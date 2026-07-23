@@ -6,7 +6,8 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
-- No durable leaves have been created yet.
+- [next-ai-draw-io provider disclosure](next-ai-draw-io-provider-disclosure.md)
+- [AI provider override trust boundaries](ai-provider-override-trust-boundaries.md)
 
 ## Authoritative Sources
 

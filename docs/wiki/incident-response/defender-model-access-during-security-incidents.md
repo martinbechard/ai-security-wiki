@@ -1,0 +1,52 @@
+---
+type: "Topic"
+title: "Defender Model Access During Security Incidents"
+description: "Security incident-response lens for using capable models as defensive analysis tools."
+---
+
+# Defender Model Access During Security Incidents
+
+## Current Understanding
+
+Defender model access means giving response teams controlled access to capable models for triage, exploit reconstruction, log analysis, and remediation planning. The [OpenAI Hugging Face cyber-evaluation incident](openai-hugging-face-cyber-evaluation-incident.md) records OpenAI's stated mitigation of expanding defender access, but that access is a security control only when it is paired with containment, audit, and human authority.
+
+The reusable concern is not broad AI-assisted development practice or [AI-assisted security repair gates](../../../upstream-ai-dev-wiki/governance-and-risk/ai-assisted-security-repair-gates.md), which belong upstream in ai-dev-wiki. The local security concern is how model access changes incident evidence handling, containment decisions, and residual risk.
+
+## Control Implications
+
+- Keep incident data classification rules in force when sharing evidence with defensive models.
+- Log model prompts, tool calls, and outputs used in incident decisions.
+- Separate defender workspaces from compromised environments and production credentials.
+- Require human approval for containment, disclosure, and recovery actions suggested by a model.
+- Record whether model-assisted analysis is preliminary, confirmed by deterministic evidence, or rejected.
+
+## Authoritative Sources
+
+- [OpenAI Hugging Face cyber-evaluation incident](openai-hugging-face-cyber-evaluation-incident.md)
+- [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
+
+## Related Code
+
+- Not yet identified.
+
+## Related Tests
+
+- Not yet identified.
+
+## Related Backlog Items
+
+- Not yet identified.
+
+## Related Wiki Pages
+
+- [incident response](index.md)
+- [cyber-evaluation containment](../testing-and-assurance/cyber-evaluation-containment.md)
+- Upstream AI development wiki owns general AI-assisted security repair practice.
+
+## Open Questions
+
+- What evidence standard is required before model-assisted incident conclusions are treated as confirmed?
+
+## Maintenance Notes
+
+- Created as a reusable control leaf during July 22, 2026 raw-source ingest.

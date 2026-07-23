@@ -6,7 +6,8 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 
 ## Leaf Pages
 
-- No durable leaves have been created yet.
+- [OpenAI Hugging Face cyber-evaluation incident](openai-hugging-face-cyber-evaluation-incident.md)
+- [Defender model access during security incidents](defender-model-access-during-security-incidents.md)
 
 ## Authoritative Sources
 

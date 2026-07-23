@@ -6,7 +6,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
-- No durable leaves have been created yet.
+- [Network-AI environment restore path traversal](network-ai-environment-restore-path-traversal.md)
+- [Agent tool filesystem path containment](agent-tool-filesystem-path-containment.md)
 
 ## Authoritative Sources
 

@@ -4,6 +4,8 @@
 
 Monthly digests summarize processed security updates and link to durable local leaves for detail. Collectors save raw evidence first; ingest updates a digest only after the local security analysis and federation routing are complete.
 
+The active digest records each independently changing security item or closely coupled advisory family separately, not by collector run or raw artifact.
+
 ## Digest Pages
 
 - [2026-07.md](2026-07.md) is the active July 2026 digest.

@@ -56,5 +56,5 @@ python3 /Users/martinbechard/.agents/skills/project-wiki/scripts/wiki_ops.py que
 
 - [automated-update-feeds.md](source-workflows/automated-update-feeds.md) records the source-first automation model.
 - AI Security Wiki Topic News Collector performs the daily public query for security-related AI items and saves raw JSON only.
-- AI Security Wiki Leaf Update Watch checks durable local security leaves for recent public changes.
-- AI Security Wiki Raw Project-Wiki Monitor ingests eligible raw artifacts into local leaves and digests after federation checks and verification.
+- AI Security Wiki [Leaf Update Watch](source-workflows/leaf-update-watch.md) checks durable local security leaves for recent public changes.
+- AI Security Wiki [Raw Project-Wiki Monitor](source-workflows/raw-project-wiki-monitor.md) ingests eligible raw artifacts into local leaves and digests after federation checks and verification.
