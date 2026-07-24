@@ -10,7 +10,7 @@ description: "Security controls for constraining file paths used by agent tools 
 
 Agent tool filesystem path containment keeps model-influenced or caller-controlled paths inside an intended directory boundary. The control applies to local MCP tools such as [next-ai-draw-io MCP server path traversal](../agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md) and to persistent runtime features such as [Network-AI environment restore path traversal](network-ai-environment-restore-path-traversal.md).
 
-The durable rule is to authorize the resolved path, not the raw string. `..`, absolute paths, symlinks, extension appends, and backup IDs can all move the actual filesystem target outside the human-visible intent.
+The durable rule is to authorize the resolved path, not the raw string. `..`, absolute paths, symlinks, extension appends, and backup IDs can all move the actual filesystem target outside the human-visible intent. The [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) reinforces this from the Network-AI restore issue: containment must be checked after joining user-controlled identifiers, not only before path assembly.
 
 ## Control Implications
 
@@ -25,6 +25,7 @@ The durable rule is to authorize the resolved path, not the raw string. `..`, ab
 - [next-ai-draw-io MCP server path traversal](../agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md)
 - [Network-AI environment restore path traversal](network-ai-environment-restore-path-traversal.md)
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
+- [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 
 ## Related Code
 
@@ -50,4 +51,4 @@ The durable rule is to authorize the resolved path, not the raw string. `..`, ab
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during July 22, 2026 raw-source ingest.
+- Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) with post-join containment evidence.

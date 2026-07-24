@@ -10,7 +10,7 @@ description: "Security analysis for CVE-2026-58413, where backup restore IDs cro
 
 The [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json) records CVE-2026-58413 for Network-AI versions before 5.12.2. The environment restore path was computed from a caller-controlled backup ID without resolving and asserting that the final path remained under `data/<env>/.backups`.
 
-The [GitHub advisory](https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf) checked during ingest lists the patched version as 5.12.2 and describes backup ID validation plus resolved-path checks. This advisory complements the later [Network-AI ApprovalInbox authorization bypass](../agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md): both show that persistent agent runtimes need equal attention to [agent tool filesystem path containment](agent-tool-filesystem-path-containment.md) and approval metadata boundaries.
+The [GitHub advisory](https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf) checked during ingest lists the patched version as 5.12.2 and describes backup ID validation plus resolved-path checks. The [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) records NVD mitigation evidence as strict `backupId` validation plus dirname containment checking. This advisory complements the later [Network-AI ApprovalInbox authorization bypass](../agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md): both show that persistent agent runtimes need equal attention to [agent tool filesystem path containment](agent-tool-filesystem-path-containment.md) and approval metadata boundaries.
 
 ## Security Impact
 
@@ -24,6 +24,7 @@ The [GitHub advisory](https://github.com/Jovancoding/Network-AI/security/advisor
 ## Authoritative Sources
 
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
+- [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 - NVD: https://nvd.nist.gov/vuln/detail/CVE-2026-58413
 - GitHub advisory: https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf
 - Network-AI 5.12.2 release: https://github.com/Jovancoding/Network-AI/releases/tag/v5.12.2
@@ -54,4 +55,4 @@ The [GitHub advisory](https://github.com/Jovancoding/Network-AI/security/advisor
 
 ## Maintenance Notes
 
-- Added from the July 22, 2026 raw collector artifact, GitHub advisory metadata, and npm metadata.
+- Added from the July 22, 2026 raw collector artifact, GitHub advisory metadata, and npm metadata; enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) with NVD mitigation evidence.

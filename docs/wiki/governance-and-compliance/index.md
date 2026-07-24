@@ -6,7 +6,7 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 
 ## Leaf Pages
 
-- No durable leaves have been created yet.
+- [AI data center security standards](ai-data-center-security-standards.md)
 
 ## Authoritative Sources
 

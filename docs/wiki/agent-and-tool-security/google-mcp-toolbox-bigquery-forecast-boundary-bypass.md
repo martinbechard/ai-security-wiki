@@ -10,7 +10,7 @@ description: "Security analysis for CVE-2026-15829, where a prebuilt BigQuery fo
 
 The [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json) records CVE-2026-15829 for [Google](../../../upstream-ai-wiki/companies/google-ai.md) [MCP Toolbox for Databases](../../../upstream-ai-wiki/mcp-servers/mcp-toolbox-for-databases.md) versions 0.13.0 through 1.3.0. The `bigquery-forecast` tool interpolated client-controlled column parameters into an `AI.FORECAST` query while validating only the selected `history_data` dataset against `allowedDatasets`.
 
-[Google PR 3324](https://github.com/googleapis/mcp-toolbox/pull/3324) was merged on June 4, 2026 and says the fix wraps tool options and dry-runs the fully assembled BigQuery statement to inspect every accessed dataset. The [GitHub releases feed](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.4.0) checked during ingest shows v1.4.0 published after the merge, so the local mitigation state is to upgrade past the affected 1.3.0 line and verify deployed prebuilt tools use a build containing PR 3324. The reusable control is [final query authorization for AI data tools](final-query-authorization-for-ai-data-tools.md).
+[Google PR 3324](https://github.com/googleapis/mcp-toolbox/pull/3324) was merged on June 4, 2026 and says the fix wraps tool options and dry-runs the fully assembled BigQuery statement to inspect every accessed dataset. The [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) records NVD enrichment from the Google CNA record: CVSS v4 8.6 with CWE-89 and CWE-863. The [GitHub releases feed](https://github.com/googleapis/mcp-toolbox/releases/tag/v1.4.0) checked during ingest shows v1.4.0 published after the merge, so the local mitigation state is to upgrade past the affected 1.3.0 line and verify deployed prebuilt tools use a build containing PR 3324. The reusable control is [final query authorization for AI data tools](final-query-authorization-for-ai-data-tools.md).
 
 ## Security Impact
 
@@ -18,12 +18,13 @@ The [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-s
 - Affected boundary: Google MCP Toolbox for Databases 0.13.0 through 1.3.0, prebuilt `bigquery-forecast`, `allowedDatasets`, and BigQuery tables reachable by the service identity.
 - Exploit or incident status: public CVE and merged fix PR; no public exploitation was identified in the raw source.
 - Mitigation state: fixed code merged in PR 3324; deploy a release after the affected 1.3.0 range and verify fully assembled query dry-run enforcement.
-- Confidence: high for affected range and technical boundary from the raw source and merged PR; medium for exact fixed release because the NVD source names the affected range but not a fixed version.
+- Confidence: high for affected range, technical boundary, and NVD CVSS/CWE enrichment from the raw sources and merged PR; medium for exact fixed release because the NVD source names the affected range but not a fixed version.
 - Residual risk: custom BigQuery tools may repeat the same anti-pattern if they validate only selected dataset parameters instead of final executed statements.
 
 ## Authoritative Sources
 
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
+- [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 - NVD: https://nvd.nist.gov/vuln/detail/CVE-2026-15829
 - Google PR 3324: https://github.com/googleapis/mcp-toolbox/pull/3324
 
@@ -54,4 +55,4 @@ The [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-s
 
 ## Maintenance Notes
 
-- Added from the July 22, 2026 raw collector artifact plus GitHub PR and release metadata.
+- Added from the July 22, 2026 raw collector artifact plus GitHub PR and release metadata; enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) with NVD CVSS/CWE details.

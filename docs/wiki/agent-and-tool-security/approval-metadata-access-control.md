@@ -10,7 +10,7 @@ description: "Security controls for protecting agent approval queues, read APIs,
 
 Approval metadata access control treats queued action details as sensitive even before an agent executes an action. [Network-AI ApprovalInbox authorization bypass](network-ai-approval-inbox-authorization-bypass.md) shows that pending commands, file paths, justifications, and risk levels can leak through read and stream routes even when approve and deny routes are protected.
 
-The durable rule is authorization parity: read, stats, and event-stream routes for approval systems need explicit access control aligned with mutating routes. Wildcard CORS is unsafe for sensitive approval queues because a browser session can become an unintended reader.
+The durable rule is authorization parity: read, stats, and event-stream routes for approval systems need explicit access control aligned with mutating routes. Wildcard CORS is unsafe for sensitive approval queues because a browser session can become an unintended reader. The [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) records VulnCheck's independent missing-authorization framing and CVSS v4 9.3 score for Network-AI 5.12.2 and later affected versions.
 
 ## Control Implications
 
@@ -24,6 +24,7 @@ The durable rule is authorization parity: read, stats, and event-stream routes f
 
 - [Network-AI ApprovalInbox authorization bypass](network-ai-approval-inbox-authorization-bypass.md)
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
+- [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 
 ## Related Code
 
@@ -50,4 +51,4 @@ The durable rule is authorization parity: read, stats, and event-stream routes f
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during July 22, 2026 raw-source ingest.
+- Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) with independent VulnCheck severity evidence.

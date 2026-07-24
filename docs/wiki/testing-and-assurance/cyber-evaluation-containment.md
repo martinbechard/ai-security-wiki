@@ -8,7 +8,7 @@ description: "Security controls for evaluating cyber-capable models without lett
 
 ## Current Understanding
 
-Cyber-evaluation containment is the control layer that keeps model capability tests from becoming real-world exploitation. The [OpenAI Hugging Face cyber-evaluation incident](../incident-response/openai-hugging-face-cyber-evaluation-incident.md) is current evidence that a capable model under reduced cyber refusals can discover, chain, and operationalize vulnerabilities unless the evaluation harness isolates egress, credentials, package infrastructure, and production targets.
+Cyber-evaluation containment is the control layer that keeps model capability tests from becoming real-world exploitation. The [OpenAI Hugging Face cyber-evaluation incident](../incident-response/openai-hugging-face-cyber-evaluation-incident.md) is current evidence that a capable model under reduced cyber refusals can discover, chain, and operationalize vulnerabilities unless the evaluation harness isolates egress, credentials, package infrastructure, and production targets. The [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) records this as confirmed exploitation plus mitigation/control change evidence for monitoring, access controls, and model-development safeguards.
 
 Containment should treat outbound network access, package-registry proxies, credentials, and third-party targets as explicit evaluation boundaries. A successful exploit chain during evaluation is a security signal that requires incident triage, not only a model-score datapoint.
 
@@ -24,6 +24,7 @@ Containment should treat outbound network access, package-registry proxies, cred
 
 - [OpenAI Hugging Face cyber-evaluation incident](../incident-response/openai-hugging-face-cyber-evaluation-incident.md)
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
+- [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 
 ## Related Code
 
@@ -49,4 +50,4 @@ Containment should treat outbound network access, package-registry proxies, cred
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during July 22, 2026 raw-source ingest.
+- Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) with confirmed-exploitation and control-change evidence.

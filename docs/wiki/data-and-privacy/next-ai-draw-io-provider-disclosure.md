@@ -10,7 +10,7 @@ description: "Security analysis for CVE-2026-50756, where provider override hand
 
 The [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json) records CVE-2026-50756 for next-ai-draw-io 0.4.13 and the `x-ai-provider` component. [GitHub issue 749](https://github.com/DayuanJiang/next-ai-draw-io/issues/749) describes an SSRF guard bypass where client-controlled provider and base URL headers can send the system prompt, user messages, and diagram XML to an attacker-controlled endpoint.
 
-This page owns the data-exposure and weak-authentication lens. [AI provider override trust boundaries](ai-provider-override-trust-boundaries.md) owns the reusable provider-routing control. Broad next-ai-draw-io product context remains upstream, and the separate MCP server path traversal advisory is tracked in [next-ai-draw-io MCP server path traversal](../agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md).
+This page owns the data-exposure and weak-authentication lens. The [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) records the NVD receipt framing for sensitive information exposure through `x-ai-provider`. [AI provider override trust boundaries](ai-provider-override-trust-boundaries.md) owns the reusable provider-routing control. Broad next-ai-draw-io product context remains upstream, and the separate MCP server path traversal advisory is tracked in [next-ai-draw-io MCP server path traversal](../agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md).
 
 ## Security Impact
 
@@ -24,6 +24,7 @@ This page owns the data-exposure and weak-authentication lens. [AI provider over
 ## Authoritative Sources
 
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
+- [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 - NVD: https://nvd.nist.gov/vuln/detail/CVE-2026-50756
 - GitHub issue 749: https://github.com/DayuanJiang/next-ai-draw-io/issues/749
 
@@ -53,4 +54,4 @@ This page owns the data-exposure and weak-authentication lens. [AI provider over
 
 ## Maintenance Notes
 
-- Added from the July 22, 2026 raw collector artifact, linked GitHub issue, and package metadata checks.
+- Added from the July 22, 2026 raw collector artifact, linked GitHub issue, and package metadata checks; enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) with NVD receipt framing.

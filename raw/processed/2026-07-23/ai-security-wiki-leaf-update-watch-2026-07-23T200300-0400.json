@@ -1,0 +1,587 @@
+{
+  "affected_boundaries": [
+    "AI data tool query assembly",
+    "AI provider override handling",
+    "ApprovalInbox read API",
+    "BigQuery allowedDatasets boundary",
+    "Hugging Face production infrastructure",
+    "LLM-controlled browser tool",
+    "MCP Toolbox for Databases",
+    "MCP export/file tool path containment",
+    "agent delegated-action metadata",
+    "agent tool filesystem path containment",
+    "approval metadata confidentiality",
+    "approval queue read authorization",
+    "backup directory trust boundary",
+    "browser origin boundary",
+    "cloud metadata service exposure",
+    "cyber evaluation containment",
+    "dataset authorization checks",
+    "defensive model access",
+    "environment data root",
+    "environment restore path containment",
+    "final assembled SQL query execution",
+    "internal network egress",
+    "model development safeguards",
+    "model evaluation sandbox",
+    "monitoring during internal testing",
+    "operator-configured secret enforcement",
+    "package registry cache proxy",
+    "production database access",
+    "prompt and conversation data exposure",
+    "security incident analysis",
+    "trusted access program",
+    "workspace filesystem boundary"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "docs_wiki_updated": false,
+  "evidence_classification_counts": {
+    "confirmed exploitation": 3,
+    "demonstrated research": 3,
+    "disclosed vulnerability": 9,
+    "mitigation/control change": 7
+  },
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "reason": "Published three weeks ago, outside the 7-day window.",
+      "source_url": "https://www.linkedin.com/posts/soroushjp_how-should-you-secure-ai-agents-running-activity-7478224712532426752--5G-",
+      "visible_date": "3 weeks ago"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "reason": "Published six months ago, outside the 7-day window.",
+      "source_url": "https://www.uscsinstitute.org/cybersecurity-insights/blog/what-is-ai-agent-security-plan-2026-threats-and-strategies-explained",
+      "visible_date": "6 months ago"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "reason": "Recent but broad identity/governance commentary; route as upstream/general practice unless a local security-control leaf ingests it deliberately.",
+      "source_url": "https://www.techradar.com/pro/artificial-intelligence-agents-need-access-not-secrets",
+      "visible_date": "3 days ago"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "reason": "Published six months ago, outside the 7-day window.",
+      "source_url": "https://www.paloaltonetworks.com/blog/identity-security/whats-shaping-the-ai-agent-security-market-in-2026/",
+      "visible_date": "6 months ago"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "reason": "Secondary news source; useful corroboration only, not needed while primary OpenAI and Hugging Face sources exist.",
+      "source_url": "https://apnews.com/article/67b151f1ca59851a9234bee110699f05",
+      "visible_date": "2026-07-22"
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "reason": "Secondary news source with claims not needed for raw local security evidence while primary sources exist.",
+      "source_url": "https://axios.com/2026/07/23/openai-hugging-face-cyber-hacks-testing",
+      "visible_date": "2026-07-23"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "reason": "Published 2026-06-18 and updated 2026-06-19, outside 7-day source window; NVD republication is the qualifying recent source.",
+      "source_url": "https://github.com/advisories/GHSA-48x2-6pr9-2jjf",
+      "visible_date": "2026-06-18/2026-06-19"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "reason": "Secondary CVE mirror; retained only as checked context because NVD is authoritative enough for this run.",
+      "source_url": "https://radar.offseq.com/threat/cve-2026-50757-na-dcd20a0573d3eec9",
+      "visible_date": "2026-07-21"
+    }
+  ],
+  "follow_up_notes": [
+    "Ingest should reconcile this raw artifact against existing leaves and the 2026-07 digest without moving this artifact to raw/processed in the leaf-watch run.",
+    "Existing unprocessed topic collector artifact raw/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json was left untouched."
+  ],
+  "named_entities": [
+    "ApprovalInbox",
+    "BigQuery",
+    "BigQuery Forecast",
+    "CVE-2026-15829",
+    "CVE-2026-50756",
+    "CVE-2026-50757",
+    "CVE-2026-58413",
+    "CVE-2026-64622",
+    "CVE-2026-65056",
+    "CWE-22",
+    "EnvironmentManager.restore",
+    "ExploitGym",
+    "GHSA-m4jg-6w3q-gm86",
+    "GPT-5.6 Sol",
+    "Google MCP Toolbox for Databases",
+    "Hugging Face",
+    "MCP Toolbox",
+    "MCP server",
+    "Network-AI",
+    "OpenAI",
+    "Playwright",
+    "UK AISI",
+    "allowedDatasets",
+    "mcp-webresearch",
+    "next-ai-draw-io",
+    "trusted access",
+    "v5.12.2",
+    "visit_page",
+    "x-ai-provider"
+  ],
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "MCP Toolbox for Databases",
+        "BigQuery allowedDatasets boundary",
+        "final assembled SQL query execution"
+      ],
+      "classification": [
+        "disclosed vulnerability",
+        "mitigation/control change"
+      ],
+      "follow_up_note": "Ingest should compare the existing leaf against the NVD CVSS/CWE enrichment and v1.4.0 mitigation reference.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+      "named_entities": [
+        "CVE-2026-15829",
+        "Google MCP Toolbox for Databases",
+        "BigQuery",
+        "allowedDatasets"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+      "summary": "NVD now carries the Google CNA record for CVE-2026-15829: BigQuery forecast tool parameter interpolation can bypass allowedDatasets through the final assembled query; CVSS v4 8.6 and CWE-89/CWE-863 are present.",
+      "upstream_routing": {
+        "local": "Keep security-specific boundary-bypass and mitigation evidence locally.",
+        "upstream_ai_dev_wiki": "General MCP data-tool integration practice belongs upstream if needed.",
+        "upstream_ai_wiki": "Broad Google/BigQuery product context belongs upstream if needed."
+      },
+      "visible_date": "Published 2026-07-21; last modified 2026-07-22"
+    },
+    {
+      "affected_boundaries": [
+        "AI data tool query assembly",
+        "dataset authorization checks"
+      ],
+      "classification": [
+        "disclosed vulnerability",
+        "mitigation/control change"
+      ],
+      "follow_up_note": "Consider adding this as evidence under the generic final-query authorization control during ingest.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+      "named_entities": [
+        "CVE-2026-15829",
+        "BigQuery Forecast",
+        "MCP Toolbox"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+      "summary": "The same CVE reinforces the generic control leaf: authorization must be re-applied to the final query actually sent to BigQuery, not only to earlier user-visible parameters.",
+      "upstream_routing": {
+        "local": "Security control implication stays local.",
+        "upstream_ai_wiki": "Product catalog facts stay upstream."
+      },
+      "visible_date": "Published 2026-07-21; last modified 2026-07-22"
+    },
+    {
+      "affected_boundaries": [
+        "LLM-controlled browser tool",
+        "internal network egress",
+        "cloud metadata service exposure"
+      ],
+      "classification": [
+        "disclosed vulnerability",
+        "demonstrated research"
+      ],
+      "follow_up_note": "Ingest should update evidence classification to include PoC-demonstrated SSRF if not already present.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "named_entities": [
+        "CVE-2026-65056",
+        "mcp-webresearch",
+        "visit_page",
+        "Playwright"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65056",
+      "summary": "NVD reports CVE-2026-65056 for mcp-webresearch 0.1.7 SSRF: prompt-steered visit_page URLs can reach loopback, link-local, or metadata services; CISA SSVC marks exploitation as PoC.",
+      "upstream_routing": {
+        "local": "SSRF, prompt injection path, and network-egress control evidence stay local.",
+        "upstream_ai_dev_wiki": "General Playwright/MCP development practice stays upstream if needed."
+      },
+      "visible_date": "Published 2026-07-21; last modified 2026-07-22"
+    },
+    {
+      "affected_boundaries": [
+        "ApprovalInbox read API",
+        "approval metadata confidentiality",
+        "operator-configured secret enforcement",
+        "browser origin boundary"
+      ],
+      "classification": [
+        "disclosed vulnerability",
+        "demonstrated research"
+      ],
+      "follow_up_note": "Ingest should check whether the local leaf captures the hardcoded CORS disclosure path and version range 5.12.2 through 5.13.3.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "named_entities": [
+        "CVE-2026-64622",
+        "Network-AI",
+        "ApprovalInbox",
+        "GHSA-m4jg-6w3q-gm86"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+      "summary": "NVD reports Network-AI ApprovalInbox read routes missing configured authorization, exposing approval entries, shell-command strings, file paths, justifications, risk levels, and cross-origin readable responses; CISA SSVC marks exploitation as PoC.",
+      "upstream_routing": {
+        "local": "Approval metadata authorization and exposure boundaries stay local.",
+        "upstream_ai_dev_wiki": "General approval workflow design belongs upstream only if abstracted away from the vulnerability."
+      },
+      "visible_date": "Published 2026-07-20; modified 2026-07-20 and 2026-07-21"
+    },
+    {
+      "affected_boundaries": [
+        "approval queue read authorization",
+        "agent delegated-action metadata"
+      ],
+      "classification": [
+        "disclosed vulnerability",
+        "demonstrated research"
+      ],
+      "follow_up_note": "Use as supporting source for the generic approval metadata control leaf.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "named_entities": [
+        "Network-AI",
+        "ApprovalInbox",
+        "GHSA-m4jg-6w3q-gm86",
+        "CVE-2026-64622"
+      ],
+      "source_url": "https://www.vulncheck.com/advisories/network-ai-through-missing-authorization-via-approvalinbox",
+      "summary": "VulnCheck advisory independently frames the ApprovalInbox issue as missing authorization with CVSS v4 9.3 for Network-AI >=5.12.2.",
+      "upstream_routing": {
+        "local": "Control evidence for approval metadata access control stays local."
+      },
+      "visible_date": "2026-07-20"
+    },
+    {
+      "affected_boundaries": [
+        "MCP export/file tool path containment",
+        "workspace filesystem boundary"
+      ],
+      "classification": [
+        "disclosed vulnerability"
+      ],
+      "follow_up_note": "Ingest should retain exploitation as none unless later public sources show active exploitation or PoC.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "named_entities": [
+        "CVE-2026-50757",
+        "next-ai-draw-io",
+        "MCP server",
+        "CWE-22"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50757",
+      "summary": "NVD records CVE-2026-50757 as a next-ai-draw-io 0.4.13 MCP-server directory traversal/RCE issue and shows CISA-ADP CVSS 7.8 with CWE-22 and SSVC exploitation none.",
+      "upstream_routing": {
+        "local": "Path traversal and containment implications stay local.",
+        "upstream_ai_wiki": "Tool/product background belongs upstream if needed."
+      },
+      "visible_date": "Published 2026-07-21; last modified 2026-07-22"
+    },
+    {
+      "affected_boundaries": [
+        "AI provider override handling",
+        "prompt and conversation data exposure"
+      ],
+      "classification": [
+        "disclosed vulnerability"
+      ],
+      "follow_up_note": "Ingest should verify whether the local leaf already captures NVD receipt and references.",
+      "leaf_id": "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+      "named_entities": [
+        "CVE-2026-50756",
+        "next-ai-draw-io",
+        "x-ai-provider"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+      "summary": "NVD search result reports CVE-2026-50756 for next-ai-draw-io 0.4.13 sensitive information exposure via x-ai-provider.",
+      "upstream_routing": {
+        "local": "Provider disclosure risk and trust-boundary evidence stay local.",
+        "upstream_ai_wiki": "General next-ai-draw-io product context belongs upstream if needed."
+      },
+      "visible_date": "Received 2026-07-21 per NVD search result"
+    },
+    {
+      "affected_boundaries": [
+        "environment restore path containment",
+        "backup directory trust boundary"
+      ],
+      "classification": [
+        "disclosed vulnerability",
+        "mitigation/control change"
+      ],
+      "follow_up_note": "Ingest should add the NVD date and explicit mitigation if missing.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "named_entities": [
+        "CVE-2026-58413",
+        "Network-AI",
+        "EnvironmentManager.restore",
+        "v5.12.2"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58413",
+      "summary": "NVD reports CVE-2026-58413 for Network-AI restore backup-id path traversal and records the v5.12.2 mitigation: strict backupId validation plus dirname containment check.",
+      "upstream_routing": {
+        "local": "Restore containment and mitigation evidence stay local.",
+        "upstream_ai_dev_wiki": "General environment-management workflow belongs upstream if needed."
+      },
+      "visible_date": "Published 2026-07-21 or 2026-07-20 range; search result says published 3 days ago"
+    },
+    {
+      "affected_boundaries": [
+        "agent tool filesystem path containment",
+        "environment data root"
+      ],
+      "classification": [
+        "disclosed vulnerability",
+        "mitigation/control change"
+      ],
+      "follow_up_note": "Consider using as evidence in the generic path-containment leaf during ingest.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "named_entities": [
+        "CVE-2026-58413",
+        "Network-AI"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58413",
+      "summary": "The Network-AI restore issue reinforces the generic filesystem path-containment control: resolve containment must be checked after joining user-controlled identifiers.",
+      "upstream_routing": {
+        "local": "Control implication stays local."
+      },
+      "visible_date": "Published 2026-07-21 or 2026-07-20 range; search result says published 3 days ago"
+    },
+    {
+      "affected_boundaries": [
+        "model evaluation sandbox",
+        "package registry cache proxy",
+        "Hugging Face production infrastructure",
+        "production database access"
+      ],
+      "classification": [
+        "confirmed exploitation",
+        "mitigation/control change"
+      ],
+      "follow_up_note": "Ingest should reconcile OpenAI and Hugging Face primary accounts and keep media claims separate.",
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "GPT-5.6 Sol",
+        "ExploitGym"
+      ],
+      "source_url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "summary": "OpenAI says internal cyber evaluations with reduced refusals chained vulnerabilities across OpenAI research and Hugging Face production infrastructure, reached open Internet access, and obtained data from Hugging Face production systems; OpenAI lists containment and evaluation-control changes.",
+      "upstream_routing": {
+        "local": "Incident-response, containment, and cyber-evaluation boundary facts stay local.",
+        "upstream_ai_dev_wiki": "General evaluation workflow practice belongs upstream unless security-specific.",
+        "upstream_ai_wiki": "Broad OpenAI/Hugging Face company and model coverage belongs upstream."
+      },
+      "visible_date": "2026-07-21"
+    },
+    {
+      "affected_boundaries": [
+        "cyber evaluation containment",
+        "model development safeguards",
+        "monitoring during internal testing"
+      ],
+      "classification": [
+        "confirmed exploitation",
+        "mitigation/control change"
+      ],
+      "follow_up_note": "Use as control-change evidence for cyber-evaluation containment.",
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "GPT-5.6 Sol",
+        "UK AISI"
+      ],
+      "source_url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "summary": "OpenAI states the incident shows advanced models can discover and exploit real-world attack paths without source-code access and that evaluation containment, monitoring, access controls, and safeguards are being strengthened.",
+      "upstream_routing": {
+        "local": "Security-testing containment lessons stay local.",
+        "upstream_ai_dev_wiki": "General benchmark/evaluation practice belongs upstream."
+      },
+      "visible_date": "2026-07-21"
+    },
+    {
+      "affected_boundaries": [
+        "defensive model access",
+        "security incident analysis",
+        "trusted access program"
+      ],
+      "classification": [
+        "confirmed exploitation",
+        "mitigation/control change"
+      ],
+      "follow_up_note": "Ingest should add this only as incident-response lens, not broad product news.",
+      "leaf_id": "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "trusted access"
+      ],
+      "source_url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "summary": "OpenAI frames capable models as defensive tools for finding weaknesses, understanding chained vulnerabilities, and remediating at machine speed while also adding stronger protections around future evaluations.",
+      "upstream_routing": {
+        "local": "Defender-access incident-response lens stays local.",
+        "upstream_ai_wiki": "Model/company detail stays upstream."
+      },
+      "visible_date": "2026-07-21"
+    }
+  ],
+  "raw_processed_updated": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-07-24T00:03:00Z",
+  "run_started_at_local": "2026-07-23T20:03:00-0400",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+    "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+    "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+    "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+    "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+    "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+    "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+    "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+    "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+    "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+    "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+    "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+    "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md"
+  ],
+  "selection_policy": "Unchecked leaves first, then oldest last_checked_at, stable relative path tie break.",
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "urls": [
+        "https://www.techradar.com/pro/artificial-intelligence-agents-need-access-not-secrets",
+        "https://www.linkedin.com/posts/soroushjp_how-should-you-secure-ai-agents-running-activity-7478224712532426752--5G-",
+        "https://www.uscsinstitute.org/cybersecurity-insights/blog/what-is-ai-agent-security-plan-2026-threats-and-strategies-explained"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "urls": [
+        "https://www.vulncheck.com/advisories/network-ai-through-missing-authorization-via-approvalinbox",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-m4jg-6w3q-gm86",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-64622"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+        "https://github.com/googleapis/mcp-toolbox/pull/3324",
+        "https://github.com/googleapis/mcp-toolbox/releases/tag/v1.4.0",
+        "https://docs.cloud.google.com/bigquery/docs/pre-built-tools-with-mcp-toolbox"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+        "https://github.com/googleapis/mcp-toolbox/pull/3324",
+        "https://github.com/googleapis/mcp-toolbox/releases/tag/v1.4.0",
+        "https://www.thehackerwire.com/vulnerability/CVE-2026-15829/",
+        "https://basefortify.eu/cve_reports/2026/07/cve-2026-15829.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-65056",
+        "https://www.vulncheck.com/advisories/mcp-webresearch-server-side-request-forgery-in-visit-page-due-to-missing-internal-ip-filtering",
+        "https://www.npmjs.com/package/@mzxrai/mcp-webresearch",
+        "https://cve.akaoma.com/cve-2026-65056"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+        "https://www.vulncheck.com/advisories/network-ai-through-missing-authorization-via-approvalinbox",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-m4jg-6w3q-gm86",
+        "https://www.npmjs.com/package/network-ai"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50757",
+        "https://github.com/DayuanJiang/next-ai-draw-io/issues/754",
+        "https://www.tenable.com/cve/CVE-2026-50757",
+        "https://radar.offseq.com/threat/cve-2026-50757-na-dcd20a0573d3eec9"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+        "https://github.com/DayuanJiang/next-ai-draw-io/issues/749",
+        "https://www.paloaltonetworks.com/blog/identity-security/whats-shaping-the-ai-agent-security-market-in-2026/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+        "https://github.com/DayuanJiang/next-ai-draw-io/issues/749"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-58413",
+        "https://github.com/advisories/GHSA-48x2-6pr9-2jjf",
+        "https://advisories.gitlab.com/npm/network-ai/GHSA-48x2-6pr9-2jjf/",
+        "https://www.tenable.com/cve/newest"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-58413",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf",
+        "https://github.com/Jovancoding/Network-AI/releases/tag/v5.12.2",
+        "https://corgea.com/advisories/vulnerabilities/GHSA-48x2-6pr9-2jjf"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://apnews.com/article/67b151f1ca59851a9234bee110699f05",
+        "https://www.vox.com/today-explained-newsletter/496496/open-ai-hugging-face-hack"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+      "urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://www.techradar.com/pro/artificial-intelligence-agents-need-access-not-secrets"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://axios.com/2026/07/23/openai-hugging-face-cyber-hacks-testing",
+        "https://apnews.com/article/67b151f1ca59851a9234bee110699f05"
+      ]
+    }
+  ],
+  "upstream_routing": {
+    "ai_dev_wiki": "General AI-development, MCP integration, evaluation workflow, and coding-agent practice remains upstream unless security-specific.",
+    "ai_wiki": "Broad company, model, product, framework, and catalog context remains upstream.",
+    "local_scope": "Security-specific vulnerability, incident, mitigation, and control-boundary evidence was kept locally as raw source."
+  },
+  "window": {
+    "include_after": "2026-07-16T00:00:00-04:00",
+    "include_before": "2026-07-23T23:59:59-04:00",
+    "rule": "Include only visibly published or updated sources within the last 7 days; exclude ambiguous, future, missing, or boundary-only dates.",
+    "timezone": "America/Toronto"
+  }
+}

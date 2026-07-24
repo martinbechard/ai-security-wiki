@@ -8,6 +8,8 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 - [next-ai-draw-io provider disclosure](next-ai-draw-io-provider-disclosure.md)
 - [AI provider override trust boundaries](ai-provider-override-trust-boundaries.md)
+- [ATO-approved sensitive data use](ato-approved-sensitive-data-use.md)
+- [AI coding telemetry redaction controls](ai-coding-telemetry-redaction-controls.md)
 
 ## Authoritative Sources
 

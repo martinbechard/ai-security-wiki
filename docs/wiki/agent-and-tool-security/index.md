@@ -7,12 +7,14 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 ## Leaf Pages
 
 - [mcp-webresearch browser SSRF](mcp-webresearch-browser-ssrf.md)
+- [Langflow KEV remote code execution](langflow-kev-rce.md)
 - [agent network egress controls](agent-network-egress-controls.md)
 - [Network-AI ApprovalInbox authorization bypass](network-ai-approval-inbox-authorization-bypass.md)
 - [approval metadata access control](approval-metadata-access-control.md)
 - [Google MCP Toolbox BigQuery forecast boundary bypass](google-mcp-toolbox-bigquery-forecast-boundary-bypass.md)
 - [final query authorization for AI data tools](final-query-authorization-for-ai-data-tools.md)
 - [next-ai-draw-io MCP server path traversal](next-ai-draw-io-mcp-server-path-traversal.md)
+- [MaxKB MCP tool import remote code execution](maxkb-mcp-tool-import-rce.md)
 
 ## Authoritative Sources
 
