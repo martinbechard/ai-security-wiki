@@ -1,0 +1,487 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-07-25T19:30:52-04:00",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "cutoff_window": {
+    "start": "2026-07-23T19:30:52-04:00",
+    "end": "2026-07-25T19:30:52-04:00",
+    "rule": "Include only public items with visible publication or update dates inside the window; exclude ambiguous, future-dated, and boundary-only dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "federation_context": {
+    "local_security_scope": "This repository owns AI-specific security implications, affected boundaries, controls, mitigations, incidents, and assurance findings.",
+    "upstream_ai_wiki_scope": "Broad AI companies, products, models, frameworks, MCP servers, and ecosystem entities route to /Users/martinbechard/dev/ai-wiki.",
+    "upstream_ai_dev_wiki_scope": "General AI-assisted development practices, agent workflows, verification practices, and adoption operations route to /Users/martinbechard/dev/ai-dev-wiki."
+  },
+  "findings": [
+    {
+      "id": "2026-07-24-google-api-hub-mcp-ga-security-controls",
+      "title": "Google API hub MCP reaches GA with OAuth scopes and Model Armor integration",
+      "source_urls": [
+        "https://docs.cloud.google.com/release-notes"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://docs.cloud.google.com/release-notes",
+          "date": "2026-07-24",
+          "basis": "Google Cloud release notes section dated July 24, 2026."
+        }
+      ],
+      "summary": "Google Cloud made the API hub MCP server generally available. The release adds read/write AI-agent actions over API assets, global endpoint routing, service-specific OAuth scopes for read-only and read-write access, and Model Armor integration to protect MCP tool invocations from prompt injection and related attacks.",
+      "evidence_classification": "official product security control; MCP release note",
+      "affected_boundary_or_version": "Google Cloud API hub MCP server GA; apihub.googleapis.com/mcp; apihub.readonly and apihub.readwrite OAuth scopes; Model Armor tool-invocation protection.",
+      "why_it_matters_for_ai_security": "This turns MCP access to an API catalog into a managed cloud control point where least-privilege OAuth scopes and prompt-injection defenses can be applied before agents discover, modify, or deploy API assets.",
+      "named_entities": [
+        "Google Cloud",
+        "Apigee API hub",
+        "Model Context Protocol",
+        "Model Armor",
+        "OAuth"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Google Cloud, Apigee API hub, and Model Armor are broad AI/cloud ecosystem entities."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Granular OAuth scopes, MCP prompt-injection protection, and agent write-action controls are local security topics."
+        }
+      ],
+      "confidence_notes": "High confidence because the source is an official Google Cloud release note with explicit security-relevant controls.",
+      "follow_up_actions": [
+        "During ingest, compare this to local MCP authorization and final-action authorization leaves.",
+        "Route broad API hub and Model Armor product coverage upstream."
+      ]
+    },
+    {
+      "id": "2026-07-24-google-cloud-ai-workload-anomaly-and-data-residency-controls",
+      "title": "Google Cloud adds AI workload anomaly signals and Gemini Enterprise data-residency placement",
+      "source_urls": [
+        "https://docs.cloud.google.com/release-notes"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://docs.cloud.google.com/release-notes",
+          "date": "2026-07-24",
+          "basis": "Google Cloud release notes section dated July 24, 2026."
+        }
+      ],
+      "summary": "Google Cloud release notes added early anomaly signals for AI workloads such as Gemini API and Vertex AI, using near-real-time cost estimates for daily service-level insights before finalized billing. The same dated section says Gemini Enterprise customers on an allowlist can use Gemini 3.6 Flash in the US multi-region with data residency at rest and machine learning processing.",
+      "evidence_classification": "official cloud control; monitoring and data-residency release note",
+      "affected_boundary_or_version": "Google Cloud Billing anomaly dashboard for AI workloads; Gemini API; Vertex AI; Gemini Enterprise Gemini 3.6 Flash in US multi-region with DRZ and MLP.",
+      "why_it_matters_for_ai_security": "AI cost anomalies are an operational signal for abuse, runaway agents, and credential misuse, while data-residency placement affects privacy, compliance, and model-processing boundary decisions for enterprise AI workloads.",
+      "named_entities": [
+        "Google Cloud",
+        "Gemini API",
+        "Vertex AI",
+        "Gemini Enterprise",
+        "Gemini 3.6 Flash"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Gemini models and Google Cloud product coverage are upstream-owned."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "AI workload anomaly monitoring, abuse detection, and data-residency controls are local security topics."
+        }
+      ],
+      "confidence_notes": "High confidence because the source is an official Google Cloud release note.",
+      "follow_up_actions": [
+        "Consider local data-and-privacy coverage for AI workload residency and processing boundaries.",
+        "Consider monitoring coverage for cost-anomaly signals as abuse or credential-compromise indicators."
+      ]
+    },
+    {
+      "id": "2026-07-24-network-ai-agentruntime-sandbox-path-traversal-cve-2026-58481",
+      "title": "Network-AI AgentRuntime sandbox path traversal permits out-of-sandbox file reads",
+      "source_urls": [
+        "https://www.sentinelone.com/vulnerability-database/cve-2026-58481/",
+        "https://github.com/advisories/GHSA-jvcm-f35g-w78p"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://www.sentinelone.com/vulnerability-database/cve-2026-58481/",
+          "date": "2026-07-24",
+          "basis": "SentinelOne vulnerability entry publication date."
+        },
+        {
+          "source_url": "https://github.com/advisories/GHSA-jvcm-f35g-w78p",
+          "date": "2026-06-19",
+          "basis": "GitHub advisory date retained as older corroborating advisory, not as the in-window qualifying date."
+        }
+      ],
+      "summary": "SentinelOne published CVE-2026-58481 for Network-AI versions before 5.12.2. AgentRuntime used raw string prefix checks for sandbox path containment, so a base path such as /tmp/network-ai-sandbox could match sibling paths such as /tmp/network-ai-sandbox_evil, allowing agent users to read or list files outside the intended sandbox.",
+      "evidence_classification": "vulnerability advisory; CVE; patched",
+      "affected_boundary_or_version": "Network-AI multi-agent orchestrator versions before 5.12.2; AgentRuntime.readFile and AgentRuntime.listDir sandbox path containment.",
+      "why_it_matters_for_ai_security": "Agent file tools rely on exact containment. Prefix-based checks break least privilege and can expose secrets or project data to an agent session that appears sandboxed.",
+      "named_entities": [
+        "Network-AI",
+        "CVE-2026-58481",
+        "GHSA-jvcm-f35g-w78p",
+        "AgentRuntime",
+        "Claude Code"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Network-AI and Claude Code product/entity background route upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Agent filesystem path containment and sandbox bypass implications are local security topics."
+        }
+      ],
+      "confidence_notes": "High confidence for technical details and fixed version from SentinelOne and the GitHub advisory. The in-window qualifying date is the SentinelOne publication date; the underlying CVE was older.",
+      "follow_up_actions": [
+        "During ingest, compare to existing agent-tool filesystem path containment coverage.",
+        "Preserve the distinction between CVE publication date and in-window vulnerability-database publication date."
+      ]
+    },
+    {
+      "id": "2026-07-24-network-ai-backup-manifest-recursive-delete-cve-2026-58484",
+      "title": "Network-AI poisoned backup manifests can trigger recursive deletion",
+      "source_urls": [
+        "https://www.sentinelone.com/vulnerability-database/cve-2026-58484/",
+        "https://github.com/advisories/GHSA-2fmp-9rvw-hc96"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://www.sentinelone.com/vulnerability-database/cve-2026-58484/",
+          "date": "2026-07-24",
+          "basis": "SentinelOne vulnerability entry publication date."
+        },
+        {
+          "source_url": "https://github.com/advisories/GHSA-2fmp-9rvw-hc96",
+          "date": "2026-06-19",
+          "basis": "GitHub advisory date retained as older corroborating advisory, not as the in-window qualifying date."
+        }
+      ],
+      "summary": "SentinelOne published CVE-2026-58484 for Network-AI versions before 5.12.2. EnvironmentManager.listBackups reads each backup manifest and trusts the manifest path field; pruneBackups then passes that path to recursive rmSync. A local actor able to write a backup manifest can cause arbitrary filesystem paths writable by the Network-AI process to be deleted.",
+      "evidence_classification": "vulnerability advisory; CVE; patched",
+      "affected_boundary_or_version": "Network-AI and Network-AI Claude Code plugin versions before 5.12.2; EnvironmentManager backup prune behavior; data/<env>/.backups manifests.",
+      "why_it_matters_for_ai_security": "Agent orchestration runtimes often persist environment snapshots and backups. Treating metadata as authority turns a local write primitive into destructive action under the agent runtime identity.",
+      "named_entities": [
+        "Network-AI",
+        "CVE-2026-58484",
+        "GHSA-2fmp-9rvw-hc96",
+        "EnvironmentManager",
+        "Claude Code"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Network-AI and Claude Code product/entity background route upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Agent runtime restore, backup, and destructive filesystem controls are local security topics."
+        }
+      ],
+      "confidence_notes": "High confidence for technical details and fixed version from SentinelOne and the GitHub advisory. The in-window qualifying date is the SentinelOne publication date; the underlying CVE was older.",
+      "follow_up_actions": [
+        "During ingest, compare to infrastructure-and-supply-chain restore-path traversal coverage.",
+        "Record monitoring recommendations for backup manifest writes and prune executions if a local leaf is updated."
+      ]
+    },
+    {
+      "id": "2026-07-24-nvidia-nemoclaw-0-0-94-sandbox-and-security-evidence",
+      "title": "NVIDIA NemoClaw 0.0.94 strengthens sandbox restore and security evidence",
+      "source_urls": [
+        "https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes/2026/7/24"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes/2026/7/24",
+          "date": "2026-07-24",
+          "basis": "NVIDIA release-note URL and page heading for July 24, 2026."
+        }
+      ],
+      "summary": "NVIDIA NemoClaw v0.0.94 release notes state that the release strengthens sandbox restore and update behavior, adds machine-readable onboarding progress, improves policy and security evidence, reduces Hermes image build time, and makes live end-to-end failures easier to classify.",
+      "evidence_classification": "official release note; security control and assurance evidence",
+      "affected_boundary_or_version": "NVIDIA NemoClaw v0.0.94; sandbox restore and update behavior; policy and security evidence; live E2E failure classification.",
+      "why_it_matters_for_ai_security": "Sandbox restore, update behavior, policy evidence, and machine-readable progress are operational controls for agent runtimes where releases need auditable state, containment, and test-failure classification.",
+      "named_entities": [
+        "NVIDIA",
+        "NemoClaw",
+        "OpenClaw",
+        "Hermes"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "NVIDIA NemoClaw/OpenClaw product background routes upstream."
+        },
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General E2E failure classification and onboarding progress may be a development-practice topic."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Sandbox restore hardening and security-evidence improvements are local security and assurance topics."
+        }
+      ],
+      "confidence_notes": "High confidence because the source is an official NVIDIA documentation page. The note is concise, so ingest should avoid inventing technical details not present in the release note.",
+      "follow_up_actions": [
+        "During ingest, keep the item as a release-control signal unless additional detailed documentation is found.",
+        "Route general NemoClaw product context upstream."
+      ]
+    },
+    {
+      "id": "2026-07-24-ai-agent-sandbox-escape-host-mac-files",
+      "title": "Researchers report AI agent sandbox escape reaching host Mac files",
+      "source_urls": [
+        "https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac",
+          "date": "2026-07-24",
+          "basis": "Article publication date and dateline."
+        }
+      ],
+      "summary": "Secure.com reported a chain in which researchers connected a single folder to a local AI agent session, then used a Linux kernel flaw identified as CVE-2026-46331 and design gaps to move from a Linux VM to host Mac file access. The report says SSH keys and cloud credentials were reachable, the product now defaults agent work to the cloud, and the local path does not appear to apply there.",
+      "evidence_classification": "security research report; sandbox escape; incident-style disclosure",
+      "affected_boundary_or_version": "Local AI agent sandbox using a Linux VM with shared host mount; Linux kernels v5.18 through v7.1-rc6 for the referenced pedit COW primitive; host Mac file boundary.",
+      "why_it_matters_for_ai_security": "Agent sandboxes often combine VM isolation, shared mounts, and host credential assumptions. A kernel primitive plus permissive host sharing can turn a narrow folder grant into broader host compromise.",
+      "named_entities": [
+        "Secure.com",
+        "CVE-2026-46331",
+        "pedit COW",
+        "Linux",
+        "macOS"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General local-agent workspace and verification workflow lessons route upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Sandbox escape, host credential exposure, shared-mount containment, and local-runtime mitigation are local security topics."
+        }
+      ],
+      "confidence_notes": "Medium confidence. The article gives concrete technical details and visible dates, but ingest should corroborate CVE-2026-46331 and vendor status with primary CVE/vendor records before treating the chain as fully confirmed.",
+      "follow_up_actions": [
+        "Find primary CVE or kernel maintainer references before updating durable pages.",
+        "Frame the local lesson around shared-mount and credential-boundary controls unless primary evidence supports broader claims."
+      ]
+    },
+    {
+      "id": "2026-07-24-darktrace-email-collaboration-ai-agent-risk-controls",
+      "title": "Darktrace expands email and collaboration controls for AI-agent-facing workflows",
+      "source_urls": [
+        "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment",
+          "date": "2026-07-24",
+          "basis": "Darktrace page includes a July 24, 2026 section for Darktrace / EMAIL capability expansion."
+        }
+      ],
+      "summary": "Darktrace described new Darktrace / EMAIL capabilities for email and collaboration workflows used by humans and AI agents. The updates include inbox analysis that highlights risky content, enhanced just-in-time training banners, custom sensitive-data detection for DLP workflows, and risk posture dashboards spanning Email, Microsoft Teams, Slack, and Zoom.",
+      "evidence_classification": "security control release; product security research and controls",
+      "affected_boundary_or_version": "Darktrace / EMAIL; Adaptive Human Defense; email, Microsoft Teams, Slack, Zoom; custom sensitive-data detection; process-level workflow risk posture.",
+      "why_it_matters_for_ai_security": "Email and collaboration systems increasingly hold prompts, approvals, credentials, and AI-agent instructions. Controls that detect sensitive-data flow and risky approval workflows help reduce prompt-injection, phishing, and delegated-authority risks around agent-facing communication channels.",
+      "named_entities": [
+        "Darktrace",
+        "Darktrace / EMAIL",
+        "Adaptive Human Defense",
+        "Microsoft Teams",
+        "Slack",
+        "Zoom"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Darktrace product background routes upstream if needed."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "AI-agent communication-channel controls, DLP, phishing, and workflow-risk posture are local security topics."
+        }
+      ],
+      "confidence_notes": "Medium-high confidence. The capabilities are concrete, but the page is product-positioned; ingest should keep it as control-release evidence rather than an independent incident or standard.",
+      "follow_up_actions": [
+        "Use only the concrete control deltas if updating local pages.",
+        "Avoid broad product claims beyond the described capabilities."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "NIST CAISI and UK AISI preliminary Kimi K3 cyber-capability assessment",
+      "source_urls": [
+        "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities"
+      ],
+      "visible_dates": [
+        "2026-07-23"
+      ],
+      "reason": "Authoritative and security-relevant, but the visible date is July 23 with no visible time; because the current window starts at 2026-07-23T19:30:52-04:00, this is treated as boundary-only and excluded."
+    },
+    {
+      "title": "Hunt.io Hermes AI agent attack reporting",
+      "source_urls": [
+        "https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent",
+        "https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/",
+        "https://thehackernews.com/2026/07/hacker-runs-hermes-ai-agent-unattended.html"
+      ],
+      "visible_dates": [
+        "2026-07-23",
+        "2026-07-24"
+      ],
+      "reason": "The primary Hunt.io source was already captured in the prior July 24 collector. The later July 24 secondary coverage did not add enough distinct primary evidence to duplicate the finding."
+    },
+    {
+      "title": "AgentForger cross-site agent forgery in ChatGPT Workspace Agents",
+      "source_urls": [
+        "https://zenity.io/company-overview/newsroom/company-news/zenity-labs-uncovers-agentforger-a-chatgpt-vulnerability",
+        "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery",
+        "https://labs.zenity.io/p/agentforger-part-2-the-autonomous-insider"
+      ],
+      "visible_dates": [
+        "2026-07-23"
+      ],
+      "reason": "Relevant and concrete, but already captured in the prior July 24 collector and not duplicated in this run."
+    },
+    {
+      "title": "n8n AI Agents Project Viewer privilege escalation CVE-2026-65015",
+      "source_urls": [
+        "https://advisories.gitlab.com/npm/n8n/CVE-2026-65015/",
+        "https://github.com/advisories/GHSA-w46p-w7w2-fr9g",
+        "https://www.sentinelone.com/vulnerability-database/cve-2026-65015/"
+      ],
+      "visible_dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "reason": "Relevant and concrete, but already captured in the prior July 24 collector. The July 23 date is also boundary-only for the current run."
+    },
+    {
+      "title": "FakeAgent campaign abuses Claude Artifacts to distribute SectopRAT",
+      "source_urls": [
+        "https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat",
+        "https://www.helpnetsecurity.com/2026/07/23/anthropic-claude-artifacts-download-malware/"
+      ],
+      "visible_dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "reason": "Relevant and concrete, but already captured in the prior July 24 collector. The July 23 secondary coverage is boundary-only for this run."
+    },
+    {
+      "title": "SecurityWeek coverage of SentinelOne Fast16 long-horizon malware-analysis benchmark",
+      "source_urls": [
+        "https://www.securityweek.com/nuclear-sabotage-malware-benchmark-trips-up-most-frontier-ai-models/",
+        "https://www.sentinelone.com/labs/fast16-mystery-shadowbrokers-reference-reveals-high-precision-software-sabotage-5-years-before-stuxnet/"
+      ],
+      "visible_dates": [
+        "2026-07-23",
+        "2026-07-22"
+      ],
+      "reason": "Security evaluation signal is relevant, but visible dates are boundary-only or outside the current two-day window. The SentinelOne page also contains an apparent typo in the update year, so it should be rechecked before ingest."
+    },
+    {
+      "title": "Google Cloud NetApp Volumes remote MCP server GA",
+      "source_urls": [
+        "https://docs.cloud.google.com/release-notes"
+      ],
+      "visible_dates": [
+        "2026-06-09"
+      ],
+      "reason": "The remote MCP feature is relevant to storage-agent authority boundaries, but the visible release-note section is outside the current window."
+    },
+    {
+      "title": "Gopher Security quantum MCP security blog",
+      "source_urls": [
+        "https://www.gopher.security/blog/mcp-security-quantum-computing-challenges"
+      ],
+      "visible_dates": [
+        "2026-07-25"
+      ],
+      "reason": "In-window and AI/MCP-related, but the claims about 2026 standards and active harvest-now-decrypt-later interception need stronger primary standards or threat-intelligence evidence before collecting as a concrete security change."
+    },
+    {
+      "title": "Cisco Antares local AI for security partner blog",
+      "source_urls": [
+        "https://blogs.cisco.com/partner/antares-and-the-partner-opportunity-local-efficient-trusted-ai-for-security"
+      ],
+      "visible_dates": [
+        "2026-07-24"
+      ],
+      "reason": "In-window AI security product positioning, but no concrete vulnerability, patch, incident, standard, or new control boundary was identified beyond a product capability statement."
+    },
+    {
+      "title": "Generic weekly infosec product roundup",
+      "source_urls": [
+        "https://www.helpnetsecurity.com/2026/07/24/new-infosec-products-of-the-week-july-24-2026/"
+      ],
+      "visible_dates": [
+        "2026-07-24"
+      ],
+      "reason": "In-window, but product-roundup coverage did not provide a concrete AI security delta suitable for this local collector."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_topic": "Google Cloud, Apigee API hub, Model Armor, Gemini, Vertex AI",
+      "route": "ai-wiki",
+      "local_handling": "Keep MCP OAuth scopes, prompt-injection protection, AI workload anomaly monitoring, and residency/security implications."
+    },
+    {
+      "entity_or_topic": "Network-AI and Claude Code",
+      "route": "ai-wiki",
+      "local_handling": "Keep AgentRuntime sandbox, backup manifest, restore, and filesystem containment security implications."
+    },
+    {
+      "entity_or_topic": "NVIDIA NemoClaw and OpenClaw",
+      "route": "ai-wiki",
+      "local_handling": "Keep sandbox restore hardening, policy evidence, and security assurance implications."
+    },
+    {
+      "entity_or_topic": "NemoClaw live E2E failure classification and onboarding progress",
+      "route": "ai-dev-wiki",
+      "local_handling": "Keep only security-evidence and containment implications here."
+    },
+    {
+      "entity_or_topic": "Secure.com reported sandbox escape",
+      "route": "ai-security-wiki",
+      "local_handling": "Keep host file, shared mount, local sandbox, and credential-exposure controls locally; corroborate primary CVE details before durable synthesis."
+    },
+    {
+      "entity_or_topic": "Darktrace / EMAIL",
+      "route": "ai-wiki",
+      "local_handling": "Keep AI-agent-facing email, collaboration, DLP, phishing, and workflow-risk controls locally."
+    },
+    {
+      "entity_or_topic": "Kimi K3, Moonshot AI, and Fast16 benchmark",
+      "route": "ai-wiki",
+      "local_handling": "Excluded this run for date-boundary reasons; if later ingested, keep only cyber-capability and malware-analysis assurance implications here."
+    },
+    {
+      "entity_or_topic": "General local-agent sandbox and workflow verification practices",
+      "route": "ai-dev-wiki",
+      "local_handling": "Keep only security enforcement, host boundary, credential exposure, and incident-evidence implications here."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed"
+  },
+  "blockers": []
+}
