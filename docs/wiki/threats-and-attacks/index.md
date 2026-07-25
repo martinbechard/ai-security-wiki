@@ -6,7 +6,9 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 
 ## Leaf Pages
 
-- No durable leaves have been created yet.
+- [AI-hosted artifact malware delivery](ai-hosted-artifact-malware-delivery.md)
+- [unattended AI agent attack automation](unattended-ai-agent-attack-automation.md)
+- [AI-assisted exploit development acceleration](ai-assisted-exploit-development-acceleration.md)
 
 ## Authoritative Sources
 

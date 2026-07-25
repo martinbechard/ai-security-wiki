@@ -10,7 +10,7 @@ description: "Security controls for protecting agent approval queues, read APIs,
 
 Approval metadata access control treats queued action details as sensitive even before an agent executes an action. [Network-AI ApprovalInbox authorization bypass](network-ai-approval-inbox-authorization-bypass.md) shows that pending commands, file paths, justifications, and risk levels can leak through read and stream routes even when approve and deny routes are protected.
 
-The durable rule is authorization parity: read, stats, and event-stream routes for approval systems need explicit access control aligned with mutating routes. Wildcard CORS is unsafe for sensitive approval queues because a browser session can become an unintended reader. The [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) records VulnCheck's independent missing-authorization framing and CVSS v4 9.3 score for Network-AI 5.12.2 and later affected versions.
+The durable rule is authorization parity: read, stats, and event-stream routes for approval systems need explicit access control aligned with mutating routes. Wildcard CORS is unsafe for sensitive approval queues because a browser session can become an unintended reader. The [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json) records the [VulnCheck APSAdapter signature-verification bypass](https://www.vulncheck.com/advisories/network-ai-before-cryptographic-signature-verification-bypass) as a deferred follow-up candidate that still needs visible-date confirmation, so it is not treated as current control evidence or added to the digest.
 
 ## Control Implications
 
@@ -25,6 +25,7 @@ The durable rule is authorization parity: read, stats, and event-stream routes f
 - [Network-AI ApprovalInbox authorization bypass](network-ai-approval-inbox-authorization-bypass.md)
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
 - [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
+- [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json)
 
 ## Related Code
 
@@ -41,6 +42,7 @@ The durable rule is authorization parity: read, stats, and event-stream routes f
 ## Related Wiki Pages
 
 - [agent and tool security](index.md)
+- [cross-site agent forgery](cross-site-agent-forgery.md)
 - [identity and access](../identity-and-access/index.md)
 - [data and privacy](../data-and-privacy/index.md)
 - Upstream AI development wiki owns general [human-agent approval boundaries](../../../upstream-ai-dev-wiki/adoption-and-operating-model/human-agent-approval-boundaries.md).
@@ -51,4 +53,4 @@ The durable rule is authorization parity: read, stats, and event-stream routes f
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) with independent VulnCheck severity evidence.
+- Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) with independent VulnCheck severity evidence and from the [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json) with a weak-date APSAdapter follow-up that remains deferred pending visible-date confirmation.

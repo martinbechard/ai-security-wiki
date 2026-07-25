@@ -7,6 +7,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 ## Leaf Pages
 
 - [Cyber-evaluation containment](cyber-evaluation-containment.md)
+- [Public cyber-capability assessments](public-cyber-capability-assessments.md)
 
 ## Authoritative Sources
 

@@ -8,7 +8,7 @@ description: "Security controls for minimizing and redacting sensitive prompt, t
 
 ## Current Understanding
 
-The [July 23 topic news collector source](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json) records [Dash0 AI Coding Insights documentation](https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy) updated on July 23, 2026. The documentation says coding-agent telemetry can include prompt text, code in tool inputs and outputs, secrets pasted into sessions, and system instructions, and it documents source redaction before data leaves the developer machine plus ingestion redaction before storage.
+The [July 23 topic news collector source](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json) and [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json) record [Dash0 AI Coding Insights documentation](https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy) updated on July 23, 2026. The documentation says coding-agent telemetry can include prompt text, code in tool inputs and outputs, secrets pasted into sessions, and system instructions, and it documents source redaction before data leaves the developer machine plus ingestion redaction before storage.
 
 Broad Dash0 product and developer-observability practice belongs upstream. The local control is telemetry minimization for agent and coding-assistant systems: prompt and tool I/O are sensitive by default, and redaction is strongest when sensitive content is removed at source before collection.
 
@@ -23,6 +23,7 @@ Broad Dash0 product and developer-observability practice belongs upstream. The l
 ## Authoritative Sources
 
 - [July 23 topic news collector source](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json)
+- [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json)
 - Dash0 AI Coding Insights data privacy documentation: https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy
 
 ## Related Code
@@ -50,4 +51,4 @@ Broad Dash0 product and developer-observability practice belongs upstream. The l
 
 ## Maintenance Notes
 
-- Added from the July 23, 2026 raw collector artifact; keep the page focused on redaction and minimization controls rather than vendor product positioning.
+- Added from the [July 23, 2026 raw collector artifact](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json); enriched from the [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json); keep the page focused on redaction and minimization controls rather than vendor product positioning.

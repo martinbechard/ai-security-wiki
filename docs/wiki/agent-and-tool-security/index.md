@@ -15,6 +15,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [final query authorization for AI data tools](final-query-authorization-for-ai-data-tools.md)
 - [next-ai-draw-io MCP server path traversal](next-ai-draw-io-mcp-server-path-traversal.md)
 - [MaxKB MCP tool import remote code execution](maxkb-mcp-tool-import-rce.md)
+- [cross-site agent forgery](cross-site-agent-forgery.md)
+- [n8n AI Agent Project Viewer privilege escalation](n8n-ai-agent-project-viewer-privilege-escalation.md)
 
 ## Authoritative Sources
 

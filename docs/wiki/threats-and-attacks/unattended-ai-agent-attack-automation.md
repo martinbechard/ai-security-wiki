@@ -1,0 +1,57 @@
+---
+type: "Topic"
+title: "Unattended AI Agent Attack Automation"
+description: "Security analysis for incidents where threat actors use autonomous agents for post-exploitation or intrusion operations."
+---
+
+# Unattended AI Agent Attack Automation
+
+## Current Understanding
+
+Unattended AI agent attack automation is the use of an agent runtime to execute intrusion steps without continuous human confirmation. The [July 24 topic news collector source](../../../raw/processed/2026-07-24/ai-security-wiki-topic-news-collector-2026-07-24T193213-0400.json) records [Hunt.io reporting](https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent) exposed infrastructure evidence that an operator ran the Hermes AI agent unattended against Thailand's Ministry of Finance, with risky-command approvals disabled and Hades implant staging observed. Broad [Autonomous AI Agent Threat Activity](../../../upstream-ai-wiki/techniques/autonomous-ai-agent-threat-activity.md) tracking belongs upstream.
+
+Broad Hermes tool background, general agent operating practice, and [Autonomous AI Agent Threat Activity](../../../upstream-ai-wiki/techniques/autonomous-ai-agent-threat-activity.md) tracking route upstream. The local security issue is incident evidence and control failure: approval mode, execution scope, tool logs, and staging artifacts become part of the intrusion timeline when an agent is used as delegated post-exploitation automation.
+
+## Security Impact
+
+- Threat: a human attacker delegates reconnaissance, command execution, or post-exploitation steps to an unattended AI agent.
+- Affected boundary: Hermes AI agent approval mode, post-exploitation operations, exposed staging infrastructure, Thai Ministry of Finance systems, and Hades implant staging.
+- Exploit or incident status: public [Hunt.io threat-intelligence report](https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent) with corroborating [BleepingComputer](https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/) and [The Hacker News](https://thehackernews.com/2026/07/hacker-runs-hermes-ai-agent-unattended.html) coverage; observed evidence should be separated from attacker-intent inference.
+- Mitigation state: defensive controls include detecting agent runtime artifacts, risky-command approval settings, staging directories, session logs, and tool-output traces.
+- Confidence: medium-high for observed infrastructure and session-evidence claims from [Hunt.io](https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent); medium for broader conclusions about attacker intent or agent autonomy.
+- Residual risk: public reporting may not expose the full command sequence, affected systems, or operator interaction level.
+
+## Authoritative Sources
+
+- [July 24 topic news collector source](../../../raw/processed/2026-07-24/ai-security-wiki-topic-news-collector-2026-07-24T193213-0400.json)
+- Hunt.io research: https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent
+- BleepingComputer coverage: https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/
+- The Hacker News coverage: https://thehackernews.com/2026/07/hacker-runs-hermes-ai-agent-unattended.html
+
+## Related Code
+
+- Not yet identified.
+
+## Related Tests
+
+- Not yet identified.
+
+## Related Backlog Items
+
+- Not yet identified.
+
+## Related Wiki Pages
+
+- [threats and attacks](index.md)
+- [agent and tool security](../agent-and-tool-security/index.md)
+- [incident response](../incident-response/index.md)
+- [testing and assurance](../testing-and-assurance/index.md)
+- Upstream AI development wiki owns general approval-mode operating practice.
+
+## Open Questions
+
+- Which Hermes session artifacts or command traces are stable enough to use as detection guidance?
+
+## Maintenance Notes
+
+- Added from the [July 24, 2026 topic collector](../../../raw/processed/2026-07-24/ai-security-wiki-topic-news-collector-2026-07-24T193213-0400.json); preserve the distinction between observed exposed-infrastructure evidence and inferred attacker intent.

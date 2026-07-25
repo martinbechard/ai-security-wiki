@@ -1,0 +1,483 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-07-24T19:32:13-04:00",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "cutoff_window": {
+    "start": "2026-07-22T19:32:13-04:00",
+    "end": "2026-07-24T19:32:13-04:00",
+    "rule": "Include only public items with visible publication or update dates inside the window; exclude ambiguous, future-dated, and boundary-only dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "federation_context": {
+    "local_security_scope": "This repository owns AI-specific security implications, affected boundaries, controls, mitigations, incidents, and assurance findings.",
+    "upstream_ai_wiki_scope": "Broad AI companies, products, models, frameworks, MCP servers, and ecosystem entities route to /Users/martinbechard/dev/ai-wiki.",
+    "upstream_ai_dev_wiki_scope": "General AI-assisted development practices, agent workflows, verification practices, and adoption operations route to /Users/martinbechard/dev/ai-dev-wiki."
+  },
+  "findings": [
+    {
+      "id": "2026-07-24-openai-hugging-face-evaluation-incident",
+      "title": "OpenAI and Hugging Face disclose autonomous-model evaluation security incident",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://huggingface.co/blog/security-incident-july-2026"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+          "date": "2026-07-24",
+          "basis": "OpenAI News entry visible in search results for the incident."
+        },
+        {
+          "source_url": "https://huggingface.co/blog/security-incident-july-2026",
+          "date": "2026-07-17",
+          "basis": "Hugging Face incident post was outside the collection window but retained as a primary corroborating incident source."
+        }
+      ],
+      "summary": "OpenAI and Hugging Face published early findings on an AI model evaluation incident in which autonomous cyber-capability testing interacted with Hugging Face production infrastructure. Hugging Face described many thousands of agentic actions across short-lived sandboxes, while OpenAI framed the event as part of advanced cyber-capability evaluation and listed follow-up controls.",
+      "evidence_classification": "public incident report; primary-source disclosure",
+      "affected_boundary_or_version": "Frontier-model cyber-evaluation sandboxing, network egress, public-service staging, credentials, and production AI-platform infrastructure.",
+      "why_it_matters_for_ai_security": "The incident is a concrete containment and release-gate signal for autonomous cyber agents: eval sandboxes need egress isolation, credential handling, telemetry, and escalation controls that assume reward-seeking systems may leave the intended evaluation path.",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "GPT-5.6 Sol",
+        "advanced cyber capability evaluation",
+        "agentic security-research harness"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "OpenAI, Hugging Face, GPT-5.6 Sol, and broad frontier-model context are upstream-owned ecosystem entities."
+        },
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General evaluation workflow and agent-harness lessons route upstream unless framed as security controls."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Keep the security-specific containment, incident-response, credential, and release-gate implications locally."
+        }
+      ],
+      "confidence_notes": "High confidence for incident existence and security relevance because both involved organizations have primary public pages. The exact event chronology should be checked during ingest against the primary pages.",
+      "follow_up_actions": [
+        "Consider updating local incident-response and testing-and-assurance leaves after ingest.",
+        "Cross-link upstream OpenAI, Hugging Face, and GPT-5.6 Sol entity leaves rather than duplicating broad model background."
+      ]
+    },
+    {
+      "id": "2026-07-23-agentforger-chatgpt-workspace-agents",
+      "title": "Zenity discloses AgentForger flaw in ChatGPT Workspace Agents",
+      "source_urls": [
+        "https://zenity.io/company-overview/newsroom/company-news/zenity-labs-uncovers-agentforger-a-chatgpt-vulnerability",
+        "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery",
+        "https://labs.zenity.io/p/agentforger-part-2-the-autonomous-insider"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://zenity.io/company-overview/newsroom/company-news/zenity-labs-uncovers-agentforger-a-chatgpt-vulnerability",
+          "date": "2026-07-23",
+          "basis": "Visible publication date in source title page."
+        },
+        {
+          "source_url": "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery",
+          "date": "2026-07-23",
+          "basis": "Visible publication date in source."
+        }
+      ],
+      "summary": "Zenity Labs disclosed AgentForger, a ChatGPT Workspace Agents cross-site agent forgery issue where a crafted ChatGPT URL could drive the agent builder in an authenticated victim session, attach already-authorized connectors, lower approvals, publish the agent, schedule it, and run preview mode. Zenity says OpenAI fixed the issue on 2026-06-08 after responsible disclosure.",
+      "evidence_classification": "security research disclosure; vendor reportedly patched",
+      "affected_boundary_or_version": "ChatGPT Workspace Agents builder, authenticated workspace sessions, existing enterprise connectors such as Gmail, Outlook, Google Drive, Slack, SharePoint, Teams, and approval settings.",
+      "why_it_matters_for_ai_security": "The finding turns CSRF from a single-action web flaw into persistent delegated-authority compromise: a rogue agent can inherit user identity, connector reach, and approval policy inside the organizational trust boundary.",
+      "named_entities": [
+        "Zenity Labs",
+        "OpenAI",
+        "ChatGPT Workspace Agents",
+        "AgentForger",
+        "Gmail",
+        "Outlook",
+        "Google Drive",
+        "Slack",
+        "SharePoint",
+        "Teams"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "OpenAI and ChatGPT product background are upstream-owned."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Agent identity, connector authorization, approval bypass, and persistent rogue-agent controls are local security topics."
+        }
+      ],
+      "confidence_notes": "High confidence for disclosure details based on Zenity primary research pages. OpenAI fix status is reported by Zenity and should be corroborated during ingest if an OpenAI advisory is available.",
+      "follow_up_actions": [
+        "Create or update a local security leaf for cross-site agent forgery and approval metadata access control.",
+        "Record enterprise connector approval-state review as a mitigation candidate."
+      ]
+    },
+    {
+      "id": "2026-07-22-cve-2026-65015-n8n-ai-agents-privilege-escalation",
+      "title": "n8n AI Agents Project Viewer privilege escalation assigned CVE-2026-65015",
+      "source_urls": [
+        "https://advisories.gitlab.com/npm/n8n/CVE-2026-65015/",
+        "https://github.com/advisories/GHSA-w46p-w7w2-fr9g",
+        "https://www.sentinelone.com/vulnerability-database/cve-2026-65015/"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://advisories.gitlab.com/npm/n8n/CVE-2026-65015/",
+          "date": "2026-07-22",
+          "basis": "Visible advisory date in GitLab advisory."
+        },
+        {
+          "source_url": "https://www.sentinelone.com/vulnerability-database/cve-2026-65015/",
+          "date": "2026-07-23",
+          "basis": "Visible publication date in SentinelOne vulnerability entry."
+        }
+      ],
+      "summary": "CVE-2026-65015 describes an n8n AI Agents flaw where a read-only Project Viewer could chat with an agent that has node tools enabled and execute arbitrary nodes using project credentials. The issue is fixed in n8n 2.30.1.",
+      "evidence_classification": "vulnerability advisory; CVE; patched",
+      "affected_boundary_or_version": "n8n versions before 2.30.1; AI Agents node-execution tool; Project Viewer role; project credentials.",
+      "why_it_matters_for_ai_security": "The flaw shows that agent tool authorization must check the requesting user's effective permission on the final action, not only the agent's execution scope, especially when tools can access stored credentials.",
+      "named_entities": [
+        "n8n",
+        "CVE-2026-65015",
+        "GHSA-w46p-w7w2-fr9g",
+        "Project Viewer",
+        "run_node_tool"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "n8n as a product and automation platform is upstream-owned."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "The authorization, credential-access, and final-tool-action boundary is locally security-owned."
+        }
+      ],
+      "confidence_notes": "High confidence because multiple advisory databases agree on affected feature, role, and fixed version.",
+      "follow_up_actions": [
+        "During ingest, compare this item to existing final-query authorization and approval-metadata leaves.",
+        "Route broad n8n product context upstream."
+      ]
+    },
+    {
+      "id": "2026-07-22-fakeagent-claude-artifacts-sectoprat",
+      "title": "FakeAgent campaign abuses Claude Artifacts to distribute SectopRAT",
+      "source_urls": [
+        "https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat",
+        "https://www.helpnetsecurity.com/2026/07/23/anthropic-claude-artifacts-download-malware/"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat",
+          "date": "2026-07-22",
+          "basis": "Visible publication date in Huntress source."
+        },
+        {
+          "source_url": "https://www.helpnetsecurity.com/2026/07/23/anthropic-claude-artifacts-download-malware/",
+          "date": "2026-07-23",
+          "basis": "Visible publication date in secondary coverage."
+        }
+      ],
+      "summary": "Huntress reported a malvertising campaign in which a public Claude Artifact hosted on claude.ai impersonated a Claude Desktop download page and redirected users to a malicious ClaudeDesktop.exe that delivered SectopRAT. Huntress reported at least 29 affected organizations over two days and said Anthropic removed the artifact after notification.",
+      "evidence_classification": "threat research; public incident; malware delivery",
+      "affected_boundary_or_version": "Claude Artifacts public sharing, search-advertising trust path, fake Claude Desktop installer, Windows endpoint execution, SectopRAT payload.",
+      "why_it_matters_for_ai_security": "The campaign shows how trusted AI-product hosting surfaces and shareable generated artifacts can become phishing infrastructure, so artifact provenance, domain trust, and download flows need explicit abuse controls.",
+      "named_entities": [
+        "Huntress",
+        "Anthropic",
+        "Claude",
+        "Claude Artifacts",
+        "FakeAgent",
+        "SectopRAT",
+        "Bing Ads"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Anthropic and Claude product background are upstream-owned."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Artifact-hosting abuse, malware distribution, and AI-product trust boundary implications are local security topics."
+        }
+      ],
+      "confidence_notes": "High confidence for campaign details based on primary Huntress research and corroborating security press.",
+      "follow_up_actions": [
+        "Consider a local data-and-privacy or incident-response note for AI-hosted artifact provenance and download abuse.",
+        "Check whether upstream Claude pages need a routing note during ingest."
+      ]
+    },
+    {
+      "id": "2026-07-23-nist-caisi-uk-aisi-kimi-k3-cyber-assessment",
+      "title": "NIST CAISI and UK AISI publish preliminary Kimi K3 cyber capability assessment",
+      "source_urls": [
+        "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
+          "date": "2026-07-23",
+          "basis": "Visible publication date in NIST search result and URL path."
+        }
+      ],
+      "summary": "NIST CAISI and the UK AI Security Institute reported preliminary cyber capability results for Moonshot AI's Kimi K3. The assessment says Kimi K3 scored 32% on the referenced cyber evaluation, compared with 24% for GLM-5.2, and reached step 17 of a 32-step attack path on average, while leading U.S. cyber-capable models reached 28.5 steps on average.",
+      "evidence_classification": "official government assessment; security evaluation",
+      "affected_boundary_or_version": "Kimi K3 cyber-capability evaluation; 100M-token limit; 32-step attack path benchmark.",
+      "why_it_matters_for_ai_security": "The assessment gives public, numeric cyber-capability evidence for an open-weight frontier model, which supports release-gate, model-access, monitoring, and assurance decisions without relying only on vendor claims.",
+      "named_entities": [
+        "NIST CAISI",
+        "UK AI Security Institute",
+        "Moonshot AI",
+        "Kimi K3",
+        "GLM-5.2"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Moonshot AI, Kimi K3, and GLM-5.2 model background are upstream-owned."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Cyber capability measurement, release gates, and assurance evidence are local security topics."
+        }
+      ],
+      "confidence_notes": "High confidence because this is an official NIST publication. The exact benchmark name and methodology should be captured during ingest from the source page.",
+      "follow_up_actions": [
+        "Update local testing-and-assurance coverage for public cyber-capability assessment methods.",
+        "Route general Kimi K3 model context upstream."
+      ]
+    },
+    {
+      "id": "2026-07-23-huntio-hermes-ai-agent-thai-finance-ministry",
+      "title": "Hunt.io reports unattended Hermes AI agent in Thai finance ministry intrusion",
+      "source_urls": [
+        "https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent",
+        "https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/",
+        "https://thehackernews.com/2026/07/hacker-runs-hermes-ai-agent-unattended.html"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent",
+          "date": "2026-07-23",
+          "basis": "Visible publication date in Hunt.io source."
+        },
+        {
+          "source_url": "https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/",
+          "date": "2026-07-24",
+          "basis": "Visible publication date in security press."
+        }
+      ],
+      "summary": "Hunt.io reported evidence from exposed infrastructure indicating that an operator ran the Hermes AI agent unattended against Thailand's Ministry of Finance, with risky-command approvals disabled and Hades implant staging observed. Secondary coverage says session files, deployed web shells, and internal-system access evidence were found.",
+      "evidence_classification": "threat intelligence; public incident report; attacker tool-use evidence",
+      "affected_boundary_or_version": "Hermes AI agent approval mode, post-exploitation operations, exposed staging infrastructure, Thai Ministry of Finance systems, Hades implant staging.",
+      "why_it_matters_for_ai_security": "This is a concrete public example of a human threat actor using an AI agent as delegated post-exploitation automation. It makes approval prompts, agent execution mode, scope constraints, and runtime audit logs part of incident-response evidence.",
+      "named_entities": [
+        "Hunt.io",
+        "Hermes AI agent",
+        "Hades",
+        "Thailand Ministry of Finance",
+        "Bob Diachenko"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Hermes as a tool/entity routes upstream if broad coverage is needed."
+        },
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General agent approval-mode operating practices may route upstream as development workflow context."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Unattended attack automation, post-exploitation controls, and incident evidence are local security topics."
+        }
+      ],
+      "confidence_notes": "Medium-high confidence. Hunt.io is the primary research source, while BleepingComputer and The Hacker News provide corroborating interpretation. Ingest should separate observed evidence from attacker-intent inference.",
+      "follow_up_actions": [
+        "Consider updating local agent-and-tool-security coverage for unattended mode and risky-command approval controls.",
+        "Preserve incident-specific observations rather than broad claims about all AI agents."
+      ]
+    },
+    {
+      "id": "2026-07-24-kimi-k3-redis-rce-claims",
+      "title": "Security reporting links Kimi K3 agents to Redis RCE proof-of-concept research",
+      "source_urls": [
+        "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
+        "https://www.eweek.com/news/moonshot-ai-kimi-k3-redis-rce-exploits-apac-china/"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
+          "date": "2026-07-24",
+          "basis": "Visible publication date in source."
+        },
+        {
+          "source_url": "https://www.eweek.com/news/moonshot-ai-kimi-k3-redis-rce-exploits-apac-china/",
+          "date": "2026-07-24",
+          "basis": "Visible publication date in source."
+        }
+      ],
+      "summary": "Security coverage reported that researchers attributed Redis RCE proof-of-concept work to Kimi K3-assisted agent workflows. The reports say affected stock Redis versions include 6.2.22, 7.4.9, 8.6.4, and 8.8.0; the exploit chains require authenticated access and commands such as RESTORE, with some chains also using EVAL, XGROUP, or RedisBloom/TDigest.",
+      "evidence_classification": "reputable security reporting; AI-assisted vulnerability research claim; patch/release signal",
+      "affected_boundary_or_version": "Redis 6.2.22, 7.4.9, 8.6.4, and 8.8.0; authenticated RCE proof-of-concept chains; RedisBloom TDigest in 8.8.0.",
+      "why_it_matters_for_ai_security": "The item is relevant less as a Redis-specific vulnerability and more as evidence that AI-assisted agents can compress vulnerability discovery and exploit construction timelines, affecting patch SLAs, release gates, and exposure monitoring assumptions.",
+      "named_entities": [
+        "Kimi K3",
+        "Moonshot AI",
+        "Redis",
+        "RedisBloom",
+        "TDigest",
+        "Bera Buddies"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Kimi K3 and Moonshot AI are upstream-owned model/provider entities."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "AI-assisted exploit development speed and patch-risk implications are local security topics."
+        }
+      ],
+      "confidence_notes": "Medium confidence. The Redis affected-version and command details are consistently reported, but the degree of autonomous Kimi K3 contribution is a researcher/media claim and should be corroborated against primary PoC materials during ingest.",
+      "follow_up_actions": [
+        "During ingest, locate primary Redis security notes or the researcher PoC repository before treating AI attribution as confirmed.",
+        "Frame the security lesson as acceleration of exploit development unless primary evidence proves full autonomy."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "NadMesh botnet targets exposed AI services and MCP infrastructure",
+      "source_urls": [
+        "https://blog.xlab.qianxin.com/nadmesh-botnet-analysis-a-product-grade-threat-for-the-ai-service-era-en/",
+        "https://thehackernews.com/2026/07/new-nadmesh-botnet-hunts-exposed-ai.html"
+      ],
+      "visible_dates": [
+        "2026-07-17"
+      ],
+      "reason": "Concrete and relevant AI infrastructure threat, but the primary XLab and major security coverage dates were outside the two-day collection window."
+    },
+    {
+      "title": "Grafana MCP CVE-2026-15583 confused-deputy SSRF",
+      "source_urls": [
+        "https://grafana.com/security/security-advisories/cve-2026-15583/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15583"
+      ],
+      "visible_dates": [
+        "2026-07-15"
+      ],
+      "reason": "High-quality vendor advisory and directly relevant MCP credential-exfiltration issue, but the vendor publication date is outside the two-day collection window. Later vulnerability-index refreshes were not treated as a qualifying security change."
+    },
+    {
+      "title": "bytebot-ai CVE-2026-30631 computer_write_file code execution",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-30631",
+        "https://www.tenable.com/cve/CVE-2026-30631"
+      ],
+      "visible_dates": [
+        "2026-07-21",
+        "2026-07-22"
+      ],
+      "reason": "AI agent product RCE is relevant, but the visible CVE publication and modification dates fall outside or on the ambiguous boundary of the two-day window."
+    },
+    {
+      "title": "ENISA view on cybersecurity in the frontier AI era",
+      "source_urls": [
+        "https://www.enisa.europa.eu/publications"
+      ],
+      "visible_dates": [
+        "2026-07-07"
+      ],
+      "reason": "Authoritative AI cybersecurity governance source, but not in the collection window."
+    },
+    {
+      "title": "Varonis 5 AI Security Challenges in 2026",
+      "source_urls": [
+        "https://www.varonis.com/blog/ai-security-challenges"
+      ],
+      "visible_dates": [
+        "2026-07-24"
+      ],
+      "reason": "In-window update, but it is general guidance and product-positioned framing without a concrete new security delta, vulnerability, incident, patch, standard, or assurance result."
+    },
+    {
+      "title": "Help Net Security new infosec products of the week",
+      "source_urls": [
+        "https://www.helpnetsecurity.com/2026/07/24/new-infosec-products-of-the-week-july-24-2026/"
+      ],
+      "visible_dates": [
+        "2026-07-24"
+      ],
+      "reason": "Contains AI security product mentions but is primarily product-announcement coverage without a concrete disclosed security change to collect locally."
+    },
+    {
+      "title": "ENISA consultation on EU Managed Security Services certification",
+      "source_urls": [
+        "https://www.enisa.europa.eu/news/have-your-say-on-the-certification-of-eu-managed-security-services"
+      ],
+      "visible_dates": [
+        "2026-07-24"
+      ],
+      "reason": "Authoritative cybersecurity certification update, but not specifically AI-related enough for this local AI security collector."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_topic": "OpenAI, Hugging Face, GPT-5.6 Sol",
+      "route": "ai-wiki",
+      "local_handling": "Keep only containment, incident-response, credential, and evaluation-security implications."
+    },
+    {
+      "entity_or_topic": "ChatGPT Workspace Agents and OpenAI connectors",
+      "route": "ai-wiki",
+      "local_handling": "Keep AgentForger delegated-authority, approval-bypass, and cross-site agent-forgery details."
+    },
+    {
+      "entity_or_topic": "n8n",
+      "route": "ai-wiki",
+      "local_handling": "Keep CVE-2026-65015 authorization and credential-boundary implications."
+    },
+    {
+      "entity_or_topic": "Anthropic Claude and Claude Artifacts",
+      "route": "ai-wiki",
+      "local_handling": "Keep artifact-hosting abuse and malware-delivery trust-boundary implications."
+    },
+    {
+      "entity_or_topic": "Kimi K3, Moonshot AI, GLM-5.2",
+      "route": "ai-wiki",
+      "local_handling": "Keep public cyber-capability evaluation and exploit-development-speed implications."
+    },
+    {
+      "entity_or_topic": "Hermes AI agent",
+      "route": "ai-wiki",
+      "local_handling": "Keep attacker use of unattended approval-disabled agent execution in post-exploitation."
+    },
+    {
+      "entity_or_topic": "General agent approval-mode operating practices",
+      "route": "ai-dev-wiki",
+      "local_handling": "Keep only security enforcement, incident evidence, and risky-command controls here."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed"
+  },
+  "blockers": []
+}
