@@ -1,0 +1,55 @@
+---
+type: "Topic"
+title: "AI Workload Cost Anomaly Monitoring"
+description: "Security assurance analysis for AI workload cost anomalies as abuse, credential, and runaway-agent signals."
+---
+
+# AI Workload Cost Anomaly Monitoring
+
+## Current Understanding
+
+The [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) records a 2026-07-24 [Google Cloud release-note](https://docs.cloud.google.com/release-notes) signal for early anomaly detection on AI workloads such as Gemini API and [Vertex AI](../../../upstream-ai-wiki/developer-tools/vertex-ai.md) using near-real-time daily service-level cost estimates.
+
+Broad [Google AI](../../../upstream-ai-wiki/companies/google-ai.md), [Gemini](../../../upstream-ai-wiki/models/gemini-model-family.md), and [Vertex AI](../../../upstream-ai-wiki/developer-tools/vertex-ai.md) platform context belongs upstream. The local security issue is detection: abnormal AI spend can indicate compromised credentials, prompt-injected agents, runaway workflows, or misrouted model calls before finalized billing is available.
+
+## Security Impact
+
+- Threat: credential misuse, prompt-injected agents, runaway workflows, or misconfigured model routing can generate abnormal AI workload cost.
+- Affected boundary: Google Cloud Billing anomaly dashboard for AI workloads, Gemini API, and Vertex AI service-level cost signals.
+- Exploit or incident status: [official control release](https://docs.cloud.google.com/release-notes); no incident was reported in the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json).
+- Mitigation state: route AI spend anomalies into security monitoring, correlate them with agent identity and workload identity, and alert on unexpected service, project, region, or caller changes.
+- Confidence: high for release-note facts because the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) cites [official Google Cloud release notes](https://docs.cloud.google.com/release-notes).
+- Residual risk: near-real-time cost estimates are detection signals, not preventive authorization; they need identity, audit, and workload context before security conclusions are reliable.
+
+## Authoritative Sources
+
+- [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
+- Google Cloud release notes: https://docs.cloud.google.com/release-notes
+
+## Related Code
+
+- Not yet identified.
+
+## Related Tests
+
+- Not yet identified.
+
+## Related Backlog Items
+
+- Not yet identified.
+
+## Related Wiki Pages
+
+- [testing and assurance](index.md)
+- [agent network egress controls](../agent-and-tool-security/agent-network-egress-controls.md)
+- [incident response](../incident-response/index.md)
+- [governance and compliance](../governance-and-compliance/index.md)
+- Upstream AI wiki owns broad Google AI, Gemini, and Vertex AI context.
+
+## Open Questions
+
+- Which anomaly thresholds, identities, and billing dimensions are sufficient to separate AI abuse from legitimate workload spikes?
+
+## Maintenance Notes
+
+- Split from the bundled anomaly/residency draft during July 25 verifier correction; keep this page focused on detection and assurance evidence.

@@ -17,6 +17,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [MaxKB MCP tool import remote code execution](maxkb-mcp-tool-import-rce.md)
 - [cross-site agent forgery](cross-site-agent-forgery.md)
 - [n8n AI Agent Project Viewer privilege escalation](n8n-ai-agent-project-viewer-privilege-escalation.md)
+- [Google API hub MCP security controls](google-api-hub-mcp-security-controls.md)
 
 ## Authoritative Sources
 

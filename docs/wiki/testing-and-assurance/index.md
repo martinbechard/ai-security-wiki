@@ -8,6 +8,8 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 
 - [Cyber-evaluation containment](cyber-evaluation-containment.md)
 - [Public cyber-capability assessments](public-cyber-capability-assessments.md)
+- [Agent runtime security evidence](agent-runtime-security-evidence.md)
+- [AI workload cost anomaly monitoring](ai-workload-cost-anomaly-monitoring.md)
 
 ## Authoritative Sources
 
