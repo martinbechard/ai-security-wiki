@@ -12,7 +12,9 @@ The [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-s
 
 Prompt injection can steer the model-controlled URL argument and turn a browsing tool into server-side request forgery. The [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json) records [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-65056) and CISA SSVC status as proof-of-concept exploitation plus [Agora Intelligence](https://agora-intelligence.com/en/blog/leon-mcp-webresearch-ssrf-cve-2026) corroboration for metadata-service reachability, so this page classifies the issue as demonstrated research rather than only a disclosed vulnerability. The relevant local security boundary is the browser tool's network reachability and returned content, covered by [agent network egress controls](agent-network-egress-controls.md), not the broad mcp-webresearch catalog entry, which belongs upstream.
 
-As of this run, [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp-webresearch) reports `@mzxrai/mcp-webresearch` latest and only latest version as 0.1.7, matching the affected version in the advisory; no fixed npm version was visible from the package metadata checked during ingest.
+The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) adds [Vulners](https://vulners.com/cve/CVE-2026-65056) as another CVE aggregation source for the same affected-through-0.1.7 browser-tool SSRF boundary. It does not identify a fixed npm release.
+
+As of this run, [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp-webresearch) reports `@mzxrai/mcp-webresearch` latest and only latest version as 0.1.7, matching the affected version in the [NVD advisory](https://nvd.nist.gov/vuln/detail/CVE-2026-65056); no fixed npm version was visible from the [package metadata](https://www.npmjs.com/package/@mzxrai/mcp-webresearch) checked during ingest.
 
 ## Security Impact
 
@@ -20,15 +22,17 @@ As of this run, [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp
 - Affected boundary: mcp-webresearch through 0.1.7, `visit_page`, server-side Playwright browser network access, and model context receiving fetched internal content.
 - Exploit or incident status: public CVE and [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-65056) record; CISA SSVC exploitation is recorded as proof-of-concept in the [July 23 watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json).
 - Mitigation state: no fixed [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp-webresearch) version identified during ingest; durable guidance should prefer disabling or isolating the tool, blocking internal address space, and stripping sensitive responses from model context until a fixed version is confirmed.
-- Confidence: high for the affected version and SSRF mechanics from the [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-65056)-backed raw source; medium for remediation because package metadata showed no newer version.
-- Residual risk: the upstream package or advisory may publish a fix after this ingest.
+- Confidence: high for the affected version and SSRF mechanics from the [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-65056)-backed [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); medium for remediation because [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp-webresearch) showed no newer version.
+- Residual risk: the upstream package or [NVD advisory](https://nvd.nist.gov/vuln/detail/CVE-2026-65056) may publish a fix after this ingest.
 
 ## Authoritative Sources
 
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
 - [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 - [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json)
+- [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
 - NVD: https://nvd.nist.gov/vuln/detail/CVE-2026-65056
+- Vulners CVE aggregation: https://vulners.com/cve/CVE-2026-65056
 - Agora Intelligence corroboration: https://agora-intelligence.com/en/blog/leon-mcp-webresearch-ssrf-cve-2026
 - VulnCheck: https://www.vulncheck.com/advisories/mcp-webresearch-server-side-request-forgery-in-visit-page-due-to-missing-internal-ip-filtering
 - npm package metadata checked during ingest: https://www.npmjs.com/package/@mzxrai/mcp-webresearch
@@ -59,4 +63,4 @@ As of this run, [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp
 
 ## Maintenance Notes
 
-- Added from the [July 22, 2026 raw collector artifact](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json) and live [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp-webresearch); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) and [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json) with proof-of-concept exploitation and cloud-metadata reachability evidence.
+- Added from the [July 22, 2026 raw collector artifact](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json) and live [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp-webresearch); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), and [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) with proof-of-concept exploitation and cloud-metadata reachability evidence.

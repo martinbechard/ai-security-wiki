@@ -10,6 +10,16 @@ description: "Security controls for limiting sensitive-data use in generative AI
 
 The [July 23 topic news collector source](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json) records [U.S. Department of Veterans Affairs guidance](https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/) updated on July 23, 2026. The guidance says VA sensitive data may be used only with generative AI tools that have a VA Authority to Operate for that purpose, and that PHI, PII, and other sensitive data cannot be entered into tools whose ATO does not cover that data class.
 
+The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) captures the same [VA guidance](https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/) with a visible July 22 update date and lists source-named examples of gated or approved tool surfaces:
+
+- VA GPT;
+- Microsoft Copilot Chat;
+- GitHub Copilot;
+- ChatGPT FedRAMP;
+- Claude for Gov.
+
+The durable local rule remains data-class approval, not endorsement of a product list outside the VA boundary.
+
 Broad product entries for VA GPT, Microsoft Copilot Chat, GitHub Copilot, Claude for Gov, ChatGPT FedRAMP, and similar tools belong upstream. The local security control is data-class authorization: tool approval, identity authentication, authorized-use policy, user accountability, records management, and human review need to line up before sensitive prompts or outputs enter a generative AI system.
 
 ## Control Implications
@@ -19,10 +29,12 @@ Broad product entries for VA GPT, Microsoft Copilot Chat, GitHub Copilot, Claude
 - Distinguish all-employee tools from gated sensitive-data tools in user guidance and enforcement.
 - Keep human review, records-management, security, privacy, and authorized-use obligations attached to AI output workflows.
 - Treat unapproved public commercial tools as outside the sensitive-data boundary even when they are technically reachable.
+- Preserve the approval purpose in policy text: a tool with an ATO for one data class or agency workflow should not inherit approval for PHI, PII, source code, or pre-decisional documents by product name alone.
 
 ## Authoritative Sources
 
 - [July 23 topic news collector source](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json)
+- [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
 - VA generative AI guidance: https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/
 
 ## Related Code
@@ -50,4 +62,4 @@ Broad product entries for VA GPT, Microsoft Copilot Chat, GitHub Copilot, Claude
 
 ## Maintenance Notes
 
-- Added from the July 23, 2026 raw collector artifact; preserve agency-specific product approvals as source evidence, not as universal product recommendations.
+- Added from the [July 23, 2026 raw collector artifact](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json); enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json). Preserve agency-specific product approvals as source evidence, not as universal product recommendations.

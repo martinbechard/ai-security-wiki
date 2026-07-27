@@ -10,6 +10,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [AI provider override trust boundaries](ai-provider-override-trust-boundaries.md)
 - [ATO-approved sensitive data use](ato-approved-sensitive-data-use.md)
 - [AI coding telemetry redaction controls](ai-coding-telemetry-redaction-controls.md)
+- [AI coding telemetry access controls](ai-coding-telemetry-access-controls.md)
 - [Model processing data residency controls](model-processing-data-residency-controls.md)
 - [AI agent collaboration DLP controls](ai-agent-collaboration-dlp-controls.md)
 

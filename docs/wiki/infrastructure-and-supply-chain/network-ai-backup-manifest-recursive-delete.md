@@ -10,6 +10,8 @@ description: "Security analysis for CVE-2026-58484, where poisoned backup manife
 
 The [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) records SentinelOne's 2026-07-24 publication of CVE-2026-58484 for Network-AI versions before 5.12.2. The [SentinelOne entry](https://www.sentinelone.com/vulnerability-database/cve-2026-58484/) and [GitHub advisory](https://github.com/advisories/GHSA-2fmp-9rvw-hc96) describe `EnvironmentManager.listBackups` trusting the `path` field in backup manifests before `pruneBackups` passes that path to recursive deletion.
 
+The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) adds [Tenable](https://www.tenable.com/cve/CVE-2026-58484) as in-window corroboration for the recursive-delete boundary. This strengthens the destructive-operation lens without changing the fixed-version boundary.
+
 Broad Network-AI and [Claude Code](../../../upstream-ai-wiki/developer-tools/claude-code.md) context belongs upstream. The local security issue is runtime metadata authority: backup manifests, restore IDs, and environment snapshots must not become trusted filesystem actions merely because they were found in an expected directory.
 
 ## Security Impact
@@ -24,8 +26,10 @@ Broad Network-AI and [Claude Code](../../../upstream-ai-wiki/developer-tools/cla
 ## Authoritative Sources
 
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
+- [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
 - SentinelOne vulnerability database: https://www.sentinelone.com/vulnerability-database/cve-2026-58484/
 - GitHub advisory: https://github.com/advisories/GHSA-2fmp-9rvw-hc96
+- Tenable CVE record: https://www.tenable.com/cve/CVE-2026-58484
 
 ## Related Code
 
@@ -54,4 +58,4 @@ Broad Network-AI and [Claude Code](../../../upstream-ai-wiki/developer-tools/cla
 
 ## Maintenance Notes
 
-- Added from the [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json); keep this page separate from restore traversal because the failure is destructive metadata trust during pruning.
+- Added from the [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json); enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json). Keep this page separate from restore traversal because the failure is destructive metadata trust during pruning.

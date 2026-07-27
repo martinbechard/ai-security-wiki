@@ -31,6 +31,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [data-and-privacy/ai-provider-override-trust-boundaries.md](data-and-privacy/ai-provider-override-trust-boundaries.md)
 - [data-and-privacy/ato-approved-sensitive-data-use.md](data-and-privacy/ato-approved-sensitive-data-use.md)
 - [data-and-privacy/ai-coding-telemetry-redaction-controls.md](data-and-privacy/ai-coding-telemetry-redaction-controls.md)
+- [data-and-privacy/ai-coding-telemetry-access-controls.md](data-and-privacy/ai-coding-telemetry-access-controls.md)
 - [data-and-privacy/model-processing-data-residency-controls.md](data-and-privacy/model-processing-data-residency-controls.md)
 - [data-and-privacy/ai-agent-collaboration-dlp-controls.md](data-and-privacy/ai-agent-collaboration-dlp-controls.md)
 - [identity-and-access](identity-and-access/index.md)

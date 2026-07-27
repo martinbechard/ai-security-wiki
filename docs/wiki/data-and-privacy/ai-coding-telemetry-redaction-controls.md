@@ -10,7 +10,7 @@ description: "Security controls for minimizing and redacting sensitive prompt, t
 
 The [July 23 topic news collector source](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json) and [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json) record [Dash0 AI Coding Insights documentation](https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy) updated on July 23, 2026. The documentation says coding-agent telemetry can include prompt text, code in tool inputs and outputs, secrets pasted into sessions, and system instructions, and it documents source redaction before data leaves the developer machine plus ingestion redaction before storage.
 
-Broad Dash0 product and developer-observability practice belongs upstream. The local control is telemetry minimization for agent and coding-assistant systems: prompt and tool I/O are sensitive by default, and redaction is strongest when sensitive content is removed at source before collection.
+Broad Dash0 product and developer-observability practice belongs upstream. The local control is telemetry minimization for agent and coding-assistant systems: prompt and tool I/O are sensitive by default, and redaction is strongest when sensitive content is removed at source before collection. [AI coding telemetry access controls](ai-coding-telemetry-access-controls.md) owns MCP OAuth, scoped telemetry access, and token-handling guidance for querying observability data.
 
 ## Control Implications
 
@@ -41,6 +41,7 @@ Broad Dash0 product and developer-observability practice belongs upstream. The l
 ## Related Wiki Pages
 
 - [data and privacy](index.md)
+- [AI coding telemetry access controls](ai-coding-telemetry-access-controls.md)
 - [agent and tool security](../agent-and-tool-security/index.md)
 - [testing and assurance](../testing-and-assurance/index.md)
 - Upstream AI development wiki owns general coding-agent telemetry and observability practice.
@@ -51,4 +52,4 @@ Broad Dash0 product and developer-observability practice belongs upstream. The l
 
 ## Maintenance Notes
 
-- Added from the [July 23, 2026 raw collector artifact](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json); enriched from the [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json); keep the page focused on redaction and minimization controls rather than vendor product positioning.
+- Added from the [July 23, 2026 raw collector artifact](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json); enriched from the [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json). Keep the page focused on redaction and minimization controls rather than vendor product positioning.

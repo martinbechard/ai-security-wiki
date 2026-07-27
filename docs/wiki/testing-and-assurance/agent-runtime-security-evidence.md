@@ -23,6 +23,15 @@ Broad NVIDIA, [NVIDIA NemoClaw](../../../upstream-ai-wiki/mcp-servers/nvidia-nem
 - containment records;
 - classified live failures.
 
+The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) adds NemoClaw v0.0.93/v0.0.94 evidence for release-assurance controls:
+
+- authenticated gateway-pairing verification;
+- stronger sandbox restore behavior;
+- policy and security evidence improvements;
+- release-validation hardening.
+
+Treat these as release-assurance controls, not proof that every downstream deployment is secure.
+
 ## Assurance Implications
 
 - Treat sandbox restore and update behavior as security-control surfaces, not only developer-experience features.
@@ -34,7 +43,9 @@ Broad NVIDIA, [NVIDIA NemoClaw](../../../upstream-ai-wiki/mcp-servers/nvidia-nem
 ## Authoritative Sources
 
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
+- [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
 - NVIDIA NemoClaw release notes: https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes/2026/7/24
+- NVIDIA NemoClaw deep agents release notes: https://docs.nvidia.com/nemoclaw/user-guide/deepagents/release-notes
 
 ## Related Code
 
@@ -59,7 +70,8 @@ Broad NVIDIA, [NVIDIA NemoClaw](../../../upstream-ai-wiki/mcp-servers/nvidia-nem
 ## Open Questions
 
 - Which NemoClaw evidence fields are stable enough to use as reusable security-assurance requirements?
+- Which gateway-pairing and sandbox-restore release checks should become mandatory pre-release evidence for local agent runtimes?
 
 ## Maintenance Notes
 
-- Added from the [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json); keep this as a release-control signal until more detailed technical documentation is captured.
+- Added from the [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json); enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json). Keep this as a release-control signal until more detailed technical documentation is captured.

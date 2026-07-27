@@ -10,7 +10,9 @@ description: "Security analysis for CVE-2026-50757, where an MCP export tool can
 
 The [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json) records CVE-2026-50757 for next-ai-draw-io 0.4.13. [GitHub issue 754](https://github.com/DayuanJiang/next-ai-draw-io/issues/754) describes unrestricted path handling in the `@next-ai-drawio/mcp-server` `export_diagram` tool, allowing an MCP client or prompt-influenced agent to write files outside the intended working directory.
 
-The [npm package metadata](https://www.npmjs.com/package/@next-ai-drawio/mcp-server) checked during ingest showed `@next-ai-drawio/mcp-server` versions newer than the issue's affected 0.1.16 line, but the raw source did not identify the first fixed version. The [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json) adds [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-50757) classification as CWE-22, CISA-ADP CVSS 7.8, and SSVC exploitation none. The local security boundary is [agent tool filesystem path containment](../infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md) for MCP tools.
+The [npm package metadata](https://www.npmjs.com/package/@next-ai-drawio/mcp-server) checked during ingest showed `@next-ai-drawio/mcp-server` versions newer than the issue's affected 0.1.16 line, but the [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json) did not identify the first fixed version. The [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json) adds [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-50757) classification as CWE-22, CISA-ADP CVSS 7.8, and SSVC exploitation none. The local security boundary is [agent tool filesystem path containment](../infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md) for MCP tools.
+
+The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) adds [Tenable](https://www.tenable.com/cve/CVE-2026-50757) as in-window corroboration and keeps this advisory paired with [next-ai-draw-io provider disclosure](../data-and-privacy/next-ai-draw-io-provider-disclosure.md): one issue exposes provider data, while this one exposes filesystem write containment.
 
 ## Security Impact
 
@@ -26,8 +28,10 @@ The [npm package metadata](https://www.npmjs.com/package/@next-ai-drawio/mcp-ser
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
 - [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 - [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json)
+- [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
 - NVD: https://nvd.nist.gov/vuln/detail/CVE-2026-50757
 - GitHub issue 754: https://github.com/DayuanJiang/next-ai-draw-io/issues/754
+- Tenable CVE record: https://www.tenable.com/cve/CVE-2026-50757
 - npm package metadata checked during ingest: https://www.npmjs.com/package/@next-ai-drawio/mcp-server
 
 ## Related Code
@@ -46,6 +50,7 @@ The [npm package metadata](https://www.npmjs.com/package/@next-ai-drawio/mcp-ser
 
 - [agent and tool security](index.md)
 - [agent tool filesystem path containment](../infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md)
+- [next-ai-draw-io provider disclosure](../data-and-privacy/next-ai-draw-io-provider-disclosure.md)
 - [infrastructure and supply chain](../infrastructure-and-supply-chain/index.md)
 - [threats and attacks](../threats-and-attacks/index.md)
 - Upstream AI wiki owns broad MCP server catalog context.
@@ -56,4 +61,4 @@ The [npm package metadata](https://www.npmjs.com/package/@next-ai-drawio/mcp-ser
 
 ## Maintenance Notes
 
-- Added from the [July 22, 2026 raw collector artifact](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json), linked [GitHub issue 754](https://github.com/DayuanJiang/next-ai-draw-io/issues/754), and [package metadata checks](https://www.npmjs.com/package/@next-ai-drawio/mcp-server); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) and [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json) with [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-50757) CWE/CVSS and exploitation-status evidence.
+- Added from the [July 22, 2026 raw collector artifact](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json), linked [GitHub issue 754](https://github.com/DayuanJiang/next-ai-draw-io/issues/754), and [package metadata checks](https://www.npmjs.com/package/@next-ai-drawio/mcp-server); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), and [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) with [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-50757) CWE/CVSS and exploitation-status evidence.

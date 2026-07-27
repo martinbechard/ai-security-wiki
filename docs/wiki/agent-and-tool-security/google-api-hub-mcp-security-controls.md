@@ -21,19 +21,24 @@ Broad [Google AI](../../../upstream-ai-wiki/companies/google-ai.md), Google Clou
 - prompt-injection defenses before tool invocation;
 - audit evidence when an agent can discover, alter, or deploy API assets.
 
+The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) reinforces the same security boundary and adds the official [Google Cloud MCP release notes](https://docs.cloud.google.com/mcp/release-notes) and [Apigee API hub MCP reference](https://docs.cloud.google.com/apigee/docs/reference/apis/apihub/mcp) as follow-up evidence to distinguish global endpoint convenience from scoped authorization and prompt-injection screening.
+
 ## Security Impact
 
 - Threat: MCP-mediated API catalog access can turn prompt injection or overbroad delegation into unauthorized API asset reads, writes, or deployment changes.
 - Affected boundary: Google Cloud API hub MCP server GA, `apihub.googleapis.com/mcp`, `apihub.readonly`, `apihub.readwrite`, and Model Armor tool-invocation protection.
 - Exploit or incident status: [official control release](https://docs.cloud.google.com/release-notes); no exploit or incident was reported in the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json).
 - Mitigation state: scope MCP clients separately for read-only and read-write use, use prompt-injection protection before tool invocation, and log agent identity, user identity, tool name, target API asset, and mutation result.
-- Confidence: high for the release-note facts because the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) cites [official Google Cloud release notes](https://docs.cloud.google.com/release-notes).
+- Confidence: high for the release-note facts because the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) and [July 26 watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) cite official Google Cloud documentation.
 - Residual risk: downstream deployments can still collapse read and write scopes into one broad credential or bypass Model Armor-style checks in custom MCP gateways.
 
 ## Authoritative Sources
 
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
+- [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
 - Google Cloud release notes: https://docs.cloud.google.com/release-notes
+- Google Cloud MCP release notes: https://docs.cloud.google.com/mcp/release-notes
+- Apigee API hub MCP reference: https://docs.cloud.google.com/apigee/docs/reference/apis/apihub/mcp
 
 ## Related Code
 
@@ -61,4 +66,4 @@ Broad [Google AI](../../../upstream-ai-wiki/companies/google-ai.md), Google Clou
 
 ## Maintenance Notes
 
-- Added from the [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json); keep this page focused on MCP security controls rather than Google Cloud product catalog coverage.
+- Added from the [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json); enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json). Keep this page focused on MCP security controls rather than Google Cloud product catalog coverage.

@@ -12,6 +12,15 @@ The [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-s
 
 Broad [Google AI](../../../upstream-ai-wiki/companies/google-ai.md), [Gemini](../../../upstream-ai-wiki/models/gemini-model-family.md), and [Vertex AI](../../../upstream-ai-wiki/developer-tools/vertex-ai.md) platform context belongs upstream. The local security issue is detection: abnormal AI spend can indicate compromised credentials, prompt-injected agents, runaway workflows, or misrouted model calls before finalized billing is available.
 
+The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) repeats the 2026-07-24 Google Cloud Billing signal and keeps it as assurance evidence rather than incident evidence. Cost anomalies should be correlated before triggering a security conclusion with:
+
+- workload identity;
+- project;
+- region;
+- service;
+- agent runtime;
+- deployment changes.
+
 ## Security Impact
 
 - Threat: credential misuse, prompt-injected agents, runaway workflows, or misconfigured model routing can generate abnormal AI workload cost.
@@ -24,6 +33,7 @@ Broad [Google AI](../../../upstream-ai-wiki/companies/google-ai.md), [Gemini](..
 ## Authoritative Sources
 
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
+- [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
 - Google Cloud release notes: https://docs.cloud.google.com/release-notes
 
 ## Related Code
@@ -52,4 +62,4 @@ Broad [Google AI](../../../upstream-ai-wiki/companies/google-ai.md), [Gemini](..
 
 ## Maintenance Notes
 
-- Split from the bundled anomaly/residency draft during July 25 verifier correction; keep this page focused on detection and assurance evidence.
+- Split from the bundled anomaly/residency draft during July 25 verifier correction; enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json). Keep this page focused on detection and assurance evidence.

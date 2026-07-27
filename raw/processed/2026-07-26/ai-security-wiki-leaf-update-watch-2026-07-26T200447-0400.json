@@ -1,0 +1,352 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "docs_wiki_updated": false,
+  "evidence_classification_counts": {
+    "control change": 5,
+    "disclosed vulnerability": 5,
+    "excluded candidate": 4,
+    "mitigation": 1
+  },
+  "exclusions": [
+    {
+      "evidence_classification": "excluded candidate",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+      "reason": "No same-leaf DLP-specific qualifying update with visible in-window date was found from public topic-name searches; adjacent agent telemetry/token-control sources were routed to telemetry redaction instead.",
+      "source_url": "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment",
+      "visible_date": "not qualified"
+    },
+    {
+      "evidence_classification": "excluded candidate",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md",
+      "reason": "No new same-leaf qualifying update found beyond existing public page topic; broader sandbox/path traversal CVEs were captured under Network-AI and next-ai-draw-io sibling leaves.",
+      "source_url": "https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac",
+      "visible_date": "not qualified"
+    },
+    {
+      "evidence_classification": "excluded candidate",
+      "leaf_id": "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+      "reason": "No in-window update beyond the previously captured July 10 MaxKB CVE-2026-54149 disclosure; current search results were stale for the strict 7-day window ending July 26.",
+      "source_url": "https://www.sentinelone.com/vulnerability-database/cve-2026-54149/",
+      "visible_date": "not qualified"
+    },
+    {
+      "evidence_classification": "excluded candidate",
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "reason": "No new in-window update beyond previously captured CVE-2026-64622 ApprovalInbox evidence; searches did not reveal a newer visible update date.",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+      "visible_date": "not qualified"
+    }
+  ],
+  "federation": {
+    "local_scope": "security-specific update, mitigation, affected boundary, evidence, and operational implication",
+    "route_to_ai_dev_wiki": [
+      "general coding-agent workflow, observability practice, evaluation or adoption practice without a distinct security boundary"
+    ],
+    "route_to_ai_wiki": [
+      "broad company/product/model/framework/catalog release details"
+    ]
+  },
+  "follow_up_notes": [
+    "Consider ingesting the MCP GA controls into the local Google API Hub MCP security-controls leaf; route broad product launch details upstream.",
+    "Check whether the leaf should distinguish global MCP endpoint convenience from residency-sensitive regional endpoint policy.",
+    "Ingest as an assurance control, not as incident evidence.",
+    "Useful as durable evidence for agent-runtime security assurance and release-validation controls.",
+    "Ingest as a public control example for ATO-scoped sensitive-data use.",
+    "Use NVD as primary evidence and GitHub advisory/release as remediation provenance.",
+    "Pair with the existing filesystem containment leaf if synthesizing cross-cutting mitigations.",
+    "Keep as disclosed vulnerability with prompt-injection/browser-tool boundary notes, not confirmed active exploitation.",
+    "This qualifies the previously no-update leaf; verify whether local page should link next-ai-draw-io provider disclosure as a sibling.",
+    "Use as sibling to provider-disclosure and path-containment leaves.",
+    "Use as adjunct to redaction controls only if the page covers telemetry access as well as content redaction.",
+    "Keep unchecked result as no qualifying update unless a visibly updated DLP-specific source appears.",
+    "Do not duplicate sibling CVE findings into this leaf unless ingest decides they change the generic control page.",
+    "Keep last qualified note from previous run; no fresh qualifying evidence.",
+    "Keep existing qualified-update status from prior run; no fresh evidence found."
+  ],
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "API Hub MCP server authorization",
+        "AI-agent API management actions",
+        "Prompt-injection screening for MCP tool invocations"
+      ],
+      "evidence_classification": "control change",
+      "follow_up_note": "Consider ingesting the MCP GA controls into the local Google API Hub MCP security-controls leaf; route broad product launch details upstream.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+      "named_entities": [
+        "Google Cloud",
+        "Apigee API Hub",
+        "Model Context Protocol",
+        "Model Armor"
+      ],
+      "source_url": "https://docs.cloud.google.com/release-notes",
+      "summary": "Google Cloud announced API Hub MCP server GA with expanded write capabilities, global endpoint routing, granular OAuth scopes, and Model Armor integration for prompt-injection protection.",
+      "upstream_routing": "General Google Cloud product GA belongs upstream in ai-wiki; local artifact keeps security controls: OAuth scopes, read/write action boundary, Model Armor integration, and MCP proxy deployment risk.",
+      "visible_date": "2026-07-24"
+    },
+    {
+      "affected_boundaries": [
+        "MCP endpoint region selection",
+        "API Hub processing location",
+        "Agent-to-Google Cloud service routing"
+      ],
+      "evidence_classification": "control change",
+      "follow_up_note": "Check whether the leaf should distinguish global MCP endpoint convenience from residency-sensitive regional endpoint policy.",
+      "leaf_id": "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+      "named_entities": [
+        "Google Cloud",
+        "Apigee API Hub",
+        "Model Context Protocol"
+      ],
+      "source_url": "https://docs.cloud.google.com/release-notes",
+      "summary": "Google Cloud release notes include regional/API Hub MCP endpoint updates and GA endpoint routing; relevant to model/API processing residency and cross-region endpoint selection, but not a vulnerability.",
+      "upstream_routing": "General endpoint/product availability belongs in ai-wiki; local security note should focus on endpoint routing and data residency control boundaries.",
+      "visible_date": "2026-07-24"
+    },
+    {
+      "affected_boundaries": [
+        "AI workload cost anomaly detection",
+        "Gemini API billing monitoring",
+        "Vertex AI billing monitoring"
+      ],
+      "evidence_classification": "control change",
+      "follow_up_note": "Ingest as an assurance control, not as incident evidence.",
+      "leaf_id": "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md",
+      "named_entities": [
+        "Google Cloud",
+        "Gemini API",
+        "Vertex AI",
+        "Cloud Billing"
+      ],
+      "source_url": "https://docs.cloud.google.com/release-notes",
+      "summary": "Google Cloud added early anomaly signals for AI workloads including Gemini API and Vertex AI using near real-time cost estimates before finalized billing.",
+      "upstream_routing": "General billing feature belongs upstream; local note should retain the assurance signal for misuse, runaway agent activity, and spend anomaly detection.",
+      "visible_date": "2026-07-24"
+    },
+    {
+      "affected_boundaries": [
+        "Agent sandbox restore",
+        "Gateway pairing verification",
+        "Release validation",
+        "Security evidence capture"
+      ],
+      "evidence_classification": "mitigation",
+      "follow_up_note": "Useful as durable evidence for agent-runtime security assurance and release-validation controls.",
+      "leaf_id": "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md",
+      "named_entities": [
+        "NVIDIA",
+        "NemoClaw",
+        "OpenClaw",
+        "Hermes"
+      ],
+      "source_url": "https://docs.nvidia.com/nemoclaw/user-guide/deepagents/release-notes",
+      "summary": "NVIDIA NemoClaw v0.0.94/v0.0.93 release notes describe stronger sandbox restore behavior, authenticated gateway-pairing verification, policy/security evidence improvements, and release validation hardening.",
+      "upstream_routing": "Broad NemoClaw release tracking belongs in ai-wiki or ai-dev-wiki; local note should keep only runtime security evidence and sandbox assurance implications.",
+      "visible_date": "2026-07-24"
+    },
+    {
+      "affected_boundaries": [
+        "Sensitive data use in generative AI",
+        "ATO-scoped tool approval",
+        "PII/PHI handling"
+      ],
+      "evidence_classification": "control change",
+      "follow_up_note": "Ingest as a public control example for ATO-scoped sensitive-data use.",
+      "leaf_id": "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md",
+      "named_entities": [
+        "Department of Veterans Affairs",
+        "VA GPT",
+        "Microsoft Copilot Chat",
+        "GitHub Copilot",
+        "ChatGPT FedRAMP",
+        "Claude for Gov"
+      ],
+      "source_url": "https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/",
+      "summary": "VA guidance updated July 22 states sensitive data may only be used with tools that have a VA Authority to Operate for that purpose and lists approved/gated generative-AI tools.",
+      "upstream_routing": "Federal AI program details are broad governance context; local note should retain the ATO-sensitive-data security rule and approved-use boundary.",
+      "visible_date": "2026-07-22"
+    },
+    {
+      "affected_boundaries": [
+        "AgentRuntime sandbox file access",
+        "Path containment",
+        "Local agent/user tool invocation"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "follow_up_note": "Use NVD as primary evidence and GitHub advisory/release as remediation provenance.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md",
+      "named_entities": [
+        "Network-AI",
+        "CVE-2026-58481",
+        "GHSA-jvcm-f35g-w78p",
+        "CISA-ADP",
+        "NVD"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58481",
+      "summary": "NVD published CVE-2026-58481 for Network-AI AgentRuntime sandbox path-prefix checks allowing file access outside the configured base path before v5.12.2; CISA-ADP SSVC marks exploitation as PoC.",
+      "upstream_routing": "Network-AI product identity belongs upstream; local note owns sandbox path-containment security analysis.",
+      "visible_date": "2026-07-20"
+    },
+    {
+      "affected_boundaries": [
+        "Backup manifest trust",
+        "Environment pruning",
+        "Filesystem destructive operations"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "follow_up_note": "Pair with the existing filesystem containment leaf if synthesizing cross-cutting mitigations.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md",
+      "named_entities": [
+        "Network-AI",
+        "CVE-2026-58484",
+        "GHSA-2fmp-9rvw-hc96"
+      ],
+      "source_url": "https://www.tenable.com/cve/CVE-2026-58484",
+      "summary": "CVE-2026-58484 records a Network-AI backup manifest trust issue that can cause arbitrary recursive deletion during backup pruning before v5.12.2.",
+      "upstream_routing": "Keep local because it is a supply-chain/runtime filesystem boundary vulnerability; route only broad Network-AI catalog facts upstream.",
+      "visible_date": "2026-07-20"
+    },
+    {
+      "affected_boundaries": [
+        "Browser-backed MCP URL fetch",
+        "Internal network access",
+        "Cloud metadata exposure"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "follow_up_note": "Keep as disclosed vulnerability with prompt-injection/browser-tool boundary notes, not confirmed active exploitation.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "named_entities": [
+        "mcp-webresearch",
+        "CVE-2026-65056",
+        "VulnCheck",
+        "npm"
+      ],
+      "source_url": "https://vulners.com/cve/CVE-2026-65056",
+      "summary": "CVE-2026-65056 describes mcp-webresearch visit_page missing internal-IP filtering, enabling SSRF to internal endpoints and cloud metadata; affected versions are through 0.1.7.",
+      "upstream_routing": "mcp-webresearch catalog details belong upstream; local security page owns SSRF and metadata-boundary implications.",
+      "visible_date": "2026-07-21"
+    },
+    {
+      "affected_boundaries": [
+        "Provider override metadata",
+        "Sensitive information exposure",
+        "Remote unauthenticated access"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "follow_up_note": "This qualifies the previously no-update leaf; verify whether local page should link next-ai-draw-io provider disclosure as a sibling.",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "named_entities": [
+        "next-ai-draw-io",
+        "CVE-2026-50756",
+        "CISA-ADP",
+        "NVD"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+      "summary": "NVD published CVE-2026-50756 for next-ai-draw-io 0.4.13 sensitive-information exposure through the x-ai-provider component; CISA-ADP marks exploitation none and automatable yes.",
+      "upstream_routing": "Product page/catalog belongs upstream; local artifact keeps provider override disclosure and data boundary risk.",
+      "visible_date": "2026-07-21"
+    },
+    {
+      "affected_boundaries": [
+        "MCP server filesystem access",
+        "Path traversal",
+        "Remote code execution"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "follow_up_note": "Use as sibling to provider-disclosure and path-containment leaves.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "named_entities": [
+        "next-ai-draw-io",
+        "CVE-2026-50757",
+        "DayuanJiang",
+        "MITRE",
+        "NVD"
+      ],
+      "source_url": "https://www.tenable.com/cve/CVE-2026-50757",
+      "summary": "CVE-2026-50757 reports a next-ai-draw-io 0.4.13 directory traversal issue in the MCP server that can lead to arbitrary code execution; Tenable shows publication/update on July 21.",
+      "upstream_routing": "Keep local because this is MCP-server path traversal; route only product/catalog detail upstream.",
+      "visible_date": "2026-07-21"
+    },
+    {
+      "affected_boundaries": [
+        "AI coding telemetry access",
+        "MCP OAuth",
+        "Token handling",
+        "Agent observability queries"
+      ],
+      "evidence_classification": "control change",
+      "follow_up_note": "Use as adjunct to redaction controls only if the page covers telemetry access as well as content redaction.",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+      "named_entities": [
+        "Dash0",
+        "MCP",
+        "Claude Code",
+        "Cursor",
+        "Windsurf"
+      ],
+      "source_url": "https://www.dash0.com/newsletter/code-red-newsletter-30",
+      "summary": "Dash0 newsletter and CLI documentation updated in-window describe OAuth for MCP telemetry access and agent-oriented CLI behavior; relevant security angle is token handling, short-lived OAuth access, structured agent use, and avoiding static tokens for human workflows.",
+      "upstream_routing": "General Dash0 CLI/product launch information belongs upstream; local note should keep telemetry access-control and token-handling controls.",
+      "visible_date": "2026-07-24"
+    }
+  ],
+  "raw_processed_updated": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-07-27T00:04:47Z",
+  "selection": {
+    "leaf_universe_count": 33,
+    "selected_leaf_count": 15,
+    "selected_leaf_ids": [
+      "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+      "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+      "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+      "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md",
+      "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md",
+      "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md",
+      "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md",
+      "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md",
+      "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+      "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+      "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md"
+    ],
+    "selection_rule": "unchecked leaves first, then oldest last_checked_at, ties by stable relative path"
+  },
+  "source_urls_checked": [
+    "https://docs.cloud.google.com/release-notes",
+    "https://docs.nvidia.com/nemoclaw/user-guide/deepagents/release-notes",
+    "https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-58481",
+    "https://www.tenable.com/cve/CVE-2026-58484",
+    "https://vulners.com/cve/CVE-2026-65056",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+    "https://www.tenable.com/cve/CVE-2026-50757",
+    "https://www.dash0.com/newsletter/code-red-newsletter-30",
+    "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment",
+    "https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac",
+    "https://www.sentinelone.com/vulnerability-database/cve-2026-54149/",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+    "https://docs.cloud.google.com/mcp/release-notes",
+    "https://docs.cloud.google.com/apigee/docs/reference/apis/apihub/mcp",
+    "https://aws.amazon.com/blogs/mt/analyzing-claude-code-usage-with-cloudwatch-and-opentelemetry/"
+  ],
+  "window": {
+    "end": "2026-07-26",
+    "policy": "visible publication or update date must be within the last 7 days; future, missing, ambiguous, stale, and boundary-only dates excluded",
+    "start": "2026-07-19"
+  }
+}
