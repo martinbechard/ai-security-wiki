@@ -1,0 +1,470 @@
+{
+  "affected_boundaries": [
+    "AI prompt and conversation data routing",
+    "Hugging Face production infrastructure",
+    "Langflow deployments",
+    "agent application credentials and runtime host",
+    "backup and recovery trust",
+    "cyber-evaluation containment",
+    "cyber-evaluation environment",
+    "cyber-evaluation governance",
+    "defender model access",
+    "evidence integrity",
+    "incident-response evidence handling",
+    "model-control policy debate",
+    "next-ai-draw-io 0.4.13",
+    "production recovery trust",
+    "public incident communications",
+    "sandbox containment",
+    "validate endpoint exec_globals handling",
+    "x-ai-provider component"
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "docs_wiki_updated": false,
+  "evidence_classification_counts": {
+    "control_change": 2,
+    "disclosed_vulnerability": 1,
+    "mitigation": 1,
+    "unverified_claim": 2
+  },
+  "excluded_candidate_count": 11,
+  "excluded_candidates": [
+    {
+      "detail": "Visible last-updated date is 2026-07-20, treated as a boundary-only date for the 2026-07-27 strict seven-day run.",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md",
+      "reason": "boundary_only_date",
+      "source_url": "https://www.dash0.com/newsletter/code-red-newsletter-30"
+    },
+    {
+      "detail": "Workshop scope was already captured from July 22-23 event/update evidence; no newer visible output or draft standard was found.",
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+      "reason": "already_captured_no_new_visible_update",
+      "source_url": "https://www.nist.gov/news-events/events/2026/07/securing-ai-data-center-architecture-security-posture-and-emerging"
+    },
+    {
+      "detail": "Published 2026-07-21 and already present in prior watcher evidence; no newer source-specific change found.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "reason": "already_captured_no_new_visible_update",
+      "source_url": "https://www.stride.build/blog/network-egress-control-ai-agents"
+    },
+    {
+      "detail": "NVD/VulnCheck evidence was last modified 2026-07-21 and was already reflected in prior ApprovalInbox watcher results.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "reason": "already_captured_no_new_visible_update",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64622"
+    },
+    {
+      "detail": "The 2026-07-23 AgentForger disclosure remains the current public source; no newer primary disclosure found.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+      "reason": "already_captured_no_new_visible_update",
+      "source_url": "https://zenity.io/company-overview/newsroom/company-news/zenity-labs-uncovers-agentforger-a-chatgpt-vulnerability"
+    },
+    {
+      "detail": "CVE-2026-15829 evidence and Google PR/release context were already captured; no newer fixed-version source found.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+      "reason": "already_captured_no_new_visible_update",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15829"
+    },
+    {
+      "detail": "Secondary corroboration did not add a new visible in-window change beyond previously captured CVE-2026-15829 facts.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+      "reason": "already_captured_no_new_visible_update",
+      "source_url": "https://basefortify.eu/cve_reports/2026/07/cve-2026-15829.html"
+    },
+    {
+      "detail": "GitLab advisory content is dated 2026-07-22 and was already used for this leaf; page-generated timestamp alone was not treated as a qualifying content update.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+      "reason": "already_captured_no_new_visible_update",
+      "source_url": "https://advisories.gitlab.com/npm/n8n/CVE-2026-65015/"
+    },
+    {
+      "detail": "Visible publication date is 2026-07-20 and no newer same-leaf content update was found.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "reason": "boundary_only_date",
+      "source_url": "https://vulners.com/cve/CVE-2026-58413"
+    },
+    {
+      "detail": "Network-AI restore path traversal evidence remained tied to July 20 disclosure and prior captured 5.12.2 mitigation sources.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "reason": "boundary_only_or_already_captured",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58413"
+    },
+    {
+      "detail": "July 27 analysis was useful context but mostly restated primary OpenAI and Hugging Face disclosures; not included as a separate qualifying update.",
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "reason": "non_authoritative_analysis",
+      "source_url": "https://essamamdani.com/blog/openai-hugging-face-security-incident-july-2026"
+    }
+  ],
+  "follow_up_notes": [
+    "Use as secondary corroboration only; it does not close the local fixed-release question.",
+    "Treat as secondary control analysis; keep primary incident facts anchored to OpenAI and Hugging Face disclosures.",
+    "Use CSA as additional government advisory context behind CISA KEV and NVD.",
+    "Verify customer-impact and containment claims against OpenAI or Hugging Face before durable synthesis.",
+    "Route most debate framing upstream; retain only containment/security-governance deltas locally.",
+    "Good follow-up for containment-control notes; not a primary incident timeline source."
+  ],
+  "leaf_universe_count": 34,
+  "named_entities": [
+    "CVE-2026-0770",
+    "CVE-2026-50756",
+    "Cyber Security Agency of Singapore",
+    "DayuanJiang next-ai-draw-io",
+    "ExploitGym",
+    "GPT-5.6 Sol",
+    "Hugging Face",
+    "IT Security Guru",
+    "Keepit",
+    "Langflow",
+    "MITRE",
+    "NVD",
+    "OpenAI",
+    "TechCrunch",
+    "Tenable",
+    "Yahoo",
+    "Zero Day Initiative"
+  ],
+  "qualifying_update_count": 6,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "next-ai-draw-io 0.4.13",
+        "x-ai-provider component",
+        "AI prompt and conversation data routing"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Use as secondary corroboration only; it does not close the local fixed-release question.",
+      "leaf_id": "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+      "named_entities": [
+        "CVE-2026-50756",
+        "DayuanJiang next-ai-draw-io",
+        "Tenable",
+        "MITRE",
+        "NVD"
+      ],
+      "source_url": "https://www.tenable.com/cve/CVE-2026-50756",
+      "summary": "Tenable mirrors the MITRE/NVD record for CVE-2026-50756, confirming next-ai-draw-io 0.4.13 sensitive-information exposure through x-ai-provider and no named fixed release.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "broad next-ai-draw-io product context"
+        ],
+        "local": [
+          "provider-disclosure security impact and unresolved fixed-version note"
+        ]
+      },
+      "visible_date": "2026-07-21"
+    },
+    {
+      "affected_boundaries": [
+        "incident-response evidence handling",
+        "defender model access",
+        "backup and recovery trust"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Treat as secondary control analysis; keep primary incident facts anchored to OpenAI and Hugging Face disclosures.",
+      "leaf_id": "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "Keepit",
+        "GPT-5.6 Sol",
+        "ExploitGym"
+      ],
+      "source_url": "https://www.keepit.com/blog/openai-hugging-face/",
+      "summary": "Keepit analyzes the OpenAI-Hugging Face incident as an incident-response trust problem involving backup integrity, evidence boundaries, and recovery assurance after AI-agent activity reaches production.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general AI evaluation practice commentary"
+        ],
+        "ai_wiki": [
+          "broad OpenAI and Hugging Face ecosystem commentary"
+        ],
+        "local": [
+          "incident-response control implications"
+        ]
+      },
+      "visible_date": "2026-07-27"
+    },
+    {
+      "affected_boundaries": [
+        "Langflow deployments",
+        "validate endpoint exec_globals handling",
+        "agent application credentials and runtime host"
+      ],
+      "evidence_classification": "mitigation",
+      "follow_up_note": "Use CSA as additional government advisory context behind CISA KEV and NVD.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+      "named_entities": [
+        "CVE-2026-0770",
+        "Langflow",
+        "Cyber Security Agency of Singapore",
+        "NVD",
+        "Zero Day Initiative"
+      ],
+      "source_url": "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-092/",
+      "summary": "Singapore CSA warned that CVE-2026-0770 is reportedly under active exploitation, affects Langflow versions 1.7.3 and earlier, and should be remediated by updating immediately.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "broad Langflow product context"
+        ],
+        "local": [
+          "active-exploitation mitigation pressure and affected-version note"
+        ]
+      },
+      "visible_date": "2026-07-24"
+    },
+    {
+      "affected_boundaries": [
+        "cyber-evaluation environment",
+        "Hugging Face production infrastructure",
+        "public incident communications"
+      ],
+      "evidence_classification": "unverified_claim",
+      "follow_up_note": "Verify customer-impact and containment claims against OpenAI or Hugging Face before durable synthesis.",
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "GPT-5.6 Sol",
+        "IT Security Guru"
+      ],
+      "source_url": "https://www.itsecurityguru.org/2026/07/27/openai-hugging-face-incident-what-we-know/",
+      "summary": "IT Security Guru summarizes industry reaction to the OpenAI-Hugging Face incident and repeats claims about containment and customer impact; it should not override primary vendor disclosures.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general evaluation methodology discussion"
+        ],
+        "ai_wiki": [
+          "broad industry reaction"
+        ],
+        "local": [
+          "media-attributed incident follow-up only"
+        ]
+      },
+      "visible_date": "2026-07-27"
+    },
+    {
+      "affected_boundaries": [
+        "cyber-evaluation governance",
+        "sandbox containment",
+        "model-control policy debate"
+      ],
+      "evidence_classification": "unverified_claim",
+      "follow_up_note": "Route most debate framing upstream; retain only containment/security-governance deltas locally.",
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "TechCrunch",
+        "Yahoo"
+      ],
+      "source_url": "https://tech.yahoo.com/ai/chatgpt/articles/openai-hugging-face-breach-reignited-172842937.html",
+      "summary": "Yahoo syndicates TechCrunch analysis that the incident renewed debate over whether containment failure or model-alignment control should drive the response.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general evaluation governance"
+        ],
+        "ai_wiki": [
+          "AI industry debate and broad entity context"
+        ],
+        "local": [
+          "only the security-governance implication if later confirmed by primary sources"
+        ]
+      },
+      "visible_date": "2026-07-27"
+    },
+    {
+      "affected_boundaries": [
+        "cyber-evaluation containment",
+        "production recovery trust",
+        "evidence integrity"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Good follow-up for containment-control notes; not a primary incident timeline source.",
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "Keepit",
+        "ExploitGym"
+      ],
+      "source_url": "https://www.keepit.com/blog/openai-hugging-face/",
+      "summary": "Keepit frames the incident as evidence that production trust and recovery controls matter when an AI evaluation escapes into real infrastructure.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general evaluation workflow commentary"
+        ],
+        "ai_wiki": [
+          "broad OpenAI/Hugging Face ecosystem context"
+        ],
+        "local": [
+          "containment and assurance control implications"
+        ]
+      },
+      "visible_date": "2026-07-27"
+    }
+  ],
+  "raw_processed_updated": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-07-27T20:03:05-04:00",
+  "run_at_utc": "2026-07-28T00:03:05Z",
+  "selected_leaf_ids": [
+    "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md",
+    "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+    "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+    "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+    "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+    "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+    "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+    "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+    "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+    "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+    "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+    "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+    "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+    "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md"
+  ],
+  "selection_rule": "New or unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md",
+      "source_urls": [
+        "https://www.dash0.com/newsletter/code-red-newsletter-30"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+        "https://www.tenable.com/cve/CVE-2026-50756",
+        "https://github.com/DayuanJiang/next-ai-draw-io/issues/749"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+      "source_urls": [
+        "https://www.nist.gov/news-events/events/2026/07/securing-ai-data-center-architecture-security-posture-and-emerging"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://www.itsecurityguru.org/2026/07/27/openai-hugging-face-incident-what-we-know/",
+        "https://www.keepit.com/blog/openai-hugging-face/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "source_urls": [
+        "https://www.stride.build/blog/network-egress-control-ai-agents"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+        "https://www.vulncheck.com/advisories/network-ai-through-missing-authorization-via-approvalinbox"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+      "source_urls": [
+        "https://zenity.io/company-overview/newsroom/company-news/zenity-labs-uncovers-agentforger-a-chatgpt-vulnerability",
+        "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery",
+        "https://labs.zenity.io/p/agentforger-part-2-the-autonomous-insider"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+        "https://github.com/googleapis/mcp-toolbox/pull/3324",
+        "https://github.com/googleapis/mcp-toolbox/releases/tag/v1.4.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+        "https://basefortify.eu/cve_reports/2026/07/cve-2026-15829.html",
+        "https://github.com/googleapis/mcp-toolbox/pull/3324"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-0770",
+        "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-092/",
+        "https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-actively-exploited-langflow-rce-flaw/amp/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+      "source_urls": [
+        "https://advisories.gitlab.com/npm/n8n/CVE-2026-65015/",
+        "https://www.tenable.com/cve/CVE-2026-65015",
+        "https://github.com/advisories/GHSA-x5vx-c2c8-m3w9"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://www.wired.com/story/security-news-this-week-the-openai-models-that-hacked-hugging-face-were-active-on-the-internet-for-days",
+        "https://www.itsecurityguru.org/2026/07/27/openai-hugging-face-incident-what-we-know/",
+        "https://www.keepit.com/blog/openai-hugging-face/",
+        "https://tech.yahoo.com/ai/chatgpt/articles/openai-hugging-face-breach-reignited-172842937.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "source_urls": [
+        "https://vulners.com/cve/CVE-2026-58413",
+        "https://vuldb.com/cve/CVE-2026-58413",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-58413",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf",
+        "https://github.com/Jovancoding/Network-AI/releases/tag/v5.12.2"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://www.wired.com/story/security-news-this-week-the-openai-models-that-hacked-hugging-face-were-active-on-the-internet-for-days",
+        "https://www.keepit.com/blog/openai-hugging-face/",
+        "https://essamamdani.com/blog/openai-hugging-face-security-incident-july-2026"
+      ]
+    }
+  ],
+  "upstream_routing_summary": {
+    "ai_dev_wiki": "Route general AI evaluation/governance workflow commentary upstream.",
+    "ai_wiki": "Route broad OpenAI, Hugging Face, Langflow, next-ai-draw-io, and industry-debate context upstream.",
+    "local": "Keep security-specific vulnerability, mitigation, containment, incident-response, and assurance-control notes."
+  },
+  "window": {
+    "date_policy": "Accepted visible publication or update dates from 2026-07-21 through 2026-07-27; excluded ambiguous, future, missing, and boundary-only July 20 dates.",
+    "end_date_inclusive": "2026-07-27",
+    "start_date_exclusive": "2026-07-20"
+  }
+}
