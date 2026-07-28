@@ -1,0 +1,285 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-07-27T19:32:42-04:00",
+  "cutoff_window": {
+    "timezone": "America/Toronto",
+    "start_inclusive": "2026-07-25T19:32:42-04:00",
+    "end_inclusive": "2026-07-27T19:32:42-04:00",
+    "rule": "Include only public items visibly published or updated within the last 2 days relative to run time; exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "federation_context": {
+    "local_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "rules_checked": [
+      "docs/wiki/federation.md",
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "local_scope": "AI-specific security facts, controls, incidents, vulnerabilities, assurance, governance, and operational implications.",
+    "upstream_scope": "Broad AI entities belong in ai-wiki; general AI-assisted development practices belong in ai-dev-wiki."
+  },
+  "qualifying_findings": [
+    {
+      "id": "2026-07-27-kimi-code-fetchurl-ssrf-cve-2026-17534",
+      "title": "Kimi Code FetchURL SSRF hardening bypass disclosed as CVE-2026-17534",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-17534",
+        "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%400.27.0",
+        "https://github.com/MoonshotAI/kimi-code/commit/31449728b72df94e22bcb2de350a1e7624895e30"
+      ],
+      "visible_dates": {
+        "published": "2026-07-27",
+        "last_modified": "2026-07-27",
+        "change_history": [
+          "2026-07-27T06:16:37Z new CVE received from JFrog",
+          "2026-07-27T08:16:43Z CISA-ADP SSVC data added"
+        ]
+      },
+      "summary": "NVD published CVE-2026-17534 for MoonshotAI Kimi Code before 0.27.0. The FetchURL tool relied on a static hostname and IP-literal denylist without DNS resolution or redirect re-validation, so prompt-influenced FetchURL calls could reach loopback or internal services. FetchURL was included in the default auto-approve tool set, so manual mode did not require interactive user confirmation.",
+      "evidence_classification": "vulnerability_database_record_with_vendor_patch_references",
+      "affected_boundary_or_version": "MoonshotAI Kimi Code @moonshot-ai/kimi-code versions before 0.27.0; affected files include local-fetch-url providers and default tool approval policy.",
+      "why_it_matters_for_ai_security": "This is a concrete agent-tool boundary failure: prompt injection can steer an auto-approved network fetch tool across an intended internal-network isolation boundary.",
+      "named_entities": [
+        "MoonshotAI",
+        "Kimi Code",
+        "FetchURL",
+        "JFrog",
+        "NVD",
+        "CISA-ADP",
+        "CVE-2026-17534",
+        "CWE-918"
+      ],
+      "upstream_routing": {
+        "local_security_note": "Keep the SSRF, auto-approval, prompt-influenced tool-call, and patch boundary in ai-security-wiki.",
+        "ai_wiki": "Kimi Code and MoonshotAI are broad AI/developer-tool entities if durable entity coverage is needed.",
+        "ai_dev_wiki": "General coding-agent tool approval practice and developer workflow implications belong upstream in ai-dev-wiki."
+      },
+      "confidence_notes": "High confidence: NVD record has an in-window publication date, CVE details, affected version range, CWE, CVSS vector from CNA, and vendor patch references.",
+      "follow_up_actions": [
+        "Track whether Kimi Code 0.27.0 or later appears in local dependency inventories before any ingest.",
+        "When ingesting, connect this finding to local agent-tool approval, SSRF, and internal-service isolation pages rather than creating a duplicate broad Kimi Code page."
+      ]
+    },
+    {
+      "id": "2026-07-27-open-secure-ai-alliance-launch",
+      "title": "NVIDIA and partners launch Open Secure AI Alliance for AI safety and security tooling",
+      "source_urls": [
+        "https://blogs.nvidia.com/blog/open-secure-ai-alliance/",
+        "https://www.crowdstrike.com/en-us/blog/crowdstrike-joins-the-open-secure-ai-alliance/",
+        "https://www.hpe.com/us/en/newsroom/blog-post/2026/07/hpe-joins-open-secure-ai-alliance-to-advance-open-cybersecurity-innovation.html"
+      ],
+      "visible_dates": {
+        "published": "2026-07-27",
+        "supporting_partner_posts": [
+          "CrowdStrike published 2026-07-27",
+          "HPE published 2026-07-27"
+        ]
+      },
+      "summary": "NVIDIA announced the Open Secure AI Alliance as an industry coalition to build and share open technologies, techniques, and tools for AI safety and cybersecurity. NVIDIA framed the coalition around open models, harnesses, guardrails, identity, permissions, logs, evaluation, and agent-stack controls, citing the Hugging Face incident as evidence that defenders need inspectable and locally runnable AI defensive systems.",
+      "evidence_classification": "official_vendor_and_partner_security_program_announcement",
+      "affected_boundary_or_version": "AI defensive tooling ecosystem; agent harnesses, open-weight defensive models, identity controls, safe model formats, supply-chain patches, multi-model scanning, and secure coding workflows.",
+      "why_it_matters_for_ai_security": "This is a governance and assurance change: major AI and security vendors are organizing open defensive infrastructure for AI agent stacks, including auditable harnesses and identity controls.",
+      "named_entities": [
+        "NVIDIA",
+        "Open Secure AI Alliance",
+        "Linux Foundation",
+        "OpenSSF",
+        "CrowdStrike",
+        "HPE",
+        "Hugging Face",
+        "Microsoft",
+        "MDASH",
+        "NOOA",
+        "Safetensors",
+        "SPIFFE",
+        "SPIRE"
+      ],
+      "upstream_routing": {
+        "local_security_note": "Keep security-specific implications for open defensive models, auditable agent harnesses, identity, and incident-response constraints in ai-security-wiki.",
+        "ai_wiki": "The coalition, NVIDIA, HPE, CrowdStrike, Hugging Face, Microsoft, Safetensors, and broad model/tool catalog details are upstream-owned AI ecosystem entities.",
+        "ai_dev_wiki": "General open-source development and secure coding workflow practices belong in ai-dev-wiki when not security-specific."
+      },
+      "confidence_notes": "High confidence: multiple official in-window posts describe the same coalition and security mission.",
+      "follow_up_actions": [
+        "Monitor whether the alliance publishes concrete tools, specs, repositories, or evaluation artifacts that should become durable local security pages.",
+        "During ingest, avoid duplicating broad company or product descriptions already owned by ai-wiki."
+      ]
+    },
+    {
+      "id": "2026-07-27-microsoft-project-perception-mai-cyber",
+      "title": "Microsoft introduces Project Perception and MAI-Cyber-1-Flash for agentic security workflows",
+      "source_urls": [
+        "https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/"
+      ],
+      "visible_dates": {
+        "published": "2026-07-27",
+        "public_preview_date": "2026-08-03"
+      },
+      "summary": "Microsoft announced Project Perception as an agentic security system using red-team, blue-team, and green-team agents over a new Cyber Stack. The first scenario brings MAI-Cyber-1-Flash into MDASH, a software vulnerability multi-model agent team; Microsoft says this configuration reaches 96% on CyberGym and nearly 50% cost savings versus the current MDASH configuration.",
+      "evidence_classification": "official_vendor_security_product_and_model_announcement",
+      "affected_boundary_or_version": "Microsoft Project Perception public preview planned for 2026-08-03; MAI-Cyber-1-Flash inside MDASH for software vulnerability management.",
+      "why_it_matters_for_ai_security": "This is a concrete change in AI-assisted assurance: a major security vendor is packaging specialized cyber models and coordinated agents for vulnerability discovery, triage, and remediation workflows.",
+      "named_entities": [
+        "Microsoft",
+        "Microsoft Security",
+        "Project Perception",
+        "MAI-Cyber-1-Flash",
+        "MDASH",
+        "CyberGym"
+      ],
+      "upstream_routing": {
+        "local_security_note": "Keep the security-agent architecture, vulnerability-management assurance claim, human-control boundary, and benchmark claim in ai-security-wiki.",
+        "ai_wiki": "Microsoft AI, MAI model-family background, and broad product/entity coverage are upstream-owned.",
+        "ai_dev_wiki": "General AI-assisted development workflow or secure SDLC usage patterns belong in ai-dev-wiki unless tied to security assurance controls."
+      },
+      "confidence_notes": "High confidence for announcement facts and dates; benchmark and cost claims are vendor-stated and should be treated as claims until independently evaluated.",
+      "follow_up_actions": [
+        "Check for the public preview or technical documentation after 2026-08-03.",
+        "If ingested, record benchmark and cost figures as Microsoft-stated claims, not independent assurance results."
+      ]
+    },
+    {
+      "id": "2026-07-27-eu-cyber-resilience-act-guidance",
+      "title": "European Commission publishes Cyber Resilience Act implementation guidance",
+      "source_urls": [
+        "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-new-guidance-support-businesses-implementation-cyber-resilience-act",
+        "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+        "https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation"
+      ],
+      "visible_dates": {
+        "published": "2026-07-27",
+        "last_update": "2026-07-27",
+        "related_deadlines": [
+          "2026-09-11 reporting obligations begin",
+          "2027-12-11 main Cyber Resilience Act obligations apply"
+        ]
+      },
+      "summary": "The European Commission published practical guidance for implementing the Cyber Resilience Act. The guidance clarifies product scope, substantial modification, support periods, reporting obligations, and risk assessment requirements. The Commission explicitly tied swift CRA implementation to recent frontier AI models with cybersecurity capabilities.",
+      "evidence_classification": "official_regulatory_guidance",
+      "affected_boundary_or_version": "Digital products placed on the EU market; CRA reporting obligations from 2026-09-11 and main obligations from 2027-12-11.",
+      "why_it_matters_for_ai_security": "AI systems with software, model, tool, runtime, or device surfaces may need lifecycle cybersecurity evidence, vulnerability handling, and reporting readiness under CRA-aligned governance.",
+      "named_entities": [
+        "European Commission",
+        "Cyber Resilience Act",
+        "AI Act",
+        "NIS2",
+        "DORA",
+        "Cyber Solidarity Act"
+      ],
+      "upstream_routing": {
+        "local_security_note": "Keep CRA risk assessment, vulnerability handling, reporting, lifecycle evidence, and frontier-AI cyber-capability implications in ai-security-wiki.",
+        "ai_wiki": "Broad EU policy and AI Act background belong upstream when not security-specific.",
+        "ai_dev_wiki": "General software-development implementation practices belong in ai-dev-wiki unless they define security evidence or release gates."
+      },
+      "confidence_notes": "High confidence: official Commission pages show in-window publication and last-update dates; legal applicability details should be verified against the downloaded guidance during ingest.",
+      "follow_up_actions": [
+        "Download and review the CRA guidance annex before durable synthesis.",
+        "Map relevant obligations to AI security release gates, audit evidence, vulnerability handling, and product lifecycle pages."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "OpenAI and Hugging Face model-evaluation security incident",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://huggingface.co/blog/security-incident-july-2026"
+      ],
+      "visible_dates": [
+        "OpenAI published 2026-07-21",
+        "Hugging Face published 2026-07-16"
+      ],
+      "reason": "Primary incident disclosures are outside the two-day cutoff, though later commentary remains relevant background."
+    },
+    {
+      "title": "PyPI rejects new files after 14 days",
+      "source_urls": [
+        "https://blog.pypi.org/posts/2026-07-22-releases-now-reject-new-files-after-14-days/"
+      ],
+      "visible_dates": [
+        "2026-07-22"
+      ],
+      "reason": "Concrete supply-chain control, but visible publication date is outside the two-day cutoff."
+    },
+    {
+      "title": "GitHub Dependabot default package cooldown",
+      "source_urls": [
+        "https://github.blog/security/supply-chain-security/the-case-for-a-cooldown-why-dependabot-now-waits-before-issuing-version-updates/",
+        "https://github.blog/changelog/2026-07-14-dependabot-version-updates-introduce-default-package-cooldown/"
+      ],
+      "visible_dates": [
+        "2026-07-23",
+        "2026-07-14"
+      ],
+      "reason": "Concrete supply-chain control, but visible publication dates are outside the two-day cutoff."
+    },
+    {
+      "title": "Prompt Sanitization: How to Protect Sensitive Data Before It Reaches an LLM",
+      "source_urls": [
+        "https://www.protecto.ai/blog/prompt-sanitization/"
+      ],
+      "visible_dates": [
+        "2026-07-27"
+      ],
+      "reason": "In-window practitioner guidance, but no distinct advisory, vulnerability, incident, regulatory change, or independently evidenced security delta was identified."
+    },
+    {
+      "title": "MCP Security Explained: Why AI Agents Need Zero Trust",
+      "source_urls": [
+        "https://accuknox.com/blog/mcp-security-explained"
+      ],
+      "visible_dates": [
+        "Edited 2026-07-26"
+      ],
+      "reason": "In-window vendor guidance with useful background controls, but the reviewed source did not add a new concrete advisory, patch, incident, or primary standard change."
+    },
+    {
+      "title": "A Complete Guide to Agent Security",
+      "source_urls": [
+        "https://trust3.ai/learn/agent-security/"
+      ],
+      "visible_dates": [
+        "2026-07-26"
+      ],
+      "reason": "In-window vendor guide, but treated as background because it does not disclose a new concrete security event or authoritative control change."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_topic": "Kimi Code",
+      "routing": "Broad developer-tool entity belongs in ai-wiki; local security record should focus on FetchURL SSRF, prompt-influenced tool execution, auto-approval, and internal-service boundary."
+    },
+    {
+      "entity_or_topic": "Open Secure AI Alliance",
+      "routing": "Broad coalition and participant catalog belong in ai-wiki; local security record should focus on open defensive models, auditable harnesses, identity, and incident-response constraints."
+    },
+    {
+      "entity_or_topic": "Project Perception / MAI-Cyber-1-Flash / MDASH",
+      "routing": "Broad Microsoft AI model/product coverage belongs in ai-wiki; security assurance architecture, benchmark claim, and agentic vulnerability-management workflow belong locally."
+    },
+    {
+      "entity_or_topic": "Cyber Resilience Act guidance",
+      "routing": "Broad EU policy background can route to ai-wiki; security lifecycle evidence, vulnerability reporting, and release-gate implications belong locally."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed"
+  },
+  "blockers": [],
+  "collection_notes": [
+    "Only public web sources were used.",
+    "No private, proprietary, sensitive, PII, or company-internal local content was sent to external services.",
+    "docs/wiki and raw/processed were intentionally left unchanged."
+  ]
+}

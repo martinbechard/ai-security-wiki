@@ -14,6 +14,8 @@ This page owns the data-exposure and weak-authentication lens. The [July 23 leaf
 
 The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) adds [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-50756) evidence that CISA-ADP records exploitation none and automatable yes for the provider disclosure. Keep the exploit status explicit instead of inferring a current incident.
 
+The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json) adds [Tenable](https://www.tenable.com/cve/CVE-2026-50756) as secondary corroboration for the MITRE and NVD record. Tenable confirms the sensitive-information exposure framing for next-ai-draw-io 0.4.13 and does not close the fixed-release question.
+
 ## Security Impact
 
 - Threat: weak authentication and provider-spoofed SSRF expose AI application prompts, user messages, and diagram content.
@@ -28,8 +30,10 @@ The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-secu
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
 - [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 - [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
+- [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json)
 - NVD: https://nvd.nist.gov/vuln/detail/CVE-2026-50756
 - GitHub issue 749: https://github.com/DayuanJiang/next-ai-draw-io/issues/749
+- Tenable CVE mirror: https://www.tenable.com/cve/CVE-2026-50756
 
 ## Related Code
 
@@ -57,4 +61,4 @@ The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-secu
 
 ## Maintenance Notes
 
-- Added from the [July 22, 2026 raw collector artifact](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json) and linked [GitHub issue 749](https://github.com/DayuanJiang/next-ai-draw-io/issues/749); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) and [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) with [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-50756) receipt, exploitation, and automation framing.
+- Added from the [July 22, 2026 raw collector artifact](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json) and linked [GitHub issue 749](https://github.com/DayuanJiang/next-ai-draw-io/issues/749); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json), and [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json) with NVD receipt, exploitation, automation, and secondary Tenable corroboration.

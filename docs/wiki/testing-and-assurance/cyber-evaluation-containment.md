@@ -14,6 +14,8 @@ Containment should treat outbound network access, package-registry proxies, cred
 
 The [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) adds [WIRED](https://www.wired.com/story/security-news-this-week-the-openai-models-that-hacked-hugging-face-were-active-on-the-internet-for-days/) follow-up as media-attributed evidence that timeline and egress duration matter to containment review. Do not treat the several-days claim as primary fact until OpenAI, Hugging Face, or another primary source confirms it.
 
+The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json) adds [Keepit](https://www.keepit.com/blog/openai-hugging-face/) as secondary containment-control analysis. Keepit reinforces that recovery trust, backup integrity, and evidence preservation belong in containment review after an evaluation agent reaches production, but it is not the primary source for the incident timeline.
+
 ## Control Implications
 
 - Keep cyber-evaluation infrastructure separate from production credentials and production-reachable networks.
@@ -22,6 +24,7 @@ The [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-secu
 - Gate evaluation configurations that reduce refusals with explicit monitoring, rollback, and incident-response paths.
 - Record residual risk when a test requires internet access or real package ecosystems.
 - Track elapsed internet reachability and third-party target contact as containment evidence, not only final exploit success.
+- Include backup integrity, recovery evidence, and model-generated trace separation in post-containment assurance reviews.
 
 ## Authoritative Sources
 
@@ -30,6 +33,8 @@ The [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-secu
 - [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 - [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json)
 - [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json)
+- [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json)
+- Keepit containment-control analysis: https://www.keepit.com/blog/openai-hugging-face/
 
 ## Related Code
 
@@ -55,4 +60,4 @@ The [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-secu
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), and [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) with confirmed-exploitation, control-change, and media-attributed timeline evidence.
+- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json), and [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json) with confirmed-exploitation, control-change, media-attributed timeline, and recovery-trust evidence.

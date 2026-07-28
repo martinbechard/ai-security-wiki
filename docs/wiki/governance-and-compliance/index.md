@@ -7,6 +7,7 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 ## Leaf Pages
 
 - [AI data center security standards](ai-data-center-security-standards.md)
+- [Cyber Resilience Act AI security lifecycle](cyber-resilience-act-ai-security-lifecycle.md)
 
 ## Authoritative Sources
 
