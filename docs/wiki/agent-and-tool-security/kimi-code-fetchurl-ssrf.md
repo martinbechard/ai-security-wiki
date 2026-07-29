@@ -10,6 +10,8 @@ description: "Security analysis for CVE-2026-17534, where a default-approved age
 
 The [July 27 topic news collector source](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json) records [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-17534) publication of CVE-2026-17534 for MoonshotAI [Kimi Code](../../../upstream-ai-wiki/developer-tools/kimi-code.md) versions before 0.27.0. The affected `FetchURL` tool used a static hostname and IP-literal denylist without resolving DNS or rechecking redirects, so prompt-influenced fetches could reach loopback or internal services despite the intended network boundary.
 
+The [July 28 leaf update watch source](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json) confirms the same NVD boundary and preserves the follow-up source set for the [0.27.0 release](https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%400.27.0) and [patch commit](https://github.com/MoonshotAI/kimi-code/commit/31449728b72df94e22bcb2de350a1e7624895e30). It does not add a broader local product-update claim.
+
 This page owns the SSRF, prompt-influenced tool-call, and default approval boundary. Broad [MoonshotAI](../../../upstream-ai-wiki/companies/moonshot-ai.md) and [Kimi Code](../../../upstream-ai-wiki/developer-tools/kimi-code.md) product context belongs upstream, while general [human-agent approval boundary](../../../upstream-ai-dev-wiki/adoption-and-operating-model/human-agent-approval-boundaries.md) practice belongs in the upstream AI development wiki.
 
 ## Security Impact
@@ -33,6 +35,7 @@ This page owns the SSRF, prompt-influenced tool-call, and default approval bound
 ## Authoritative Sources
 
 - [July 27 topic news collector source](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json)
+- [July 28 leaf update watch source](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json)
 - NVD: https://nvd.nist.gov/vuln/detail/CVE-2026-17534
 - Kimi Code 0.27.0 release: https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%400.27.0
 - Vendor patch commit: https://github.com/MoonshotAI/kimi-code/commit/31449728b72df94e22bcb2de350a1e7624895e30
@@ -63,4 +66,4 @@ This page owns the SSRF, prompt-influenced tool-call, and default approval bound
 
 ## Maintenance Notes
 
-- Added from the [July 27, 2026 topic collector artifact](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json); keep future updates focused on SSRF mechanics, approval boundaries, and fixed-version evidence.
+- Added from the [July 27, 2026 topic collector artifact](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json); enriched from the [July 28 leaf watcher](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json). Keep future updates focused on SSRF mechanics, approval boundaries, and fixed-version evidence.

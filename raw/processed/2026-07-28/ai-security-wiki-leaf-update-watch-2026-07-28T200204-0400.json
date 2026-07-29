@@ -1,0 +1,340 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "docs_wiki_updated": false,
+  "excluded_candidates": [
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/public-cyber-capability-assessments.md",
+      "reason": "Already captured in the durable leaf from July 24/26 evidence; no newer visible same-leaf update found.",
+      "source_url": "https://www.aisi.gov.uk/blog/preliminary-assessment-of-kimi-k3s-cyber-capabilities"
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+      "reason": "Already captured July 24 exploit-development-acceleration evidence; no newer same-leaf source found.",
+      "source_url": "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html"
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-hosted-artifact-malware-delivery.md",
+      "reason": "Duplicate/secondary FakeAgent coverage with no new local security delta beyond Huntress and Help Net Security.",
+      "source_url": "https://www.techradar.com/pro/security/hackers-hid-dangerous-malware-on-a-page-hidden-in-anthopics-claude-ai-domain"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+      "reason": "July 22 Cursor redirect fix is adjacent Google MCP client compatibility, not a new API Hub MCP security-control delta for this leaf.",
+      "source_url": "https://docs.cloud.google.com/mcp/release-notes"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+      "reason": "No newer in-window MaxKB CVE update beyond previously captured fixed-version evidence.",
+      "source_url": "https://www.sentinelone.com/vulnerability-database/cve-2026-54149/"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "reason": "NVD publication/last-modified date remains 2026-07-21; no fixed release or newer authoritative update found.",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65056"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "reason": "No newer visible update beyond previously captured ApprovalInbox authorization-bypass evidence.",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64622"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "reason": "NVD/CISA-ADP update was July 22 and already captured; no first-fixed package version found.",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50757"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+      "reason": "Same vendor capability family and no new DLP-specific local delta beyond existing Darktrace source.",
+      "source_url": "https://www.darktrace.com/fr/blog/darktrace-email-expands-behavioral-defense-across-email-and-collaboration-workflows"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+      "reason": "Last updated July 23 and already captured in the telemetry-redaction leaf; no newer source-specific change found.",
+      "source_url": "https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy"
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+      "reason": "Excluded as unverified/non-authoritative and not a same-leaf public cyber-capability or exploit-acceleration update.",
+      "source_url": "https://kimi-k3-notice.ussyco.de/"
+    }
+  ],
+  "federation_notes": [
+    "Broad AI entities, model/product catalog facts, and general AI-development practices were routed upstream in notes only; local records keep security-specific threat, control, mitigation, and evidence boundaries."
+  ],
+  "follow_up_notes": [
+    "Ingest should prioritize the five qualifying updates, preserving evidence classifications and duplicate/secondary-source caveats.",
+    "Do not move this raw watcher artifact to raw/processed until normal ingest synthesis and verifier gates complete."
+  ],
+  "qualifying_update_count": 5,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "agent tool network egress",
+        "default-approved fetch tool",
+        "internal service SSRF boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest as a new local security leaf update if not already fully covered by the July 27 processed source.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+      "named_entities": [
+        "MoonshotAI",
+        "Kimi Code",
+        "FetchURL",
+        "CVE-2026-17534",
+        "JFrog"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-17534",
+      "summary": "NVD published CVE-2026-17534 for Kimi Code before 0.27.0, describing FetchURL SSRF through DNS/redirect bypass of a static denylist and default auto-approval exposure.",
+      "upstream_routing": "Route broad Kimi Code product metadata to ai-wiki; keep SSRF mechanics, affected tool boundary, and patch note locally.",
+      "visible_date": "2026-07-27"
+    },
+    {
+      "affected_boundaries": [
+        "AI software product lifecycle governance",
+        "vulnerability reporting readiness",
+        "security-by-design compliance evidence"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Use official guidance/library page and implementation fact page as authoritative sources.",
+      "leaf_id": "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+      "named_entities": [
+        "European Commission",
+        "Cyber Resilience Act",
+        "CRA"
+      ],
+      "source_url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+      "summary": "European Commission published non-binding CRA implementation guidance and confirmed reporting and full-application milestone dates on the implementation fact page.",
+      "upstream_routing": "Keep legal/compliance lifecycle implications for AI security products locally; route broad EU digital-policy background upstream only if needed.",
+      "visible_date": "2026-07-27"
+    },
+    {
+      "affected_boundaries": [
+        "agentic vulnerability discovery",
+        "multi-model security triage",
+        "human-controlled remediation workflows"
+      ],
+      "evidence_classification": "demonstrated_research",
+      "follow_up_note": "Treat benchmark and cost claims as Microsoft-stated until independently reproduced.",
+      "leaf_id": "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md",
+      "named_entities": [
+        "Microsoft",
+        "Project Perception",
+        "MAI-Cyber-1-Flash",
+        "MDASH",
+        "CyberGym"
+      ],
+      "source_url": "https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/",
+      "summary": "Microsoft announced Project Perception and MAI-Cyber-1-Flash for agentic security workflows, including vulnerability-management claims for MDASH and a public preview date of 2026-08-03.",
+      "upstream_routing": "Route broad Microsoft product/model catalog facts to ai-wiki; keep vulnerability-management assurance caveats and security workflow claims locally.",
+      "visible_date": "2026-07-27"
+    },
+    {
+      "affected_boundaries": [
+        "open defensive AI tooling",
+        "agent harness auditability",
+        "AI security identity and isolation controls",
+        "vulnerability disclosure coordination"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Corroborate concrete artifacts as they become available; current evidence is announcement-level.",
+      "leaf_id": "docs/wiki/testing-and-assurance/open-defensive-ai-security-infrastructure.md",
+      "named_entities": [
+        "NVIDIA",
+        "Open Secure AI Alliance",
+        "Linux Foundation",
+        "OpenSSF",
+        "NOOA",
+        "SPIFFE",
+        "SPIRE",
+        "Safetensors",
+        "MDASH"
+      ],
+      "source_url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance/",
+      "summary": "NVIDIA and founding partners launched the Open Secure AI Alliance to develop open security tooling for AI safety, agents, identity, harnesses, vulnerability disclosure, and defensive evaluation.",
+      "upstream_routing": "Route broad alliance/member catalog details upstream to ai-wiki; keep open defensive security-infrastructure implications and local evidence caveats here.",
+      "visible_date": "2026-07-27"
+    },
+    {
+      "affected_boundaries": [
+        "unattended agent execution",
+        "post-exploitation automation",
+        "critical-government target operations"
+      ],
+      "evidence_classification": "unverified_claim",
+      "follow_up_note": "Do not treat this as official victim confirmation; preserve Hunt.io as primary evidence and Dark Reading as secondary framing.",
+      "leaf_id": "docs/wiki/threats-and-attacks/unattended-ai-agent-attack-automation.md",
+      "named_entities": [
+        "Dark Reading",
+        "Hunt.io",
+        "Hermes",
+        "Thailand Ministry of Finance",
+        "Hades"
+      ],
+      "source_url": "https://www.darkreading.com/cyberattacks-data-breaches/ai-agent-espionage-attack-thai-ministry-finance",
+      "summary": "Dark Reading published secondary coverage of the Hunt.io Hermes AI agent operation against Thailand Ministry of Finance, framing it as cyber-espionage while relying on Hunt.io evidence.",
+      "upstream_routing": "Keep the local threat-pattern note; route general Hermes or Nous Research entity coverage upstream if needed.",
+      "visible_date": "2026-07-28"
+    }
+  ],
+  "raw_processed_updated": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-07-29T00:02:04Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+    "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+    "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md",
+    "docs/wiki/testing-and-assurance/open-defensive-ai-security-infrastructure.md",
+    "docs/wiki/testing-and-assurance/public-cyber-capability-assessments.md",
+    "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+    "docs/wiki/threats-and-attacks/ai-hosted-artifact-malware-delivery.md",
+    "docs/wiki/threats-and-attacks/unattended-ai-agent-attack-automation.md",
+    "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+    "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+    "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+    "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+    "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+    "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+    "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md"
+  ],
+  "selection_policy": "New or unchecked leaves first, then oldest last_checked_at, tie-broken by stable relative path.",
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-17534",
+        "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%400.27.0",
+        "https://github.com/MoonshotAI/kimi-code/commit/31449728b72df94e22bcb2de350a1e7624895e30"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+      "source_urls": [
+        "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+        "https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md",
+      "source_urls": [
+        "https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/open-defensive-ai-security-infrastructure.md",
+      "source_urls": [
+        "https://blogs.nvidia.com/blog/open-secure-ai-alliance/",
+        "https://www.crowdstrike.com/en-us/blog/crowdstrike-joins-the-open-secure-ai-alliance/",
+        "https://www.hpe.com/us/en/newsroom/blog-post/2026/07/hpe-joins-open-secure-ai-alliance-to-advance-open-cybersecurity-innovation.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/public-cyber-capability-assessments.md",
+      "source_urls": [
+        "https://www.aisi.gov.uk/blog/preliminary-assessment-of-kimi-k3s-cyber-capabilities",
+        "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+      "source_urls": [
+        "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
+        "https://www.eweek.com/news/moonshot-ai-kimi-k3-redis-rce-exploits-apac-china/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-hosted-artifact-malware-delivery.md",
+      "source_urls": [
+        "https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat",
+        "https://www.helpnetsecurity.com/2026/07/23/anthropic-claude-artifacts-download-malware/",
+        "https://www.techradar.com/pro/security/hackers-hid-dangerous-malware-on-a-page-hidden-in-anthopics-claude-ai-domain"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/unattended-ai-agent-attack-automation.md",
+      "source_urls": [
+        "https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent",
+        "https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/amp/",
+        "https://therecord.media/thailand-hackers-ai-finance-ministry",
+        "https://www.darkreading.com/cyberattacks-data-breaches/ai-agent-espionage-attack-thai-ministry-finance"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+      "source_urls": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/release-notes",
+        "https://docs.cloud.google.com/mcp/release-notes",
+        "https://docs.cloud.google.com/model-armor/release-notes"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+      "source_urls": [
+        "https://www.sentinelone.com/vulnerability-database/cve-2026-54149/",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-4pr3-9xhm-98x5",
+        "https://security-tracker.debian.org/tracker/CVE-2026-54149"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-65056",
+        "https://www.vulncheck.com/advisories/mcp-webresearch-server-side-request-forgery-in-visit-page-due-to-missing-internal-ip-filtering",
+        "https://www.npmjs.com/package/@mzxrai/mcp-webresearch"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-m4jg-6w3q-gm86",
+        "https://www.npmjs.com/package/network-ai"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50757",
+        "https://github.com/DayuanJiang/next-ai-draw-io/issues/754",
+        "https://www.tenable.com/cve/CVE-2026-50757",
+        "https://www.npmjs.com/package/@next-ai-drawio/mcp-server"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+      "source_urls": [
+        "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment",
+        "https://www.darktrace.com/fr/blog/darktrace-email-expands-behavioral-defense-across-email-and-collaboration-workflows",
+        "https://www.darktrace.com/products/email/data-loss-prevention"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+      "source_urls": [
+        "https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy",
+        "https://www.dash0.com/newsletter/code-red-newsletter-30"
+      ]
+    }
+  ],
+  "strict_window": {
+    "current_date": "2026-07-28",
+    "excluded_dates": [
+      "missing visible dates",
+      "future dates",
+      "ambiguous dates",
+      "boundary-only dates without clear publication/update inside the run window"
+    ],
+    "included_visible_dates": "2026-07-22 through 2026-07-28"
+  }
+}

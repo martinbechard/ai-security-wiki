@@ -20,6 +20,8 @@ The source-named control surfaces include:
 - Evaluation artifacts.
 - Agent-stack controls.
 
+The [July 28 leaf update watch source](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json) confirms the same NVIDIA, CrowdStrike, and HPE source set. It keeps the local confidence boundary unchanged: concrete artifacts still need inspection before the alliance is treated as operational assurance evidence.
+
 This page owns the local security-assurance implication: open defensive infrastructure can improve inspection, local operation, evidence generation, and incident response only when artifacts have clear provenance, versioning, identity boundaries, and evaluation evidence. Broad [NVIDIA AI](../../../upstream-ai-wiki/companies/nvidia-ai.md), partner, model, safe model format, and coalition catalog context belongs upstream in the AI wiki; the raw source's Safetensors mention remains source evidence until a durable upstream format leaf exists.
 
 ## Security Impact
@@ -34,6 +36,7 @@ This page owns the local security-assurance implication: open defensive infrastr
 ## Authoritative Sources
 
 - [July 27 topic news collector source](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json)
+- [July 28 leaf update watch source](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json)
 - NVIDIA announcement: https://blogs.nvidia.com/blog/open-secure-ai-alliance/
 - CrowdStrike partner post: https://www.crowdstrike.com/en-us/blog/crowdstrike-joins-the-open-secure-ai-alliance/
 - HPE partner post: https://www.hpe.com/us/en/newsroom/blog-post/2026/07/hpe-joins-open-secure-ai-alliance-to-advance-open-cybersecurity-innovation.html
@@ -66,4 +69,4 @@ This page owns the local security-assurance implication: open defensive infrastr
 
 ## Maintenance Notes
 
-- Added from the [July 27, 2026 topic collector artifact](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json); avoid duplicating broad partner catalog coverage owned upstream.
+- Added from the [July 27, 2026 topic collector artifact](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json); enriched from the [July 28 leaf watcher](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json). Avoid duplicating broad partner catalog coverage owned upstream.

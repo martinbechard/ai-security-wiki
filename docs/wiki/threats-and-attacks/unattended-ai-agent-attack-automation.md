@@ -12,6 +12,8 @@ Unattended AI agent attack automation is the use of an agent runtime to execute 
 
 Broad Hermes tool background, general agent operating practice, and [Autonomous AI Agent Threat Activity](../../../upstream-ai-wiki/techniques/autonomous-ai-agent-threat-activity.md) tracking route upstream. The local security issue is incident evidence and control failure: approval mode, execution scope, tool logs, and staging artifacts become part of the intrusion timeline when an agent is used as delegated post-exploitation automation.
 
+The [July 28 leaf update watch source](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json) adds [Dark Reading](https://www.darkreading.com/cyberattacks-data-breaches/ai-agent-espionage-attack-thai-ministry-finance) as secondary coverage that frames the same Hunt.io Hermes operation as cyber espionage. Preserve that as secondary framing only; it does not replace Hunt.io as the primary evidence source or confirm victim-side impact.
+
 ## Security Impact
 
 - Threat: a human attacker delegates reconnaissance, command execution, or post-exploitation steps to an unattended AI agent.
@@ -24,9 +26,11 @@ Broad Hermes tool background, general agent operating practice, and [Autonomous 
 ## Authoritative Sources
 
 - [July 24 topic news collector source](../../../raw/processed/2026-07-24/ai-security-wiki-topic-news-collector-2026-07-24T193213-0400.json)
+- [July 28 leaf update watch source](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json)
 - Hunt.io research: https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent
 - BleepingComputer coverage: https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/
 - The Hacker News coverage: https://thehackernews.com/2026/07/hacker-runs-hermes-ai-agent-unattended.html
+- Dark Reading secondary coverage: https://www.darkreading.com/cyberattacks-data-breaches/ai-agent-espionage-attack-thai-ministry-finance
 
 ## Related Code
 
@@ -54,4 +58,4 @@ Broad Hermes tool background, general agent operating practice, and [Autonomous 
 
 ## Maintenance Notes
 
-- Added from the [July 24, 2026 topic collector](../../../raw/processed/2026-07-24/ai-security-wiki-topic-news-collector-2026-07-24T193213-0400.json); preserve the distinction between observed exposed-infrastructure evidence and inferred attacker intent.
+- Added from the [July 24, 2026 topic collector](../../../raw/processed/2026-07-24/ai-security-wiki-topic-news-collector-2026-07-24T193213-0400.json); enriched from the [July 28 leaf watcher](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json). Preserve the distinction between observed exposed-infrastructure evidence and inferred attacker intent.

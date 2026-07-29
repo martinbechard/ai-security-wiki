@@ -20,6 +20,8 @@ The Commission source says the guidance clarifies:
 
 The Commission fact page records [reporting obligations beginning 2026-09-11 and main CRA obligations applying 2027-12-11](https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation).
 
+The [July 28 leaf update watch source](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json) confirms the same official guidance and fact-page source set. It reinforces the reporting-readiness and full-application milestone dates without changing the local applicability caveat.
+
 This page owns the AI security lifecycle lens. AI products may need security lifecycle evidence for:
 
 - Software surfaces.
@@ -48,6 +50,7 @@ Broad EU policy, AI Act, and legislative background belongs upstream when it is 
 ## Authoritative Sources
 
 - [July 27 topic news collector source](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json)
+- [July 28 leaf update watch source](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json)
 - European Commission news: https://digital-strategy.ec.europa.eu/en/news/commission-publishes-new-guidance-support-businesses-implementation-cyber-resilience-act
 - European Commission library page: https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation
 - European Commission implementation fact page: https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation
@@ -79,4 +82,4 @@ Broad EU policy, AI Act, and legislative background belongs upstream when it is 
 
 ## Maintenance Notes
 
-- Added from the [July 27, 2026 topic collector artifact](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json); verify legal applicability against official guidance before converting this lens into mandatory local release gates.
+- Added from the [July 27, 2026 topic collector artifact](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json); enriched from the [July 28 leaf watcher](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json). Verify legal applicability against official guidance before converting this lens into mandatory local release gates.

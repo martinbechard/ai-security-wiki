@@ -11,6 +11,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Network-AI AgentRuntime sandbox path traversal](network-ai-agentruntime-sandbox-path-traversal.md)
 - [Network-AI backup manifest recursive delete](network-ai-backup-manifest-recursive-delete.md)
 - [AI agent sandbox escape host file access](ai-agent-sandbox-escape-host-file-access.md)
+- [MCP SDK transport header handling](mcp-sdk-transport-header-handling.md)
 
 ## Authoritative Sources
 

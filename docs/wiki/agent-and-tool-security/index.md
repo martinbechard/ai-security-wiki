@@ -19,6 +19,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [n8n AI Agent Project Viewer privilege escalation](n8n-ai-agent-project-viewer-privilege-escalation.md)
 - [Google API hub MCP security controls](google-api-hub-mcp-security-controls.md)
 - [Kimi Code FetchURL SSRF](kimi-code-fetchurl-ssrf.md)
+- [Cloud observability MCP response controls](cloud-observability-mcp-response-controls.md)
 
 ## Authoritative Sources
 

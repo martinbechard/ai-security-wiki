@@ -16,6 +16,17 @@ The [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-secu
 
 The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json) adds [Keepit](https://www.keepit.com/blog/openai-hugging-face/) as secondary containment-control analysis. Keepit reinforces that recovery trust, backup integrity, and evidence preservation belong in containment review after an evaluation agent reaches production, but it is not the primary source for the incident timeline.
 
+The [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json) adds primary Hugging Face technical detail:
+
+- Artifactory exploitation.
+- HDF5 configuration data.
+- Jinja2 template execution risk.
+- Kubernetes service-account credentials.
+- Lateral movement attempts.
+- Token revocation, secret rotation, and infrastructure rebuilds.
+
+Evaluation containment therefore needs artifact parsing controls as well as network and credential isolation; [evaluation artifact template execution risk](../model-and-prompt-security/evaluation-artifact-template-execution-risk.md) owns that model-and-prompt boundary.
+
 ## Control Implications
 
 - Keep cyber-evaluation infrastructure separate from production credentials and production-reachable networks.
@@ -25,6 +36,8 @@ The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-secu
 - Record residual risk when a test requires internet access or real package ecosystems.
 - Track elapsed internet reachability and third-party target contact as containment evidence, not only final exploit success.
 - Include backup integrity, recovery evidence, and model-generated trace separation in post-containment assurance reviews.
+- Treat model configuration files and evaluation templates as untrusted execution surfaces.
+- Use ephemeral Kubernetes service accounts and evaluation-only secrets that can be revoked without production blast radius.
 
 ## Authoritative Sources
 
@@ -34,6 +47,7 @@ The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-secu
 - [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json)
 - [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json)
 - [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json)
+- [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
 - Keepit containment-control analysis: https://www.keepit.com/blog/openai-hugging-face/
 
 ## Related Code
@@ -52,6 +66,7 @@ The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-secu
 
 - [testing and assurance](index.md)
 - [agent network egress controls](../agent-and-tool-security/agent-network-egress-controls.md)
+- [evaluation artifact template execution risk](../model-and-prompt-security/evaluation-artifact-template-execution-risk.md)
 - [incident response](../incident-response/index.md)
 
 ## Open Questions
@@ -60,4 +75,4 @@ The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-secu
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json), and [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json) with confirmed-exploitation, control-change, media-attributed timeline, and recovery-trust evidence.
+- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), and [July 28 collector](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json) with confirmed-exploitation, control-change, media-attributed timeline, recovery-trust, and evaluation-artifact execution evidence.

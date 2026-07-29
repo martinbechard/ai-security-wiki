@@ -1,0 +1,460 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-07-28T19:32:13-04:00",
+  "cutoff_window": {
+    "timezone": "America/Toronto",
+    "start_exclusive": "2026-07-26T19:32:13-04:00",
+    "end_inclusive": "2026-07-28T19:32:13-04:00",
+    "date_policy": "Include only items visibly published or updated within the last 2 days relative to run time; exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "federation_boundary": {
+    "local_owner": "ai-security-wiki owns the security-specific implication, affected boundary, mitigation, evidence, and operational lesson.",
+    "upstream_ai_wiki": "Broad AI entities, providers, products, model families, frameworks, MCP servers, and general product updates.",
+    "upstream_ai_dev_wiki": "General AI-assisted development practices, coding-agent workflows, verification patterns, adoption practices, and development governance."
+  },
+  "qualifying_findings": [
+    {
+      "id": "2026-07-28-openai-hugging-face-eval-incident-update",
+      "title": "OpenAI updated its public Hugging Face model-evaluation incident report with exploitation scope and hardening details",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://www.axios.com/2026/07/28/openai-hugging-face-modal-labs-hack"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+          "date": "2026-07-28",
+          "date_type": "visible updated date"
+        },
+        {
+          "url": "https://www.axios.com/2026/07/28/openai-hugging-face-modal-labs-hack",
+          "date": "2026-07-28",
+          "date_type": "visible publication date"
+        }
+      ],
+      "summary": "OpenAI's July 28 update says attackers exploited a Hugging Face Artifactory zero-day to run code during a third-party evaluation, generated unusual token volume, created nearly 17,600 actions, and accessed four OpenAI accounts. OpenAI says exposed data included public model evaluation artifacts and some credentials, while customer API keys, ChatGPT data, production services, model weights, and source code were not impacted. The update names mitigations including identity-token revocation, credential rotation, token control review, audit-log review, and additional monitoring.",
+      "evidence_classification": "primary incident update plus reputable secondary report",
+      "affected_boundary_or_version": "Third-party Hugging Face model-evaluation environment; OpenAI evaluation artifacts and limited account credentials; Modal Labs also reported exposure per Axios.",
+      "why_it_matters_for_ai_security": "AI model evaluation pipelines are supply-chain and data-exposure boundaries; third-party sandbox escape, credential exposure, and artifact access need explicit isolation, token minimization, and incident evidence gates.",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "Modal Labs",
+        "Artifactory",
+        "model evaluations",
+        "credentials",
+        "tokens"
+      ],
+      "upstream_routing": [
+        {
+          "entity": "OpenAI",
+          "owner": "ai-wiki",
+          "note": "Provider/entity context belongs upstream; keep incident and mitigation lens locally."
+        },
+        {
+          "entity": "Hugging Face",
+          "owner": "ai-wiki",
+          "note": "Platform/entity context belongs upstream; keep third-party evaluation supply-chain incident locally."
+        }
+      ],
+      "confidence_notes": "High confidence for OpenAI facts from primary update; Modal Labs exposure is carried as secondary-report context only.",
+      "follow_up_actions": [
+        "In ingest, reconcile with existing incident-response/openai-hugging-face-cyber-evaluation-incident.md and update only if the July 28 delta is not already captured.",
+        "Watch for Hugging Face or Modal postmortem updates before treating secondary-reported scope as final."
+      ]
+    },
+    {
+      "id": "2026-07-27-hugging-face-zero-day-technical-report",
+      "title": "Hugging Face published a technical timeline for the cyber-evaluation environment compromise",
+      "source_urls": [
+        "https://huggingface.co/blog/incident-report-evals"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://huggingface.co/blog/incident-report-evals",
+          "date": "2026-07-27",
+          "date_type": "visible publication date"
+        }
+      ],
+      "summary": "Hugging Face's technical report says the incident chain began with an Artifactory zero-day that gave unauthorized access to an environment used for partner evaluation workloads. The report describes access to HDF5 model-configuration data, Jinja2 template execution risk, Kubernetes service-account credential exposure, lateral movement attempts, and cleanup actions such as revoking tokens, rotating secrets, and rebuilding infrastructure.",
+      "evidence_classification": "primary technical incident report",
+      "affected_boundary_or_version": "Hugging Face evaluation infrastructure and partner cyber-evaluation workloads; HDF5/Jinja2 evaluation artifacts and Kubernetes credentials are named affected boundaries.",
+      "why_it_matters_for_ai_security": "The report gives reproducible threat-model detail for evaluation sandboxes: model artifacts and templates can become execution surfaces, and evaluation infrastructure needs secret isolation, ephemeral credentials, and strong workload containment.",
+      "named_entities": [
+        "Hugging Face",
+        "Artifactory",
+        "HDF5",
+        "Jinja2",
+        "Kubernetes",
+        "OpenAI",
+        "cyber evaluations"
+      ],
+      "upstream_routing": [
+        {
+          "entity": "Hugging Face",
+          "owner": "ai-wiki",
+          "note": "Broad platform page belongs upstream; local page should keep only evaluation-infrastructure security lessons."
+        },
+        {
+          "entity": "Jinja2",
+          "owner": "ai-wiki",
+          "note": "General template-engine entity is upstream; local security lens is prompt/model-artifact execution risk."
+        }
+      ],
+      "confidence_notes": "High confidence; primary source supplies publication date and concrete incident facts.",
+      "follow_up_actions": [
+        "During ingest, cross-link supply-chain, testing-and-assurance, and incident-response lenses if they already exist.",
+        "Check whether existing local incident page separates OpenAI-scope facts from Hugging Face infrastructure facts."
+      ]
+    },
+    {
+      "id": "2026-07-28-google-cloud-monitoring-mcp-model-armor",
+      "title": "Google Cloud Monitoring MCP documentation was updated with Model Armor checks for AI-generated insights",
+      "source_urls": [
+        "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+          "date": "2026-07-28",
+          "date_type": "visible last-updated date"
+        }
+      ],
+      "summary": "The Cloud Monitoring MCP documentation says natural-language responses are checked with Model Armor when the MCP server is enabled, and names filter categories including prompt injection, malicious URL, sensitive data, sexually explicit, dangerous content, harassment, hate speech, and Cloud Logging IAM-aware response controls.",
+      "evidence_classification": "official product security documentation update",
+      "affected_boundary_or_version": "Google Cloud Monitoring MCP server responses and Cloud Logging queries; Model Armor and IAM-aware response controls.",
+      "why_it_matters_for_ai_security": "Observability agents can expose sensitive logs or act on untrusted natural-language context; this page documents a concrete runtime filtering and IAM-control boundary for AI-generated operational insights.",
+      "named_entities": [
+        "Google Cloud",
+        "Cloud Monitoring",
+        "Cloud Logging",
+        "MCP",
+        "Model Armor",
+        "IAM"
+      ],
+      "upstream_routing": [
+        {
+          "entity": "Google Cloud",
+          "owner": "ai-wiki",
+          "note": "Provider/product catalog belongs upstream; local capture should focus on MCP response filtering and IAM boundary."
+        },
+        {
+          "entity": "Model Armor",
+          "owner": "ai-wiki",
+          "note": "Product page belongs upstream; AI-security-wiki owns its security-control implications."
+        }
+      ],
+      "confidence_notes": "High confidence for the visible last-updated date and concrete control statements on the official documentation page.",
+      "follow_up_actions": [
+        "Map to agent-and-tool-security and data-and-privacy leaves if not already represented.",
+        "Check whether Cloud Logging IAM-aware response controls should update identity-and-access coverage."
+      ]
+    },
+    {
+      "id": "2026-07-27-google-cloud-mcp-iam-controls",
+      "title": "Google Cloud MCP AI security documentation was updated with tool-level IAM allow and deny controls",
+      "source_urls": [
+        "https://docs.cloud.google.com/mcp/ai-security-safety"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://docs.cloud.google.com/mcp/ai-security-safety",
+          "date": "2026-07-27",
+          "date_type": "visible last-updated date"
+        }
+      ],
+      "summary": "Google Cloud's MCP AI security and safety page describes IAM allow and deny policies that can control which Google Cloud MCP tools are available to users or groups through the tool.name permission, along with audit logging and least-privilege practices for agent access.",
+      "evidence_classification": "official product security documentation update",
+      "affected_boundary_or_version": "Google Cloud MCP Toolbox and Google Cloud MCP tools; IAM conditions using tool.name.",
+      "why_it_matters_for_ai_security": "Tool-level authorization is a concrete least-privilege control for agents that can otherwise discover and invoke cloud tools beyond the human's intended scope.",
+      "named_entities": [
+        "Google Cloud",
+        "MCP",
+        "MCP Toolbox",
+        "IAM",
+        "tool.name"
+      ],
+      "upstream_routing": [
+        {
+          "entity": "MCP",
+          "owner": "ai-wiki",
+          "note": "Protocol and general implementation context belongs upstream; local lens is MCP tool authorization and least privilege."
+        },
+        {
+          "entity": "Google Cloud MCP Toolbox",
+          "owner": "ai-wiki",
+          "note": "Product/entity page belongs upstream; security control implication belongs locally."
+        }
+      ],
+      "confidence_notes": "High confidence from official documentation and visible last-updated date.",
+      "follow_up_actions": [
+        "Consider ingest into agent-and-tool-security/google-api-hub-mcp-security-controls.md or a broader MCP tool-authorization leaf.",
+        "Preserve exact tool.name control wording only if sourced directly during ingest."
+      ]
+    },
+    {
+      "id": "2026-07-27-google-cloud-mcp-release-notes-cursor-oauth-fix",
+      "title": "Google Cloud MCP release notes record a Cursor redirect-URI authentication fix",
+      "source_urls": [
+        "https://docs.cloud.google.com/mcp/docs/release-notes"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://docs.cloud.google.com/mcp/docs/release-notes",
+          "date": "2026-07-27",
+          "date_type": "visible last-updated date"
+        },
+        {
+          "url": "https://docs.cloud.google.com/mcp/docs/release-notes",
+          "date": "2026-07-22",
+          "date_type": "release-note entry date"
+        }
+      ],
+      "summary": "The Google Cloud MCP release notes, visibly updated July 27, include a July 22 entry that fixes an issue in which the Cursor OAuth redirect URI was not supported during configuration setup.",
+      "evidence_classification": "official release-note update with in-window page update and older embedded entry date",
+      "affected_boundary_or_version": "Google Cloud MCP configuration setup for Cursor OAuth redirect URI handling.",
+      "why_it_matters_for_ai_security": "OAuth redirect URI handling is an identity boundary for MCP clients; setup failures or mismatches can weaken governance, create brittle auth workarounds, or block use of managed identity flows.",
+      "named_entities": [
+        "Google Cloud MCP",
+        "Cursor",
+        "OAuth",
+        "redirect URI"
+      ],
+      "upstream_routing": [
+        {
+          "entity": "Cursor",
+          "owner": "ai-wiki",
+          "note": "Developer-tool entity belongs upstream; local lens is MCP OAuth setup boundary."
+        }
+      ],
+      "confidence_notes": "Medium confidence because the page update is in-window but the concrete release-note entry is dated July 22; retain as an in-window updated source with date caveat.",
+      "follow_up_actions": [
+        "During ingest, decide whether date caveat warrants an exclusion instead of a durable update.",
+        "If kept, record as identity-and-access or agent-and-tool-security context, not general Cursor product news."
+      ]
+    },
+    {
+      "id": "2026-07-28-modelcontextprotocol-go-sdk-2026-07-28-protocol",
+      "title": "MCP Go SDK v1.7.0 added support for the 2026-07-28 protocol revision and new HTTP header handling",
+      "source_urls": [
+        "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+          "date": "2026-07-28",
+          "date_type": "visible release date"
+        }
+      ],
+      "summary": "The MCP Go SDK v1.7.0 release says it supports protocol version 2026-07-28, switches streamable HTTP server sessions to stateless by default, adds request and response header support, adds server discovery, deprecates the older header hook path, and removes the deprecated sse package.",
+      "evidence_classification": "primary open-source release note",
+      "affected_boundary_or_version": "modelcontextprotocol/go-sdk v1.7.0; MCP protocol 2026-07-28; streamable HTTP sessions; header handling; server discovery.",
+      "why_it_matters_for_ai_security": "MCP SDK transport defaults, header propagation, server discovery, and deprecated-package removal affect authentication, session management, gateway mediation, audit headers, and supply-chain upgrade planning for AI tools.",
+      "named_entities": [
+        "Model Context Protocol",
+        "MCP Go SDK",
+        "streamable HTTP",
+        "server discovery",
+        "HTTP headers"
+      ],
+      "upstream_routing": [
+        {
+          "entity": "Model Context Protocol",
+          "owner": "ai-wiki",
+          "note": "Protocol overview belongs upstream; security-specific transport and auth implications belong locally."
+        },
+        {
+          "entity": "MCP Go SDK",
+          "owner": "ai-wiki",
+          "note": "SDK entity belongs upstream; local capture should focus on security-relevant version delta."
+        }
+      ],
+      "confidence_notes": "High confidence for release date and version delta from GitHub release page; security impact is an inference from transport and header-handling changes.",
+      "follow_up_actions": [
+        "During ingest, compare against local MCP authorization and transport leaves before creating a new security-specific leaf.",
+        "Check whether protocol 2026-07-28 has a separate primary spec page with authorization/security changes."
+      ]
+    },
+    {
+      "id": "2026-07-28-csa-imda-generative-ai-advisory",
+      "title": "Singapore CSA and IMDA published an advisory on safe and secure use of generative AI",
+      "source_urls": [
+        "https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-008/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-008/",
+          "date": "2026-07-28",
+          "date_type": "visible advisory date"
+        }
+      ],
+      "summary": "Singapore's Cyber Security Agency and Infocomm Media Development Authority issued Advisory AD-2026-008 for safe and secure use of generative AI. The advisory warns users not to submit sensitive or personal information unless necessary and permitted, to verify AI outputs before acting on them, to review third-party GenAI app permissions, and to use secure configurations and organizational controls.",
+      "evidence_classification": "official government advisory",
+      "affected_boundary_or_version": "Generative AI user, organizational, and third-party application usage; data disclosure and app-permission boundaries.",
+      "why_it_matters_for_ai_security": "The advisory is a public governance and risk-management signal that treats GenAI data entry, third-party app permissions, and output verification as concrete security controls rather than optional usage tips.",
+      "named_entities": [
+        "Cyber Security Agency of Singapore",
+        "Infocomm Media Development Authority",
+        "Generative AI",
+        "third-party GenAI apps",
+        "sensitive data"
+      ],
+      "upstream_routing": [
+        {
+          "entity": "Generative AI",
+          "owner": "ai-wiki",
+          "note": "Broad technology overview belongs upstream; local page owns security guidance and controls."
+        }
+      ],
+      "confidence_notes": "High confidence; primary government advisory has an in-window visible date and security guidance.",
+      "follow_up_actions": [
+        "Route governance controls locally; avoid duplicating general GenAI explanation from ai-wiki.",
+        "Check whether this belongs under governance-and-compliance, data-and-privacy, or identity-and-access during ingest."
+      ]
+    },
+    {
+      "id": "2026-07-27-microsoft-project-perception-ai-cyber-model",
+      "title": "Microsoft disclosed Project Perception and MAI-Cyber-1-Flash cyber-evaluation results in public reporting",
+      "source_urls": [
+        "https://www.axios.com/2026/07/27/microsoft-ai-cybersecurity-model-cyber-risks",
+        "https://siliconangle.com/2026/07/28/microsoft-debuts-ai-model-performed-high-level-simulated-cyberattacks/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.axios.com/2026/07/27/microsoft-ai-cybersecurity-model-cyber-risks",
+          "date": "2026-07-27",
+          "date_type": "visible publication date"
+        },
+        {
+          "url": "https://siliconangle.com/2026/07/28/microsoft-debuts-ai-model-performed-high-level-simulated-cyberattacks/",
+          "date": "2026-07-28",
+          "date_type": "visible publication date"
+        }
+      ],
+      "summary": "Public reporting says Microsoft introduced Project Perception, a benchmark meant to measure how AI systems perform on cyber tasks, and MAI-Cyber-1-Flash, a model reportedly able to complete a meaningful share of simulated cyberattack tasks while being limited to internal Microsoft Security use with human sign-off requirements.",
+      "evidence_classification": "reputable secondary reporting; official primary source not found during this run",
+      "affected_boundary_or_version": "Microsoft Project Perception benchmark and MAI-Cyber-1-Flash cyber model; internal Microsoft Security deployment boundary per reports.",
+      "why_it_matters_for_ai_security": "Cyber-capable AI evaluation and restricted internal deployment controls are concrete assurance and release-gate signals for dual-use models; the item also illustrates why model capability reporting needs source quality and access-boundary notes.",
+      "named_entities": [
+        "Microsoft",
+        "Microsoft Security",
+        "Project Perception",
+        "MAI-Cyber-1-Flash",
+        "cyber benchmark"
+      ],
+      "upstream_routing": [
+        {
+          "entity": "Microsoft AI",
+          "owner": "ai-wiki",
+          "note": "Provider and model-family coverage belongs upstream; local capture should focus on cyber-evaluation and release-gate implications."
+        },
+        {
+          "entity": "Project Perception",
+          "owner": "ai-wiki",
+          "note": "Benchmark entity may belong upstream; security-assurance implications belong locally."
+        }
+      ],
+      "confidence_notes": "Medium confidence because the item is secondary-sourced; keep any ingest conservative until an official Microsoft source is available.",
+      "follow_up_actions": [
+        "Search for an official Microsoft announcement before durable synthesis.",
+        "If no primary source appears, record as a watch item or caveated secondary signal rather than a normative local control."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "NSA guidance on AI Data Security",
+      "source_url": "https://media.defense.gov/2026/May/20/2003719648/-1/-1/0/CSI_AI_DATA_SECURITY.PDF",
+      "visible_date": "2026-05-20",
+      "reason": "Authoritative and security-relevant but outside the two-day cutoff window."
+    },
+    {
+      "candidate": "CISA/NCSC/ENISA joint guidance on MCP server risks",
+      "source_url": "https://www.cisa.gov/news-events/alerts/2026/05/20/securing-model-context-protocol-servers",
+      "visible_date": "2026-05-20",
+      "reason": "Security-relevant MCP guidance but outside the two-day cutoff window."
+    },
+    {
+      "candidate": "OWASP GenAI Security Project Top 10 for LLM Applications 2025",
+      "source_url": "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/",
+      "visible_date": "2025",
+      "reason": "Useful baseline but not an in-window update."
+    },
+    {
+      "candidate": "NVD CVE-2026-46555",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46555",
+      "visible_date": "2026-07-21",
+      "reason": "Potentially relevant AI/security result, but the visible publication/update date is older than the cutoff."
+    },
+    {
+      "candidate": "NVD CVE-2026-52869",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-52869",
+      "visible_date": "2026-07-22",
+      "reason": "Potentially relevant AI/security result, but the visible publication/update date is older than the cutoff."
+    },
+    {
+      "candidate": "Model Context Protocol specification release-candidate blog",
+      "source_url": "https://modelcontextprotocol.io/blog/2026-05-21-2026-06-18-specification-rc0",
+      "visible_date": "2026-05-21",
+      "reason": "Mentions the July 28 finalization plan, but the visible page publication date is outside the window and the final spec page was not confirmed during this run."
+    },
+    {
+      "candidate": "Zenity AgentFlayer / AgentForger research",
+      "source_url": "https://www.zenity.io/blog/agentflayer-how-malicious-websites-can-steal-your-ai-agents-memory",
+      "visible_date": "2026-07-23",
+      "reason": "Security-relevant agent/browser attack research but outside the two-day cutoff window."
+    },
+    {
+      "candidate": "EU AI Act General-Purpose AI transparency code coverage",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai",
+      "visible_date": "2026-07-20",
+      "reason": "Governance-relevant but visible update date falls outside the two-day cutoff."
+    },
+    {
+      "candidate": "Permission Protocol website updates",
+      "source_url": "https://permissionprotocol.org/",
+      "visible_date": "2026-07 ambiguous",
+      "reason": "Potentially relevant delegated-authority concept, but no concrete in-window dated security change was visible."
+    },
+    {
+      "candidate": "General AI product announcements without security deltas",
+      "source_url": "multiple search results",
+      "visible_date": "2026-07-27 to 2026-07-28",
+      "reason": "Excluded ordinary launch, model, feature, and funding announcements that did not contain a concrete security fact, mitigation, incident, advisory, assurance result, or control change."
+    }
+  ],
+  "routing_summary": {
+    "routing_count": 8,
+    "notes": [
+      "OpenAI, Hugging Face, Microsoft, Google Cloud, Model Armor, MCP, MCP Go SDK, Cursor, and general GenAI entity coverage should be checked against ai-wiki before local durable synthesis.",
+      "General AI-assisted development workflow implications from MCP tooling, authorization setup, and agent operation should be routed to ai-dev-wiki if they are not security-specific.",
+      "This artifact keeps only security-specific facts, controls, incidents, and assurance implications for ai-security-wiki."
+    ]
+  },
+  "confidence_summary": {
+    "high_confidence_items": 6,
+    "medium_confidence_items": 2,
+    "low_confidence_items": 0,
+    "main_caveats": [
+      "Google Cloud MCP release-note item has an in-window page update but an older embedded entry date.",
+      "Microsoft Project Perception item is secondary-sourced pending an official in-window Microsoft source."
+    ]
+  },
+  "blockers": [],
+  "validation": {
+    "jq_empty": "passed 2026-07-28T19:32:13-04:00 run validation",
+    "python_json_tool": "passed 2026-07-28T19:32:13-04:00 run validation"
+  }
+}

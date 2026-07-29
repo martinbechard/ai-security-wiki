@@ -6,7 +6,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
-- No durable leaves have been created yet.
+- [MCP tool-level IAM authorization](mcp-tool-level-iam-authorization.md)
+- [MCP client OAuth redirect URI handling](mcp-client-oauth-redirect-uri-handling.md)
 
 ## Authoritative Sources
 
