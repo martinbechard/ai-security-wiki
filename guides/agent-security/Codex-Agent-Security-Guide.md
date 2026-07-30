@@ -57,6 +57,39 @@ If centrally enforced prohibition of Codex cloud is a requirement, an individual
 
 See Codex authentication: https://learn.chatgpt.com/docs/auth. This page distinguishes ChatGPT subscription sign-in from API-key sign-in and states that Codex cloud requires ChatGPT sign-in. [OpenAI authentication](#source-auth)
 
+### 1.2 Permanently opt out of model training
+
+Before using the individual ChatGPT Pro account for project work, submit the
+**Do not train on my content** request through the OpenAI Privacy Portal:
+https://privacy.openai.com/policies/en/?modal=take-control. OpenAI describes
+this request as a permanent opt-out from use of the account's content for model
+improvements. This provider-side privacy request is separate from the local
+Codex sandbox, `requirements.toml`, `config.toml`, transcript persistence, and
+telemetry settings. [permanent model-training opt-out](#source-privacy-optout)
+[local security and privacy settings](#source-local-config)
+
+1. Open the Privacy Portal URL above.
+2. Select **Do not train on my content** and follow the portal's submission instructions.
+3. Record the successful request according to the organization’s privacy-control evidence procedure.
+4. In ChatGPT, also open **Settings > Data Controls** and confirm that **Improve the model for everyone** is off. OpenAI says a privacy-form opt-out is represented on the account, while the self-service Data Controls setting is account-wide and can otherwise be changed at any time. [account-level training controls](#source-data-controls)
+
+The opt-out is prospective: OpenAI says new conversations are not used to train
+its models after the opt-out. OpenAI does not state that the request removes
+content already used for training. Do not submit thumbs-up or thumbs-down
+feedback on a sensitive Codex task, because OpenAI says the entire conversation
+associated with submitted feedback may be used for training even after a
+general opt-out. [personal-service training boundaries](#source-training-use)
+
+OpenAI separately documents Codex controls for allowing training on “full
+environments” and says the ChatGPT interface and Privacy Portal do not change
+those controls. OpenAI’s data-use page does not define “full environments”; its
+Codex documentation most strongly associates repository-backed environments
+with Codex cloud. This baseline does not use Codex cloud, does not create a
+cloud environment, and requires any separately displayed full-environment
+training control in Codex Settings to remain off. [personal-service training
+boundaries](#source-training-use) [desktop execution modes](#source-modes)
+[Codex cloud environment](#source-cloud)
+
 ## 2. Accesses required for development
 
 Each subsection defines one access grant, the development work it enables, the configuration that provides it, and the resulting security tradeoff.
@@ -834,6 +867,7 @@ Verify the effective controls with synthetic test files and a disposable schema:
 14. Live browsing, Computer Use, plugins, apps, unapproved MCP servers, and full-access permission profiles are unavailable. [disabled product surfaces](#source-features) [MCP allowlist policy](#source-mcp-policy) [administrator-enforced requirements](#source-requirements)
 15. In the desktop app’s new-chat composer, confirm that the task mode is **Local** or **Worktree**, not **Cloud**. [desktop execution modes](#source-modes)
 16. Open Codex settings — Environments: https://chatgpt.com/codex/settings/environments. Confirm that no cloud environment exists for the project. Record that checks 15–16 verify operating practice, not a Pro-account technical prohibition. [Codex cloud environment](#source-cloud)
+17. Confirm that the permanent **Do not train on my content** Privacy Portal request has been submitted, **Improve the model for everyone** is off, and any separately displayed Codex full-environment training control is off. [permanent model-training opt-out](#source-privacy-optout) [account-level training controls](#source-data-controls) [personal-service training boundaries](#source-training-use)
 
 Re-run this verification after Codex, Windows sandbox, authentication, permission-profile, Java toolchain, artifact proxy, or MySQL changes.
 
@@ -858,6 +892,9 @@ Copy the generator from that document into a `.ps1` file. Run it from the projec
 - Codex environment modes — Local, Worktree, and Cloud: https://learn.chatgpt.com/docs/environments/modes
 - Codex cloud setup: https://learn.chatgpt.com/docs/cloud
 - Codex cloud environments: https://learn.chatgpt.com/docs/environments/cloud-environment
+- OpenAI Privacy Portal controls: https://privacy.openai.com/policies/en/?modal=take-control
+- OpenAI model-training data use: https://help.openai.com/en/articles/5722486
+- ChatGPT Data Controls FAQ: https://help.openai.com/en/articles/7730893
 - Roles and workspace permissions: https://learn.chatgpt.com/docs/enterprise/roles-and-workspace-permissions
 - Quarkus configuration reference: https://quarkus.io/guides/config-reference
 - Quarkus datasource guide: https://quarkus.io/guides/datasource
@@ -893,6 +930,21 @@ quotation supporting the linked security assertion. Accessed July 30, 2026.
   Authentication — https://learn.chatgpt.com/docs/auth#enforce-a-login-method-or-workspace:
   “If the active credentials don't match the configured restrictions, Codex
   logs the user out and exits.”
+- <a id="source-privacy-optout"></a>**Official OpenAI source — permanent
+  model-training opt-out.** OpenAI Privacy Portal controls —
+  https://privacy.openai.com/policies/en/?modal=take-control: “If you want to
+  permanently opt out of your content being used for model improvements, you
+  can make a request here.”
+- <a id="source-data-controls"></a>**Official OpenAI source — account-level
+  training controls.** Data Controls FAQ —
+  https://help.openai.com/en/articles/7730893: “the setting applies to your
+  entire account”; a Support or privacy-form opt-out means “your account will
+  represent that request.”
+- <a id="source-training-use"></a>**Official OpenAI source — personal-service
+  training boundaries.** How your data is used to improve model performance —
+  https://help.openai.com/en/articles/5722486: “Once you opt out, new
+  conversations will not be used to train our models”; “Codex has separate
+  controls for allowing training on full environments.”
 - <a id="source-profiles"></a>**Official OpenAI source — named least-privilege profiles.**
   Permissions — https://learn.chatgpt.com/docs/permissions: “Permission
   profiles let you apply least-privilege boundaries to local commands Codex

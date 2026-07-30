@@ -95,6 +95,12 @@ All sources were accessed on 2026-07-30.
    Official Enterprise Codex statement. Its security summary says: “No
    training on your data—ever.”
 
+9. **OpenAI Privacy Center — Your Privacy Controls**
+   https://privacy.openai.com/policies/en/?modal=take-control
+   Official privacy-request description. It describes **Do not train on my
+   content** as a request to “permanently opt out” of content being used for
+   model improvements.
+
 ## Synthesis
 
 ### Personal ChatGPT Account
@@ -117,12 +123,14 @@ not change that setting. Therefore a personal-account review must check both
 the account-wide ChatGPT training control and the separate control visible in
 Codex Settings when full-environment sharing is available.
 
-OpenAI documents current account state, cross-device synchronization, and
-privacy-request representation. The reviewed official sources do **not**
-document a user-visible immutable change history, an audit-log event for this
-specific preference, or an administrator policy that prevents a personal
-account holder from turning it back on. The Data Controls FAQ instead says it
-can be changed at any time.
+OpenAI distinguishes two opt-out routes. The self-service **Improve the model
+for everyone** setting is account-wide but mutable; the Data Controls FAQ says
+it can be changed at any time. The Privacy Center describes **Do not train on
+my content** as a permanent opt-out request, and the Data Controls FAQ says the
+account represents a privacy-form request. The reviewed sources do not explain
+the internal record, whether or how a permanent request can be reversed, or
+whether a specific audit-log event is available. The Privacy Portal request
+also does not change Codex's separate full-environment control.
 
 ### Managed ChatGPT Workspace
 
@@ -182,10 +190,11 @@ administered.
 
 ### Recommended Assurance Pattern
 
-1. For personal use, turn off **Improve the model for everyone**, check the
+1. For personal use, submit the Privacy Portal's permanent **Do not train on my
+   content** request, turn off **Improve the model for everyone**, check the
    separate full-environment control in Codex Settings, avoid feedback on
-   sensitive conversations, and retain a dated screenshot or privacy-request
-   confirmation as local evidence. This is evidence, not an immutable lock.
+   sensitive conversations, and retain the privacy-request confirmation as
+   local evidence.
 2. For organization-controlled use, prefer Enterprise or an approved API
    organization with a non-sharing policy. Reserve owner privileges for a small
    administrative group.
@@ -240,6 +249,10 @@ duplicate broad Codex product coverage.
   the account control while full-environment sharing is an additional control.
   The reviewed pages do not precisely define the boundary or name the
   full-environment UI toggle.
+- The Privacy Center calls its request a permanent opt-out, while the Data
+  Controls FAQ says the self-service account setting can be changed at any
+  time. The reviewed sources support treating these as distinct routes but do
+  not explain their precedence, reversal behavior, or backend representation.
 - No reviewed official source documents an immutable audit trail for a personal
   opt-out, a named Compliance API event for the preference, or inclusion of the
   current preference in a ChatGPT data export.
