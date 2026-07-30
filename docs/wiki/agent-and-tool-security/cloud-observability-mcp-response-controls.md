@@ -16,6 +16,13 @@ The [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-s
 
 This page owns the agent-and-tool security lens for observability agents. Broad [Google Cloud](../../../upstream-ai-wiki/companies/google-ai.md), Cloud Monitoring, Cloud Logging, and [Model Armor](../../../upstream-ai-wiki/products/google-cloud-model-armor.md) product context belongs upstream. Locally, the durable control is response mediation for operational insights that may include logs, alerts, resource names, incident context, or attacker-influenced prompt content.
 
+The [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json) reinforces the same Cloud Monitoring MCP boundary as a control change. Remote MCP access should combine:
+
+- IAM-scoped tool calls;
+- optional [Model Armor](../../../upstream-ai-wiki/products/google-cloud-model-armor.md) prompt and response screening;
+- audit logging;
+- explicit handling for Model Armor logging because full payload logging can itself become a sensitive-data sink.
+
 ## Security Impact
 
 - Threat: AI-generated observability responses can expose sensitive logs, amplify prompt injection from log content, or summarize data the user is not authorized to inspect.
@@ -25,12 +32,14 @@ This page owns the agent-and-tool security lens for observability agents. Broad 
   - Filter natural-language responses for prompt injection, malicious URLs, and sensitive data.
   - Apply IAM-aware response constraints to logs.
   - Audit the query, agent identity, user identity, and returned summary.
+  - Decide whether Model Armor logging is allowed for sensitive observability payloads before enabling full-payload capture.
 - Confidence: high for the official documentation update and named control categories carried by the collector source.
 - Residual risk: observability stores often contain secrets, tokens, customer data, and attacker-controlled strings; response filtering does not replace source-side log redaction or least-privilege log access.
 
 ## Authoritative Sources
 
 - [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
+- [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json)
 - Cloud Monitoring MCP documentation: https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp
 
 ## Related Code
@@ -54,8 +63,8 @@ This page owns the agent-and-tool security lens for observability agents. Broad 
 
 ## Open Questions
 
-- Which Model Armor policy categories and Cloud Logging audit events are sufficient to prove that an AI-generated observability response honored log-access boundaries?
+- Which Model Armor policy categories, payload-logging settings, and Cloud Logging audit events are sufficient to prove that an AI-generated observability response honored log-access boundaries without creating a secondary sensitive-data store?
 
 ## Maintenance Notes
 
-- Added from the [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json); keep this page focused on response filtering and IAM-bounded observability output.
+- Added from the [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json); enriched from the [July 29 leaf watcher](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json). Keep this page focused on response filtering and IAM-bounded observability output.

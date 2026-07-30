@@ -18,6 +18,12 @@ The [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-s
 
 This page owns the security-governance lens. Broad generative AI background belongs upstream; locally, public advisories are useful when they turn usage norms into control expectations for data handling, connector permissions, and human verification.
 
+The [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json) keeps the advisory as in-window mitigation evidence because the site footer was last updated on 2026-07-29. The source does not add a separate incident; it reinforces the same local control family around:
+
+- sensitive data entry;
+- third-party application permissions;
+- output verification.
+
 ## Security Impact
 
 - Threat or control area: users can disclose sensitive or personal data, grant excessive third-party GenAI app permissions, or act on unverified outputs in security-relevant workflows.
@@ -34,6 +40,7 @@ This page owns the security-governance lens. Broad generative AI background belo
 ## Authoritative Sources
 
 - [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
+- [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json)
 - Singapore CSA/IMDA advisory: https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-008/
 
 ## Related Code
@@ -61,4 +68,4 @@ This page owns the security-governance lens. Broad generative AI background belo
 
 ## Maintenance Notes
 
-- Added from the [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json); keep this page focused on security controls rather than general GenAI usage advice.
+- Added from the [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json); enriched from the [July 29 leaf watcher](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json). Keep this page focused on security controls rather than general GenAI usage advice.

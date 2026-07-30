@@ -10,6 +10,16 @@ description: "Security analysis for controlling agent-visible MCP tools through 
 
 The [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json) records the official [Google Cloud MCP AI security and safety documentation](https://docs.cloud.google.com/mcp/ai-security-safety) update that describes IAM allow and deny policies for Google Cloud MCP tools through the `tool.name` permission. The same source records [Cloud Monitoring MCP documentation](https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp) with [cloud observability MCP response controls](../agent-and-tool-security/cloud-observability-mcp-response-controls.md).
 
+The [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json) adds the same official Google Cloud MCP safety documentation as in-window control evidence. It expands the local authorization model beyond `tool.name` to include:
+
+- least-privilege agent identities;
+- API key restrictions;
+- prompt-injection mitigations;
+- [Model Armor](../../../upstream-ai-wiki/products/google-cloud-model-armor.md) screening;
+- periodic tool review;
+- organization, project, and folder MCP restrictions;
+- deny policies for read-write production access.
+
 This page owns the local identity-and-access boundary for MCP tools. Broad [MCP](../../../upstream-ai-wiki/techniques/mcp-authorization-model.md), [Google Cloud](../../../upstream-ai-wiki/companies/google-ai.md), and managed product coverage belongs upstream; locally, tool visibility and invocation must be treated as delegated authorization decisions tied to:
 
 - Human identity.
@@ -28,12 +38,15 @@ This page owns the local identity-and-access boundary for MCP tools. Broad [MCP]
   - Use deny policies for disallowed tools.
   - Log user and agent context for invocations.
   - Keep log responses constrained by the requesting identity's effective permissions.
+  - Restrict production read-write tools at the organization, folder, or project level when agent identity does not require them.
+  - Review tool allowlists periodically because prompt injection can turn an otherwise legitimate tool into an overbroad delegated action path.
 - Confidence: high for the official documentation statements and visible update dates carried by the collector source.
 - Residual risk: local MCP deployments can still expose overbroad tool lists if discovery, authorization, and audit logging are implemented outside managed IAM controls.
 
 ## Authoritative Sources
 
 - [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
+- [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json)
 - Google Cloud MCP AI security and safety documentation: https://docs.cloud.google.com/mcp/ai-security-safety
 - Cloud Monitoring MCP documentation: https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp
 
@@ -63,4 +76,4 @@ This page owns the local identity-and-access boundary for MCP tools. Broad [MCP]
 
 ## Maintenance Notes
 
-- Added from the [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json); keep future updates focused on tool authorization and identity evidence, not general MCP catalog coverage.
+- Added from the [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json); enriched from the [July 29 leaf watcher](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json). Keep future updates focused on tool authorization and identity evidence, not general MCP catalog coverage.

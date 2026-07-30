@@ -8,6 +8,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 - [MCP tool-level IAM authorization](mcp-tool-level-iam-authorization.md)
 - [MCP client OAuth redirect URI handling](mcp-client-oauth-redirect-uri-handling.md)
+- [MCP SDK OAuth issuer binding](mcp-sdk-oauth-issuer-binding.md)
 
 ## Authoritative Sources
 

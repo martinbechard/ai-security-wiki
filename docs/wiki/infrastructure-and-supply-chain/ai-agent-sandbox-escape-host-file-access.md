@@ -19,6 +19,8 @@ The reported outcomes were reachable SSH keys and cloud credentials, plus a prod
 
 The collector marks confidence as medium and asks for primary CVE or vendor corroboration before treating the full chain as confirmed. The local durable lesson is therefore narrower: AI-agent sandboxes need explicit host-mount minimization, credential separation, kernel patch management, and proof that a shared workspace cannot become a host file browser.
 
+The [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json) repeats Secure.com reporting as demonstrated-research evidence and keeps primary CVE/vendor corroboration as follow-up. This does not change the confidence level; it reinforces that host filesystem mounts and credential-bearing paths must be modeled as reachable when a local agent sandbox combines a shared folder, VM boundary, and kernel vulnerability.
+
 ## Security Impact
 
 - Threat: a local agent sandbox escape converts a narrow folder grant into broader host file and credential access.
@@ -31,6 +33,7 @@ The collector marks confidence as medium and asks for primary CVE or vendor corr
 ## Authoritative Sources
 
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
+- [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json)
 - Secure.com research report: https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac
 
 ## Related Code
@@ -60,4 +63,4 @@ The collector marks confidence as medium and asks for primary CVE or vendor corr
 
 ## Maintenance Notes
 
-- Added from the [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json); keep the page at medium confidence until primary corroboration is captured.
+- Added from the [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json); enriched from the [July 29 leaf watcher](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json). Keep the page at medium confidence until primary corroboration is captured.

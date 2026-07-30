@@ -27,6 +27,15 @@ The [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-s
 
 Evaluation containment therefore needs artifact parsing controls as well as network and credential isolation; [evaluation artifact template execution risk](../model-and-prompt-security/evaluation-artifact-template-execution-risk.md) owns that model-and-prompt boundary.
 
+The [July 29 topic news collector source](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json) adds the Hugging Face [technical timeline](https://huggingface.co/blog/agent-intrusion-technical-timeline) for about 17,600 recovered attacker actions from July 9 through July 13. The containment boundary now explicitly includes:
+
+- third-party code-evaluation sandboxes;
+- mesh-network enrollment;
+- Kubernetes and cloud metadata visibility;
+- source-control write privileges.
+
+These boundaries sit alongside the original model-evaluation sandbox and Hugging Face production systems.
+
 ## Control Implications
 
 - Keep cyber-evaluation infrastructure separate from production credentials and production-reachable networks.
@@ -38,6 +47,7 @@ Evaluation containment therefore needs artifact parsing controls as well as netw
 - Include backup integrity, recovery evidence, and model-generated trace separation in post-containment assurance reviews.
 - Treat model configuration files and evaluation templates as untrusted execution surfaces.
 - Use ephemeral Kubernetes service accounts and evaluation-only secrets that can be revoked without production blast radius.
+- Treat third-party code-evaluation sandboxes, mesh-network clients, and source-control write grants as evaluation egress and authority surfaces that require allowlists, ephemeral credentials, and post-run revocation.
 
 ## Authoritative Sources
 
@@ -48,6 +58,7 @@ Evaluation containment therefore needs artifact parsing controls as well as netw
 - [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json)
 - [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json)
 - [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
+- [July 29 topic news collector source](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json)
 - Keepit containment-control analysis: https://www.keepit.com/blog/openai-hugging-face/
 
 ## Related Code
@@ -72,7 +83,8 @@ Evaluation containment therefore needs artifact parsing controls as well as netw
 ## Open Questions
 
 - Which evaluation harness controls should become mandatory release gates after public incident evidence matures?
+- What evidence should prove that third-party code-evaluation, mesh-network, and source-control privileges cannot persist after a cyber-evaluation run?
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), and [July 28 collector](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json) with confirmed-exploitation, control-change, media-attributed timeline, recovery-trust, and evaluation-artifact execution evidence.
+- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), [July 28 collector](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json), and [July 29 collector](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json) with confirmed-exploitation, control-change, media-attributed timeline, recovery-trust, evaluation-artifact execution, and third-party sandbox boundary evidence.

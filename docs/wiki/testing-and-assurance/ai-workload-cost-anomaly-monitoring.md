@@ -21,6 +21,12 @@ The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-secu
 - agent runtime;
 - deployment changes.
 
+The [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json) keeps the same Google Cloud release-note signal as in-window assurance-control evidence for Gemini API and Vertex AI. It does not report an incident; it reinforces that near-real-time service-level estimates should feed:
+
+- abuse detection;
+- credential-misuse detection;
+- runaway-agent monitoring before finalized billing closes.
+
 ## Security Impact
 
 - Threat: credential misuse, prompt-injected agents, runaway workflows, or misconfigured model routing can generate abnormal AI workload cost.
@@ -34,6 +40,7 @@ The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-secu
 
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
 - [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
+- [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json)
 - Google Cloud release notes: https://docs.cloud.google.com/release-notes
 
 ## Related Code
@@ -62,4 +69,4 @@ The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-secu
 
 ## Maintenance Notes
 
-- Split from the bundled anomaly/residency draft during July 25 verifier correction; enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json). Keep this page focused on detection and assurance evidence.
+- Split from the bundled anomaly/residency draft during July 25 verifier correction; enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) and [July 29 leaf watcher](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json). Keep this page focused on detection and assurance evidence.

@@ -12,6 +12,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Network-AI backup manifest recursive delete](network-ai-backup-manifest-recursive-delete.md)
 - [AI agent sandbox escape host file access](ai-agent-sandbox-escape-host-file-access.md)
 - [MCP SDK transport header handling](mcp-sdk-transport-header-handling.md)
+- [AI guardrail dependency compromise](ai-guardrail-dependency-compromise.md)
 
 ## Authoritative Sources
 
