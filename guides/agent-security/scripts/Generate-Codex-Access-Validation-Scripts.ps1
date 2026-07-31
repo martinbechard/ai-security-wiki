@@ -15,11 +15,12 @@ $DownloadsRoot = Join-Path $HOME 'Downloads'
 $GitInstallRoot = Join-Path $env:ProgramFiles 'Git'
 $JavaInstallRoot = Join-Path $env:ProgramFiles 'Eclipse Adoptium'
 $ManagedJavaRoot = Join-Path $env:ProgramData '<Organization Name>\Java'
-$GlabInstallRoot = Join-Path $env:ProgramData '<Organization Name>\Tools\glab'
-$CodexSkillsRoot = Join-Path $HOME '.codex\skills'
-$SharedSkillsRoot = Join-Path $HOME '.agents\skills'
+$ExternalDatabaseTestHost = '<Controlled External Database Test Host>'
+$GitLabTestHost = '<GitLab Test Host>'
 
-if ($ManagedJavaRoot -match '<[^>]+>' -or $GlabInstallRoot -match '<[^>]+>') {
+if ($ManagedJavaRoot -match '<[^>]+>' -or
+    $ExternalDatabaseTestHost -match '<[^>]+>' -or
+    $GitLabTestHost -match '<[^>]+>') {
     throw 'Replace every <...> placeholder in the generator before running it.'
 }
 
@@ -116,15 +117,6 @@ Get-ChildItem '@@JAVA_INSTALL_ROOT@@' -Force | Select-Object -First 1
 Write-Host "`nALLOW - read the managed Java configuration"
 Get-ChildItem '@@MANAGED_JAVA_ROOT@@' -Force | Select-Object -First 1
 
-Write-Host "`nALLOW - read the glab installation"
-Get-ChildItem '@@GLAB_INSTALL_ROOT@@' -Force | Select-Object -First 1
-
-Write-Host "`nALLOW - read Codex skills"
-Get-ChildItem '@@CODEX_SKILLS_ROOT@@' -Force | Select-Object -First 1
-
-Write-Host "`nALLOW - read shared agent skills"
-Get-ChildItem '@@SHARED_SKILLS_ROOT@@' -Force | Select-Object -First 1
-
 Write-Host "`nALLOW - bind a temporary server to loopback"
 $Listener = [Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback, 0)
 $Listener.Start()
@@ -137,8 +129,11 @@ Test-NetConnection 127.0.0.1 -Port 8080 -InformationLevel Detailed
 Write-Host "`nALLOW - connect to MySQL on 127.0.0.1:3306"
 Test-NetConnection 127.0.0.1 -Port 3306 -InformationLevel Detailed
 
-Write-Host "`nBLOCK - reach an arbitrary public website"
-Invoke-WebRequest 'https://example.com/' -Method Head -TimeoutSec 5 -UseBasicParsing
+Write-Host "`nBLOCK - connect to a controlled non-local database endpoint"
+Test-NetConnection '@@EXTERNAL_DATABASE_TEST_HOST@@' -Port 3306 -InformationLevel Detailed
+
+Write-Host "`nBLOCK - connect to a controlled GitLab endpoint"
+Test-NetConnection '@@GITLAB_TEST_HOST@@' -Port 443 -InformationLevel Detailed
 
 Write-Host "`nTest complete. Compare every result with its ALLOW or BLOCK label."
 '@
@@ -150,9 +145,8 @@ $TestScript = $TestScript.Replace('@@DOWNLOADS_ROOT@@', $DownloadsRoot)
 $TestScript = $TestScript.Replace('@@GIT_INSTALL_ROOT@@', $GitInstallRoot)
 $TestScript = $TestScript.Replace('@@JAVA_INSTALL_ROOT@@', $JavaInstallRoot)
 $TestScript = $TestScript.Replace('@@MANAGED_JAVA_ROOT@@', $ManagedJavaRoot)
-$TestScript = $TestScript.Replace('@@GLAB_INSTALL_ROOT@@', $GlabInstallRoot)
-$TestScript = $TestScript.Replace('@@CODEX_SKILLS_ROOT@@', $CodexSkillsRoot)
-$TestScript = $TestScript.Replace('@@SHARED_SKILLS_ROOT@@', $SharedSkillsRoot)
+$TestScript = $TestScript.Replace('@@EXTERNAL_DATABASE_TEST_HOST@@', $ExternalDatabaseTestHost)
+$TestScript = $TestScript.Replace('@@GITLAB_TEST_HOST@@', $GitLabTestHost)
 
 $CleanupScript = @'
 # Copyright (c) 2026 Martin.Bechard@DevConsult.ca

@@ -246,7 +246,7 @@ glob_scan_max_depth = 5
 
 [permissions.project_dev_profile.network]
 enabled = true
-allow_local_binding = false
+allow_local_binding = true
 allow_upstream_proxy = false
 
 [permissions.project_dev_profile.network.domains]
@@ -379,10 +379,10 @@ Revalidate the baseline after any Codex client, permission-profile schema, Windo
 
 ## 5. Numbered quoted references
 
-The quotations were checked against the printed URLs on 2026-07-30.
+The quotations were checked against the printed URLs on 2026-07-31.
 
 1. **OpenAI, Agent approvals & security.** “the agent runs with network access turned off”; local Codex uses “an OS-enforced sandbox” and an approval policy. https://learn.chatgpt.com/docs/agent-approvals-security
-2. **OpenAI, Permissions.** Permission profiles “apply least-privilege boundaries to local commands”; they combine filesystem and network rules, and are “under active development.” https://learn.chatgpt.com/docs/permissions
+2. **OpenAI, Permissions.** Permission profiles “apply least-privilege boundaries to local commands”; they combine filesystem and network rules, are “under active development,” and “setting `allow_local_binding = true` explicitly opens access to local services.” https://learn.chatgpt.com/docs/permissions
 3. **OpenAI, Managed configuration.** “Requirements constrain security-sensitive settings”; Windows loads the system file from `%ProgramData%\OpenAI\Codex\requirements.toml`; an empty `mcp_servers` allowlist “disables all MCP servers.” https://learn.chatgpt.com/docs/enterprise/managed-configuration
 4. **OpenAI, Windows sandbox.** The elevated sandbox uses “dedicated lower-privilege sandbox users, filesystem permission boundaries, firewall rules.” https://learn.chatgpt.com/docs/windows/windows-sandbox
 5. **OpenAI, Authentication.** Codex supports “Sign in with ChatGPT for subscription access” and API-key sign-in; `keyring` uses the operating-system credential store. https://learn.chatgpt.com/docs/auth

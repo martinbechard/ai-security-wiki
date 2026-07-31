@@ -36,12 +36,12 @@ The generator does not require path editing. Run it from the root of the project
 | Desktop | Windows `DesktopDirectory` known-folder value |
 | Downloads | `Downloads` under `$HOME` |
 | Git and Java installations | `$env:ProgramFiles` |
-| Managed Java and `glab` locations | `$env:ProgramData` |
-| Codex and shared skills | `$HOME` |
+| Managed Java configuration | `$env:ProgramData` |
+| Controlled external database and GitLab test hosts | Values entered in the generator |
 
 The generator substitutes the resolved values into the three generated files. The setup, test, and cleanup scripts therefore contain literal paths and do not resolve paths from their execution environment.
 
-The generator stops if the Documents, Desktop, or Downloads path is empty.
+The generator stops if the Documents, Desktop, or Downloads path is empty. Use controlled non-production endpoints for the external database and GitLab host values.
 
 ## 2. Files created by setup
 
@@ -107,11 +107,21 @@ Ask Codex to run:
 powershell.exe -NoProfile -File "C:\Dev\Projects\<Project Folder Name>\tools\agent-access-validation\Test-Codex-Access-Validation.ps1"
 ```
 
+Start local Quarkus and MySQL first. From the developer account, also confirm that both controlled external test endpoints are reachable; otherwise a failed sandbox connection would not prove that Codex blocked it.
+
 Each test prints `ALLOW` or `BLOCK` before the operation:
 
 - An `ALLOW` operation should succeed.
 - A `BLOCK` operation should report an access or network denial.
 - `Test-NetConnection` can run successfully while reporting that a port is closed. For the Quarkus and MySQL checks, inspect `TcpTestSucceeded`.
+- For the external database and GitLab checks, `TcpTestSucceeded` must be `False`.
+
+The wrapper tests sandboxed filesystem and network access. It does not prove settings and command rules that apply before a wrapper starts. Separately confirm:
+
+- **Local** mode, `project_dev_profile`, and the elevated Windows sandbox;
+- the approved Maven build, project-local cache, and artifact proxy;
+- disabled browser, web-search, app, plugin, and MCP features; and
+- forbidden `glab`, `mysql`, and remote Git commands plus permitted local checkpoint commits.
 
 After reviewing the results, the developer runs:
 
@@ -139,11 +149,12 @@ $DownloadsRoot = Join-Path $HOME 'Downloads'
 $GitInstallRoot = Join-Path $env:ProgramFiles 'Git'
 $JavaInstallRoot = Join-Path $env:ProgramFiles 'Eclipse Adoptium'
 $ManagedJavaRoot = Join-Path $env:ProgramData '<Organization Name>\Java'
-$GlabInstallRoot = Join-Path $env:ProgramData '<Organization Name>\Tools\glab'
-$CodexSkillsRoot = Join-Path $HOME '.codex\skills'
-$SharedSkillsRoot = Join-Path $HOME '.agents\skills'
+$ExternalDatabaseTestHost = '<Controlled External Database Test Host>'
+$GitLabTestHost = '<GitLab Test Host>'
 
-if ($ManagedJavaRoot -match '<[^>]+>' -or $GlabInstallRoot -match '<[^>]+>') {
+if ($ManagedJavaRoot -match '<[^>]+>' -or
+    $ExternalDatabaseTestHost -match '<[^>]+>' -or
+    $GitLabTestHost -match '<[^>]+>') {
     throw 'Replace every <...> placeholder in the generator before running it.'
 }
 
@@ -240,15 +251,6 @@ Get-ChildItem '@@JAVA_INSTALL_ROOT@@' -Force | Select-Object -First 1
 Write-Host "`nALLOW - read the managed Java configuration"
 Get-ChildItem '@@MANAGED_JAVA_ROOT@@' -Force | Select-Object -First 1
 
-Write-Host "`nALLOW - read the glab installation"
-Get-ChildItem '@@GLAB_INSTALL_ROOT@@' -Force | Select-Object -First 1
-
-Write-Host "`nALLOW - read Codex skills"
-Get-ChildItem '@@CODEX_SKILLS_ROOT@@' -Force | Select-Object -First 1
-
-Write-Host "`nALLOW - read shared agent skills"
-Get-ChildItem '@@SHARED_SKILLS_ROOT@@' -Force | Select-Object -First 1
-
 Write-Host "`nALLOW - bind a temporary server to loopback"
 $Listener = [Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback, 0)
 $Listener.Start()
@@ -261,8 +263,11 @@ Test-NetConnection 127.0.0.1 -Port 8080 -InformationLevel Detailed
 Write-Host "`nALLOW - connect to MySQL on 127.0.0.1:3306"
 Test-NetConnection 127.0.0.1 -Port 3306 -InformationLevel Detailed
 
-Write-Host "`nBLOCK - reach an arbitrary public website"
-Invoke-WebRequest 'https://example.com/' -Method Head -TimeoutSec 5 -UseBasicParsing
+Write-Host "`nBLOCK - connect to a controlled non-local database endpoint"
+Test-NetConnection '@@EXTERNAL_DATABASE_TEST_HOST@@' -Port 3306 -InformationLevel Detailed
+
+Write-Host "`nBLOCK - connect to a controlled GitLab endpoint"
+Test-NetConnection '@@GITLAB_TEST_HOST@@' -Port 443 -InformationLevel Detailed
 
 Write-Host "`nTest complete. Compare every result with its ALLOW or BLOCK label."
 '@
@@ -274,9 +279,8 @@ $TestScript = $TestScript.Replace('@@DOWNLOADS_ROOT@@', $DownloadsRoot)
 $TestScript = $TestScript.Replace('@@GIT_INSTALL_ROOT@@', $GitInstallRoot)
 $TestScript = $TestScript.Replace('@@JAVA_INSTALL_ROOT@@', $JavaInstallRoot)
 $TestScript = $TestScript.Replace('@@MANAGED_JAVA_ROOT@@', $ManagedJavaRoot)
-$TestScript = $TestScript.Replace('@@GLAB_INSTALL_ROOT@@', $GlabInstallRoot)
-$TestScript = $TestScript.Replace('@@CODEX_SKILLS_ROOT@@', $CodexSkillsRoot)
-$TestScript = $TestScript.Replace('@@SHARED_SKILLS_ROOT@@', $SharedSkillsRoot)
+$TestScript = $TestScript.Replace('@@EXTERNAL_DATABASE_TEST_HOST@@', $ExternalDatabaseTestHost)
+$TestScript = $TestScript.Replace('@@GITLAB_TEST_HOST@@', $GitLabTestHost)
 
 $CleanupScript = @'
 # Copyright (c) 2026 Martin.Bechard@DevConsult.ca
