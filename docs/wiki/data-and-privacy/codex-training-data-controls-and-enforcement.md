@@ -9,7 +9,7 @@ tags: ["data-and-privacy"]
 
 ## Current Understanding
 
-The [Codex training data controls research](../../../raw/project-wiki-research-2026-07-30-codex-training-data-controls.md) distinguishes model-training use from retention, telemetry, feedback, local transcripts, and abuse-monitoring logs. Broad [OpenAI Codex](../../../upstream-ai-wiki/developer-tools/openai-codex.md) product coverage stays upstream; this page owns the local security control for proving which OpenAI account, ChatGPT workspace, or API organization owns the no-training decision used by Codex.
+The [Codex training data controls research](../../../raw/processed/2026-07-30/project-wiki-research-2026-07-30-codex-training-data-controls.md) distinguishes model-training use from retention, telemetry, feedback, local transcripts, and abuse-monitoring logs. Broad [OpenAI Codex](../../../upstream-ai-wiki/developer-tools/openai-codex.md) product coverage stays upstream; this page owns the local security control for proving which OpenAI account, ChatGPT workspace, or API organization owns the no-training decision used by Codex.
 
 For personal ChatGPT Free, Plus, and Pro use, the training choice is an OpenAI account-level data-control setting, not a local Codex project setting. The research records that the account-wide self-service control is mutable, while the Privacy Portal route is described as a permanent opt-out request. The reviewed sources do not explain the internal record, reversal behavior, or whether a personal account exposes an immutable audit log for this preference.
 
@@ -44,7 +44,7 @@ These settings enforce which account or organization Codex uses; they do not cre
 
 ## Authoritative Sources
 
-- [Codex training data controls research](../../../raw/project-wiki-research-2026-07-30-codex-training-data-controls.md)
+- [Codex training data controls research](../../../raw/processed/2026-07-30/project-wiki-research-2026-07-30-codex-training-data-controls.md)
 - OpenAI Help Center Data Controls FAQ: https://help.openai.com/en/articles/7730893-data-controls-faq
 - OpenAI Help Center model-improvement data use: https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance
 - OpenAI Help Center Codex with ChatGPT plan: https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan
@@ -80,4 +80,4 @@ These settings enforce which account or organization Codex uses; they do not cre
 
 ## Maintenance Notes
 
-- Created on 2026-07-30 from the [Codex training data controls research](../../../raw/project-wiki-research-2026-07-30-codex-training-data-controls.md); keep this page limited to Codex security-control assurance and route broad product behavior to the upstream AI wiki.
+- Created on 2026-07-30 from the [Codex training data controls research](../../../raw/processed/2026-07-30/project-wiki-research-2026-07-30-codex-training-data-controls.md); keep this page limited to Codex security-control assurance and route broad product behavior to the upstream AI wiki.
