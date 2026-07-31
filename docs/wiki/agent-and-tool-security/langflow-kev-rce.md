@@ -12,7 +12,13 @@ The [July 23 topic news collector source](../../../raw/processed/2026-07-23/ai-s
 
 Broad Langflow product and AI workflow-builder background belongs upstream. This page owns the local AI orchestration security lens: Langflow-style platforms often hold model credentials, data connectors, tool definitions, and runtime authority, so an exposed RCE becomes an agent infrastructure incident boundary rather than only an application-server patch item.
 
-The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json) adds [Singapore CSA advisory AL-2026-092](https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-092/) as government advisory context. CSA repeats active-exploitation urgency, identifies Langflow versions 1.7.3 and earlier as affected, and recommends immediate updating; keep CISA KEV and NVD as the primary exploitation and CVE anchors.
+The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json) and [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) add [Singapore CSA advisory AL-2026-092](https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-092/) as government advisory context. CSA adds three local facts:
+
+- active-exploitation urgency still applies;
+- Langflow versions 1.7.3 and earlier are affected;
+- immediate updating is the stated remediation.
+
+Keep CISA KEV and NVD as the primary exploitation and CVE anchors.
 
 ## Security Impact
 
@@ -28,6 +34,7 @@ The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-secu
 - [July 23 topic news collector source](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json)
 - [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json)
 - [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json)
+- [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json)
 - CISA alert: https://www.cisa.gov/news-events/alerts/2026/07/21/cisa-adds-four-known-exploited-vulnerabilities-catalog
 - CISA KEV catalog lookup: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-0770
 - NVD: https://nvd.nist.gov/vuln/detail/CVE-2026-0770
@@ -60,4 +67,4 @@ The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-secu
 
 ## Maintenance Notes
 
-- Added from the [July 23, 2026 raw collector artifact](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json); enriched from the [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json) and [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json); track KEV due-date and exploitation status separately from general Langflow framework coverage.
+- Added from the [July 23, 2026 raw collector artifact](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json); enriched from the [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), and [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json); track KEV due-date and exploitation status separately from general Langflow framework coverage.

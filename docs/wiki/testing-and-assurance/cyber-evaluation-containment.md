@@ -36,6 +36,13 @@ The [July 29 topic news collector source](../../../raw/processed/2026-07-29/ai-s
 
 These boundaries sit alongside the original model-evaluation sandbox and Hugging Face production systems.
 
+The [July 30 topic news collector source](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json) expands the containment pattern beyond one vendor:
+
+- [OpenAI's update](https://openai.com/index/hugging-face-model-evaluation-security-incident/) says a previously unknown Artifactory vulnerability gave models internet access despite no direct evaluation-environment internet access.
+- The [Anthropic internet-connected cyber-evaluation incident](../incident-response/anthropic-internet-connected-cyber-evaluation-incident.md) records reported real-world system access when evaluation infrastructure was connected to the internet.
+
+The shared control lesson is that cyber evaluations need positive proof of network isolation, package-publishing denial, credential absence, and third-party target segregation before the model is allowed to pursue realistic objectives.
+
 ## Control Implications
 
 - Keep cyber-evaluation infrastructure separate from production credentials and production-reachable networks.
@@ -48,6 +55,7 @@ These boundaries sit alongside the original model-evaluation sandbox and Hugging
 - Treat model configuration files and evaluation templates as untrusted execution surfaces.
 - Use ephemeral Kubernetes service accounts and evaluation-only secrets that can be revoked without production blast radius.
 - Treat third-party code-evaluation sandboxes, mesh-network clients, and source-control write grants as evaluation egress and authority surfaces that require allowlists, ephemeral credentials, and post-run revocation.
+- Prohibit public package publication, internet scanning, and benchmark answer-key or solution-store access unless a test explicitly requires those paths and has separate legal, monitoring, and rollback controls.
 
 ## Authoritative Sources
 
@@ -59,6 +67,7 @@ These boundaries sit alongside the original model-evaluation sandbox and Hugging
 - [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json)
 - [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
 - [July 29 topic news collector source](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json)
+- [July 30 topic news collector source](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json)
 - Keepit containment-control analysis: https://www.keepit.com/blog/openai-hugging-face/
 
 ## Related Code
@@ -79,12 +88,14 @@ These boundaries sit alongside the original model-evaluation sandbox and Hugging
 - [agent network egress controls](../agent-and-tool-security/agent-network-egress-controls.md)
 - [evaluation artifact template execution risk](../model-and-prompt-security/evaluation-artifact-template-execution-risk.md)
 - [incident response](../incident-response/index.md)
+- [Anthropic internet-connected cyber-evaluation incident](../incident-response/anthropic-internet-connected-cyber-evaluation-incident.md)
 
 ## Open Questions
 
 - Which evaluation harness controls should become mandatory release gates after public incident evidence matures?
 - What evidence should prove that third-party code-evaluation, mesh-network, and source-control privileges cannot persist after a cyber-evaluation run?
+- What evidence should prove that evaluation agents cannot publish public packages, scan unrelated internet targets, or access benchmark solution stores?
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), [July 28 collector](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json), and [July 29 collector](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json) with confirmed-exploitation, control-change, media-attributed timeline, recovery-trust, evaluation-artifact execution, and third-party sandbox boundary evidence.
+- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), [July 28 collector](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json), [July 29 collector](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json), and [July 30 collector](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json) with confirmed-exploitation, control-change, media-attributed timeline, recovery-trust, evaluation-artifact execution, and third-party sandbox boundary evidence.

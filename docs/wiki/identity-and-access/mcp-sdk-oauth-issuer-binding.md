@@ -17,6 +17,14 @@ The release evidence identifies these local control areas:
 - issuer binding;
 - issuer mix-up mitigation.
 
+The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) adds the same v1.7.0 release as watcher evidence and connects these SDK changes to MCP client/server capability validation:
+
+- protocol 2026-07-28 support;
+- stateless request metadata;
+- server discovery;
+- sessionless behavior;
+- consolidated OAuth changes.
+
 Broad [MCP authorization model](../../../upstream-ai-wiki/techniques/mcp-authorization-model.md), protocol, and SDK catalog context stays upstream. Locally, this page owns the identity-control lens for MCP SDK upgrades, while [MCP SDK transport header handling](../infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md) owns streamable HTTP headers, stateless metadata, server discovery, request-size enforcement, and SSE transport background.
 
 ## Security Impact
@@ -36,6 +44,7 @@ Broad [MCP authorization model](../../../upstream-ai-wiki/techniques/mcp-authori
 
 - [July 29 topic news collector source](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json)
 - [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json)
+- [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json)
 - MCP Go SDK v1.7.0 release: https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0
 
 ## Related Code
@@ -63,4 +72,4 @@ Broad [MCP authorization model](../../../upstream-ai-wiki/techniques/mcp-authori
 
 ## Maintenance Notes
 
-- Split from [MCP SDK transport header handling](../infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md) after July 29 topic-verifier correction so OAuth issuer, scope, and refresh-token controls remain independently maintainable.
+- Split from [MCP SDK transport header handling](../infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md) after July 29 topic-verifier correction so OAuth issuer, scope, and refresh-token controls remain independently maintainable; enriched from the [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) with protocol 2026-07-28 and sessionless capability-validation evidence.

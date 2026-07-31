@@ -12,6 +12,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 - [AI workload cost anomaly monitoring](ai-workload-cost-anomaly-monitoring.md)
 - [Open defensive AI security infrastructure](open-defensive-ai-security-infrastructure.md)
 - [Agentic vulnerability management assurance](agentic-vulnerability-management-assurance.md)
+- [Coding agent access validation](coding-agent-access-validation.md)
 
 ## Authoritative Sources
 

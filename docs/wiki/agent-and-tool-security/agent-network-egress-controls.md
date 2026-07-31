@@ -12,6 +12,8 @@ Agent network egress controls limit where model-driven tools, browsers, package 
 
 The shared rule is to authorize the final network destination, not only the user-facing tool intent. Tool protocols, URL schemas, provider names, or "browser" labels do not prove that the destination is safe.
 
+The [Codex security guide](../../../guides/agent-security/Codex-Development-Security-Guide.md) and [Junie profile in the JetBrains AI Development Security Guide](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) apply this rule to local development: dependency traffic is restricted to an approved artifact proxy, development services bind to loopback, and remote Git, public web commands, and external-system CLIs remain blocked or approval-gated. The Codex profile also makes an important residual boundary explicit: allowing loopback hostnames permits connections to every listening local port because its host policy is not port-specific. The Junie profile narrows command authority further by allowing only an exact health-check URL.
+
 The [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) adds [Stride operational guidance](https://www.stride.build/blog/network-egress-control-ai-agents) for these egress controls:
 
 - default-deny outbound access;
@@ -21,6 +23,13 @@ The [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-secu
 
 Treat these as control guidance rather than incident evidence.
 
+The [July 30 topic news collector source](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json) adds two evaluation-egress failure modes:
+
+- [OpenAI](https://openai.com/index/hugging-face-model-evaluation-security-incident/) says a previously unknown Artifactory vulnerability let an evaluation model reach the internet even though the environment had no direct internet access.
+- [Axios](https://www.axios.com/2026/07/28/openai-hugging-face-modal-labs-hack) reports an unauthenticated Modal customer endpoint became reachable during the same incident.
+
+These are evidence that package proxies, customer sandboxes, and benchmark-adjacent endpoints must be modeled as outbound paths, not only as internal dependencies.
+
 ## Control Implications
 
 - Block loopback, link-local, private, reserved, and cloud metadata ranges unless the tool has an explicit internal-access purpose.
@@ -29,6 +38,10 @@ Treat these as control guidance rather than incident evidence.
 - Keep credentials and production services outside reachable egress paths for cyber-evaluation harnesses.
 - Treat prompt injection that changes a URL, provider endpoint, or package source as an egress-control bypass attempt.
 - Inventory dependencies and package sources that agent tools can reach because dependency fetches can become hidden egress paths.
+- Bind development servers and databases to loopback, but inventory other local listeners because host-level loopback permission may not be port-specific.
+- Separate product web search from local-command network access; authorizing one must not silently authorize the other.
+- Keep remote repository operations and external-system CLIs approval-gated even when local Git commands are permitted.
+- Treat package proxies, sandbox APIs, and benchmark services as egress destinations with their own deny rules and monitoring, even when direct public internet access is blocked.
 
 ## Authoritative Sources
 
@@ -36,7 +49,10 @@ Treat these as control guidance rather than incident evidence.
 - [OpenAI Hugging Face cyber-evaluation incident](../incident-response/openai-hugging-face-cyber-evaluation-incident.md)
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
 - [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json)
+- [July 30 topic news collector source](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json)
 - Stride guidance: https://www.stride.build/blog/network-egress-control-ai-agents
+- [Codex Development Security Guide](../../../guides/agent-security/Codex-Development-Security-Guide.md)
+- [JetBrains AI Development Security Guide - Junie profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
 
 ## Related Code
 
@@ -58,8 +74,8 @@ Treat these as control guidance rather than incident evidence.
 
 ## Open Questions
 
-- Which egress telemetry fields should be standardized across local AI tool servers?
+- Which egress telemetry fields should be standardized across local AI tool servers and cyber-evaluation harnesses?
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) with default-deny, allowlist, metadata-blocking, and dependency-inventory guidance.
+- Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) with default-deny, allowlist, metadata-blocking, and dependency-inventory guidance, extended on 2026-07-30 with local development service, artifact, Git, and web-search boundaries from the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md) and [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides, and then updated from the [July 30 topic collector](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json) with package-proxy and sandbox-endpoint egress evidence.

@@ -13,6 +13,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [AI agent sandbox escape host file access](ai-agent-sandbox-escape-host-file-access.md)
 - [MCP SDK transport header handling](mcp-sdk-transport-header-handling.md)
 - [AI guardrail dependency compromise](ai-guardrail-dependency-compromise.md)
+- [AI development workstation containment](ai-development-workstation-containment.md)
+- [Agent build and dependency execution boundaries](agent-build-and-dependency-execution-boundaries.md)
 
 ## Authoritative Sources
 

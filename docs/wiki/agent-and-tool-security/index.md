@@ -20,6 +20,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Google API hub MCP security controls](google-api-hub-mcp-security-controls.md)
 - [Kimi Code FetchURL SSRF](kimi-code-fetchurl-ssrf.md)
 - [Cloud observability MCP response controls](cloud-observability-mcp-response-controls.md)
+- [Local agent execution and processing boundaries](local-agent-execution-and-processing-boundaries.md)
+- [Coding agent command approval boundaries](coding-agent-command-approval-boundaries.md)
 
 ## Authoritative Sources
 

@@ -13,6 +13,8 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [AI coding telemetry access controls](ai-coding-telemetry-access-controls.md)
 - [Model processing data residency controls](model-processing-data-residency-controls.md)
 - [AI agent collaboration DLP controls](ai-agent-collaboration-dlp-controls.md)
+- [AI development context exclusion controls](ai-development-context-exclusion-controls.md)
+- [Codex training data controls and enforcement](codex-training-data-controls-and-enforcement.md)
 
 ## Authoritative Sources
 

@@ -1,0 +1,533 @@
+{
+  "affected_boundaries": [
+    "AI development workstation containment",
+    "BYOK provider keys",
+    "Langflow unauthenticated RCE",
+    "MCP OAuth issuer binding",
+    "MCP and skill discovery paths",
+    "MCP tool approval",
+    "MCP/hooks/agents/skills/guidelines loading",
+    "agent credential isolation",
+    "agent workflow runtime exposure",
+    "agent-triggered build execution",
+    "build-script edit execution",
+    "build-script execution boundary",
+    "client/server capability validation",
+    "coding-agent access validation",
+    "coding-agent command approval",
+    "context exclusion",
+    "file access restriction",
+    "internet-exposed AI application builders",
+    "local agent execution",
+    "non-interactive CLI validation",
+    "non-interactive project trust",
+    "outside-project filesystem access",
+    "per-project configuration loading",
+    "preview execution",
+    "project trust marker",
+    "project-root ignore policy",
+    "repository-controlled configuration loading",
+    "repository-controlled inputs",
+    "session handling",
+    "stateless protocol negotiation",
+    "temporary storage isolation",
+    "test execution approval",
+    "trust-marker validation"
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "blockers": [],
+  "docs_wiki_updated": false,
+  "evidence_classifications": [
+    "confirmed_exploitation",
+    "demonstrated_research",
+    "disclosed_vulnerability",
+    "mitigation",
+    "control_change",
+    "unverified_claim"
+  ],
+  "excluded_candidates": [
+    {
+      "candidate_classification": "mitigation",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-guardrail-dependency-compromise.md",
+      "reason": "No visible publication or update date on the page, despite recent crawl; excluded under missing visible date rule.",
+      "source_url": "https://o3.security/malware/pypi/guardrails-ai"
+    },
+    {
+      "candidate_classification": "disclosed_vulnerability",
+      "leaf_id": "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "reason": "Visible date is 2026-07-20, outside the strict seven-day window.",
+      "source_url": "https://xploitwire.com/article/network-ai-flaw-exposes-approval-data"
+    },
+    {
+      "candidate_classification": "demonstrated_research",
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+      "reason": "Search result did not provide a precise in-window visible date beyond prior captured AgentForger disclosure; excluded as already-captured or ambiguous date.",
+      "source_url": "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery"
+    },
+    {
+      "candidate_classification": "control_change",
+      "leaf_id": "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+      "reason": "Google MCP Cursor redirect fix is dated 2026-07-22, before the strict window and adjacent to final-query authorization rather than a new same-leaf CVE-2026-15829 control delta.",
+      "source_url": "https://docs.cloud.google.com/mcp/release-notes"
+    },
+    {
+      "candidate_classification": "control_change",
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+      "reason": "Release note is dated 2026-07-22 and addresses Cursor redirect URI compatibility, not a new BigQuery forecast boundary-bypass fix.",
+      "source_url": "https://docs.cloud.google.com/mcp/release-notes"
+    },
+    {
+      "candidate_classification": "disclosed_vulnerability",
+      "leaf_id": "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+      "reason": "Visible date is 2026-07-22, before the strict window start; retained as checked source but not qualified.",
+      "source_url": "https://securelayer7.net/lab/cve-2026-65015-n8n-ai-agent-project-viewer-privilege-escalation-run-node-tool"
+    }
+  ],
+  "follow_up_notes": [
+    "Ingest Junie July 30 documentation as security-control evidence across the new coding-agent security leaves, while routing broad product usage upstream.",
+    "Ingest MCP Go SDK v1.7.0 only for OAuth/session/stateless security boundary implications; route broad SDK release coverage upstream.",
+    "CSA Langflow advisory can enrich the local KEV RCE page with official government active-exploitation and affected-version confirmation.",
+    "Do not ingest n8n SecureLayer7 item from this run unless a later in-window update appears; visible date is before the strict window."
+  ],
+  "leaf_universe_count": 53,
+  "named_entities": [
+    ".aiignore",
+    "ACP",
+    "Anthropic",
+    "CVE-2026-0770",
+    "Google AI",
+    "JetBrains",
+    "Junie",
+    "Langflow",
+    "MCP",
+    "NVD",
+    "OAuth",
+    "OpenAI",
+    "OpenRouter",
+    "SEP-2567",
+    "SEP-2575",
+    "Singapore CSA",
+    "Zero Day Initiative",
+    "modelcontextprotocol/go-sdk",
+    "xAI"
+  ],
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "coding-agent command approval",
+        "MCP tool approval",
+        "outside-project filesystem access",
+        "build-script execution boundary"
+      ],
+      "confidence": "high",
+      "evidence_classification": "control_change",
+      "leaf_id": "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md",
+      "named_entities": [
+        "Junie",
+        "JetBrains",
+        "MCP"
+      ],
+      "source_title": "Junie Action Allowlist",
+      "source_url": "https://junie.jetbrains.com/docs/action-allowlist.html",
+      "summary": "Junie documents sensitive-action allowlist rule types for terminal, MCP, outside-project reads/writes, build-script edits, and build/test actions, including regex guidance to avoid command chaining and shell metacharacter expansion.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "General Junie CLI product documentation belongs upstream if a broad product update is needed."
+        ],
+        "ai_wiki": [],
+        "local_security_scope": "Keep command-approval and action-allowlist security controls locally."
+      },
+      "visible_published_or_updated_at": "2026-07-30"
+    },
+    {
+      "affected_boundaries": [
+        "local agent execution",
+        "non-interactive project trust",
+        "repository-controlled inputs",
+        "MCP/hooks/agents/skills/guidelines loading"
+      ],
+      "confidence": "high",
+      "evidence_classification": "control_change",
+      "leaf_id": "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+      "named_entities": [
+        "Junie",
+        "JetBrains",
+        "ACP"
+      ],
+      "source_title": "Junie Headless mode",
+      "source_url": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "summary": "Junie documents the non-interactive project-trust boundary for one-shot, piped-input, ACP, Gateway, and other CLI modes; while the rollout toggle is disabled, those modes retain existing trusted behavior, and when enabled they use exact or parent trust markers before loading project-scoped inputs.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "General Junie headless workflow and product usage belong upstream."
+        ],
+        "ai_wiki": [
+          "ACP is a broad protocol entity."
+        ],
+        "local_security_scope": "Keep non-interactive trust-marker and repository-input loading controls locally."
+      },
+      "visible_published_or_updated_at": "2026-07-30"
+    },
+    {
+      "affected_boundaries": [
+        "context exclusion",
+        "file access restriction",
+        "project-root ignore policy"
+      ],
+      "confidence": "high",
+      "evidence_classification": "mitigation",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+      "named_entities": [
+        "Junie",
+        ".aiignore"
+      ],
+      "source_title": "Junie Action Allowlist",
+      "source_url": "https://junie.jetbrains.com/docs/action-allowlist.html",
+      "summary": "Junie points to project-root .aiignore patterns for restricting files and folders the agent may access, making context-exclusion controls part of the approval and allowlist surface.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "General .aiignore workflow guidance belongs upstream if tracked."
+        ],
+        "ai_wiki": [],
+        "local_security_scope": "Keep sensitive-file and context-exclusion control implications locally."
+      },
+      "visible_published_or_updated_at": "2026-07-30"
+    },
+    {
+      "affected_boundaries": [
+        "agent credential isolation",
+        "BYOK provider keys",
+        "per-project configuration loading",
+        "MCP and skill discovery paths"
+      ],
+      "confidence": "high",
+      "evidence_classification": "control_change",
+      "leaf_id": "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+      "named_entities": [
+        "Junie",
+        "OpenAI",
+        "Anthropic",
+        "Google AI",
+        "xAI",
+        "OpenRouter",
+        "MCP"
+      ],
+      "source_title": "Junie CLI reference",
+      "source_url": "https://junie.jetbrains.com/docs/parameters.html",
+      "summary": "Junie CLI reference documents separate authentication surfaces for Junie tokens, license keys, and BYOK provider API keys, plus configurable cache, MCP, model, skill, command, and agent locations that affect credential and project-input isolation.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "General CLI configuration behavior belongs upstream."
+        ],
+        "ai_wiki": [
+          "Provider and product catalog context belongs upstream."
+        ],
+        "local_security_scope": "Keep credential-isolation and discovery-path security controls locally."
+      },
+      "visible_published_or_updated_at": "2026-07-30"
+    },
+    {
+      "affected_boundaries": [
+        "MCP OAuth issuer binding",
+        "stateless protocol negotiation",
+        "client/server capability validation",
+        "session handling"
+      ],
+      "confidence": "high",
+      "evidence_classification": "control_change",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+      "named_entities": [
+        "MCP",
+        "modelcontextprotocol/go-sdk",
+        "OAuth",
+        "SEP-2575",
+        "SEP-2567"
+      ],
+      "source_title": "modelcontextprotocol/go-sdk v1.7.0",
+      "source_url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+      "summary": "MCP Go SDK v1.7.0 adds full support for protocol 2026-07-28, stateless request metadata, server discovery, sessionless behavior, and consolidated OAuth-related changes from the pre-releases.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "Broad MCP Go SDK release coverage belongs upstream."
+        ],
+        "local_security_scope": "Keep OAuth issuer/session/security-boundary implications locally."
+      },
+      "visible_published_or_updated_at": "2026-07-28"
+    },
+    {
+      "affected_boundaries": [
+        "agent-triggered build execution",
+        "test execution approval",
+        "build-script edit execution",
+        "preview execution"
+      ],
+      "confidence": "high",
+      "evidence_classification": "control_change",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+      "named_entities": [
+        "Junie",
+        "JetBrains"
+      ],
+      "source_title": "Junie Action Allowlist",
+      "source_url": "https://junie.jetbrains.com/docs/action-allowlist.html",
+      "summary": "Junie treats Build, RunTest, Preview, and build-script edits as action classes with approval behavior; editing build scripts is called out as potentially leading to code execution through project import.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "General IDE build/test workflow belongs upstream."
+        ],
+        "ai_wiki": [],
+        "local_security_scope": "Keep build/dependency execution approval controls locally."
+      },
+      "visible_published_or_updated_at": "2026-07-30"
+    },
+    {
+      "affected_boundaries": [
+        "AI development workstation containment",
+        "project trust marker",
+        "temporary storage isolation",
+        "repository-controlled configuration loading"
+      ],
+      "confidence": "high",
+      "evidence_classification": "control_change",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md",
+      "named_entities": [
+        "Junie",
+        "MCP",
+        "ACP"
+      ],
+      "source_title": "Junie Headless mode",
+      "source_url": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "summary": "Junie documents restricted-mode behavior for unknown projects in non-interactive contexts, using temporary writable Junie storage outside the repository and avoiding repository-controlled MCP servers, hooks, agents, skills, or guidelines when trust-marker enforcement is enabled.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "General headless development workflow belongs upstream."
+        ],
+        "ai_wiki": [
+          "Broad Junie/ACP entity coverage belongs upstream."
+        ],
+        "local_security_scope": "Keep workstation containment and trust-loading security boundaries locally."
+      },
+      "visible_published_or_updated_at": "2026-07-30"
+    },
+    {
+      "affected_boundaries": [
+        "coding-agent access validation",
+        "trust-marker validation",
+        "non-interactive CLI validation"
+      ],
+      "confidence": "high",
+      "evidence_classification": "control_change",
+      "leaf_id": "docs/wiki/testing-and-assurance/coding-agent-access-validation.md",
+      "named_entities": [
+        "Junie",
+        "ACP"
+      ],
+      "source_title": "Junie Headless mode",
+      "source_url": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "summary": "Junie headless documentation gives an assurance target for validating interactive versus non-interactive trust behavior, including exact-project and parent-directory trust markers and restricted mode for unknown projects.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "General validation workflow examples may belong upstream."
+        ],
+        "ai_wiki": [],
+        "local_security_scope": "Keep access-validation evidence for security boundaries locally."
+      },
+      "visible_published_or_updated_at": "2026-07-30"
+    },
+    {
+      "affected_boundaries": [
+        "Langflow unauthenticated RCE",
+        "agent workflow runtime exposure",
+        "internet-exposed AI application builders"
+      ],
+      "confidence": "high",
+      "evidence_classification": "confirmed_exploitation",
+      "leaf_id": "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+      "named_entities": [
+        "Langflow",
+        "CVE-2026-0770",
+        "Singapore CSA",
+        "NVD",
+        "Zero Day Initiative"
+      ],
+      "source_title": "Critical Vulnerability in Langflow",
+      "source_url": "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-092/",
+      "summary": "Singapore CSA warns CVE-2026-0770 is reportedly under active exploitation, affects Langflow 1.7.3 and earlier, and should be remediated by updating immediately.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "General Langflow framework coverage belongs upstream."
+        ],
+        "local_security_scope": "Keep exploited AI-agent workflow RCE and remediation implications locally."
+      },
+      "visible_published_or_updated_at": "2026-07-24"
+    }
+  ],
+  "raw_processed_updated": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-07-31T00:01:59Z",
+  "run_started_at_local": "2026-07-30T20:01:59-04:00",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md",
+    "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+    "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+    "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+    "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+    "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-guardrail-dependency-compromise.md",
+    "docs/wiki/testing-and-assurance/coding-agent-access-validation.md",
+    "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+    "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+    "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+    "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+    "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+    "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md"
+  ],
+  "selection_policy": "Unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md",
+      "source_urls": [
+        "https://junie.jetbrains.com/docs/action-allowlist.html",
+        "https://help.openai.com/en/articles/11096431",
+        "https://github.com/openai/codex/issues/33974"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+      "source_urls": [
+        "https://junie.jetbrains.com/docs/junie-headless.html",
+        "https://junie.jetbrains.com/docs/parameters.html",
+        "https://www.jetbrains.com/help/idea/security-model.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+      "source_urls": [
+        "https://junie.jetbrains.com/docs/action-allowlist.html",
+        "https://junie.jetbrains.com/docs/junie-headless.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+      "source_urls": [
+        "https://junie.jetbrains.com/docs/parameters.html",
+        "https://junie.jetbrains.com/docs/junie-headless.html",
+        "https://blog.jetbrains.com/platform/2026/06/marketplace-ecosystem-security-update-malicious-ai-plugins/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+      "source_urls": [
+        "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+        "https://github.com/modelcontextprotocol/go-sdk/releases"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+      "source_urls": [
+        "https://junie.jetbrains.com/docs/action-allowlist.html",
+        "https://junie.jetbrains.com/docs/parameters.html",
+        "https://blog.jetbrains.com/platform/2026/06/marketplace-ecosystem-security-update-malicious-ai-plugins/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md",
+      "source_urls": [
+        "https://junie.jetbrains.com/docs/junie-headless.html",
+        "https://www.jetbrains.com/help/idea/security-model.html",
+        "https://help.openai.com/en/articles/11096431"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-guardrail-dependency-compromise.md",
+      "source_urls": [
+        "https://o3.security/malware/pypi/guardrails-ai",
+        "https://advisories.gitlab.com/pypi/guardrails-ai/CVE-2026-45758/",
+        "https://security.snyk.io/package/pip/guardrails-ai"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/coding-agent-access-validation.md",
+      "source_urls": [
+        "https://junie.jetbrains.com/docs/action-allowlist.html",
+        "https://junie.jetbrains.com/docs/junie-headless.html",
+        "https://junie.jetbrains.com/docs/parameters.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+        "https://xploitwire.com/article/network-ai-flaw-exposes-approval-data"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+      "source_urls": [
+        "https://zenity.io/company-overview/newsroom/company-news/zenity-labs-uncovers-agentforger-a-chatgpt-vulnerability",
+        "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery",
+        "https://labs.zenity.io/p/agentforger-part-2-the-autonomous-insider"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+        "https://github.com/googleapis/mcp-toolbox/pull/3324",
+        "https://docs.cloud.google.com/mcp/release-notes"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+        "https://basefortify.eu/cve_reports/2026/07/cve-2026-15829.html",
+        "https://docs.cloud.google.com/mcp/release-notes"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+      "source_urls": [
+        "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-092/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-0770",
+        "https://blog.kevintel.com/cve-2026-0770-exploited-in-the-wild-langflow-rce-added-to-cisa-kev/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+      "source_urls": [
+        "https://securelayer7.net/lab/cve-2026-65015-n8n-ai-agent-project-viewer-privilege-escalation-run-node-tool",
+        "https://advisories.gitlab.com/npm/n8n/CVE-2026-65015/",
+        "https://github.com/advisories/GHSA-w46p-w7w2-fr9g"
+      ]
+    }
+  ],
+  "strict_window": {
+    "date_policy": "Only sources published or visibly updated within the last 7 days; date-only sources before 2026-07-24 local were excluded.",
+    "end_inclusive": "2026-07-31T00:01:59Z",
+    "start_exclusive": "2026-07-24T00:01:59Z"
+  },
+  "upstream_routing": {
+    "ai_dev_wiki": [
+      "General AI-development practices, workflow usage, and non-security agent-operation guidance belong upstream."
+    ],
+    "ai_wiki": [
+      "Broad AI entities, product catalog entries, model/provider pages, MCP protocol or SDK background, and ACP/Junie/Codex product coverage belong upstream when not security-specific."
+    ],
+    "local": "This artifact keeps only security-specific controls, exploitation, mitigation, and boundary implications for selected leaves."
+  }
+}
