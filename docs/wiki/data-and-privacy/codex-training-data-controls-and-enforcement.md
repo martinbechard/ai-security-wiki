@@ -17,6 +17,16 @@ For managed ChatGPT Business, Enterprise, and Edu workspaces, training use is go
 
 For API-key authentication, the training decision belongs to the OpenAI Platform organization or selected projects. API inputs and outputs are not used for model training by default unless sharing is explicitly enabled, but that is not the same as zero retention; default abuse-monitoring logs may retain customer content for a limited period.
 
+The [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json) adds [OpenAI Help Center evidence](https://help.openai.com/en/articles/5722486-api-data-usage-policies) that individual ChatGPT and Codex content are covered by account-level model-improvement controls. Locally, that reinforces this assurance split:
+
+- Codex task content;
+- Codex environment data;
+- explicit feedback;
+- support conversation data;
+- Temporary Chat style exclusions.
+
+Each boundary must be checked separately instead of being treated as one "training off" switch.
+
 Codex local configuration does not independently turn provider model training off. Managed authentication can reduce accidental policy drift by forcing Codex to use the approved control plane:
 
 ```toml
@@ -36,6 +46,8 @@ These settings enforce which account or organization Codex uses; they do not cre
 
 - Record the selected Codex authentication route and the account, workspace, organization, or project that owns training-use policy.
 - For personal use, check both the ChatGPT account training control and the separate Codex full-environment sharing control when that setting is available.
+- Check feedback and support-conversation settings separately because those paths can create training-use exceptions even when ordinary account content is opted out.
+- Record whether the Codex full-environment control covers repository files, shell output, terminal transcripts, and environment metadata for the selected authentication route.
 - Retain Privacy Portal or account-setting evidence, but do not claim a personal immutable audit trail unless OpenAI documents one.
 - Prefer Enterprise or an approved API organization for organization-controlled use when accidental personal-account drift is unacceptable.
 - Use managed `forced_login_method`; add `forced_chatgpt_workspace_id` for approved ChatGPT workspaces.
@@ -45,6 +57,7 @@ These settings enforce which account or organization Codex uses; they do not cre
 ## Authoritative Sources
 
 - [Codex training data controls research](../../../raw/processed/2026-07-30/project-wiki-research-2026-07-30-codex-training-data-controls.md)
+- [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json)
 - OpenAI Help Center Data Controls FAQ: https://help.openai.com/en/articles/7730893-data-controls-faq
 - OpenAI Help Center model-improvement data use: https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance
 - OpenAI Help Center Codex with ChatGPT plan: https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan
@@ -76,8 +89,8 @@ These settings enforce which account or organization Codex uses; they do not cre
 
 - How does OpenAI represent Privacy Portal permanent opt-out requests internally, and can they be reversed?
 - Which audit event or export, if any, proves a personal ChatGPT training-control state at a point in time?
-- Where exactly is the separate Codex full-environment sharing control exposed, and what content boundary does it cover?
+- Where exactly is the separate Codex full-environment sharing control exposed, and what content boundary does it cover for task, environment, shell, and transcript data?
 
 ## Maintenance Notes
 
-- Created on 2026-07-30 from the [Codex training data controls research](../../../raw/processed/2026-07-30/project-wiki-research-2026-07-30-codex-training-data-controls.md); keep this page limited to Codex security-control assurance and route broad product behavior to the upstream AI wiki.
+- Created on 2026-07-30 from the [Codex training data controls research](../../../raw/processed/2026-07-30/project-wiki-research-2026-07-30-codex-training-data-controls.md); enriched from the [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json). Keep this page limited to Codex security-control assurance and route broad product behavior to the upstream AI wiki.

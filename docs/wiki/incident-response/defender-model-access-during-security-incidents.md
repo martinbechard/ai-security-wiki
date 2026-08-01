@@ -14,6 +14,8 @@ The reusable concern is not broad AI-assisted development practice or [AI-assist
 
 The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json) adds [Keepit](https://www.keepit.com/blog/openai-hugging-face/) as secondary response-control analysis. Keepit frames the incident as a recovery-trust and evidence-boundary problem after AI-agent activity reaches production; keep this as corroborating control framing, not as a primary incident timeline.
 
+The [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json) adds [SANS analysis](https://www.sans.org/blog/models-said-no-inside-hugging-face-post-mortem) of the OpenAI/Hugging Face response. SANS describes responder friction when frontier models refused to help reconstruct attack data during the incident. Treat that as secondary incident-response evidence: it does not prove the full incident chronology, but it shows why defender model access must distinguish malicious enablement from authorized reconstruction in a documented incident workspace.
+
 ## Control Implications
 
 - Keep incident data classification rules in force when sharing evidence with defensive models.
@@ -22,6 +24,8 @@ The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-secu
 - Require human approval for containment, disclosure, and recovery actions suggested by a model.
 - Record whether model-assisted analysis is preliminary, confirmed by deterministic evidence, or rejected.
 - Preserve backup, recovery, and trace evidence separately from model-generated conclusions.
+- Provide an incident-response mode or approval path that lets authorized responders reconstruct exploit steps without weakening general-public guardrails.
+- Record refusal, override, and approval evidence when model safeguards block defensive reconstruction.
 
 ## Authoritative Sources
 
@@ -30,7 +34,9 @@ The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-secu
 - [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 - [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json)
 - [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json)
+- [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json)
 - Keepit response-control analysis: https://www.keepit.com/blog/openai-hugging-face/
+- SANS incident-response analysis: https://www.sans.org/blog/models-said-no-inside-hugging-face-post-mortem
 
 ## Related Code
 
@@ -53,7 +59,8 @@ The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-secu
 ## Open Questions
 
 - What evidence standard is required before model-assisted incident conclusions are treated as confirmed?
+- What control evidence should authorize incident responders to obtain model help with exploit reconstruction without creating reusable offensive guidance outside the incident workspace?
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), and [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json) with defensive-model-access, assurance-pressure, and recovery-trust evidence.
+- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), and [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json) with defensive-model-access, assurance-pressure, recovery-trust, and incident-reconstruction access evidence.

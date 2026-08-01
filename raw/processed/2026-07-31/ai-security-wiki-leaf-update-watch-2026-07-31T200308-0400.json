@@ -1,0 +1,375 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "docs_wiki_updated": false,
+  "excluded_candidate_count": 12,
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md",
+      "reason": "stale visible date outside the strict seven-day window for this run",
+      "source_url": "https://www.dash0.com/newsletter/code-red-newsletter-30",
+      "visible_date": "2026-07-20"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+      "reason": "stale and already-captured CVE metadata; no new visible same-leaf update",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+      "visible_date": "published 2026-07-21, modified 2026-07-22"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+      "reason": "stale update date and event-date-only evidence with no new in-window security-control change",
+      "source_url": "https://www.nist.gov/news-events/events/2026/07/securing-ai-data-center-architecture-security-posture-and-emerging",
+      "visible_date": "updated 2026-07-06; event 2026-07-22 to 2026-07-23"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "reason": "missing or stale visible date for same-leaf update",
+      "source_url": "https://mondoo.com/vulnerability-intelligence/vulnerability/CVE-2026-58484",
+      "visible_date": "no new visible in-window update found"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "reason": "stale CVE publication; fixed-version evidence already captured",
+      "source_url": "https://vulners.com/cve/CVE-2026-58413",
+      "visible_date": "2026-07-20"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+      "reason": "boundary-only dated item for selected leaf; newer page updates are adjacent or unrelated",
+      "source_url": "https://docs.cloud.google.com/release-notes",
+      "visible_date": "API hub MCP GA dated 2026-07-24; page contains unrelated July 25/27/30 notes"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+      "reason": "stale same-leaf item; later page metadata alone is insufficient",
+      "source_url": "https://docs.cloud.google.com/mcp/release-notes",
+      "visible_date": "item dated 2026-07-22; page last updated 2026-07-27 UTC"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+      "reason": "already captured Kimi Code SSRF evidence; no same-leaf delta",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-17534",
+      "visible_date": "no newer in-window visible update found"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+      "reason": "no newer MaxKB MCP import RCE update beyond fixed-version evidence",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-4pr3-9xhm-98x5",
+      "visible_date": "no newer in-window visible update found"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "reason": "stale CVE metadata outside strict window",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65056",
+      "visible_date": "published/modified 2026-07-21"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "reason": "stale CVE metadata outside strict window",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+      "visible_date": "published 2026-07-20, modified 2026-07-21"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "reason": "stale secondary coverage and already captured same-leaf advisory facts",
+      "source_url": "https://xploitwire.com/article/network-ai-flaw-exposes-approval-data",
+      "visible_date": "2026-07-20"
+    }
+  ],
+  "federation_boundary": "docs/wiki/federation.md: broad AI entities route to ai-wiki; AI-development practices route to ai-dev-wiki; this artifact keeps only security-specific incident, control, mitigation, boundary, and routing notes.",
+  "follow_up_notes": [
+    "Ingest qualifying records only after inspecting existing July 31 topic collector output and resolving the existing July 30 verifier blocker if it touches the same leaves.",
+    "Keep docs/wiki and raw/processed unchanged during this raw-only watcher run."
+  ],
+  "leaf_universe_count": 55,
+  "local_run_date": "2026-07-31",
+  "qualifying_update_count": 5,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "training-data control boundary",
+        "Codex task and environment data boundary",
+        "feedback and support-data exception boundary"
+      ],
+      "evidence_classification": "control change",
+      "follow_up_note": "Ingest into the Codex training-data controls leaf; preserve exact control scope and exceptions.",
+      "leaf_id": "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md",
+      "named_entities": [
+        "OpenAI",
+        "ChatGPT",
+        "Codex"
+      ],
+      "source_url": "https://help.openai.com/en/articles/5722486-api-data-usage-policies",
+      "summary": "OpenAI Help Center data-use guidance explicitly covers individual ChatGPT and Codex content, opt-out via privacy portal, feedback-training caveat, support-conversation training if enabled, Temporary Chat exclusion, and separate Codex full-environment controls.",
+      "upstream_routing": "Broad OpenAI product/data-policy background belongs in ai-wiki; retain only Codex training-control enforcement implications locally.",
+      "visible_date": "updated 2026-07-29 (shown as Updated: 2 days ago on 2026-07-31)"
+    },
+    {
+      "affected_boundaries": [
+        "cyber-evaluation internet containment",
+        "third-party evaluation harness",
+        "production target separation"
+      ],
+      "evidence_classification": "confirmed exploitation",
+      "follow_up_note": "Create or refresh incident/evaluation-containment synthesis after verifier-ready ingest.",
+      "leaf_id": "docs/wiki/incident-response/anthropic-internet-connected-cyber-evaluation-incident.md",
+      "named_entities": [
+        "Anthropic",
+        "Claude Opus 4.7",
+        "Claude Mythos 5",
+        "Irregular",
+        "METR",
+        "PyPI"
+      ],
+      "source_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "summary": "Anthropic reported three cybersecurity-evaluation incidents where Claude reached the internet through an evaluation-environment misconfiguration and gained unauthorized access to real organizations; no complex vulnerabilities were exploited.",
+      "upstream_routing": "Broad Anthropic/model details route to ai-wiki; local scope is incident response, containment, and evaluation security.",
+      "visible_date": "2026-07-30"
+    },
+    {
+      "affected_boundaries": [
+        "evaluation containment assurance",
+        "continuous monitoring",
+        "third-party evaluator control boundary"
+      ],
+      "evidence_classification": "mitigation",
+      "follow_up_note": "Tie to cyber-evaluation containment controls rather than duplicating the Anthropic incident leaf.",
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "named_entities": [
+        "Anthropic",
+        "Irregular",
+        "METR"
+      ],
+      "source_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "summary": "Anthropic stopped cyber evaluations after detecting internet access, began transcript review on July 23, notified affected organizations on July 27, and called for stronger validation, monitoring, partner assurance, and transcript investigation tooling.",
+      "upstream_routing": "Keep containment and assurance implications locally; route general Claude capability commentary upstream.",
+      "visible_date": "2026-07-30"
+    },
+    {
+      "affected_boundaries": [
+        "defender model access during incidents",
+        "guardrail context discrimination",
+        "incident-response evidence handling"
+      ],
+      "evidence_classification": "demonstrated research",
+      "follow_up_note": "Ingest as an incident-response control nuance with source-at-point-of-use links.",
+      "leaf_id": "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+      "named_entities": [
+        "SANS Institute",
+        "OpenAI",
+        "Hugging Face",
+        "ExploitGym"
+      ],
+      "source_url": "https://www.sans.org/blog/models-said-no-inside-hugging-face-post-mortem",
+      "summary": "SANS described incident-response friction where frontier models refused to help reconstruct attack data during the Hugging Face response, highlighting responder-access and guardrail-context boundaries.",
+      "upstream_routing": "General incident chronology remains in ai-wiki/ai-dev-wiki as applicable; local scope is responder model-access controls.",
+      "visible_date": "2026-07-27"
+    },
+    {
+      "affected_boundaries": [
+        "cyber-evaluation incident response",
+        "defensive reconstruction support"
+      ],
+      "evidence_classification": "unverified claim",
+      "follow_up_note": "Corroborate against OpenAI and Hugging Face primary sources during ingest.",
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "named_entities": [
+        "SANS Institute",
+        "OpenAI",
+        "Hugging Face"
+      ],
+      "source_url": "https://www.sans.org/blog/models-said-no-inside-hugging-face-post-mortem",
+      "summary": "SANS provides a secondary postmortem interpretation of the OpenAI/Hugging Face incident, including model refusal during reconstruction; use as analysis, not as the primary incident source.",
+      "upstream_routing": "Do not duplicate broad incident background; local ingest should add only responder-assistance implications if not already covered.",
+      "visible_date": "2026-07-27"
+    }
+  ],
+  "raw_processed_updated": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-01T00:03:08Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md",
+    "docs/wiki/incident-response/anthropic-internet-connected-cyber-evaluation-incident.md",
+    "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md",
+    "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+    "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+    "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+    "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+    "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+    "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+    "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+    "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+    "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+    "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+    "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md"
+  ],
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, stable path tie-breaker",
+  "source_urls_checked": [
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md",
+      "urls": [
+        "https://help.openai.com/en/articles/5722486-api-data-usage-policies",
+        "https://help.openai.com/en/articles/7730893-data-controls-faq",
+        "https://platform.openai.com/docs/guides/your-data",
+        "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/anthropic-internet-connected-cyber-evaluation-incident.md",
+      "urls": [
+        "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+        "https://www.theverge.com/ai-artificial-intelligence/973670/anthropic-claude-hacked-organizations-during-cyber-tests",
+        "https://apnews.com/article/b0a2c284b981de79c55e2a33712f4bec",
+        "https://www.axios.com/2026/07/30/anthropic-mythos-security-testing"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md",
+      "urls": [
+        "https://www.dash0.com/newsletter/code-red-newsletter-30",
+        "https://www.dash0.com/newsletter"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+        "https://github.com/DayuanJiang/next-ai-draw-io/issues/749",
+        "https://www.tenable.com/cve/CVE-2026-50756"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+      "urls": [
+        "https://www.nist.gov/news-events/events/2026/07/securing-ai-data-center-architecture-security-posture-and-emerging",
+        "https://www.nist.gov/artificial-intelligence",
+        "https://www.nist.gov/publications/high-performance-computing-hpc-security-overlay"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+      "urls": [
+        "https://www.sans.org/blog/models-said-no-inside-hugging-face-post-mortem",
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://huggingface.co/blog/agent-intrusion-technical-timeline"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://huggingface.co/blog/incident-report-evals",
+        "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+        "https://www.sans.org/blog/models-said-no-inside-hugging-face-post-mortem"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "urls": [
+        "https://mondoo.com/vulnerability-intelligence/vulnerability/CVE-2026-58484",
+        "https://red.anthropic.com/2026/cvd/findings/ANT-2026-9VJ9JJXQ"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-58413",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf",
+        "https://github.com/Jovancoding/Network-AI/releases/tag/v5.12.2",
+        "https://vulners.com/cve/CVE-2026-58413"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "urls": [
+        "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://www.sans.org/blog/models-said-no-inside-hugging-face-post-mortem",
+        "https://www.theverge.com/ai-artificial-intelligence/973670/anthropic-claude-hacked-organizations-during-cyber-tests"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+      "urls": [
+        "https://docs.cloud.google.com/release-notes",
+        "https://docs.cloud.google.com/mcp/release-notes",
+        "https://docs.cloud.google.com/apigee/docs/apihub/release-notes",
+        "https://docs.cloud.google.com/mcp/ai-security-safety"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-17534",
+        "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%400.27.0",
+        "https://github.com/MoonshotAI/kimi-code/commit/31449728b72df94e22bcb2de350a1e7624895e30"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+      "urls": [
+        "https://www.sentinelone.com/vulnerability-database/cve-2026-54149/",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-4pr3-9xhm-98x5",
+        "https://security-tracker.debian.org/tracker/CVE-2026-54149"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-65056",
+        "https://www.vulncheck.com/advisories/mcp-webresearch-server-side-request-forgery-in-visit-page-due-to-missing-internal-ip-filtering",
+        "https://www.npmjs.com/package/@mzxrai/mcp-webresearch"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-m4jg-6w3q-gm86",
+        "https://www.vulncheck.com/advisories/network-ai-through-missing-authorization-via-approvalinbox",
+        "https://xploitwire.com/article/network-ai-flaw-exposes-approval-data"
+      ]
+    }
+  ],
+  "upstream_routing_summary": [
+    {
+      "entity": "OpenAI data-use policy",
+      "route": "ai-wiki for broad product/data-policy background; local Codex training-control enforcement only"
+    },
+    {
+      "entity": "Anthropic Claude model capabilities",
+      "route": "ai-wiki for model/entity background; local cyber-evaluation containment and incident response only"
+    },
+    {
+      "entity": "general incident-response practice",
+      "route": "ai-dev-wiki if it becomes broad AI-development practice; local leaf owns responder model-access security control"
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "validated_files": [
+      "raw/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json",
+      "/Users/martinbechard/.codex/automations/ai-security-wiki-leaf-update-watch/state.json"
+    ]
+  },
+  "window": {
+    "included_after": "2026-07-25T00:03:08Z",
+    "included_through": "2026-08-01T00:03:08Z",
+    "policy": "visible publication or update date within last 7 days; ambiguous, future, missing, and boundary-only dates excluded"
+  }
+}
