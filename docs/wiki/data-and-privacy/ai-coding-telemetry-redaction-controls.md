@@ -10,7 +10,9 @@ description: "Security controls for minimizing and redacting sensitive prompt, t
 
 The [July 23 topic news collector source](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json) and [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json) record [Dash0 AI Coding Insights documentation](https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy) updated on July 23, 2026. The documentation says coding-agent telemetry can include prompt text, code in tool inputs and outputs, secrets pasted into sessions, and system instructions, and it documents source redaction before data leaves the developer machine plus ingestion redaction before storage.
 
-Broad Dash0 product and developer-observability practice belongs upstream. The local control is telemetry minimization for agent and coding-assistant systems: prompt and tool I/O are sensitive by default, and redaction is strongest when sensitive content is removed at source before collection. [AI coding telemetry access controls](ai-coding-telemetry-access-controls.md) owns MCP OAuth, scoped telemetry access, and token-handling guidance for querying observability data.
+The [August 3 leaf update watch source](../../../raw/processed/2026-08-03/ai-security-wiki-leaf-update-watch-2026-08-03T192131Z.json) records the same Dash0 documentation as updated on 2026-07-29 and adds a narrower error-data boundary: GenAI Attribute Redaction covers conversation content, tool-call arguments and results, and tool-call error messages. Error-message redaction covers span status messages plus exception messages on spans, span events, and logs when telemetry carries a `gen_ai.tool.name` attribute.
+
+Broad Dash0 product and developer-observability practice belongs upstream, including general [runtime telemetry](../../../upstream-ai-dev-wiki/application-patterns/user-visible-progress-and-runtime-telemetry.md) patterns. The local control is telemetry minimization for agent and coding-assistant systems: prompt and tool I/O are sensitive by default, and redaction is strongest when sensitive content is removed at source before collection. [AI coding telemetry access controls](ai-coding-telemetry-access-controls.md) owns MCP OAuth, scoped telemetry access, and token-handling guidance for querying observability data.
 
 ## Control Implications
 
@@ -18,12 +20,14 @@ Broad Dash0 product and developer-observability practice belongs upstream. The l
 - Use ingestion-time redaction as a second layer, not the only control for secrets, proprietary code, prompts, or instructions.
 - Omit prompt and tool I/O from conversation previews unless collection is explicitly required and governed.
 - Treat system instructions and tool outputs as sensitive operational data, not harmless observability metadata.
+- Treat tool-call error messages, span status messages, exception messages, span events, and logs as sensitive when they are associated with agent tool execution.
 - Record which telemetry fields are never collected, source-redacted, ingestion-redacted, stored, or displayed.
 
 ## Authoritative Sources
 
 - [July 23 topic news collector source](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json)
 - [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json)
+- [August 3 leaf update watch source](../../../raw/processed/2026-08-03/ai-security-wiki-leaf-update-watch-2026-08-03T192131Z.json)
 - Dash0 AI Coding Insights data privacy documentation: https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy
 
 ## Related Code
@@ -44,12 +48,14 @@ Broad Dash0 product and developer-observability practice belongs upstream. The l
 - [AI coding telemetry access controls](ai-coding-telemetry-access-controls.md)
 - [agent and tool security](../agent-and-tool-security/index.md)
 - [testing and assurance](../testing-and-assurance/index.md)
-- Upstream AI development wiki owns general coding-agent telemetry and observability practice.
+- Upstream AI development wiki owns general coding-agent telemetry and observability practice, including [runtime telemetry](../../../upstream-ai-dev-wiki/application-patterns/user-visible-progress-and-runtime-telemetry.md).
 
 ## Open Questions
 
 - Which local telemetry sinks collect prompt or tool I/O and need field-level redaction evidence?
+- Which local OpenTelemetry spans, events, and logs carry `gen_ai.tool.name` and need explicit error-message redaction tests?
 
 ## Maintenance Notes
 
 - Added from the [July 23, 2026 raw collector artifact](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json); enriched from the [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json). Keep the page focused on redaction and minimization controls rather than vendor product positioning.
+- Enriched on 2026-08-03 from the [August 3 watcher](../../../raw/processed/2026-08-03/ai-security-wiki-leaf-update-watch-2026-08-03T192131Z.json) with tool-call error-message redaction scope.

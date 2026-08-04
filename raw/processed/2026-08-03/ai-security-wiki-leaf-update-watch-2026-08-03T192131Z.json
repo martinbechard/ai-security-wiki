@@ -1,0 +1,290 @@
+{
+  "affected_boundaries": [
+    "coding-agent telemetry storage",
+    "tool-call error redaction",
+    "dataset-level ingestion redaction"
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "docs_wiki_updated": false,
+  "evidence_classifications": [
+    "control change"
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md",
+      "reason": "already captured in processed July 31 topic collector and existing durable leaf; no later source-specific security delta found",
+      "source_url": "https://www.theguardian.com/technology/2026/jul/31/ai-labels-to-be-compulsory-on-authentic-looking-content-under-eu-rules",
+      "visible_date": "2026-07-31"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/browser-runtime-patch-cadence-under-ai-bug-hunting.md",
+      "reason": "already captured in processed July 31 topic collector and existing durable leaf; no later source-specific security delta found",
+      "source_url": "https://www.wired.com/story/chrome-needs-twice-a-week-patching-thanks-to-ai-bug-hunting-for-now",
+      "visible_date": "2026-07-30"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "reason": "stale outside strict seven-day window",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50757",
+      "visible_date": "2026-07-22"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+      "reason": "stale outside strict seven-day window",
+      "source_url": "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment",
+      "visible_date": "2026-07-24"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+      "reason": "already captured by prior July 29 leaf watch; no newer official CRA guidance delta found",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+      "visible_date": "2026-07-27"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md",
+      "reason": "already captured by processed July 27-29 sources and prior leaf watch; no newer Microsoft source-specific delta found",
+      "source_url": "https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/",
+      "visible_date": "2026-07-27"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/open-defensive-ai-security-infrastructure.md",
+      "reason": "already captured by prior Open Secure AI Alliance sources; broad alliance membership routes upstream unless tied to local security control evidence",
+      "source_url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-joins-the-open-secure-ai-alliance/",
+      "visible_date": "2026-07-27"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/public-cyber-capability-assessments.md",
+      "reason": "opened AISI page did not expose a publication date; related model release/open-weight dates are event dates, not source publication dates",
+      "source_url": "https://www.aisi.gov.uk/blog/preliminary-assessment-of-kimi-k3s-cyber-capabilities",
+      "visible_date": "missing on opened page"
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+      "reason": "no new authoritative same-leaf source found after prior July checks",
+      "source_url": "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
+      "visible_date": "not re-confirmed current-window"
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-hosted-artifact-malware-delivery.md",
+      "reason": "secondary endpoint-coverage guidance adjacent to existing Claude artifact malware leaf; not a new local security finding beyond already captured campaign evidence",
+      "source_url": "https://www.zipsec.com/blog/fake-claude-installer-malware",
+      "visible_date": "2026-07-27"
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/unattended-ai-agent-attack-automation.md",
+      "reason": "secondary coverage already represented by prior Hermes AI-agent source set; primary Hunt.io source is July 23 and stale",
+      "source_url": "https://www.darkreading.com/cyberattacks-data-breaches/ai-agent-espionage-attack-thai-ministry-finance",
+      "visible_date": "2026-07-28"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "reason": "agent evaluation incident belongs primarily to existing incident/sandbox-egress leaves; no new network-egress-control delta for this selected leaf",
+      "source_url": "https://www.axios.com/2026/07/29/openai-hugging-face-modal-cyber-benchmark",
+      "visible_date": "2026-07-29"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+      "reason": "already captured in existing Cloud Observability MCP response-controls leaf and July 29 leaf watch source",
+      "source_url": "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+      "visible_date": "2026-07-28"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "reason": "stale outside strict seven-day window; no new CVE-2026-50756 provider-override update found",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+      "visible_date": "2026-07-22"
+    }
+  ],
+  "follow_up_notes": [
+    "Update the local telemetry redaction leaf with the separate tool-call error-message policy during the next ingest pass.",
+    "Do not edit docs/wiki or raw/processed in the watcher run."
+  ],
+  "leaf_universe_count": 57,
+  "named_entities": [
+    "Dash0",
+    "AI Coding Insights",
+    "GenAI Attribute Redaction",
+    "OpenTelemetry"
+  ],
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "coding-agent telemetry storage",
+        "tool-call error messages",
+        "exception.message fields",
+        "dataset-level ingestion redaction policy"
+      ],
+      "confidence": "high",
+      "date_basis": "page last-updated line",
+      "evidence_classification": "control change",
+      "follow_up_note": "Ingest into ai-coding-telemetry-redaction-controls.md; add tool-call error-message redaction as a separate control and preserve source-side redaction as the strongest guarantee.",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+      "named_entities": [
+        "Dash0",
+        "AI Coding Insights",
+        "GenAI Attribute Redaction",
+        "OpenTelemetry"
+      ],
+      "source_url": "https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy",
+      "summary": "Dash0 AI Coding Insights data-privacy documentation now separates GenAI Attribute Redaction into conversation content, tool-call arguments/results, and tool-call error messages. Error-message redaction covers span status messages plus exception messages on spans, span events, and logs for telemetry carrying a gen_ai.tool.name attribute.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general coding-agent observability product workflow"
+        ],
+        "ai_wiki": [],
+        "local_security_lens": "field-level telemetry minimization and redaction for AI coding-agent prompt/tool/error data"
+      },
+      "visible_date": "2026-07-29"
+    }
+  ],
+  "raw_processed_updated": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-03T19:21:31Z",
+  "selected_leaf_ids": [
+    "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md",
+    "docs/wiki/testing-and-assurance/browser-runtime-patch-cadence-under-ai-bug-hunting.md",
+    "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+    "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+    "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+    "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+    "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md",
+    "docs/wiki/testing-and-assurance/open-defensive-ai-security-infrastructure.md",
+    "docs/wiki/testing-and-assurance/public-cyber-capability-assessments.md",
+    "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+    "docs/wiki/threats-and-attacks/ai-hosted-artifact-malware-delivery.md",
+    "docs/wiki/threats-and-attacks/unattended-ai-agent-attack-automation.md",
+    "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+    "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+    "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md"
+  ],
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, stable relative path tie-breaker",
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md",
+      "urls": [
+        "https://www.theguardian.com/technology/2026/jul/31/ai-labels-to-be-compulsory-on-authentic-looking-content-under-eu-rules",
+        "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-guidelines-transparency-obligations-providers-and-deployers-certain-ai-systems",
+        "https://digital-strategy.ec.europa.eu/en/faqs/code-practice-transparency-ai-generated-content"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/browser-runtime-patch-cadence-under-ai-bug-hunting.md",
+      "urls": [
+        "https://www.wired.com/story/chrome-needs-twice-a-week-patching-thanks-to-ai-bug-hunting-for-now",
+        "https://security.googleblog.com/2023/08/an-update-on-chrome-security-updates.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50757",
+        "https://github.com/DayuanJiang/next-ai-draw-io/issues/754",
+        "https://www.npmjs.com/package/@next-ai-drawio/mcp-server"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+      "urls": [
+        "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+      "urls": [
+        "https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy",
+        "https://www.dash0.com/newsletter/code-red-newsletter-30"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+      "urls": [
+        "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+        "https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md",
+      "urls": [
+        "https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/",
+        "https://www.securityweek.com/microsoft-unveils-mai-cyber-1-flash-its-first-cybersecurity-ai-model/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/open-defensive-ai-security-infrastructure.md",
+      "urls": [
+        "https://blogs.nvidia.com/blog/open-secure-ai-alliance/",
+        "https://www.crowdstrike.com/en-us/blog/crowdstrike-joins-the-open-secure-ai-alliance/",
+        "https://www.redhat.com/en/blog/strengthening-open-source-defense-layer-red-hat-joins-nvidias-open-secure-ai-alliance"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/public-cyber-capability-assessments.md",
+      "urls": [
+        "https://www.aisi.gov.uk/blog/preliminary-assessment-of-kimi-k3s-cyber-capabilities",
+        "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+      "urls": [
+        "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
+        "https://www.eweek.com/news/moonshot-ai-kimi-k3-redis-rce-exploits-apac-china/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-hosted-artifact-malware-delivery.md",
+      "urls": [
+        "https://www.helpnetsecurity.com/2026/07/23/anthropic-claude-artifacts-download-malware/",
+        "https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat",
+        "https://www.zipsec.com/blog/fake-claude-installer-malware"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/unattended-ai-agent-attack-automation.md",
+      "urls": [
+        "https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent",
+        "https://www.darkreading.com/cyberattacks-data-breaches/ai-agent-espionage-attack-thai-ministry-finance",
+        "https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "urls": [
+        "https://www.stride.build/blog/network-egress-control-ai-agents",
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://www.axios.com/2026/07/29/openai-hugging-face-modal-cyber-benchmark"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+      "urls": [
+        "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+        "https://docs.cloud.google.com/monitoring/docs/release-notes"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50756"
+      ]
+    }
+  ],
+  "upstream_routing": {
+    "ai_dev_wiki": [
+      "general coding-agent observability practice and Dash0 product background"
+    ],
+    "ai_wiki": [],
+    "local": "security-specific telemetry minimization and redaction controls"
+  }
+}

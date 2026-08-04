@@ -8,7 +8,8 @@ The active digest records each independently changing security item or closely c
 
 ## Digest Pages
 
-- [2026-07.md](2026-07.md) is the active July 2026 digest.
+- [2026-08.md](2026-08.md) is the active August 2026 digest.
+- [2026-07.md](2026-07.md) is the previous July 2026 digest.
 
 ## Authoritative Sources
 

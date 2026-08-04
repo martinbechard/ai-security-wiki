@@ -1,0 +1,145 @@
+{
+  "affected_boundaries": [
+    "AI sensitive data ATO boundary",
+    "model processing data residency boundary",
+    "generative AI safe-use advisory boundary",
+    "MCP OAuth redirect URI boundary",
+    "MCP tool-level IAM authorization boundary",
+    "AI agent sandbox host-file boundary",
+    "MCP SDK transport header boundary",
+    "Network-AI sandbox and backup filesystem boundaries",
+    "evaluation artifact execution boundary",
+    "agent runtime security-evidence boundary",
+    "AI workload cost anomaly monitoring boundary",
+    "approval metadata access-control boundary",
+    "coding-agent command approval boundary",
+    "cross-site agent forgery boundary"
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "evidence_classification": {
+    "confirmed_exploitation": [],
+    "control_change": [],
+    "demonstrated_research": [],
+    "disclosed_vulnerability": [],
+    "mitigation": [],
+    "unverified_claim": []
+  },
+  "exclusions": [
+    {
+      "candidate": "Google Cloud release notes - Security Command Center AI Protection Standard-tier support",
+      "reason": "adjacent-not-same-leaf; relevant to Google Security Command Center AI Protection inventory, not the selected data-residency or cost-anomaly leaves",
+      "routing": "security-specific but outside selected leaf set; consider a future local AI Protection/SCC control leaf if durable coverage is needed",
+      "source_url": "https://docs.cloud.google.com/release-notes",
+      "visible_date": "2026-08-03"
+    },
+    {
+      "candidate": "Google Cloud release notes - Google SecOps Threat Hunt Agent public preview",
+      "reason": "adjacent security product capability, not a same-leaf update for selected durable leaves",
+      "routing": "broad product capability belongs upstream unless a local security-control boundary is created",
+      "source_url": "https://docs.cloud.google.com/release-notes",
+      "visible_date": "2026-08-03"
+    },
+    {
+      "candidate": "Zenity LinkedIn and secondary AgentForger posts",
+      "reason": "secondary/social amplification without new authoritative same-leaf facts beyond already-captured Zenity primary disclosure",
+      "routing": "none",
+      "source_url": "search results for AgentForger public topic name",
+      "visible_date": "2026-07-30 to 2026-08-03"
+    },
+    {
+      "candidate": "Network-AI CVE-2026-58481 and CVE-2026-58484 advisory pages",
+      "reason": "stale visible dates or already-captured advisory facts; no confirmed exploitation change",
+      "routing": "none",
+      "source_url": "cited CVE/GHSA/SentinelOne pages",
+      "visible_date": "2026-07-20 to 2026-07-24"
+    }
+  ],
+  "follow_up_notes": [
+    "No raw/processed or docs/wiki edits were made.",
+    "Future run can select newer unchecked/oldest leaves and revisit Google Cloud AI Protection if a durable local leaf exists."
+  ],
+  "named_entities": [
+    "U.S. Department of Veterans Affairs",
+    "Google Cloud",
+    "Cyber Security Agency of Singapore",
+    "Infocomm Media Development Authority",
+    "Cloud Monitoring MCP",
+    "Model Context Protocol",
+    "Network-AI",
+    "NVIDIA NemoClaw",
+    "JetBrains Junie",
+    "Zenity Labs",
+    "OpenAI ChatGPT Workspace Agents"
+  ],
+  "qualifying_update_count": 0,
+  "qualifying_updates": [],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-04T00:03:38Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md",
+    "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+    "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md",
+    "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md",
+    "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md",
+    "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md",
+    "docs/wiki/model-and-prompt-security/evaluation-artifact-template-execution-risk.md",
+    "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md",
+    "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md",
+    "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+    "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md",
+    "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md"
+  ],
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, ties by stable relative path",
+  "source_urls_checked": [
+    "https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/",
+    "https://docs.cloud.google.com/release-notes",
+    "https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-008/",
+    "https://docs.cloud.google.com/mcp/docs/release-notes",
+    "https://docs.cloud.google.com/mcp/ai-security-safety",
+    "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+    "https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac",
+    "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+    "https://www.sentinelone.com/vulnerability-database/cve-2026-58481/",
+    "https://github.com/advisories/GHSA-jvcm-f35g-w78p",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-58481",
+    "https://www.sentinelone.com/vulnerability-database/cve-2026-58484/",
+    "https://github.com/advisories/GHSA-2fmp-9rvw-hc96",
+    "https://www.tenable.com/cve/CVE-2026-58484",
+    "https://huggingface.co/blog/incident-report-evals",
+    "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+    "https://www.theguardian.com/technology/2026/jul/29/rogue-openai-agent-that-hacked-startup-tried-to-attack-other-firms",
+    "https://www.axios.com/2026/07/29/openai-hugging-face-modal-cyber-benchmark",
+    "https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes/2026/7/24",
+    "https://docs.nvidia.com/nemoclaw/user-guide/deepagents/release-notes",
+    "https://www.vulncheck.com/advisories/network-ai-before-cryptographic-signature-verification-bypass",
+    "https://junie.jetbrains.com/docs/action-allowlist.html",
+    "https://zenity.io/company-overview/newsroom/company-news/zenity-labs-uncovers-agentforger-a-chatgpt-vulnerability",
+    "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery",
+    "https://labs.zenity.io/p/agentforger-part-2-the-autonomous-insider"
+  ],
+  "upstream_routing": [
+    {
+      "entity": "Google SecOps Threat Hunt Agent",
+      "route": "ai-wiki or ai-dev-wiki for broad product capability unless a local AI-security control leaf is created"
+    },
+    {
+      "entity": "Google Security Command Center AI Protection",
+      "route": "local security lens may be appropriate in a future selected leaf; broad product coverage remains upstream"
+    }
+  ]
+}

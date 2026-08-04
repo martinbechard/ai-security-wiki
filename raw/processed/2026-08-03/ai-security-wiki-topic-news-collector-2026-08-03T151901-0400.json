@@ -1,0 +1,232 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-08-03T15:19:01-04:00",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "collection_boundary": {
+    "public_sources_only": true,
+    "no_private_or_internal_content_sent_external": true,
+    "raw_only": true,
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false
+  },
+  "cutoff_window": {
+    "start": "2026-08-01T15:19:01-04:00",
+    "end": "2026-08-03T15:19:01-04:00",
+    "rule": "Include only items published, visibly updated, or becoming operative/enforceable within the last 2 days relative to run time. Exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_owner": "ai-security-wiki owns AI-specific security threats, controls, assurance, governance, compliance, and incident-response lenses.",
+    "upstream_ai_wiki": "Broad AI companies, products, models, frameworks, MCP servers, and general AI techniques route to /Users/martinbechard/dev/ai-wiki.",
+    "upstream_ai_dev_wiki": "General AI-assisted development practices, coding-agent workflows, verification patterns, and development governance route to /Users/martinbechard/dev/ai-dev-wiki.",
+    "local_topic_index_checked": true,
+    "upstream_topic_indexes_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ]
+  },
+  "qualifying_findings": [
+    {
+      "id": "2026-08-03-eu-ai-act-enforcement-agent-transparency-gpai",
+      "source_url": "https://ai-act-service-desk.ec.europa.eu/en/faq",
+      "source_title": "Frequently Asked Questions | AI Act Service Desk",
+      "publisher": "European Commission AI Act Service Desk",
+      "visible_dates": [
+        {
+          "date": "2026-08-02",
+          "date_type": "enforcement_start",
+          "evidence": "FAQ states that some AI Office and member-state enforcement powers start to apply on 2 August 2026; transparency obligations and GPAI rules are enforceable from that date."
+        },
+        {
+          "date": "2026-08-02",
+          "date_type": "agent_transparency_start",
+          "evidence": "FAQ states that from 2 August 2026 onwards, AI agents intended to interact with natural persons or generate content are subject to transparency rules."
+        }
+      ],
+      "factual_summary": "The European Commission FAQ says AI Act enforcement powers begin on 2026-08-02 for prohibited practices, transparency requirements for certain AI systems, and general-purpose AI model rules. It also states AI agents are not a separate legal category but are covered by AI system and GPAI model definitions; agent interaction and generated-content transparency rules apply from 2026-08-02, and GPAI systemic-risk obligations include autonomous capabilities and agentic use considerations.",
+      "evidence_classification": "official regulatory guidance",
+      "affected_boundary_or_version": "EU AI Act enforcement for prohibited practices, Article 50 transparency obligations, GPAI model obligations, and agentic systems using GPAI models; pre-2026-08-02 generative AI systems have until 2026-12-02 for Article 50(2) marking and detection obligations.",
+      "why_it_matters_for_ai_security": "This creates an active compliance and audit-evidence boundary for AI systems and agents: providers and deployers need user-facing transparency, generated-content marking paths, systemic-risk assessment, mitigation evidence, and enforcement-response readiness for GPAI and agentic deployments.",
+      "local_topics": [
+        "governance-and-compliance",
+        "agent-and-tool-security",
+        "testing-and-assurance",
+        "data-and-privacy"
+      ],
+      "named_entities": [
+        "European Commission",
+        "AI Office",
+        "EU AI Act",
+        "GPAI models",
+        "AI agents",
+        "GPAI Code of Practice"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "Broad EU AI Act and GPAI entity background belongs upstream; this repo should keep the security/compliance enforcement lens."
+        },
+        {
+          "owner": "ai-dev-wiki",
+          "reason": "General agent workflow implications belong upstream when not security-specific; this repo should keep audit, authorization, transparency, and risk-control implications."
+        }
+      ],
+      "confidence_notes": "High confidence for the enforcement facts because the source is the official AI Act Service Desk. Publication/update timestamp is not explicit, so the item is included on the basis of an in-window operative enforcement date rather than a visible page-published date.",
+      "follow_up_actions": [
+        "During ingest, map the official FAQ to local governance-and-compliance and agent-and-tool-security leaves without duplicating broad AI Act background.",
+        "Check whether a more specific official Article 50 Code of Practice or AI Office enforcement page should be linked as point-of-use source evidence."
+      ]
+    },
+    {
+      "id": "2026-08-03-california-ai-transparency-act-operative-date",
+      "source_url": "https://www.leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB853",
+      "source_title": "AB-853 California AI Transparency Act",
+      "publisher": "California Legislative Information",
+      "visible_dates": [
+        {
+          "date": "2026-08-02",
+          "date_type": "operative_date",
+          "evidence": "Section 22757.6 is amended to state that the chapter becomes operative on August 2, 2026."
+        },
+        {
+          "date": "2027-01-01",
+          "date_type": "future_related_obligation",
+          "evidence": "Large online platform and GenAI hosting platform provisions become operative on January 1, 2027."
+        },
+        {
+          "date": "2028-01-01",
+          "date_type": "future_related_obligation",
+          "evidence": "Capture device manufacturer latent-disclosure provisions become operative on January 1, 2028."
+        }
+      ],
+      "factual_summary": "California AB 853 amends the California AI Transparency Act so Chapter 25 becomes operative on 2026-08-02. The chapter covers provenance data and digital signatures for GenAI content, defines covered providers as publicly accessible GenAI systems with over 1,000,000 monthly California users, requires AI detection/provenance mechanisms under the underlying chapter, and adds later obligations for large online platforms, GenAI hosting platforms, and capture device manufacturers.",
+      "evidence_classification": "official state legislation",
+      "affected_boundary_or_version": "California Business and Professions Code Chapter 25, AI Transparency Act; covered GenAI providers from 2026-08-02, with related platform and device provisions staged for 2027 and 2028.",
+      "why_it_matters_for_ai_security": "The operative date turns synthetic-content provenance, disclosure, and verification into a live compliance and evidence concern for large GenAI providers operating in California, affecting authenticity controls, privacy handling for provenance data, third-party license revocation, and abuse-resistant detection tooling.",
+      "local_topics": [
+        "governance-and-compliance",
+        "data-and-privacy",
+        "model-and-prompt-security"
+      ],
+      "named_entities": [
+        "California Legislature",
+        "California AI Transparency Act",
+        "AB 853",
+        "SB 942",
+        "GenAI systems",
+        "large online platforms"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "Broad state AI regulation and GenAI market context belongs upstream; this repository owns provenance, detection, privacy, and compliance controls."
+        }
+      ],
+      "confidence_notes": "High confidence for operative date and statutory text because the source is California Legislative Information. The legislation predates the window, so inclusion is based on the in-window operative date and concrete compliance change.",
+      "follow_up_actions": [
+        "During ingest, avoid treating California AI transparency as a broad regulatory encyclopedia page; synthesize only the security-control implications for provenance, privacy, and disclosure verification.",
+        "Check current codified California Business and Professions Code sections during ingest because SB 1000 or later amendments may change scope."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "source_url": "https://jfrog.com/blog/jfrog-and-openai-collaboration-on-zero-day-security-findings/",
+      "source_title": "Fast Remediation Is the New Trust Model: JFrog and OpenAI Collaboration on Zero-Day Security Findings",
+      "publisher": "JFrog",
+      "visible_date": "2026-07-27",
+      "reason": "Published before the cutoff window. Security-relevant OpenAI/JFrog Artifactory zero-day collaboration is concrete, but it is outside the last-2-days rule for this run.",
+      "follow_up": "Prior run follow-up is no longer a blocker for locating JFrog's public disclosure, but do not duplicate it in this raw artifact as a qualifying in-window item."
+    },
+    {
+      "source_url": "https://www.theguardian.com/technology/2026/jul/31/ai-labels-to-be-compulsory-on-authentic-looking-content-under-eu-rules",
+      "source_title": "AI labels to be compulsory on authentic-looking content under EU rules",
+      "publisher": "The Guardian",
+      "visible_date": "2026-07-31",
+      "reason": "Published before the cutoff window and secondary to official EU sources. The operative EU AI Act transparency date is captured from the official AI Act Service Desk instead."
+    },
+    {
+      "source_url": "https://www.hklaw.com/en/insights/publications/2026/06/gsa-proposes-sweeping-ai-data-safeguarding-rules-for-llm-contractors",
+      "source_title": "GSA Proposes Sweeping AI Data Safeguarding Rules for LLM Contractors",
+      "publisher": "Holland & Knight",
+      "visible_date": "2026-06-29",
+      "reason": "Published before the cutoff window. The in-window August 3 comment due date is a deadline, not a publication/update or operative final rule, so it is boundary-only for this collector."
+    },
+    {
+      "source_url": "https://regulations.justia.com/regulations/fedreg/2026/06/17/2026-12205.html",
+      "source_title": "General Services Acquisition Regulation; Acquisition of Information and Communication Technology; Notice of Listening Sessions and Request for Comments",
+      "publisher": "General Services Administration via Federal Register mirror",
+      "visible_date": "2026-06-17",
+      "reason": "Official/procedural source is security-relevant for LLM government-data safeguarding, but publication is outside the cutoff and the August 3 comment date is a boundary-only deadline."
+    },
+    {
+      "source_url": "https://www.cyera.com/blackhat-2026",
+      "source_title": "Cyera at Black Hat 2026",
+      "publisher": "Cyera",
+      "visible_date": "2026-08-03",
+      "reason": "In-window event page contains useful agentic-AI security framing, but it is promotional conference content rather than a concrete vulnerability, advisory, mitigation, control change, regulatory change, or incident."
+    },
+    {
+      "source_url": "https://blog.disclose.io/upcoming-dates/",
+      "source_title": "Upcoming Dates",
+      "publisher": "Disclose.io",
+      "visible_date": "last week",
+      "reason": "Useful date index, but not primary authority and no explicit in-window publication/update date. California and EU operative dates were verified against official sources instead."
+    },
+    {
+      "source_url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
+      "source_title": "More details on Fable 5's cyber safeguards and our jailbreak framework",
+      "publisher": "Anthropic",
+      "visible_date": "2026-07-02",
+      "reason": "Concrete model and prompt security content, but outside the cutoff window and already represented by earlier collection windows."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_topic": "EU AI Act",
+      "owner": "ai-wiki",
+      "local_security_lens": "Keep enforcement, transparency, systemic-risk, audit, and agent control implications in ai-security-wiki; route broad law/entity background upstream."
+    },
+    {
+      "entity_or_topic": "AI agents under AI Act",
+      "owner": "ai-dev-wiki for general workflow practice; ai-security-wiki for security controls",
+      "local_security_lens": "Keep transparency, harmful-manipulation safeguards, GPAI systemic-risk, autonomous-capability, and enforcement evidence implications locally."
+    },
+    {
+      "entity_or_topic": "California AI Transparency Act",
+      "owner": "ai-wiki",
+      "local_security_lens": "Keep provenance, detection-tool, latent/manifest disclosure, license-revocation, and privacy-control implications locally."
+    },
+    {
+      "entity_or_topic": "JFrog/OpenAI Artifactory zero-day collaboration",
+      "owner": "ai-security-wiki for incident and supply-chain security; ai-wiki for broad OpenAI/JFrog entities",
+      "local_security_lens": "Out-of-window here, but useful future ingest routing for AI-discovered vulnerabilities and supply-chain remediation speed."
+    }
+  ],
+  "confidence_summary": {
+    "qualifying_count": 2,
+    "exclusion_count": 7,
+    "routing_count": 4,
+    "overall_confidence": "Medium-high. Official regulatory facts are strong; inclusion depends on treating in-window operative/enforcement dates as qualifying visible date changes even when source pages were originally published earlier."
+  },
+  "blockers": [
+    "No in-window primary vulnerability database entry or product security advisory for a new AI-specific CVE was located.",
+    "OpenAI technical postmortem for the Hugging Face evaluation incident was still not located during this run.",
+    "White House/ONCD primary text for the reported AI model cybersecurity testing framework was not located; secondary media mentions were not included."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed"
+  }
+}

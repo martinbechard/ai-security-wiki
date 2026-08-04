@@ -22,6 +22,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Cloud observability MCP response controls](cloud-observability-mcp-response-controls.md)
 - [Local agent execution and processing boundaries](local-agent-execution-and-processing-boundaries.md)
 - [Coding agent command approval boundaries](coding-agent-command-approval-boundaries.md)
+- [AI agent interaction transparency controls](ai-agent-interaction-transparency-controls.md)
 
 ## Authoritative Sources
 
