@@ -11,6 +11,8 @@ tags: ["governance-and-compliance"]
 
 EU AI Act prohibited-practices enforcement controls are the evidence and release-gate checks that prevent AI systems from entering or remaining in prohibited-use territory. The [August 3 topic news collector source](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) records the official [European Commission AI Act Service Desk FAQ](https://ai-act-service-desk.ec.europa.eu/en/faq), which says some AI Office and member-state enforcement powers for prohibited practices apply from 2026-08-02.
 
+The [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) adds the Commission [AI Act Service Desk Resources](https://ai-act-service-desk.ec.europa.eu/en/resources) page as enforcement-response evidence. The source records the AI Office, European Data Protection Supervisor, and member-state national competent authorities as the shared enforcement boundary starting 2026-08-02.
+
 Broad EU AI Act legal background belongs upstream. This page owns the local security-governance lens: release gates need explicit prohibited-practice checks, exception records, risk acceptance boundaries, monitoring signals, and enforcement-response evidence.
 
 ## Security Impact
@@ -18,8 +20,8 @@ Broad EU AI Act legal background belongs upstream. This page owns the local secu
 - Threat: an AI system can create unacceptable manipulation, exploitation, biometric, or surveillance risk when prohibited-practice checks are not part of security review.
 - Affected boundary: AI product release gates, deployment review, use-case authorization, policy exception records, monitoring, and enforcement-response readiness.
 - Exploit or incident status: regulatory enforcement boundary, not a specific exploit.
-- Mitigation state: official FAQ guidance records the enforcement start; implementation depends on local prohibited-use screening, documentation, monitoring, and escalation paths.
-- Confidence: high for the 2026-08-02 enforcement start because the source is official European Commission guidance; medium for local applicability until use cases are mapped to the prohibited-practices taxonomy.
+- Mitigation state: official FAQ and resource-page guidance records the enforcement start and authority boundary; implementation depends on local prohibited-use screening, documentation, monitoring, and escalation paths.
+- Confidence: high for the 2026-08-02 enforcement start because the sources are official European Commission guidance; medium for local applicability until use cases are mapped to the prohibited-practices taxonomy.
 - Residual risk: exact prohibited-practice classification, exceptions, member-state enforcement practice, and evidence expectations remain implementation-specific.
 
 ## Control Implications
@@ -32,7 +34,9 @@ Broad EU AI Act legal background belongs upstream. This page owns the local secu
 ## Authoritative Sources
 
 - [August 3 topic news collector source](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json)
+- [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json)
 - European Commission AI Act Service Desk FAQ: https://ai-act-service-desk.ec.europa.eu/en/faq
+- European Commission AI Act Service Desk Resources: https://ai-act-service-desk.ec.europa.eu/en/resources
 
 ## Related Code
 
@@ -60,4 +64,4 @@ Broad EU AI Act legal background belongs upstream. This page owns the local secu
 
 ## Maintenance Notes
 
-- Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) to map the prohibited-practices enforcement boundary separately from transparency and GPAI controls.
+- Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) to map the prohibited-practices enforcement boundary separately from transparency and GPAI controls; enriched from the [August 4 leaf watcher](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) with official resource-page enforcement-authority evidence.

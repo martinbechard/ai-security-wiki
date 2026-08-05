@@ -1,0 +1,450 @@
+{
+  "affected_boundaries": [
+    "ACP mode",
+    "AI Act enforcement response evidence",
+    "AI development workstation containment",
+    "AI-agent natural-person interaction notices",
+    "Article 50 release evidence",
+    "Gateway mode",
+    "Gateway/ACP non-interactive execution",
+    "agent cyberattack evidence preservation",
+    "forensic trace retention",
+    "generated-or-altered content transparency",
+    "national/EU enforcement authority boundary",
+    "non-interactive Junie CLI tasks",
+    "prohibited-practice screening and release gates",
+    "project trust markers",
+    "public technical-report follow-up",
+    "repository-controlled MCP/hooks/agents/skills/guidelines",
+    "repository-controlled local inputs",
+    "state/federal legal scrutiny",
+    "unknown-project restricted mode"
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "docs_wiki_updated": false,
+  "evidence_classification_values": [
+    "confirmed_exploitation",
+    "demonstrated_research",
+    "disclosed_vulnerability",
+    "mitigation",
+    "control_change",
+    "unverified_claim",
+    "incident_response_governance"
+  ],
+  "exclusions": [
+    {
+      "candidate_date": "2025-10-14",
+      "leaf_id": "docs/wiki/governance-and-compliance/california-ai-transparency-act-provenance-controls.md",
+      "reason": "official bill text is dated 2025-10-14 and already captured; no visible in-window update on the source page",
+      "source_url": "https://www.leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB853"
+    },
+    {
+      "candidate_date": null,
+      "leaf_id": "docs/wiki/governance-and-compliance/gpai-systemic-risk-controls.md",
+      "reason": "FAQ content is relevant but the page view did not expose a new visible publication or update date; resource-page enforcement item did not add a same-leaf GPAI systemic-risk delta beyond already captured FAQ facts",
+      "source_url": "https://ai-act-service-desk.ec.europa.eu/en/faq?faq_category_id=69"
+    },
+    {
+      "candidate_date": "2026-07-22",
+      "leaf_id": "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+      "reason": "NVD CVE record is dated 2026-07-21/2026-07-22 and was already captured; no newer in-window modification found",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15829"
+    },
+    {
+      "candidate_date": "2026-07-17",
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+      "reason": "Google Cloud BigQuery MCP page is relevant but last updated 2026-07-17, outside the strict seven-day window",
+      "source_url": "https://docs.cloud.google.com/bigquery/docs/pre-built-tools-with-mcp-toolbox"
+    },
+    {
+      "candidate_date": "2026-07-21",
+      "leaf_id": "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+      "reason": "KEVIntel exploitation telemetry is useful but dated 2026-07-21 and already outside the strict current window",
+      "source_url": "https://blog.kevintel.com/cve-2026-0770-exploited-in-the-wild-langflow-rce-added-to-cisa-kev/"
+    },
+    {
+      "candidate_date": "2026-07-22",
+      "leaf_id": "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+      "reason": "n8n advisory source is dated 2026-07-22 and already captured; no same-leaf in-window update found",
+      "source_url": "https://securelayer7.net/lab/cve-2026-65015-n8n-ai-agent-project-viewer-privilege-escalation-run-node-tool"
+    },
+    {
+      "candidate_date": "2026-07-22",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+      "reason": "Action Allowlist page is dated 2026-07-22 and already captured; 2026-08-03 Headless update is adjacent to trust/execution boundaries, not a new context-exclusion control",
+      "source_url": "https://junie.jetbrains.com/docs/action-allowlist.html"
+    },
+    {
+      "candidate_date": null,
+      "leaf_id": "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+      "reason": "No visible in-window credential-isolation update found; adjacent Junie Headless update belongs to execution/workstation containment leaves",
+      "source_url": "https://junie.jetbrains.com/docs/parameters.html"
+    },
+    {
+      "candidate_date": "2026-07-28",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+      "reason": "v1.7.0 was released 2026-07-28 and already captured in this leaf ledger before this run; no newer issuer-binding delta found",
+      "source_url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0"
+    },
+    {
+      "candidate_date": "2026-07-22",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+      "reason": "Action Allowlist build-script evidence is dated 2026-07-22 and already captured; no new build/dependency execution update found",
+      "source_url": "https://junie.jetbrains.com/docs/action-allowlist.html"
+    },
+    {
+      "candidate_date": "2026-08-04",
+      "leaf_id": "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+      "reason": "in-window and security-specific, but this primarily updates cyber-evaluation containment/network monitoring rather than the selected disclosure-and-traceability leaf; route to testing-and-assurance if that leaf is selected",
+      "source_url": "https://www.axios.com/2026/08/04/anthropic-openai-uk-ai-security-institute"
+    },
+    {
+      "candidate_date": "2026-07-31",
+      "leaf_id": "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+      "reason": "in-window reporting about Anthropic evaluation incidents is adjacent but not a new disclosure/trace-sharing requirement for this selected leaf; route to incident/evaluation containment on a later pass",
+      "source_url": "https://apnews.com/article/anthropic-ai-models-hack-cybersecurity-b0a2c284b981de79c55e2a33712f4bec"
+    }
+  ],
+  "follow_up_notes": [
+    "Ingest this raw artifact through the normal raw-source workflow; do not edit docs/wiki from this collector.",
+    "Look for primary AG letter and OpenAI technical report on the Hugging Face incident.",
+    "Route Axios/AP cyber-evaluation containment findings when the relevant testing/incident leaves are selected."
+  ],
+  "leaf_universe_count": 62,
+  "named_entities": [
+    "ACP mode",
+    "Article 50 AI Act",
+    "Clem Delangue",
+    "Code of Practice on Transparency of AI-generated Content",
+    "EU AI Act",
+    "EU member-state national competent authorities",
+    "European Commission AI Office",
+    "European Data Protection Supervisor",
+    "GPT-5.6 Sol",
+    "Gateway mode",
+    "Hugging Face",
+    "JetBrains Junie CLI",
+    "OpenAI",
+    "state attorneys general"
+  ],
+  "qualifying_update_count": 5,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "AI-agent natural-person interaction notices",
+        "generated-or-altered content transparency",
+        "Article 50 release evidence"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should update the agent transparency leaf only with the security-control delta; route broad legal background upstream.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md",
+      "named_entities": [
+        "European Commission AI Office",
+        "EU AI Act",
+        "Article 50 AI Act",
+        "Code of Practice on Transparency of AI-generated Content"
+      ],
+      "source_title": "AI Act Service Desk Resources - The enforcement framework of the AI Act; Strong backing for the Code of Practice on Transparency of AI-generated Content",
+      "source_url": "https://ai-act-service-desk.ec.europa.eu/en/resources",
+      "summary": "The Commission resource page dated 2026-07-31 states that from 2026-08-02 enforcement begins and transparency rules require certain AI systems to tell users when they interact with AI or when content was generated or altered by AI; it also records broad signatory support for the transparency code of practice.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "broad EU AI Act and provider signatory context"
+        ],
+        "local_ai_security_wiki": [
+          "agent interaction transparency control evidence"
+        ]
+      },
+      "visible_date": "2026-07-31"
+    },
+    {
+      "affected_boundaries": [
+        "AI Act enforcement response evidence",
+        "prohibited-practice screening and release gates",
+        "national/EU enforcement authority boundary"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should keep this as enforcement-readiness evidence rather than duplicating the general EU AI Act page.",
+      "leaf_id": "docs/wiki/governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md",
+      "named_entities": [
+        "European Commission AI Office",
+        "European Data Protection Supervisor",
+        "EU member-state national competent authorities",
+        "EU AI Act"
+      ],
+      "source_title": "AI Act Service Desk Resources - The enforcement framework of the AI Act",
+      "source_url": "https://ai-act-service-desk.ec.europa.eu/en/resources",
+      "summary": "The Commission resource page dated 2026-07-31 records the shared enforcement framework for the AI Act starting 2026-08-02 across the AI Office, EDPS, and national competent authorities.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "broad EU AI Act enforcement background"
+        ],
+        "local_ai_security_wiki": [
+          "prohibited-practices enforcement readiness"
+        ]
+      },
+      "visible_date": "2026-07-31"
+    },
+    {
+      "affected_boundaries": [
+        "non-interactive Junie CLI tasks",
+        "Gateway mode",
+        "ACP mode",
+        "project trust markers",
+        "repository-controlled MCP/hooks/agents/skills/guidelines"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should separate the security-control effect from general Junie CLI usage details.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+      "named_entities": [
+        "JetBrains Junie CLI",
+        "Gateway mode",
+        "ACP mode"
+      ],
+      "source_title": "Junie Documentation - Headless mode",
+      "source_url": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "summary": "The Junie Headless page now shows a 2026-08-03 visible date and explicitly states that Gateway and ACP modes retain trusted behavior while the non-interactive rollout toggle is disabled; enabling it applies marker-aware restricted behavior without prompting.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general coding-agent workflow practice"
+        ],
+        "ai_wiki": [
+          "broad Junie product coverage"
+        ],
+        "local_ai_security_wiki": [
+          "local execution and processing boundary controls"
+        ]
+      },
+      "visible_date": "2026-08-03"
+    },
+    {
+      "affected_boundaries": [
+        "AI development workstation containment",
+        "unknown-project restricted mode",
+        "Gateway/ACP non-interactive execution",
+        "repository-controlled local inputs"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest alongside the local-agent-execution leaf to avoid duplicating generic product documentation.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md",
+      "named_entities": [
+        "JetBrains Junie CLI",
+        "Gateway mode",
+        "ACP mode"
+      ],
+      "source_title": "Junie Documentation - Headless mode",
+      "source_url": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "summary": "The same 2026-08-03 Headless update clarifies that Gateway and ACP restricted behavior follows the same marker-aware path when the rollout toggle is enabled, reinforcing workstation containment for unknown projects and repository-controlled inputs.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general coding-agent workflow practice"
+        ],
+        "ai_wiki": [
+          "broad Junie product coverage"
+        ],
+        "local_ai_security_wiki": [
+          "workstation containment security controls"
+        ]
+      },
+      "visible_date": "2026-08-03"
+    },
+    {
+      "affected_boundaries": [
+        "agent cyberattack evidence preservation",
+        "forensic trace retention",
+        "public technical-report follow-up",
+        "state/federal legal scrutiny"
+      ],
+      "evidence_classification": "incident_response_governance",
+      "follow_up_note": "Track for primary AG letter, OpenAI technical report, and any binding disclosure rule; keep secondary-report claims attributed.",
+      "leaf_id": "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "GPT-5.6 Sol",
+        "Clem Delangue",
+        "state attorneys general"
+      ],
+      "source_title": "15 attorneys general have instructed OpenAI to preserve all materials related to the Hugging Face hack",
+      "source_url": "https://www.businessinsider.com/openai-attorney-general-preserve-hugging-face-evidence-2026-8",
+      "summary": "Business Insider reports that 15 state attorneys general instructed OpenAI to preserve materials related to the Hugging Face incident and prior unauthorized agent intrusions, while OpenAI said it will share a technical report with attorneys general and publish findings publicly after review.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general runtime telemetry practice"
+        ],
+        "ai_wiki": [
+          "broad OpenAI/Hugging Face/model incident background"
+        ],
+        "local_ai_security_wiki": [
+          "agent incident disclosure and traceability evidence"
+        ]
+      },
+      "visible_date": "2026-08-04T04:11:27.430Z"
+    }
+  ],
+  "raw_processed_updated": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-04T16:15:00Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md",
+    "docs/wiki/governance-and-compliance/california-ai-transparency-act-provenance-controls.md",
+    "docs/wiki/governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md",
+    "docs/wiki/governance-and-compliance/gpai-systemic-risk-controls.md",
+    "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+    "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+    "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+    "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+    "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+    "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+    "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+    "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+    "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+    "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md"
+  ],
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, ties by stable relative path",
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md",
+      "urls": [
+        "https://ai-act-service-desk.ec.europa.eu/en/faq?faq_category_id=69",
+        "https://ai-act-service-desk.ec.europa.eu/en/resources"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/california-ai-transparency-act-provenance-controls.md",
+      "urls": [
+        "https://www.leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB853",
+        "https://ai-act-service-desk.ec.europa.eu/en/resources"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md",
+      "urls": [
+        "https://ai-act-service-desk.ec.europa.eu/en/faq?faq_category_id=69",
+        "https://ai-act-service-desk.ec.europa.eu/en/resources"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/gpai-systemic-risk-controls.md",
+      "urls": [
+        "https://ai-act-service-desk.ec.europa.eu/en/faq?faq_category_id=69",
+        "https://ai-act-service-desk.ec.europa.eu/en/resources"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+      "urls": [
+        "https://www.businessinsider.com/hugging-face-ceo-hack-openai-mandatory-transparency-law-ai-2026-8",
+        "https://www.businessinsider.com/openai-attorney-general-preserve-hugging-face-evidence-2026-8",
+        "https://www.axios.com/2026/08/04/anthropic-openai-uk-ai-security-institute",
+        "https://apnews.com/article/anthropic-ai-models-hack-cybersecurity-b0a2c284b981de79c55e2a33712f4bec"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+        "https://github.com/googleapis/mcp-toolbox/pull/3324",
+        "https://docs.cloud.google.com/bigquery/docs/pre-built-tools-with-mcp-toolbox"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+        "https://github.com/googleapis/mcp-toolbox/pull/3324",
+        "https://mcp-toolbox.dev/integrations/bigquery/tools/bigquery-forecast/",
+        "https://docs.cloud.google.com/bigquery/docs/pre-built-tools-with-mcp-toolbox"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-0770",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-0770",
+        "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-092/",
+        "https://blog.kevintel.com/cve-2026-0770-exploited-in-the-wild-langflow-rce-added-to-cisa-kev/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+      "urls": [
+        "https://junie.jetbrains.com/docs/junie-headless.html",
+        "https://junie.jetbrains.com/docs/parameters.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+      "urls": [
+        "https://advisories.gitlab.com/npm/n8n/CVE-2026-65015/",
+        "https://github.com/advisories/GHSA-w46p-w7w2-fr9g",
+        "https://securelayer7.net/lab/cve-2026-65015-n8n-ai-agent-project-viewer-privilege-escalation-run-node-tool"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+      "urls": [
+        "https://junie.jetbrains.com/docs/action-allowlist.html",
+        "https://junie.jetbrains.com/docs/junie-headless.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+      "urls": [
+        "https://junie.jetbrains.com/docs/parameters.html",
+        "https://junie.jetbrains.com/docs/junie-headless.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+      "urls": [
+        "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+        "https://github.com/modelcontextprotocol/go-sdk/releases"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+      "urls": [
+        "https://junie.jetbrains.com/docs/action-allowlist.html",
+        "https://junie.jetbrains.com/docs/junie-headless.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md",
+      "urls": [
+        "https://junie.jetbrains.com/docs/junie-headless.html",
+        "https://www.jetbrains.com/help/idea/security-model.html",
+        "https://help.openai.com/en/articles/11096431"
+      ]
+    }
+  ],
+  "upstream_routing": {
+    "ai_dev_wiki": [
+      "general coding-agent workflow, runtime telemetry, and evaluation practice"
+    ],
+    "ai_wiki": [
+      "broad AI Act, provider, product, model, OpenAI/Hugging Face, and Junie background"
+    ],
+    "local_ai_security_wiki": [
+      "security-specific controls, incident traceability, enforcement readiness, and execution/workstation boundaries"
+    ]
+  },
+  "window": {
+    "excluded": "ambiguous, missing, future, boundary-only, stale, adjacent, and already-captured dates",
+    "included": "sources with visible publication or update dates from 2026-07-29 through 2026-08-04 UTC"
+  }
+}

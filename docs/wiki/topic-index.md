@@ -31,6 +31,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [threats-and-attacks/ai-hosted-artifact-malware-delivery.md](threats-and-attacks/ai-hosted-artifact-malware-delivery.md)
 - [threats-and-attacks/unattended-ai-agent-attack-automation.md](threats-and-attacks/unattended-ai-agent-attack-automation.md)
 - [threats-and-attacks/ai-assisted-exploit-development-acceleration.md](threats-and-attacks/ai-assisted-exploit-development-acceleration.md)
+- [threats-and-attacks/ai-assisted-credential-harvesting-and-token-abuse.md](threats-and-attacks/ai-assisted-credential-harvesting-and-token-abuse.md)
 - [data-and-privacy](data-and-privacy/index.md)
 - [data-and-privacy/next-ai-draw-io-provider-disclosure.md](data-and-privacy/next-ai-draw-io-provider-disclosure.md)
 - [data-and-privacy/ai-provider-override-trust-boundaries.md](data-and-privacy/ai-provider-override-trust-boundaries.md)

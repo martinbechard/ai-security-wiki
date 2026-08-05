@@ -21,6 +21,8 @@ For IntelliJ Chat, the opened project, selected context, explicit attachments, `
 
 The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) adds [Junie Headless mode](https://junie.jetbrains.com/docs/junie-headless.html) evidence that unknown-project restricted mode uses temporary writable Junie storage outside the repository and avoids repository-controlled MCP servers, hooks, agents, skills, and guidelines when trust-marker enforcement is active.
 
+The [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) records a 2026-08-03 [Junie Headless mode](https://junie.jetbrains.com/docs/junie-headless.html) update for Gateway and ACP non-interactive execution. The local workstation-containment implication is narrow: when marker-aware restricted behavior is enabled, unknown projects should avoid repository-controlled MCP, hook, agent, skill, and guideline loading; when the rollout toggle is disabled, Gateway and ACP retain the trusted behavior path and cannot be counted as restricted-mode containment.
+
 ## Control Implications
 
 - For Codex, require the managed elevated Windows sandbox and verify its dedicated lower-privilege sandbox accounts.
@@ -30,6 +32,7 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 - Deny outside-project reads by default where an enforceable sandbox supports that policy; for Junie or IntelliJ, the developer account retains its filesystem access and must not approve, open, or attach unrelated files.
 - Disable unreviewed configuration, model, MCP, command, agent, skill, plugin, browser, and remote-control discovery surfaces when the product supports those controls.
 - Keep restricted-mode temporary storage outside the repository and verify repository-controlled MCP, hook, agent, skill, and guideline loading is disabled for unknown projects.
+- For non-interactive Gateway and ACP runs, preserve rollout-state evidence before relying on unknown-project restricted mode as workstation containment.
 - Keep administrator-managed policy and allowlist files read-only to the development account.
 - Treat writable local Git metadata as an explicit recoverability tradeoff: checkpoint commits help, but destructive Git operations can still lose local-only work.
 
@@ -39,6 +42,7 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 - [JetBrains AI Development Security Guide - Junie profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
 - [JetBrains AI Development Security Guide - AI Assistant profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
 - [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json)
+- [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json)
 
 ## Related Code
 
@@ -65,4 +69,4 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 
 ## Maintenance Notes
 
-- Created on 2026-07-30 from the Windows workstation control models in the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md), [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md), and [IntelliJ AI Assistant](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides; enriched from the [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) with Junie restricted-mode temporary-storage and repository-controlled input evidence.
+- Created on 2026-07-30 from the Windows workstation control models in the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md), [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md), and [IntelliJ AI Assistant](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides; enriched from the [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) and [August 4 leaf watcher](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) with Junie restricted-mode temporary-storage, rollout-state, and repository-controlled input evidence.

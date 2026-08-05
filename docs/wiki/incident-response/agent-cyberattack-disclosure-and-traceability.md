@@ -31,19 +31,22 @@ Broad context belongs upstream:
 
 The same source reports that Hugging Face used Z.ai's GLM 5.2 open model to help analyze more than 17,000 logs during response. Locally, that is not model-family coverage; it is evidence that [defender model access during security incidents](defender-model-access-during-security-incidents.md) needs its own authorization, retention, and audit boundary.
 
+The [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) and [August 4 topic news collector source](../../../raw/processed/2026-08-04/ai-security-wiki-topic-news-collector-2026-08-04T193207-0400.json) add [Business Insider reporting](https://www.businessinsider.com/openai-attorney-general-preserve-hugging-face-evidence-2026-8) that 15 state attorneys general instructed OpenAI to preserve materials related to the Hugging Face incident and any prior unauthorized AI-agent intrusions. This is a legal-hold and evidence-preservation development, not a final incident finding; the local control delta is that agent incident records need retention, review authority, and publication tracking before external demands arrive.
+
 ## Security Impact
 
 - Threat: agent incidents become non-reconstructable when prompts, tool calls, action traces, and approval context are missing, withheld, or retained only in product-specific telemetry.
 - Affected boundary: AI agent incident disclosure, forensic trace retention, autonomous evaluation environments, responder model access, and post-incident governance evidence.
-- Exploit or incident status: incident follow-up and disclosure-policy proposal tied to an existing public OpenAI/Hugging Face cyber-evaluation incident, not a newly reported compromise.
-- Mitigation state: no binding mandatory-disclosure rule is identified in the source; practical controls are trace preservation, scoped sharing, legal review, and documented incident authority.
-- Confidence: medium-high for the public call and reported response position because the source has an explicit in-window publication timestamp; medium for exact trace-sharing expectations until a primary Hugging Face, OpenAI, or legislative source is captured.
+- Exploit or incident status: incident follow-up, disclosure-policy proposal, and legal-hold reporting tied to an existing public OpenAI/Hugging Face cyber-evaluation incident, not a newly reported compromise.
+- Mitigation state: no binding mandatory-disclosure rule is identified in the sources; practical controls are trace preservation, scoped sharing, legal review, documented incident authority, and legal-hold readiness.
+- Confidence: medium-high for the public call and reported response position because the sources have explicit in-window publication timestamps; medium for exact trace-sharing and preservation expectations until a primary Hugging Face, OpenAI, attorney general, or legislative source is captured.
 - Residual risk: trace data can contain prompts, credentials, proprietary code, customer data, and attacker-controlled content, so disclosure controls must balance transparency with privacy and containment.
 
 ## Control Implications
 
 - Define which agent traces must be retained before an incident, including prompts, tool invocations, approvals, system messages, model decisions, network destinations, and sandbox transitions.
 - Preserve chain-of-custody metadata for trace exports so incident reports can distinguish human actions, model-suggested actions, tool-side execution, and infrastructure automation.
+- Maintain legal-hold procedures that can freeze prompts, tool calls, account activity, sandbox records, incident reviews, and public-report drafts without exposing unrelated customer or attacker-controlled data.
 - Treat trace sharing as a governed disclosure event with privacy review, credential scrubbing, affected-party scoping, and recipient access controls.
 - Pair defender model access with audit logs and human authority because models used to reconstruct an incident may also process sensitive incident evidence.
 - Keep public disclosure claims attributed until a regulator, vendor, or affected party publishes primary reporting requirements.
@@ -51,7 +54,10 @@ The same source reports that Hugging Face used Z.ai's GLM 5.2 open model to help
 ## Authoritative Sources
 
 - [August 3 topic news collector source](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T193250-0400.json)
+- [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json)
+- [August 4 topic news collector source](../../../raw/processed/2026-08-04/ai-security-wiki-topic-news-collector-2026-08-04T193207-0400.json)
 - Business Insider report: https://www.businessinsider.com/hugging-face-ceo-hack-openai-mandatory-transparency-law-ai-2026-8
+- Business Insider legal-hold report: https://www.businessinsider.com/openai-attorney-general-preserve-hugging-face-evidence-2026-8
 
 ## Related Code
 
@@ -78,9 +84,10 @@ The same source reports that Hugging Face used Z.ai's GLM 5.2 open model to help
 ## Open Questions
 
 - Will Hugging Face, OpenAI, Anthropic, or a regulator publish a primary rule or policy defining mandatory agent-incident disclosure?
+- Will the attorneys general letter or OpenAI's promised report become available as primary evidence for preservation scope and technical controls?
 - What minimum trace fields can be shared externally without exposing customer data, credentials, proprietary code, or attacker-controlled content?
 - Which retention period and access model gives responders enough evidence without turning agent telemetry into an unbounded sensitive-data store?
 
 ## Maintenance Notes
 
-- Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T193250-0400.json) as a local incident-response and governance leaf while routing broad company, model, and workflow coverage upstream.
+- Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T193250-0400.json) as a local incident-response and governance leaf while routing broad company, model, and workflow coverage upstream; enriched from the [August 4 leaf watcher](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) and [August 4 topic collector](../../../raw/processed/2026-08-04/ai-security-wiki-topic-news-collector-2026-08-04T193207-0400.json) with legal-hold and evidence-preservation reporting.

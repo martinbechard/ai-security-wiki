@@ -11,6 +11,8 @@ tags: ["agent-and-tool-security", "governance-and-compliance"]
 
 AI agent interaction transparency controls govern agent deployments that interact with natural persons or generate content in ways users may mistake for human action or non-AI content. The [August 3 topic news collector source](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) records the official [European Commission AI Act Service Desk FAQ](https://ai-act-service-desk.ec.europa.eu/en/faq), which says AI agents are not a separate legal category but can be covered by AI system definitions. The same source records 2026-08-02 as the start date for transparency obligations affecting AI agents intended to interact with natural persons or generate content.
 
+The [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) adds the Commission [AI Act Service Desk Resources](https://ai-act-service-desk.ec.europa.eu/en/resources) page as release evidence. The source records 2026-07-31 resource-page evidence that enforcement begins from 2026-08-02 and that certain AI systems must tell users when they interact with AI or when content was generated or altered by AI.
+
 Broad EU AI Act and agent product background belongs upstream. This page owns the local agent-security lens: systems need evidence for user-facing AI interaction notices, generated-content transparency where applicable, and release-gate checks that connect transparency to delegated authority.
 
 ## Security Impact
@@ -18,8 +20,8 @@ Broad EU AI Act and agent product background belongs upstream. This page owns th
 - Threat: users and operators can misjudge whether they are interacting with an AI agent, whether an agent is acting with delegated authority, or whether output is AI-generated.
 - Affected boundary: AI agents intended to interact with natural persons, generated-content workflows, delegated-authority notices, and user-facing transparency evidence.
 - Exploit or incident status: regulatory transparency boundary, not a specific exploit.
-- Mitigation state: official FAQ guidance exists; implementation depends on concrete notices, content marking paths, and evidence retention.
-- Confidence: high for the 2026-08-02 start date and agent framing because the source is official European Commission guidance; medium for local applicability until each agent role is mapped.
+- Mitigation state: official FAQ and resource-page guidance exists; implementation depends on concrete notices, content marking paths, and evidence retention.
+- Confidence: high for the 2026-08-02 start date and agent framing because the sources are official European Commission guidance; medium for local applicability until each agent role is mapped.
 - Residual risk: provider/deployer responsibility, notice placement, accessibility, and enforcement evidence remain implementation-specific.
 
 ## Control Implications
@@ -32,7 +34,9 @@ Broad EU AI Act and agent product background belongs upstream. This page owns th
 ## Authoritative Sources
 
 - [August 3 topic news collector source](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json)
+- [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json)
 - European Commission AI Act Service Desk FAQ: https://ai-act-service-desk.ec.europa.eu/en/faq
+- European Commission AI Act Service Desk Resources: https://ai-act-service-desk.ec.europa.eu/en/resources
 
 ## Related Code
 
@@ -62,4 +66,4 @@ Broad EU AI Act and agent product background belongs upstream. This page owns th
 
 ## Maintenance Notes
 
-- Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) after splitting agent-interaction transparency from GPAI systemic-risk controls.
+- Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) after splitting agent-interaction transparency from GPAI systemic-risk controls; enriched from the [August 4 leaf watcher](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) with official resource-page release evidence.
