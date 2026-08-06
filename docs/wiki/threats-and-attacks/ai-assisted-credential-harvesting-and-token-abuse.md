@@ -15,6 +15,8 @@ The collector treats the Axios item as medium-confidence secondary threat-intell
 
 The same source reports one React2Shell-related workflow that scanned 9,180 exposed hosts and collected credentials and source code from 54 systems. Preserve those figures as Axios-attributed Talos reporting until a primary Talos publication, indicator list, or technical appendix is captured. React2Shell is deferred rather than split into a local leaf because the collector did not capture primary Talos indicators, affected software details, or an upstream React2Shell owner page; split it when primary campaign evidence is available.
 
+The [August 5 topic news collector source](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json) and [August 5 leaf update watch source](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json) recapture the same Axios/Talos item in the strict August 5 window. They do not add primary indicators, affected-version detail, or a new independently changing campaign, so they enrich provenance without creating a duplicate digest entry.
+
 ## Security Impact
 
 - Threat: attackers use AI systems to draft malware, generate attack tooling, search for vulnerabilities, bypass guardrails with research pretexts, and scale credential harvesting.
@@ -34,6 +36,8 @@ The same source reports one React2Shell-related workflow that scanned 9,180 expo
 ## Authoritative Sources
 
 - [August 4 topic news collector source](../../../raw/processed/2026-08-04/ai-security-wiki-topic-news-collector-2026-08-04T193207-0400.json)
+- [August 5 topic news collector source](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json)
+- [August 5 leaf update watch source](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json)
 - Axios coverage: https://www.axios.com/2026/08/04/exclusive-hackers-ai-chat-logs-reveal-evolving-tactics
 
 ## Related Code
@@ -67,4 +71,4 @@ The same source reports one React2Shell-related workflow that scanned 9,180 expo
 
 ## Maintenance Notes
 
-- Created on 2026-08-04 from the [August 4 topic collector](../../../raw/processed/2026-08-04/ai-security-wiki-topic-news-collector-2026-08-04T193207-0400.json) after routing broad product/model context upstream and keeping only attacker-use, credential, telemetry, confidence, and residual-risk analysis locally.
+- Created on 2026-08-04 from the [August 4 topic collector](../../../raw/processed/2026-08-04/ai-security-wiki-topic-news-collector-2026-08-04T193207-0400.json) after routing broad product/model context upstream and keeping only attacker-use, credential, telemetry, confidence, and residual-risk analysis locally. Enriched on 2026-08-05 from the [August 5 topic collector](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json) and [August 5 watcher](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json) as duplicate-source provenance without a separate digest item.

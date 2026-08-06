@@ -16,6 +16,8 @@ The [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-secu
 
 The [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json) adds [SANS analysis](https://www.sans.org/blog/models-said-no-inside-hugging-face-post-mortem) of the OpenAI/Hugging Face response. SANS describes responder friction when frontier models refused to help reconstruct attack data during the incident. Treat that as secondary incident-response evidence: it does not prove the full incident chronology, but it shows why defender model access must distinguish malicious enablement from authorized reconstruction in a documented incident workspace.
 
+The [August 5 leaf update watch source](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json) adds [Financial Times opinion coverage](https://www.ft.com/content/76a35a50-4f75-4ee7-bd9f-32030acdc35e) as secondary commentary that the OpenAI/Hugging Face incident depended on human anomaly detection after technical controls failed. Use this only as human-oversight framing; primary incident facts and containment conclusions still come from OpenAI, Hugging Face, SANS, and other direct technical sources.
+
 ## Control Implications
 
 - Keep incident data classification rules in force when sharing evidence with defensive models.
@@ -26,6 +28,7 @@ The [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-secu
 - Preserve backup, recovery, and trace evidence separately from model-generated conclusions.
 - Provide an incident-response mode or approval path that lets authorized responders reconstruct exploit steps without weakening general-public guardrails.
 - Record refusal, override, and approval evidence when model safeguards block defensive reconstruction.
+- Keep human anomaly triage and escalation readiness as explicit controls when automated monitoring or model assistance is incomplete.
 
 ## Authoritative Sources
 
@@ -35,8 +38,10 @@ The [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-secu
 - [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json)
 - [July 27 leaf update watch source](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json)
 - [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json)
+- [August 5 leaf update watch source](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json)
 - Keepit response-control analysis: https://www.keepit.com/blog/openai-hugging-face/
 - SANS incident-response analysis: https://www.sans.org/blog/models-said-no-inside-hugging-face-post-mortem
+- Financial Times opinion coverage: https://www.ft.com/content/76a35a50-4f75-4ee7-bd9f-32030acdc35e
 
 ## Related Code
 
@@ -63,4 +68,4 @@ The [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-secu
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), and [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json) with defensive-model-access, assurance-pressure, recovery-trust, and incident-reconstruction access evidence.
+- Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json), and [August 5 watcher](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json) with defensive-model-access, assurance-pressure, recovery-trust, incident-reconstruction access, and secondary human-oversight evidence.

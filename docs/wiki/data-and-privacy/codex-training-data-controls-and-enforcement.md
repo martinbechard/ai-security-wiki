@@ -27,6 +27,14 @@ The [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-secu
 
 Each boundary must be checked separately instead of being treated as one "training off" switch.
 
+The [August 5 leaf update watch source](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json) records an in-window visible update to OpenAI's [model-improvement data-use page](https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance). The watcher says the page continues to preserve these separate boundaries:
+
+- individual ChatGPT and Codex content may be used for training unless opted out;
+- Codex full-environment sharing is controlled separately in Codex settings;
+- feedback and support conversations remain separate exceptions.
+
+This update reinforces the existing boundary split; it does not prove that every Help Center paragraph changed.
+
 Codex local configuration does not independently turn provider model training off. Managed authentication can reduce accidental policy drift by forcing Codex to use the approved control plane:
 
 ```toml
@@ -58,6 +66,7 @@ These settings enforce which account or organization Codex uses; they do not cre
 
 - [Codex training data controls research](../../../raw/processed/2026-07-30/project-wiki-research-2026-07-30-codex-training-data-controls.md)
 - [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json)
+- [August 5 leaf update watch source](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json)
 - OpenAI Help Center Data Controls FAQ: https://help.openai.com/en/articles/7730893-data-controls-faq
 - OpenAI Help Center model-improvement data use: https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance
 - OpenAI Help Center Codex with ChatGPT plan: https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan
@@ -93,4 +102,4 @@ These settings enforce which account or organization Codex uses; they do not cre
 
 ## Maintenance Notes
 
-- Created on 2026-07-30 from the [Codex training data controls research](../../../raw/processed/2026-07-30/project-wiki-research-2026-07-30-codex-training-data-controls.md); enriched from the [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json). Keep this page limited to Codex security-control assurance and route broad product behavior to the upstream AI wiki.
+- Created on 2026-07-30 from the [Codex training data controls research](../../../raw/processed/2026-07-30/project-wiki-research-2026-07-30-codex-training-data-controls.md); enriched from the [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json) and [August 5 watcher](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json). Keep this page limited to Codex security-control assurance and route broad product behavior to the upstream AI wiki.

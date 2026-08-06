@@ -36,6 +36,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 
 - [model and prompt security](../model-and-prompt-security/index.md)
 - [governance and compliance](../governance-and-compliance/index.md)
+- [third-party cyber-evaluation boundary failures](../incident-response/third-party-cyber-evaluation-boundary-failures.md)
 
 ## Open Questions
 

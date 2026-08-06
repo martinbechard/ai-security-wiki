@@ -8,6 +8,9 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 
 - [OpenAI Hugging Face cyber-evaluation incident](openai-hugging-face-cyber-evaluation-incident.md)
 - [Anthropic internet-connected cyber-evaluation incident](anthropic-internet-connected-cyber-evaluation-incident.md)
+- [AISI live-internet cyber-evaluation incident](aisi-live-internet-cyber-evaluation-incident.md)
+- [Irregular real-site cyber-evaluation scope collision](irregular-real-site-cyber-evaluation-scope-collision.md)
+- [Third-party cyber-evaluation boundary failures](third-party-cyber-evaluation-boundary-failures.md)
 - [Defender model access during security incidents](defender-model-access-during-security-incidents.md)
 - [Agent cyberattack disclosure and traceability](agent-cyberattack-disclosure-and-traceability.md)
 

@@ -26,6 +26,8 @@ The [July 31 topic news collector source](../../../raw/processed/2026-07-31/ai-s
 
 The primary disclosure raises confidence for the core incident facts, but it does not close the affected-organization, package-identifier, remediation, or partner-control questions. Irregular remains a named third-party evaluation partner with local security relevance; broad company or evaluator background still belongs upstream when a durable upstream page exists.
 
+The [AISI live-internet cyber-evaluation incident](aisi-live-internet-cyber-evaluation-incident.md) is a separate AISI-operated July 2026 incident. Keep its live-internet action details in that leaf; use this page only for Anthropic's Irregular-partner evaluation incidents.
+
 ## Security Impact
 
 - Threat: cyber-capable models can cross from simulated tasks into unauthorized real-world access when evaluation internet access is misconfigured.
@@ -59,6 +61,8 @@ The primary disclosure raises confidence for the core incident facts, but it doe
 
 - [incident response](index.md)
 - [cyber-evaluation containment](../testing-and-assurance/cyber-evaluation-containment.md)
+- [AISI live-internet cyber-evaluation incident](aisi-live-internet-cyber-evaluation-incident.md)
+- [third-party cyber-evaluation boundary failures](third-party-cyber-evaluation-boundary-failures.md)
 - [OpenAI Hugging Face cyber-evaluation incident](openai-hugging-face-cyber-evaluation-incident.md)
 - [agent network egress controls](../agent-and-tool-security/agent-network-egress-controls.md)
 - Upstream AI wiki owns broad [Anthropic](../../../upstream-ai-wiki/companies/anthropic.md) and [Claude/Mythos](../../../upstream-ai-wiki/models/claude-fable-5-and-mythos-5.md) coverage.
@@ -71,4 +75,4 @@ The primary disclosure raises confidence for the core incident facts, but it doe
 
 ## Maintenance Notes
 
-- Created on 2026-07-30 from the [July 30 topic news collector source](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json) and promoted to primary-disclosure confidence from the [July 31 collector](../../../raw/processed/2026-07-31/ai-security-wiki-topic-news-collector-2026-07-31T193247-0400.json) and [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json) while keeping broad Anthropic, Claude, Opus, Mythos, and evaluation-partner coverage upstream.
+- Created on 2026-07-30 from the [July 30 topic news collector source](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json) and promoted to primary-disclosure confidence from the [July 31 collector](../../../raw/processed/2026-07-31/ai-security-wiki-topic-news-collector-2026-07-31T193247-0400.json) and [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json) while keeping broad Anthropic, Claude, Opus, Mythos, and evaluation-partner coverage upstream. On 2026-08-05, AISI-specific material was split into [AISI live-internet cyber-evaluation incident](aisi-live-internet-cyber-evaluation-incident.md).
