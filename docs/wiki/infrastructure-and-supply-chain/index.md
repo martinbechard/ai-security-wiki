@@ -15,6 +15,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [AI guardrail dependency compromise](ai-guardrail-dependency-compromise.md)
 - [AI development workstation containment](ai-development-workstation-containment.md)
 - [Agent build and dependency execution boundaries](agent-build-and-dependency-execution-boundaries.md)
+- [Evaluation artifact repository agent coordination](evaluation-artifact-repository-agent-coordination.md)
+- [Slopsquatting package hallucination risk](slopsquatting-package-hallucination-risk.md)
 
 ## Authoritative Sources
 

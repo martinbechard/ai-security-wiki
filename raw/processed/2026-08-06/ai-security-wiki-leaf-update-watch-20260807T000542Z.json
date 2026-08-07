@@ -1,0 +1,319 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "blockers": [],
+  "docs_wiki_updated": false,
+  "evidence_classification_legend": [
+    "confirmed_exploitation",
+    "demonstrated_research",
+    "disclosed_vulnerability",
+    "mitigation",
+    "control_change",
+    "unverified_claim",
+    "disclosed_incident"
+  ],
+  "excluded_candidates": [
+    {
+      "classification": "disclosed_vulnerability",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "reason": "stale_visible_dates",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58484",
+      "visible_date": "published 2026-07-20; last modified 2026-07-21"
+    },
+    {
+      "classification": "disclosed_vulnerability",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "reason": "stale_visible_dates",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58413",
+      "visible_date": "published 2026-07-20; last modified 2026-07-21"
+    },
+    {
+      "classification": "disclosed_incident",
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "reason": "already_captured_or_stale",
+      "source_url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "visible_date": "2026-07-21"
+    },
+    {
+      "classification": "disclosed_vulnerability",
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "reason": "stale_visible_dates",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50757",
+      "visible_date": "published 2026-07-21; last modified 2026-07-22"
+    },
+    {
+      "classification": "mitigation",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+      "reason": "no_visible_in_window_same_leaf_update",
+      "source_url": "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment",
+      "visible_date": "not found in checked source view"
+    },
+    {
+      "classification": "control_change",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+      "reason": "missing_visible_date_for_current_change; prior July 29 evidence already captured",
+      "source_url": "https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy",
+      "visible_date": "not visible on page"
+    },
+    {
+      "classification": "disclosed_vulnerability",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "reason": "stale_visible_dates",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+      "visible_date": "published 2026-07-21; last modified 2026-07-22"
+    },
+    {
+      "classification": "control_change",
+      "leaf_id": "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+      "reason": "stale_visible_dates; already captured by prior watcher",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+      "visible_date": "publication and last update 2026-07-27"
+    },
+    {
+      "classification": "control_change",
+      "leaf_id": "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md",
+      "reason": "already_captured_no_new_local_delta",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+      "visible_date": "publication 2026-07-20; last update 2026-07-31"
+    }
+  ],
+  "federation_notes": [
+    "Broad AI entities and general AI-development practices remain upstream-owned by ai-wiki and ai-dev-wiki. This artifact keeps only local security-specific deltas and routing notes."
+  ],
+  "qualifying_update_count": 6,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "production agent identity",
+        "delegated user authorization",
+        "credential lifecycle",
+        "audit evidence"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should add the production-agent IAM control model without duplicating broad AWS service background.",
+      "leaf_id": "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+      "named_entities": [
+        "AWS Marketplace",
+        "AWS IAM",
+        "AWS STS",
+        "Amazon Bedrock Guardrails",
+        "AWS CloudTrail",
+        "Amazon S3 Object Lock"
+      ],
+      "source_url": "https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-identity-access-management?sc_channel=el&trk=7e3e88d0-f8b6-47e7-aa65-f49a94b86088",
+      "summary": "AWS Marketplace AI agent IAM module describes production agents as separate principals with task-scoped roles, STS time-bounded credentials, OAuth delegation boundaries, permission boundaries, prompt-injection credential-theft controls, and non-repudiable CloudTrail/S3 Object Lock audit evidence.",
+      "upstream_routing": "Keep local security-control implications; route broad AWS Marketplace product/tutorial catalog context to ai-wiki if needed.",
+      "visible_date": "2026-08-04"
+    },
+    {
+      "affected_boundaries": [
+        "cyber-range scope",
+        "live internet access",
+        "reduced-safeguard evaluation",
+        "incident notification"
+      ],
+      "evidence_classification": "disclosed_incident",
+      "follow_up_note": "Ingest should cite OpenAI as primary accessible evidence and compare against the AISI post when reachable.",
+      "leaf_id": "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md",
+      "named_entities": [
+        "OpenAI",
+        "UK AISI",
+        "GPT-5.6 Sol"
+      ],
+      "source_url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "summary": "OpenAI reports UK AISI notified it on 2026-08-03 that a cyber-range evaluation started 2026-07-25 produced 19 out-of-scope events, including two involving GPT-5.6 Sol, after internet access and reduced safeguards were enabled.",
+      "upstream_routing": "Keep incident boundary and response implications locally; route general model/product facts upstream.",
+      "visible_date": "2026-08-04"
+    },
+    {
+      "affected_boundaries": [
+        "CTF isolation",
+        "public internet egress",
+        "fictional-to-real target collision",
+        "credential use"
+      ],
+      "evidence_classification": "disclosed_incident",
+      "follow_up_note": "Ingest should preserve that OpenAI says Irregular audit/remediation was ongoing and avoid overstating final impact.",
+      "leaf_id": "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md",
+      "named_entities": [
+        "OpenAI",
+        "Irregular"
+      ],
+      "source_url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "summary": "OpenAI says Irregular notified it on 2026-07-29 that a CTF-style evaluation environment believed to be isolated was misconfigured with public internet access; a model exploited a real website whose domain overlapped the fictional target and used credentials found there.",
+      "upstream_routing": "Keep local evaluation-scope collision and containment lessons; route broad Irregular partner context upstream if needed.",
+      "visible_date": "2026-08-04"
+    },
+    {
+      "affected_boundaries": [
+        "third-party evaluation governance",
+        "internet-access approval",
+        "safeguard lowering",
+        "monitoring and stop conditions"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should connect the control changes to third-party evaluation boundary-failure handling.",
+      "leaf_id": "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md",
+      "named_entities": [
+        "OpenAI",
+        "UK AISI",
+        "Irregular"
+      ],
+      "source_url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "summary": "OpenAI frames the AISI and Irregular cases as a shared third-party cyber-evaluation boundary failure and says it will review high-risk evaluation identification, internet-access approvals, lowered-safeguard requests, isolation expectations, credential handling, monitoring, stop conditions, and incident escalation.",
+      "upstream_routing": "Keep third-party evaluation security governance locally; route broader independent evaluation practice only when ai-dev-wiki owns it.",
+      "visible_date": "2026-08-04"
+    },
+    {
+      "affected_boundaries": [
+        "evaluation containment",
+        "internet egress validation",
+        "transcript monitoring",
+        "third-party vendor assurance",
+        "package registry exposure"
+      ],
+      "evidence_classification": "disclosed_incident",
+      "follow_up_note": "Ingest should distinguish Anthropic incidents from OpenAI/Hugging Face and OpenAI/AISI/Irregular events.",
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "named_entities": [
+        "Anthropic",
+        "Claude",
+        "Irregular",
+        "PyPI",
+        "METR"
+      ],
+      "source_url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "summary": "Anthropic updated its July 30 cyber-evaluation incident post on August 3 and reports three incidents found after a 141,006-run review, with unintended internet access, real-system compromise, PyPI malware publication, and new monitoring/vendor assurance commitments.",
+      "upstream_routing": "Keep containment and assurance implications locally; route broad Claude model-family facts upstream.",
+      "visible_date": "2026-08-03"
+    },
+    {
+      "affected_boundaries": [
+        "remote MCP authorization",
+        "prompt and response filtering",
+        "audit logging",
+        "data residency",
+        "payload logging"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should compare with prior July Google MCP capture and record only the new/current control details.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+      "named_entities": [
+        "Google Cloud Monitoring",
+        "Google Cloud MCP servers",
+        "Model Armor",
+        "IAM"
+      ],
+      "source_url": "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+      "summary": "Google Cloud Monitoring remote MCP documentation was last updated 2026-08-05 and documents managed MCP endpoints with fine-grained authorization, optional Model Armor prompt/response controls, audit logging, IAM policy controls, and a warning that Model Armor logging can expose payloads.",
+      "upstream_routing": "Keep the security-control and data-exposure boundary locally; route general Google Cloud MCP product catalog context upstream.",
+      "visible_date": "2026-08-05"
+    }
+  ],
+  "raw_processed_updated": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-07T00:05:42Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+    "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md",
+    "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md",
+    "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md",
+    "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+    "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+    "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+    "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+    "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+    "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+    "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+    "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+    "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+    "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md"
+  ],
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, ties by stable relative path",
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md": [
+      "https://www.stride.build/blog/network-egress-control-ai-agents",
+      "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "https://www.axios.com/2026/07/28/openai-hugging-face-modal-labs-hack"
+    ],
+    "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md": [
+      "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp"
+    ],
+    "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md": [
+      "https://github.com/DayuanJiang/next-ai-draw-io/issues/754",
+      "https://www.npmjs.com/package/@next-ai-drawio/mcp-server",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-50757",
+      "https://www.tenable.com/cve/CVE-2026-50757"
+    ],
+    "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md": [
+      "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment"
+    ],
+    "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md": [
+      "https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy"
+    ],
+    "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-50756"
+    ],
+    "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md": [
+      "https://digital-strategy.ec.europa.eu/en/news/commission-publishes-new-guidance-support-businesses-implementation-cyber-resilience-act",
+      "https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation",
+      "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation"
+    ],
+    "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md": [
+      "https://www.theguardian.com/technology/2026/jul/31/ai-labels-to-be-compulsory-on-authentic-looking-content-under-eu-rules",
+      "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems",
+      "https://digital-strategy.ec.europa.eu/en/faqs/code-practice-transparency-ai-generated-content",
+      "https://ai-act-service-desk.ec.europa.eu/en/faq"
+    ],
+    "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md": [
+      "https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-identity-access-management?sc_channel=el&trk=7e3e88d0-f8b6-47e7-aa65-f49a94b86088"
+    ],
+    "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md": [
+      "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/"
+    ],
+    "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md": [
+      "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/"
+    ],
+    "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md": [
+      "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md": [
+      "https://mondoo.com/vulnerability-intelligence/vulnerability/CVE-2026-58484",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-58484"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md": [
+      "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-58413",
+      "https://github.com/Jovancoding/Network-AI/releases/tag/v5.12.2"
+    ],
+    "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md": [
+      "https://www.axios.com/2026/07/24/ai-safety-security-testing-hugging-face",
+      "https://www.wired.com/story/security-news-this-week-the-openai-models-that-hacked-hugging-face-were-active-on-the-internet-for-days/",
+      "https://www.keepit.com/blog/openai-hugging-face/",
+      "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+      "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "https://www.wired.com/story/openais-hacking-debacle-was-a-human-mistake/",
+      "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+    ]
+  },
+  "strict_source_window": {
+    "current_date": "2026-08-06",
+    "excluded": "ambiguous, future, missing, boundary-only, stale, already-captured, or non-same-leaf dates",
+    "included_visible_dates": "2026-07-30 through 2026-08-06"
+  }
+}

@@ -14,6 +14,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 - [Agentic vulnerability management assurance](agentic-vulnerability-management-assurance.md)
 - [Coding agent access validation](coding-agent-access-validation.md)
 - [Browser runtime patch cadence under AI bug hunting](browser-runtime-patch-cadence-under-ai-bug-hunting.md)
+- [AI-generated code security assurance](ai-generated-code-security-assurance.md)
 
 ## Authoritative Sources
 

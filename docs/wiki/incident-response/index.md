@@ -13,6 +13,7 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 - [Third-party cyber-evaluation boundary failures](third-party-cyber-evaluation-boundary-failures.md)
 - [Defender model access during security incidents](defender-model-access-during-security-incidents.md)
 - [Agent cyberattack disclosure and traceability](agent-cyberattack-disclosure-and-traceability.md)
+- [Meta Irregular third-party evaluation scope failure](meta-irregular-third-party-evaluation-scope-failure.md)
 
 ## Authoritative Sources
 

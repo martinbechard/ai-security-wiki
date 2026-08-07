@@ -60,6 +60,14 @@ The [AISI clipping source](../../../raw/processed/2026-08-05/aisi-unsanctioned-a
 - prompt-injection placement;
 - agent-to-agent artifact reuse.
 
+The [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json) adds [Axios](https://www.axios.com/2026/08/06/openai-hugging-face-black-hat) and [WIRED](https://www.wired.com/story/openai-didnt-notice-its-ai-agents-using-a-message-board-to-plan-their-hacking-spree/) Black Hat reporting on OpenAI's Artifactory evaluation-infrastructure compromise and [AP reporting](https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514) on a separate Meta/Irregular third-party-service exploitation claim. Shared artifact repositories and third-party evaluator environments need the same evidence categories as live cyber ranges:
+
+- positive isolation;
+- write denial;
+- egress control;
+- monitoring;
+- stop-condition enforcement.
+
 ## Control Implications
 
 - Keep cyber-evaluation infrastructure separate from production credentials and production-reachable networks.
@@ -94,6 +102,7 @@ The [AISI clipping source](../../../raw/processed/2026-08-05/aisi-unsanctioned-a
 - [July 31 topic news collector source](../../../raw/processed/2026-07-31/ai-security-wiki-topic-news-collector-2026-07-31T193247-0400.json)
 - [July 31 leaf update watch source](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json)
 - [AISI clipping source](../../../raw/processed/2026-08-05/aisi-unsanctioned-agent-behaviour-cyber-testing.md)
+- [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json)
 - [August 5 topic news collector source](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json)
 - [August 5 leaf update watch source](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json)
 - Anthropic incident disclosure: https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals
@@ -121,6 +130,8 @@ The [AISI clipping source](../../../raw/processed/2026-08-05/aisi-unsanctioned-a
 - [incident response](../incident-response/index.md)
 - [AISI live-internet cyber-evaluation incident](../incident-response/aisi-live-internet-cyber-evaluation-incident.md)
 - [Anthropic internet-connected cyber-evaluation incident](../incident-response/anthropic-internet-connected-cyber-evaluation-incident.md)
+- [evaluation artifact repository agent coordination](../infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
+- [Meta Irregular third-party evaluation scope failure](../incident-response/meta-irregular-third-party-evaluation-scope-failure.md)
 - [third-party cyber-evaluation boundary failures](../incident-response/third-party-cyber-evaluation-boundary-failures.md)
 
 ## Open Questions
@@ -134,3 +145,4 @@ The [AISI clipping source](../../../raw/processed/2026-08-05/aisi-unsanctioned-a
 ## Maintenance Notes
 
 - Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), [July 28 collector](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json), [July 29 collector](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json), [July 30 collector](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json), [July 31 collector](../../../raw/processed/2026-07-31/ai-security-wiki-topic-news-collector-2026-07-31T193247-0400.json), [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json), [AISI clipping](../../../raw/processed/2026-08-05/aisi-unsanctioned-agent-behaviour-cyber-testing.md), [August 5 collector](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json), and [August 5 watcher](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json) with confirmed-exploitation, control-change, media-attributed timeline, recovery-trust, evaluation-artifact execution, third-party sandbox boundary, evaluator-assurance, and live-internet evaluation-control evidence.
+- Updated on 2026-08-06 from the [August 6 topic collector](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json) to add artifact-repository coordination and Meta/Irregular third-party-service exploitation as containment evidence. Next check should compare OpenAI, Meta, or Irregular primary reports against the isolation, write-denial, egress, monitoring, and stop-condition evidence categories.

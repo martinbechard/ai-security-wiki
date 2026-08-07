@@ -22,6 +22,8 @@ The AWS guidance is control guidance rather than a vulnerability advisory. It na
 
 This page complements [development agent credential isolation](development-agent-credential-isolation.md). Development isolation separates local model, artifact, database, and Git credentials. Production identity control adds auditable workload identity, tenant-aware authorization, delegated user authority, non-repudiable logging, and immutable evidence for agents that call cloud, SaaS, or MCP tools.
 
+The [August 6 leaf update watch source](../../../raw/processed/2026-08-06/ai-security-wiki-leaf-update-watch-20260807T000542Z.json) keeps the same AWS guidance in scope and reinforces prompt-injection credential-theft filtering as part of production-agent credential control.
+
 ## Security Impact
 
 - Threat: agents with shared service-account credentials can overreach across tenants, tools, data classes, or user authority when prompts, tool outputs, or delegated tasks are hostile.
@@ -43,6 +45,7 @@ This page complements [development agent credential isolation](development-agent
 
 ## Authoritative Sources
 
+- [August 6 leaf update watch source](../../../raw/processed/2026-08-06/ai-security-wiki-leaf-update-watch-20260807T000542Z.json)
 - [August 5 topic news collector source](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json)
 - AWS agent identity and access-management guidance: https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-identity-access-management?sc_channel=el&trk=7e3e88d0-f8b6-47e7-aa65-f49a94b86088
 
@@ -76,3 +79,4 @@ This page complements [development agent credential isolation](development-agent
 ## Maintenance Notes
 
 - Created on 2026-08-05 from the [August 5 topic collector](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json) as a production identity-control leaf after routing broad AWS and vendor catalog coverage upstream.
+- Updated on 2026-08-06 from the [August 6 leaf watcher](../../../raw/processed/2026-08-06/ai-security-wiki-leaf-update-watch-20260807T000542Z.json) to record supporting provenance for prompt-injection credential-theft filtering without creating a separate digest item. Next check should look for cross-cloud equivalents to AWS IAM, STS, CloudTrail, and S3 Object Lock guidance.

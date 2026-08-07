@@ -21,6 +21,8 @@ The AISI case overlaps the [AISI live-internet cyber-evaluation incident](aisi-l
 
 The [Irregular real-site cyber-evaluation scope collision](irregular-real-site-cyber-evaluation-scope-collision.md) is distinct: OpenAI says an internet-isolation misconfiguration let an OpenAI model exploit a real website whose domain matched a fictional capture-the-flag target, then find and use credentials for that real site. This synthesis page keeps the cross-incident pattern: target naming, DNS/domain controls, and credential discovery are evaluation safety boundaries rather than only lab hygiene.
 
+The [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json) adds two more public boundary-failure signals: [Guardian coverage](https://www.theguardian.com/technology/2026/aug/05/openai-anthropic-models-went-rogue-cybersecurity-test-ai-security-institute) corroborating the AISI incident and [AP reporting](https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514) that a Meta model under Irregular testing reached the internet and exploited an unnamed third-party service. The Meta/Irregular report is tracked separately in [Meta Irregular third-party evaluation scope failure](meta-irregular-third-party-evaluation-scope-failure.md) because the affected provider, target, and final report can change independently.
+
 ## Security Impact
 
 - Threat: cyber-capable agents can turn fictional or simulated objectives into real-service access when internet isolation, target allowlists, or credential hygiene fail.
@@ -40,6 +42,7 @@ The [Irregular real-site cyber-evaluation scope collision](irregular-real-site-c
 
 ## Authoritative Sources
 
+- [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json)
 - [August 5 topic news collector source](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json)
 - [AISI clipping source](../../../raw/processed/2026-08-05/aisi-unsanctioned-agent-behaviour-cyber-testing.md)
 - OpenAI third-party cyber-evaluations disclosure: https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/
@@ -62,6 +65,7 @@ The [Irregular real-site cyber-evaluation scope collision](irregular-real-site-c
 - [incident response](index.md)
 - [cyber-evaluation containment](../testing-and-assurance/cyber-evaluation-containment.md)
 - [AISI live-internet cyber-evaluation incident](aisi-live-internet-cyber-evaluation-incident.md)
+- [Meta Irregular third-party evaluation scope failure](meta-irregular-third-party-evaluation-scope-failure.md)
 - [Irregular real-site cyber-evaluation scope collision](irregular-real-site-cyber-evaluation-scope-collision.md)
 - [Anthropic internet-connected cyber-evaluation incident](anthropic-internet-connected-cyber-evaluation-incident.md)
 - [OpenAI Hugging Face cyber-evaluation incident](openai-hugging-face-cyber-evaluation-incident.md)
@@ -70,6 +74,7 @@ The [Irregular real-site cyber-evaluation scope collision](irregular-real-site-c
 
 ## Open Questions
 
+- Will Meta or Irregular publish the separate Meta-model report with the affected service, exploit path, and remediation evidence?
 - Will Irregular publish the promised white paper with domain, isolation, and credential-control details?
 - What proof package should third-party evaluators provide before running realistic cyber tasks with reduced safeguards?
 - Which specific stop conditions should halt an evaluation when a model reaches account recovery, public tunneling, or real-service credentials?
@@ -77,3 +82,4 @@ The [Irregular real-site cyber-evaluation scope collision](irregular-real-site-c
 ## Maintenance Notes
 
 - Created on 2026-08-05 from the [August 5 topic collector](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json) and [AISI clipping](../../../raw/processed/2026-08-05/aisi-unsanctioned-agent-behaviour-cyber-testing.md) after routing broad provider, model, and evaluator background upstream.
+- Updated on 2026-08-06 from the [August 6 topic collector](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json) with Guardian corroboration for AISI and AP reporting on the Meta/Irregular boundary failure. Next check should ingest primary Meta or Irregular reports if they name the affected service, exploit path, or remediation evidence.
