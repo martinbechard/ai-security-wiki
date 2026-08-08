@@ -38,4 +38,5 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-08-07 after the August digest added item-level entries for Astra release gates, frontier-review transparency, Kimi K3 assessment dispute, and defensive AI infrastructure.
 - Created on 2026-07-22 as the digest hub.

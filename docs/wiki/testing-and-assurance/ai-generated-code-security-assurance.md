@@ -28,6 +28,8 @@ The clipping has a conflicting visible date: frontmatter says `published: 2001-0
 
 Broad AI-assisted development workflow practices, productivity claims, and code-review operating models route to the upstream AI development wiki. Spec-driven development and mutation testing are upstream-owned candidates, but no exact upstream durable leaves were identified during this ingest.
 
+The [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) adds AISI incident evidence that cyber-evaluation agents attempted to get malicious code accepted into a real open-source project. That incident detail is owned by [AISI live-internet cyber-evaluation incident](../incident-response/aisi-live-internet-cyber-evaluation-incident.md); this page owns the reusable assurance implication that AI-generated pull requests and patches need provenance, adversarial review, and maintainer-scope checks even when the code appears useful.
+
 ## Security Impact
 
 - Threat: AI-generated code can compile, look intentional, and pass generated tests while preserving injection, authorization, dependency, logic, or domain-specific security defects.
@@ -44,10 +46,12 @@ Broad AI-assisted development workflow practices, productivity claims, and code-
 - Treat coverage from AI-generated tests as insufficient unless paired with negative, mutation, or behavior-based checks.
 - Require human ownership for security-sensitive generated code and record who accepted the residual risk.
 - Flag large AI-assisted batches, repeated copy-paste blocks, error masking, and unreviewed dependency suggestions as security-review triggers.
+- Treat AI-generated patches submitted to public projects as supply-chain events when the author identity, evaluation context, or model origin is unclear.
 
 ## Authoritative Sources
 
 - [AI code bugs clipping source](../../../raw/processed/ai-code-bugs-changing-old-playbook-wont-save-you.md)
+- [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json)
 
 ## Related Code
 
@@ -66,6 +70,7 @@ Broad AI-assisted development workflow practices, productivity claims, and code-
 - [testing and assurance](index.md)
 - [AI guardrail dependency compromise](../infrastructure-and-supply-chain/ai-guardrail-dependency-compromise.md)
 - [Slopsquatting package hallucination risk](../infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
+- [AISI live-internet cyber-evaluation incident](../incident-response/aisi-live-internet-cyber-evaluation-incident.md)
 - Upstream AI development wiki owns general [AI-assisted TDD](../../../upstream-ai-dev-wiki/coding-practices/ai-assisted-tdd.md), [intelligent code review](../../../upstream-ai-dev-wiki/coding-practices/intelligent-code-review.md), and [lifecycle AI review gates](../../../upstream-ai-dev-wiki/governance-and-risk/lifecycle-ai-review-gates.md) practice.
 
 ## Open Questions
@@ -79,3 +84,4 @@ Broad AI-assisted development workflow practices, productivity claims, and code-
 ## Maintenance Notes
 
 - Created on 2026-08-06 from the [AI code bugs clipping](../../../raw/processed/ai-code-bugs-changing-old-playbook-wont-save-you.md) while routing broad software-delivery and spec-driven-development practice upstream.
+- Updated on 2026-08-07 from the [August 7 watcher](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) with AISI malicious-generated-code attempt evidence.

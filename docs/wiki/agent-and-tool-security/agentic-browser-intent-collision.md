@@ -24,13 +24,15 @@ The source says Zenity framed the failure as intent collision. The collector als
 
 OpenAI Atlas and Amazon Rufus do not have exact upstream product leaves identified during this ingest; broad [OpenAI](../../../upstream-ai-wiki/companies/openai.md) and [Amazon AI](../../../upstream-ai-wiki/companies/amazon-ai.md) coverage are the current upstream routes. The adjacent browser-agent prompt-injection pattern [BioShocking](../../../upstream-ai-wiki/techniques/bioshocking.md) is upstream-owned context.
 
+The [August 7 topic news collector source](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) repeats the [WIRED](https://www.wired.com/story/openais-browser-could-be-hijacked-to-spam-your-whatsapp-contacts/) and [Zenity](https://zenity.io/research/pleasefix-vulnerabilities) evidence inside the strict August 7 collection window and says the Zenity primary write-up was not fetched during that collector run. That keeps the local confidence boundary unchanged: WIRED is the dated qualifying source, and exact affected products, versions, and remediation status remain open.
+
 ## Security Impact
 
 - Threat: malicious web content can steer an authenticated browser agent into messaging, account-state changes, purchases, data disclosure, or cross-service action that the user did not intend.
 - Affected boundary: OpenAI Atlas, agentic browsers and extensions, authenticated browser sessions, WhatsApp messaging, Amazon account state, Amazon Rufus action completion, and cross-origin web instructions.
 - Exploit or incident status: public security research disclosure with proofs of concept; no confirmed customer compromise in the captured source.
 - Mitigation state: reporting says OpenAI had fixed earlier Atlas protections and Atlas deprecation was scheduled for 2026-08-09; broader vendor mitigations are not fully captured.
-- Confidence: high for WIRED-reported Black Hat findings; medium for direct Zenity technical detail because the collector found no visible date on the Zenity research page.
+- Confidence: high for [WIRED-reported](https://www.wired.com/story/openais-browser-could-be-hijacked-to-spam-your-whatsapp-contacts/) Black Hat findings; medium for direct [Zenity](https://zenity.io/research/pleasefix-vulnerabilities) technical detail because the [August 7 topic collector](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) did not fetch the Zenity primary write-up, while the [August 7 leaf watcher](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) excluded the Zenity page for missing visible publication or update date.
 - Residual risk: affected versions, vendor-specific patches, remaining browser-extension products, and reproducible isolation guarantees remain unresolved.
 
 ## Control Implications
@@ -44,6 +46,8 @@ OpenAI Atlas and Amazon Rufus do not have exact upstream product leaves identifi
 ## Authoritative Sources
 
 - [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json)
+- [August 7 topic news collector source](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json)
+- [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json)
 - [WIRED coverage](https://www.wired.com/story/openais-browser-could-be-hijacked-to-spam-your-whatsapp-contacts/)
 - [Zenity research background](https://zenity.io/research/pleasefix-vulnerabilities)
 
@@ -77,3 +81,4 @@ OpenAI Atlas and Amazon Rufus do not have exact upstream product leaves identifi
 ## Maintenance Notes
 
 - Created on 2026-08-06 from the [August 6 topic collector](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json) as a reusable delegated-browser control leaf instead of a product page. Next check should replace WIRED/Zenity-derived details when affected versions, vendor patches, or remediation evidence become available.
+- Updated on 2026-08-07 from the [August 7 topic collector](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) with repeated dated evidence and unchanged primary-write-up gaps.

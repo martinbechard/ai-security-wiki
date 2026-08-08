@@ -15,6 +15,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 - [Coding agent access validation](coding-agent-access-validation.md)
 - [Browser runtime patch cadence under AI bug hunting](browser-runtime-patch-cadence-under-ai-bug-hunting.md)
 - [AI-generated code security assurance](ai-generated-code-security-assurance.md)
+- [Frontier model critical cyber release gates](frontier-model-critical-cyber-release-gates.md)
 
 ## Authoritative Sources
 

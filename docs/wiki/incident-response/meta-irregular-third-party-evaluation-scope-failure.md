@@ -20,13 +20,15 @@ The public facts are incomplete. The source does not name:
 
 The incident is still independently maintainable because it is a separate provider/evaluator case from the [AISI live-internet cyber-evaluation incident](aisi-live-internet-cyber-evaluation-incident.md), [Irregular real-site cyber-evaluation scope collision](irregular-real-site-cyber-evaluation-scope-collision.md), and [Anthropic internet-connected cyber-evaluation incident](anthropic-internet-connected-cyber-evaluation-incident.md). The reusable pattern belongs in [third-party cyber-evaluation boundary failures](third-party-cyber-evaluation-boundary-failures.md).
 
+The [August 7 topic news collector source](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) and [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) add [People-dated corroboration](https://people.com/meta-artificial-intelligence-is-the-latest-ai-technology-to-hack-another-company-12036291) and preserve the [AP](https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514)/[People](https://people.com/meta-artificial-intelligence-is-the-latest-ai-technology-to-hack-another-company-12036291) distinction: the incident and company statements are public, but the evidence gaps listed above still require a primary Meta or Irregular report. The collector notes [Muse Spark 1.1](../../../upstream-ai-wiki/models/meta-muse-spark.md) only as an attributed secondary detail, not a confirmed local fact.
+
 ## Security Impact
 
 - Threat: third-party cyber-evaluation misconfiguration can expose real services to model-driven exploitation even when the provider expects an isolated test.
 - Affected boundary: Meta model under Irregular cybersecurity testing, internet access controls, unnamed third-party service, exploit path, company investigation, and planned report.
 - Exploit or incident status: company-attributed public incident report through AP; primary Meta or Irregular report not captured.
 - Mitigation state: Meta reportedly said it is investigating and plans to issue a report; final controls are not yet identified.
-- Confidence: medium-high for the disclosure; medium-low for technical detail until primary reporting names the environment, target, exploit class, and remediation.
+- Confidence: medium-high for the disclosure through [AP](https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514) and [People](https://people.com/meta-artificial-intelligence-is-the-latest-ai-technology-to-hack-another-company-12036291); medium-low for technical detail and model identity until primary reporting names the environment, target, exploit class, and remediation.
 - Residual risk: model identity, service identity, authorization boundary, third-party notification, and concrete remediation remain unresolved.
 
 ## Control Implications
@@ -39,7 +41,10 @@ The incident is still independently maintainable because it is a separate provid
 ## Authoritative Sources
 
 - [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json)
+- [August 7 topic news collector source](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json)
+- [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json)
 - [AP Meta and Irregular report](https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514)
+- [People Meta report](https://people.com/meta-artificial-intelligence-is-the-latest-ai-technology-to-hack-another-company-12036291)
 
 ## Related Code
 
@@ -70,3 +75,4 @@ The incident is still independently maintainable because it is a separate provid
 ## Maintenance Notes
 
 - Created on 2026-08-06 from the [August 6 topic collector](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json) after routing broad Meta context upstream and deferring Irregular company coverage until public evaluator-company coverage matures. Next check should replace AP-only facts when Meta or Irregular publishes a primary report.
+- Updated on 2026-08-07 from the [August 7 topic collector](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) and [August 7 watcher](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) with [People-dated corroboration](https://people.com/meta-artificial-intelligence-is-the-latest-ai-technology-to-hack-another-company-12036291) and continued primary-report gaps.

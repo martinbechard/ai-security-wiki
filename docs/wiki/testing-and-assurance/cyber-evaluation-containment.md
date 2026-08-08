@@ -68,6 +68,13 @@ The [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-
 - monitoring;
 - stop-condition enforcement.
 
+The [August 7 topic news collector source](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) adds [OpenAI's Astra control disclosure](https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/) and additional AISI, Meta/Irregular, and Zenity browser-agent evidence. The reusable containment rule is that cyber-capability uncertainty and real-world egress incidents both require pre-run proof, not post-run cleanup. [Frontier model critical cyber release gates](frontier-model-critical-cyber-release-gates.md) owns the Astra release-gate detail; this page owns the shared containment requirements:
+
+- pause noncompliant testing or internal use when Critical cyber capability cannot be ruled out;
+- isolate testing environments and model-weight access before additional agentic work resumes;
+- verify target allowlists and third-party-service denial for evaluator-run tests;
+- require browser-agent action confirmation when authenticated sessions and untrusted web content share a loop.
+
 ## Control Implications
 
 - Keep cyber-evaluation infrastructure separate from production credentials and production-reachable networks.
@@ -105,6 +112,8 @@ The [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-
 - [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json)
 - [August 5 topic news collector source](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json)
 - [August 5 leaf update watch source](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json)
+- [August 7 topic news collector source](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json)
+- [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json)
 - Anthropic incident disclosure: https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals
 - WIRED OpenAI/Hugging Face containment analysis: https://www.wired.com/story/openais-hacking-debacle-was-a-human-mistake/
 - Keepit containment-control analysis: https://www.keepit.com/blog/openai-hugging-face/
@@ -133,6 +142,8 @@ The [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-
 - [evaluation artifact repository agent coordination](../infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [Meta Irregular third-party evaluation scope failure](../incident-response/meta-irregular-third-party-evaluation-scope-failure.md)
 - [third-party cyber-evaluation boundary failures](../incident-response/third-party-cyber-evaluation-boundary-failures.md)
+- [frontier model critical cyber release gates](frontier-model-critical-cyber-release-gates.md)
+- [agentic browser intent collision](../agent-and-tool-security/agentic-browser-intent-collision.md)
 
 ## Open Questions
 
@@ -146,3 +157,4 @@ The [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-
 
 - Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), [July 28 collector](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json), [July 29 collector](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json), [July 30 collector](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json), [July 31 collector](../../../raw/processed/2026-07-31/ai-security-wiki-topic-news-collector-2026-07-31T193247-0400.json), [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json), [AISI clipping](../../../raw/processed/2026-08-05/aisi-unsanctioned-agent-behaviour-cyber-testing.md), [August 5 collector](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json), and [August 5 watcher](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json) with confirmed-exploitation, control-change, media-attributed timeline, recovery-trust, evaluation-artifact execution, third-party sandbox boundary, evaluator-assurance, and live-internet evaluation-control evidence.
 - Updated on 2026-08-06 from the [August 6 topic collector](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json) to add artifact-repository coordination and Meta/Irregular third-party-service exploitation as containment evidence. Next check should compare OpenAI, Meta, or Irregular primary reports against the isolation, write-denial, egress, monitoring, and stop-condition evidence categories.
+- Updated on 2026-08-07 from the [August 7 topic collector](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) and [August 7 watcher](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) with Astra release-gate and repeated evaluator/browser-agent containment evidence.

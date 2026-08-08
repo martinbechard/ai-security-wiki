@@ -13,6 +13,7 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 - [California AI Transparency Act provenance controls](california-ai-transparency-act-provenance-controls.md)
 - [GPAI systemic-risk controls](gpai-systemic-risk-controls.md)
 - [EU AI Act prohibited-practices enforcement controls](eu-ai-act-prohibited-practices-enforcement-controls.md)
+- [Frontier model cybersecurity review transparency](frontier-model-cybersecurity-review-transparency.md)
 
 ## Authoritative Sources
 
