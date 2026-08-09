@@ -27,12 +27,21 @@ The [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-secu
 - credential-misuse detection;
 - runaway-agent monitoring before finalized billing closes.
 
+The [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) adds [Google Cloud Billing release-note](https://docs.cloud.google.com/release-notes) evidence for Originating products filtering and grouping, including Gemini Enterprise cost-by-SKU reporting.
+
+Treat this as attribution evidence for AI spend monitoring. The security value is better separation of these dimensions before an abnormal model bill is classified as abuse, compromise, or expected use:
+
+- originating product;
+- SKU;
+- project;
+- workload.
+
 ## Security Impact
 
 - Threat: credential misuse, prompt-injected agents, runaway workflows, or misconfigured model routing can generate abnormal AI workload cost.
-- Affected boundary: Google Cloud Billing anomaly dashboard for AI workloads, Gemini API, and Vertex AI service-level cost signals.
+- Affected boundary: Google Cloud Billing anomaly dashboard for AI workloads, Gemini API, Vertex AI, Gemini Enterprise cost-by-SKU reporting, and originating-product grouping.
 - Exploit or incident status: [official control release](https://docs.cloud.google.com/release-notes); no incident was reported in the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json).
-- Mitigation state: route AI spend anomalies into security monitoring, correlate them with agent identity and workload identity, and alert on unexpected service, project, region, or caller changes.
+- Mitigation state: route AI spend anomalies into security monitoring, correlate them with agent identity and workload identity, and alert on unexpected service, project, region, originating product, SKU, or caller changes.
 - Confidence: high for release-note facts because the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) cites [official Google Cloud release notes](https://docs.cloud.google.com/release-notes).
 - Residual risk: near-real-time cost estimates are detection signals, not preventive authorization; they need identity, audit, and workload context before security conclusions are reliable.
 
@@ -41,6 +50,7 @@ The [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-secu
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
 - [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
 - [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json)
+- [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json)
 - Google Cloud release notes: https://docs.cloud.google.com/release-notes
 
 ## Related Code
@@ -66,7 +76,9 @@ The [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-secu
 ## Open Questions
 
 - Which anomaly thresholds, identities, and billing dimensions are sufficient to separate AI abuse from legitimate workload spikes?
+- Which originating-product and SKU dimensions should be required before treating a Gemini Enterprise cost spike as a security signal?
 
 ## Maintenance Notes
 
 - Split from the bundled anomaly/residency draft during July 25 verifier correction; enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) and [July 29 leaf watcher](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json). Keep this page focused on detection and assurance evidence.
+- Updated on 2026-08-09 from the [August 9 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) with originating-product and Gemini Enterprise cost-by-SKU attribution evidence.

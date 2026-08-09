@@ -1,0 +1,411 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "run_at": "2026-08-09T00:03:23Z",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "selection_policy": "Unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "visible_date_window": {
+    "included_from": "2026-08-02",
+    "included_through": "2026-08-09",
+    "basis": "Public source visible publication or update date; ambiguous, future, missing, stale, and boundary-only dates are excluded."
+  },
+  "leaf_universe_count": 74,
+  "selected_leaf_ids": [
+    "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md",
+    "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md",
+    "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md",
+    "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+    "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md",
+    "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md",
+    "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md",
+    "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md",
+    "docs/wiki/model-and-prompt-security/evaluation-artifact-template-execution-risk.md",
+    "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md",
+    "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md",
+    "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md"
+  ],
+  "sources_checked": [
+    {
+      "url": "https://www.theguardian.com/technology/2026/aug/07/white-house-ai",
+      "visible_date": "2026-08-07",
+      "matched_leaf_ids": [
+        "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md"
+      ],
+      "result": "qualified"
+    },
+    {
+      "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+      "visible_date": "2026-08-07",
+      "matched_leaf_ids": [
+        "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md"
+      ],
+      "result": "qualified"
+    },
+    {
+      "url": "https://www.axios.com/2026/08/07/openai-astra-model-delay-cybersecurity-risks",
+      "visible_date": "2026-08-07",
+      "matched_leaf_ids": [
+        "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md"
+      ],
+      "result": "qualified_secondary"
+    },
+    {
+      "url": "https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/",
+      "visible_date": null,
+      "matched_leaf_ids": [
+        "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md"
+      ],
+      "result": "excluded_missing_visible_update_date"
+    },
+    {
+      "url": "https://docs.cloud.google.com/release-notes",
+      "visible_date": "2026-08-07",
+      "matched_leaf_ids": [
+        "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+        "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md",
+        "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md"
+      ],
+      "result": "qualified"
+    },
+    {
+      "url": "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+      "visible_date": "2026-08-05",
+      "matched_leaf_ids": [
+        "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+        "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md"
+      ],
+      "result": "qualified"
+    },
+    {
+      "url": "https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-008/",
+      "visible_date": null,
+      "matched_leaf_ids": [
+        "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md"
+      ],
+      "result": "excluded_missing_visible_update_date"
+    },
+    {
+      "url": "https://docs.cloud.google.com/mcp/docs/release-notes",
+      "visible_date": null,
+      "matched_leaf_ids": [
+        "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md"
+      ],
+      "result": "excluded_no_new_same_leaf_qualified_update_found"
+    },
+    {
+      "url": "https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac",
+      "visible_date": null,
+      "matched_leaf_ids": [
+        "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md"
+      ],
+      "result": "excluded_missing_visible_update_date"
+    },
+    {
+      "url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+      "visible_date": "2026-07-28",
+      "matched_leaf_ids": [
+        "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md"
+      ],
+      "result": "excluded_stale_visible_date"
+    },
+    {
+      "url": "https://github.com/advisories/GHSA-jvcm-f35g-w78p",
+      "visible_date": "2026-06-19",
+      "matched_leaf_ids": [
+        "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md"
+      ],
+      "result": "excluded_stale_visible_date"
+    },
+    {
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58481",
+      "visible_date": null,
+      "matched_leaf_ids": [
+        "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md"
+      ],
+      "result": "excluded_no_in_window_visible_update_identified"
+    },
+    {
+      "url": "https://github.com/advisories/GHSA-2fmp-9rvw-hc96",
+      "visible_date": "2026-06-19",
+      "matched_leaf_ids": [
+        "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md"
+      ],
+      "result": "excluded_stale_visible_date"
+    },
+    {
+      "url": "https://www.tenable.com/cve/CVE-2026-58484",
+      "visible_date": null,
+      "matched_leaf_ids": [
+        "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md"
+      ],
+      "result": "excluded_no_in_window_visible_update_identified"
+    },
+    {
+      "url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+      "visible_date": "2026-07-27",
+      "matched_leaf_ids": [
+        "docs/wiki/model-and-prompt-security/evaluation-artifact-template-execution-risk.md"
+      ],
+      "result": "excluded_stale_visible_date"
+    },
+    {
+      "url": "https://huggingface.co/blog/security-incident-july-2026",
+      "visible_date": "2026-07-16",
+      "matched_leaf_ids": [
+        "docs/wiki/model-and-prompt-security/evaluation-artifact-template-execution-risk.md"
+      ],
+      "result": "excluded_stale_visible_date"
+    },
+    {
+      "url": "https://docs.nvidia.com/nemoclaw/user-guide/deepagents/release-notes",
+      "visible_date": "2026-08-04",
+      "matched_leaf_ids": [
+        "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md"
+      ],
+      "result": "qualified"
+    },
+    {
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/resources",
+      "visible_date": "2026-07-31",
+      "matched_leaf_ids": [
+        "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md"
+      ],
+      "result": "excluded_boundary_or_stale_visible_date"
+    },
+    {
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/faq",
+      "visible_date": null,
+      "matched_leaf_ids": [
+        "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md"
+      ],
+      "result": "excluded_missing_page_update_date"
+    }
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md",
+      "source_url": "https://www.theguardian.com/technology/2026/aug/07/white-house-ai",
+      "visible_date": "2026-08-07",
+      "evidence_classification": "governance_control_change",
+      "summary": "Reporting says a White House framework for voluntary frontier-model safety and cybersecurity vetting was finalized but not released publicly, leaving model-review criteria available only to selected companies.",
+      "affected_boundaries": [
+        "frontier model cybersecurity review transparency",
+        "government safety and cybersecurity vetting",
+        "public accountability for advanced AI model release checks"
+      ],
+      "named_entities": [
+        "White House",
+        "OpenAI",
+        "Anthropic",
+        "Meta",
+        "Google",
+        "Nvidia",
+        "Microsoft",
+        "Center for AI Standards and Innovation"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Route broad company and administration-policy background upstream if needed.",
+        "ai_dev_wiki": "No general development-practice update identified.",
+        "local_security_scope": "Keep the transparency and cybersecurity-review boundary locally."
+      },
+      "follow_up_note": "Ingest should avoid restating broad AI policy background and capture only the security-review transparency risk."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md",
+      "source_url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+      "visible_date": "2026-08-07",
+      "evidence_classification": "control_change",
+      "summary": "OpenAI disclosed that preliminary Astra evaluations could not rule out the Preparedness Framework critical cybersecurity threshold and said it paused internal Astra activities that do not meet strengthened controls.",
+      "affected_boundaries": [
+        "frontier model release gates",
+        "critical cyber capability evaluation",
+        "isolated testing environments",
+        "restricted network and tool access",
+        "sandboxed execution"
+      ],
+      "named_entities": [
+        "OpenAI",
+        "Astra",
+        "Preparedness Framework"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Route broad Astra model/entity coverage upstream.",
+        "ai_dev_wiki": "Route general model-evaluation practice upstream if needed.",
+        "local_security_scope": "Keep the cyber release-gate and strengthened-control delta locally."
+      },
+      "follow_up_note": "Ingest should treat Axios as secondary confirmation and the OpenAI post as the primary release-gate source."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+      "source_url": "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+      "visible_date": "2026-08-05",
+      "evidence_classification": "mitigation",
+      "summary": "Google Cloud Monitoring MCP documentation states that Model Armor routing can differ by MCP server and may affect in-use and in-transit data residency when the server jurisdiction and Model Armor support differ.",
+      "affected_boundaries": [
+        "MCP prompt and response inspection",
+        "in-use data residency",
+        "in-transit data residency",
+        "Model Armor regional routing"
+      ],
+      "named_entities": [
+        "Google Cloud",
+        "Cloud Monitoring MCP server",
+        "Model Armor"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Route broad Google Cloud product coverage upstream.",
+        "ai_dev_wiki": "No general development-practice update identified.",
+        "local_security_scope": "Keep the data-residency control implication locally."
+      },
+      "follow_up_note": "Ingest should link this to model-processing residency controls, not to a generic Google Cloud product page."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md",
+      "source_url": "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+      "visible_date": "2026-08-05",
+      "evidence_classification": "mitigation",
+      "summary": "Google Cloud Monitoring MCP now documents required roles and permissions for MCP tool calls, including the MCP Tool User role, Monitoring Admin role, and mcp.tools.call permission.",
+      "affected_boundaries": [
+        "MCP tool-call authorization",
+        "agent identity separation",
+        "Cloud Monitoring tool permissions",
+        "IAM-governed remote MCP access"
+      ],
+      "named_entities": [
+        "Google Cloud",
+        "Cloud Monitoring MCP server",
+        "Identity and Access Management"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Route broad Google Cloud and MCP entity coverage upstream.",
+        "ai_dev_wiki": "Route general MCP setup guidance upstream if needed.",
+        "local_security_scope": "Keep tool-level authorization and role boundary locally."
+      },
+      "follow_up_note": "Ingest should compare this against the existing Google MCP authorization leaf before adding duplicate control prose."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md",
+      "source_url": "https://docs.cloud.google.com/release-notes",
+      "visible_date": "2026-08-07",
+      "evidence_classification": "control_change",
+      "summary": "Google Cloud Billing release notes add Originating products filter and grouping support, including Gemini Enterprise cost-by-SKU reporting for AI spend tracking.",
+      "affected_boundaries": [
+        "AI workload cost monitoring",
+        "Gemini Enterprise spend attribution",
+        "originating-product billing analysis"
+      ],
+      "named_entities": [
+        "Google Cloud Billing",
+        "Gemini Enterprise"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Route broad Gemini Enterprise product coverage upstream.",
+        "ai_dev_wiki": "Route general FinOps practice upstream if needed.",
+        "local_security_scope": "Keep cost-anomaly monitoring as a control signal for AI workloads."
+      },
+      "follow_up_note": "Ingest should avoid broad billing release-note coverage and capture only the AI workload monitoring control delta."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md",
+      "source_url": "https://docs.nvidia.com/nemoclaw/user-guide/deepagents/release-notes",
+      "visible_date": "2026-08-04",
+      "evidence_classification": "control_change",
+      "summary": "NemoClaw release notes add host readiness producer identity, source revision evidence, coupled MCP credential evidence validation, and release E2E evidence hardening.",
+      "affected_boundaries": [
+        "agent runtime evidence provenance",
+        "host readiness attestations",
+        "MCP credential evidence validation",
+        "release E2E evidence quality"
+      ],
+      "named_entities": [
+        "NVIDIA",
+        "NemoClaw",
+        "Deep Agents",
+        "OpenClaw"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Route broad NVIDIA/NemoClaw product coverage upstream.",
+        "ai_dev_wiki": "Route general agent-runtime release workflow details upstream if needed.",
+        "local_security_scope": "Keep security evidence and credential-validation deltas locally."
+      },
+      "follow_up_note": "Ingest should distinguish runtime evidence controls from broad NemoClaw product release details."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md",
+      "source_url": "https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/",
+      "reason": "The page contains relevant ATO-sensitive-data guidance but no visible in-window page publication or update date was found."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md",
+      "source_url": "https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-008/",
+      "reason": "The advisory page was relevant but no visible in-window publication or update date was available in the accessible page text."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md",
+      "source_url": "https://docs.cloud.google.com/mcp/docs/release-notes",
+      "reason": "No new same-leaf redirect-URI handling update was identified in the strict window."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md",
+      "source_url": "https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac",
+      "reason": "The source discusses the sandbox escape and CVE-2026-46331, but no visible in-window publication or update date was found."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md",
+      "source_url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+      "reason": "The visible release date is 2026-07-28, outside the seven-day inclusion window."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md",
+      "source_url": "https://github.com/advisories/GHSA-jvcm-f35g-w78p",
+      "reason": "The advisory was published and last updated in June 2026, outside the seven-day inclusion window."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md",
+      "source_url": "https://github.com/advisories/GHSA-2fmp-9rvw-hc96",
+      "reason": "The advisory was published and last updated in June 2026, outside the seven-day inclusion window."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/evaluation-artifact-template-execution-risk.md",
+      "source_url": "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+      "reason": "The technical timeline is relevant but visibly published 2026-07-27, outside the seven-day inclusion window."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md",
+      "source_url": "https://ai-act-service-desk.ec.europa.eu/en/resources",
+      "reason": "The visible 2026-07-31 resource date is outside the strict seven-day window for this run; the FAQ page had no page-level visible update date."
+    }
+  ],
+  "evidence_classification_counts": {
+    "confirmed_exploitation": 0,
+    "demonstrated_research": 0,
+    "disclosed_vulnerability": 0,
+    "mitigation": 2,
+    "control_change": 3,
+    "governance_control_change": 1,
+    "unverified_claim": 0
+  },
+  "follow_up_notes": [
+    "Normal raw-source ingest should update only durable local security leaves and leave docs/wiki untouched until verifier-gated ingest.",
+    "The OpenAI Astra and Guardian updates have upstream entity/policy background, but the local durable delta is security-review/release-gate governance.",
+    "Google Cloud MCP records should be split between IAM authorization, data residency, and AI workload cost monitoring instead of bundled as a generic Google product update.",
+    "Stale Network-AI and Hugging Face incident sources were checked to avoid duplicate or out-of-window ingest."
+  ],
+  "docs_wiki_updated": false,
+  "raw_processed_updated": false
+}

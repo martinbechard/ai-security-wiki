@@ -18,12 +18,21 @@ The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-secu
 - regional processing endpoints need separate policy treatment for residency-sensitive routing;
 - agent-sent API metadata, prompts, and tool outputs need explicit location controls before crossing regions.
 
+The [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) adds [Cloud Monitoring MCP documentation](https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp) evidence that [Model Armor](../../../upstream-ai-wiki/products/google-cloud-model-armor.md) routing can differ by MCP server and may affect in-use and in-transit residency when the server jurisdiction and Model Armor support differ.
+
+The local control remains data-path verification. Residency-sensitive workloads should confirm that these paths share the expected region boundary:
+
+- prompt inspection;
+- response inspection;
+- telemetry;
+- MCP tool payloads.
+
 ## Security Impact
 
 - Threat: regulated or sensitive data can cross an unacceptable region or processing boundary through model calls, retrieval context, tool outputs, or telemetry.
 - Affected boundary: Gemini Enterprise Gemini 3.6 Flash, US multi-region data residency at rest, machine learning processing, API Hub MCP endpoint region selection, and agent-to-Google Cloud service routing.
 - Exploit or incident status: [official control release](https://docs.cloud.google.com/release-notes); no incident was reported in the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json).
-- Mitigation state: require residency evidence before placing regulated data into model-processing paths and verify whether logs, traces, connector payloads, and fallback models share the same boundary.
+- Mitigation state: require residency evidence before placing regulated data into model-processing paths and verify whether logs, traces, connector payloads, Model Armor routing, MCP prompt and response inspection, and fallback models share the same boundary.
 - Confidence: high for release-note facts because the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) cites [official Google Cloud release notes](https://docs.cloud.google.com/release-notes).
 - Residual risk: allowlist status and tenant configuration determine whether the residency control applies; surrounding telemetry and tool calls can still leave the intended boundary.
 
@@ -31,7 +40,9 @@ The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-secu
 
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
 - [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
+- [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json)
 - Google Cloud release notes: https://docs.cloud.google.com/release-notes
+- Cloud Monitoring MCP documentation: https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp
 
 ## Related Code
 
@@ -57,7 +68,9 @@ The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-secu
 
 - Which logs, traces, connector payloads, and fallback paths are covered by the Gemini Enterprise residency boundary?
 - Which API Hub MCP endpoint policies distinguish global endpoint convenience from residency-sensitive regional processing?
+- Which MCP servers route Model Armor inspection through regions that differ from the server jurisdiction?
 
 ## Maintenance Notes
 
 - Split from the bundled anomaly/residency draft during July 25 verifier correction; enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json). Keep this page focused on data residency and model-processing boundaries.
+- Updated on 2026-08-09 from the [August 9 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) with Cloud Monitoring MCP and Model Armor in-use or in-transit residency caveats.

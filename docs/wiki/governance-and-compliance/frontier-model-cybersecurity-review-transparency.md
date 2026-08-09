@@ -20,6 +20,8 @@ The reported boundary includes:
 - reported exclusion of open-source models;
 - prior public CAISI assessment reporting changes while the framework was developed.
 
+The [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) keeps the [Guardian White House AI review reporting](https://www.theguardian.com/technology/2026/aug/07/white-house-ai) as an in-window governance-control update. The local security delta remains transparency and accountability: a finalized but unpublished review framework may create private company-facing cybersecurity gates without giving defenders, customers, or independent researchers enough criteria to compare model release claims.
+
 ## Security Impact
 
 - Threat or control area: private cybersecurity review can gate dangerous model releases, but opaque criteria and selective access can weaken independent assurance and downstream risk acceptance.
@@ -39,6 +41,7 @@ The reported boundary includes:
 ## Authoritative Sources
 
 - [August 7 topic news collector source](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json)
+- [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json)
 - Guardian White House AI review reporting: https://www.theguardian.com/technology/2026/aug/07/white-house-ai
 
 ## Related Code
@@ -69,3 +72,4 @@ The reported boundary includes:
 ## Maintenance Notes
 
 - Created on 2026-08-07 from the [August 7 topic collector](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) as a security-governance transparency leaf, not a broad US AI policy page.
+- Updated on 2026-08-09 from the [August 9 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) to preserve the private-framework transparency risk without duplicating broad policy background.

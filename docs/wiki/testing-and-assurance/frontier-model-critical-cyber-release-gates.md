@@ -23,13 +23,15 @@ The reported control change is stronger than a normal benchmark update. The coll
 - universal monitoring of agentic Astra applications;
 - external or government testing.
 
+The [August 8 topic news collector source](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json) and [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) keep Astra as a current release-gate item. They add corroborating [The Verge](https://www.theverge.com/ai-artificial-intelligence/976948/openai-astra-model-pause-critical-cyber-capabilities) and [Guardian](https://www.theguardian.com/technology/2026/aug/08/openai-astra-security-concerns) publication evidence while preserving the same boundary: Critical-threshold uncertainty is enough to pause model work that lacks the controls listed above.
+
 ## Security Impact
 
 - Threat or control area: frontier cyber-capable models can move from scoring well on cyber tasks to requiring containment, access restriction, and release delay because autonomous exploitation capability cannot be excluded.
 - Affected boundary: OpenAI Astra internal training, evaluation, agentic application environments, model-weight custody, network and tool access, external evaluator access, and government testing paths.
 - Exploit or incident status: control-change and release-gate disclosure, not a public exploit incident.
-- Mitigation state: OpenAI reports pausing noncompliant Astra internal activity and strengthening isolation, access control, monitoring, sandboxing, model-weight protection, and external testing.
-- Confidence: high for the [OpenAI control disclosure](https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/) because the source is primary and in-window; medium for exact release-delay and White House notice context that comes from [Axios](https://www.axios.com/2026/08/07/openai-astra-model-delay-cybersecurity-risks).
+- Mitigation state: OpenAI reports pausing noncompliant Astra internal activity and strengthening isolation, access control, monitoring, sandboxing, model-weight protection, universal monitoring, and external testing.
+- Confidence: high for the [OpenAI control disclosure](https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/) because the source is primary and in-window; medium for exact release-delay, media characterization, and government-notice context that comes from [Axios](https://www.axios.com/2026/08/07/openai-astra-model-delay-cybersecurity-risks), [The Verge](https://www.theverge.com/ai-artificial-intelligence/976948/openai-astra-model-pause-critical-cyber-capabilities), and [Guardian](https://www.theguardian.com/technology/2026/aug/08/openai-astra-security-concerns).
 - Residual risk: exact Astra capability results, evaluator criteria, government review requirements, and final release decision remain unresolved.
 
 ## Control Implications
@@ -42,8 +44,12 @@ The reported control change is stronger than a normal benchmark update. The coll
 ## Authoritative Sources
 
 - [August 7 topic news collector source](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json)
+- [August 8 topic news collector source](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json)
+- [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json)
 - OpenAI Astra cyber-capability disclosure: https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/
 - Axios Astra reporting: https://www.axios.com/2026/08/07/openai-astra-model-delay-cybersecurity-risks
+- The Verge Astra reporting: https://www.theverge.com/ai-artificial-intelligence/976948/openai-astra-model-pause-critical-cyber-capabilities
+- Guardian Astra reporting: https://www.theguardian.com/technology/2026/aug/08/openai-astra-security-concerns
 
 ## Related Code
 
@@ -75,3 +81,4 @@ The reported control change is stronger than a normal benchmark update. The coll
 ## Maintenance Notes
 
 - Created on 2026-08-07 from the [August 7 topic collector](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) after routing broad OpenAI, model, and framework coverage upstream.
+- Updated on 2026-08-08 from the [August 8 topic collector](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json) and [August 9 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) with additional in-window corroboration and the same Critical-threshold halt-control boundary.
