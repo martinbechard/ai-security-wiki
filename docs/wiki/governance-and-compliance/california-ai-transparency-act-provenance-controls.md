@@ -13,6 +13,8 @@ California AI Transparency Act provenance controls are the state-law authenticit
 
 Broad California AI regulation and GenAI market context belongs upstream. This page owns the local security and compliance lens: provenance data, digital signatures, latent disclosures, manifest labels, detection tools, license revocation, and privacy handling are authenticity and anti-abuse controls, not only legal metadata.
 
+The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) adds [SFGate](https://www.sfgate.com/politics/article/artificial-intelligence-law-california-22374394.php) in-window reporting that California AI Transparency Act obligations took effect in early August 2026. The report frames provenance metadata and watermarking as the public compliance mechanism. Use that article as current public evidence only; official AB 853 text remains the authority for exact operative dates, staged obligations, and covered-system boundaries.
+
 ## Security Impact
 
 - Threat: generated content can be republished, laundered, or modified in ways that defeat users' ability to verify origin, enabling impersonation, fraud, social engineering, and evidentiary confusion.
@@ -33,6 +35,7 @@ Broad California AI regulation and GenAI market context belongs upstream. This p
 ## Authoritative Sources
 
 - [August 3 topic news collector source](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json)
+- [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
 - California AB 853: https://www.leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB853
 
 ## Related Code
@@ -63,3 +66,4 @@ Broad California AI regulation and GenAI market context belongs upstream. This p
 ## Maintenance Notes
 
 - Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) after splitting California provenance obligations from EU Article 50 and agent/GPAI controls.
+- Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) with in-window public reporting while preserving official AB 853 as the operative-date authority.

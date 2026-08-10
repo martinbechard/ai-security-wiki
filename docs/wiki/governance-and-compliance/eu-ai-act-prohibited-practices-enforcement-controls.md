@@ -15,6 +15,15 @@ The [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-sec
 
 Broad EU AI Act legal background belongs upstream. This page owns the local security-governance lens: release gates need explicit prohibited-practice checks, exception records, risk acceptance boundaries, monitoring signals, and enforcement-response evidence.
 
+The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) records the same FAQ category as current enforcement-boundary evidence. This page keeps the prohibited-practices boundary for:
+
+- intake;
+- release;
+- monitoring;
+- response.
+
+The independently changing advanced-GPAI powers are owned by [AI Office GPAI enforcement controls](ai-office-gpai-enforcement-controls.md).
+
 ## Security Impact
 
 - Threat: an AI system can create unacceptable manipulation, exploitation, biometric, or surveillance risk when prohibited-practice checks are not part of security review.
@@ -30,11 +39,13 @@ Broad EU AI Act legal background belongs upstream. This page owns the local secu
 - Preserve evidence for why a system is out of scope, permitted, remediated, or blocked.
 - Treat unresolved prohibited-practice classification as a release blocker rather than a post-release documentation task.
 - Keep monitoring and incident-response records ready for enforcement inquiries once a system is deployed.
+- Route advanced-GPAI enforcement powers to [AI Office GPAI enforcement controls](ai-office-gpai-enforcement-controls.md) while preserving prohibited-practice classification and release-gate evidence here.
 
 ## Authoritative Sources
 
 - [August 3 topic news collector source](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json)
 - [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json)
+- [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
 - European Commission AI Act Service Desk FAQ: https://ai-act-service-desk.ec.europa.eu/en/faq
 - European Commission AI Act Service Desk Resources: https://ai-act-service-desk.ec.europa.eu/en/resources
 
@@ -55,6 +66,7 @@ Broad EU AI Act legal background belongs upstream. This page owns the local secu
 - [governance and compliance](index.md)
 - [synthetic content provenance labeling controls](synthetic-content-provenance-labeling-controls.md)
 - [GPAI systemic-risk controls](gpai-systemic-risk-controls.md)
+- [AI Office GPAI enforcement controls](ai-office-gpai-enforcement-controls.md)
 - Upstream AI wiki owns broad EU AI Act legal background.
 
 ## Open Questions
@@ -65,3 +77,4 @@ Broad EU AI Act legal background belongs upstream. This page owns the local secu
 ## Maintenance Notes
 
 - Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) to map the prohibited-practices enforcement boundary separately from transparency and GPAI controls; enriched from the [August 4 leaf watcher](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) with official resource-page enforcement-authority evidence.
+- Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) to link the separately owned advanced-GPAI enforcement leaf while keeping this page focused on prohibited-practices controls.

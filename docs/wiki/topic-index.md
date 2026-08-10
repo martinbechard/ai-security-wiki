@@ -80,6 +80,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [governance-and-compliance/california-ai-transparency-act-provenance-controls.md](governance-and-compliance/california-ai-transparency-act-provenance-controls.md)
 - [governance-and-compliance/gpai-systemic-risk-controls.md](governance-and-compliance/gpai-systemic-risk-controls.md)
 - [governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md](governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md)
+- [governance-and-compliance/ai-office-gpai-enforcement-controls.md](governance-and-compliance/ai-office-gpai-enforcement-controls.md)
 - [governance-and-compliance/frontier-model-cybersecurity-review-transparency.md](governance-and-compliance/frontier-model-cybersecurity-review-transparency.md)
 - [incident-response](incident-response/index.md)
 - [incident-response/openai-hugging-face-cyber-evaluation-incident.md](incident-response/openai-hugging-face-cyber-evaluation-incident.md)

@@ -25,20 +25,23 @@ The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-secu
 
 The [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json) adds two adjacent Google Cloud MCP control updates. The [Google Cloud MCP AI security and safety documentation](https://docs.cloud.google.com/mcp/ai-security-safety) describes tool-level IAM allow and deny policies through `tool.name`, which is owned locally by [MCP tool-level IAM authorization](../identity-and-access/mcp-tool-level-iam-authorization.md). The [Cloud Monitoring MCP documentation](https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp) describes [Model Armor](../../../upstream-ai-wiki/products/google-cloud-model-armor.md) checks for natural-language observability responses, which is owned locally by [cloud observability MCP response controls](cloud-observability-mcp-response-controls.md).
 
+The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) records [Model Armor release notes](https://docs.cloud.google.com/model-armor/release-notes) for the planned promotion of filter version v3 to Stable on 2026-08-31 while v1 and v2 move to Legacy and retire on 2026-11-29. API hub MCP did not itself change in this evidence. The local MCP-control effect is filter-version lifecycle risk for deployments that depend on Model Armor-backed prompt-injection, jailbreak, or tool-invocation controls. [Model processing data residency controls](../data-and-privacy/model-processing-data-residency-controls.md) owns the separate `australia-southeast2` and `asia-northeast3` residency update.
+
 ## Security Impact
 
 - Threat: MCP-mediated API catalog access can turn prompt injection or overbroad delegation into unauthorized API asset reads, writes, or deployment changes.
-- Affected boundary: Google Cloud API hub MCP server GA, `apihub.googleapis.com/mcp`, `apihub.readonly`, `apihub.readwrite`, and Model Armor tool-invocation protection.
+- Affected boundary: Google Cloud API hub MCP server GA, `apihub.googleapis.com/mcp`, `apihub.readonly`, `apihub.readwrite`, Model Armor tool-invocation protection, and Model Armor template filter-version aliases used by MCP or agent gateway guardrails.
 - Exploit or incident status: [official control release](https://docs.cloud.google.com/release-notes); no exploit or incident was reported in the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json).
-- Mitigation state: scope MCP clients separately for read-only and read-write use, use prompt-injection protection before tool invocation, and log agent identity, user identity, tool name, target API asset, and mutation result.
-- Confidence: high for the release-note facts because the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) and [July 26 watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) cite official Google Cloud documentation.
-- Residual risk: downstream deployments can still collapse read and write scopes into one broad credential or bypass Model Armor-style checks in custom MCP gateways.
+- Mitigation state: scope MCP clients separately for read-only and read-write use, use prompt-injection protection before tool invocation, pin or migrate Model Armor filter versions, and log agent identity, user identity, tool name, target API asset, filter version, and mutation result.
+- Confidence: high for the release-note facts because the collector and watcher sources cite official Google Cloud documentation; medium for downstream MCP impact because the Model Armor filter lifecycle can affect guardrails without changing API hub MCP itself.
+- Residual risk: downstream deployments can still collapse read and write scopes into one broad credential, bypass Model Armor-style checks in custom MCP gateways, or drift when filter-version aliases change.
 
 ## Authoritative Sources
 
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
 - [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
 - [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
+- [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
 - Google Cloud release notes: https://docs.cloud.google.com/release-notes
 - Google Cloud MCP release notes: https://docs.cloud.google.com/mcp/release-notes
 - Apigee API hub MCP reference: https://docs.cloud.google.com/apigee/docs/reference/apis/apihub/mcp
@@ -72,3 +75,4 @@ The [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-s
 ## Maintenance Notes
 
 - Added from the [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json); enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) and [July 28 collector](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json). Keep this page focused on API hub MCP security controls rather than Google Cloud product catalog coverage.
+- Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) with Model Armor filter-version lifecycle evidence while routing the separate residency update to [model processing data residency controls](../data-and-privacy/model-processing-data-residency-controls.md).

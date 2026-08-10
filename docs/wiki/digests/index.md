@@ -38,6 +38,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-08-09 after the August digest added item-level entries for cross-provider containment, Astra release gates, Junie non-interactive execution, Model Armor residency and filter lifecycle, AI Office GPAI enforcement, and GPAI systemic-risk evidence.
 - Updated on 2026-08-09 after the August digest added item-level entries for Cloud Monitoring MCP residency, Cloud Monitoring MCP IAM, Google Cloud cost attribution, and NemoClaw Deep Agents runtime evidence.
 - Updated on 2026-08-07 after the August digest added item-level entries for Astra release gates, frontier-review transparency, Kimi K3 assessment dispute, and defensive AI infrastructure.
 - Created on 2026-07-22 as the digest hub.
