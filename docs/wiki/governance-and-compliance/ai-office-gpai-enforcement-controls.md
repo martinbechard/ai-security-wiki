@@ -13,10 +13,20 @@ AI Office GPAI enforcement controls are the response and evidence controls neede
 
 The local security-governance boundary is enforcement readiness for advanced GPAI models that create systemic risk or support agentic deployments. Broad EU AI Act, provider, model, and legal background belongs upstream. This page owns the local response-control lens for AI Office information requests, model access for evaluations, risk-mitigation measures, fines, and market restrictions when compliance dialogues do not resolve concerns.
 
+The [August 10 leaf update watch source](../../../raw/processed/2026-08-10/ai-security-wiki-leaf-update-watch-20260811T000543Z.json) adds European Commission [AI Act enforcement-page evidence](https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act), preferred over FAQ crawler dates, that the AI Office can use these GPAI enforcement powers:
+
+- require model access for evaluations;
+- request measures;
+- restrict availability;
+- issue enforcement actions.
+
+This strengthens the page's control boundary without changing it into a general EU AI Act explainer. Exact upstream EU AI Act and GPAI explainer leaves were not identified during this ingest; broad regulatory background remains upstream-owned when those pages exist.
+
 ## Security Impact
 
 - Threat: security-relevant GPAI deployments can lack the evidence needed to answer regulator requests, support model evaluations, or prove mitigation after systemic-risk concerns arise.
 - Affected boundary: European Commission AI Office enforcement over the most advanced GPAI models, model-evaluation access, compliance-dialogue records, mitigation orders, fines, and market-restriction response paths.
+- Affected boundary: AI Office requests for model access for evaluations, requested measures, availability restrictions, and enforcement actions for GPAI models.
 - Exploit or incident status: regulatory enforcement boundary, not a specific exploit or incident.
 - Mitigation state: preserve model/version dependency records, systemic-risk assessments, evaluation-access plans, mitigation evidence, and escalation ownership before an AI Office inquiry or order arrives.
 - Confidence: high for the 2026-08-02 enforcement boundary because the source is official European Commission guidance; medium for exact response expectations because the fetched FAQ lacks a page-level update timestamp and local applicability depends on model role.
@@ -28,10 +38,13 @@ The local security-governance boundary is enforcement readiness for advanced GPA
 - Preserve evaluation-access and confidentiality procedures before a regulator requests model or evidence access.
 - Link mitigation records to the specific risk, model version, and deployment boundary they address.
 - Treat possible fines or market restrictions as release-gate and incident-response considerations, not only legal follow-up.
+- Prepare a model-access response path that can satisfy AI Office evaluation requests while protecting customer data, security-sensitive artifacts, and provider-confidential implementation details.
 
 ## Authoritative Sources
 
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
+- [August 10 leaf update watch source](../../../raw/processed/2026-08-10/ai-security-wiki-leaf-update-watch-20260811T000543Z.json)
+- European Commission AI Act enforcement page: https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act
 - European Commission AI Act Service Desk FAQ: https://ai-act-service-desk.ec.europa.eu/en/faq?faq_category_id=69
 
 ## Related Code
@@ -59,7 +72,9 @@ The local security-governance boundary is enforcement readiness for advanced GPA
 - Which local GPAI model dependencies could fall under AI Office advanced-model enforcement powers?
 - What evidence package is sufficient for AI Office model-evaluation access while preserving sensitive security and customer data?
 - Which mitigation records should be retained before market-restriction or fine exposure becomes material?
+- What internal owner approves regulator-facing model access, requested measures, or availability-restriction responses for GPAI dependencies?
 
 ## Maintenance Notes
 
 - Created on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) after splitting advanced-GPAI enforcement powers from prohibited-practices and systemic-risk leaves.
+- Updated on 2026-08-10 from the [August 10 watcher](../../../raw/processed/2026-08-10/ai-security-wiki-leaf-update-watch-20260811T000543Z.json) with European Commission enforcement-page evidence for model access, measures, availability restrictions, and enforcement actions.

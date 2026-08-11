@@ -15,6 +15,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [AI agent collaboration DLP controls](ai-agent-collaboration-dlp-controls.md)
 - [AI development context exclusion controls](ai-development-context-exclusion-controls.md)
 - [Codex training data controls and enforcement](codex-training-data-controls-and-enforcement.md)
+- [MCP data movement exposure controls](mcp-data-movement-exposure-controls.md)
 
 ## Authoritative Sources
 

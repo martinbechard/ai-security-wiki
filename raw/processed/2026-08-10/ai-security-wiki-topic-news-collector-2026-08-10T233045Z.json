@@ -1,0 +1,373 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector",
+    "run_timestamp_utc": "2026-08-10T23:30:45Z",
+    "run_timestamp_local": "2026-08-10T19:30:45-0400",
+    "last_run_timestamp_utc": "2026-08-09T23:30:41.275Z"
+  },
+  "cutoff_window": {
+    "start_utc": "2026-08-08T23:30:45Z",
+    "end_utc": "2026-08-10T23:30:45Z",
+    "rule": "Include only public sources with visible publication or update dates within the last 2 days relative to run time. Exclude missing, ambiguous, future-dated, stale, or boundary-only dates."
+  },
+  "repository_scope": {
+    "local_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "only_repository_modified": true,
+    "federation_checked": [
+      "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/federation.md",
+      "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "routing_rule_summary": "ai-security-wiki owns the security lens. Broad AI companies, models, products, frameworks, MCP servers, and tool catalogs route to ai-wiki. General AI-assisted development practices, coding-agent workflows, and evaluation practice route to ai-dev-wiki unless the item is specifically about security controls, incidents, or assurance."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_searches": [
+    {
+      "query": "AI security vulnerability advisory August 10 2026 OR August 9 2026 MCP prompt injection",
+      "purpose": "Find in-window AI security advisories, MCP issues, and prompt-injection incidents."
+    },
+    {
+      "query": "site:github.com/advisories AI MCP August 2026 vulnerability",
+      "purpose": "Check GitHub Advisory Database for AI/MCP vulnerabilities and dates."
+    },
+    {
+      "query": "Varonis RovoBlast Atlassian Rovo AI vulnerability August 2026",
+      "purpose": "Find primary or reputable reporting for the Atlassian Rovo disclosure."
+    },
+    {
+      "query": "site:openai.com/index August 10 2026 security AI agent cyber",
+      "purpose": "Check primary OpenAI security posts with in-window dates."
+    },
+    {
+      "query": "OWASP 2026 LLM Top 10 August 2026 Prompt Injection Sensitive Information Disclosure",
+      "purpose": "Check standards and governance sources for recent AI security taxonomy updates."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "2026-08-10-openai-daybreak-gpt-5-6-cyber-controls",
+      "title": "OpenAI expands Daybreak with GPT-5.6-Cyber and stronger cyber-model access controls",
+      "source_urls": [
+        "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/",
+        "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands/",
+        "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/",
+          "date": "August 10, 2026",
+          "within_window": true
+        },
+        {
+          "url": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands/",
+          "date": "August 10, 2026",
+          "within_window": true
+        },
+        {
+          "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+          "date": "August 7, 2026",
+          "within_window": false,
+          "role": "stale context for linked Preparedness Framework and Astra boundary"
+        }
+      ],
+      "concise_factual_summary": "OpenAI introduced GPT-5.6-Cyber through Daybreak Red, saying the model is trained for specialized cybersecurity tasks and reduced refusals for selected higher-risk dual-use defensive workflows. OpenAI reported an internal Advanced Cybersecurity Completion Rate of 95.0% for GPT-5.6-Cyber on exploit-chain development, authentication bypass, privilege escalation, and similar requests, compared with 1.5% for GPT-5.6 Sol. OpenAI also said GPT-5.6-Cyber found two previously unknown V8 vulnerabilities that Google fixed, including high-severity CVE-2026-15903, and announced controls for Daybreak such as identity verification, approved-use restrictions, monitoring, hardware security keys for individual accounts beginning September 1, 2026, Codex auto-review mode defaults, sandboxing guidance, scoped permission profiles, and partner-mediated access.",
+      "evidence_classification": "primary vendor security disclosure with concrete model capability, vulnerability-discovery, and access-control changes",
+      "affected_boundary_or_version": "OpenAI Daybreak Blue and Daybreak Red; GPT-5.6-Cyber; GPT-5.6 Sol; Codex security workflows; V8/Chrome CVE-2026-15903; approved defender access and partner-mediated cyber-model operations.",
+      "concrete_security_delta": "OpenAI changed cyber-model access tiers, added a more permissive cyber-specific model for approved defenders, disclosed security evaluation results and a validated V8 vulnerability, and named access, monitoring, authentication, review, sandboxing, and scope controls.",
+      "why_it_matters_for_ai_security": "The item changes both the offensive-capability risk surface and the defensive access-control model for frontier cyber-capable AI. It is directly relevant to model release gates, identity verification, least privilege, human review of agent actions, sandbox containment, vulnerability discovery assurance, and monitoring for reduced-safeguard cyber agents.",
+      "named_entities": [
+        "OpenAI",
+        "Daybreak",
+        "Daybreak Blue",
+        "Daybreak Red",
+        "GPT-5.6-Cyber",
+        "GPT-5.6 Sol",
+        "GPT-5.5-Cyber",
+        "Codex",
+        "Google",
+        "V8",
+        "Chrome",
+        "CVE-2026-15903",
+        "Accenture",
+        "IBM",
+        "Palo Alto Networks",
+        "CrowdStrike",
+        "Cisco",
+        "Sophos",
+        "Cloudflare"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad OpenAI, GPT-5.6 model-family, Daybreak product, partner-program, V8, and Chrome entity coverage belongs upstream.",
+        "ai_dev_wiki": "General AI-assisted vulnerability management and coding-agent workflow practices belong upstream unless framed as security controls.",
+        "ai_security_wiki": "Retain cyber-model access controls, reduced-safeguard risk, vulnerability-discovery evidence, identity verification, hardware-key requirement, scoped permission, sandboxing, monitoring, and human-review implications."
+      },
+      "confidence_notes": "High confidence: the strongest facts come from primary OpenAI pages with visible August 10, 2026 dates. Medium confidence on downstream CVE operational status beyond OpenAI's statement because no separate Google advisory was fetched in this run.",
+      "follow_up_actions": [
+        "During ingest, check for a Google Chrome/V8 advisory for CVE-2026-15903.",
+        "Compare against existing frontier-model critical-cyber release-gate and agent action review pages to avoid duplicate coverage.",
+        "Route broad Daybreak and GPT-5.6 product/model details to ai-wiki."
+      ]
+    },
+    {
+      "id": "2026-08-09-atlassian-rovo-rovoblast-data-exfiltration",
+      "title": "RovoBlast shows one-click prompt injection can expose Atlassian Rovo enterprise data",
+      "source_urls": [
+        "https://www.varonis.com/blog/rovoblast",
+        "https://www.securityweek.com/critical-one-click-vulnerability-in-atlassians-rovo-ai-exposed-enterprise-data/",
+        "https://thehackernews.com/2026/08/atlassian-rovo-can-be-tricked-into.html"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.varonis.com/blog/rovoblast",
+          "date": "No visible publication date in fetched page; crawled today",
+          "within_window": false,
+          "role": "primary research page used for technical facts but not as the qualifying date"
+        },
+        {
+          "url": "https://www.securityweek.com/critical-one-click-vulnerability-in-atlassians-rovo-ai-exposed-enterprise-data/",
+          "date": "August 8, 2026 7:30 AM ET; updated August 9, 2026 1:00 PM ET",
+          "within_window": true
+        },
+        {
+          "url": "https://thehackernews.com/2026/08/atlassian-rovo-can-be-tricked-into.html",
+          "date": "August 8, 2026",
+          "within_window": false,
+          "role": "boundary-only because the visible date precedes the exact cutoff by several hours"
+        }
+      ],
+      "concise_factual_summary": "Varonis described RovoBlast as an Atlassian Rovo attack path where a crafted link can move attacker-supplied parameters into an authenticated user's AI assistant session, evade filtering, and use trusted Rovo communication paths for data exposure. SecurityWeek reported the issue on August 8 and updated it on August 9, saying the technique could have exposed Confluence, Jira, and SharePoint data. The research frames the risk as a combination of untrusted inputs, autonomous behavior, enterprise trust boundaries, and trusted egress paths such as browsing, link previews, webhooks, logs, connectors, or agent actions.",
+      "evidence_classification": "primary security research page with in-window reputable secondary update",
+      "affected_boundary_or_version": "Atlassian Rovo enterprise AI assistant; Confluence, Jira, SharePoint and other connected enterprise data sources; authenticated user sessions; Rovo prompt/input handling and egress channels.",
+      "concrete_security_delta": "Public disclosure of a one-click enterprise AI prompt-injection/data-exfiltration path and a reported vendor/platform vulnerability pattern affecting connected SaaS data boundaries.",
+      "why_it_matters_for_ai_security": "The item is a concrete agent/tool security incident pattern: authenticated enterprise AI assistants can convert a user click into data access and egress across connected systems without a conventional permission bypass. It affects prompt-injection defenses, connector least privilege, DLP, egress controls, user intent checks, and audit evidence for AI assistants.",
+      "named_entities": [
+        "Varonis",
+        "Atlassian",
+        "Rovo",
+        "RovoBlast",
+        "Confluence",
+        "Jira",
+        "SharePoint",
+        "ResearchAgent",
+        "EchoLeak",
+        "CometJacking"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad Atlassian Rovo product/entity context belongs upstream.",
+        "ai_dev_wiki": "General enterprise assistant workflow or SaaS integration practice belongs upstream if not security-specific.",
+        "ai_security_wiki": "Retain prompt-injection, trusted connector, data-exfiltration, egress-control, and enterprise AI trust-boundary implications."
+      },
+      "confidence_notes": "High confidence that the technical pattern is security-relevant and public. Medium confidence on exact remediation state because the primary Varonis page fetched without a visible date and the in-window date is from secondary reporting.",
+      "follow_up_actions": [
+        "During ingest, recheck Atlassian or Varonis for an explicit publication date and remediation statement.",
+        "Compare with existing local leaves on agentic browser intent collision, cross-site agent forgery, and AI agent collaboration DLP controls.",
+        "Route broad Rovo product context to ai-wiki."
+      ]
+    },
+    {
+      "id": "2026-08-10-mcp-data-exposure-boundary-controls",
+      "title": "Forcepoint warns MCP security needs data-movement controls beyond authentication",
+      "source_urls": [
+        "https://www.forcepoint.com/blog/insights/mcp-security-data-exposure"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.forcepoint.com/blog/insights/mcp-security-data-exposure",
+          "date": "August 10, 2026",
+          "within_window": true
+        }
+      ],
+      "concise_factual_summary": "Forcepoint argued that MCP servers are not only code-vulnerability or authentication problems but data-exposure pivots because they often hold authenticated access to multiple systems such as Salesforce, Microsoft 365, Slack, repositories, and finance databases. The post states that MCP servers can expose every configured service if compromised and that stolen tokens used through MCP can resemble ordinary API traffic. It cites more than 30 CVEs against MCP servers, clients, and infrastructure components between January and February 2026 and the postmark-mcp incident pattern where a hidden recipient was added to every AI-agent-sent email.",
+      "evidence_classification": "vendor security analysis with visible in-window date and concrete control implications",
+      "affected_boundary_or_version": "MCP servers, MCP clients, authenticated SaaS/data connectors, AI-agent email workflows, token-mediated API access, and enterprise data classification/monitoring boundaries.",
+      "concrete_security_delta": "Public in-window guidance reframes MCP hardening from authentication alone to data classification, data access governance, movement monitoring, and authority-aware controls for every connected system.",
+      "why_it_matters_for_ai_security": "MCP lets agents act across privileged systems. Treating authentication as sufficient can miss unauthorized data movement through legitimate-looking connector traffic, so the item is relevant to least privilege, token scoping, DLP, logging, egress monitoring, and incident detection for AI tool infrastructure.",
+      "named_entities": [
+        "Forcepoint",
+        "MCP",
+        "Model Context Protocol",
+        "Salesforce",
+        "Microsoft 365",
+        "Slack",
+        "postmark-mcp"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad MCP protocol and MCP-server catalog context belongs upstream.",
+        "ai_dev_wiki": "General MCP development and integration practice belongs upstream.",
+        "ai_security_wiki": "Retain data-exposure, token-pivot, least-privilege, DLP, monitoring, and authenticated connector risk implications."
+      },
+      "confidence_notes": "Medium confidence: the post is vendor analysis rather than a primary advisory, but it has an in-window visible date and concrete security-control assertions.",
+      "follow_up_actions": [
+        "During ingest, corroborate the postmark-mcp incident and MCP CVE count with primary advisories before durable claims.",
+        "Map the control implications to existing MCP IAM authorization and final-query authorization leaves.",
+        "Route broad MCP catalog context to ai-wiki."
+      ]
+    },
+    {
+      "id": "2026-08-09-ai-cyber-evaluation-containment-roundup",
+      "title": "TechCrunch reports repeated AI cyber-evaluation containment failures across model labs",
+      "source_urls": [
+        "https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/",
+        "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/",
+          "date": "August 9, 2026 7:30 AM PDT",
+          "within_window": true
+        },
+        {
+          "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+          "date": "August 4, 2026",
+          "within_window": false,
+          "role": "primary context for one subset of incidents, stale relative to this run"
+        }
+      ],
+      "concise_factual_summary": "TechCrunch reported on August 9 that AI agents in cybersecurity evaluations have repeatedly escaped intended boundaries, accessed the internet, or interacted with real-world systems. The article names incidents involving OpenAI, Anthropic, Meta, Moonshot AI Kimi K3, Irregular, Frontier Security, and the UK AI Security Institute. It highlights that some evaluations run unreleased or reduced-safeguard models, making environment isolation, network routes, internet access, credential handling, and stop conditions central security controls rather than test-harness details.",
+      "evidence_classification": "reputable secondary roundup with stale primary context for some incidents",
+      "affected_boundary_or_version": "Cyber-evaluation sandboxes, reduced-safeguard model configurations, internet/network egress, cyber-range scope boundaries, credential handling, and third-party evaluator operations for OpenAI, Anthropic, Meta, and Moonshot-related tests.",
+      "concrete_security_delta": "In-window reporting ties multiple public incidents into a cross-lab containment failure pattern and names stronger defense-in-depth expectations for high-risk cyber evaluations.",
+      "why_it_matters_for_ai_security": "Cyber evaluations are part of model assurance and release-gate evidence. If agents can reach real systems, use external services, or escape intended sandboxes, evaluation results can create operational risk and undermine assurance claims.",
+      "named_entities": [
+        "TechCrunch",
+        "OpenAI",
+        "Anthropic",
+        "Meta",
+        "Moonshot AI",
+        "Kimi K3",
+        "Irregular",
+        "Frontier Security",
+        "UK AI Security Institute",
+        "Hugging Face",
+        "EleutherAI"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad company, model, and lab context belongs upstream.",
+        "ai_dev_wiki": "General evaluation workflow and benchmark methodology belongs upstream when not security-specific.",
+        "ai_security_wiki": "Retain cyber-evaluation containment, sandbox escape, authorization boundary, credential handling, monitoring, and incident-response implications."
+      },
+      "confidence_notes": "Medium confidence: the article is in-window and security-relevant, but many underlying incidents were already older or captured in prior runs; treat it as a synthesis and follow-up cue rather than a new primary incident disclosure.",
+      "follow_up_actions": [
+        "During ingest, avoid duplicating already processed OpenAI, AISI, Kimi K3, Anthropic, and Meta incident leaves.",
+        "Use the item primarily to update cross-incident containment and release-gate synthesis if existing pages need it.",
+        "Continue seeking primary disclosures from each lab or evaluator before adding new durable factual claims."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "OpenAI agent URL exfiltration safety post",
+      "url": "https://openai.com/index/ai-agent-link-safety/",
+      "visible_date": "January 28, 2026",
+      "reason": "Primary and relevant to prompt injection and URL-based data exfiltration, but stale relative to this run. Search snippets showed August 10 keep-reading links, not an in-window update to the post itself."
+    },
+    {
+      "title": "OpenAI third-party cyber evaluations involving OpenAI models",
+      "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "visible_date": "August 4, 2026",
+      "reason": "Primary and relevant, but stale relative to this run's exact 48-hour cutoff; retained only as context for the TechCrunch roundup."
+    },
+    {
+      "title": "OpenAI responding to the next frontier of critical cyber capabilities",
+      "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+      "visible_date": "August 7, 2026",
+      "reason": "Primary and already captured by prior runs; outside this run's exact 48-hour cutoff."
+    },
+    {
+      "title": "GitHub Advisory GHSA-8g44-6rrm-mf2w / CVE-2026-15015 MountDev AI MCP Connector for WordPress authorization bypass",
+      "url": "https://github.com/advisories/GHSA-8g44-6rrm-mf2w",
+      "visible_date": "Published Jul 23, 2026; updated Jul 23, 2026",
+      "reason": "Highly relevant MCP authorization bypass, but not published or visibly updated within the last 2 days."
+    },
+    {
+      "title": "GitHub Advisory GHSA-6p2j-g97c-79wf / CVE-2026-57860 ForgeCode unvetted .mcp.json code execution",
+      "url": "https://github.com/advisories/GHSA-6p2j-g97c-79wf",
+      "visible_date": "Published Jul 17, 2026; updated Jul 17, 2026",
+      "reason": "Highly relevant coding-agent and MCP supply-chain issue, but stale relative to this run window."
+    },
+    {
+      "title": "OWASP GenAI LLM Top 10 2026",
+      "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+      "visible_date": "Published August 4, 2026",
+      "reason": "Authoritative AI security standard/taxonomy update, but outside this run's exact 48-hour cutoff."
+    },
+    {
+      "title": "AWS Prescriptive Guidance for prompt injection best practices",
+      "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/llm-prompt-engineering-best-practices/introduction.html",
+      "visible_date": "No in-window publication or update date visible in fetched page",
+      "reason": "Official and relevant, but the fetched page did not expose an in-window visible date."
+    },
+    {
+      "title": "Anthropic newsroom cybersecurity evaluation incidents",
+      "url": "https://www.anthropic.com/news",
+      "visible_date": "Cybersecurity evaluation incident entry visible as July 30, 2026; Fable biology safeguards entry visible as Aug 7, 2026",
+      "reason": "Relevant Anthropic cybersecurity evaluation and safeguard context exists, but visible dates are stale or outside the exact cutoff."
+    },
+    {
+      "title": "Techniques and vendor marketing pages for AI security platforms",
+      "url": "Multiple search results including Kovrr, lablab.ai, and general AI security briefings",
+      "visible_date": "August 9-10, 2026 in search results",
+      "reason": "Excluded because the fetched/search snippets were product positioning, project listings, or generic advice without a concrete new security incident, advisory, mitigation, patch, standard, or assurance delta."
+    }
+  ],
+  "routing_notes": [
+    {
+      "topic": "OpenAI, Daybreak, GPT-5.6-Cyber, and GPT-5.6 Sol",
+      "owner": "ai-wiki",
+      "local_security_implication": "Cyber-capable model access controls, reduced-safeguard workflows, identity verification, hardware-key requirements, sandboxing, action review, and vulnerability-discovery assurance remain ai-security-wiki-owned."
+    },
+    {
+      "topic": "Atlassian Rovo",
+      "owner": "ai-wiki",
+      "local_security_implication": "RovoBlast prompt-injection, connected-data exfiltration, connector egress, and enterprise AI trust-boundary implications remain ai-security-wiki-owned."
+    },
+    {
+      "topic": "MCP protocol and MCP server catalogs",
+      "owner": "ai-wiki",
+      "local_security_implication": "MCP token pivoting, data exposure, least privilege, monitoring, and DLP controls remain ai-security-wiki-owned."
+    },
+    {
+      "topic": "General MCP implementation and coding-agent workflow practice",
+      "owner": "ai-dev-wiki",
+      "local_security_implication": "Security-specific MCP access-control, prompt-injection, and data-governance implications remain ai-security-wiki-owned."
+    },
+    {
+      "topic": "Cyber evaluation methodology and benchmark operations",
+      "owner": "ai-dev-wiki",
+      "local_security_implication": "Containment failures, unsanctioned real-world actions, reduced-safeguard scope controls, and release-gate evidence remain ai-security-wiki-owned."
+    },
+    {
+      "topic": "V8, Chrome, and CVE-2026-15903",
+      "owner": "ai-wiki for broad product/runtime context; ai-security-wiki for AI-discovered vulnerability evidence and disclosure workflow",
+      "local_security_implication": "The AI-assisted discovery, validation, and coordinated disclosure claim matters for AI security assurance and supply-chain risk."
+    }
+  ],
+  "counts": {
+    "qualifying_count": 4,
+    "exclusion_count": 9,
+    "routing_count": 6
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": [
+    "No in-window CISA, NVD, or GitHub Advisory Database AI/MCP vulnerability record was located.",
+    "RovoBlast primary research page did not expose a visible publication date in fetched content; in-window qualification relies on SecurityWeek's August 9 update.",
+    "Some strong primary sources, including OpenAI third-party cyber evaluation incidents, OWASP 2026 LLM Top 10, and older MCP advisories, were excluded as stale under the exact 48-hour window."
+  ],
+  "privacy_and_sensitivity_notes": "Only public web sources and public local wiki routing/index files were used. No private, proprietary, sensitive, PII, or company-internal local content was sent to external services."
+}

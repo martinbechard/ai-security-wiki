@@ -24,6 +24,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Coding agent command approval boundaries](coding-agent-command-approval-boundaries.md)
 - [AI agent interaction transparency controls](ai-agent-interaction-transparency-controls.md)
 - [Agentic browser intent collision](agentic-browser-intent-collision.md)
+- [RovoBlast enterprise data exfiltration](rovoblast-enterprise-data-exfiltration.md)
 
 ## Authoritative Sources
 

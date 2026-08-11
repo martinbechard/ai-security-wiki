@@ -13,12 +13,15 @@ The [July 31 topic news collector source](../../../raw/processed/2026-07-31/ai-s
 
 The reported signal is not an agent-specific vulnerability. It changes the assurance boundary for agent browsers and browser-backed tools: when AI increases vulnerability discovery volume, security programs need evidence that browser runtimes patch quickly, restart or reload safely, and receive structural mitigations rather than only carrying a larger patch backlog.
 
+The [August 10 topic news collector source](../../../raw/processed/2026-08-10/ai-security-wiki-topic-news-collector-2026-08-10T233045Z.json) adds OpenAI's primary [expanded Daybreak access](https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/) evidence that GPT-5.6-Cyber found two previously unknown V8 vulnerabilities that Google fixed, including high-severity CVE-2026-15903. Treat this as AI-discovered browser-runtime vulnerability evidence; do not treat the exact V8/Chrome affected versions or fix timeline as confirmed until a primary Google, Chrome, V8, or CVE advisory is captured.
+
 ## Security Impact
 
 - Threat: browser-backed agents can inherit known-vulnerability exposure when patch cadence cannot keep up with AI-assisted discovery and triage.
 - Affected boundary: Google Chrome and Chromium-derived browser runtimes used by human users, browser-control agents, MCP browser tools, and embedded automation.
+- Affected boundary: V8/Chrome CVE-2026-15903 disclosure workflow and any agent browser runtime that depends on the affected JavaScript engine or Chromium embedder path.
 - Exploit or incident status: patch-volume and release-cadence reporting; no specific in-window exploit is identified by the collector.
-- Mitigation state: Chrome is reported to be piloting twice-weekly security fixes and pursuing structural improvements such as memory-safe Rust rewrites.
+- Mitigation state: Chrome is reported to be piloting twice-weekly security fixes and pursuing structural improvements such as memory-safe Rust rewrites; OpenAI says Google fixed the V8 vulnerabilities found by GPT-5.6-Cyber, but the primary browser advisory was not captured in this run.
 - Confidence: medium because the in-window evidence is reputable reporting based on Chrome security team statements; primary Google material for the July 2026 report was not captured in the raw source.
 - Residual risk: enterprise update lag, browser restart behavior, downstream Chromium embedder cadence, and agent-session continuity controls remain unresolved.
 
@@ -29,12 +32,15 @@ The reported signal is not an agent-specific vulnerability. It changes the assur
 - Track Chromium embedder lag separately from upstream Chrome patch cadence.
 - Pair faster patching with structural mitigations such as memory-safe rewrites, sandboxing, site isolation, and least-privilege browser profiles.
 - Record residual risk when long-running agent sessions keep an old browser process alive after a security update is available.
+- Require a primary browser advisory or vendor release note before closing AI-discovered V8/Chrome vulnerability follow-up.
 
 ## Authoritative Sources
 
 - [July 31 topic news collector source](../../../raw/processed/2026-07-31/ai-security-wiki-topic-news-collector-2026-07-31T193247-0400.json)
+- [August 10 topic news collector source](../../../raw/processed/2026-08-10/ai-security-wiki-topic-news-collector-2026-08-10T233045Z.json)
 - WIRED report: https://www.wired.com/story/chrome-needs-twice-a-week-patching-thanks-to-ai-bug-hunting-for-now
 - Google Chrome security update cadence background: https://security.googleblog.com/2023/08/an-update-on-chrome-security-updates.html
+- OpenAI expanded Daybreak access: https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/
 
 ## Related Code
 
@@ -60,7 +66,9 @@ The reported signal is not an agent-specific vulnerability. It changes the assur
 - Which primary Google July 2026 report should anchor the AI bug-hunting patch-volume facts?
 - Which browser runtime update and restart evidence should be required before agents use privileged web sessions?
 - How should Chromium-based embedders prove they receive the same security fixes quickly enough for agent use?
+- Which primary Google, Chrome, V8, or CVE advisory confirms CVE-2026-15903, its affected versions, and fix timeline?
 
 ## Maintenance Notes
 
 - Created on 2026-07-31 from the [July 31 topic news collector source](../../../raw/processed/2026-07-31/ai-security-wiki-topic-news-collector-2026-07-31T193247-0400.json) while routing broad Chrome and AI-assisted development workflow context upstream.
+- Updated on 2026-08-10 from the [August 10 topic collector](../../../raw/processed/2026-08-10/ai-security-wiki-topic-news-collector-2026-08-10T233045Z.json) with OpenAI-attributed GPT-5.6-Cyber discovery evidence for V8 CVE-2026-15903.
