@@ -74,6 +74,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [testing-and-assurance/browser-runtime-patch-cadence-under-ai-bug-hunting.md](testing-and-assurance/browser-runtime-patch-cadence-under-ai-bug-hunting.md)
 - [testing-and-assurance/ai-generated-code-security-assurance.md](testing-and-assurance/ai-generated-code-security-assurance.md)
 - [testing-and-assurance/frontier-model-critical-cyber-release-gates.md](testing-and-assurance/frontier-model-critical-cyber-release-gates.md)
+- [testing-and-assurance/codex-security-plugin-workflow-boundaries.md](testing-and-assurance/codex-security-plugin-workflow-boundaries.md)
 - [governance-and-compliance](governance-and-compliance/index.md)
 - [governance-and-compliance/ai-data-center-security-standards.md](governance-and-compliance/ai-data-center-security-standards.md)
 - [governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md](governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md)

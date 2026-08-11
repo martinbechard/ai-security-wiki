@@ -16,6 +16,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 - [Browser runtime patch cadence under AI bug hunting](browser-runtime-patch-cadence-under-ai-bug-hunting.md)
 - [AI-generated code security assurance](ai-generated-code-security-assurance.md)
 - [Frontier model critical cyber release gates](frontier-model-critical-cyber-release-gates.md)
+- [Codex Security plugin workflow boundaries](codex-security-plugin-workflow-boundaries.md)
 
 ## Authoritative Sources
 
@@ -47,3 +48,4 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 ## Maintenance Notes
 
 - Keep security assurance distinct from general software verification already owned by ai-dev-wiki.
+- Updated on 2026-08-11 with the Codex Security plugin workflow boundary leaf.
