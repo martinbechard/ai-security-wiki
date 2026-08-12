@@ -1,0 +1,421 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-08-11T23:31:15Z",
+  "run_timestamp_local": "2026-08-11T19:31:15-0400",
+  "cutoff_window": {
+    "start_utc": "2026-08-09T23:31:15Z",
+    "end_utc": "2026-08-11T23:31:15Z",
+    "rule": "Include only public items published or visibly updated inside the exact 48-hour window. Exclude missing, ambiguous, future-dated, boundary-only, duplicate, or ordinary product-announcement-only items."
+  },
+  "repository_boundary": {
+    "target_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "only_repository_modified": true,
+    "raw_only": true,
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_security_lens": "This repository owns AI-specific threats, prompt and agent security, data and privacy controls, identity and access, supply chain, testing and assurance, governance and compliance, and incident response.",
+    "upstream_ai_wiki": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md owns broad AI companies, models, products, frameworks, MCP servers, developer tools, and general AI techniques.",
+    "upstream_ai_dev_wiki": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md owns general AI-assisted development practices, coding-agent workflows, verification patterns, adoption practices, and development governance."
+  },
+  "qualifying_findings": [
+    {
+      "id": "2026-08-11-ghostsplice-mcp-split-instruction-exfiltration",
+      "title": "GhostSplice shows malicious MCP servers can split instructions across trusted agent channels",
+      "source_urls": [
+        "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html",
+        "https://asset-group.github.io/disclosures/ghostsplice/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html",
+          "date": "2026-08-11",
+          "basis": "article byline"
+        },
+        {
+          "url": "https://asset-group.github.io/disclosures/ghostsplice/",
+          "date": "2026-07",
+          "basis": "primary research page month only; outside exact cutoff, retained as supporting technical source"
+        }
+      ],
+      "concise_factual_summary": "The Hacker News reported ASSET Research Group's GhostSplice technique: a malicious MCP server can place separately harmless-looking instruction fragments in tool descriptions, tool results, and sampling channels so a coding agent combines them and exfiltrates SSH keys, .env secrets, source code, or customer data. The report notes controlled tests with fake credentials and no CVE identifiers as of August 10, 2026.",
+      "evidence_classification": "reputable security news with primary research support; controlled proof-of-concept, not confirmed in-the-wild intrusion",
+      "affected_boundary_or_version": "MCP-connected coding agents that already trust a malicious or compromised MCP server and can read the targeted files.",
+      "why_it_matters_for_ai_security": "It turns MCP server trust into an agent-context supply-chain problem: instruction boundaries at the protocol level do not guarantee that the agent will keep tool metadata and results from recombining into a malicious objective.",
+      "named_entities": [
+        "GhostSplice",
+        "ASSET Research Group",
+        "Model Context Protocol",
+        "MCP",
+        "AI coding assistants",
+        "The Hacker News"
+      ],
+      "upstream_routing": {
+        "local_security_implication": "Agent and tool security, MCP server trust, prompt injection, and secret exfiltration controls belong in ai-security-wiki.",
+        "ai_wiki_note": "Broad MCP protocol and MCP server catalog context belongs upstream in ai-wiki.",
+        "ai_dev_wiki_note": "General coding-agent workflow and MCP adoption guidance belongs upstream in ai-dev-wiki."
+      },
+      "confidence_notes": "High confidence in the in-window secondary report; medium confidence on precise primary publication date because the research page exposes only July 2026 in fetched content.",
+      "follow_up_actions": [
+        "During ingest, compare against existing MCP trust, prompt-injection, and coding-agent command-boundary leaves.",
+        "Check whether ASSET or affected clients publish coordinated CVEs or vendor mitigations after the report."
+      ]
+    },
+    {
+      "id": "2026-08-10-ghostjacking-poisoned-logs-agent-hijack",
+      "title": "Ghostjacking uses poisoned logs and alerts to hijack AI agents through trusted operational tools",
+      "source_urls": [
+        "https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/",
+        "https://tenetsecurity.ai"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/",
+          "date": "2026-08-10T08:59:00-04:00",
+          "basis": "article byline"
+        }
+      ],
+      "concise_factual_summary": "SecurityWeek reported Tenet's DEF CON Ghostjacking demonstration, where malicious instructions are planted in logs or alerts that an AI agent later reviews. Reported cases targeted Cloudflare logs, Datadog alerts, and Sentry-to-coding-agent handoffs; the article says tests caused DNS changes, code execution, and cloud credential or environment secret exfiltration in controlled demonstrations.",
+      "evidence_classification": "reputable security news covering vendor research demonstration",
+      "affected_boundary_or_version": "Agent workflows that let one AI read operational logs, alerts, or AI-generated fixes and then act through Cloudflare, Datadog, Sentry, build systems, Kubernetes, or similar trusted operational tools.",
+      "why_it_matters_for_ai_security": "It shows that blocked malicious input can remain dangerous when faithfully logged and later consumed by an authorized agent with action privileges.",
+      "named_entities": [
+        "Ghostjacking",
+        "Tenet Security",
+        "Cloudflare",
+        "Datadog",
+        "Sentry",
+        "Claude Code",
+        "Seer",
+        "DEF CON"
+      ],
+      "upstream_routing": {
+        "local_security_implication": "Operational log trust boundaries, agent action authorization, and cross-agent trust chains belong in ai-security-wiki.",
+        "ai_wiki_note": "Broad product pages for Cloudflare, Datadog, Sentry, and Claude belong upstream in ai-wiki.",
+        "ai_dev_wiki_note": "General coding-agent incident workflow practices belong upstream in ai-dev-wiki."
+      },
+      "confidence_notes": "High confidence in the article date and technical summary; primary Tenet page should be fetched during ingest for exact vendor wording if accessible.",
+      "follow_up_actions": [
+        "Route to agent-and-tool-security and incident-response leaves covering log ingestion, delegated authority, and cross-agent trust.",
+        "Look for vendor advisories or configuration mitigations from Cloudflare, Datadog, Sentry, Anthropic, or Tenet."
+      ]
+    },
+    {
+      "id": "2026-08-11-cursor-auto-run-sandbox-escape-cves",
+      "title": "Cursor advisories describe macOS Auto-Run Sandbox escapes through Python virtual environments and Docker",
+      "source_urls": [
+        "https://github.com/cursor/cursor/security/advisories/GHSA-p9g2-cr55-cw9c",
+        "https://vulners.com/cve/CVE-2026-73217",
+        "https://www.tenable.com/cve"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://vulners.com/cve/CVE-2026-73217",
+          "date": "2026-08-11T17:46:16",
+          "basis": "CVE source timeline"
+        },
+        {
+          "url": "https://github.com/cursor/cursor/security/advisories/GHSA-p9g2-cr55-cw9c",
+          "date": "2026-07-14",
+          "basis": "GitHub advisory publication date; outside cutoff but primary patch context"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-73217 says Cursor IDE before 3.1.2 on macOS lets an agent in Auto-Run Sandbox mode replace a virtual environment Python executable; the Microsoft Python extension can later invoke it outside the sandbox, allowing host commands with user privileges. CVE-2026-73218, visible in Tenable's updated CVE feed on August 11, describes a pre-3.0.0 Cursor sandbox escape involving Docker Desktop and Dev Containers that can mount Docker's virtiofs0 and gain home-directory read/write and host command execution without an additional prompt.",
+      "evidence_classification": "public vulnerability advisory and vulnerability database update",
+      "affected_boundary_or_version": "Cursor IDE for macOS before 3.1.2 for CVE-2026-73217 and before 3.0.0 for CVE-2026-73218.",
+      "why_it_matters_for_ai_security": "The findings test the core assumption that an autonomous coding agent's sandbox prevents host-side file modification and command execution when the agent can mutate developer environment artifacts.",
+      "named_entities": [
+        "Cursor",
+        "CVE-2026-73217",
+        "CVE-2026-73218",
+        "GitHub Advisory Database",
+        "Vulners",
+        "Tenable",
+        "Docker Desktop",
+        "Dev Containers",
+        "Microsoft Python extension"
+      ],
+      "upstream_routing": {
+        "local_security_implication": "Coding-agent sandbox escapes, host command boundaries, and patch requirements belong in ai-security-wiki.",
+        "ai_wiki_note": "Cursor as a developer-tool entity belongs upstream in ai-wiki.",
+        "ai_dev_wiki_note": "General Cursor usage and coding-agent workflow guidance belongs upstream in ai-dev-wiki."
+      },
+      "confidence_notes": "High confidence for CVE-2026-73217 because the GitHub advisory and Vulners timeline agree. Medium-high for CVE-2026-73218 because the visible source was a live CVE feed rather than a fetched GHSA detail page.",
+      "follow_up_actions": [
+        "During ingest, split CVE-2026-73217 and CVE-2026-73218 if they need independent leaves.",
+        "Check NVD and Cursor advisories for CVE-2026-73218 canonical GHSA details before synthesis."
+      ]
+    },
+    {
+      "id": "2026-08-11-claude-code-templates-studio-rce",
+      "title": "Claude Code Templates Studio vulnerability exposes unauthenticated command execution from a local agent tool server",
+      "source_urls": [
+        "https://github.com/davila7/claude-code-templates/blob/main/CHANGELOG.md",
+        "https://www.tenable.com/cve",
+        "https://www.redhotcyber.com/en/latest-critical-vulnerabilities/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.tenable.com/cve",
+          "date": "2026-08-11",
+          "basis": "updated CVE feed"
+        },
+        {
+          "url": "https://github.com/davila7/claude-code-templates/blob/main/CHANGELOG.md",
+          "date": "2026-07-13",
+          "basis": "project changelog patch date; outside cutoff but primary fix context"
+        },
+        {
+          "url": "https://www.redhotcyber.com/en/latest-critical-vulnerabilities/",
+          "date": "2026-08-11T19:18:51",
+          "basis": "vulnerability listing publication timestamp"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-73222 describes Claude Code Templates before 1.29.4 launching Claude Code Studio on all interfaces at port 3444 with permissive CORS and no authentication. Request fields reached child_process.spawn with shell execution enabled, enabling an attacker who can reach the port or lure a developer to a malicious page to run OS commands with developer privileges; the changelog says 1.29.4 removed shell execution, constrained arguments, bound to loopback, and restricted CORS.",
+      "evidence_classification": "public vulnerability database update with project changelog patch evidence",
+      "affected_boundary_or_version": "claude-code-templates prior to 1.29.4 when Claude Code Studio is launched with --studio.",
+      "why_it_matters_for_ai_security": "Agent companion tools can become high-privilege local control planes; unauthenticated local studio surfaces need the same origin, authentication, and shell-injection controls as any developer service.",
+      "named_entities": [
+        "Claude Code Templates",
+        "Claude Code Studio",
+        "CVE-2026-73222",
+        "GHSA-79wm-x847-7cvg",
+        "Tenable",
+        "Red Hot Cyber"
+      ],
+      "upstream_routing": {
+        "local_security_implication": "Local agent tool server exposure, command execution, and developer credential compromise belong in ai-security-wiki.",
+        "ai_wiki_note": "Claude Code Templates as a developer-tool entity belongs upstream in ai-wiki if cataloged.",
+        "ai_dev_wiki_note": "General Claude Code workflow and local tool setup guidance belongs upstream in ai-dev-wiki."
+      },
+      "confidence_notes": "High confidence in the vulnerability content and fix because the project changelog matches the CVE summary; in-window qualification relies on the August 11 CVE publication/update.",
+      "follow_up_actions": [
+        "Check the GHSA page directly during ingest if accessible.",
+        "Consider linking to local-agent execution boundary and developer workstation containment pages."
+      ]
+    },
+    {
+      "id": "2026-08-11-db-gpt-unauthenticated-path-traversal-rce",
+      "title": "DB-GPT v0.8.1 path traversal advisory enables arbitrary file write and possible RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73034",
+        "https://www.cve.org/CVERecord?id=CVE-2026-73034",
+        "https://www.redhotcyber.com/en/latest-critical-vulnerabilities/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73034",
+          "date": "2026-08-11",
+          "basis": "NVD published and last modified dates"
+        },
+        {
+          "url": "https://www.redhotcyber.com/en/latest-critical-vulnerabilities/",
+          "date": "2026-08-11T20:18:46",
+          "basis": "vulnerability listing publication timestamp"
+        }
+      ],
+      "concise_factual_summary": "NVD published CVE-2026-73034 for DB-GPT v0.8.1: an unauthenticated remote attacker can inject directory traversal sequences into the user_id HTTP header of the Python file-upload endpoint, write arbitrary files outside the intended directory, and potentially reach remote code execution through Python startup hooks, cron directories, or agent scripts.",
+      "evidence_classification": "NVD and CVE record for AI application vulnerability",
+      "affected_boundary_or_version": "DB-GPT v0.8.1, affected through at least 0.8.1 per NVD affected range.",
+      "why_it_matters_for_ai_security": "It is an AI application/runtime platform vulnerability where upload trust boundaries can become code execution against deployed AI/agent infrastructure.",
+      "named_entities": [
+        "DB-GPT",
+        "CVE-2026-73034",
+        "NVD",
+        "CVE.org",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_implication": "AI runtime/file-upload boundary and deployment hardening belong in ai-security-wiki.",
+        "ai_wiki_note": "DB-GPT as an AI application/framework entity belongs upstream in ai-wiki.",
+        "ai_dev_wiki_note": "General DB-GPT development use belongs upstream in ai-dev-wiki only if it affects AI-assisted development practice."
+      },
+      "confidence_notes": "High confidence because NVD exposes the change history and CVE description inside the in-window publication date.",
+      "follow_up_actions": [
+        "Check DB-GPT issue and commit before ingesting mitigation details.",
+        "Assess whether this belongs under infrastructure-and-supply-chain, agent-and-tool-security, or both."
+      ]
+    },
+    {
+      "id": "2026-08-11-papersgpt-zotero-llm-response-eval-rce",
+      "title": "PapersGPT for Zotero RCE advisory links prompt injection and malicious LLM responses to Zotero privilege",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-73032",
+        "https://www.redhotcyber.com/en/latest-critical-vulnerabilities/",
+        "https://github.com/papersgpt/papersgpt-for-zotero"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.cve.org/CVERecord?id=CVE-2026-73032",
+          "date": "2026-08-11",
+          "basis": "CVE record publication visible in search result"
+        },
+        {
+          "url": "https://www.redhotcyber.com/en/latest-critical-vulnerabilities/",
+          "date": "2026-08-11T20:18:46",
+          "basis": "vulnerability listing publication timestamp"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-73032 describes PapersGPT for Zotero 0.6.1 executing arbitrary JavaScript when a malicious LLM endpoint, MITM, or prompt-injected PDF returns code that is passed unsanitized to window.eval() in views.ts. The advisory says execution occurs in Zotero's chrome-privileged context, enabling file read/write, process execution, and access to Zotero data.",
+      "evidence_classification": "CVE record and vulnerability database update",
+      "affected_boundary_or_version": "PapersGPT for Zotero 0.6.1.",
+      "why_it_matters_for_ai_security": "It is a concrete prompt-injection-to-code-execution path in an AI-assisted document/research workflow, where model output crosses directly into privileged local extension execution.",
+      "named_entities": [
+        "PapersGPT for Zotero",
+        "Zotero",
+        "CVE-2026-73032",
+        "VulnCheck",
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "DeepSeek"
+      ],
+      "upstream_routing": {
+        "local_security_implication": "Prompt injection, unsafe model-output handling, and privileged plugin execution belong in ai-security-wiki.",
+        "ai_wiki_note": "PapersGPT and model-provider catalog context belongs upstream in ai-wiki.",
+        "ai_dev_wiki_note": "General research-agent or document workflow practice belongs upstream in ai-dev-wiki if treated as an AI-assisted work pattern."
+      },
+      "confidence_notes": "Medium-high confidence: CVE publication is visible and corroborated by a vulnerability listing, but NVD detail was not fetched successfully in this run.",
+      "follow_up_actions": [
+        "Fetch NVD or the VulnCheck advisory during ingest for exact CVSS, CWE, affected range, and patch details.",
+        "Route alongside model-output handling and document-agent plugin security pages."
+      ]
+    },
+    {
+      "id": "2026-08-11-ai-sidebar-extension-relisted-after-chat-theft",
+      "title": "Netskope reports relisted AI Sidebar Chrome extension shipping new malicious updates after prior AI-chat theft",
+      "source_urls": [
+        "https://www.netskope.com/blog/ai-sidebar-extension-monetizes-its-own-updates",
+        "https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.netskope.com/blog/ai-sidebar-extension-monetizes-its-own-updates",
+          "date": "2026-08-11",
+          "basis": "primary research blog date"
+        },
+        {
+          "url": "https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/",
+          "date": "2026-08-11T07:15:00-04:00",
+          "basis": "article byline"
+        }
+      ],
+      "concise_factual_summary": "Netskope reported that the Chrome extension 'AI Sidebar with DeepSeek AI' had previously been removed for scraping ChatGPT and DeepSeek conversations, then reappeared and delivered updates through Google's CRX CDN to enterprise endpoints. Version 1.7.3.0 added a 21-line malicious monetization payload that opens affiliate links on update and uninstall; Netskope classifies the CRX as Trojan.GenericFCA.Script.37952 and recommends removing extension ID inhcgfpbfdjbjogdfjbclgolkmhnooop.",
+      "evidence_classification": "primary threat research with indicators of compromise, corroborated by security news",
+      "affected_boundary_or_version": "Chrome extension ID inhcgfpbfdjbjogdfjbclgolkmhnooop; malicious version 1.7.3.0; prior pre-1.7.x builds exfiltrated AI conversation content.",
+      "why_it_matters_for_ai_security": "It shows AI-chat browser extensions as a data-security and supply-chain boundary: marketplace relisting and auto-update channels can reintroduce code to managed browsers after prior conversation theft.",
+      "named_entities": [
+        "Netskope Threat Labs",
+        "AI Sidebar with DeepSeek AI",
+        "Chrome Web Store",
+        "Google CRX CDN",
+        "ChatGPT",
+        "DeepSeek",
+        "Extchange.com",
+        "Aitopia"
+      ],
+      "upstream_routing": {
+        "local_security_implication": "AI conversation theft, browser extension supply chain, enterprise browser controls, and data exfiltration belong in ai-security-wiki.",
+        "ai_wiki_note": "Broad product/provider pages for ChatGPT, DeepSeek, Chrome, Aitopia, and browser-extension products belong upstream in ai-wiki.",
+        "ai_dev_wiki_note": "General browser-extension governance for development workflows belongs upstream in ai-dev-wiki only when framed as practice guidance."
+      },
+      "confidence_notes": "High confidence because the primary source has an in-window date, concrete version numbers, IOC hashes/domains, and mitigation guidance.",
+      "follow_up_actions": [
+        "During ingest, avoid duplicating broad ChatGPT or DeepSeek pages; keep the local leaf focused on extension-mediated AI conversation theft and browser supply-chain controls.",
+        "Check Chrome Web Store status and any Google response before publication."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "OpenAI expands Daybreak with GPT-5.6-Cyber",
+      "source_urls": [
+        "https://www.securityweek.com/openai-unveils-new-cybersecurity-model-gpt-5-6-cyber/",
+        "https://www.bleepingcomputer.com/news/security/openai-releases-chatgpt-56-cyber-but-its-only-for-approved-users/"
+      ],
+      "visible_date": "2026-08-10 or 2026-08-11 depending on secondary source",
+      "reason": "Duplicate of the prior August 10 collector finding already processed into raw/processed; no distinct new security fact kept for this run."
+    },
+    {
+      "title": "OpenAI Astra autonomous cyberattack concern coverage",
+      "source_urls": [
+        "https://www.securityweek.com/openais-upcoming-astra-model-raises-autonomous-cyberattack-concerns/",
+        "https://www.theguardian.com/technology/2026/aug/08/openai-astra-security-concerns"
+      ],
+      "visible_date": "2026-08-10 secondary; 2026-08-08 Guardian",
+      "reason": "Secondary follow-on coverage of already captured frontier cyber-evaluation containment concerns; source trail overlaps prior run and lacks a distinct in-window primary control change."
+    },
+    {
+      "title": "Shared AI Findings Exchange SAFE request for comments",
+      "source_urls": [
+        "https://www.linuxfoundation.org/blog/proposing-the-safe-working-group-an-open-community-effort-to-improve-ai-security",
+        "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/",
+        "https://www.axios.com/2026/08/11/open-source-security-ai-agent-reporting"
+      ],
+      "visible_date": "2026-08-04 primary sources; 2026-08-11 Axios",
+      "reason": "Official Linux Foundation and NVIDIA primary publications are outside the exact 48-hour cutoff; Axios is in-window secondary coverage but does not establish a new official update."
+    },
+    {
+      "title": "Stealthium targets AI accelerator and neo-cloud security blind spots",
+      "source_urls": [
+        "https://www.securityweek.com/stealthium-targets-security-blind-spots-in-ai-accelerators-and-neo-clouds/"
+      ],
+      "visible_date": "2026-08-10T10:19:00-04:00",
+      "reason": "In-window but primarily a startup/product positioning article; security risk is plausible and relevant but the article does not disclose a concrete vulnerability, incident, patch, assurance result, or standard change."
+    },
+    {
+      "title": "Microsoft August 2026 Patch Tuesday fixes hundreds of CVEs",
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/microsoft/microsoft-august-2026-patch-tuesday-fixes-400-flaws-3-zero-days/",
+        "https://www.securityweek.com/"
+      ],
+      "visible_date": "2026-08-11",
+      "reason": "In-window security update, but not AI-specific; the AI-powered vulnerability discovery note is ordinary process context rather than an AI-system security delta."
+    },
+    {
+      "title": "Prompt injection breaks today's AI agents, study warns",
+      "source_urls": [
+        "https://www.csoonline.com/article/4184455/prompt-injection-breaks-todays-ai-agents-study-warns.html"
+      ],
+      "visible_date": "2026-06-12",
+      "reason": "Strongly relevant to AI security but outside the exact cutoff window."
+    },
+    {
+      "title": "BleepingComputer sponsored AI agent delegation and device-trust articles",
+      "source_urls": [
+        "https://www.bleepingcomputer.com/news/security/vague-task-total-access-when-ai-delegation-becomes-a-security-risk/",
+        "https://www.bleepingcomputer.com/news/security/when-credentials-are-no-longer-enough-device-trust-in-the-ai-era/"
+      ],
+      "visible_date": "2026-08-10 or 2026-08-11",
+      "reason": "In-window and thematically relevant, but sponsored/positioning content without a concrete new public vulnerability, incident, patch, standard, or assurance result."
+    }
+  ],
+  "summary_counts": {
+    "qualifying_count": 7,
+    "exclusion_count": 7,
+    "routing_count": 7
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": [],
+  "privacy_and_sensitivity_notes": [
+    "Only public web sources and public local wiki indexes/federation pages were used.",
+    "No private, proprietary, sensitive, PII, or company-internal local content was sent to external services."
+  ]
+}

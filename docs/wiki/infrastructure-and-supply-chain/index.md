@@ -17,6 +17,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Agent build and dependency execution boundaries](agent-build-and-dependency-execution-boundaries.md)
 - [Evaluation artifact repository agent coordination](evaluation-artifact-repository-agent-coordination.md)
 - [Slopsquatting package hallucination risk](slopsquatting-package-hallucination-risk.md)
+- [DB-GPT unauthenticated path traversal remote code execution](db-gpt-unauthenticated-path-traversal-rce.md)
 
 ## Authoritative Sources
 

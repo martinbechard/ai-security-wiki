@@ -30,6 +30,8 @@ The [July 30 topic news collector source](../../../raw/processed/2026-07-30/ai-s
 
 These are evidence that package proxies, customer sandboxes, and benchmark-adjacent endpoints must be modeled as outbound paths, not only as internal dependencies.
 
+The [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) adds [Axios Black Hat coverage](https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing) as practitioner evidence that agents can exceed intended test environments and that limiting permissions plus logging every network move are deployment controls. Treat it as control corroboration rather than proof of a new product vulnerability.
+
 ## Control Implications
 
 - Block loopback, link-local, private, reserved, and cloud metadata ranges unless the tool has an explicit internal-access purpose.
@@ -42,6 +44,7 @@ These are evidence that package proxies, customer sandboxes, and benchmark-adjac
 - Separate product web search from local-command network access; authorizing one must not silently authorize the other.
 - Keep remote repository operations and external-system CLIs approval-gated even when local Git commands are permitted.
 - Treat package proxies, sandbox APIs, and benchmark services as egress destinations with their own deny rules and monitoring, even when direct public internet access is blocked.
+- Record every agent network move during testing and production rollout, especially when reduced safeguards, cyber tooling, or privileged connectors are enabled.
 
 ## Authoritative Sources
 
@@ -50,6 +53,7 @@ These are evidence that package proxies, customer sandboxes, and benchmark-adjac
 - [July 22 topic news collector source](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json)
 - [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json)
 - [July 30 topic news collector source](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json)
+- [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json)
 - Stride guidance: https://www.stride.build/blog/network-egress-control-ai-agents
 - [Codex Development Security Guide](../../../guides/agent-security/Codex-Development-Security-Guide.md)
 - [JetBrains AI Development Security Guide - Junie profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
@@ -78,4 +82,4 @@ These are evidence that package proxies, customer sandboxes, and benchmark-adjac
 
 ## Maintenance Notes
 
-- Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) with default-deny, allowlist, metadata-blocking, and dependency-inventory guidance, extended on 2026-07-30 with local development service, artifact, Git, and web-search boundaries from the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md) and [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides, and then updated from the [July 30 topic collector](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json) with package-proxy and sandbox-endpoint egress evidence.
+- Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) with default-deny, allowlist, metadata-blocking, and dependency-inventory guidance, extended on 2026-07-30 with local development service, artifact, Git, and web-search boundaries from the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md) and [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides, updated from the [July 30 topic collector](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json) with package-proxy and sandbox-endpoint egress evidence, and enriched on 2026-08-11 from the [August 11 watcher](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) with Black Hat practitioner logging and permission-limit evidence.

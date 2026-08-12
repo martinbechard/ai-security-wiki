@@ -15,6 +15,8 @@ Broad California AI regulation and GenAI market context belongs upstream. This p
 
 The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) adds [SFGate](https://www.sfgate.com/politics/article/artificial-intelligence-law-california-22374394.php) in-window reporting that California AI Transparency Act obligations took effect in early August 2026. The report frames provenance metadata and watermarking as the public compliance mechanism. Use that article as current public evidence only; official AB 853 text remains the authority for exact operative dates, staged obligations, and covered-system boundaries.
 
+The [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) adds [SFGATE reporting](https://www.sfgate.com/politics/article/california-ai-law-22374394.php) on the first rollout for large-scale AI companies used in California to embed difficult-to-remove metadata in AI-generated photos, audio, and videos, with later rollouts through January 2028. Treat this as current public rollout evidence; official statutory text remains authoritative for thresholds, operative dates, and staged platform or device duties.
+
 ## Security Impact
 
 - Threat: generated content can be republished, laundered, or modified in ways that defeat users' ability to verify origin, enabling impersonation, fraud, social engineering, and evidentiary confusion.
@@ -36,6 +38,7 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 
 - [August 3 topic news collector source](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
+- [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json)
 - California AB 853: https://www.leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB853
 
 ## Related Code
@@ -67,3 +70,4 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 
 - Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) after splitting California provenance obligations from EU Article 50 and agent/GPAI controls.
 - Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) with in-window public reporting while preserving official AB 853 as the operative-date authority.
+- Enriched on 2026-08-11 from the [August 11 watcher](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) with public rollout reporting for metadata on AI-generated photos, audio, and videos while preserving official statutory authority.

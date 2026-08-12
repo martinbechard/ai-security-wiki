@@ -9,7 +9,7 @@ tags: ["testing-and-assurance", "agent-and-tool-security", "data-and-privacy"]
 
 ## Current Understanding
 
-Codex Security plugin workflow boundaries cover how OpenAI's Codex Security plugin should be treated when it is used for codebase security scanning, analysis, validation, and investigation. The [Codex Security clipping source](../../../raw/processed/2026-08-11/ChatGPT - Codex Security.md) describes Codex Security as security scanning for codebases, with reusable workflows across code, diffs, and related artifacts.
+Codex Security plugin workflow boundaries cover how OpenAI's Codex Security plugin should be treated when it is used for codebase security scanning, analysis, validation, and investigation. The [Codex Security clipping source](../../../raw/processed/2026-08-11/chatgpt-codex-security.md) describes Codex Security as security scanning for codebases, with reusable workflows across code, diffs, and related artifacts.
 
 The clipping records:
 
@@ -42,7 +42,7 @@ Broad product positioning for [Daybreak, Codex Security, Patch the Planet](../..
 
 ## Authoritative Sources
 
-- [Codex Security clipping source](../../../raw/processed/2026-08-11/ChatGPT - Codex Security.md)
+- [Codex Security clipping source](../../../raw/processed/2026-08-11/chatgpt-codex-security.md)
 - [Upstream AI wiki product coverage for Daybreak, Codex Security, and Patch the Planet](../../../upstream-ai-wiki/products/daybreak-codex-security-and-patch-the-planet.md)
 - [Upstream AI development wiki governance controls for agents](../../../upstream-ai-dev-wiki/governance-and-risk/governance-controls-for-agents.md)
 - [Upstream AI development wiki sensitive data and supply-chain controls](../../../upstream-ai-dev-wiki/governance-and-risk/sensitive-data-and-supply-chain-controls.md)
@@ -74,4 +74,4 @@ Broad product positioning for [Daybreak, Codex Security, Patch the Planet](../..
 
 ## Maintenance Notes
 
-- Created on 2026-08-11 from the [Codex Security clipping](../../../raw/processed/2026-08-11/ChatGPT - Codex Security.md) while routing broad product and general plugin governance context upstream.
+- Created on 2026-08-11 from the [Codex Security clipping](../../../raw/processed/2026-08-11/chatgpt-codex-security.md) while routing broad product and general plugin governance context upstream.

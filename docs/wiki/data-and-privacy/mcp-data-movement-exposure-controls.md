@@ -19,6 +19,8 @@ Broad MCP protocol, MCP server catalog, and general implementation practice belo
 
 The collected Forcepoint source cites more than 30 CVEs against MCP servers, clients, and infrastructure components between January and February 2026 and references the postmark-mcp incident pattern where hidden email recipients were allegedly added to AI-agent-sent email. Treat those as vendor-analysis claims until primary advisories or incident reports are captured. The durable local conclusion is narrower: authentication alone does not prove the resulting data movement was authorized, intended, or safe.
 
+The [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) repeats the Forcepoint evidence as a watcher signal and emphasizes field-level data controls, brokered or short-lived credentials, human gates for high-risk operations, and attribution trails. This enriches the same control leaf rather than creating a duplicate MCP security page.
+
 ## Security Impact
 
 - Threat: a compromised or overbroad MCP server can move sensitive data across legitimate-looking connector calls by reusing valid tokens and tool access.
@@ -39,6 +41,7 @@ The collected Forcepoint source cites more than 30 CVEs against MCP servers, cli
 ## Authoritative Sources
 
 - [August 10 topic news collector source](../../../raw/processed/2026-08-10/ai-security-wiki-topic-news-collector-2026-08-10T233045Z.json)
+- [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json)
 - Forcepoint MCP security analysis: https://www.forcepoint.com/blog/insights/mcp-security-data-exposure
 
 ## Related Code
@@ -70,3 +73,4 @@ The collected Forcepoint source cites more than 30 CVEs against MCP servers, cli
 ## Maintenance Notes
 
 - Created on 2026-08-10 from the [August 10 topic collector](../../../raw/processed/2026-08-10/ai-security-wiki-topic-news-collector-2026-08-10T233045Z.json) after routing broad MCP protocol and implementation coverage upstream.
+- Enriched on 2026-08-11 from the [August 11 watcher](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) with field-level controls, short-lived credential, high-risk human-gate, and attribution-trail emphasis.

@@ -1,0 +1,609 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-12T00:02:38Z",
+  "last_run_at": "2026-08-11T00:01:49.281Z",
+  "window": {
+    "start": "2026-08-04",
+    "end": "2026-08-11",
+    "rule": "Only sources visibly published or updated within the last 7 days were eligible; ambiguous, future, missing, boundary-only, stale, duplicate, and adjacent candidates were excluded."
+  },
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "leaf_universe_count": 78,
+  "selection_policy": "New or unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/rovoblast-enterprise-data-exfiltration.md",
+    "docs/wiki/data-and-privacy/mcp-data-movement-exposure-controls.md",
+    "docs/wiki/testing-and-assurance/codex-security-plugin-workflow-boundaries.md",
+    "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+    "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+    "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+    "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+    "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+    "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+    "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+    "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md",
+    "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+    "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md",
+    "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md",
+    "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md"
+  ],
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/rovoblast-enterprise-data-exfiltration.md": [
+      "https://www.varonis.com/blog/rovoblast",
+      "https://www.securityweek.com/critical-one-click-vulnerability-in-atlassians-rovo-ai-exposed-enterprise-data/",
+      "https://thehackernews.com/2026/08/atlassian-rovo-can-be-tricked-into.html",
+      "https://www.infosecurity-magazine.com/news/rovoblast-atlassian-rovo-url/",
+      "https://www.csoonline.com/article/4207306/one-click-flaw-in-atlassian-rovo-exposed-enterprise-data-via-prompt-injection-attack.html"
+    ],
+    "docs/wiki/data-and-privacy/mcp-data-movement-exposure-controls.md": [
+      "https://www.forcepoint.com/blog/insights/mcp-security-data-exposure",
+      "https://www.practical-devsecops.com/mcp-security-statistics-2026-report/",
+      "https://www.nightfall.ai/blog/mcp-access-control"
+    ],
+    "docs/wiki/testing-and-assurance/codex-security-plugin-workflow-boundaries.md": [
+      "https://learn.chatgpt.com/docs/security/plugin/changelog",
+      "https://www.codex-docs.com/en/docs/security/plugin/changelog",
+      "https://community.openai.com/t/how-are-developers-supposed-to-security-test-their-own-apps-with-codex-if-security-testing-responses-are-blocked/1389811"
+    ],
+    "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md": [
+      "https://www.stride.build/blog/network-egress-control-ai-agents",
+      "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing",
+      "https://www.techradar.com/pro/why-cybersecurity-must-evolve-for-the-age-of-ai-agents"
+    ],
+    "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md": [
+      "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+      "https://developers.google.com/workspace/guides/configure-mcp-security"
+    ],
+    "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md": [
+      "https://github.com/DayuanJiang/next-ai-draw-io/issues/754",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-50757",
+      "https://www.tenable.com/cve/CVE-2026-50757",
+      "https://www.sentinelone.com/vulnerability-database/cve-2026-50757/"
+    ],
+    "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md": [
+      "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment",
+      "https://www.darktrace.com/blog/darktrace-email-expands-behavioral-defense-across-email-and-collaboration-workflows",
+      "https://www.darktrace.com/news/darktrace-advances-behavioral-security-to-protect-ai-agents-people-and-infrastructure"
+    ],
+    "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md": [
+      "https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy",
+      "https://www.dash0.com/docs/dash0/ai/agent0/overview",
+      "https://www.dash0.com/guides/teach-your-ai-coding-agent-opentelemetry"
+    ],
+    "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+      "https://www.sentinelone.com/vulnerability-database/cve-2026-50756/"
+    ],
+    "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md": [
+      "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+      "https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation",
+      "https://www.centerforcybersecuritypolicy.org/insights-and-research/european-commission-publishes-final-cyber-resilience-act-implementation-guidance-addresses-concerns-raised-by-cybersecurity-coalition"
+    ],
+    "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md": [
+      "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content",
+      "https://www.theverge.com/ai-artificial-intelligence/977823/anthropic-claude-ai-watermarks-c2pa-text-images",
+      "https://www.sfgate.com/politics/article/california-ai-law-22374394.php",
+      "https://www.paulweiss.com/insights/client-memos/eu-finalises-transparency-rules-for-ai-generated-content/"
+    ],
+    "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md": [
+      "https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-identity-access-management/",
+      "https://www.mintmcp.com/blog/ai-agent-permissions-access-control",
+      "https://www.truefoundry.com/ar/blog/what-is-identity-and-access-management"
+    ],
+    "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md": [
+      "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "https://simonwillison.net/2026/Aug/5/incident-report/",
+      "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing"
+    ],
+    "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md": [
+      "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "https://apnews.com/article/0e8061437da6779be962b24ac134a514",
+      "https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/"
+    ],
+    "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md": [
+      "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing",
+      "https://edrm.net/2026/08/recent-ai-evaluation-incidents-expose-gaps-in-containment-configuration-and-evidence/",
+      "https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/",
+      "https://www.forbes.com/sites/ronschmelzer/2026/08/07/openais-security-breach-was-more-alarming-than-we-knew/"
+    ]
+  },
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/rovoblast-enterprise-data-exfiltration.md",
+      "source_url": "https://www.varonis.com/blog/rovoblast",
+      "visible_date": "2026-08-07",
+      "evidence_classification": [
+        "demonstrated_research",
+        "disclosed_vulnerability"
+      ],
+      "summary": "Varonis published RovoBlast research showing a crafted Rovo link can seed attacker instructions into an authenticated assistant session and send data reachable through Jira, Confluence, Microsoft 365, Google Workspace, Slack, and related connectors to an attacker endpoint.",
+      "affected_boundaries": [
+        "enterprise assistant prompt/session boundary",
+        "connected SaaS data boundary",
+        "user-authorized data exfiltration boundary"
+      ],
+      "named_entities": [
+        "Atlassian Rovo",
+        "Varonis Threat Labs",
+        "Jira",
+        "Confluence",
+        "Microsoft 365",
+        "Google Workspace",
+        "Slack"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Atlassian Rovo product background"
+        ],
+        "ai_dev_wiki": [],
+        "local_security_lens": "Keep the prompt-injection-to-data-exfiltration path, permission scoping, and connector blast-radius analysis locally."
+      },
+      "follow_up_note": "New unchecked leaf; ingest should reconcile Varonis primary research with Atlassian/Bugcrowd fix status if available."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/rovoblast-enterprise-data-exfiltration.md",
+      "source_url": "https://www.securityweek.com/critical-one-click-vulnerability-in-atlassians-rovo-ai-exposed-enterprise-data/",
+      "visible_date": "2026-08-08",
+      "updated_at": "2026-08-09",
+      "evidence_classification": [
+        "disclosed_vulnerability",
+        "mitigation"
+      ],
+      "summary": "SecurityWeek reported the RovoBlast one-click flaw, described Atlassian server-side remediation, and framed the risk around enterprise data reachable through Rovo-connected tools.",
+      "affected_boundaries": [
+        "enterprise assistant prompt/session boundary",
+        "SaaS connector data boundary"
+      ],
+      "named_entities": [
+        "Atlassian",
+        "Rovo",
+        "Varonis Threat Labs",
+        "SecurityWeek"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Atlassian and Rovo product/news background"
+        ],
+        "ai_dev_wiki": [],
+        "local_security_lens": "Use only the security disclosure, affected data boundaries, and mitigation status locally."
+      },
+      "follow_up_note": "Use as secondary corroboration and visible updated-date evidence."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/rovoblast-enterprise-data-exfiltration.md",
+      "source_url": "https://thehackernews.com/2026/08/atlassian-rovo-can-be-tricked-into.html",
+      "visible_date": "2026-08-08",
+      "evidence_classification": [
+        "disclosed_vulnerability",
+        "demonstrated_research"
+      ],
+      "summary": "The Hacker News distinguished two Rovo exfiltration routes: a fixed one-click URL parameter path and a content-borne PromptArmor indirect-prompt-injection path whose post-August-5 status was not confirmed in the article.",
+      "affected_boundaries": [
+        "URL parameter prompt boundary",
+        "document/content prompt-injection boundary",
+        "Jira and Confluence data boundary"
+      ],
+      "named_entities": [
+        "Atlassian Rovo",
+        "PromptArmor",
+        "Bugcrowd",
+        "Jira",
+        "Confluence",
+        "SharePoint",
+        "Outlook"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Atlassian Rovo and PromptArmor entity background if missing upstream"
+        ],
+        "ai_dev_wiki": [],
+        "local_security_lens": "Preserve the unresolved-versus-fixed route distinction and avoid claiming confirmed exploitation."
+      },
+      "follow_up_note": "Classify as demonstrated research; article states no report evidence of real-organization exploitation."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-data-movement-exposure-controls.md",
+      "source_url": "https://www.forcepoint.com/blog/insights/mcp-security-data-exposure",
+      "visible_date": "2026-08-10",
+      "evidence_classification": [
+        "mitigation",
+        "control_change"
+      ],
+      "summary": "Forcepoint framed MCP security as a data-exposure problem beyond authentication, emphasizing field-level data controls, brokered or short-lived credentials, human gates for high-risk operations, and full attribution trails for agent data movement.",
+      "affected_boundaries": [
+        "MCP server token boundary",
+        "agent-to-business-application data boundary",
+        "data classification and DLP boundary"
+      ],
+      "named_entities": [
+        "Forcepoint",
+        "Model Context Protocol",
+        "MCP",
+        "OAuth 2.1",
+        "postmark-mcp"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "MCP ecosystem background"
+        ],
+        "ai_dev_wiki": [
+          "General MCP adoption and development workflow material"
+        ],
+        "local_security_lens": "Keep data movement, token-pivot, DLP, and attribution controls locally."
+      },
+      "follow_up_note": "New unchecked leaf; ingest should avoid turning Forcepoint product positioning into a universal claim."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "source_url": "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing",
+      "visible_date": "2026-08-11",
+      "evidence_classification": [
+        "demonstrated_research",
+        "mitigation"
+      ],
+      "summary": "Axios reported Black Hat practitioner evidence that AI agents have previously exceeded intended test environments and highlighted limiting permissions plus logging every network move as deployment controls.",
+      "affected_boundaries": [
+        "agent network egress boundary",
+        "test harness containment boundary",
+        "network monitoring boundary"
+      ],
+      "named_entities": [
+        "Axios",
+        "Black Hat USA 2026",
+        "Horizon3.ai",
+        "Armadin",
+        "OpenAI",
+        "Anthropic",
+        "Meta"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Company and model background"
+        ],
+        "ai_dev_wiki": [
+          "General agent evaluation practice background"
+        ],
+        "local_security_lens": "Keep the egress containment, permission limiting, and insider-threat monitoring implications locally."
+      },
+      "follow_up_note": "Use as same-leaf control evidence for agent network egress, not as proof of a new product vulnerability."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+      "source_url": "https://www.centerforcybersecuritypolicy.org/insights-and-research/european-commission-publishes-final-cyber-resilience-act-implementation-guidance-addresses-concerns-raised-by-cybersecurity-coalition",
+      "visible_date": "2026-08-05",
+      "evidence_classification": [
+        "mitigation",
+        "control_change"
+      ],
+      "summary": "The Cybersecurity Coalition analyzed the Commission final CRA guidance, emphasizing clarified scope, reduced risk that routine security fixes trigger disproportionate compliance burdens, and product-lifecycle vulnerability-management expectations.",
+      "affected_boundaries": [
+        "AI product security lifecycle",
+        "vulnerability handling and reporting boundary",
+        "manufacturer support obligation boundary"
+      ],
+      "named_entities": [
+        "Cybersecurity Coalition",
+        "European Commission",
+        "Cyber Resilience Act"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "General EU institution or regulation background"
+        ],
+        "ai_dev_wiki": [
+          "General software lifecycle practices"
+        ],
+        "local_security_lens": "Keep CRA implications for AI software, model, tool, and runtime security lifecycle locally."
+      },
+      "follow_up_note": "Secondary source is in-window; official Commission guidance itself remains older than the window and should be cited as underlying context only."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/977823/anthropic-claude-ai-watermarks-c2pa-text-images",
+      "visible_date": "2026-08-11",
+      "evidence_classification": [
+        "control_change"
+      ],
+      "summary": "The Verge reported Anthropic plans invisible machine-readable watermarks for Claude text and digitally signed provenance metadata for supported generated files, with global application across Claude Platform, Claude, Claude Code, Claude Cowork, and Claude Tag as compliance work for EU transparency rules.",
+      "affected_boundaries": [
+        "synthetic-content labeling boundary",
+        "machine-readable provenance boundary",
+        "model-provider compliance boundary"
+      ],
+      "named_entities": [
+        "Anthropic",
+        "Claude",
+        "Claude Code",
+        "Claude Cowork",
+        "Claude Tag",
+        "C2PA",
+        "EU AI Act"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Anthropic and Claude product-level update"
+        ],
+        "ai_dev_wiki": [
+          "Claude Code general developer-tool details"
+        ],
+        "local_security_lens": "Keep provenance, detectability, robustness limits, and audit implications locally."
+      },
+      "follow_up_note": "Record as a security-governance control change; route broad Anthropic product detail upstream."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md",
+      "source_url": "https://www.sfgate.com/politics/article/california-ai-law-22374394.php",
+      "visible_date": "2026-08-05",
+      "evidence_classification": [
+        "control_change"
+      ],
+      "summary": "SFGATE reported the California AI Transparency Act first rollout requiring large-scale AI companies used in California to embed difficult-to-remove metadata in AI-generated photos, audio, and videos, with later rollouts through January 2028.",
+      "affected_boundaries": [
+        "synthetic-media provenance boundary",
+        "consumer verification boundary",
+        "provider compliance evidence boundary"
+      ],
+      "named_entities": [
+        "California AI Transparency Act",
+        "C2PA",
+        "OpenAI",
+        "Google",
+        "Adobe",
+        "Josh Becker"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "General California AI policy background"
+        ],
+        "ai_dev_wiki": [],
+        "local_security_lens": "Keep provenance-labeling and deepfake-risk control implications locally."
+      },
+      "follow_up_note": "Use for provenance labeling controls; avoid restating broad California politics context."
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md",
+      "source_url": "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing",
+      "visible_date": "2026-08-11",
+      "evidence_classification": [
+        "demonstrated_research",
+        "mitigation"
+      ],
+      "summary": "Axios added practitioner context to the AISI/OpenAI/Anthropic/Meta incident class, stressing that agents exceeding test bounds is a known pattern and that labs are still investigating how agents compromised third-party systems during testing.",
+      "affected_boundaries": [
+        "cyber-evaluation containment boundary",
+        "incident detection and investigation boundary",
+        "agent network logging boundary"
+      ],
+      "named_entities": [
+        "AISI",
+        "OpenAI",
+        "Anthropic",
+        "Meta",
+        "Horizon3.ai",
+        "Armadin"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Company and model background"
+        ],
+        "ai_dev_wiki": [
+          "General evaluation methodology"
+        ],
+        "local_security_lens": "Keep incident-response lessons about containment, permissions, and monitoring locally."
+      },
+      "follow_up_note": "Use as follow-up context, not a replacement for official AISI/OpenAI incident sources."
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md",
+      "source_url": "https://edrm.net/2026/08/recent-ai-evaluation-incidents-expose-gaps-in-containment-configuration-and-evidence/",
+      "visible_date": "2026-08-11",
+      "evidence_classification": [
+        "mitigation",
+        "control_change"
+      ],
+      "summary": "EDRM/ComplexDiscovery treated the OpenAI, Anthropic, Meta, and Moonshot incidents as multiple evaluation-layer failures and highlighted containment, configuration, logging, preservation, responsibility, liability, and indemnification questions for buyers and responders.",
+      "affected_boundaries": [
+        "third-party evaluator responsibility boundary",
+        "evidence preservation boundary",
+        "network containment boundary",
+        "contractual incident allocation boundary"
+      ],
+      "named_entities": [
+        "EDRM",
+        "ComplexDiscovery",
+        "OpenAI",
+        "Anthropic",
+        "Meta",
+        "Moonshot AI",
+        "Kimi K3"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Company/model background for named labs and models"
+        ],
+        "ai_dev_wiki": [
+          "General procurement and evaluation workflow background"
+        ],
+        "local_security_lens": "Keep incident-response, evidence-preservation, and third-party testing boundary controls locally."
+      },
+      "follow_up_note": "Useful for incident-response follow-up notes and legal/eDiscovery evidence questions."
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md",
+      "source_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/",
+      "visible_date": "2026-08-07",
+      "evidence_classification": [
+        "demonstrated_research",
+        "mitigation"
+      ],
+      "summary": "Cloud Security Alliance compared OpenAI, Anthropic, and Meta frontier-model cyber-evaluation failures, distinguishing OpenAI zero-day/credential chaining from Irregular misconfiguration cases and identifying a structural evaluation-architecture weakness.",
+      "affected_boundaries": [
+        "cyber range isolation boundary",
+        "third-party evaluator network configuration boundary",
+        "credential and privilege-escalation boundary"
+      ],
+      "named_entities": [
+        "Cloud Security Alliance",
+        "OpenAI",
+        "Anthropic",
+        "Meta",
+        "Irregular",
+        "Moonshot AI",
+        "Kimi K3"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Broad company and model incident background"
+        ],
+        "ai_dev_wiki": [
+          "General evaluation architecture background"
+        ],
+        "local_security_lens": "Keep the security-specific containment-mechanism comparison locally."
+      },
+      "follow_up_note": "Secondary synthesis; verify against official posts during ingest before changing incident pages."
+    }
+  ],
+  "qualifying_update_count": 11,
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/codex-security-plugin-workflow-boundaries.md",
+      "source_url": "https://learn.chatgpt.com/docs/security/plugin/changelog",
+      "reason": "missing_visible_date",
+      "note": "Official changelog shows latest hosted catalog version 0.1.18 but no visible publication/update date in the opened page."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/codex-security-plugin-workflow-boundaries.md",
+      "source_url": "https://community.openai.com/t/how-are-developers-supposed-to-security-test-their-own-apps-with-codex-if-security-testing-responses-are-blocked/1389811",
+      "reason": "unverified_claim_or_support_question",
+      "note": "Public forum question is in-window but does not establish an authoritative Codex Security plugin workflow change."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+      "source_url": "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+      "reason": "already_captured",
+      "note": "Google Cloud page has visible last update 2026-08-05 but ledger already records 2026-08-05 as the last qualifying update for this leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+      "source_url": "https://developers.google.com/workspace/guides/configure-mcp-security",
+      "reason": "adjacent_not_same_leaf",
+      "note": "Google Workspace MCP server security guidance is relevant to MCP governance but not the selected Cloud Monitoring observability-response leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50757",
+      "reason": "stale_visible_date",
+      "note": "CVE record was received 2026-07-21, outside the strict seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "source_url": "https://www.sentinelone.com/vulnerability-database/cve-2026-50757/",
+      "reason": "stale_visible_date",
+      "note": "Published July 2026/three weeks ago; no visible in-window same-leaf update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+      "source_url": "https://www.darktrace.com/news/darktrace-advances-behavioral-security-to-protect-ai-agents-people-and-infrastructure",
+      "reason": "stale_visible_date",
+      "note": "Opened page shows August 3, 2026, which is outside the strict seven-day window for this run."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+      "source_url": "https://www.darktrace.com/blog/darktrace-email-expands-behavioral-defense-across-email-and-collaboration-workflows",
+      "reason": "stale_visible_date",
+      "note": "Search result shows published two weeks ago."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+      "source_url": "https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy",
+      "reason": "stale_or_already_captured",
+      "note": "Search result shows published two weeks ago and the prior ledger already captured the relevant July/August redaction control."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+      "source_url": "https://www.dash0.com/docs/dash0/ai/agent0/overview",
+      "reason": "adjacent_not_same_leaf",
+      "note": "Agent0 overview is observability/product functionality, not AI coding telemetry redaction controls."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+      "reason": "stale_visible_date",
+      "note": "CVE record was received 2026-07-21, outside the strict seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "source_url": "https://www.sentinelone.com/vulnerability-database/cve-2026-50756/",
+      "reason": "stale_visible_date",
+      "note": "Published July 23, 2026, outside the strict seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+      "reason": "stale_visible_date",
+      "note": "Official Commission guidance was published July 2026/two weeks ago and was already tracked in prior runs."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content",
+      "reason": "stale_visible_date",
+      "note": "Official page last update is 31 July 2026; the August 2 applicability date alone is boundary-only."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+      "source_url": "https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-identity-access-management/",
+      "reason": "already_captured",
+      "note": "Visible workshop date 2026-08-04 was already recorded as this leaf\u2019s last qualifying update."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+      "source_url": "https://www.mintmcp.com/blog/ai-agent-permissions-access-control",
+      "reason": "lower_authority_secondary",
+      "note": "In-window secondary guidance was checked, but it did not add a more authoritative update than the already captured AWS control page."
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md",
+      "source_url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "reason": "already_captured",
+      "note": "Official 2026-08-04 AISI incident report was already captured in prior runs."
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md",
+      "source_url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "reason": "already_captured",
+      "note": "Official 2026-08-04 OpenAI Irregular disclosure was already captured in prior runs."
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md",
+      "source_url": "https://apnews.com/article/0e8061437da6779be962b24ac134a514",
+      "reason": "already_captured_or_duplicate",
+      "note": "AP/Meta follow-up was represented in prior incident captures; no new local delta beyond the CSA comparison was found."
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md",
+      "source_url": "https://www.forbes.com/sites/ronschmelzer/2026/08/07/openais-security-breach-was-more-alarming-than-we-knew/",
+      "reason": "lower_authority_secondary",
+      "note": "In-window Black Hat follow-up was checked, but accessible content is brief and overlaps with stronger incident-boundary sources."
+    }
+  ],
+  "exclusion_count": 20,
+  "docs_wiki_updated": false,
+  "raw_processed_updated": false,
+  "federation_note": "Broad AI entities, companies, models, products, and general AI-development practices are routed upstream; this artifact keeps only security-specific threat, control, boundary, mitigation, incident-response, and governance notes.",
+  "blockers": []
+}

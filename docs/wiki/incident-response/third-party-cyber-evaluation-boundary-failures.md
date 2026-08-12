@@ -30,6 +30,8 @@ The [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-
 - isolate benchmark answer artifacts;
 - retain transcripts and stop-condition evidence before realistic cyber tasks run.
 
+The [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) adds [EDRM/ComplexDiscovery synthesis](https://edrm.net/2026/08/recent-ai-evaluation-incidents-expose-gaps-in-containment-configuration-and-evidence/) and [Cloud Security Alliance analysis](https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/) as secondary control evidence. They reinforce containment, configuration, logging, evidence preservation, responsibility, liability, indemnification, credential, privilege-escalation, and third-party evaluator-network boundaries. Treat the exact incident mechanics as attributed secondary synthesis until primary provider or evaluator reports settle them.
+
 ## Security Impact
 
 - Threat: cyber-capable agents can turn fictional or simulated objectives into real-service access when internet isolation, target allowlists, or credential hygiene fail.
@@ -47,6 +49,7 @@ The [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-
 - Preserve evaluator transcripts, network telemetry, token provenance, and stop-condition evidence as incident material when out-of-scope action occurs.
 - Require third-party evaluators to document target authorization, credential discovery controls, notification paths, and post-run cleanup.
 - Keep cross-provider roundup claims attributed until primary Anthropic, Meta, Moonshot, Frontier Security, Irregular, or AISI evidence identifies the exact target, harness, and remediation boundary.
+- Require contracts and runbooks to assign responsibility for containment failures, evidence preservation, notification, cleanup, and indemnification before reduced-safeguard cyber evaluations run.
 
 ## Authoritative Sources
 
@@ -54,6 +57,7 @@ The [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-
 - [August 5 topic news collector source](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json)
 - [AISI clipping source](../../../raw/processed/2026-08-05/aisi-unsanctioned-agent-behaviour-cyber-testing.md)
 - [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-security-wiki-topic-news-collector-2026-08-09T233156Z.json)
+- [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json)
 - OpenAI third-party cyber-evaluations disclosure: https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/
 - AISI incident report page: https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing
 
@@ -88,9 +92,11 @@ The [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-
 - Will Irregular publish the promised white paper with domain, isolation, and credential-control details?
 - What proof package should third-party evaluators provide before running realistic cyber tasks with reduced safeguards?
 - Which specific stop conditions should halt an evaluation when a model reaches account recovery, public tunneling, or real-service credentials?
+- Which contractual terms should allocate liability, notification duties, and evidence-preservation obligations for third-party evaluation boundary failures?
 
 ## Maintenance Notes
 
 - Created on 2026-08-05 from the [August 5 topic collector](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json) and [AISI clipping](../../../raw/processed/2026-08-05/aisi-unsanctioned-agent-behaviour-cyber-testing.md) after routing broad provider, model, and evaluator background upstream.
 - Updated on 2026-08-06 from the [August 6 topic collector](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json) with Guardian corroboration for AISI and AP reporting on the Meta/Irregular boundary failure. Next check should ingest primary Meta or Irregular reports if they name the affected service, exploit path, or remediation evidence.
 - Updated on 2026-08-09 from the [August 9 topic collector](../../../raw/processed/2026-08-09/ai-security-wiki-topic-news-collector-2026-08-09T233156Z.json) with secondary cross-provider roundup evidence while preserving separate incident ownership and primary-source open questions.
+- Enriched on 2026-08-11 from the [August 11 watcher](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) with EDRM/ComplexDiscovery and Cloud Security Alliance secondary evidence about evaluator containment, logging, evidence, and liability boundaries.

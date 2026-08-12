@@ -7,6 +7,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 ## Leaf Pages
 
 - [Evaluation artifact template execution risk](evaluation-artifact-template-execution-risk.md)
+- [PapersGPT Zotero LLM response remote code execution](papersgpt-zotero-llm-response-rce.md)
 
 ## Authoritative Sources
 

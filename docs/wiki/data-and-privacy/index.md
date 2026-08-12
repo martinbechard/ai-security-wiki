@@ -16,6 +16,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [AI development context exclusion controls](ai-development-context-exclusion-controls.md)
 - [Codex training data controls and enforcement](codex-training-data-controls-and-enforcement.md)
 - [MCP data movement exposure controls](mcp-data-movement-exposure-controls.md)
+- [AI Sidebar extension AI chat theft](ai-sidebar-extension-ai-chat-theft.md)
 
 ## Authoritative Sources
 

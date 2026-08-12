@@ -25,6 +25,10 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [AI agent interaction transparency controls](ai-agent-interaction-transparency-controls.md)
 - [Agentic browser intent collision](agentic-browser-intent-collision.md)
 - [RovoBlast enterprise data exfiltration](rovoblast-enterprise-data-exfiltration.md)
+- [GhostSplice MCP split instruction exfiltration](ghostsplice-mcp-split-instruction-exfiltration.md)
+- [Ghostjacking poisoned operational log agent hijack](ghostjacking-poisoned-operational-log-agent-hijack.md)
+- [Cursor Auto-Run Sandbox escapes](cursor-auto-run-sandbox-escapes.md)
+- [Claude Code Templates Studio remote code execution](claude-code-templates-studio-rce.md)
 
 ## Authoritative Sources
 
