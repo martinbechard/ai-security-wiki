@@ -1,0 +1,327 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-08-12T23:31:46Z",
+  "run_timestamp_local": "2026-08-12T19:31:46-0400",
+  "cutoff_window": {
+    "start_utc": "2026-08-10T23:31:46Z",
+    "end_utc": "2026-08-12T23:31:46Z",
+    "rule": "Include only public web items published or visibly updated within the last 2 days relative to run time. Exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "repository_scope": {
+    "modified_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "raw_only": true,
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false
+  },
+  "federation_context": {
+    "local_security_scope": "AI-specific threats, model and prompt security, agent and tool security, data and privacy controls, identity and access, infrastructure and supply-chain security, testing and assurance, governance and compliance, and AI incident response.",
+    "upstream_ai_wiki": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+    "upstream_ai_dev_wiki": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+    "routing_rule": "Broad companies, products, model families, frameworks, MCP servers, developer tools, and general AI-assisted development practices route upstream; this artifact keeps only the security-specific implication or routing note."
+  },
+  "findings": [
+    {
+      "id": "2026-08-12-cloudsek-litellm-supply-chain-exposure",
+      "title": "CloudSEK reports reconstructed exposure from LiteLLM supply-chain compromise",
+      "source_urls": [
+        "https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines",
+        "https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/",
+        "https://thehackernews.com/2026/08/malicious-litellm-releases-tied-to.html"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines",
+          "date": "August 11, 2026",
+          "date_type": "visible publication date"
+        },
+        {
+          "url": "https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/",
+          "date": "August 12, 2026 (5:55 AM ET)",
+          "date_type": "visible publication timestamp"
+        },
+        {
+          "url": "https://thehackernews.com/2026/08/malicious-litellm-releases-tied-to.html",
+          "date": "Aug 12, 2026",
+          "date_type": "visible publication date"
+        }
+      ],
+      "concise_factual_summary": "CloudSEK published a reconstructed exposure dataset for the March 2026 LiteLLM compromise, reporting 2,500+ companies and about 434,000 CI/CD pipelines potentially exposed. The report says compromised runners could expose SSH keys, cloud credentials, Kubernetes tokens, .env files, CI/CD secrets, LLM API keys, and AI gateway configuration; it cautions that exposure counts are not proof every organization was compromised.",
+      "evidence_classification": "primary security research with corroborating reputable security coverage",
+      "affected_boundary_or_version": "LiteLLM PyPI releases 1.82.7 and 1.82.8; CI/CD runners and AI infrastructure secrets reachable during the March 2026 exposure window",
+      "why_it_matters_for_ai_security": "LiteLLM is an AI gateway/proxy component. A malicious package at that control point can bridge dependency supply chain, identity, cloud runtime, CI/CD, and model-provider credential exposure, making AI infrastructure a high-value lateral-movement target.",
+      "named_entities": [
+        "CloudSEK",
+        "LiteLLM",
+        "TeamPCP",
+        "Trivy",
+        "PyPI",
+        "SANDCLOCK",
+        "FBI",
+        "AWS",
+        "GCP",
+        "Azure",
+        "Kubernetes"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "route_note": "Broad LiteLLM, Trivy, PyPI, CloudSEK, and provider/company catalog facts belong upstream if durable entity pages are needed."
+        },
+        {
+          "owner": "ai-dev-wiki",
+          "route_note": "General CI/CD, package pinning, and development workflow lessons belong upstream as AI-assisted development practice; this repo should keep AI security supply-chain implications, exposed AI secrets, and incident-response controls."
+        }
+      ],
+      "confidence_notes": "High confidence on visible dates and primary CloudSEK claims. CloudSEK and secondary coverage warn that the exposure dataset is not equivalent to confirmed compromise of every named organization.",
+      "follow_up_actions": [
+        "During ingest, distinguish reconstructed exposure from confirmed compromise.",
+        "Check whether existing local pages cover AI gateway supply-chain credential rotation and long-lived token retirement.",
+        "Track any later LiteLLM, Aqua, FBI, or PyPI primary updates that refine root cause or victim impact."
+      ]
+    },
+    {
+      "id": "2026-08-12-encrypted-reasoning-cross-model-replay",
+      "title": "Researchers disclose cross-model replay attack against encrypted reasoning traces",
+      "source_urls": [
+        "https://stolen-thoughts.com/paper.pdf",
+        "https://www.wired.com/story/a-new-trick-reveals-ai-models-inner-thoughts/",
+        "https://thehackernews.com/2026/08/openai-anthropic-google-api-flaw-let.html"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.wired.com/story/a-new-trick-reveals-ai-models-inner-thoughts/",
+          "date": "Published yesterday in search result for the 2026-08-12 run",
+          "date_type": "search-visible publication recency"
+        },
+        {
+          "url": "https://thehackernews.com/2026/08/openai-anthropic-google-api-flaw-let.html",
+          "date": "Aug 12, 2026",
+          "date_type": "visible publication date"
+        },
+        {
+          "url": "https://stolen-thoughts.com/paper.pdf",
+          "date": "No explicit publication date fetched; paper states provider behavior was assessed as of July 2026 and reports responsible disclosure before in-window coverage",
+          "date_type": "undated primary paper with in-window secondary coverage"
+        }
+      ],
+      "concise_factual_summary": "The paper 'Stealing Reasoning Traces from Proprietary LLM APIs' describes an architectural weakness where encrypted reasoning blocks were portable across sessions, users, and models within a provider ecosystem. Researchers report using weaker compatible models as decoders for reasoning traces from stronger models across OpenAI, Anthropic, and Google; from 315,320 public reasoning blocks they recovered 367 PII artifacts and 182 credentials. WIRED reports providers were alerted and mitigations have been applied, while some trace recovery may remain possible.",
+      "evidence_classification": "public research paper qualified by in-window reputable security/news coverage",
+      "affected_boundary_or_version": "Client-side encrypted reasoning blocks and thinking signatures in proprietary reasoning APIs; provider/model compatibility conditions vary by OpenAI, Anthropic, and Google model family",
+      "why_it_matters_for_ai_security": "Encrypted hidden reasoning can contain credentials, PII, tool outputs, policy-sensitive refusal reasoning, and invisible prompt-injection payloads. Client-side storage and cross-context replay make reasoning traces a data-security, model-IP, and agent-rollout integrity boundary, not just a UX implementation detail.",
+      "named_entities": [
+        "OpenAI",
+        "Anthropic",
+        "Google",
+        "MATS Research",
+        "ELLIS Institute Tubingen",
+        "Max Planck Institute for Intelligent Systems",
+        "Tubingen AI Center",
+        "Snyk",
+        "Claude",
+        "GPT",
+        "Gemini",
+        "Kimi K3",
+        "GLM"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "route_note": "Broad model-family and provider facts for Claude, GPT, Gemini, Kimi, and GLM belong upstream."
+        },
+        {
+          "owner": "ai-dev-wiki",
+          "route_note": "General logging, session transcript hygiene, and developer workflow guidance for not publishing opaque reasoning blocks belongs upstream; this repo should keep security implications for reasoning confidentiality, credential leakage, and prompt-injection channels."
+        }
+      ],
+      "confidence_notes": "Medium-high confidence. The primary paper was fetched but did not expose a clear publication date; in-window qualification relies on WIRED and The Hacker News coverage dated within the collection window.",
+      "follow_up_actions": [
+        "During ingest, avoid reproducing exploit prompts or recovered secret examples.",
+        "Track provider postmortems or official mitigation advisories if OpenAI, Anthropic, or Google publish them.",
+        "Consider a local security lens for encrypted reasoning blocks as sensitive artifacts in agent logs."
+      ]
+    },
+    {
+      "id": "2026-08-12-csa-top-threats-cloud-ai-system-compromise",
+      "title": "CSA 2026 Top Threats report adds AI-enhanced attacks and AI system compromise",
+      "source_urls": [
+        "https://cloudsecurityalliance.org/research",
+        "https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-2026"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cloudsecurityalliance.org/research",
+          "date": "Release Date: 08/12/2026",
+          "date_type": "visible release date on CSA research index"
+        },
+        {
+          "url": "https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-2026",
+          "date": "No explicit release date on artifact page in fetched content; CSA research index lists 08/12/2026",
+          "date_type": "artifact page date missing; index date used"
+        }
+      ],
+      "concise_factual_summary": "CSA's 2026 Top Threats to Cloud Computing Survey Report says identity, AI, third-party resources, and API threats dominate the cloud threat landscape. It states two AI security risks enter the rankings for the first time: AI-Enhanced Attacks, covering adversarial use of AI to improve and automate attacks, and AI System Compromise, covering manipulation or abuse of AI models, data, agents, tools, and pipelines.",
+      "evidence_classification": "official standards/security-organization research publication",
+      "affected_boundary_or_version": "Cloud security risk management, identity and access management, AI systems, agents, tools, pipelines, APIs, third-party dependencies, and CSA AI Cloud Controls Matrix v1.1 mappings",
+      "why_it_matters_for_ai_security": "The report makes AI system compromise and AI-enabled attacker automation first-class cloud threats, tying AI security to identity, APIs, third-party dependencies, software development, cloud data, visibility, change control, and resilience.",
+      "named_entities": [
+        "Cloud Security Alliance",
+        "CSA Top Threats",
+        "CSA AI Cloud Controls Matrix v1.1",
+        "CSA Security Guidance v5"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "route_note": "Broad CSA organization/background facts route upstream."
+        },
+        {
+          "owner": "ai-dev-wiki",
+          "route_note": "General development controls for APIs, dependencies, and software delivery route upstream; this repo should keep AI security governance, risk, and cloud-control implications."
+        }
+      ],
+      "confidence_notes": "High confidence on official CSA content and release date from the CSA research index. The artifact page itself lacked a fetched release-date field.",
+      "follow_up_actions": [
+        "During ingest, map this item to governance, cloud deployment, identity, and supply-chain security pages rather than broad CSA background.",
+        "Check whether local pages already cite CSA AICM v1.1 before adding any durable control mapping."
+      ]
+    },
+    {
+      "id": "2026-08-12-nist-ai-enabled-vulnerability-management-rfi",
+      "title": "NIST seeks feedback on AI-enabled vulnerability management and NVD modernization",
+      "source_urls": [
+        "https://www.nist.gov/blogs/cybersecurity-insights/shaping-nvd-future-we-need-your-feedback-ai-enabled-vulnerability",
+        "https://www.federalregister.gov/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.nist.gov/blogs/cybersecurity-insights/shaping-nvd-future-we-need-your-feedback-ai-enabled-vulnerability",
+          "date": "August 12, 2026",
+          "date_type": "visible publication date"
+        }
+      ],
+      "concise_factual_summary": "NIST published a Cybersecurity Insights post seeking feedback on AI-enabled vulnerability management and NVD modernization. The post says AI creates opportunities to discover and exploit vulnerabilities and to strengthen cybersecurity response, and that NIST wants to improve NVD scalability, automation, interoperability, transparency, and utility. It also says NIST has begun V-etalon, an AI-assisted tool for enriching vulnerability information, and asks for feedback in areas including vulnerability data and standards, remediation deployment and monitoring, and development processes by October 13, 2026.",
+      "evidence_classification": "official government cybersecurity standards and vulnerability-management source",
+      "affected_boundary_or_version": "NVD, vulnerability information enrichment, vulnerability management process, remediation monitoring, CPE specifications, and AI-enabled cyber tooling",
+      "why_it_matters_for_ai_security": "AI security assurance depends on trustworthy vulnerability metadata for model-serving stacks, agent tools, dependencies, AI infrastructure, and AI-enabled vulnerability discovery. NIST is explicitly tying AI-enabled cyber capabilities to continuous, contextual, automated vulnerability management.",
+      "named_entities": [
+        "NIST",
+        "National Vulnerability Database",
+        "NVD",
+        "V-etalon",
+        "Common Platform Enumeration",
+        "CPE",
+        "NCCoE",
+        "Software and AI Agent Identity and Authorization"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "route_note": "Broad NIST/NVD background route upstream if needed."
+        },
+        {
+          "owner": "ai-dev-wiki",
+          "route_note": "General vulnerability-management workflow modernization and development-process implications route upstream; this repo should keep AI security standards, assurance, and vulnerability-data implications."
+        }
+      ],
+      "confidence_notes": "High confidence on visible date and official NIST source. The Federal Register RFI was linked but not separately fetched during this run, so the artifact relies on the NIST post for summary details.",
+      "follow_up_actions": [
+        "During ingest, fetch the Federal Register RFI if exact docket metadata is needed.",
+        "Track upcoming V-etalon release details and any NIST AI agent identity/authorization outputs."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Forcepoint persistent memory poisoning blog",
+      "url": "https://www.forcepoint.com/blog/x-labs/persistent-memory-poisoning-ai-agents",
+      "visible_date": "August 4, 2026",
+      "reason": "Stale outside strict two-day cutoff, despite concrete AI-agent memory poisoning facts and later secondary coverage."
+    },
+    {
+      "title": "Forcepoint Agentic AI Trust Vulnerabilities report landing page",
+      "url": "https://www.forcepoint.com/resources/reports/ai-threat-research-report",
+      "visible_date": "No explicit in-window publication date fetched",
+      "reason": "Concrete agentic trust and sandbox-escape claims were visible, but the fetched page lacked a qualifying visible publication or update date."
+    },
+    {
+      "title": "CSA Autonomous Pentest Assurance Standard (APAS) peer review page",
+      "url": "https://cloudsecurityalliance.org/artifacts/autonomous-pentest-assurance-standard-apas",
+      "visible_date": "Open Until: 08/12/2026",
+      "reason": "Boundary-only open-until date; no visible publication or update date fetched. Keep as a follow-up for standards ingest if a publication date is confirmed."
+    },
+    {
+      "title": "OWASP Top 10 for LLM Applications 2026 legacy project page",
+      "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+      "visible_date": "Published August 4, 2026 for current release",
+      "reason": "Concrete AI application security standard, but stale outside strict two-day cutoff."
+    },
+    {
+      "title": "LangChain path traversal and sandbox escape advisory",
+      "url": "https://github.com/advisories/GHSA-gr75-jv2w-4656",
+      "visible_date": "Published Jun 12, 2026; updated Jul 8, 2026",
+      "reason": "Concrete AI-agent filesystem boundary vulnerability, but stale outside strict two-day cutoff."
+    },
+    {
+      "title": "SecurityWeek Mindgard funding article",
+      "url": "https://www.securityweek.com/mindgard-raises-30-million-to-protect-ai-systems/",
+      "visible_date": "August 12, 2026",
+      "reason": "In-window but primarily funding/product news. It mentions prior vulnerabilities without enough directly reproducible technical detail or a concrete new security delta."
+    },
+    {
+      "title": "New York Post OpenAI Astra testing pause article",
+      "url": "https://nypost.com/2026/08/10/business/openai-hits-pause-on-new-bot-testing-over-critical-risk-concerns-in-latest-ai-cybersecurity-incident/",
+      "visible_date": "Published 2 days ago in search result; URL date August 10, 2026",
+      "reason": "Ambiguous/boundary date relative to 2026-08-10T23:31:46Z cutoff and no primary OpenAI post was fetched."
+    },
+    {
+      "title": "The Hacker News VMware, Cisco, SAP, and Microsoft Defender vulnerability stories",
+      "url": "https://thehackernews.com/",
+      "visible_date": "Aug 12, 2026 story dates visible in search results",
+      "reason": "In-window security items, but no concrete AI-system, AI-agent, model, prompt, AI supply-chain, or AI governance delta was identified."
+    },
+    {
+      "title": "GitHub Advisory Database and NVD AI/MCP searches",
+      "url": "https://github.com/advisories",
+      "visible_date": "Search performed during 2026-08-12 run",
+      "reason": "No new in-window GitHub-reviewed AI/MCP/LangChain-style advisory was located; returned relevant AI-agent advisories were stale or unrelated 2025 results."
+    },
+    {
+      "title": "CISA AI/security advisory searches",
+      "url": "https://www.cisa.gov/news-events/cybersecurity-advisories",
+      "visible_date": "Search performed during 2026-08-12 run",
+      "reason": "No in-window CISA advisory with a concrete AI security delta was located; general CISA homepage results and older advisories were excluded."
+    }
+  ],
+  "routing_summary": {
+    "routing_count": 8,
+    "notes": [
+      "LiteLLM, Trivy, PyPI, provider, and company catalog facts route to ai-wiki; AI gateway supply-chain risk remains local.",
+      "CI/CD and developer workflow hardening from the LiteLLM incident routes to ai-dev-wiki; AI credential and infrastructure exposure remains local.",
+      "Model-family/provider background for OpenAI, Anthropic, Google, Claude, GPT, Gemini, Kimi, and GLM routes to ai-wiki; encrypted reasoning confidentiality remains local.",
+      "Developer session-log hygiene for opaque reasoning blocks routes to ai-dev-wiki; secret leakage and hidden prompt-injection boundaries remain local.",
+      "CSA background routes to ai-wiki; AI security governance and cloud-control implications remain local.",
+      "API, dependency, and delivery-practice controls in CSA materials route to ai-dev-wiki when framed as development practice.",
+      "NIST/NVD institutional background routes to ai-wiki; AI vulnerability-data and assurance implications remain local.",
+      "General vulnerability-management workflow modernization routes to ai-dev-wiki; AI security standards and vulnerability-management assurance remain local."
+    ]
+  },
+  "confidence_summary": "Four qualifying findings were captured. Three rely on primary or official sources with visible in-window dates. One research finding uses an undated fetched primary paper plus in-window WIRED and The Hacker News coverage; it is marked medium-high confidence.",
+  "validation": {
+    "jq_empty": "passed",
+    "python3_m_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": []
+}

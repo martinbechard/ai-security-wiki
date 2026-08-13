@@ -18,6 +18,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Evaluation artifact repository agent coordination](evaluation-artifact-repository-agent-coordination.md)
 - [Slopsquatting package hallucination risk](slopsquatting-package-hallucination-risk.md)
 - [DB-GPT unauthenticated path traversal remote code execution](db-gpt-unauthenticated-path-traversal-rce.md)
+- [LiteLLM supply-chain secret exposure](litellm-supply-chain-secret-exposure.md)
 
 ## Authoritative Sources
 

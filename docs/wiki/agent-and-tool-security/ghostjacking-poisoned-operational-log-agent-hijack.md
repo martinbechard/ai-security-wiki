@@ -11,7 +11,9 @@ tags: ["agent-and-tool-security", "threats-and-attacks", "incident-response"]
 
 Ghostjacking is a demonstrated attack pattern where malicious instructions are planted in logs, alerts, or operational artifacts that an AI agent later reads through trusted tools. The [August 11 topic news collector source](../../../raw/processed/2026-08-11/ai-security-wiki-topic-news-collector-2026-08-11T233115Z.json) records [SecurityWeek reporting](https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/) on Tenet Security's DEF CON demonstration, including Cloudflare logs, Datadog alerts, and Sentry-to-coding-agent handoffs.
 
-Broad Cloudflare, Datadog, Sentry, Claude Code, and incident-workflow background belongs upstream. Locally, Ghostjacking matters because blocked or untrusted input can become trusted evidence when faithfully logged, then be consumed by an authorized agent with permission to change DNS, run code, or access cloud and environment secrets. The collected examples are controlled demonstrations, not confirmed production intrusions.
+The [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json) reinforces that the demonstrations covered DNS alteration, command execution, credential theft, and cross-agent trust abuse in controlled tests. It preserves the distinction between demonstrated research and confirmed production exploitation.
+
+Broad Cloudflare, Datadog, Sentry, [Claude Code](../../../upstream-ai-wiki/developer-tools/claude-code.md), and incident-workflow background belongs upstream. Locally, Ghostjacking matters because blocked or untrusted input can become trusted evidence when faithfully logged, then be consumed by an authorized agent with permission to change DNS, run code, or access cloud and environment secrets. The collected examples are controlled demonstrations, not confirmed production intrusions.
 
 ## Security Impact
 
@@ -33,6 +35,7 @@ Broad Cloudflare, Datadog, Sentry, Claude Code, and incident-workflow background
 ## Authoritative Sources
 
 - [August 11 topic news collector source](../../../raw/processed/2026-08-11/ai-security-wiki-topic-news-collector-2026-08-11T233115Z.json)
+- [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json)
 - SecurityWeek Ghostjacking report: https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/
 - Tenet Security site: https://tenetsecurity.ai
 
@@ -54,7 +57,7 @@ Broad Cloudflare, Datadog, Sentry, Claude Code, and incident-workflow background
 - [coding agent command approval boundaries](coding-agent-command-approval-boundaries.md)
 - [agent network egress controls](agent-network-egress-controls.md)
 - [AI coding telemetry redaction controls](../data-and-privacy/ai-coding-telemetry-redaction-controls.md)
-- Upstream AI development wiki owns general incident-workflow and coding-agent handoff practice.
+- Upstream AI wiki owns broad [Claude Code](../../../upstream-ai-wiki/developer-tools/claude-code.md) context; upstream AI development wiki owns general incident-workflow and coding-agent handoff practice.
 
 ## Open Questions
 
@@ -64,3 +67,4 @@ Broad Cloudflare, Datadog, Sentry, Claude Code, and incident-workflow background
 ## Maintenance Notes
 
 - Created on 2026-08-11 from the [August 11 topic collector](../../../raw/processed/2026-08-11/ai-security-wiki-topic-news-collector-2026-08-11T233115Z.json) after routing broad observability and coding-agent workflow context upstream.
+- Updated on 2026-08-12 from the [August 12 leaf watcher](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json) with additional controlled-demo impact boundaries and exploitation-status caveat.

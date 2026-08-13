@@ -11,7 +11,9 @@ tags: ["data-and-privacy", "infrastructure-and-supply-chain"]
 
 The AI Sidebar with DeepSeek AI Chrome extension is a browser-extension supply-chain and AI-conversation theft case. The [August 11 topic news collector source](../../../raw/processed/2026-08-11/ai-security-wiki-topic-news-collector-2026-08-11T233115Z.json) records [Netskope Threat Labs research](https://www.netskope.com/blog/ai-sidebar-extension-monetizes-its-own-updates) and [SecurityWeek reporting](https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/) that extension ID `inhcgfpbfdjbjogdfjbclgolkmhnooop` was removed after scraping ChatGPT and DeepSeek conversations, then reappeared and delivered new malicious updates through Google's CRX CDN.
 
-Broad ChatGPT, DeepSeek, Chrome, Aitopia, and extension product context belongs upstream. Locally, this page owns the data-security boundary: AI chat content in browser extensions can include prompts, retrieved context, credentials, customer data, source snippets, and decisions, and browser auto-update channels can reintroduce code after marketplace removal.
+The [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json) adds that version 1.7.3.0 delivered a monetization payload on update and uninstall events after relisting. Preserve that as a separate update-channel risk from the earlier AI-conversation theft while retaining the same extension identity.
+
+Broad [ChatGPT](../../../upstream-ai-wiki/models/openai-gpt-5-chatgpt-models.md), [DeepSeek](../../../upstream-ai-wiki/companies/deepseek-ai.md), Chrome, Aitopia, and extension product context belongs upstream. Locally, this page owns the data-security boundary: AI chat content in browser extensions can include prompts, retrieved context, credentials, customer data, source snippets, and decisions, and browser auto-update channels can reintroduce code after marketplace removal.
 
 ## Security Impact
 
@@ -33,6 +35,7 @@ Broad ChatGPT, DeepSeek, Chrome, Aitopia, and extension product context belongs 
 ## Authoritative Sources
 
 - [August 11 topic news collector source](../../../raw/processed/2026-08-11/ai-security-wiki-topic-news-collector-2026-08-11T233115Z.json)
+- [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json)
 - Netskope Threat Labs AI Sidebar research: https://www.netskope.com/blog/ai-sidebar-extension-monetizes-its-own-updates
 - SecurityWeek AI Sidebar report: https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/
 
@@ -54,7 +57,7 @@ Broad ChatGPT, DeepSeek, Chrome, Aitopia, and extension product context belongs 
 - [AI development context exclusion controls](ai-development-context-exclusion-controls.md)
 - [AI coding telemetry access controls](ai-coding-telemetry-access-controls.md)
 - [slopsquatting package hallucination risk](../infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
-- Upstream AI wiki owns broad ChatGPT, DeepSeek, Chrome, and browser-extension product context.
+- Upstream AI wiki owns broad [ChatGPT](../../../upstream-ai-wiki/models/openai-gpt-5-chatgpt-models.md), [DeepSeek](../../../upstream-ai-wiki/companies/deepseek-ai.md), Chrome, and browser-extension product context.
 
 ## Open Questions
 
@@ -64,3 +67,4 @@ Broad ChatGPT, DeepSeek, Chrome, Aitopia, and extension product context belongs 
 ## Maintenance Notes
 
 - Created on 2026-08-11 from the [August 11 topic collector](../../../raw/processed/2026-08-11/ai-security-wiki-topic-news-collector-2026-08-11T233115Z.json) after routing broad AI product and browser-extension catalog context upstream.
+- Updated on 2026-08-12 from the [August 12 leaf watcher](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json) to separate the relisted monetization payload from prior AI-chat theft evidence.

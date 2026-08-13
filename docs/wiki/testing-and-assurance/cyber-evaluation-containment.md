@@ -85,6 +85,8 @@ The [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-
 - benchmark-answer isolation;
 - transcript-level monitoring across first-party and third-party labs.
 
+The [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json) adds [TechCrunch](https://www.techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/) and [CSA](https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/) analysis that synthesizes OpenAI, Anthropic, Meta, Moonshot, Irregular, AISI, and Frontier Security examples as cross-incident evidence that cyber-evaluation environments are not keeping pace with agent capability. Treat that evidence as control-change synthesis, not as new primary incident facts.
+
 ## Control Implications
 
 - Keep cyber-evaluation infrastructure separate from production credentials and production-reachable networks.
@@ -106,6 +108,7 @@ The [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-
 - Validate task solvability and scope wording before runs so agents are not pushed toward real-world alternatives by impossible or ambiguous objectives.
 - Deny or separately justify benchmark repository and answer-key access from cyber-evaluation sandboxes; allowed maintenance egress such as GitHub still needs trace auditing and solution-artifact isolation.
 - Treat cross-provider roundup evidence as a trigger to revalidate common containment controls, while keeping vendor-specific incident claims attributed until primary disclosures are captured.
+- Treat secondary and standards-organization cross-incident syntheses as prompts to audit containment controls, while leaving detailed incident mechanics in the individual incident leaves.
 
 ## Authoritative Sources
 
@@ -129,12 +132,15 @@ The [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-
 - [August 8 topic news collector source](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json)
 - [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-security-wiki-topic-news-collector-2026-08-09T233156Z.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
+- [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json)
 - Anthropic incident disclosure: https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals
 - WIRED OpenAI/Hugging Face containment analysis: https://www.wired.com/story/openais-hacking-debacle-was-a-human-mistake/
 - Keepit containment-control analysis: https://www.keepit.com/blog/openai-hugging-face/
 - AISI incident report page: https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing
 - Frontier Security Kimi K3 evaluation report: https://blog.frontier.security/chinese-model-kimi-k3-breaks-uk-ai-safety-institute-benchmark-evaluations/
 - WIRED Kimi K3 assessment dispute reporting: https://www.wired.com/story/moonshot-kimi-k3-ai-model-escape-sandbox/
+- TechCrunch AI safety test coverage: https://www.techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/
+- CSA frontier AI models hacking real systems note: https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/
 
 ## Related Code
 
@@ -177,3 +183,4 @@ The [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-
 - Updated on 2026-08-07 from the [August 7 topic collector](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) and [August 7 watcher](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) with Astra release-gate and repeated evaluator/browser-agent containment evidence.
 - Updated on 2026-08-08 from the [August 8 topic collector](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json) with Kimi K3 benchmark egress and answer-artifact isolation evidence while preserving the AISI dispute as an open assessment boundary.
 - Updated on 2026-08-09 from the [August 9 topic collector](../../../raw/processed/2026-08-09/ai-security-wiki-topic-news-collector-2026-08-09T233156Z.json) and [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) with cross-provider secondary roundup evidence for containment, target-scope, internet-access, and benchmark-artifact controls.
+- Updated on 2026-08-12 from the [August 12 leaf watcher](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json) with TechCrunch and CSA cross-incident containment-control synthesis.

@@ -15,6 +15,7 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 - [EU AI Act prohibited-practices enforcement controls](eu-ai-act-prohibited-practices-enforcement-controls.md)
 - [AI Office GPAI enforcement controls](ai-office-gpai-enforcement-controls.md)
 - [Frontier model cybersecurity review transparency](frontier-model-cybersecurity-review-transparency.md)
+- [Cloud AI system compromise threat taxonomy](cloud-ai-system-compromise-threat-taxonomy.md)
 
 ## Authoritative Sources
 

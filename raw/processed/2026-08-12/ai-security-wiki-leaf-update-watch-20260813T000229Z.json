@@ -1,0 +1,443 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "docs_wiki_updated": false,
+  "evidence_classifications_used": [
+    "confirmed_exploitation",
+    "control_change",
+    "demonstrated_research",
+    "disclosed_vulnerability"
+  ],
+  "excluded_candidate_count": 12,
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/claude-code-templates-studio-rce.md",
+      "reason": "GitHub advisory itself was published July 14, 2026, outside the seven-day window; used only as supporting technical detail for the in-window NVD CVE update.",
+      "source_url": "https://github.com/davila7/claude-code-templates/security/advisories/GHSA-79wm-x847-7cvg"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cursor-auto-run-sandbox-escapes.md",
+      "reason": "Visible publication was four weeks ago, outside the seven-day window.",
+      "source_url": "https://github.com/cursor/cursor/security/advisories/GHSA-p9g2-cr55-cw9c"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cursor-auto-run-sandbox-escapes.md",
+      "reason": "Published about three weeks ago; not a new in-window same-leaf update.",
+      "source_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-coding-agent-sandbox-escapes-20260722-c/"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ghostsplice-mcp-split-instruction-exfiltration.md",
+      "reason": "Primary disclosure showed only July 2026; month-only date is ambiguous and not accepted as direct in-window date evidence.",
+      "source_url": "https://asset-group.github.io/disclosures/ghostsplice/"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "reason": "CVE-2026-58484 content is about three weeks old or lacks an in-window visible update for this same leaf.",
+      "source_url": "https://mondoo.com/vulnerability-intelligence/vulnerability/CVE-2026-58484"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "reason": "Published June 18, 2026 and updated June 19, 2026, outside the seven-day window.",
+      "source_url": "https://github.com/advisories/GHSA-48x2-6pr9-2jjf"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agentic-browser-intent-collision.md",
+      "reason": "Relevant PleaseFix/Claude-in-Chrome items are dated August 5, 2026; with no time-of-day they are boundary/outside the exact UTC cutoff and excluded.",
+      "source_url": "https://labs.zenity.io/"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "reason": "No new in-window same-leaf update found; existing advisory coverage is older.",
+      "source_url": "https://www.vulncheck.com/advisories/network-ai-before-cryptographic-signature-verification-bypass"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md",
+      "reason": "Page was crawled today but had no visible published or updated date; custom-LLM page dated yesterday is adjacent, not command-approval same-leaf evidence.",
+      "source_url": "https://junie.jetbrains.com/docs/action-allowlist.html"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+      "reason": "AgentForger source is dated July 23, 2026, outside the seven-day window.",
+      "source_url": "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery"
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/meta-irregular-third-party-evaluation-scope-failure.md",
+      "reason": "Accepted for the broader cyber-evaluation containment leaf; for the Meta-specific incident leaf it did not add a distinct Meta-only update beyond previously captured disclosure/follow-up.",
+      "source_url": "https://www.techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/"
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/meta-irregular-third-party-evaluation-scope-failure.md",
+      "reason": "Search result showed an in-window date, but it appeared to restate the known Meta/Irregular disclosure and was not used as a distinct qualifying update without deeper direct-date verification.",
+      "source_url": "https://www.infosecurity-magazine.com/news/meta-ai-exploit-incident/"
+    }
+  ],
+  "federation_boundary": "Broad AI entities belong in ai-wiki and general AI-development practices belong in ai-dev-wiki; this artifact keeps only security-specific updates and routing notes for local ingest.",
+  "follow_up_notes": [
+    "Run normal raw-source ingest before editing docs/wiki.",
+    "During ingest, avoid duplicating prior OpenAI/Hugging Face/Meta incident facts; focus on new containment synthesis where applicable.",
+    "Verify CVE.org/NVD direct records again for PapersGPT if the web tool cannot open CVE.org cleanly."
+  ],
+  "leaf_selection": {
+    "leaf_universe_count": 85,
+    "selected_leaf_count": 15,
+    "selected_leaf_ids": [
+      "docs/wiki/agent-and-tool-security/claude-code-templates-studio-rce.md",
+      "docs/wiki/agent-and-tool-security/cursor-auto-run-sandbox-escapes.md",
+      "docs/wiki/agent-and-tool-security/ghostjacking-poisoned-operational-log-agent-hijack.md",
+      "docs/wiki/agent-and-tool-security/ghostsplice-mcp-split-instruction-exfiltration.md",
+      "docs/wiki/data-and-privacy/ai-sidebar-extension-ai-chat-theft.md",
+      "docs/wiki/infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md",
+      "docs/wiki/model-and-prompt-security/papersgpt-zotero-llm-response-rce.md",
+      "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "docs/wiki/agent-and-tool-security/agentic-browser-intent-collision.md",
+      "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md",
+      "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+      "docs/wiki/incident-response/meta-irregular-third-party-evaluation-scope-failure.md"
+    ],
+    "selection_order": "new or unchecked leaves first, then oldest last_checked_at, ties by stable relative path"
+  },
+  "qualifying_update_count": 7,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "developer workstation",
+        "local Studio HTTP server",
+        "LAN and drive-by browser request boundary",
+        "source code and credential exposure"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should add the CVE/NVD timing and preserve the GitHub advisory as supporting root-cause/mitigation evidence.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/claude-code-templates-studio-rce.md",
+      "named_entities": [
+        "Claude Code Templates",
+        "Claude Code Studio",
+        "GitHub Advisory Database",
+        "NVD",
+        "CVE-2026-73222",
+        "GHSA-79wm-x847-7cvg"
+      ],
+      "published_or_updated_at": "2026-08-11",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73222",
+        "https://github.com/davila7/claude-code-templates/security/advisories/GHSA-79wm-x847-7cvg"
+      ],
+      "summary": "NVD added CVE-2026-73222 for Claude Code Templates Studio unauthenticated OS command injection via the --studio server. The GitHub advisory describes no authentication, wildcard CORS, 0.0.0.0 binding, shell execution, and fixed version 1.29.4.",
+      "upstream_routing": "Keep local security vulnerability/control boundary. Route broad Claude Code Templates product context upstream to ai-dev-wiki or ai-wiki if needed.",
+      "visible_date_evidence": "NVD published and last modified 08/11/2026; NVD change history received from GitHub on 8/11/2026 3:18:51 PM."
+    },
+    {
+      "affected_boundaries": [
+        "security log and alert ingestion",
+        "Cloudflare firewall log review",
+        "Datadog alert handling",
+        "Sentry Seer to coding-agent handoff",
+        "agent trust in operational telemetry"
+      ],
+      "evidence_classification": "demonstrated_research",
+      "follow_up_note": "Ingest should distinguish controlled demonstrations from confirmed exploitation in the wild.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ghostjacking-poisoned-operational-log-agent-hijack.md",
+      "named_entities": [
+        "Tenet Security",
+        "Ghostjacking",
+        "Cloudflare",
+        "Datadog",
+        "Sentry",
+        "Claude Code",
+        "DEF CON"
+      ],
+      "published_or_updated_at": "2026-08-10",
+      "source_urls": [
+        "https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/",
+        "https://tenetsecurity.ai/"
+      ],
+      "summary": "SecurityWeek reported Tenet research showing Ghostjacking, where attacker-planted instructions in logs or alerts can manipulate agents reviewing Cloudflare, Datadog, or Sentry data. The demonstrations include DNS alteration, command execution, credential theft, and cross-agent trust abuse in controlled tests.",
+      "upstream_routing": "Retain the attack pattern and operational security controls locally; route Tenet company/product background upstream to ai-wiki.",
+      "visible_date_evidence": "SecurityWeek article dated August 10, 2026 8:59 AM ET; Tenet homepage links GhostJacking as DEF CON research without an exact visible page date in the captured text."
+    },
+    {
+      "affected_boundaries": [
+        "MCP server trust boundary",
+        "tool description channel",
+        "tool result channel",
+        "server-initiated sampling",
+        "coding-agent secret handling"
+      ],
+      "evidence_classification": "demonstrated_research",
+      "follow_up_note": "Ingest should note that the primary ASSET page had only month-level date evidence while the dated secondary report is in-window.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ghostsplice-mcp-split-instruction-exfiltration.md",
+      "named_entities": [
+        "GhostSplice",
+        "ASSET Research Group",
+        "Model Context Protocol",
+        "The Hacker News"
+      ],
+      "published_or_updated_at": "2026-08-11",
+      "source_urls": [
+        "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html",
+        "https://asset-group.github.io/disclosures/ghostsplice/"
+      ],
+      "summary": "The Hacker News covered ASSET Research Group GhostSplice findings that malicious MCP servers can split a secret-exfiltration instruction across tool descriptions, tool results, and server-initiated sampling so coding agents reassemble the malicious task in context. The report says no CVE identifiers were listed as of August 10, 2026 and frames the evidence as isolated-project testing.",
+      "upstream_routing": "Keep the MCP split-instruction security finding locally; route broad MCP protocol background upstream to ai-wiki.",
+      "visible_date_evidence": "The Hacker News article dated Aug 11, 2026; ASSET disclosure shows only July 2026 and was treated as supporting, not direct in-window date evidence."
+    },
+    {
+      "affected_boundaries": [
+        "browser extension supply chain",
+        "enterprise browser endpoints",
+        "Chrome Web Store curation boundary",
+        "AI conversation data exposure history",
+        "extension auto-update channel"
+      ],
+      "evidence_classification": "confirmed_exploitation",
+      "follow_up_note": "Ingest should separate prior conversation theft from the newer monetization payload while preserving the same extension ID and update-channel risk.",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-sidebar-extension-ai-chat-theft.md",
+      "named_entities": [
+        "AI Sidebar with DeepSeek AI",
+        "Netskope Threat Labs",
+        "SecurityWeek",
+        "Google Chrome Web Store",
+        "Extchange.com",
+        "DeepSeek AI display name"
+      ],
+      "published_or_updated_at": "2026-08-11",
+      "source_urls": [
+        "https://www.netskope.com/blog/ai-sidebar-extension-monetizes-its-own-updates",
+        "https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/"
+      ],
+      "summary": "Netskope reported that the same AI Sidebar Chrome extension previously removed for AI conversation theft was relisted and delivered version 1.7.3.0 through Google CRX infrastructure with a malicious monetization payload on update/uninstall events. SecurityWeek corroborated the relisting, enterprise endpoint delivery, and Netskope detection/blocking.",
+      "upstream_routing": "Keep the browser-extension security and AI chat theft implications locally; route broad extension/product identity background upstream only if needed.",
+      "visible_date_evidence": "Netskope post dated August 11, 2026; SecurityWeek article dated August 11, 2026 7:15 AM ET."
+    },
+    {
+      "affected_boundaries": [
+        "DB-GPT server file-upload endpoint",
+        "HTTP user_id header trust boundary",
+        "server filesystem write boundary",
+        "remote code execution path"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should use NVD/VulnCheck as the dated vulnerability evidence and the GitHub issue/commit as patch provenance.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md",
+      "named_entities": [
+        "DB-GPT",
+        "eosphoros-ai",
+        "VulnCheck",
+        "NVD",
+        "CVE-2026-73034"
+      ],
+      "published_or_updated_at": "2026-08-11",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73034",
+        "https://www.vulncheck.com/advisories/db-gpt-path-traversal-arbitrary-file-write-via-user-id-header",
+        "https://github.com/eosphoros-ai/DB-GPT/issues/3104",
+        "https://github.com/eosphoros-ai/DB-GPT/commit/e0c741bd2b5e521b128cffb3f68982dde3f7b359"
+      ],
+      "summary": "NVD added CVE-2026-73034 for DB-GPT v0.8.1 unauthenticated path traversal via the user_id upload header, enabling arbitrary file writes that can lead to remote code execution through startup hooks, cron directories, or agent scripts.",
+      "upstream_routing": "Keep the security-specific vulnerability locally; route general DB-GPT product background to ai-wiki.",
+      "visible_date_evidence": "NVD published and last modified 08/11/2026; NVD change history received from VulnCheck 8/11/2026 4:18:46 PM."
+    },
+    {
+      "affected_boundaries": [
+        "Zotero extension execution context",
+        "LLM response handling",
+        "PDF prompt-injection path",
+        "custom LLM endpoint trust boundary",
+        "local file and process access"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should verify the CVE.org record directly during synthesis if the current web tool remains unable to open it cleanly.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/papersgpt-zotero-llm-response-rce.md",
+      "named_entities": [
+        "PapersGPT for Zotero",
+        "VulnCheck",
+        "CVE-2026-73032",
+        "Zotero"
+      ],
+      "published_or_updated_at": "2026-08-11",
+      "source_urls": [
+        "https://www.vulncheck.com/advisories/papersgpt-for-zotero-rce-via-unsanitized-llm-response-eval",
+        "https://www.cve.org/CVERecord?id=CVE-2026-73032"
+      ],
+      "summary": "VulnCheck published CVE-2026-73032 for PapersGPT for Zotero 0.6.1 remote code execution caused by unsanitized LLM output passed to window.eval() in views.ts. The advisory describes prompt-injection-in-PDF, MITM, and malicious custom LLM endpoint exploit paths into Zotero chrome-privileged execution.",
+      "upstream_routing": "Keep the LLM-response-to-RCE security finding locally; route generic Zotero/PapersGPT product context upstream if needed.",
+      "visible_date_evidence": "VulnCheck advisory/search result shows date 8/11/2026 for CVE-2026-73032."
+    },
+    {
+      "affected_boundaries": [
+        "cyber-evaluation sandboxing",
+        "live internet egress",
+        "third-party system exposure",
+        "unreleased model security testing",
+        "human oversight and containment controls"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should avoid duplicating prior incident facts and focus on the new cross-incident containment-control synthesis.",
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "named_entities": [
+        "TechCrunch",
+        "Cloud Security Alliance",
+        "OpenAI",
+        "Anthropic",
+        "Meta",
+        "Moonshot AI",
+        "Irregular",
+        "AISI",
+        "Frontier Security",
+        "Hugging Face"
+      ],
+      "published_or_updated_at": "2026-08-09",
+      "source_urls": [
+        "https://www.techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/"
+      ],
+      "summary": "TechCrunch synthesized the OpenAI, Anthropic, Meta, Moonshot, Irregular, AISI, and Frontier Security evaluation-containment incidents as evidence that cyber-evaluation environments are not keeping pace with agent capability. CSA published an in-window point-in-time analysis recommending security and governance attention to leaked test environments and frontier-model cyber evaluation controls.",
+      "upstream_routing": "Keep the containment and assurance implications locally; route broad model/company catalog facts upstream.",
+      "visible_date_evidence": "TechCrunch article dated August 9, 2026; CSA note says it is based on public information as of August 7, 2026."
+    }
+  ],
+  "raw_processed_updated": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-13T00:02:29Z",
+  "run_at_local": "2026-08-12T20:02:29-0400",
+  "source_urls_checked": [
+    "https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514",
+    "https://asset-group.github.io/disclosures/ghostsplice/",
+    "https://cybersecuritynews.com/chatgpt-agentforger-vulnerability/",
+    "https://github.com/Jovancoding/Network-AI/releases/tag/v5.12.2",
+    "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf",
+    "https://github.com/advisories/GHSA-48x2-6pr9-2jjf",
+    "https://github.com/cursor/cursor/security/advisories/GHSA-p9g2-cr55-cw9c",
+    "https://github.com/davila7/claude-code-templates/blob/main/CHANGELOG.md",
+    "https://github.com/davila7/claude-code-templates/security/advisories/GHSA-79wm-x847-7cvg",
+    "https://github.com/eosphoros-ai/DB-GPT/commit/e0c741bd2b5e521b128cffb3f68982dde3f7b359",
+    "https://github.com/eosphoros-ai/DB-GPT/issues/3104",
+    "https://github.com/papersgpt/papersgpt-for-zotero",
+    "https://junie.jetbrains.com/docs/action-allowlist.html",
+    "https://junie.jetbrains.com/docs/custom-llm-models.html",
+    "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-coding-agent-sandbox-escapes-20260722-c/",
+    "https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/",
+    "https://labs.zenity.io/",
+    "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery",
+    "https://labs.zenity.io/p/agentforger-part-2-the-autonomous-insider",
+    "https://mondoo.com/vulnerability-intelligence/vulnerability/CVE-2026-58484",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-58413",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-58484",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-73034",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-73222",
+    "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+    "https://tenetsecurity.ai/",
+    "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html",
+    "https://vulners.com/cve/CVE-2026-73217",
+    "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+    "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+    "https://www.cve.org/CVERecord?id=CVE-2026-73032",
+    "https://www.darkreading.com/cyber-risk/ghostjacking-identity-governance-gaps-ai-agents",
+    "https://www.infosecurity-magazine.com/news/meta-ai-exploit-incident/",
+    "https://www.netskope.com/blog/ai-sidebar-extension-monetizes-its-own-updates",
+    "https://www.ox.security/research/malicious-chrome-extensions-steal-chatgpt-conversations",
+    "https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/",
+    "https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/",
+    "https://www.techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/",
+    "https://www.vulncheck.com/advisories/db-gpt-path-traversal-arbitrary-file-write-via-user-id-header",
+    "https://www.vulncheck.com/advisories/network-ai-before-cryptographic-signature-verification-bypass",
+    "https://www.vulncheck.com/advisories/papersgpt-for-zotero-rce-via-unsanitized-llm-response-eval",
+    "https://www.wired.com/story/openais-browser-could-be-hijacked-to-spam-your-whatsapp-contacts/",
+    "https://zenity.io/research/pleasefix-vulnerabilities"
+  ],
+  "source_window": {
+    "cutoff_utc": "2026-08-06T00:02:29Z",
+    "rule": "Include only sources published or visibly updated after the cutoff; exclude ambiguous, future, missing, and boundary-only dates.",
+    "type": "strict_last_7_days"
+  },
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/agentic-browser-intent-collision.md": [
+      "https://labs.zenity.io/",
+      "https://zenity.io/research/pleasefix-vulnerabilities",
+      "https://www.wired.com/story/openais-browser-could-be-hijacked-to-spam-your-whatsapp-contacts/"
+    ],
+    "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md": [
+      "https://www.vulncheck.com/advisories/network-ai-before-cryptographic-signature-verification-bypass",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-64622"
+    ],
+    "docs/wiki/agent-and-tool-security/claude-code-templates-studio-rce.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-73222",
+      "https://github.com/davila7/claude-code-templates/security/advisories/GHSA-79wm-x847-7cvg",
+      "https://github.com/davila7/claude-code-templates/blob/main/CHANGELOG.md"
+    ],
+    "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md": [
+      "https://junie.jetbrains.com/docs/action-allowlist.html",
+      "https://junie.jetbrains.com/docs/custom-llm-models.html"
+    ],
+    "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md": [
+      "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery",
+      "https://labs.zenity.io/p/agentforger-part-2-the-autonomous-insider",
+      "https://cybersecuritynews.com/chatgpt-agentforger-vulnerability/"
+    ],
+    "docs/wiki/agent-and-tool-security/cursor-auto-run-sandbox-escapes.md": [
+      "https://github.com/cursor/cursor/security/advisories/GHSA-p9g2-cr55-cw9c",
+      "https://vulners.com/cve/CVE-2026-73217",
+      "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-coding-agent-sandbox-escapes-20260722-c/"
+    ],
+    "docs/wiki/agent-and-tool-security/ghostjacking-poisoned-operational-log-agent-hijack.md": [
+      "https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/",
+      "https://tenetsecurity.ai/",
+      "https://www.darkreading.com/cyber-risk/ghostjacking-identity-governance-gaps-ai-agents"
+    ],
+    "docs/wiki/agent-and-tool-security/ghostsplice-mcp-split-instruction-exfiltration.md": [
+      "https://asset-group.github.io/disclosures/ghostsplice/",
+      "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html"
+    ],
+    "docs/wiki/data-and-privacy/ai-sidebar-extension-ai-chat-theft.md": [
+      "https://www.netskope.com/blog/ai-sidebar-extension-monetizes-its-own-updates",
+      "https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/",
+      "https://www.ox.security/research/malicious-chrome-extensions-steal-chatgpt-conversations"
+    ],
+    "docs/wiki/incident-response/meta-irregular-third-party-evaluation-scope-failure.md": [
+      "https://www.techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/",
+      "https://www.infosecurity-magazine.com/news/meta-ai-exploit-incident/",
+      "https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md": [
+      "https://mondoo.com/vulnerability-intelligence/vulnerability/CVE-2026-58484",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-58484"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-73034",
+      "https://www.vulncheck.com/advisories/db-gpt-path-traversal-arbitrary-file-write-via-user-id-header",
+      "https://github.com/eosphoros-ai/DB-GPT/issues/3104",
+      "https://github.com/eosphoros-ai/DB-GPT/commit/e0c741bd2b5e521b128cffb3f68982dde3f7b359"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md": [
+      "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf",
+      "https://github.com/Jovancoding/Network-AI/releases/tag/v5.12.2",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-58413",
+      "https://github.com/advisories/GHSA-48x2-6pr9-2jjf"
+    ],
+    "docs/wiki/model-and-prompt-security/papersgpt-zotero-llm-response-rce.md": [
+      "https://www.vulncheck.com/advisories/papersgpt-for-zotero-rce-via-unsanitized-llm-response-eval",
+      "https://www.cve.org/CVERecord?id=CVE-2026-73032",
+      "https://github.com/papersgpt/papersgpt-for-zotero"
+    ],
+    "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md": [
+      "https://www.techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/",
+      "https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/",
+      "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
+    ]
+  }
+}

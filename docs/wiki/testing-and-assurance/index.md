@@ -17,6 +17,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 - [AI-generated code security assurance](ai-generated-code-security-assurance.md)
 - [Frontier model critical cyber release gates](frontier-model-critical-cyber-release-gates.md)
 - [Codex Security plugin workflow boundaries](codex-security-plugin-workflow-boundaries.md)
+- [AI-enabled vulnerability management modernization](ai-enabled-vulnerability-management-modernization.md)
 
 ## Authoritative Sources
 

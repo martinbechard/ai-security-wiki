@@ -11,6 +11,8 @@ tags: ["agent-and-tool-security", "model-and-prompt-security", "data-and-privacy
 
 GhostSplice is a demonstrated MCP prompt-injection technique where a malicious or compromised MCP server places separately innocuous instruction fragments in tool descriptions, tool results, and sampling channels. The [August 11 topic news collector source](../../../raw/processed/2026-08-11/ai-security-wiki-topic-news-collector-2026-08-11T233115Z.json) records [The Hacker News reporting](https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html) and the [ASSET Research Group disclosure](https://asset-group.github.io/disclosures/ghostsplice/) as supporting technical evidence.
 
+The [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json) confirms the same split-instruction boundary across tool descriptions, tool results, and server-initiated sampling, and records that no CVE identifiers were listed as of August 10, 2026. The evidence remains isolated-project testing rather than a confirmed incident.
+
 Broad MCP protocol and server-catalog context belongs upstream in the [MCP security best practices](../../../upstream-ai-wiki/techniques/mcp-security-best-practices.md) and MCP protocol leaves. The local security boundary is narrower: an agent may recombine trusted-looking MCP metadata and results into a malicious objective, then exfiltrate SSH keys, `.env` files, source code, or customer data reachable to the agent. The collected evidence describes controlled tests with fake credentials and no CVE identifier or confirmed in-the-wild incident.
 
 ## Security Impact
@@ -33,6 +35,7 @@ Broad MCP protocol and server-catalog context belongs upstream in the [MCP secur
 ## Authoritative Sources
 
 - [August 11 topic news collector source](../../../raw/processed/2026-08-11/ai-security-wiki-topic-news-collector-2026-08-11T233115Z.json)
+- [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json)
 - The Hacker News GhostSplice report: https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html
 - ASSET Research Group GhostSplice disclosure: https://asset-group.github.io/disclosures/ghostsplice/
 
@@ -64,3 +67,4 @@ Broad MCP protocol and server-catalog context belongs upstream in the [MCP secur
 ## Maintenance Notes
 
 - Created on 2026-08-11 from the [August 11 topic collector](../../../raw/processed/2026-08-11/ai-security-wiki-topic-news-collector-2026-08-11T233115Z.json) after routing broad MCP and coding-agent adoption context upstream.
+- Updated on 2026-08-12 from the [August 12 leaf watcher](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json) with server-initiated sampling scope and no-CVE status.
