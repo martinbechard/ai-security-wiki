@@ -1,0 +1,336 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-08-13T23:31:50Z",
+  "run_timestamp_local": "2026-08-13T19:31:50-04:00",
+  "cutoff_window": {
+    "timezone_basis": "UTC",
+    "include_after_or_at": "2026-08-11T23:31:50Z",
+    "exclude_before": "2026-08-11T23:31:50Z",
+    "policy": "Only include public items with a visible publication or update timestamp inside the 48-hour window. Date-only August 11 items are treated as boundary-only and excluded unless a precise time confirms they are after the cutoff."
+  },
+  "repository_scope": {
+    "target_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "modified_paths": [
+      "raw/2026-08-13/ai-security-wiki-topic-news-collector-2026-08-13T233150Z.json"
+    ],
+    "not_modified": [
+      "docs/wiki",
+      "raw/processed"
+    ]
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "federation_source": "docs/wiki/federation.md",
+    "local_scope": "AI-specific security findings, affected security boundaries, mitigations, controls, assurance evidence, and incident lessons.",
+    "upstream_ai_wiki_scope": "Broad AI entities, companies, products, model families, frameworks, and MCP server catalogs.",
+    "upstream_ai_dev_wiki_scope": "General AI-assisted development practices, coding-agent workflow governance, verification patterns, adoption practices, and development governance."
+  },
+  "qualifying_items": [
+    {
+      "id": "2026-08-13-01-litellm-supply-chain-impact-update",
+      "title": "LiteLLM supply-chain impact update maps exposure across thousands of organizations",
+      "source_urls": [
+        "https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/",
+        "https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines",
+        "https://thehackernews.com/2026/08/malicious-litellm-releases-tied-to.html",
+        "https://docs.litellm.ai/blog/security-update-march-2026"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/",
+          "date": "2026-08-12T05:55:00-04:00",
+          "basis": "visible byline timestamp; qualifies inside the cutoff window"
+        },
+        {
+          "url": "https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines",
+          "date": "2026-08-11",
+          "basis": "date-only primary research page; supporting source, not sole qualification because it is boundary-date without a visible time"
+        },
+        {
+          "url": "https://thehackernews.com/2026/08/malicious-litellm-releases-tied-to.html",
+          "date": "2026-08-12",
+          "basis": "visible byline date; supporting in-window secondary source"
+        },
+        {
+          "url": "https://docs.litellm.ai/blog/security-update-march-2026",
+          "date": "2026-03-24 to 2026-03-27 updates",
+          "basis": "older project advisory used for affected versions and mitigation context"
+        }
+      ],
+      "evidence_classification": "public incident impact update; AI infrastructure supply-chain compromise; credential-exposure assessment",
+      "concise_factual_summary": "SecurityWeek's August 12 update reports CloudSEK's assessment that the March LiteLLM package compromise potentially exposed more than 2,500 organizations and more than 430,000 CI/CD pipelines. The malicious LiteLLM versions 1.82.7 and 1.82.8 were tied to the broader Trivy/TeamPCP supply-chain campaign and included credential-stealing behavior. LiteLLM's own advisory says the compromised PyPI packages were live on March 24, 2026 for about 40 minutes, with a broader suspect install window through 16:00 UTC, and recommends checking installs and rotating exposed secrets.",
+      "affected_boundary_or_version": {
+        "project": "LiteLLM AI Gateway / BerriAI LiteLLM",
+        "affected_versions": [
+          "1.82.7",
+          "1.82.8"
+        ],
+        "affected_window": "2026-03-24T10:39:00Z through about 40 minutes for package availability; LiteLLM advises treating installs through 2026-03-24T16:00:00Z as suspect",
+        "credential_boundary": "environment variables, SSH keys, cloud credentials, Kubernetes tokens, database passwords, CI/CD secrets, publishing tokens, and model provider API keys available to affected processes"
+      },
+      "why_it_matters_for_ai_security": "LiteLLM is an AI gateway and orchestration dependency that may be installed directly or transitively by AI agent frameworks, MCP servers, and LLM orchestration tools. The incident turns ordinary dependency resolution and CI/CD automation into a model-provider credential and AI-infrastructure exposure path.",
+      "named_entities": [
+        "LiteLLM",
+        "BerriAI",
+        "CloudSEK",
+        "SecurityWeek",
+        "The Hacker News",
+        "TeamPCP",
+        "Aqua Security Trivy",
+        "PyPI",
+        "OpenAI API keys",
+        "Anthropic API keys",
+        "CVE-2026-33634"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad LiteLLM, BerriAI, CloudSEK, Trivy, PyPI, OpenAI, and Anthropic entity context belongs upstream."
+        },
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General dependency pinning, CI/CD secret rotation, and agent framework transitive-dependency governance belong upstream as development practice."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Retain the security-specific incident lesson: AI infrastructure dependencies and gateway packages need credential rotation, package provenance gates, and transitive install exposure checks."
+        }
+      ],
+      "confidence_notes": "High confidence that the August 12 SecurityWeek item is inside the window and that the affected versions and payload classes are supported by LiteLLM's own advisory. CloudSEK's organization-scale dataset is treated as potential exposure, not confirmed compromise, matching the source caveat.",
+      "follow_up_actions": [
+        "During ingest, reconcile this update with the existing LiteLLM supply-chain secret exposure page if present.",
+        "Preserve the distinction between potential exposure counts and confirmed victim compromise.",
+        "Check whether upstream ai-wiki already owns durable LiteLLM and CloudSEK entity leaves before creating local references."
+      ]
+    },
+    {
+      "id": "2026-08-13-02-cve-2026-73498-mcp-atlassian-file-read",
+      "title": "CVE-2026-73498 discloses MCP Atlassian arbitrary file read through Confluence attachment upload",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73498",
+        "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/73xxx/CVE-2026-73498.json",
+        "https://github.com/sooperset/mcp-atlassian/security/advisories/GHSA-g5r6-gv6m-f5jv",
+        "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/73xxx/CVE-2026-73498.json",
+          "date": "2026-08-12T21:17:24.634Z",
+          "basis": "CVE metadata datePublished; qualifies inside the cutoff window"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/73xxx/CVE-2026-73498.json",
+          "date": "2026-08-13T13:37:36.522Z",
+          "basis": "CVE metadata dateUpdated; confirms in-window enrichment"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73498",
+          "date": "2026-08-12",
+          "basis": "NVD published date displayed as 08/12/2026; NVD change history also records August 13 modification"
+        }
+      ],
+      "evidence_classification": "public vulnerability advisory; MCP server file-read and credential-exfiltration risk; patch available",
+      "concise_factual_summary": "CVE-2026-73498 says mcp-atlassian versions before 0.22.0 pass a client-supplied file_path into confluence_upload_attachment without validate_safe_path. An authenticated MCP client can read files accessible to the server process and upload them to Confluence. The CVE description explicitly notes that an AI agent induced by untrusted content to call the tool could disclose server environment variables, including CONFLUENCE_API_TOKEN and other credentials. Version 0.22.0 fixes the issue.",
+      "affected_boundary_or_version": {
+        "project": "sooperset/mcp-atlassian",
+        "affected_versions": "< 0.22.0",
+        "fixed_version": "0.22.0",
+        "cwe": "CWE-22",
+        "cvss_v3_1": "7.7 HIGH; CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N",
+        "tool_boundary": "confluence_upload_attachment file_path handling in src/mcp_atlassian/confluence/attachments.py through _upload_attachment_direct()"
+      },
+      "why_it_matters_for_ai_security": "MCP servers often bridge agent instructions to privileged local files and SaaS APIs. This advisory shows how a normal authenticated tool call can become an agent-mediated credential disclosure when untrusted content steers an agent toward a vulnerable MCP tool.",
+      "named_entities": [
+        "CVE-2026-73498",
+        "GHSA-g5r6-gv6m-f5jv",
+        "mcp-atlassian",
+        "Model Context Protocol",
+        "Confluence",
+        "Jira",
+        "CONFLUENCE_API_TOKEN",
+        "GitHub Security Advisory",
+        "NVD",
+        "CISA ADP Vulnrichment"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad Atlassian, Confluence, Jira, and MCP server catalog context belongs upstream."
+        },
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General MCP server selection and development workflow guidance belongs upstream unless security-specific."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Retain the local security lens for MCP tool file containment, least privilege, credential exposure, and prompt-injection-to-tool-call risk."
+        }
+      ],
+      "confidence_notes": "High confidence because the CVE metadata has precise in-window publication and update timestamps and NVD exposes the vulnerability description, affected version, CVSS, references, and CISA ADP enrichment.",
+      "follow_up_actions": [
+        "During ingest, check whether an MCP Atlassian local security leaf already exists or whether this belongs under agent-and-tool-security or identity-and-access.",
+        "Link to upstream MCP server entity coverage rather than duplicating broad product background.",
+        "Record that the patch boundary is mcp-atlassian 0.22.0."
+      ]
+    },
+    {
+      "id": "2026-08-13-03-ghostjacking-agentic-kill-chain-update",
+      "title": "GhostJacking update describes poisoned telemetry as an agent takeover path",
+      "source_urls": [
+        "https://tenetsecurity.ai/blog/ghostjacking-attacks-agentic-kill-chain/",
+        "https://www.iansresearch.com/resources/all-blogs/post/security-blog/2026/08/13/ghostjacking%27-shows-how-attackers-can-turn-trusted-data-into-ai-commands",
+        "https://thehackernews.com/2026/08/threatsday-ghostjacking-ai-attacks.html"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://tenetsecurity.ai/blog/ghostjacking-attacks-agentic-kill-chain/",
+          "date": "2026-08-13",
+          "basis": "Tenet page shows 'Latest update: Aug 13th, 2026'; qualifies as visibly updated inside the cutoff window"
+        },
+        {
+          "url": "https://www.iansresearch.com/resources/all-blogs/post/security-blog/2026/08/13/ghostjacking%27-shows-how-attackers-can-turn-trusted-data-into-ai-commands",
+          "date": "2026-08-13",
+          "basis": "visible publication date; corroborating in-window secondary security analysis"
+        },
+        {
+          "url": "https://thehackernews.com/2026/08/threatsday-ghostjacking-ai-attacks.html",
+          "date": "2026-08-13",
+          "basis": "visible bulletin date; corroborating in-window secondary coverage"
+        }
+      ],
+      "evidence_classification": "security research update; agentic kill-chain demonstration; telemetry prompt-injection and delegated-authority risk",
+      "concise_factual_summary": "Tenet's updated GhostJacking research describes attacks where poisoned logs or alerts from Cloudflare, Datadog, or Sentry are read by AI agents that also have write-capable tools. The researchers report a chain that can move from initial access through poisoned telemetry to escalation, exfiltration, and persistence, including a remediated Claude Desktop sandbox escape. IANS and The Hacker News summarize the same risk as agents treating operational telemetry as trusted instructions and using their authorized privileges to take unauthorized actions.",
+      "affected_boundary_or_version": {
+        "platform_boundaries": [
+          "Cloudflare firewall event logs queried by agent sessions that also hold Cloudflare write/API tools",
+          "Datadog and Sentry telemetry or alert data consumed by agents with operational authority",
+          "Claude Desktop sandbox escape reported to Anthropic and fixed before the DEFCON presentation"
+        ],
+        "not_a_single_cve": "Research describes a composition of poisoned telemetry, agent trust, delegated authority, tool scope, sandbox exfiltration, and persistent agent configuration rather than one product CVE."
+      },
+      "why_it_matters_for_ai_security": "The research reframes security logs, alerts, tickets, and other operational records as attacker-writable instruction channels when agents can both read telemetry and mutate infrastructure. It supports local controls for trust labels, read/write separation, human approval for high-impact actions, and least-privilege agent identities.",
+      "named_entities": [
+        "GhostJacking",
+        "Tenet Security",
+        "Cloudflare",
+        "Datadog",
+        "Sentry",
+        "Claude Desktop",
+        "Anthropic",
+        "DEFCON 34",
+        "The Hacker News",
+        "IANS"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad Cloudflare, Datadog, Sentry, Anthropic, and Claude Desktop entity context belongs upstream."
+        },
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General coding-agent workflow governance and telemetry-driven automation practice belong upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Retain the local security lens for poisoned telemetry, prompt injection, delegated authority, agent identity, approval gates, and runtime monitoring."
+        }
+      ],
+      "confidence_notes": "Medium-high confidence. The primary Tenet page is visibly updated August 13 and includes concrete technical claims, but some scale estimates are research extrapolations rather than breach counts. Treat the Claude Desktop sandbox note as reported fixed by the researcher unless corroborated by an Anthropic advisory during ingest.",
+      "follow_up_actions": [
+        "During ingest, consider whether this updates the existing GhostJacking or agentic-browser/telemetry trust pages.",
+        "Preserve the distinction between demonstrated vulnerable setups and confirmed breached organizations.",
+        "Look for an Anthropic primary confirmation before making durable claims about the sandbox fix beyond Tenet's report."
+      ]
+    }
+  ],
+  "excluded_candidates": [
+    {
+      "title": "GhostSplice split-instruction MCP exfiltration",
+      "url": "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html",
+      "visible_date": "2026-08-11",
+      "reason": "Date-only August 11 candidate is boundary-only relative to the 2026-08-11T23:31:50Z cutoff; no precise visible timestamp confirmed it after the cutoff. Likely already captured or considered by the prior run."
+    },
+    {
+      "title": "CloudSEK LiteLLM primary research page",
+      "url": "https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines",
+      "visible_date": "2026-08-11",
+      "reason": "Used as support for the SecurityWeek-qualified LiteLLM item, but not used alone because the direct page has a date-only boundary date without a visible time."
+    },
+    {
+      "title": "AISI incident report on unsanctioned agent behaviour during cyber testing",
+      "url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "visible_date": "last week",
+      "reason": "Primary report is outside the 48-hour window. In-window PC Gamer coverage was a secondary recap rather than a new primary security change."
+    },
+    {
+      "title": "PC Gamer synthesis of AI agents as malware victims and attackers",
+      "url": "https://www.pcgamer.com/software/ai/welcome-to-the-internet-in-2026-where-ai-agents-are-both-victim-and-attacker-in-malware-wars/",
+      "visible_date": "2026-08-12",
+      "reason": "In-window secondary synthesis, but the concrete source facts come from older Island and AISI primary work. Excluded to avoid re-capturing stale primary findings as a new item."
+    },
+    {
+      "title": "CISA KEV entry for IBM Langflow CVE-2026-9198",
+      "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "visible_date": "2026-08-04",
+      "reason": "AI-relevant exploited vulnerability, but dateAdded is outside the 48-hour window."
+    },
+    {
+      "title": "SecurityWeek Mindgard funding announcement",
+      "url": "https://www.securityweek.com/news/",
+      "visible_date": "2026-08-12",
+      "reason": "In-window AI security company item, but it is a funding announcement without a concrete vulnerability, mitigation, control, standard, incident, or assurance result."
+    },
+    {
+      "title": "Obot top open-source AI security tools list",
+      "url": "https://obot.ai/blog/top-5-open-source-ai-security-tools-in-2026/",
+      "visible_date": "2026-08-12",
+      "reason": "In-window listicle, but ordinary tool roundup without a concrete security delta for a specific AI system."
+    },
+    {
+      "title": "Forkast MCP security crisis commentary",
+      "url": "https://forkast.news/the-structural-cost-of-the-mcp-security-crisis-3/",
+      "visible_date": "2026-08-11",
+      "reason": "Date-only boundary candidate and mostly commentary synthesizing older MCP security disclosures."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_practice": "LiteLLM and BerriAI",
+      "route": "ai-wiki owns broad entity context; ai-security-wiki keeps the credential-exposure and AI-gateway supply-chain incident lens."
+    },
+    {
+      "entity_or_practice": "MCP Atlassian",
+      "route": "ai-wiki owns broad MCP server catalog context; ai-security-wiki keeps the CVE-specific file-containment and credential-exfiltration lens."
+    },
+    {
+      "entity_or_practice": "General MCP server selection and coding-agent dependency governance",
+      "route": "ai-dev-wiki owns broad development practice; ai-security-wiki keeps concrete vulnerable tool boundaries and mitigations."
+    },
+    {
+      "entity_or_practice": "Cloudflare, Datadog, Sentry, Anthropic, Claude Desktop",
+      "route": "ai-wiki owns broad entity/product background; ai-security-wiki keeps GhostJacking's poisoned-telemetry and delegated-authority security implications."
+    },
+    {
+      "entity_or_practice": "Telemetry-driven coding-agent and operations-agent workflows",
+      "route": "ai-dev-wiki owns general workflow design; ai-security-wiki keeps read/write separation, approval, identity, and trust-label controls."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": [],
+  "confidence_summary": "Three qualifying items were direct-date-verified inside the cutoff. Stronger but stale or boundary-only AI security candidates were retained as exclusions rather than inferred into the window."
+}
