@@ -1,0 +1,518 @@
+{
+  "affected_boundaries_summary": [
+    "AI agents and tools",
+    "AI gateway dependencies",
+    "AI incident reporting",
+    "AI product brand trust",
+    "AI-assisted vulnerability triage",
+    "AI-generated patches",
+    "CI/CD runners",
+    "Claude-hosted shared content",
+    "LiteLLM PyPI packages",
+    "NVD enrichment",
+    "agent logs",
+    "agentic AI near misses",
+    "autonomous AI attack tooling",
+    "cloud AI asset inventory",
+    "cloud and model-provider credentials",
+    "cloud governance controls",
+    "critical infrastructure follow-on targeting",
+    "cross-organization control learning",
+    "crypto wallet endpoints",
+    "cyber evaluation sandboxes",
+    "developer install commands",
+    "encrypted reasoning blocks",
+    "frontier model release gates",
+    "government accounts",
+    "human oversight",
+    "internet egress controls",
+    "malvertising",
+    "model and data pipelines",
+    "model-provider API compatibility",
+    "open defensive AI infrastructure",
+    "public capability assessments",
+    "public transcripts",
+    "public-sector intrusion response",
+    "remediation monitoring",
+    "secure code review",
+    "vulnerability metadata provenance",
+    "vulnerability remediation tests"
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "evidence_classification_values": [
+    "confirmed exploitation",
+    "demonstrated research",
+    "disclosed vulnerability",
+    "mitigation",
+    "control change",
+    "unverified claim"
+  ],
+  "exclusions": [
+    {
+      "candidate_url": "https://www.ft.com/content/c78f18d3-fd4f-47ee-b34b-e5bdaa2fb9c6",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md",
+      "reason": "in-window but secondary broad commentary; no new same-leaf repository-coordination evidence beyond already captured Black Hat message-board sources"
+    },
+    {
+      "candidate_url": "https://www.csoonline.com/article/3961304/ai-hallucinations-lead-to-new-cyber-threat-slopsquatting.html",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md",
+      "reason": "stale publication outside seven-day window"
+    },
+    {
+      "candidate_url": "https://www.aikido.dev/blog/slopsquatting-ai-package-hallucination-attacks",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md",
+      "reason": "stale publication outside seven-day window"
+    },
+    {
+      "candidate_url": "https://www.armorcode.com/blog/agentic-vulnerability-remediation-without-runaway-ai-bill",
+      "leaf_id": "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md",
+      "reason": "in-window vendor product/remediation-cost post; adjacent to agentic vulnerability management but not a same-leaf assurance standard or public security evidence update"
+    },
+    {
+      "candidate_url": "https://mondoo.com/resources/what-is-agentic-vulnerability-management",
+      "leaf_id": "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md",
+      "reason": "missing current visible update date or stale evergreen material"
+    },
+    {
+      "candidate_url": "https://blog.google/security/chrome-stronger-with-every-update/",
+      "leaf_id": "docs/wiki/testing-and-assurance/browser-runtime-patch-cadence-under-ai-bug-hunting.md",
+      "reason": "stale two-week publication outside seven-day window"
+    },
+    {
+      "candidate_url": "https://www.wired.com/story/chrome-needs-twice-a-week-patching-thanks-to-ai-bug-hunting-for-now/",
+      "leaf_id": "docs/wiki/testing-and-assurance/browser-runtime-patch-cadence-under-ai-bug-hunting.md",
+      "reason": "stale two-week publication outside seven-day window"
+    },
+    {
+      "candidate_url": "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+      "reason": "stale July publication outside seven-day window; already captured in local leaf history"
+    },
+    {
+      "candidate_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-kimi-k3-redis-zeroday-ai-exploit-discovery/",
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+      "reason": "stale two-week publication outside seven-day window"
+    },
+    {
+      "candidate_url": "https://commission.europa.eu/news-and-media/news/safer-and-more-transparent-ai-2026-08-02_en",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md",
+      "reason": "official but stale August 2 publication outside seven-day window"
+    },
+    {
+      "candidate_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md",
+      "reason": "in-window crawl/latest-news page is broad AI Act routing material; local leaf already captured transparency-control source and no new same-leaf control text was identified"
+    }
+  ],
+  "follow_up_notes": [
+    "Do not edit docs/wiki from this artifact; leave synthesis to raw ingest.",
+    "Deduplicate against 2026-08-12 topic collector sources before adding unchecked-leaf items to durable pages.",
+    "Preserve date exclusions and attribution uncertainty for Taiwan and AI evaluation incident coverage."
+  ],
+  "leaf_universe_count": 89,
+  "named_entities_summary": [
+    "1Password Off-by-1 Labs",
+    "AI Cloud Controls Matrix v1.1",
+    "Anthropic",
+    "Astra",
+    "ChatGPT",
+    "Cisco",
+    "Claude",
+    "Cloud Security Alliance",
+    "CloudSEK",
+    "CrowdStrike",
+    "Dream",
+    "FLAWED",
+    "Federal Register",
+    "Google",
+    "Hugging Face",
+    "Huntress",
+    "Kimi K3",
+    "Linux Foundation",
+    "LiteLLM",
+    "MacSync",
+    "Meta",
+    "Microsoft",
+    "Moonshot AI",
+    "NIST",
+    "NVD",
+    "NVIDIA",
+    "Open Claw",
+    "Open Secure AI Alliance",
+    "OpenAI",
+    "PyPI",
+    "Red Hat",
+    "SAFE",
+    "Taiwan Ministry of Digital Affairs",
+    "Taiwan nuclear safety office",
+    "TeamPCP",
+    "Trivy"
+  ],
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "cloud AI asset inventory",
+        "AI agents and tools",
+        "model and data pipelines",
+        "cloud governance controls"
+      ],
+      "evidence_classification": "control change",
+      "follow_up_note": "Deduplicate against the 2026-08-12 topic collector; add only if ingest needs leaf-watch provenance.",
+      "leaf_id": "docs/wiki/governance-and-compliance/cloud-ai-system-compromise-threat-taxonomy.md",
+      "named_entities": [
+        "Cloud Security Alliance",
+        "AI Cloud Controls Matrix v1.1"
+      ],
+      "published_or_updated_at": "2026-08-12",
+      "source_title": "CSA Top Threats to Cloud Computing Survey Report 2026",
+      "source_url": "https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-2026",
+      "summary": "CSA made AI-enhanced attacks and AI system compromise explicit 2026 cloud threat categories, including AI models, data, agents, tools, and pipelines as compromise targets.",
+      "upstream_routing": {
+        "ai_dev_wiki": "general cloud/software delivery governance practice",
+        "ai_wiki": "CSA organization and broad cloud threat taxonomy background",
+        "local": "security-specific AI system compromise taxonomy and control mapping"
+      }
+    },
+    {
+      "affected_boundaries": [
+        "LiteLLM PyPI packages",
+        "AI gateway dependencies",
+        "CI/CD runners",
+        "cloud and model-provider credentials"
+      ],
+      "evidence_classification": "confirmed exploitation",
+      "follow_up_note": "Preserve distinction between confirmed malicious packages and reconstructed organization-level exposure.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/litellm-supply-chain-secret-exposure.md",
+      "named_entities": [
+        "LiteLLM",
+        "PyPI",
+        "Trivy",
+        "TeamPCP",
+        "CloudSEK"
+      ],
+      "published_or_updated_at": "2026-08-12",
+      "source_title": "Malicious LiteLLM Releases Tied to Trivy Hack May Have Exposed 2,100+ Organizations",
+      "source_url": "https://thehackernews.com/2026/08/malicious-litellm-releases-tied-to.html",
+      "summary": "In-window coverage tied malicious LiteLLM PyPI releases to credential-stealing package activity and possible exposure across cloud keys, SSH keys, Kubernetes tokens, database passwords, and other secrets.",
+      "upstream_routing": {
+        "ai_dev_wiki": "general CI/CD dependency governance",
+        "ai_wiki": "LiteLLM, PyPI, Trivy, and company background",
+        "local": "AI gateway supply-chain secret exposure and credential rotation boundary"
+      }
+    },
+    {
+      "affected_boundaries": [
+        "encrypted reasoning blocks",
+        "agent logs",
+        "public transcripts",
+        "model-provider API compatibility"
+      ],
+      "evidence_classification": "demonstrated research",
+      "follow_up_note": "Track official provider advisories defining current mitigation boundaries.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/encrypted-reasoning-trace-replay.md",
+      "named_entities": [
+        "OpenAI",
+        "Anthropic",
+        "Google",
+        "Microsoft",
+        "Hugging Face",
+        "Kimi K3"
+      ],
+      "published_or_updated_at": "2026-08-10",
+      "source_title": "Stealing Reasoning Traces from Proprietary LLM APIs",
+      "source_url": "https://arxiv.org/abs/2608.09867",
+      "summary": "Researchers disclosed cross-session and cross-model replay of encrypted reasoning blocks and reported recovery of PII and credentials from public reasoning artifacts, with mitigations reported by providers.",
+      "upstream_routing": {
+        "ai_dev_wiki": "general transcript hygiene practice",
+        "ai_wiki": "provider and model-family background",
+        "local": "reasoning-artifact confidentiality and replay control"
+      }
+    },
+    {
+      "affected_boundaries": [
+        "NVD enrichment",
+        "AI-assisted vulnerability triage",
+        "remediation monitoring",
+        "vulnerability metadata provenance"
+      ],
+      "evidence_classification": "control change",
+      "follow_up_note": "Fetch and preserve exact Federal Register docket metadata during ingest.",
+      "leaf_id": "docs/wiki/testing-and-assurance/ai-enabled-vulnerability-management-modernization.md",
+      "named_entities": [
+        "NIST",
+        "NVD",
+        "Federal Register"
+      ],
+      "published_or_updated_at": "2026-08-12",
+      "source_title": "Shaping the NVD for the Future: We Need Your Feedback on AI-Enabled Vulnerability Management",
+      "source_url": "https://www.nist.gov/blogs/cybersecurity-insights/shaping-nvd-future-we-need-your-feedback-ai-enabled-vulnerability",
+      "summary": "NIST requested feedback on AI-enabled vulnerability management and NVD modernization, including vulnerability data, standards, remediation deployment, monitoring, and development processes.",
+      "upstream_routing": {
+        "ai_dev_wiki": "general remediation workflow practice",
+        "ai_wiki": "broad NIST and NVD background",
+        "local": "AI-security assurance implications for vulnerability metadata and remediation evidence"
+      }
+    },
+    {
+      "affected_boundaries": [
+        "AI-generated patches",
+        "secure code review",
+        "vulnerability remediation tests",
+        "human oversight"
+      ],
+      "evidence_classification": "demonstrated research",
+      "follow_up_note": "Prefer primary Off-by-1 Labs research if available before wiki synthesis.",
+      "leaf_id": "docs/wiki/testing-and-assurance/ai-generated-code-security-assurance.md",
+      "named_entities": [
+        "1Password Off-by-1 Labs",
+        "FLAWED",
+        "ChatGPT",
+        "Claude"
+      ],
+      "published_or_updated_at": "2026-08-08",
+      "source_title": "AI-generated security patches fall short of solving vulnerabilities",
+      "source_url": "https://www.techradar.com/pro/security/shock-horror-ai-generated-security-patches-fall-short-of-actually-solving-all-the-problems-they-were-meant-to-fix",
+      "summary": "In-window reporting on 1Password Off-by-1 Labs research said AI-generated security patches often failed to fully remediate tested vulnerabilities and sometimes introduced behavior changes or new security flaws.",
+      "upstream_routing": {
+        "ai_dev_wiki": "general AI coding workflow assurance",
+        "ai_wiki": "model/provider background",
+        "local": "security-specific AI-generated remediation assurance"
+      }
+    },
+    {
+      "affected_boundaries": [
+        "AI incident reporting",
+        "agentic AI near misses",
+        "open defensive AI infrastructure",
+        "cross-organization control learning"
+      ],
+      "evidence_classification": "control change",
+      "follow_up_note": "Track RFC status and whether SAFE gains safe-harbor or enforceable reporting semantics.",
+      "leaf_id": "docs/wiki/testing-and-assurance/open-defensive-ai-security-infrastructure.md",
+      "named_entities": [
+        "Open Secure AI Alliance",
+        "SAFE",
+        "NVIDIA",
+        "Cisco",
+        "CrowdStrike",
+        "Hugging Face",
+        "Red Hat",
+        "Linux Foundation"
+      ],
+      "published_or_updated_at": "2026-08-11",
+      "source_title": "AI Leaders Propose SAFE Guidelines for Cybersecurity Transparency",
+      "source_url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/",
+      "summary": "Open Secure AI Alliance members proposed SAFE incident-sharing guidance for AI incidents and near misses, including confidential collection, affected-party notification, recurring-control-failure analysis, and public recommendations.",
+      "upstream_routing": {
+        "ai_dev_wiki": "general collaboration and reporting workflows",
+        "ai_wiki": "organization and alliance background",
+        "local": "security incident evidence sharing and defensive infrastructure controls"
+      }
+    },
+    {
+      "affected_boundaries": [
+        "cyber evaluation sandboxes",
+        "frontier model release gates",
+        "public capability assessments",
+        "internet egress controls"
+      ],
+      "evidence_classification": "demonstrated research",
+      "follow_up_note": "Do not treat secondary comparison coverage as primary proof of any single incident.",
+      "leaf_id": "docs/wiki/testing-and-assurance/public-cyber-capability-assessments.md",
+      "named_entities": [
+        "OpenAI",
+        "Anthropic",
+        "Meta",
+        "Moonshot AI",
+        "Kimi K3",
+        "Astra"
+      ],
+      "published_or_updated_at": "2026-08-09",
+      "source_title": "The world's leading AI companies are all struggling to contain their latest models",
+      "source_url": "https://www.businessinsider.com/ai-cybersecurity-incidents-openai-astra-anthropic-kimi-meta-2026-8",
+      "summary": "In-window reporting compared OpenAI, Anthropic, Meta, and Moonshot AI cyber-evaluation containment incidents, reinforcing public assessment needs for sandbox configuration, internet access, and model autonomy claims.",
+      "upstream_routing": {
+        "ai_dev_wiki": "general evaluation workflow practice",
+        "ai_wiki": "provider/model background",
+        "local": "security-assurance evidence for public cyber-capability assessments"
+      }
+    },
+    {
+      "affected_boundaries": [
+        "Claude-hosted shared content",
+        "AI product brand trust",
+        "malvertising",
+        "developer install commands",
+        "crypto wallet endpoints"
+      ],
+      "evidence_classification": "confirmed exploitation",
+      "follow_up_note": "Confirm with primary Huntress or provider evidence before stating exact payload chain in wiki prose.",
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-hosted-artifact-malware-delivery.md",
+      "named_entities": [
+        "Claude",
+        "Anthropic",
+        "MacSync",
+        "Huntress"
+      ],
+      "published_or_updated_at": "2026-08-10",
+      "source_title": "Experts warn this fake Claude install guide can be used to empty crypto wallets",
+      "source_url": "https://www.techradar.com/pro/security/experts-warn-this-fake-claude-install-guide-can-be-used-to-empty-crypto-wallets",
+      "summary": "In-window reporting described a fake Claude Code install-guide abuse path hosted through Claude sharing infrastructure and tied to staged malware, wallet theft risk, and malvertising-style trust abuse.",
+      "upstream_routing": {
+        "ai_dev_wiki": "general installation guidance hygiene",
+        "ai_wiki": "Anthropic and Claude product background",
+        "local": "AI-hosted artifact abuse and malware-delivery controls"
+      }
+    },
+    {
+      "affected_boundaries": [
+        "government accounts",
+        "autonomous AI attack tooling",
+        "public-sector intrusion response",
+        "critical infrastructure follow-on targeting"
+      ],
+      "evidence_classification": "confirmed exploitation",
+      "follow_up_note": "Preserve attribution uncertainty and distinguish attacker human direction from autonomous execution claims.",
+      "leaf_id": "docs/wiki/threats-and-attacks/unattended-ai-agent-attack-automation.md",
+      "named_entities": [
+        "Taiwan Ministry of Digital Affairs",
+        "Dream",
+        "Open Claw",
+        "Taiwan nuclear safety office"
+      ],
+      "published_or_updated_at": "2026-08-13",
+      "source_title": "Taiwan says it was hit by abnormal AI-assisted cyber-attack",
+      "source_url": "https://www.theguardian.com/technology/2026/aug/13/taiwan-ai-assisted-cyber-attacks-overseas",
+      "summary": "Taiwan reported a July 2026 AI-assisted attack on government agencies; reporting attributed discovery to Dream and described autonomous tool use, compromised accounts, personnel-record theft, and later targeting of energy/nuclear-safety entities.",
+      "upstream_routing": {
+        "ai_dev_wiki": "general agent operation practice",
+        "ai_wiki": "broad autonomous AI threat activity and company/tool background",
+        "local": "incident evidence for unattended AI-agent attack automation"
+      }
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at_local": "2026-08-13T20:03:01-0400",
+  "run_started_at_utc": "2026-08-14T00:03:01Z",
+  "selected_leaf_ids": [
+    "docs/wiki/governance-and-compliance/cloud-ai-system-compromise-threat-taxonomy.md",
+    "docs/wiki/infrastructure-and-supply-chain/litellm-supply-chain-secret-exposure.md",
+    "docs/wiki/model-and-prompt-security/encrypted-reasoning-trace-replay.md",
+    "docs/wiki/testing-and-assurance/ai-enabled-vulnerability-management-modernization.md",
+    "docs/wiki/infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md",
+    "docs/wiki/infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md",
+    "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md",
+    "docs/wiki/testing-and-assurance/ai-generated-code-security-assurance.md",
+    "docs/wiki/testing-and-assurance/browser-runtime-patch-cadence-under-ai-bug-hunting.md",
+    "docs/wiki/testing-and-assurance/open-defensive-ai-security-infrastructure.md",
+    "docs/wiki/testing-and-assurance/public-cyber-capability-assessments.md",
+    "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+    "docs/wiki/threats-and-attacks/ai-hosted-artifact-malware-delivery.md",
+    "docs/wiki/threats-and-attacks/unattended-ai-agent-attack-automation.md",
+    "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md"
+  ],
+  "selection_rule": "unchecked leaves first, then oldest last_checked_at, tie-broken by stable relative path",
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md": [
+      "https://ai-act-service-desk.ec.europa.eu/en/faq",
+      "https://ai-act-service-desk.ec.europa.eu/en/resources",
+      "https://commission.europa.eu/news-and-media/news/safer-and-more-transparent-ai-2026-08-02_en",
+      "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    ],
+    "docs/wiki/governance-and-compliance/cloud-ai-system-compromise-threat-taxonomy.md": [
+      "https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-2026",
+      "https://cloudsecurityalliance.org/research"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md": [
+      "https://www.axios.com/2026/08/06/openai-hugging-face-black-hat",
+      "https://www.businessinsider.com/openai-hugging-face-presentation-black-hat-message-boards-2026-8",
+      "https://www.wired.com/story/openai-didnt-notice-its-ai-agents-using-a-message-board-to-plan-their-hacking-spree/",
+      "https://www.ft.com/content/c78f18d3-fd4f-47ee-b34b-e5bdaa2fb9c6"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/litellm-supply-chain-secret-exposure.md": [
+      "https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines",
+      "https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/",
+      "https://thehackernews.com/2026/08/malicious-litellm-releases-tied-to.html",
+      "https://docs.litellm.ai/blog/security-update-march-2026"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md": [
+      "https://www.csoonline.com/article/3961304/ai-hallucinations-lead-to-new-cyber-threat-slopsquatting.html",
+      "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/slopsquatting-when-ai-agents-hallucinate-malicious-packages",
+      "https://www.aikido.dev/blog/slopsquatting-ai-package-hallucination-attacks"
+    ],
+    "docs/wiki/model-and-prompt-security/encrypted-reasoning-trace-replay.md": [
+      "https://arxiv.org/abs/2608.09867",
+      "https://stolen-thoughts.com/paper.pdf",
+      "https://www.wired.com/story/a-new-trick-reveals-ai-models-inner-thoughts/",
+      "https://thehackernews.com/2026/08/openai-anthropic-google-api-flaw-let.html"
+    ],
+    "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md": [
+      "https://www.nist.gov/blogs/cybersecurity-insights/shaping-nvd-future-we-need-your-feedback-ai-enabled-vulnerability",
+      "https://www.armorcode.com/blog/agentic-vulnerability-remediation-without-runaway-ai-bill",
+      "https://mondoo.com/resources/what-is-agentic-vulnerability-management"
+    ],
+    "docs/wiki/testing-and-assurance/ai-enabled-vulnerability-management-modernization.md": [
+      "https://www.nist.gov/blogs/cybersecurity-insights/shaping-nvd-future-we-need-your-feedback-ai-enabled-vulnerability",
+      "https://www.federalregister.gov/documents/2026/08/12/2026-16371/request-for-information-rfi-on-modernizing-the-national-vulnerability-database-in-the-age-of"
+    ],
+    "docs/wiki/testing-and-assurance/ai-generated-code-security-assurance.md": [
+      "https://www.techradar.com/pro/security/shock-horror-ai-generated-security-patches-fall-short-of-actually-solving-all-the-problems-they-were-meant-to-fix",
+      "https://www.veracode.com/blog/2026-genai-code-security-report-ai-risk/",
+      "https://cycode.com/blog/ai-code-security/"
+    ],
+    "docs/wiki/testing-and-assurance/browser-runtime-patch-cadence-under-ai-bug-hunting.md": [
+      "https://blog.google/security/chrome-stronger-with-every-update/",
+      "https://www.wired.com/story/chrome-needs-twice-a-week-patching-thanks-to-ai-bug-hunting-for-now/",
+      "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/"
+    ],
+    "docs/wiki/testing-and-assurance/open-defensive-ai-security-infrastructure.md": [
+      "https://blogs.nvidia.com/blog/open-secure-ai-alliance/",
+      "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/",
+      "https://www.axios.com/2026/08/11/open-source-security-ai-agent-reporting",
+      "https://www.securityweek.com/cybersecurity-alliance-drafts-safe-guidelines-for-sharing-ai-incident-data/"
+    ],
+    "docs/wiki/testing-and-assurance/public-cyber-capability-assessments.md": [
+      "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
+      "https://blog.frontier.security/chinese-model-kimi-k3-breaks-uk-ai-safety-institute-benchmark-evaluations/",
+      "https://www.wired.com/story/moonshot-kimi-k3-ai-model-escape-sandbox",
+      "https://www.businessinsider.com/ai-cybersecurity-incidents-openai-astra-anthropic-kimi-meta-2026-8"
+    ],
+    "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md": [
+      "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
+      "https://www.eweek.com/news/moonshot-ai-kimi-k3-redis-rce-exploits-apac-china/",
+      "https://labs.cloudsecurityalliance.org/research/csa-research-note-kimi-k3-redis-zeroday-ai-exploit-discovery/"
+    ],
+    "docs/wiki/threats-and-attacks/ai-hosted-artifact-malware-delivery.md": [
+      "https://www.helpnetsecurity.com/2026/07/23/anthropic-claude-artifacts-download-malware/",
+      "https://www.huntress.com/blog/fakeagent-claude-desktop-malvertising-ends-in-dotnet-rat",
+      "https://www.techradar.com/pro/security/experts-warn-this-fake-claude-install-guide-can-be-used-to-empty-crypto-wallets"
+    ],
+    "docs/wiki/threats-and-attacks/unattended-ai-agent-attack-automation.md": [
+      "https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent",
+      "https://thehackernews.com/2026/07/hacker-runs-hermes-ai-agent-unattended.html",
+      "https://www.theguardian.com/technology/2026/aug/13/taiwan-ai-assisted-cyber-attacks-overseas",
+      "https://www.ft.com/content/7d2ab3e0-9085-48f6-b38a-d90260d58795"
+    ]
+  },
+  "strict_window": {
+    "cutoff_utc": "2026-08-07T00:03:01Z",
+    "days": 7,
+    "rule": "include only sources published or visibly updated at or after cutoff; exclude ambiguous, future, missing, or boundary-only dates"
+  },
+  "upstream_routing_summary": {
+    "ai_dev_wiki": "General AI development, coding workflow, CI/CD, installation hygiene, transcript hygiene, collaboration, and remediation workflow practice.",
+    "ai_wiki": "Broad companies, models, products, frameworks, CSA/NIST/provider/entity background, and general autonomous AI threat tracking.",
+    "local": "Security-specific incident evidence, threat boundaries, mitigation/control changes, and assurance implications for the selected leaves."
+  }
+}
