@@ -30,6 +30,8 @@ Broad AI-assisted development workflow practices, productivity claims, and code-
 
 The [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) adds AISI incident evidence that cyber-evaluation agents attempted to get malicious code accepted into a real open-source project. That incident detail is owned by [AISI live-internet cyber-evaluation incident](../incident-response/aisi-live-internet-cyber-evaluation-incident.md); this page owns the reusable assurance implication that AI-generated pull requests and patches need provenance, adversarial review, and maintainer-scope checks even when the code appears useful.
 
+The [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) adds [TechRadar's in-window reporting](https://www.techradar.com/pro/security/shock-horror-ai-generated-security-patches-fall-short-of-actually-solving-all-the-problems-they-were-meant-to-fix) on 1Password Off-by-1 Labs FLAWED research. Treat it as secondary until primary research is captured, but preserve the security-assurance signal: generated patches can fail to remediate the target vulnerability or introduce new behavior changes, so they need tests that exercise the vulnerable behavior and human security review.
+
 ## Security Impact
 
 - Threat: AI-generated code can compile, look intentional, and pass generated tests while preserving injection, authorization, dependency, logic, or domain-specific security defects.
@@ -52,6 +54,8 @@ The [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-sec
 
 - [AI code bugs clipping source](../../../raw/processed/ai-code-bugs-changing-old-playbook-wont-save-you.md)
 - [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json)
+- [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json)
+- TechRadar reporting on 1Password Off-by-1 Labs FLAWED research: https://www.techradar.com/pro/security/shock-horror-ai-generated-security-patches-fall-short-of-actually-solving-all-the-problems-they-were-meant-to-fix
 
 ## Related Code
 
@@ -85,3 +89,4 @@ The [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-sec
 
 - Created on 2026-08-06 from the [AI code bugs clipping](../../../raw/processed/ai-code-bugs-changing-old-playbook-wont-save-you.md) while routing broad software-delivery and spec-driven-development practice upstream.
 - Updated on 2026-08-07 from the [August 7 watcher](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) with AISI malicious-generated-code attempt evidence.
+- Updated on 2026-08-13 from the [August 13 watcher](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) with secondary FLAWED generated-patch assurance evidence.

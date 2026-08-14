@@ -13,6 +13,8 @@ Ghostjacking is a demonstrated attack pattern where malicious instructions are p
 
 The [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json) reinforces that the demonstrations covered DNS alteration, command execution, credential theft, and cross-agent trust abuse in controlled tests. It preserves the distinction between demonstrated research and confirmed production exploitation.
 
+The [August 13 topic news collector source](../../../raw/processed/2026-08-13/ai-security-wiki-topic-news-collector-2026-08-13T233150Z.json) records [Tenet's August 13 update](https://tenetsecurity.ai/blog/ghostjacking-attacks-agentic-kill-chain/) plus [IANS](https://www.iansresearch.com/resources/all-blogs/post/security-blog/2026/08/13/ghostjacking%27-shows-how-attackers-can-turn-trusted-data-into-ai-commands) and [The Hacker News](https://thehackernews.com/2026/08/threatsday-ghostjacking-ai-attacks.html) corroboration. The updated framing treats poisoned Cloudflare, Datadog, and Sentry telemetry as a full agentic kill chain when agents can both read operational records and write infrastructure, including escalation, exfiltration, persistence, and a Claude Desktop sandbox escape that Tenet reports was remediated before public presentation.
+
 Broad Cloudflare, Datadog, Sentry, [Claude Code](../../../upstream-ai-wiki/developer-tools/claude-code.md), and incident-workflow background belongs upstream. Locally, Ghostjacking matters because blocked or untrusted input can become trusted evidence when faithfully logged, then be consumed by an authorized agent with permission to change DNS, run code, or access cloud and environment secrets. The collected examples are controlled demonstrations, not confirmed production intrusions.
 
 ## Security Impact
@@ -36,6 +38,7 @@ Broad Cloudflare, Datadog, Sentry, [Claude Code](../../../upstream-ai-wiki/devel
 
 - [August 11 topic news collector source](../../../raw/processed/2026-08-11/ai-security-wiki-topic-news-collector-2026-08-11T233115Z.json)
 - [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json)
+- [August 13 topic news collector source](../../../raw/processed/2026-08-13/ai-security-wiki-topic-news-collector-2026-08-13T233150Z.json)
 - SecurityWeek Ghostjacking report: https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/
 - Tenet Security site: https://tenetsecurity.ai
 
@@ -68,3 +71,4 @@ Broad Cloudflare, Datadog, Sentry, [Claude Code](../../../upstream-ai-wiki/devel
 
 - Created on 2026-08-11 from the [August 11 topic collector](../../../raw/processed/2026-08-11/ai-security-wiki-topic-news-collector-2026-08-11T233115Z.json) after routing broad observability and coding-agent workflow context upstream.
 - Updated on 2026-08-12 from the [August 12 leaf watcher](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json) with additional controlled-demo impact boundaries and exploitation-status caveat.
+- Updated on 2026-08-13 from the [August 13 topic collector](../../../raw/processed/2026-08-13/ai-security-wiki-topic-news-collector-2026-08-13T233150Z.json) with poisoned-telemetry kill-chain framing and reported Claude Desktop sandbox-remediation caveat.

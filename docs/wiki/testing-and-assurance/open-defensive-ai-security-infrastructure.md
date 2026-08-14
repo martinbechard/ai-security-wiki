@@ -26,6 +26,8 @@ This page owns the local security-assurance implication: open defensive infrastr
 
 The [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) adds [Business Insider reporting](https://www.businessinsider.com/nvidia-staffs-new-ai-safety-team-push-for-open-models-2026-8) about an NVIDIA AI safety and security engineering team focused on pre-deployment agent evaluation and AI-powered vulnerability-patching tools. Treat this as a staffing and direction signal, not as evidence that concrete defensive artifacts are available for local assurance.
 
+The [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) adds [SAFE AI incident sharing guidance](../incident-response/safe-ai-incident-sharing-guidance.md) reporting from [NVIDIA](https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/), [Axios](https://www.axios.com/2026/08/11/open-source-security-ai-agent-reporting), and [SecurityWeek](https://www.securityweek.com/cybersecurity-alliance-drafts-safe-guidelines-for-sharing-ai-incident-data/). This page keeps the open-defensive-infrastructure relationship; the incident-sharing framework itself now lives in its own durable leaf.
+
 ## Security Impact
 
 - Threat or control area: opaque defensive models and agent harnesses can become unauditable control dependencies in security operations.
@@ -40,10 +42,14 @@ The [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-sec
 - [July 27 topic news collector source](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json)
 - [July 28 leaf update watch source](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json)
 - [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json)
+- [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json)
 - NVIDIA announcement: https://blogs.nvidia.com/blog/open-secure-ai-alliance/
 - CrowdStrike partner post: https://www.crowdstrike.com/en-us/blog/crowdstrike-joins-the-open-secure-ai-alliance/
 - HPE partner post: https://www.hpe.com/us/en/newsroom/blog-post/2026/07/hpe-joins-open-secure-ai-alliance-to-advance-open-cybersecurity-innovation.html
 - Business Insider NVIDIA staffing report: https://www.businessinsider.com/nvidia-staffs-new-ai-safety-team-push-for-open-models-2026-8
+- NVIDIA SAFE guidance contribution: https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/
+- Axios SAFE guidance coverage: https://www.axios.com/2026/08/11/open-source-security-ai-agent-reporting
+- SecurityWeek SAFE guidance coverage: https://www.securityweek.com/cybersecurity-alliance-drafts-safe-guidelines-for-sharing-ai-incident-data/
 
 ## Related Code
 
@@ -62,6 +68,7 @@ The [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-sec
 - [testing and assurance](index.md)
 - [cyber-evaluation containment](cyber-evaluation-containment.md)
 - [incident response](../incident-response/index.md)
+- [SAFE AI incident sharing guidance](../incident-response/safe-ai-incident-sharing-guidance.md)
 - [identity and access](../identity-and-access/index.md)
 - [infrastructure and supply chain](../infrastructure-and-supply-chain/index.md)
 - Upstream AI wiki owns broad coalition, company, model, and format context.
@@ -76,3 +83,4 @@ The [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-sec
 
 - Added from the [July 27, 2026 topic collector artifact](../../../raw/processed/2026-07-27/ai-security-wiki-topic-news-collector-2026-07-27T193242-0400.json); enriched from the [July 28 leaf watcher](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json). Avoid duplicating broad partner catalog coverage owned upstream.
 - Updated on 2026-08-07 from the [August 7 watcher](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) with NVIDIA staffing-direction evidence while keeping artifact availability open.
+- Updated on 2026-08-13 from the [August 13 watcher](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) with SAFE incident-sharing guidance evidence, then split SAFE into [SAFE AI incident sharing guidance](../incident-response/safe-ai-incident-sharing-guidance.md) after verifier correction.

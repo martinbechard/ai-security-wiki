@@ -14,6 +14,7 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 - [Defender model access during security incidents](defender-model-access-during-security-incidents.md)
 - [Agent cyberattack disclosure and traceability](agent-cyberattack-disclosure-and-traceability.md)
 - [Meta Irregular third-party evaluation scope failure](meta-irregular-third-party-evaluation-scope-failure.md)
+- [SAFE AI incident sharing guidance](safe-ai-incident-sharing-guidance.md)
 
 ## Authoritative Sources
 

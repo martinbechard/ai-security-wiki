@@ -11,6 +11,8 @@ tags: ["infrastructure-and-supply-chain", "identity-and-access", "data-and-priva
 
 The LiteLLM PyPI compromise is an AI gateway supply-chain exposure case. The [August 12 topic news collector source](../../../raw/processed/2026-08-12/ai-security-wiki-topic-news-collector-2026-08-12T233146Z.json) records [CloudSEK research](https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines), [SecurityWeek coverage](https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/), and [The Hacker News coverage](https://thehackernews.com/2026/08/malicious-litellm-releases-tied-to.html) about malicious LiteLLM releases 1.82.7 and 1.82.8 and a reconstructed exposure set across more than 2,500 organizations and about 434,000 CI/CD pipelines.
 
+The [August 13 topic news collector source](../../../raw/processed/2026-08-13/ai-security-wiki-topic-news-collector-2026-08-13T233150Z.json) and [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) add in-window impact updates. [SecurityWeek](https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/) reports [CloudSEK's](https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines) assessment of more than 2,500 potentially exposed organizations and more than 430,000 CI/CD pipelines, while [The Hacker News](https://thehackernews.com/2026/08/malicious-litellm-releases-tied-to.html) frames the same malicious releases as tied to Trivy/TeamPCP compromise activity. [LiteLLM's project advisory](https://docs.litellm.ai/blog/security-update-march-2026) remains the affected-version and mitigation source: versions 1.82.7 and 1.82.8 were compromised, the package was live for about 40 minutes on March 24, 2026, and installs through 16:00 UTC that day should be treated as suspect.
+
 Broad LiteLLM, PyPI, Trivy, CloudSEK, cloud-provider catalog facts, and general [AI supply-chain risk](../../../upstream-ai-wiki/techniques/ai-supply-chain-risk.md) belong upstream. General development-practice controls for secrets and package installs belong in the upstream AI development wiki's [sensitive data and supply-chain controls](../../../upstream-ai-dev-wiki/governance-and-risk/sensitive-data-and-supply-chain-controls.md). Locally, this page owns the security boundary where an AI gateway dependency can expose model-provider API keys, cloud credentials, CI/CD secrets, Kubernetes tokens, `.env` files, SSH keys, and gateway configuration reachable from compromised runners. The exposure dataset is not proof that every named organization was compromised.
 
 ## Security Impact
@@ -33,6 +35,8 @@ Broad LiteLLM, PyPI, Trivy, CloudSEK, cloud-provider catalog facts, and general 
 ## Authoritative Sources
 
 - [August 12 topic news collector source](../../../raw/processed/2026-08-12/ai-security-wiki-topic-news-collector-2026-08-12T233146Z.json)
+- [August 13 topic news collector source](../../../raw/processed/2026-08-13/ai-security-wiki-topic-news-collector-2026-08-13T233150Z.json)
+- [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json)
 - CloudSEK LiteLLM exposure research: https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines
 - SecurityWeek LiteLLM coverage: https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/
 - The Hacker News LiteLLM coverage: https://thehackernews.com/2026/08/malicious-litellm-releases-tied-to.html
@@ -66,3 +70,4 @@ Broad LiteLLM, PyPI, Trivy, CloudSEK, cloud-provider catalog facts, and general 
 ## Maintenance Notes
 
 - Created on 2026-08-12 from the [August 12 topic collector](../../../raw/processed/2026-08-12/ai-security-wiki-topic-news-collector-2026-08-12T233146Z.json) after routing broad package, provider, and CI/CD practice context upstream.
+- Updated on 2026-08-13 from the [August 13 topic collector](../../../raw/processed/2026-08-13/ai-security-wiki-topic-news-collector-2026-08-13T233150Z.json) and [August 13 watcher](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) with in-window exposure-scale corroboration while preserving possible-exposure caveats.

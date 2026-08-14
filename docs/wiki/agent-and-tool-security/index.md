@@ -29,6 +29,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Ghostjacking poisoned operational log agent hijack](ghostjacking-poisoned-operational-log-agent-hijack.md)
 - [Cursor Auto-Run Sandbox escapes](cursor-auto-run-sandbox-escapes.md)
 - [Claude Code Templates Studio remote code execution](claude-code-templates-studio-rce.md)
+- [MCP Atlassian Confluence attachment file read](mcp-atlassian-confluence-attachment-file-read.md)
 
 ## Authoritative Sources
 

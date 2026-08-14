@@ -13,6 +13,8 @@ The Cloud Security Alliance 2026 Top Threats report makes AI-enhanced attacks an
 
 Broad CSA organization and cloud-security background belongs upstream. Locally, the useful security analysis is the control taxonomy: AI systems, agents, tools, data, and pipelines are cloud assets that can be compromised directly, while attackers can use AI to scale reconnaissance, exploitation, phishing, evasion, and cloud-control abuse.
 
+The [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) confirms this leaf as the local owner for the [CSA Top Threats to Cloud Computing 2026](https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-2026) follow-up evidence. It keeps the change as a governance taxonomy item rather than separate CSA product coverage: AI-enhanced attacks and AI system compromise belong in cloud inventories, risk registers, and control mappings for models, agents, tools, and pipelines.
+
 ## Security Impact
 
 - Threat: cloud risk programs that treat AI only as a productivity tool may miss AI systems as assets and AI-enabled attacker automation as a threat multiplier.
@@ -33,6 +35,7 @@ Broad CSA organization and cloud-security background belongs upstream. Locally, 
 ## Authoritative Sources
 
 - [August 12 topic news collector source](../../../raw/processed/2026-08-12/ai-security-wiki-topic-news-collector-2026-08-12T233146Z.json)
+- [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json)
 - CSA research index: https://cloudsecurityalliance.org/research
 - CSA Top Threats to Cloud Computing 2026 artifact: https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-2026
 
@@ -65,3 +68,4 @@ Broad CSA organization and cloud-security background belongs upstream. Locally, 
 ## Maintenance Notes
 
 - Created on 2026-08-12 from the [August 12 topic collector](../../../raw/processed/2026-08-12/ai-security-wiki-topic-news-collector-2026-08-12T233146Z.json) after routing broad CSA and general cloud-practice context upstream.
+- Updated on 2026-08-13 from the [August 13 watcher](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) to retain CSA Top Threats 2026 as local AI-system compromise taxonomy evidence.

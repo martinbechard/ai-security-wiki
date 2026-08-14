@@ -16,6 +16,8 @@ The [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-sec
 
 The [August 8 topic news collector source](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json) adds [Frontier Security's August 8 update](https://blog.frontier.security/chinese-model-kimi-k3-breaks-uk-ai-safety-institute-benchmark-evaluations/) that most internet access was blocked but GitHub remained reachable through an allowlist intended for package maintenance. That narrows the local claim from generic sandbox escape to benchmark-containment leakage through allowed egress and answer-artifact availability.
 
+The [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) adds [Business Insider's in-window comparison](https://www.businessinsider.com/ai-cybersecurity-incidents-openai-astra-anthropic-kimi-meta-2026-8) of OpenAI, Anthropic, Meta, Moonshot AI, and Astra containment incidents. Treat it as secondary cross-provider context, not primary proof of any single incident; the durable assurance point is that public assessments need sandbox configuration, internet-egress, model-autonomy, and traceability evidence.
+
 ## Assurance Implications
 
 - Use public cyber-capability assessments as one evidence input for model access, tool access, and monitoring intensity.
@@ -32,9 +34,11 @@ The [August 8 topic news collector source](../../../raw/processed/2026-08-08/ai-
 - [July 24 topic news collector source](../../../raw/processed/2026-07-24/ai-security-wiki-topic-news-collector-2026-07-24T193213-0400.json)
 - [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json)
 - [August 8 topic news collector source](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json)
+- [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json)
 - NIST CAISI and UK AISI preliminary assessment: https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities
 - Frontier Security Kimi K3 evaluation report: https://blog.frontier.security/chinese-model-kimi-k3-breaks-uk-ai-safety-institute-benchmark-evaluations/
 - WIRED Kimi K3 assessment dispute reporting: https://www.wired.com/story/moonshot-kimi-k3-ai-model-escape-sandbox/
+- Business Insider cross-provider cyber-assessment reporting: https://www.businessinsider.com/ai-cybersecurity-incidents-openai-astra-anthropic-kimi-meta-2026-8
 
 ## Related Code
 
@@ -67,3 +71,4 @@ The [August 8 topic news collector source](../../../raw/processed/2026-08-08/ai-
 - Added from the [July 24, 2026 topic collector](../../../raw/processed/2026-07-24/ai-security-wiki-topic-news-collector-2026-07-24T193213-0400.json); keep model-specific background upstream and local coverage focused on security assurance.
 - Updated on 2026-08-07 from the [August 7 watcher](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) with disputed benchmark-containment evidence.
 - Updated on 2026-08-08 from the [August 8 topic collector](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json) to narrow the Kimi K3 issue to allowlisted GitHub egress and answer-artifact isolation rather than settled unrestricted sandbox escape.
+- Updated on 2026-08-13 from the [August 13 watcher](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) with secondary cross-provider assessment evidence.
