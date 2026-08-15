@@ -9,6 +9,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - [Evaluation artifact template execution risk](evaluation-artifact-template-execution-risk.md)
 - [PapersGPT Zotero LLM response remote code execution](papersgpt-zotero-llm-response-rce.md)
 - [Encrypted reasoning trace replay](encrypted-reasoning-trace-replay.md)
+- [Hidden context exposure reconnaissance](hidden-context-exposure-reconnaissance.md)
 
 ## Authoritative Sources
 

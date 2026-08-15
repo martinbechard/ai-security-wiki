@@ -8,6 +8,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 
 - [AI-hosted artifact malware delivery](ai-hosted-artifact-malware-delivery.md)
 - [unattended AI agent attack automation](unattended-ai-agent-attack-automation.md)
+- [Zoom annotation RCE AI-assisted research](zoom-annotation-rce-ai-assisted-research.md)
 - [AI-assisted exploit development acceleration](ai-assisted-exploit-development-acceleration.md)
 - [AI-assisted credential harvesting and token abuse](ai-assisted-credential-harvesting-and-token-abuse.md)
 

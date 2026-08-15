@@ -30,6 +30,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Cursor Auto-Run Sandbox escapes](cursor-auto-run-sandbox-escapes.md)
 - [Claude Code Templates Studio remote code execution](claude-code-templates-studio-rce.md)
 - [MCP Atlassian Confluence attachment file read](mcp-atlassian-confluence-attachment-file-read.md)
+- [Agent action runtime hooks](agent-action-runtime-hooks.md)
 
 ## Authoritative Sources
 

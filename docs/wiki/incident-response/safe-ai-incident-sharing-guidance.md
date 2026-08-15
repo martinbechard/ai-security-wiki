@@ -13,12 +13,14 @@ SAFE AI incident sharing guidance is an Open Secure AI Alliance proposal for exc
 
 Broad Open Secure AI Alliance, NVIDIA, Cisco, CrowdStrike, Hugging Face, Red Hat, and Linux Foundation background belongs upstream. Locally, SAFE matters as an incident-response and assurance control: AI incidents and near misses can become reusable defensive evidence only when reporting preserves source provenance, protects sensitive victim data, and distinguishes voluntary guidance from enforceable obligations.
 
+The [August 14 leaf update watch source](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json) repeats Axios reporting and adds that SAFE should standardize reportable AI-agent incidents, near misses, evidence preservation, notification timing, and remediation updates. Preserve that as proposed RFC-style guidance, not binding safe-harbor or mandatory disclosure law.
+
 ## Security Impact
 
 - Threat or control area: AI incident evidence stays siloed, unactionable, or unsafe to share when reporting channels lack confidentiality, affected-party handling, and provenance controls.
 - Affected boundary: AI incident reporting, agentic AI near misses, cross-organization control learning, public recommendations, and open defensive AI infrastructure.
 - Exploit or incident status: public guidance proposal and reporting signal, not a vulnerability disclosure or confirmed incident.
-- Mitigation state: treat SAFE as candidate incident-sharing guidance until stable RFC, safe-harbor, or enforceable reporting semantics are published.
+- Mitigation state: treat SAFE as candidate incident-sharing guidance until stable RFC, safe-harbor, or enforceable reporting semantics are published; do not treat reporting fields as mandatory obligations without a stronger source.
 - Confidence: medium-high for the existence and stated scope of the proposal from NVIDIA and security press; medium for operating impact until the guidance has a stable version and adoption evidence.
 - Residual risk: shared incident evidence can expose victim, model, prompt, tool, or infrastructure details if confidentiality and affected-party boundaries are weak.
 
@@ -33,6 +35,7 @@ Broad Open Secure AI Alliance, NVIDIA, Cisco, CrowdStrike, Hugging Face, Red Hat
 ## Authoritative Sources
 
 - [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json)
+- [August 14 leaf update watch source](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json)
 - NVIDIA SAFE guidance contribution: https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/
 - Axios SAFE guidance coverage: https://www.axios.com/2026/08/11/open-source-security-ai-agent-reporting
 - SecurityWeek SAFE guidance coverage: https://www.securityweek.com/cybersecurity-alliance-drafts-safe-guidelines-for-sharing-ai-incident-data/
@@ -66,3 +69,4 @@ Broad Open Secure AI Alliance, NVIDIA, Cisco, CrowdStrike, Hugging Face, Red Hat
 ## Maintenance Notes
 
 - Created on 2026-08-13 from the [August 13 watcher](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) after verifier correction split SAFE from the broader open defensive infrastructure leaf.
+- Updated on 2026-08-14 from the [August 14 watcher](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json) with reportability, evidence-preservation, notification-timing, and remediation-update framing while preserving the voluntary-guidance caveat.

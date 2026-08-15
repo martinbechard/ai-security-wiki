@@ -1,0 +1,329 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-08-14T23:31:11Z",
+  "cutoff_window": {
+    "relative_window": "last 2 days",
+    "cutoff_start_utc": "2026-08-12T23:31:11Z",
+    "cutoff_end_utc": "2026-08-14T23:31:11Z",
+    "inclusion_rule": "Include only public sources with a visible publication or update date inside the exact cutoff window; date-only August 12 sources are treated as boundary-only and excluded."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "repository_scope": {
+    "target_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "local_owner_scope": "Security-specific AI threats, controls, incidents, assurance, governance, and operational implications.",
+    "federation_context": "docs/wiki/federation.md says ai-wiki owns broad AI ecosystem entities and ai-dev-wiki owns general AI-assisted development practices; this artifact keeps security-specific implications locally and routes broad entity or practice updates upstream."
+  },
+  "qualifying_items": [
+    {
+      "id": "2026-08-14-zoom-annotation-rce",
+      "title": "Zoom updated security bulletins for AI-assisted Zoomsday annotation vulnerabilities",
+      "source_urls": [
+        "https://www.zoom.com/en/trust/security-bulletin/",
+        "https://a.security/blog/asecurity-zoomsday",
+        "https://www.tomshardware.com/tech-industry/cyber-security/zoomsday-vulnerability-let-anyone-in-a-zoom-meeting-take-over-anybody-else-ai-assisted-research-only-used-20-prompts-to-find-an-exploit-to-hack-hundred-of-millions-of-people"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.zoom.com/en/trust/security-bulletin/",
+          "published": "08/11/2026",
+          "updated": "08/14/2026",
+          "date_basis": "Official Zoom bulletin table lists CVE-2026-53413, CVE-2026-53414, and CVE-2026-53415 as published 08/11/2026 and updated 08/14/2026."
+        },
+        {
+          "url": "https://www.tomshardware.com/tech-industry/cyber-security/zoomsday-vulnerability-let-anyone-in-a-zoom-meeting-take-over-anybody-else-ai-assisted-research-only-used-20-prompts-to-find-an-exploit-to-hack-hundred-of-millions-of-people",
+          "published": "2026-08-13",
+          "date_basis": "Article page displays Published 13 August 2026."
+        },
+        {
+          "url": "https://a.security/blog/asecurity-zoomsday",
+          "published": null,
+          "date_basis": "No visible publication date found in fetched text; used as technical supplemental source, not as the inclusion date."
+        }
+      ],
+      "concise_factual_summary": "Zoom's official bulletin table shows CVE-2026-53413, CVE-2026-53414, and CVE-2026-53415 updated on 2026-08-14. A.Security says the flaws affected Zoom annotation handling, enabled no-click remote code execution or disruption from another meeting participant, and were found and weaponized with fewer than 20 prompts on public AI models. The reported affected boundary includes Zoom Workplace clients on supported platforms before 7.1.5 and 7.0.6 under the relevant release branches.",
+      "evidence_classification": "primary vendor bulletin plus primary security research and reputable secondary reporting",
+      "affected_boundary_or_version": "Zoom Workplace clients before 7.1.5 and 7.0.6; related Zoom VDI, Zoom Rooms, and Meeting SDK bulletins should be checked during ingest against individual ZSB pages.",
+      "why_it_matters_for_ai_security": "The case is a concrete example of AI-assisted exploit development compressing zero-click vulnerability discovery and weaponization timelines against closed-source enterprise software.",
+      "named_entities": [
+        "Zoom",
+        "A.Security",
+        "CVE-2026-53413",
+        "CVE-2026-53414",
+        "CVE-2026-53415",
+        "Zoom Workplace",
+        "Zoom Rooms",
+        "Zoom Meeting SDK"
+      ],
+      "upstream_routing": {
+        "ai_security_wiki": "Owns the AI-assisted exploit-development implication, affected security boundary, patch requirement, and lessons for release gates.",
+        "ai_wiki": "Zoom as a broad product/company entity is upstream-owned if durable product context is needed.",
+        "ai_dev_wiki": "Only coding-agent exploit-development workflow implications should route upstream; no general development-practice update is needed from this item."
+      },
+      "confidence_notes": "High confidence for official CVE dates and patch relevance. Medium confidence for the exact AI-prompt count because it is a researcher claim repeated by secondary reporting and not independently reproducible from public evidence.",
+      "follow_up_actions": [
+        "During ingest, open the individual Zoom ZSB pages for CVE-specific affected-product tables.",
+        "Capture A.Security's disclosure timeline and distinguish patched vendor fact from researcher claims about AI-assisted exploit speed.",
+        "Check CISA KEV and NVD for exploitation and scoring status before any durable page update."
+      ]
+    },
+    {
+      "id": "2026-08-13-taiwan-ai-assisted-cyberattack",
+      "title": "Taiwan reported an overseas AI-assisted attack on government agencies",
+      "source_urls": [
+        "https://www.theguardian.com/technology/2026/aug/13/taiwan-ai-assisted-cyber-attacks-overseas"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.theguardian.com/technology/2026/aug/13/taiwan-ai-assisted-cyber-attacks-overseas",
+          "published": "2026-08-13T01:02:00-04:00",
+          "updated": "2026-08-13T15:40:00-04:00",
+          "date_basis": "Article displays Thu 13 Aug 2026 01.02 EDT and Last modified Thu 13 Aug 2026 15.40 EDT."
+        }
+      ],
+      "concise_factual_summary": "Taiwan's Ministry of Digital Affairs said monitoring units detected an abnormal overseas AI-assisted attack that began on 2026-07-20. The report says Dream described open-source AI agents being used to build an autonomous hacking tool behaving like a coordinated cyber team, compromising at least 85 government user accounts, extracting more than 2,500 personnel records, and expanding toward Taiwan's nuclear safety agency and energy companies. Taiwan said affected units completed handling, protective guidelines were established, and monitoring was strengthened.",
+      "evidence_classification": "public incident report via reputable news outlet citing government and vendor statements",
+      "affected_boundary_or_version": "Taiwan government agencies, personnel records, nuclear safety agency, and energy companies; specific systems and tool versions were not public in the fetched source.",
+      "why_it_matters_for_ai_security": "This is an in-window public incident signal for AI-assisted offensive operations against government targets and for monitoring, response, and protective-guideline requirements around agent-assisted intrusions.",
+      "named_entities": [
+        "Taiwan Ministry of Digital Affairs",
+        "National Institute of Cyber Security",
+        "Dream",
+        "Open Claw",
+        "Taiwan nuclear safety agency",
+        "Taiwan energy companies"
+      ],
+      "upstream_routing": {
+        "ai_security_wiki": "Owns the public AI-assisted cyber incident, operational mitigations, and lessons for threat modeling and monitoring.",
+        "ai_wiki": "Dream and Open Claw as broad AI entities are upstream-owned if durable entity pages are needed.",
+        "ai_dev_wiki": "No general AI-assisted development practice update is needed."
+      },
+      "confidence_notes": "Medium confidence because the report combines government statements, Reuters contribution, and Financial Times/Dream details; no primary Taiwan incident report URL was located in this run.",
+      "follow_up_actions": [
+        "Locate the primary Taiwan MDA or National Institute of Cyber Security notice before durable synthesis.",
+        "Check whether Dream publishes a technical report with indicators, tool behavior, or affected boundary details.",
+        "Avoid attribution beyond the reported indicators unless primary sources provide more evidence."
+      ]
+    },
+    {
+      "id": "2026-08-14-agent-runtime-hooks",
+      "title": "Runtime hooks framed as action-level controls for AI agents",
+      "source_urls": [
+        "https://www.bankinfosecurity.com/ai-agents-need-more-than-prompt-guardrails-a-32373"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.bankinfosecurity.com/ai-agents-need-more-than-prompt-guardrails-a-32373",
+          "published": "2026-08-14",
+          "date_basis": "Article page displays August 14, 2026."
+        }
+      ],
+      "concise_factual_summary": "BankInfoSecurity reports that enterprises are responding to failed AI-agent guardrails with runtime hooks that inspect a proposed agent action before another system executes it. The described control can allow, block, or escalate an action for approval, while complementing prompt guardrails, restricted credentials, and isolated backups.",
+      "evidence_classification": "reputable security-industry reporting and practitioner analysis",
+      "affected_boundary_or_version": "Agent action execution boundary between model output and connected systems; no specific product version is identified.",
+      "why_it_matters_for_ai_security": "The item captures a concrete mitigation pattern for autonomous action risk: controls must gate the tool/action boundary, not just filter prompts and responses.",
+      "named_entities": [
+        "BankInfoSecurity",
+        "AI agents",
+        "runtime hooks",
+        "guardrails"
+      ],
+      "upstream_routing": {
+        "ai_security_wiki": "Owns runtime hooks as a security-control pattern for delegated authority and autonomous action.",
+        "ai_wiki": "No broad AI entity update is needed.",
+        "ai_dev_wiki": "General agent workflow design can route upstream if later synthesized as a development practice; this repository should keep the security-control lens."
+      },
+      "confidence_notes": "Medium confidence because the item is an expert/practitioner report rather than a formal standard or advisory.",
+      "follow_up_actions": [
+        "During ingest, compare the runtime-hook pattern with existing local pages for agent approval boundaries, least privilege, and tool execution gates.",
+        "Look for primary vendor or open-source implementations before creating a durable local leaf."
+      ]
+    },
+    {
+      "id": "2026-08-14-ai-agent-insider-risk",
+      "title": "AI agents characterized as synthetic insider-risk actors",
+      "source_urls": [
+        "https://www.bankinfosecurity.com/ai-agents-are-insider-risks-newest-blind-spot-a-32561"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.bankinfosecurity.com/ai-agents-are-insider-risks-newest-blind-spot-a-32561",
+          "published": "2026-08-14",
+          "date_basis": "Article page displays August 14, 2026."
+        }
+      ],
+      "concise_factual_summary": "BankInfoSecurity frames AI agents as synthetic insiders because they can access sensitive systems, act at machine speed, and change behavior from prompt context. The item emphasizes continuous investigation over static insider-risk baselines and rules.",
+      "evidence_classification": "reputable security-industry reporting and practitioner analysis",
+      "affected_boundary_or_version": "Identity, access, data, SaaS, and delegated-agent activity monitoring boundaries; no specific product version is identified.",
+      "why_it_matters_for_ai_security": "The item sharpens the identity and least-privilege issue for AI systems: agents with legitimate access may create insider-like risk even when no human insider is malicious.",
+      "named_entities": [
+        "BankInfoSecurity",
+        "Above Security",
+        "AI agents",
+        "synthetic insiders"
+      ],
+      "upstream_routing": {
+        "ai_security_wiki": "Owns synthetic-insider risk as a local security lens over agent identity, authorization, and monitoring.",
+        "ai_wiki": "Above Security as a broad company/entity is upstream-owned if durable entity tracking is needed.",
+        "ai_dev_wiki": "General agent operating-model material should route upstream; keep only the security implication locally."
+      },
+      "confidence_notes": "Medium confidence because the source is interview/reporting rather than incident telemetry or a standard.",
+      "follow_up_actions": [
+        "Check for primary Above Security research or product material before durable synthesis.",
+        "Map this to existing local identity, authorization, and least-privilege pages."
+      ]
+    },
+    {
+      "id": "2026-08-14-akamai-hidden-context-exposure",
+      "title": "Akamai connected OWASP LLM 2026 risks to hidden context exposure and AI reconnaissance",
+      "source_urls": [
+        "https://www.akamai.com/blog/ai/owasp-top-10-llm-applications-2026-realistic-security-model",
+        "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.akamai.com/blog/ai/owasp-top-10-llm-applications-2026-realistic-security-model",
+          "published": "2026-08-14",
+          "date_basis": "Article page displays August 14, 2026."
+        },
+        {
+          "url": "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/",
+          "published": "2026-08-03",
+          "date_basis": "OWASP page is older than the cutoff and used only as the referenced standard, not as the inclusion date."
+        }
+      ],
+      "concise_factual_summary": "Akamai reports that OWASP LLM Top 10 2026 keeps prompt injection and sensitive information disclosure while giving more prominence to excessive agency and hidden context exposure. Akamai says hidden context exposure includes disclosure of tool schemas, behavioral logic, permissions, roles, refusal mechanisms, and workflow rules, and that its research across more than 170 real-world AI assistants found assistants can reveal operational boundaries even when refusing direct sensitive-data requests.",
+      "evidence_classification": "security vendor research and standards interpretation",
+      "affected_boundary_or_version": "AI assistant reconnaissance boundary, tool schema exposure, operational instruction exposure, and runtime AI application firewall controls.",
+      "why_it_matters_for_ai_security": "The item identifies pre-exploit reconnaissance against AI applications as a control point before targeted prompt injection, unauthorized access, tool abuse, or action chaining.",
+      "named_entities": [
+        "Akamai",
+        "OWASP GenAI Security Project",
+        "OWASP Top 10 for LLM Applications 2026",
+        "LLM03 Excessive Agency",
+        "LLM08 Hidden Context Exposure",
+        "Firewall for AI"
+      ],
+      "upstream_routing": {
+        "ai_security_wiki": "Owns the hidden-context-exposure, reconnaissance, and runtime security-control implications.",
+        "ai_wiki": "Akamai and OWASP as broad entities are upstream-owned if durable catalog context is needed.",
+        "ai_dev_wiki": "General application-design practices around tool schemas may route upstream; keep security-control analysis locally."
+      },
+      "confidence_notes": "Medium confidence. The date-qualified source is vendor analysis; OWASP itself is outside the cutoff but provides the referenced taxonomy.",
+      "follow_up_actions": [
+        "During ingest, verify exact OWASP category names and definitions from the OWASP source.",
+        "Check whether Akamai's cited research across 170 assistants has a primary methodology post or dataset."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "NIST Shaping the NVD for the Future: AI-Enabled Vulnerability Management",
+      "url": "https://www.nist.gov/blogs/cybersecurity-insights/shaping-nvd-future-we-need-your-feedback-ai-enabled-vulnerability",
+      "visible_date": "August 12, 2026",
+      "reason": "Excluded as boundary-only: the page shows only a date, not a time, and the exact cutoff is 2026-08-12T23:31:11Z."
+    },
+    {
+      "title": "NIST Workshop Summary Report for Cyber AI Profile Hybrid Workshop #1",
+      "url": "https://www.nist.gov/publications/workshop-summary-report-cyber-ai-profile-hybrid-workshop-1",
+      "visible_date": "Published August 3, 2026; Updated August 12, 2026",
+      "reason": "Excluded as boundary-only for the same reason: the update date is August 12 without a visible time after the UTC cutoff."
+    },
+    {
+      "title": "PC Gamer summary of AI agents as victims and attackers",
+      "url": "https://www.pcgamer.com/software/ai/welcome-to-the-internet-in-2026-where-ai-agents-are-both-victim-and-attacker-in-malware-wars/",
+      "visible_date": "Published 12 August 2026",
+      "reason": "Excluded as boundary-only and largely derivative of older AISI and Island/FakeGit sources."
+    },
+    {
+      "title": "Harris Beach Murtha prompt injection attack aimed at a U.S. court",
+      "url": "https://www.harrisbeachmurtha.com/insights/the-first-documented-prompt-injection-attack-aimed-at-a-u-s-court/",
+      "visible_date": "August 12, 2026",
+      "reason": "Excluded as boundary-only under the exact cutoff, despite containing a concrete prompt-injection incident."
+    },
+    {
+      "title": "Linux Foundation SAFE Working Group proposal",
+      "url": "https://www.linuxfoundation.org/blog/proposing-the-safe-working-group-an-open-community-effort-to-improve-ai-security",
+      "visible_date": "04 August 2026",
+      "reason": "Excluded as outside the 2-day window. Similar SAFE coverage in Axios was also outside the cutoff."
+    },
+    {
+      "title": "AISI unsanctioned agent behaviour during cyber testing",
+      "url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "visible_date": "August 4, 2026",
+      "reason": "Excluded as outside the 2-day window; retained only as context for in-window secondary mentions."
+    },
+    {
+      "title": "Cloud Security Alliance FakeGit and AgentBaiting report",
+      "url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-fakegit-agentbaiting-mcp-supply-chain-2026/",
+      "visible_date": "Published 2026-07-21",
+      "reason": "Excluded as stale, although it remains relevant background for AI Skill and MCP supply-chain risk."
+    },
+    {
+      "title": "Model Context Protocol 2026-07-28 specification and changelog",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+      "visible_date": "2026-07-28",
+      "reason": "Excluded as stale. An in-window Gravitee article discussed the release, but the authoritative specification date is outside the cutoff."
+    },
+    {
+      "title": "CVE-2026-18647 jina-ai reader SSRF records",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18647",
+      "visible_date": "August 3, 2026",
+      "reason": "Excluded as stale under the direct CVE and NVD dates."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_topic": "Zoom",
+      "routing": "Broad product/company context belongs in ai-wiki; AI-assisted exploit-development implications and Zoomsday patch facts belong in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "Dream and Open Claw",
+      "routing": "Broad AI vendor/tool coverage belongs in ai-wiki; Taiwan incident details and agent-assisted intrusion implications belong in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "Runtime hooks",
+      "routing": "General agent workflow design can route to ai-dev-wiki; action-gating as a security control belongs in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "Synthetic insiders",
+      "routing": "General agent operating-model discussion can route to ai-dev-wiki; identity, least-privilege, and monitoring implications belong in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "OWASP LLM Top 10 2026",
+      "routing": "The broad OWASP taxonomy may be cross-linked upstream; hidden-context exposure and reconnaissance controls belong in ai-security-wiki."
+    }
+  ],
+  "confidence_summary": {
+    "qualifying_count": 5,
+    "exclusion_count": 9,
+    "routing_count": 5,
+    "overall_confidence": "medium",
+    "notes": [
+      "The strongest item is the Zoom bulletin update because it has official vendor update dates inside the window.",
+      "Several otherwise useful public sources were excluded because August 12 date-only pages cannot be safely placed after the exact UTC cutoff.",
+      "No private, proprietary, sensitive, PII, or company-internal local content was sent to external services."
+    ]
+  },
+  "follow_up_actions": [
+    "Ingest workflow should verify each source again, especially individual Zoom ZSB pages and any primary Taiwan/Dream incident material.",
+    "Do not move this artifact to raw/processed until durable synthesis and verifier-gated wiki ingest complete.",
+    "Check for NVD, CVE, CISA KEV, and vendor advisory changes before using the Zoom item in a durable page."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": []
+}

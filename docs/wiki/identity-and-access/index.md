@@ -11,6 +11,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [MCP SDK OAuth issuer binding](mcp-sdk-oauth-issuer-binding.md)
 - [Development agent credential isolation](development-agent-credential-isolation.md)
 - [Production agent identity and access controls](production-agent-identity-and-access-controls.md)
+- [Agent synthetic insider risk](agent-synthetic-insider-risk.md)
 
 ## Authoritative Sources
 

@@ -1,0 +1,400 @@
+{
+  "affected_boundaries_summary": [
+    "AI incident reporting boundary",
+    "Confluence attachment upload tool boundary",
+    "MCP server filesystem boundary",
+    "administrator feature-toggle boundary",
+    "agent runtime launch-readiness boundary",
+    "agent trace and tool-call evidence boundary",
+    "agent-mediated secret exfiltration boundary",
+    "credential exposure boundary",
+    "frontier-model prerelease cybersecurity review boundary",
+    "government-lab testing relationship boundary",
+    "model-processing data residency boundary",
+    "open-model review transparency boundary",
+    "regional endpoint selection boundary",
+    "release evidence boundary",
+    "sandbox port isolation boundary",
+    "third-party notification boundary"
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "evidence_classification_legend": [
+    "confirmed_exploitation",
+    "demonstrated_research",
+    "disclosed_vulnerability",
+    "mitigation",
+    "control_change",
+    "unverified_claim"
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md",
+      "reason": "stale visible publication date; no in-window update found for ATO-approved sensitive-data use.",
+      "source_url": "https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/",
+      "visible_date": "2026-01"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+      "reason": "outside strict seven-day window for this run; already captured in earlier watcher evidence.",
+      "source_url": "https://docs.cloud.google.com/model-armor/release-notes",
+      "visible_date": "2026-08-05"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md",
+      "reason": "boundary-only date at start of the seven-day window and already captured in prior leaf evidence.",
+      "source_url": "https://www.theguardian.com/technology/2026/aug/07/white-house-ai",
+      "visible_date": "2026-08-07"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md",
+      "reason": "stale advisory date; page chrome showed 2026-08-13 but not as an advisory update date.",
+      "source_url": "https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-008/",
+      "visible_date": "2026-07-28"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md",
+      "reason": "stale MCP OAuth redirect URI fix; no in-window redirect-handling update found.",
+      "source_url": "https://docs.cloud.google.com/mcp/docs/release-notes",
+      "visible_date": "2026-07-22"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md",
+      "reason": "outside strict seven-day window and adjacent to managed MCP authentication setup rather than the selected redirect-URI leaf.",
+      "source_url": "https://developers.google.com/knowledge/mcp",
+      "visible_date": "2026-08-05"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md",
+      "reason": "adjacent enterprise data-federation connector update, not same-leaf MCP tool-level IAM authorization evidence.",
+      "source_url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+      "visible_date": "2026-08-12"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md",
+      "reason": "adjacent frontier-evaluation containment coverage, not a same-leaf local sandbox escape host-file-access update.",
+      "source_url": "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing",
+      "visible_date": "2026-08-11"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md",
+      "reason": "stale v1.7.0 release date; no in-window MCP SDK transport-header update found.",
+      "source_url": "https://github.com/modelcontextprotocol/go-sdk/releases",
+      "visible_date": "2026-07-28"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md",
+      "reason": "stale CVE publication; current crawls do not establish a visible in-window update.",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58481",
+      "visible_date": "2026-07-20"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md",
+      "reason": "stale CVE publication; current crawls do not establish a visible in-window update.",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58484",
+      "visible_date": "2026-07-20"
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/evaluation-artifact-template-execution-risk.md",
+      "reason": "stale incident report; no in-window template-execution update found.",
+      "source_url": "https://huggingface.co/blog/incident-report-evals",
+      "visible_date": "2026-07-21"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md",
+      "reason": "boundary-only Cloud Billing date for Gemini Enterprise cost-by-SKU reporting; already captured previously.",
+      "source_url": "https://docs.cloud.google.com/release-notes",
+      "visible_date": "2026-08-07"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md",
+      "reason": "secondary vendor explainer; not authoritative enough for a same-leaf wiki update without a new primary control change.",
+      "source_url": "https://www.nops.io/blog/ai-cost-anomaly-detection/",
+      "visible_date": "2026-08-13"
+    }
+  ],
+  "follow_up_notes": [
+    "Ingest should add the CVE publication and CISA ADP PoC timing without duplicating the older July GitHub advisory background.",
+    "Ingest should distinguish proposed RFC guidance from binding legal safe-harbor or mandatory disclosure obligations.",
+    "Treat as reported policy intent, not an official published framework; pair with official source if one appears.",
+    "Ingest should avoid turning this into a broad Gemini model update; the local delta is the residency warning.",
+    "Ingest should compare with prior v0.0.108 runtime-hardening evidence and avoid duplicating general product notes."
+  ],
+  "leaf_universe_count": 91,
+  "local_run_time": "2026-08-14 20:04:08 -0400",
+  "named_entities_summary": [
+    "Anthropic",
+    "CISA ADP",
+    "CVE-2026-73498",
+    "Cisco",
+    "Confluence",
+    "CrowdStrike",
+    "GHSA-g5r6-gv6m-f5jv",
+    "Gemini 3.7 Flash",
+    "Gemini Enterprise",
+    "Google Cloud",
+    "Hermes sandbox",
+    "Linux Foundation",
+    "NVIDIA",
+    "NemoClaw",
+    "Open Secure AI Alliance",
+    "OpenAI",
+    "OpenAI-compatible API",
+    "SAFE",
+    "White House",
+    "frontier models",
+    "mcp-atlassian",
+    "open models"
+  ],
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "MCP server filesystem boundary",
+        "Confluence attachment upload tool boundary",
+        "agent-mediated secret exfiltration boundary"
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Ingest should add the CVE publication and CISA ADP PoC timing without duplicating the older July GitHub advisory background.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md",
+      "named_entities": [
+        "mcp-atlassian",
+        "CVE-2026-73498",
+        "GHSA-g5r6-gv6m-f5jv",
+        "Confluence",
+        "CISA ADP"
+      ],
+      "source_title": "CVE-2026-73498 CVE List record",
+      "source_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/73xxx/CVE-2026-73498.json",
+      "summary": "CVE-2026-73498 was published for mcp-atlassian Confluence attachment upload path validation failure; CISA ADP tagged proof-of-concept exploitation and the fix is v0.22.0.",
+      "upstream_routing": "Route broad Atlassian and MCP server catalog facts upstream; keep the file-read/exfiltration control locally.",
+      "visible_published_or_updated_at": "2026-08-13T13:37:36.522Z"
+    },
+    {
+      "affected_boundaries": [
+        "AI incident reporting boundary",
+        "agent trace and tool-call evidence boundary",
+        "third-party notification boundary"
+      ],
+      "evidence_classification": [
+        "control_change",
+        "mitigation"
+      ],
+      "follow_up_note": "Ingest should distinguish proposed RFC guidance from binding legal safe-harbor or mandatory disclosure obligations.",
+      "leaf_id": "docs/wiki/incident-response/safe-ai-incident-sharing-guidance.md",
+      "named_entities": [
+        "Open Secure AI Alliance",
+        "SAFE",
+        "NVIDIA",
+        "Cisco",
+        "CrowdStrike",
+        "Linux Foundation"
+      ],
+      "source_title": "Axios coverage of SAFE AI agent incident-reporting framework",
+      "source_url": "https://www.axios.com/2026/08/11/open-source-security-ai-agent-reporting",
+      "summary": "Axios reports that SAFE would standardize reportable AI-agent incidents, near misses, evidence preservation, notification timing, and remediation updates.",
+      "upstream_routing": "Route broad alliance membership and general open-source AI governance upstream; keep the incident-sharing security operating rule locally.",
+      "visible_published_or_updated_at": "2026-08-11"
+    },
+    {
+      "affected_boundaries": [
+        "frontier-model prerelease cybersecurity review boundary",
+        "open-model review transparency boundary",
+        "government-lab testing relationship boundary"
+      ],
+      "evidence_classification": [
+        "unverified_claim",
+        "control_change"
+      ],
+      "follow_up_note": "Treat as reported policy intent, not an official published framework; pair with official source if one appears.",
+      "leaf_id": "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md",
+      "named_entities": [
+        "White House",
+        "OpenAI",
+        "Anthropic",
+        "frontier models",
+        "open models"
+      ],
+      "source_title": "WIRED report on planned expansion of White House AI framework",
+      "source_url": "https://www.wired.com/story/the-white-house-is-going-to-expand-its-ai-policy",
+      "summary": "WIRED reports, citing people familiar with the matter, that the White House expects to extend its frontier-model prerelease testing framework from closed models to sufficiently capable open models.",
+      "upstream_routing": "Route broad US AI policy and open-model ecosystem coverage upstream; keep the cybersecurity-review transparency delta locally.",
+      "visible_published_or_updated_at": "2026-08-12"
+    },
+    {
+      "affected_boundaries": [
+        "model-processing data residency boundary",
+        "regional endpoint selection boundary",
+        "administrator feature-toggle boundary"
+      ],
+      "evidence_classification": [
+        "control_change"
+      ],
+      "follow_up_note": "Ingest should avoid turning this into a broad Gemini model update; the local delta is the residency warning.",
+      "leaf_id": "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+      "named_entities": [
+        "Google Cloud",
+        "Gemini Enterprise",
+        "Gemini 3.7 Flash"
+      ],
+      "source_title": "Gemini Enterprise release notes",
+      "source_url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+      "summary": "Gemini Enterprise made Gemini 3.7 Flash available in global, US, and EU regions and notes that unsupported in-country regions can route traffic to the global endpoint, which does not support regional data residency.",
+      "upstream_routing": "Route model-release details upstream; keep the regional data-residency caveat locally.",
+      "visible_published_or_updated_at": "2026-08-13"
+    },
+    {
+      "affected_boundaries": [
+        "agent runtime launch-readiness boundary",
+        "sandbox port isolation boundary",
+        "credential exposure boundary",
+        "release evidence boundary"
+      ],
+      "evidence_classification": [
+        "control_change",
+        "mitigation"
+      ],
+      "follow_up_note": "Ingest should compare with prior v0.0.108 runtime-hardening evidence and avoid duplicating general product notes.",
+      "leaf_id": "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md",
+      "named_entities": [
+        "NVIDIA",
+        "NemoClaw",
+        "Hermes sandbox",
+        "OpenAI-compatible API"
+      ],
+      "source_title": "NVIDIA NemoClaw release notes",
+      "source_url": "https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes",
+      "summary": "NemoClaw v0.0.109 adds credential-free launch-readiness leases, distinct OpenAI-compatible API ports per Hermes sandbox, and improves sandbox startup, inference health reporting, and onboarding recovery.",
+      "upstream_routing": "Route broad NemoClaw product release context upstream; keep runtime security evidence and containment controls locally.",
+      "visible_published_or_updated_at": "2026-08-14"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-15T00:04:08Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md",
+    "docs/wiki/incident-response/safe-ai-incident-sharing-guidance.md",
+    "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md",
+    "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+    "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md",
+    "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md",
+    "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md",
+    "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md",
+    "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md",
+    "docs/wiki/model-and-prompt-security/evaluation-artifact-template-execution-risk.md",
+    "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md",
+    "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md"
+  ],
+  "selection_policy": "Unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-73498",
+      "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/73xxx/CVE-2026-73498.json",
+      "https://github.com/sooperset/mcp-atlassian/security/advisories/GHSA-g5r6-gv6m-f5jv",
+      "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0",
+      "https://www.incibe.es/en/incibe-cert/early-warning/vulnerabilities/cve-2026-73498"
+    ],
+    "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md": [
+      "https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/",
+      "https://www.digital.gov.au/policy/ai/staff-guidance-public-generative-ai"
+    ],
+    "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md": [
+      "https://docs.cloud.google.com/model-armor/release-notes",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+      "https://docs.cloud.google.com/release-notes"
+    ],
+    "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md": [
+      "https://www.theguardian.com/technology/2026/aug/07/white-house-ai",
+      "https://www.wired.com/story/the-white-house-is-going-to-expand-its-ai-policy",
+      "https://www.washingtonpost.com/technology/2026/08/04/white-house-will-exempt-open-ai-systems-security-review/"
+    ],
+    "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md": [
+      "https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-008/",
+      "https://www.centreforcybersecurity.com/blog/how-to-use-ai-chatbots-safely-singapore",
+      "https://digital-strategy.ec.europa.eu/en/policies/guidelines-ai-transparency-obligations"
+    ],
+    "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md": [
+      "https://docs.cloud.google.com/mcp/docs/release-notes",
+      "https://developers.google.com/knowledge/mcp",
+      "https://gofastmcp.com/integrations/google"
+    ],
+    "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md": [
+      "https://docs.cloud.google.com/mcp/ai-security-safety",
+      "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+      "https://developers.google.com/workspace/guides/configure-mcp-security",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes"
+    ],
+    "docs/wiki/incident-response/safe-ai-incident-sharing-guidance.md": [
+      "https://www.axios.com/2026/08/11/open-source-security-ai-agent-reporting",
+      "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/",
+      "https://www.securityweek.com/cybersecurity-alliance-drafts-safe-guidelines-for-sharing-ai-incident-data/",
+      "https://www.channelinsider.com/ai/news-safe-framework-agentic-ai-security-incidents/"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md": [
+      "https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac",
+      "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md": [
+      "https://github.com/modelcontextprotocol/go-sdk/releases",
+      "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
+      "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports",
+      "https://blog.cloudflare.com/mcp-v2/"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-58481",
+      "https://github.com/advisories/GHSA-jvcm-f35g-w78p",
+      "https://opencve.alliance.unm.edu/cve/CVE-2026-58481",
+      "https://www.sentinelone.com/vulnerability-database/cve-2026-58481/"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-58484",
+      "https://github.com/advisories/GHSA-2fmp-9rvw-hc96",
+      "https://www.sentinelone.com/vulnerability-database/cve-2026-58484/",
+      "https://www.tenable.com/cve/CVE-2026-58484"
+    ],
+    "docs/wiki/model-and-prompt-security/evaluation-artifact-template-execution-risk.md": [
+      "https://huggingface.co/blog/incident-report-evals",
+      "https://huggingface.co/blog/security-incident-july-2026",
+      "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "https://huggingface.co/blog/agent-intrusion-technical-timeline"
+    ],
+    "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md": [
+      "https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes/2026/7/24",
+      "https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes",
+      "https://docs.nvidia.com/nemoclaw/user-guide/deepagents/release-notes",
+      "https://www.langchain.com/blog/langchain-and-nvidia-launch-the-nemoclaw-deep-agents-blueprint"
+    ],
+    "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md": [
+      "https://docs.cloud.google.com/release-notes",
+      "https://docs.cloud.google.com/billing/docs/how-to/manage-anomalies",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+      "https://www.nops.io/blog/ai-cost-anomaly-detection/"
+    ]
+  },
+  "strict_source_window": {
+    "date_policy": "Included only visibly published or updated sources inside the last seven days; excluded stale, missing, future, ambiguous, and boundary-only dates.",
+    "end_inclusive": "2026-08-15T00:04:08Z",
+    "start_exclusive": "2026-08-08T00:04:08Z"
+  },
+  "upstream_routing_summary": [
+    "Route broad Atlassian and MCP server catalog facts upstream; keep the file-read/exfiltration control locally.",
+    "Route broad alliance membership and general open-source AI governance upstream; keep the incident-sharing security operating rule locally.",
+    "Route broad US AI policy and open-model ecosystem coverage upstream; keep the cybersecurity-review transparency delta locally.",
+    "Route model-release details upstream; keep the regional data-residency caveat locally.",
+    "Route broad NemoClaw product release context upstream; keep runtime security evidence and containment controls locally."
+  ]
+}

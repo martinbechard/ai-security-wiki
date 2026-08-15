@@ -45,11 +45,14 @@ Those fields make runtime evidence more provenance-oriented. The release gate sh
 - which source revision was exercised;
 - whether MCP credential evidence was validated with the runtime path.
 
+The [August 14 leaf update watch source](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json) adds [NVIDIA NemoClaw release-note](https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes) evidence for v0.0.109 controls: credential-free launch-readiness leases, distinct OpenAI-compatible API ports per Hermes sandbox, and improved sandbox startup, inference health reporting, and onboarding recovery. Broad product release context remains upstream; locally, the v0.0.109 signal expands the runtime-evidence checklist for launch readiness, port isolation, and health reporting.
+
 ## Assurance Implications
 
 - Treat sandbox restore and update behavior as security-control surfaces, not only developer-experience features.
 - Preserve machine-readable onboarding and policy evidence for audit and release review.
 - Preserve host readiness producer identity, source revision evidence, and coupled MCP credential validation as release-gate evidence.
+- Require launch-readiness leases, sandbox-specific API port isolation, sandbox startup status, inference health, and onboarding recovery evidence where the runtime exposes them.
 - Classify live end-to-end failures by containment, policy, identity, tool, network, and environment causes when evidence supports it.
 - Avoid inferring technical implementation details beyond the concise release-note signal until detailed documentation is captured.
 - Confidence is high for the [official release-note](https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes/2026/7/24) facts and medium for operational interpretation because the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) is concise.
@@ -59,6 +62,7 @@ Those fields make runtime evidence more provenance-oriented. The release gate sh
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
 - [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
 - [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json)
+- [August 14 leaf update watch source](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json)
 - NVIDIA NemoClaw release notes: https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes/2026/7/24
 - NVIDIA NemoClaw [Deep Agents](../../../upstream-ai-wiki/agentic-frameworks/deep-agents.md) release notes: https://docs.nvidia.com/nemoclaw/user-guide/deepagents/release-notes
 
@@ -87,8 +91,10 @@ Those fields make runtime evidence more provenance-oriented. The release gate sh
 - Which NemoClaw evidence fields are stable enough to use as reusable security-assurance requirements?
 - Which gateway-pairing and sandbox-restore release checks should become mandatory pre-release evidence for local agent runtimes?
 - Which source-revision and MCP credential-evidence fields are necessary to reproduce a failed or passed agent-runtime release gate?
+- Which sandbox port-isolation and launch-readiness lease evidence should block a runtime release when missing?
 
 ## Maintenance Notes
 
 - Added from the [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json); enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json). Keep this as a release-control signal until more detailed technical documentation is captured.
 - Updated on 2026-08-09 from the [August 9 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) with Deep Agents release evidence for producer identity, source revision, MCP credential validation, and release E2E hardening.
+- Updated on 2026-08-14 from the [August 14 watcher](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json) with v0.0.109 launch-readiness lease, sandbox port-isolation, startup-health, inference-health, and onboarding-recovery evidence.

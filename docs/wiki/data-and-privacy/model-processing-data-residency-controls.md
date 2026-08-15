@@ -29,14 +29,16 @@ The local control remains data-path verification. Residency-sensitive workloads 
 
 The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) adds [Model Armor release notes](https://docs.cloud.google.com/model-armor/release-notes) for data residency support for in-use and in-transit data in `australia-southeast2` and `asia-northeast3`, with limited feature support. This is a Model Armor residency control, not an API Hub MCP feature change. The local residency implication is that Model Armor-backed MCP or agent gateway deployments need region-specific evidence for inspection, logging, and unsupported feature fallback before sensitive data is routed through those controls.
 
+The [August 14 leaf update watch source](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json) adds [Gemini Enterprise release-note](https://docs.cloud.google.com/gemini/enterprise/docs/release-notes) evidence that Gemini 3.7 Flash is available in global, US, and EU regions and that unsupported in-country regions can route traffic to the global endpoint, which does not support regional data residency. This is a residency warning, not a broad Gemini model update.
+
 ## Security Impact
 
 - Threat: regulated or sensitive data can cross an unacceptable region or processing boundary through model calls, retrieval context, tool outputs, or telemetry.
-- Affected boundary: Gemini Enterprise Gemini 3.6 Flash, US multi-region data residency at rest, machine learning processing, API Hub MCP endpoint region selection, Model Armor in-use and in-transit processing in `australia-southeast2` and `asia-northeast3`, and agent-to-Google Cloud service routing.
+- Affected boundary: Gemini Enterprise Gemini 3.6 Flash, Gemini 3.7 Flash region selection, US multi-region data residency at rest, machine learning processing, API Hub MCP endpoint region selection, Model Armor in-use and in-transit processing in `australia-southeast2` and `asia-northeast3`, global endpoint fallback, and agent-to-Google Cloud service routing.
 - Exploit or incident status: [official control release](https://docs.cloud.google.com/release-notes); no incident was reported in the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json).
 - Mitigation state: require residency evidence before placing regulated data into model-processing paths and verify whether logs, traces, connector payloads, Model Armor routing, MCP prompt and response inspection, limited-support features, and fallback models share the same boundary.
 - Confidence: high for release-note facts because the [collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) cites [official Google Cloud release notes](https://docs.cloud.google.com/release-notes).
-- Residual risk: allowlist status, region availability, limited feature support, and tenant configuration determine whether the residency control applies; surrounding telemetry and tool calls can still leave the intended boundary.
+- Residual risk: allowlist status, region availability, unsupported in-country regions, limited feature support, global endpoint fallback, and tenant configuration determine whether the residency control applies; surrounding telemetry and tool calls can still leave the intended boundary.
 
 ## Authoritative Sources
 
@@ -44,6 +46,7 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 - [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
 - [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
+- [August 14 leaf update watch source](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json)
 - Google Cloud release notes: https://docs.cloud.google.com/release-notes
 - Cloud Monitoring MCP documentation: https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp
 
@@ -72,9 +75,11 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 - Which logs, traces, connector payloads, and fallback paths are covered by the Gemini Enterprise residency boundary?
 - Which API Hub MCP endpoint policies distinguish global endpoint convenience from residency-sensitive regional processing?
 - Which MCP servers route Model Armor inspection through regions that differ from the server jurisdiction?
+- Which Gemini Enterprise configurations silently use the global endpoint when an in-country region is unsupported?
 
 ## Maintenance Notes
 
 - Split from the bundled anomaly/residency draft during July 25 verifier correction; enriched from the [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json). Keep this page focused on data residency and model-processing boundaries.
 - Updated on 2026-08-09 from the [August 9 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) with Cloud Monitoring MCP and Model Armor in-use or in-transit residency caveats.
 - Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) with `australia-southeast2` and `asia-northeast3` Model Armor residency evidence and limited-support caveats.
+- Updated on 2026-08-14 from the [August 14 watcher](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json) with Gemini 3.7 Flash regional availability and global-endpoint residency caveats.
