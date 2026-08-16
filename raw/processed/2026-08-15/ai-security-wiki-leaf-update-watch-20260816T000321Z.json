@@ -1,0 +1,340 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-16T00:03:21Z",
+  "local_run_time": "2026-08-15 20:03:21 -0400",
+  "strict_source_window": {
+    "start_inclusive": "2026-08-08",
+    "end_inclusive": "2026-08-15",
+    "policy": "Include only sources visibly published or updated within the last 7 days; exclude ambiguous, missing, future, stale, or boundary-only dates."
+  },
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "selection_policy": "New or unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "leaf_universe_count": 95,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/agent-action-runtime-hooks.md",
+    "docs/wiki/identity-and-access/agent-synthetic-insider-risk.md",
+    "docs/wiki/model-and-prompt-security/hidden-context-exposure-reconnaissance.md",
+    "docs/wiki/threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md",
+    "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md",
+    "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+    "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+    "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+    "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+    "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+    "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+    "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+    "docs/wiki/governance-and-compliance/california-ai-transparency-act-provenance-controls.md",
+    "docs/wiki/governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md",
+    "docs/wiki/governance-and-compliance/gpai-systemic-risk-controls.md"
+  ],
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/agent-action-runtime-hooks.md": [
+      "https://www.bankinfosecurity.com/ai-agents-need-more-than-prompt-guardrails-a-32373",
+      "https://www.bankinfosecurity.com/rise-malicious-ai-skills-expands-enterprise-risk-a-32475"
+    ],
+    "docs/wiki/identity-and-access/agent-synthetic-insider-risk.md": [
+      "https://www.bankinfosecurity.com/ai-agents-are-insider-risks-newest-blind-spot-a-32561"
+    ],
+    "docs/wiki/model-and-prompt-security/hidden-context-exposure-reconnaissance.md": [
+      "https://www.akamai.com/blog/ai/owasp-top-10-llm-applications-2026-realistic-security-model",
+      "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
+    ],
+    "docs/wiki/threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md": [
+      "https://www.malwarebytes.com/blog/bugs/2026/08/zoomsday-flaws-could-let-one-zoom-participant-attack-another",
+      "https://www.techradar.com/pro/security/a-dangerous-zoom-screen-sharing-bug-could-have-let-hackers-hijack-other-devices-on-a-call",
+      "https://www.zoom.com/en/trust/security-bulletin/zsb-26015/",
+      "https://www.zoom.com/en/trust/security-bulletin/zsb-26016/",
+      "https://www.zoom.com/en/trust/security-bulletin/zsb-26017/"
+    ],
+    "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md": [
+      "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/",
+      "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+      "https://www.axios.com/2026/08/10/openai-gpt-astra-restrictions-safety-hacking-defenders",
+      "https://www.itpro.com/security/openai-has-paused-work-on-its-astra-ai-model-after-it-passed-a-critical-threshold-in-cyber-capability-but-its-not-the-one-that-breached-hugging-face"
+    ],
+    "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-14538",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-15829"
+    ],
+    "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md": [
+      "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud",
+      "https://docs.cloud.google.com/apigee/docs/apihub/release-notes",
+      "https://docs.cloud.google.com/mcp/release-notes",
+      "https://docs.cloud.google.com/model-armor/release-notes"
+    ],
+    "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-14538",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+      "https://github.com/googleapis/mcp-toolbox/pull/3324"
+    ],
+    "docs/wiki/agent-and-tool-security/langflow-kev-rce.md": [
+      "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-0770",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-0770",
+      "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-092/"
+    ],
+    "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md": [
+      "https://junie.jetbrains.com/docs/junie-headless.html",
+      "https://junie.jetbrains.com/docs/junie-cli-configuration.html"
+    ],
+    "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-65015",
+      "https://github.com/advisories/GHSA-w46p-w7w2-fr9g",
+      "https://advisories.gitlab.com/npm/n8n/CVE-2026-65015/"
+    ],
+    "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md": [
+      "https://junie.jetbrains.com/docs/action-allowlist.html",
+      "https://junie.jetbrains.com/docs/junie-ide-plugin.html",
+      "https://github.com/api-evangelist/aiignore"
+    ],
+    "docs/wiki/governance-and-compliance/california-ai-transparency-act-provenance-controls.md": [
+      "https://www.leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB853",
+      "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab853",
+      "https://www.onetrust.com/blog/california-ai-transparency-act-requirements-deadlines-and-compliance-steps/"
+    ],
+    "docs/wiki/governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md": [
+      "https://ai-act-service-desk.ec.europa.eu/en/faq",
+      "https://ai-act-service-desk.ec.europa.eu/en/resources",
+      "https://ai.gov.gr/en/press-releases/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-on-2-august/"
+    ],
+    "docs/wiki/governance-and-compliance/gpai-systemic-risk-controls.md": [
+      "https://ai-act-service-desk.ec.europa.eu/en/faq",
+      "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "https://ai.gov.gr/en/press-releases/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-on-2-august/"
+    ]
+  },
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md",
+      "source_title": "Malwarebytes Zoomsday operational mitigation coverage",
+      "source_url": "https://www.malwarebytes.com/blog/bugs/2026/08/zoomsday-flaws-could-let-one-zoom-participant-attack-another",
+      "visible_published_or_updated_at": "2026-08-12",
+      "summary": "Malwarebytes published same-leaf operational guidance for the Zoom annotation advisory family, emphasizing meeting-participant attack preconditions, recurring crash investigation, anti-malware controls, and device-management checks for deployed Zoom client updates.",
+      "evidence_classification": [
+        "mitigation"
+      ],
+      "affected_boundaries": [
+        "Zoom meeting-client annotation surface",
+        "enterprise endpoint patch-management boundary",
+        "meeting-participant incident triage boundary"
+      ],
+      "named_entities": [
+        "Zoom",
+        "Zoomsday",
+        "CVE-2026-53413",
+        "CVE-2026-53414",
+        "CVE-2026-53415",
+        "Malwarebytes"
+      ],
+      "upstream_routing": "Route broad Zoom product coverage upstream; keep the patch-management and AI-assisted exploit-development operational security lens locally.",
+      "follow_up_note": "Ingest should preserve Zoom official bulletins as affected-version authority and use Malwarebytes only for operational mitigation and triage guidance."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+      "source_title": "Google Cloud latest MCP security-gateway announcement",
+      "source_url": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud",
+      "visible_published_or_updated_at": "2026-08-15",
+      "summary": "Google Cloud public latest-news content announced an Apigee-centered technical deep dive for MCP security, naming unmonitored agentic tool calls as a critical architecture risk and highlighting centralized tool filtering, execution quotas, ParsePayload policy, and payload operations groups in API Products.",
+      "evidence_classification": [
+        "control_change"
+      ],
+      "affected_boundaries": [
+        "MCP tool-call monitoring boundary",
+        "Apigee security gateway boundary",
+        "API Product quota and payload-policy boundary"
+      ],
+      "named_entities": [
+        "Google Cloud",
+        "Apigee",
+        "Model Context Protocol",
+        "ParsePayload",
+        "API Products"
+      ],
+      "upstream_routing": "Route broad Apigee and Google Cloud product positioning upstream; keep MCP tool filtering, quotas, and gateway enforcement locally.",
+      "follow_up_note": "Ingest should decide whether this enriches Google API hub MCP controls or should become a separate Apigee MCP gateway control leaf if more evidence appears."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+      "source_title": "Junie Headless mode documentation",
+      "source_url": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "visible_published_or_updated_at": "2026-08-12",
+      "summary": "JetBrains Junie Headless documentation now visibly states that Gateway and ACP modes retain trusted behavior while the non-interactive rollout toggle is disabled, and enabling the toggle applies marker-aware restricted behavior without prompting.",
+      "evidence_classification": [
+        "control_change"
+      ],
+      "affected_boundaries": [
+        "Junie non-interactive execution boundary",
+        "Gateway and ACP trusted-mode boundary",
+        "project trust-marker enforcement boundary"
+      ],
+      "named_entities": [
+        "JetBrains Junie",
+        "Junie Headless",
+        "Gateway",
+        "ACP",
+        "trust markers"
+      ],
+      "upstream_routing": "Route broad JetBrains Junie product lifecycle upstream; keep trusted versus restricted non-interactive execution controls locally.",
+      "follow_up_note": "Ingest should update the local boundary with the August 12 visible date and preserve the rollout-toggle caveat."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+      "source_title": "Junie CLI config trust-marker documentation",
+      "source_url": "https://junie.jetbrains.com/docs/junie-cli-configuration.html",
+      "visible_published_or_updated_at": "2026-08-13",
+      "summary": "JetBrains Junie CLI configuration documentation describes trust-marker integrity codes tied to a local key and explains exact-marker and parent-marker revocation behavior for future CLI processes.",
+      "evidence_classification": [
+        "control_change"
+      ],
+      "affected_boundaries": [
+        "local project trust persistence boundary",
+        "trust-marker revocation boundary",
+        "non-interactive agent startup boundary"
+      ],
+      "named_entities": [
+        "JetBrains Junie",
+        "Junie CLI",
+        "trust marker",
+        "integrity code"
+      ],
+      "upstream_routing": "Route general Junie configuration documentation upstream; keep trust-marker integrity and revocation behavior locally as execution-boundary evidence.",
+      "follow_up_note": "Ingest should keep this separate from .aiignore context filtering because it governs project trust, not prompt context selection."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-action-runtime-hooks.md",
+      "source_url": "https://www.bankinfosecurity.com/ai-agents-need-more-than-prompt-guardrails-a-32373",
+      "visible_date": "2026-08-14",
+      "reason": "already captured by the processed August 14 topic collector and already represented in the newly created local leaf; no new same-leaf delta for this watcher run."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-action-runtime-hooks.md",
+      "source_url": "https://www.bankinfosecurity.com/rise-malicious-ai-skills-expands-enterprise-risk-a-32475",
+      "visible_date": "2026-08-15",
+      "reason": "adjacent agent-tool risk, but not the same runtime-hook control leaf; route only if a malicious AI skills leaf is selected or created."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/agent-synthetic-insider-risk.md",
+      "source_url": "https://www.bankinfosecurity.com/ai-agents-are-insider-risks-newest-blind-spot-a-32561",
+      "visible_date": "2026-08-14",
+      "reason": "already captured by the processed August 14 topic collector and already represented in the local synthetic-insider leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/hidden-context-exposure-reconnaissance.md",
+      "source_url": "https://www.akamai.com/blog/ai/owasp-top-10-llm-applications-2026-realistic-security-model",
+      "visible_date": "2026-08-14",
+      "reason": "already captured by the processed August 14 topic collector and already represented in the local hidden-context leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md",
+      "source_url": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/",
+      "visible_date": "2026-08-10",
+      "reason": "already represented in the current frontier-model release-gates page through the August 10 topic collector; no new same-leaf delta."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md",
+      "source_url": "https://www.itpro.com/security/openai-has-paused-work-on-its-astra-ai-model-after-it-passed-a-critical-threshold-in-cyber-capability-but-its-not-the-one-that-breached-hugging-face",
+      "visible_date": "2026-08-11",
+      "reason": "secondary Astra/Daybreak coverage; confirms already-captured control state without new primary evidence."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14538",
+      "visible_date": "2026-07-30",
+      "reason": "stale visible publication date outside the seven-day source window, despite relevance to final query authorization."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-14538",
+      "visible_date": "2026-07-30",
+      "reason": "stale visible publication date outside the seven-day source window; related Google MCP Toolbox boundary issue should wait for ingest from an in-window update or older-source reconciliation."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-0770",
+      "visible_date": "2026-01-23",
+      "reason": "stale CVE record; no in-window Langflow CVE-2026-0770 update identified."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-65015",
+      "visible_date": "2026-07-22",
+      "reason": "stale CVE record; no in-window n8n CVE-2026-65015 update identified."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+      "source_url": "https://github.com/api-evangelist/aiignore",
+      "visible_date": "2026-08-13",
+      "reason": "general .aiignore community/specification content, not a source cited by the leaf and not a product-specific same-leaf control change."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/california-ai-transparency-act-provenance-controls.md",
+      "source_url": "https://www.onetrust.com/blog/california-ai-transparency-act-requirements-deadlines-and-compliance-steps/",
+      "visible_date": "2026-07-30",
+      "reason": "stale visible publication date outside the seven-day source window."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md",
+      "source_url": "https://ai.gov.gr/en/press-releases/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-on-2-august/",
+      "visible_date": "2026-08-02",
+      "reason": "outside the seven-day source window for this August 15 run; also focuses on AI Office/GPAI enforcement rather than prohibited-practices controls."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/gpai-systemic-risk-controls.md",
+      "source_url": "https://ai.gov.gr/en/press-releases/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-on-2-august/",
+      "visible_date": "2026-08-02",
+      "reason": "outside the seven-day source window, even though it is relevant to GPAI enforcement routing."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/gpai-systemic-risk-controls.md",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+      "visible_date": "missing page-level in-window date",
+      "reason": "current official policy page, but the visible snippet does not establish an in-window publication or update date for a new local security delta."
+    }
+  ],
+  "evidence_classification_legend": {
+    "confirmed_exploitation": "Public source confirms exploitation in the wild or active exploitation.",
+    "demonstrated_research": "Research demonstrates exploitability or attack mechanics without confirmed real-world exploitation.",
+    "disclosed_vulnerability": "CVE, advisory, or vendor disclosure names a vulnerability or affected range.",
+    "mitigation": "Source gives patch, configuration, detection, or operational mitigation guidance.",
+    "control_change": "Source changes or clarifies a security control, enforcement boundary, or governance obligation.",
+    "unverified_claim": "Source asserts a security-relevant claim without enough primary evidence for stronger classification."
+  },
+  "affected_boundaries_summary": [
+    "Zoom meeting-client annotation and endpoint patch management",
+    "MCP security gateway and API tool-call control",
+    "Junie non-interactive local execution and project trust markers"
+  ],
+  "named_entities_summary": [
+    "Zoom",
+    "CVE-2026-53413",
+    "CVE-2026-53414",
+    "CVE-2026-53415",
+    "Google Cloud",
+    "Apigee",
+    "Model Context Protocol",
+    "JetBrains Junie",
+    "Gateway",
+    "ACP"
+  ],
+  "upstream_routing_summary": [
+    "Broad Zoom, Google Cloud, Apigee, JetBrains Junie, OpenAI, OWASP, EU AI Act, and California statute entity coverage remains upstream in ai-wiki or ai-dev-wiki.",
+    "This raw artifact keeps only security-specific mitigation, MCP enforcement, and local execution-boundary deltas."
+  ],
+  "follow_up_notes": [
+    "Ingest should avoid duplicating the processed August 14 topic collector sources for the newly created BankInfoSecurity/Akamai leaves.",
+    "Consider whether Apigee MCP gateway controls deserve a separate durable local leaf if future evidence repeats the centralized gateway pattern.",
+    "For Junie, keep trust-marker execution controls distinct from .aiignore context-exclusion controls."
+  ]
+}

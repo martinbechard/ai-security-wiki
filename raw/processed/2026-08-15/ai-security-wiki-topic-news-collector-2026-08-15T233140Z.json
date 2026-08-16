@@ -1,0 +1,331 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-08-15T23:31:40Z",
+  "cutoff_window": {
+    "start_utc": "2026-08-13T23:31:40Z",
+    "end_utc": "2026-08-15T23:31:40Z",
+    "rule": "Include only public items published or visibly updated within the exact last 2 days; exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "repository_scope": {
+    "repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "modified_paths": [
+      "raw/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json",
+      "/Users/martinbechard/.codex/automations/ai-security-wiki-topic-news-collector/memory.md"
+    ],
+    "not_modified": [
+      "docs/wiki",
+      "raw/processed"
+    ]
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "federation_context": {
+    "local_owner": "ai-security-wiki owns the security lens for AI threats, controls, incidents, assurance, identity, privacy, infrastructure, supply chain, and governance.",
+    "ai_wiki_upstream": "Broad AI companies, models, products, frameworks, MCP servers, and ecosystem entities route to /Users/martinbechard/dev/ai-wiki.",
+    "ai_dev_wiki_upstream": "General AI-assisted development practices, coding-agent workflows, evaluation patterns, and development governance route to /Users/martinbechard/dev/ai-dev-wiki."
+  },
+  "qualifying_findings": [
+    {
+      "id": "2026-08-15-ghsa-token-optimizer-mcp-command-injection",
+      "title": "token-optimizer-mcp command injection advisory",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-86qw-c7qw-gp4c",
+        "https://www.cve.org/CVERecord?id=CVE-2026-55157"
+      ],
+      "visible_dates": [
+        {
+          "source": "GitHub Advisory Database",
+          "date": "2026-08-15",
+          "date_type": "published",
+          "window_assessment": "in_window"
+        }
+      ],
+      "concise_factual_summary": "GitHub Advisory Database published GHSA-86qw-c7qw-gp4c for token-optimizer-mcp, identifying a high-severity command-injection issue, CVE-2026-55157, in MCP tooling that runs optimizer-related commands.",
+      "evidence_classification": "vulnerability_advisory",
+      "affected_boundary_or_version": "token-optimizer-mcp, affected versions as recorded by the GitHub advisory; exact downstream deployments depend on package use.",
+      "why_it_matters_for_ai_security": "MCP servers extend agent tool authority. Command injection in an MCP server can turn delegated tool use into host command execution, requiring package version control, sandboxing, and least-privilege runtime isolation.",
+      "named_entities": [
+        "token-optimizer-mcp",
+        "GitHub Advisory Database",
+        "CVE-2026-55157",
+        "Model Context Protocol"
+      ],
+      "local_topic_candidates": [
+        "agent-and-tool-security",
+        "infrastructure-and-supply-chain",
+        "identity-and-access"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "Broad MCP server and package catalog context belongs upstream; this repository should keep the security-specific command-injection implication."
+        }
+      ],
+      "confidence_notes": "High confidence on in-window status and advisory relevance from GitHub's visible publication date; affected-range details should be rechecked during ingest.",
+      "follow_up_actions": [
+        "During ingest, check whether a local durable page should be created for MCP package command execution boundaries or folded into an existing MCP server vulnerability page.",
+        "Verify patched version and mitigation language from package metadata or maintainer release notes before writing durable guidance."
+      ]
+    },
+    {
+      "id": "2026-08-15-cve-swagger-testcase-mcp-code-injection",
+      "title": "swagger-testcase-mcp code injection CVE",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-19765",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-19765",
+        "https://security.snyk.io/vuln/SNYK-PYTHON-SWAGGERTESTCASEMCP-13016954"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Program record search result",
+          "date": "2026-08-15",
+          "date_type": "published",
+          "window_assessment": "in_window"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-19765 was published for swagger-testcase-mcp, describing code injection through a crafted swagger file in the Python MCP server package.",
+      "evidence_classification": "vulnerability_database_record",
+      "affected_boundary_or_version": "swagger-testcase-mcp Python package before the fixed release identified by downstream vulnerability databases.",
+      "why_it_matters_for_ai_security": "Swagger or OpenAPI documents are likely to be treated as data inputs for API-aware agents, but this issue turns untrusted API description input into executable code risk inside an MCP server.",
+      "named_entities": [
+        "swagger-testcase-mcp",
+        "CVE-2026-19765",
+        "Snyk",
+        "Model Context Protocol"
+      ],
+      "local_topic_candidates": [
+        "agent-and-tool-security",
+        "model-and-prompt-security",
+        "infrastructure-and-supply-chain"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "General MCP package catalog ownership is upstream; keep local detail to untrusted API-spec input and MCP execution risk."
+        },
+        {
+          "owner": "ai-dev-wiki",
+          "reason": "General API-test generation workflow implications belong upstream to AI-assisted development practice; keep only the security boundary here."
+        }
+      ],
+      "confidence_notes": "Medium-high confidence: multiple vulnerability databases reference the CVE and package; the CVE page was not fully rendered in the fetched view, so ingest should verify authoritative record fields.",
+      "follow_up_actions": [
+        "Fetch CVE JSON or advisory metadata during ingest to confirm affected versions and remediation.",
+        "Compare with existing MCP vulnerability leaves before creating a new page."
+      ]
+    },
+    {
+      "id": "2026-08-14-acsc-ai-agents-unexpected-actions",
+      "title": "Australian Cyber Security Centre updated AI agent action guidance",
+      "source_urls": [
+        "https://www.cyber.gov.au/about-us/view-all-content/news/when-ai-agents-take-unexpected-actions"
+      ],
+      "visible_dates": [
+        {
+          "source": "Australian Cyber Security Centre",
+          "date": "2026-08-14",
+          "date_type": "last_updated",
+          "window_assessment": "in_window"
+        },
+        {
+          "source": "Australian Cyber Security Centre",
+          "date": "2026-08-11",
+          "date_type": "first_published",
+          "window_assessment": "stale_but_updated_in_window"
+        }
+      ],
+      "concise_factual_summary": "ACSC visibly updated guidance on 2026-08-14 about AI agents taking unexpected actions, emphasizing that agent authority, tool access, and autonomous execution can create cyber-security risk when actions exceed user intent or organizational controls.",
+      "evidence_classification": "official_government_security_guidance",
+      "affected_boundary_or_version": "Organizations deploying AI agents with tool access, delegated action, browser or workflow automation, and access to enterprise data or systems.",
+      "why_it_matters_for_ai_security": "The update directly addresses delegated authority, approval boundaries, monitoring, and operational controls for agentic systems, which are core local wiki ownership areas.",
+      "named_entities": [
+        "Australian Cyber Security Centre",
+        "AI agents"
+      ],
+      "local_topic_candidates": [
+        "agent-and-tool-security",
+        "identity-and-access",
+        "governance-and-compliance",
+        "testing-and-assurance"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-dev-wiki",
+          "reason": "General agent workflow governance belongs upstream; local coverage should focus on cyber-security controls and delegated-authority risk."
+        }
+      ],
+      "confidence_notes": "High confidence on official source and visible updated date; ingest should capture the exact controls from the source page without over-quoting.",
+      "follow_up_actions": [
+        "Map ACSC controls to existing local pages on approval boundaries, delegated authority, and agent action runtime hooks.",
+        "Check whether an official companion PDF or archived version exists for durable citation."
+      ]
+    },
+    {
+      "id": "2026-08-15-tenable-agentic-ai-threat-cluster",
+      "title": "Tenable agentic AI threat-cluster report",
+      "source_urls": [
+        "https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean"
+      ],
+      "visible_dates": [
+        {
+          "source": "Tenable blog search result and page metadata",
+          "date": "2026-08-15",
+          "date_type": "published",
+          "window_assessment": "in_window"
+        }
+      ],
+      "concise_factual_summary": "Tenable published a report grouping seven agentic-AI security incidents across three actor categories, framing recurring risks around autonomous agents, delegated system access, prompt or tool misuse, and enterprise exposure.",
+      "evidence_classification": "reputable_security_research",
+      "affected_boundary_or_version": "Enterprise agentic-AI deployments and integrations with tool access, data access, cloud resources, or developer environments.",
+      "why_it_matters_for_ai_security": "The cluster analysis is a public security synthesis of recurring agentic-AI incident patterns and can support local threat modeling, assurance gates, and incident taxonomy updates.",
+      "named_entities": [
+        "Tenable",
+        "agentic AI",
+        "AI agents"
+      ],
+      "local_topic_candidates": [
+        "threats-and-attacks",
+        "agent-and-tool-security",
+        "incident-response",
+        "testing-and-assurance"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "Broad vendor and agentic-AI ecosystem context belongs upstream; local coverage should preserve incident patterns and security lessons."
+        }
+      ],
+      "confidence_notes": "Medium confidence: search and page metadata identify an in-window Tenable report; ingest should refetch the article and verify individual incident claims before durable synthesis.",
+      "follow_up_actions": [
+        "During ingest, split specific named incidents into existing incident or threat leaves where they add new facts.",
+        "Avoid treating Tenable's clustering taxonomy as authoritative without preserving attribution."
+      ]
+    },
+    {
+      "id": "2026-08-14-pax-silica-ai-supply-chain-provenance-grant",
+      "title": "U.S. grant notice for AI supply-chain security provenance platform",
+      "source_urls": [
+        "https://simpler.grants.gov/opportunity/2f434e81-c476-49bb-a7e6-9a320c907cd9"
+      ],
+      "visible_dates": [
+        {
+          "source": "Grants.gov opportunity page",
+          "date": "2026-08-14",
+          "date_type": "posted_or_updated",
+          "window_assessment": "in_window"
+        }
+      ],
+      "concise_factual_summary": "A U.S. government Grants.gov opportunity for Pax Silica describes an AI supply-chain security credentialing and provenance platform, tying provenance, verification, and supply-chain trust to AI system security.",
+      "evidence_classification": "official_government_funding_and_governance_notice",
+      "affected_boundary_or_version": "AI supply-chain credentialing, provenance, and verification controls; grant opportunity rather than deployed product advisory.",
+      "why_it_matters_for_ai_security": "The notice is a public official signal that AI supply-chain provenance and credentialing are being funded as security infrastructure, relevant to model, artifact, dependency, and deployment trust boundaries.",
+      "named_entities": [
+        "Grants.gov",
+        "Pax Silica",
+        "AI supply chain security",
+        "provenance"
+      ],
+      "local_topic_candidates": [
+        "infrastructure-and-supply-chain",
+        "governance-and-compliance",
+        "testing-and-assurance"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "Company and platform background belongs upstream if Pax Silica becomes durable; local coverage should keep the security-provenance implication."
+        }
+      ],
+      "confidence_notes": "Medium confidence: official source and in-window date qualify, but because it is a funding notice rather than an incident or advisory, ingest should decide whether it merits durable coverage or only a routing note.",
+      "follow_up_actions": [
+        "Check whether the opportunity exposes agency, award, or abstract details suitable for an AI supply-chain controls page.",
+        "Exclude from durable security pages if the notice proves to be only a generic funding listing without concrete control detail."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Google's Private AI Compute explained",
+      "source_url": "https://blog.google/products/pixel-snap/technology-private-ai-compute/",
+      "visible_date": "2025-11-11",
+      "reason": "Stale relative to the 2026-08-13T23:31:40Z cutoff despite privacy/security relevance."
+    },
+    {
+      "title": "OpenAI Codex GitHub token vulnerability post",
+      "source_url": "https://www.dolthub.com/blog/2025-05-21-openai-codex-github-token-vulnerability/",
+      "visible_date": "2025-05-21",
+      "reason": "Stale and already outside the collection window."
+    },
+    {
+      "title": "CISO Online Black Hat USA 2026 takeaways",
+      "source_url": "https://www.csoonline.com/article/4209429/5-key-takeaways-from-black-hat-usa-2026.html",
+      "visible_date": "2026-08-13",
+      "reason": "Date-only August 13 is boundary-only and ambiguous against the exact cutoff; also mostly conference synthesis rather than a new primary security delta."
+    },
+    {
+      "title": "Stata MCP arbitrary code execution GitHub advisory",
+      "source_url": "https://github.com/advisories/GHSA-49m4-vp58-wgc9",
+      "visible_date": "2026-08-12",
+      "reason": "Visible publication date is outside the exact 48-hour window."
+    },
+    {
+      "title": "AI-Trader GitHub advisory",
+      "source_url": "https://github.com/advisories/GHSA-8v2r-35gr-p77q",
+      "visible_date": "2026-08-11",
+      "reason": "Visible publication date is outside the exact 48-hour window."
+    },
+    {
+      "title": "Windsurf editor code execution advisory",
+      "source_url": "https://github.com/advisories/GHSA-wj2m-jvpr-64cq",
+      "visible_date": "2026-08-06",
+      "reason": "Stale; not within the last 2 days."
+    },
+    {
+      "title": "NIST AI 600-1 and GenAI profile references",
+      "source_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "visible_date": "2026-07-29",
+      "reason": "Useful governance context but not an in-window publication or update with a concrete new security change."
+    },
+    {
+      "title": "Vendor blog posts on general MCP or agent security best practices",
+      "source_url": "multiple search results",
+      "visible_date": "2026-08-14 to 2026-08-15",
+      "reason": "Excluded where pages were ordinary thought leadership or product positioning without a concrete vulnerability, mitigation, control change, incident, assurance result, or regulatory/security delta."
+    },
+    {
+      "title": "Search-result-only AI security news candidates with no accessible visible date",
+      "source_url": "multiple search results",
+      "visible_date": "missing",
+      "reason": "Excluded under the missing-date rule even when title snippets appeared relevant."
+    }
+  ],
+  "routing_summary": {
+    "routing_count": 7,
+    "notes": [
+      "MCP package catalog context for token-optimizer-mcp routes upstream to ai-wiki; local implication is command injection in delegated tool infrastructure.",
+      "MCP package catalog context for swagger-testcase-mcp routes upstream to ai-wiki; local implication is untrusted API-spec input leading to MCP execution risk.",
+      "General API-test generation workflow implications for swagger-testcase-mcp route upstream to ai-dev-wiki.",
+      "General agent workflow governance in ACSC guidance routes upstream to ai-dev-wiki; local implication is cyber-security control and delegated-authority risk.",
+      "Broad Tenable vendor and agentic-AI ecosystem background routes upstream to ai-wiki; local implication is incident clustering and threat modeling.",
+      "Pax Silica company/platform background routes upstream to ai-wiki if durable; local implication is AI supply-chain provenance as security infrastructure.",
+      "Ordinary product or practice announcements without a concrete security delta were excluded instead of routed."
+    ]
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": [],
+  "collector_confidence": "The artifact uses public web sources only and applies the exact cutoff. Highest-confidence items are GitHub Advisory Database and ACSC official guidance; CVE rendering and Tenable article details should be rechecked during ingest before durable wiki synthesis."
+}

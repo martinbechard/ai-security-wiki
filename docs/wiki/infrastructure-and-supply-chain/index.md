@@ -19,6 +19,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Slopsquatting package hallucination risk](slopsquatting-package-hallucination-risk.md)
 - [DB-GPT unauthenticated path traversal remote code execution](db-gpt-unauthenticated-path-traversal-rce.md)
 - [LiteLLM supply-chain secret exposure](litellm-supply-chain-secret-exposure.md)
+- [AI supply chain provenance credentialing](ai-supply-chain-provenance-credentialing.md)
 
 ## Authoritative Sources
 

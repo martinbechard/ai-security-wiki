@@ -11,6 +11,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 - [Zoom annotation RCE AI-assisted research](zoom-annotation-rce-ai-assisted-research.md)
 - [AI-assisted exploit development acceleration](ai-assisted-exploit-development-acceleration.md)
 - [AI-assisted credential harvesting and token abuse](ai-assisted-credential-harvesting-and-token-abuse.md)
+- [Agentic AI threat cluster](agentic-ai-threat-cluster.md)
 
 ## Authoritative Sources
 

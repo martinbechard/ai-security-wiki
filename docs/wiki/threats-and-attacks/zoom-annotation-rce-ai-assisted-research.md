@@ -15,12 +15,19 @@ Zoom's official bulletin pages are the authority for affected products, severity
 
 Broad Zoom product and company context belongs upstream if needed. The local AI-security issue is narrower: public AI-assisted research can compress discovery, triage, and exploit-construction cycles against closed-source collaboration software, so release gates and enterprise patch windows should treat credible AI-assisted exploit claims as time-compression evidence even when the exact model contribution is not independently reproducible.
 
+The [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-security-wiki-leaf-update-watch-20260816T000321Z.json) adds [Malwarebytes operational coverage](https://www.malwarebytes.com/blog/bugs/2026/08/zoomsday-flaws-could-let-one-zoom-participant-attack-another) for the same advisory family. Use this as mitigation and triage evidence only: Zoom's bulletins remain authoritative for affected products and patch thresholds, while the Malwarebytes article reinforces:
+
+- participant-to-participant attack preconditions;
+- recurring crash investigation;
+- anti-malware coverage;
+- managed-device update checks.
+
 ## Security Impact
 
 - Threat: AI-assisted vulnerability research can shorten the time between annotator bug discovery and practical exploit construction against meeting clients.
 - Affected boundary: Zoom Workplace, Zoom Workplace VDI Client for Windows, Zoom Rooms, Zoom Meeting SDK, Zoom Video SDK, and the annotator function affected by CVE-2026-53413, CVE-2026-53414, and CVE-2026-53415.
 - Exploit or incident status: official public vendor advisories and researcher claims; no confirmed in-the-wild exploitation was captured by the source.
-- Mitigation state: apply the Zoom client, room, SDK, and VDI versions listed in the relevant ZSB pages; use the vendor pages rather than secondary articles for exact branch thresholds.
+- Mitigation state: apply the Zoom client, room, SDK, and VDI versions listed in the relevant ZSB pages, monitor repeated meeting-client crashes, use endpoint protection and device-management checks to confirm rollout, and use the vendor pages rather than secondary articles for exact branch thresholds.
 - Confidence: high for Zoom advisory facts and update dates; medium for the prompt-count and AI-assistance claims because those are researcher assertions rather than reproducible public evidence.
 - Residual risk: affected-product tables vary across the three CVEs, and secondary reporting may overstate AI autonomy while defenders may underweight the shorter exploit-development window.
 
@@ -39,6 +46,8 @@ Broad Zoom product and company context belongs upstream if needed. The local AI-
 - Zoom ZSB-26017 CVE-2026-53415 bulletin: https://www.zoom.com/en/trust/security-bulletin/zsb-26017/
 - A.Security Zoomsday research: https://a.security/blog/asecurity-zoomsday
 - Tom's Hardware coverage: https://www.tomshardware.com/tech-industry/cyber-security/zoomsday-vulnerability-let-anyone-in-a-zoom-meeting-take-over-anybody-else-ai-assisted-research-only-used-20-prompts-to-find-an-exploit-to-hack-hundred-of-millions-of-people
+- [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-security-wiki-leaf-update-watch-20260816T000321Z.json)
+- Malwarebytes operational mitigation coverage: https://www.malwarebytes.com/blog/bugs/2026/08/zoomsday-flaws-could-let-one-zoom-participant-attack-another
 
 ## Related Code
 
@@ -67,3 +76,4 @@ Broad Zoom product and company context belongs upstream if needed. The local AI-
 ## Maintenance Notes
 
 - Created on 2026-08-14 from the [August 14 topic collector](../../../raw/processed/2026-08-14/ai-security-wiki-topic-news-collector-2026-08-14T233111Z.json) after checking upstream ownership and routing broad Zoom context outside this local security leaf.
+- Updated on 2026-08-15 from the [August 15 watcher](../../../raw/processed/2026-08-15/ai-security-wiki-leaf-update-watch-20260816T000321Z.json) with Malwarebytes mitigation and triage coverage while keeping Zoom bulletins as affected-version authority.

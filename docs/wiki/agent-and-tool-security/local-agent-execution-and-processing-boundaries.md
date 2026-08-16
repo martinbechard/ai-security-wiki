@@ -32,6 +32,8 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 
 Current security reviews should preserve the distinction between documented future enforcement and the presently trusted non-interactive execution path.
 
+The [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-security-wiki-leaf-update-watch-20260816T000321Z.json) adds visible August 12 and August 13 Junie documentation updates. [Junie Headless mode](https://junie.jetbrains.com/docs/junie-headless.html) still documents Gateway and ACP as retaining trusted behavior while the non-interactive rollout toggle is disabled, and says marker-aware restricted behavior applies without prompting when that toggle is enabled. [Junie CLI configuration](https://junie.jetbrains.com/docs/junie-cli-configuration.html) describes trust-marker integrity codes tied to a local key and exact-marker or parent-marker revocation behavior for future CLI processes. This keeps trust markers as local execution-boundary evidence, not as context-exclusion evidence owned by the data-and-privacy folder.
+
 ## Control Implications
 
 - Record local command execution, hosted model processing, and hosted agent execution as separate data-flow and authority boundaries.
@@ -42,6 +44,7 @@ Current security reviews should preserve the distinction between documented futu
 - Establish exact-project trust interactively before non-interactive use, and do not rely on trust markers as an enforced control while the documented rollout toggle remains disabled.
 - Validate the rollout state explicitly. Once enforcement is enabled, verify exact-project or parent trust markers and restricted unknown-project behavior before relying on them as security boundaries.
 - For Gateway and ACP mode, record whether the documented trusted behavior or marker-aware restricted behavior applies before classifying a non-interactive task as locally constrained.
+- Preserve trust-marker integrity-code and revocation evidence with local execution controls; do not confuse it with `.aiignore` or prompt-context selection.
 
 ## Authoritative Sources
 
@@ -51,6 +54,9 @@ Current security reviews should preserve the distinction between documented futu
 - [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json)
 - [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
+- [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-security-wiki-leaf-update-watch-20260816T000321Z.json)
+- Junie Headless mode documentation: https://junie.jetbrains.com/docs/junie-headless.html
+- Junie CLI configuration documentation: https://junie.jetbrains.com/docs/junie-cli-configuration.html
 
 ## Related Code
 
@@ -78,3 +84,4 @@ Current security reviews should preserve the distinction between documented futu
 
 - Created on 2026-07-30 from the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md), [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md), and [IntelliJ AI Assistant](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security baselines; enriched from the [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) and [August 4 leaf watcher](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) with Junie non-interactive trust-marker evidence.
 - Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) with visible 2026-08-05 Junie documentation evidence while preserving the rollout-state caveat.
+- Updated on 2026-08-15 from the [August 15 watcher](../../../raw/processed/2026-08-15/ai-security-wiki-leaf-update-watch-20260816T000321Z.json) with Junie trust-marker integrity-code and revocation evidence while keeping context-exclusion controls separate.
