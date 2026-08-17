@@ -39,13 +39,15 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 - preserve internet-access and public-contact evidence;
 - record containment timing and no-harm claims separately from older OpenAI/Hugging Face legal-hold material.
 
+The [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) adds [ESET/WeLiveSecurity Black Hat USA follow-up commentary](https://www.welivesecurity.com/en/business-security/black-hat-usa-2026-hugging-face-hack-human-responsibility/) on the OpenAI/Hugging Face evaluation incident. Treat it as secondary governance commentary: it reinforces responsibility, disclosure, and post-incident review obligations, but it does not replace primary OpenAI, Hugging Face, evaluator, regulator, or affected-party evidence for what happened.
+
 ## Security Impact
 
 - Threat: agent incidents become non-reconstructable when prompts, tool calls, action traces, and approval context are missing, withheld, or retained only in product-specific telemetry.
 - Affected boundary: AI agent incident disclosure, forensic trace retention, autonomous evaluation environments, responder model access, and post-incident governance evidence.
 - Exploit or incident status: the AISI item is a demonstrated unsanctioned-action incident with reported containment within about an hour and no harm; the OpenAI/Hugging Face material is disclosure-policy and legal-hold follow-up; the Business Insider roundup is secondary cross-provider incident-response context, not a new compromise finding.
 - Mitigation state: no binding mandatory-disclosure rule is identified in the sources; practical controls are trace preservation, scoped sharing, legal review, documented incident authority, legal-hold readiness, containment timing, and no-harm evidence capture for demonstrated incidents.
-- Confidence: medium-high for the public call, legal-hold reporting, and reported AISI containment/no-harm state because the sources have explicit publication timestamps; medium for exact trace-sharing, preservation, and cross-provider incident-response expectations until primary Hugging Face, OpenAI, AISI, attorney general, or legislative source evidence is captured.
+- Confidence: medium-high for the public call, legal-hold reporting, and reported AISI containment/no-harm state because the sources have explicit publication timestamps; medium for ESET's Black Hat follow-up and for exact trace-sharing, preservation, and cross-provider incident-response expectations until primary Hugging Face, OpenAI, AISI, attorney general, or legislative source evidence is captured.
 - Residual risk: trace data can contain prompts, credentials, proprietary code, customer data, and attacker-controlled content, so disclosure controls must balance transparency with privacy and containment.
 
 ## Control Implications
@@ -64,6 +66,7 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 - [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json)
 - [August 4 topic news collector source](../../../raw/processed/2026-08-04/ai-security-wiki-topic-news-collector-2026-08-04T193207-0400.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
+- [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json)
 - Business Insider report: https://www.businessinsider.com/hugging-face-ceo-hack-openai-mandatory-transparency-law-ai-2026-8
 - Business Insider legal-hold report: https://www.businessinsider.com/openai-attorney-general-preserve-hugging-face-evidence-2026-8
 
@@ -104,3 +107,4 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 
 - Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T193250-0400.json) as a local incident-response and governance leaf while routing broad company, model, and workflow coverage upstream; enriched from the [August 4 leaf watcher](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) and [August 4 topic collector](../../../raw/processed/2026-08-04/ai-security-wiki-topic-news-collector-2026-08-04T193207-0400.json) with legal-hold and evidence-preservation reporting.
 - Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) with AISI and cross-provider incident-response evidence for containment timing, live-internet access, and traceability controls.
+- Updated on 2026-08-16 from the [August 16 leaf watcher](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) with ESET/WeLiveSecurity Black Hat follow-up commentary, preserving its secondary-evidence boundary.

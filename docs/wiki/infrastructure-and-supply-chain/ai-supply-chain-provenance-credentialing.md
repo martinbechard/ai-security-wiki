@@ -11,6 +11,8 @@ tags: ["infrastructure-and-supply-chain", "governance-and-compliance", "testing-
 
 The [August 15 topic news collector source](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json) records a 2026-08-14 [Grants.gov opportunity](https://simpler.grants.gov/opportunity/2f434e81-c476-49bb-a7e6-9a320c907cd9) for Pax Silica describing an AI supply-chain security credentialing and provenance platform. This is a funding and governance signal, not a deployed-product advisory or proof of control effectiveness.
 
+The [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) repeats the public opportunity as a control-change signal and adds the cross-border logistics framing: cryptographic cargo verification and AI-expedited risk assessment are proposed provenance use cases. Keep that as scope evidence for credentialing and assurance design, not as proof that a working credentialing platform exists.
+
 Broad Pax Silica company or platform background belongs upstream if it becomes durable ecosystem context. This local page owns the security-control lens: AI supply-chain provenance and credentialing need to bind model, dataset, dependency, artifact, runtime, deployment, and evaluator evidence to verifiable identities and review gates.
 
 ## Security Impact
@@ -32,6 +34,7 @@ Broad Pax Silica company or platform background belongs upstream if it becomes d
 ## Authoritative Sources
 
 - [August 15 topic news collector source](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json)
+- [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json)
 - Grants.gov opportunity: https://simpler.grants.gov/opportunity/2f434e81-c476-49bb-a7e6-9a320c907cd9
 
 ## Related Code
@@ -61,3 +64,4 @@ Broad Pax Silica company or platform background belongs upstream if it becomes d
 ## Maintenance Notes
 
 - Created on 2026-08-15 from the [August 15 topic collector](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json) as a security-control signal, not as a deployed-product endorsement.
+- Updated on 2026-08-16 from the [August 16 leaf watcher](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) with cryptographic cargo verification and AI-expedited risk-assessment scope evidence.

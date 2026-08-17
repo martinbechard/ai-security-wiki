@@ -15,6 +15,8 @@ Project-local caches avoid a writable user-wide Maven or Gradle repository and i
 
 The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) adds [Junie Action Allowlist](https://junie.jetbrains.com/docs/action-allowlist.html) evidence that Build, RunTest, Preview, and build-script edits are distinct action classes. Build-script edits are especially sensitive because import, refresh, or build execution can turn a text edit into code execution without a later obvious command prompt.
 
+The [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) adds current [Junie CLI](https://junie.jetbrains.com/docs/junie-cli.html) evidence that Action Allowlist and Brave mode levels change when sensitive shell commands can run without prompting. The local security implication is not a general Junie feature profile; it is that build, dependency, and shell boundaries must account for both explicit allowlisted actions and broad trust-mode settings before an agent executes project-supplied scripts.
+
 ## Control Implications
 
 - Route wrapper, dependency, and plugin downloads through an organization-managed artifact proxy.
@@ -25,12 +27,14 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 - Evaluate network policy and artifact provenance together; an allowlisted proxy reduces sources but does not make every artifact safe.
 - Treat Build, RunTest, Preview, and build-script edits as separate approval classes.
 - Review project import and dependency refresh as execution triggers when an agent can edit build scripts.
+- Audit Brave mode or equivalent trust-level settings separately from per-action allowlists because broad modes can change whether sensitive commands prompt at runtime.
 
 ## Authoritative Sources
 
 - [Codex Development Security Guide](../../../guides/agent-security/Codex-Development-Security-Guide.md)
 - [JetBrains AI Development Security Guide - Junie profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
 - [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json)
+- [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json)
 
 ## Related Code
 
@@ -58,3 +62,4 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 ## Maintenance Notes
 
 - Created on 2026-07-30 from the build, cache, and artifact-proxy sections of the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md) and [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides; enriched from the [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) with Junie build/test/preview and build-script execution evidence.
+- Updated on 2026-08-16 from the [August 16 leaf watcher](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) with Junie Action Allowlist and Brave mode command-prompting boundaries.

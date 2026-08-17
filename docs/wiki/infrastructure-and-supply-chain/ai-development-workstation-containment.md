@@ -33,6 +33,13 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 
 Before that rollout, non-interactive runs remain a trusted-project containment risk.
 
+The [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) adds current [Junie Headless](https://junie.jetbrains.com/docs/junie-headless.html) evidence for project trust-marker and configuration boundaries:
+
+- project trust markers can be created interactively, so trust creation needs an explicit owner and review trail;
+- trust markers can be revoked by deleting marker files, so revocation should be documented as a containment recovery action;
+- explicit config-location paths remain deliberate restricted-mode inputs, so overrides should be reviewed before non-interactive runs;
+- config-location overrides can reintroduce external instructions or tool configuration, so they should be treated as sensitive execution-boundary inputs.
+
 ## Control Implications
 
 - For Codex, require the managed elevated Windows sandbox and verify its dedicated lower-privilege sandbox accounts.
@@ -43,6 +50,7 @@ Before that rollout, non-interactive runs remain a trusted-project containment r
 - Disable unreviewed configuration, model, MCP, command, agent, skill, plugin, browser, and remote-control discovery surfaces when the product supports those controls.
 - Keep restricted-mode temporary storage outside the repository and verify repository-controlled MCP, hook, agent, skill, and guideline loading is disabled for unknown projects.
 - For non-interactive Gateway and ACP runs, preserve rollout-state evidence before relying on unknown-project restricted mode as workstation containment.
+- Treat trust markers as revocable security state and review config-location overrides before headless or non-interactive runs.
 - Keep administrator-managed policy and allowlist files read-only to the development account.
 - Treat writable local Git metadata as an explicit recoverability tradeoff: checkpoint commits help, but destructive Git operations can still lose local-only work.
 
@@ -54,6 +62,7 @@ Before that rollout, non-interactive runs remain a trusted-project containment r
 - [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json)
 - [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
+- [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json)
 
 ## Related Code
 
@@ -82,3 +91,4 @@ Before that rollout, non-interactive runs remain a trusted-project containment r
 
 - Created on 2026-07-30 from the Windows workstation control models in the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md), [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md), and [IntelliJ AI Assistant](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides; enriched from the [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) and [August 4 leaf watcher](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) with Junie restricted-mode temporary-storage, rollout-state, and repository-controlled input evidence.
 - Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) with visible 2026-08-05 Junie restricted-mode evidence and the same non-interactive rollout-state boundary.
+- Updated on 2026-08-16 from the [August 16 leaf watcher](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) with trust-marker revocation and config-location override boundaries.

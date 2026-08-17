@@ -11,13 +11,15 @@ tags: ["threats-and-attacks", "agent-and-tool-security", "incident-response"]
 
 The [August 15 topic news collector source](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json) records [Tenable reporting](https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean) that groups seven agentic-AI security incidents across three actor categories. Treat this as an attributed security-research clustering, not as a canonical taxonomy. Broad Tenable vendor context and broad agentic-AI ecosystem coverage belongs upstream in the AI wiki; this page owns the local threat-model implication.
 
+The [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) adds the same Tenable analysis as confirmed-exploitation evidence for the Taiwan autonomous AI cyber attack and as attributed clustering evidence for the broader seven-incident set. Keep those two confidence levels separate: Taiwan public-sector exploitation is the stronger incident signal, while JADEPUFFER, knaithe, KnYuan, CVE-2025-3248, and Langflow remain part of Tenable's cluster framing unless primary incident records are captured.
+
 The useful local signal is convergence. Independent incidents are repeatedly combining autonomous tool use, delegated system access, prompt or tool misuse, cloud or developer-environment exposure, and enterprise data reach. Security programs should therefore model agentic AI as a cluster of authority, identity, data, and runtime risks rather than as only prompt-injection or model-output quality risk.
 
 ## Security Impact
 
 - Threat: agentic systems can concentrate model intent, tool authority, delegated identity, external connectivity, and enterprise data into one operational path.
 - Affected boundary: enterprise agents, MCP-connected tools, browser agents, coding agents, SaaS connectors, cloud resources, developer workstations, and data-access workflows.
-- Exploit or incident status: security-research synthesis of public incidents; individual incident pages remain the authority for confirmed exploitation, affected versions, and mitigation state.
+- Exploit or incident status: security-research synthesis of public incidents, with the Taiwan autonomous AI attack treated as confirmed exploitation in the watcher source; individual incident pages remain the authority for affected versions and mitigation state.
 - Mitigation state: use cluster analysis for threat modeling, control coverage checks, and incident taxonomy; do not use it to replace incident-specific advisories or vendor bulletins.
 - Confidence: medium because the cluster is vendor-attributed research; confidence for any single incident depends on its own primary evidence.
 - Residual risk: aggregated reporting can overgeneralize actor categories, while narrow control reviews can miss cross-boundary agent behavior.
@@ -32,6 +34,7 @@ The useful local signal is convergence. Independent incidents are repeatedly com
 ## Authoritative Sources
 
 - [August 15 topic news collector source](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json)
+- [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json)
 - Tenable report: https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean
 
 ## Related Code
@@ -61,3 +64,4 @@ The useful local signal is convergence. Independent incidents are repeatedly com
 ## Maintenance Notes
 
 - Created on 2026-08-15 from the [August 15 topic collector](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json). Keep this page as an attributed cluster lens and route incident-specific facts to their durable incident or vulnerability leaves.
+- Updated on 2026-08-16 from the [August 16 leaf watcher](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) to separate confirmed Taiwan exploitation evidence from Tenable's broader cluster assessment.

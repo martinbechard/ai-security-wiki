@@ -1,0 +1,514 @@
+{
+  "affected_boundaries": [
+    "AI model evaluation incident disclosure",
+    "AI supply-chain provenance",
+    "MCP browser/scraper URL fetching",
+    "MCP smart_user tool execution",
+    "MCP tool URL-fetch boundary",
+    "agent command approval",
+    "agent traceability",
+    "autonomous agent offensive operations",
+    "cloud metadata service exposure",
+    "credentialing platform governance",
+    "cross-border logistics compliance",
+    "cross-organization incident response",
+    "developer workstation or server running the MCP package",
+    "developer workstation policy",
+    "government connected systems",
+    "headless agent trust state",
+    "identity and SSO exposure",
+    "local shell command boundary",
+    "local terminal execution",
+    "non-interactive workstation containment",
+    "npm package dependency boundary",
+    "project trust marker storage",
+    "redirect and DNS resolution validation",
+    "swagger parser network egress"
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "evidence_classification_counts": {
+    "confirmed_exploitation": 1,
+    "control_change": 3,
+    "disclosed_vulnerability": 1,
+    "disclosed_vulnerability_and_mitigation": 1,
+    "incident_response_follow_up": 1,
+    "mitigation": 1
+  },
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+      "note": "Relevant to credential isolation, but before the strict August 10-16 window.",
+      "reason": "outside_last_7_days_or_boundary_only_for_this_run",
+      "source_url": "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-coding-agent-cicd-secrets-20260808-csa/",
+      "visible_date": "2026-08-08"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+      "note": "Cited issuer-binding release predates the 7-day window.",
+      "reason": "stale",
+      "source_url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+      "visible_date": "2026-07-28"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+      "note": "Google MCP stateless post predates the 7-day window.",
+      "reason": "stale",
+      "source_url": "https://developers.googleblog.com/scaling-ai-agent-infrastructure-with-the-mcp-stateless-updates/",
+      "visible_date": "2026-08-05"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+      "note": "Kimi Code FetchURL SSRF source is outside the window; no in-window primary update found.",
+      "reason": "stale",
+      "source_url": "https://research.jfrog.com/",
+      "visible_date": "2026-07-27"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+      "note": "Search results did not surface an authoritative in-window MaxKB update.",
+      "reason": "missing_or_stale_visible_date",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-4pr3-9xhm-98x5",
+      "visible_date": "missing_or_not_in_window"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "note": "NVD/GHSA/VulnCheck material for Network-AI ApprovalInbox is July-dated; no in-window same-leaf update found.",
+      "reason": "stale",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+      "visible_date": "2026-07-20"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md",
+      "note": "Dash0 AI integration docs are before the strict 7-day window; newer product mentions lacked same-leaf privacy/control detail.",
+      "reason": "stale",
+      "source_url": "https://www.dash0.com/docs/dash0/get-started/use-ai",
+      "visible_date": "2026-08-07"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md",
+      "note": "The page contains Codex data-control content but no visible publication/update date in the opened source.",
+      "reason": "missing_visible_update_date",
+      "source_url": "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan",
+      "visible_date": "missing"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md",
+      "note": "The page is authoritative for API data controls but does not provide a visible in-window update date for this Codex training-data leaf.",
+      "reason": "missing_visible_update_date",
+      "source_url": "https://developers.openai.com/api/docs/guides/your-data",
+      "visible_date": "missing"
+    }
+  ],
+  "follow_up_notes": [
+    "Normal raw ingest should update durable leaves and digests later; this run did not edit docs/wiki or raw/processed.",
+    "Prioritize primary advisory/CVE evidence for the two new MCP package vulnerabilities before secondary summaries.",
+    "Keep Tenable cluster claims separated by evidence strength: Taiwan confirmation versus Tenable broader cluster assessment."
+  ],
+  "named_entities": [
+    "@ooples/token-optimizer-mcp",
+    "ACP",
+    "Action Allowlist",
+    "Black Hat USA 2026",
+    "Brave mode",
+    "Bureau of Economic and Business Affairs",
+    "CVE-2025-3248",
+    "CVE-2026-19765",
+    "CVE-2026-55157",
+    "CVE-2026-65056",
+    "CrawlForge",
+    "DFOP0019193",
+    "ESET",
+    "GHSA-49mq-fc6q-3h46",
+    "Gateway mode",
+    "GitLab Advisory Database",
+    "Grants.gov",
+    "Hugging Face",
+    "JADEPUFFER",
+    "JetBrains",
+    "Junie CLI",
+    "Junie Headless",
+    "KnYuan",
+    "Langflow",
+    "OpenAI",
+    "Pax Silica Artificial Intelligence Assistance Project",
+    "Simpler.Grants.gov",
+    "Taiwan Ministry of Digital Affairs",
+    "Tenable Research Special Operations",
+    "VulDB",
+    "WeLiveSecurity",
+    "eyaushev",
+    "knaithe",
+    "mcp-webresearch",
+    "swagger-testcase-mcp",
+    "token-optimizer-mcp"
+  ],
+  "privacy_and_query_limits": {
+    "local_content_sent_to_external_services": "none beyond public leaf titles, advisory identifiers, topic names, aliases, and public source URLs cited by leaves",
+    "sensitive_content_excluded": true
+  },
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "MCP tool URL-fetch boundary",
+        "swagger parser network egress",
+        "developer workstation or server running the MCP package"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the SSRF leaf with patch/response status if authoritative maintainer remediation appears.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/swagger-testcase-mcp-swagger-parser-ssrf.md",
+      "named_entities": [
+        "CVE-2026-19765",
+        "swagger-testcase-mcp",
+        "VulDB",
+        "eyaushev"
+      ],
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-19765",
+      "summary": "CVE-2026-19765 was published for swagger-testcase-mcp fetch_swagger/loadSource SSRF in swagger-parser.ts, with VulDB/CVE metadata identifying CWE-918 and the affected fetch_swagger boundary.",
+      "upstream_routing": {
+        "ai_dev_wiki": "General MCP development guidance routes upstream; local artifact keeps SSRF security finding.",
+        "ai_wiki": "Product/package entity details belong upstream if a package catalog page is needed."
+      },
+      "visible_date": "2026-08-14"
+    },
+    {
+      "affected_boundaries": [
+        "MCP smart_user tool execution",
+        "local shell command boundary",
+        "npm package dependency boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability_and_mitigation",
+      "follow_up_note": "Ingest with fixed-version guidance and command-substitution risk language.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/token-optimizer-mcp-command-injection.md",
+      "named_entities": [
+        "CVE-2026-55157",
+        "GHSA-49mq-fc6q-3h46",
+        "token-optimizer-mcp",
+        "@ooples/token-optimizer-mcp",
+        "GitLab Advisory Database"
+      ],
+      "source_url": "https://advisories.gitlab.com/npm/%40ooples/token-optimizer-mcp/CVE-2026-55157/",
+      "summary": "GitLab Advisory Database published CVE-2026-55157 for token-optimizer-mcp OS command injection in smart_user/get-user-info and identifies version 5.1.0 as fixed.",
+      "upstream_routing": {
+        "ai_dev_wiki": "General MCP SDK/tool implementation guidance routes upstream; local artifact keeps command-injection control implications.",
+        "ai_wiki": "Package catalog metadata belongs upstream if needed."
+      },
+      "visible_date": "2026-08-14"
+    },
+    {
+      "affected_boundaries": [
+        "AI supply-chain provenance",
+        "credentialing platform governance",
+        "cross-border logistics compliance"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest as provenance-control evidence, not as a generic funding-program page.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-supply-chain-provenance-credentialing.md",
+      "named_entities": [
+        "Pax Silica Artificial Intelligence Assistance Project",
+        "Bureau of Economic and Business Affairs",
+        "DFOP0019193",
+        "Grants.gov",
+        "Simpler.Grants.gov"
+      ],
+      "source_url": "https://simpler.grants.gov/opportunity/2f434e81-c476-49bb-a7e6-9a320c907cd9",
+      "summary": "A public U.S. grant opportunity for the Pax Silica AI Assistance Project was posted/updated on August 14, 2026 and explicitly targets AI supply-chain credentialing and provenance with cryptographic cargo verification and AI-expedited risk assessment.",
+      "upstream_routing": {
+        "ai_dev_wiki": "Not a general AI-development practice. Local security wiki owns AI supply-chain provenance/control implications.",
+        "ai_wiki": "Broad government-program entity coverage can route upstream."
+      },
+      "visible_date": "2026-08-14"
+    },
+    {
+      "affected_boundaries": [
+        "government connected systems",
+        "identity and SSO exposure",
+        "autonomous agent offensive operations"
+      ],
+      "evidence_classification": "confirmed_exploitation",
+      "follow_up_note": "Ingest as confirmed exploitation with explicit distinction between Taiwan confirmation and Tenable cluster assessment.",
+      "leaf_id": "docs/wiki/threats-and-attacks/agentic-ai-threat-cluster.md",
+      "named_entities": [
+        "Tenable Research Special Operations",
+        "Taiwan Ministry of Digital Affairs",
+        "JADEPUFFER",
+        "knaithe",
+        "KnYuan",
+        "CVE-2025-3248",
+        "Langflow"
+      ],
+      "source_url": "https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean",
+      "summary": "Tenable published an agentic AI threat-cluster analysis tying a confirmed Taiwan autonomous AI cyber attack to a broader seven-incident cluster and emphasizing identity/authentication exposure as the recurring entry condition.",
+      "upstream_routing": {
+        "ai_dev_wiki": "General agent capability discussion routes upstream; local wiki owns the threat-cluster security evidence.",
+        "ai_wiki": "Actor and broad ecosystem entity entries route upstream if created."
+      },
+      "visible_date": "2026-08-14"
+    },
+    {
+      "affected_boundaries": [
+        "AI model evaluation incident disclosure",
+        "agent traceability",
+        "cross-organization incident response"
+      ],
+      "evidence_classification": "incident_response_follow_up",
+      "follow_up_note": "Treat as secondary follow-up unless paired with a primary OpenAI/Hugging Face update.",
+      "leaf_id": "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "Black Hat USA 2026",
+        "ESET",
+        "WeLiveSecurity"
+      ],
+      "source_url": "https://www.welivesecurity.com/en/business-security/black-hat-usa-2026-hugging-face-hack-human-responsibility/",
+      "summary": "ESET/WeLiveSecurity published Black Hat USA follow-up commentary on the OpenAI/Hugging Face evaluation incident, emphasizing disclosure, responsibility, and post-incident governance.",
+      "upstream_routing": {
+        "ai_dev_wiki": "General evaluation practice routes upstream; local artifact keeps security incident-response implications.",
+        "ai_wiki": "Broad OpenAI/Hugging Face entity background routes upstream."
+      },
+      "visible_date": "2026-08-12"
+    },
+    {
+      "affected_boundaries": [
+        "agent command approval",
+        "local terminal execution",
+        "developer workstation policy"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest into build/dependency execution boundaries and link to workstation containment if synthesized later.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+      "named_entities": [
+        "Junie CLI",
+        "JetBrains",
+        "Action Allowlist",
+        "Brave mode"
+      ],
+      "source_url": "https://junie.jetbrains.com/docs/junie-cli.html",
+      "summary": "Junie CLI documentation now describes action allowlisting, approval behavior, and Brave mode levels that change when potentially sensitive shell commands can run without prompting.",
+      "upstream_routing": {
+        "ai_dev_wiki": "General coding-agent workflow guidance routes upstream; local wiki owns approval/allowlist security boundaries.",
+        "ai_wiki": "Junie product facts route upstream."
+      },
+      "visible_date": "2026-08-12"
+    },
+    {
+      "affected_boundaries": [
+        "headless agent trust state",
+        "project trust marker storage",
+        "non-interactive workstation containment"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest as control behavior for non-interactive agent trust and revocation.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md",
+      "named_entities": [
+        "Junie Headless",
+        "JetBrains",
+        "ACP",
+        "Gateway mode"
+      ],
+      "source_url": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "summary": "Junie Headless documentation now states that trusted project markers can be created interactively, revoked by deleting marker files, and that explicit config-location paths remain deliberate restricted-mode inputs.",
+      "upstream_routing": {
+        "ai_dev_wiki": "General headless coding-agent use routes upstream; local wiki owns trust-marker and containment implications.",
+        "ai_wiki": "Junie product page details route upstream."
+      },
+      "visible_date": "2026-08-12"
+    },
+    {
+      "affected_boundaries": [
+        "MCP browser/scraper URL fetching",
+        "cloud metadata service exposure",
+        "redirect and DNS resolution validation"
+      ],
+      "evidence_classification": "mitigation",
+      "follow_up_note": "Ingest as mitigation follow-up for the existing mcp-webresearch SSRF leaf.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "named_entities": [
+        "CVE-2026-65056",
+        "mcp-webresearch",
+        "CrawlForge"
+      ],
+      "source_url": "https://www.crawlforge.dev/blog/mcp-server-ssrf-cloud-metadata-security",
+      "summary": "CrawlForge published mitigation guidance for MCP scraper SSRF, explicitly using CVE-2026-65056/mcp-webresearch as the example and recommending resolved-IP blocking, redirect revalidation, and browser-navigation guards.",
+      "upstream_routing": {
+        "ai_dev_wiki": "General MCP implementation practices route upstream; local artifact keeps SSRF mitigation evidence.",
+        "ai_wiki": "MCP server catalog details route upstream."
+      },
+      "visible_date": "2026-08-12"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-17T00:03:00Z",
+  "selection": {
+    "leaf_universe_count": 99,
+    "method": "unchecked leaves first, then oldest last_checked_at, stable path tie-break",
+    "selected_leaf_count": 15,
+    "selected_leaf_ids": [
+      "docs/wiki/agent-and-tool-security/swagger-testcase-mcp-swagger-parser-ssrf.md",
+      "docs/wiki/agent-and-tool-security/token-optimizer-mcp-command-injection.md",
+      "docs/wiki/infrastructure-and-supply-chain/ai-supply-chain-provenance-credentialing.md",
+      "docs/wiki/threats-and-attacks/agentic-ai-threat-cluster.md",
+      "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+      "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+      "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+      "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+      "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md",
+      "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+      "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+      "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md",
+      "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md"
+    ]
+  },
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/swagger-testcase-mcp-swagger-parser-ssrf.md",
+      "urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-19765",
+        "https://app.opencve.io/cve/CVE-2026-19765",
+        "https://vuldb.com/cve/CVE-2026-19765"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/token-optimizer-mcp-command-injection.md",
+      "urls": [
+        "https://advisories.gitlab.com/npm/%40ooples/token-optimizer-mcp/CVE-2026-55157/",
+        "https://github.com/advisories/GHSA-49mq-fc6q-3h46",
+        "https://www.tenable.com/plugins/cloud-security/445980",
+        "https://www.tenable.com/cve/CVE-2026-55157"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-supply-chain-provenance-credentialing.md",
+      "urls": [
+        "https://simpler.grants.gov/opportunity/2f434e81-c476-49bb-a7e6-9a320c907cd9"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/agentic-ai-threat-cluster.md",
+      "urls": [
+        "https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean",
+        "https://www.socdefenders.ai/item/f5609c6f-d1ba-462e-bd31-aaebf9b554ea"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+      "urls": [
+        "https://junie.jetbrains.com/docs/parameters.html",
+        "https://www.digitalapplied.com/blog/agent-tool-access-authorization-review-checklist-2026",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-coding-agent-cicd-secrets-20260808-csa/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+      "urls": [
+        "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+        "https://github.com/modelcontextprotocol/go-sdk/releases",
+        "https://developers.googleblog.com/scaling-ai-agent-infrastructure-with-the-mcp-stateless-updates/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+      "urls": [
+        "https://www.businessinsider.com/ai-cybersecurity-incidents-openai-astra-anthropic-kimi-meta-2026-8",
+        "https://www.businessinsider.com/hugging-face-ceo-hack-openai-mandatory-transparency-law-ai-2026-8",
+        "https://www.businessinsider.com/openai-attorney-general-preserve-hugging-face-evidence-2026-8",
+        "https://www.theguardian.com/technology/2026/aug/05/openai-anthropic-models-went-rogue-cybersecurity-test-ai-security-institute",
+        "https://www.welivesecurity.com/en/business-security/black-hat-usa-2026-hugging-face-hack-human-responsibility/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+      "urls": [
+        "https://junie.jetbrains.com/docs/action-allowlist.html",
+        "https://junie.jetbrains.com/docs/junie-cli.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md",
+      "urls": [
+        "https://junie.jetbrains.com/docs/junie-headless.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+      "urls": [
+        "https://github.com/MoonshotAI/kimi-code/commit/31449728b72df94e22bcb2de350a1e7624895e30",
+        "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%400.27.0",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-17534",
+        "https://research.jfrog.com/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+      "urls": [
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-4pr3-9xhm-98x5",
+        "https://security-tracker.debian.org/tracker/CVE-2026-54149",
+        "https://www.sentinelone.com/vulnerability-database/cve-2026-54149/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "urls": [
+        "https://agora-intelligence.com/en/blog/leon-mcp-webresearch-ssrf-cve-2026",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-65056",
+        "https://vulners.com/cve/CVE-2026-65056",
+        "https://www.npmjs.com/package/@mzxrai/mcp-webresearch",
+        "https://www.vulncheck.com/advisories/mcp-webresearch-server-side-request-forgery-in-visit-page-due-to-missing-internal-ip-filtering",
+        "https://www.crawlforge.dev/blog/mcp-server-ssrf-cloud-metadata-security"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "urls": [
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-m4jg-6w3q-gm86",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+        "https://www.npmjs.com/package/network-ai",
+        "https://www.vulncheck.com/advisories/network-ai-through-missing-authorization-via-approvalinbox"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md",
+      "urls": [
+        "https://www.dash0.com/newsletter/code-red-newsletter-30",
+        "https://www.dash0.com/docs/dash0/get-started/use-ai",
+        "https://www.dash0.com/docs/dash0/darkplane/overview"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md",
+      "urls": [
+        "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan",
+        "https://help.openai.com/en/articles/11390924",
+        "https://help.openai.com/en/articles/5722486-api-data-usage-policies",
+        "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+        "https://help.openai.com/en/articles/7730893-data-controls-faq",
+        "https://developers.openai.com/api/docs/guides/your-data"
+      ]
+    }
+  ],
+  "upstream_routing": {
+    "notes": [
+      "Package/product catalog details for Junie, MCP packages, OpenAI, Hugging Face, and other broad entities should not be duplicated locally except as needed for security analysis."
+    ],
+    "rule": "Broad AI entities route to ai-wiki; general AI-development practices route to ai-dev-wiki; this artifact keeps only security-specific findings, controls, mitigations, and incident-response implications."
+  },
+  "window": {
+    "end": "2026-08-16",
+    "rule": "include only sources published or visibly updated within the last 7 local calendar days; exclude ambiguous, future, missing, stale, and boundary-only dates",
+    "start": "2026-08-10",
+    "timezone": "America/Toronto"
+  }
+}

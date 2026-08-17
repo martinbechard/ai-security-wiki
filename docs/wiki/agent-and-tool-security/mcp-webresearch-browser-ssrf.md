@@ -16,6 +16,12 @@ The [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-secu
 
 As of this run, [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp-webresearch) reports `@mzxrai/mcp-webresearch` latest and only latest version as 0.1.7, matching the affected version in the [NVD advisory](https://nvd.nist.gov/vuln/detail/CVE-2026-65056); no fixed npm version was visible from the [package metadata](https://www.npmjs.com/package/@mzxrai/mcp-webresearch) checked during ingest.
 
+The [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) adds [CrawlForge mitigation guidance](https://www.crawlforge.dev/blog/mcp-server-ssrf-cloud-metadata-security) using CVE-2026-65056 as the example. The useful local update is the mitigation shape for browser-backed MCP scrapers:
+
+- block resolved IPs that land in loopback, link-local, private, reserved, or cloud metadata ranges;
+- revalidate destinations after every redirect rather than trusting the original URL;
+- add browser-navigation guards because Playwright navigation can reach sensitive endpoints after DNS resolution or redirect handling changes the final destination.
+
 ## Security Impact
 
 - Threat: prompt injection steers an LLM-controlled browser URL into internal or metadata endpoints.
@@ -31,11 +37,13 @@ As of this run, [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp
 - [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 - [July 24 leaf update watch source](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json)
 - [July 26 leaf update watch source](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json)
+- [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json)
 - NVD: https://nvd.nist.gov/vuln/detail/CVE-2026-65056
 - Vulners CVE aggregation: https://vulners.com/cve/CVE-2026-65056
 - Agora Intelligence corroboration: https://agora-intelligence.com/en/blog/leon-mcp-webresearch-ssrf-cve-2026
 - VulnCheck: https://www.vulncheck.com/advisories/mcp-webresearch-server-side-request-forgery-in-visit-page-due-to-missing-internal-ip-filtering
 - npm package metadata checked during ingest: https://www.npmjs.com/package/@mzxrai/mcp-webresearch
+- CrawlForge mitigation guidance: https://www.crawlforge.dev/blog/mcp-server-ssrf-cloud-metadata-security
 
 ## Related Code
 
@@ -64,3 +72,4 @@ As of this run, [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp
 ## Maintenance Notes
 
 - Added from the [July 22, 2026 raw collector artifact](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json) and live [npm package metadata](https://www.npmjs.com/package/@mzxrai/mcp-webresearch); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), and [July 26 leaf watcher](../../../raw/processed/2026-07-26/ai-security-wiki-leaf-update-watch-2026-07-26T200447-0400.json) with proof-of-concept exploitation and cloud-metadata reachability evidence.
+- Updated on 2026-08-16 from the [August 16 leaf watcher](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) with resolved-IP blocking, redirect revalidation, and browser-navigation guard mitigation evidence.

@@ -38,12 +38,14 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/agent-action-runtime-hooks.md](agent-and-tool-security/agent-action-runtime-hooks.md)
 - [agent-and-tool-security/token-optimizer-mcp-command-injection.md](agent-and-tool-security/token-optimizer-mcp-command-injection.md)
 - [agent-and-tool-security/swagger-testcase-mcp-swagger-parser-ssrf.md](agent-and-tool-security/swagger-testcase-mcp-swagger-parser-ssrf.md)
+- [agent-and-tool-security/gomarble-facebook-ads-mcp-ssrf.md](agent-and-tool-security/gomarble-facebook-ads-mcp-ssrf.md)
 - [threats-and-attacks/ai-hosted-artifact-malware-delivery.md](threats-and-attacks/ai-hosted-artifact-malware-delivery.md)
 - [threats-and-attacks/unattended-ai-agent-attack-automation.md](threats-and-attacks/unattended-ai-agent-attack-automation.md)
 - [threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md](threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md)
 - [threats-and-attacks/ai-assisted-exploit-development-acceleration.md](threats-and-attacks/ai-assisted-exploit-development-acceleration.md)
 - [threats-and-attacks/ai-assisted-credential-harvesting-and-token-abuse.md](threats-and-attacks/ai-assisted-credential-harvesting-and-token-abuse.md)
 - [threats-and-attacks/agentic-ai-threat-cluster.md](threats-and-attacks/agentic-ai-threat-cluster.md)
+- [threats-and-attacks/macos-screen-sharing-ai-accelerated-exploitability.md](threats-and-attacks/macos-screen-sharing-ai-accelerated-exploitability.md)
 - [data-and-privacy](data-and-privacy/index.md)
 - [data-and-privacy/next-ai-draw-io-provider-disclosure.md](data-and-privacy/next-ai-draw-io-provider-disclosure.md)
 - [data-and-privacy/ai-provider-override-trust-boundaries.md](data-and-privacy/ai-provider-override-trust-boundaries.md)
@@ -91,6 +93,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [testing-and-assurance/frontier-model-critical-cyber-release-gates.md](testing-and-assurance/frontier-model-critical-cyber-release-gates.md)
 - [testing-and-assurance/codex-security-plugin-workflow-boundaries.md](testing-and-assurance/codex-security-plugin-workflow-boundaries.md)
 - [testing-and-assurance/ai-enabled-vulnerability-management-modernization.md](testing-and-assurance/ai-enabled-vulnerability-management-modernization.md)
+- [testing-and-assurance/semantic-governance-policy-telemetry.md](testing-and-assurance/semantic-governance-policy-telemetry.md)
 - [governance-and-compliance](governance-and-compliance/index.md)
 - [governance-and-compliance/ai-data-center-security-standards.md](governance-and-compliance/ai-data-center-security-standards.md)
 - [governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md](governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md)
@@ -128,3 +131,4 @@ description: "Navigation for locally owned AI security topics and source workflo
 ## Maintenance Notes
 
 - Add local durable leaves here after federation routing and wiki verification.
+- Updated on 2026-08-16 with GoMarble Facebook Ads MCP SSRF, macOS Screen Sharing AI-accelerated exploitability, and semantic governance policy telemetry.

@@ -1,0 +1,305 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-08-16T23:31:29Z",
+  "run_timestamp_local": "2026-08-16T19:31:29-0400",
+  "cutoff_window": {
+    "start_utc": "2026-08-14T23:31:29Z",
+    "end_utc": "2026-08-16T23:31:29Z",
+    "date_policy": "Include only items published or visibly updated within the last 2 days relative to run time. Date-only August 14 candidates were treated as boundary-only and excluded unless an in-window timestamp was visible."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "federation_policy": "Broad AI ecosystem entities, companies, products, model families, developer tools, and general AI-assisted development practice belong upstream. This repository keeps the security-specific implication, affected boundary, mitigation, evidence, and operational routing note.",
+    "upstream_indexes_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "docs_wiki_status": {
+      "page_count": 126,
+      "missing_required_files": 0,
+      "lint_findings": 0
+    }
+  },
+  "collection_methods": [
+    {
+      "method": "web_search",
+      "queries": [
+        "AI security vulnerability prompt injection August 15 2026",
+        "site:github.com/advisories AI MCP vulnerability August 2026",
+        "site:nvd.nist.gov AI MCP CVE August 15 2026",
+        "AI security incident August 16 2026 prompt injection",
+        "site:securityweek.com AI security August 15 2026",
+        "site:therecord.media AI security August 15 2026",
+        "site:bleepingcomputer.com AI security August 15 2026",
+        "site:thehackernews.com AI security August 15 2026",
+        "Published Aug 16, 2026 MCP GitHub Advisory Database",
+        "August 16, 2026 AI security update agent",
+        "August 15, 2026 AI security advisory MCP"
+      ]
+    },
+    {
+      "method": "public_feed_check",
+      "sources": [
+        "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "https://api.github.com/advisories"
+      ]
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "2026-08-16-gomarble-facebook-ads-mcp-ssrf",
+      "title": "GoMarble Facebook Ads MCP Server SSRF advisory",
+      "visible_dates": [
+        {
+          "source_url": "https://github.com/advisories/GHSA-8xwh-hx55-jjpr",
+          "published": "2026-08-16",
+          "updated": "2026-08-16",
+          "date_basis": "GitHub Advisory Database visible publication and update dates"
+        },
+        {
+          "source_url": "https://github.com/gomarble-ai/facebook-ads-mcp-server/pull/32",
+          "published": "2026-07-20",
+          "date_basis": "Patch pull request merge date, outside collection window but useful for affected-boundary evidence"
+        }
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-8xwh-hx55-jjpr",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19956",
+        "https://github.com/gomarble-ai/facebook-ads-mcp-server/pull/32",
+        "https://github.com/gomarble-ai/facebook-ads-mcp-server/commit/4e53875aa22e8991c2fa4a7660d86e1caba66659"
+      ],
+      "concise_factual_summary": "GitHub Advisory Database published CVE-2026-19956 / GHSA-8xwh-hx55-jjpr for gomarble-ai facebook-ads-mcp-server 0.1.0. The vulnerable fetch_pagination_url function in server.py allowed server-side request forgery; remote exploitation is described with low attack complexity and low privileges required. The referenced patch restricts pagination requests to HTTPS on the exact graph.facebook.com host, blocks URL credentials, nonstandard ports, malformed and control-character URLs, disables redirects, and adds a timeout.",
+      "evidence_classification": "primary vulnerability database plus public patch record",
+      "affected_boundary_or_version": "gomarble-ai/facebook-ads-mcp-server 0.1.0; affected and patched package versions are listed as unknown in GitHub Advisory Database, but patch commit 4e53875aa22e8991c2fa4a7660d86e1caba66659 is named.",
+      "why_it_matters_for_ai_security": "An MCP server connected to advertising data and agent workflows can become an SSRF bridge from a trusted tool context into internal services, loopback endpoints, or cloud metadata endpoints. The mitigation is a concrete example of positive destination allowlisting for agent tool egress.",
+      "named_entities": [
+        "GoMarble",
+        "facebook-ads-mcp-server",
+        "Model Context Protocol",
+        "Meta Ads",
+        "GitHub Advisory Database",
+        "National Vulnerability Database",
+        "CVE-2026-19956",
+        "GHSA-8xwh-hx55-jjpr",
+        "CWE-918"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "The MCP server as a product/entity belongs upstream if a durable catalog page is created. The SSRF flaw, egress allowlist mitigation, and MCP tool-boundary lesson belong locally."
+      },
+      "confidence_notes": "High confidence on publication date, vulnerability class, affected project, and patch behavior because the GitHub advisory and public patch PR agree. Confidence is lower on exact vulnerable-version range because the advisory lists affected and patched versions as unknown.",
+      "follow_up_actions": [
+        "During ingest, check whether ai-wiki already has a GoMarble or facebook-ads-mcp-server entity page before creating any local lens.",
+        "Track this under MCP/server tool egress controls and SSRF allowlisting rather than a broad product profile.",
+        "Recheck NVD enrichment for CVSS v3/v4 and affected CPE/package metadata."
+      ]
+    },
+    {
+      "id": "2026-08-16-google-cloud-semantic-governance-observability",
+      "title": "Google Cloud semantic governance policy metrics for AI agents",
+      "visible_dates": [
+        {
+          "source_url": "https://docs.cloud.google.com/release-notes",
+          "published": "2026-08-16",
+          "date_basis": "Google Cloud release notes section headed August 16, 2026"
+        }
+      ],
+      "source_urls": [
+        "https://docs.cloud.google.com/release-notes"
+      ],
+      "concise_factual_summary": "Google Cloud release notes state that built-in Cloud Monitoring metrics for the semantic governance policy engine are available in Preview. The metrics include request throughput, evaluation counts, latencies, ALLOW versus DENY verdict distribution, and LLM token consumption for policy evaluation through Metrics Explorer, Cloud Monitoring v3 API, PromQL, and alerting policies.",
+      "evidence_classification": "official product security/governance release note",
+      "affected_boundary_or_version": "Google SecOps SOAR release 6.3.98 rollout; semantic governance policy engine metrics in Preview.",
+      "why_it_matters_for_ai_security": "Runtime authorization for agent tool calls needs auditability and monitoring. Exposing verdict distribution, evaluation volume, latency, and token consumption gives teams evidence for release gates, anomaly detection, and control assurance around semantic policy enforcement.",
+      "named_entities": [
+        "Google Cloud",
+        "Google SecOps SOAR",
+        "Cloud Monitoring",
+        "semantic governance policy engine",
+        "Metrics Explorer",
+        "PromQL",
+        "AI agents"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "Google Cloud and Google SecOps product context belongs upstream. The local security note should focus on runtime policy telemetry, audit evidence, and agent tool-call governance."
+      },
+      "confidence_notes": "High confidence that the release note is official and in-window. The note is product-release evidence rather than an external assurance result, and it does not disclose incident or vulnerability identifiers.",
+      "follow_up_actions": [
+        "During ingest, connect to local topics for monitoring, release gates, and agent/tool authorization evidence.",
+        "Check whether ai-wiki already owns Google Cloud or Google SecOps pages before adding any entity context.",
+        "Look for linked Google documentation on monitoring semantic governance policies if a durable implementation-control page is updated."
+      ]
+    },
+    {
+      "id": "2026-08-15-nvd-cisa-cve-2026-65400-ai-accelerated-exploitability",
+      "title": "CVE-2026-65400 rescored as automatable total-impact macOS Screen Sharing flaw",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/cve-2026-65400",
+          "updated": "2026-08-15T00:18:24-04:00",
+          "date_basis": "NVD change history shows CISA-ADP modified the SSVC record on August 15, 2026"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/cve-2026-65400",
+          "updated": "2026-08-14T14:18:56-04:00",
+          "date_basis": "NVD change history shows CISA-ADP added CVSS 9.8 critical vector and changed technical impact on August 14, 2026; included as context because the later August 15 SSVC change is in-window"
+        },
+        {
+          "source_url": "https://support.apple.com/en-us/148170",
+          "published": "2026-08-06",
+          "date_basis": "Apple vendor advisory release date, outside collection window but primary patch evidence"
+        },
+        {
+          "source_url": "https://thehackernews.com/2026/08/apple-macos-screen-sharing-flaw.html",
+          "published": "2026-08-15",
+          "date_basis": "Visible article date"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/cve-2026-65400",
+        "https://support.apple.com/en-us/148170",
+        "https://support.apple.com/en-afri/148171",
+        "https://support.apple.com/en-mt/148172",
+        "https://thehackernews.com/2026/08/apple-macos-screen-sharing-flaw.html",
+        "https://blog.calif.io/p/no-country-for-old-passwords"
+      ],
+      "concise_factual_summary": "NVD records CVE-2026-65400 as an Apple macOS Screen Sharing authentication issue fixed in macOS Tahoe 26.6.1, Sequoia 15.7.9, and Sonoma 14.8.9. CISA-ADP changed the CVSS v3.1 vector to network, low complexity, no privileges, no user interaction, and high confidentiality/integrity/availability impact, producing a 9.8 critical score, then changed SSVC automatability to yes on August 15. Public security reporting on August 15 connected the flaw to active exploitation against internet-exposed Macs and noted AI-assisted exploit development context from Calif's earlier analysis.",
+      "evidence_classification": "primary vulnerability database and vendor advisory, with reputable secondary incident reporting for active exploitation and AI-acceleration context",
+      "affected_boundary_or_version": "macOS Screen Sharing before Tahoe 26.6.1, Sequoia 15.7.9, and Sonoma 14.8.9; network-reachable Screen Sharing hosts are the exposed operational boundary.",
+      "why_it_matters_for_ai_security": "The original vulnerability is a general endpoint flaw, but the in-window CISA/NVD change and public analysis make it an AI-security signal: exploitability was reassessed as automatable, and public researchers describe AI agents producing working pre-auth remote-root exploits quickly. This supports local tracking of AI-compressed time-to-exploit and release-gate assumptions for exposed remote-management services.",
+      "named_entities": [
+        "Apple",
+        "macOS Screen Sharing",
+        "CVE-2026-65400",
+        "CISA-ADP",
+        "NVD",
+        "Calif",
+        "The Hacker News",
+        "macOS Tahoe",
+        "macOS Sequoia",
+        "macOS Sonoma"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "Apple and macOS product context belongs upstream if durable coverage is needed. The local item should capture AI-assisted exploitability, automatable scoring, and patch-priority implications."
+      },
+      "confidence_notes": "High confidence on the NVD/CISA scoring and Apple patch details. Medium confidence on active-exploitation scope because the primary NCSC page fetched through search said no active exploitation while later secondary reporting says exploitation was observed; ingest should reconcile this before making a durable incident claim.",
+      "follow_up_actions": [
+        "During ingest, reconcile NCSC-NL status text against The Hacker News, Security Affairs, and any CISA KEV update before stating exploitation scope.",
+        "Use this as an AI-accelerated exploitability example rather than a general Apple product page.",
+        "Recheck whether CISA KEV adds CVE-2026-65400 after this run."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Anthropic Claude text watermark",
+      "source_urls": [
+        "https://www.anthropic.com/news/claude-text-watermark"
+      ],
+      "visible_date": "2026-08-14",
+      "reason": "Date-only August 14 is boundary-only relative to the exact 2026-08-14T23:31:29Z cutoff; excluded despite likely governance relevance."
+    },
+    {
+      "title": "Cloudflare One MCP traffic detection and shadow MCP controls",
+      "source_urls": [
+        "https://getaibook.com/blog/how-to-secure-mcp-traffic-with-cloudflare-gateway/"
+      ],
+      "visible_date": "2026-08-14 described by secondary article; secondary article dated 2026-08-15",
+      "reason": "The in-window source located was a secondary blog, not the official Cloudflare source; the described Cloudflare release date was boundary-only August 14 and needs primary verification."
+    },
+    {
+      "title": "Google Cloud Gemini Enterprise Agent Platform Agent Studio SSRF fix",
+      "source_urls": [
+        "https://docs.cloud.google.com/release-notes"
+      ],
+      "visible_date": "2026-07-25",
+      "reason": "Concrete AI-agent SSRF security update, but the release-note section date is outside the 2-day window."
+    },
+    {
+      "title": "Google Security Command Center Malicious Skill runtime threat detectors",
+      "source_urls": [
+        "https://docs.cloud.google.com/release-notes"
+      ],
+      "visible_date": "2026-08-03",
+      "reason": "Concrete AI-agent runtime detection capability, but outside the 2-day window."
+    },
+    {
+      "title": "A.Security Zoomsday AI-assisted Zoom exploit coverage",
+      "source_urls": [
+        "https://www.tomshardware.com/tech-industry/cyber-security/zoomsday-vulnerability-let-anyone-in-a-zoom-meeting-take-over-anybody-else-ai-assisted-research-only-used-20-prompts-to-find-an-exploit-to-hack-hundred-of-millions-of-people",
+        "https://www.theverge.com/ai-artificial-intelligence/977909/zoom-vulnerability-ai-attack"
+      ],
+      "visible_date": "2026-08-11 to 2026-08-13 range from search snippets",
+      "reason": "AI-assisted vulnerability research relevance is strong, but visible publication dates are outside the 2-day cutoff."
+    },
+    {
+      "title": "Tom's Hardware prompt-injection court-filing incident",
+      "source_urls": [
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/plaintiff-busted-trying-to-use-ai-prompt-injection-to-win-court-case-hides-text-instruction-in-filing-demands-ai-model-reviewing-the-text-should-side-with-him-rumbled-because-of-strange-white-spaces-in-text"
+      ],
+      "visible_date": "2026-08-14",
+      "reason": "Concrete prompt-injection incident, but date-only August 14 is boundary-only relative to the exact cutoff."
+    },
+    {
+      "title": "OpenClawAI AI agent SSRF protection for browser automation",
+      "source_urls": [
+        "https://openclawai.io/blog/ai-agent-ssrf-protection-browser-automation"
+      ],
+      "visible_date": "2026-08-15",
+      "reason": "In-window and security-relevant, but treated as vendor guidance without an independently verifiable standard, vulnerability, patch, incident, or assurance result."
+    },
+    {
+      "title": "NIST seeks blueprint for AI-era overhaul of National Vulnerability Database",
+      "source_urls": [
+        "https://securityboulevard.com/2026/08/nist-seeks-blueprint-for-ai-era-overhaul-of-national-vulnerability-database/"
+      ],
+      "visible_date": "2026-08-14 from search result age",
+      "reason": "Potentially relevant to AI-era vulnerability governance, but located as secondary coverage with boundary-only date and no primary NIST source verified in-window."
+    },
+    {
+      "title": "CISA KEV feed recent additions",
+      "source_urls": [
+        "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+      ],
+      "visible_date": "2026-08-16 fetch",
+      "reason": "No AI/MCP/LLM-specific KEV entries added on or after 2026-08-14 were found. Older LiteLLM KEV entries remained outside the window."
+    }
+  ],
+  "routing_counts": {
+    "qualifying_items_with_upstream_routing_notes": 3,
+    "upstream_owned_entity_contexts": 3,
+    "local_security_lens_items": 3
+  },
+  "counts": {
+    "qualifying_findings": 3,
+    "exclusions": 9,
+    "routing_notes": 3
+  },
+  "blockers": [
+    "Could not locate an in-window primary Cloudflare source for the reported MCP traffic detection release.",
+    "CVE-2026-65400 active-exploitation status needs reconciliation because NCSC-NL search text and later secondary reporting conflict."
+  ],
+  "privacy_and_sensitivity_notes": "Only public web sources and public local wiki indexes/procedural files were used. No private, proprietary, sensitive, PII, or company-internal local content was sent to external services.",
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "notes": "Validated after artifact creation with jq empty and python3 -m json.tool."
+  }
+}
