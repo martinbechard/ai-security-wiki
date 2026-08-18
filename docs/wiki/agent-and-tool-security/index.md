@@ -34,6 +34,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [token-optimizer-mcp command injection](token-optimizer-mcp-command-injection.md)
 - [swagger-testcase-mcp Swagger parser SSRF](swagger-testcase-mcp-swagger-parser-ssrf.md)
 - [GoMarble Facebook Ads MCP SSRF](gomarble-facebook-ads-mcp-ssrf.md)
+- [chrome-devtools-mcp symlink root bypass](chrome-devtools-mcp-symlink-root-bypass.md)
 
 ## Authoritative Sources
 
@@ -65,3 +66,4 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 - Keep each leaf focused on a distinct security boundary or control rather than a general agent workflow.
 - Updated on 2026-08-16 with the GoMarble Facebook Ads MCP SSRF leaf.
+- Updated on 2026-08-17 with the chrome-devtools-mcp symlink root bypass leaf.

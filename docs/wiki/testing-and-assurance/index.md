@@ -19,6 +19,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 - [Codex Security plugin workflow boundaries](codex-security-plugin-workflow-boundaries.md)
 - [AI-enabled vulnerability management modernization](ai-enabled-vulnerability-management-modernization.md)
 - [Semantic governance policy telemetry](semantic-governance-policy-telemetry.md)
+- [Delegated agent cost guardrail bypass](delegated-agent-cost-guardrail-bypass.md)
 
 ## Authoritative Sources
 
@@ -52,3 +53,4 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 - Keep security assurance distinct from general software verification already owned by ai-dev-wiki.
 - Updated on 2026-08-11 with the Codex Security plugin workflow boundary leaf.
 - Updated on 2026-08-16 with the semantic governance policy telemetry leaf.
+- Updated on 2026-08-17 with the delegated agent cost guardrail bypass leaf.

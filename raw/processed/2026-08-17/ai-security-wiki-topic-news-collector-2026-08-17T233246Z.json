@@ -1,0 +1,613 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-08-17T23:32:46Z",
+  "run_timestamp_local": "2026-08-17T19:32:46-0400",
+  "cutoff_window": {
+    "start_utc": "2026-08-15T23:32:46Z",
+    "end_utc": "2026-08-17T23:32:46Z",
+    "date_policy": "Include only items published or visibly updated within the last 2 days relative to run time. Date-only August 15 candidates were treated as boundary-only and excluded unless an in-window timestamp was visible."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "federation_policy": "Broad AI ecosystem entities, companies, products, model families, developer tools, and general AI-assisted development practice belong upstream. This repository keeps the security-specific implication, affected boundary, mitigation, evidence, and operational routing note.",
+    "upstream_indexes_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "docs_wiki_status": {
+      "page_count": 129,
+      "missing_required_files": 0,
+      "lint_findings": 0
+    }
+  },
+  "collection_methods": [
+    {
+      "method": "web_search",
+      "queries": [
+        "AI security vulnerability MCP August 17 2026",
+        "AI security incident prompt injection August 17 2026",
+        "site:github.com/advisories MCP AI vulnerability 2026 August 17",
+        "site:nvd.nist.gov CVE AI MCP August 17 2026",
+        "site:openai.com Greg Brockman AI cybersecurity Hugging Face August 17 2026",
+        "OpenAI Hugging Face AI agents escaped test environment blog August 17 2026 Brockman"
+      ]
+    },
+    {
+      "method": "public_feed_check",
+      "sources": [
+        "https://api.github.com/advisories",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0/",
+        "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+      ]
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "2026-08-17-openai-defenders-window-cyber-response",
+      "title": "OpenAI Defender's Window AI cyber response guidance",
+      "visible_dates": [
+        {
+          "source_url": "https://openai.com/index/the-defenders-window/",
+          "published": "2026-08-17",
+          "updated": "2026-08-17",
+          "date_basis": "Search result and web index showed the OpenAI page as published or crawled 11 hours before the run."
+        },
+        {
+          "source_url": "https://blog.gregbrockman.com/the-defenders-window",
+          "published": "2026-08-15",
+          "updated": "2026-08-15",
+          "date_basis": "Public mirror/search result showed a visible 2-day age; included as corroborating but not sole timing evidence."
+        }
+      ],
+      "source_urls": [
+        "https://openai.com/index/the-defenders-window/",
+        "https://blog.gregbrockman.com/the-defenders-window",
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://www.businessinsider.com/openai-president-greg-brockman-10-cybersecurity-tips-hugging-face-2026-8"
+      ],
+      "concise_factual_summary": "OpenAI published an in-window security response stating that the Hugging Face incident showed it had underestimated real-world cyber capabilities of its models. The page says OpenAI is strengthening safety requirements and urges organizations to accelerate cyber defense work, with secondary coverage describing a ten-point action plan from Greg Brockman after the model-evaluation incident.",
+      "evidence_classification": "official AI provider security response with reputable secondary coverage",
+      "affected_boundary_or_version": "Frontier model cyber-evaluation and deployment safety boundary after the OpenAI-Hugging Face model evaluation incident; not a software version advisory.",
+      "why_it_matters_for_ai_security": "The item is a concrete change in provider security posture after an autonomous-agent security incident: stronger safety requirements, defensive automation urgency, and incident-driven release-gate pressure for cyber-capable models.",
+      "named_entities": [
+        "OpenAI",
+        "Greg Brockman",
+        "Hugging Face",
+        "frontier AI models",
+        "cyber evaluations",
+        "The Defender's Window"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "OpenAI, Hugging Face, and model-family background belongs upstream. The local security lens should capture post-incident safety requirements, cyber release gates, and defender-readiness implications."
+      },
+      "confidence_notes": "High confidence that the OpenAI page is official and in-window based on web index metadata. Lower confidence on full page detail because direct curl encountered a JavaScript/Cookie challenge; ingest should re-open the page with a browser-capable fetch if exact wording is needed.",
+      "follow_up_actions": [
+        "During ingest, reconcile this with existing OpenAI-Hugging Face incident and frontier cyber release-gate pages.",
+        "Check whether the OpenAI page adds specific controls beyond the summarized safety-requirement and defender-readiness changes.",
+        "Route broad OpenAI entity updates to ai-wiki."
+      ]
+    },
+    {
+      "id": "2026-08-17-mlflow-3150-ai-platform-security-advisory-cluster",
+      "title": "MLflow 3.15.0 fixes SSRF and authorization flaws",
+      "visible_dates": [
+        {
+          "source_url": "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
+          "published": "2026-08-17T21:58:51Z",
+          "updated": "2026-08-17T21:58:52Z",
+          "date_basis": "GitHub Advisory Database API"
+        },
+        {
+          "source_url": "https://github.com/advisories/GHSA-3p64-6gvh-82v5",
+          "published": "2026-08-17T21:59:01Z",
+          "updated": "2026-08-17T21:59:01Z",
+          "date_basis": "GitHub Advisory Database API"
+        },
+        {
+          "source_url": "https://github.com/advisories/GHSA-gqch-g4w5-7qcw",
+          "published": "2026-08-17T21:59:09Z",
+          "updated": "2026-08-17T21:59:12Z",
+          "date_basis": "GitHub Advisory Database API"
+        }
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
+        "https://github.com/mlflow/mlflow/security/advisories/GHSA-7gwp-5pfp-969j",
+        "https://github.com/mlflow/mlflow/pull/24258",
+        "https://github.com/mlflow/mlflow/commit/ba949522477cbd5915aa55d29b0cfad7d5ddf939",
+        "https://github.com/advisories/GHSA-3p64-6gvh-82v5",
+        "https://github.com/mlflow/mlflow/security/advisories/GHSA-3p64-6gvh-82v5",
+        "https://github.com/mlflow/mlflow/pull/24291",
+        "https://github.com/mlflow/mlflow/commit/5c34aec5669e2386b38b5ee0855cd61174e27693",
+        "https://github.com/advisories/GHSA-gqch-g4w5-7qcw",
+        "https://github.com/mlflow/mlflow/security/advisories/GHSA-gqch-g4w5-7qcw",
+        "https://github.com/mlflow/mlflow/pull/24293",
+        "https://github.com/mlflow/mlflow/commit/4bb7474771c3be808cd9e129defef9305f2869be",
+        "https://github.com/mlflow/mlflow/releases/tag/v3.15.0"
+      ],
+      "concise_factual_summary": "GitHub published three MLflow advisories fixed in 3.15.0. CVE-2026-64849 is a critical unauthenticated full-read SSRF in model-registry webhook delivery where URL validation can be bypassed by redirects or DNS rebinding. CVE-2026-69146 lets any authenticated basic-auth user write dataset lineage records to another user's run through an unguarded LogInputs endpoint. CVE-2026-69148 lets authenticated users create model versions referencing another user's run or model artifacts and then read files through model-version artifact access without the required READ permission.",
+      "evidence_classification": "primary GitHub reviewed advisories plus public patch and release records",
+      "affected_boundary_or_version": "MLflow before 3.15.0; vulnerable surfaces include default tracking-server model-registry webhooks, basic-auth run lineage writes, and registered-model artifact source validation.",
+      "why_it_matters_for_ai_security": "MLflow stores model artifacts, dataset lineage, evaluation evidence, and registry metadata for ML and agent systems. These flaws cross network, identity, and audit-evidence boundaries: internal service read via SSRF, poisoned dataset provenance, and unauthorized model artifact disclosure.",
+      "named_entities": [
+        "MLflow",
+        "CVE-2026-64849",
+        "CVE-2026-69146",
+        "CVE-2026-69148",
+        "GHSA-7gwp-5pfp-969j",
+        "GHSA-3p64-6gvh-82v5",
+        "GHSA-gqch-g4w5-7qcw",
+        "model registry",
+        "dataset lineage",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "MLflow as an AI engineering platform belongs upstream. The local item should keep the model artifact confidentiality, lineage integrity, webhook SSRF, and ML audit-evidence implications."
+      },
+      "confidence_notes": "High confidence on dates, affected ranges, patched version, and vulnerability classes because GitHub Advisory Database and referenced patches agree. One advisory reports the MLflow package ecosystem as npm despite MLflow being a Python project; ingest should treat that as advisory metadata drift rather than product fact.",
+      "follow_up_actions": [
+        "During ingest, decide whether to split SSRF, lineage-integrity, and artifact-read bypass into separate local leaves or update a shared ML platform boundary page.",
+        "Check ai-wiki for an MLflow entity page before adding product background.",
+        "Recheck NVD enrichment for final CVSS and CPE metadata."
+      ]
+    },
+    {
+      "id": "2026-08-17-chrome-devtools-mcp-symlink-root-bypass",
+      "title": "chrome-devtools-mcp symlink bypass of workspace roots",
+      "visible_dates": [
+        {
+          "source_url": "https://github.com/advisories/GHSA-8qf9-62x2-82pp",
+          "published": "2026-08-17T21:56:12Z",
+          "updated": "2026-08-17T21:56:13Z",
+          "date_basis": "GitHub Advisory Database API and page"
+        }
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-8qf9-62x2-82pp",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/security/advisories/GHSA-8qf9-62x2-82pp",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53766",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/pull/2127",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/commit/176eb695137d9c46a61e2d4d5571880c5145cf46",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.1.0"
+      ],
+      "concise_factual_summary": "GitHub published CVE-2026-53766 for chrome-devtools-mcp versions 0.24.0 through 1.0.1. McpContext.validatePath checked resolved path text against configured roots without canonicalizing symlinks, so an in-root symlink to an out-of-root target could pass validation. Downstream file operations could overwrite out-of-root files or upload out-of-root files through browser file inputs. Version 1.1.0 is listed as patched.",
+      "evidence_classification": "primary GitHub reviewed advisory plus public patch/release records",
+      "affected_boundary_or_version": "chrome-devtools-mcp >= 0.24.0 and <= 1.0.1; patched in 1.1.0; workspace roots and browser file upload/save tool boundary.",
+      "why_it_matters_for_ai_security": "Browser-connected MCP tools bridge agent decisions, local files, and untrusted web pages. A roots bypass undermines least privilege and can turn normal file upload or trace-save actions into secret disclosure or out-of-workspace writes, especially when prompt-injected page content influences tool use.",
+      "named_entities": [
+        "ChromeDevTools",
+        "chrome-devtools-mcp",
+        "Model Context Protocol",
+        "CVE-2026-53766",
+        "GHSA-8qf9-62x2-82pp",
+        "CWE-22",
+        "CWE-59",
+        "Google Bug Hunters",
+        "Puppeteer"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "chrome-devtools-mcp as an MCP server/tool belongs upstream. The local security lens should focus on root canonicalization, symlink handling, prompt-injection-to-file-upload chains, and browser agent filesystem boundaries."
+      },
+      "confidence_notes": "High confidence on vulnerability class, affected versions, patched version, and publication date. The advisory describes a local/workspace-state-dependent exploit unless a remote page can rely on or induce a suitable symlink.",
+      "follow_up_actions": [
+        "During ingest, link to local agent tool filesystem path containment and browser-agent intent-collision pages.",
+        "Check whether ai-wiki already has a chrome-devtools-mcp entity leaf.",
+        "Track canonical path logging as an auditability control."
+      ]
+    },
+    {
+      "id": "2026-08-17-atomic-agents-stack-http-mcp-catalog-rce",
+      "title": "atomic-agents-stack cleartext MCP catalog MITM to RCE",
+      "visible_dates": [
+        {
+          "source_url": "https://github.com/advisories/GHSA-xhcr-cqfr-m3hv",
+          "published": "2026-08-17T21:49:55Z",
+          "updated": "2026-08-17T21:49:55Z",
+          "date_basis": "GitHub Advisory Database API"
+        }
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-xhcr-cqfr-m3hv",
+        "https://github.com/dep0we/atomic-agents-stack/security/advisories/GHSA-xhcr-cqfr-m3hv",
+        "https://github.com/dep0we/atomic-agents-stack/releases#release-v1.1.0"
+      ],
+      "concise_factual_summary": "GitHub published GHSA-xhcr-cqfr-m3hv for atomic-agents-stack versions through 1.0.0. The HTTP MCP registry backend accepted cleartext http URLs and later spawned catalog-supplied command and args as local stdio subprocesses. A network man-in-the-middle could rewrite a catalog response to inject arbitrary command execution on the agent host. Version 1.1.0 is listed as patched.",
+      "evidence_classification": "primary GitHub advisory plus public release record",
+      "affected_boundary_or_version": "atomic-agents-stack <= 1.0.0; HTTP MCP registry backend and registry-sourced stdio subprocess spawning; patched in 1.1.0.",
+      "why_it_matters_for_ai_security": "MCP catalogs are delegated authority surfaces: agents may turn catalog metadata into local process execution. Cleartext catalog transport plus unrestricted command fields collapses registry integrity into host code execution, showing why agent tool discovery needs HTTPS, integrity checks, and command allowlists.",
+      "named_entities": [
+        "atomic-agents-stack",
+        "Model Context Protocol",
+        "MCP registry",
+        "GHSA-xhcr-cqfr-m3hv",
+        "CWE-319",
+        "CWE-494",
+        "stdio subprocesses"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-dev-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "General agent framework usage and catalog patterns belong in ai-dev-wiki. The local security item should capture cleartext registry trust, command-spawn allowlisting, and MCP supply-chain integrity controls."
+      },
+      "confidence_notes": "High confidence on affected version range and patched version from GitHub Advisory Database. No CVE ID was assigned in the fetched record.",
+      "follow_up_actions": [
+        "During ingest, connect this to MCP supply-chain and agent tool execution-boundary pages.",
+        "Route any durable framework profile for atomic-agents-stack to ai-dev-wiki.",
+        "Check whether release 1.1.0 documents exact mitigation behavior."
+      ]
+    },
+    {
+      "id": "2026-08-17-atomic-agents-stack-cost-guardrail-bypass",
+      "title": "atomic-agents-stack unknown-model cost guardrail bypass",
+      "visible_dates": [
+        {
+          "source_url": "https://github.com/advisories/GHSA-j659-8xh6-5pq5",
+          "published": "2026-08-17T21:50:01Z",
+          "updated": "2026-08-17T21:50:02Z",
+          "date_basis": "GitHub Advisory Database API"
+        }
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-j659-8xh6-5pq5",
+        "https://github.com/dep0we/atomic-agents-stack/security/advisories/GHSA-j659-8xh6-5pq5",
+        "https://github.com/dep0we/atomic-agents-stack/releases#release-v1.1.0"
+      ],
+      "concise_factual_summary": "GitHub published GHSA-j659-8xh6-5pq5 for atomic-agents-stack versions through 1.0.0. The parallel helper/delegate batch cost estimator returned zero for model IDs absent from the hardcoded pricing table, causing the cost-cap reservation check to skip reservation. The advisory says unknown self-hosted or new provider models, or a steered parallel-helper model argument, could bypass configured daily caps; version 1.1.0 is listed as patched.",
+      "evidence_classification": "primary GitHub advisory plus public release record",
+      "affected_boundary_or_version": "atomic-agents-stack <= 1.0.0; cost_guardrails with daily_cap_usd and parallel helper/delegate batches using unknown model IDs; patched in 1.1.0.",
+      "why_it_matters_for_ai_security": "Cost and quota controls are abuse-containment controls for autonomous agents. A fan-out guard that treats unknown models as free can let delegated actions overrun operator-defined limits and defeats monitoring assumptions for high-volume agent execution.",
+      "named_entities": [
+        "atomic-agents-stack",
+        "GHSA-j659-8xh6-5pq5",
+        "cost_guardrails",
+        "daily_cap_usd",
+        "parallel helper",
+        "delegated agents",
+        "CWE-770"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-dev-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "General framework orchestration and cost ergonomics belong in ai-dev-wiki. The local security lens should capture cost caps as delegated-agent abuse containment and release-gate evidence."
+      },
+      "confidence_notes": "High confidence on advisory timing and affected range. No CVE ID or CVSS vector was present in the fetched GitHub record.",
+      "follow_up_actions": [
+        "During ingest, decide whether this belongs under AI workload cost anomaly monitoring or agent action runtime hooks.",
+        "Check release notes for mitigation specifics and tests.",
+        "Record unknown-model fallback pricing as a control expectation."
+      ]
+    },
+    {
+      "id": "2026-08-17-cisa-kev-ray-browser-rce-ai-compute",
+      "title": "CISA adds Ray AI compute browser-triggered RCE to KEV",
+      "visible_dates": [
+        {
+          "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "published": "2026-08-17",
+          "updated": "2026-08-17T17:00:24.7655Z",
+          "date_basis": "CISA KEV feed dateReleased and dateAdded"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2025-62593",
+          "updated": "2026-08-17T18:16:32.503",
+          "date_basis": "NVD API lastModified"
+        }
+      ],
+      "source_urls": [
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-62593",
+        "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-62593",
+        "https://github.com/ray-project/ray/security/advisories/GHSA-q279-jhrf-cc6v",
+        "https://github.com/ray-project/ray/commit/70e7c72780bdec075dba6cad1afe0832772bfe09",
+        "https://www.bitsight.com/blog/rondodox-botnet-infrastructure-analysis"
+      ],
+      "concise_factual_summary": "CISA added CVE-2025-62593 to the Known Exploited Vulnerabilities catalog on August 17, 2026. The feed describes Ray as affected by a code injection vulnerability that can allow remote code execution and notes developer exposure through Firefox and Safari. NVD describes Ray as an AI compute engine before 2.52.0 with an insufficient browser-attack guard based on the User-Agent header; combined with DNS rebinding, a malicious site or advertisement can exploit a developer running Ray. NVD records CISA SSVC exploitation as active and technical impact as total.",
+      "evidence_classification": "official government exploited-vulnerability catalog plus NVD and vendor advisory references",
+      "affected_boundary_or_version": "Ray before 2.52.0; developer-run Ray instances reachable through browser-based DNS rebinding paths; fixed by Ray commit 70e7c72780bdec075dba6cad1afe0832772bfe09.",
+      "why_it_matters_for_ai_security": "Ray is used for AI compute and distributed development workflows. Active exploitation of a browser-triggered RCE path against developer-run AI infrastructure is a concrete supply-chain and workstation-boundary risk for model development, evaluation, and agent runtime environments.",
+      "named_entities": [
+        "CISA",
+        "Known Exploited Vulnerabilities Catalog",
+        "Ray",
+        "Ray-Project",
+        "CVE-2025-62593",
+        "GHSA-q279-jhrf-cc6v",
+        "NVD",
+        "Firefox",
+        "Safari",
+        "DNS rebinding",
+        "Bitsight",
+        "RondoDox"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "Ray as an AI compute framework belongs upstream. The local item should capture active exploitation, browser-to-local-service attack path, patch urgency, and AI development infrastructure exposure."
+      },
+      "confidence_notes": "High confidence on KEV addition date, active exploitation flag, vulnerability description, and patched version from CISA/NVD/GitHub references. The original CVE publication predates the window; this run qualifies on in-window KEV addition and NVD modification.",
+      "follow_up_actions": [
+        "During ingest, update local supply-chain or development workstation containment coverage.",
+        "Reconcile whether the issue is already represented by a Ray entity page upstream.",
+        "Track KEV-driven patch deadlines and browser-origin protections for local AI services."
+      ]
+    },
+    {
+      "id": "2026-08-17-memos-internal-service-secret-auth-bypass",
+      "title": "MemOS unset internal secret grants unauthenticated admin access",
+      "visible_dates": [
+        {
+          "source_url": "https://github.com/advisories/GHSA-v9vw-ccqp-q298",
+          "published": "2026-08-17T21:31:27Z",
+          "updated": "2026-08-17T21:31:27Z",
+          "date_basis": "GitHub Advisory Database API"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75110",
+          "published": "2026-08-17T21:16:50.043",
+          "updated": "2026-08-17T21:16:50.043",
+          "date_basis": "NVD API search result"
+        }
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-v9vw-ccqp-q298",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75110",
+        "https://github.com/MemTensor/MemOS/issues/2259",
+        "https://github.com/MemTensor/MemOS",
+        "https://github.com/MemTensor/MemOS/blob/main/src/memos/api/middleware/auth.py",
+        "https://www.vulncheck.com/advisories/memos-authentication-bypass-via-unset-internal-service-secret"
+      ],
+      "concise_factual_summary": "GitHub published CVE-2026-75110 / GHSA-v9vw-ccqp-q298 for MemOS. When AUTH_ENABLED=true but INTERNAL_SERVICE_SECRET is unset, the internal-request check compares two null values and treats a request without X-Internal-Service as trusted internal traffic. The advisory says an unauthenticated remote attacker can mint API keys for any user, enumerate and revoke keys, generate a master key, and reach all data endpoints. The GitHub record gives CVSS 9.8 critical.",
+      "evidence_classification": "GitHub advisory and NVD record with third-party vulnerability advisory reference",
+      "affected_boundary_or_version": "MemOS deployments with authentication enabled and INTERNAL_SERVICE_SECRET unset; exact patched version was not listed in the fetched GitHub record.",
+      "why_it_matters_for_ai_security": "MemOS is a memory operating system for LLMs and AI agents. A fail-open internal-service secret check turns a missing deployment secret into full administrative API-key and data access, directly affecting agent memory confidentiality, tenant isolation, and credential lifecycle controls.",
+      "named_entities": [
+        "MemOS",
+        "MemTensor",
+        "CVE-2026-75110",
+        "GHSA-v9vw-ccqp-q298",
+        "INTERNAL_SERVICE_SECRET",
+        "X-Internal-Service",
+        "LLM agents",
+        "VulnCheck",
+        "CWE-697"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "MemOS as an AI memory platform belongs upstream if durable catalog coverage exists. The local security item should focus on fail-open service identity, admin API-key management, and agent memory data exposure."
+      },
+      "confidence_notes": "High confidence on vulnerability mechanism and timing from GitHub and NVD. Confidence is lower on remediation status because the fetched advisory did not list a vulnerable version range or patched version.",
+      "follow_up_actions": [
+        "During ingest, check the MemOS issue for fix status and recommended mitigations.",
+        "Represent missing internal service secrets as a deployment gate and least-privilege control.",
+        "Route broad MemOS product background upstream."
+      ]
+    },
+    {
+      "id": "2026-08-17-redhat-openshift-ai-serviceaccount-excessive-permissions",
+      "title": "Red Hat OpenShift AI service accounts overprivileged",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-15218",
+          "published": "2026-08-17T14:20:19.357",
+          "updated": "2026-08-17T18:16:32.963",
+          "date_basis": "NVD API"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15218",
+        "https://access.redhat.com/security/cve/CVE-2026-15218",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2498426"
+      ],
+      "concise_factual_summary": "NVD published CVE-2026-15218 for Red Hat OpenShift AI. The maas-api and maas-controller ServiceAccounts have cluster-wide permissions beyond operational requirements. If an attacker compromises those identities through remote code execution or a malicious pod in the same namespace, the excess permissions can lead to full cluster administrator privileges through new ClusterRoleBindings or disclosure of all cluster secrets. Red Hat's CVSS v3.1 score is 7.9 high.",
+      "evidence_classification": "NVD record with Red Hat security and Bugzilla references",
+      "affected_boundary_or_version": "Red Hat OpenShift AI maas-api and maas-controller ServiceAccounts; exact affected product versions not identified in fetched NVD output.",
+      "why_it_matters_for_ai_security": "AI platform operators frequently grant runtime and controller identities access to models, data, secrets, and cluster resources. This advisory is a concrete least-privilege failure where compromise of an AI platform service account can become cluster-admin access and broad secret disclosure.",
+      "named_entities": [
+        "Red Hat",
+        "OpenShift AI",
+        "CVE-2026-15218",
+        "maas-api",
+        "maas-controller",
+        "ServiceAccount",
+        "ClusterRoleBinding",
+        "Kubernetes",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "Red Hat OpenShift AI product background belongs upstream. The local security lens should capture AI platform service-account least privilege, cluster-scope escalation, and secret-access blast radius."
+      },
+      "confidence_notes": "High confidence on NVD publication date and vulnerability description. Follow-up is needed for exact affected versions and Red Hat errata state because the access.redhat.com page was not separately fetched in this run.",
+      "follow_up_actions": [
+        "During ingest, fetch Red Hat CVE page for affected versions, fixes, and mitigation advice.",
+        "Map this to production agent identity and access controls or AI platform Kubernetes least-privilege coverage.",
+        "Check whether ai-wiki owns Red Hat OpenShift AI as an entity."
+      ]
+    },
+    {
+      "id": "2026-08-17-kiota-ai-host-manifest-file-boundary-disclosure",
+      "title": "Kiota manifest file reference escapes AI host package boundary",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73851",
+          "published": "2026-08-17T15:16:57.980",
+          "updated": "2026-08-17T16:17:47.677",
+          "date_basis": "NVD API"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73851",
+        "https://github.com/microsoft/kiota/security/advisories/GHSA-p5rm-jg5c-8c77",
+        "https://github.com/microsoft/kiota/issues/7912",
+        "https://github.com/microsoft/kiota/pull/7910",
+        "https://github.com/microsoft/kiota/pull/7913",
+        "https://github.com/microsoft/kiota/commit/430008e9d700b3fe80f206c672415cfbd8e830e7",
+        "https://github.com/microsoft/kiota/commit/de3d18d9fe31ced4ac749728d3a2f94811f59268",
+        "https://github.com/microsoft/kiota/releases/tag/v1.29.1",
+        "https://github.com/microsoft/kiota/releases/tag/v1.34.0"
+      ],
+      "concise_factual_summary": "NVD published CVE-2026-73851 for Microsoft Kiota. Before 1.29.1 and 1.34.0, an attacker controlling or tampering with an OpenAPI description consumed by Kiota could supply file references that resolve outside the manifest package, including path traversal, absolute paths, file URIs, or HTTP(S) URIs. When the generated manifest is deployed and consumed by an AI host, this can include or disclose files outside the intended package boundary.",
+      "evidence_classification": "NVD record plus public GitHub advisory, pull requests, commits, and release references",
+      "affected_boundary_or_version": "Kiota before 1.29.1 and 1.34.0; generated manifest package consumed by an AI host; fixed in 1.29.1 and 1.34.0.",
+      "why_it_matters_for_ai_security": "Generated tool manifests are part of the AI tool supply chain. If an OpenAPI input can smuggle external file references into a manifest, an AI host may package or disclose files outside the intended artifact boundary, weakening dependency provenance and tool-install containment.",
+      "named_entities": [
+        "Microsoft",
+        "Kiota",
+        "OpenAPI",
+        "AI host",
+        "CVE-2026-73851",
+        "GHSA-p5rm-jg5c-8c77",
+        "CWE-22",
+        "CWE-829",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "entity_owner": "ai-dev-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "Kiota and OpenAPI generation practice belong in ai-dev-wiki. The local item should keep the AI-host package-boundary, manifest supply-chain, and external-reference disclosure implications."
+      },
+      "confidence_notes": "High confidence on dates, affected versions, and fixed versions from NVD. Follow-up should inspect the GitHub advisory for whether both branches carry identical remediation semantics.",
+      "follow_up_actions": [
+        "During ingest, map to agent/tool artifact containment and AI supply-chain provenance.",
+        "Check ai-dev-wiki for Kiota or OpenAPI code-generation coverage.",
+        "Use this as a generated-manifest trust-boundary case rather than a broad Microsoft product update."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "UpTrain evaluation platform default API key and RCE CVE cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-27621",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-27770",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-27771",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-27772"
+      ],
+      "visible_date": "2026-08-17 from NVD search results",
+      "reason": "Highly relevant AI evaluation-platform security items, but direct per-CVE NVD fetches hit parse/rate-limit failures during this run; excluded until source detail and references can be verified cleanly."
+    },
+    {
+      "title": "Onyx Enterprise Edition user-group and MCP OAuth token exposure CVEs",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-63178",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71424"
+      ],
+      "visible_date": "2026-08-17 from NVD search results",
+      "reason": "Relevant to AI platform authorization and MCP token isolation, but direct per-CVE NVD fetches failed during this run; excluded pending clean advisory/reference verification."
+    },
+    {
+      "title": "AI WordPress plugin authorization bypass advisories",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-g2qc-vm5h-cg28",
+        "https://github.com/advisories/GHSA-mxh6-wmv3-9hg9",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-13167",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-16779"
+      ],
+      "visible_date": "2026-08-16T06:30Z from GitHub Advisory Database",
+      "reason": "In-window and AI-branded, but the concrete deltas are ordinary WordPress plugin authorization bypasses with weak direct AI-system security implication compared with stronger in-window platform advisories."
+    },
+    {
+      "title": "JeecgBoot AI Chat Module files-parameter RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-67926"
+      ],
+      "visible_date": "2026-08-17 from NVD search results",
+      "reason": "Potentially relevant AI chat module RCE, but only a terse NVD search-result description was captured and no primary patch/advisory detail was verified."
+    },
+    {
+      "title": "Generic vm2 sandbox escape advisories",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-cfcw-xp6x-25gj",
+        "https://github.com/advisories/GHSA-m283-3h24-438v",
+        "https://github.com/advisories/GHSA-m5w8-4gq2-6f8x"
+      ],
+      "visible_date": "2026-08-17 from GitHub Advisory Database",
+      "reason": "In-window sandbox vulnerabilities, but no AI-specific runtime, model, tool, or agent boundary was visible in the fetched records; route only if later evidence ties vm2 usage to an AI agent runtime."
+    },
+    {
+      "title": "Generic Netty, sqlparse, http4k, Glances, Terragrunt, and uniget advisories",
+      "source_urls": [
+        "https://github.com/advisories"
+      ],
+      "visible_date": "2026-08-17 from GitHub Advisory Database",
+      "reason": "Fresh security advisories were present, but fetched summaries did not provide a concrete AI-system security delta beyond ordinary software supply-chain relevance."
+    },
+    {
+      "title": "The Verge rogue AI column",
+      "source_urls": [
+        "https://www.theverge.com/column/980337/rogue-ai-science-fiction-openai"
+      ],
+      "visible_date": "2026-08-16 from search result",
+      "reason": "In-window and thematically relevant, but it is opinion/analysis without a newly verified primary security fact distinct from prior OpenAI, Anthropic, Meta, and Moonshot incident coverage."
+    },
+    {
+      "title": "Business Insider coverage of Greg Brockman's Defender's Window post",
+      "source_urls": [
+        "https://www.businessinsider.com/openai-president-greg-brockman-10-cybersecurity-tips-hugging-face-2026-8"
+      ],
+      "visible_date": "2026-08-17 from search result",
+      "reason": "Used as secondary corroboration for the official OpenAI item rather than counted separately."
+    },
+    {
+      "title": "Boundary-only August 15 MCP and prompt-injection blog posts",
+      "source_urls": [
+        "https://thehackernews.com/2026/08/how-mcp-servers-can-expose-enterprise.html",
+        "https://openclawai.io/blog/ai-agent-ssrf-protection-browser-automation"
+      ],
+      "visible_date": "2026-08-15 or unclear from search snippets",
+      "reason": "Date-only or ambiguous August 15 is boundary-only relative to the exact 2026-08-15T23:32:46Z cutoff unless a timestamp is visible; excluded even when topic relevance was plausible."
+    },
+    {
+      "title": "Already captured or stale OpenAI-Hugging Face, SAFE, Zoomsday, and court-filing prompt-injection coverage",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+        "https://www.axios.com/2026/08/11/open-source-security-ai-agent-reporting",
+        "https://www.theverge.com/ai-artificial-intelligence/977909/zoom-vulnerability-ai-attack",
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/plaintiff-busted-trying-to-use-ai-prompt-injection-to-win-court-case-hides-text-instruction-in-filing-demands-ai-model-reviewing-the-text-should-side-with-him-rumbled-because-of-strange-white-spaces-in-text"
+      ],
+      "visible_date": "2026-07-21 through 2026-08-14",
+      "reason": "Concrete AI-security facts, but visible dates are outside the current 48-hour window or boundary-only, and prior automation runs already captured the main incident classes."
+    }
+  ],
+  "routing_counts": {
+    "qualifying_items_with_upstream_routing_notes": 9,
+    "upstream_owned_entity_contexts": 9,
+    "local_security_lens_items": 9
+  },
+  "counts": {
+    "qualifying_findings": 9,
+    "exclusions": 10,
+    "routing_notes": 9
+  },
+  "blockers": [
+    "Direct curl of the official OpenAI Defender's Window page encountered a JavaScript/Cookie challenge, so exact page detail should be rechecked during ingest with a browser-capable fetch.",
+    "NVD per-CVE fetches began returning parse/rate-limit failures after several requests, so UpTrain, Onyx, and JeecgBoot candidates were excluded despite likely relevance until advisory references can be verified cleanly."
+  ],
+  "privacy_and_sensitivity_notes": "Only public web sources, public advisory APIs, and public local wiki indexes/procedural files were used. No private, proprietary, sensitive, PII, or company-internal local content was sent to external services.",
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "notes": "Validated after artifact creation with jq empty and python3 -m json.tool."
+  }
+}

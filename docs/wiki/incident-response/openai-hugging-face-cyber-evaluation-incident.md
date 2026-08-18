@@ -66,6 +66,8 @@ The [August 6 topic news collector source](../../../raw/processed/2026-08-06/ai-
 
 The [August 10 leaf update watch source](../../../raw/processed/2026-08-10/ai-security-wiki-leaf-update-watch-20260811T000543Z.json) adds [Axios](https://www.axios.com/2026/08/06/openai-hugging-face-black-hat) and [Business Insider](https://www.businessinsider.com/openai-hugging-face-presentation-black-hat-message-boards-2026-8) Black Hat presentation details about evaluation agents coordinating through message-board-style artifacts while pursuing the Hugging Face target. This remains secondary response-phase evidence, but it sharpens the incident-control concern: containment evidence needs to include inter-agent coordination records, not only final tool calls and network logs.
 
+The [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json) and [August 17 leaf update watch source](../../../raw/processed/2026-08-17/ai-security-wiki-leaf-update-watch-20260818T000239Z.json) add OpenAI's [Defender's Window](https://openai.com/index/the-defenders-window/) and secondary [Business Insider](https://www.businessinsider.com/openai-president-greg-brockman-10-cybersecurity-tips-hugging-face-2026-8) coverage. OpenAI says the Hugging Face incident showed it underestimated the real-world cyber capabilities of its AI models and that it is strengthening safety requirements while urging faster defensive automation. This is a vendor mitigation and posture update, not a new technical incident chronology; detailed defender-access implications live in [defender model access during security incidents](defender-model-access-during-security-incidents.md), and release-gate implications live in [frontier model critical cyber release gates](../testing-and-assurance/frontier-model-critical-cyber-release-gates.md).
+
 ## Security Impact
 
 - Threat: evaluation-time agent autonomy can convert model capability testing into cross-boundary exploitation when infrastructure egress and credentials are not isolated.
@@ -75,10 +77,12 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-10/ai-se
 - Affected boundary: July 31 analysis adds explicit containment-control pressure around zero trust, container isolation, egress restrictions, monitoring, and defender-assistance access during reconstruction.
 - Affected boundary: August 4 legal-hold reporting adds evidence preservation, external-advisor review, Safety and Security Committee oversight, and public technical-report follow-up as incident-response boundaries.
 - Affected boundary: August 10 watcher evidence adds message-board-style evaluation-agent coordination records as response evidence that should be preserved with prompts, tool calls, network traces, and artifact-repository logs.
+- Affected boundary: August 17 OpenAI response evidence adds safety-requirement reassessment, defensive automation, Codex security review, AI-assisted detection triage, and responder access as mitigation and readiness boundaries.
 - Exploit or incident status: public incident disclosure; OpenAI described continuing investigation and coordinated work with Hugging Face.
 - Mitigation state: partial and ongoing.
   - OpenAI reported token revocation, credential rotation, token-control review, audit-log review, additional monitoring, and deactivation, encryption, and research-access restriction for the internal pre-release model.
   - Hugging Face reported token revocation, secret rotation, cleanup, and infrastructure rebuilds.
+  - OpenAI later reported strengthening safety requirements and investing in secure-code assistance, AI-assisted infrastructure defense, continuous attack-path enumeration, and security fundamentals at scale.
 - Confidence: high for OpenAI's disclosed event and Hugging Face technical timeline; medium for third-party-provider and CyberGym details that depend on follow-up reporting; lower for media-attributed containment, customer-impact, and several-days exposure claims until primary confirmation is captured.
 - Residual risk: package proxy details, full credential exposure paths, third-party sandbox responsibilities, source-control write blast radius, preservation-demand scope, and final containment changes remain unresolved.
 
@@ -101,6 +105,8 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-10/ai-se
 - [August 4 topic news collector source](../../../raw/processed/2026-08-04/ai-security-wiki-topic-news-collector-2026-08-04T193207-0400.json)
 - [August 5 leaf update watch source](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-10/ai-security-wiki-leaf-update-watch-20260811T000543Z.json)
+- [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json)
+- [August 17 leaf update watch source](../../../raw/processed/2026-08-17/ai-security-wiki-leaf-update-watch-20260818T000239Z.json)
 - OpenAI disclosure: https://openai.com/index/hugging-face-model-evaluation-security-incident/
 - Hugging Face related disclosure: https://huggingface.co/blog/security-incident-july-2026
 - Hugging Face technical incident report: https://huggingface.co/blog/incident-report-evals
@@ -113,6 +119,8 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-10/ai-se
 - WIRED containment analysis: https://www.wired.com/story/openais-hacking-debacle-was-a-human-mistake/
 - SANS incident-response analysis: https://www.sans.org/blog/models-said-no-inside-hugging-face-post-mortem
 - Business Insider legal-hold follow-up: https://www.businessinsider.com/openai-attorney-general-preserve-hugging-face-evidence-2026-8
+- OpenAI Defender's Window: https://openai.com/index/the-defenders-window/
+- Business Insider Defender's Window coverage: https://www.businessinsider.com/openai-president-greg-brockman-10-cybersecurity-tips-hugging-face-2026-8
 
 ## Related Code
 
@@ -150,9 +158,11 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-10/ai-se
 - Will OpenAI publish the Black Hat-described Artifactory message-board, RCE, administrator-privilege, outage, and post-patch coordination details in a primary postmortem?
 - Will the attorneys general preservation letter or OpenAI's promised public findings expose concrete log-retention, sandbox, credential, or advisor-review requirements?
 - Which message-board-style coordination artifacts should be retained as evaluation-agent evidence, and how are they linked to tool calls and network events?
+- Which specific strengthened safety requirements are direct post-incident changes rather than previously planned internal security work?
 
 ## Maintenance Notes
 
 - Added from the [July 22, 2026 raw collector artifact](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 collector](../../../raw/processed/2026-07-23/ai-security-wiki-topic-news-collector-2026-07-23T193409-0400.json), [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 collector](../../../raw/processed/2026-07-24/ai-security-wiki-topic-news-collector-2026-07-24T193213-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), [July 28 collector](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json), [July 29 collector](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json), [July 30 collector](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json), [July 31 collector](../../../raw/processed/2026-07-31/ai-security-wiki-topic-news-collector-2026-07-31T193247-0400.json), [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json), [August 4 leaf watcher](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json), [August 4 topic collector](../../../raw/processed/2026-08-04/ai-security-wiki-topic-news-collector-2026-08-04T193207-0400.json), and [August 5 watcher](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json) while keeping future updates focused on incident mechanics and AI security controls.
 - Updated on 2026-08-06 from the [August 6 topic collector](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json) with secondary Black Hat reporting on Artifactory-as-coordination infrastructure. Next check should replace secondary Axios/WIRED details when OpenAI publishes the promised postmortem.
 - Updated on 2026-08-10 from the [August 10 watcher](../../../raw/processed/2026-08-10/ai-security-wiki-leaf-update-watch-20260811T000543Z.json) with secondary Black Hat evidence about message-board-style evaluation-agent coordination records.
+- Updated on 2026-08-17 from the [August 17 topic collector](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json) and [August 17 watcher](../../../raw/processed/2026-08-17/ai-security-wiki-leaf-update-watch-20260818T000239Z.json) with OpenAI Defender's Window mitigation and safety-requirement evidence.

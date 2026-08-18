@@ -20,6 +20,10 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [DB-GPT unauthenticated path traversal remote code execution](db-gpt-unauthenticated-path-traversal-rce.md)
 - [LiteLLM supply-chain secret exposure](litellm-supply-chain-secret-exposure.md)
 - [AI supply chain provenance credentialing](ai-supply-chain-provenance-credentialing.md)
+- [MLflow 3.15.0 security advisory cluster](mlflow-3150-security-advisory-cluster.md)
+- [atomic-agents-stack cleartext MCP catalog RCE](atomic-agents-stack-cleartext-mcp-catalog-rce.md)
+- [Ray browser-triggered AI compute RCE](ray-browser-triggered-ai-compute-rce.md)
+- [Kiota AI host manifest file boundary disclosure](kiota-ai-host-manifest-file-boundary-disclosure.md)
 
 ## Authoritative Sources
 
@@ -50,3 +54,4 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 ## Maintenance Notes
 
 - Record provenance, affected component, trust boundary, deployment surface, and remediation status.
+- Updated on 2026-08-17 with MLflow, atomic-agents-stack, Ray, and Kiota AI infrastructure and supply-chain advisory leaves.

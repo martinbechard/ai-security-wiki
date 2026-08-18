@@ -27,6 +27,8 @@ The [August 10 topic news collector source](../../../raw/processed/2026-08-10/ai
 
 The local incident-response recommendation is stronger than the source's access statement: incident teams should require auditable evidence for each applicable control before using reduced-refusal cyber-model access in live response. Broad [Daybreak, Codex Security, and Patch the Planet](../../../upstream-ai-wiki/products/daybreak-codex-security-and-patch-the-planet.md) product coverage stays upstream. Exact upstream GPT-5.6-Cyber model coverage was not identified during this ingest.
 
+The [August 17 leaf update watch source](../../../raw/processed/2026-08-17/ai-security-wiki-leaf-update-watch-20260818T000239Z.json) adds [AWS announcement evidence](https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/) that Daybreak Red and Daybreak Blue are available to eligible Amazon Bedrock customers. Broad AWS, Amazon Bedrock, OpenAI, and Daybreak product coverage stays upstream; the local response-control delta is partner-mediated access evidence that needs the same identity, monitoring, scoped-permission, and evidence-retention review as direct OpenAI-managed access.
+
 ## Control Implications
 
 - Keep incident data classification rules in force when sharing evidence with defensive models.
@@ -40,6 +42,7 @@ The local incident-response recommendation is stronger than the source's access 
 - Keep human anomaly triage and escalation readiness as explicit controls when automated monitoring or model assistance is incomplete.
 - Verify responder identity and approved defensive purpose before granting reduced-refusal or higher-risk cyber-model access.
 - Require hardware-backed account security, scoped permission profiles, sandboxed workspaces, and review defaults for defender workflows that can generate exploit chains or modify live systems.
+- Treat eligible Amazon Bedrock access as partner-mediated access that still needs auditable identity, custody, logging, scoped-permission, and evidence-retention controls.
 
 ## Authoritative Sources
 
@@ -52,8 +55,10 @@ The local incident-response recommendation is stronger than the source's access 
 - [August 5 leaf update watch source](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json)
 - [August 10 topic news collector source](../../../raw/processed/2026-08-10/ai-security-wiki-topic-news-collector-2026-08-10T233045Z.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-10/ai-security-wiki-leaf-update-watch-20260811T000543Z.json)
+- [August 17 leaf update watch source](../../../raw/processed/2026-08-17/ai-security-wiki-leaf-update-watch-20260818T000239Z.json)
 - OpenAI expanded Daybreak access: https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/
 - OpenAI trusted-hands cyber-model controls: https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands/
+- AWS Daybreak Bedrock announcement: https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/
 - Axios GPT-5.6-Cyber reporting: https://www.axios.com/2026/08/10/openai-gpt-astra-restrictions-safety-hacking-defenders
 - Keepit response-control analysis: https://www.keepit.com/blog/openai-hugging-face/
 - SANS incident-response analysis: https://www.sans.org/blog/models-said-no-inside-hugging-face-post-mortem
@@ -82,8 +87,10 @@ The local incident-response recommendation is stronger than the source's access 
 - What evidence standard is required before model-assisted incident conclusions are treated as confirmed?
 - What control evidence should authorize incident responders to obtain model help with exploit reconstruction without creating reusable offensive guidance outside the incident workspace?
 - Which Daybreak partner-mediated access controls are externally auditable during active incidents?
+- Which Amazon Bedrock eligibility, logging, identity, and custody controls are externally auditable for Daybreak Red and Daybreak Blue use?
 
 ## Maintenance Notes
 
 - Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json), and [August 5 watcher](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json) with defensive-model-access, assurance-pressure, recovery-trust, incident-reconstruction access, and secondary human-oversight evidence.
 - Updated on 2026-08-10 from the [August 10 topic collector](../../../raw/processed/2026-08-10/ai-security-wiki-topic-news-collector-2026-08-10T233045Z.json) and [August 10 watcher](../../../raw/processed/2026-08-10/ai-security-wiki-leaf-update-watch-20260811T000543Z.json) with Daybreak/GPT-5.6-Cyber defender-access controls.
+- Updated on 2026-08-17 from the [August 17 watcher](../../../raw/processed/2026-08-17/ai-security-wiki-leaf-update-watch-20260818T000239Z.json) with Amazon Bedrock as partner-mediated Daybreak access evidence.

@@ -1,0 +1,400 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/gomarble-facebook-ads-mcp-ssrf.md",
+      "note": "Enginsight listed CVE-2026-19956 among recent CVEs but did not provide a stable visible in-window publication/update date in the checked search result; GHSA/NVD/patch facts are already captured by the August 16 source.",
+      "reason": "missing_visible_publication_date_or_duplicate_of_august_16_topic_collector",
+      "source_url": "https://cve.enginsight.com/"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+      "note": "CVE-2026-72777 is a new Next AI Draw.io parse-url SSRF through 0.4.16, not the existing x-ai-provider disclosure leaf; it may deserve a separate local security leaf.",
+      "reason": "adjacent_not_same_leaf",
+      "source_url": "https://mallory.ai/vulnerabilities/CVE-2026-72777"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+      "note": "Secondary CVE-2026-72777 coverage corroborates the separate parse-url SSRF candidate but does not update CVE-2026-50756.",
+      "reason": "adjacent_not_same_leaf",
+      "source_url": "https://www.strix.ai/cve/CVE-2026-72777"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+      "note": "Visible date 2026-08-04 is outside the strict 7-day window for this 2026-08-17 run.",
+      "reason": "stale_visible_date",
+      "source_url": "https://www.wiley.law/alert-A-New-Framework-for-AI-Data-Center-Security-NIST-SP-800-239"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-office-gpai-enforcement-controls.md",
+      "note": "Visible August 7 update/effective-date coverage is outside the strict window or repeats enforcement boundary already captured.",
+      "reason": "stale_or_boundary_only_date",
+      "source_url": "https://digital-strategy.ec.europa.eu/en/policies/ai-act-governance-and-enforcement"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-guardrail-dependency-compromise.md",
+      "note": "No primary OSV/PyPI/maintainer update with a visible in-window date was found for MAL-2026-3607.",
+      "reason": "no_new_in_window_primary_evidence",
+      "source_url": "https://www.hacktron.ai/package/pypi/guardrails-ai/0.10.1"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/coding-agent-access-validation.md",
+      "note": "The Black Hat permission/logging evidence is already represented in agent egress/control pages and did not add a distinct coding-agent access-validation evidence format.",
+      "reason": "already_captured_or_adjacent",
+      "source_url": "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing"
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-assisted-credential-harvesting-and-token-abuse.md",
+      "note": "Visible date 2026-08-06 is outside this run window and was captured by the August 10 watcher.",
+      "reason": "stale_visible_date_already_captured",
+      "source_url": "https://unit42.paloaltonetworks.com/ai-token-jacking/"
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-assisted-credential-harvesting-and-token-abuse.md",
+      "note": "In-window secondary coverage repeats Unit 42 token-jacking facts without new same-leaf evidence.",
+      "reason": "secondary_without_new_local_delta",
+      "source_url": "https://india.entrepreneur.com/technology/ai-token-jacking-enterprises-must-secure-ai-resources"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "note": "Already included on the agent network egress controls page from the August 11 watcher.",
+      "reason": "already_captured",
+      "source_url": "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+      "note": "Visible date 2026-08-05 is outside the window and already captured in the page.",
+      "reason": "stale_visible_date_already_captured",
+      "source_url": "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+      "note": "Marketplace connector page is not authoritative for Google Cloud MCP response controls and did not provide a same-leaf control delta.",
+      "reason": "non_authoritative_product_marketplace",
+      "source_url": "https://withwillow.ai/marketplace/connectors/com-googleapis-monitoring-mcp"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "note": "New parse-url SSRF is separate from CVE-2026-50757 MCP export path traversal.",
+      "reason": "adjacent_not_same_leaf",
+      "source_url": "https://mallory.ai/vulnerabilities/CVE-2026-72777"
+    }
+  ],
+  "federation_note": "Broad AI entities, products, models, providers, and general AI-development practices route to upstream ai-wiki or ai-dev-wiki. This artifact keeps only local AI-security evidence and routing notes.",
+  "follow_up_notes": [
+    "Consider a separate durable local leaf for CVE-2026-72777 Next AI Draw.io parse-url SSRF if normal ingest confirms it is security-specific and not already covered upstream.",
+    "For CVE-2026-65400, capture primary NCSC-NL advisory evidence if available and continue watching CISA KEV.",
+    "For semantic governance policy telemetry, reconcile Google SecOps SOAR versus Gemini Enterprise Agent Platform product naming during ingest."
+  ],
+  "privacy_and_sensitivity_note": "External searches used only public leaf titles, public advisory identifiers, public entity names, and public URLs cited by leaves; no private page bodies, PII, proprietary, sensitive, or company-internal content was sent.",
+  "qualifying_count": 7,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "Gemini Enterprise Agent Platform semantic governance policy engine",
+        "Cloud Monitoring metrics and alert policies",
+        "agent authorization assurance telemetry"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should reconcile the existing Google SecOps SOAR wording with the August 15 Gemini Enterprise Agent Platform release-note ownership.",
+      "leaf_id": "docs/wiki/testing-and-assurance/semantic-governance-policy-telemetry.md",
+      "named_entities": [
+        "Google Cloud",
+        "Gemini Enterprise Agent Platform",
+        "Cloud Monitoring",
+        "semantic governance policy engine"
+      ],
+      "source_url": "https://docs.cloud.google.com/release-notes",
+      "summary": "Google Cloud release notes added Preview built-in Cloud Monitoring metrics for the semantic governance policy engine, covering request throughput, evaluation counts, latency, ALLOW/DENY verdict distribution, token consumption, API/PromQL querying, and alerting policies.",
+      "upstream_routing": "Route broad Google Cloud and Gemini Enterprise product coverage to ai-wiki; keep the security assurance telemetry control locally.",
+      "visible_date": "2026-08-15"
+    },
+    {
+      "affected_boundaries": [
+        "macOS Screen Sharing",
+        "TCP 5900 internet exposure",
+        "remote-management vulnerability response"
+      ],
+      "evidence_classification": "confirmed_exploitation",
+      "follow_up_note": "Check for a primary NCSC-NL advisory capture and whether CISA KEV later lists CVE-2026-65400.",
+      "leaf_id": "docs/wiki/threats-and-attacks/macos-screen-sharing-ai-accelerated-exploitability.md",
+      "named_entities": [
+        "Apple",
+        "macOS Screen Sharing",
+        "CVE-2026-65400",
+        "NCSC-NL",
+        "Monero"
+      ],
+      "source_url": "https://thehackernews.com/2026/08/apple-macos-screen-sharing-flaw.html",
+      "summary": "Public security coverage cites NCSC-NL warning that CVE-2026-65400 is being exploited on internet-exposed Macs to gain root and deploy a Monero miner.",
+      "upstream_routing": "Route broad Apple and macOS platform context to ai-wiki; keep exploit-pressure and AI-accelerated vulnerability-management implications locally.",
+      "visible_date": "2026-08-15"
+    },
+    {
+      "affected_boundaries": [
+        "macOS Screen Sharing",
+        "endpoint detection and emergency patching"
+      ],
+      "evidence_classification": "confirmed_exploitation",
+      "follow_up_note": "Use as secondary corroboration unless a primary national advisory is captured.",
+      "leaf_id": "docs/wiki/threats-and-attacks/macos-screen-sharing-ai-accelerated-exploitability.md",
+      "named_entities": [
+        "Malwarebytes",
+        "Apple",
+        "CVE-2026-65400"
+      ],
+      "source_url": "https://www.malwarebytes.com/blog/bugs/2026/08/update-your-mac-screen-sharing-vulnerability-exploited-in-the-wild",
+      "summary": "Malwarebytes published same-leaf exploitation follow-up, reinforcing that attackers are exploiting the patched Screen Sharing flaw in the wild.",
+      "upstream_routing": "Keep only exploitation and mitigation implications locally.",
+      "visible_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "Anthropic cybersecurity evaluations",
+        "model-behavior risk assessment",
+        "incident-driven threat model updates"
+      ],
+      "evidence_classification": "mitigation",
+      "follow_up_note": "Ingest should cite the PDF/report directly where possible and avoid turning this into a general Model 2 product page.",
+      "leaf_id": "docs/wiki/incident-response/anthropic-internet-connected-cyber-evaluation-incident.md",
+      "named_entities": [
+        "Anthropic",
+        "Claude",
+        "Mythos 5",
+        "Model 2"
+      ],
+      "source_url": "https://www.anthropic.com/aug-2026-risk-report",
+      "summary": "Anthropic August 2026 risk-report material says recent cybersecurity-evaluation incident disclosures are driving updates to threat models and risk-assessment methodology, with the assessed risk raised to low because of increased uncertainty.",
+      "upstream_routing": "Route broad Anthropic model and risk-report coverage to ai-wiki; keep the incident-response and containment lesson locally.",
+      "visible_date": "2026-08-14"
+    },
+    {
+      "affected_boundaries": [
+        "defender model access",
+        "Amazon Bedrock eligible-customer access",
+        "Daybreak Red and Daybreak Blue governed cyber workflows"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should compare partner-mediated controls with existing identity verification, monitoring, and hardware-key requirements.",
+      "leaf_id": "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+      "named_entities": [
+        "AWS",
+        "Amazon Bedrock",
+        "OpenAI",
+        "Daybreak Red",
+        "Daybreak Blue",
+        "GPT-5.6 Cyber",
+        "GPT-5.6 Sol"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/",
+      "summary": "AWS announced Daybreak Red and Daybreak Blue availability to eligible Amazon Bedrock customers, adding a partner-mediated access path for governed defensive cyber model use.",
+      "upstream_routing": "Route broad Daybreak, OpenAI, AWS, and Bedrock product coverage upstream; keep the incident-response access-control evidence locally.",
+      "visible_date": "2026-08-11"
+    },
+    {
+      "affected_boundaries": [
+        "OpenAI/Hugging Face cyber-evaluation incident follow-up",
+        "frontier-model cyber safety requirements",
+        "defensive automation and responder access"
+      ],
+      "evidence_classification": "mitigation",
+      "follow_up_note": "Treat as a vendor mitigation/position update, not as new technical incident chronology.",
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "Greg Brockman"
+      ],
+      "source_url": "https://openai.com/index/the-defenders-window/",
+      "summary": "OpenAI published a defender-response essay stating that the Hugging Face incident showed it underestimated real-world cyber capabilities and is strengthening safety requirements while urging faster defensive automation.",
+      "upstream_routing": "Route broad OpenAI strategy and product positioning to ai-wiki; keep incident-response, containment, and defender-control implications locally.",
+      "visible_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "incident-response guidance",
+        "enterprise defensive automation",
+        "AI-enabled exploit acceleration"
+      ],
+      "evidence_classification": "mitigation",
+      "follow_up_note": "Prefer OpenAI primary text for durable claims; use secondary coverage for context only.",
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "named_entities": [
+        "Business Insider",
+        "OpenAI",
+        "Greg Brockman",
+        "Hugging Face"
+      ],
+      "source_url": "https://www.businessinsider.com/openai-president-greg-brockman-10-cybersecurity-tips-hugging-face-2026-8",
+      "summary": "Business Insider reported Brockman framed the Hugging Face event as a watershed moment and promoted a 10-point defensive action plan for organizations facing AI-enabled vulnerability discovery and exploitation.",
+      "upstream_routing": "Use only as secondary reporting for local security-response framing; broad executive/product news routes upstream.",
+      "visible_date": "2026-08-17"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_local_time": "2026-08-17T20:02:39-0400",
+  "run_started_at": "2026-08-18T00:02:39Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/gomarble-facebook-ads-mcp-ssrf.md",
+    "docs/wiki/testing-and-assurance/semantic-governance-policy-telemetry.md",
+    "docs/wiki/threats-and-attacks/macos-screen-sharing-ai-accelerated-exploitability.md",
+    "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+    "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+    "docs/wiki/governance-and-compliance/ai-office-gpai-enforcement-controls.md",
+    "docs/wiki/incident-response/anthropic-internet-connected-cyber-evaluation-incident.md",
+    "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+    "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-guardrail-dependency-compromise.md",
+    "docs/wiki/testing-and-assurance/coding-agent-access-validation.md",
+    "docs/wiki/threats-and-attacks/ai-assisted-credential-harvesting-and-token-abuse.md",
+    "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+    "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+    "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md"
+  ],
+  "selection_policy": "new_or_unchecked_leaves_first_then_oldest_last_checked_at_tie_break_by_relative_path",
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/gomarble-facebook-ads-mcp-ssrf.md",
+      "urls": [
+        "https://github.com/advisories/GHSA-8xwh-hx55-jjpr",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19956",
+        "https://github.com/gomarble-ai/facebook-ads-mcp-server/pull/32",
+        "https://cve.enginsight.com/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/semantic-governance-policy-telemetry.md",
+      "urls": [
+        "https://docs.cloud.google.com/release-notes",
+        "https://docs.cloud.google.com/security-command-center/docs/monitor-semantic-governance-policies"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/macos-screen-sharing-ai-accelerated-exploitability.md",
+      "urls": [
+        "https://support.apple.com/en-us/148170",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-65400",
+        "https://thehackernews.com/2026/08/apple-macos-screen-sharing-flaw.html",
+        "https://www.malwarebytes.com/blog/bugs/2026/08/update-your-mac-screen-sharing-vulnerability-exploited-in-the-wild",
+        "https://www.tomshardware.com/tech-industry/cyber-security/macos-screen-sharing-flaw-exploited-to-root-macs-and-plant-monero-miners",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+        "https://github.com/DayuanJiang/next-ai-draw-io/issues/749",
+        "https://mallory.ai/vulnerabilities/CVE-2026-72777",
+        "https://www.strix.ai/cve/CVE-2026-72777"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+      "urls": [
+        "https://www.nist.gov/news-events/events/2026/07/securing-ai-data-center-architecture-security-posture-and-emerging",
+        "https://www.wiley.law/alert-A-New-Framework-for-AI-Data-Center-Security-NIST-SP-800-239",
+        "https://www.nist.gov/artificial-intelligence/ai-standards"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-office-gpai-enforcement-controls.md",
+      "urls": [
+        "https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act",
+        "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+        "https://digital-strategy.ec.europa.eu/en/policies/ai-act-governance-and-enforcement",
+        "https://ai-act-service-desk.ec.europa.eu/en/faq?faq_category_id=69"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/anthropic-internet-connected-cyber-evaluation-incident.md",
+      "urls": [
+        "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+        "https://www.anthropic.com/aug-2026-risk-report",
+        "https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf",
+        "https://www.axios.com/2026/08/14/anthropic-model-2-ai-risk",
+        "https://www.businessinsider.com/anthropic-ai-agents-risk-report-safety-mythos-claude-2026"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+      "urls": [
+        "https://openai.com/index/the-defenders-window/",
+        "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/",
+        "https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/",
+        "https://www.axios.com/2026/08/10/openai-gpt-astra-restrictions-safety-hacking-defenders"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://huggingface.co/blog/security-incident-july-2026",
+        "https://openai.com/index/the-defenders-window/",
+        "https://www.businessinsider.com/openai-president-greg-brockman-10-cybersecurity-tips-hugging-face-2026-8",
+        "https://www.bankinfosecurity.com/openai-president-urges-enterprises-to-deploy-ai-agents-a-32583"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-guardrail-dependency-compromise.md",
+      "urls": [
+        "https://www.hacktron.ai/package/pypi/guardrails-ai/0.10.1",
+        "https://pypi.org/project/guardrails-ai/0.10.1/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/coding-agent-access-validation.md",
+      "urls": [
+        "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing",
+        "https://virtualizationreview.com/articles/2026/08/06/black-hat-usa-2026-security-vendors-go-agentic.aspx",
+        "https://northflank.com/blog/enterprise-ai-coding-agent-deployment"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-assisted-credential-harvesting-and-token-abuse.md",
+      "urls": [
+        "https://unit42.paloaltonetworks.com/ai-token-jacking/",
+        "https://india.entrepreneur.com/technology/ai-token-jacking-enterprises-must-secure-ai-resources",
+        "https://www.axios.com/2026/08/04/exclusive-hackers-ai-chat-logs-reveal-evolving-tactics"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "urls": [
+        "https://www.stride.build/blog/network-egress-control-ai-agents",
+        "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing",
+        "https://openai.com/index/the-defenders-window/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+      "urls": [
+        "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+        "https://docs.cloud.google.com/release-notes",
+        "https://withwillow.ai/marketplace/connectors/com-googleapis-monitoring-mcp",
+        "https://www.stackone.com/connectors/googlecloudobservability/mcp/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50757",
+        "https://www.cve.org/CVERecord?id=CVE-2026-50757",
+        "https://github.com/DayuanJiang/next-ai-draw-io/issues/754",
+        "https://www.npmjs.com/package/@next-ai-drawio/mcp-server",
+        "https://mallory.ai/vulnerabilities/CVE-2026-72777"
+      ]
+    }
+  ]
+}

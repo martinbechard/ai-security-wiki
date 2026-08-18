@@ -12,6 +12,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [Development agent credential isolation](development-agent-credential-isolation.md)
 - [Production agent identity and access controls](production-agent-identity-and-access-controls.md)
 - [Agent synthetic insider risk](agent-synthetic-insider-risk.md)
+- [MemOS internal service secret auth bypass](memos-internal-service-secret-auth-bypass.md)
+- [OpenShift AI service account excessive permissions](openshift-ai-service-account-excessive-permissions.md)
 
 ## Authoritative Sources
 
@@ -42,3 +44,4 @@ This topic owns human and non-human identity, authentication, authorization, cre
 ## Maintenance Notes
 
 - Distinguish user identity, workload identity, agent identity, delegated authority, and tool credentials.
+- Updated on 2026-08-17 with MemOS internal-service identity and OpenShift AI service-account least-privilege advisory leaves.

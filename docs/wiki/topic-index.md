@@ -39,6 +39,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/token-optimizer-mcp-command-injection.md](agent-and-tool-security/token-optimizer-mcp-command-injection.md)
 - [agent-and-tool-security/swagger-testcase-mcp-swagger-parser-ssrf.md](agent-and-tool-security/swagger-testcase-mcp-swagger-parser-ssrf.md)
 - [agent-and-tool-security/gomarble-facebook-ads-mcp-ssrf.md](agent-and-tool-security/gomarble-facebook-ads-mcp-ssrf.md)
+- [agent-and-tool-security/chrome-devtools-mcp-symlink-root-bypass.md](agent-and-tool-security/chrome-devtools-mcp-symlink-root-bypass.md)
 - [threats-and-attacks/ai-hosted-artifact-malware-delivery.md](threats-and-attacks/ai-hosted-artifact-malware-delivery.md)
 - [threats-and-attacks/unattended-ai-agent-attack-automation.md](threats-and-attacks/unattended-ai-agent-attack-automation.md)
 - [threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md](threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md)
@@ -65,6 +66,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/development-agent-credential-isolation.md](identity-and-access/development-agent-credential-isolation.md)
 - [identity-and-access/production-agent-identity-and-access-controls.md](identity-and-access/production-agent-identity-and-access-controls.md)
 - [identity-and-access/agent-synthetic-insider-risk.md](identity-and-access/agent-synthetic-insider-risk.md)
+- [identity-and-access/memos-internal-service-secret-auth-bypass.md](identity-and-access/memos-internal-service-secret-auth-bypass.md)
+- [identity-and-access/openshift-ai-service-account-excessive-permissions.md](identity-and-access/openshift-ai-service-account-excessive-permissions.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -80,6 +83,10 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md](infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md)
 - [infrastructure-and-supply-chain/litellm-supply-chain-secret-exposure.md](infrastructure-and-supply-chain/litellm-supply-chain-secret-exposure.md)
 - [infrastructure-and-supply-chain/ai-supply-chain-provenance-credentialing.md](infrastructure-and-supply-chain/ai-supply-chain-provenance-credentialing.md)
+- [infrastructure-and-supply-chain/mlflow-3150-security-advisory-cluster.md](infrastructure-and-supply-chain/mlflow-3150-security-advisory-cluster.md)
+- [infrastructure-and-supply-chain/atomic-agents-stack-cleartext-mcp-catalog-rce.md](infrastructure-and-supply-chain/atomic-agents-stack-cleartext-mcp-catalog-rce.md)
+- [infrastructure-and-supply-chain/ray-browser-triggered-ai-compute-rce.md](infrastructure-and-supply-chain/ray-browser-triggered-ai-compute-rce.md)
+- [infrastructure-and-supply-chain/kiota-ai-host-manifest-file-boundary-disclosure.md](infrastructure-and-supply-chain/kiota-ai-host-manifest-file-boundary-disclosure.md)
 - [testing-and-assurance](testing-and-assurance/index.md)
 - [testing-and-assurance/cyber-evaluation-containment.md](testing-and-assurance/cyber-evaluation-containment.md)
 - [testing-and-assurance/public-cyber-capability-assessments.md](testing-and-assurance/public-cyber-capability-assessments.md)
@@ -94,6 +101,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [testing-and-assurance/codex-security-plugin-workflow-boundaries.md](testing-and-assurance/codex-security-plugin-workflow-boundaries.md)
 - [testing-and-assurance/ai-enabled-vulnerability-management-modernization.md](testing-and-assurance/ai-enabled-vulnerability-management-modernization.md)
 - [testing-and-assurance/semantic-governance-policy-telemetry.md](testing-and-assurance/semantic-governance-policy-telemetry.md)
+- [testing-and-assurance/delegated-agent-cost-guardrail-bypass.md](testing-and-assurance/delegated-agent-cost-guardrail-bypass.md)
 - [governance-and-compliance](governance-and-compliance/index.md)
 - [governance-and-compliance/ai-data-center-security-standards.md](governance-and-compliance/ai-data-center-security-standards.md)
 - [governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md](governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md)
@@ -131,4 +139,5 @@ description: "Navigation for locally owned AI security topics and source workflo
 ## Maintenance Notes
 
 - Add local durable leaves here after federation routing and wiki verification.
+- Updated on 2026-08-17 with MLflow, chrome-devtools-mcp, atomic-agents-stack, Ray, MemOS, OpenShift AI, Kiota, and delegated-agent cost guardrail leaves.
 - Updated on 2026-08-16 with GoMarble Facebook Ads MCP SSRF, macOS Screen Sharing AI-accelerated exploitability, and semantic governance policy telemetry.

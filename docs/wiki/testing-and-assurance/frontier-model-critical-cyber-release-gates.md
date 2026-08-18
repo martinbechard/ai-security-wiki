@@ -43,11 +43,14 @@ The [August 10 topic news collector source](../../../raw/processed/2026-08-10/ai
 
 OpenAI also reported an internal Advanced Cybersecurity Completion Rate of 95.0% for GPT-5.6-Cyber compared with 1.5% for GPT-5.6 Sol. This page treats those facts as release-gate and access-control evidence. The same source's V8/CVE-2026-15903 vulnerability-discovery evidence belongs in [browser runtime patch cadence under AI bug hunting](browser-runtime-patch-cadence-under-ai-bug-hunting.md). Broad [Daybreak, Codex Security, and Patch the Planet](../../../upstream-ai-wiki/products/daybreak-codex-security-and-patch-the-planet.md), GPT-5.6-Cyber, V8, and Chrome product or model coverage belongs upstream; exact upstream GPT-5.6-Cyber, V8, and Chrome leaves were not identified during this ingest.
 
+The [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json) and [August 17 leaf update watch source](../../../raw/processed/2026-08-17/ai-security-wiki-leaf-update-watch-20260818T000239Z.json) add OpenAI's [Defender's Window](https://openai.com/index/the-defenders-window/) as post-incident release-gate and defender-readiness evidence. OpenAI says the Hugging Face incident showed it underestimated real-world cyber capabilities and is strengthening safety requirements. Locally, that statement reinforces release gates that respond to real-world incident evidence, not only benchmark scores.
+
 ## Security Impact
 
 - Threat or control area: frontier cyber-capable models can move from scoring well on cyber tasks to requiring containment, access restriction, and release delay because autonomous exploitation capability cannot be excluded.
 - Affected boundary: OpenAI Astra internal training, evaluation, agentic application environments, model-weight custody, network and tool access, external evaluator access, and government testing paths.
 - Affected boundary: OpenAI Daybreak Blue and Daybreak Red, GPT-5.6-Cyber, GPT-5.6 Sol comparison evidence, Codex security workflows, approved defender access, and partner-mediated cyber-model operations.
+- Affected boundary: OpenAI post-Hugging Face safety requirements, real-world cyber-capability reassessment, Daybreak access, GPT-5.6-Cyber, Codex security workflows, and partner-mediated cyber-model operations.
 - Exploit or incident status: control-change and release-gate disclosure, not a public exploit incident.
 - Mitigation state: OpenAI reports pausing noncompliant Astra internal activity and strengthening isolation, access control, monitoring, sandboxing, model-weight protection, universal monitoring, and external testing.
 - Mitigation state: OpenAI reports current identity verification, approved-use restrictions, and monitoring; a 2026-09-01 hardware-security-key requirement for individual Daybreak accounts; encouraged Codex auto-review and human review; sandboxing and scoped-permission guidance; and partner-mediated workflows where approved partners retain model access.
@@ -70,9 +73,12 @@ OpenAI also reported an internal Advanced Cybersecurity Completion Rate of 95.0%
 - [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json)
 - [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-security-wiki-topic-news-collector-2026-08-09T233156Z.json)
 - [August 10 topic news collector source](../../../raw/processed/2026-08-10/ai-security-wiki-topic-news-collector-2026-08-10T233045Z.json)
+- [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json)
+- [August 17 leaf update watch source](../../../raw/processed/2026-08-17/ai-security-wiki-leaf-update-watch-20260818T000239Z.json)
 - OpenAI Astra cyber-capability disclosure: https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/
 - OpenAI expanded Daybreak access: https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/
 - OpenAI trusted-hands cyber-model controls: https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands/
+- OpenAI Defender's Window: https://openai.com/index/the-defenders-window/
 - Axios Astra reporting: https://www.axios.com/2026/08/07/openai-astra-model-delay-cybersecurity-risks
 - The Verge Astra reporting: https://www.theverge.com/ai-artificial-intelligence/976948/openai-astra-model-pause-critical-cyber-capabilities
 - Guardian Astra reporting: https://www.theguardian.com/technology/2026/aug/08/openai-astra-security-concerns
@@ -104,6 +110,7 @@ OpenAI also reported an internal Advanced Cybersecurity Completion Rate of 95.0%
 - Which external or government evaluators will review Astra before release?
 - Which strengthened controls become mandatory for other frontier models with similar cyber-capability uncertainty?
 - Which Daybreak controls are mandatory for partner-mediated access versus direct OpenAI-managed access?
+- Which strengthened OpenAI safety requirements changed specifically because the Hugging Face incident showed underestimated real-world cyber capability?
 
 ## Maintenance Notes
 
@@ -111,3 +118,4 @@ OpenAI also reported an internal Advanced Cybersecurity Completion Rate of 95.0%
 - Updated on 2026-08-08 from the [August 8 topic collector](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json) and [August 9 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) with additional in-window corroboration and the same Critical-threshold halt-control boundary.
 - Updated on 2026-08-09 from the [August 9 topic collector](../../../raw/processed/2026-08-09/ai-security-wiki-topic-news-collector-2026-08-09T233156Z.json) with additional secondary reporting while preserving the primary-source caveat and upstream routing for broad OpenAI and Astra coverage.
 - Updated on 2026-08-10 from the [August 10 topic collector](../../../raw/processed/2026-08-10/ai-security-wiki-topic-news-collector-2026-08-10T233045Z.json) with primary OpenAI Daybreak/GPT-5.6-Cyber access-control evidence while routing browser vulnerability-discovery evidence to the browser-runtime assurance leaf.
+- Updated on 2026-08-17 from the [August 17 topic collector](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json) and [August 17 watcher](../../../raw/processed/2026-08-17/ai-security-wiki-leaf-update-watch-20260818T000239Z.json) with OpenAI Defender's Window post-incident safety-requirement evidence.
