@@ -15,6 +15,8 @@ The [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai
 
 The issue is locally important because AI compute and evaluation infrastructure often runs on developer workstations, lab clusters, or notebook-adjacent services that users assume are local. Browser-origin paths break that assumption: a web page can become an attack path into a local or reachable AI runtime.
 
+The [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json) adds secondary [SecurityAffairs coverage](https://securityaffairs.com/197419/security/u-s-cisa-adds-a-ray-project-ray-flaw-to-its-known-exploited-vulnerabilities-catalog.html) of the CISA KEV entry and quoted Aviatrix analysis. Treat the added privilege-escalation, lateral-movement, command-and-control, data-exfiltration, and disruption effects as post-exploitation risk framing, not as a replacement for the CISA active-exploitation fact.
+
 ## Security Impact
 
 - Threat: browser-origin DNS rebinding can reach and exploit developer-run AI compute services.
@@ -27,6 +29,7 @@ The issue is locally important because AI compute and evaluation infrastructure 
 ## Authoritative Sources
 
 - [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json)
+- [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json)
 - CISA KEV catalog entry: https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-62593
 - NVD CVE-2025-62593: https://nvd.nist.gov/vuln/detail/CVE-2025-62593
 - Ray advisory GHSA-q279-jhrf-cc6v: https://github.com/ray-project/ray/security/advisories/GHSA-q279-jhrf-cc6v
@@ -57,3 +60,4 @@ The issue is locally important because AI compute and evaluation infrastructure 
 ## Maintenance Notes
 
 - Created on 2026-08-17 from the August 17 topic collector after CISA KEV added CVE-2025-62593.
+- Updated on 2026-08-19 from the August 19 leaf watcher with secondary post-exploitation risk framing while retaining CISA as the exploitation authority.

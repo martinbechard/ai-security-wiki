@@ -1,0 +1,441 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "docs_wiki_updated": false,
+  "evidence_classification_values": [
+    "confirmed_exploitation",
+    "demonstrated_research",
+    "disclosed_vulnerability",
+    "mitigation",
+    "control_change",
+    "unverified_claim"
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/chrome-devtools-mcp-symlink-root-bypass.md",
+      "reason": "secondary mirror with no new same-leaf facts beyond already captured GHSA/NVD/release evidence",
+      "source_url": "https://patchstack.com/database/npm/npm/chrome-devtools-mcp/vulnerability/npm-chrome-devtools-mcp-validatepath-does-not-canonicalize-symlinks-before-enforcing-roots",
+      "visible_date": "2026-08-18"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/memos-internal-service-secret-auth-bypass.md",
+      "reason": "already captured by August 17 topic collector and durable page; no additional same-leaf delta found",
+      "source_url": "https://github.com/advisories/GHSA-v9vw-ccqp-q298",
+      "visible_date": "2026-08-17"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/openshift-ai-service-account-excessive-permissions.md",
+      "reason": "already captured by August 17 topic collector and durable page; no new errata or exact role-reduction fix found",
+      "source_url": "https://access.redhat.com/security/cve/CVE-2026-15218",
+      "visible_date": "2026-08-17"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/rovoblast-enterprise-data-exfiltration.md",
+      "reason": "outside strict seven-day window and already ingested",
+      "source_url": "https://www.varonis.com/blog/rovoblast",
+      "visible_date": "2026-08-07"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+      "reason": "stale source; no fresh same-leaf public update found",
+      "source_url": "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment",
+      "visible_date": "2026-07-25"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "reason": "adjacent Next AI Draw.io SSRF issue, not the selected provider-override trust-boundary leaf; should be routed as separate local security leaf if ingested",
+      "source_url": "https://github.com/advisories/ghsa-2f59-92g6-qm58",
+      "visible_date": "2026-08-13"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "reason": "adjacent Next AI Draw.io reflected-XSS issue, not the selected provider-override trust-boundary leaf; should be routed as separate local security leaf if ingested",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73037",
+      "visible_date": "2026-08-13"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-data-movement-exposure-controls.md",
+      "reason": "outside strict seven-day window for this 2026-08-19T00:04Z run and already captured",
+      "source_url": "https://www.forcepoint.com/blog/insights/mcp-security-data-exposure",
+      "visible_date": "2026-08-10"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+      "reason": "secondary timeline/resource roundup with no new official CRA obligation or local security lifecycle delta beyond existing Commission sources",
+      "source_url": "https://opensource.org/blog/eu-ai-act-and-cra-timelines-and-resources",
+      "visible_date": "2026-08-14"
+    }
+  ],
+  "federation_notes": [
+    "Broad AI entities and product/framework background route to ai-wiki or ai-dev-wiki. This artifact keeps only security-specific boundaries, mitigations, exploitation state, and routing notes."
+  ],
+  "follow_up_notes": [
+    "Prioritize ingest for Ray KEV exploitation follow-up and synthetic-content provenance robustness because they add post-page evidence not fully represented in current leaves.",
+    "Consider separate durable local leaves for Next AI Draw.io SSRF and reflected-XSS if the raw ingest workflow accepts adjacent same-product security issues."
+  ],
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "MCP catalog transport integrity",
+        "agent host subprocess spawning",
+        "registry-sourced command provenance"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest can add reviewed GitHub severity/CVSS and confirm whether release notes document the command allowlist or HTTP opt-in semantics.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/atomic-agents-stack-cleartext-mcp-catalog-rce.md",
+      "named_entities": [
+        "atomic-agents-stack",
+        "GHSA-xhcr-cqfr-m3hv",
+        "MCPClientPool"
+      ],
+      "source_url": "https://github.com/advisories/GHSA-xhcr-cqfr-m3hv",
+      "summary": "GitHub Advisory Database publication/review records GHSA-xhcr-cqfr-m3hv as high severity with CVSS 8.7 for atomic-agents-stack HTTP MCP catalog MITM-to-RCE risk; fixed version remains 1.1.0.",
+      "upstream_routing": "General atomic-agents-stack framework/catalog practice remains ai-dev-wiki-owned; local artifact keeps MCP supply-chain execution boundary only.",
+      "visible_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "generated AI-host manifests",
+        "OpenAPI input provenance",
+        "manifest package file boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should add SSVC exploitation/automation fields and preserve fixed-version split 1.29.1 and 1.34.0.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/kiota-ai-host-manifest-file-boundary-disclosure.md",
+      "named_entities": [
+        "Microsoft Kiota",
+        "CVE-2026-73851",
+        "GHSA-p5rm-jg5c-8c77",
+        "CISA-ADP"
+      ],
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73851",
+      "summary": "NVD records CVE-2026-73851 and CISA-ADP SSVC values: exploitation none, automatable no, technical impact partial, for Kiota manifest file-reference disclosure into AI hosts.",
+      "upstream_routing": "Broad Kiota/OpenAPI generation practice remains ai-dev-wiki-owned; local artifact keeps generated-manifest security boundary only.",
+      "visible_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "MLflow tracking server",
+        "model-registry webhook testing",
+        "internal network and metadata-service reachability"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should decide whether individual CVSS/advisory detail belongs in the cluster page or separate subleafs.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-3150-security-advisory-cluster.md",
+      "named_entities": [
+        "MLflow",
+        "CVE-2026-64849",
+        "GHSA-7gwp-5pfp-969j"
+      ],
+      "source_url": "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
+      "summary": "GitHub reviewed the MLflow webhook SSRF advisory on August 17, 2026, recording CVE-2026-64849 as critical 9.3 and confirming reflected internal response-body exposure through webhook test flows.",
+      "upstream_routing": "Broad MLflow release coverage remains ai-wiki-owned; local artifact keeps model-platform SSRF boundary only.",
+      "visible_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "MLflow run authorization",
+        "dataset lineage audit evidence",
+        "model reproducibility records"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should preserve that this is lineage/evidence integrity, not model-artifact confidentiality.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-3150-security-advisory-cluster.md",
+      "named_entities": [
+        "MLflow",
+        "CVE-2026-69146",
+        "GHSA-3p64-6gvh-82v5"
+      ],
+      "source_url": "https://github.com/advisories/GHSA-3p64-6gvh-82v5",
+      "summary": "GitHub reviewed the MLflow LogInputs authorization advisory on August 17, 2026, recording CVE-2026-69146 as dataset-lineage integrity impact where any authenticated user can write lineage to another user run.",
+      "upstream_routing": "General MLflow product details remain upstream; local artifact keeps audit-evidence integrity implications.",
+      "visible_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "MLflow registered models",
+        "run artifact authorization",
+        "model artifact confidentiality"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should retain default_permission nuance and retrospective artifact-access audit need.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-3150-security-advisory-cluster.md",
+      "named_entities": [
+        "MLflow",
+        "CVE-2026-69148",
+        "GHSA-gqch-g4w5-7qcw"
+      ],
+      "source_url": "https://github.com/advisories/GHSA-gqch-g4w5-7qcw",
+      "summary": "GitHub reviewed the MLflow CreateModelVersion source-validation advisory on August 17, 2026, recording CVE-2026-69148 as high severity and confirming cross-run artifact read impact for model weights, training samples, and evaluation reports.",
+      "upstream_routing": "General MLflow release coverage remains upstream; local artifact keeps model-artifact access boundary only.",
+      "visible_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "Ray developer and test runtimes",
+        "browser-origin DNS rebinding path",
+        "AI compute host containment",
+        "incident-response scope for exposed Ray services"
+      ],
+      "evidence_classification": "confirmed_exploitation",
+      "follow_up_note": "Ingest should distinguish CISA-confirmed KEV status from secondary reporting of post-exploitation effects.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ray-browser-triggered-ai-compute-rce.md",
+      "named_entities": [
+        "Ray",
+        "CVE-2025-62593",
+        "CISA KEV",
+        "Aviatrix"
+      ],
+      "source_url": "https://securityaffairs.com/197419/security/u-s-cisa-adds-a-ray-project-ray-flaw-to-its-known-exploited-vulnerabilities-catalog.html",
+      "summary": "SecurityAffairs published an August 18 follow-up on CISA KEV for CVE-2025-62593 and quoted Aviatrix analysis describing exploitation effects beyond RCE: privilege escalation, lateral movement, command-and-control, data exfiltration, and disruption.",
+      "upstream_routing": "Broad Ray framework background remains ai-wiki-owned; local artifact keeps active exploitation and AI compute containment implications.",
+      "visible_date": "2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        "delegated-agent fan-out",
+        "daily cost caps",
+        "unknown model pricing",
+        "preventive spend-abuse controls"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should add CVSS/CWE and specific fail-closed conformance-test implication.",
+      "leaf_id": "docs/wiki/testing-and-assurance/delegated-agent-cost-guardrail-bypass.md",
+      "named_entities": [
+        "atomic-agents-stack",
+        "GHSA-j659-8xh6-5pq5",
+        "CostGuardrailBlocked"
+      ],
+      "source_url": "https://github.com/advisories/GHSA-j659-8xh6-5pq5",
+      "summary": "GitHub Advisory Database publication/review records the atomic-agents-stack unknown-model cost-cap bypass as high severity CVSS 8.7, CWE-770, fixed in 1.1.0, with conformance-test guidance for unknown-model reservation.",
+      "upstream_routing": "General delegated-agent orchestration and cost ergonomics remain ai-dev-wiki-owned; local artifact keeps abuse-containment assurance boundary.",
+      "visible_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "AI coding telemetry minimization",
+        "prompt and tool-output collection",
+        "source-side filtering evidence",
+        "conversation replay data scope"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should reconcile the overview page with the existing data privacy page and note always-captured versus filterable fields.",
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+      "named_entities": [
+        "Dash0 AI Coding Insights",
+        "Claude Code",
+        "Cursor",
+        "OpenTelemetry GenAI semantic conventions"
+      ],
+      "source_url": "https://www.dash0.com/docs/dash0/darkplane/ai-coding",
+      "summary": "Dash0 AI Coding Insights overview was visibly updated within the window and states Claude Code/Cursor telemetry uses OpenTelemetry spans, prompts and tool outputs can be source-filtered for privacy, and token counts, model names, durations, and tool names are always captured.",
+      "upstream_routing": "General AI coding telemetry analytics belongs ai-dev-wiki-owned; local artifact keeps privacy/redaction control boundaries.",
+      "visible_date": "2026-08-15"
+    },
+    {
+      "affected_boundaries": [
+        "synthetic-text provenance",
+        "machine-readable watermark detection",
+        "C2PA file provenance",
+        "EU AI Act Article 50 evidence"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should add method-level details and detection-key/control limitations without overstating robustness.",
+      "leaf_id": "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md",
+      "named_entities": [
+        "Anthropic",
+        "Claude",
+        "SynthID-Text",
+        "Google DeepMind",
+        "C2PA",
+        "EU AI Act Article 50"
+      ],
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system",
+      "summary": "The Verge reports Anthropic clarified Claude text watermarking as a version of Google DeepMind SynthID-Text, using machine-readable statistical wording patterns alongside C2PA support for Claude-processed images to meet EU AI Act transparency obligations.",
+      "upstream_routing": "Broad Anthropic/Claude product rollout remains ai-wiki-owned; local artifact keeps provenance-control mechanics and compliance evidence.",
+      "visible_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "watermark robustness",
+        "adversarial removal assessment",
+        "synthetic-content audit evidence",
+        "provider transparency-control threat model"
+      ],
+      "evidence_classification": "unverified_claim",
+      "follow_up_note": "Ingest should classify this as removal-risk evidence, not confirmed effective bypass.",
+      "leaf_id": "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md",
+      "named_entities": [
+        "Anthropic",
+        "Watermarks Remover",
+        "MarkScrub",
+        "EU AI Act",
+        "Business Insider"
+      ],
+      "source_url": "https://www.businessinsider.com/ai-watermark-remover-tools-anthropic-2026-8",
+      "summary": "Business Insider reports early watermark-removal tools targeting Anthropic-style text/file marks and quotes EU guidance expectations that marking systems address removal, regeneration, copying, and modification threats; effectiveness of the tools was not independently assessed.",
+      "upstream_routing": "Broad market reaction and product adoption remains upstream; local artifact keeps adversarial-removal and audit-evidence control implications.",
+      "visible_date": "2026-08-18"
+    }
+  ],
+  "raw_processed_updated": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-19T00:04:20Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/chrome-devtools-mcp-symlink-root-bypass.md",
+    "docs/wiki/identity-and-access/memos-internal-service-secret-auth-bypass.md",
+    "docs/wiki/identity-and-access/openshift-ai-service-account-excessive-permissions.md",
+    "docs/wiki/infrastructure-and-supply-chain/atomic-agents-stack-cleartext-mcp-catalog-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/kiota-ai-host-manifest-file-boundary-disclosure.md",
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-3150-security-advisory-cluster.md",
+    "docs/wiki/infrastructure-and-supply-chain/ray-browser-triggered-ai-compute-rce.md",
+    "docs/wiki/testing-and-assurance/delegated-agent-cost-guardrail-bypass.md",
+    "docs/wiki/agent-and-tool-security/rovoblast-enterprise-data-exfiltration.md",
+    "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+    "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+    "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+    "docs/wiki/data-and-privacy/mcp-data-movement-exposure-controls.md",
+    "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+    "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md"
+  ],
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/chrome-devtools-mcp-symlink-root-bypass.md",
+      "urls": [
+        "https://github.com/advisories/GHSA-8qf9-62x2-82pp",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53766",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/releases/tag/chrome-devtools-mcp-v1.1.0",
+        "https://patchstack.com/database/npm/npm/chrome-devtools-mcp/vulnerability/npm-chrome-devtools-mcp-validatepath-does-not-canonicalize-symlinks-before-enforcing-roots"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/memos-internal-service-secret-auth-bypass.md",
+      "urls": [
+        "https://github.com/advisories/GHSA-v9vw-ccqp-q298",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75110",
+        "https://www.vulncheck.com/advisories/memos-authentication-bypass-via-unset-internal-service-secret"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/openshift-ai-service-account-excessive-permissions.md",
+      "urls": [
+        "https://access.redhat.com/security/cve/CVE-2026-15218",
+        "https://www.cve.org/CVERecord?id=CVE-2026-15218",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15218",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2498426"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/atomic-agents-stack-cleartext-mcp-catalog-rce.md",
+      "urls": [
+        "https://github.com/advisories/GHSA-xhcr-cqfr-m3hv",
+        "https://advisories.gitlab.com/pypi/atomic-agents-stack/GHSA-xhcr-cqfr-m3hv/",
+        "https://github.com/dep0we/atomic-agents-stack/releases#release-v1.1.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/kiota-ai-host-manifest-file-boundary-disclosure.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73851",
+        "https://github.com/microsoft/kiota/security/advisories/GHSA-p5rm-jg5c-8c77",
+        "https://github.com/microsoft/kiota/releases/tag/v1.29.1",
+        "https://github.com/microsoft/kiota/releases/tag/v1.34.0",
+        "https://www.strix.ai/cve/CVE-2026-73851"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-3150-security-advisory-cluster.md",
+      "urls": [
+        "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
+        "https://github.com/advisories/GHSA-3p64-6gvh-82v5",
+        "https://github.com/advisories/GHSA-gqch-g4w5-7qcw",
+        "https://mlflow.org/releases/3.15.0/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ray-browser-triggered-ai-compute-rce.md",
+      "urls": [
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2025-62593",
+        "https://securityaffairs.com/197419/security/u-s-cisa-adds-a-ray-project-ray-flaw-to-its-known-exploited-vulnerabilities-catalog.html",
+        "https://mallory.ai/stories/01a01122-08b7-7094-bc0e-70c3f329be4e",
+        "https://github.com/ray-project/ray/security/advisories/GHSA-q279-jhrf-cc6v"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/delegated-agent-cost-guardrail-bypass.md",
+      "urls": [
+        "https://github.com/advisories/GHSA-j659-8xh6-5pq5",
+        "https://github.com/dep0we/atomic-agents-stack/releases#release-v1.1.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/rovoblast-enterprise-data-exfiltration.md",
+      "urls": [
+        "https://www.varonis.com/blog/rovoblast",
+        "https://www.securityweek.com/critical-one-click-vulnerability-in-atlassians-rovo-ai-exposed-enterprise-data/",
+        "https://thehackernews.com/2026/08/atlassian-rovo-can-be-tricked-into.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-agent-collaboration-dlp-controls.md",
+      "urls": [
+        "https://www.darktrace.com/blog/when-guardrails-break-why-securing-ai-requires-behavioral-detection-and-autonomous-containment"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-redaction-controls.md",
+      "urls": [
+        "https://www.dash0.com/docs/dash0/darkplane/ai-coding/data-privacy",
+        "https://www.dash0.com/docs/dash0/darkplane/ai-coding"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-provider-override-trust-boundaries.md",
+      "urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50756",
+        "https://github.com/advisories/ghsa-2f59-92g6-qm58",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-72777",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73037"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-data-movement-exposure-controls.md",
+      "urls": [
+        "https://www.forcepoint.com/blog/insights/mcp-security-data-exposure",
+        "https://www.trendaisecurity.com/en-us/resources-insights/deep-research/update-on-exposed-mcp-servers-the-threat-widens-to-the-cloud"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md",
+      "urls": [
+        "https://digital-strategy.ec.europa.eu/en/library/commission-publishes-new-guidance-support-timely-cyber-resilience-act-implementation",
+        "https://digital-strategy.ec.europa.eu/en/factpages/cyber-resilience-act-implementation",
+        "https://opensource.org/blog/eu-ai-act-and-cra-timelines-and-resources"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/synthetic-content-provenance-labeling-controls.md",
+      "urls": [
+        "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content",
+        "https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system",
+        "https://www.businessinsider.com/ai-watermark-remover-tools-anthropic-2026-8",
+        "https://digital-strategy.ec.europa.eu/en/policies/code-practice-ai-generated-content"
+      ]
+    }
+  ],
+  "window": {
+    "end_inclusive": "2026-08-19T00:04:20Z",
+    "rule": "visible publication or update date must be within the last 7 days; ambiguous, future, missing, or boundary-only dates excluded",
+    "start_exclusive": "2026-08-12T00:04:20Z"
+  }
+}

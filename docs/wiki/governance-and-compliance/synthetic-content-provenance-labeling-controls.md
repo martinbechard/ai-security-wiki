@@ -17,6 +17,8 @@ Broad EU AI Act and provider product coverage routes upstream. This page owns th
 
 The [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) adds [The Verge reporting](https://www.theverge.com/ai-artificial-intelligence/977823/anthropic-claude-ai-watermarks-c2pa-text-images) that Anthropic plans invisible machine-readable watermarks for Claude text and digitally signed provenance metadata for supported generated files across Claude surfaces. Broad Anthropic and Claude product rollout context stays upstream; [California AI Transparency Act provenance controls](california-ai-transparency-act-provenance-controls.md) owns the California-specific rollout evidence.
 
+The [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json) adds two provenance-control signals. [The Verge reporting](https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system) says Anthropic clarified Claude text watermarking as a version of Google DeepMind SynthID-Text and uses C2PA support for Claude-processed images as part of EU AI Act transparency obligations. [Business Insider reporting](https://www.businessinsider.com/ai-watermark-remover-tools-anthropic-2026-8) describes early watermark-removal tools targeting Anthropic-style marks and cites EU guidance expectations that marking systems address removal, regeneration, copying, and modification threats. Treat the removal-tool reporting as unverified removal-risk evidence, not as confirmed effective bypass.
+
 ## Security Impact
 
 - Threat: realistic synthetic media and text can support phishing, impersonation, fraud, disinformation, and evidence tampering when users and systems cannot identify AI origin.
@@ -39,6 +41,9 @@ The [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-se
 - [July 31 topic news collector source](../../../raw/processed/2026-07-31/ai-security-wiki-topic-news-collector-2026-07-31T193247-0400.json)
 - [August 3 topic news collector source](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json)
 - [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json)
+- [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json)
+- The Verge SynthID-Text reporting: https://www.theverge.com/ai-artificial-intelligence/980869/anthropic-claude-watermarks-synthid-text-system
+- Business Insider watermark-removal reporting: https://www.businessinsider.com/ai-watermark-remover-tools-anthropic-2026-8
 - European Commission Article 50 transparency guidelines: https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems
 - European Commission Code of Practice FAQ: https://digital-strategy.ec.europa.eu/en/faqs/code-practice-transparency-ai-generated-content
 - European Commission AI Act Service Desk FAQ: https://ai-act-service-desk.ec.europa.eu/en/faq
@@ -65,7 +70,7 @@ The [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-se
 - [GPAI systemic-risk controls](gpai-systemic-risk-controls.md)
 - [EU AI Act prohibited-practices enforcement controls](eu-ai-act-prohibited-practices-enforcement-controls.md)
 - [AI agent collaboration DLP controls](../data-and-privacy/ai-agent-collaboration-dlp-controls.md)
-- Upstream AI wiki owns broad EU AI Act and provider coverage.
+- Upstream AI wiki owns broad EU AI Act and provider coverage, including [Anthropic](../../../upstream-ai-wiki/companies/anthropic.md).
 
 ## Open Questions
 
@@ -79,3 +84,4 @@ The [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-se
 - Created on 2026-07-31 from the [July 31 topic news collector source](../../../raw/processed/2026-07-31/ai-security-wiki-topic-news-collector-2026-07-31T193247-0400.json) and official European Commission transparency guidance while routing broad AI Act background upstream.
 - Enriched on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) with official EU transparency enforcement-start evidence while splitting California provenance, agent transparency, GPAI systemic-risk, and prohibited-practices enforcement controls into separate leaves.
 - Enriched on 2026-08-11 from the [August 11 watcher](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) with Anthropic watermarking and California rollout evidence while preserving broad product and policy routing upstream.
+- Enriched on 2026-08-19 from the [August 19 watcher](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json) with SynthID-Text, C2PA, and unverified watermark-removal risk evidence.

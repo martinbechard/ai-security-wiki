@@ -21,9 +21,13 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [LiteLLM supply-chain secret exposure](litellm-supply-chain-secret-exposure.md)
 - [AI supply chain provenance credentialing](ai-supply-chain-provenance-credentialing.md)
 - [MLflow 3.15.0 security advisory cluster](mlflow-3150-security-advisory-cluster.md)
+- [MLflow webhook test SSRF](mlflow-webhook-test-ssrf.md)
+- [MLflow dataset lineage authorization bypass](mlflow-dataset-lineage-authorization-bypass.md)
+- [MLflow model artifact source validation bypass](mlflow-model-artifact-source-validation-bypass.md)
 - [atomic-agents-stack cleartext MCP catalog RCE](atomic-agents-stack-cleartext-mcp-catalog-rce.md)
 - [Ray browser-triggered AI compute RCE](ray-browser-triggered-ai-compute-rce.md)
 - [Kiota AI host manifest file boundary disclosure](kiota-ai-host-manifest-file-boundary-disclosure.md)
+- [Hugging Face Transformers checkpoint shard file read](huggingface-transformers-checkpoint-shard-file-read.md)
 
 ## Authoritative Sources
 
@@ -55,3 +59,5 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 - Record provenance, affected component, trust boundary, deployment surface, and remediation status.
 - Updated on 2026-08-17 with MLflow, atomic-agents-stack, Ray, and Kiota AI infrastructure and supply-chain advisory leaves.
+- Updated on 2026-08-19 with the Hugging Face Transformers checkpoint shard file-read leaf and watcher enrichments for MLflow, atomic-agents-stack, Ray, and Kiota.
+- Updated on 2026-08-19 after verifier correction split MLflow webhook SSRF, dataset-lineage authorization, and model-artifact source-validation advisories into separate leaves.

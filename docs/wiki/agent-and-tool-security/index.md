@@ -35,6 +35,17 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [swagger-testcase-mcp Swagger parser SSRF](swagger-testcase-mcp-swagger-parser-ssrf.md)
 - [GoMarble Facebook Ads MCP SSRF](gomarble-facebook-ads-mcp-ssrf.md)
 - [chrome-devtools-mcp symlink root bypass](chrome-devtools-mcp-symlink-root-bypass.md)
+- [mcp-florence2 image fetch SSRF](mcp-florence2-image-fetch-ssrf.md)
+- [SiYuan MCP debug key and file boundary](siyuan-mcp-debug-key-and-file-boundary.md)
+- [PyCharm Jupyter MCP unauthenticated code execution](pycharm-jupyter-mcp-unauthenticated-code-execution.md)
+- [Apache SkyWalking MCP SSRF GraphQL injection](apache-skywalking-mcp-ssrf-graphql-injection.md)
+- [RAGFlow agent workflow Invoke SSRF](ragflow-agent-workflow-invoke-ssrf.md)
+- [CodeWhale agent control plane vulnerabilities](codewhale-agent-control-plane-vulnerabilities.md)
+- [CodeWhale auto-approved execution tools](codewhale-auto-approved-execution-tools.md)
+- [CodeWhale project configuration authority](codewhale-project-configuration-authority.md)
+- [CodeWhale git tool argument injection](codewhale-git-tool-argument-injection.md)
+- [CodeWhale JS execution environment exposure](codewhale-js-execution-environment-exposure.md)
+- [SiYuan MCP database clean path traversal](siyuan-mcp-database-clean-path-traversal.md)
 
 ## Authoritative Sources
 
@@ -67,3 +78,5 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Keep each leaf focused on a distinct security boundary or control rather than a general agent workflow.
 - Updated on 2026-08-16 with the GoMarble Facebook Ads MCP SSRF leaf.
 - Updated on 2026-08-17 with the chrome-devtools-mcp symlink root bypass leaf.
+- Updated on 2026-08-19 with MCP and agent-tool leaves for mcp-florence2, SiYuan, PyCharm, Apache SkyWalking, RAGFlow, and CodeWhale.
+- Updated on 2026-08-19 after verifier correction split CodeWhale and SiYuan advisory routers into focused leaves.

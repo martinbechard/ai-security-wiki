@@ -32,12 +32,15 @@ The [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-sec
 
 The [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) adds [TechRadar's in-window reporting](https://www.techradar.com/pro/security/shock-horror-ai-generated-security-patches-fall-short-of-actually-solving-all-the-problems-they-were-meant-to-fix) on 1Password Off-by-1 Labs FLAWED research. Treat it as secondary until primary research is captured, but preserve the security-assurance signal: generated patches can fail to remediate the target vulnerability or introduce new behavior changes, so they need tests that exercise the vulnerable behavior and human security review.
 
+The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) adds a public [arXiv paper](https://arxiv.org/abs/2608.16187) evaluating just-in-time detection and remediation for AI-generated Python. The paper's reported seven-stage pipeline uses LLMSecEval prompts, CodeQL, Bandit, an independent Code Validator LLM enriched with MITRE ATT&CK, CWE examples, and Python guidance, fix generation, and rescanning. The collector records that scanner-plus-enrichment reduced static analyzer findings more than enrichment alone, but remediation still introduced new vulnerabilities in 15-22% of cases across 80 runs on 26 prompts and four Claude models. Treat this as preprint evidence: it strengthens the local rule that generated fixes need independent rescanning and regression evidence, not only LLM validator agreement.
+
 ## Security Impact
 
 - Threat: AI-generated code can compile, look intentional, and pass generated tests while preserving injection, authorization, dependency, logic, or domain-specific security defects.
 - Affected boundary: coding-assistant output, generated tests, AI-assisted pull requests, security review, SAST gates, dependency install commands, and production release decisions.
 - Exploit or incident status: assurance pattern based on attributed research and survey evidence in the clipping; no single exploit advisory is captured by this source.
 - Mitigation state: hard security gates, dependency verification, source-backed review, behavior specifications, mutation or negative testing, and human accountability remain required.
+- Mitigation state: generated remediation should be rescanned with independent tools and checked for newly introduced findings before acceptance.
 - Confidence: medium because the clipping aggregates external studies and includes a publication-date conflict; claims should be promoted only when primary sources are later captured.
 - Residual risk: exact benchmark values, tool-specific effectiveness, and production incident attribution need primary-source confirmation before becoming quantitative policy.
 
@@ -55,7 +58,9 @@ The [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-se
 - [AI code bugs clipping source](../../../raw/processed/ai-code-bugs-changing-old-playbook-wont-save-you.md)
 - [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json)
 - [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json)
-- TechRadar reporting on 1Password Off-by-1 Labs FLAWED research: https://www.techradar.com/pro/security/shock-horror-ai-generated-security-patches-fall-short-of-actually-solving-all-the-problems-they-were-meant-to-fix
+- [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [TechRadar reporting on 1Password Off-by-1 Labs FLAWED research](https://www.techradar.com/pro/security/shock-horror-ai-generated-security-patches-fall-short-of-actually-solving-all-the-problems-they-were-meant-to-fix)
+- [arXiv AI-generated code remediation paper](https://arxiv.org/abs/2608.16187)
 
 ## Related Code
 
@@ -84,9 +89,11 @@ The [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-se
 - How should teams record residual risk when AI-generated tests and AI review share the same blind spots?
 - Should upstream AI development wiki create `coding-practices/spec-driven-development.md` for the spec-driven development practice cited by the clipping?
 - Should upstream AI development wiki create `verification-and-evals/mutation-testing-for-ai-generated-tests.md` for mutation testing as an AI-generated-test assurance signal?
+- Is the paper's repository or database snapshot public enough to independently reproduce the 15-22% introduced-vulnerability finding?
 
 ## Maintenance Notes
 
 - Created on 2026-08-06 from the [AI code bugs clipping](../../../raw/processed/ai-code-bugs-changing-old-playbook-wont-save-you.md) while routing broad software-delivery and spec-driven-development practice upstream.
 - Updated on 2026-08-07 from the [August 7 watcher](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) with AISI malicious-generated-code attempt evidence.
 - Updated on 2026-08-13 from the [August 13 watcher](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) with secondary FLAWED generated-patch assurance evidence.
+- Updated on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) with preprint evidence for rescanning AI-generated remediations.

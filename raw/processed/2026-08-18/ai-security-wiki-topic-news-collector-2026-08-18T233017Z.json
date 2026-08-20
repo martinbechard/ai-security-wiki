@@ -1,0 +1,895 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-08-18T23:30:17Z",
+  "run_timestamp_local": "2026-08-18T19:30:17-04:00",
+  "cutoff_window": {
+    "start_utc": "2026-08-16T23:30:17Z",
+    "end_utc": "2026-08-18T23:30:17Z",
+    "policy": "Include only public items visibly published or updated inside this exact 48-hour window; date-only August 16 items are boundary-ambiguous unless a qualifying timestamp is visible."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_repo": "/Users/martinbechard/dev/ai-security-wiki",
+    "local_pages_checked": [
+      "docs/wiki/federation.md",
+      "docs/wiki/topic-index.md"
+    ],
+    "upstream_indexes_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "federation_rule": "Broad AI entities belong upstream in ai-wiki; general AI-assisted development practice belongs upstream in ai-dev-wiki; this artifact keeps security-specific implications, affected boundaries, controls, and routing notes."
+  },
+  "collection_methods": [
+    "Reviewed existing automation memory and the processed 2026-08-17 collector artifact to avoid duplicate recent work.",
+    "Checked local wiki federation and topic indexes before web collection.",
+    "Searched public web sources for in-window AI security advisories, public incident reports, standards/regulatory updates, and research.",
+    "Queried public NVD CVE API for keyword windows AI, MCP, LLM, agent, and model; NVD began returning HTTP 429 during per-CVE detail fetches, so GitHub Advisory API and search-result snippets were used for additional public advisory detail where available."
+  ],
+  "qualifying_findings": [
+    {
+      "id": "openai-pacing-cyber-critical-capabilities-2026-08-18",
+      "title": "OpenAI slows frontier model scaling and raises cyber-capability research safeguards",
+      "source_urls": [
+        "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://openai.com/index/the-defenders-window/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+          "date": "2026-08-18",
+          "date_type": "published"
+        },
+        {
+          "url": "https://openai.com/index/the-defenders-window/",
+          "date": "2026-08-17",
+          "date_type": "published"
+        }
+      ],
+      "summary": "OpenAI said the OpenAI-Hugging Face incident and preliminary evidence that Astra may meet its critical cybersecurity capability threshold led it to slow scaling, pause some frontier RL training, require stronger workload and network isolation, remove shared services, reduce standing privileges, expand security logging, and require multistage chain-of-thought/tool-action monitoring for tool-using RL and Astra tool inference. The post states that highest-priority monitoring alerts should page safety, security, and research teams and pause activity if a false positive cannot be concluded within 30 minutes.",
+      "evidence_classification": "primary vendor security and governance disclosure",
+      "affected_boundary_or_version": "OpenAI frontier research workloads involving Astra, Sol-capability-or-higher tool use, cyber models, code execution, and internet-accessible tools.",
+      "why_it_matters_for_ai_security": "This is an in-window public control change for frontier cyber-capable model development: it turns prior incident lessons into concrete release-gate, sandbox, network-isolation, monitoring, and pause criteria.",
+      "named_entities": [
+        "OpenAI",
+        "Astra",
+        "Sol",
+        "Hugging Face",
+        "Preparedness Framework",
+        "chain-of-thought monitoring"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep the security-control and incident-response implications here; route broad OpenAI/Astra/Sol entity background to ai-wiki."
+      },
+      "confidence_notes": "High confidence: primary OpenAI page has visible August 18 date and concrete control changes. The August 17 Defender's Window post was captured in the previous run and is cited here only as context.",
+      "follow_up_actions": [
+        "During ingest, reconcile this with existing incident-response/openai-hugging-face-cyber-evaluation-incident.md and testing-and-assurance/frontier-model-critical-cyber-release-gates.md.",
+        "Watch for OpenAI's promised technical report in coming weeks."
+      ]
+    },
+    {
+      "id": "wiz-red-agent-snowflake-github-actions-2026-08-17",
+      "title": "Wiz Red Agent autonomously exploited Snowflake GitHub Actions injection",
+      "source_urls": [
+        "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug",
+        "https://github.com/snowflakedb/snowflake-connector-net/pull/1218",
+        "https://github.com/snowflakedb/snowflake-connector-net/pull/1402"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug",
+          "date": "2026-08-17",
+          "date_type": "published"
+        },
+        {
+          "url": "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug",
+          "date": "2026-08-17T19:57:00Z",
+          "date_type": "visible update"
+        }
+      ],
+      "summary": "Wiz reported that its autonomous Red Agent found a script injection in Snowflake's public snowflake-connector-net GitHub Actions workflow five days after the vulnerable PR became live. An issue title could break out of shell quoting, execute commands on a GitHub Actions runner, and exfiltrate Jira credentials; Red Agent adjusted its payload after a syntax error and validated access to Snowflake Jira. Snowflake patched same day, rotated the token, and reported no evidence of unauthorized access beyond Wiz testing.",
+      "evidence_classification": "reputable primary security research with vendor response",
+      "affected_boundary_or_version": "snowflakedb/snowflake-connector-net GitHub Actions jira_issue.yml workflow between June 18 and June 23, 2026; affected token qa@snowflake.net for snowflakecomputing.atlassian.net.",
+      "why_it_matters_for_ai_security": "It is a concrete public example of an autonomous AI security agent discovering, exploiting, and adapting a real CI/CD exploit, while an AI-assisted or AI-reviewed development workflow and established scanners missed the regression.",
+      "named_entities": [
+        "Wiz",
+        "Wiz Red Agent",
+        "Snowflake",
+        "GitHub Actions",
+        "GitHub Advanced Security",
+        "GitHub Copilot",
+        "HackerOne",
+        "Jira"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep autonomous exploit, CI/CD credential exposure, and AI-assisted-review failure here; route general Snowflake/Wiz product context to ai-wiki and general coding-agent review practice to ai-dev-wiki."
+      },
+      "confidence_notes": "High confidence for exploit and remediation facts from primary Wiz post; Copilot authorship is uncertain because Wiz updated the post to clarify Copilot was a co-author/checker and the code-change source is unclear.",
+      "follow_up_actions": [
+        "Create or update local CI/CD agent exploit and coding-agent security review leaves during ingest.",
+        "Retain the authorship uncertainty and avoid claiming Copilot generated the vulnerable line."
+      ]
+    },
+    {
+      "id": "arxiv-ai-generated-code-remediation-pipeline-2026-08-17",
+      "title": "Paper evaluates just-in-time vulnerability detection and remediation for AI-generated code",
+      "source_urls": [
+        "https://arxiv.org/abs/2608.16187"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://arxiv.org/abs/2608.16187",
+          "date": "2026-08-17T07:09:09Z",
+          "date_type": "arXiv submission date"
+        }
+      ],
+      "summary": "A public arXiv paper evaluated a seven-stage pipeline that generates Python from LLMSecEval prompts, scans with CodeQL and Bandit, uses an independent Code Validator LLM enriched with MITRE ATT&CK, CWE examples, and Python guidance, generates fixes, and rescans. Across 80 runs on 26 prompts and four Claude models, the scanner-plus-enrichment pipeline reduced static analyzer findings more than enrichment alone, but remediation still introduced new vulnerabilities in 15-22% of cases.",
+      "evidence_classification": "public research paper",
+      "affected_boundary_or_version": "AI-generated Python code from LLMSecEval prompts; models listed as Claude Opus 4.8, Sonnet 4.6, Sonnet 5, and Haiku 4.5.",
+      "why_it_matters_for_ai_security": "The result gives quantitative evidence for release gates around AI-generated code: model-generated fixes can reduce findings but also introduce new weaknesses, so rescanning and regression evidence remain necessary.",
+      "named_entities": [
+        "arXiv",
+        "LLMSecEval",
+        "CodeQL",
+        "Bandit",
+        "MITRE ATT&CK",
+        "CWE",
+        "Claude"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep security-evaluation and remediation-risk findings here; route general AI-assisted development pipeline practice to ai-dev-wiki."
+      },
+      "confidence_notes": "Medium-high confidence: public preprint with reproducible methodology claims, not peer-reviewed in the fetched evidence.",
+      "follow_up_actions": [
+        "During ingest, connect to ai-generated-code-security-assurance and release-gate pages.",
+        "Check whether the paper repository is public and whether the encrypted database snapshot is usable for independent validation."
+      ]
+    },
+    {
+      "id": "uptrain-rce-default-api-key-cluster-2026-08-17",
+      "title": "UpTrain generative-AI evaluation platform CVE cluster exposes zero-click RCE path",
+      "source_urls": [
+        "https://securitylab.github.com/advisories/GHSL-2024-198_GHSL-2024-199_Uptrain/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-27621",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-27770",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-27771",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-27772"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://securitylab.github.com/advisories/GHSL-2024-198_GHSL-2024-199_Uptrain/",
+          "date": "2026-08-08",
+          "date_type": "published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-27770",
+          "date": "2026-08-17T16:16:46Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "summary": "NVD published multiple UpTrain CVEs inside the window for a generative-AI evaluation platform: a default static API key/user issue and RCE in create_project, add_prompts, and new_run via checks and metadata parameters. GitHub Security Lab's primary advisory describes weak dashboard authentication, open CORS, and RCE primitives that can be combined for zero-click RCE against an UpTrain host when a user visits a crafted website.",
+      "evidence_classification": "primary security research plus vulnerability database records",
+      "affected_boundary_or_version": "UpTrain 0.7.1 and prior.",
+      "why_it_matters_for_ai_security": "Evaluation platforms process prompts, datasets, and model outputs; RCE and static API keys in that control plane can turn assurance tooling into an execution and data-exposure path.",
+      "named_entities": [
+        "UpTrain",
+        "GitHub Security Lab",
+        "NVD",
+        "LLM evaluation"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep evaluation-platform RCE and assurance-tool control-plane risk here; route generic UpTrain product background upstream if needed."
+      },
+      "confidence_notes": "High confidence for advisory and CVE existence. Previous collector excluded this cluster due per-CVE fetch failures; this run resolved enough public evidence to qualify it.",
+      "follow_up_actions": [
+        "Ingest as testing-and-assurance and infrastructure-and-supply-chain evidence.",
+        "Check patched version availability before writing durable mitigation text."
+      ]
+    },
+    {
+      "id": "mcp-florence2-ssrf-2026-08-17",
+      "title": "mcp-florence2 SSRF CVE affects image retrieval tool",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19984",
+        "https://github.com/jkawamoto/mcp-florence2/issues/59",
+        "https://vuldb.com/vuln/391184"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19984",
+          "date": "2026-08-17T05:17:10Z",
+          "date_type": "NVD published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19984",
+          "date": "2026-08-18T14:17:00Z",
+          "date_type": "NVD modified"
+        }
+      ],
+      "summary": "CVE-2026-19984 describes SSRF in jkawamoto/mcp-florence2 through manipulation of the src argument to get_images in src/mcp_florence2/__init__.py. The record says exploitation may be initiated remotely, exploit details are public, and the vendor recommends routing HTTP(S) requests through an SSRF-safe proxy where SSRF protection is required.",
+      "evidence_classification": "vulnerability database record with public issue/reference",
+      "affected_boundary_or_version": "mcp-florence2 up to 0.3.13.",
+      "why_it_matters_for_ai_security": "MCP image-fetch tools can bridge model/tool requests to internal network access; SSRF-safe proxying becomes a concrete compensating control for multimodal MCP servers.",
+      "named_entities": [
+        "mcp-florence2",
+        "Model Context Protocol",
+        "VulDB",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep SSRF and MCP tool egress implication here; route mcp-florence2 entity catalog context to ai-wiki if it becomes durable."
+      },
+      "confidence_notes": "High confidence for CVE facts pulled from NVD before rate limiting.",
+      "follow_up_actions": [
+        "During ingest, compare with existing MCP SSRF leaves and avoid duplicate wording."
+      ]
+    },
+    {
+      "id": "siyuan-mcp-debug-ai-key-disclosure-cluster-2026-08-17",
+      "title": "SiYuan MCP and debug endpoints expose AI keys and file boundaries",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74798",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74799",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-43jx-gxq4-jpjc",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-9cqq-p2hw-mj3f"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-74798",
+          "date": "2026-08-17T11:16:39Z",
+          "date_type": "NVD published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-74799",
+          "date": "2026-08-17T11:16:40Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "summary": "CVE-2026-74798 reports that SiYuan before 3.7.4 lets an authenticated MCP client abuse path traversal in the database_clean MCP tool to copy arbitrary readable files into history and delete originals. CVE-2026-74799 reports unauthenticated pprof debug endpoints when --mode is not exactly prod, allowing heap and goroutine dumps that can expose AccessAuthCode and AI provider API keys.",
+      "evidence_classification": "vulnerability database records with GitHub security advisories",
+      "affected_boundary_or_version": "SiYuan before 3.7.4.",
+      "why_it_matters_for_ai_security": "The cluster combines MCP tool filesystem authority with AI-provider credential exposure, reinforcing that local knowledge tools need explicit production-mode, endpoint-authentication, and path-containment controls.",
+      "named_entities": [
+        "SiYuan",
+        "Model Context Protocol",
+        "AccessAuthCode",
+        "AI provider API keys",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep MCP path traversal and AI credential exposure here; ai-wiki already has SiYuan/MCP routing context for broad entity background."
+      },
+      "confidence_notes": "High confidence for NVD/GHSA facts.",
+      "follow_up_actions": [
+        "Check whether a local SiYuan security leaf already exists before creating a new durable page."
+      ]
+    },
+    {
+      "id": "pycharm-jupyter-mcp-unauth-code-execution-2026-08-17",
+      "title": "PyCharm fixed unauthenticated Jupyter MCP tool code execution",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75060",
+        "https://www.jetbrains.com/privacy-security/issues-fixed/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75060",
+          "date": "2026-08-17T16:17:53Z",
+          "date_type": "NVD published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75060",
+          "date": "2026-08-18T04:16:47Z",
+          "date_type": "NVD modified"
+        }
+      ],
+      "summary": "CVE-2026-75060 states that JetBrains PyCharm before 2026.2.1 allowed code execution via unauthenticated Jupyter MCP tools.",
+      "evidence_classification": "vulnerability database record with vendor fixed-issues reference",
+      "affected_boundary_or_version": "JetBrains PyCharm before 2026.2.1.",
+      "why_it_matters_for_ai_security": "IDE-integrated MCP tools can become local code-execution surfaces if unauthenticated, especially when they bridge notebooks, developer workspaces, and AI tool calls.",
+      "named_entities": [
+        "JetBrains",
+        "PyCharm",
+        "Jupyter",
+        "Model Context Protocol"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep unauthenticated MCP tool execution here; route broad PyCharm/developer-tool background to ai-dev-wiki if needed."
+      },
+      "confidence_notes": "Medium-high confidence: NVD description is terse but vendor fixed-issues page is referenced.",
+      "follow_up_actions": [
+        "During ingest, check JetBrains fixed-issues page for CVE-specific patched build details."
+      ]
+    },
+    {
+      "id": "apache-skywalking-mcp-ssrf-graphql-injection-2026-08-18",
+      "title": "Apache SkyWalking MCP 0.1.0 SSRF and GraphQL expression injection fixed",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-34884",
+        "https://lists.apache.org/thread/s447p6h5dfr02lx17v27phoksgb8mkkp",
+        "http://www.openwall.com/lists/oss-security/2026/04/13/5"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34884",
+          "date": "2026-08-18T08:16:42Z",
+          "date_type": "NVD published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-34884",
+          "date": "2026-08-18T15:04:46Z",
+          "date_type": "NVD modified"
+        }
+      ],
+      "summary": "CVE-2026-34884 describes SSRF via the set_skywalking_url tool and GraphQL expression injection in Apache SkyWalking MCP 0.1.0. The record recommends upgrading to 0.2.0.",
+      "evidence_classification": "vulnerability database record with Apache advisory references",
+      "affected_boundary_or_version": "Apache SkyWalking MCP 0.1.0; fixed in 0.2.0.",
+      "why_it_matters_for_ai_security": "Observability MCP servers often hold privileged telemetry paths; SSRF and query injection in a tool endpoint can compromise internal observability infrastructure through agent-mediated actions.",
+      "named_entities": [
+        "Apache SkyWalking",
+        "Apache SkyWalking MCP",
+        "Model Context Protocol",
+        "GraphQL"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep observability-MCP attack surface here; route broad Apache SkyWalking product background upstream only if needed."
+      },
+      "confidence_notes": "High confidence: NVD detail fetched before rate limiting and includes Apache list reference.",
+      "follow_up_actions": [
+        "During ingest, cross-link with cloud-observability MCP response/control pages if applicable."
+      ]
+    },
+    {
+      "id": "arcadedb-mcp-authorization-bypass-2026-08-18",
+      "title": "ArcadeDB MCP set_server_setting authorization bypass affects read-only users",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-2c26-2qqv-6r9c",
+        "https://github.com/ArcadeData/arcadedb/security/advisories/GHSA-pff6-hp53-pj54",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75845"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://github.com/advisories/GHSA-2c26-2qqv-6r9c",
+          "date": "2026-08-18T12:31:23Z",
+          "date_type": "GitHub Advisory published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75845",
+          "date": "2026-08-18T12:19:35Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "summary": "GitHub Advisory GHSA-2c26-2qqv-6r9c reports that ArcadeDB 26.4.2 through 26.7.3 lets any authenticated read-only user invoke the set_server_setting MCP server-level tool when allowAdmin=true because SetServerSettingTool.execute checks allowAdmin but not the caller role. The issue is fixed in 26.8.1.",
+      "evidence_classification": "GitHub Advisory Database record with upstream security advisory reference",
+      "affected_boundary_or_version": "ArcadeDB 26.4.2 through 26.7.3; fixed in 26.8.1.",
+      "why_it_matters_for_ai_security": "The advisory is a concrete least-privilege failure in an MCP administrative tool: authentication alone did not preserve role boundaries for agent/tool actions.",
+      "named_entities": [
+        "ArcadeDB",
+        "Model Context Protocol",
+        "GitHub Advisory Database",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep MCP least-privilege and tool-level authorization implications here; route generic database product context upstream."
+      },
+      "confidence_notes": "High confidence: GitHub advisory contains affected versions and fixed version.",
+      "follow_up_actions": [
+        "Consider a durable MCP tool-level authorization leaf update."
+      ]
+    },
+    {
+      "id": "ragflow-agent-workflow-ssrf-2026-08-18",
+      "title": "RAGFlow agent workflow Invoke component SSRF fixed in 0.26.3",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-9m4v-54qq-67fw",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75898",
+        "https://github.com/infiniflow/ragflow/issues/15425",
+        "https://github.com/infiniflow/ragflow/issues/18280"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://github.com/advisories/GHSA-9m4v-54qq-67fw",
+          "date": "2026-08-18T15:31:50Z",
+          "date_type": "GitHub Advisory published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75898",
+          "date": "2026-08-18T15:17:15Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "summary": "GHSA-9m4v-54qq-67fw reports that RAGFlow before 0.26.3 has SSRF in the agent workflow Invoke component. The component builds outbound request URLs from canvas configuration and runtime template variables and sends them without the shared safe-URL validator or resolved-address pinning, allowing a user who can create or trigger an agent to reach loopback, link-local, RFC1918, and cloud metadata destinations.",
+      "evidence_classification": "GitHub Advisory Database record",
+      "affected_boundary_or_version": "RAGFlow before 0.26.3.",
+      "why_it_matters_for_ai_security": "Agent workflow systems that let users compose outbound calls need URL safety checks at every tool path; one skipped validator can expose metadata services and internal APIs.",
+      "named_entities": [
+        "RAGFlow",
+        "GitHub Advisory Database",
+        "agent workflow",
+        "SSRF"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep agent workflow SSRF and metadata-access implication here; route generic RAGFlow product context upstream."
+      },
+      "confidence_notes": "High confidence from public GHSA and NVD timestamps.",
+      "follow_up_actions": [
+        "During ingest, compare with existing agent-network-egress and MCP data movement controls."
+      ]
+    },
+    {
+      "id": "codewhale-agent-tool-approval-and-config-cluster-2026-08-18",
+      "title": "CodeWhale CVE cluster exposes agent approval, config, git, and environment boundaries",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75857",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75858",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75859",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75911",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75912",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75913",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75915"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75857",
+          "date": "2026-08-18T16:18:21Z",
+          "date_type": "NVD published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75915",
+          "date": "2026-08-18T16:18:23Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "summary": "NVD published a cluster of CodeWhale vulnerabilities affecting versions before 0.8.64 or >=0.8.41 and <0.8.64. The cluster includes auto-approval for code-executing exec_shell_interact and rlm_eval tools, malicious project config that can enable arbitrary shell execution or read arbitrary files through instructions, git_blame/git_show argument injection allowing file reads, and js_execution environment-variable exposure.",
+      "evidence_classification": "vulnerability database cluster",
+      "affected_boundary_or_version": "CodeWhale before 0.8.64, with several tool issues listed for >=0.8.41 and <0.8.64.",
+      "why_it_matters_for_ai_security": "This is a compact example of multiple coding-agent control failures: auto-approval of execution tools, repository-controlled config authority, git option injection, file reads, and unsanitized inherited environments.",
+      "named_entities": [
+        "CodeWhale",
+        "LLM agents",
+        "NVD",
+        "git",
+        "Node.js"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep approval-boundary, local-file, and environment-secret risks here; route general coding-agent workflow implications to ai-dev-wiki."
+      },
+      "confidence_notes": "Medium-high confidence: NVD keyword results supplied concrete descriptions, but per-CVE detail fetches hit HTTP 429 during this run and GitHub Advisory API did not return records for these CVEs.",
+      "follow_up_actions": [
+        "Re-fetch per-CVE NVD records during ingest for exact CVSS, CWE, and reference URLs.",
+        "Consider a single durable leaf for CodeWhale agent control-plane vulnerabilities."
+      ]
+    },
+    {
+      "id": "context7-mcp-custom-instructions-prompt-injection-2026-08-18",
+      "title": "Context7 MCP prompt injection can drive connected coding agents",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-97r6-3rgm-v39r",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75130",
+        "https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://github.com/advisories/GHSA-97r6-3rgm-v39r",
+          "date": "2026-08-18T18:32:03Z",
+          "date_type": "GitHub Advisory published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75130",
+          "date": "2026-08-18T18:19:34Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "summary": "GHSA-97r6-3rgm-v39r reports that Context7 through 2.1.2 lets attackers inject malicious instructions into connected AI coding agents through unsanitized Custom AI Instructions served via the MCP server. The advisory says poisoned instructions can exfiltrate credentials from environment files to an attacker-controlled service and delete files when the agent makes routine library documentation requests.",
+      "evidence_classification": "GitHub Advisory Database record with security research reference",
+      "affected_boundary_or_version": "Context7 through 2.1.2.",
+      "why_it_matters_for_ai_security": "It is a direct prompt-injection-to-agent-action vulnerability in a documentation MCP path, reinforcing that retrieved tool context is untrusted input even when the user requested ordinary docs.",
+      "named_entities": [
+        "Context7",
+        "Model Context Protocol",
+        "Noma Security",
+        "AI coding agents"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep prompt-injection, credential-exfiltration, and destructive-action implications here; route broad Context7 MCP server entity background to ai-wiki."
+      },
+      "confidence_notes": "High confidence from in-window GHSA and NVD records.",
+      "follow_up_actions": [
+        "During ingest, compare with prompt-injection architecture risk and MCP security best-practices leaves."
+      ]
+    },
+    {
+      "id": "apify-mcp-token-leak-path-authority-2026-08-18",
+      "title": "Apify MCP server actor path authority injection leaks bearer token",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-6gr2-qh89-hxwm",
+        "https://github.com/apify/apify-mcp-server/security/advisories/GHSA-6gr2-qh89-hxwm",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50143"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50143",
+          "date": "2026-08-18T18:17:53Z",
+          "date_type": "NVD published"
+        },
+        {
+          "url": "https://github.com/advisories/GHSA-6gr2-qh89-hxwm",
+          "date": "2026-07-01T22:02:15Z",
+          "date_type": "GitHub Advisory published"
+        }
+      ],
+      "summary": "The Apify MCP server advisory reports that @apify/actors-mcp-server 0.10.7 concatenated a trusted Actor standby URL with attacker-controlled webServerMcpPath from an Actor definition. A malicious Actor path such as @attacker.example/mcp can redirect the final MCP URL to an attacker host while the client attaches the victim's Authorization: Bearer APIFY_TOKEN header.",
+      "evidence_classification": "vulnerability database update plus earlier GitHub security advisory",
+      "affected_boundary_or_version": "@apify/actors-mcp-server 0.10.7; NVD says prior to 0.10.11.",
+      "why_it_matters_for_ai_security": "Hosted MCP servers that assemble tool URLs from marketplace or actor metadata need strict URL authority validation; otherwise agent connector tokens can be leaked cross-origin.",
+      "named_entities": [
+        "Apify",
+        "Apify MCP Server",
+        "Model Context Protocol",
+        "APIFY_TOKEN"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep MCP token leakage and path-authority control here; route Apify product/entity background upstream."
+      },
+      "confidence_notes": "High confidence for the security advisory; qualification is based on NVD publication inside the window while the GHSA itself is older.",
+      "follow_up_actions": [
+        "During ingest, decide whether to treat as fresh NVD publication or stale advisory update in the digest."
+      ]
+    },
+    {
+      "id": "onyx-mcp-oauth-token-exposure-2026-08-17",
+      "title": "Onyx MCP endpoints expose another user's OAuth Authorization header",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71424",
+        "https://www.strix.ai/cve/CVE-2026-71424",
+        "https://github.com/advisories"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71424",
+          "date": "2026-08-17T22:17:26Z",
+          "date_type": "NVD published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71424",
+          "date": "2026-08-18T18:19:32Z",
+          "date_type": "NVD modified"
+        }
+      ],
+      "summary": "CVE-2026-71424 reports that Onyx before 3.1.10, 3.2.14, and 4.0.0 exposes another user's OAuth Authorization header through GET /api/mcp/servers and GET /api/mcp/servers/persona/{persona_id}. The issue arises because per-user tokens are copied into a shared admin MCPConnectionConfig row and returned through auth_template.headers to BASIC_ACCESS users.",
+      "evidence_classification": "vulnerability database record with secondary CVE mirrors",
+      "affected_boundary_or_version": "Onyx before 3.1.10, 3.2.14, and 4.0.0.",
+      "why_it_matters_for_ai_security": "This is a concrete MCP OAuth token isolation failure in an AI platform and maps directly to least privilege, credential handling, and cross-user connector scoping.",
+      "named_entities": [
+        "Onyx",
+        "Model Context Protocol",
+        "OAuth",
+        "MCPConnectionConfig"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep MCP OAuth token isolation here; route general Onyx platform context upstream."
+      },
+      "confidence_notes": "Medium-high confidence from NVD/search snippets; previous run excluded Onyx due fetch failures, now public detail is sufficient but primary upstream advisory still needs direct ingest recheck.",
+      "follow_up_actions": [
+        "Fetch primary Onyx advisory or patch references during ingest before writing durable mitigation text."
+      ]
+    },
+    {
+      "id": "vllm-0260-derender-and-multimodal-ssrf-2026-08-17",
+      "title": "vLLM 0.26.0 fixes derender DoS and multimodal SSRF/file-read issues",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71486",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73560",
+        "https://www.strix.ai/cve/CVE-2026-73560"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-71486",
+          "date": "2026-08-17T20:16:45Z",
+          "date_type": "NVD published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73560",
+          "date": "2026-08-17T21:16:48Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "summary": "NVD entries report two vLLM issues fixed before 0.26.0: authenticated denial of service through caller-supplied GenerateResponse objects on derender endpoints before size limits apply, and SSRF/local file reads in MiMoV2OmniMultiModalProcessor because attacker-controlled image and audio strings bypass MediaConnector protections for allowed_media_domains and allowed_local_media_path.",
+      "evidence_classification": "vulnerability database records with secondary CVE detail",
+      "affected_boundary_or_version": "vLLM prior to 0.26.0.",
+      "why_it_matters_for_ai_security": "LLM inference servers are production AI runtime boundaries; multimodal fetch bypass and derender resource exhaustion affect availability, data exposure, and network egress controls.",
+      "named_entities": [
+        "vLLM",
+        "MiMoV2OmniMultiModalProcessor",
+        "MediaConnector",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep inference-runtime SSRF and DoS implications here; route broad vLLM project background to ai-wiki."
+      },
+      "confidence_notes": "Medium-high confidence from NVD/search snippets; per-CVE NVD detail was partly affected by rate limiting.",
+      "follow_up_actions": [
+        "During ingest, verify upstream vLLM release notes and GitHub advisories for exact fixed version set."
+      ]
+    },
+    {
+      "id": "huggingface-transformers-checkpoint-shard-path-traversal-2026-08-17",
+      "title": "Hugging Face Transformers checkpoint shard filenames allow arbitrary file read",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-fv5v-hfxp-5379",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75104",
+        "https://github.com/huggingface/transformers/issues/47176",
+        "https://github.com/huggingface/transformers/issues/47177"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://github.com/advisories/GHSA-fv5v-hfxp-5379",
+          "date": "2026-08-17T21:31:26Z",
+          "date_type": "GitHub Advisory published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75104",
+          "date": "2026-08-17T21:16:49Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "summary": "GHSA-fv5v-hfxp-5379 reports that Hugging Face Transformers fails to validate shard filenames in checkpoint index files. Malicious index files can use parent-directory references or absolute paths joined without validation, enabling file disclosure and filesystem reconnaissance outside the model directory.",
+      "evidence_classification": "GitHub Advisory Database record",
+      "affected_boundary_or_version": "Hugging Face Transformers; exact fixed version not captured in this run.",
+      "why_it_matters_for_ai_security": "Model checkpoint metadata is an artifact supply-chain boundary. Path traversal in shard names can turn model loading into local file disclosure.",
+      "named_entities": [
+        "Hugging Face",
+        "Transformers",
+        "model checkpoints",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep model-artifact file-boundary risk here; route broad Hugging Face/Transformers entity background to ai-wiki."
+      },
+      "confidence_notes": "High confidence for public GHSA/NVD fact; fixed version needs follow-up.",
+      "follow_up_actions": [
+        "Verify patched Transformers versions and relevant commits before durable ingest."
+      ]
+    },
+    {
+      "id": "9router-oidc-test-ssrf-2026-08-17",
+      "title": "9Router AI router OIDC provider test endpoint allows SSRF",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-8g4w-4ffg-8vgx",
+        "https://github.com/decolua/9router/security/advisories/GHSA-8g4w-4ffg-8vgx",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-56677"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://github.com/advisories/GHSA-8g4w-4ffg-8vgx",
+          "date": "2026-08-17T21:58:43Z",
+          "date_type": "GitHub Advisory published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56677",
+          "date": "2026-08-17T22:17:14Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "summary": "GHSA-8g4w-4ffg-8vgx reports SSRF in the 9Router dashboard /api/auth/oidc/test endpoint. The application accepts issuerUrl and performs outbound OIDC discovery without restricting internal network destinations; the advisory notes the endpoint can be reached without active session authentication where the dashboard API is visible.",
+      "evidence_classification": "GitHub Advisory Database record",
+      "affected_boundary_or_version": "9Router 0.5.4 and earlier according to NVD keyword result.",
+      "why_it_matters_for_ai_security": "AI routing gateways often hold provider credentials and internal network reach. Even an identity-test helper can become an unauthenticated egress primitive if URL validation is missing.",
+      "named_entities": [
+        "9Router",
+        "OIDC",
+        "AI router",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep AI gateway SSRF and identity-test boundary here; route general model-router product context upstream."
+      },
+      "confidence_notes": "High confidence from GHSA and NVD timestamps.",
+      "follow_up_actions": [
+        "Check for fixed version and route to identity-and-access plus agent-network-egress controls during ingest."
+      ]
+    },
+    {
+      "id": "oracle-siebel-ai-data-access-cve-2026-60758",
+      "title": "Oracle Siebel Artificial Intelligence component vulnerability exposes critical data",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-5x7x-p8x7-qppp",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-60758",
+        "https://www.oracle.com/security-alerts/cspuaug2026.html"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://github.com/advisories/GHSA-5x7x-p8x7-qppp",
+          "date": "2026-08-18T21:32:00Z",
+          "date_type": "GitHub Advisory published"
+        },
+        {
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-60758",
+          "date": "2026-08-18T21:16:42Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "summary": "GHSA-5x7x-p8x7-qppp reports a vulnerability in Oracle Siebel CRM's Siebel Artificial Intelligence component affecting versions 25.12 through 26.6. A low-privileged network attacker over HTTP can compromise Siebel Artificial Intelligence, with possible scope change and unauthorized access to critical data or complete access to all accessible data.",
+      "evidence_classification": "GitHub Advisory Database record referencing Oracle Critical Patch Update",
+      "affected_boundary_or_version": "Oracle Siebel Artificial Intelligence 25.12-26.6.",
+      "why_it_matters_for_ai_security": "Enterprise AI components embedded in CRM inherit sensitive business-data access; low-privilege HTTP compromise and scope change raise data-security and authorization concerns.",
+      "named_entities": [
+        "Oracle",
+        "Siebel CRM",
+        "Siebel Artificial Intelligence",
+        "Oracle Critical Patch Update"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep AI component data-access vulnerability here; route broad Oracle/Siebel product context upstream."
+      },
+      "confidence_notes": "High confidence from in-window GHSA and Oracle CPU reference.",
+      "follow_up_actions": [
+        "During ingest, confirm Oracle CPU affected product table for patch identifiers."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "OpenAI Defender's Window as a standalone item",
+      "source_urls": [
+        "https://openai.com/index/the-defenders-window/"
+      ],
+      "visible_dates": [
+        "2026-08-17"
+      ],
+      "reason": "Highly relevant and in-window, but already captured as a qualifying item in the processed 2026-08-17 collector artifact. This run cites it as context for the new August 18 OpenAI safeguard post rather than counting it again."
+    },
+    {
+      "title": "Red Hat OpenShift AI service-account excessive permissions",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15218",
+        "https://access.redhat.com/security/cve/CVE-2026-15218"
+      ],
+      "visible_dates": [
+        "2026-08-17T14:20:19Z"
+      ],
+      "reason": "Qualifying AI security vulnerability but already captured in the processed 2026-08-17 collector artifact."
+    },
+    {
+      "title": "MLflow 3.15.0 SSRF and authorization CVE cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-64849",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69146",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69148"
+      ],
+      "visible_dates": [
+        "2026-08-17T22:17:23Z",
+        "2026-08-17T22:17:26Z"
+      ],
+      "reason": "Qualifying AI engineering platform vulnerabilities but already captured in the processed 2026-08-17 collector artifact."
+    },
+    {
+      "title": "MemOS internal service secret authentication bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75110",
+        "https://www.vulncheck.com/advisories/memos-authentication-bypass-via-unset-internal-service-secret"
+      ],
+      "visible_dates": [
+        "2026-08-17T21:16:50Z"
+      ],
+      "reason": "Qualifying LLM/agent memory-system auth bypass but already captured in the processed 2026-08-17 collector artifact."
+    },
+    {
+      "title": "Kiota AI host manifest file boundary disclosure",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73851",
+        "https://github.com/microsoft/kiota/security/advisories/GHSA-p5rm-jg5c-8c77"
+      ],
+      "visible_dates": [
+        "2026-08-17T15:16:57Z"
+      ],
+      "reason": "Qualifying AI-host artifact boundary issue but already captured in the processed 2026-08-17 collector artifact."
+    },
+    {
+      "title": "CISA Gold Eagle AI-driven vulnerability reporting page",
+      "source_urls": [
+        "https://www.cisa.gov/resources-tools/resources/gold-eagle-advancing-ai-driven-vulnerability-reporting"
+      ],
+      "visible_dates": [
+        "CISA home/search surfaced Aug 18, 2026",
+        "target page search snippet also showed 05.12.2024"
+      ],
+      "reason": "Potentially relevant AI vulnerability-reporting governance item, but visible page dating was conflicting or ambiguous in fetched/search evidence, so it was excluded under the no ambiguous dates rule."
+    },
+    {
+      "title": "Unit 42 Frontier AI Vulnerability Burst",
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/frontier-ai-vulnerability-burst/"
+      ],
+      "visible_dates": [
+        "2026-08-04"
+      ],
+      "reason": "Concrete AI vulnerability-discovery research but outside the 48-hour window. Related in-window search surfacing did not show a new visible update date."
+    },
+    {
+      "title": "Zoomsday AI-assisted exploit coverage",
+      "source_urls": [
+        "https://www.tomshardware.com/tech-industry/cyber-security/zoomsday-vulnerability-let-anyone-in-a-zoom-meeting-take-over-anybody-else-ai-assisted-research-only-used-20-prompts-to-find-an-exploit-to-hack-hundred-of-millions-of-people"
+      ],
+      "visible_dates": [
+        "2026-08-13"
+      ],
+      "reason": "Concrete AI-assisted exploit-development item, but outside this run's 48-hour window and already covered by earlier automation context."
+    },
+    {
+      "title": "Court-filing hidden prompt injection coverage",
+      "source_urls": [
+        "https://www.tomshardware.com/tech-industry/artificial-intelligence/plaintiff-busted-trying-to-use-ai-prompt-injection-to-win-court-case-hides-text-instruction-in-filing-demands-ai-model-reviewing-the-text-should-side-with-him-rumbled-because-of-strange-white-spaces-in-text"
+      ],
+      "visible_dates": [
+        "2026-08-14"
+      ],
+      "reason": "Concrete prompt-injection incident, but outside the exact 48-hour cutoff."
+    },
+    {
+      "title": "Generic Chrome, Oracle Helidon, Wazuh, Kraken, and other non-AI advisories",
+      "source_urls": [
+        "https://api.github.com/advisories?published=2026-08-17..2026-08-18"
+      ],
+      "visible_dates": [
+        "2026-08-17 to 2026-08-18"
+      ],
+      "reason": "Fresh public security advisories, but no concrete AI-system, model, agent, MCP, dataset, AI runtime, or AI deployment boundary was visible in the fetched advisory summaries."
+    }
+  ],
+  "routing_counts": {
+    "local_security_owned_findings": 17,
+    "upstream_ai_wiki_routing_notes": 15,
+    "upstream_ai_dev_wiki_routing_notes": 4,
+    "duplicate_previous_run_exclusions": 5
+  },
+  "counts": {
+    "qualifying_findings": 17,
+    "exclusions": 10,
+    "routing_notes": 19
+  },
+  "blockers": [
+    "NVD returned HTTP 429 during later per-CVE detail fetches; the artifact uses already fetched NVD keyword results, GitHub Advisory API, primary advisories, and search result snippets for affected facts where direct per-CVE NVD detail was unavailable.",
+    "Some fixed-version details for CodeWhale, vLLM, Onyx, and Hugging Face Transformers should be rechecked during ingest before durable wiki synthesis."
+  ],
+  "privacy_and_sensitivity_notes": [
+    "Only public web sources, public vulnerability databases, and local wiki/index files were used.",
+    "No private, proprietary, sensitive, PII, or company-internal local content was sent to external services.",
+    "Local wiki files were used only for routing context and were not uploaded verbatim to external services."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  }
+}

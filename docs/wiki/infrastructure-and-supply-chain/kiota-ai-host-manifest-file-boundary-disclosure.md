@@ -15,6 +15,8 @@ Before Kiota 1.29.1 and 1.34.0, an attacker who controlled or tampered with an O
 
 Generated tool manifests are AI supply-chain artifacts. They need the same containment expectations as dependencies and model artifacts: input schema provenance, path normalization, external-reference policy, reproducible packaging, and review before host consumption.
 
+The [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json) adds [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-73851) and CISA-ADP SSVC fields for CVE-2026-73851: exploitation none, automatable no, and technical impact partial. That narrows current triage without weakening the boundary: generated AI-host manifests can still disclose files when OpenAPI provenance is untrusted.
+
 ## Security Impact
 
 - Threat: tampered OpenAPI input can smuggle external file references into an AI-host package and disclose unintended local or remote content.
@@ -27,6 +29,7 @@ Generated tool manifests are AI supply-chain artifacts. They need the same conta
 ## Authoritative Sources
 
 - [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json)
+- [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json)
 - NVD CVE-2026-73851: https://nvd.nist.gov/vuln/detail/CVE-2026-73851
 - GitHub advisory GHSA-p5rm-jg5c-8c77: https://github.com/microsoft/kiota/security/advisories/GHSA-p5rm-jg5c-8c77
 - Kiota 1.29.1 release: https://github.com/microsoft/kiota/releases/tag/v1.29.1
@@ -59,3 +62,4 @@ Generated tool manifests are AI supply-chain artifacts. They need the same conta
 ## Maintenance Notes
 
 - Created on 2026-08-17 from the August 17 topic collector as a generated-manifest trust-boundary advisory leaf.
+- Updated on 2026-08-19 from the August 19 leaf watcher with CISA-ADP SSVC exploitation, automation, and technical-impact fields.

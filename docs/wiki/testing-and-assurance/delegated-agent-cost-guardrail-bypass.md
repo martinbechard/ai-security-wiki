@@ -13,6 +13,8 @@ The [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai
 
 The advisory says the parallel helper or delegated-agent batch estimator returned zero for model IDs absent from a hardcoded pricing table. Unknown self-hosted models, newly released provider models, or a steered helper model argument could skip daily cost-cap reservation. Version 1.1.0 is listed as patched.
 
+The [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json) adds [GitHub-reviewed severity](https://github.com/advisories/GHSA-j659-8xh6-5pq5) for GHSA-j659-8xh6-5pq5: high severity, CVSS 8.7, CWE-770, fixed in 1.1.0. It also preserves the conformance-test implication that unknown-model reservation should fail closed rather than reserve zero.
+
 This belongs near [AI workload cost anomaly monitoring](ai-workload-cost-anomaly-monitoring.md), but the control boundary is preventive rather than detective: unknown model prices must fail closed or require explicit approval before delegated fan-out begins.
 
 ## Security Impact
@@ -27,6 +29,7 @@ This belongs near [AI workload cost anomaly monitoring](ai-workload-cost-anomaly
 ## Authoritative Sources
 
 - [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json)
+- [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json)
 - GitHub advisory GHSA-j659-8xh6-5pq5: https://github.com/advisories/GHSA-j659-8xh6-5pq5
 - atomic-agents-stack release page: https://github.com/dep0we/atomic-agents-stack/releases#release-v1.1.0
 
@@ -47,7 +50,7 @@ This belongs near [AI workload cost anomaly monitoring](ai-workload-cost-anomaly
 - [testing and assurance](index.md)
 - [AI workload cost anomaly monitoring](ai-workload-cost-anomaly-monitoring.md)
 - [Agent action runtime hooks](../agent-and-tool-security/agent-action-runtime-hooks.md)
-- Upstream AI development wiki owns general framework orchestration and model-cost workflow practice.
+- Upstream AI development wiki owns general framework orchestration and model-cost workflow practice, including [Agent Cost Telemetry](../../../upstream-ai-dev-wiki/adoption-and-operating-model/agent-cost-telemetry.md).
 
 ## Open Questions
 
@@ -56,3 +59,4 @@ This belongs near [AI workload cost anomaly monitoring](ai-workload-cost-anomaly
 ## Maintenance Notes
 
 - Created on 2026-08-17 from the August 17 topic collector as a separate preventive cost-guardrail leaf, not a duplicate of cost anomaly monitoring.
+- Updated on 2026-08-19 from the August 19 leaf watcher with CVSS, CWE-770, fixed-version, and fail-closed conformance-test detail.

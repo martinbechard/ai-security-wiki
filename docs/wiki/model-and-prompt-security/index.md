@@ -10,6 +10,10 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - [PapersGPT Zotero LLM response remote code execution](papersgpt-zotero-llm-response-rce.md)
 - [Encrypted reasoning trace replay](encrypted-reasoning-trace-replay.md)
 - [Hidden context exposure reconnaissance](hidden-context-exposure-reconnaissance.md)
+- [Context7 MCP custom instructions prompt injection](context7-mcp-custom-instructions-prompt-injection.md)
+- [vLLM multimodal input boundary vulnerabilities](vllm-multimodal-input-boundary-vulnerabilities.md)
+- [vLLM derender denial of service](vllm-derender-denial-of-service.md)
+- [vLLM multimodal media SSRF file read](vllm-multimodal-media-ssrf-file-read.md)
 
 ## Authoritative Sources
 
@@ -40,3 +44,5 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 ## Maintenance Notes
 
 - Record affected boundary, attack prerequisites, mitigation, residual risk, and evidence quality.
+- Updated on 2026-08-19 with Context7 MCP prompt-injection and vLLM multimodal input-boundary leaves.
+- Updated on 2026-08-19 after verifier correction split vLLM derender DoS and multimodal media SSRF/file-read leaves.

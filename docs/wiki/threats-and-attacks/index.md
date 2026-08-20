@@ -13,6 +13,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 - [AI-assisted credential harvesting and token abuse](ai-assisted-credential-harvesting-and-token-abuse.md)
 - [Agentic AI threat cluster](agentic-ai-threat-cluster.md)
 - [macOS Screen Sharing AI-accelerated exploitability](macos-screen-sharing-ai-accelerated-exploitability.md)
+- [Autonomous CI/CD exploit adaptation](autonomous-ci-cd-exploit-adaptation.md)
 
 ## Authoritative Sources
 
@@ -44,3 +45,4 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 
 - Separate observed exploitation, demonstrated research, and plausible threat hypotheses.
 - Updated on 2026-08-16 with the macOS Screen Sharing AI-accelerated exploitability leaf.
+- Updated on 2026-08-19 with the autonomous CI/CD exploit adaptation leaf.

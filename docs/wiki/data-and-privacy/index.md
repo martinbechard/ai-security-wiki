@@ -17,6 +17,8 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [Codex training data controls and enforcement](codex-training-data-controls-and-enforcement.md)
 - [MCP data movement exposure controls](mcp-data-movement-exposure-controls.md)
 - [AI Sidebar extension AI chat theft](ai-sidebar-extension-ai-chat-theft.md)
+- [Oracle Siebel AI data access vulnerability](oracle-siebel-ai-data-access-vulnerability.md)
+- [SiYuan debug endpoint AI key disclosure](siyuan-debug-endpoint-ai-key-disclosure.md)
 
 ## Authoritative Sources
 
@@ -47,3 +49,5 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 ## Maintenance Notes
 
 - Do not place private, proprietary, sensitive, PII, or company-internal source content in public collector prompts.
+- Updated on 2026-08-19 with the Oracle Siebel Artificial Intelligence data-access advisory leaf.
+- Updated on 2026-08-19 after verifier correction split SiYuan debug endpoint credential disclosure into a data/privacy leaf.

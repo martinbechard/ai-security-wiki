@@ -14,6 +14,10 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [Agent synthetic insider risk](agent-synthetic-insider-risk.md)
 - [MemOS internal service secret auth bypass](memos-internal-service-secret-auth-bypass.md)
 - [OpenShift AI service account excessive permissions](openshift-ai-service-account-excessive-permissions.md)
+- [ArcadeDB MCP server setting authorization bypass](arcadedb-mcp-server-setting-authorization-bypass.md)
+- [Apify MCP token authority leak](apify-mcp-token-authority-leak.md)
+- [Onyx MCP OAuth token isolation](onyx-mcp-oauth-token-isolation.md)
+- [9Router OIDC test SSRF](9router-oidc-test-ssrf.md)
 
 ## Authoritative Sources
 
@@ -45,3 +49,4 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 - Distinguish user identity, workload identity, agent identity, delegated authority, and tool credentials.
 - Updated on 2026-08-17 with MemOS internal-service identity and OpenShift AI service-account least-privilege advisory leaves.
+- Updated on 2026-08-19 with ArcadeDB, Apify, Onyx, and 9Router identity-boundary advisory leaves.
