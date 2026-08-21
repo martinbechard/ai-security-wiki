@@ -13,6 +13,8 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 The advisory says version 0.10.7 concatenated a trusted Actor standby URL with attacker-controlled `webServerMcpPath` from an Actor definition. A malicious path such as `@attacker.example/mcp` can redirect the final MCP URL to an attacker host while the client attaches the victim's `Authorization: Bearer APIFY_TOKEN` header. [NVD CVE-2026-50143](https://nvd.nist.gov/vuln/detail/CVE-2026-50143) says versions prior to 0.10.11 are affected.
 
+The [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) records the in-window [CVE Program](https://www.cve.org/CVERecord?id=CVE-2026-50143) and [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-50143) publication for the older [GHSA](https://github.com/advisories/GHSA-6gr2-qh89-hxwm) and keeps the authority-parsing issue local while broad Apify product context routes upstream.
+
 ## Security Impact
 
 - Threat: actor or marketplace metadata can redirect MCP traffic and leak bearer tokens cross-origin.
@@ -25,6 +27,7 @@ The advisory says version 0.10.7 concatenated a trusted Actor standby URL with a
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
 - [GitHub advisory GHSA-6gr2-qh89-hxwm](https://github.com/advisories/GHSA-6gr2-qh89-hxwm)
 - [Apify security advisory GHSA-6gr2-qh89-hxwm](https://github.com/apify/apify-mcp-server/security/advisories/GHSA-6gr2-qh89-hxwm)
 - [NVD CVE-2026-50143](https://nvd.nist.gov/vuln/detail/CVE-2026-50143)
@@ -54,3 +57,4 @@ The advisory says version 0.10.7 concatenated a trusted Actor standby URL with a
 ## Maintenance Notes
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json); digest treatment records the in-window NVD publication while preserving that the GHSA is older.
+- Updated on 2026-08-20 from the [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) with additional publication evidence for the existing authority-leak advisory.

@@ -1,0 +1,554 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "evidence_classification_summary": {
+    "confirmed_exploitation": 0,
+    "control_change": 9,
+    "demonstrated_research": 1,
+    "disclosed_vulnerability": 15,
+    "mitigation": 15,
+    "unverified_claim": 0
+  },
+  "excluded_candidates": [
+    {
+      "candidate": "http://www.openwall.com/lists/oss-security/2026/04/13/5",
+      "reason": "Visible date 2026-04-13 is outside the seven-day window; retained only as background reference for Apache SkyWalking MCP."
+    },
+    {
+      "candidate": "https://github.com/infiniflow/ragflow/issues/15425",
+      "reason": "Issue discussion is older/background; same-leaf in-window qualification comes from 2026-08-18 CVE/GHSA publication."
+    },
+    {
+      "candidate": "https://github.com/apify/apify-mcp-server/security/advisories/GHSA-6gr2-qh89-hxwm original publication",
+      "reason": "Original GHSA publication predates the seven-day window; only in-window NVD/CVE publication and visible refreshed mirrors qualify."
+    },
+    {
+      "candidate": "https://github.com/jkawamoto/mcp-florence2/issues/59",
+      "reason": "Used as primary technical reference when cited by CVE, but no independent visible in-window issue update was confirmed during this run."
+    },
+    {
+      "candidate": "Broad product documentation for Apify, JetBrains, Oracle, RAGFlow, SiYuan, CodeWhale, SkyWalking, and 9Router",
+      "reason": "General product facts route upstream under docs/wiki/federation.md; local artifact keeps only the security boundary, mitigation, and evidence notes."
+    }
+  ],
+  "federation_note": "Kept local security-specific update records only. Broad product, company, IDE, CRM, MCP-server, and coding-agent background belongs in upstream ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+  "follow_up_notes": [
+    "Normal raw ingest should update durable leaves rather than this collector editing docs/wiki directly.",
+    "Several leaves have open questions about exact fixed versions, primary advisory detail, CVSS/CWE, or authentication prerequisites; this artifact gives public URLs for the ingest pass."
+  ],
+  "leaf_selection": {
+    "ordering": "unchecked leaves first, then oldest last_checked_at, tie by stable relative path",
+    "selected_leaf_count": 15,
+    "selected_leaf_ids": [
+      "docs/wiki/agent-and-tool-security/apache-skywalking-mcp-ssrf-graphql-injection.md",
+      "docs/wiki/agent-and-tool-security/codewhale-agent-control-plane-vulnerabilities.md",
+      "docs/wiki/agent-and-tool-security/codewhale-auto-approved-execution-tools.md",
+      "docs/wiki/agent-and-tool-security/codewhale-git-tool-argument-injection.md",
+      "docs/wiki/agent-and-tool-security/codewhale-js-execution-environment-exposure.md",
+      "docs/wiki/agent-and-tool-security/codewhale-project-configuration-authority.md",
+      "docs/wiki/agent-and-tool-security/mcp-florence2-image-fetch-ssrf.md",
+      "docs/wiki/agent-and-tool-security/pycharm-jupyter-mcp-unauthenticated-code-execution.md",
+      "docs/wiki/agent-and-tool-security/ragflow-agent-workflow-invoke-ssrf.md",
+      "docs/wiki/agent-and-tool-security/siyuan-mcp-database-clean-path-traversal.md",
+      "docs/wiki/agent-and-tool-security/siyuan-mcp-debug-key-and-file-boundary.md",
+      "docs/wiki/data-and-privacy/oracle-siebel-ai-data-access-vulnerability.md",
+      "docs/wiki/data-and-privacy/siyuan-debug-endpoint-ai-key-disclosure.md",
+      "docs/wiki/identity-and-access/9router-oidc-test-ssrf.md",
+      "docs/wiki/identity-and-access/apify-mcp-token-authority-leak.md"
+    ],
+    "universe_count": 137
+  },
+  "local_run_at": "2026-08-20T20:02:16-0400",
+  "lookback_window": {
+    "end": "2026-08-20",
+    "rule": "Include only sources published or visibly updated within the last 7 days; exclude ambiguous, future, missing, or boundary-only dates.",
+    "start": "2026-08-13"
+  },
+  "privacy_and_sensitivity": "Searches used public topic names, CVE/GHSA identifiers, product names, and public source URLs cited by leaves; no whole local pages, private data, PII, or company-internal content was sent externally.",
+  "qualifying_update_count": 15,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "Apache SkyWalking MCP 0.1.0",
+        "set_skywalking_url tool",
+        "GraphQL expression construction",
+        "fixed in 0.2.0"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation; control change",
+      "factual_summary": "In-window CVE publication identifies SSRF through set_skywalking_url plus GraphQL expression injection, recommends upgrading to 0.2.0, and adds CISA ADP CVSS/SSVC enrichment on August 19.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/apache-skywalking-mcp-ssrf-graphql-injection.md",
+      "named_entities": [
+        "Apache SkyWalking MCP 0.1.0",
+        "set_skywalking_url tool",
+        "GraphQL expression construction",
+        "fixed in 0.2.0"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-34884",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-34884",
+        "https://lists.apache.org/thread/s447p6h5dfr02lx17v27phoksgb8mkkp",
+        "https://app.opencve.io/cve/CVE-2026-34884"
+      ],
+      "update_title": "CVE Program and CISA ADP enrichment for Apache SkyWalking MCP CVE-2026-34884",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-18/2026-08-19"
+    },
+    {
+      "affected_boundaries": [
+        "CodeWhale/codewhale-tui before 0.8.64",
+        "approval policy",
+        "project configuration",
+        "git tool arguments",
+        "js_execution inherited environment"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation; control change",
+      "factual_summary": "In-window CVE records and VulnCheck advisory pages make the cluster concrete enough for local leaf routing: upgrade to 0.8.64 and treat approval, config, git-argv, and environment inheritance as separate controls.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/codewhale-agent-control-plane-vulnerabilities.md",
+      "named_entities": [
+        "CodeWhale/codewhale-tui before 0.8.64",
+        "approval policy",
+        "project configuration",
+        "git tool arguments",
+        "js_execution inherited environment"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-75857",
+        "https://www.cve.org/CVERecord?id=CVE-2026-75858",
+        "https://www.cve.org/CVERecord?id=CVE-2026-75859",
+        "https://www.cve.org/CVERecord?id=CVE-2026-75911",
+        "https://www.cve.org/CVERecord?id=CVE-2026-75912",
+        "https://www.cve.org/CVERecord?id=CVE-2026-75913",
+        "https://www.cve.org/CVERecord?id=CVE-2026-75915",
+        "https://www.vulncheck.com/advisories/codewhale-before-arbitrary-file-read-via-instructions"
+      ],
+      "update_title": "CodeWhale CVE cluster published for approval, config, git-argument, and environment boundaries",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-18/2026-08-19"
+    },
+    {
+      "affected_boundaries": [
+        "exec_shell_interact/exec_interact",
+        "rlm_eval",
+        "approval_requirement",
+        "CodeWhale >=0.8.41 and <0.8.64"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation; control change",
+      "factual_summary": "The in-window records say execution-capable tools returned automatic approval, allowing model-supplied shell or Python input to run without the expected approval prompt.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/codewhale-auto-approved-execution-tools.md",
+      "named_entities": [
+        "exec_shell_interact/exec_interact",
+        "rlm_eval",
+        "approval_requirement",
+        "CodeWhale >=0.8.41 and <0.8.64"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-75857",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75857",
+        "https://www.cve.org/CVERecord?id=CVE-2026-75858",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75858",
+        "https://www.rapid7.com/db/vulnerabilities/cve-2026-75857/"
+      ],
+      "update_title": "CodeWhale execution tools auto-approval CVEs published",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-18/2026-08-19"
+    },
+    {
+      "affected_boundaries": [
+        "git_blame rev parameter",
+        "git_show rev parameter",
+        "CodeWhale before 0.8.64"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation",
+      "factual_summary": "The in-window records distinguish git_blame and git_show option injection, including arbitrary file-read paths through git flags such as --contents or output redirection arguments.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/codewhale-git-tool-argument-injection.md",
+      "named_entities": [
+        "git_blame rev parameter",
+        "git_show rev parameter",
+        "CodeWhale before 0.8.64"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-75912",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75912",
+        "https://www.cve.org/CVERecord?id=CVE-2026-75913",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75913",
+        "https://www.rapid7.com/db/vulnerabilities/cve-2026-75912/"
+      ],
+      "update_title": "CodeWhale git_blame and git_show argument-injection CVEs published",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        "js_execution tool",
+        "Node.js child process environment",
+        "API keys, cloud credentials, authentication tokens",
+        "CodeWhale before 0.8.64"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation",
+      "factual_summary": "The in-window record says js_execution failed to scrub parent process environment variables before spawning Node.js, allowing malicious JavaScript to leak secrets into model context.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/codewhale-js-execution-environment-exposure.md",
+      "named_entities": [
+        "js_execution tool",
+        "Node.js child process environment",
+        "API keys, cloud credentials, authentication tokens",
+        "CodeWhale before 0.8.64"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-75915",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75915",
+        "https://www.rapid7.com/db/vulnerabilities/cve-2026-75915/"
+      ],
+      "update_title": "CodeWhale js_execution environment-variable leak CVE published",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        ".codewhale/config.toml",
+        "instructions field",
+        "allow_shell parameter",
+        "exec_shell/task_shell tools",
+        "CodeWhale before 0.8.64"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation; control change",
+      "factual_summary": "The in-window advisories split repository-controlled configuration into file-read via instructions and shell enablement via allow_shell, both fixed by upgrading to 0.8.64.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/codewhale-project-configuration-authority.md",
+      "named_entities": [
+        ".codewhale/config.toml",
+        "instructions field",
+        "allow_shell parameter",
+        "exec_shell/task_shell tools",
+        "CodeWhale before 0.8.64"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-75859",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75859",
+        "https://www.cve.org/CVERecord?id=CVE-2026-75911",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75911",
+        "https://www.vulncheck.com/advisories/codewhale-before-arbitrary-file-read-via-instructions",
+        "https://www.vulncheck.com/advisories/codewhale-before-remote-code-execution-via-allow-shell"
+      ],
+      "update_title": "CodeWhale project configuration file-read and allow_shell CVEs published",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        "jkawamoto/mcp-florence2 up to 0.3.13",
+        "get_images src argument",
+        "image retrieval network egress"
+      ],
+      "evidence_classification": "disclosed vulnerability; demonstrated research; mitigation",
+      "factual_summary": "In-window CVE/NVD publication says remote manipulation of get_images src causes SSRF, exploit details are public, and SSRF-safe proxying or configuration changes are needed.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-florence2-image-fetch-ssrf.md",
+      "named_entities": [
+        "jkawamoto/mcp-florence2 up to 0.3.13",
+        "get_images src argument",
+        "image retrieval network egress"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-19984",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19984",
+        "https://github.com/jkawamoto/mcp-florence2/issues/59",
+        "https://vuldb.com/vuln/391184"
+      ],
+      "update_title": "mcp-florence2 image-fetch SSRF CVE published",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-17/2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        "JetBrains PyCharm before 2026.2.1",
+        "Jupyter MCP tools",
+        "local IDE runtime"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation",
+      "factual_summary": "In-window records say PyCharm before 2026.2.1 allowed code execution via unauthenticated Jupyter MCP tools; vendor fixed-issues page remains the primary fixed-build source.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/pycharm-jupyter-mcp-unauthenticated-code-execution.md",
+      "named_entities": [
+        "JetBrains PyCharm before 2026.2.1",
+        "Jupyter MCP tools",
+        "local IDE runtime"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-75060",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75060",
+        "https://www.jetbrains.com/privacy-security/issues-fixed/"
+      ],
+      "update_title": "PyCharm Jupyter MCP unauthenticated code-execution CVE published",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-17/2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        "RAGFlow before 0.26.3",
+        "agent workflow Invoke component",
+        "canvas configuration",
+        "runtime template variables",
+        "safe URL validator coverage"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation; control change",
+      "factual_summary": "In-window CVE/GHSA publication states Invoke built outbound URLs without the shared safe-URL validator or resolved-address pinning, enabling authenticated users to reach loopback, private, and metadata destinations.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ragflow-agent-workflow-invoke-ssrf.md",
+      "named_entities": [
+        "RAGFlow before 0.26.3",
+        "agent workflow Invoke component",
+        "canvas configuration",
+        "runtime template variables",
+        "safe URL validator coverage"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-75898",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75898",
+        "https://github.com/advisories/GHSA-9m4v-54qq-67fw",
+        "https://github.com/infiniflow/ragflow/issues/18280"
+      ],
+      "update_title": "RAGFlow agent Invoke SSRF CVE published",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        "SiYuan before 3.7.4",
+        "database_clean MCP tool",
+        "RemoveUnusedAttributeView",
+        "history storage",
+        "local filesystem"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation",
+      "factual_summary": "In-window records say database_clean only checked for empty id before path construction, allowing authenticated MCP clients to move arbitrary readable files into history and delete originals.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-database-clean-path-traversal.md",
+      "named_entities": [
+        "SiYuan before 3.7.4",
+        "database_clean MCP tool",
+        "RemoveUnusedAttributeView",
+        "history storage",
+        "local filesystem"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-74798",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74798",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-43jx-gxq4-jpjc"
+      ],
+      "update_title": "SiYuan database_clean MCP path-traversal CVE published",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "SiYuan before 3.7.4",
+        "database_clean",
+        "pprof debug endpoints",
+        "AccessAuthCode",
+        "AI provider API keys"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation; control change",
+      "factual_summary": "In-window records support the local family router: one issue is authenticated MCP file movement/deletion and the other is unauthenticated debug endpoint credential disclosure when mode is not exactly prod.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-debug-key-and-file-boundary.md",
+      "named_entities": [
+        "SiYuan before 3.7.4",
+        "database_clean",
+        "pprof debug endpoints",
+        "AccessAuthCode",
+        "AI provider API keys"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-74798",
+        "https://www.cve.org/CVERecord?id=CVE-2026-74799",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-43jx-gxq4-jpjc",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-9cqq-p2hw-mj3f"
+      ],
+      "update_title": "SiYuan MCP path-traversal and debug-key disclosure family published",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "Oracle Siebel Artificial Intelligence 25.12 through 26.6",
+        "HTTP low-privilege network access",
+        "critical CRM data"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation",
+      "factual_summary": "In-window Oracle/NVD/GHSA evidence states a low-privileged network attacker can compromise Siebel Artificial Intelligence over HTTP, with critical-data read impact and some update/insert/delete impact.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/data-and-privacy/oracle-siebel-ai-data-access-vulnerability.md",
+      "named_entities": [
+        "Oracle Siebel Artificial Intelligence 25.12 through 26.6",
+        "HTTP low-privilege network access",
+        "critical CRM data"
+      ],
+      "source_urls": [
+        "https://www.oracle.com/security-alerts/cspuaug2026.html",
+        "https://www.oracle.com/security-alerts/cspuaug2026verbose.html",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-60758",
+        "https://github.com/advisories/GHSA-5x7x-p8x7-qppp"
+      ],
+      "update_title": "Oracle Siebel Artificial Intelligence CVE enriched in August CPU/NVD sources",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-18/2026-08-20"
+    },
+    {
+      "affected_boundaries": [
+        "SiYuan before 3.7.4",
+        "net/http/pprof endpoints",
+        "heap and goroutine dumps",
+        "AccessAuthCode",
+        "AI provider API keys"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation",
+      "factual_summary": "In-window records say non-prod mode registers unauthenticated pprof endpoints that can leak AccessAuthCode and AI provider API keys, requiring upgrade and credential rotation when exposure is suspected.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/data-and-privacy/siyuan-debug-endpoint-ai-key-disclosure.md",
+      "named_entities": [
+        "SiYuan before 3.7.4",
+        "net/http/pprof endpoints",
+        "heap and goroutine dumps",
+        "AccessAuthCode",
+        "AI provider API keys"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-74799",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74799",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-9cqq-p2hw-mj3f"
+      ],
+      "update_title": "SiYuan unauthenticated debug endpoint AI-key disclosure CVE published",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "9Router 0.5.4 and earlier",
+        "/api/auth/oidc/test",
+        "issuerUrl",
+        "OIDC discovery egress",
+        "dashboard API authentication"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation; control change",
+      "factual_summary": "In-window advisory records say the OIDC test endpoint accepts an attacker-controlled issuerUrl and performs discovery without private, loopback, or internal destination filtering; some sources describe the endpoint as authenticated while the existing leaf notes dashboard exposure questions.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/identity-and-access/9router-oidc-test-ssrf.md",
+      "named_entities": [
+        "9Router 0.5.4 and earlier",
+        "/api/auth/oidc/test",
+        "issuerUrl",
+        "OIDC discovery egress",
+        "dashboard API authentication"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-56677",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-56677",
+        "https://github.com/advisories/GHSA-8g4w-4ffg-8vgx",
+        "https://advisories.gitlab.com/npm/9router/CVE-2026-56677/"
+      ],
+      "update_title": "9Router OIDC provider test SSRF CVE published",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "@apify/actors-mcp-server prior to 0.10.11",
+        "webServerMcpPath",
+        "Actor standby URL construction",
+        "Authorization Bearer APIFY_TOKEN",
+        "third-party origin redirect"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation; control change",
+      "factual_summary": "In-window NVD/CVE publication adds current vulnerability-database coverage for the older GHSA: actor-controlled webServerMcpPath could change the final authority and cause the victim bearer token to be sent to an attacker host.",
+      "follow_up_note": "Normal raw ingest should reconcile exact affected ranges, fixed versions, CVSS/CWE, and primary advisory references where the leaf records an open question.",
+      "leaf_id": "docs/wiki/identity-and-access/apify-mcp-token-authority-leak.md",
+      "named_entities": [
+        "@apify/actors-mcp-server prior to 0.10.11",
+        "webServerMcpPath",
+        "Actor standby URL construction",
+        "Authorization Bearer APIFY_TOKEN",
+        "third-party origin redirect"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-50143",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50143",
+        "https://github.com/advisories/GHSA-6gr2-qh89-hxwm",
+        "https://github.com/apify/apify-mcp-server/security/advisories/GHSA-6gr2-qh89-hxwm"
+      ],
+      "update_title": "NVD/GHSA publication for Apify actors MCP server token authority leak",
+      "upstream_routing": "Keep security-specific boundary locally; broad product or ecosystem background routes upstream per federation.md.",
+      "visible_publication_or_update_date": "2026-08-18"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-21T00:02:16Z",
+  "source_urls_checked": [
+    "https://advisories.gitlab.com/npm/9router/CVE-2026-56677/",
+    "https://app.opencve.io/cve/CVE-2026-34884",
+    "https://github.com/advisories/GHSA-5x7x-p8x7-qppp",
+    "https://github.com/advisories/GHSA-6gr2-qh89-hxwm",
+    "https://github.com/advisories/GHSA-8g4w-4ffg-8vgx",
+    "https://github.com/advisories/GHSA-9m4v-54qq-67fw",
+    "https://github.com/apify/apify-mcp-server/security/advisories/GHSA-6gr2-qh89-hxwm",
+    "https://github.com/infiniflow/ragflow/issues/18280",
+    "https://github.com/jkawamoto/mcp-florence2/issues/59",
+    "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-43jx-gxq4-jpjc",
+    "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-9cqq-p2hw-mj3f",
+    "https://lists.apache.org/thread/s447p6h5dfr02lx17v27phoksgb8mkkp",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-19984",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-34884",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-50143",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-56677",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-60758",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-74798",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-74799",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-75060",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-75857",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-75858",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-75859",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-75898",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-75911",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-75912",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-75913",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-75915",
+    "https://vuldb.com/vuln/391184",
+    "https://www.cve.org/CVERecord?id=CVE-2026-19984",
+    "https://www.cve.org/CVERecord?id=CVE-2026-34884",
+    "https://www.cve.org/CVERecord?id=CVE-2026-50143",
+    "https://www.cve.org/CVERecord?id=CVE-2026-56677",
+    "https://www.cve.org/CVERecord?id=CVE-2026-74798",
+    "https://www.cve.org/CVERecord?id=CVE-2026-74799",
+    "https://www.cve.org/CVERecord?id=CVE-2026-75060",
+    "https://www.cve.org/CVERecord?id=CVE-2026-75857",
+    "https://www.cve.org/CVERecord?id=CVE-2026-75858",
+    "https://www.cve.org/CVERecord?id=CVE-2026-75859",
+    "https://www.cve.org/CVERecord?id=CVE-2026-75898",
+    "https://www.cve.org/CVERecord?id=CVE-2026-75911",
+    "https://www.cve.org/CVERecord?id=CVE-2026-75912",
+    "https://www.cve.org/CVERecord?id=CVE-2026-75913",
+    "https://www.cve.org/CVERecord?id=CVE-2026-75915",
+    "https://www.jetbrains.com/privacy-security/issues-fixed/",
+    "https://www.oracle.com/security-alerts/cspuaug2026.html",
+    "https://www.oracle.com/security-alerts/cspuaug2026verbose.html",
+    "https://www.rapid7.com/db/vulnerabilities/cve-2026-75857/",
+    "https://www.rapid7.com/db/vulnerabilities/cve-2026-75912/",
+    "https://www.rapid7.com/db/vulnerabilities/cve-2026-75915/",
+    "https://www.vulncheck.com/advisories/codewhale-before-arbitrary-file-read-via-instructions",
+    "https://www.vulncheck.com/advisories/codewhale-before-remote-code-execution-via-allow-shell"
+  ]
+}

@@ -20,6 +20,8 @@ The cluster is split into focused leaves because the boundaries can change indep
 
 The collector notes [NVD](https://nvd.nist.gov/) keyword results supplied concrete descriptions but per-CVE detail fetches hit HTTP 429, so exact CVSS, CWE, and references still need re-fetching.
 
+The [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) adds in-window [CVE Program](https://www.cve.org/CVERecord?id=CVE-2026-75857) and [VulnCheck](https://www.vulncheck.com/advisories/codewhale-before-arbitrary-file-read-via-instructions) evidence for the cluster and keeps the local routing split across approval, configuration, git argument, and inherited-environment boundaries.
+
 ## Security Impact
 
 - Threat: a coding-agent control plane can lose separation between approval policy, repository content, local file reads, git arguments, and environment secrets; the linked leaves own issue-specific details.
@@ -39,6 +41,7 @@ The collector notes [NVD](https://nvd.nist.gov/) keyword results supplied concre
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
 - [NVD CVE-2026-75857](https://nvd.nist.gov/vuln/detail/CVE-2026-75857)
 - [NVD CVE-2026-75858](https://nvd.nist.gov/vuln/detail/CVE-2026-75858)
 - [NVD CVE-2026-75859](https://nvd.nist.gov/vuln/detail/CVE-2026-75859)
@@ -78,3 +81,4 @@ The collector notes [NVD](https://nvd.nist.gov/) keyword results supplied concre
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) as a coding-agent control-plane advisory router.
 - Split on 2026-08-19 after verifier correction into approval, project-configuration, git-argument, and environment-exposure leaves.
+- Updated on 2026-08-20 from the [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) with additional cluster evidence while preserving the split leaves.

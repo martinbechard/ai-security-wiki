@@ -16,6 +16,8 @@ The family is split into focused leaves because the issues have different access
 - [SiYuan MCP database clean path traversal](siyuan-mcp-database-clean-path-traversal.md) owns CVE-2026-74798, where an authenticated MCP client can abuse `database_clean` path traversal to copy arbitrary readable files into history and delete originals.
 - [SiYuan debug endpoint AI key disclosure](../data-and-privacy/siyuan-debug-endpoint-ai-key-disclosure.md) owns CVE-2026-74799, where unauthenticated `pprof` debug endpoints can expose `AccessAuthCode` and AI provider API keys when `--mode` is not exactly `prod`.
 
+The [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) confirms the family split with [CVE-2026-74798](https://www.cve.org/CVERecord?id=CVE-2026-74798) as authenticated MCP file movement/deletion and [CVE-2026-74799](https://www.cve.org/CVERecord?id=CVE-2026-74799) as unauthenticated debug-endpoint key disclosure.
+
 ## Security Impact
 
 - Threat: local knowledge-base tooling can expose files and AI provider keys when MCP tools and debug endpoints are not independently constrained; linked leaves own issue-specific details.
@@ -28,6 +30,7 @@ The family is split into focused leaves because the issues have different access
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
 - [NVD CVE-2026-74798](https://nvd.nist.gov/vuln/detail/CVE-2026-74798)
 - [NVD CVE-2026-74799](https://nvd.nist.gov/vuln/detail/CVE-2026-74799)
 - [GitHub advisory GHSA-43jx-gxq4-jpjc](https://github.com/siyuan-note/siyuan/security/advisories/GHSA-43jx-gxq4-jpjc)
@@ -62,3 +65,4 @@ The family is split into focused leaves because the issues have different access
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) as a SiYuan MCP and debug-endpoint advisory router.
 - Split on 2026-08-19 after verifier correction into separate MCP path-traversal and debug-endpoint credential-disclosure leaves.
+- Updated on 2026-08-20 from the [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) with additional advisory evidence preserving the access-prerequisite split.

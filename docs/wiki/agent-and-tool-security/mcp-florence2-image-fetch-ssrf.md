@@ -13,6 +13,8 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 [NVD CVE-2026-19984](https://nvd.nist.gov/vuln/detail/CVE-2026-19984) describes SSRF through manipulation of the `src` argument to `get_images` in `src/mcp_florence2/__init__.py`, affecting mcp-florence2 up to 0.3.13. The record says exploitation can be initiated remotely, exploit details are public, and HTTP(S) requests should be routed through an SSRF-safe proxy where SSRF protection is required.
 
+The [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) adds [CVE Program](https://www.cve.org/CVERecord?id=CVE-2026-19984), [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-19984), [mcp-florence2 issue 59](https://github.com/jkawamoto/mcp-florence2/issues/59), and [VulDB](https://vuldb.com/vuln/391184) evidence for the same SSRF boundary; it preserves the open question about a fixed version or maintainer patch beyond proxy/configuration controls.
+
 ## Security Impact
 
 - Threat: model- or user-supplied image URLs can steer an MCP image tool toward internal services or metadata endpoints.
@@ -25,6 +27,7 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
 - [NVD CVE-2026-19984](https://nvd.nist.gov/vuln/detail/CVE-2026-19984)
 - [mcp-florence2 issue 59](https://github.com/jkawamoto/mcp-florence2/issues/59)
 - [VulDB CVE page](https://vuldb.com/vuln/391184)
@@ -54,3 +57,4 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Maintenance Notes
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) as a granular MCP SSRF leaf.
+- Updated on 2026-08-20 from the [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) with additional advisory evidence and preserved fixed-version uncertainty.

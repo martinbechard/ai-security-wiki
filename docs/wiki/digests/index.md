@@ -15,6 +15,7 @@ The active digest records each independently changing security item or closely c
 
 - [schema.md](../schema.md)
 - [automated update feeds](../source-workflows/automated-update-feeds.md)
+- [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
 
 ## Related Code
 
@@ -40,6 +41,7 @@ The active digest records each independently changing security item or closely c
 
 - Updated on 2026-08-17 after the August digest added item-level entries for OpenAI Defender's Window, MLflow 3.15.0 advisories, chrome-devtools-mcp, atomic-agents-stack, Ray KEV, MemOS, OpenShift AI, Kiota, and watcher enrichments.
 - Updated on 2026-08-19 after the August digest added item-level entries for OpenAI pacing controls, [autonomous CI/CD exploit adaptation](../threats-and-attacks/autonomous-ci-cd-exploit-adaptation.md), generated-code remediation evidence, UpTrain, MCP/agent advisories, vLLM, Transformers, 9Router, Oracle Siebel AI, and watcher enrichments.
+- Updated on 2026-08-20 after the August digest folded watcher evidence into existing item-level advisory entries without adding batch or duplicate digest items.
 - Updated on 2026-08-16 after the August digest added item-level entries for [GoMarble Facebook Ads MCP SSRF](../agent-and-tool-security/gomarble-facebook-ads-mcp-ssrf.md), [semantic governance policy telemetry](../testing-and-assurance/semantic-governance-policy-telemetry.md), and [macOS Screen Sharing AI-accelerated exploitability](../threats-and-attacks/macos-screen-sharing-ai-accelerated-exploitability.md).
 - Updated on 2026-08-15 after the August digest added item-level entries for MCP package advisories, delegated-action guidance, agentic threat clustering, provenance credentialing, Apigee MCP gateway controls, and Junie trust-marker evidence.
 - Updated on 2026-08-14 after the August digest added item-level entries for [Zoom annotation advisory research](../threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md), [agent action runtime hooks](../agent-and-tool-security/agent-action-runtime-hooks.md), [agent synthetic insider risk](../identity-and-access/agent-synthetic-insider-risk.md), [hidden context exposure reconnaissance](../model-and-prompt-security/hidden-context-exposure-reconnaissance.md), [NemoClaw runtime evidence](../testing-and-assurance/agent-runtime-security-evidence.md), model residency caveats, and frontier-model review transparency.

@@ -13,6 +13,8 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 [NVD CVE-2026-34884](https://nvd.nist.gov/vuln/detail/CVE-2026-34884) describes SSRF through the `set_skywalking_url` tool and GraphQL expression injection in Apache SkyWalking MCP 0.1.0, with upgrade to 0.2.0 recommended. The local security issue is that an observability MCP server can expose privileged telemetry and query paths to agent-mediated network and expression inputs.
 
+The [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) confirms [CVE Program publication](https://www.cve.org/CVERecord?id=CVE-2026-34884) on August 18, [CISA ADP enrichment](https://nvd.nist.gov/vuln/detail/CVE-2026-34884) on August 19, the [Apache advisory thread](https://lists.apache.org/thread/s447p6h5dfr02lx17v27phoksgb8mkkp), and the 0.2.0 mitigation path.
+
 ## Security Impact
 
 - Threat: agent-visible observability tools can be steered toward internal URLs or injected GraphQL expressions.
@@ -25,6 +27,7 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
 - [NVD CVE-2026-34884](https://nvd.nist.gov/vuln/detail/CVE-2026-34884)
 - [Apache advisory thread](https://lists.apache.org/thread/s447p6h5dfr02lx17v27phoksgb8mkkp)
 - [oss-security mirror](http://www.openwall.com/lists/oss-security/2026/04/13/5)
@@ -54,3 +57,4 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Maintenance Notes
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) as an observability-MCP vulnerability leaf.
+- Updated on 2026-08-20 from the [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) with additional advisory enrichment and fixed-version confirmation.

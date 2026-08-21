@@ -13,6 +13,8 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 [NVD CVE-2026-75060](https://nvd.nist.gov/vuln/detail/CVE-2026-75060) states that PyCharm allowed code execution via unauthenticated Jupyter MCP tools. The vendor fixed-issues page is referenced by the source but exact tool, listener, and build details still need direct confirmation before this page claims a more specific exploit path.
 
+The [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) confirms in-window [CVE Program](https://www.cve.org/CVERecord?id=CVE-2026-75060) and [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-75060) publication and keeps [JetBrains' fixed-issues page](https://www.jetbrains.com/privacy-security/issues-fixed/) as the primary fixed-build source for PyCharm 2026.2.1.
+
 ## Security Impact
 
 - Threat: unauthenticated MCP endpoints in an IDE can bridge notebook, project, and local runtime authority into code execution.
@@ -25,6 +27,7 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
 - [NVD CVE-2026-75060](https://nvd.nist.gov/vuln/detail/CVE-2026-75060)
 - [JetBrains fixed issues](https://www.jetbrains.com/privacy-security/issues-fixed/)
 
@@ -53,3 +56,4 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Maintenance Notes
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) with a conservative affected-boundary statement.
+- Updated on 2026-08-20 from the [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) with additional publication confirmation and fixed-build source routing.
