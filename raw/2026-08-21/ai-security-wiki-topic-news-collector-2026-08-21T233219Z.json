@@ -1,0 +1,430 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-08-21T23:32:19Z",
+  "run_timestamp_local": "2026-08-21T19:32:19-0400",
+  "cutoff_window": {
+    "start_utc": "2026-08-19T23:32:19Z",
+    "end_utc": "2026-08-21T23:32:19Z",
+    "policy": "Include only public items visibly published or updated inside the exact 48-hour window. Date-only August 19 items are treated as boundary-only and excluded unless a distinct in-window source supplies the qualifying update."
+  },
+  "searched_topics": [
+    "AI threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "federation_policy_source": "docs/wiki/federation.md",
+    "upstream_indexes_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "routing_rules_applied": [
+      "Broad AI companies, models, products, frameworks, MCP servers, developer tools, and general AI techniques are upstream-owned by ai-wiki.",
+      "General AI-assisted development practices are upstream-owned by ai-dev-wiki.",
+      "This repository keeps the security-specific threat, control, vulnerability, incident, assurance, governance, and mitigation implications."
+    ]
+  },
+  "qualifying_findings": [
+    {
+      "id": "spring-ai-2-0-1-security-cves",
+      "title": "Spring AI 2.0.1 fixes AI framework vulnerabilities including prompt-injection tool dispatch",
+      "source_urls": [
+        "https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/",
+        "https://spring.io/security/cve-2026-59318/",
+        "https://spring.io/security/cve-2026-59308/",
+        "https://spring.io/security/cve-2026-59319/"
+      ],
+      "visible_dates": [
+        {
+          "source": "Spring release post",
+          "date": "August 21, 2026"
+        },
+        {
+          "source": "Spring security advisories",
+          "date": "August 20, 2026"
+        }
+      ],
+      "summary": "Spring AI 2.0.1 lists seven fixed CVEs. The most AI-agent-specific advisory, CVE-2026-59318, says Spring AI advertised per-request tool lists to the model but did not fully enforce them during dispatch, allowing an unavailable tool to be invoked under some conditions and potentially leading to privilege escalation. Related Spring AI advisories cover semantic-cache cross-context leakage and Redis chat-memory query injection that can expose messages across conversations.",
+      "evidence_classification": "primary vendor release and security advisories",
+      "affected_boundary_or_version": "Spring AI 2.0.0, 1.1.0-1.1.8, and 1.0.0-1.0.9 for CVE-2026-59318; Spring AI 2.0.0 for CVE-2026-59308 and CVE-2026-59319; fixed in 2.0.1 OSS with enterprise support fixes for older lines where listed.",
+      "why_it_matters_for_ai_security": "The tool-dispatch advisory is a concrete example of prompt-level authorization boundaries failing unless the runtime enforces least privilege. The cache and chat-memory advisories map to AI data-isolation and conversation-boundary controls.",
+      "named_entities": [
+        "Spring AI",
+        "Broadcom",
+        "CVE-2026-59318",
+        "CVE-2026-59308",
+        "CVE-2026-59319",
+        "DefaultToolCallingManager",
+        "RedisChatMemoryRepository"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Spring AI as a framework/product belongs upstream if broad framework coverage is needed.",
+        "ai_dev_wiki": "General Spring AI development practices and release mechanics belong upstream in ai-dev-wiki.",
+        "local_security_lens": "Keep the prompt-injection tool-dispatch bypass, AI cache isolation, chat-memory exposure, affected versions, and patch guidance."
+      },
+      "confidence_notes": "High confidence: primary Spring pages expose dates, affected versions, mitigations, and CVE IDs inside the cutoff window.",
+      "follow_up_actions": [
+        "During ingest, decide whether the local security wiki needs a Spring AI vulnerability leaf or whether these fit an existing AI framework supply-chain/runtime-security page.",
+        "Check NVD/GitHub advisory records later for CVSS and CWE normalization if durable synthesis needs vulnerability database metadata."
+      ]
+    },
+    {
+      "id": "cryptographic-context-injection-grok-gemini",
+      "title": "Adversa discloses Cryptographic Context Injection against Grok and Gemini",
+      "source_urls": [
+        "https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/",
+        "https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/"
+      ],
+      "visible_dates": [
+        {
+          "source": "Adversa AI",
+          "date": "August 20, 2026"
+        },
+        {
+          "source": "SecurityWeek",
+          "date": "August 21, 2026 10:34 AM ET"
+        }
+      ],
+      "summary": "Adversa described Cryptographic Context Injection, where encrypted instructions are decrypted inside a model or agent code-execution runtime and then treated as trusted runtime output. The report says a Grok browsing scenario could exfiltrate private session context and chat history through an outbound navigation tool without user confirmation, and a Gemini Deep Thinking scenario could bypass safety filtering by returning prohibited output as ciphertext.",
+      "evidence_classification": "primary security research with reputable security press corroboration",
+      "affected_boundary_or_version": "xAI Grok web chat agentic browsing framework; Google Gemini public chat interface in Deep Thinking mode. Adversa says Grok remained reproducible as of August 19, 2026; Gemini success had fallen but was not fully closed.",
+      "why_it_matters_for_ai_security": "The finding shifts prompt-injection defense from text filtering to provenance, runtime-output trust, tool egress gating, and agent harness controls, especially for agents with code execution, browsing, credentials, or write authority.",
+      "named_entities": [
+        "Adversa AI",
+        "Cryptographic Context Injection",
+        "xAI",
+        "Grok",
+        "Google",
+        "Gemini",
+        "AES-256-GCM",
+        "PBKDF2"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Grok, Gemini, xAI, Google, and general model/product background are upstream-owned.",
+        "ai_dev_wiki": "General agent harness design practice is upstream-owned unless framed as a security control.",
+        "local_security_lens": "Keep the attack pattern, disclosure state, zero-click exfiltration boundary, and harness mitigation implications."
+      },
+      "confidence_notes": "High confidence on public disclosure timing and technical claims as reported by Adversa; vendor remediation status is based on researcher statements and should be rechecked during ingest.",
+      "follow_up_actions": [
+        "Track whether xAI or Google publish a formal response or mitigation.",
+        "Map the attack to existing prompt-injection, tool-output provenance, and agent egress-control pages if present."
+      ]
+    },
+    {
+      "id": "siemens-s7-ai-generated-exploit-scripts",
+      "title": "US agencies warn of AI-generated exploit scripts targeting Siemens S7 PLCs",
+      "source_urls": [
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a",
+        "https://www.helpnetsecurity.com/2026/08/20/usa-ai-attacks-siemens-s7-plcs-critical-infrastructure/",
+        "https://qz.com/us-agencies-warn-ai-hackers-siemens-plcs-water-plants-082026"
+      ],
+      "visible_dates": [
+        {
+          "source": "CISA advisory listing",
+          "date": "Release Date August 19, 2026"
+        },
+        {
+          "source": "Help Net Security",
+          "date": "August 20, 2026"
+        },
+        {
+          "source": "Quartz",
+          "date": "Updated August 20, 2026"
+        }
+      ],
+      "summary": "NSA, CISA, FBI, DOE, and EPA issued advisory AA26-231A warning that threat actors are using open-source industrial automation libraries such as snap7.dll and python-snap7 with AI-assisted scripting to create tools that mimic legitimate OT monitoring software and provide read/write access to Siemens S7 PLC memory, configuration data, and ladder logic via S7comm. The activity targets exposed or poorly segmented devices in critical manufacturing, energy, water and wastewater, chemical, food and agriculture, and commercial facilities.",
+      "evidence_classification": "primary government advisory identified, with in-window secondary reporting used for exact window qualification",
+      "affected_boundary_or_version": "Siemens S7-200, S7-300, S7-400, S7-1200, and S7-1500 product lines; especially internet-exposed or weakly segmented PLCs using S7comm and weak/default credentials.",
+      "why_it_matters_for_ai_security": "This is an operational public example of AI lowering the expertise and time needed to build exploitation scripts for critical infrastructure, making AI-enabled offensive capability and defensive monitoring a local AI-security concern.",
+      "named_entities": [
+        "CISA",
+        "NSA",
+        "FBI",
+        "DOE",
+        "EPA",
+        "Siemens S7",
+        "snap7.dll",
+        "python-snap7",
+        "S7comm",
+        "Censys",
+        "ZoomEye"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Siemens and broad OT/PLC background are not local AI-security entity pages unless needed as context.",
+        "ai_dev_wiki": "General AI-assisted code generation practice is upstream-owned.",
+        "local_security_lens": "Keep the AI-generated exploit-script capability, affected OT boundary, mitigation controls, and critical-infrastructure risk implications."
+      },
+      "confidence_notes": "Medium-high confidence: CISA primary page was identified but the fetched CISA content exposed only date/title in search output during this run; in-window details were corroborated by Help Net Security and Quartz.",
+      "follow_up_actions": [
+        "Re-fetch the CISA advisory during ingest and capture exact official mitigation text.",
+        "Check whether Siemens publishes a matching advisory or product security note."
+      ]
+    },
+    {
+      "id": "openai-private-safety-processing-zdr",
+      "title": "OpenAI previews ZDR-compatible Private Safety Processing",
+      "source_urls": [
+        "https://openai.com/index/offering-zero-data-retention-for-frontier-models/",
+        "https://www.helpnetsecurity.com/2026/08/20/openai-private-safety-processing-zdr/"
+      ],
+      "visible_dates": [
+        {
+          "source": "OpenAI page",
+          "date": "2026"
+        },
+        {
+          "source": "Help Net Security",
+          "date": "August 20, 2026"
+        }
+      ],
+      "summary": "OpenAI previewed Private Safety Processing for eligible Zero Data Retention deployments. The design aims to analyze related interactions for misuse patterns while keeping customer prompts and responses unavailable to OpenAI personnel, with customer-controlled infrastructure or future customer-controlled encryption keys and only limited safety signals returned to OpenAI.",
+      "evidence_classification": "primary product security/privacy control page with in-window secondary reporting for visible date",
+      "affected_boundary_or_version": "OpenAI API frontier-model deployments for eligible ZDR customers; early customer testing, planned rollout and technical white paper in September 2026.",
+      "why_it_matters_for_ai_security": "This is a concrete control change at the tension point between agentic misuse monitoring and enterprise data confidentiality. It belongs in AI safety monitoring, privacy, audit evidence, and customer-controlled content boundary tracking.",
+      "named_entities": [
+        "OpenAI",
+        "Private Safety Processing",
+        "Zero Data Retention",
+        "ZDR",
+        "Glean",
+        "Databricks",
+        "Abridge",
+        "Microsoft"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "OpenAI and broad API platform/product coverage are upstream-owned.",
+        "ai_dev_wiki": "General API integration practice is upstream-owned.",
+        "local_security_lens": "Keep the ZDR-compatible misuse detection control, privacy boundary, customer-controlled key model, and monitoring/audit implications."
+      },
+      "confidence_notes": "Medium confidence for in-window qualification because the OpenAI page exposes only a year in fetched content; Help Net Security provides the August 20 visible date and links to the OpenAI page.",
+      "follow_up_actions": [
+        "Recheck OpenAI for a technical white paper in September 2026.",
+        "During ingest, avoid restating general OpenAI product context and focus on privacy-preserving safety monitoring."
+      ]
+    },
+    {
+      "id": "aws-bedrock-agentcore-authorization-context",
+      "title": "AWS publishes downstream authorization pattern for Bedrock AgentCore agents",
+      "source_urls": [
+        "https://aws.amazon.com/blogs/security/propagate-user-authorization-context-in-ai-agents-with-amazon-bedrock-agentcore/",
+        "https://www.helpnetsecurity.com/2026/08/20/aws-ai-agents-access-controls/"
+      ],
+      "visible_dates": [
+        {
+          "source": "AWS Security Blog",
+          "date": "19 AUG 2026"
+        },
+        {
+          "source": "Help Net Security",
+          "date": "August 20, 2026"
+        }
+      ],
+      "summary": "AWS described a pattern for propagating user authorization context through Amazon Bedrock AgentCore so downstream systems, not the agent, enforce access decisions. The example uses identity-provider claims, Bedrock AgentCore Runtime authorization, session-tagged credentials, metadata filtering for knowledge bases, and on-behalf-of token exchange for Salesforce so prompt injection or agent bugs cannot grant access beyond the requesting user.",
+      "evidence_classification": "primary cloud-provider security architecture guidance with in-window secondary reporting",
+      "affected_boundary_or_version": "Amazon Bedrock AgentCore Runtime and Identity patterns for agents accessing DynamoDB, Bedrock Knowledge Bases, Salesforce, and similar data sources.",
+      "why_it_matters_for_ai_security": "The item gives a concrete least-privilege architecture for delegated AI agents, separating orchestration from authorization and limiting credential exposure even when prompt manipulation succeeds.",
+      "named_entities": [
+        "AWS",
+        "Amazon Bedrock AgentCore",
+        "Amazon Cognito",
+        "AWS STS",
+        "AWS Secrets Manager",
+        "DynamoDB",
+        "Amazon Bedrock Knowledge Bases",
+        "Salesforce",
+        "RFC 8693"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "AWS, Bedrock, and AgentCore broad product coverage are upstream-owned.",
+        "ai_dev_wiki": "General agent implementation patterns are upstream-owned when not security-specific.",
+        "local_security_lens": "Keep the user-bound credential propagation, downstream authorization, prompt-injection-resistant least privilege, and audit/control implications."
+      },
+      "confidence_notes": "Medium confidence for exact-window qualification because the primary AWS post is date-only August 19, which is boundary-only for this run; the in-window Help Net Security coverage supplies the August 20 date.",
+      "follow_up_actions": [
+        "During ingest, decide whether to capture this under agent identity/delegated authority or AI data-access controls.",
+        "Check AWS Well-Architected Agentic AI Lens AGENTSEC03 if a durable control page needs primary control language."
+      ]
+    },
+    {
+      "id": "fake-gemini-installer-vidar-colab",
+      "title": "Darktrace reports fake Gemini installer delivering Vidar via Google Colab lure",
+      "source_urls": [
+        "https://www.darktrace.com/blog/when-ai-becomes-the-lure-a-fake-gemini-installer-delivers-vidar",
+        "https://www.helpnetsecurity.com/2026/08/20/fake-google-gemini-installer-vidar-infostealer/"
+      ],
+      "visible_dates": [
+        {
+          "source": "Darktrace",
+          "date": "August 19, 2026"
+        },
+        {
+          "source": "Help Net Security",
+          "date": "August 20, 2026"
+        }
+      ],
+      "summary": "Darktrace reported an EMEA customer incident in which a malicious executable named Download_Google_Gemini_For_Windows.exe masqueraded as a Google Gemini installer. The lure used a Google Colab page and a secondary Windows Software Hub site to deliver a newer Go-compiled Vidar infostealer variant that contacted Telegram-based infrastructure and a C2 endpoint, with observed credential-theft indicators before containment.",
+      "evidence_classification": "primary incident research with in-window secondary reporting",
+      "affected_boundary_or_version": "Fake Google Gemini software acquisition workflow; Google Colab-hosted lure; Vidar infostealer; observed July 2026 with Colab page active at July 15 review.",
+      "why_it_matters_for_ai_security": "This is a concrete AI-themed social-engineering and brand-impersonation incident where enterprise AI adoption interest becomes the lure for credential theft, relevant to AI product trust, identity, and user workflow controls.",
+      "named_entities": [
+        "Darktrace",
+        "Google Gemini",
+        "Google Colab",
+        "Vidar",
+        "Telegram",
+        "micronsoftwares[.]com",
+        "dtm[.]kijangturbo88[.]top"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Gemini and Google Colab broad product pages are upstream-owned.",
+        "ai_dev_wiki": "General developer use of Colab belongs upstream if needed.",
+        "local_security_lens": "Keep the AI-themed lure, trusted-platform abuse, malware delivery path, credential-theft implication, and containment lessons."
+      },
+      "confidence_notes": "Medium confidence for exact-window qualification because the primary Darktrace date is date-only August 19 and therefore boundary-only, but Help Net Security reported the incident on August 20.",
+      "follow_up_actions": [
+        "During ingest, avoid implying the legitimate Gemini product was compromised.",
+        "Consider adding this to AI brand-impersonation, trusted-platform lure, or AI adoption social-engineering coverage."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Microsoft Copilot Personal CoSnitch / CVE-2026-24301",
+      "source_urls": [
+        "https://www.varonis.com/blog/cosnitch",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-24301",
+        "https://www.tenable.com/cve/CVE-2026-24301"
+      ],
+      "visible_dates": [
+        "Varonis search result: 3 days ago",
+        "NVD search result: received August 18, 2026 10:17:01 AM",
+        "Tenable search result: published 2026-08-18, updated 2026-08-20"
+      ],
+      "reason": "Excluded from qualifying findings because the primary disclosure and CVE publication are outside the exact 48-hour window, and the August 20 vulnerability-database update did not expose a distinct new AI-security delta in fetched content. Also likely overlaps recent collector coverage of Copilot prompt-injection issues."
+    },
+    {
+      "title": "NIST SP 1353 initial public draft, Quick-Start Guide for Using AI for CSF Analysis and Reporting",
+      "source_urls": [
+        "https://www.nist.gov/news-events/news/2026/08/seeking-public-comment-using-artificial-intelligence-cybersecurity",
+        "https://csrc.nist.gov/pubs/sp/1353/ipd"
+      ],
+      "visible_dates": [
+        "August 19, 2026"
+      ],
+      "reason": "Excluded as boundary-only for this run because the visible date is date-only August 19 and the cutoff is 2026-08-19T23:32:19Z. It is relevant to AI-assisted cybersecurity governance and should be considered in a later ingest if another in-window update appears."
+    },
+    {
+      "title": "Google Mandiant Agentic Vulnerability Discovery Harness article",
+      "source_urls": [
+        "https://www.helpnetsecurity.com/2026/08/19/google-mandiant-avdh-ai-vulnerability-discovery-tool/"
+      ],
+      "visible_dates": [
+        "August 19, 2026"
+      ],
+      "reason": "Excluded as boundary-only. The article contains concrete security evaluation facts, but the visible date is date-only August 19, before or ambiguous against the exact cutoff."
+    },
+    {
+      "title": "Hazmat open-source containment for AI coding agents",
+      "source_urls": [
+        "https://www.helpnetsecurity.com/2026/08/17/hazmat-open-source-ai-coding-agent-containment/"
+      ],
+      "visible_dates": [
+        "August 17, 2026"
+      ],
+      "reason": "Excluded as older than the 48-hour window."
+    },
+    {
+      "title": "LiteLLM supply-chain attack follow-on reporting",
+      "source_urls": [
+        "https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines",
+        "https://www.resecurity.com/blog/article/the-litellm-supply-chain-attack-teampcp-sandclock-cicd-credential-harvesting-campaign-via-a-backdoored-trivy-github-action",
+        "https://www.techradar.com/pro/security/massive-supply-chain-attack-sees-terabytes-of-data-belonging-to-some-of-the-worlds-biggest-and-most-sensitive-organizations-leaked-online"
+      ],
+      "visible_dates": [
+        "CloudSEK: August 11, 2026",
+        "Resecurity: August 14, 2026",
+        "TechRadar: August 21, 2026"
+      ],
+      "reason": "Excluded as duplicate/follow-on context without a clearly new concrete security delta beyond prior recent collector coverage of the LiteLLM supply-chain incident and its credential exposure."
+    },
+    {
+      "title": "SecurityWeek MLflow vulnerability exploited for cloud credential theft",
+      "source_urls": [
+        "https://www.securityweek.com/"
+      ],
+      "visible_dates": [
+        "SecurityWeek homepage: August 20, 2026"
+      ],
+      "reason": "Excluded pending direct article or primary advisory verification. Homepage snippet indicates an MLflow flaw exploited for credential theft, but this run did not fetch enough source detail to confirm AI-specific affected boundary, CVE, or mitigation."
+    },
+    {
+      "title": "Ordinary AI product, conference, and award announcements",
+      "source_urls": [
+        "https://nsfocusglobal.com/nsfocus-named-to-the-2026-idc-china-ai-top-50/",
+        "https://www.darktrace.com/blog/ai-agents-securing-the-path-from-intent-to-action"
+      ],
+      "visible_dates": [
+        "August 21, 2026"
+      ],
+      "reason": "Excluded because the fetched content was product positioning, event/award coverage, or general guidance without a concrete new vulnerability, exploit, mitigation, assurance result, control change, incident, standard, or regulatory delta specific enough for this collector."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_topic": "Spring AI",
+      "upstream_owner": "ai-wiki or ai-dev-wiki for broad framework/development coverage",
+      "local_note": "Local repository should keep the CVE, prompt-injection tool-dispatch bypass, conversation data exposure, semantic cache isolation, and patch implications."
+    },
+    {
+      "entity_or_topic": "Grok and Gemini",
+      "upstream_owner": "ai-wiki for broad model/product pages",
+      "local_note": "Local repository should keep the Cryptographic Context Injection attack, disclosure state, and agent harness security controls."
+    },
+    {
+      "entity_or_topic": "Amazon Bedrock AgentCore",
+      "upstream_owner": "ai-wiki for product coverage and ai-dev-wiki for general agent implementation patterns",
+      "local_note": "Local repository should keep identity propagation, on-behalf-of token exchange, and downstream authorization controls for AI agents."
+    },
+    {
+      "entity_or_topic": "OpenAI Private Safety Processing",
+      "upstream_owner": "ai-wiki for OpenAI/API product coverage",
+      "local_note": "Local repository should keep privacy-preserving safety monitoring and ZDR-compatible misuse-detection implications."
+    },
+    {
+      "entity_or_topic": "Siemens S7 PLCs",
+      "upstream_owner": "neither upstream AI wiki should become a general OT encyclopedia for Siemens PLCs",
+      "local_note": "Local repository should keep the AI-generated exploit-script threat, affected OT boundary, and mitigation/risk-management facts."
+    },
+    {
+      "entity_or_topic": "Google Gemini fake installer lure",
+      "upstream_owner": "ai-wiki for Gemini and Google Colab product context",
+      "local_note": "Local repository should keep AI brand impersonation, trusted-platform abuse, and credential-theft security lessons."
+    }
+  ],
+  "confidence_summary": {
+    "overall": "Medium-high",
+    "notes": [
+      "Strongest items are Spring AI CVEs and Adversa Cryptographic Context Injection because primary sources expose in-window dates and concrete technical details.",
+      "AWS, OpenAI, Darktrace, and CISA-related findings rely partly on reputable in-window secondary reporting because primary pages exposed date-only August 19 or limited fetched content; each includes a confidence note and follow-up action.",
+      "No private, proprietary, sensitive, PII, or company-internal local content was sent to external services."
+    ]
+  },
+  "validation": {
+    "commands": [
+      "jq empty raw/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json",
+      "python3 -m json.tool raw/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json"
+    ],
+    "status": "passed"
+  },
+  "blockers": [
+    "CISA primary advisory content did not fully fetch in this run; secondary in-window reporting was used for detailed Siemens S7 facts.",
+    "Some relevant official sources exposed date-only August 19, which is boundary-only relative to the exact cutoff; these were either excluded or included only when a distinct in-window secondary source supplied qualification."
+  ]
+}
