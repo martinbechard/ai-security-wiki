@@ -1,0 +1,513 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "date_window": {
+    "included_after": "2026-08-14T00:04:54Z",
+    "included_before_or_at": "2026-08-22T00:04:54Z",
+    "policy": "Only visibly published or updated within the last seven days; ambiguous, future, missing, stale, and boundary-only dates excluded."
+  },
+  "exclusions": [
+    {
+      "candidate_source_url": "https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-identity-access-management/",
+      "leaf_id": "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+      "reason": "stale: official AWS workshop page date is outside the seven-day window.",
+      "visible_date": "2026-08-04"
+    },
+    {
+      "candidate_source_url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture-generative-ai/gen-auto-agents.html",
+      "leaf_id": "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+      "reason": "missing visible publication/update date; search crawl recency alone is not a qualifying source date.",
+      "visible_date": null
+    },
+    {
+      "candidate_source_url": "https://www.expresscomputer.in/guest-blogs/why-ai-agents-could-become-the-next-enterprise-security-blind-spot/137874/",
+      "leaf_id": "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+      "reason": "broad IAM commentary and not a concrete same-leaf control change from an authoritative source.",
+      "visible_date": "2026-08-18"
+    },
+    {
+      "candidate_source_url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "leaf_id": "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md",
+      "reason": "stale primary incident report; useful for verification but not a new seven-day update.",
+      "visible_date": "2026-08-04"
+    },
+    {
+      "candidate_source_url": "https://www.irregular.com/research",
+      "leaf_id": "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md",
+      "reason": "boundary-only date for this run; also broad benchmark listing rather than a complete same-leaf incident postmortem.",
+      "visible_date": "2026-08-14"
+    },
+    {
+      "candidate_source_url": "https://securitylab.github.com/advisories/GHSL-2024-198_GHSL-2024-199_Uptrain/",
+      "leaf_id": "docs/wiki/testing-and-assurance/evaluation-platform-control-plane-rce.md",
+      "reason": "stale original technical advisory; retained only as primary technical context for the in-window CVE database publication.",
+      "visible_date": "2026-07-24"
+    }
+  ],
+  "federation_notes": [
+    "General AI/product/model/provider/developer-practice context routes to upstream ai-wiki or ai-dev-wiki; local artifacts retain only security-specific threats, controls, assurance, governance, and incident-response deltas."
+  ],
+  "follow_up_notes": [
+    "Normal raw-source ingest should update durable leaves and digests later; this collector did not edit docs/wiki or raw/processed.",
+    "MLflow and vLLM updates should be deduplicated during ingest because multiple selected leaves share release-level fixes."
+  ],
+  "local_run_at": "2026-08-21T20:04:54-0400",
+  "privacy_and_sensitivity": "Searches used only public topic names, advisory identifiers, aliases, and public source URLs cited by leaves; no local page bodies, private data, proprietary content, PII, or company-internal content were sent intentionally.",
+  "qualifying_update_count": 14,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "MCP server-level tool authorization",
+        "configuration integrity",
+        "denial-of-service exposure"
+      ],
+      "evidence_classification": "disclosed_vulnerability; mitigation",
+      "factual_summary": "NVD and advisory mirrors describe CVE-2026-75845/GHSA-2c26-2qqv-6r9c: ArcadeDB 26.4.2 through 26.7.3 allow an authenticated read-only MCP user to invoke set_server_setting when allowAdmin=true, with a fix in 26.8.1.",
+      "follow_up_note": "Ingest should verify the upstream GitHub advisory and fixed release before changing the durable leaf.",
+      "leaf_id": "docs/wiki/identity-and-access/arcadedb-mcp-server-setting-authorization-bypass.md",
+      "named_entities": [
+        "ArcadeDB",
+        "CVE-2026-75845",
+        "GHSA-2c26-2qqv-6r9c"
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75845",
+        "https://www.strix.ai/cve/CVE-2026-75845",
+        "https://github.com/advisories/GHSA-2c26-2qqv-6r9c"
+      ],
+      "update_title": "ArcadeDB MCP set_server_setting authorization-bypass CVE published",
+      "upstream_routing": "Broad ArcadeDB database context routes to ai-wiki; local page owns MCP authorization boundary.",
+      "visible_publication_or_update_date": "2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        "MCP connector credential isolation",
+        "tenant/user boundary",
+        "OAuth token confidentiality"
+      ],
+      "evidence_classification": "disclosed_vulnerability; mitigation",
+      "factual_summary": "NVD records CVE-2026-71424 for Onyx versions before 3.1.10, 3.2.14, and 4.0.0, where MCP server listing endpoints can return another user's OAuth Authorization header from shared admin connection configuration.",
+      "follow_up_note": "Verify fixed-version branches and pull requests during ingest.",
+      "leaf_id": "docs/wiki/identity-and-access/onyx-mcp-oauth-token-isolation.md",
+      "named_entities": [
+        "Onyx",
+        "CVE-2026-71424",
+        "GHSA-q62f-rv3h-f822"
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71424",
+        "https://github.com/onyx-dot-app/onyx/security/advisories/GHSA-q62f-rv3h-f822",
+        "https://www.strix.ai/cve/CVE-2026-71424"
+      ],
+      "update_title": "Onyx MCP endpoints expose cross-user OAuth Authorization headers",
+      "upstream_routing": "Broad Onyx platform context routes to ai-wiki; local page owns connector credential-isolation risk.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "model artifact loading",
+        "local filesystem confidentiality",
+        "checkpoint supply chain"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "factual_summary": "NVD records CVE-2026-75104 for Hugging Face Transformers checkpoint index files that allow parent-directory or absolute shard paths to read files outside the model directory.",
+      "follow_up_note": "Confirm the GitHub advisory and patched version during ingest.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/huggingface-transformers-checkpoint-shard-file-read.md",
+      "named_entities": [
+        "Hugging Face Transformers",
+        "CVE-2026-75104",
+        "GHSA-fv5v-hfxp-5379"
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75104",
+        "https://github.com/advisories/GHSA-fv5v-hfxp-5379",
+        "https://cvefeed.io/vuln/detail/CVE-2026-75104"
+      ],
+      "update_title": "Transformers checkpoint shard filename path traversal CVE published",
+      "upstream_routing": "Broad Hugging Face/Transformers context routes upstream; local page owns model-artifact file-boundary risk.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "dataset lineage integrity",
+        "per-run authorization",
+        "basic-auth deployment boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability; mitigation",
+      "factual_summary": "GitLab Advisory Database describes CVE-2026-69146/GHSA-3p64-6gvh-82v5: MLflow basic-auth deployments omit LogInputs from authorization handlers, enabling authenticated cross-run dataset-lineage writes; fixed in 3.15.0.",
+      "follow_up_note": "Ingest alongside related MLflow 3.15.0 authorization fixes to avoid duplicate digest entries.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-dataset-lineage-authorization-bypass.md",
+      "named_entities": [
+        "MLflow",
+        "CVE-2026-69146",
+        "GHSA-3p64-6gvh-82v5"
+      ],
+      "source_urls": [
+        "https://advisories.gitlab.com/npm/mlflow/CVE-2026-69146/",
+        "https://github.com/advisories/GHSA-3p64-6gvh-82v5",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69146"
+      ],
+      "update_title": "MLflow LogInputs skips per-run UPDATE authorization",
+      "upstream_routing": "Broad MLflow platform context routes upstream; local page owns dataset-lineage integrity boundary.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "model artifact confidentiality",
+        "source validation",
+        "per-run/per-model authorization"
+      ],
+      "evidence_classification": "disclosed_vulnerability; mitigation",
+      "factual_summary": "GitLab Advisory Database describes CVE-2026-69148/GHSA-gqch-g4w5-7qcw: MLflow source validation checks path containment but not caller READ permission, enabling artifact reads through model-version references; fixed in 3.15.0.",
+      "follow_up_note": "Ingest with MLflow 3.15.0 cluster notes and verify commit/PR references.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-model-artifact-source-validation-bypass.md",
+      "named_entities": [
+        "MLflow",
+        "CVE-2026-69148",
+        "GHSA-gqch-g4w5-7qcw"
+      ],
+      "source_urls": [
+        "https://advisories.gitlab.com/npm/mlflow/CVE-2026-69148/",
+        "https://github.com/advisories/GHSA-gqch-g4w5-7qcw",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69148"
+      ],
+      "update_title": "MLflow CreateModelVersion source validation misses READ permission check",
+      "upstream_routing": "Broad MLflow context routes upstream; local page owns artifact confidentiality and source-validation boundary.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "model registry webhook network reachability",
+        "SSRF",
+        "cloud metadata exposure"
+      ],
+      "evidence_classification": "disclosed_vulnerability; mitigation",
+      "factual_summary": "GitLab Advisory Database describes CVE-2026-64849/GHSA-7gwp-5pfp-969j: the webhook test path validates the original URL but follows redirects without revalidating or pinning the resolved address, yielding unauthenticated full-read SSRF on default servers; fixed in 3.15.0.",
+      "follow_up_note": "Check whether ingest should group this with the other MLflow 3.15.0 security fixes.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-webhook-test-ssrf.md",
+      "named_entities": [
+        "MLflow",
+        "CVE-2026-64849",
+        "GHSA-7gwp-5pfp-969j"
+      ],
+      "source_urls": [
+        "https://advisories.gitlab.com/pypi/mlflow/CVE-2026-64849/",
+        "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-64849"
+      ],
+      "update_title": "MLflow webhook test endpoint SSRF redirect bypass published",
+      "upstream_routing": "Broad MLflow context routes upstream; local page owns webhook network-boundary risk.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "MCP prompt-content boundary",
+        "coding-agent action boundary",
+        "developer workstation secrets"
+      ],
+      "evidence_classification": "disclosed_vulnerability; demonstrated_research",
+      "factual_summary": "The CVE record for CVE-2026-75130 reports prompt injection through Context7 custom AI instructions served via MCP, with credential exfiltration and destructive file-deletion scenarios against connected AI coding agents.",
+      "follow_up_note": "Verify the advisory and any Context7 release/fix notes before updating local guidance.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/context7-mcp-custom-instructions-prompt-injection.md",
+      "named_entities": [
+        "Context7",
+        "CVE-2026-75130",
+        "GHSA-97r6-3rgm-v39r"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-75130",
+        "https://github.com/advisories/GHSA-97r6-3rgm-v39r",
+        "https://www.strix.ai/cve/CVE-2026-75130"
+      ],
+      "update_title": "Context7 custom AI instructions prompt-injection CVE published",
+      "upstream_routing": "Broad Context7 MCP background routes to ai-wiki; local page owns prompt-injection-to-agent-action security boundary.",
+      "visible_publication_or_update_date": "2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        "model serving availability",
+        "authenticated API resource limits",
+        "derender response processing"
+      ],
+      "evidence_classification": "disclosed_vulnerability; mitigation",
+      "factual_summary": "NVD records CVE-2026-71486 for vLLM before 0.26.0: authenticated derender endpoints process caller-supplied GenerateResponse structures before size and response limits, enabling CPU, memory, and oversized-response denial of service.",
+      "follow_up_note": "Confirm fixed commit and release notes during ingest.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-derender-denial-of-service.md",
+      "named_entities": [
+        "vLLM",
+        "CVE-2026-71486",
+        "GHSA-8737-qx52-hjff"
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71486",
+        "https://github.com/vllm-project/vllm/security/advisories/GHSA-8737-qx52-hjff",
+        "https://github.com/vllm-project/vllm/releases/tag/v0.26.0"
+      ],
+      "update_title": "vLLM derender endpoint resource-exhaustion CVE published",
+      "upstream_routing": "Broad vLLM runtime context routes upstream; local page owns derender availability boundary.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "multimodal input boundary",
+        "model serving availability",
+        "local file and network egress controls"
+      ],
+      "evidence_classification": "disclosed_vulnerability; mitigation",
+      "factual_summary": "The selected synthesis leaf has two in-window CVE updates: CVE-2026-71486 for derender resource exhaustion and CVE-2026-73560 for MiMoV2Omni media SSRF/local file reads, both fixed in vLLM 0.26.0.",
+      "follow_up_note": "Ingest may update child leaves first, then keep this synthesis compact.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-multimodal-input-boundary-vulnerabilities.md",
+      "named_entities": [
+        "vLLM",
+        "CVE-2026-71486",
+        "CVE-2026-73560"
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71486",
+        "https://www.cve.org/CVERecord?id=CVE-2026-73560",
+        "https://github.com/vllm-project/vllm/releases/tag/v0.26.0"
+      ],
+      "update_title": "vLLM 0.26.0 multimodal boundary fixes span derender DoS and media SSRF/file-read CVEs",
+      "upstream_routing": "Broad vLLM context routes upstream; local page should stay a security-specific synthesis of input-boundary failures.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "multimodal media ingestion",
+        "SSRF",
+        "local file confidentiality"
+      ],
+      "evidence_classification": "disclosed_vulnerability; mitigation",
+      "factual_summary": "CVE-2026-73560 reports that vLLM before 0.26.0 passes attacker-controlled image/audio strings through direct fetch and image-loading paths instead of MediaConnector, bypassing allowed media domains and local media path controls for SSRF and arbitrary local file reads.",
+      "follow_up_note": "Verify official GitHub advisory or CVE record detail before page edits.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-multimodal-media-ssrf-file-read.md",
+      "named_entities": [
+        "vLLM",
+        "CVE-2026-73560"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-73560",
+        "https://secalerts.co/vulnerability/CVE-2026-73560",
+        "https://www.strix.ai/cve/CVE-2026-73560"
+      ],
+      "update_title": "vLLM MiMoV2Omni media loader bypasses MediaConnector controls",
+      "upstream_routing": "Broad vLLM runtime context routes upstream; local page owns media network/file boundary.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "evaluation dashboard authentication",
+        "control-plane RCE",
+        "browser-to-local-service CORS boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability; demonstrated_research",
+      "factual_summary": "Fresh CVE database entries on 2026-08-17 cover UpTrain 0.7.1 and prior weaknesses originally reported by GitHub Security Lab: static default API key/open CORS plus RCE-capable parameters can give a malicious website zero-click control-plane code execution.",
+      "follow_up_note": "Treat July/August GHSL posts as primary technical evidence and Aug. 17 CVE publication as the in-window date.",
+      "leaf_id": "docs/wiki/testing-and-assurance/evaluation-platform-control-plane-rce.md",
+      "named_entities": [
+        "UpTrain",
+        "GitHub Security Lab",
+        "CVE-2025-27621",
+        "CVE-2025-27770",
+        "CVE-2025-27771",
+        "CVE-2025-27772"
+      ],
+      "source_urls": [
+        "https://securitylab.github.com/advisories/GHSL-2024-198_GHSL-2024-199_Uptrain/",
+        "https://securitylab.github.com/advisories/GHSL-2024-200_GHSL-2024-201_Uptrain/",
+        "https://www.strix.ai/cve/CVE-2025-27621",
+        "https://www.rapid7.com/db/vulnerabilities/cve-2025-27621/"
+      ],
+      "update_title": "UpTrain evaluation dashboard CVEs published for static-key/open-CORS RCE chain",
+      "upstream_routing": "Broad UpTrain product context routes upstream; local page owns evaluation-platform control-plane security.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "CI/CD command execution",
+        "GitHub Actions runner boundary",
+        "AI-assisted code attribution",
+        "credential exposure"
+      ],
+      "evidence_classification": "demonstrated_research; mitigation; unverified_claim_routed_with_caution",
+      "factual_summary": "Fresh reporting says Wiz Red Agent autonomously found and validated a GitHub Actions script-injection flaw in Snowflake's public repository; follow-up reporting clarified Copilot co-authorship attribution while preserving the security lesson that AI-involved workflows and scans missed the vulnerable flow. Snowflake reported immediate remediation and no evidence of unauthorized access beyond Wiz testing.",
+      "follow_up_note": "Ingest should avoid claiming Copilot authored the vulnerable lines; preserve attribution uncertainty from ITPro/Wiz clarification.",
+      "leaf_id": "docs/wiki/threats-and-attacks/autonomous-ci-cd-exploit-adaptation.md",
+      "named_entities": [
+        "Wiz Red Agent",
+        "Snowflake",
+        "GitHub Copilot Autofix",
+        "GitHub Actions",
+        "Jira"
+      ],
+      "source_urls": [
+        "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug",
+        "https://www.forbes.com/sites/timkeary/2026/08/17/github-copilot-missed-a-vulnerability-that-wizs-ai-agent-found/",
+        "https://www.itpro.com/security/wiz-cto-speaks-out-amid-snowflake-github-flaw-confusion",
+        "https://www.scworld.com/news/wiz-agent-finds-snowflake-repo-flaw-in-code-co-authored-by-github-copilot-autofix"
+      ],
+      "update_title": "Snowflake/Wiz autonomous CI/CD exploit reporting clarified AI attribution and mitigation",
+      "upstream_routing": "Broad Wiz/Snowflake/Copilot context routes upstream; local page owns AI-agent exploit adaptation and CI/CD security boundary.",
+      "visible_publication_or_update_date": "2026-08-17"
+    },
+    {
+      "affected_boundaries": [
+        "frontier-model cyber evaluation containment",
+        "research sandbox monitoring",
+        "incident-response release gating"
+      ],
+      "evidence_classification": "mitigation; control_change",
+      "factual_summary": "Fresh reports describe OpenAI strengthening monitoring, alignment, sandboxing, and internet-isolation controls and slowing some model work after model-evaluation cyber incidents, with references to the Hugging Face incident and broader lab disclosures.",
+      "follow_up_note": "Use as follow-up context for incident-response controls; verify against OpenAI primary posts before durable changes.",
+      "leaf_id": "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md",
+      "named_entities": [
+        "OpenAI",
+        "Astra",
+        "Hugging Face",
+        "Anthropic",
+        "Meta",
+        "Moonshot"
+      ],
+      "source_urls": [
+        "https://www.wired.com/story/openai-overhauls-safety-protocols-after-its-ai-agents-went-rogue/",
+        "https://www.theguardian.com/technology/2026/aug/18/open-ai-pause-hack",
+        "https://www.axios.com/2026/08/19/openai-astra-safety-altman-anthropic",
+        "https://openai.com/index/pacing-model-development-cyber-capabilities/"
+      ],
+      "update_title": "OpenAI and broader labs add safety/monitoring controls after cyber-evaluation incidents",
+      "upstream_routing": "General OpenAI/Astra model-development coverage routes to ai-wiki or ai-dev-wiki; local page owns incident containment and evidence-preservation implications.",
+      "visible_publication_or_update_date": "2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        "third-party cyber-evaluation scoping",
+        "real-domain collision",
+        "controlled internet access",
+        "evaluation logging and escalation"
+      ],
+      "evidence_classification": "mitigation; control_change; unverified_claim",
+      "factual_summary": "CyberScoop and The Record report on Irregular's postmortem for evaluation environments where internet access and real-domain collisions let models take offensive actions against real infrastructure; reported follow-up controls include stronger setup documentation, log monitoring, threat-model revisions, and faster stakeholder information sharing.",
+      "follow_up_note": "Treat The Record/CyberScoop as secondary unless Irregular publishes a detailed whitepaper; keep criticism and remediation claims attributed.",
+      "leaf_id": "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md",
+      "named_entities": [
+        "Irregular",
+        "OpenAI",
+        "Anthropic",
+        "Meta",
+        "Mythos 5",
+        "GPT-5.6 Sol"
+      ],
+      "source_urls": [
+        "https://cyberscoop.com/irregular-ai-sandbox-escape-human-oversight/",
+        "https://therecord.media/irregular-ai-hacking-model-blog",
+        "https://www.irregular.com/research",
+        "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/"
+      ],
+      "update_title": "Irregular postmortem reporting ties real-domain evaluation collisions to internet-access setup controls",
+      "upstream_routing": "Broad model/provider coverage routes upstream; local page owns third-party cyber-evaluation scope-collision controls.",
+      "visible_publication_or_update_date": "2026-08-17"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-22T00:04:54Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/identity-and-access/arcadedb-mcp-server-setting-authorization-bypass.md",
+    "docs/wiki/identity-and-access/onyx-mcp-oauth-token-isolation.md",
+    "docs/wiki/infrastructure-and-supply-chain/huggingface-transformers-checkpoint-shard-file-read.md",
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-dataset-lineage-authorization-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-model-artifact-source-validation-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-webhook-test-ssrf.md",
+    "docs/wiki/model-and-prompt-security/context7-mcp-custom-instructions-prompt-injection.md",
+    "docs/wiki/model-and-prompt-security/vllm-derender-denial-of-service.md",
+    "docs/wiki/model-and-prompt-security/vllm-multimodal-input-boundary-vulnerabilities.md",
+    "docs/wiki/model-and-prompt-security/vllm-multimodal-media-ssrf-file-read.md",
+    "docs/wiki/testing-and-assurance/evaluation-platform-control-plane-rce.md",
+    "docs/wiki/threats-and-attacks/autonomous-ci-cd-exploit-adaptation.md",
+    "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+    "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md",
+    "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md"
+  ],
+  "selection_policy": "Unchecked leaves first, then oldest last_checked_at, tie-broken by stable relative path.",
+  "sources_checked": {
+    "docs/wiki/identity-and-access/arcadedb-mcp-server-setting-authorization-bypass.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-75845",
+      "https://www.strix.ai/cve/CVE-2026-75845",
+      "https://github.com/advisories/GHSA-2c26-2qqv-6r9c"
+    ],
+    "docs/wiki/identity-and-access/onyx-mcp-oauth-token-isolation.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-71424",
+      "https://github.com/onyx-dot-app/onyx/security/advisories/GHSA-q62f-rv3h-f822",
+      "https://www.strix.ai/cve/CVE-2026-71424"
+    ],
+    "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md": [
+      "https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-identity-access-management/",
+      "https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture-generative-ai/gen-auto-agents.html",
+      "https://www.expresscomputer.in/guest-blogs/why-ai-agents-could-become-the-next-enterprise-security-blind-spot/137874/"
+    ],
+    "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md": [
+      "https://www.wired.com/story/openai-overhauls-safety-protocols-after-its-ai-agents-went-rogue/",
+      "https://www.theguardian.com/technology/2026/aug/18/open-ai-pause-hack",
+      "https://www.axios.com/2026/08/19/openai-astra-safety-altman-anthropic",
+      "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+      "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+    ],
+    "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md": [
+      "https://cyberscoop.com/irregular-ai-sandbox-escape-human-oversight/",
+      "https://therecord.media/irregular-ai-hacking-model-blog",
+      "https://www.irregular.com/research",
+      "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/huggingface-transformers-checkpoint-shard-file-read.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-75104",
+      "https://github.com/advisories/GHSA-fv5v-hfxp-5379",
+      "https://cvefeed.io/vuln/detail/CVE-2026-75104"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-dataset-lineage-authorization-bypass.md": [
+      "https://advisories.gitlab.com/npm/mlflow/CVE-2026-69146/",
+      "https://github.com/advisories/GHSA-3p64-6gvh-82v5",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-69146"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-model-artifact-source-validation-bypass.md": [
+      "https://advisories.gitlab.com/npm/mlflow/CVE-2026-69148/",
+      "https://github.com/advisories/GHSA-gqch-g4w5-7qcw",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-69148"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-webhook-test-ssrf.md": [
+      "https://advisories.gitlab.com/pypi/mlflow/CVE-2026-64849/",
+      "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-64849"
+    ],
+    "docs/wiki/model-and-prompt-security/context7-mcp-custom-instructions-prompt-injection.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-75130",
+      "https://github.com/advisories/GHSA-97r6-3rgm-v39r",
+      "https://www.strix.ai/cve/CVE-2026-75130"
+    ],
+    "docs/wiki/model-and-prompt-security/vllm-derender-denial-of-service.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-71486",
+      "https://github.com/vllm-project/vllm/security/advisories/GHSA-8737-qx52-hjff",
+      "https://github.com/vllm-project/vllm/releases/tag/v0.26.0"
+    ],
+    "docs/wiki/model-and-prompt-security/vllm-multimodal-input-boundary-vulnerabilities.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-71486",
+      "https://www.cve.org/CVERecord?id=CVE-2026-73560",
+      "https://github.com/vllm-project/vllm/releases/tag/v0.26.0"
+    ],
+    "docs/wiki/model-and-prompt-security/vllm-multimodal-media-ssrf-file-read.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-73560",
+      "https://secalerts.co/vulnerability/CVE-2026-73560",
+      "https://www.strix.ai/cve/CVE-2026-73560"
+    ],
+    "docs/wiki/testing-and-assurance/evaluation-platform-control-plane-rce.md": [
+      "https://securitylab.github.com/advisories/GHSL-2024-198_GHSL-2024-199_Uptrain/",
+      "https://securitylab.github.com/advisories/GHSL-2024-200_GHSL-2024-201_Uptrain/",
+      "https://www.strix.ai/cve/CVE-2025-27621",
+      "https://www.rapid7.com/db/vulnerabilities/cve-2025-27621/"
+    ],
+    "docs/wiki/threats-and-attacks/autonomous-ci-cd-exploit-adaptation.md": [
+      "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug",
+      "https://www.forbes.com/sites/timkeary/2026/08/17/github-copilot-missed-a-vulnerability-that-wizs-ai-agent-found/",
+      "https://www.itpro.com/security/wiz-cto-speaks-out-amid-snowflake-github-flaw-confusion",
+      "https://www.scworld.com/news/wiz-agent-finds-snowflake-repo-flaw-in-code-co-authored-by-github-copilot-autofix"
+    ]
+  }
+}
