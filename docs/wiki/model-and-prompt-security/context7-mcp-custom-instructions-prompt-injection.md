@@ -13,6 +13,8 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 The advisory says unsanitized Custom AI Instructions served through the MCP server can inject malicious instructions into connected AI coding agents. Reported impacts include credential exfiltration from environment files to an attacker-controlled service and destructive file operations when the agent makes routine library documentation requests.
 
+The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) adds CVE publication evidence for CVE-2026-75130 and keeps the key boundary unchanged: MCP-provided documentation and custom instructions are untrusted content, not developer or user instructions. Credential exfiltration and destructive file-deletion scenarios remain demonstrated research evidence, not local incident evidence.
+
 ## Security Impact
 
 - Threat: documentation retrieval can become an instruction-delivery path that drives credential theft or destructive actions.
@@ -32,6 +34,7 @@ The advisory says unsanitized Custom AI Instructions served through the MCP serv
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
 - [GitHub advisory GHSA-97r6-3rgm-v39r](https://github.com/advisories/GHSA-97r6-3rgm-v39r)
 - [NVD CVE-2026-75130](https://nvd.nist.gov/vuln/detail/CVE-2026-75130)
 - [Noma Security ContextCrush research](https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability)
@@ -62,3 +65,4 @@ The advisory says unsanitized Custom AI Instructions served through the MCP serv
 ## Maintenance Notes
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) as a prompt-injection leaf rather than a general Context7 product page.
+- Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with CVE publication evidence and action-boundary wording.

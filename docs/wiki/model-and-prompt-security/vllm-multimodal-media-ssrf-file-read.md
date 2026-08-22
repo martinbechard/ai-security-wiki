@@ -13,6 +13,8 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 [vLLM multimodal input boundary vulnerabilities](vllm-multimodal-input-boundary-vulnerabilities.md) routes the broader vLLM 0.26.0 vulnerability family. This leaf is narrower: SSRF and local file reads occur in `MiMoV2OmniMultiModalProcessor` because attacker-controlled image and audio strings bypass `MediaConnector` protections for `allowed_media_domains` and `allowed_local_media_path`.
 
+The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) adds in-window CVE-2026-73560 evidence and keeps the fix boundary at vLLM 0.26.0. The local lesson is processor coverage: media validation must be shared across multimodal processors rather than trusted to per-processor parsing code.
+
 ## Security Impact
 
 - Threat: attacker-controlled multimodal media references can bypass shared media connector controls and reach internal URLs or local files.
@@ -25,6 +27,7 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
 - [NVD CVE-2026-73560](https://nvd.nist.gov/vuln/detail/CVE-2026-73560)
 - [Strix CVE-2026-73560 mirror](https://www.strix.ai/cve/CVE-2026-73560)
 
@@ -54,3 +57,4 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Maintenance Notes
 
 - Created on 2026-08-19 after verifier correction split the vLLM vulnerability family.
+- Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with vLLM 0.26.0 fixed-release and media-boundary evidence.

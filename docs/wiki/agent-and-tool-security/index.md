@@ -46,6 +46,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [CodeWhale git tool argument injection](codewhale-git-tool-argument-injection.md)
 - [CodeWhale JS execution environment exposure](codewhale-js-execution-environment-exposure.md)
 - [SiYuan MCP database clean path traversal](siyuan-mcp-database-clean-path-traversal.md)
+- [Spring AI tool dispatch authorization bypass](spring-ai-tool-dispatch-authorization-bypass.md)
 
 ## Authoritative Sources
 
@@ -80,3 +81,4 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Updated on 2026-08-17 with the chrome-devtools-mcp symlink root bypass leaf.
 - Updated on 2026-08-19 with MCP and agent-tool leaves for mcp-florence2, SiYuan, PyCharm, Apache SkyWalking, RAGFlow, and CodeWhale.
 - Updated on 2026-08-19 after verifier correction split CodeWhale and SiYuan advisory routers into focused leaves.
+- Updated on 2026-08-21 with the Spring AI tool-dispatch authorization leaf.

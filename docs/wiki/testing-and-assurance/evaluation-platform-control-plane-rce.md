@@ -13,6 +13,8 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 The cluster combines weak dashboard authentication, open CORS, a default static API key or user issue, and remote-code-execution primitives in `create_project`, `add_prompts`, and `new_run` parameters. [GitHub Security Lab's advisory](https://securitylab.github.com/advisories/GHSL-2024-198_GHSL-2024-199_Uptrain/) describes a zero-click path when an authenticated user visits a crafted website, while NVD published multiple CVEs for UpTrain 0.7.1 and prior inside the collection window.
 
+The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) records fresh CVE database entries on 2026-08-17 for the same UpTrain chain. The durable local item stays one closely coupled control-plane RCE family because the static-key/open-CORS weaknesses and RCE-capable parameters combine into the browser-to-local-service compromise path.
+
 ## Security Impact
 
 - Threat: an evaluation platform can become a code-execution and data-exposure path when browser-origin requests, static credentials, and parameterized evaluation checks share one control plane.
@@ -32,6 +34,7 @@ The cluster combines weak dashboard authentication, open CORS, a default static 
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
 - [GitHub Security Lab UpTrain advisory](https://securitylab.github.com/advisories/GHSL-2024-198_GHSL-2024-199_Uptrain/)
 - [NVD CVE-2025-27621](https://nvd.nist.gov/vuln/detail/CVE-2025-27621)
 - [NVD CVE-2025-27770](https://nvd.nist.gov/vuln/detail/CVE-2025-27770)
@@ -63,3 +66,4 @@ The cluster combines weak dashboard authentication, open CORS, a default static 
 ## Maintenance Notes
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) after routing broad product context upstream.
+- Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with in-window CVE database publication evidence for the existing UpTrain RCE chain.

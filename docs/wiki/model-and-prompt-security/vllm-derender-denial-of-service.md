@@ -13,6 +13,8 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 [vLLM multimodal input boundary vulnerabilities](vllm-multimodal-input-boundary-vulnerabilities.md) routes the broader vLLM 0.26.0 vulnerability family. This leaf is narrower: authenticated denial of service occurs through caller-supplied `GenerateResponse` objects on derender endpoints before size limits apply.
 
+The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) adds release-level evidence that CVE-2026-71486 is fixed in vLLM 0.26.0. The issue remains an availability leaf because it concerns CPU, memory, and oversized-response exhaustion before response limits apply.
+
 ## Security Impact
 
 - Threat: authenticated callers can exhaust model-serving resources through derender payloads before size controls apply.
@@ -25,6 +27,7 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
 - [NVD CVE-2026-71486](https://nvd.nist.gov/vuln/detail/CVE-2026-71486)
 
 ## Related Code
@@ -51,3 +54,4 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Maintenance Notes
 
 - Created on 2026-08-19 after verifier correction split the vLLM vulnerability family.
+- Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with vLLM 0.26.0 fixed-release evidence.

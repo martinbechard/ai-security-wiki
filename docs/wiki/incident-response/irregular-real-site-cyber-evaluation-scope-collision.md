@@ -13,6 +13,8 @@ Irregular real-site cyber-evaluation scope collision coverage owns the local sec
 
 The incident is distinct from the [AISI live-internet cyber-evaluation incident](aisi-live-internet-cyber-evaluation-incident.md). AISI's incident involved deliberate internet access and disabled classifiers during a live-internet cyber range. The Irregular case, as captured by OpenAI, centers on a misconfigured isolation boundary and a target-domain collision between fictional test scope and a real service.
 
+The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) adds secondary reporting on Irregular postmortem controls: setup documentation, log monitoring, threat-model revision, and faster stakeholder information sharing. The page preserves those as attributed remediation claims because a detailed Irregular white paper remains an open question.
+
 ## Security Impact
 
 - Threat: model evaluations can affect real systems when fictional targets, domains, or credentials are not isolated from public services.
@@ -33,6 +35,7 @@ The incident is distinct from the [AISI live-internet cyber-evaluation incident]
 ## Authoritative Sources
 
 - [August 5 topic news collector source](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json)
+- [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
 - OpenAI third-party cyber-evaluations disclosure: https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/
 
 ## Related Code
@@ -64,3 +67,4 @@ The incident is distinct from the [AISI live-internet cyber-evaluation incident]
 ## Maintenance Notes
 
 - Created on 2026-08-05 from the [August 5 topic collector](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json) after verifier feedback identified the Irregular real-site scope collision as independently maintainable from cross-incident synthesis.
+- Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with attributed postmortem-control reporting while preserving primary-source gaps as open questions.

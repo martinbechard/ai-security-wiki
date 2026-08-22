@@ -19,6 +19,9 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [AI Sidebar extension AI chat theft](ai-sidebar-extension-ai-chat-theft.md)
 - [Oracle Siebel AI data access vulnerability](oracle-siebel-ai-data-access-vulnerability.md)
 - [SiYuan debug endpoint AI key disclosure](siyuan-debug-endpoint-ai-key-disclosure.md)
+- [Spring AI semantic cache cross-context leakage](spring-ai-semantic-cache-cross-context-leakage.md)
+- [Spring AI Redis chat memory query injection](spring-ai-redis-chat-memory-query-injection.md)
+- [Private Safety Processing ZDR](private-safety-processing-zdr.md)
 
 ## Authoritative Sources
 
@@ -51,3 +54,4 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - Do not place private, proprietary, sensitive, PII, or company-internal source content in public collector prompts.
 - Updated on 2026-08-19 with the Oracle Siebel Artificial Intelligence data-access advisory leaf.
 - Updated on 2026-08-19 after verifier correction split SiYuan debug endpoint credential disclosure into a data/privacy leaf.
+- Updated on 2026-08-21 with Spring AI cache and memory leaves plus the Private Safety Processing ZDR privacy-control leaf.

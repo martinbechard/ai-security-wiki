@@ -14,6 +14,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - [vLLM multimodal input boundary vulnerabilities](vllm-multimodal-input-boundary-vulnerabilities.md)
 - [vLLM derender denial of service](vllm-derender-denial-of-service.md)
 - [vLLM multimodal media SSRF file read](vllm-multimodal-media-ssrf-file-read.md)
+- [Cryptographic Context Injection](cryptographic-context-injection.md)
 
 ## Authoritative Sources
 
@@ -46,3 +47,4 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - Record affected boundary, attack prerequisites, mitigation, residual risk, and evidence quality.
 - Updated on 2026-08-19 with Context7 MCP prompt-injection and vLLM multimodal input-boundary leaves.
 - Updated on 2026-08-19 after verifier correction split vLLM derender DoS and multimodal media SSRF/file-read leaves.
+- Updated on 2026-08-21 with the Cryptographic Context Injection attack-pattern leaf.

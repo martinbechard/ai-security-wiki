@@ -13,6 +13,8 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 [NVD CVE-2026-71424](https://nvd.nist.gov/vuln/detail/CVE-2026-71424) reports that `GET /api/mcp/servers` and `GET /api/mcp/servers/persona/{persona_id}` can expose another user's OAuth `Authorization` header. The issue arises because per-user tokens are copied into a shared admin `MCPConnectionConfig` row and returned through `auth_template.headers` to `BASIC_ACCESS` users.
 
+The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) confirms the fixed branches as versions before 3.1.10, 3.2.14, and 4.0.0. The durable boundary remains connector credential isolation: shared admin connection configuration must not carry per-user OAuth `Authorization` headers into lower-privilege MCP listing responses.
+
 ## Security Impact
 
 - Threat: shared MCP connection configuration can leak one user's OAuth token to another user.
@@ -25,6 +27,7 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
 - [NVD CVE-2026-71424](https://nvd.nist.gov/vuln/detail/CVE-2026-71424)
 - [Strix CVE mirror](https://www.strix.ai/cve/CVE-2026-71424)
 
@@ -53,3 +56,4 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 ## Maintenance Notes
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) after preserving source-confidence caveats.
+- Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with fixed-branch and cross-user Authorization header evidence.

@@ -16,6 +16,8 @@ The active digest records each independently changing security item or closely c
 - [schema.md](../schema.md)
 - [automated update feeds](../source-workflows/automated-update-feeds.md)
 - [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
+- [August 21 topic news collector source](../../../raw/processed/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json)
+- [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
 
 ## Related Code
 
@@ -39,6 +41,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-08-21 after the August digest added item-level entries for Spring AI security CVEs, [Cryptographic Context Injection](../model-and-prompt-security/cryptographic-context-injection.md), [AI-generated OT exploit scripts](../threats-and-attacks/ai-generated-ot-exploit-scripts.md), [Private Safety Processing ZDR](../data-and-privacy/private-safety-processing-zdr.md), [downstream agent authorization context](../identity-and-access/downstream-agent-authorization-context.md), and [AI-themed installer malware lures](../threats-and-attacks/ai-themed-installer-malware-lures.md) while folding watcher repeats into existing leaves.
 - Updated on 2026-08-17 after the August digest added item-level entries for OpenAI Defender's Window, MLflow 3.15.0 advisories, chrome-devtools-mcp, atomic-agents-stack, Ray KEV, MemOS, OpenShift AI, Kiota, and watcher enrichments.
 - Updated on 2026-08-19 after the August digest added item-level entries for OpenAI pacing controls, [autonomous CI/CD exploit adaptation](../threats-and-attacks/autonomous-ci-cd-exploit-adaptation.md), generated-code remediation evidence, UpTrain, MCP/agent advisories, vLLM, Transformers, 9Router, Oracle Siebel AI, and watcher enrichments.
 - Updated on 2026-08-20 after the August digest folded watcher evidence into existing item-level advisory entries without adding batch or duplicate digest items.

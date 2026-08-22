@@ -16,6 +16,8 @@ The family is split into focused leaves because availability and media-fetch bou
 - [vLLM derender denial of service](vllm-derender-denial-of-service.md) owns CVE-2026-71486, authenticated denial of service through caller-supplied `GenerateResponse` objects on derender endpoints before size limits apply.
 - [vLLM multimodal media SSRF file read](vllm-multimodal-media-ssrf-file-read.md) owns CVE-2026-73560, SSRF and local file read in `MiMoV2OmniMultiModalProcessor` when attacker-controlled image and audio strings bypass `MediaConnector` protections.
 
+The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) keeps these two CVEs as one closely coupled vLLM 0.26.0 security family while preserving the child-leaf split for the independently changing denial-of-service and media fetch/file-read controls.
+
 ## Security Impact
 
 - Threat: model-serving endpoints can treat multimodal references or generated response objects as trusted enough to bypass size, network, or local-file controls; linked leaves own issue-specific details.
@@ -28,6 +30,7 @@ The family is split into focused leaves because availability and media-fetch bou
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
 - [NVD CVE-2026-71486](https://nvd.nist.gov/vuln/detail/CVE-2026-71486)
 - [NVD CVE-2026-73560](https://nvd.nist.gov/vuln/detail/CVE-2026-73560)
 - [Strix CVE-2026-73560 mirror](https://www.strix.ai/cve/CVE-2026-73560)
@@ -60,3 +63,4 @@ The family is split into focused leaves because availability and media-fetch bou
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) as a vLLM 0.26.0 model-serving input-boundary router.
 - Split on 2026-08-19 after verifier correction into separate derender DoS and multimodal media SSRF/file-read leaves.
+- Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with vLLM 0.26.0 family-level CVE publication evidence.

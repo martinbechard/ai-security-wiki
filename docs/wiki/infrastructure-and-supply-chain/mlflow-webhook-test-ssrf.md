@@ -13,6 +13,8 @@ The [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai
 
 The advisory family page [MLflow 3.15.0 security advisory cluster](mlflow-3150-security-advisory-cluster.md) links the related MLflow 3.15.0 issues. This leaf is narrower: unauthenticated model-registry webhook testing can become full-read SSRF when URL validation is bypassed through redirects or DNS rebinding. The watcher adds GitHub-reviewed critical severity, CVSS 9.3, and reflected internal response-body exposure through webhook test flows.
 
+The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) preserves this as the MLflow 3.15.0 network-boundary member. It reinforces that redirect revalidation and resolved-address pinning are the practical control points for webhook-test SSRF.
+
 ## Security Impact
 
 - Threat: attackers can use webhook testing to read internal network resources or metadata-service responses through the MLflow tracking server.
@@ -26,6 +28,7 @@ The advisory family page [MLflow 3.15.0 security advisory cluster](mlflow-3150-s
 
 - [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json)
 - [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json)
+- [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
 - GitHub advisory GHSA-7gwp-5pfp-969j: https://github.com/advisories/GHSA-7gwp-5pfp-969j
 - MLflow 3.15.0 release: https://github.com/mlflow/mlflow/releases/tag/v3.15.0
 
@@ -55,3 +58,4 @@ The advisory family page [MLflow 3.15.0 security advisory cluster](mlflow-3150-s
 ## Maintenance Notes
 
 - Created on 2026-08-19 after verifier correction split the MLflow advisory family into independently maintainable leaves.
+- Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with repeated CVE publication and redirect-bypass evidence.

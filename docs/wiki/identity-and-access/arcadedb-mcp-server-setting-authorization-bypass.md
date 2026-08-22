@@ -13,6 +13,8 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 The advisory says any authenticated read-only user can invoke the `set_server_setting` MCP server-level tool when `allowAdmin=true` because `SetServerSettingTool.execute` checks the server setting but not the caller role. ArcadeDB 26.8.1 is listed as fixed.
 
+The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) keeps the same affected-version boundary from NVD and advisory mirrors: ArcadeDB 26.4.2 through 26.7.3 are affected, and 26.8.1 is the fixed version. The update does not change the durable control: server-level MCP administration needs per-caller role enforcement even when a global `allowAdmin` setting is enabled.
+
 ## Security Impact
 
 - Threat: authentication without role enforcement lets read-only users drive administrative MCP tools.
@@ -25,6 +27,7 @@ The advisory says any authenticated read-only user can invoke the `set_server_se
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
+- [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
 - [GitHub advisory GHSA-2c26-2qqv-6r9c](https://github.com/advisories/GHSA-2c26-2qqv-6r9c)
 - [ArcadeDB advisory GHSA-pff6-hp53-pj54](https://github.com/ArcadeData/arcadedb/security/advisories/GHSA-pff6-hp53-pj54)
 - [NVD CVE-2026-75845](https://nvd.nist.gov/vuln/detail/CVE-2026-75845)
@@ -54,3 +57,4 @@ The advisory says any authenticated read-only user can invoke the `set_server_se
 ## Maintenance Notes
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) as an MCP least-privilege advisory leaf.
+- Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with repeated NVD/advisory mirror version and fix evidence.

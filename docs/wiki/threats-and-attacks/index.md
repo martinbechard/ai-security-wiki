@@ -14,6 +14,8 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 - [Agentic AI threat cluster](agentic-ai-threat-cluster.md)
 - [macOS Screen Sharing AI-accelerated exploitability](macos-screen-sharing-ai-accelerated-exploitability.md)
 - [Autonomous CI/CD exploit adaptation](autonomous-ci-cd-exploit-adaptation.md)
+- [AI-generated OT exploit scripts](ai-generated-ot-exploit-scripts.md)
+- [AI-themed installer malware lures](ai-themed-installer-malware-lures.md)
 
 ## Authoritative Sources
 
@@ -46,3 +48,4 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 - Separate observed exploitation, demonstrated research, and plausible threat hypotheses.
 - Updated on 2026-08-16 with the macOS Screen Sharing AI-accelerated exploitability leaf.
 - Updated on 2026-08-19 with the autonomous CI/CD exploit adaptation leaf.
+- Updated on 2026-08-21 with AI-generated OT exploit-script and AI-themed installer malware-lure leaves.

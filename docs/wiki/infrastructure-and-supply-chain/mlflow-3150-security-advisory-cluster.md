@@ -21,6 +21,8 @@ MLflow stores registry metadata, model artifacts, dataset lineage, and evaluatio
 
 The [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json) adds GitHub review metadata for all three advisories. [GHSA-7gwp-5pfp-969j](https://github.com/advisories/GHSA-7gwp-5pfp-969j) is recorded as critical 9.3 with reflected internal response-body exposure through webhook test flows. [GHSA-3p64-6gvh-82v5](https://github.com/advisories/GHSA-3p64-6gvh-82v5) is lineage or evidence-integrity impact, not model-artifact confidentiality. [GHSA-gqch-g4w5-7qcw](https://github.com/advisories/GHSA-gqch-g4w5-7qcw) is high severity and confirms cross-run artifact read impact for model weights, training samples, and evaluation reports.
 
+The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) repeats the in-window MLflow 3.15.0 advisory family as separate updates but does not require new leaves. This router keeps the three-item family grouped for digest and navigation while the child leaves own independently changing SSRF, lineage-integrity, and model-artifact confidentiality details.
+
 ## Security Impact
 
 - Threat: attackers can use MLflow control-plane features to read internal network resources, poison lineage evidence, or disclose model artifacts; the linked leaves own the issue-specific analysis.
@@ -34,6 +36,7 @@ The [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-se
 
 - [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json)
 - [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json)
+- [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
 - GitHub advisory GHSA-7gwp-5pfp-969j: https://github.com/advisories/GHSA-7gwp-5pfp-969j
 - GitHub advisory GHSA-3p64-6gvh-82v5: https://github.com/advisories/GHSA-3p64-6gvh-82v5
 - GitHub advisory GHSA-gqch-g4w5-7qcw: https://github.com/advisories/GHSA-gqch-g4w5-7qcw
@@ -70,3 +73,4 @@ The [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-se
 - Created on 2026-08-17 from the August 17 topic collector as one closely coupled MLflow 3.15.0 advisory-family leaf.
 - Updated on 2026-08-19 from the August 19 leaf watcher with GitHub-reviewed severity, response-body, lineage-integrity, and artifact-read impact detail.
 - Split on 2026-08-19 after verifier correction so each CVE has its own durable leaf and this page remains the family router.
+- Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with repeated in-window CVE publication evidence without creating duplicate digest items.
