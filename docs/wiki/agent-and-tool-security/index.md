@@ -47,6 +47,14 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [CodeWhale JS execution environment exposure](codewhale-js-execution-environment-exposure.md)
 - [SiYuan MCP database clean path traversal](siyuan-mcp-database-clean-path-traversal.md)
 - [Spring AI tool dispatch authorization bypass](spring-ai-tool-dispatch-authorization-bypass.md)
+- [Spring AI MCP Streamable HTTP session DoS](spring-ai-mcp-streamable-http-session-dos.md)
+- [CKAN MCP Server SSRF filter bypass](ckan-mcp-server-ssrf-filter-bypass.md)
+- [SiYuan MCP HTTP request secret exfiltration](siyuan-mcp-http-request-secret-exfiltration.md)
+- [SiYuan MCP file tool blocklist bypass](siyuan-mcp-file-tool-blocklist-bypass.md)
+- [Omnigent shared agent bundle overwrite RCE](omnigent-shared-agent-bundle-overwrite-rce.md)
+- [Omnigent callable path runner RCE](omnigent-callable-path-runner-rce.md)
+- [Omnigent shell policy parser bypass](omnigent-shell-policy-parser-bypass.md)
+- [Omnigent agent bundle CWD workspace bypass](omnigent-agent-bundle-cwd-workspace-bypass.md)
 
 ## Authoritative Sources
 
@@ -82,3 +90,4 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Updated on 2026-08-19 with MCP and agent-tool leaves for mcp-florence2, SiYuan, PyCharm, Apache SkyWalking, RAGFlow, and CodeWhale.
 - Updated on 2026-08-19 after verifier correction split CodeWhale and SiYuan advisory routers into focused leaves.
 - Updated on 2026-08-21 with the Spring AI tool-dispatch authorization leaf.
+- Updated on 2026-08-22 with Spring AI MCP transport DoS, CKAN, SiYuan v3.8.0, and Omnigent agent-control-plane advisory leaves.

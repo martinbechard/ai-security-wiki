@@ -21,6 +21,8 @@ Approval applies to the launched process. Approving a shell or wrapper script ca
 
 The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) adds [Junie Action Allowlist](https://junie.jetbrains.com/docs/action-allowlist.html) evidence for terminal, MCP, outside-project read/write, build/test, preview, and build-script action classes. Its shell guidance reinforces that command patterns must avoid chaining and shell metacharacter expansion when the intent is one reviewed operation.
 
+The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) adds the visibly modified [Junie CLI action allowlist documentation](https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html). It keeps terminal commands, MCP tools, and other sensitive actions approval-gated unless brave mode or reviewed allowlist entries apply, so CLI-specific allowlist files must be treated as production authorization artifacts.
+
 ## Control Implications
 
 - Match exact commands or tightly bounded argument patterns instead of executable prefixes.
@@ -38,6 +40,10 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 - [JetBrains AI Development Security Guide - Junie profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
 - [JetBrains AI Development Security Guide - AI Assistant profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
 - [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json)
+- [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json)
+- JetBrains Junie CLI action allowlist: https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html
+- JetBrains Junie action allowlist: https://junie.jetbrains.com/docs/action-allowlist.html
+- JetBrains Junie CLI documentation: https://junie.jetbrains.com/docs/junie-cli.html
 
 ## Related Code
 
@@ -65,3 +71,4 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 ## Maintenance Notes
 
 - Created on 2026-07-30 from the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md), [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md), and [IntelliJ AI Assistant](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides; enriched from the [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) with Junie action-class and shell-pattern evidence.
+- Updated on 2026-08-22 from the [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) with Junie CLI allowlist documentation evidence.

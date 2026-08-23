@@ -13,6 +13,8 @@ The [August 21 topic news collector source](../../../raw/processed/2026-08-21/ai
 
 The reported attack uses encrypted instructions, such as AES-256-GCM material derived with PBKDF2, so text filters and safety classifiers do not see the harmful instruction in plaintext before model or runtime processing. Adversa reports a Grok browsing scenario where decrypted instructions could exfiltrate private session context and chat history through outbound navigation without user confirmation, and a Gemini Deep Thinking scenario where prohibited output returned as ciphertext bypassed safety filtering. The collector notes Grok remained reproducible as of 2026-08-19 and Gemini success had declined but was not fully closed according to researcher statements, with [SecurityWeek](https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/) corroborating the public disclosure window.
 
+The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) adds [The Hacker News](https://thehackernews.com/2026/08/new-cryptographic-context-injection.html) as additional secondary coverage while preserving the open question for primary xAI or Google mitigation statements.
+
 ## Security Impact
 
 - Threat: encrypted or encoded runtime content can bypass prompt filters and then influence tool use, outbound navigation, or unsafe output after decryption.
@@ -25,8 +27,10 @@ The reported attack uses encrypted instructions, such as AES-256-GCM material de
 ## Authoritative Sources
 
 - [August 21 topic news collector source](../../../raw/processed/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json)
+- [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json)
 - Adversa AI research: https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/
 - SecurityWeek report: https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/
+- The Hacker News report: https://thehackernews.com/2026/08/new-cryptographic-context-injection.html
 
 ## Related Code
 
@@ -54,3 +58,4 @@ The reported attack uses encrypted instructions, such as AES-256-GCM material de
 ## Maintenance Notes
 
 - Created on 2026-08-21 from the [August 21 topic collector](../../../raw/processed/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json) as a prompt-security attack-pattern leaf.
+- Updated on 2026-08-22 from the [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) with additional secondary coverage and unchanged vendor-mitigation open question.

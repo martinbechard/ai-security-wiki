@@ -15,6 +15,8 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - [vLLM derender denial of service](vllm-derender-denial-of-service.md)
 - [vLLM multimodal media SSRF file read](vllm-multimodal-media-ssrf-file-read.md)
 - [Cryptographic Context Injection](cryptographic-context-injection.md)
+- [Xinference Llama3 tool call eval RCE](xinference-llama3-tool-call-eval-rce.md)
+- [Legal filing prompt injection](legal-filing-prompt-injection.md)
 
 ## Authoritative Sources
 
@@ -48,3 +50,4 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - Updated on 2026-08-19 with Context7 MCP prompt-injection and vLLM multimodal input-boundary leaves.
 - Updated on 2026-08-19 after verifier correction split vLLM derender DoS and multimodal media SSRF/file-read leaves.
 - Updated on 2026-08-21 with the Cryptographic Context Injection attack-pattern leaf.
+- Updated on 2026-08-22 with Xinference prompt-driven parser RCE and legal filing prompt-injection leaves.

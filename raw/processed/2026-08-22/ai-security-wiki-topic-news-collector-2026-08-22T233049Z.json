@@ -1,0 +1,968 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-08-22T23:30:49Z",
+  "cutoff_window": {
+    "start": "2026-08-20T23:30:49Z",
+    "end": "2026-08-22T23:30:49Z",
+    "basis": "Exact 48-hour window relative to the local run timestamp. Date-only August 20 sources were treated as boundary-only unless a visible timestamp placed them after the cutoff."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "search_methods": [
+    {
+      "method": "public_web_search",
+      "queries": [
+        "AI security vulnerability advisory August 22 2026 MCP prompt injection",
+        "August 21 2026 AI security advisory vulnerability LLM",
+        "site:cisa.gov AI security August 21 2026",
+        "site:nist.gov AI security August 21 2026",
+        "Connecticut judge hidden AI prompt injection court filing sanctions August 22 2026"
+      ]
+    },
+    {
+      "method": "public_nvd_api_keyword_queries",
+      "window": "2026-08-20T23:30:49Z/2026-08-22T23:30:49Z",
+      "keywords": [
+        "AI",
+        "MCP",
+        "agent",
+        "LLM",
+        "model",
+        "prompt injection",
+        "dataset"
+      ]
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-59279",
+      "title": "Spring AI MCP Streamable HTTP transport unbounded session allocation DoS",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59279",
+        "https://spring.io/security/cve-2026-59279/"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-21T12:16:30.013Z",
+          "last_modified": "2026-08-21T15:16:42.257Z"
+        },
+        {
+          "source": "Spring advisory",
+          "published": "AUGUST 20, 2026",
+          "history": "2026-08-20: Initial vulnerability report published"
+        }
+      ],
+      "summary": "Spring AI 2.0.0's MCP Streamable HTTP server transport does not bound retained sessions and does not require client authentication by default, allowing a remote attacker to exhaust memory with repeated initialize requests.",
+      "evidence_classification": "primary vendor advisory and NVD CVE record",
+      "affected_boundary_or_version": "Spring AI 2.0.0; fixed in 2.0.1 OSS and 2.0.0.1 enterprise support",
+      "security_delta": "new vulnerability disclosure and patch",
+      "why_it_matters_for_ai_security": "MCP transports are agent tool-control boundaries; unauthenticated resource exhaustion can take down AI tool servers shared by legitimate agents.",
+      "named_entities": [
+        "Spring AI",
+        "Model Context Protocol",
+        "MCP Streamable HTTP"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Spring AI and MCP protocol/product context are upstream-owned entity material.",
+        "ai_dev_wiki": "General MCP server implementation practice is upstream-owned by ai-dev-wiki.",
+        "local_security_lens": "Keep the denial-of-service control boundary, authentication default, and fixed-version implication here."
+      },
+      "confidence_notes": "High confidence from vendor advisory and NVD timestamp; Spring date is date-only August 20 but NVD publication is inside the exact window.",
+      "follow_up_actions": [
+        "During ingest, group with the other Spring AI CVEs as a Spring AI MCP/security patch cluster if a single local security leaf already owns Spring AI framework risk.",
+        "Check whether any local page already tracks MCP transport authentication defaults."
+      ]
+    },
+    {
+      "id": "CVE-2026-59308",
+      "title": "Spring AI Semantic Cache cross-context isolation bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59308",
+        "https://spring.io/security/cve-2026-59308/"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-21T12:16:30.270Z",
+          "last_modified": "2026-08-21T15:16:42.360Z"
+        },
+        {
+          "source": "Spring advisory",
+          "published": "AUGUST 20, 2026",
+          "history": "2026-08-20: Initial vulnerability report published"
+        }
+      ],
+      "summary": "Spring AI 2.0.0 Semantic Cache used a context hash that could allow cached responses to be shared across unrelated system-prompt contexts.",
+      "evidence_classification": "primary vendor advisory and NVD CVE record",
+      "affected_boundary_or_version": "Spring AI 2.0.0; fixed in 2.0.1 OSS and 2.0.0.1 enterprise support",
+      "security_delta": "new vulnerability disclosure and patch",
+      "why_it_matters_for_ai_security": "Semantic caches can cross tenant, prompt, or policy boundaries; cache isolation failures can leak or replay responses under the wrong AI application context.",
+      "named_entities": [
+        "Spring AI",
+        "Semantic Cache",
+        "PayPal"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Spring AI framework facts are upstream-owned.",
+        "ai_dev_wiki": "General caching implementation practice is upstream-owned if not security-specific.",
+        "local_security_lens": "Keep the AI cache isolation risk and mitigation record here."
+      },
+      "confidence_notes": "High confidence from vendor advisory and NVD timestamp.",
+      "follow_up_actions": [
+        "Check for existing local pages on AI cache isolation, context separation, or data leakage.",
+        "Preserve the fixed-version mapping during ingest."
+      ]
+    },
+    {
+      "id": "CVE-2026-59318",
+      "title": "Spring AI tool calling boundary bypass can dispatch unadvertised tools",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59318",
+        "https://spring.io/security/cve-2026-59318/"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-21T12:16:30.390Z",
+          "last_modified": "2026-08-22T04:17:51.870Z"
+        },
+        {
+          "source": "Spring advisory",
+          "published": "AUGUST 20, 2026",
+          "history": "2026-08-20: Initial vulnerability report published"
+        }
+      ],
+      "summary": "Spring AI's tool-calling support advertised a per-request tool list to the model but did not fully enforce that list at dispatch, allowing conditions where a tool unavailable to the current request could be invoked.",
+      "evidence_classification": "primary vendor advisory and NVD CVE record",
+      "affected_boundary_or_version": "Spring AI 2.0.0, 1.1.0 through 1.1.8, and 1.0.0 through 1.0.9; fixed in 2.0.1 OSS, 2.0.0.1, 1.1.9, and 1.0.10",
+      "security_delta": "new vulnerability disclosure and patch",
+      "why_it_matters_for_ai_security": "Advertised tool lists are least-privilege boundaries for agent execution; dispatch fallback can turn prompt influence into unintended tool access.",
+      "named_entities": [
+        "Spring AI",
+        "DefaultToolCallingManager",
+        "Securin"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Spring AI framework and product details route upstream.",
+        "ai_dev_wiki": "General tool-calling implementation practice routes upstream.",
+        "local_security_lens": "Keep the prompt-injection-to-tool-dispatch privilege escalation implication here."
+      },
+      "confidence_notes": "High confidence from vendor advisory and NVD modification inside window.",
+      "follow_up_actions": [
+        "During ingest, connect to local leaves on agent tool authorization and prompt injection boundaries.",
+        "Check whether fixed-version availability differs for OSS versus enterprise support."
+      ]
+    },
+    {
+      "id": "CVE-2026-53509",
+      "title": "CKAN MCP Server SSRF filter bypass via hostname aliases",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53509",
+        "https://github.com/ondata/ckan-mcp-server/security/advisories/GHSA-g84h-j7jj-x32p",
+        "https://github.com/ondata/ckan-mcp-server/releases/tag/v0.4.106"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-21T22:16:38.993Z",
+          "last_modified": "2026-08-21T22:16:38.993Z"
+        }
+      ],
+      "summary": "CKAN MCP Server before 0.4.106 inspected only parsed hostname strings before outbound requests, allowing aliases such as ip6-localhost to bypass SSRF filtering and resolve to loopback or private destinations.",
+      "evidence_classification": "NVD CVE record with linked GitHub advisory and release",
+      "affected_boundary_or_version": "CKAN MCP Server before 0.4.106",
+      "security_delta": "new vulnerability disclosure and patch",
+      "why_it_matters_for_ai_security": "MCP data connectors can become SSRF pivots from an agent tool invocation into local or private network resources.",
+      "named_entities": [
+        "CKAN MCP Server",
+        "CKAN",
+        "Model Context Protocol"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "CKAN MCP Server entity coverage routes upstream if cataloged.",
+        "ai_dev_wiki": "General MCP connector practice routes upstream.",
+        "local_security_lens": "Keep hostname validation, SSRF bypass, and connector boundary implications here."
+      },
+      "confidence_notes": "High confidence from NVD in-window timestamp; GitHub advisory should be rechecked during ingest for original publication date and affected ranges.",
+      "follow_up_actions": [
+        "Verify whether CVE-2026-33060 was already captured and link this as a bypass/follow-on fix.",
+        "Check local MCP SSRF pages for consolidation."
+      ]
+    },
+    {
+      "id": "CVE-2026-59809",
+      "title": "SiYuan MCP http_request tool can exfiltrate stored secrets",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59809",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-853m-gvvm-6rvx",
+        "https://www.vulncheck.com/advisories/siyuan-before-secret-exfiltration-via-http-request-url"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-22T13:16:39.127Z",
+          "last_modified": "2026-08-22T13:16:39.127Z"
+        }
+      ],
+      "summary": "SiYuan before v3.8.0 interpolates secret placeholders into the destination URL parameter of its http_request MCP tool, letting an MCP client send plaintext stored secrets to attacker-controlled public hosts.",
+      "evidence_classification": "NVD CVE record with linked GitHub advisory and VulnCheck advisory",
+      "affected_boundary_or_version": "SiYuan before v3.8.0",
+      "security_delta": "new vulnerability disclosure and patch",
+      "why_it_matters_for_ai_security": "Tool URL construction can become a credential-exfiltration boundary when an AI client can invoke MCP tools with templated secrets.",
+      "named_entities": [
+        "SiYuan",
+        "MCP",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "SiYuan product context routes upstream if represented.",
+        "ai_dev_wiki": "General MCP secret-template handling may be upstream practice.",
+        "local_security_lens": "Keep MCP tool secret exfiltration and URL-destination validation here."
+      },
+      "confidence_notes": "High confidence from NVD in-window publication; vendor advisory publication date should be checked during ingest.",
+      "follow_up_actions": [
+        "Connect to identity, credentials, least privilege, and MCP tool security leaves.",
+        "Record that high-privilege MCP clients remain sensitive even when the CVSS v3.1 privilege requirement is high."
+      ]
+    },
+    {
+      "id": "CVE-2026-60083",
+      "title": "SiYuan MCP file tool incomplete blocklist exposes workspace secrets",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-60083",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-c8r8-95hg-mp34",
+        "https://www.vulncheck.com/advisories/siyuan-before-incomplete-path-blocklist-via-mcp-file-tool"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-22T13:16:39.263Z",
+          "last_modified": "2026-08-22T13:16:39.263Z"
+        }
+      ],
+      "summary": "SiYuan before v3.8.0 had an incomplete MCP file-tool path blocklist, allowing authenticated administrators to read plaintext publish-mode passwords and other sensitive workspace files.",
+      "evidence_classification": "NVD CVE record with linked GitHub advisory and VulnCheck advisory",
+      "affected_boundary_or_version": "SiYuan before v3.8.0",
+      "security_delta": "new vulnerability disclosure and patch",
+      "why_it_matters_for_ai_security": "MCP file tools need positive filesystem scoping; blocklists can miss sensitive workspace files that agents should not expose.",
+      "named_entities": [
+        "SiYuan",
+        "MCP file tool",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "SiYuan product context routes upstream if represented.",
+        "ai_dev_wiki": "General file-tool scoping practice may route upstream.",
+        "local_security_lens": "Keep MCP filesystem access-control and sensitive-workspace-file implications here."
+      },
+      "confidence_notes": "High confidence from NVD in-window publication; linked advisories should be fetched during ingest for fixed-version detail.",
+      "follow_up_actions": [
+        "Check whether local pages already discuss blocklist versus allowlist patterns for agent tools.",
+        "Pair with CVE-2026-59809 as a SiYuan MCP credential/file exposure cluster."
+      ]
+    },
+    {
+      "id": "CVE-2026-62674",
+      "title": "Omnigent shared agent bundle overwrite enables runner command execution",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62674",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-jrrm-9hc7-2v3h",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-21T18:16:49.460Z",
+          "last_modified": "2026-08-21T18:16:49.460Z"
+        },
+        {
+          "source": "GitHub advisory",
+          "published": "Jun 29, 2026"
+        }
+      ],
+      "summary": "Omnigent before 0.3.0 allowed an authenticated user with edit access to overwrite a shared/template agent bundle, add a stdio MCP server, and cause future sessions using that shared agent to launch attacker-controlled commands with runner permissions.",
+      "evidence_classification": "NVD CVE record and older GitHub security advisory",
+      "affected_boundary_or_version": "Omnigent before 0.3.0; patched in 0.3.0",
+      "security_delta": "new NVD CVE publication inside window for an older GitHub advisory",
+      "why_it_matters_for_ai_security": "Shared agent templates and MCP stdio configuration are delegated-authority boundaries; bundle overwrite can turn ordinary session edit rights into runner RCE and credential exposure.",
+      "named_entities": [
+        "Omnigent",
+        "MCP stdio",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Omnigent framework/entity facts route upstream.",
+        "ai_dev_wiki": "General coding-agent framework workflow implications route upstream.",
+        "local_security_lens": "Keep shared-agent template authorization, MCP command execution, and runner credential exposure here."
+      },
+      "confidence_notes": "High confidence for NVD in-window publication; note that the linked GitHub advisory itself is older than the window.",
+      "follow_up_actions": [
+        "During ingest, avoid presenting this as a newly discovered bug; phrase as newly indexed/received by NVD.",
+        "Consolidate with the other Omnigent 0.3.0 fixes."
+      ]
+    },
+    {
+      "id": "CVE-2026-62675",
+      "title": "Omnigent agent bundle callable path imports allow runner RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62675",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-21T18:16:49.603Z",
+          "last_modified": "2026-08-21T19:17:12.840Z"
+        }
+      ],
+      "summary": "Omnigent before 0.3.0 accepted authenticated agent bundles with a dotted Python callable path; the runner could import and invoke attacker-selected callables such as subprocess.check_output, exposing files, environment variables, credentials, workspace data, internal services, and availability.",
+      "evidence_classification": "NVD CVE record with linked project release",
+      "affected_boundary_or_version": "Omnigent before 0.3.0; patched in 0.3.0",
+      "security_delta": "new vulnerability disclosure/indexing and patch",
+      "why_it_matters_for_ai_security": "Agent bundle validation is an AI supply-chain and execution-sandbox control; dynamic callable imports create a direct path from user-controlled agent packaging to runner code execution.",
+      "named_entities": [
+        "Omnigent",
+        "Python callable",
+        "subprocess.check_output"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Omnigent framework facts route upstream.",
+        "ai_dev_wiki": "General agent bundle packaging practice routes upstream.",
+        "local_security_lens": "Keep the untrusted agent bundle execution and runner isolation implications here."
+      },
+      "confidence_notes": "High confidence from NVD in-window publication; linked advisory title should be fetched during ingest if available.",
+      "follow_up_actions": [
+        "Check if local pages distinguish agent bundle validation from tool-call authorization.",
+        "Preserve the runner process permission boundary."
+      ]
+    },
+    {
+      "id": "CVE-2026-62676",
+      "title": "Omnigent shell parser bypass allows unauthorized repository or workspace actions",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62676",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-21T18:16:49.743Z",
+          "last_modified": "2026-08-21T18:16:49.743Z"
+        }
+      ],
+      "summary": "Omnigent before 0.3.0 failed to recognize several shell-command forms, including combined interpreter flags, wrappers, substitutions, and a background operator, causing repository and workspace allowlist policies to abstain and permit unauthorized git, gh, or workspace-escape operations.",
+      "evidence_classification": "NVD CVE record with linked project release",
+      "affected_boundary_or_version": "Omnigent before 0.3.0; patched in 0.3.0",
+      "security_delta": "new vulnerability disclosure/indexing and patch",
+      "why_it_matters_for_ai_security": "Coding-agent shell policies often rely on command parsing; parser blind spots can let prompt-injected or authenticated agents bypass repository and workspace least-privilege controls.",
+      "named_entities": [
+        "Omnigent",
+        "GitHub CLI",
+        "git",
+        "working_dir.py"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Omnigent entity facts route upstream.",
+        "ai_dev_wiki": "General coding-agent workflow and shell parsing practice routes upstream.",
+        "local_security_lens": "Keep the command-policy bypass and prompt-injected agent action implications here."
+      },
+      "confidence_notes": "High confidence from NVD in-window publication.",
+      "follow_up_actions": [
+        "Relate to local least-privilege and delegated-authority leaves.",
+        "During ingest, capture that policy abstention failed open."
+      ]
+    },
+    {
+      "id": "CVE-2026-62677",
+      "title": "Omnigent cwd traversal lets agent tools access files outside workspace",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62677",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-21T18:16:49.887Z",
+          "last_modified": "2026-08-21T22:16:41.803Z"
+        }
+      ],
+      "summary": "Omnigent before 0.3.0 allowed an authenticated user to upload a session-scoped agent bundle with an absolute or traversal-containing os_env.cwd, making sys_os_read, write, edit, and shell tools treat attacker-selected paths as trusted roots when OMNIGENT_RUNNER_WORKSPACE was unset.",
+      "evidence_classification": "NVD CVE record with linked project release",
+      "affected_boundary_or_version": "Omnigent before 0.3.0; patched in 0.3.0",
+      "security_delta": "new vulnerability disclosure/indexing and patch",
+      "why_it_matters_for_ai_security": "Workspace confinement is a core coding-agent safety control; cwd trust confusion can expose runner files, environment secrets, and non-workspace data to agent tools.",
+      "named_entities": [
+        "Omnigent",
+        "OMNIGENT_RUNNER_WORKSPACE",
+        "agent bundle"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Omnigent entity facts route upstream.",
+        "ai_dev_wiki": "General coding-agent environment readiness practice routes upstream.",
+        "local_security_lens": "Keep workspace confinement bypass and credential-exposure implications here."
+      },
+      "confidence_notes": "High confidence from NVD in-window publication and modification.",
+      "follow_up_actions": [
+        "Preserve the condition where OMNIGENT_RUNNER_WORKSPACE is unset.",
+        "Link with local workspace and filesystem tool containment guidance."
+      ]
+    },
+    {
+      "id": "CVE-2026-71493",
+      "title": "Infracost template functions can read files through checkout symlinks in agent and CI workflows",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71493"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-21T18:16:50.440Z",
+          "last_modified": "2026-08-21T18:16:50.440Z"
+        }
+      ],
+      "summary": "Infracost before 0.10.45 used lexical path checks and leaf-only stat checks in template functions, allowing a repository symlink to make readFile and related functions read runner-accessible files and surface them through generated configuration, dashboards, or pull request comments.",
+      "evidence_classification": "NVD CVE record",
+      "affected_boundary_or_version": "Infracost before 0.10.45",
+      "security_delta": "new vulnerability disclosure and patch",
+      "why_it_matters_for_ai_security": "The advisory explicitly covers workflows for AI coding agents and CI/CD; attacker-controlled repository content can exfiltrate runner secrets through an auxiliary agent-adjacent tool.",
+      "named_entities": [
+        "Infracost",
+        "AI coding agents",
+        "CI/CD"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Infracost product/entity context routes upstream if cataloged.",
+        "ai_dev_wiki": "General CI and coding-agent workflow practice routes upstream.",
+        "local_security_lens": "Keep repository-content trust, symlink traversal, and runner-secret exposure implications here."
+      },
+      "confidence_notes": "High confidence from NVD in-window publication; primary GitHub advisory should be fetched during ingest to enrich references.",
+      "follow_up_actions": [
+        "Pair with CVE-2026-71494 as an Infracost agent/CI supply-chain risk cluster.",
+        "Check local leaves on coding-agent repository supply-chain risk."
+      ]
+    },
+    {
+      "id": "CVE-2026-71494",
+      "title": "Infracost can leak Terraform Cloud or registry tokens to attacker-controlled hosts",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71494"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-21T18:16:50.590Z",
+          "last_modified": "2026-08-21T20:16:40.340Z"
+        }
+      ],
+      "summary": "Infracost before 0.10.45 could attach configured Terraform Cloud or registry tokens to destination hostnames derived from untrusted Terraform input, exposing tokens in CI runs that scan attacker-controlled Terraform with secrets available.",
+      "evidence_classification": "NVD CVE record",
+      "affected_boundary_or_version": "Infracost before 0.10.45",
+      "security_delta": "new vulnerability disclosure and patch",
+      "why_it_matters_for_ai_security": "AI coding agents and CI workflows often inspect infrastructure code from pull requests; untrusted IaC input can redirect privileged tokens if outbound host binding is not enforced.",
+      "named_entities": [
+        "Infracost",
+        "Terraform Cloud",
+        "Terragrunt",
+        "AI coding agents"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Infracost entity facts route upstream if represented.",
+        "ai_dev_wiki": "General pull-request and CI workflow practice routes upstream.",
+        "local_security_lens": "Keep credential forwarding and untrusted infrastructure-code scanning implications here."
+      },
+      "confidence_notes": "High confidence from NVD in-window publication and modification.",
+      "follow_up_actions": [
+        "During ingest, record that standard fork pull_request workflows without secrets are not exposed according to NVD.",
+        "Check existing local credential and least-privilege pages."
+      ]
+    },
+    {
+      "id": "CVE-2026-53656",
+      "title": "FiftyOne local AI dataset server CORS and media route file-read exposure",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53656"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "published": "2026-08-21T21:17:00.113Z",
+          "last_modified": "2026-08-21T22:16:40.100Z"
+        }
+      ],
+      "summary": "FiftyOne before 1.17.0 returned Access-Control-Allow-Origin: * from a local unauthenticated App/API server, and its /media route accepted filesystem paths, allowing a malicious website visited by the user to read files accessible to the server and exfiltrate them.",
+      "evidence_classification": "NVD CVE record",
+      "affected_boundary_or_version": "FiftyOne before 1.17.0; fixed by explicit allowed_origins configuration and same-origin default policy",
+      "security_delta": "new vulnerability disclosure and patch",
+      "why_it_matters_for_ai_security": "Local dataset and visual-model tooling can expose host files through browser-origin mistakes, affecting AI data security and developer workstation boundaries.",
+      "named_entities": [
+        "FiftyOne",
+        "visual AI models",
+        "dataset tooling"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "FiftyOne product/entity context routes upstream if cataloged.",
+        "ai_dev_wiki": "General local development tooling practice routes upstream.",
+        "local_security_lens": "Keep data-tool CORS, local server, and filesystem exposure implications here."
+      },
+      "confidence_notes": "High confidence from NVD in-window publication and fixed-version detail.",
+      "follow_up_actions": [
+        "Check for local pages about data security, privacy, and browser-to-localhost attack surfaces.",
+        "Confirm whether FiftyOne has a primary advisory during ingest."
+      ]
+    },
+    {
+      "id": "CVE-2026-77775",
+      "title": "Headroom LLM proxy accepts client-supplied upstream base URL without address validation",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77775",
+        "https://www.cve.org/CVERecord?id=CVE-2026-77775",
+        "https://www.vulncheck.com/advisories/headroom-proxy-sends-upstream-requests-to-a-client-supplied-base-url-without-address-validation"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE.org",
+          "published": "2026-08-21T11:22:51.107Z",
+          "updated": "2026-08-21T11:44:34.968Z"
+        },
+        {
+          "source": "NVD/search result",
+          "published": "2026-08-21T12:16:36.813Z"
+        }
+      ],
+      "summary": "Headroom's LLM proxy accepted a client-controlled x-headroom-base-url request header for OpenAI-compatible and passthrough upstream routing without rejecting loopback, link-local, RFC 1918, or metadata destinations.",
+      "evidence_classification": "CVE record and NVD-indexed vulnerability database entry",
+      "affected_boundary_or_version": "Headroom LLM proxy; public sources identify affected versions before 0.36.1, but ingest should verify exact range from primary advisory",
+      "security_delta": "new vulnerability disclosure",
+      "why_it_matters_for_ai_security": "LLM proxies sit between agents and model APIs; arbitrary upstream routing can turn model API traffic into SSRF against internal services and cloud metadata.",
+      "named_entities": [
+        "Headroom",
+        "LLM proxy",
+        "OpenAI-compatible API",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Headroom product/entity context routes upstream if cataloged.",
+        "ai_dev_wiki": "General proxy integration practice routes upstream.",
+        "local_security_lens": "Keep LLM-proxy SSRF and upstream-destination validation implications here."
+      },
+      "confidence_notes": "Medium-high confidence from CVE.org and NVD search result; NVD per-CVE detail fetch was rate-limited during collection.",
+      "follow_up_actions": [
+        "Re-fetch NVD and VulnCheck during ingest for exact affected and fixed versions.",
+        "Check whether local pages already cover LLM proxy destination allowlists."
+      ]
+    },
+    {
+      "id": "CVE-2026-77776",
+      "title": "Headroom LLM proxy trusts client-supplied memory owner header",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77776",
+        "https://www.cve.org/CVERecord?id=CVE-2026-77776",
+        "https://app.opencve.io/cve/CVE-2026-77776"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE.org/search result",
+          "published": "2026-08-21"
+        },
+        {
+          "source": "NVD/search result",
+          "published": "2026-08-21T12:16:36.967Z"
+        }
+      ],
+      "summary": "Headroom's LLM proxy derived the memory owner from x-headroom-user-id without binding it to the caller, allowing a client to name another user's identifier and read or write that user's stored LLM memory.",
+      "evidence_classification": "CVE record and NVD-indexed vulnerability database entry",
+      "affected_boundary_or_version": "Headroom LLM proxy; public secondary sources mention versions before 0.36.1 or 0.29.0 and earlier, requiring ingest verification",
+      "security_delta": "new vulnerability disclosure",
+      "why_it_matters_for_ai_security": "Cross-user memory disclosure and manipulation is an AI privacy, identity, and authorization failure affecting persistent LLM context.",
+      "named_entities": [
+        "Headroom",
+        "LLM memory",
+        "x-headroom-user-id"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Headroom product/entity context routes upstream if cataloged.",
+        "ai_dev_wiki": "General memory-proxy workflow context routes upstream.",
+        "local_security_lens": "Keep the user-controlled identity key and AI memory isolation implication here."
+      },
+      "confidence_notes": "Medium confidence: multiple public CVE database sources agree on the fact pattern, but NVD per-CVE detail fetch was rate-limited and affected-version snippets conflict.",
+      "follow_up_actions": [
+        "Re-fetch NVD, CVE.org, and primary advisory before durable synthesis.",
+        "Record any affected-version conflict as an open ingest note until resolved."
+      ]
+    },
+    {
+      "id": "CVE-2026-54457",
+      "title": "TensorZero Gateway internal object storage endpoint arbitrary file read and SSRF",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54457",
+        "https://github.com/tensorzero/tensorzero/security/advisories/GHSA-824w-x939-6cmc",
+        "https://app.opencve.io/cve/CVE-2026-54457"
+      ],
+      "visible_dates": [
+        {
+          "source": "OpenCVE CVE record",
+          "published": "2026-08-21T20:34:03.632Z",
+          "updated": "2026-08-21T20:34:03.632Z"
+        },
+        {
+          "source": "NVD/search result",
+          "published": "2026-08-21T21:17:00.267Z"
+        }
+      ],
+      "summary": "TensorZero before 2026.6.0 exposed an LLMOps gateway internal object-storage endpoint that could be abused for arbitrary file read and SSRF by selecting filesystem or attacker-controlled object-storage backends.",
+      "evidence_classification": "CVE record with linked GitHub advisory",
+      "affected_boundary_or_version": "TensorZero before 2026.6.0",
+      "security_delta": "new CVE publication/indexing for LLMOps gateway vulnerability",
+      "why_it_matters_for_ai_security": "LLMOps gateways centralize prompts, traces, evals, and model traffic; arbitrary file read and SSRF can expose credentials and internal services around AI operations.",
+      "named_entities": [
+        "TensorZero",
+        "LLMOps",
+        "LLM gateway",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "TensorZero product/entity context routes upstream if cataloged.",
+        "ai_dev_wiki": "General observability/evaluation workflow practice may route upstream.",
+        "local_security_lens": "Keep LLMOps gateway file-read, SSRF, and operational-data exposure implications here."
+      },
+      "confidence_notes": "Medium-high confidence from OpenCVE/CVE metadata and NVD search result; NVD per-CVE detail fetch was rate-limited.",
+      "follow_up_actions": [
+        "Fetch GitHub advisory during ingest for exact endpoint and mitigation text.",
+        "Check for local pages on AI observability and eval data sensitivity."
+      ]
+    },
+    {
+      "id": "CVE-2026-49114",
+      "title": "ONNX external data save path symlink-following arbitrary file write",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-49114",
+        "https://www.cve.org/CVERecord?id=CVE-2026-49114",
+        "https://github.com/onnx/onnx/security/advisories/GHSA-q56x-g2fj-4rj6"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD/search result",
+          "published": "2026-08-21T16:17:17.863Z"
+        },
+        {
+          "source": "OpenCVE CVE metadata",
+          "published": "2026-08-21T16:10:56.241Z",
+          "updated": "2026-08-21T16:43:10.933Z"
+        }
+      ],
+      "summary": "ONNX before 1.21.0 allowed a local attacker with write access to a model external-data serialization directory to pre-plant a symlink so save_external_data would append to files writable by the victim.",
+      "evidence_classification": "NVD-indexed CVE record and linked GitHub advisory",
+      "affected_boundary_or_version": "ONNX before 1.21.0; 1.21.0 marked unaffected",
+      "security_delta": "new CVE publication/indexing for model artifact write vulnerability",
+      "why_it_matters_for_ai_security": "Model artifact formats and serialization code are part of the AI supply chain; external-data path handling can affect integrity and availability of host files during model processing.",
+      "named_entities": [
+        "ONNX",
+        "External Data",
+        "CISA ADP"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "ONNX model-format context is upstream-owned.",
+        "ai_dev_wiki": "General model-handling implementation practice may route upstream.",
+        "local_security_lens": "Keep model artifact path traversal and local write implications here."
+      },
+      "confidence_notes": "Medium-high confidence; NVD search and OpenCVE metadata agree, and CISA ADP notes proof-of-concept status in CVE metadata.",
+      "follow_up_actions": [
+        "Re-fetch the primary GitHub advisory during ingest.",
+        "Check whether local pages already track model artifact path traversal."
+      ]
+    },
+    {
+      "id": "CVE-2026-61539",
+      "title": "Xinference unsafe eval in Llama3 tool-call parsing allows prompt-driven RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61539",
+        "https://advisories.gitlab.com/pypi/xinference/CVE-2026-61539/",
+        "https://github.com/advisories"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD/search result",
+          "published": "2026-08-21T21:17:02.963Z"
+        },
+        {
+          "source": "GitLab Advisory Database",
+          "published": "August 21, 2026"
+        },
+        {
+          "source": "GitHub Advisory Database search result",
+          "published": "Aug 21, 2026"
+        }
+      ],
+      "summary": "Xinference 2.5.0 and earlier passed attacker-influenced Llama3 tool-call output to Python eval() while handling /v1/chat/completions with tools, allowing an unauthenticated remote attacker to craft prompts that execute commands in the server process; public sources identify 2.7.0 as fixed.",
+      "evidence_classification": "NVD-indexed CVE record and package advisory database entries",
+      "affected_boundary_or_version": "Xinference 2.5.0 and earlier; fixed in 2.7.0 according to NVD/search snippets",
+      "security_delta": "new vulnerability disclosure and patch",
+      "why_it_matters_for_ai_security": "This is a direct prompt-to-code-execution path in an inference API: model-generated tool-call text becomes executable server-side Python.",
+      "named_entities": [
+        "Xinference",
+        "Llama3",
+        "OpenAI-compatible API",
+        "GitHub Advisory Database",
+        "GitLab Advisory Database"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Xinference and model-serving product context route upstream if cataloged.",
+        "ai_dev_wiki": "General inference server operation practice may route upstream.",
+        "local_security_lens": "Keep prompt-driven tool parsing RCE, unsafe eval, and fixed-version implications here."
+      },
+      "confidence_notes": "High confidence on fact pattern from multiple public advisory databases; NVD per-CVE detail fetch was rate-limited but search snippets exposed the critical details.",
+      "follow_up_actions": [
+        "Fetch the GitHub GHSA directly during ingest to confirm affected and fixed versions.",
+        "Link to local prompt-injection and inference-runtime security pages."
+      ]
+    },
+    {
+      "id": "CVE-2026-71513",
+      "title": "NLTK AllowlistUnpickler bypass enables malicious transition-parser model RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71513",
+        "https://www.cve.org/CVERecord?id=CVE-2026-71513"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD/search result",
+          "published": "2026-08-22T14:16:33.417Z"
+        }
+      ],
+      "summary": "NLTK before 3.10.3 validated only the pickle module string and not the global name in AllowlistUnpickler, allowing crafted untrusted transition-parser models to execute arbitrary commands when loaded through allowlisted_pickle_load.",
+      "evidence_classification": "NVD-indexed CVE record",
+      "affected_boundary_or_version": "NLTK before 3.10.3",
+      "security_delta": "new vulnerability disclosure and patch",
+      "why_it_matters_for_ai_security": "NLP model artifacts and ML dependencies can carry executable deserialization payloads; model-loading allowlists must validate exact callables, not only module namespaces.",
+      "named_entities": [
+        "NLTK",
+        "AllowlistUnpickler",
+        "TransitionParser"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "NLTK dependency/entity context routes upstream if cataloged.",
+        "ai_dev_wiki": "General ML dependency management practice may route upstream.",
+        "local_security_lens": "Keep malicious NLP model loading and AI supply-chain deserialization implications here."
+      },
+      "confidence_notes": "Medium-high confidence from NVD search result; direct per-CVE fetch was rate-limited and should be rechecked.",
+      "follow_up_actions": [
+        "Fetch direct NVD/CVE/GHSA details during ingest.",
+        "Check whether local pages cover model artifact deserialization and dependency supply-chain risk."
+      ]
+    },
+    {
+      "id": "public-incident-connecticut-court-filing-prompt-injection-2026-08-22",
+      "title": "Connecticut litigant sanctioned after hiding prompt injection in court filings",
+      "source_urls": [
+        "https://www.ctinsider.com/connecticut/article/connecticut-judge-hidden-ai-prompt-injection-court-22387143.php"
+      ],
+      "visible_dates": [
+        {
+          "source": "CT Insider search result",
+          "published": "today",
+          "interpreted_date": "2026-08-22"
+        }
+      ],
+      "summary": "CT Insider reported that a Connecticut Superior Court judge found hidden white-text AI instructions in legal filings that told AI systems analyzing the documents to favor the filer and reverse a clerk's ruling; the judge treated it as prompt injection and revoked electronic filing access.",
+      "evidence_classification": "reputable public incident report; primary court order not located in-window",
+      "affected_boundary_or_version": "Court filings consumed by AI tools used by litigants or lawyers; Connecticut court itself reportedly did not use AI to assess the filings",
+      "security_delta": "public prompt-injection incident and mitigation",
+      "why_it_matters_for_ai_security": "The incident shows prompt injection moving into ordinary document workflows where downstream AI readers, not the original host system, are the target.",
+      "named_entities": [
+        "Connecticut Superior Court",
+        "Matthew Elliott",
+        "Walter Spader Jr.",
+        "CT Insider"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad AI-in-legal-workflow facts route upstream if a legal AI entity page exists.",
+        "ai_dev_wiki": "General document-review workflow practice routes upstream if not security-specific.",
+        "local_security_lens": "Keep the hidden-document prompt injection pattern, AI-reader trust boundary, and sanction/mitigation note here."
+      },
+      "confidence_notes": "Medium confidence because only a secondary report was located; it is in-window and describes a concrete public incident.",
+      "follow_up_actions": [
+        "Find the public court order during ingest if available.",
+        "Consider a local durable note on prompt injection in documents consumed by AI tools."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Splunk MCP Server app CVE-2026-76404",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-76404",
+        "https://github.com/advisories/GHSA-3v49-2fcm-3rcj",
+        "https://advisory.splunk.com/"
+      ],
+      "visible_dates": [
+        "CVE datePublished 2026-08-19T21:35:17.448Z from CVE metadata",
+        "GitHub advisory release/update date shown as 2026-08-20 in search results"
+      ],
+      "reason": "Relevant MCP vulnerability, but the primary CVE timestamp is older than the exact cutoff and date-only August 20 references are boundary-only or visibly before 2026-08-20T23:30:49Z.",
+      "confidence_notes": "Secondary articles on August 22 were found, but they appear to repackage an older primary disclosure."
+    },
+    {
+      "title": "Dokan: AI Powered WooCommerce Multivendor Marketplace Solution CVE cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-16575",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-16576",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-16577"
+      ],
+      "visible_dates": [
+        "2026-08-21T07:16:24Z NVD publications"
+      ],
+      "reason": "The plugin name contains AI, but the disclosed flaws are ordinary marketplace REST authorization/payment issues without a concrete AI-system security boundary.",
+      "confidence_notes": "Exclude unless future ingest determines the AI-powered component itself is involved."
+    },
+    {
+      "title": "AI Engine WordPress plugin CVE-2026-75796",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75796"
+      ],
+      "visible_dates": [
+        "2026-08-21T07:16:25.453Z NVD publication"
+      ],
+      "reason": "NVD snippet describes privileged user-management authorization issues in a WordPress plugin; no concrete model, prompt, agent, data, or AI runtime security delta was visible before NVD rate limiting.",
+      "confidence_notes": "Recheck if a primary advisory shows AI-specific access to prompts, model credentials, or generated content."
+    },
+    {
+      "title": "NIST IR 8613 Multi-Cloud Architecture Challenges",
+      "source_urls": [
+        "https://csrc.nist.gov/pubs/ir/8613/ipd",
+        "https://www.nist.gov/news-events/news/2026/08/multi-cloud-architecture-challenges-draft-ir-8613-available-public-comment"
+      ],
+      "visible_dates": [
+        "Date Published: August 21, 2026"
+      ],
+      "reason": "Official in-window security publication, but it is a general multi-cloud security and ATO draft without a visible concrete AI-system security delta.",
+      "confidence_notes": "Route to a cloud-security wiki if maintained; not local AI-security intake unless later AI-specific guidance is identified."
+    },
+    {
+      "title": "NIST SP 1353 Quick-Start Guide for Using AI for CSF Analysis and Reporting",
+      "source_urls": [
+        "https://csrc.nist.gov/pubs/sp/1353/ipd",
+        "https://csrc.nist.gov/News/2026/using-ai-for-csf-2-analysis-reporting-draft-qsg"
+      ],
+      "visible_dates": [
+        "Date Published: August 19, 2026"
+      ],
+      "reason": "AI-governance and audit-evidence relevant but outside the exact 48-hour window.",
+      "confidence_notes": "May already have been eligible for earlier runs; do not duplicate in this artifact."
+    },
+    {
+      "title": "Generic 'agent' CVEs for Rocket.Chat, CloudStack, Checkmk, and other non-AI agents",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0 keywordSearch=agent"
+      ],
+      "visible_dates": [
+        "Several NVD records inside the 48-hour window"
+      ],
+      "reason": "The word agent referred to support, monitoring, or infrastructure agents rather than AI agents, model agents, or agentic tool execution.",
+      "confidence_notes": "Filtered out to avoid keyword false positives."
+    },
+    {
+      "title": "DJI DUML BLE encryption CVE-2026-77812",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77812"
+      ],
+      "visible_dates": [
+        "2026-08-21T15:16:47.557Z NVD publication"
+      ],
+      "reason": "Security-relevant but not AI-specific; appeared in broad keyword results because of unrelated text match.",
+      "confidence_notes": "Exclude from this AI security wiki collector."
+    },
+    {
+      "title": "Linux kernel driver CVEs from broad 'AI' keyword search",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74649",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74699",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74713",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-12999"
+      ],
+      "visible_dates": [
+        "2026-08-22 NVD publications"
+      ],
+      "reason": "Kernel/driver vulnerabilities were not visibly tied to AI hardware, model runtime, AI deployment, or AI data flows.",
+      "confidence_notes": "Exclude as keyword noise."
+    },
+    {
+      "title": "OpenAI model-testing sandbox reports",
+      "source_urls": [
+        "https://www.wsj.com/pro/cybersecurity/openai-pauses-training-over-concerns-about-safety-dd2ce1ef",
+        "https://www.ft.com/content/556e36dd-24b0-4601-bbbb-1ee5ba86eb2c"
+      ],
+      "visible_dates": [
+        "Search snippets showed two to four days old"
+      ],
+      "reason": "Highly relevant AI security incident, but source snippets placed the reports outside or at the boundary of the 48-hour cutoff and primary OpenAI postmortem was not located.",
+      "confidence_notes": "Prior run memory already recorded OpenAI/Irregular sandbox follow-up caveats."
+    }
+  ],
+  "routing_summary": {
+    "routing_count": 19,
+    "upstream_owned_entities": [
+      "Spring AI",
+      "Model Context Protocol",
+      "CKAN MCP Server",
+      "SiYuan",
+      "Omnigent",
+      "Infracost",
+      "FiftyOne",
+      "Headroom",
+      "TensorZero",
+      "ONNX",
+      "Xinference",
+      "NLTK"
+    ],
+    "local_security_implications": [
+      "MCP transport authentication and resource limits",
+      "AI cache context isolation",
+      "agent tool dispatch enforcement",
+      "MCP connector SSRF",
+      "MCP tool secret and file exfiltration",
+      "shared-agent bundle authorization",
+      "coding-agent runner command execution",
+      "shell policy parsing fail-open behavior",
+      "workspace confinement",
+      "repository-controlled symlink/file exfiltration in agent-adjacent CI",
+      "credential forwarding in infrastructure-code scanning",
+      "local AI dataset server browser-origin exposure",
+      "LLM proxy SSRF",
+      "LLM memory identity isolation",
+      "LLMOps gateway file read and SSRF",
+      "model artifact external-data path safety",
+      "prompt-driven inference-server RCE",
+      "NLP model deserialization RCE",
+      "document-borne prompt injection against downstream AI readers"
+    ]
+  },
+  "confidence_summary": {
+    "overall": "High for NVD/Spring/SiYuan/Omnigent/Infracost/FiftyOne findings with exact in-window timestamps; medium-high for Headroom, TensorZero, ONNX, Xinference, and NLTK where per-CVE NVD detail was partially rate-limited but public CVE/advisory snippets were specific; medium for the Connecticut court prompt-injection incident because a primary court order was not fetched.",
+    "blockers_or_caveats": [
+      "NVD per-CVE detail fetches returned HTTP 429 for several later records, so some affected-version and reference lists require ingest recheck.",
+      "GitHub advisory pages can show older advisory publication dates than NVD indexing dates; ingest should distinguish newly indexed from newly disclosed.",
+      "Date-only August 20 sources were excluded or caveated because they could fall before the exact cutoff."
+    ]
+  },
+  "follow_up_actions": [
+    "Re-fetch rate-limited NVD records and primary GHSA/CVE.org pages during ingest before durable synthesis.",
+    "Group related Spring AI and Omnigent CVEs into coherent local security clusters rather than separate broad product pages.",
+    "Respect federation by routing broad framework, product, model-format, and dependency facts upstream while keeping only security boundaries and mitigations locally.",
+    "Do not move this artifact to raw/processed until it has been synthesized into durable wiki pages and the normal wiki verification/lint workflow passes."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed"
+  }
+}

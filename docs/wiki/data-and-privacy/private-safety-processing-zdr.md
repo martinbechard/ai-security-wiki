@@ -13,6 +13,8 @@ The [August 21 topic news collector source](../../../raw/processed/2026-08-21/ai
 
 Private Safety Processing is described as a design for analyzing related interactions for misuse patterns while keeping customer prompts and responses unavailable to OpenAI personnel. The source identifies customer-controlled infrastructure, future customer-controlled encryption keys, and limited safety signals returned to OpenAI as the core boundary. The collector treats the OpenAI page as primary product-security evidence but uses the [Help Net Security report](https://www.helpnetsecurity.com/2026/08/20/openai-private-safety-processing-zdr/) for the visible August 20, 2026 in-window date because the primary page exposed only a year.
 
+The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) corroborates the preview boundary and preserves the September 2026 technical white-paper follow-up for key control, signal minimization, and audit evidence.
+
 ## Security Impact
 
 - Threat: enterprise ZDR deployments still need misuse detection, but sending raw prompts and responses to a provider can violate confidentiality, privacy, or regulatory commitments.
@@ -25,6 +27,7 @@ Private Safety Processing is described as a design for analyzing related interac
 ## Authoritative Sources
 
 - [August 21 topic news collector source](../../../raw/processed/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json)
+- [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json)
 - OpenAI Private Safety Processing page: https://openai.com/index/offering-zero-data-retention-for-frontier-models/
 - Help Net Security report: https://www.helpnetsecurity.com/2026/08/20/openai-private-safety-processing-zdr/
 
@@ -54,3 +57,4 @@ Private Safety Processing is described as a design for analyzing related interac
 ## Maintenance Notes
 
 - Created on 2026-08-21 from the [August 21 topic collector](../../../raw/processed/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json) as a privacy-preserving safety-monitoring control leaf.
+- Updated on 2026-08-22 from the [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) with preview corroboration and white-paper follow-up.

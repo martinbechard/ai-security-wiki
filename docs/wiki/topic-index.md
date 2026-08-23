@@ -52,6 +52,14 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/codewhale-js-execution-environment-exposure.md](agent-and-tool-security/codewhale-js-execution-environment-exposure.md)
 - [agent-and-tool-security/siyuan-mcp-database-clean-path-traversal.md](agent-and-tool-security/siyuan-mcp-database-clean-path-traversal.md)
 - [agent-and-tool-security/spring-ai-tool-dispatch-authorization-bypass.md](agent-and-tool-security/spring-ai-tool-dispatch-authorization-bypass.md)
+- [agent-and-tool-security/spring-ai-mcp-streamable-http-session-dos.md](agent-and-tool-security/spring-ai-mcp-streamable-http-session-dos.md)
+- [agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md](agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md)
+- [agent-and-tool-security/siyuan-mcp-http-request-secret-exfiltration.md](agent-and-tool-security/siyuan-mcp-http-request-secret-exfiltration.md)
+- [agent-and-tool-security/siyuan-mcp-file-tool-blocklist-bypass.md](agent-and-tool-security/siyuan-mcp-file-tool-blocklist-bypass.md)
+- [agent-and-tool-security/omnigent-shared-agent-bundle-overwrite-rce.md](agent-and-tool-security/omnigent-shared-agent-bundle-overwrite-rce.md)
+- [agent-and-tool-security/omnigent-callable-path-runner-rce.md](agent-and-tool-security/omnigent-callable-path-runner-rce.md)
+- [agent-and-tool-security/omnigent-shell-policy-parser-bypass.md](agent-and-tool-security/omnigent-shell-policy-parser-bypass.md)
+- [agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md](agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md)
 - [threats-and-attacks/ai-hosted-artifact-malware-delivery.md](threats-and-attacks/ai-hosted-artifact-malware-delivery.md)
 - [threats-and-attacks/unattended-ai-agent-attack-automation.md](threats-and-attacks/unattended-ai-agent-attack-automation.md)
 - [threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md](threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md)
@@ -79,6 +87,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [data-and-privacy/spring-ai-semantic-cache-cross-context-leakage.md](data-and-privacy/spring-ai-semantic-cache-cross-context-leakage.md)
 - [data-and-privacy/spring-ai-redis-chat-memory-query-injection.md](data-and-privacy/spring-ai-redis-chat-memory-query-injection.md)
 - [data-and-privacy/private-safety-processing-zdr.md](data-and-privacy/private-safety-processing-zdr.md)
+- [data-and-privacy/fiftyone-local-ai-dataset-server-exposure.md](data-and-privacy/fiftyone-local-ai-dataset-server-exposure.md)
 - [identity-and-access](identity-and-access/index.md)
 - [identity-and-access/mcp-tool-level-iam-authorization.md](identity-and-access/mcp-tool-level-iam-authorization.md)
 - [identity-and-access/mcp-client-oauth-redirect-uri-handling.md](identity-and-access/mcp-client-oauth-redirect-uri-handling.md)
@@ -93,6 +102,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/onyx-mcp-oauth-token-isolation.md](identity-and-access/onyx-mcp-oauth-token-isolation.md)
 - [identity-and-access/9router-oidc-test-ssrf.md](identity-and-access/9router-oidc-test-ssrf.md)
 - [identity-and-access/downstream-agent-authorization-context.md](identity-and-access/downstream-agent-authorization-context.md)
+- [identity-and-access/headroom-llm-memory-owner-header-bypass.md](identity-and-access/headroom-llm-memory-owner-header-bypass.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -116,6 +126,12 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [infrastructure-and-supply-chain/ray-browser-triggered-ai-compute-rce.md](infrastructure-and-supply-chain/ray-browser-triggered-ai-compute-rce.md)
 - [infrastructure-and-supply-chain/kiota-ai-host-manifest-file-boundary-disclosure.md](infrastructure-and-supply-chain/kiota-ai-host-manifest-file-boundary-disclosure.md)
 - [infrastructure-and-supply-chain/huggingface-transformers-checkpoint-shard-file-read.md](infrastructure-and-supply-chain/huggingface-transformers-checkpoint-shard-file-read.md)
+- [infrastructure-and-supply-chain/infracost-template-symlink-file-read.md](infrastructure-and-supply-chain/infracost-template-symlink-file-read.md)
+- [infrastructure-and-supply-chain/infracost-terraform-token-forwarding-leak.md](infrastructure-and-supply-chain/infracost-terraform-token-forwarding-leak.md)
+- [infrastructure-and-supply-chain/headroom-llm-proxy-upstream-ssrf.md](infrastructure-and-supply-chain/headroom-llm-proxy-upstream-ssrf.md)
+- [infrastructure-and-supply-chain/tensorzero-gateway-object-storage-file-read-ssrf.md](infrastructure-and-supply-chain/tensorzero-gateway-object-storage-file-read-ssrf.md)
+- [infrastructure-and-supply-chain/onnx-external-data-symlink-file-write.md](infrastructure-and-supply-chain/onnx-external-data-symlink-file-write.md)
+- [infrastructure-and-supply-chain/nltk-transition-parser-model-pickle-rce.md](infrastructure-and-supply-chain/nltk-transition-parser-model-pickle-rce.md)
 - [testing-and-assurance](testing-and-assurance/index.md)
 - [testing-and-assurance/cyber-evaluation-containment.md](testing-and-assurance/cyber-evaluation-containment.md)
 - [testing-and-assurance/public-cyber-capability-assessments.md](testing-and-assurance/public-cyber-capability-assessments.md)
@@ -162,6 +178,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [model-and-prompt-security/vllm-derender-denial-of-service.md](model-and-prompt-security/vllm-derender-denial-of-service.md)
 - [model-and-prompt-security/vllm-multimodal-media-ssrf-file-read.md](model-and-prompt-security/vllm-multimodal-media-ssrf-file-read.md)
 - [model-and-prompt-security/cryptographic-context-injection.md](model-and-prompt-security/cryptographic-context-injection.md)
+- [model-and-prompt-security/xinference-llama3-tool-call-eval-rce.md](model-and-prompt-security/xinference-llama3-tool-call-eval-rce.md)
+- [model-and-prompt-security/legal-filing-prompt-injection.md](model-and-prompt-security/legal-filing-prompt-injection.md)
 - [source-workflows](source-workflows/index.md)
 - [digests](digests/index.md)
 
@@ -174,6 +192,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 ## Maintenance Notes
 
 - Add local durable leaves here after federation routing and wiki verification.
+- Updated on 2026-08-22 with Spring AI MCP transport DoS, CKAN, SiYuan v3.8.0, Omnigent, Infracost, FiftyOne, Headroom, TensorZero, ONNX, Xinference, NLTK, and legal filing prompt-injection leaves.
 - Updated on 2026-08-19 with August 18 topic-news leaves and watcher enrichments across MCP, agent-tool, model-input, identity, data, infrastructure, testing, threats, and governance topics.
 - Updated on 2026-08-17 with MLflow, chrome-devtools-mcp, atomic-agents-stack, Ray, MemOS, OpenShift AI, Kiota, and delegated-agent cost guardrail leaves.
 - Updated on 2026-08-16 with GoMarble Facebook Ads MCP SSRF, macOS Screen Sharing AI-accelerated exploitability, and semantic governance policy telemetry.

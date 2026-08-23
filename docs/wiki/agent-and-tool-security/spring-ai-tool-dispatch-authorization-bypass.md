@@ -13,6 +13,8 @@ The [August 21 topic news collector source](../../../raw/processed/2026-08-21/ai
 
 The [CVE-2026-59318 advisory](https://spring.io/security/cve-2026-59318/) says Spring AI advertised per-request tool lists to the model but did not fully enforce those lists during `DefaultToolCallingManager` dispatch. Under some conditions, a model or prompt-injection path could invoke a tool that was not available for the current request, creating privilege-escalation risk when tools carry different data, action, or administrative authority. The affected lines are Spring AI 2.0.0, 1.1.0 through 1.1.8, and 1.0.0 through 1.0.9; Spring AI 2.0.1 and listed enterprise fixes are the mitigation boundary captured by the source.
 
+The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) corroborates the exact `DefaultToolCallingManager` boundary and records the fixed OSS version as Spring AI 2.0.1. It keeps the remaining local question focused on whether applications need per-tool authorization tests beyond the framework fix.
+
 Related Spring AI 2.0.1 advisories are split into [semantic cache cross-context leakage](../data-and-privacy/spring-ai-semantic-cache-cross-context-leakage.md) and [Redis chat memory query injection](../data-and-privacy/spring-ai-redis-chat-memory-query-injection.md) because cache isolation and chat-memory query control can change independently from tool dispatch authorization.
 
 ## Security Impact
@@ -27,6 +29,7 @@ Related Spring AI 2.0.1 advisories are split into [semantic cache cross-context 
 ## Authoritative Sources
 
 - [August 21 topic news collector source](../../../raw/processed/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json)
+- [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json)
 - Spring AI 2.0.1 release post: https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/
 - Spring advisory CVE-2026-59318: https://spring.io/security/cve-2026-59318/
 
@@ -56,3 +59,4 @@ Related Spring AI 2.0.1 advisories are split into [semantic cache cross-context 
 ## Maintenance Notes
 
 - Created on 2026-08-21 from the [August 21 topic collector](../../../raw/processed/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json) as a separate tool-dispatch authorization leaf for CVE-2026-59318.
+- Updated on 2026-08-22 from the [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) with fixed-version and dispatch-path corroboration.

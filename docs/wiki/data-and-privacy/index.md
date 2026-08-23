@@ -22,6 +22,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [Spring AI semantic cache cross-context leakage](spring-ai-semantic-cache-cross-context-leakage.md)
 - [Spring AI Redis chat memory query injection](spring-ai-redis-chat-memory-query-injection.md)
 - [Private Safety Processing ZDR](private-safety-processing-zdr.md)
+- [FiftyOne local AI dataset server exposure](fiftyone-local-ai-dataset-server-exposure.md)
 
 ## Authoritative Sources
 
@@ -55,3 +56,4 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - Updated on 2026-08-19 with the Oracle Siebel Artificial Intelligence data-access advisory leaf.
 - Updated on 2026-08-19 after verifier correction split SiYuan debug endpoint credential disclosure into a data/privacy leaf.
 - Updated on 2026-08-21 with Spring AI cache and memory leaves plus the Private Safety Processing ZDR privacy-control leaf.
+- Updated on 2026-08-22 with FiftyOne local AI dataset server exposure and watcher enrichments for Spring AI and Private Safety Processing.

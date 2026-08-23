@@ -49,3 +49,4 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 - Updated on 2026-08-16 with the macOS Screen Sharing AI-accelerated exploitability leaf.
 - Updated on 2026-08-19 with the autonomous CI/CD exploit adaptation leaf.
 - Updated on 2026-08-21 with AI-generated OT exploit-script and AI-themed installer malware-lure leaves.
+- Updated on 2026-08-22 with watcher provenance for AI-generated OT exploit scripts and AI-themed installer malware lures.

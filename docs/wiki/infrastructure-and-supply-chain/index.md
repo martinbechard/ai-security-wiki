@@ -28,6 +28,12 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Ray browser-triggered AI compute RCE](ray-browser-triggered-ai-compute-rce.md)
 - [Kiota AI host manifest file boundary disclosure](kiota-ai-host-manifest-file-boundary-disclosure.md)
 - [Hugging Face Transformers checkpoint shard file read](huggingface-transformers-checkpoint-shard-file-read.md)
+- [Infracost template symlink file read](infracost-template-symlink-file-read.md)
+- [Infracost Terraform token forwarding leak](infracost-terraform-token-forwarding-leak.md)
+- [Headroom LLM proxy upstream SSRF](headroom-llm-proxy-upstream-ssrf.md)
+- [TensorZero gateway object storage file read SSRF](tensorzero-gateway-object-storage-file-read-ssrf.md)
+- [ONNX external data symlink file write](onnx-external-data-symlink-file-write.md)
+- [NLTK transition parser model pickle RCE](nltk-transition-parser-model-pickle-rce.md)
 
 ## Authoritative Sources
 
@@ -61,3 +67,4 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - Updated on 2026-08-17 with MLflow, atomic-agents-stack, Ray, and Kiota AI infrastructure and supply-chain advisory leaves.
 - Updated on 2026-08-19 with the Hugging Face Transformers checkpoint shard file-read leaf and watcher enrichments for MLflow, atomic-agents-stack, Ray, and Kiota.
 - Updated on 2026-08-19 after verifier correction split MLflow webhook SSRF, dataset-lineage authorization, and model-artifact source-validation advisories into separate leaves.
+- Updated on 2026-08-22 with Infracost, TensorZero, ONNX, and NLTK supply-chain advisory leaves.

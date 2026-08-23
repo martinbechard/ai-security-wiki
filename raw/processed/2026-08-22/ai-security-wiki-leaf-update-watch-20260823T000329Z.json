@@ -1,0 +1,601 @@
+{
+  "affected_boundaries": [
+    "Amazon Bedrock AgentCore Gateway",
+    "Amazon Bedrock AgentCore Runtime",
+    "Amazon Cognito claims",
+    "Google Colab lure hosting",
+    "Grok and Gemini demonstrations",
+    "JFrog Artifactory",
+    "Junie CLI allowlist.json",
+    "MCP tool approval",
+    "MCP tool gateway outbound credential selection",
+    "RediSearch tag/text query escaping",
+    "RedisChatMemoryRepository.findByMetadata()",
+    "S7comm exposure",
+    "Siemens S7 PLCs",
+    "Spring AI 2.0.0",
+    "Spring AI 2.0.0 semantic cache",
+    "Spring AI 2.0.0, 1.1.0-1.1.8, 1.0.0-1.0.9",
+    "Spring AI DefaultToolCallingManager",
+    "Telegram and C2 egress",
+    "Zero Data Retention deployments",
+    "agentic browsing and outbound navigation",
+    "automated monitoring",
+    "brave mode unattended execution",
+    "browser credential theft",
+    "cached response reuse across unrelated contexts",
+    "conversation memory isolation",
+    "critical infrastructure OT segmentation and credentials",
+    "endpoint execution",
+    "frontier-model cyber evaluations",
+    "future customer-controlled encryption key design",
+    "human stop conditions",
+    "knowledge-base metadata filters",
+    "misuse monitoring without provider personnel access to raw prompts and responses",
+    "model-visible tool list versus runtime dispatch authorization",
+    "model/runtime decryption path",
+    "on-behalf-of downstream access",
+    "open-source industrial automation libraries",
+    "per-user OBO token exchange",
+    "pre-execution content filters",
+    "sandbox and internet isolation",
+    "session-tagged credentials",
+    "system-prompt context hash isolation",
+    "terminal command approval",
+    "third-party evaluator configuration",
+    "unofficial AI product download workflows"
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "docs_wiki_modified": false,
+  "evidence_classification_counts": {
+    "confirmed_exploitation": 2,
+    "control_change": 4,
+    "demonstrated_research": 1,
+    "disclosed_vulnerability": 3,
+    "mitigation": 1
+  },
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/codex-security-plugin-workflow-boundaries.md",
+      "reason": "visible update date 2026-08-07 is outside the strict seven-day window for this run; GitHub repository page had no qualifying in-window security-boundary change visible.",
+      "source_url": "https://learn.chatgpt.com/docs/security/plugin/changelog"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agentic-browser-intent-collision.md",
+      "reason": "visible publication date 2026-08-05 is stale for this run; related WIRED coverage is also stale and already represented locally.",
+      "source_url": "https://labs.zenity.io/post/grand-theft-atlas"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "reason": "in-window candidate was adjacent gateway-approval commentary, not a same-leaf update about approval queue read/stream metadata access control.",
+      "source_url": "https://nhimg.org/articles/mcp-tool-approvals-at-the-gateway-boundary-what-changes/"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/claude-code-templates-studio-rce.md",
+      "reason": "CVE/GHSA evidence is 2026-08-11 to 2026-08-13 and outside the strict seven-day window; no new exploitation or mitigation update was found.",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73222"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+      "reason": "AgentForger primary and secondary coverage is July 2026 and stale for this run; no new OpenAI confirmation or same-leaf remediation update was found.",
+      "source_url": "https://labs.zenity.io/post/agentforger-part-1-chatgpt-cross-site-agent-forgery"
+    }
+  ],
+  "follow_up_notes": [
+    "Ingest should reconcile exact dispatch paths and decide whether app-level per-tool authorization tests need separate guidance.",
+    "Watch for the planned September 2026 technical white paper on keys, signal minimization, and audit evidence.",
+    "Ingest should replace the current open question with the primary RediSearch escape mechanics now visible in the Spring advisory.",
+    "Ingest should update the leaf open question with the now-public SHA-256 truncation isolation detail.",
+    "Ingest should compare this with AGENTSEC03 language if that becomes the canonical Well-Architected control source.",
+    "Consider whether this should also cross-link MCP tool-level IAM authorization during normal ingest.",
+    "Watch for primary xAI or Google mitigation statements before changing vendor-specific remediation confidence.",
+    "Normal ingest should use the primary PDF/advisory for exact mitigation wording and avoid unsupported actor attribution.",
+    "Ingest should keep clear that legitimate Gemini was not reported compromised.",
+    "Prefer primary OpenAI postmortem or policy update if published; treat news reports as attributed mitigation follow-up.",
+    "Ingest should compare the modified CLI-specific allowlist fields with the existing July 30 action-class evidence.",
+    "visible update date 2026-08-07 is outside the strict seven-day window for this run; GitHub repository page had no qualifying in-window security-boundary change visible.",
+    "visible publication date 2026-08-05 is stale for this run; related WIRED coverage is also stale and already represented locally.",
+    "in-window candidate was adjacent gateway-approval commentary, not a same-leaf update about approval queue read/stream metadata access control.",
+    "CVE/GHSA evidence is 2026-08-11 to 2026-08-13 and outside the strict seven-day window; no new exploitation or mitigation update was found.",
+    "AgentForger primary and secondary coverage is July 2026 and stale for this run; no new OpenAI confirmation or same-leaf remediation update was found."
+  ],
+  "leaf_universe_count": 145,
+  "lookback_window": {
+    "end": "2026-08-22",
+    "policy": "include only sources published or visibly updated within the last seven days; exclude ambiguous, future, missing, stale, and boundary-only dates",
+    "start": "2026-08-16"
+  },
+  "named_entities": [
+    "AA26-231A",
+    "AISI",
+    "AWS",
+    "Adversa AI",
+    "Amazon Bedrock AgentCore",
+    "Amazon Bedrock AgentCore Gateway",
+    "Amazon Cognito",
+    "Anthropic",
+    "Artifactory",
+    "Broadcom",
+    "CISA",
+    "CVE-2026-59308",
+    "CVE-2026-59318",
+    "CVE-2026-59319",
+    "Cryptographic Context Injection",
+    "DOE",
+    "Darktrace",
+    "DefaultToolCallingManager",
+    "EPA",
+    "FBI",
+    "GHSA-h4jw-w55g-65gf",
+    "Gemini",
+    "Google",
+    "Google Colab",
+    "Google Gemini",
+    "Grok",
+    "Hugging Face",
+    "Irregular",
+    "JFrog",
+    "JetBrains",
+    "Junie CLI",
+    "MCP",
+    "Meta",
+    "NSA",
+    "OpenAI",
+    "Private Safety Processing",
+    "RediSearch",
+    "RedisChatMemoryRepository",
+    "Salesforce",
+    "Semantic Cache",
+    "Siemens S7",
+    "Spring AI",
+    "Telegram",
+    "Vidar",
+    "Zero Data Retention",
+    "xAI"
+  ],
+  "qualifying_update_count": 11,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "Spring AI DefaultToolCallingManager",
+        "model-visible tool list versus runtime dispatch authorization",
+        "Spring AI 2.0.0, 1.1.0-1.1.8, 1.0.0-1.0.9"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should reconcile exact dispatch paths and decide whether app-level per-tool authorization tests need separate guidance.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/spring-ai-tool-dispatch-authorization-bypass.md",
+      "named_entities": [
+        "Spring AI",
+        "Broadcom",
+        "CVE-2026-59318",
+        "DefaultToolCallingManager"
+      ],
+      "source_urls": [
+        "https://spring.io/security/cve-2026-59318/",
+        "https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/"
+      ],
+      "summary": "Spring published CVE-2026-59318 for Spring AI tool dispatch failing to fully enforce per-request tool lists, with fixed OSS version 2.0.1.",
+      "upstream_routing": "Broad Java AI framework and release coverage belongs upstream; local page owns the security-specific tool-dispatch authorization boundary.",
+      "visible_date": "2026-08-20"
+    },
+    {
+      "affected_boundaries": [
+        "Zero Data Retention deployments",
+        "misuse monitoring without provider personnel access to raw prompts and responses",
+        "future customer-controlled encryption key design"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Watch for the planned September 2026 technical white paper on keys, signal minimization, and audit evidence.",
+      "leaf_id": "docs/wiki/data-and-privacy/private-safety-processing-zdr.md",
+      "named_entities": [
+        "OpenAI",
+        "Private Safety Processing",
+        "Zero Data Retention"
+      ],
+      "source_urls": [
+        "https://openai.com/index/offering-zero-data-retention-for-frontier-models/",
+        "https://www.helpnetsecurity.com/2026/08/20/openai-private-safety-processing-zdr/"
+      ],
+      "summary": "OpenAI described Private Safety Processing for eligible ZDR frontier-model deployments; Help Net Security supplied the precise in-window date for the preview.",
+      "upstream_routing": "OpenAI platform/product details route upstream; local page owns the safety-monitoring versus customer-content confidentiality control boundary.",
+      "visible_date": "2026-08-20"
+    },
+    {
+      "affected_boundaries": [
+        "Spring AI 2.0.0",
+        "RedisChatMemoryRepository.findByMetadata()",
+        "RediSearch tag/text query escaping",
+        "conversation memory isolation"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should replace the current open question with the primary RediSearch escape mechanics now visible in the Spring advisory.",
+      "leaf_id": "docs/wiki/data-and-privacy/spring-ai-redis-chat-memory-query-injection.md",
+      "named_entities": [
+        "Spring AI",
+        "RedisChatMemoryRepository",
+        "RediSearch",
+        "CVE-2026-59319"
+      ],
+      "source_urls": [
+        "https://spring.io/security/cve-2026-59319/",
+        "https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/"
+      ],
+      "summary": "Spring published CVE-2026-59319 for RediSearch tag injection in RedisChatMemoryRepository.findByMetadata(), allowing cross-conversation message matching when user-controlled metadata reaches tag queries.",
+      "upstream_routing": "Redis and broad Spring AI framework background route upstream; local page owns AI chat-memory data-isolation implications.",
+      "visible_date": "2026-08-20"
+    },
+    {
+      "affected_boundaries": [
+        "Spring AI 2.0.0 semantic cache",
+        "system-prompt context hash isolation",
+        "cached response reuse across unrelated contexts"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should update the leaf open question with the now-public SHA-256 truncation isolation detail.",
+      "leaf_id": "docs/wiki/data-and-privacy/spring-ai-semantic-cache-cross-context-leakage.md",
+      "named_entities": [
+        "Spring AI",
+        "CVE-2026-59308",
+        "Semantic Cache",
+        "GHSA-h4jw-w55g-65gf"
+      ],
+      "source_urls": [
+        "https://spring.io/security/cve-2026-59308/",
+        "https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/",
+        "https://github.com/advisories/ghsa-h4jw-w55g-65gf"
+      ],
+      "summary": "Spring published CVE-2026-59308 for semantic-cache cross-tenant isolation bypass via SHA-256 truncation, fixed in Spring AI 2.0.1.",
+      "upstream_routing": "General release and framework coverage belongs upstream; local page owns semantic-cache isolation and cross-context leakage controls.",
+      "visible_date": "2026-08-20"
+    },
+    {
+      "affected_boundaries": [
+        "Amazon Bedrock AgentCore Runtime",
+        "Amazon Cognito claims",
+        "session-tagged credentials",
+        "knowledge-base metadata filters",
+        "on-behalf-of downstream access"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should compare this with AGENTSEC03 language if that becomes the canonical Well-Architected control source.",
+      "leaf_id": "docs/wiki/identity-and-access/downstream-agent-authorization-context.md",
+      "named_entities": [
+        "AWS",
+        "Amazon Bedrock AgentCore",
+        "Amazon Cognito",
+        "Salesforce"
+      ],
+      "source_urls": [
+        "https://aws.amazon.com/blogs/security/propagate-user-authorization-context-in-ai-agents-with-amazon-bedrock-agentcore/",
+        "https://www.helpnetsecurity.com/2026/08/20/aws-ai-agents-access-controls/"
+      ],
+      "summary": "AWS published Bedrock AgentCore guidance for propagating user authorization context through agent runtime, credentials, metadata filters, and downstream token exchange.",
+      "upstream_routing": "AWS and Bedrock product coverage belongs upstream; local page owns the least-privilege authorization propagation pattern.",
+      "visible_date": "2026-08-19"
+    },
+    {
+      "affected_boundaries": [
+        "Amazon Bedrock AgentCore Gateway",
+        "JFrog Artifactory",
+        "MCP tool gateway outbound credential selection",
+        "per-user OBO token exchange"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Consider whether this should also cross-link MCP tool-level IAM authorization during normal ingest.",
+      "leaf_id": "docs/wiki/identity-and-access/downstream-agent-authorization-context.md",
+      "named_entities": [
+        "JFrog",
+        "Amazon Bedrock AgentCore Gateway",
+        "Artifactory",
+        "MCP"
+      ],
+      "source_urls": [
+        "https://jfrog.com/blog/amazon-bedrock-agentcore-gateway-jfrog-artifactory/"
+      ],
+      "summary": "JFrog published an AgentCore Gateway example showing on-behalf-of token exchange to carry per-user identity into Artifactory instead of using a broad shared tool credential.",
+      "upstream_routing": "JFrog and AgentCore product details route upstream; local page owns the downstream authorization-context security pattern.",
+      "visible_date": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "model/runtime decryption path",
+        "agentic browsing and outbound navigation",
+        "pre-execution content filters",
+        "Grok and Gemini demonstrations"
+      ],
+      "evidence_classification": "demonstrated_research",
+      "follow_up_note": "Watch for primary xAI or Google mitigation statements before changing vendor-specific remediation confidence.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/cryptographic-context-injection.md",
+      "named_entities": [
+        "Adversa AI",
+        "Cryptographic Context Injection",
+        "Grok",
+        "Gemini",
+        "xAI",
+        "Google"
+      ],
+      "source_urls": [
+        "https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/",
+        "https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/",
+        "https://thehackernews.com/2026/08/new-cryptographic-context-injection.html"
+      ],
+      "summary": "Adversa disclosed Cryptographic Context Injection, using encrypted instructions that models decrypt inside runtime context to bypass pre-decryption guardrails and demonstrate Grok data exfiltration and Gemini refusal bypass behavior.",
+      "upstream_routing": "Grok, Gemini, xAI, and Google entity background belongs upstream; local page owns the encrypted-instruction security pattern and control boundary.",
+      "visible_date": "2026-08-20"
+    },
+    {
+      "affected_boundaries": [
+        "Siemens S7 PLCs",
+        "S7comm exposure",
+        "open-source industrial automation libraries",
+        "critical infrastructure OT segmentation and credentials"
+      ],
+      "evidence_classification": "confirmed_exploitation",
+      "follow_up_note": "Normal ingest should use the primary PDF/advisory for exact mitigation wording and avoid unsupported actor attribution.",
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-generated-ot-exploit-scripts.md",
+      "named_entities": [
+        "CISA",
+        "NSA",
+        "FBI",
+        "DOE",
+        "EPA",
+        "Siemens S7",
+        "AA26-231A"
+      ],
+      "source_urls": [
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a",
+        "https://media.defense.gov/2026/Aug/18/2003983494/-1/-1/0/CSA_Active_Threat_to_Siemens_S7_Series_PLCs.PDF",
+        "https://www.helpnetsecurity.com/2026/08/20/usa-ai-attacks-siemens-s7-plcs-critical-infrastructure/"
+      ],
+      "summary": "CISA, NSA, FBI, DOE, and EPA warned of active threat activity against Siemens S7 PLCs using AI-generated exploitation scripts disguised as legitimate monitoring tools.",
+      "upstream_routing": "General Siemens/OT background is upstream or external; local page owns AI-enabled exploit-script capability and critical-infrastructure risk.",
+      "visible_date": "2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        "unofficial AI product download workflows",
+        "Google Colab lure hosting",
+        "endpoint execution",
+        "browser credential theft",
+        "Telegram and C2 egress"
+      ],
+      "evidence_classification": "confirmed_exploitation",
+      "follow_up_note": "Ingest should keep clear that legitimate Gemini was not reported compromised.",
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-themed-installer-malware-lures.md",
+      "named_entities": [
+        "Darktrace",
+        "Google Gemini",
+        "Google Colab",
+        "Vidar",
+        "Telegram"
+      ],
+      "source_urls": [
+        "https://www.darktrace.com/blog/when-ai-becomes-the-lure-a-fake-gemini-installer-delivers-vidar",
+        "https://www.helpnetsecurity.com/2026/08/20/fake-google-gemini-installer-vidar-infostealer/"
+      ],
+      "summary": "Darktrace reported an EMEA incident where a fake Google Gemini installer hosted through a Google Colab lure delivered a Go-compiled Vidar infostealer variant.",
+      "upstream_routing": "Gemini and Google Colab product background belongs upstream; local page owns AI-themed installer social engineering and malware-delivery boundary.",
+      "visible_date": "2026-08-20"
+    },
+    {
+      "affected_boundaries": [
+        "frontier-model cyber evaluations",
+        "sandbox and internet isolation",
+        "automated monitoring",
+        "human stop conditions",
+        "third-party evaluator configuration"
+      ],
+      "evidence_classification": "mitigation",
+      "follow_up_note": "Prefer primary OpenAI postmortem or policy update if published; treat news reports as attributed mitigation follow-up.",
+      "leaf_id": "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md",
+      "named_entities": [
+        "OpenAI",
+        "Hugging Face",
+        "AISI",
+        "Irregular",
+        "Anthropic",
+        "Meta"
+      ],
+      "source_urls": [
+        "https://www.ft.com/content/556e36dd-24b0-4601-bbbb-1ee5ba86eb2c",
+        "https://www.wired.com/story/openai-overhauls-safety-protocols-after-its-ai-agents-went-rogue",
+        "https://www.theguardian.com/technology/2026/aug/18/open-ai-pause-hack",
+        "https://www.wsj.com/pro/cybersecurity/openai-hit-the-brakes-on-ai-training-after-models-went-rogue-c3d6d9bd"
+      ],
+      "summary": "Multiple in-window reports said OpenAI slowed or paused parts of frontier-model training/evaluation and expanded monitoring, isolation, and human-intervention controls after cyber-evaluation boundary incidents.",
+      "upstream_routing": "Broad OpenAI and model-development strategy routes upstream; local page owns incident-response and evaluation-containment control implications.",
+      "visible_date": "2026-08-18"
+    },
+    {
+      "affected_boundaries": [
+        "Junie CLI allowlist.json",
+        "terminal command approval",
+        "MCP tool approval",
+        "brave mode unattended execution"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should compare the modified CLI-specific allowlist fields with the existing July 30 action-class evidence.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md",
+      "named_entities": [
+        "JetBrains",
+        "Junie CLI",
+        "MCP"
+      ],
+      "source_urls": [
+        "https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html",
+        "https://junie.jetbrains.com/docs/action-allowlist.html",
+        "https://junie.jetbrains.com/docs/junie-cli.html"
+      ],
+      "summary": "JetBrains Junie CLI action-allowlist documentation was visibly modified on 2026-08-21 and reiterates that terminal commands, MCP tools, and other sensitive actions require approval unless brave mode or allowlist entries apply.",
+      "upstream_routing": "General Junie product and coding-agent workflow coverage belongs upstream; local page owns command-approval and unattended-execution security boundaries.",
+      "visible_date": "2026-08-21"
+    }
+  ],
+  "raw_processed_modified": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-23T00:03:29Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/spring-ai-tool-dispatch-authorization-bypass.md",
+    "docs/wiki/data-and-privacy/private-safety-processing-zdr.md",
+    "docs/wiki/data-and-privacy/spring-ai-redis-chat-memory-query-injection.md",
+    "docs/wiki/data-and-privacy/spring-ai-semantic-cache-cross-context-leakage.md",
+    "docs/wiki/identity-and-access/downstream-agent-authorization-context.md",
+    "docs/wiki/model-and-prompt-security/cryptographic-context-injection.md",
+    "docs/wiki/threats-and-attacks/ai-generated-ot-exploit-scripts.md",
+    "docs/wiki/threats-and-attacks/ai-themed-installer-malware-lures.md",
+    "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md",
+    "docs/wiki/testing-and-assurance/codex-security-plugin-workflow-boundaries.md",
+    "docs/wiki/agent-and-tool-security/agentic-browser-intent-collision.md",
+    "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+    "docs/wiki/agent-and-tool-security/claude-code-templates-studio-rce.md",
+    "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md",
+    "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md"
+  ],
+  "selection_policy": "New or unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "sources_checked_by_leaf": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/spring-ai-tool-dispatch-authorization-bypass.md",
+      "source_urls_checked": [
+        "https://spring.io/security/cve-2026-59318/",
+        "https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/",
+        "https://www.tenable.com/cve/CVE-2026-59318"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/private-safety-processing-zdr.md",
+      "source_urls_checked": [
+        "https://openai.com/index/offering-zero-data-retention-for-frontier-models/",
+        "https://www.helpnetsecurity.com/2026/08/20/openai-private-safety-processing-zdr/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/spring-ai-redis-chat-memory-query-injection.md",
+      "source_urls_checked": [
+        "https://spring.io/security/cve-2026-59319/",
+        "https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/spring-ai-semantic-cache-cross-context-leakage.md",
+      "source_urls_checked": [
+        "https://spring.io/security/cve-2026-59308/",
+        "https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/",
+        "https://github.com/advisories/ghsa-h4jw-w55g-65gf"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/downstream-agent-authorization-context.md",
+      "source_urls_checked": [
+        "https://aws.amazon.com/blogs/security/propagate-user-authorization-context-in-ai-agents-with-amazon-bedrock-agentcore/",
+        "https://www.helpnetsecurity.com/2026/08/20/aws-ai-agents-access-controls/",
+        "https://jfrog.com/blog/amazon-bedrock-agentcore-gateway-jfrog-artifactory/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/cryptographic-context-injection.md",
+      "source_urls_checked": [
+        "https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/",
+        "https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/",
+        "https://thehackernews.com/2026/08/new-cryptographic-context-injection.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-generated-ot-exploit-scripts.md",
+      "source_urls_checked": [
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a",
+        "https://media.defense.gov/2026/Aug/18/2003983494/-1/-1/0/CSA_Active_Threat_to_Siemens_S7_Series_PLCs.PDF",
+        "https://www.helpnetsecurity.com/2026/08/20/usa-ai-attacks-siemens-s7-plcs-critical-infrastructure/",
+        "https://thehackernews.com/2026/08/ai-generated-exploit-scripts-target.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-themed-installer-malware-lures.md",
+      "source_urls_checked": [
+        "https://www.darktrace.com/blog/when-ai-becomes-the-lure-a-fake-gemini-installer-delivers-vidar",
+        "https://www.helpnetsecurity.com/2026/08/20/fake-google-gemini-installer-vidar-infostealer/",
+        "https://cybersecuritynews.com/fake-google-gemini-installer/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md",
+      "source_urls_checked": [
+        "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+        "https://www.ft.com/content/556e36dd-24b0-4601-bbbb-1ee5ba86eb2c",
+        "https://www.wired.com/story/openai-overhauls-safety-protocols-after-its-ai-agents-went-rogue",
+        "https://www.theguardian.com/technology/2026/aug/18/open-ai-pause-hack",
+        "https://www.wsj.com/pro/cybersecurity/openai-hit-the-brakes-on-ai-training-after-models-went-rogue-c3d6d9bd"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/codex-security-plugin-workflow-boundaries.md",
+      "source_urls_checked": [
+        "https://learn.chatgpt.com/docs/security/plugin/changelog",
+        "https://github.com/openai/codex-security",
+        "https://community.openai.com/t/introducing-the-open-source-codex-security-cli/1388319"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agentic-browser-intent-collision.md",
+      "source_urls_checked": [
+        "https://labs.zenity.io/post/grand-theft-atlas",
+        "https://www.wired.com/story/openais-browser-could-be-hijacked-to-spam-your-whatsapp-contacts/",
+        "https://zenity.io/research/pleasefix-vulnerabilities"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "source_urls_checked": [
+        "https://www.vulncheck.com/advisories/network-ai-before-cryptographic-signature-verification-bypass",
+        "https://nhimg.org/articles/mcp-tool-approvals-at-the-gateway-boundary-what-changes/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/claude-code-templates-studio-rce.md",
+      "source_urls_checked": [
+        "https://github.com/davila7/claude-code-templates/security/advisories/GHSA-79wm-x847-7cvg",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73222",
+        "https://www.sentinelone.com/vulnerability-database/cve-2026-73222/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md",
+      "source_urls_checked": [
+        "https://junie.jetbrains.com/docs/action-allowlist.html",
+        "https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html",
+        "https://junie.jetbrains.com/docs/junie-cli.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+      "source_urls_checked": [
+        "https://labs.zenity.io/post/agentforger-part-1-chatgpt-cross-site-agent-forgery",
+        "https://zenity.io/company-overview/newsroom/company-news/zenity-labs-uncovers-agentforger-a-chatgpt-vulnerability",
+        "https://www.securityweek.com/openai-fixes-chatgpt-agent-flaw-that-could-let-attackers-forge-an-ai-insider/"
+      ]
+    }
+  ],
+  "upstream_routing_notes": [
+    "Broad Java AI framework and release coverage belongs upstream; local page owns the security-specific tool-dispatch authorization boundary.",
+    "OpenAI platform/product details route upstream; local page owns the safety-monitoring versus customer-content confidentiality control boundary.",
+    "Redis and broad Spring AI framework background route upstream; local page owns AI chat-memory data-isolation implications.",
+    "General release and framework coverage belongs upstream; local page owns semantic-cache isolation and cross-context leakage controls.",
+    "AWS and Bedrock product coverage belongs upstream; local page owns the least-privilege authorization propagation pattern.",
+    "JFrog and AgentCore product details route upstream; local page owns the downstream authorization-context security pattern.",
+    "Grok, Gemini, xAI, and Google entity background belongs upstream; local page owns the encrypted-instruction security pattern and control boundary.",
+    "General Siemens/OT background is upstream or external; local page owns AI-enabled exploit-script capability and critical-infrastructure risk.",
+    "Gemini and Google Colab product background belongs upstream; local page owns AI-themed installer social engineering and malware-delivery boundary.",
+    "Broad OpenAI and model-development strategy routes upstream; local page owns incident-response and evaluation-containment control implications.",
+    "General Junie product and coding-agent workflow coverage belongs upstream; local page owns command-approval and unattended-execution security boundaries."
+  ]
+}

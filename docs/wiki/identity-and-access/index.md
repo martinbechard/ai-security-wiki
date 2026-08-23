@@ -19,6 +19,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [Onyx MCP OAuth token isolation](onyx-mcp-oauth-token-isolation.md)
 - [9Router OIDC test SSRF](9router-oidc-test-ssrf.md)
 - [Downstream agent authorization context](downstream-agent-authorization-context.md)
+- [Headroom LLM memory owner header bypass](headroom-llm-memory-owner-header-bypass.md)
 
 ## Authoritative Sources
 
@@ -52,3 +53,4 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - Updated on 2026-08-17 with MemOS internal-service identity and OpenShift AI service-account least-privilege advisory leaves.
 - Updated on 2026-08-19 with ArcadeDB, Apify, Onyx, and 9Router identity-boundary advisory leaves.
 - Updated on 2026-08-21 with the downstream agent authorization context control leaf.
+- Updated on 2026-08-22 with the Headroom proxy routing and memory-owner boundary leaf plus downstream authorization watcher evidence.
