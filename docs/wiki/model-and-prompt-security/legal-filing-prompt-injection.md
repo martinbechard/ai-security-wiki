@@ -9,7 +9,7 @@ tags: ["model-and-prompt-security", "governance-and-compliance"]
 
 ## Current Understanding
 
-The [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json) records a Connecticut court incident in which hidden white-text instructions were placed in legal filings. Broad legal-technology and court-administration context is not locally owned; this page owns the AI security boundary where adversarial document text targets downstream AI analysis used by litigants, lawyers, or reviewers.
+The [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json) and [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json) record a Connecticut court incident in which hidden white-text instructions were placed in legal filings. Broad legal-technology and court-administration context is not locally owned; this page owns the AI security boundary where adversarial document text targets downstream AI analysis used by litigants, lawyers, or reviewers.
 
 The [CT Insider report](https://www.ctinsider.com/connecticut/article/connecticut-judge-hidden-ai-prompt-injection-court-22387143.php) cited by the collector says a Connecticut Superior Court judge found hidden AI instructions that told AI systems analyzing the documents to favor the filer and reverse a clerk's ruling. The collector also records that the Connecticut court itself reportedly did not use AI to assess the filings, so the incident is best treated as prompt-injection abuse against external AI-assisted document analysis rather than compromise of a court AI system.
 
@@ -25,6 +25,7 @@ The [CT Insider report](https://www.ctinsider.com/connecticut/article/connecticu
 ## Authoritative Sources
 
 - [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json)
+- [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json)
 - [CT Insider report](https://www.ctinsider.com/connecticut/article/connecticut-judge-hidden-ai-prompt-injection-court-22387143.php)
 
 ## Related Code
@@ -52,3 +53,4 @@ The [CT Insider report](https://www.ctinsider.com/connecticut/article/connecticu
 ## Maintenance Notes
 
 - Created on 2026-08-22 from the [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json) as a legal-document prompt-injection incident leaf.
+- Updated on 2026-08-23 from the [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json) with CT Insider sanction-reporting provenance while leaving the primary-order question open.

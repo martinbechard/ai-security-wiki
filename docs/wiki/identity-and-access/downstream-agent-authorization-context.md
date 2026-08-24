@@ -15,6 +15,8 @@ The AWS pattern uses identity-provider claims, Bedrock AgentCore Runtime authori
 
 The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) adds [JFrog's AgentCore Gateway and Artifactory example](https://jfrog.com/blog/amazon-bedrock-agentcore-gateway-jfrog-artifactory/) as a same-pattern implementation signal: a gateway performs on-behalf-of token exchange so the downstream repository system receives per-user identity rather than a broad shared tool credential. That evidence links this page to [MCP tool-level IAM authorization](mcp-tool-level-iam-authorization.md) without moving the broad AgentCore product coverage out of upstream ownership.
 
+The [agent delegated task authorization drift](agent-delegated-task-authorization-drift.md) leaf records the incident-pattern side of the same control: even when a human delegates a legitimate goal, downstream systems still need subject/resource authorization checks that prevent an agent from acting on another user's queue entry, booking, or account state.
+
 ## Security Impact
 
 - Threat: agents that hold broad service credentials can turn prompt manipulation, planner bugs, or tool-call confusion into cross-user data access.
@@ -49,6 +51,7 @@ The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-se
 - [identity and access](index.md)
 - [production agent identity and access controls](production-agent-identity-and-access-controls.md)
 - [MCP tool-level IAM authorization](mcp-tool-level-iam-authorization.md)
+- [agent delegated task authorization drift](agent-delegated-task-authorization-drift.md)
 
 ## Open Questions
 
@@ -58,3 +61,4 @@ The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-se
 
 - Created on 2026-08-21 from the [August 21 topic collector](../../../raw/processed/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json) as a downstream-authorization pattern leaf.
 - Updated on 2026-08-22 from the [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) with JFrog Artifactory on-behalf-of token-exchange evidence.
+- Updated on 2026-08-23 with a cross-link to [agent delegated task authorization drift](agent-delegated-task-authorization-drift.md) as the incident-pattern complement to downstream authorization propagation.

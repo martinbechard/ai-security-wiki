@@ -1,0 +1,527 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "docs_wiki_edited": false,
+  "exclusions": [
+    {
+      "examples": [
+        "generic CVE mirrors, vulnerability databases, and news reposts that repeated the primary CVE/advisory facts without a distinct local-security delta"
+      ],
+      "reason": "secondary_or_duplicate_mirror"
+    },
+    {
+      "examples": [
+        "broad product/framework catalog facts for Omnigent, SiYuan, Spring AI, FiftyOne, Headroom, Infracost, NLTK, and ONNX"
+      ],
+      "reason": "upstream_routed_context"
+    },
+    {
+      "examples": [
+        "SiYuan datePublic 2026-08-08 and older ONNX vendor advisory/public dates were not used as freshness anchors; in-window CVE publication/update dates were used instead"
+      ],
+      "reason": "boundary_only_or_stale_date"
+    }
+  ],
+  "follow_up_notes": [
+    "Ingest should consolidate overlapping advisory clusters where appropriate, especially Omnigent, SiYuan, Headroom, and Infracost.",
+    "No confirmed in-the-wild exploitation was found for the selected leaves during this run; proof-of-concept indicators were recorded only where public CVE/ADP data exposed them."
+  ],
+  "privacy_and_sensitivity_notes": "Only public leaf ids, public advisory identifiers, public topic names, and public source URLs were used for external checks; local page bodies and private content were not sent as search payloads.",
+  "qualifying_count": 15,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "agent MCP connector outbound request egress / hostname validation"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md",
+      "named_entities": [
+        "CKAN MCP Server",
+        "ondata/ckan-mcp-server",
+        "CVE-2026-53509",
+        "GHSA-g84h-j7jj-x32p"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-53509",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53509",
+        "https://github.com/ondata/ckan-mcp-server/security/advisories/GHSA-g84h-j7jj-x32p"
+      ],
+      "summary": "CKAN MCP Server before 0.4.106; hostname aliases such as ip6-localhost can bypass string-based SSRF filtering before outbound requests.",
+      "topic": "CKAN MCP Server SSRF Filter Bypass",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "agent bundle current-working-directory and runner workspace root containment"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md",
+      "named_entities": [
+        "Omnigent",
+        "omnigent-ai/omnigent",
+        "CVE-2026-62677",
+        "GHSA-p8rw-8qj3-hf33"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-62677",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62677",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0"
+      ],
+      "summary": "Omnigent before 0.3.0 permits authenticated bundles to set os_env.cwd values that can move file and shell tools outside the intended workspace when OMNIGENT_RUNNER_WORKSPACE is unset.",
+      "topic": "Omnigent Agent Bundle CWD Workspace Bypass",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "agent bundle callable-path parsing and runner code execution"
+      ],
+      "evidence_classification": "demonstrated_research",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-callable-path-runner-rce.md",
+      "named_entities": [
+        "Omnigent",
+        "omnigent-ai/omnigent",
+        "CVE-2026-62675",
+        "GHSA-756x-9hf6-q4h4"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-62675",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62675",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-756x-9hf6-q4h4"
+      ],
+      "summary": "Omnigent before 0.3.0 accepts dotted Python callable paths in uploaded agent bundles; CISA ADP marks proof-of-concept exploitation evidence for the advisory.",
+      "topic": "Omnigent Callable Path Runner RCE",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "shared/template agent bundle edit authority and future stdio MCP execution"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-shared-agent-bundle-overwrite-rce.md",
+      "named_entities": [
+        "Omnigent",
+        "omnigent-ai/omnigent",
+        "CVE-2026-62674",
+        "GHSA-jrrm-9hc7-2v3h"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-62674",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62674",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-jrrm-9hc7-2v3h"
+      ],
+      "summary": "Omnigent before 0.3.0 allows an authenticated editor to overwrite a shared/template agent bundle and cause later sessions to launch attacker-controlled stdio MCP commands.",
+      "topic": "Omnigent Shared Agent Bundle Overwrite RCE",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "coding-agent shell command policy parser and allowlist decision boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-shell-policy-parser-bypass.md",
+      "named_entities": [
+        "Omnigent",
+        "omnigent-ai/omnigent",
+        "CVE-2026-62676",
+        "GHSA-7mqg-cx4g-x2rf"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-62676",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62676",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-7mqg-cx4g-x2rf"
+      ],
+      "summary": "Omnigent before 0.3.0 shell-command parser fails open for command forms that policy code does not understand, permitting unauthorized repository/workspace operations.",
+      "topic": "Omnigent Shell Policy Parser Bypass",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "MCP file tool workspace-secret and path-containment boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-file-tool-blocklist-bypass.md",
+      "named_entities": [
+        "SiYuan",
+        "siyuan-note/siyuan",
+        "CVE-2026-60083",
+        "GHSA-c8r8-95hg-mp34"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-60083",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-60083",
+        "https://www.vulncheck.com/advisories/siyuan-before-incomplete-path-blocklist-via-mcp-file-tool"
+      ],
+      "summary": "SiYuan before v3.8.0 has an incomplete MCP file-tool blocklist allowing authenticated administrators to read publish-mode passwords and sensitive workspace files.",
+      "topic": "SiYuan MCP File Tool Blocklist Bypass",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-22"
+    },
+    {
+      "affected_boundaries": [
+        "MCP http_request URL construction and stored-secret interpolation boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-http-request-secret-exfiltration.md",
+      "named_entities": [
+        "SiYuan",
+        "siyuan-note/siyuan",
+        "CVE-2026-59809",
+        "GHSA-853m-gvvm-6rvx"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-59809",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59809",
+        "https://www.vulncheck.com/advisories/siyuan-before-secret-exfiltration-via-http-request-url"
+      ],
+      "summary": "SiYuan before v3.8.0 interpolates stored secret placeholders into attacker-controlled http_request destination URLs, enabling secret exfiltration to public hosts.",
+      "topic": "SiYuan MCP HTTP Request Secret Exfiltration",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-22"
+    },
+    {
+      "affected_boundaries": [
+        "MCP Streamable HTTP server transport session retention and authentication default boundary"
+      ],
+      "evidence_classification": "mitigation",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/spring-ai-mcp-streamable-http-session-dos.md",
+      "named_entities": [
+        "Spring AI",
+        "MCP Streamable HTTP",
+        "CVE-2026-59279"
+      ],
+      "source_urls": [
+        "https://spring.io/security/cve-2026-59279",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59279",
+        "https://securityonline.info/spring-data-rest-spring-ai-vulnerabilities/"
+      ],
+      "summary": "Spring advisory describes unbounded retained MCP Streamable HTTP sessions plus unauthenticated defaults; fixed in Spring AI 2.0.1 OSS and 2.0.0.1 enterprise support.",
+      "topic": "Spring AI MCP Streamable HTTP Session DoS",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "local AI dataset server browser-origin and media filesystem-read boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/data-and-privacy/fiftyone-local-ai-dataset-server-exposure.md",
+      "named_entities": [
+        "FiftyOne",
+        "voxel51/fiftyone",
+        "CVE-2026-53656",
+        "GHSA-q78p-hj9h-5466"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-53656",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53656",
+        "https://github.com/voxel51/fiftyone/security/advisories/GHSA-q78p-hj9h-5466"
+      ],
+      "summary": "FiftyOne before 1.17.0 used wildcard CORS on the local unauthenticated App/API server and allowed /media path reads, enabling malicious pages to read server-accessible files.",
+      "topic": "FiftyOne Local AI Dataset Server Exposure",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "LLM memory owner identity binding and client-supplied header boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/identity-and-access/headroom-llm-memory-owner-header-bypass.md",
+      "named_entities": [
+        "Headroom",
+        "Headroom LLM proxy",
+        "CVE-2026-77776",
+        "x-headroom-user-id"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-77776",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77776",
+        "https://app.opencve.io/cve/CVE-2026-77776"
+      ],
+      "summary": "Headroom LLM proxy derives memory owner from x-headroom-user-id without binding it to the authenticated caller, enabling cross-user memory read/write.",
+      "topic": "Headroom LLM Memory Owner Header Bypass",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "LLM proxy upstream-base-url selection and internal network egress boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/headroom-llm-proxy-upstream-ssrf.md",
+      "named_entities": [
+        "Headroom",
+        "Headroom LLM proxy",
+        "CVE-2026-77775",
+        "x-headroom-base-url"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-77775",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77775",
+        "https://www.vulncheck.com/advisories/headroom-proxy-sends-upstream-requests-to-a-client-supplied-base-url-without-address-validation"
+      ],
+      "summary": "Headroom LLM proxy accepts x-headroom-base-url for OpenAI-compatible and passthrough upstreams without rejecting loopback, link-local, RFC1918, or metadata destinations.",
+      "topic": "Headroom LLM Proxy Upstream SSRF",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "agent/CI cost-analysis template file access and symlink containment boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/infracost-template-symlink-file-read.md",
+      "named_entities": [
+        "Infracost",
+        "CVE-2026-71493",
+        "GHSA-mmg6-4qmv-6pc8"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-71493",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71493",
+        "https://github.com/infracost/infracost/security/advisories/GHSA-mmg6-4qmv-6pc8"
+      ],
+      "summary": "Infracost before 0.10.45 template functions use lexical path checks that can follow intermediate directory symlinks and read runner-accessible files into outputs.",
+      "topic": "Infracost Template Symlink File Read",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "Terraform Cloud/registry token destination binding in CI and agent workflows"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/infracost-terraform-token-forwarding-leak.md",
+      "named_entities": [
+        "Infracost",
+        "CVE-2026-71494",
+        "GHSA-6x6c-w9w9-hv4h"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-71494",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71494",
+        "https://github.com/infracost/infracost/security/advisories/GHSA-6x6c-w9w9-hv4h"
+      ],
+      "summary": "Infracost before 0.10.45 can attach configured Terraform Cloud or registry tokens to hostnames derived from untrusted Terraform input, exposing tokens in secret-bearing CI scans.",
+      "topic": "Infracost Terraform Token Forwarding Leak",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    },
+    {
+      "affected_boundaries": [
+        "NLP model artifact deserialization and pickle allowlist boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/nltk-transition-parser-model-pickle-rce.md",
+      "named_entities": [
+        "NLTK",
+        "AllowlistUnpickler",
+        "CVE-2026-71513"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-71513",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71513",
+        "https://app.opencve.io/cve/CVE-2026-71513"
+      ],
+      "summary": "NLTK 3.10.0 through 3.10.2 validates pickle module strings but not global names in AllowlistUnpickler, allowing malicious transition-parser models to execute commands.",
+      "topic": "NLTK Transition Parser Model Pickle RCE",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-22"
+    },
+    {
+      "affected_boundaries": [
+        "model external-data serialization and filesystem-write boundary"
+      ],
+      "evidence_classification": "demonstrated_research",
+      "follow_up_note": "Normal raw ingest should reconcile primary advisory details, affected/fixed version precision, CVSS/CWE deltas, and any exploit-status changes without editing docs/wiki in this collector run.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/onnx-external-data-symlink-file-write.md",
+      "named_entities": [
+        "ONNX",
+        "CVE-2026-49114",
+        "GHSA-q56x-g2fj-4rj6"
+      ],
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-49114",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-49114",
+        "https://github.com/onnx/onnx/security/advisories/GHSA-q56x-g2fj-4rj6"
+      ],
+      "summary": "ONNX before 1.21.0 save_external_data can follow pre-planted symlinks during external-data writes; CISA ADP marks proof-of-concept exploitation evidence.",
+      "topic": "ONNX External Data Symlink File Write",
+      "upstream_routing": "Keep local security boundary and advisory evidence here; route broad product/framework background to upstream ai-wiki or general AI-development workflow context to ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-08-21"
+    }
+  ],
+  "raw_processed_edited": false,
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-24T00:02:59Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md",
+    "docs/wiki/agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md",
+    "docs/wiki/agent-and-tool-security/omnigent-callable-path-runner-rce.md",
+    "docs/wiki/agent-and-tool-security/omnigent-shared-agent-bundle-overwrite-rce.md",
+    "docs/wiki/agent-and-tool-security/omnigent-shell-policy-parser-bypass.md",
+    "docs/wiki/agent-and-tool-security/siyuan-mcp-file-tool-blocklist-bypass.md",
+    "docs/wiki/agent-and-tool-security/siyuan-mcp-http-request-secret-exfiltration.md",
+    "docs/wiki/agent-and-tool-security/spring-ai-mcp-streamable-http-session-dos.md",
+    "docs/wiki/data-and-privacy/fiftyone-local-ai-dataset-server-exposure.md",
+    "docs/wiki/identity-and-access/headroom-llm-memory-owner-header-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/headroom-llm-proxy-upstream-ssrf.md",
+    "docs/wiki/infrastructure-and-supply-chain/infracost-template-symlink-file-read.md",
+    "docs/wiki/infrastructure-and-supply-chain/infracost-terraform-token-forwarding-leak.md",
+    "docs/wiki/infrastructure-and-supply-chain/nltk-transition-parser-model-pickle-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/onnx-external-data-symlink-file-write.md"
+  ],
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, stable relative path tie-breaker",
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-53509",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53509",
+        "https://github.com/ondata/ckan-mcp-server/security/advisories/GHSA-g84h-j7jj-x32p"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-62677",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62677",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-callable-path-runner-rce.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-62675",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62675",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-756x-9hf6-q4h4"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-shared-agent-bundle-overwrite-rce.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-62674",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62674",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-jrrm-9hc7-2v3h"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-shell-policy-parser-bypass.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-62676",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62676",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-7mqg-cx4g-x2rf"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-file-tool-blocklist-bypass.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-60083",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-60083",
+        "https://www.vulncheck.com/advisories/siyuan-before-incomplete-path-blocklist-via-mcp-file-tool"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-http-request-secret-exfiltration.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-59809",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59809",
+        "https://www.vulncheck.com/advisories/siyuan-before-secret-exfiltration-via-http-request-url"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/spring-ai-mcp-streamable-http-session-dos.md",
+      "source_urls": [
+        "https://spring.io/security/cve-2026-59279",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59279",
+        "https://securityonline.info/spring-data-rest-spring-ai-vulnerabilities/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/fiftyone-local-ai-dataset-server-exposure.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-53656",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53656",
+        "https://github.com/voxel51/fiftyone/security/advisories/GHSA-q78p-hj9h-5466"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/headroom-llm-memory-owner-header-bypass.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-77776",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77776",
+        "https://app.opencve.io/cve/CVE-2026-77776"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/headroom-llm-proxy-upstream-ssrf.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-77775",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77775",
+        "https://www.vulncheck.com/advisories/headroom-proxy-sends-upstream-requests-to-a-client-supplied-base-url-without-address-validation"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/infracost-template-symlink-file-read.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-71493",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71493",
+        "https://github.com/infracost/infracost/security/advisories/GHSA-mmg6-4qmv-6pc8"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/infracost-terraform-token-forwarding-leak.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-71494",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71494",
+        "https://github.com/infracost/infracost/security/advisories/GHSA-6x6c-w9w9-hv4h"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/nltk-transition-parser-model-pickle-rce.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-71513",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71513",
+        "https://app.opencve.io/cve/CVE-2026-71513"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/onnx-external-data-symlink-file-write.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-49114",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-49114",
+        "https://github.com/onnx/onnx/security/advisories/GHSA-q56x-g2fj-4rj6"
+      ]
+    }
+  ]
+}

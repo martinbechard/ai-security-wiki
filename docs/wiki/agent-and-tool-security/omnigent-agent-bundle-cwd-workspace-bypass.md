@@ -25,6 +25,7 @@ The [NVD record](https://nvd.nist.gov/vuln/detail/CVE-2026-62677) describes auth
 ## Authoritative Sources
 
 - [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json)
+- [August 23 leaf update watch source](../../../raw/processed/2026-08-23/ai-security-wiki-leaf-update-watch-20260824T000259Z.json)
 - [NVD CVE-2026-62677](https://nvd.nist.gov/vuln/detail/CVE-2026-62677)
 - [Omnigent 0.3.0 release](https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0)
 

@@ -9,7 +9,7 @@ tags: ["agent-and-tool-security", "data-and-privacy", "infrastructure-and-supply
 
 ## Current Understanding
 
-The [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json) records CVE-2026-60083 for SiYuan before v3.8.0. Broad [SiYuan MCP endpoint authorization risk](../../../upstream-ai-wiki/techniques/siyuan-mcp-endpoint-authorization-risk.md) belongs upstream; this page owns the local MCP file-tool containment boundary.
+The [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json) and [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json) record CVE-2026-60083 for SiYuan before v3.8.0. Broad [SiYuan MCP endpoint authorization risk](../../../upstream-ai-wiki/techniques/siyuan-mcp-endpoint-authorization-risk.md) belongs upstream; this page owns the local MCP file-tool containment boundary.
 
 The [NVD record](https://nvd.nist.gov/vuln/detail/CVE-2026-60083), linked [GitHub advisory](https://github.com/siyuan-note/siyuan/security/advisories/GHSA-c8r8-95hg-mp34), and [VulnCheck advisory](https://www.vulncheck.com/advisories/siyuan-before-incomplete-path-blocklist-via-mcp-file-tool) describe an incomplete path blocklist that let authenticated administrators read plaintext publish-mode passwords and other sensitive workspace files. The fix boundary is v3.8.0 in the collector evidence.
 
@@ -27,6 +27,8 @@ This page is separate from [agent tool filesystem path containment](../infrastru
 ## Authoritative Sources
 
 - [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json)
+- [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json)
+- [August 23 leaf update watch source](../../../raw/processed/2026-08-23/ai-security-wiki-leaf-update-watch-20260824T000259Z.json)
 - [NVD CVE-2026-60083](https://nvd.nist.gov/vuln/detail/CVE-2026-60083)
 - [GitHub advisory GHSA-c8r8-95hg-mp34](https://github.com/siyuan-note/siyuan/security/advisories/GHSA-c8r8-95hg-mp34)
 - [VulnCheck advisory](https://www.vulncheck.com/advisories/siyuan-before-incomplete-path-blocklist-via-mcp-file-tool)
@@ -57,3 +59,4 @@ This page is separate from [agent tool filesystem path containment](../infrastru
 ## Maintenance Notes
 
 - Created on 2026-08-22 from the [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json) as the file-tool member of the SiYuan v3.8.0 advisory set.
+- Updated on 2026-08-23 from the [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json) with additional NVD evidence while avoiding a duplicate SiYuan leaf.

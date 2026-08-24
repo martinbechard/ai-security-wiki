@@ -55,6 +55,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Omnigent callable path runner RCE](omnigent-callable-path-runner-rce.md)
 - [Omnigent shell policy parser bypass](omnigent-shell-policy-parser-bypass.md)
 - [Omnigent agent bundle CWD workspace bypass](omnigent-agent-bundle-cwd-workspace-bypass.md)
+- [MCP context injection transparency](mcp-context-injection-transparency.md)
 
 ## Authoritative Sources
 
@@ -91,3 +92,4 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Updated on 2026-08-19 after verifier correction split CodeWhale and SiYuan advisory routers into focused leaves.
 - Updated on 2026-08-21 with the Spring AI tool-dispatch authorization leaf.
 - Updated on 2026-08-22 with Spring AI MCP transport DoS, CKAN, SiYuan v3.8.0, and Omnigent agent-control-plane advisory leaves.
+- Updated on 2026-08-23 with the MCP context-injection transparency leaf.

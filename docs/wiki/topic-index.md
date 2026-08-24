@@ -60,6 +60,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/omnigent-callable-path-runner-rce.md](agent-and-tool-security/omnigent-callable-path-runner-rce.md)
 - [agent-and-tool-security/omnigent-shell-policy-parser-bypass.md](agent-and-tool-security/omnigent-shell-policy-parser-bypass.md)
 - [agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md](agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md)
+- [agent-and-tool-security/mcp-context-injection-transparency.md](agent-and-tool-security/mcp-context-injection-transparency.md)
 - [threats-and-attacks/ai-hosted-artifact-malware-delivery.md](threats-and-attacks/ai-hosted-artifact-malware-delivery.md)
 - [threats-and-attacks/unattended-ai-agent-attack-automation.md](threats-and-attacks/unattended-ai-agent-attack-automation.md)
 - [threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md](threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md)
@@ -103,6 +104,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/9router-oidc-test-ssrf.md](identity-and-access/9router-oidc-test-ssrf.md)
 - [identity-and-access/downstream-agent-authorization-context.md](identity-and-access/downstream-agent-authorization-context.md)
 - [identity-and-access/headroom-llm-memory-owner-header-bypass.md](identity-and-access/headroom-llm-memory-owner-header-bypass.md)
+- [identity-and-access/agent-delegated-task-authorization-drift.md](identity-and-access/agent-delegated-task-authorization-drift.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -192,6 +194,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 ## Maintenance Notes
 
 - Add local durable leaves here after federation routing and wiki verification.
+- Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.
 - Updated on 2026-08-22 with Spring AI MCP transport DoS, CKAN, SiYuan v3.8.0, Omnigent, Infracost, FiftyOne, Headroom, TensorZero, ONNX, Xinference, NLTK, and legal filing prompt-injection leaves.
 - Updated on 2026-08-19 with August 18 topic-news leaves and watcher enrichments across MCP, agent-tool, model-input, identity, data, infrastructure, testing, threats, and governance topics.
 - Updated on 2026-08-17 with MLflow, chrome-devtools-mcp, atomic-agents-stack, Ray, MemOS, OpenShift AI, Kiota, and delegated-agent cost guardrail leaves.

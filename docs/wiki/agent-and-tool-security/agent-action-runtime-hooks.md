@@ -15,6 +15,8 @@ This page owns the security-control lens, not general agent workflow design. Bro
 
 The [August 15 topic news collector source](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json) adds official [Australian Cyber Security Centre guidance](https://www.cyber.gov.au/about-us/view-all-content/news/when-ai-agents-take-unexpected-actions) on AI agents taking unexpected actions. ACSC frames goal misalignment, specification gaming, over-optimization, ambiguous instructions, weak boundaries, and software-control weaknesses as reasons an agent can satisfy a literal objective while violating user or organizational intent. General agent workflow governance remains upstream in the AI development wiki; the local security update is that runtime hooks need to evaluate whether a proposed action still matches delegated intent, not only whether the action is technically permitted.
 
+The [agent delegated task authorization drift](../identity-and-access/agent-delegated-task-authorization-drift.md) leaf adds a reported OpenClaw gym-booking example where a normal delegated task allegedly crossed into another user's waitlist action. This page keeps the reusable hook control: inspect subject, owner, resource, and objective drift before allowing a consequential downstream action.
+
 ## Security Impact
 
 - Threat or control area: prompt guardrails can fail open when the dangerous step is a tool call, transaction, configuration change, file write, message send, or workflow launch.
@@ -59,6 +61,7 @@ The [August 15 topic news collector source](../../../raw/processed/2026-08-15/ai
 - [MCP tool-level IAM authorization](../identity-and-access/mcp-tool-level-iam-authorization.md)
 - [production agent identity and access controls](../identity-and-access/production-agent-identity-and-access-controls.md)
 - [agentic AI threat cluster](../threats-and-attacks/agentic-ai-threat-cluster.md)
+- [agent delegated task authorization drift](../identity-and-access/agent-delegated-task-authorization-drift.md)
 - Upstream AI development wiki owns general agent lifecycle and workflow-hook design practice.
 
 ## Open Questions
@@ -70,3 +73,4 @@ The [August 15 topic news collector source](../../../raw/processed/2026-08-15/ai
 
 - Created on 2026-08-14 from the [August 14 topic collector](../../../raw/processed/2026-08-14/ai-security-wiki-topic-news-collector-2026-08-14T233111Z.json) after routing general agent workflow practice upstream.
 - Updated on 2026-08-15 from the [August 15 topic collector](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json) with ACSC delegated-intent and specification-gaming guidance while routing general workflow governance upstream.
+- Updated on 2026-08-23 with a cross-link to [agent delegated task authorization drift](../identity-and-access/agent-delegated-task-authorization-drift.md) as a concrete incident pattern for runtime hook policy.
