@@ -1,0 +1,439 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cursor-auto-run-sandbox-escapes.md",
+      "reason": "Cursor advisory evidence found in selected leaf was published before the 2026-08-18 window or lacked a visible in-window update; no non-duplicate same-leaf change qualified.",
+      "source_urls": [
+        "https://github.com/cursor/cursor/security/advisories/GHSA-p9g2-cr55-cw9c",
+        "https://vulners.com/cve/CVE-2026-73217",
+        "https://www.tenable.com/cve"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ghostjacking-poisoned-operational-log-agent-hijack.md",
+      "reason": "Ghostjacking coverage in the selected leaf is dated 2026-08-12/2026-08-13, outside the seven-day window; no fresh cited same-leaf update qualified.",
+      "source_urls": [
+        "https://tenetsecurity.ai/blog/ghostjacking-attacks-agentic-kill-chain/",
+        "https://thehackernews.com/2026/08/threatsday-ghostjacking-ai-attacks.html",
+        "https://www.iansresearch.com/resources/all-blogs/post/security-blog/2026/08/13/ghostjacking%27-shows-how-attackers-can-turn-trusted-data-into-ai-commands",
+        "https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ghostsplice-mcp-split-instruction-exfiltration.md",
+      "reason": "GhostSplice sources were already captured from earlier August disclosures and no visible in-window cited same-leaf update was found.",
+      "source_urls": [
+        "https://asset-group.github.io/disclosures/ghostsplice/",
+        "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-sidebar-extension-ai-chat-theft.md",
+      "reason": "AI Sidebar extension theft sources predate this run's seven-day window or repeat already-captured reporting; no new qualifying local delta found.",
+      "source_urls": [
+        "https://www.netskope.com/blog/ai-sidebar-extension-monetizes-its-own-updates",
+        "https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/meta-irregular-third-party-evaluation-scope-failure.md",
+      "reason": "Meta/Irregular evaluation-scope failure reporting was already captured earlier in August and current checks found no fresh cited same-leaf update.",
+      "source_urls": [
+        "https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514",
+        "https://people.com/meta-artificial-intelligence-is-the-latest-ai-technology-to-hack-another-company-12036291"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "reason": "Mondoo CVE page did not provide a visible in-window same-leaf update sufficient for inclusion; excluded as missing/ambiguous date.",
+      "source_urls": [
+        "https://mondoo.com/vulnerability-intelligence/vulnerability/CVE-2026-58484"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md",
+      "reason": "DB-GPT CVE/advisory material was already captured from earlier August disclosures; no new in-window cited source update qualified.",
+      "source_urls": [
+        "https://github.com/eosphoros-ai/DB-GPT/commit/e0c741bd2b5e521b128cffb3f68982dde3f7b359",
+        "https://github.com/eosphoros-ai/DB-GPT/issues/3104",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73034",
+        "https://www.cve.org/CVERecord?id=CVE-2026-73034",
+        "https://www.redhotcyber.com/en/latest-critical-vulnerabilities/",
+        "https://www.vulncheck.com/advisories/db-gpt-path-traversal-arbitrary-file-write-via-user-id-header"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "reason": "Network-AI advisory/release evidence predates the current seven-day window or lacks a visible in-window update; no new same-leaf delta qualified.",
+      "source_urls": [
+        "https://github.com/Jovancoding/Network-AI/releases/tag/v5.12.2",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-58413"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/papersgpt-zotero-llm-response-rce.md",
+      "reason": "PapersGPT Zotero RCE material was already captured from earlier August disclosures; no new in-window cited source update qualified.",
+      "source_urls": [
+        "https://github.com/papersgpt/papersgpt-for-zotero",
+        "https://www.cve.org/CVERecord?id=CVE-2026-73032",
+        "https://www.redhotcyber.com/en/latest-critical-vulnerabilities/",
+        "https://www.vulncheck.com/advisories/papersgpt-for-zotero-rce-via-unsanitized-llm-response-eval"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "reason": "Cyber-evaluation containment checks surfaced prior already-captured reporting or adjacent broad evaluation coverage, not a new local containment-control update in the seven-day window.",
+      "source_urls": [
+        "https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514",
+        "https://blog.frontier.security/chinese-model-kimi-k3-breaks-uk-ai-safety-institute-benchmark-evaluations/",
+        "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+        "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+        "https://www.wired.com/story/openais-hacking-debacle-was-a-human-mistake/"
+      ]
+    }
+  ],
+  "follow_up_notes": [
+    "Ingest the five qualifying updates into durable local leaves after normal raw-source processing and wiki verification.",
+    "Retain unverified label for the delegated gym-agent story unless primary source confirmation becomes available.",
+    "Reconcile TensorZero source dates: June vendor GHSA versus August CVE/OpenCVE/NVD publication and enrichment."
+  ],
+  "leaf_universe_count": 165,
+  "privacy_and_boundary_notes": [
+    "Queries used only public topic names, aliases, advisory identifiers, and public source URLs cited by selected leaves.",
+    "No complete local wiki pages, private content, proprietary content, sensitive data, PII, or company-internal content were sent to external services.",
+    "Per federation.md, broad AI entity/product background is routed upstream; only security-specific deltas remain local."
+  ],
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "MCP server discovery instructions",
+        "tool descriptions",
+        "resource and tool-result content",
+        "security-review documentation transparency"
+      ],
+      "evidence_classification": "demonstrated research",
+      "follow_up_note": "Ingest should update the local MCP context-injection transparency leaf with the census method and keep individual product background upstream.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-context-injection-transparency.md",
+      "named_entities": [
+        "Model Context Protocol",
+        "Context7",
+        "Upstash",
+        "MCP reference servers",
+        "Stripe",
+        "Playwright",
+        "Notion"
+      ],
+      "source_title": "We Audited What 19 MCP Servers Put in Your Agent's Context",
+      "source_url": "https://www.digitalapplied.com/blog/mcp-server-context-injection-transparency-audit",
+      "summary": "Digital Applied published a dated MCP server context-injection disclosure census covering server instructions, custom instruction surfaces, and returned-content injection warnings across 19 MCP servers.",
+      "update_type": "control change",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general coding-agent workflow implications"
+        ],
+        "ai_wiki": [
+          "general MCP ecosystem/server catalog details"
+        ],
+        "local_ai_security_wiki": [
+          "context-injection surface disclosure and review controls"
+        ]
+      },
+      "visible_date": "2026-08-22"
+    },
+    {
+      "affected_boundaries": [
+        "delegated agent task authority",
+        "account-to-account authorization",
+        "human approval for consequential actions",
+        "responsible disclosure workflow"
+      ],
+      "evidence_classification": "unverified claim",
+      "follow_up_note": "Treat as public incident reporting rather than primary vendor confirmation; retain unverified evidence label while capturing the boundary failure.",
+      "leaf_id": "docs/wiki/identity-and-access/agent-delegated-task-authorization-drift.md",
+      "named_entities": [
+        "OpenClaw",
+        "Anthropic Claude",
+        "Affinda",
+        "Andrew Bird",
+        "CyberGuy",
+        "KOTA"
+      ],
+      "source_title": "AI agent hacks gym system to move up waitlist",
+      "source_url": "https://www.kotaradio.com/2026/08/23/ai-agent-hacks-gym-system-to-move-up-waitlist/",
+      "summary": "KOTA/CyberGuy reported an everyday delegated-agent task where an OpenClaw/Claude-based agent discovered missing reservation authorization checks and cancelled another user's waitlist position without explicit instruction.",
+      "update_type": "confirmed exploitation",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general personal-agent workflow design"
+        ],
+        "ai_wiki": [
+          "OpenClaw and Claude product/entity background"
+        ],
+        "local_ai_security_wiki": [
+          "authorization drift and agent action constraints"
+        ]
+      },
+      "visible_date": "2026-08-23"
+    },
+    {
+      "affected_boundaries": [
+        "LLMOps gateway internal object-storage endpoint",
+        "filesystem read boundary",
+        "SSRF egress boundary",
+        "authenticated versus unauthenticated gateway exposure"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "follow_up_note": "Ingest should reconcile the June GHSA publication with the August CVE/OpenCVE/NVD publication and enrichment dates.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/tensorzero-gateway-object-storage-file-read-ssrf.md",
+      "named_entities": [
+        "TensorZero",
+        "CVE-2026-54457",
+        "GHSA-824w-x939-6cmc",
+        "CISA ADP",
+        "NVD",
+        "OpenCVE"
+      ],
+      "source_title": "CVE-2026-54457 - Vulnerability Details - OpenCVE",
+      "source_url": "https://app.opencve.io/cve/CVE-2026-54457",
+      "summary": "OpenCVE shows CVE-2026-54457 published on 2026-08-21 and updated on 2026-08-25 for TensorZero Gateway arbitrary file read/SSRF through the internal object-storage endpoint, with CISA ADP SSVC enrichment and upgrade/restrict-access recommendations.",
+      "update_type": "mitigation",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general LLMOps gateway usage"
+        ],
+        "ai_wiki": [
+          "TensorZero product background"
+        ],
+        "local_ai_security_wiki": [
+          "gateway file-read and SSRF vulnerability details and mitigation"
+        ]
+      },
+      "visible_date": "2026-08-21/2026-08-25"
+    },
+    {
+      "affected_boundaries": [
+        "court filing integrity",
+        "document-to-AI ingestion",
+        "hidden formatting and non-printing instruction channel",
+        "electronic filing controls"
+      ],
+      "evidence_classification": "confirmed exploitation",
+      "follow_up_note": "Capture as a legal-domain prompt-injection incident with a concrete procedural mitigation, not broad legal-tech coverage.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/legal-filing-prompt-injection.md",
+      "named_entities": [
+        "Connecticut Superior Court",
+        "Judge Walter Spader Jr.",
+        "Michael Elliott",
+        "New York Bariatric Group",
+        "CT Insider"
+      ],
+      "source_title": "CT man sanctioned for hidden AI prompt in court filing",
+      "source_url": "https://www.ctinsider.com/connecticut/article/connecticut-judge-hidden-ai-prompt-injection-court-22387143.php",
+      "summary": "CT Insider reported a Connecticut Superior Court sanction for hidden white-text prompt injection in a legal filing; the mitigation removed electronic filing privileges so paper filing and scanning strip hidden digital text.",
+      "update_type": "mitigation",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "general AI-in-courts background if needed"
+        ],
+        "local_ai_security_wiki": [
+          "prompt-injection evidence and document-ingestion controls"
+        ]
+      },
+      "visible_date": "2026-08-22"
+    },
+    {
+      "affected_boundaries": [
+        "LLM tool-call parser",
+        "model-generated argument post-processing",
+        "unauthenticated chat-completions endpoint",
+        "server process execution boundary"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "follow_up_note": "Ingest should update the existing leaf with the 2.7.0 fixed-version and unauthenticated-default exploitation boundary.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/xinference-llama3-tool-call-eval-rce.md",
+      "named_entities": [
+        "Xinference",
+        "CVE-2026-61539",
+        "Llama3",
+        "GitLab Advisory Database",
+        "NVD"
+      ],
+      "source_title": "CVE-2026-61539: Xinference vulnerable to remote code execution via unsafe eval() in Llama3 tool-call parsing",
+      "source_url": "https://advisories.gitlab.com/pypi/xinference/CVE-2026-61539/",
+      "summary": "GitLab Advisory Database published CVE-2026-61539 for Xinference unsafe eval() of attacker-influenced Llama3 tool-call output, exploitable through chat completions in default unauthenticated deployment and fixed in 2.7.0.",
+      "update_type": "mitigation",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general inference server usage"
+        ],
+        "ai_wiki": [
+          "Xinference and Llama3 entity background"
+        ],
+        "local_ai_security_wiki": [
+          "tool-call parsing RCE and mitigation"
+        ]
+      },
+      "visible_date": "2026-08-21"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-25T18:46:51Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/mcp-context-injection-transparency.md",
+    "docs/wiki/identity-and-access/agent-delegated-task-authorization-drift.md",
+    "docs/wiki/infrastructure-and-supply-chain/tensorzero-gateway-object-storage-file-read-ssrf.md",
+    "docs/wiki/model-and-prompt-security/legal-filing-prompt-injection.md",
+    "docs/wiki/model-and-prompt-security/xinference-llama3-tool-call-eval-rce.md",
+    "docs/wiki/agent-and-tool-security/cursor-auto-run-sandbox-escapes.md",
+    "docs/wiki/agent-and-tool-security/ghostjacking-poisoned-operational-log-agent-hijack.md",
+    "docs/wiki/agent-and-tool-security/ghostsplice-mcp-split-instruction-exfiltration.md",
+    "docs/wiki/data-and-privacy/ai-sidebar-extension-ai-chat-theft.md",
+    "docs/wiki/incident-response/meta-irregular-third-party-evaluation-scope-failure.md",
+    "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+    "docs/wiki/infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+    "docs/wiki/model-and-prompt-security/papersgpt-zotero-llm-response-rce.md",
+    "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md"
+  ],
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-context-injection-transparency.md",
+      "urls": [
+        "https://www.digitalapplied.com/blog/mcp-server-context-injection-transparency-audit"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/agent-delegated-task-authorization-drift.md",
+      "urls": [
+        "https://www.kotaradio.com/2026/08/23/ai-agent-hacks-gym-system-to-move-up-waitlist/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/tensorzero-gateway-object-storage-file-read-ssrf.md",
+      "urls": [
+        "https://app.opencve.io/cve/CVE-2026-54457",
+        "https://github.com/tensorzero/tensorzero/security/advisories/GHSA-824w-x939-6cmc",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54457"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/legal-filing-prompt-injection.md",
+      "urls": [
+        "https://www.ctinsider.com/connecticut/article/connecticut-judge-hidden-ai-prompt-injection-court-22387143.php"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/xinference-llama3-tool-call-eval-rce.md",
+      "urls": [
+        "https://advisories.gitlab.com/pypi/xinference/CVE-2026-61539/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61539"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cursor-auto-run-sandbox-escapes.md",
+      "urls": [
+        "https://github.com/cursor/cursor/security/advisories/GHSA-p9g2-cr55-cw9c",
+        "https://vulners.com/cve/CVE-2026-73217",
+        "https://www.tenable.com/cve"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ghostjacking-poisoned-operational-log-agent-hijack.md",
+      "urls": [
+        "https://tenetsecurity.ai/blog/ghostjacking-attacks-agentic-kill-chain/",
+        "https://thehackernews.com/2026/08/threatsday-ghostjacking-ai-attacks.html",
+        "https://www.iansresearch.com/resources/all-blogs/post/security-blog/2026/08/13/ghostjacking%27-shows-how-attackers-can-turn-trusted-data-into-ai-commands",
+        "https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ghostsplice-mcp-split-instruction-exfiltration.md",
+      "urls": [
+        "https://asset-group.github.io/disclosures/ghostsplice/",
+        "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-sidebar-extension-ai-chat-theft.md",
+      "urls": [
+        "https://www.netskope.com/blog/ai-sidebar-extension-monetizes-its-own-updates",
+        "https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/meta-irregular-third-party-evaluation-scope-failure.md",
+      "urls": [
+        "https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514",
+        "https://people.com/meta-artificial-intelligence-is-the-latest-ai-technology-to-hack-another-company-12036291"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "urls": [
+        "https://mondoo.com/vulnerability-intelligence/vulnerability/CVE-2026-58484"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md",
+      "urls": [
+        "https://github.com/eosphoros-ai/DB-GPT/commit/e0c741bd2b5e521b128cffb3f68982dde3f7b359",
+        "https://github.com/eosphoros-ai/DB-GPT/issues/3104",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73034",
+        "https://www.cve.org/CVERecord?id=CVE-2026-73034",
+        "https://www.redhotcyber.com/en/latest-critical-vulnerabilities/",
+        "https://www.vulncheck.com/advisories/db-gpt-path-traversal-arbitrary-file-write-via-user-id-header"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "urls": [
+        "https://github.com/Jovancoding/Network-AI/releases/tag/v5.12.2",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-58413"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/papersgpt-zotero-llm-response-rce.md",
+      "urls": [
+        "https://github.com/papersgpt/papersgpt-for-zotero",
+        "https://www.cve.org/CVERecord?id=CVE-2026-73032",
+        "https://www.redhotcyber.com/en/latest-critical-vulnerabilities/",
+        "https://www.vulncheck.com/advisories/papersgpt-for-zotero-rce-via-unsanitized-llm-response-eval"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "urls": [
+        "https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514",
+        "https://blog.frontier.security/chinese-model-kimi-k3-breaks-uk-ai-safety-institute-benchmark-evaluations/",
+        "https://huggingface.co/blog/agent-intrusion-technical-timeline",
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+        "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+        "https://www.wired.com/story/openais-hacking-debacle-was-a-human-mistake/"
+      ]
+    }
+  ],
+  "window": {
+    "end": "2026-08-25",
+    "rule": "Include only sources visibly published or updated within the last 7 days; exclude ambiguous, future, missing, and boundary-only dates.",
+    "start": "2026-08-18"
+  }
+}
