@@ -13,18 +13,21 @@ The [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai
 
 The [NVD record](https://nvd.nist.gov/vuln/detail/CVE-2026-54457), linked [GitHub advisory](https://github.com/tensorzero/tensorzero/security/advisories/GHSA-824w-x939-6cmc), and [OpenCVE record](https://app.opencve.io/cve/CVE-2026-54457) describe an internal object-storage endpoint that can be abused for arbitrary file read and SSRF by selecting filesystem or attacker-controlled object-storage backends.
 
+The [August 25 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json) adds OpenCVE evidence that the record was published on 2026-08-21 and updated on 2026-08-25 with CISA ADP SSVC enrichment and upgrade/restrict-access recommendations. Treat the August date as CVE/OpenCVE enrichment timing, not proof that the original GitHub advisory was first disclosed then.
+
 ## Security Impact
 
 - Threat: an LLMOps gateway object-storage endpoint can expose local files or become an SSRF relay when backend selection is attacker-influenced.
 - Affected boundary: TensorZero before 2026.6.0 internal object-storage endpoint and backend selection.
 - Exploit or incident status: public NVD and GitHub advisory evidence; no local exploitation evidence is recorded.
 - Mitigation state: upgrade to 2026.6.0 or later, restrict backend schemes and destinations, and isolate gateway file access from host secrets and model artifacts.
-- Confidence: high for advisory identity and affected range from NVD and linked GitHub evidence.
+- Confidence: high for advisory identity, affected range, OpenCVE enrichment, and upgrade/restrict-access mitigation from NVD, OpenCVE, and linked GitHub evidence.
 - Residual risk: model gateways often hold provider keys, traces, datasets, and artifacts, making backend-selection bugs high-impact even without direct model compromise.
 
 ## Authoritative Sources
 
 - [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json)
+- [August 25 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json)
 - [NVD CVE-2026-54457](https://nvd.nist.gov/vuln/detail/CVE-2026-54457)
 - [GitHub advisory GHSA-824w-x939-6cmc](https://github.com/tensorzero/tensorzero/security/advisories/GHSA-824w-x939-6cmc)
 - [OpenCVE CVE-2026-54457](https://app.opencve.io/cve/CVE-2026-54457)
@@ -54,3 +57,4 @@ The [NVD record](https://nvd.nist.gov/vuln/detail/CVE-2026-54457), linked [GitHu
 ## Maintenance Notes
 
 - Created on 2026-08-22 from the [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json) as an LLM gateway object-storage boundary leaf.
+- Updated on 2026-08-26 from the [August 25 leaf watcher](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json) with OpenCVE/CISA ADP enrichment and mitigation timing.

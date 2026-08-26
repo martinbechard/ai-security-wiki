@@ -13,12 +13,14 @@ The [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai
 
 The [CT Insider report](https://www.ctinsider.com/connecticut/article/connecticut-judge-hidden-ai-prompt-injection-court-22387143.php) cited by the collector says a Connecticut Superior Court judge found hidden AI instructions that told AI systems analyzing the documents to favor the filer and reverse a clerk's ruling. The collector also records that the Connecticut court itself reportedly did not use AI to assess the filings, so the incident is best treated as prompt-injection abuse against external AI-assisted document analysis rather than compromise of a court AI system.
 
+The [August 25 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json) adds the reported mitigation: the sanctioned party lost electronic filing privileges, forcing paper filing and scanning that strips hidden digital text. This is a procedural mitigation, not a technical guarantee against all hidden or adversarial document content.
+
 ## Security Impact
 
 - Threat: hidden document text can manipulate AI summaries, legal analysis, or review workflows when documents are treated as trusted context.
 - Affected boundary: court filings and other legal documents consumed by AI tools used by litigants, lawyers, or reviewers.
 - Exploit or incident status: reported public sanctions incident; source attribution is a media report rather than a primary court order in this ingest.
-- Mitigation state: render hidden text, compare extracted text with visual presentation, label document text as untrusted evidence, and preserve human review for legal conclusions.
+- Mitigation state: render hidden text, compare extracted text with visual presentation, label document text as untrusted evidence, preserve human review for legal conclusions, and consider paper/scanned intake for sanctioned or high-risk filers when hidden digital text is the abuse channel.
 - Confidence: medium because the collector captured one press source; a primary court order should be preferred if available.
 - Residual risk: legal, procurement, contract, and compliance workflows often ingest adversarial documents, so prompt-injection controls must apply to documents, not only webpages or chat messages.
 
@@ -26,6 +28,7 @@ The [CT Insider report](https://www.ctinsider.com/connecticut/article/connecticu
 
 - [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json)
 - [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json)
+- [August 25 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json)
 - [CT Insider report](https://www.ctinsider.com/connecticut/article/connecticut-judge-hidden-ai-prompt-injection-court-22387143.php)
 
 ## Related Code
@@ -54,3 +57,4 @@ The [CT Insider report](https://www.ctinsider.com/connecticut/article/connecticu
 
 - Created on 2026-08-22 from the [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json) as a legal-document prompt-injection incident leaf.
 - Updated on 2026-08-23 from the [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json) with CT Insider sanction-reporting provenance while leaving the primary-order question open.
+- Updated on 2026-08-26 from the [August 25 leaf watcher](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json) with the electronic-filing removal mitigation.

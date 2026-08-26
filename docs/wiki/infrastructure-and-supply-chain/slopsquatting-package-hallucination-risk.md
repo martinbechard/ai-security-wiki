@@ -19,13 +19,15 @@ The risk grows when:
 - package names are repeated across model families;
 - generated README or setup instructions propagate the false dependency.
 
+The [August 26 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260826T001230Z.json) adds primary research evidence from [arXiv:2608.22652](https://arxiv.org/abs/2608.22652), an ASE 2026 paper evaluating inference-time defenses against package hallucination across eight models, five families, and four languages. The source reports that RAG helped in 18 of 32 model-language configurations, while adversarial fabricated package names can increase hallucination rates by up to 45 percentage points. This strengthens the page's control claim without importing broad software-engineering benchmark analysis owned by the AI development wiki.
+
 ## Security Impact
 
 - Threat: attackers can register hallucinated dependency names on public registries and receive installs from AI-assisted developers or autonomous agents.
 - Affected boundary: package managers, generated install commands, setup scripts, README snippets, CI dependency restoration, coding-agent tool calls, npm, PyPI, and similar registries.
 - Exploit or incident status: clipping-attributed proof-of-concept and incident claims; primary advisories not yet captured in this wiki.
 - Mitigation state: package existence, provenance, maintainer, age, popularity, signature, lockfile, and vulnerability checks should gate dependency acceptance.
-- Confidence: medium for named counts and incidents because the clipping is secondary and has date conflict; high for the general control need because it matches established dependency-confusion and supply-chain principles.
+- Confidence: medium for older clipping-named incidents because the clipping is secondary and has date conflict; high for the general control need and current defense limitations because the August watcher adds primary package-hallucination research evidence.
 - Residual risk: exact package names, model-family recurrence rates, registry takedown status, and autonomous-agent blast radius remain open until primary sources are linked.
 
 ## Control Implications
@@ -39,6 +41,8 @@ The risk grows when:
 ## Authoritative Sources
 
 - [AI code bugs clipping source](../../../raw/processed/ai-code-bugs-changing-old-playbook-wont-save-you.md)
+- [August 26 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260826T001230Z.json)
+- [Package hallucination defense paper](https://arxiv.org/abs/2608.22652)
 
 ## Related Code
 
@@ -70,3 +74,4 @@ The risk grows when:
 ## Maintenance Notes
 
 - Created on 2026-08-06 from the [AI code bugs clipping](../../../raw/processed/ai-code-bugs-changing-old-playbook-wont-save-you.md) as a supply-chain security leaf with quantitative claims kept medium confidence until primary sources are ingested.
+- Updated on 2026-08-26 from the [August 26 leaf watcher](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260826T001230Z.json) with arXiv:2608.22652 primary defense-evaluation evidence.

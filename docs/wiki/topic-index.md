@@ -51,6 +51,17 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/codewhale-git-tool-argument-injection.md](agent-and-tool-security/codewhale-git-tool-argument-injection.md)
 - [agent-and-tool-security/codewhale-js-execution-environment-exposure.md](agent-and-tool-security/codewhale-js-execution-environment-exposure.md)
 - [agent-and-tool-security/siyuan-mcp-database-clean-path-traversal.md](agent-and-tool-security/siyuan-mcp-database-clean-path-traversal.md)
+- [agent-and-tool-security/continue-cli-unattended-command-denylist-bypass.md](agent-and-tool-security/continue-cli-unattended-command-denylist-bypass.md)
+- [agent-and-tool-security/mcp-ffmpeg-helper-command-injection.md](agent-and-tool-security/mcp-ffmpeg-helper-command-injection.md)
+- [agent-and-tool-security/mcp-shell-command-policy-bypasses.md](agent-and-tool-security/mcp-shell-command-policy-bypasses.md)
+- [agent-and-tool-security/praisonai-mcp-origin-and-csrf-instruction-persistence.md](agent-and-tool-security/praisonai-mcp-origin-and-csrf-instruction-persistence.md)
+- [agent-and-tool-security/praisonai-mcp-session-exhaustion.md](agent-and-tool-security/praisonai-mcp-session-exhaustion.md)
+- [agent-and-tool-security/praisonai-agent-control-plane-advisory-deferrals.md](agent-and-tool-security/praisonai-agent-control-plane-advisory-deferrals.md)
+- [agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md](agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md)
+- [agent-and-tool-security/browse-mcp-file-path-boundary.md](agent-and-tool-security/browse-mcp-file-path-boundary.md)
+- [agent-and-tool-security/nextcloud-mcp-webhook-vector-index-auth.md](agent-and-tool-security/nextcloud-mcp-webhook-vector-index-auth.md)
+- [agent-and-tool-security/genieacs-mcp-loopback-dns-rebinding.md](agent-and-tool-security/genieacs-mcp-loopback-dns-rebinding.md)
+- [agent-and-tool-security/chainlit-mcp-setup-command-and-ssrf.md](agent-and-tool-security/chainlit-mcp-setup-command-and-ssrf.md)
 - [agent-and-tool-security/spring-ai-tool-dispatch-authorization-bypass.md](agent-and-tool-security/spring-ai-tool-dispatch-authorization-bypass.md)
 - [agent-and-tool-security/spring-ai-mcp-streamable-http-session-dos.md](agent-and-tool-security/spring-ai-mcp-streamable-http-session-dos.md)
 - [agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md](agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md)
@@ -102,6 +113,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/apify-mcp-token-authority-leak.md](identity-and-access/apify-mcp-token-authority-leak.md)
 - [identity-and-access/onyx-mcp-oauth-token-isolation.md](identity-and-access/onyx-mcp-oauth-token-isolation.md)
 - [identity-and-access/9router-oidc-test-ssrf.md](identity-and-access/9router-oidc-test-ssrf.md)
+- [identity-and-access/coroot-mcp-oauth-dcr-redirect-hijack.md](identity-and-access/coroot-mcp-oauth-dcr-redirect-hijack.md)
+- [identity-and-access/kibana-ai-assistant-conversation-ownership-bypass.md](identity-and-access/kibana-ai-assistant-conversation-ownership-bypass.md)
 - [identity-and-access/downstream-agent-authorization-context.md](identity-and-access/downstream-agent-authorization-context.md)
 - [identity-and-access/headroom-llm-memory-owner-header-bypass.md](identity-and-access/headroom-llm-memory-owner-header-bypass.md)
 - [identity-and-access/agent-delegated-task-authorization-drift.md](identity-and-access/agent-delegated-task-authorization-drift.md)
@@ -128,6 +141,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [infrastructure-and-supply-chain/ray-browser-triggered-ai-compute-rce.md](infrastructure-and-supply-chain/ray-browser-triggered-ai-compute-rce.md)
 - [infrastructure-and-supply-chain/kiota-ai-host-manifest-file-boundary-disclosure.md](infrastructure-and-supply-chain/kiota-ai-host-manifest-file-boundary-disclosure.md)
 - [infrastructure-and-supply-chain/huggingface-transformers-checkpoint-shard-file-read.md](infrastructure-and-supply-chain/huggingface-transformers-checkpoint-shard-file-read.md)
+- [infrastructure-and-supply-chain/consciousness-explorer-mcp-state-file-write.md](infrastructure-and-supply-chain/consciousness-explorer-mcp-state-file-write.md)
+- [infrastructure-and-supply-chain/mcp-php-sdk-sse-memory-exhaustion.md](infrastructure-and-supply-chain/mcp-php-sdk-sse-memory-exhaustion.md)
+- [infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md](infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md)
 - [infrastructure-and-supply-chain/infracost-template-symlink-file-read.md](infrastructure-and-supply-chain/infracost-template-symlink-file-read.md)
 - [infrastructure-and-supply-chain/infracost-terraform-token-forwarding-leak.md](infrastructure-and-supply-chain/infracost-terraform-token-forwarding-leak.md)
 - [infrastructure-and-supply-chain/headroom-llm-proxy-upstream-ssrf.md](infrastructure-and-supply-chain/headroom-llm-proxy-upstream-ssrf.md)
@@ -150,6 +166,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [testing-and-assurance/semantic-governance-policy-telemetry.md](testing-and-assurance/semantic-governance-policy-telemetry.md)
 - [testing-and-assurance/delegated-agent-cost-guardrail-bypass.md](testing-and-assurance/delegated-agent-cost-guardrail-bypass.md)
 - [testing-and-assurance/evaluation-platform-control-plane-rce.md](testing-and-assurance/evaluation-platform-control-plane-rce.md)
+- [testing-and-assurance/qwed-sympy-verification-parser-rce.md](testing-and-assurance/qwed-sympy-verification-parser-rce.md)
 - [governance-and-compliance](governance-and-compliance/index.md)
 - [governance-and-compliance/ai-data-center-security-standards.md](governance-and-compliance/ai-data-center-security-standards.md)
 - [governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md](governance-and-compliance/cyber-resilience-act-ai-security-lifecycle.md)
@@ -195,6 +212,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 - Add local durable leaves here after federation routing and wiki verification.
 - Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.
+- Updated on 2026-08-26 with August 25 MCP, agent-tool, identity, infrastructure, verification-parser, emergency-shutdown, and advisory-deferral leaves.
 - Updated on 2026-08-22 with Spring AI MCP transport DoS, CKAN, SiYuan v3.8.0, Omnigent, Infracost, FiftyOne, Headroom, TensorZero, ONNX, Xinference, NLTK, and legal filing prompt-injection leaves.
 - Updated on 2026-08-19 with August 18 topic-news leaves and watcher enrichments across MCP, agent-tool, model-input, identity, data, infrastructure, testing, threats, and governance topics.
 - Updated on 2026-08-17 with MLflow, chrome-devtools-mcp, atomic-agents-stack, Ray, MemOS, OpenShift AI, Kiota, and delegated-agent cost guardrail leaves.

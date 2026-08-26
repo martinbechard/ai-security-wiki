@@ -13,6 +13,8 @@ MCP context-injection transparency is the control that makes agent-visible serve
 
 Broad MCP protocol and MCP server catalog coverage belongs upstream in the AI wiki; general MCP documentation practice belongs in the AI development wiki. This page owns the local security control: MCP servers can add tool descriptions, resource text, prompts, or implementation-specific instructions to an agent's context, so procurement and runtime allowlisting need evidence for which text surfaces exist and who controls them.
 
+The [August 25 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json) repeats the Digital Applied audit as a current control signal. Keep the local update scoped to transparency method and review requirements: product-by-product MCP catalog conclusions remain upstream, while this page tracks the security evidence needed before trusting server-supplied context.
+
 ## Security Impact
 
 - Threat: hidden or poorly documented MCP context surfaces can carry prompt injection, policy overrides, or data-exfiltration instructions into an agent loop.
@@ -25,7 +27,8 @@ Broad MCP protocol and MCP server catalog coverage belongs upstream in the AI wi
 ## Authoritative Sources
 
 - [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json)
-- Digital Applied audit: https://www.digitalapplied.com/blog/mcp-server-context-injection-transparency-audit
+- [August 25 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json)
+- [Digital Applied audit](https://www.digitalapplied.com/blog/mcp-server-context-injection-transparency-audit)
 
 ## Related Code
 
@@ -55,3 +58,4 @@ Broad MCP protocol and MCP server catalog coverage belongs upstream in the AI wi
 ## Maintenance Notes
 
 - Created on 2026-08-23 from the [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json) after routing broad MCP protocol, product, and documentation-practice coverage upstream.
+- Updated on 2026-08-26 from the [August 25 leaf watcher](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json) with repeated audit provenance and no duplicate digest item.

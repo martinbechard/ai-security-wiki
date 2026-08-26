@@ -18,6 +18,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [Apify MCP token authority leak](apify-mcp-token-authority-leak.md)
 - [Onyx MCP OAuth token isolation](onyx-mcp-oauth-token-isolation.md)
 - [9Router OIDC test SSRF](9router-oidc-test-ssrf.md)
+- [Coroot MCP OAuth DCR redirect hijack](coroot-mcp-oauth-dcr-redirect-hijack.md)
+- [Kibana AI Assistant conversation ownership bypass](kibana-ai-assistant-conversation-ownership-bypass.md)
 - [Downstream agent authorization context](downstream-agent-authorization-context.md)
 - [Headroom LLM memory owner header bypass](headroom-llm-memory-owner-header-bypass.md)
 - [Agent delegated task authorization drift](agent-delegated-task-authorization-drift.md)
@@ -56,3 +58,4 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - Updated on 2026-08-21 with the downstream agent authorization context control leaf.
 - Updated on 2026-08-22 with the Headroom proxy routing and memory-owner boundary leaf plus downstream authorization watcher evidence.
 - Updated on 2026-08-23 with the delegated task authorization drift incident-pattern leaf.
+- Updated on 2026-08-26 with Coroot MCP OAuth DCR redirect-hijack and Kibana AI Assistant conversation-owner leaves.

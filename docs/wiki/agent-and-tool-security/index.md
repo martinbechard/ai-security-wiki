@@ -46,6 +46,17 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [CodeWhale git tool argument injection](codewhale-git-tool-argument-injection.md)
 - [CodeWhale JS execution environment exposure](codewhale-js-execution-environment-exposure.md)
 - [SiYuan MCP database clean path traversal](siyuan-mcp-database-clean-path-traversal.md)
+- [Continue CLI unattended command denylist bypass](continue-cli-unattended-command-denylist-bypass.md)
+- [mcp-ffmpeg-helper command injection](mcp-ffmpeg-helper-command-injection.md)
+- [mcp-shell command policy bypasses](mcp-shell-command-policy-bypasses.md)
+- [PraisonAI MCP origin and CSRF instruction persistence](praisonai-mcp-origin-and-csrf-instruction-persistence.md)
+- [PraisonAI MCP session exhaustion](praisonai-mcp-session-exhaustion.md)
+- [PraisonAI agent control plane advisory deferrals](praisonai-agent-control-plane-advisory-deferrals.md)
+- [agentic AI emergency shutdown controls](agentic-ai-emergency-shutdown-controls.md)
+- [browse-mcp file path boundary](browse-mcp-file-path-boundary.md)
+- [Nextcloud MCP webhook vector index auth](nextcloud-mcp-webhook-vector-index-auth.md)
+- [genieacs-mcp loopback DNS rebinding](genieacs-mcp-loopback-dns-rebinding.md)
+- [Chainlit MCP setup command and SSRF](chainlit-mcp-setup-command-and-ssrf.md)
 - [Spring AI tool dispatch authorization bypass](spring-ai-tool-dispatch-authorization-bypass.md)
 - [Spring AI MCP Streamable HTTP session DoS](spring-ai-mcp-streamable-http-session-dos.md)
 - [CKAN MCP Server SSRF filter bypass](ckan-mcp-server-ssrf-filter-bypass.md)
@@ -93,3 +104,4 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Updated on 2026-08-21 with the Spring AI tool-dispatch authorization leaf.
 - Updated on 2026-08-22 with Spring AI MCP transport DoS, CKAN, SiYuan v3.8.0, and Omnigent agent-control-plane advisory leaves.
 - Updated on 2026-08-23 with the MCP context-injection transparency leaf.
+- Updated on 2026-08-26 with Continue CLI, mcp-ffmpeg-helper, mcp-shell, PraisonAI, browse-mcp, Nextcloud MCP, genieacs-mcp, Chainlit, and agentic AI shutdown leaves.

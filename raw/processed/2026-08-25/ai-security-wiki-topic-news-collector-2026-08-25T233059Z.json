@@ -1,0 +1,1235 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-08-25T23:30:59Z",
+  "cutoff_window": {
+    "start": "2026-08-23T23:30:59Z",
+    "end": "2026-08-25T23:30:59Z",
+    "duration_hours": 48,
+    "date_policy": "Include only items published or visibly updated after the start timestamp and at or before the run timestamp; exclude date-only boundary items and ambiguous dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model/dataset/dependency/artifact/runtime/cloud/hardware/deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "collection_method": {
+    "sources_used": [
+      "NVD CVE API with pubStartDate/pubEndDate and MCP/AI keyword filters",
+      "GitHub Advisory Database pages",
+      "public web search for AI security standards, incidents, and CISA updates"
+    ],
+    "privacy_note": "Only public topic names, public CVE/advisory identifiers, and public source URLs were used. No private, proprietary, sensitive, PII, or company-internal local content was sent to external services."
+  },
+  "qualifying_count": 18,
+  "exclusion_count": 8,
+  "routing_count": 3,
+  "findings": [
+    {
+      "id": "CVE-2026-78430",
+      "title": "mcp-ffmpeg-helper handleToolCall command injection",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78430",
+        "https://github.com/sworddut/mcp-ffmpeg-helper/",
+        "https://github.com/sworddut/mcp-ffmpeg-helper/issues/6",
+        "https://vuldb.com/cve/CVE-2026-78430",
+        "https://vuldb.com/submit/886393",
+        "https://vuldb.com/vuln/394711",
+        "https://vuldb.com/vuln/394711/cti"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-24T20:17:22.560",
+        "nvd_last_modified": "2026-08-24T20:17:22.560",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "NVD records OS command injection in sworddut mcp-ffmpeg-helper 0.1.0, 0.1.1, and 0.2.1 through argument handling in src/tools/handlers.ts; the exploit is public and the project had not responded according to the CNA text.",
+      "evidence_classification": "vulnerability_advisory_public_exploit",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "cna@vuldb.com",
+            "affectedData": [
+              {
+                "vendor": "sworddut",
+                "product": "mcp-ffmpeg-helper",
+                "cpes": [
+                  "cpe:2.3:a:sworddut:mcp-ffmpeg-helper:*:*:*:*:*:*:*:*"
+                ],
+                "modules": [
+                  "Tool Handler"
+                ],
+                "versions": [
+                  {
+                    "version": "0.1.0",
+                    "status": "affected"
+                  },
+                  {
+                    "version": "0.1.1",
+                    "status": "affected"
+                  },
+                  {
+                    "version": "0.2.1",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV40",
+            "base_score": 1.9,
+            "severity": "LOW",
+            "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:L/SC:N/SI:N/SA:N/E:P/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+          },
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 5.3,
+            "severity": "MEDIUM",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L"
+          }
+        ],
+        "weaknesses": [
+          "CWE-77",
+          "CWE-78"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Media-processing MCP helpers can turn agent-selected tool arguments into local command execution when validation is missing.",
+      "named_entities": [],
+      "upstream_routing": "Local security lens: agent/tool security and MCP command execution. Broad MCP server catalog ownership remains upstream in ai-wiki.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Check whether a maintainer patch appears after the unanswered issue report.",
+        "During ingest, consider a local leaf for MCP media helper command-injection boundaries."
+      ]
+    },
+    {
+      "id": "CVE-2026-55529",
+      "title": "PraisonAI MCP origin-prefix bypass enables browser-to-local tool calls",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55529",
+        "https://github.com/MervinPraison/PraisonAI/commit/2f9677abb2ea68eab864ee8b6a828fd0141612e1",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-wj6g-v78p-6fx3"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T15:16:33.727",
+        "nvd_last_modified": "2026-08-25T15:16:33.727",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "PraisonAI before 4.6.58 accepted request origins by startswith comparison, allowing attacker-controlled localhost-like origins to match the allowlist and submit MCP tools/call requests to a local server without an API key.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "MervinPraison",
+                "product": "PraisonAI",
+                "versions": [
+                  {
+                    "version": "< 4.6.58",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 6.9,
+            "severity": "MEDIUM",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:L/A:N"
+          }
+        ],
+        "weaknesses": [
+          "CWE-306",
+          "CWE-346"
+        ]
+      },
+      "why_it_matters_for_ai_security": "This is a browser-origin and delegated-tool boundary failure for multi-agent systems reachable from local web contexts.",
+      "named_entities": [
+        "MCP",
+        "PraisonAI"
+      ],
+      "upstream_routing": "PraisonAI as a broad framework/product belongs upstream in ai-wiki; local note should preserve the MCP origin-validation security implication.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Group with CVE-2026-55532 during ingest if one PraisonAI origin-validation leaf is created."
+      ]
+    },
+    {
+      "id": "CVE-2026-55531",
+      "title": "PraisonAI MCP initialize session exhaustion",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55531",
+        "https://github.com/MervinPraison/PraisonAI/commit/2f9677abb2ea68eab864ee8b6a828fd0141612e1",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-wv94-5qcp-6m36",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-wv94-5qcp-6m36"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T15:16:34.017",
+        "nvd_last_modified": "2026-08-25T17:17:30.750",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "PraisonAI before 4.6.58 created a new MCP HTTP Stream session for every initialize request without cleanup or a maximum, allowing unauthenticated memory exhaustion; the fix adds cleanup and PRAISONAI_MCP_MAX_SESSIONS.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "MervinPraison",
+                "product": "PraisonAI",
+                "versions": [
+                  {
+                    "version": "< 4.6.58",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 6.5,
+            "severity": "MEDIUM",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H"
+          }
+        ],
+        "weaknesses": [
+          "CWE-400",
+          "CWE-770"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Agent runtimes need session lifecycle limits because unauthenticated MCP setup endpoints can become availability attack surfaces.",
+      "named_entities": [
+        "MCP",
+        "PraisonAI"
+      ],
+      "upstream_routing": "PraisonAI entity belongs upstream; local security lens is MCP transport resource exhaustion.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "During ingest, decide whether this belongs with PraisonAI MCP origin issues or a separate MCP session lifecycle control leaf."
+      ]
+    },
+    {
+      "id": "CVE-2026-55532",
+      "title": "PraisonAI text/plain MCP CSRF can persist agent instructions",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55532",
+        "https://github.com/MervinPraison/PraisonAI/commit/2f9677abb2ea68eab864ee8b6a828fd0141612e1",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvph-5j39-v8qc"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T16:16:54.560",
+        "nvd_last_modified": "2026-08-25T17:17:30.910",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "PraisonAI before 4.6.58 allowed attacker-controlled localhost.attacker.com origins through prefix matching and accepted text/plain requests without preflight, enabling tools/call without an API key, including file writes that persist agent instructions.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "MervinPraison",
+                "product": "PraisonAI",
+                "versions": [
+                  {
+                    "version": "< 4.6.58",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 7.6,
+            "severity": "HIGH",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:H/A:L"
+          }
+        ],
+        "weaknesses": [
+          "CWE-346",
+          "CWE-352"
+        ]
+      },
+      "why_it_matters_for_ai_security": "This combines web CSRF/origin mistakes with persistent agent-instruction modification, a concrete autonomous-agent integrity risk.",
+      "named_entities": [
+        "CSRF",
+        "MCP",
+        "PraisonAI"
+      ],
+      "upstream_routing": "PraisonAI general coverage routes upstream; local repo should keep the persistent-instruction and MCP origin-control lesson.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Track with browser-to-local MCP threat modeling and instruction-persistence controls."
+      ]
+    },
+    {
+      "id": "CVE-2026-55546",
+      "title": "QWED-MCP math verification parse_expr RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55546",
+        "https://github.com/QWED-AI/qwed-mcp/commit/362e61892052e250c56cb1ee852024d6f98c467b",
+        "https://github.com/QWED-AI/qwed-mcp/pull/22",
+        "https://github.com/QWED-AI/qwed-mcp/releases/tag/v0.2.1",
+        "https://github.com/QWED-AI/qwed-mcp/security/advisories/GHSA-mw6r-2hvm-4rp2",
+        "https://github.com/QWED-AI/qwed-mcp/security/advisories/GHSA-mw6r-2hvm-4rp2"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T16:16:55.160",
+        "nvd_last_modified": "2026-08-25T19:16:49.683",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "QWED-MCP before 0.2.1 passed attacker-controlled expression strings to SymPy parse_expr without restricted globals or AST validation, enabling arbitrary OS command execution when downstream integrations feed untrusted input to the public library function.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "QWED-AI",
+                "product": "qwed-mcp",
+                "versions": [
+                  {
+                    "version": "< 0.2.1",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 9.8,
+            "severity": "CRITICAL",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          }
+        ],
+        "weaknesses": [
+          "CWE-94"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Verification gateways can become pre-execution trust anchors; unsafe expression parsing inside a verifier can compromise the process that is supposed to gate agent actions.",
+      "named_entities": [
+        "QWED-MCP",
+        "RCE"
+      ],
+      "upstream_routing": "QWED-MCP as a tool belongs upstream; local security lens is evaluation/verification gateway code execution.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "During ingest, compare with QWED core CVE-2026-55585 for shared SymPy parsing guidance."
+      ]
+    },
+    {
+      "id": "CVE-2026-55580",
+      "title": "mcp-shell documented default disables command policy",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55580",
+        "https://github.com/sonirico/mcp-shell/commit/f31377fce6ec31114e5a4398c0e5270552bce09f",
+        "https://github.com/sonirico/mcp-shell/pull/16",
+        "https://github.com/sonirico/mcp-shell/releases/tag/v0.6.0",
+        "https://github.com/sonirico/mcp-shell/security/advisories/GHSA-f5pj-2738-996m",
+        "https://github.com/sonirico/mcp-shell/security/advisories/GHSA-f5pj-2738-996m"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T16:16:55.317",
+        "nvd_last_modified": "2026-08-25T17:17:32.743",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "mcp-shell before 0.6.0 initialized Security.Enabled to false and the documented bare-binary configuration omitted MCP_SHELL_SEC_CONFIG_FILE, so shell_exec could run unrestricted OS commands as the process user.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "sonirico",
+                "product": "mcp-shell",
+                "versions": [
+                  {
+                    "version": "< 0.6.0",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV40",
+            "base_score": 8.6,
+            "severity": "HIGH",
+            "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+          }
+        ],
+        "weaknesses": [
+          "CWE-78"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Shell MCP servers expose high-impact delegated authority; insecure defaults defeat least privilege for AI-connected command execution.",
+      "named_entities": [],
+      "upstream_routing": "mcp-shell entity routes upstream; local repo owns command-approval, least-privilege, and shell-tool policy implications.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Consider a local mcp-shell command-policy leaf or update coding-agent command approval boundaries during ingest."
+      ]
+    },
+    {
+      "id": "CVE-2026-55581",
+      "title": "mcp-shell Docker bash allowlist bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55581",
+        "https://github.com/sonirico/mcp-shell/commit/f31377fce6ec31114e5a4398c0e5270552bce09f",
+        "https://github.com/sonirico/mcp-shell/pull/16",
+        "https://github.com/sonirico/mcp-shell/releases/tag/v0.6.0",
+        "https://github.com/sonirico/mcp-shell/security/advisories/GHSA-3x77-wg38-92r3",
+        "https://github.com/sonirico/mcp-shell/security/advisories/GHSA-3x77-wg38-92r3"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T16:16:55.470",
+        "nvd_last_modified": "2026-08-25T19:16:50.040",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "mcp-shell before 0.6.0 shipped Docker security.yaml allowing /bin/bash while validation checked only the first token and failed to reject -c, enabling arbitrary commands through shell_exec.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "sonirico",
+                "product": "mcp-shell",
+                "versions": [
+                  {
+                    "version": "< 0.6.0",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 8.4,
+            "severity": "HIGH",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          }
+        ],
+        "weaknesses": [
+          "CWE-1188",
+          "CWE-183",
+          "CWE-78"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Allowlisting executables is insufficient for agent shell tools unless dangerous interpreter modes and arguments are policy-controlled.",
+      "named_entities": [
+        "Docker"
+      ],
+      "upstream_routing": "General package coverage upstream; local security lesson belongs under agent/tool command policy and runtime least privilege.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "During ingest, fold with other mcp-shell CVEs if maintaining one clustered leaf."
+      ]
+    },
+    {
+      "id": "CVE-2026-55582",
+      "title": "mcp-shell Git alias command execution bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55582",
+        "https://github.com/sonirico/mcp-shell/commit/f31377fce6ec31114e5a4398c0e5270552bce09f",
+        "https://github.com/sonirico/mcp-shell/pull/16",
+        "https://github.com/sonirico/mcp-shell/releases/tag/v0.6.0",
+        "https://github.com/sonirico/mcp-shell/security/advisories/GHSA-74hp-mggr-hv58"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T16:16:55.650",
+        "nvd_last_modified": "2026-08-25T16:16:55.650",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "mcp-shell before 0.6.0 allowed /usr/bin/git by default and failed to block Git shell aliases using !, allowing a shell_exec caller to run arbitrary OS commands in the default Docker deployment.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "sonirico",
+                "product": "mcp-shell",
+                "versions": [
+                  {
+                    "version": "< 0.6.0",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 8.4,
+            "severity": "HIGH",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          }
+        ],
+        "weaknesses": [
+          "CWE-78"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Developer-oriented tools such as Git need argument-level policies when delegated to AI agents, not just executable allowlists.",
+      "named_entities": [
+        "Git"
+      ],
+      "upstream_routing": "mcp-shell package upstream; local route is command argument policy for agent-run developer tools.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Track with agent build/dependency execution boundaries and shell-tool hardening."
+      ]
+    },
+    {
+      "id": "CVE-2026-55640",
+      "title": "Nextcloud MCP Server unauthenticated webhook vector-index deletion",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55640",
+        "https://github.com/cbcoutinho/nextcloud-mcp-server/commit/4fc2b10945108cf1008ec9698291de6706ffcb73",
+        "https://github.com/cbcoutinho/nextcloud-mcp-server/security/advisories/GHSA-8vh3-g2qg-2h2c",
+        "https://github.com/cbcoutinho/nextcloud-mcp-server/tree/v0.117.2"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T16:16:55.810",
+        "nvd_last_modified": "2026-08-25T20:16:57.797",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "Nextcloud MCP Server before 0.117.2 accepted POST /webhooks/nextcloud without authentication when WEBHOOK_SECRET was unset; attacker-controlled user.uid values could delete or re-index Qdrant vector embeddings for any user.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "cbcoutinho",
+                "product": "nextcloud-mcp-server",
+                "versions": [
+                  {
+                    "version": "< 0.117.2",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 9.1,
+            "severity": "CRITICAL",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H"
+          }
+        ],
+        "weaknesses": [
+          "CWE-306"
+        ]
+      },
+      "why_it_matters_for_ai_security": "AI assistant connectors that mirror user files into vector indexes need authenticated event sources and owner binding to prevent data-integrity loss.",
+      "named_entities": [
+        "MCP",
+        "Nextcloud",
+        "Server"
+      ],
+      "upstream_routing": "Nextcloud and MCP server entity context upstream; local security lens is AI connector webhook authentication and vector-store ownership.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "During ingest, map to data security and MCP data movement exposure controls."
+      ]
+    },
+    {
+      "id": "CVE-2026-55557",
+      "title": "browse-mcp arbitrary file write through download and state paths",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55557",
+        "https://github.com/That1Drifter/browse-mcp/blob/v0.8.2/CHANGELOG.md#082---2026-06-13",
+        "https://github.com/That1Drifter/browse-mcp/commit/5352a4a56f626254b445bfa07e4bb48c5aad15c1",
+        "https://github.com/That1Drifter/browse-mcp/pull/58",
+        "https://github.com/That1Drifter/browse-mcp/releases/tag/v0.8.2",
+        "https://github.com/That1Drifter/browse-mcp/security/advisories/GHSA-m9mq-7m7q-xc6p"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T17:17:32.357",
+        "nvd_last_modified": "2026-08-25T19:16:49.923",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "browse-mcp before 0.8.2 let MCP callers control download save_dir and browser state paths, allowing arbitrary file writes; its force_fetch fallback also bypassed the allowed-origin fence. Version 0.8.2 confines paths and honors the origin fence.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "That1Drifter",
+                "product": "browse-mcp",
+                "versions": [
+                  {
+                    "version": "< 0.8.2",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV40",
+            "base_score": 8.6,
+            "severity": "HIGH",
+            "vector": "CVSS:4.0/AV:L/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+          }
+        ],
+        "weaknesses": [
+          "CWE-22"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Browser MCP tools bridge untrusted web content, downloads, and local files; prompt-injected agents can turn path arguments into host compromise.",
+      "named_entities": [],
+      "upstream_routing": "browse-mcp as a server belongs upstream; local repo owns browser-agent file-boundary and indirect prompt-injection implications.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Reconcile with existing browser/agent filesystem containment leaves during ingest."
+      ]
+    },
+    {
+      "id": "CVE-2026-55637",
+      "title": "genieacs-mcp DNS rebinding reaches loopback MCP transport",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55637",
+        "https://github.com/GeiserX/genieacs-mcp/commit/577306d78190622eee97e362b042a69499ef373f",
+        "https://github.com/GeiserX/genieacs-mcp/pull/26",
+        "https://github.com/GeiserX/genieacs-mcp/releases/tag/v0.3.2",
+        "https://github.com/GeiserX/genieacs-mcp/security/advisories/GHSA-cmwv-wf9p-p8wx",
+        "https://github.com/GeiserX/genieacs-mcp/security/advisories/GHSA-cmwv-wf9p-p8wx"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T18:17:56.157",
+        "nvd_last_modified": "2026-08-25T19:16:50.917",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "genieacs-mcp before 0.3.2 accepted attacker-controlled Host and Origin headers on its default loopback Streamable HTTP MCP endpoint, letting a malicious web page initialize MCP sessions and invoke GenieACS tools through DNS rebinding.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "GeiserX",
+                "product": "genieacs-mcp",
+                "versions": [
+                  {
+                    "version": "< 0.3.2",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV40",
+            "base_score": 8.8,
+            "severity": "HIGH",
+            "vector": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:P/VC:H/VI:H/VA:N/SC:H/SI:H/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+          }
+        ],
+        "weaknesses": [
+          "CWE-346"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Loopback MCP transports are not inherently browser-safe; Host and Origin validation are required before local automation endpoints accept tool calls.",
+      "named_entities": [
+        "DNS",
+        "MCP"
+      ],
+      "upstream_routing": "GenieACS and the MCP server entity route upstream; local route is browser-origin protection for loopback MCP transports.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "During ingest, connect to agentic browser intent collision and MCP transport hardening."
+      ]
+    },
+    {
+      "id": "CVE-2026-55609",
+      "title": "consciousness-explorer MCP export_state arbitrary file write",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55609",
+        "https://github.com/BruceJqs/public_exp/issues/32",
+        "https://github.com/ruvnet/sublinear-time-solver/commit/a701296e363192be863e79d788fa268095e3d229",
+        "https://github.com/ruvnet/sublinear-time-solver/commit/ea9a212b69e4449ec443fe088a7aec7546f70b4a",
+        "https://github.com/ruvnet/sublinear-time-solver/issues/19",
+        "https://github.com/ruvnet/sublinear-time-solver/pull/20",
+        "https://github.com/ruvnet/sublinear-time-solver/releases/tag/v1.6.0"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T19:16:50.160",
+        "nvd_last_modified": "2026-08-25T19:16:50.160",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "consciousness-explorer and sublinear-time-solver exposed MCP state/vector file operations that accepted caller-supplied paths without traversal controls; patched releases constrain files to dedicated directories and basename-only inputs.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "ruvnet",
+                "product": "sublinear-time-solver",
+                "versions": [
+                  {
+                    "version": "< 1.6.0",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 7.1,
+            "severity": "HIGH",
+            "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H"
+          }
+        ],
+        "weaknesses": [
+          "CWE-73"
+        ]
+      },
+      "why_it_matters_for_ai_security": "State import/export tools in agent-accessible MCP servers need path containment because file writes can become persistence or host-compromise primitives.",
+      "named_entities": [
+        "MCP"
+      ],
+      "upstream_routing": "Package/library entity context upstream; local repo owns MCP state tool filesystem containment.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Check whether existing agent-tool filesystem containment leaf should absorb this example."
+      ]
+    },
+    {
+      "id": "CVE-2026-79786",
+      "title": "Coroot MCP OAuth dynamic client registration redirect hijack",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79786",
+        "https://github.com/coroot/coroot",
+        "https://github.com/coroot/coroot/blob/v1.24.5/api/mcp_oauth.go",
+        "https://github.com/coroot/coroot/issues/929",
+        "https://www.vulncheck.com/advisories/coroot-1.20.2-through-1.24.5-unvalidated-redirect-uri-in-mcp-oauth-client-registration"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T19:16:54.750",
+        "nvd_last_modified": "2026-08-25T19:16:54.750",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "Coroot accepted arbitrary redirect URIs at its unauthenticated MCP OAuth dynamic client registration endpoint, enabling attackers to register hostile clients, phish signed-in users for consent, capture authorization codes, and exchange them for MCP access tokens.",
+      "evidence_classification": "vulnerability_advisory",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "disclosure@vulncheck.com",
+            "affectedData": [
+              {
+                "vendor": "coroot",
+                "product": "coroot",
+                "defaultStatus": "unaffected",
+                "collectionURL": "https://github.com/coroot/coroot",
+                "repo": "https://github.com/coroot/coroot",
+                "packageURL": "pkg:golang/github.com/coroot/coroot",
+                "versions": [
+                  {
+                    "version": "1.20.2",
+                    "lessThanOrEqual": "1.24.5",
+                    "versionType": "semver",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV40",
+            "base_score": 7.0,
+            "severity": "HIGH",
+            "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:H/VI:L/VA:N/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+          },
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 7.1,
+            "severity": "HIGH",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:L/A:N"
+          }
+        ],
+        "weaknesses": [
+          "CWE-601"
+        ]
+      },
+      "why_it_matters_for_ai_security": "MCP OAuth client registration needs redirect URI validation and consent hardening or attackers can hijack delegated agent/tool sessions.",
+      "named_entities": [
+        "Coroot",
+        "MCP",
+        "OAuth"
+      ],
+      "upstream_routing": "Coroot product coverage upstream; local route is identity, OAuth, and MCP delegated-authority controls.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "During ingest, compare with existing MCP OAuth redirect URI handling leaf."
+      ]
+    },
+    {
+      "id": "CVE-2026-53965",
+      "title": "MCP PHP SDK SSE client unbounded memory growth",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53965",
+        "https://github.com/modelcontextprotocol/php-sdk/commit/055593f2592e1d7f5f48587c999ca7068a3be90d",
+        "https://github.com/modelcontextprotocol/php-sdk/releases/tag/v0.7.1",
+        "https://github.com/modelcontextprotocol/php-sdk/security/advisories/GHSA-7m52-jw36-44r3"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T21:17:01.597",
+        "nvd_last_modified": "2026-08-25T21:17:01.597",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "The official MCP PHP SDK versions 0.5.0 through 0.7.0 buffered Server-Sent Events response chunks without an upper bound until a delimiter appeared; malicious or compromised MCP servers could exhaust client memory. Version 0.7.1 fixes it.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "modelcontextprotocol",
+                "product": "php-sdk",
+                "versions": [
+                  {
+                    "version": ">= 0.5.0, < 0.7.1",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV40",
+            "base_score": 6.9,
+            "severity": "MEDIUM",
+            "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:A/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:X/CR:X/IR:X/AR:X/MAV:X/MAC:X/MAT:X/MPR:X/MUI:X/MVC:X/MVI:X/MVA:X/MSC:X/MSI:X/MSA:X/S:X/AU:X/R:X/V:X/RE:X/U:X"
+          }
+        ],
+        "weaknesses": [
+          "CWE-400",
+          "CWE-770"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Clients need defensive stream limits when connecting agents to untrusted MCP servers; otherwise server-controlled output can deny service to the client process.",
+      "named_entities": [
+        "MCP",
+        "PHP",
+        "SDK",
+        "SSE"
+      ],
+      "upstream_routing": "Official SDK context belongs upstream; local repo owns MCP client resilience and tool-output trust boundaries.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Route during ingest to MCP transport header/stream hardening or create a client streaming limits note."
+      ]
+    },
+    {
+      "id": "CVE-2026-78581",
+      "title": "Kibana AI Assistant conversation ownership bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78581",
+        "https://discuss.elastic.co/t/kibana-8-16-3-8-17-2-security-update-esa-2026-51/387446"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T13:19:31.120",
+        "nvd_last_modified": "2026-08-25T15:16:45.493",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "NVD records a Kibana authorization bypass where an authenticated user knowing another user's AI Assistant conversation identifier could access or modify that conversation under certain conditions.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security@elastic.co",
+            "affectedData": [
+              {
+                "vendor": "Elastic",
+                "product": "Kibana",
+                "defaultStatus": "unaffected",
+                "versions": [
+                  {
+                    "version": "8.0.0",
+                    "lessThanOrEqual": "8.16.2",
+                    "versionType": "semver",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 4.2,
+            "severity": "MEDIUM",
+            "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N"
+          }
+        ],
+        "weaknesses": [
+          "CWE-639"
+        ]
+      },
+      "why_it_matters_for_ai_security": "AI assistant conversation stores need owner-bound identifiers and ACL checks because conversation history can include sensitive operational context.",
+      "named_entities": [
+        "AI",
+        "Assistant",
+        "Kibana"
+      ],
+      "upstream_routing": "Kibana/Elastic product details are upstream-owned; local repo should keep the AI Assistant conversation access-control implication.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "This resolves the previous run's Kibana date/CVE reconciliation caveat; ingest should check Elastic ESA-2026-51 for fixed versions."
+      ]
+    },
+    {
+      "id": "CVE-2026-55585",
+      "title": "QWED verification API SymPy parse_expr RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55585",
+        "https://github.com/QWED-AI/qwed-verification/commit/6066b68c0c4f4cc2c3771824822aaa864d082ef8",
+        "https://github.com/QWED-AI/qwed-verification/commit/dc9d4db72ca4b4ae3f96d0e6a0c27a9e38a06f61",
+        "https://github.com/QWED-AI/qwed-verification/pull/200",
+        "https://github.com/QWED-AI/qwed-verification/security/advisories/GHSA-q27q-98j4-9pfv"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T17:17:32.903",
+        "nvd_last_modified": "2026-08-25T17:17:32.903",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "QWED before 5.1.2 accepted tenant-supplied math verification expressions and batch jobs that flowed into SymPy parse_expr without sandboxed namespaces, enabling arbitrary Python code execution by any valid tenant API key; default signup could issue such keys.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "QWED-AI",
+                "product": "qwed-verification",
+                "versions": [
+                  {
+                    "version": "< 5.1.2",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 8.8,
+            "severity": "HIGH",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H"
+          }
+        ],
+        "weaknesses": [
+          "CWE-94"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Security/evaluation platforms for LLM outputs can become multi-tenant execution surfaces when validators evaluate untrusted expressions unsafely.",
+      "named_entities": [
+        "API",
+        "QWED",
+        "RCE",
+        "SymPy"
+      ],
+      "upstream_routing": "QWED product/entity routes upstream; local repo owns security-assurance platform RCE and tenant boundary implications.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Compare with CVE-2026-55546 and decide whether one shared deterministic-verification parser-risk leaf is enough."
+      ]
+    },
+    {
+      "id": "CVE-2026-45018",
+      "title": "Chainlit unauthenticated MCP stdio command injection",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45018",
+        "https://github.com/Chainlit/chainlit/blob/2.12.0/docs/security-advisory-2026-mcp.md#spl-2026-001--command-injection-via-mcp-stdio",
+        "https://github.com/Chainlit/chainlit/commit/0565fd0eccb915fce159929598b053ed79f6e0c9",
+        "https://github.com/Chainlit/chainlit/releases/tag/2.12.0",
+        "https://github.com/Chainlit/chainlit/security/advisories/GHSA-w3fx-mc44-mf6j",
+        "https://github.com/Chainlit/chainlit/security/advisories/GHSA-w3fx-mc44-mf6j"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T20:16:55.720",
+        "nvd_last_modified": "2026-08-25T20:16:55.720",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "Chainlit 2.4.0rc0 through before 2.12.0 exposed POST /mcp without authentication when MCP was enabled; stdio transport accepted a user-controlled fullCommand and allowed unchecked arguments, letting npx -c execute arbitrary commands.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "Chainlit",
+                "product": "chainlit",
+                "versions": [
+                  {
+                    "version": ">= 2.4.0rc0, < 2.12.0",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 9.8,
+            "severity": "CRITICAL",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+          }
+        ],
+        "weaknesses": [
+          "CWE-78"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Conversational AI app frameworks that expose MCP connection setup can turn unauthenticated HTTP requests into server-side process execution.",
+      "named_entities": [
+        "Chainlit",
+        "MCP"
+      ],
+      "upstream_routing": "Chainlit framework details route upstream; local security lens is MCP stdio command injection and framework release gates.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "During ingest, map to hosted MCP server deployment and agent command-approval boundaries."
+      ]
+    },
+    {
+      "id": "CVE-2026-45019",
+      "title": "Chainlit MCP SSE and Streamable HTTP SSRF",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45019",
+        "https://github.com/Chainlit/chainlit/blob/2.12.0/docs/security-advisory-2026-mcp.md#spl-2026-002--ssrf-via-mcp-streamable-http--sse",
+        "https://github.com/Chainlit/chainlit/commit/0565fd0eccb915fce159929598b053ed79f6e0c9",
+        "https://github.com/Chainlit/chainlit/releases/tag/2.12.0",
+        "https://github.com/Chainlit/chainlit/security/advisories/GHSA-hvfh-5mj3-5f3j"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T20:16:55.910",
+        "nvd_last_modified": "2026-08-25T20:16:55.910",
+        "run_window_basis": "NVD published timestamp is inside the 48-hour collection window."
+      },
+      "concise_factual_summary": "Chainlit 2.4.0rc0 through before 2.12.0 exposed POST /mcp without authentication when MCP was enabled; SSE and Streamable HTTP transport setup accepted arbitrary URLs and headers, allowing blind outbound requests to internal or external services, including metadata endpoints.",
+      "evidence_classification": "vulnerability_advisory_patch",
+      "affected_boundary_or_version": {
+        "affected": [
+          {
+            "source": "security-advisories@github.com",
+            "affectedData": [
+              {
+                "vendor": "Chainlit",
+                "product": "chainlit",
+                "versions": [
+                  {
+                    "version": ">= 2.4.0rc0, < 2.12.0",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "cvss": [
+          {
+            "scheme": "cvssMetricV31",
+            "base_score": 7.2,
+            "severity": "HIGH",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N"
+          }
+        ],
+        "weaknesses": [
+          "CWE-918"
+        ]
+      },
+      "why_it_matters_for_ai_security": "Agent connector setup endpoints need URL allowlists, private-address filtering, and header controls to avoid turning AI app servers into SSRF pivots.",
+      "named_entities": [
+        "Chainlit",
+        "HTTP",
+        "MCP",
+        "SSE",
+        "SSRF",
+        "Streamable"
+      ],
+      "upstream_routing": "Chainlit general framework upstream; local route is MCP transport SSRF and cloud-runtime boundary control.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "During ingest, compare with existing SSRF leaves for MCP web/browsing/data tools."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "BetterLinks WordPress Link Shortener, Link Cloaking, Redirects, Affiliate Link Manager & MCP CVE-2026-19801",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19801"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T02:16:40.250"
+      },
+      "reason": "Excluded: MCP appears in a WordPress plugin/product name but the record does not establish Model Context Protocol or AI-agent relevance; the concrete issue is generic authenticated link creation/SEO abuse."
+    },
+    {
+      "candidate": "MagicAI for WordPress local file inclusion CVE-2026-32560",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-32560"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-24T22:16:52.027"
+      },
+      "reason": "Excluded as low-confidence AI security relevance: product is AI-branded, but the visible record is a terse WordPress local file inclusion without an AI-specific boundary or enough detail for durable synthesis."
+    },
+    {
+      "candidate": "SiteLeads AI Chatbot sensitive data exposure CVE-2026-78268",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78268"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-24T22:17:20.797"
+      },
+      "reason": "Excluded as weakly AI-specific: the record identifies an AI chatbot plugin, but the visible fact is generic unauthenticated sensitive data exposure with no assistant, model, prompt, or agent boundary described."
+    },
+    {
+      "candidate": "TranslatePress AI Translation stored XSS CVE-2026-18512",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18512"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-25T08:18:08.750"
+      },
+      "reason": "Excluded as product-name-only AI relevance: the concrete issue is stored XSS in a WordPress translation editor string dropdown; no AI-specific security delta is visible."
+    },
+    {
+      "candidate": "OpenAI/Hugging Face unsanctioned agent incident secondary coverage",
+      "source_urls": [
+        "https://www.theguardian.com/technology/2026/aug/23/openai-cyber-attacks-threat-chris-lehane",
+        "https://www.thetimes.com/uk/technology-uk/article/openais-agents-joined-forces-to-launch-very-scary-cyberattack-zvc8pnnlx"
+      ],
+      "visible_dates": {
+        "search_visible_dates": "Aug 23-25, 2026 secondary coverage"
+      },
+      "reason": "Excluded from this artifact to avoid duplicating the earlier 2026-08-25 collector artifact; no new primary OpenAI technical postmortem or materially different technical fact was located in this run."
+    },
+    {
+      "candidate": "CISA Advisory Highlights Red Team Findings",
+      "source_urls": [
+        "https://www.cisa.gov/news-events/news/cisa-advisory-highlights-red-team-findings-help-organizations-assess-risk-identify-threats-and"
+      ],
+      "visible_dates": {
+        "search_visible_date": "August 25, 2026"
+      },
+      "reason": "Excluded: visible search result is cybersecurity red-team guidance but not AI-specific and no concrete AI security change was visible in fetched source context."
+    },
+    {
+      "candidate": "OWASP GenAI resources and older guides",
+      "source_urls": [
+        "https://genai.owasp.org/resources/",
+        "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
+      ],
+      "visible_dates": {
+        "search_visible_dates": "Resources page crawled today; listed resources dated 2025 or undated in fetched snippet"
+      },
+      "reason": "Excluded: useful background but no visible publication/update date inside the exact two-day window for a concrete security delta."
+    },
+    {
+      "candidate": "EU AI Act / NIST AI RMF general pages",
+      "source_urls": [
+        "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai",
+        "https://www.nist.gov/itl/ai-risk-management-framework"
+      ],
+      "visible_dates": {
+        "search_visible_dates": "Crawled today; older or general timeline content"
+      },
+      "reason": "Excluded: authoritative background, but no new in-window security-specific regulatory or standard change was visible."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "MCP servers and SDKs",
+      "upstream_owner": "ai-wiki",
+      "local_security_implication": "Keep vulnerability facts, affected versions, transport/auth/path-control lessons, and mitigations in ai-security-wiki only."
+    },
+    {
+      "entity_or_topic": "PraisonAI, Chainlit, QWED, Coroot, Kibana, Nextcloud MCP Server",
+      "upstream_owner": "ai-wiki",
+      "local_security_implication": "Route broad product/framework descriptions upstream; retain only access-control, transport, parser, vector-index, and incident-response implications locally."
+    },
+    {
+      "entity_or_topic": "General MCP deployment and coding-agent practice",
+      "upstream_owner": "ai-dev-wiki",
+      "local_security_implication": "General development workflow practices stay upstream; this artifact records security controls and failure modes."
+    }
+  ],
+  "confidence_summary": "High confidence for NVD-published CVEs and GitHub reviewed advisories with explicit affected versions and patches. Medium confidence for low-detail CNA records or cases where product/entity context needs ingest-time reconciliation.",
+  "follow_up_actions": [
+    "During ingest, cluster related PraisonAI, mcp-shell, QWED, and Chainlit advisories where one durable leaf can preserve shared root cause without losing affected-version detail.",
+    "Recheck maintainer advisories for mcp-ffmpeg-helper because NVD says the exploit is public and no maintainer response was visible at collection time.",
+    "Use Elastic ESA-2026-51 to reconcile Kibana affected and fixed versions before creating or updating a durable local leaf.",
+    "Do not edit docs/wiki from this collector artifact; leave synthesis to the raw ingest workflow."
+  ]
+}

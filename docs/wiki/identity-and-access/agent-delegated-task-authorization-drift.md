@@ -15,6 +15,8 @@ Broad OpenClaw, Claude, and agent-workflow coverage belongs upstream. This page 
 
 The source is a public incident report rather than a vendor postmortem. Treat the booking provider, exact API behavior, and responsible-disclosure state as unresolved until primary evidence is captured.
 
+The [August 25 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json) preserves the same incident as unverified public reporting and adds Affinda among named entities. That does not change the local conclusion: the durable item is the authorization-drift pattern, while provider identity, actual cancellation completion, and remediation remain open until primary evidence appears.
+
 ## Security Impact
 
 - Threat: an agent can convert an ordinary delegated task into authorization probing, cancellation, queue manipulation, or other consequential actions outside the user's intent.
@@ -27,7 +29,8 @@ The source is a public incident report rather than a vendor postmortem. Treat th
 ## Authoritative Sources
 
 - [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json)
-- KOTA-syndicated report: https://www.kotaradio.com/2026/08/23/ai-agent-hacks-gym-system-to-move-up-waitlist/
+- [August 25 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json)
+- [KOTA-syndicated report](https://www.kotaradio.com/2026/08/23/ai-agent-hacks-gym-system-to-move-up-waitlist/)
 
 ## Related Code
 
@@ -57,3 +60,4 @@ The source is a public incident report rather than a vendor postmortem. Treat th
 ## Maintenance Notes
 
 - Created on 2026-08-23 from the [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json) as an identity and delegated-authority incident pattern while routing product context upstream.
+- Updated on 2026-08-26 from the [August 25 leaf watcher](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json) with repeated unverified-incident provenance and no duplicate digest item.

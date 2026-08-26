@@ -18,12 +18,14 @@ The [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-se
 
 The [August 14 topic news collector source](../../../raw/processed/2026-08-14/ai-security-wiki-topic-news-collector-2026-08-14T233111Z.json) repeats the Taiwan reporting and adds the government's reported mitigation response: affected units completed handling, protective guidelines were established, and monitoring was strengthened. That reinforces this as an incident-response and monitoring boundary, not only an autonomy claim.
 
+The [August 26 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260826T001230Z.json) adds [NCSC guidance](https://www.ncsc.gov.uk/blogs/managing-the-cyber-risk-of-agentic-ai) recommending explicit scope and red lines, gated approvals, sandboxing, least-privilege credentials, monitoring, attribution, and emergency shutdown for agentic AI. This is a control baseline for the same unattended-agent risk, while general agent adoption practice remains upstream in the AI development wiki. The reusable controls route to [agent action runtime hooks](../agent-and-tool-security/agent-action-runtime-hooks.md), [coding agent command approval boundaries](../agent-and-tool-security/coding-agent-command-approval-boundaries.md), [development agent credential isolation](../identity-and-access/development-agent-credential-isolation.md), [agent network egress controls](../agent-and-tool-security/agent-network-egress-controls.md), [AI development workstation containment](../infrastructure-and-supply-chain/ai-development-workstation-containment.md), and [agentic AI emergency shutdown controls](../agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md).
+
 ## Security Impact
 
 - Threat: a human attacker delegates reconnaissance, command execution, or post-exploitation steps to an unattended AI agent.
 - Affected boundary: Hermes AI agent approval mode, post-exploitation operations, exposed staging infrastructure, Thai Ministry of Finance systems, Hades implant staging, Taiwan government accounts, public-sector personnel records, and follow-on energy or nuclear-safety targeting claims.
 - Exploit or incident status: public [Hunt.io threat-intelligence report](https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent) with corroborating [BleepingComputer](https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/) and [The Hacker News](https://thehackernews.com/2026/07/hacker-runs-hermes-ai-agent-unattended.html) coverage, plus [Guardian reporting](https://www.theguardian.com/technology/2026/aug/13/taiwan-ai-assisted-cyber-attacks-overseas) on Taiwan's AI-assisted attack claims; observed evidence should be separated from attacker-intent and autonomy inference.
-- Mitigation state: defensive controls include detecting agent runtime artifacts, risky-command approval settings, staging directories, session logs, tool-output traces, protective guidelines, and strengthened monitoring after affected units complete handling.
+- Mitigation state: defensive controls include detecting agent runtime artifacts, risky-command approval settings, staging directories, session logs, tool-output traces, explicit scope/red lines, gated approvals, sandboxing, least-privilege credentials, attribution, emergency shutdown, protective guidelines, and strengthened monitoring after affected units complete handling.
 - Confidence: medium-high for observed infrastructure and session-evidence claims from [Hunt.io](https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent); medium for the Guardian-reported Taiwan claims and for broader conclusions about attacker intent or agent autonomy.
 - Residual risk: public reporting may not expose the full command sequence, affected systems, or operator interaction level.
 
@@ -33,11 +35,13 @@ The [August 14 topic news collector source](../../../raw/processed/2026-08-14/ai
 - [July 28 leaf update watch source](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json)
 - [August 13 leaf update watch source](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json)
 - [August 14 topic news collector source](../../../raw/processed/2026-08-14/ai-security-wiki-topic-news-collector-2026-08-14T233111Z.json)
-- Hunt.io research: https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent
-- BleepingComputer coverage: https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/
-- The Hacker News coverage: https://thehackernews.com/2026/07/hacker-runs-hermes-ai-agent-unattended.html
-- Dark Reading secondary coverage: https://www.darkreading.com/cyberattacks-data-breaches/ai-agent-espionage-attack-thai-ministry-finance
-- Guardian Taiwan AI-assisted attack reporting: https://www.theguardian.com/technology/2026/aug/13/taiwan-ai-assisted-cyber-attacks-overseas
+- [August 26 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260826T001230Z.json)
+- [Hunt.io research](https://hunt.io/blog/thailand-ministry-finance-targeted-with-hermes-ai-agent)
+- [BleepingComputer coverage](https://www.bleepingcomputer.com/news/security/hermes-ai-agent-used-to-automate-attack-on-thai-finance-ministry/)
+- [The Hacker News coverage](https://thehackernews.com/2026/07/hacker-runs-hermes-ai-agent-unattended.html)
+- [Dark Reading secondary coverage](https://www.darkreading.com/cyberattacks-data-breaches/ai-agent-espionage-attack-thai-ministry-finance)
+- [Guardian Taiwan AI-assisted attack reporting](https://www.theguardian.com/technology/2026/aug/13/taiwan-ai-assisted-cyber-attacks-overseas)
+- [NCSC agentic AI risk guidance](https://www.ncsc.gov.uk/blogs/managing-the-cyber-risk-of-agentic-ai)
 
 ## Related Code
 
@@ -57,6 +61,8 @@ The [August 14 topic news collector source](../../../raw/processed/2026-08-14/ai
 - [agent and tool security](../agent-and-tool-security/index.md)
 - [incident response](../incident-response/index.md)
 - [testing and assurance](../testing-and-assurance/index.md)
+- [agent action runtime hooks](../agent-and-tool-security/agent-action-runtime-hooks.md)
+- [agentic AI emergency shutdown controls](../agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md)
 - Upstream AI development wiki owns general approval-mode operating practice.
 
 ## Open Questions
@@ -69,3 +75,4 @@ The [August 14 topic news collector source](../../../raw/processed/2026-08-14/ai
 - Added from the [July 24, 2026 topic collector](../../../raw/processed/2026-07-24/ai-security-wiki-topic-news-collector-2026-07-24T193213-0400.json); enriched from the [July 28 leaf watcher](../../../raw/processed/2026-07-28/ai-security-wiki-leaf-update-watch-2026-07-28T200204-0400.json). Preserve the distinction between observed exposed-infrastructure evidence and inferred attacker intent.
 - Updated on 2026-08-13 from the [August 13 watcher](../../../raw/processed/2026-08-13/ai-security-wiki-leaf-update-watch-20260814T000301Z.json) with Taiwan AI-assisted attack reporting and attribution/autonomy caveats.
 - Updated on 2026-08-14 from the [August 14 topic collector](../../../raw/processed/2026-08-14/ai-security-wiki-topic-news-collector-2026-08-14T233111Z.json) with Taiwan mitigation-response framing without creating a duplicate digest entry.
+- Updated on 2026-08-26 from the [August 26 watcher](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260826T001230Z.json) with NCSC control-baseline evidence for autonomous-agent scope, approvals, containment, monitoring, and shutdown.

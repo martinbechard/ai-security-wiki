@@ -22,6 +22,10 @@ The active digest records each independently changing security item or closely c
 - [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json)
 - [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json)
 - [August 23 leaf update watch source](../../../raw/processed/2026-08-23/ai-security-wiki-leaf-update-watch-20260824T000259Z.json)
+- [August 25 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260825T184651Z.json)
+- [August 25 topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T183709Z.json)
+- [August 25 late topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T233059Z.json)
+- [August 26 leaf update watch source](../../../raw/processed/2026-08-25/ai-security-wiki-leaf-update-watch-20260826T001230Z.json)
 
 ## Related Code
 
@@ -45,6 +49,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-08-26 after the August digest added item-level entries for August 24-25 MCP, agent-tool, identity, infrastructure, and verification-parser advisories plus selected watcher enrichments while folding duplicate or low-signal sightings into durable leaves.
 - Updated on 2026-08-23 after the August digest added item-level entries for [MCP context-injection transparency](../agent-and-tool-security/mcp-context-injection-transparency.md), [agent delegated task authorization drift](../identity-and-access/agent-delegated-task-authorization-drift.md), and [frontier model critical cyber release gates](../testing-and-assurance/frontier-model-critical-cyber-release-gates.md) governance evidence while folding duplicate SiYuan and watcher corroboration into existing leaves.
 - Updated on 2026-08-22 after the August digest added item-level entries for CKAN MCP SSRF, SiYuan v3.8.0 advisories, split Omnigent advisories, split Infracost advisories, FiftyOne, split Headroom advisories, TensorZero, ONNX external-data writes, NLTK pickle model loading, Xinference parser RCE, and [legal filing prompt injection](../model-and-prompt-security/legal-filing-prompt-injection.md) while folding watcher corroboration into existing leaves.
 - Updated on 2026-08-21 after the August digest added item-level entries for Spring AI security CVEs, [Cryptographic Context Injection](../model-and-prompt-security/cryptographic-context-injection.md), [AI-generated OT exploit scripts](../threats-and-attacks/ai-generated-ot-exploit-scripts.md), [Private Safety Processing ZDR](../data-and-privacy/private-safety-processing-zdr.md), [downstream agent authorization context](../identity-and-access/downstream-agent-authorization-context.md), and [AI-themed installer malware lures](../threats-and-attacks/ai-themed-installer-malware-lures.md) while folding watcher repeats into existing leaves.
