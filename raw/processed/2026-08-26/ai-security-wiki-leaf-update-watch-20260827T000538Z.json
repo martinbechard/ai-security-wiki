@@ -1,0 +1,354 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md",
+      "reason": "NCSC guidance is in-window but already represented in the leaf; secondary commentary was excluded as non-authoritative/no new local delta.",
+      "source_urls": [
+        "https://www.ncsc.gov.uk/blogs/managing-the-cyber-risk-of-agentic-ai"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/browse-mcp-file-path-boundary.md",
+      "reason": "No distinct in-window local security delta beyond source evidence already represented in the durable leaf.",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55557",
+        "https://github.com/That1Drifter/browse-mcp/security/advisories/GHSA-m9mq-7m7q-xc6p",
+        "https://github.com/That1Drifter/browse-mcp/releases/tag/v0.8.2",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55557"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/chainlit-mcp-setup-command-and-ssrf.md",
+      "reason": "No distinct in-window local security delta beyond source evidence already represented in the durable leaf.",
+      "source_urls": [
+        "https://github.com/Chainlit/chainlit/releases/tag/2.12.0",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45018",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-45019",
+        "https://github.com/Chainlit/chainlit/blob/2.12.0/docs/security-advisory-2026-mcp.md",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-45018",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-45019"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/continue-cli-unattended-command-denylist-bypass.md",
+      "reason": "No distinct in-window local security delta beyond source evidence already represented in the durable leaf.",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-76072",
+        "https://www.vulncheck.com/advisories/continue-cli-through-incomplete-destructive-command-denylist-in-headless-and-auto-mode",
+        "https://github.com/continuedev/continue/issues/13001",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76072"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/genieacs-mcp-loopback-dns-rebinding.md",
+      "reason": "No distinct in-window local security delta beyond source evidence already represented in the durable leaf.",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55637",
+        "https://github.com/GeiserX/genieacs-mcp/releases/tag/v0.3.2",
+        "https://github.com/GeiserX/genieacs-mcp/security/advisories/GHSA-cmwv-wf9p-p8wx",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55637"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-ffmpeg-helper-command-injection.md",
+      "reason": "No distinct in-window local security delta beyond source evidence already represented in the durable leaf.",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78430",
+        "https://github.com/sworddut/mcp-ffmpeg-helper/",
+        "https://github.com/sworddut/mcp-ffmpeg-helper/issues/6",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78430"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-shell-command-policy-bypasses.md",
+      "reason": "No distinct in-window local security delta beyond source evidence already represented in the durable leaf.",
+      "source_urls": [
+        "https://github.com/sonirico/mcp-shell/releases/tag/v0.6.0",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55580",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55581",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55582",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55580",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55581",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55582"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/nextcloud-mcp-webhook-vector-index-auth.md",
+      "reason": "No distinct in-window local security delta beyond source evidence already represented in the durable leaf.",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55640",
+        "https://github.com/cbcoutinho/nextcloud-mcp-server/security/advisories/GHSA-8vh3-g2qg-2h2c",
+        "https://github.com/cbcoutinho/nextcloud-mcp-server/tree/v0.117.2",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55640"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-mcp-origin-and-csrf-instruction-persistence.md",
+      "reason": "No distinct in-window local security delta beyond source evidence already represented in the durable leaf.",
+      "source_urls": [
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55529",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55532",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55529",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55532"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-mcp-session-exhaustion.md",
+      "reason": "No distinct in-window local security delta beyond source evidence already represented in the durable leaf.",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55531",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-wv94-5qcp-6m36",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55531"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/coroot-mcp-oauth-dcr-redirect-hijack.md",
+      "reason": "No distinct in-window local security delta beyond source evidence already represented in the durable leaf.",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79786",
+        "https://www.vulncheck.com/advisories/coroot-1.20.2-through-1.24.5-unvalidated-redirect-uri-in-mcp-oauth-client-registration",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79786"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/kibana-ai-assistant-conversation-ownership-bypass.md",
+      "reason": "No distinct in-window local security delta beyond source evidence already represented in the durable leaf.",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78581",
+        "https://discuss.elastic.co/t/kibana-8-16-3-8-17-2-security-update-esa-2026-51/387446",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78581"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mcp-php-sdk-sse-memory-exhaustion.md",
+      "reason": "CVE metadata updated on 2026-08-26, but the current description, affected range, and 0.7.1 mitigation are already represented locally; metadata churn only.",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53965",
+        "https://github.com/modelcontextprotocol/php-sdk/security/advisories/GHSA-7m52-jw36-44r3",
+        "https://github.com/modelcontextprotocol/php-sdk/releases/tag/v0.7.1",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53965"
+      ]
+    }
+  ],
+  "federation_notes": [
+    "Broad AI entities and product/framework catalog context route upstream to ai-wiki. General AI-development practice routes upstream to ai-dev-wiki. This artifact keeps only security-specific advisory and control-boundary updates."
+  ],
+  "follow_up_notes": [
+    "Ingest PraisonAI deferral mapping corrections and CVE-2026-55609 mitigation detail through the normal raw ingest workflow; do not edit docs/wiki from this collector output."
+  ],
+  "leaf_universe_count": 182,
+  "privacy_and_sensitivity": "Only public leaf IDs, public topic/advisory identifiers, and public source URLs were used. No full local pages, private content, PII, or company-internal content was sent to external services.",
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "AgentServer authentication",
+        "web_crawl SSRF redirect validation",
+        "agent-controlled file rewrite approval",
+        "praisonai serve API-key enforcement"
+      ],
+      "classification": [
+        "disclosed_vulnerability",
+        "mitigation"
+      ],
+      "follow_up_note": "Normal ingest should split or update the PraisonAI deferral page, correcting the local mismatch that had CVE-2026-55530 and CVE-2026-55541 assigned to the wrong deferred root causes.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-agent-control-plane-advisory-deferrals.md",
+      "named_entities": [
+        "PraisonAI",
+        "praisonaiagents",
+        "MervinPraison",
+        "CVE-2026-55525",
+        "CVE-2026-55528",
+        "CVE-2026-55530",
+        "CVE-2026-55541"
+      ],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55525",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55528",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55530",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55541",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-5r34-2g38-6569",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-7g3p-92qq-8wvh",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-cfxv-8fw8-rwpv",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvxx-r596-f5qj",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58"
+      ],
+      "summary": "CVE JSON resolves the deferred PraisonAI advisory mapping: CVE-2026-55525 maps to GHSA-5r34-2g38-6569 for redirect-following web_crawl SSRF fixed in praisonaiagents 1.6.58; CVE-2026-55528 maps to GHSA-7g3p-92qq-8wvh for AgentServer auth_token non-enforcement fixed in praisonaiagents 1.6.58; CVE-2026-55530 maps to GHSA-cfxv-8fw8-rwpv for ast_grep_rewrite missing @require_approval fixed in praisonaiagents 1.6.58; CVE-2026-55541 maps to GHSA-pvxx-r596-f5qj for praisonai serve --api-key non-enforcement fixed in PraisonAI 4.6.58.",
+      "upstream_routing": "Broad PraisonAI framework/product context remains upstream in ai-wiki; local follow-up should keep only security boundaries and exact advisory mappings.",
+      "visible_dates": {
+        "CVE-2026-55525": "published 2026-08-25T14:07:08Z; updated 2026-08-25T16:14:41Z",
+        "CVE-2026-55528": "published 2026-08-25T14:32:05Z; updated 2026-08-25T18:17:51Z",
+        "CVE-2026-55530": "published 2026-08-25T14:45:07Z; updated 2026-08-25T16:26:22Z",
+        "CVE-2026-55541": "published 2026-08-25T15:05:25Z; updated 2026-08-25T19:21:21Z"
+      }
+    },
+    {
+      "affected_boundaries": [
+        "MCP export_state/import_state file paths",
+        "MCP saveVectorToFile/loadVectorFromFile vector file paths",
+        "agent-accessible state persistence directories"
+      ],
+      "classification": [
+        "disclosed_vulnerability",
+        "mitigation",
+        "control_change"
+      ],
+      "follow_up_note": "Normal ingest should add consciousness-explorer 1.1.2 and the read/write vector sink details to the durable leaf if not already present.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/consciousness-explorer-mcp-state-file-write.md",
+      "named_entities": [
+        "consciousness-explorer",
+        "sublinear-time-solver",
+        "CVE-2026-55609",
+        "GHSA-xc9g-j69q-37xw"
+      ],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55609",
+        "https://github.com/ruvnet/sublinear-time-solver/security/advisories/GHSA-xc9g-j69q-37xw",
+        "https://github.com/ruvnet/sublinear-time-solver/pull/20",
+        "https://github.com/ruvnet/sublinear-time-solver/releases/tag/v1.6.0"
+      ],
+      "summary": "The updated CVE record expands the local mitigation boundary beyond sublinear-time-solver 1.6.0: it also names consciousness-explorer 1.1.2 as fixed, describes both export/import state filepath sinks and save/load vector file_path sinks, and states attacker-invoked MCP tools can read, write, or overwrite accessible files.",
+      "upstream_routing": "Broad package and project catalog context belongs in ai-wiki; the local page should retain the MCP filesystem-boundary and mitigation detail.",
+      "visible_dates": {
+        "CVE-2026-55609": "published 2026-08-25T18:34:47Z; updated 2026-08-26T15:41:54Z"
+      }
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-27T00:05:38Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md",
+    "docs/wiki/agent-and-tool-security/browse-mcp-file-path-boundary.md",
+    "docs/wiki/agent-and-tool-security/chainlit-mcp-setup-command-and-ssrf.md",
+    "docs/wiki/agent-and-tool-security/continue-cli-unattended-command-denylist-bypass.md",
+    "docs/wiki/agent-and-tool-security/genieacs-mcp-loopback-dns-rebinding.md",
+    "docs/wiki/agent-and-tool-security/mcp-ffmpeg-helper-command-injection.md",
+    "docs/wiki/agent-and-tool-security/mcp-shell-command-policy-bypasses.md",
+    "docs/wiki/agent-and-tool-security/nextcloud-mcp-webhook-vector-index-auth.md",
+    "docs/wiki/agent-and-tool-security/praisonai-agent-control-plane-advisory-deferrals.md",
+    "docs/wiki/agent-and-tool-security/praisonai-mcp-origin-and-csrf-instruction-persistence.md",
+    "docs/wiki/agent-and-tool-security/praisonai-mcp-session-exhaustion.md",
+    "docs/wiki/identity-and-access/coroot-mcp-oauth-dcr-redirect-hijack.md",
+    "docs/wiki/identity-and-access/kibana-ai-assistant-conversation-ownership-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/consciousness-explorer-mcp-state-file-write.md",
+    "docs/wiki/infrastructure-and-supply-chain/mcp-php-sdk-sse-memory-exhaustion.md"
+  ],
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, tie-broken by stable relative path",
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md": [
+      "https://www.ncsc.gov.uk/blogs/managing-the-cyber-risk-of-agentic-ai"
+    ],
+    "docs/wiki/agent-and-tool-security/browse-mcp-file-path-boundary.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-55557",
+      "https://github.com/That1Drifter/browse-mcp/security/advisories/GHSA-m9mq-7m7q-xc6p",
+      "https://github.com/That1Drifter/browse-mcp/releases/tag/v0.8.2",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55557"
+    ],
+    "docs/wiki/agent-and-tool-security/chainlit-mcp-setup-command-and-ssrf.md": [
+      "https://github.com/Chainlit/chainlit/releases/tag/2.12.0",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-45018",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-45019",
+      "https://github.com/Chainlit/chainlit/blob/2.12.0/docs/security-advisory-2026-mcp.md",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-45018",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-45019"
+    ],
+    "docs/wiki/agent-and-tool-security/continue-cli-unattended-command-denylist-bypass.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-76072",
+      "https://www.vulncheck.com/advisories/continue-cli-through-incomplete-destructive-command-denylist-in-headless-and-auto-mode",
+      "https://github.com/continuedev/continue/issues/13001",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-76072"
+    ],
+    "docs/wiki/agent-and-tool-security/genieacs-mcp-loopback-dns-rebinding.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-55637",
+      "https://github.com/GeiserX/genieacs-mcp/releases/tag/v0.3.2",
+      "https://github.com/GeiserX/genieacs-mcp/security/advisories/GHSA-cmwv-wf9p-p8wx",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55637"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-ffmpeg-helper-command-injection.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-78430",
+      "https://github.com/sworddut/mcp-ffmpeg-helper/",
+      "https://github.com/sworddut/mcp-ffmpeg-helper/issues/6",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-78430"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-shell-command-policy-bypasses.md": [
+      "https://github.com/sonirico/mcp-shell/releases/tag/v0.6.0",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-55580",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-55581",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-55582",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55580",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55581",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55582"
+    ],
+    "docs/wiki/agent-and-tool-security/nextcloud-mcp-webhook-vector-index-auth.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-55640",
+      "https://github.com/cbcoutinho/nextcloud-mcp-server/security/advisories/GHSA-8vh3-g2qg-2h2c",
+      "https://github.com/cbcoutinho/nextcloud-mcp-server/tree/v0.117.2",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55640"
+    ],
+    "docs/wiki/agent-and-tool-security/praisonai-agent-control-plane-advisory-deferrals.md": [
+      "https://services.nvd.nist.gov/rest/json/cves/2.0/?keywordSearch=agent&pubStartDate=2026-08-23T18:37:09.000&pubEndDate=2026-08-25T18:37:09.000",
+      "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-5r34-2g38-6569",
+      "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-7g3p-92qq-8wvh",
+      "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-cfxv-8fw8-rwpv",
+      "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvph-5j39-v8qc",
+      "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvxx-r596-f5qj",
+      "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+      "https://github.com/MervinPraison/PraisonAI/security/advisories",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55525",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55528",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55529",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55530",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55531",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55532",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55541"
+    ],
+    "docs/wiki/agent-and-tool-security/praisonai-mcp-origin-and-csrf-instruction-persistence.md": [
+      "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-55529",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-55532",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55529",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55532"
+    ],
+    "docs/wiki/agent-and-tool-security/praisonai-mcp-session-exhaustion.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-55531",
+      "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+      "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-wv94-5qcp-6m36",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55531"
+    ],
+    "docs/wiki/identity-and-access/coroot-mcp-oauth-dcr-redirect-hijack.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-79786",
+      "https://www.vulncheck.com/advisories/coroot-1.20.2-through-1.24.5-unvalidated-redirect-uri-in-mcp-oauth-client-registration",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-79786"
+    ],
+    "docs/wiki/identity-and-access/kibana-ai-assistant-conversation-ownership-bypass.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-78581",
+      "https://discuss.elastic.co/t/kibana-8-16-3-8-17-2-security-update-esa-2026-51/387446",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-78581"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/consciousness-explorer-mcp-state-file-write.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-55609",
+      "https://github.com/ruvnet/sublinear-time-solver/releases/tag/v1.6.0",
+      "https://github.com/ruvnet/sublinear-time-solver/pull/20",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55609"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/mcp-php-sdk-sse-memory-exhaustion.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-53965",
+      "https://github.com/modelcontextprotocol/php-sdk/security/advisories/GHSA-7m52-jw36-44r3",
+      "https://github.com/modelcontextprotocol/php-sdk/releases/tag/v0.7.1",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-53965"
+    ]
+  }
+}

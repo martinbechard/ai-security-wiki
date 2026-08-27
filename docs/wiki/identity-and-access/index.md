@@ -23,6 +23,9 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [Downstream agent authorization context](downstream-agent-authorization-context.md)
 - [Headroom LLM memory owner header bypass](headroom-llm-memory-owner-header-bypass.md)
 - [Agent delegated task authorization drift](agent-delegated-task-authorization-drift.md)
+- [one-api channel pinning provider key bypass](one-api-channel-pinning-provider-key-bypass.md)
+- [UniFi Protect AI Key privilege escalation](unifi-protect-ai-key-privilege-escalation.md)
+- [PraisonAI AgentServer API Key Auth Enforcement](praisonai-agentserver-api-key-auth-enforcement.md)
 
 ## Authoritative Sources
 
@@ -59,3 +62,4 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - Updated on 2026-08-22 with the Headroom proxy routing and memory-owner boundary leaf plus downstream authorization watcher evidence.
 - Updated on 2026-08-23 with the delegated task authorization drift incident-pattern leaf.
 - Updated on 2026-08-26 with Coroot MCP OAuth DCR redirect-hijack and Kibana AI Assistant conversation-owner leaves.
+- Updated on 2026-08-27 with one-api channel-pinning provider-key, UniFi Protect AI Key privilege-escalation, and PraisonAI auth-enforcement leaves.

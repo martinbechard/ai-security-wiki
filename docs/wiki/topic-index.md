@@ -57,6 +57,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/praisonai-mcp-origin-and-csrf-instruction-persistence.md](agent-and-tool-security/praisonai-mcp-origin-and-csrf-instruction-persistence.md)
 - [agent-and-tool-security/praisonai-mcp-session-exhaustion.md](agent-and-tool-security/praisonai-mcp-session-exhaustion.md)
 - [agent-and-tool-security/praisonai-agent-control-plane-advisory-deferrals.md](agent-and-tool-security/praisonai-agent-control-plane-advisory-deferrals.md)
+- [agent-and-tool-security/praisonai-web-crawl-ssrf.md](agent-and-tool-security/praisonai-web-crawl-ssrf.md)
+- [agent-and-tool-security/praisonai-ast-grep-rewrite-approval-bypass.md](agent-and-tool-security/praisonai-ast-grep-rewrite-approval-bypass.md)
 - [agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md](agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md)
 - [agent-and-tool-security/browse-mcp-file-path-boundary.md](agent-and-tool-security/browse-mcp-file-path-boundary.md)
 - [agent-and-tool-security/nextcloud-mcp-webhook-vector-index-auth.md](agent-and-tool-security/nextcloud-mcp-webhook-vector-index-auth.md)
@@ -72,6 +74,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/omnigent-shell-policy-parser-bypass.md](agent-and-tool-security/omnigent-shell-policy-parser-bypass.md)
 - [agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md](agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md)
 - [agent-and-tool-security/mcp-context-injection-transparency.md](agent-and-tool-security/mcp-context-injection-transparency.md)
+- [agent-and-tool-security/mcp-fetch-ipv6-ssrf.md](agent-and-tool-security/mcp-fetch-ipv6-ssrf.md)
+- [agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md](agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md)
+- [agent-and-tool-security/dradis-ai-provider-ssrf.md](agent-and-tool-security/dradis-ai-provider-ssrf.md)
 - [threats-and-attacks/ai-hosted-artifact-malware-delivery.md](threats-and-attacks/ai-hosted-artifact-malware-delivery.md)
 - [threats-and-attacks/unattended-ai-agent-attack-automation.md](threats-and-attacks/unattended-ai-agent-attack-automation.md)
 - [threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md](threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md)
@@ -118,6 +123,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/downstream-agent-authorization-context.md](identity-and-access/downstream-agent-authorization-context.md)
 - [identity-and-access/headroom-llm-memory-owner-header-bypass.md](identity-and-access/headroom-llm-memory-owner-header-bypass.md)
 - [identity-and-access/agent-delegated-task-authorization-drift.md](identity-and-access/agent-delegated-task-authorization-drift.md)
+- [identity-and-access/one-api-channel-pinning-provider-key-bypass.md](identity-and-access/one-api-channel-pinning-provider-key-bypass.md)
+- [identity-and-access/unifi-protect-ai-key-privilege-escalation.md](identity-and-access/unifi-protect-ai-key-privilege-escalation.md)
+- [identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md](identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -150,6 +158,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [infrastructure-and-supply-chain/tensorzero-gateway-object-storage-file-read-ssrf.md](infrastructure-and-supply-chain/tensorzero-gateway-object-storage-file-read-ssrf.md)
 - [infrastructure-and-supply-chain/onnx-external-data-symlink-file-write.md](infrastructure-and-supply-chain/onnx-external-data-symlink-file-write.md)
 - [infrastructure-and-supply-chain/nltk-transition-parser-model-pickle-rce.md](infrastructure-and-supply-chain/nltk-transition-parser-model-pickle-rce.md)
+- [infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md](infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md)
+- [infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md](infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md)
 - [testing-and-assurance](testing-and-assurance/index.md)
 - [testing-and-assurance/cyber-evaluation-containment.md](testing-and-assurance/cyber-evaluation-containment.md)
 - [testing-and-assurance/public-cyber-capability-assessments.md](testing-and-assurance/public-cyber-capability-assessments.md)
@@ -199,6 +209,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [model-and-prompt-security/cryptographic-context-injection.md](model-and-prompt-security/cryptographic-context-injection.md)
 - [model-and-prompt-security/xinference-llama3-tool-call-eval-rce.md](model-and-prompt-security/xinference-llama3-tool-call-eval-rce.md)
 - [model-and-prompt-security/legal-filing-prompt-injection.md](model-and-prompt-security/legal-filing-prompt-injection.md)
+- [model-and-prompt-security/langfun-python-protocol-model-output-rce.md](model-and-prompt-security/langfun-python-protocol-model-output-rce.md)
 - [source-workflows](source-workflows/index.md)
 - [digests](digests/index.md)
 
@@ -213,6 +224,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - Add local durable leaves here after federation routing and wiki verification.
 - Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.
 - Updated on 2026-08-26 with August 25 MCP, agent-tool, identity, infrastructure, verification-parser, emergency-shutdown, and advisory-deferral leaves.
+- Updated on 2026-08-27 with August 26 MCP SSRF, Strands consent, Langfun RCE, Mage AI, one-api, Dradis AI provider, WordPress AI Engine, UniFi Protect AI Key, delegated authorization, split PraisonAI control-plane leaves, and consciousness-explorer updates.
 - Updated on 2026-08-22 with Spring AI MCP transport DoS, CKAN, SiYuan v3.8.0, Omnigent, Infracost, FiftyOne, Headroom, TensorZero, ONNX, Xinference, NLTK, and legal filing prompt-injection leaves.
 - Updated on 2026-08-19 with August 18 topic-news leaves and watcher enrichments across MCP, agent-tool, model-input, identity, data, infrastructure, testing, threats, and governance topics.
 - Updated on 2026-08-17 with MLflow, chrome-devtools-mcp, atomic-agents-stack, Ray, MemOS, OpenShift AI, Kiota, and delegated-agent cost guardrail leaves.

@@ -52,6 +52,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [PraisonAI MCP origin and CSRF instruction persistence](praisonai-mcp-origin-and-csrf-instruction-persistence.md)
 - [PraisonAI MCP session exhaustion](praisonai-mcp-session-exhaustion.md)
 - [PraisonAI agent control plane advisory deferrals](praisonai-agent-control-plane-advisory-deferrals.md)
+- [PraisonAI web_crawl SSRF](praisonai-web-crawl-ssrf.md)
+- [PraisonAI ast_grep_rewrite approval bypass](praisonai-ast-grep-rewrite-approval-bypass.md)
 - [agentic AI emergency shutdown controls](agentic-ai-emergency-shutdown-controls.md)
 - [browse-mcp file path boundary](browse-mcp-file-path-boundary.md)
 - [Nextcloud MCP webhook vector index auth](nextcloud-mcp-webhook-vector-index-auth.md)
@@ -67,6 +69,9 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Omnigent shell policy parser bypass](omnigent-shell-policy-parser-bypass.md)
 - [Omnigent agent bundle CWD workspace bypass](omnigent-agent-bundle-cwd-workspace-bypass.md)
 - [MCP context injection transparency](mcp-context-injection-transparency.md)
+- [mcp-fetch IPv6 SSRF](mcp-fetch-ipv6-ssrf.md)
+- [Strands Agents Tools Python REPL consent bypass](strands-agents-tools-python-repl-consent-bypass.md)
+- [Dradis AI provider SSRF](dradis-ai-provider-ssrf.md)
 
 ## Authoritative Sources
 
@@ -105,3 +110,4 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Updated on 2026-08-22 with Spring AI MCP transport DoS, CKAN, SiYuan v3.8.0, and Omnigent agent-control-plane advisory leaves.
 - Updated on 2026-08-23 with the MCP context-injection transparency leaf.
 - Updated on 2026-08-26 with Continue CLI, mcp-ffmpeg-helper, mcp-shell, PraisonAI, browse-mcp, Nextcloud MCP, genieacs-mcp, Chainlit, and agentic AI shutdown leaves.
+- Updated on 2026-08-27 with mcp-fetch IPv6 SSRF, Strands Agents Tools consent bypass, Dradis AI provider SSRF, and split PraisonAI control-plane leaves.

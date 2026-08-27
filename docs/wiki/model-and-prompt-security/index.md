@@ -17,6 +17,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - [Cryptographic Context Injection](cryptographic-context-injection.md)
 - [Xinference Llama3 tool call eval RCE](xinference-llama3-tool-call-eval-rce.md)
 - [Legal filing prompt injection](legal-filing-prompt-injection.md)
+- [Langfun Python protocol model output RCE](langfun-python-protocol-model-output-rce.md)
 
 ## Authoritative Sources
 
@@ -51,3 +52,4 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - Updated on 2026-08-19 after verifier correction split vLLM derender DoS and multimodal media SSRF/file-read leaves.
 - Updated on 2026-08-21 with the Cryptographic Context Injection attack-pattern leaf.
 - Updated on 2026-08-22 with Xinference prompt-driven parser RCE and legal filing prompt-injection leaves.
+- Updated on 2026-08-27 with the Langfun model-output-as-code parser RCE leaf.

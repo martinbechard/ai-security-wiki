@@ -37,6 +37,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [TensorZero gateway object storage file read SSRF](tensorzero-gateway-object-storage-file-read-ssrf.md)
 - [ONNX external data symlink file write](onnx-external-data-symlink-file-write.md)
 - [NLTK transition parser model pickle RCE](nltk-transition-parser-model-pickle-rce.md)
+- [Mage AI browser items file read](mage-ai-browser-items-file-read.md)
+- [WordPress AI Engine plugin file read and query execution](wordpress-ai-engine-plugin-file-read-and-query-execution.md)
 
 ## Authoritative Sources
 
@@ -72,3 +74,4 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - Updated on 2026-08-19 after verifier correction split MLflow webhook SSRF, dataset-lineage authorization, and model-artifact source-validation advisories into separate leaves.
 - Updated on 2026-08-22 with Infracost, TensorZero, ONNX, and NLTK supply-chain advisory leaves.
 - Updated on 2026-08-26 with consciousness-explorer MCP state file-write, MCP PHP SDK SSE memory-exhaustion, WordPress AI plugin advisory deferrals, OpenAI pacing, and slopsquatting research enrichments.
+- Updated on 2026-08-27 with Mage AI project-browser path confinement and AI Engine WordPress plugin advisory-family leaves.
