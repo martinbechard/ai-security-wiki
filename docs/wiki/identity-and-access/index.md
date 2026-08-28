@@ -27,6 +27,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [UniFi Protect AI Key privilege escalation](unifi-protect-ai-key-privilege-escalation.md)
 - [PraisonAI AgentServer API Key Auth Enforcement](praisonai-agentserver-api-key-auth-enforcement.md)
 
+- [Telnyx MCP stored credential auth bypass](telnyx-mcp-stored-credential-auth-bypass.md)
+
 ## Authoritative Sources
 
 - [federation.md](../federation.md)
@@ -55,6 +57,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with Telnyx MCP stored-credential auth bypass plus watcher enrichments for one-api, UniFi Protect AI Key, and PraisonAI auth-enforcement leaves.
 - Distinguish user identity, workload identity, agent identity, delegated authority, and tool credentials.
 - Updated on 2026-08-17 with MemOS internal-service identity and OpenShift AI service-account least-privilege advisory leaves.
 - Updated on 2026-08-19 with ArcadeDB, Apify, Onyx, and 9Router identity-boundary advisory leaves.

@@ -73,6 +73,26 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Strands Agents Tools Python REPL consent bypass](strands-agents-tools-python-repl-consent-bypass.md)
 - [Dradis AI provider SSRF](dradis-ai-provider-ssrf.md)
 
+- [Amazon Kiro Powers prompt injection exfiltration](amazon-kiro-powers-prompt-injection-exfiltration.md)
+
+- [sentry-selfhosted-mcp raw_sentry_api SSRF](sentry-selfhosted-mcp-raw-api-ssrf.md)
+
+- [mcp-file-context-server path traversal](mcp-file-context-server-path-traversal.md)
+
+- [mcp-use inspector proxy SSRF](mcp-use-inspector-proxy-ssrf.md)
+
+- [mcp-go DNS rebinding host validation](mcp-go-dns-rebinding-host-validation.md)
+
+- [Apify MCP get-html-skeleton SSRF](apify-mcp-get-html-skeleton-ssrf.md)
+
+- [mcp-router unauthenticated aggregator exposure](mcp-router-unauthenticated-aggregator-exposure.md)
+
+- [ToolUniverse Python executor sandbox escape](tooluniverse-python-executor-sandbox-escape.md)
+
+- [UI-TARS desktop MCP unauthenticated RCE](ui-tars-desktop-mcp-unauthenticated-rce.md)
+
+- [Agno Python and Shell tools prompt-injection RCE](agno-python-shell-tools-prompt-injection-rce.md)
+
 ## Authoritative Sources
 
 - [federation.md](../federation.md)
@@ -101,6 +121,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with Kiro Powers prompt-injection exfiltration, MCP server/transport SSRF and exposure leaves, ToolUniverse/UI-TARS/Agno execution leaves, and watcher enrichments for mcp-fetch, Dradis, PraisonAI, and Strands Agents Tools.
 - Keep each leaf focused on a distinct security boundary or control rather than a general agent workflow.
 - Updated on 2026-08-16 with the GoMarble Facebook Ads MCP SSRF leaf.
 - Updated on 2026-08-17 with the chrome-devtools-mcp symlink root bypass leaf.

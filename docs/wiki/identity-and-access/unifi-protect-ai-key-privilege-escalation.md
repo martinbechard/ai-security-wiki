@@ -9,9 +9,9 @@ tags: ["identity-and-access", "infrastructure-and-supply-chain"]
 
 ## Current Understanding
 
-The [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) records CVE-2026-77557 for UniFi Protect AI Key. Broad Ubiquiti and UniFi product background belongs upstream; this page owns the local AI-enabled physical-security device access-control boundary.
+CVE-2026-77557 affects UniFi Protect AI Key and crosses the local AI-enabled physical-security device access-control boundary. Broad Ubiquiti and UniFi product background belongs upstream. The [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) and [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json) provide the current evidence.
 
-The collector records an improper access-control vulnerability that a malicious actor with network access could use to escalate privileges on the device. The source did not capture exact firmware or fixed-version details, so this page keeps the affected boundary narrow and preserves an open question for bulletin-level verification.
+A malicious actor with network access can exploit improper access control to escalate privileges on the device. The source did not capture exact firmware or fixed-version details, so this page keeps the affected boundary narrow and preserves an open question for bulletin-level verification.
 
 ## Security Impact
 
@@ -24,6 +24,8 @@ The collector records an improper access-control vulnerability that a malicious 
 
 ## Authoritative Sources
 
+- [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json)
+- [CVE-2026-77557 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-77557)
 - [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json)
 - [NVD CVE-2026-77557](https://nvd.nist.gov/vuln/detail/CVE-2026-77557)
 - [Ubiquiti Security Advisory Bulletin 067](https://community.ui.com/releases/Security-Advisory-Bulletin-067/fc4a3488-7c43-4628-8bab-f715e96dbfc9)
@@ -52,4 +54,5 @@ The collector records an improper access-control vulnerability that a malicious 
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with August 27 leaf-update evidence for CVE-2026-77557.
 - Created on 2026-08-27 from the [August 26 topic collector](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) as an AI-enabled device access-control leaf.

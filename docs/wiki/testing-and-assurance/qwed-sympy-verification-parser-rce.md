@@ -9,9 +9,18 @@ tags: ["testing-and-assurance", "infrastructure-and-supply-chain", "agent-and-to
 
 ## Current Understanding
 
-The [August 25 topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T183709Z.json) and [August 25 late topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T233059Z.json) record two QWED SymPy parser advisories. Broad QWED product and deterministic-verification practice belongs upstream; this page owns the local security-assurance control-plane execution boundary.
+Two QWED SymPy parser advisories share this security-assurance control-plane execution boundary. Broad QWED product and deterministic-verification practice belongs upstream; this page owns the local risk that a validator or verification API can become a Python execution sink. The [August 25 topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T183709Z.json), [August 25 late topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T233059Z.json), and [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json) provide the current evidence.
 
-[CVE-2026-55546](https://nvd.nist.gov/vuln/detail/CVE-2026-55546) affects QWED-MCP before the [0.2.1 release](https://github.com/QWED-AI/qwed-mcp/releases/tag/v0.2.1), where attacker-controlled expression strings reached SymPy `parse_expr` without restricted globals or AST validation. [CVE-2026-55585](https://nvd.nist.gov/vuln/detail/CVE-2026-55585) affects QWED/qwed-verification before 5.1.2, where tenant-supplied math verification expressions and batch jobs flowed into the same unsafe parsing pattern; default signup could issue ordinary tenant API keys according to the [GitHub advisory](https://github.com/QWED-AI/qwed-verification/security/advisories/GHSA-q27q-98j4-9pfv). The two advisories are kept together because the reusable security lesson is the same parser boundary across MCP and API verification surfaces, while affected package/version details remain distinct.
+[CVE-2026-55546](https://nvd.nist.gov/vuln/detail/CVE-2026-55546) affects QWED-MCP before the [0.2.1 release](https://github.com/QWED-AI/qwed-mcp/releases/tag/v0.2.1), where [`verify_math_expression()`](https://github.com/QWED-AI/qwed-mcp/blob/main/src/qwed_mcp/engines/math_engine.py) passes attacker-controlled expression and claimed-result strings to SymPy `parse_expr` after only normalizing caret syntax. The [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json) clarifies that exploitation requires a downstream integration that invokes this public library function with attacker-controlled input because the default MCP tool registry does not expose it.
+
+[CVE-2026-55585](https://nvd.nist.gov/vuln/detail/CVE-2026-55585) affects QWED/qwed-verification before 5.1.2, where tenant-supplied math verification expressions and batch jobs flow into the same unsafe parsing pattern. The [GitHub advisory](https://github.com/QWED-AI/qwed-verification/security/advisories/GHSA-q27q-98j4-9pfv) and watcher source record two API paths:
+
+- Direct math verification: [`src/qwed_new/api/main.py`](https://github.com/QWED-AI/qwed-verification/blob/main/src/qwed_new/api/main.py) accepts any valid tenant API key for `POST /verify/math`, reads the expression field, performs only cosmetic normalization, and passes the expression text to `parse_expr`.
+- Batch verification: [`src/qwed_new/core/batch.py`](https://github.com/QWED-AI/qwed-verification/blob/main/src/qwed_new/core/batch.py) accepts math items through `POST /verify/batch`, stores `item.query` in a batch job, and later passes `VerificationType.MATH` input to `parse_expr` without sanitization.
+
+Default signup and API-key issuance can make both paths reachable to ordinary tenants in shared deployments.
+
+The two advisories are kept together because the reusable security lesson is the same parser boundary across MCP and API verification surfaces, while affected package/version details remain distinct.
 
 ## Security Impact
 
@@ -30,6 +39,9 @@ The [August 25 topic news collector source](../../../raw/processed/2026-08-25/ai
 
 ## Authoritative Sources
 
+- [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json)
+- [CVE-2026-55546 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-55546)
+- [CVE-2026-55585 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-55585)
 - [August 25 topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T183709Z.json)
 - [August 25 late topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T233059Z.json)
 - [NVD CVE-2026-55546](https://nvd.nist.gov/vuln/detail/CVE-2026-55546)
@@ -39,7 +51,9 @@ The [August 25 topic news collector source](../../../raw/processed/2026-08-25/ai
 
 ## Related Code
 
-- Not yet identified.
+- [QWED-MCP `src/qwed_mcp/engines/math_engine.py`](https://github.com/QWED-AI/qwed-mcp/blob/main/src/qwed_mcp/engines/math_engine.py)
+- [QWED verification `src/qwed_new/api/main.py`](https://github.com/QWED-AI/qwed-verification/blob/main/src/qwed_new/api/main.py)
+- [QWED verification `src/qwed_new/core/batch.py`](https://github.com/QWED-AI/qwed-verification/blob/main/src/qwed_new/core/batch.py)
 
 ## Related Tests
 
@@ -61,4 +75,5 @@ The [August 25 topic news collector source](../../../raw/processed/2026-08-25/ai
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with August 27 leaf-update evidence for CVE-2026-55546, CVE-2026-55585.
 - Created on 2026-08-26 from the [August 25 collectors](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T233059Z.json) as a shared verification-parser RCE leaf with separate CVE/version details.

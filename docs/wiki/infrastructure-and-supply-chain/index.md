@@ -40,6 +40,16 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Mage AI browser items file read](mage-ai-browser-items-file-read.md)
 - [WordPress AI Engine plugin file read and query execution](wordpress-ai-engine-plugin-file-read-and-query-execution.md)
 
+- [Spring AI PDF Document Reader recursion DoS](spring-ai-pdf-document-reader-recursion-dos.md)
+
+- [Spring AI ONNX cache model substitution](spring-ai-onnx-cache-model-substitution.md)
+
+- [Spring AI ResourceCache fragment file write](spring-ai-resource-cache-fragment-file-write.md)
+
+- [ServiceNow AI platform code injection](servicenow-ai-platform-code-injection.md)
+- [ServiceNow AI platform access-control escalation](servicenow-ai-platform-access-control-escalation.md)
+- [ServiceNow AI platform SQL injection](servicenow-ai-platform-sql-injection.md)
+
 ## Authoritative Sources
 
 - [federation.md](../federation.md)
@@ -68,6 +78,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with Spring AI PDF, ONNX, and ResourceCache leaves plus split ServiceNow AI platform code-injection, access-control, and SQL-injection leaves.
 - Record provenance, affected component, trust boundary, deployment surface, and remediation status.
 - Updated on 2026-08-17 with MLflow, atomic-agents-stack, Ray, and Kiota AI infrastructure and supply-chain advisory leaves.
 - Updated on 2026-08-19 with the Hugging Face Transformers checkpoint shard file-read leaf and watcher enrichments for MLflow, atomic-agents-stack, Ray, and Kiota.

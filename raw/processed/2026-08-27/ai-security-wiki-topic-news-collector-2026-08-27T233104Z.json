@@ -1,0 +1,758 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-08-27T23:31:04Z",
+  "cutoff_window": {
+    "start": "2026-08-25T23:31:04Z",
+    "end": "2026-08-27T23:31:04Z",
+    "policy": "Include only items published or visibly updated within the last 2 days relative to run time; exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "collection_method": "Public web search plus public NVD/CVE/GitHub/vendor security pages. No private, proprietary, sensitive, PII, or company-internal local content was sent externally.",
+  "federation_context": {
+    "local_wiki": "AI security lens only",
+    "upstream_ai_wiki_index_checked": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+    "upstream_ai_dev_wiki_index_checked": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+    "federation_rules_checked": "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/federation.md"
+  },
+  "qualifying_findings": [
+    {
+      "id": "mindgard-amazon-kiro-powers-exfiltration-2026-08-27",
+      "title": "Amazon Kiro prompt injection through Kiro Powers can exfiltrate local data",
+      "source_urls": [
+        "https://mindgard.ai/blog/amazon-kiro-data-exfiltration",
+        "https://thehackernews.com/2026/08/amazon-kiro-prompt-injection-can.html"
+      ],
+      "visible_dates": {
+        "mindgard": "crawled today; disclosure timeline lists remediation released 2026-01-26; page surfaced 11 hours ago in public search",
+        "the_hacker_news": "2026-08-27"
+      },
+      "summary": "Mindgard publicly described a Kiro IDE issue where attacker-controlled repository content, including a directory-name prompt injection, could influence the agent to read local files and send data to an attacker-controlled endpoint through Kiro Powers. The Hacker News reports the issue worked against Kiro IDE 0.7.45 on Windows and Amazon fixed it in 0.8.140.",
+      "evidence_classification": "primary research plus reputable secondary report",
+      "affected_boundary_or_version": "Amazon Kiro IDE 0.7.45 on Windows; fixed in Kiro IDE 0.8.140; no CVE reported",
+      "why_it_matters_for_ai_security": "Shows that repository-controlled context and agent extension bundles can cross file-read, persistent instruction, MCP configuration, and network-exfiltration boundaries without a separate malicious executable.",
+      "named_entities": [
+        "Amazon Kiro",
+        "Kiro Powers",
+        "Mindgard",
+        "Amazon",
+        "MCP",
+        "prompt injection"
+      ],
+      "upstream_routing": "Amazon Kiro as a broad AI development product belongs upstream in ai-wiki/ai-dev-wiki; keep the local security implication under agent/tool security and data exfiltration controls.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "During ingest, reconcile whether the local leaf should extend existing Kiro/Codex/Cursor approval-boundary pages or become a Kiro Powers-specific security leaf."
+      ]
+    },
+    {
+      "id": "CVE-2026-81421",
+      "title": "ddfourtwo sentry-selfhosted-mcp raw_sentry_api SSRF",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81421",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81421",
+        "https://www.tenable.com/cve/CVE-2026-81421",
+        "https://github.com/ddfourtwo/sentry-selfhosted-mcp/issues/2"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27",
+        "last_modified": "2026-08-27"
+      },
+      "summary": "sentry-selfhosted-mcp 0.4.0 raw_sentry_api accepts a caller-controlled endpoint that can be manipulated for server-side request forgery; public exploit information is available and the project reportedly had not responded.",
+      "evidence_classification": "vulnerability database record with public issue reference",
+      "affected_boundary_or_version": "ddfourtwo sentry-selfhosted-mcp 0.4.0",
+      "why_it_matters_for_ai_security": "A Sentry MCP server can become an internal-network read primitive for an agent if tool arguments are model-influenced.",
+      "named_entities": [
+        "ddfourtwo",
+        "sentry-selfhosted-mcp",
+        "Sentry",
+        "MCP",
+        "SSRF"
+      ],
+      "upstream_routing": "MCP server entity routing belongs upstream in ai-wiki; local ownership is SSRF and agent egress-control impact.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-81486",
+      "title": "mcp-file-context-server read_context path traversal",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81486",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81486",
+        "https://github.com/bsmi021/mcp-file-context-server/issues/15"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T02:16:28.747Z",
+        "last_modified": "2026-08-27T17:20:54.297Z"
+      },
+      "summary": "bsmi021 mcp-file-context-server 1.0.0 read_context path resolution lets a remote attacker use path traversal through the path argument; exploit details are public and the project reportedly had not responded.",
+      "evidence_classification": "NVD CVE record",
+      "affected_boundary_or_version": "bsmi021 mcp-file-context-server 1.0.0",
+      "why_it_matters_for_ai_security": "File-context MCP tools are direct agent data boundaries; path traversal lets model-influenced requests read outside intended context roots.",
+      "named_entities": [
+        "bsmi021",
+        "mcp-file-context-server",
+        "MCP",
+        "path traversal"
+      ],
+      "upstream_routing": "MCP server catalog ownership routes upstream; local security note belongs under agent file-boundary controls.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-81091",
+      "title": "mcp-use inspector proxy SSRF via caller-supplied target URL",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81091",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81091",
+        "https://github.com/mcp-use/mcp-use/security/advisories/GHSA-f2jg-rm2x-hc5p",
+        "https://www.vulncheck.com/advisories/mcp-use-inspector-proxy-server-side-request-forgery-via-caller-supplied-target-url"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T17:20:51.183Z",
+        "last_modified": "2026-08-27T20:18:49.180Z"
+      },
+      "summary": "mcp-use inspector proxy read a destination from X-Target-URL or __mcp_target and proxied without host, private-range, or redirect validation, allowing loopback, link-local, private, and redirect-based SSRF.",
+      "evidence_classification": "NVD CVE record plus GitHub/VulnCheck references",
+      "affected_boundary_or_version": "mcp-use TypeScript inspector proxy before fixed advisory state",
+      "why_it_matters_for_ai_security": "Inspector and debugging proxies for MCP can expose internal services when target URLs are supplied through agent or browser-reachable inputs.",
+      "named_entities": [
+        "mcp-use",
+        "MCP inspector",
+        "VulnCheck",
+        "SSRF"
+      ],
+      "upstream_routing": "mcp-use framework/product belongs upstream; local ownership is MCP proxy SSRF and final-destination authorization.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-81092",
+      "title": "mcp-go DNS rebinding through missing Host validation",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81092",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81092",
+        "https://github.com/mark3labs/mcp-go/releases/tag/v0.56.0",
+        "https://github.com/mark3labs/mcp-go/pull/921"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T17:20:51.337Z",
+        "last_modified": "2026-08-27T17:20:51.337Z"
+      },
+      "summary": "mcp-go HTTP transports accepted loopback requests without validating Host, and SSE default cross-origin behavior allowed browser pages to invoke tools and read resources through DNS rebinding; release v0.56.0 added localhost DNS rebinding protection.",
+      "evidence_classification": "NVD CVE record plus GitHub release/PR evidence",
+      "affected_boundary_or_version": "mark3labs/mcp-go before v0.56.0; fixed in v0.56.0",
+      "why_it_matters_for_ai_security": "Local MCP servers are browser-reachable authority surfaces unless Host, Origin, and loopback protections are enforced.",
+      "named_entities": [
+        "mcp-go",
+        "mark3labs",
+        "MCP",
+        "DNS rebinding",
+        "SSE"
+      ],
+      "upstream_routing": "mcp-go broad framework ownership routes upstream; local ownership is transport host validation as agent/tool security.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-81093",
+      "title": "Apify Actors MCP get-html-skeleton SSRF",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81093",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81093",
+        "https://github.com/apify/apify-mcp-server/security/advisories/GHSA-m28f-9v8h-gg2f",
+        "https://github.com/apify/apify-mcp-server/pull/572"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T17:20:51.493Z",
+        "last_modified": "2026-08-27T20:18:49.303Z"
+      },
+      "summary": "Apify MCP server get-html-skeleton accepted a caller-supplied URL after syntax-only validation, allowing loopback, link-local, private-range, and cloud metadata targets to be fetched into model context.",
+      "evidence_classification": "NVD CVE record plus GitHub advisory/PR references",
+      "affected_boundary_or_version": "apify/apify-mcp-server before 0.9.12",
+      "why_it_matters_for_ai_security": "Agent web-fetch helpers need IP-range and redirect controls because model-supplied URLs can turn tool output into internal data exfiltration.",
+      "named_entities": [
+        "Apify",
+        "Apify MCP Server",
+        "MCP",
+        "SSRF"
+      ],
+      "upstream_routing": "Apify product/entity routes upstream; local implication belongs under agent web-fetch and egress controls.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-81094",
+      "title": "mcp-router default all-interface unauthenticated aggregator",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81094",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81094",
+        "https://github.com/mcp-router/mcp-router/security/advisories/GHSA-rx55-5c7h-r56r",
+        "https://github.com/mcp-router/mcp-router/commit/4c4642cfd274097ec8b33ecd3047390829c79d35"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T17:20:51.650Z",
+        "last_modified": "2026-08-27T20:18:49.427Z"
+      },
+      "summary": "mcp-router CLI served its MCP aggregator on all interfaces by default and required a token only when explicitly configured; release 0.6.3 defaults to loopback and refuses unsafe unauthenticated exposure.",
+      "evidence_classification": "NVD CVE record plus GitHub advisory/commit reference",
+      "affected_boundary_or_version": "mcp-router before 0.6.3; fixed in 0.6.3",
+      "why_it_matters_for_ai_security": "MCP aggregators can front many downstream tools, so insecure default binding and optional authentication expands delegated agent authority to any reachable network client.",
+      "named_entities": [
+        "mcp-router",
+        "MCP aggregator",
+        "authentication",
+        "network binding"
+      ],
+      "upstream_routing": "mcp-router entity routes upstream; local note belongs under production MCP exposure and least privilege.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-81096",
+      "title": "ToolUniverse unauthenticated RCE through Python executor sandbox escape",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81096",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81096",
+        "https://github.com/mims-harvard/ToolUniverse/security/advisories/GHSA-pxwq-22vf-87fm",
+        "https://github.com/mims-harvard/ToolUniverse/pull/251"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T17:20:51.950Z",
+        "last_modified": "2026-08-27T20:18:49.567Z"
+      },
+      "summary": "ToolUniverse exposed caller-supplied Python in a sandbox that could be escaped on a server requiring no authentication, enabling arbitrary code and OS command execution through the python_code_executor tool.",
+      "evidence_classification": "NVD CVE record plus GitHub/VulnCheck references",
+      "affected_boundary_or_version": "ToolUniverse through 1.2.6",
+      "why_it_matters_for_ai_security": "AI tool platforms that expose code-execution tools need hard authentication, sandbox isolation, and denial-list avoidance; model-routed execution is not a safe boundary.",
+      "named_entities": [
+        "ToolUniverse",
+        "MCP",
+        "python_code_executor",
+        "RCE",
+        "sandbox escape"
+      ],
+      "upstream_routing": "ToolUniverse framework/entity routes upstream; local ownership is evaluation/tool execution containment.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-81098",
+      "title": "Telnyx MCP server missing authentication forwards stored provider credentials",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81098",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81098",
+        "https://github.com/team-telnyx/telnyx-node/security/advisories/GHSA-46jp-xr2h-fw7h",
+        "https://github.com/team-telnyx/telnyx-node/pull/450"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T17:20:52.297Z",
+        "last_modified": "2026-08-27T20:18:49.697Z"
+      },
+      "summary": "Telnyx MCP server exposed HTTP transport on all interfaces and did not fail absent authentication headers, allowing unauthenticated initialization and tool dispatch using stored Telnyx API key and client secret.",
+      "evidence_classification": "NVD CVE record plus GitHub advisory/PR references",
+      "affected_boundary_or_version": "team-telnyx/telnyx-node MCP server through 6.83.0",
+      "why_it_matters_for_ai_security": "Provider MCP servers can transform missing caller auth into misuse of server-side API credentials, making identity binding and credential isolation mandatory.",
+      "named_entities": [
+        "Telnyx",
+        "Telnyx MCP server",
+        "MCP",
+        "API key",
+        "client secret"
+      ],
+      "upstream_routing": "Telnyx entity routes upstream; local security lens is MCP credential authority leakage.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-81735",
+      "title": "ByteDance UI-TARS-desktop agent-infra MCP servers unauthenticated RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81735",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81735",
+        "https://github.com/bytedance/UI-TARS-desktop/commit/c2ad42e3eb9b27830db41a3e6f51ca7179d9b168",
+        "https://github.com/bytedance/UI-TARS-desktop/pull/1918"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T17:21:03.677Z",
+        "last_modified": "2026-08-27T17:21:03.677Z"
+      },
+      "summary": "UI-TARS-desktop mcp-http-server defaulted to listening on :: and authentication middleware was optional, so bundled commands and filesystem MCP entry points could expose unauthenticated command execution and file tools to reachable clients.",
+      "evidence_classification": "NVD CVE record plus GitHub commit/PR references",
+      "affected_boundary_or_version": "ByteDance UI-TARS-desktop @agent-infra mcp-http-server before referenced fix",
+      "why_it_matters_for_ai_security": "Desktop agent infrastructure that binds command and filesystem tools to the network without mandatory auth creates immediate host compromise risk.",
+      "named_entities": [
+        "ByteDance",
+        "UI-TARS-desktop",
+        "@agent-infra",
+        "MCP",
+        "RCE"
+      ],
+      "upstream_routing": "UI-TARS as a broad product routes upstream; local ownership is desktop agent MCP exposure and host-control risk.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-37003",
+      "title": "Agno PythonTools and ShellTools RCE via prompt injection",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-37003",
+        "https://www.cve.org/CVERecord?id=CVE-2026-37003",
+        "https://www.cve.org/CVERecord?id=CVE-2026-37003",
+        "https://yerangamage.com/cves/detail/?slug=agno-rce-tools"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T20:17:41.107Z",
+        "last_modified": "2026-08-27T20:17:41.107Z"
+      },
+      "summary": "Agno up to and including 2.5.8 passes unsanitized LLM-generated arguments to PythonTools and ShellTools execution sinks such as exec(), runpy.run_path(), and subprocess.run(), enabling unauthenticated prompt-injection-triggered code execution from processed web pages or documents.",
+      "evidence_classification": "NVD/CVE record",
+      "affected_boundary_or_version": "Agno <= 2.5.8",
+      "why_it_matters_for_ai_security": "Confirms that tool argument generation must be authorization- and policy-checked before execution; prompt injection becomes RCE when shell/Python tools trust model output.",
+      "named_entities": [
+        "Agno",
+        "PythonTools",
+        "ShellTools",
+        "prompt injection",
+        "RCE"
+      ],
+      "upstream_routing": "Agno framework ownership routes upstream; local implication belongs under model/tool execution gates.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-47851",
+      "title": "Spring AI PDF Document Reader unbounded recursion DoS",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-47851",
+        "https://www.cve.org/CVERecord?id=CVE-2026-47851",
+        "https://spring.io/security/cve-2026-47851"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T01:17:32.150Z",
+        "last_modified": "2026-08-27T17:18:29.093Z"
+      },
+      "summary": "NVD published a Spring AI record for a PDF Document Reader issue where a deeply nested or cyclic table of contents can cause StackOverflowError in the ingestion thread; Spring lists fixed versions 2.0.1, 2.0.0.1, 1.1.9, and 1.0.10.",
+      "evidence_classification": "NVD in-window indexing plus primary Spring advisory dated 2026-08-20",
+      "affected_boundary_or_version": "Spring AI 2.0.0, 1.1.0-1.1.8, 1.0.0-1.0.9",
+      "why_it_matters_for_ai_security": "Document ingestion pipelines for RAG and AI apps need parser hardening against adversarial files that can take down indexing workers.",
+      "named_entities": [
+        "Spring AI",
+        "PDF Document Reader",
+        "RAG",
+        "DoS"
+      ],
+      "upstream_routing": "Spring AI framework routes upstream/ai-dev-wiki; local security lens is ingestion parser availability.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-47852",
+      "title": "Spring AI predictable ONNX cache path permits local model substitution",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-47852",
+        "https://www.cve.org/CVERecord?id=CVE-2026-47852",
+        "https://spring.io/security/cve-2026-47852"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T01:17:32.320Z",
+        "last_modified": "2026-08-27T17:18:29.527Z"
+      },
+      "summary": "NVD published a Spring AI record for deterministic cache-path behavior allowing a local attacker on a multi-user host to pre-create the cache path and plant a malicious ONNX model; Spring lists fixed versions 2.0.1, 2.0.0.1, 1.1.9, and 1.0.10.",
+      "evidence_classification": "NVD in-window indexing plus primary Spring advisory dated 2026-08-20",
+      "affected_boundary_or_version": "Spring AI 2.0.0, 1.1.0-1.1.8, 1.0.0-1.0.9",
+      "why_it_matters_for_ai_security": "Model artifact caching is a supply-chain boundary; predictable paths allow local substitution of model files used by AI runtimes.",
+      "named_entities": [
+        "Spring AI",
+        "ONNX",
+        "model cache",
+        "artifact substitution"
+      ],
+      "upstream_routing": "Spring AI and ONNX routes upstream; local ownership is model artifact supply-chain control.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-59294",
+      "title": "Spring AI ResourceCacheService writes URI fragment into cache filename",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59294",
+        "https://www.cve.org/CVERecord?id=CVE-2026-59294",
+        "https://spring.io/security/cve-2026-59294"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T20:17:55.583Z",
+        "last_modified": "2026-08-27T20:17:55.583Z"
+      },
+      "summary": "ResourceCacheService.getCacheName() appends a URI fragment verbatim to an on-disk filename without stripping path separators or .. sequences, allowing downloaded bytes to be written outside the intended cache path.",
+      "evidence_classification": "NVD CVE record with Spring advisory reference",
+      "affected_boundary_or_version": "Spring AI 2.0.0, 1.1.0-1.1.8, 1.0.9 and earlier",
+      "why_it_matters_for_ai_security": "AI resource caches that ingest remote model or document resources must treat URI components as untrusted filesystem input.",
+      "named_entities": [
+        "Spring AI",
+        "ResourceCacheService",
+        "cache",
+        "path traversal",
+        "artifact write"
+      ],
+      "upstream_routing": "Spring AI framework routes upstream/ai-dev-wiki; local note belongs under model/runtime artifact supply chain.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-59319",
+      "title": "Spring AI RedisChatMemoryRepository RediSearch query injection",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59319",
+        "https://www.cve.org/CVERecord?id=CVE-2026-59319",
+        "https://spring.io/security/cve-2026-59319"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T20:17:57.913Z",
+        "last_modified": "2026-08-27T20:17:57.913Z"
+      },
+      "summary": "RedisChatMemoryRepository.findByMetadata() builds RediSearch tag and text queries from caller-supplied metadata without escaping, allowing RediSearch syntax injection that can broaden, alter, or disrupt AI memory lookups.",
+      "evidence_classification": "NVD CVE record with Spring advisory reference",
+      "affected_boundary_or_version": "Spring AI affected versions per Spring advisory",
+      "why_it_matters_for_ai_security": "Agent/chat memory stores need query escaping and tenant scoping because metadata injection can cross conversation, user, or retrieval boundaries.",
+      "named_entities": [
+        "Spring AI",
+        "RedisChatMemoryRepository",
+        "RediSearch",
+        "chat memory",
+        "query injection"
+      ],
+      "upstream_routing": "Spring AI routes upstream; local ownership is AI memory access-control and query-injection risk.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-19889",
+      "title": "GitLab AI Gateway model metadata redirect can disclose cloud credentials",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19889",
+        "https://www.cve.org/CVERecord?id=CVE-2026-19889",
+        "https://gitlab.com/gitlab-org/gitlab/-/work_items/614164",
+        "https://hackerone.com/reports/3938027"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T17:17:43.170Z",
+        "last_modified": "2026-08-27T20:17:04.750Z"
+      },
+      "summary": "GitLab remediated an AI Gateway issue where an authenticated Duo Agent Platform user could redirect model requests to an external endpoint via crafted model metadata, disclosing Google Vertex AI or AWS Bedrock cloud service credentials.",
+      "evidence_classification": "NVD CVE record plus GitLab/HackerOne references",
+      "affected_boundary_or_version": "GitLab AI Gateway 18.9.0-19.0.12, 19.1-19.1.7, 19.2-19.2.2",
+      "why_it_matters_for_ai_security": "Model-routing metadata is an authorization boundary; provider credentials must not follow user-controlled endpoints.",
+      "named_entities": [
+        "GitLab",
+        "GitLab AI Gateway",
+        "Duo Agent Platform",
+        "Vertex AI",
+        "AWS Bedrock"
+      ],
+      "upstream_routing": "GitLab/Duo entity routes upstream/ai-dev-wiki; local security note belongs under provider-key egress and model-routing controls.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-75871",
+      "title": "GitLab AI Gateway inline flow Host override can disclose cloud credentials",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75871",
+        "https://www.cve.org/CVERecord?id=CVE-2026-75871",
+        "https://gitlab.com/gitlab-org/gitlab/-/work_items/616990",
+        "https://hackerone.com/reports/3945100"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T17:20:01.503Z",
+        "last_modified": "2026-08-27T20:18:37.867Z"
+      },
+      "summary": "GitLab remediated an AI Gateway issue where an authenticated Duo Agent Platform user could redirect outbound model requests to an external endpoint using crafted inline flow configuration overriding the HTTP Host header, exposing Google Vertex AI or AWS Bedrock credentials.",
+      "evidence_classification": "NVD CVE record plus GitLab/HackerOne references",
+      "affected_boundary_or_version": "GitLab AI Gateway 18.10-19.0.12, 19.1-19.1.7, 19.2-19.2.2",
+      "why_it_matters_for_ai_security": "Inline agent/model-flow configuration can become credential exfiltration if final host and provider-token binding are not enforced.",
+      "named_entities": [
+        "GitLab",
+        "GitLab AI Gateway",
+        "Duo Agent Platform",
+        "Host header",
+        "Vertex AI",
+        "AWS Bedrock"
+      ],
+      "upstream_routing": "GitLab/Duo entity routes upstream/ai-dev-wiki; local security note belongs under final-destination authorization.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-18885",
+      "title": "ServiceNow AI platform code injection remediated",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18885",
+        "https://www.cve.org/CVERecord?id=CVE-2026-18885",
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3152242"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T20:17:03.870Z",
+        "last_modified": "2026-08-27T20:17:03.870Z"
+      },
+      "summary": "ServiceNow remediated a code injection vulnerability in the ServiceNow AI platform that could let an unauthenticated user, in some circumstances, execute arbitrary code and access or modify instance data beyond intended scope.",
+      "evidence_classification": "NVD CVE record plus ServiceNow support advisory reference",
+      "affected_boundary_or_version": "ServiceNow AI platform; hosted instances updated and partner/self-hosted update path referenced by advisory",
+      "why_it_matters_for_ai_security": "AI platform control-plane code injection combines model/service extensibility with enterprise instance data exposure.",
+      "named_entities": [
+        "ServiceNow",
+        "ServiceNow AI platform",
+        "code injection"
+      ],
+      "upstream_routing": "ServiceNow entity routes upstream; local ownership is enterprise AI platform code-execution and incident response implications.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-18886",
+      "title": "ServiceNow AI platform improper access control privilege escalation",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18886",
+        "https://www.cve.org/CVERecord?id=CVE-2026-18886",
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3152242"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T20:17:04.020Z",
+        "last_modified": "2026-08-27T20:17:04.020Z"
+      },
+      "summary": "ServiceNow remediated an improper access-control issue in the ServiceNow AI platform that could let an unauthenticated user create or modify instance data beyond intended scope, resulting in privilege escalation.",
+      "evidence_classification": "NVD CVE record plus ServiceNow support advisory reference",
+      "affected_boundary_or_version": "ServiceNow AI platform; hosted instances updated and partner/self-hosted update path referenced by advisory",
+      "why_it_matters_for_ai_security": "AI workflow platforms need strict authorization on data-changing actions, especially where unauthenticated flows can reach platform internals.",
+      "named_entities": [
+        "ServiceNow",
+        "ServiceNow AI platform",
+        "privilege escalation"
+      ],
+      "upstream_routing": "ServiceNow entity routes upstream; local security note belongs under identity/access for AI platforms.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-74820",
+      "title": "ServiceNow AI platform SQL injection remediated",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74820",
+        "https://www.cve.org/CVERecord?id=CVE-2026-74820",
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3152242"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T20:18:36.670Z",
+        "last_modified": "2026-08-27T20:18:36.670Z"
+      },
+      "summary": "ServiceNow remediated a SQL injection vulnerability in the ServiceNow AI platform that could let an unauthenticated user execute SQL against the instance database and access or modify unintended instance data.",
+      "evidence_classification": "NVD CVE record plus ServiceNow support advisory reference",
+      "affected_boundary_or_version": "ServiceNow AI platform; hosted instances updated and partner/self-hosted update path referenced by advisory",
+      "why_it_matters_for_ai_security": "Enterprise AI platforms often sit near sensitive workflow records; SQL injection creates direct confidentiality and integrity risk for AI-enabled records.",
+      "named_entities": [
+        "ServiceNow",
+        "ServiceNow AI platform",
+        "SQL injection"
+      ],
+      "upstream_routing": "ServiceNow entity routes upstream; local security note belongs under data security and platform assurance.",
+      "confidence_notes": "high",
+      "follow_up_actions": [
+        "Verify fixed-version and exploit-state details during raw ingest before creating or updating durable leaves."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-75797 AI Engine WordPress plugin file read/exfiltration",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75797",
+        "https://wpscan.com/vulnerability/1048b130-9263-4780-b886-656a891de85a/"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-26T06:16:27.230Z"
+      },
+      "reason": "Qualifies by date and AI-security content, but the prior 2026-08-26 collector run already captured the WordPress AI Engine cluster and topic index shows it was ingested on 2026-08-27; not repeated in this raw artifact."
+    },
+    {
+      "candidate": "CVE-2026-75798 AI Engine WordPress plugin unauthenticated provider-account query abuse",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75798"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-26T06:16:27.333Z"
+      },
+      "reason": "Qualifies by date, but overlaps the already captured and ingested WordPress AI Engine cluster from the previous run."
+    },
+    {
+      "candidate": "CVE-2026-81030 Mage AI browser-items filesystem boundary issue",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81030",
+        "https://github.com/mage-ai/mage-ai/issues/6134"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-26T16:16:45.710Z"
+      },
+      "reason": "Qualifies by date, but topic-index maintenance notes show Mage AI was already ingested on 2026-08-27 from the previous raw run."
+    },
+    {
+      "candidate": "Cohere North AI CVE-2025-61162 through CVE-2025-61165",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-61162",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-61163",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-61164",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-61165"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-26T19:16Z cluster"
+      },
+      "reason": "In-window and security-relevant, but the previous automation memory explicitly notes Cohere North AI details were collected with reconciliation caveats; avoid duplicate capture and leave fixed-version reconciliation to ingest."
+    },
+    {
+      "candidate": "CVE-2026-19485 Google Cloud Vertex AI Search for Commerce predictable staging bucket",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19485",
+        "https://unit42.paloaltonetworks.com/hijacking-vertex-ai-model/"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-26T19:16:49.157Z"
+      },
+      "reason": "In-window by NVD publication, but previous run captured the Vertex AI Search for Commerce item; not repeated."
+    },
+    {
+      "candidate": "CVE-2026-75411 JeecgBoot AI Flow Groovy command execution",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75411",
+        "https://github.com/jeecgboot/JeecgBoot/issues/9691"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-26T21:16:41.097Z"
+      },
+      "reason": "In-window and AI module-specific, but it was within the previous run focus and is left as a prior-run duplicate."
+    },
+    {
+      "candidate": "EU AI Act implementation overview page",
+      "source_urls": [
+        "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+      ],
+      "visible_dates": {
+        "search_crawled": "2026-08-27",
+        "visible_policy_dates": "mostly July/August 2026 timeline text"
+      },
+      "reason": "Useful routing context, but no visible in-window publication or update date and no new concrete security delta in the last two days."
+    },
+    {
+      "candidate": "CISA Open Source Software Security Principles and Practices PDF",
+      "source_urls": [
+        "https://www.cisa.gov/sites/default/files/2026-08/open-source-software-security-principles-and-practices.pdf"
+      ],
+      "visible_dates": {
+        "search_result": "3 days ago"
+      },
+      "reason": "Security-relevant and mentions AI-driven vulnerability discovery, but visibly outside the exact 48-hour cutoff."
+    },
+    {
+      "candidate": "Axios report on OpenAI/Anthropic open letter warning of AI-enabled cyberattacks",
+      "source_urls": [
+        "https://www.axios.com/2026/08/27/openai-anthropic-issue-dire-cyber-threat-warning"
+      ],
+      "visible_dates": {
+        "axios": "2026-08-27"
+      },
+      "reason": "In-window and security-relevant, but the primary open letter was not located during this run and the accessible coverage did not expose enough concrete commitments, controls, or authoritative source text for a high-confidence raw finding."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_scope": "Amazon Kiro / Kiro Powers",
+      "upstream_owner": "ai-wiki and ai-dev-wiki",
+      "local_security_lens": "agent extension bundles, repository-context prompt injection, file-read plus network exfiltration"
+    },
+    {
+      "entity_or_scope": "MCP servers and MCP SDK/framework products",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "transport auth, Host/Origin validation, SSRF, path containment, and tool authority"
+    },
+    {
+      "entity_or_scope": "Agno and ToolUniverse",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "prompt-injection-to-code-execution and sandbox containment"
+    },
+    {
+      "entity_or_scope": "Spring AI",
+      "upstream_owner": "ai-dev-wiki for framework practice and ai-wiki for broad entity",
+      "local_security_lens": "document ingestion DoS, model cache substitution, resource-cache writes, and chat-memory query injection"
+    },
+    {
+      "entity_or_scope": "GitLab Duo Agent Platform and GitLab AI Gateway",
+      "upstream_owner": "ai-dev-wiki for AI-assisted development workflow; ai-wiki for provider/entity context",
+      "local_security_lens": "model-route final destination authorization and cloud provider credential disclosure"
+    },
+    {
+      "entity_or_scope": "ServiceNow AI platform",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "enterprise AI platform unauthenticated code/data access and patch/incident evidence"
+    }
+  ],
+  "counts": {
+    "qualifying_findings": 20,
+    "exclusions": 9,
+    "routing_notes": 6
+  },
+  "confidence_notes": [
+    "NVD API responses were fetched successfully for AI, MCP, and LLM keyword windows at run time.",
+    "Several records are newly published in NVD while the primary vendor page has an older visible date; those are marked as vulnerability-database evidence and should be reconciled during ingest.",
+    "ServiceNow support details may require support-site access beyond NVD summary; ingest should verify fixed instance/update guidance before durable synthesis."
+  ],
+  "follow_up_actions": [
+    "Deduplicate MCP transport/SSRF findings into shared leaves where appropriate rather than creating one page per near-identical DNS-rebinding pattern.",
+    "During ingest, verify fixed versions for each NVD record from primary advisories or release commits before updating docs/wiki.",
+    "Check whether Kiro Powers should extend an existing agentic IDE prompt-injection leaf or receive a focused downstream security leaf."
+  ]
+}

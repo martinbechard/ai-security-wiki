@@ -77,6 +77,25 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/mcp-fetch-ipv6-ssrf.md](agent-and-tool-security/mcp-fetch-ipv6-ssrf.md)
 - [agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md](agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md)
 - [agent-and-tool-security/dradis-ai-provider-ssrf.md](agent-and-tool-security/dradis-ai-provider-ssrf.md)
+- [agent-and-tool-security/amazon-kiro-powers-prompt-injection-exfiltration.md](agent-and-tool-security/amazon-kiro-powers-prompt-injection-exfiltration.md)
+- [agent-and-tool-security/sentry-selfhosted-mcp-raw-api-ssrf.md](agent-and-tool-security/sentry-selfhosted-mcp-raw-api-ssrf.md)
+- [agent-and-tool-security/mcp-file-context-server-path-traversal.md](agent-and-tool-security/mcp-file-context-server-path-traversal.md)
+- [agent-and-tool-security/mcp-use-inspector-proxy-ssrf.md](agent-and-tool-security/mcp-use-inspector-proxy-ssrf.md)
+- [agent-and-tool-security/mcp-go-dns-rebinding-host-validation.md](agent-and-tool-security/mcp-go-dns-rebinding-host-validation.md)
+- [agent-and-tool-security/apify-mcp-get-html-skeleton-ssrf.md](agent-and-tool-security/apify-mcp-get-html-skeleton-ssrf.md)
+- [agent-and-tool-security/mcp-router-unauthenticated-aggregator-exposure.md](agent-and-tool-security/mcp-router-unauthenticated-aggregator-exposure.md)
+- [agent-and-tool-security/tooluniverse-python-executor-sandbox-escape.md](agent-and-tool-security/tooluniverse-python-executor-sandbox-escape.md)
+- [agent-and-tool-security/ui-tars-desktop-mcp-unauthenticated-rce.md](agent-and-tool-security/ui-tars-desktop-mcp-unauthenticated-rce.md)
+- [agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md](agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md)
+- [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
+- [infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md](infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md)
+- [infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md](infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md)
+- [infrastructure-and-supply-chain/spring-ai-resource-cache-fragment-file-write.md](infrastructure-and-supply-chain/spring-ai-resource-cache-fragment-file-write.md)
+- [data-and-privacy/gitlab-ai-gateway-model-metadata-credential-disclosure.md](data-and-privacy/gitlab-ai-gateway-model-metadata-credential-disclosure.md)
+- [data-and-privacy/gitlab-ai-gateway-inline-flow-host-credential-disclosure.md](data-and-privacy/gitlab-ai-gateway-inline-flow-host-credential-disclosure.md)
+- [infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md](infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md)
+- [infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md](infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md)
+- [infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md](infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md)
 - [threats-and-attacks/ai-hosted-artifact-malware-delivery.md](threats-and-attacks/ai-hosted-artifact-malware-delivery.md)
 - [threats-and-attacks/unattended-ai-agent-attack-automation.md](threats-and-attacks/unattended-ai-agent-attack-automation.md)
 - [threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md](threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md)
@@ -229,3 +248,5 @@ description: "Navigation for locally owned AI security topics and source workflo
 - Updated on 2026-08-19 with August 18 topic-news leaves and watcher enrichments across MCP, agent-tool, model-input, identity, data, infrastructure, testing, threats, and governance topics.
 - Updated on 2026-08-17 with MLflow, chrome-devtools-mcp, atomic-agents-stack, Ray, MemOS, OpenShift AI, Kiota, and delegated-agent cost guardrail leaves.
 - Updated on 2026-08-16 with GoMarble Facebook Ads MCP SSRF, macOS Screen Sharing AI-accelerated exploitability, and semantic governance policy telemetry.
+
+- Updated on 2026-08-28 with August 27 Kiro, MCP transport and server, tool-execution, Spring AI, split GitLab AI Gateway, split ServiceNow AI platform, and watcher enrichment pages.

@@ -15,6 +15,9 @@ The [CVE-2026-59319 advisory](https://spring.io/security/cve-2026-59319/) identi
 
 The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) adds the primary RediSearch mechanics: user-controlled metadata reaching tag queries can affect `RedisChatMemoryRepository.findByMetadata()` matching. The local fix expectation is therefore escaping and parameterization of RediSearch tag/text query material plus ownership checks on final conversation matches.
 
+
+The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json) records CVE-2026-59319 as the RedisChatMemoryRepository RediSearch query-injection member of the Spring AI advisory family. The issue is separate from cache leakage: caller-supplied metadata can alter tag or text query semantics and broaden, disrupt, or misdirect memory retrieval for AI conversations.
+
 ## Security Impact
 
 - Threat: injected Redis chat-memory queries can cross conversation boundaries and expose stored AI messages.
@@ -26,10 +29,12 @@ The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-se
 
 ## Authoritative Sources
 
+- [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json)
+- [NVD CVE-2026-59319](https://nvd.nist.gov/vuln/detail/CVE-2026-59319)
+- [CVE-2026-59319 record](https://www.cve.org/CVERecord?id=CVE-2026-59319)
+- [Spring security advisory](https://spring.io/security/cve-2026-59319)
 - [August 21 topic news collector source](../../../raw/processed/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json)
 - [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json)
-- Spring AI 2.0.1 release post: https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/
-- Spring advisory CVE-2026-59319: https://spring.io/security/cve-2026-59319/
 
 ## Related Code
 
@@ -55,5 +60,6 @@ The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-se
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with August 27 collector evidence for CVE-2026-59319 RediSearch metadata query injection.
 - Created on 2026-08-21 from the [August 21 topic collector](../../../raw/processed/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json) as the chat-memory data-isolation member of the Spring AI 2.0.1 advisory family.
 - Updated on 2026-08-22 from the [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) with RediSearch tag-query escape mechanics.

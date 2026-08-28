@@ -9,9 +9,16 @@ tags: ["agent-and-tool-security", "identity-and-access"]
 
 ## Current Understanding
 
-The [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) records CVE-2026-79788 for Dradis Community Edition 5.1.0 through 5.2.0. Broad Dradis product context belongs upstream; this page owns the local AI provider egress authorization boundary.
+CVE-2026-79788 affects Dradis Community Edition 5.1.0 through 5.2.0 and crosses the local AI provider egress authorization boundary. Broad Dradis product context belongs upstream; this page owns the security analysis for low-privilege provider rewiring and readable SSRF responses. The [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) and [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json) provide the current evidence.
 
-The collector records that provider and agent controllers skipped an intended `admin_required` check because it depended on a `Dradis::Pro` constant not defined in Community Edition. A non-admin authenticated user could configure an arbitrary HTTP or HTTPS AI provider address, reassign the built-in Roslin agent, trigger an AI interaction, and read non-2xx SSRF response bodies through ActionCable or Turbo Stream errors. Provider configuration is therefore both an identity boundary and an egress boundary.
+Provider and agent controllers skip an intended `admin_required` check because it depends on a `Dradis::Pro` constant not defined in Community Edition. The exploit path is:
+
+- A non-admin authenticated user configures an arbitrary HTTP or HTTPS AI provider address, including internal or link-local hosts.
+- The same user reassigns the built-in Roslin agent to that provider.
+- An AI interaction makes the server request the attacker-supplied URL.
+- Non-2xx target response bodies are reflected to the attacker's browser through ActionCable or Turbo Stream errors.
+
+Provider configuration is therefore both an identity boundary and an egress boundary.
 
 ## Security Impact
 
@@ -24,6 +31,8 @@ The collector records that provider and agent controllers skipped an intended `a
 
 ## Authoritative Sources
 
+- [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json)
+- [CVE-2026-79788 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-79788)
 - [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json)
 - [NVD CVE-2026-79788](https://nvd.nist.gov/vuln/detail/CVE-2026-79788)
 - [Dradis CE issue 1641](https://github.com/dradis/dradis-ce/issues/1641)
@@ -54,4 +63,5 @@ The collector records that provider and agent controllers skipped an intended `a
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with August 27 leaf-update evidence for CVE-2026-79788.
 - Created on 2026-08-27 from the [August 26 topic collector](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) as an AI provider configuration SSRF leaf.

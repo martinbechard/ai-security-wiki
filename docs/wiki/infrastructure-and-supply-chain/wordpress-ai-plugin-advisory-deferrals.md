@@ -9,7 +9,7 @@ tags: ["infrastructure-and-supply-chain", "data-and-privacy"]
 
 ## Current Understanding
 
-The [August 25 topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T183709Z.json) initially captured MagicAI [CVE-2026-32560](https://nvd.nist.gov/vuln/detail/CVE-2026-32560) and SiteLeads [CVE-2026-78268](https://nvd.nist.gov/vuln/detail/CVE-2026-78268) as AI-branded WordPress plugin advisories. The [August 25 late topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T233059Z.json) then excluded both from durable ingest because the visible records were weakly AI-specific: MagicAI was a terse WordPress local file inclusion, and SiteLeads was generic unauthenticated sensitive data exposure without visible assistant, model, prompt, or agent boundary detail.
+MagicAI [CVE-2026-32560](https://nvd.nist.gov/vuln/detail/CVE-2026-32560) and SiteLeads [CVE-2026-78268](https://nvd.nist.gov/vuln/detail/CVE-2026-78268) remain AI-branded WordPress plugin deferrals rather than standalone local AI-security leaves. The visible records are weakly AI-specific: MagicAI is a terse WordPress local file inclusion, and SiteLeads is generic unauthenticated sensitive data exposure without visible assistant, model, prompt, or agent boundary detail. The [August 25 topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T183709Z.json), [August 25 late topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T233059Z.json), and [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json) provide the current evidence.
 
 Broad WordPress plugin and AI product catalog context belongs upstream. This local deferral exists so future agents do not silently lose the evidence or create overclaimed AI-security pages from product-name-only matches.
 
@@ -17,6 +17,8 @@ Broad WordPress plugin and AI product catalog context belongs upstream. This loc
 
 - MagicAI for WordPress [CVE-2026-32560](https://nvd.nist.gov/vuln/detail/CVE-2026-32560): NVD published the record on 2026-08-24 and records subscriber local file inclusion through version 1.4 with CVSS 3.1 HIGH 8.8. Defer a standalone local leaf until another source confirms an AI-specific data, prompt, model, credential, or agent boundary.
 - SiteLeads AI Chatbot [CVE-2026-78268](https://nvd.nist.gov/vuln/detail/CVE-2026-78268): NVD published the record on 2026-08-24 and records unauthenticated sensitive data exposure through version 1.2.0. Defer a standalone local leaf until source detail confirms exposed chat/contact data or another AI assistant privacy boundary.
+
+Current primary CVE-record evidence corroborates the same deferral boundary: MagicAI remains a subscriber local file-inclusion record, and SiteLeads remains an unauthenticated sensitive-data exposure record, without enough additional prompt, model, credential, or assistant-data detail to justify separate local leaves.
 
 ## Security Impact
 
@@ -29,6 +31,9 @@ Broad WordPress plugin and AI product catalog context belongs upstream. This loc
 
 ## Authoritative Sources
 
+- [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json)
+- [CVE-2026-32560 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-32560)
+- [CVE-2026-78268 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-78268)
 - [August 25 topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T183709Z.json)
 - [August 25 late topic news collector source](../../../raw/processed/2026-08-25/ai-security-wiki-topic-news-collector-2026-08-25T233059Z.json)
 - [NVD CVE-2026-32560](https://nvd.nist.gov/vuln/detail/CVE-2026-32560)
@@ -59,4 +64,5 @@ Broad WordPress plugin and AI product catalog context belongs upstream. This loc
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with August 27 leaf-update evidence for CVE-2026-32560, CVE-2026-78268.
 - Created on 2026-08-26 to record explicit source-based deferrals for MagicAI and SiteLeads after the late collector classified them as weakly AI-specific.

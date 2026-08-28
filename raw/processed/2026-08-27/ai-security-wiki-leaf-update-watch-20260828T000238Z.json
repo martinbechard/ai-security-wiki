@@ -1,0 +1,639 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "exclusions": [
+    {
+      "classification": "stale_visible_date",
+      "follow_up_note": "No local raw update needed unless a new primary advisory or exploitation report appears.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md",
+      "reason": "No qualifying in-window update: CVE-2026-73498 was published 2026-08-12 and updated 2026-08-13, outside the 2026-08-21 through 2026-08-28 freshness window.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73498",
+        "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0",
+        "https://github.com/sooperset/mcp-atlassian/security/advisories/GHSA-g5r6-gv6m-f5jv",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73498",
+        "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/73xxx/CVE-2026-73498.json"
+      ]
+    },
+    {
+      "classification": "no_visible_in_window_update",
+      "follow_up_note": "Recheck only cited public guidance or explicit public ATO/sensitive-data policy updates; route broad AI governance material upstream.",
+      "leaf_id": "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md",
+      "reason": "No visible public update within the last 7 days was found for the cited VA generative-AI guidance or ATO-sensitive-data boundary topic.",
+      "source_urls_checked": [
+        "https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/"
+      ]
+    },
+    {
+      "classification": "unverified_claim",
+      "follow_up_note": "Do not mark confirmed exploitation unless a primary authority such as CISA KEV, vendor advisory, or incident report confirms it.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md",
+      "reason": "Secondary listing claims exploitation in the wild for CVE-2026-81030, but the selected primary CVE record checked here does not independently confirm exploitation.",
+      "source_urls_checked": [
+        "https://dbugs.ptsecurity.com/vulnerability/PT-2026-82218"
+      ]
+    }
+  ],
+  "federation_notes": "Per docs/wiki/federation.md, broad AI entities and general AI-development practices route upstream; this artifact keeps only security-specific vulnerability, control, mitigation, and boundary evidence for existing local leaves.",
+  "follow_up_notes": "Prioritize ingest for the in-window CVE publications/enrichment records. Preserve source-first boundary; do not edit docs/wiki from this collector artifact directly.",
+  "freshness_window": {
+    "end_inclusive": "2026-08-28T00:02:38Z",
+    "policy": "Exclude ambiguous, future, missing, or boundary-only dates.",
+    "start_exclusive": "2026-08-21T00:02:38Z"
+  },
+  "leaf_universe_count": 193,
+  "privacy_and_sensitivity_notes": "Only public leaf ids, public advisory identifiers, topic names, and public source URLs were used. No whole local page contents, private content, PII, or company-internal content were sent to external services.",
+  "qualifying_update_count": 17,
+  "qualifying_updates": [
+    {
+      "advisory_id": "CVE-2026-79788",
+      "affected_boundaries": [
+        "AI provider configuration SSRF / non-admin provider authority"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/dradis-ai-provider-ssrf.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "Dradis CE",
+        "Dradis AI provider",
+        "Roslin agent"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79788",
+      "summary": "In Dradis Community Edition, the ProvidersController and AgentsController gate their admin_required before_action on `defined?(Dradis::Pro)`, a constant that is never defined in CE, so the authorization check is never applied. As a result, any authenticated (non-admin) user can create an AI provider pointing to an arbitrary HTTP/HTTPS address (including internal/link-local hosts such as http://169.254.169.254) and reassign the built-in Roslin agent to use it. When an AI interaction is triggered, the server issues a request to the attacker-supplied URL (server-side request forgery). For non-2xx responses, the target's response body is reflected verbatim to the attacker's browser via ActionCable/Turbo Stream error messages, making the SSRF readable.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-25T18:23:15.839Z",
+      "visible_update_date": "2026-08-26T16:10:46.614Z"
+    },
+    {
+      "advisory_id": "CVE-2026-80347",
+      "affected_boundaries": [
+        "MCP fetch SSRF guard / IPv6 literal normalization"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-fetch-ipv6-ssrf.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "mcp-fetch"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-80347",
+      "summary": "mcp-fetch checks a fetch target against its SSRF guard without removing the brackets that surround an IPv6 literal. isSafeUrl reads the hostname from the parsed URL, which for a literal such as http://[::1]/ yields the bracketed string, and then tests it with net.isIP. That call returns zero for a bracketed value, so the branch holding the private-address checks is skipped entirely. The guard falls back to resolving the hostname, the bracketed string is not a resolvable name, no addresses are returned, and the target is reported safe. The HTTP client then strips the brackets and connects. Because the address may be given in IPv4-mapped form, the same path reaches any IPv4 target the loopback and private checks were meant to exclude, including link-local metadata endpoints. isPrivateIPv6 also has no case for the ::ffff: prefix, so the mapped form would still pass even if the brackets were removed. The fetch target is supplied as a tool argument, so an attacker who can influence what the model requests can read internal responses back into the model context.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-26T10:09:47.977Z",
+      "visible_update_date": "2026-08-26T12:05:24.996Z"
+    },
+    {
+      "advisory_id": "CVE-2026-55530",
+      "affected_boundaries": [
+        "agent-controlled file mutation approval boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-ast-grep-rewrite-approval-bypass.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "PraisonAI",
+        "praisonaiagents",
+        "ast_grep_rewrite"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55530",
+      "summary": "PraisonAI is a multi-agent teams system. Prior to praisonaiagents 1.6.58, ast_grep_rewrite lacks the @require_approval decorator used by sibling mutation tools. With dry_run=False, an agent-controlled call can pass --update-all and a broad path to rewrite matching files without the expected authorization gate. This issue is fixed in version 1.6.58.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-25T14:45:07.570Z",
+      "visible_update_date": "2026-08-25T16:26:22.899Z"
+    },
+    {
+      "advisory_id": "CVE-2026-55525",
+      "affected_boundaries": [
+        "agent web-crawl redirect SSRF and internal-response exposure"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-web-crawl-ssrf.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "PraisonAI",
+        "praisonaiagents",
+        "web_crawl"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55525",
+      "summary": "PraisonAI is a multi-agent teams system. Prior to praisonaiagents 1.6.58, the web_crawl function validates only the initial URL before _crawl_with_httpx uses httpx.Client(follow_redirects=True). Redirect targets are not revalidated, so an attacker who influences a crawl target can redirect a public URL to loopback, private network, or cloud metadata services while ALLOW_LOCAL_CRAWL remains disabled. The fetched internal response is returned to the agent context. This issue is fixed in version 1.6.58.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-25T14:07:08.551Z",
+      "visible_update_date": "2026-08-25T16:14:41.881Z"
+    },
+    {
+      "advisory_id": "CVE-2026-78379",
+      "affected_boundaries": [
+        "agent host-code execution consent gate"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "Amazon Strands Agents Tools",
+        "python_repl",
+        "batch tool"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-78379",
+      "summary": "Improper neutralization of input used for LLM prompting in the python_repl tool in Amazon Strands Agents Tools before 0.8.5 might allow remote actors to execute arbitrary Python code on the agent's host by bypassing the human consent gate, via a crafted prompt that forwards non_interactive_mode as a keyword argument through the batch tool.\u00a0To remediate this issue, users should upgrade to version 0.8.5 or later.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-25T19:05:57.779Z",
+      "visible_update_date": "2026-08-25T19:20:51.512Z"
+    },
+    {
+      "advisory_id": "CVE-2026-81027",
+      "affected_boundaries": [
+        "provider-key authorization and channel pinning"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/identity-and-access/one-api-channel-pinning-provider-key-bypass.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "one-api"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-81027",
+      "summary": "one-api gates one of its two channel-pinning paths and not the other. middleware/auth.go permits a request to name a specific channel either through a suffix on the API key or through a URL path parameter. The suffix path is reached only after model.IsAdmin succeeds and otherwise rejects the caller, while the path-parameter branch sets the selected-channel value from c.Param(\"channelid\") with no role check at all. The route carrying that parameter sits behind token authentication only, so any account holding a valid API token reaches it. The value flows to the distributor, which loads the channel by integer identifier with no scoping to the caller's user or group, and then sets the outbound Authorization header to that channel's stored key and directs the request at the channel's base URL. A low-privilege account can therefore pin any channel by incrementing an identifier, causing the server to make upstream requests bearing an operator-configured provider key the account was never granted, and bypassing both the per-group restriction and the channel's model allowlist.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-26T15:44:56.599Z",
+      "visible_update_date": "2026-08-26T17:25:39.276Z"
+    },
+    {
+      "advisory_id": "CVE-2026-55528",
+      "affected_boundaries": [
+        "AgentServer route authentication enforcement"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "PraisonAI AgentServer"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55528",
+      "summary": "PraisonAI is a multi-agent teams system. Prior to praisonaiagents 1.6.58, AgentServer exposes ServerConfig.auth_token but AgentServer._create_app does not check it on any route. A remote caller can subscribe, publish, and perform other actions without a valid bearer token or X-Auth-Token even when authentication is configured. This issue is fixed in version 1.6.58.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-25T14:32:05.929Z",
+      "visible_update_date": "2026-08-25T18:17:51.763Z"
+    },
+    {
+      "advisory_id": "CVE-2026-55541",
+      "affected_boundaries": [
+        "serve command API-key authentication enforcement"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "PraisonAI serve"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55541",
+      "summary": "PraisonAI is a multi-agent teams system. Prior to praisonai 4.6.58, praisonai serve agents and praisonai serve unified parse --api-key but _create_agents_app() and _create_unified_app() do not install a credential check. Unauthenticated callers can reach POST /agents and POST /api/v1/agents/{id}/invoke. This issue is fixed in version 4.6.58.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-25T15:05:25.370Z",
+      "visible_update_date": "2026-08-25T19:21:21.324Z"
+    },
+    {
+      "advisory_id": "CVE-2026-77557",
+      "affected_boundaries": [
+        "edge AI device access control / privilege boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/identity-and-access/unifi-protect-ai-key-privilege-escalation.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "Ubiquiti UniFi Protect AI Key"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77557",
+      "summary": "A malicious actor with access to the network could exploit an Improper Access Control vulnerability found in UniFi Protect AI Key to escalate privileges on the device.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-26T10:53:27.169Z",
+      "visible_update_date": "2026-08-26T12:38:19.953Z"
+    },
+    {
+      "advisory_id": "CVE-2026-81030",
+      "affected_boundaries": [
+        "AI project browser filesystem containment"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "Mage AI"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-81030",
+      "summary": "Mage AI does not confine the paths accepted by its browser-items API to the project directory. BrowserItemResource in mage_ai/api/resources/BrowserItemResource.py passes a caller-supplied path to the filesystem read and write helpers without calling the containment helper that the sibling FileContentResource and FileResource classes both use, so the resource contains no such call while those two contain several. A user holding the Viewer role, which grants read access within the project and nothing outside it, can therefore read any file the server process can read by supplying an absolute path. The permission model that would otherwise separate roles is not consulted for this route in the default configuration, because the setting that enables it defaults to false. Callers holding the Editor role additionally write through the same unconfined path, though that role is already able to execute code by design, so the boundary crossed by this flaw is the read available to the Viewer role.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-26T15:44:58.663Z",
+      "visible_update_date": "2026-08-26T16:05:12.110Z"
+    },
+    {
+      "advisory_id": "CVE-2026-75797",
+      "affected_boundaries": [
+        "WordPress AI plugin server file read and off-host exfiltration"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "AI Engine WordPress plugin"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-75797",
+      "summary": "The AI Engine  WordPress plugin before 3.7.2 does not confine a caller-supplied URL when mapping it to a local filesystem path before reading the file and forwarding its contents to an external service, allowing users with a subscriber-level account to read arbitrary files from the server and exfiltrate them off-host. Reaching the issue at subscriber level requires a non-default public API feature to be enabled; otherwise the same issue is reachable by an administrator, which on multisite allows a non-super subsite administrator to read the network-shared configuration and its secrets.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-26T06:00:20.867Z",
+      "visible_update_date": "2026-08-26T14:43:08.518Z"
+    },
+    {
+      "advisory_id": "CVE-2026-75798",
+      "affected_boundaries": [
+        "WordPress AI plugin provider-account query authorization"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "AI Engine WordPress plugin"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-75798",
+      "summary": "The AI Engine  WordPress plugin before 3.7.2 does not perform an authorisation check on one of its administration-only features, relying instead on a token it hands out to anonymous visitors, allowing unauthenticated attackers to run AI queries of their own choosing against the site owner's configured provider account.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-26T06:00:21.050Z",
+      "visible_update_date": "2026-08-26T14:43:08.353Z"
+    },
+    {
+      "advisory_id": "CVE-2026-32560",
+      "affected_boundaries": [
+        "WordPress AI plugin local file inclusion"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "LiquidThemes MagicAI for WordPress"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-32560",
+      "summary": "Subscriber Local File Inclusion in MagicAI for WordPress - AI Text, Image, Chat, Code, and Voice Generator <= 1.4 versions.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-24T21:31:27.848Z",
+      "visible_update_date": "2026-08-25T19:23:15.522Z"
+    },
+    {
+      "advisory_id": "CVE-2026-78268",
+      "affected_boundaries": [
+        "WordPress AI chatbot sensitive-data exposure"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "SiteLeads AI Chatbot WordPress plugin"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-78268",
+      "summary": "Unauthenticated Sensitive Data Exposure in Lead Generation Contact Widget &amp; AI Chatbot: Chat Button, Phone Call, Telegram, Email \u2013 SiteLeads <= 1.2.0 versions.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-24T21:31:34.955Z",
+      "visible_update_date": "2026-08-25T19:22:54.673Z"
+    },
+    {
+      "advisory_id": "CVE-2026-75062",
+      "affected_boundaries": [
+        "prompt-influenced model output eval execution"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/langfun-python-protocol-model-output-rce.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "Google langfun lf.query Python protocol"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-75062",
+      "summary": "Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection') in the default lf.query Python protocol in Google langfun versions prior to 0.1.2 allows remote unauthenticated attackers to execute arbitrary Python code in the context of the host application via crafted prompt inputs that cause the model to generate executable Python expressions evaluated without a sandbox.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-26T14:50:50.604Z",
+      "visible_update_date": "2026-08-27T16:55:00.832Z"
+    },
+    {
+      "advisory_id": "CVE-2026-55546",
+      "affected_boundaries": [
+        "verification gateway math parser code execution"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "QWED-MCP"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55546",
+      "summary": "QWED-MCP is a deterministic verification gateway for MCP. Prior to 0.2.1, verify_math_expression() in src/qwed_mcp/engines/math_engine.py passes attacker-controlled expression and claimed_result strings directly to SymPy's parse_expr() after only normalizing caret syntax to Python exponent syntax, without restricting global_dict, removing Python built-ins, or validating the expression AST. Because parse_expr() calls Python's eval() with built-ins available, an attacker who can cause a downstream caller to pass untrusted input to this public library function can use Python import functionality to execute arbitrary operating-system commands as the qwed-mcp process user, read or modify accessible data, exfiltrate process secrets, or reach internal services. The default MCP tool registry does not expose verify_math_expression(), so exploitation requires a downstream integration that invokes the library API with attacker-controlled input. This issue is fixed in version 0.2.1.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-25T15:25:34.759Z",
+      "visible_update_date": "2026-08-25T18:26:44.049Z"
+    },
+    {
+      "advisory_id": "CVE-2026-55585",
+      "affected_boundaries": [
+        "verification API SymPy parse_expr code execution"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest into the existing local security leaf; preserve CVE publication/enrichment date and distinguish disclosure from confirmed exploitation.",
+      "leaf_id": "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md",
+      "mitigation_or_control_change": "Use the fixed version or vendor-advised patched release when the CVE record names one; ingest should verify exact patched-version wording from the primary advisory before editing docs/wiki.",
+      "named_entities": [
+        "QWED"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55585",
+      "summary": "QWED is open-source AI verification infrastructure for deterministic verification of LLM outputs, tool calls, code, schemas, and agent state before production execution. Prior to 5.1.2, the qwed package passes caller-controlled math expressions directly to SymPy parse_expr() without restricted global_dict and local_dict namespaces, allowing Python eval() to resolve builtins and execute arbitrary Python code in the API server process. In src/qwed_new/api/main.py, POST /verify/math is protected by get_current_tenant but accepts any valid tenant API key, reads the expression field, applies only a cosmetic re.sub(r'(\\d)(()', r'\\1*\\2', expression) normalization, and passes the result to parse_expr(). In src/qwed_new/core/batch.py, POST /verify/batch sends math items through batch_service.create_job(), stores item.query verbatim, and _verify_item() passes VerificationType.MATH input to parse_expr() without sanitization. The default-enabled POST /auth/signup endpoint allows anyone to create a standard tenant account, POST /auth/api-keys issues an x-api-key, and either vulnerable path can then be used to read or write files, modify data, execute operating system commands, terminate the service, and compromise other tenants in a shared deployment. This issue is fixed in version 5.1.2.",
+      "upstream_routing": "Keep the security-specific vulnerability/control delta locally; route broad product background to ai-wiki or general development practice to ai-dev-wiki if needed.",
+      "visible_publication_date": "2026-08-25T16:23:39.334Z",
+      "visible_update_date": "2026-08-25T16:23:39.334Z"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-28T00:02:38Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/dradis-ai-provider-ssrf.md",
+    "docs/wiki/agent-and-tool-security/mcp-fetch-ipv6-ssrf.md",
+    "docs/wiki/agent-and-tool-security/praisonai-ast-grep-rewrite-approval-bypass.md",
+    "docs/wiki/agent-and-tool-security/praisonai-web-crawl-ssrf.md",
+    "docs/wiki/agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md",
+    "docs/wiki/identity-and-access/one-api-channel-pinning-provider-key-bypass.md",
+    "docs/wiki/identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md",
+    "docs/wiki/identity-and-access/unifi-protect-ai-key-privilege-escalation.md",
+    "docs/wiki/infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md",
+    "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+    "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md",
+    "docs/wiki/model-and-prompt-security/langfun-python-protocol-model-output-rce.md",
+    "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md",
+    "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md",
+    "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md"
+  ],
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/dradis-ai-provider-ssrf.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-79788"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/dradis-ai-provider-ssrf.md",
+      "url": "https://github.com/dradis/dradis-ce/issues/1641"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/dradis-ai-provider-ssrf.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79788"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/dradis-ai-provider-ssrf.md",
+      "url": "https://www.vulncheck.com/advisories/dradis-community-edition-5.1.0-through-5.2.0-server-side-request-forgery-via-unrestricted-ai-provider-address"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-fetch-ipv6-ssrf.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-80347"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-fetch-ipv6-ssrf.md",
+      "url": "https://github.com/kazuph/mcp-fetch/issues/16"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-fetch-ipv6-ssrf.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80347"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-fetch-ipv6-ssrf.md",
+      "url": "https://www.cve.org/CVERecord?id=CVE-2026-80347"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-fetch-ipv6-ssrf.md",
+      "url": "https://www.vulncheck.com/advisories/mcp-fetch-through-1.6.3-server-side-request-forgery-via-unstripped-ipv6-literal-brackets"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-ast-grep-rewrite-approval-bypass.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-55530"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-ast-grep-rewrite-approval-bypass.md",
+      "url": "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-ast-grep-rewrite-approval-bypass.md",
+      "url": "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-cfxv-8fw8-rwpv"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-web-crawl-ssrf.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-55525"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-web-crawl-ssrf.md",
+      "url": "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-web-crawl-ssrf.md",
+      "url": "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-5r34-2g38-6569"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md",
+      "url": "https://aws.amazon.com/security/security-bulletins/rss/2026-089-aws/"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-78379"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78379"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md",
+      "url": "https://pypi.org/project/strands-agents-tools/0.8.5/"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/one-api-channel-pinning-provider-key-bypass.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-81027"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/one-api-channel-pinning-provider-key-bypass.md",
+      "url": "https://github.com/songquanpeng/one-api/issues/2410"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/one-api-channel-pinning-provider-key-bypass.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81027"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/one-api-channel-pinning-provider-key-bypass.md",
+      "url": "https://www.vulncheck.com/advisories/one-api-through-0.6.10-missing-authorization-on-url-parameter-channel-pinning"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-55528"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-55541"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md",
+      "url": "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md",
+      "url": "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-7g3p-92qq-8wvh"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md",
+      "url": "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvxx-r596-f5qj"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/unifi-protect-ai-key-privilege-escalation.md",
+      "url": "https://community.ui.com/releases/Security-Advisory-Bulletin-067/fc4a3488-7c43-4628-8bab-f715e96dbfc9"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/unifi-protect-ai-key-privilege-escalation.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-77557"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/unifi-protect-ai-key-privilege-escalation.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-77557"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-81030"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md",
+      "url": "https://github.com/mage-ai/mage-ai/issues/6134"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81030"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md",
+      "url": "https://www.vulncheck.com/advisories/mage-ai-through-0.9.79-arbitrary-file-read-via-unvalidated-path-in-browser-items-endpoint"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-75797"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-75798"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75797"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75798"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+      "url": "https://wpscan.com/vulnerability/1048b130-9263-4780-b886-656a891de85a/"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+      "url": "https://wpscan.com/vulnerability/a77168df-61b8-40df-95f5-e19cf6540ce5/"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-32560"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-78268"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-32560"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78268"
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/langfun-python-protocol-model-output-rce.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-75062"
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/langfun-python-protocol-model-output-rce.md",
+      "url": "https://github.com/google/langfun"
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/langfun-python-protocol-model-output-rce.md",
+      "url": "https://github.com/google/langfun/issues/725"
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/langfun-python-protocol-model-output-rce.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-75062"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-55546"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-55585"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md",
+      "url": "https://github.com/QWED-AI/qwed-mcp/releases/tag/v0.2.1"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md",
+      "url": "https://github.com/QWED-AI/qwed-verification/security/advisories/GHSA-q27q-98j4-9pfv"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55546"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55585"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-73498"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md",
+      "url": "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md",
+      "url": "https://github.com/sooperset/mcp-atlassian/security/advisories/GHSA-g5r6-gv6m-f5jv"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-73498"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md",
+      "url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/73xxx/CVE-2026-73498.json"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md",
+      "url": "https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/"
+    }
+  ]
+}

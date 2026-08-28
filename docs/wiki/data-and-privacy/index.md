@@ -24,6 +24,9 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [Private Safety Processing ZDR](private-safety-processing-zdr.md)
 - [FiftyOne local AI dataset server exposure](fiftyone-local-ai-dataset-server-exposure.md)
 
+- [GitLab AI Gateway model metadata credential disclosure](gitlab-ai-gateway-model-metadata-credential-disclosure.md)
+- [GitLab AI Gateway inline flow Host credential disclosure](gitlab-ai-gateway-inline-flow-host-credential-disclosure.md)
+
 ## Authoritative Sources
 
 - [federation.md](../federation.md)
@@ -52,6 +55,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with GitLab AI Gateway credential-disclosure leaves and Spring AI Redis chat-memory query-injection enrichment.
 - Do not place private, proprietary, sensitive, PII, or company-internal source content in public collector prompts.
 - Updated on 2026-08-19 with the Oracle Siebel Artificial Intelligence data-access advisory leaf.
 - Updated on 2026-08-19 after verifier correction split SiYuan debug endpoint credential disclosure into a data/privacy leaf.

@@ -13,6 +13,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json)
+- [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json)
 - [schema.md](../schema.md)
 - [automated update feeds](../source-workflows/automated-update-feeds.md)
 - [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
@@ -49,6 +51,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with 2026-08-27 Kiro, MCP, tool-execution, Spring AI, GitLab AI Gateway, ServiceNow AI platform, and watcher digest coverage.
 - Updated on 2026-08-27 after August 26 raw ingest; the active monthly digest uses one entry per independently changing security item or closely coupled advisory family.
 - Updated on 2026-08-26 after the August digest added item-level entries for August 24-25 MCP, agent-tool, identity, infrastructure, and verification-parser advisories plus selected watcher enrichments while folding duplicate or low-signal sightings into durable leaves.
 - Updated on 2026-08-23 after the August digest added item-level entries for [MCP context-injection transparency](../agent-and-tool-security/mcp-context-injection-transparency.md), [agent delegated task authorization drift](../identity-and-access/agent-delegated-task-authorization-drift.md), and [frontier model critical cyber release gates](../testing-and-assurance/frontier-model-critical-cyber-release-gates.md) governance evidence while folding duplicate SiYuan and watcher corroboration into existing leaves.

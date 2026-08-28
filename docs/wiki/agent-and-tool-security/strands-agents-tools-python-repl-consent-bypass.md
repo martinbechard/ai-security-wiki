@@ -9,9 +9,15 @@ tags: ["agent-and-tool-security", "identity-and-access"]
 
 ## Current Understanding
 
-The [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) records CVE-2026-78379 for Amazon Strands Agents Tools before 0.8.5. Broad Strands Agents and AWS framework context belongs upstream; this page owns the local consent-gate and nested tool-dispatch boundary.
+CVE-2026-78379 affects Amazon Strands Agents Tools before 0.8.5 and crosses the local consent-gate and nested tool-dispatch boundary. Broad Strands Agents and AWS framework context belongs upstream. The [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) and [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json) provide the current evidence.
 
-The collector records that a crafted prompt can forward `non_interactive_mode` through the batch tool as a keyword argument and cause `python_repl` to execute Python on the agent host without the intended human approval. This is a concrete advisory instance of the reusable [agent action runtime hooks](agent-action-runtime-hooks.md) and [coding agent command approval boundaries](coding-agent-command-approval-boundaries.md) rule: consent checks must sit at the execution edge, not only at the first model-visible tool entry point.
+The exploit path is a nested tool-call consent bypass:
+
+- A crafted prompt can forward `non_interactive_mode` through the batch tool as a keyword argument.
+- The forwarded flag can cause `python_repl` to execute Python on the agent host without the intended human approval.
+- The affected boundary is Amazon Strands Agents Tools before 0.8.5, with upgrade to 0.8.5 or later recorded as the remediation.
+
+This is a concrete advisory instance of the reusable [agent action runtime hooks](agent-action-runtime-hooks.md) and [coding agent command approval boundaries](coding-agent-command-approval-boundaries.md) rule: consent checks must sit at the execution edge, not only at the first model-visible tool entry point.
 
 ## Security Impact
 
@@ -24,6 +30,8 @@ The collector records that a crafted prompt can forward `non_interactive_mode` t
 
 ## Authoritative Sources
 
+- [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json)
+- [CVE-2026-78379 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-78379)
 - [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json)
 - [NVD CVE-2026-78379](https://nvd.nist.gov/vuln/detail/CVE-2026-78379)
 - [AWS security bulletin](https://aws.amazon.com/security/security-bulletins/rss/2026-089-aws/)
@@ -54,4 +62,5 @@ The collector records that a crafted prompt can forward `non_interactive_mode` t
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with August 27 leaf-update evidence for CVE-2026-78379.
 - Created on 2026-08-27 from the [August 26 topic collector](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) as a nested execution-tool approval boundary leaf.

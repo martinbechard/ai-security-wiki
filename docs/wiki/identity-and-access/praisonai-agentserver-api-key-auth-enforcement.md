@@ -9,9 +9,14 @@ tags: ["identity-and-access", "agent-and-tool-security"]
 
 ## Current Understanding
 
-The [August 26 leaf update watch source](../../../raw/processed/2026-08-26/ai-security-wiki-leaf-update-watch-20260827T000538Z.json) resolves two closely coupled PraisonAI authentication advisories. CVE-2026-55528 maps to [GHSA-7g3p-92qq-8wvh](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-7g3p-92qq-8wvh) for AgentServer `auth_token` non-enforcement fixed in `praisonaiagents` 1.6.58. CVE-2026-55541 maps to [GHSA-pvxx-r596-f5qj](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvxx-r596-f5qj) for `praisonai serve --api-key` non-enforcement fixed in PraisonAI 4.6.58.
+Two closely coupled PraisonAI authentication advisories share this durable identity leaf. CVE-2026-55528 maps to [GHSA-7g3p-92qq-8wvh](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-7g3p-92qq-8wvh) for AgentServer `auth_token` non-enforcement fixed in `praisonaiagents` 1.6.58. CVE-2026-55541 maps to [GHSA-pvxx-r596-f5qj](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvxx-r596-f5qj) for `praisonai serve --api-key` non-enforcement fixed in PraisonAI 4.6.58. The [August 26 leaf update watch source](../../../raw/processed/2026-08-26/ai-security-wiki-leaf-update-watch-20260827T000538Z.json) and [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json) provide the current evidence.
 
-These advisories can share one durable identity leaf because both concern configured authentication material that was not enforced at served agent/control-plane endpoints. Broad PraisonAI framework context belongs upstream; this page owns the local API-key and token enforcement boundary for agent control planes.
+These advisories can share one durable identity leaf because both concern configured authentication material that was not enforced at served agent/control-plane endpoints:
+
+- CVE-2026-55528: AgentServer exposes `ServerConfig.auth_token`, but `AgentServer._create_app` does not check it on routes, so remote callers can subscribe, publish, and perform other actions without a valid bearer token or `X-Auth-Token` even when authentication is configured.
+- CVE-2026-55541: `praisonai serve agents` and `praisonai serve unified` parse `--api-key`, but `_create_agents_app()` and `_create_unified_app()` do not install credential checks, leaving endpoints such as `POST /agents` and `POST /api/v1/agents/{id}/invoke` reachable without authentication.
+
+Broad PraisonAI framework context belongs upstream; this page owns the local API-key and token enforcement boundary for agent control planes.
 
 ## Security Impact
 
@@ -24,6 +29,9 @@ These advisories can share one durable identity leaf because both concern config
 
 ## Authoritative Sources
 
+- [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json)
+- [CVE-2026-55528 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-55528)
+- [CVE-2026-55541 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-55541)
 - [August 26 leaf update watch source](../../../raw/processed/2026-08-26/ai-security-wiki-leaf-update-watch-20260827T000538Z.json)
 - [GHSA-7g3p-92qq-8wvh](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-7g3p-92qq-8wvh)
 - [GHSA-pvxx-r596-f5qj](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvxx-r596-f5qj)
@@ -55,4 +63,5 @@ These advisories can share one durable identity leaf because both concern config
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with August 27 leaf-update evidence for CVE-2026-55528, CVE-2026-55541.
 - Created on 2026-08-27 from the [August 26 leaf watcher](../../../raw/processed/2026-08-26/ai-security-wiki-leaf-update-watch-20260827T000538Z.json) after verifier correction split the resolved PraisonAI authentication mappings into a focused identity leaf.

@@ -9,9 +9,16 @@ tags: ["identity-and-access", "data-and-privacy"]
 
 ## Current Understanding
 
-The [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) records CVE-2026-81027 for one-api through 0.6.10. Broad one-api gateway coverage belongs upstream; this page owns the local provider-credential delegation and channel authorization boundary.
+CVE-2026-81027 covers one-api through 0.6.10, where token-authenticated callers can select provider channels without the same authorization check on every channel-pinning path. Broad one-api gateway coverage belongs upstream; this page owns the local provider-credential delegation and channel authorization boundary, with provenance from the [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) and [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json).
 
-The collector records a missing role check on a URL path-parameter branch for channel pinning. Any account with a valid API token could select a provider channel by identifier, causing upstream requests to use an operator-configured provider key the caller was not granted. That bypassed group restrictions and model allowlists. The durable local rule is that AI gateways must authorize model routing, provider-key use, channel pinning, and model allowlists as one decision, not as separate string parameters after token possession has been accepted.
+The vulnerable branch is a URL path-parameter channel selector that does not enforce the role check used by the API-key suffix channel selector:
+
+- [`middleware/auth.go`](https://github.com/songquanpeng/one-api/blob/main/middleware/auth.go) permits channel selection through either an API-key suffix or a URL path parameter.
+- The suffix path requires `model.IsAdmin`, while the path-parameter branch sets the selected channel from `c.Param("channelid")` without a role check.
+- Token-authenticated low-privilege callers can increment channel identifiers; the distributor loads the channel without scoping it to the caller's user or group.
+- The outbound request then uses the selected channel's stored `Authorization` header and base URL, bypassing group restrictions and model allowlists.
+
+The durable local rule is that AI gateways must authorize model routing, provider-key use, channel pinning, and model allowlists as one decision, not as separate string parameters after token possession has been accepted.
 
 ## Security Impact
 
@@ -24,6 +31,8 @@ The collector records a missing role check on a URL path-parameter branch for ch
 
 ## Authoritative Sources
 
+- [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json)
+- [CVE-2026-81027 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-81027)
 - [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json)
 - [NVD CVE-2026-81027](https://nvd.nist.gov/vuln/detail/CVE-2026-81027)
 - [one-api issue 2410](https://github.com/songquanpeng/one-api/issues/2410)
@@ -31,7 +40,7 @@ The collector records a missing role check on a URL path-parameter branch for ch
 
 ## Related Code
 
-- Not yet identified.
+- [one-api `middleware/auth.go`](https://github.com/songquanpeng/one-api/blob/main/middleware/auth.go)
 
 ## Related Tests
 
@@ -54,4 +63,5 @@ The collector records a missing role check on a URL path-parameter branch for ch
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with August 27 leaf-update evidence for CVE-2026-81027.
 - Created on 2026-08-27 from the [August 26 topic collector](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) as an AI gateway provider-key delegation leaf.

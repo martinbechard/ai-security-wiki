@@ -9,9 +9,14 @@ tags: ["infrastructure-and-supply-chain", "data-and-privacy", "identity-and-acce
 
 ## Current Understanding
 
-The [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) records CVE-2026-75797 and CVE-2026-75798 for the AI Engine WordPress plugin before 3.7.2. Broad WordPress plugin catalog context belongs upstream; this page owns the local plugin boundary where website roles, filesystem reads, external AI-provider forwarding, and provider-query authorization meet.
+CVE-2026-75797 and CVE-2026-75798 affect the AI Engine WordPress plugin before 3.7.2. Broad WordPress plugin catalog context belongs upstream; this page owns the local plugin boundary where website roles, filesystem reads, external AI-provider forwarding, and provider-query authorization meet. The [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) and [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json) provide the current evidence.
 
-The collector records two closely coupled failures. First, subscriber-level callers could map supplied URLs to local filesystem paths and forward file contents to an external AI service. Second, unauthenticated callers could run AI queries against the site owner's configured provider account by relying on a token handed to anonymous visitors. This is more AI-specific than the weaker WordPress AI plugin deferrals because it crosses local file access and provider account use.
+The advisory family has two closely coupled failures:
+
+- CVE-2026-75797: subscriber-level callers can map supplied URLs to local filesystem paths, read arbitrary server files, and forward contents to an external AI service when the non-default public API feature is enabled; otherwise, administrator reachability remains relevant on multisite because non-super subsite administrators may read network-shared configuration and secrets.
+- CVE-2026-75798: unauthenticated callers can run AI queries against the site owner's configured provider account by relying on a token handed to anonymous visitors.
+
+This is more AI-specific than the weaker WordPress AI plugin deferrals because it crosses local file access and provider account use.
 
 ## Security Impact
 
@@ -24,6 +29,9 @@ The collector records two closely coupled failures. First, subscriber-level call
 
 ## Authoritative Sources
 
+- [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json)
+- [CVE-2026-75797 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-75797)
+- [CVE-2026-75798 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-75798)
 - [August 26 topic news collector source](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json)
 - [NVD CVE-2026-75797](https://nvd.nist.gov/vuln/detail/CVE-2026-75797)
 - [NVD CVE-2026-75798](https://nvd.nist.gov/vuln/detail/CVE-2026-75798)
@@ -54,4 +62,5 @@ The collector records two closely coupled failures. First, subscriber-level call
 
 ## Maintenance Notes
 
+- Updated on 2026-08-28 with August 27 leaf-update evidence for CVE-2026-75797, CVE-2026-75798.
 - Created on 2026-08-27 from the [August 26 topic collector](../../../raw/processed/2026-08-26/ai-security-wiki-topic-news-collector-2026-08-26T233123Z.json) as a closely coupled WordPress AI plugin advisory-family leaf.
