@@ -1,0 +1,502 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "evidence_classification_summary": {
+    "confirmed_exploitation": 0,
+    "control_change": 0,
+    "demonstrated_research": 1,
+    "disclosed_vulnerability": 13,
+    "mitigation": 1,
+    "unverified_claim": 0
+  },
+  "exclusions": [
+    {
+      "candidate": "AWS Security Bulletin AWS-2025-019 for older Kiro/Q prompt injection issues",
+      "reason": "stale 2025 publication; outside seven-day window and not same Kiro Powers exfiltration leaf",
+      "source_url": "https://aws.amazon.com/security/security-bulletins/AWS-2025-019/"
+    },
+    {
+      "candidate": "Kodem/Intezer Kiro MCP configuration RCE",
+      "reason": "published 2026-07-19; stale and adjacent to the selected Kiro Powers exfiltration leaf",
+      "source_url": "https://www.kodemsecurity.com/resources/aws-kiro-agentic-ide-rce-prompt-injection-mcp-config-vulnerability"
+    },
+    {
+      "candidate": "Rapid7 Agno CVE-2026-76832 path traversal",
+      "reason": "published 2026-08-19, outside lookback window and different Agno leaf",
+      "source_url": "https://www.rapid7.com/db/vulnerabilities/cve-2026-76832/"
+    },
+    {
+      "candidate": "SecureLayer7 genieacs-mcp DNS rebinding CVE-2026-55637",
+      "reason": "in-window but adjacent product; not the selected mcp-go DNS rebinding leaf",
+      "source_url": "https://securelayer7.net/lab/cve-2026-55637-genieacs-mcp-dns-rebinding-origin-validation"
+    },
+    {
+      "candidate": "ServiceNow secondary news summaries without primary details",
+      "reason": "secondary coverage; useful corroboration but primary ServiceNow/NVD/CVE sources own the local evidence",
+      "source_url": "https://www.secure-iss.com/newsroom/servicenow-fixes-three-critical-ai-platform-vulnerabilities"
+    }
+  ],
+  "federation_notes": [
+    "Security-specific vulnerability and control deltas remain local under ai-security-wiki.",
+    "Broad company, product, framework, and general AI-development background should be routed to upstream ai-wiki or ai-dev-wiki if ingest needs it."
+  ],
+  "follow_up_notes": [
+    "Normal ingest should reconcile these raw records with already-created durable leaves before editing docs/wiki.",
+    "Prior raw/2026-08-28 content was preserved."
+  ],
+  "leaf_selection": {
+    "ordering": "new or unchecked leaves first, then oldest last_checked_at, ties by relative path",
+    "selected_count": 15,
+    "selected_leaf_ids": [
+      "docs/wiki/agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md",
+      "docs/wiki/agent-and-tool-security/amazon-kiro-powers-prompt-injection-exfiltration.md",
+      "docs/wiki/agent-and-tool-security/apify-mcp-get-html-skeleton-ssrf.md",
+      "docs/wiki/agent-and-tool-security/mcp-file-context-server-path-traversal.md",
+      "docs/wiki/agent-and-tool-security/mcp-go-dns-rebinding-host-validation.md",
+      "docs/wiki/agent-and-tool-security/mcp-router-unauthenticated-aggregator-exposure.md",
+      "docs/wiki/agent-and-tool-security/mcp-use-inspector-proxy-ssrf.md",
+      "docs/wiki/agent-and-tool-security/sentry-selfhosted-mcp-raw-api-ssrf.md",
+      "docs/wiki/agent-and-tool-security/tooluniverse-python-executor-sandbox-escape.md",
+      "docs/wiki/agent-and-tool-security/ui-tars-desktop-mcp-unauthenticated-rce.md",
+      "docs/wiki/data-and-privacy/gitlab-ai-gateway-inline-flow-host-credential-disclosure.md",
+      "docs/wiki/data-and-privacy/gitlab-ai-gateway-model-metadata-credential-disclosure.md",
+      "docs/wiki/identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md",
+      "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md",
+      "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md"
+    ],
+    "universe_count": 211
+  },
+  "lookback_window": {
+    "end_date": "2026-08-28",
+    "rule": "include only sources published or visibly updated within the last 7 days; exclude ambiguous, future, missing, or boundary-only dates",
+    "start_date": "2026-08-21"
+  },
+  "privacy_and_sensitivity": "Queries used public topic names, advisory identifiers, and public URLs from durable leaf citations; no local page bodies or private content were sent externally.",
+  "qualifying_updates": [
+    {
+      "advisory_or_identifier": "CVE-2026-37003",
+      "affected_boundaries": [
+        "Agno through 2.5.8 PythonTools and ShellTools execution sinks"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "not confirmed as active exploitation in checked sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md",
+      "named_entities": [
+        "Agno",
+        "CVE-2026-37003"
+      ],
+      "public_topic": "Agno Python and Shell tools prompt-injection RCE",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-37003",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-37003",
+        "https://yerangamage.com/cves/detail/?slug=agno-rce-tools"
+      ],
+      "summary": "Prompt-injection-controlled tool arguments can reach Python and shell execution; public CVE evidence was published/updated on 2026-08-27.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "Mindgard Kiro Powers research",
+      "affected_boundaries": [
+        "Kiro IDE workspace trust boundary and Kiro Powers network behavior"
+      ],
+      "evidence_classification": "demonstrated_research",
+      "exploitation_status": "not confirmed as active exploitation in checked sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/amazon-kiro-powers-prompt-injection-exfiltration.md",
+      "named_entities": [
+        "Amazon Kiro Powers prompt injection exfiltration",
+        "Mindgard Kiro Powers research"
+      ],
+      "public_topic": "Amazon Kiro Powers prompt injection exfiltration",
+      "source_urls": [
+        "https://mindgard.ai/blog/amazon-kiro-data-exfiltration",
+        "https://thehackernews.com/2026/08/amazon-kiro-prompt-injection-can.html"
+      ],
+      "summary": "Mindgard/secondary coverage describes a 2026-08-27 prompt-injection path where crafted workspace content can cause sensitive workspace data exfiltration; Amazon reportedly fixed in Kiro 0.8.140.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-81093",
+      "affected_boundaries": [
+        "Apify MCP get-html-skeleton URL-fetch boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "not confirmed as active exploitation in checked sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/apify-mcp-get-html-skeleton-ssrf.md",
+      "named_entities": [
+        "Apify",
+        "CVE-2026-81093"
+      ],
+      "public_topic": "Apify MCP get-html-skeleton SSRF",
+      "source_urls": [
+        "https://github.com/apify/apify-mcp-server/security/advisories/GHSA-m28f-9v8h-gg2f",
+        "https://github.com/apify/apify-mcp-server/pull/572",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81093",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81093"
+      ],
+      "summary": "Public CVE/GitHub advisory evidence indicates an SSRF in Apify MCP get-html-skeleton was disclosed in the current window.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-81486",
+      "affected_boundaries": [
+        "mcp-file-context-server read_context path resolution"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "public exploit or PoC reported by vulnerability feeds",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-file-context-server-path-traversal.md",
+      "named_entities": [
+        "CVE-2026-81486",
+        "mcp-file-context-server"
+      ],
+      "public_topic": "mcp-file-context-server path traversal",
+      "source_urls": [
+        "https://github.com/bsmi021/mcp-file-context-server/issues/15",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81486",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81486",
+        "https://vuldb.com/vuln/395980"
+      ],
+      "summary": "CVE/VulDB evidence published around 2026-08-26/27 describes remotely triggerable path traversal with public exploit availability; maintainer response was not visible.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-81092",
+      "affected_boundaries": [
+        "mcp-go StreamableHTTP/SSE localhost Host validation"
+      ],
+      "evidence_classification": "mitigation",
+      "exploitation_status": "not confirmed as active exploitation in checked sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-go-dns-rebinding-host-validation.md",
+      "named_entities": [
+        "CVE-2026-81092",
+        "mcp-go"
+      ],
+      "public_topic": "mcp-go DNS rebinding host validation",
+      "source_urls": [
+        "https://github.com/mark3labs/mcp-go/releases/tag/v0.56.0",
+        "https://github.com/mark3labs/mcp-go/pull/921",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81092",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81092",
+        "https://www.tenable.com/cve/CVE-2026-81092"
+      ],
+      "summary": "Public CVE and release evidence published 2026-08-27 says mcp-go before 0.56.0 lacked Host validation; 0.56.0 adds loopback Host checks for HTTP transports.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-81094",
+      "affected_boundaries": [
+        "mcp-router CLI aggregator listener/authentication boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "not confirmed as active exploitation in checked sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-router-unauthenticated-aggregator-exposure.md",
+      "named_entities": [
+        "CVE-2026-81094",
+        "mcp-router"
+      ],
+      "public_topic": "mcp-router unauthenticated aggregator exposure",
+      "source_urls": [
+        "https://github.com/mcp-router/mcp-router/security/advisories/GHSA-rx55-5c7h-r56r",
+        "https://github.com/mcp-router/mcp-router/commit/4c4642cfd274097ec8b33ecd3047390829c79d35",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81094",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81094"
+      ],
+      "summary": "Public CVE/advisory evidence published 2026-08-27 describes the aggregator listening broadly and requiring auth only when configured.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-81091",
+      "affected_boundaries": [
+        "mcp-use Inspector proxy target URL boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "not confirmed as active exploitation in checked sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-use-inspector-proxy-ssrf.md",
+      "named_entities": [
+        "CVE-2026-81091",
+        "mcp-use"
+      ],
+      "public_topic": "mcp-use inspector proxy SSRF",
+      "source_urls": [
+        "https://github.com/mcp-use/mcp-use/security/advisories/GHSA-f2jg-rm2x-hc5p",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81091",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81091",
+        "https://www.vulncheck.com/advisories/mcp-use-inspector-proxy-server-side-request-forgery-via-caller-supplied-target-url"
+      ],
+      "summary": "CVE evidence published 2026-08-27 describes caller-controlled proxy targets reaching loopback/private/link-local addresses and redirects without validation.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-81421",
+      "affected_boundaries": [
+        "sentry-selfhosted-mcp raw_sentry_api endpoint argument boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "public exploit or PoC reported by vulnerability feeds",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/sentry-selfhosted-mcp-raw-api-ssrf.md",
+      "named_entities": [
+        "CVE-2026-81421",
+        "sentry-selfhosted-mcp"
+      ],
+      "public_topic": "sentry-selfhosted-mcp raw_sentry_api SSRF",
+      "source_urls": [
+        "https://github.com/ddfourtwo/sentry-selfhosted-mcp/issues/2",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81421",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81421",
+        "https://www.tenable.com/cve/CVE-2026-81421"
+      ],
+      "summary": "Public CVE evidence from 2026-08-26/27 describes remote SSRF through the raw_sentry_api endpoint argument with public exploit availability.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-81096",
+      "affected_boundaries": [
+        "ToolUniverse python_code_executor sandbox/authentication boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "not confirmed as active exploitation in checked sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/tooluniverse-python-executor-sandbox-escape.md",
+      "named_entities": [
+        "CVE-2026-81096",
+        "ToolUniverse"
+      ],
+      "public_topic": "ToolUniverse Python executor sandbox escape",
+      "source_urls": [
+        "https://github.com/mims-harvard/ToolUniverse/security/advisories/GHSA-pxwq-22vf-87fm",
+        "https://github.com/mims-harvard/ToolUniverse/pull/251",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81096",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81096"
+      ],
+      "summary": "CVE evidence published 2026-08-27 describes unauthenticated remote code execution via a Python executor sandbox escape through ToolUniverse 1.2.6.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-81735",
+      "affected_boundaries": [
+        "UI-TARS-desktop @agent-infra MCP HTTP listener/authentication boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "not confirmed as active exploitation in checked sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ui-tars-desktop-mcp-unauthenticated-rce.md",
+      "named_entities": [
+        "CVE-2026-81735",
+        "UI-TARS"
+      ],
+      "public_topic": "UI-TARS desktop MCP unauthenticated RCE",
+      "source_urls": [
+        "https://github.com/bytedance/UI-TARS-desktop/pull/1918",
+        "https://github.com/bytedance/UI-TARS-desktop/commit/c2ad42e3eb9b27830db41a3e6f51ca7179d9b168",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81735",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81735"
+      ],
+      "summary": "Public CVE evidence published 2026-08-27 describes an unauthenticated MCP HTTP server binding all interfaces and exposing command/filesystem tools.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-75871",
+      "affected_boundaries": [
+        "GitLab AI Gateway outbound model request Host-header boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "not confirmed as active exploitation in checked sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/data-and-privacy/gitlab-ai-gateway-inline-flow-host-credential-disclosure.md",
+      "named_entities": [
+        "CVE-2026-75871",
+        "GitLab"
+      ],
+      "public_topic": "GitLab AI Gateway inline flow Host credential disclosure",
+      "source_urls": [
+        "https://gitlab.com/gitlab-org/gitlab/-/work_items/616990",
+        "https://hackerone.com/reports/3945100",
+        "https://www.cve.org/CVERecord?id=CVE-2026-75871",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75871"
+      ],
+      "summary": "GitLab/CVE evidence published 2026-08-27 says crafted inline flow configuration could redirect outbound model requests and disclose Vertex credentials/private signing keys; fixed releases are listed.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-19889",
+      "affected_boundaries": [
+        "GitLab AI Gateway model metadata endpoint-selection boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "not confirmed as active exploitation in checked sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/data-and-privacy/gitlab-ai-gateway-model-metadata-credential-disclosure.md",
+      "named_entities": [
+        "CVE-2026-19889",
+        "GitLab"
+      ],
+      "public_topic": "GitLab AI Gateway model metadata credential disclosure",
+      "source_urls": [
+        "https://gitlab.com/gitlab-org/gitlab/-/work_items/614164",
+        "https://hackerone.com/reports/3938027",
+        "https://www.cve.org/CVERecord?id=CVE-2026-19889",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19889"
+      ],
+      "summary": "GitLab/CVE evidence published 2026-08-27 says crafted model metadata could redirect model requests and disclose Google Vertex AI or AWS Bedrock credentials; fixed releases are listed.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-81098",
+      "affected_boundaries": [
+        "Telnyx MCP Streamable HTTP transport authentication boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "not confirmed as active exploitation in checked sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md",
+      "named_entities": [
+        "CVE-2026-81098",
+        "Telnyx"
+      ],
+      "public_topic": "Telnyx MCP stored credential auth bypass",
+      "source_urls": [
+        "https://github.com/team-telnyx/telnyx-node/security/advisories/GHSA-46jp-xr2h-fw7h",
+        "https://github.com/team-telnyx/telnyx-node/pull/450",
+        "https://www.cve.org/CVERecord?id=CVE-2026-81098",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81098"
+      ],
+      "summary": "Public CVE/GitHub evidence published 2026-08-27 describes unauthenticated tool dispatch using the server stored Telnyx API key/client secret.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-18886",
+      "affected_boundaries": [
+        "ServiceNow AI Platform system configuration image upload processor access-control boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "not reported as actively exploited in checked primary sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md",
+      "named_entities": [
+        "CVE-2026-18886",
+        "ServiceNow"
+      ],
+      "public_topic": "ServiceNow AI platform access-control escalation",
+      "source_urls": [
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3152242",
+        "https://www.cve.org/CVERecord?id=CVE-2026-18886",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18886"
+      ],
+      "summary": "ServiceNow/NVD evidence published 2026-08-27 describes unauthenticated improper access control enabling instance-data creation/modification and privilege escalation; ServiceNow reports no known exploitation.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    },
+    {
+      "advisory_or_identifier": "CVE-2026-18885",
+      "affected_boundaries": [
+        "ServiceNow AI Platform GraphQL Composite Data API code-execution boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "exploitation_status": "not reported as actively exploited in checked primary sources",
+      "follow_up_note": "Queue for normal raw-source ingest into the durable leaf and August digest if not already represented.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md",
+      "named_entities": [
+        "CVE-2026-18885",
+        "ServiceNow"
+      ],
+      "public_topic": "ServiceNow AI platform code injection",
+      "source_urls": [
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3152242",
+        "https://www.cve.org/CVERecord?id=CVE-2026-18885",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18885"
+      ],
+      "summary": "ServiceNow/NVD evidence published 2026-08-27 describes unauthenticated code injection/arbitrary code execution with access to or modification of instance data; ServiceNow reports no known malicious exploitation.",
+      "upstream_routing": "Keep local security-specific vulnerability/control delta; route broad product or company background upstream if needed.",
+      "visible_publication_or_update_date": "2026-08-27"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-29T00:04:05Z",
+  "sources_checked": [
+    "https://github.com/apify/apify-mcp-server/pull/572",
+    "https://github.com/apify/apify-mcp-server/security/advisories/GHSA-m28f-9v8h-gg2f",
+    "https://github.com/bsmi021/mcp-file-context-server/issues/15",
+    "https://github.com/bytedance/UI-TARS-desktop/commit/c2ad42e3eb9b27830db41a3e6f51ca7179d9b168",
+    "https://github.com/bytedance/UI-TARS-desktop/pull/1918",
+    "https://github.com/ddfourtwo/sentry-selfhosted-mcp/issues/2",
+    "https://github.com/mark3labs/mcp-go/pull/921",
+    "https://github.com/mark3labs/mcp-go/releases/tag/v0.56.0",
+    "https://github.com/mcp-router/mcp-router/commit/4c4642cfd274097ec8b33ecd3047390829c79d35",
+    "https://github.com/mcp-router/mcp-router/security/advisories/GHSA-rx55-5c7h-r56r",
+    "https://github.com/mcp-use/mcp-use/security/advisories/GHSA-f2jg-rm2x-hc5p",
+    "https://github.com/mims-harvard/ToolUniverse/pull/251",
+    "https://github.com/mims-harvard/ToolUniverse/security/advisories/GHSA-pxwq-22vf-87fm",
+    "https://github.com/team-telnyx/telnyx-node/pull/450",
+    "https://github.com/team-telnyx/telnyx-node/security/advisories/GHSA-46jp-xr2h-fw7h",
+    "https://gitlab.com/gitlab-org/gitlab/-/work_items/614164",
+    "https://gitlab.com/gitlab-org/gitlab/-/work_items/616990",
+    "https://hackerone.com/reports/3938027",
+    "https://hackerone.com/reports/3945100",
+    "https://mindgard.ai/blog/amazon-kiro-data-exfiltration",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-18885",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-18886",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-19889",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-37003",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-75871",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-81091",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-81092",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-81093",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-81094",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-81096",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-81098",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-81421",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-81486",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-81735",
+    "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3152242",
+    "https://thehackernews.com/2026/08/amazon-kiro-prompt-injection-can.html",
+    "https://vuldb.com/vuln/395980",
+    "https://www.cve.org/CVERecord?id=CVE-2026-18885",
+    "https://www.cve.org/CVERecord?id=CVE-2026-18886",
+    "https://www.cve.org/CVERecord?id=CVE-2026-19889",
+    "https://www.cve.org/CVERecord?id=CVE-2026-37003",
+    "https://www.cve.org/CVERecord?id=CVE-2026-75871",
+    "https://www.cve.org/CVERecord?id=CVE-2026-81091",
+    "https://www.cve.org/CVERecord?id=CVE-2026-81092",
+    "https://www.cve.org/CVERecord?id=CVE-2026-81093",
+    "https://www.cve.org/CVERecord?id=CVE-2026-81094",
+    "https://www.cve.org/CVERecord?id=CVE-2026-81096",
+    "https://www.cve.org/CVERecord?id=CVE-2026-81098",
+    "https://www.cve.org/CVERecord?id=CVE-2026-81421",
+    "https://www.cve.org/CVERecord?id=CVE-2026-81486",
+    "https://www.cve.org/CVERecord?id=CVE-2026-81735",
+    "https://www.tenable.com/cve/CVE-2026-81092",
+    "https://www.tenable.com/cve/CVE-2026-81421",
+    "https://www.vulncheck.com/advisories/mcp-use-inspector-proxy-server-side-request-forgery-via-caller-supplied-target-url",
+    "https://yerangamage.com/cves/detail/?slug=agno-rce-tools"
+  ]
+}

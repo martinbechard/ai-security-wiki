@@ -87,15 +87,21 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/tooluniverse-python-executor-sandbox-escape.md](agent-and-tool-security/tooluniverse-python-executor-sandbox-escape.md)
 - [agent-and-tool-security/ui-tars-desktop-mcp-unauthenticated-rce.md](agent-and-tool-security/ui-tars-desktop-mcp-unauthenticated-rce.md)
 - [agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md](agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md)
+- [agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md](agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md)
 - [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
 - [infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md](infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md)
 - [infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md](infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md)
 - [infrastructure-and-supply-chain/spring-ai-resource-cache-fragment-file-write.md](infrastructure-and-supply-chain/spring-ai-resource-cache-fragment-file-write.md)
 - [data-and-privacy/gitlab-ai-gateway-model-metadata-credential-disclosure.md](data-and-privacy/gitlab-ai-gateway-model-metadata-credential-disclosure.md)
 - [data-and-privacy/gitlab-ai-gateway-inline-flow-host-credential-disclosure.md](data-and-privacy/gitlab-ai-gateway-inline-flow-host-credential-disclosure.md)
+- [data-and-privacy/stable-diffusion-webui-cmd-flags-credential-disclosure.md](data-and-privacy/stable-diffusion-webui-cmd-flags-credential-disclosure.md)
 - [infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md](infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md)
 - [infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md](infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md)
 - [infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md](infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md)
+- [infrastructure-and-supply-chain/bifrost-ai-gateway-multimodal-ssrf.md](infrastructure-and-supply-chain/bifrost-ai-gateway-multimodal-ssrf.md)
+- [infrastructure-and-supply-chain/portkey-ai-gateway-proxy-ssrf.md](infrastructure-and-supply-chain/portkey-ai-gateway-proxy-ssrf.md)
+- [infrastructure-and-supply-chain/gpt-crawler-output-filename-file-write.md](infrastructure-and-supply-chain/gpt-crawler-output-filename-file-write.md)
+- [infrastructure-and-supply-chain/bisheng-workflow-callback-ssrf.md](infrastructure-and-supply-chain/bisheng-workflow-callback-ssrf.md)
 - [threats-and-attacks/ai-hosted-artifact-malware-delivery.md](threats-and-attacks/ai-hosted-artifact-malware-delivery.md)
 - [threats-and-attacks/unattended-ai-agent-attack-automation.md](threats-and-attacks/unattended-ai-agent-attack-automation.md)
 - [threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md](threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md)
@@ -145,6 +151,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/one-api-channel-pinning-provider-key-bypass.md](identity-and-access/one-api-channel-pinning-provider-key-bypass.md)
 - [identity-and-access/unifi-protect-ai-key-privilege-escalation.md](identity-and-access/unifi-protect-ai-key-privilege-escalation.md)
 - [identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md](identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md)
+- [identity-and-access/fastgpt-wechat-outlink-auth-bypass.md](identity-and-access/fastgpt-wechat-outlink-auth-bypass.md)
+- [identity-and-access/voltagent-memory-ownership-bypass.md](identity-and-access/voltagent-memory-ownership-bypass.md)
+- [identity-and-access/gitingest-host-prefix-token-disclosure.md](identity-and-access/gitingest-host-prefix-token-disclosure.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -207,6 +216,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [governance-and-compliance/ai-office-gpai-enforcement-controls.md](governance-and-compliance/ai-office-gpai-enforcement-controls.md)
 - [governance-and-compliance/frontier-model-cybersecurity-review-transparency.md](governance-and-compliance/frontier-model-cybersecurity-review-transparency.md)
 - [governance-and-compliance/cloud-ai-system-compromise-threat-taxonomy.md](governance-and-compliance/cloud-ai-system-compromise-threat-taxonomy.md)
+- [governance-and-compliance/collective-cyber-defense-controls.md](governance-and-compliance/collective-cyber-defense-controls.md)
 - [incident-response](incident-response/index.md)
 - [incident-response/openai-hugging-face-cyber-evaluation-incident.md](incident-response/openai-hugging-face-cyber-evaluation-incident.md)
 - [incident-response/anthropic-internet-connected-cyber-evaluation-incident.md](incident-response/anthropic-internet-connected-cyber-evaluation-incident.md)
@@ -249,4 +259,5 @@ description: "Navigation for locally owned AI security topics and source workflo
 - Updated on 2026-08-17 with MLflow, chrome-devtools-mcp, atomic-agents-stack, Ray, MemOS, OpenShift AI, Kiota, and delegated-agent cost guardrail leaves.
 - Updated on 2026-08-16 with GoMarble Facebook Ads MCP SSRF, macOS Screen Sharing AI-accelerated exploitability, and semantic governance policy telemetry.
 
+- Updated on 2026-08-29 with August 28 SiYuan, Bifrost, Portkey, FastGPT, Stable Diffusion WebUI, VoltAgent, gpt-crawler, Gitingest, Bisheng, and collective cyber-defense leaves plus watcher provenance links.
 - Updated on 2026-08-28 with August 27 Kiro, MCP transport and server, tool-execution, Spring AI, split GitLab AI Gateway, split ServiceNow AI platform, and watcher enrichment pages.

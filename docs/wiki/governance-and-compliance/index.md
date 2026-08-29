@@ -16,6 +16,7 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 - [AI Office GPAI enforcement controls](ai-office-gpai-enforcement-controls.md)
 - [Frontier model cybersecurity review transparency](frontier-model-cybersecurity-review-transparency.md)
 - [Cloud AI system compromise threat taxonomy](cloud-ai-system-compromise-threat-taxonomy.md)
+- [Collective cyber-defense controls](collective-cyber-defense-controls.md)
 
 ## Authoritative Sources
 
@@ -45,4 +46,5 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 
 ## Maintenance Notes
 
+- Updated on 2026-08-29 with the collective cyber-defense controls leaf from the OpenAI-hosted public letter.
 - Verify current law, regulation, and standard text from authoritative sources before durable synthesis.

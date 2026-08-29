@@ -15,13 +15,14 @@ The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-secu
 
 - Threat: model-influenced `raw_sentry_api` endpoint arguments can make the MCP server fetch internal or unintended URLs and return responses into the agent workflow
 - Affected boundary: ddfourtwo sentry-selfhosted-mcp 0.4.0
-- Exploit or incident status: public advisory evidence; no local in-the-wild exploitation evidence is recorded.
+- Exploit or incident status: public advisory evidence with public exploit or PoC availability reported by vulnerability feeds; no local in-the-wild exploitation evidence is recorded.
 - Mitigation state: No fixed version is recorded in the source; disable the tool or enforce destination allowlists, private-range blocks, and final URL validation.
 - Confidence: high for advisory existence and affected boundary; medium for remediation details when the primary advisory does not name a fixed release.
 - Residual risk: model- or browser-reachable helper surfaces can convert ordinary tool arguments into internal data access, credential use, or host execution when final authorization is missing.
 
 ## Authoritative Sources
 
+- [August 29 leaf update watch source](../../../raw/processed/2026-08-29/ai-security-wiki-leaf-update-watch-20260829T000405Z.json)
 - [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json)
 - [NVD record](https://nvd.nist.gov/vuln/detail/CVE-2026-81421)
 - [CVE record](https://www.cve.org/CVERecord?id=CVE-2026-81421)
@@ -52,4 +53,5 @@ The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-secu
 
 ## Maintenance Notes
 
+- Updated on 2026-08-29 with [August 29 watcher](../../../raw/processed/2026-08-29/ai-security-wiki-leaf-update-watch-20260829T000405Z.json) provenance for the same durable advisory boundary.
 - Created on 2026-08-28 from the [August 27 topic collector](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json) as a focused Sentry MCP `raw_sentry_api` SSRF leaf after routing broad Sentry and MCP catalog context upstream; next check maintainer response and fixed-version status.

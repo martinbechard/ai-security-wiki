@@ -1,0 +1,797 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-08-28T23:31:39Z",
+  "cutoff_window": {
+    "start_utc": "2026-08-26T23:31:39Z",
+    "end_utc": "2026-08-28T23:31:39Z",
+    "rule": "Include only public items with visible publication or update timestamps inside the last 48 hours. Exclude date-only boundary candidates when the exact timestamp cannot be proven inside the window."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "repository_scope": {
+    "modified_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "wiki_edits": false,
+    "raw_processed_edits": false,
+    "federation_rule_applied": "Broad AI companies, products, frameworks, models, MCP servers, and general AI-assisted development practices are upstream-owned by ai-wiki or ai-dev-wiki; this artifact keeps only the security fact, affected boundary, mitigation, and routing note."
+  },
+  "routing_context_checked": [
+    {
+      "source": "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/federation.md",
+      "finding": "Local wiki owns AI security lens; broad AI entity catalog belongs upstream."
+    },
+    {
+      "source": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "finding": "ai-wiki owns broad AI companies, products, models, MCP servers, frameworks, and techniques."
+    },
+    {
+      "source": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+      "finding": "ai-dev-wiki owns general AI-assisted development workflows, agent governance practices, verification patterns, and MCP practice patterns."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "openai-collective-cyber-defense-letter-2026-08-27",
+      "title": "OpenAI-hosted collective cyber-defense letter warns of AI-enabled cyberattack acceleration",
+      "visible_dates": [
+        {
+          "source_url": "https://www.axios.com/2026/08/27/openai-anthropic-issue-dire-cyber-threat-warning",
+          "date": "2026-08-27",
+          "date_type": "published"
+        },
+        {
+          "source_url": "https://openai.com/collective-cyberdefense/",
+          "date": "2026-08-27",
+          "date_type": "visible via secondary publication; primary page did not expose a machine-readable timestamp in fetched content"
+        }
+      ],
+      "source_urls": [
+        "https://openai.com/collective-cyberdefense/",
+        "https://www.axios.com/2026/08/27/openai-anthropic-issue-dire-cyber-threat-warning"
+      ],
+      "concise_factual_summary": "More than 100 organizations, including frontier AI companies, cloud providers, security vendors, and critical-infrastructure stakeholders, called for urgent cyber-defense action against increasingly widespread and sophisticated AI-enabled attacks. The primary letter asks organizations to fix high-risk weaknesses, deploy least privilege and strong access controls, continuously test defenses against frontier cyber capabilities, share threat intelligence, and make defender access to capable AI available during major incidents.",
+      "evidence_classification": "primary official open letter corroborated by reputable secondary reporting",
+      "affected_boundary_or_version": "AI-enabled cyber defense and critical-infrastructure security operations; no product version boundary",
+      "why_it_matters_for_ai_security": "This is a governance and risk-management signal that frames cyber-capable AI as an active threat multiplier and names concrete controls: least privilege, access controls, defense-in-depth, continuous testing, observability, traceable agent identities, trusted access programs, and incident-response access to defensive models.",
+      "named_entities": [
+        "OpenAI",
+        "Anthropic",
+        "AWS",
+        "Microsoft",
+        "Google",
+        "Hugging Face",
+        "CISA",
+        "critical infrastructure"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad company and ecosystem-signatory context belongs upstream.",
+        "ai_dev_wiki": "General AI-generated-code quality and development workflow implications belong upstream.",
+        "local_security_lens": "Retain the AI-enabled attack acceleration, defensive-control, incident-response, and agent identity implications."
+      },
+      "confidence_notes": "High confidence on publication date from Axios and primary-source content from OpenAI; primary OpenAI page did not expose an explicit visible date in fetched text."
+    },
+    {
+      "id": "cve-2026-82233-siyuan-mcp-asset-upload-file-read",
+      "title": "SiYuan MCP asset.upload path traversal enables prompt-induced local file exposure",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82233",
+          "date": "2026-08-28T12:16:32.953Z",
+          "date_type": "NVD published"
+        },
+        {
+          "source_url": "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-p23f-cm6q-2qp8",
+          "date": "2026-08-13",
+          "date_type": "GitHub advisory originally published"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82233",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-p23f-cm6q-2qp8",
+        "https://www.vulncheck.com/advisories/siyuan-before-3.8.1-path-traversal-via-asset-upload"
+      ],
+      "concise_factual_summary": "SiYuan before v3.8.1 accepted arbitrary absolute file paths in the MCP asset.upload tool without workspace boundary validation. A prompt-injection path can induce an AI Agent to upload sensitive host files such as SSH keys or cloud credentials into the workspace after a category-level approval that does not show the exact file path.",
+      "evidence_classification": "NVD in-window publication plus GitHub security advisory with technical details",
+      "affected_boundary_or_version": "SiYuan <= 3.8.0; patched in v3.8.1 according to NVD/GitHub metadata",
+      "why_it_matters_for_ai_security": "It demonstrates that human approval is insufficient when the approval hides tool arguments; AI tool file access needs explicit workspace and sensitive-path enforcement.",
+      "named_entities": [
+        "SiYuan",
+        "MCP",
+        "asset.upload",
+        "GitHub Advisory Database",
+        "NVD",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "SiYuan product/background belongs upstream if durable product coverage is needed.",
+        "ai_dev_wiki": "General MCP approval UX and tool-governance pattern belongs upstream.",
+        "local_security_lens": "Retain the MCP file-boundary bypass, prompt-injection trigger, and sensitive-file exposure."
+      },
+      "confidence_notes": "High confidence. GitHub advisory has older publication date, but NVD publication is inside the cutoff window."
+    },
+    {
+      "id": "cve-2026-81091-mcp-use-inspector-proxy-ssrf",
+      "title": "mcp-use inspector proxy SSRF accepts caller-supplied internal targets",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81091",
+          "date": "2026-08-27T17:20:51.183Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81091",
+        "https://github.com/mcp-use/mcp-use/security/advisories/GHSA-f2jg-rm2x-hc5p",
+        "https://www.vulncheck.com/advisories/mcp-use-inspector-proxy-server-side-request-forgery-via-caller-supplied-target-url"
+      ],
+      "concise_factual_summary": "The mcp-use inspector proxy forwarded requests to a destination supplied through the X-Target-URL header or __mcp_target parameter without rejecting loopback, link-local, private addresses, names resolving to those ranges, or unsafe redirect targets. Current code adds isSafeProxyTarget checks and redirect bounds.",
+      "evidence_classification": "NVD in-window publication with public repository advisory references",
+      "affected_boundary_or_version": "mcp-use versions <= 2.3.2; fixed code validates resolved addresses before proxying",
+      "why_it_matters_for_ai_security": "MCP inspection and debugging surfaces can become internal-network read channels unless proxy destinations are constrained before and after redirects.",
+      "named_entities": [
+        "mcp-use",
+        "MCP inspector",
+        "NVD",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "mcp-use framework/background belongs upstream.",
+        "ai_dev_wiki": "General MCP debugging workflow belongs upstream.",
+        "local_security_lens": "Retain SSRF, redirect validation, and inspector trust-boundary implications."
+      },
+      "confidence_notes": "High confidence from structured NVD result; GitHub page was accessible as a referenced advisory but publication date in fetched browser content may be older than NVD."
+    },
+    {
+      "id": "cve-2026-81092-mcp-go-dns-rebinding",
+      "title": "mcp-go HTTP transports missed Host validation, enabling DNS rebinding",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81092",
+          "date": "2026-08-27T17:20:51.337Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81092",
+        "https://github.com/mark3labs/mcp-go/pull/921",
+        "https://github.com/mark3labs/mcp-go/releases/tag/v0.56.0",
+        "https://www.vulncheck.com/advisories/mcp-go-before-0.56.0-missing-host-header-validation-enables-dns-rebinding"
+      ],
+      "concise_factual_summary": "mcp-go HTTP transports accepted requests over loopback without validating the Host header, so a browser-based DNS rebinding path could reach Streamable HTTP or SSE MCP endpoints. The referenced fix is v0.56.0.",
+      "evidence_classification": "NVD in-window publication with project pull request and release references",
+      "affected_boundary_or_version": "mcp-go before 0.56.0",
+      "why_it_matters_for_ai_security": "Local MCP transports need browser-origin and Host-header protections because browser content can bridge into loopback services used by agents.",
+      "named_entities": [
+        "mcp-go",
+        "MCP",
+        "Streamable HTTP",
+        "SSE",
+        "DNS rebinding"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "mcp-go SDK entity coverage belongs upstream.",
+        "ai_dev_wiki": "General MCP transport deployment practice belongs upstream.",
+        "local_security_lens": "Retain local transport Host validation and browser-to-agent attack path."
+      },
+      "confidence_notes": "High confidence from NVD dates and project fix references."
+    },
+    {
+      "id": "cve-2026-81096-tooluniverse-python-executor-rce",
+      "title": "ToolUniverse unauthenticated Python executor sandbox escape permits RCE",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81096",
+          "date": "2026-08-27T17:20:51.950Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81096",
+        "https://github.com/mims-harvard/ToolUniverse/security/advisories/GHSA-pxwq-22vf-87fm",
+        "https://github.com/mims-harvard/ToolUniverse/pull/251",
+        "https://www.vulncheck.com/advisories/tooluniverse-through-1.2.6-unauthenticated-remote-code-execution-via-python-code-executor-sandbox-escape"
+      ],
+      "concise_factual_summary": "ToolUniverse ran caller-supplied Python inside a sandbox that could be escaped while the server required no authentication. The python_code_executor tool used denied-list source inspection that could be bypassed to reach arbitrary code execution.",
+      "evidence_classification": "NVD in-window publication with GitHub advisory and maintainer pull request references",
+      "affected_boundary_or_version": "ToolUniverse through 1.2.6",
+      "why_it_matters_for_ai_security": "Agent tool ecosystems frequently expose code-execution tools; unauthenticated or deny-list-only sandboxes collapse the boundary between AI tool invocation and host execution.",
+      "named_entities": [
+        "ToolUniverse",
+        "python_code_executor",
+        "NVD",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "ToolUniverse product/framework background belongs upstream.",
+        "ai_dev_wiki": "General agent tool execution workflow belongs upstream.",
+        "local_security_lens": "Retain unauthenticated tool execution, sandbox escape, and RCE risk."
+      },
+      "confidence_notes": "High confidence from NVD structured record; fixed-version detail should be rechecked during ingest."
+    },
+    {
+      "id": "cve-2026-81735-ui-tars-desktop-mcp-unauthenticated-rce",
+      "title": "UI-TARS desktop MCP transports bind broadly without authentication",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81735",
+          "date": "2026-08-27T17:21:03.677Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81735",
+        "https://github.com/bytedance/UI-TARS-desktop/commit/c2ad42e3eb9b27830db41a3e6f51ca7179d9b168",
+        "https://github.com/bytedance/UI-TARS-desktop/pull/1918",
+        "https://www.vulncheck.com/advisories/ui-tars-desktop-agent-infra-mcp-servers-bind-every-interface-without-authentication-exposing-arbitrary-command-execution"
+      ],
+      "concise_factual_summary": "UI-TARS-desktop started Streamable HTTP and SSE MCP transports on all interfaces when no host was supplied, while authentication middleware did not require caller credentials. The exposed transport could provide arbitrary command execution through agent infrastructure.",
+      "evidence_classification": "NVD in-window publication with public commit and pull request references",
+      "affected_boundary_or_version": "UI-TARS-desktop agent-infra MCP HTTP server at commit e9f3387-era source; fix referenced in c2ad42e3 and PR 1918",
+      "why_it_matters_for_ai_security": "Desktop agent infrastructure with action tools must default to loopback-only, authenticated transports; otherwise local automation becomes a remotely reachable execution service.",
+      "named_entities": [
+        "UI-TARS-desktop",
+        "ByteDance",
+        "MCP",
+        "Streamable HTTP",
+        "SSE"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "UI-TARS desktop product/entity context belongs upstream.",
+        "ai_dev_wiki": "Desktop-agent workflow practice belongs upstream.",
+        "local_security_lens": "Retain unauthenticated MCP transport and command-execution exposure."
+      },
+      "confidence_notes": "High confidence from NVD publication and project references."
+    },
+    {
+      "id": "cve-2026-55245-bifrost-ai-gateway-ssrf",
+      "title": "Bifrost AI Gateway multimodal fetch guard misses internal address ranges",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55245",
+          "date": "2026-08-28T20:18:26.743Z",
+          "date_type": "NVD published"
+        },
+        {
+          "source_url": "https://github.com/maximhq/bifrost/security/advisories/GHSA-w98g-5w9p-p3rc",
+          "date": "2026-07-21",
+          "date_type": "GitHub advisory originally published"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55245",
+        "https://github.com/maximhq/bifrost/security/advisories/GHSA-w98g-5w9p-p3rc",
+        "https://github.com/maximhq/bifrost/releases/tag/core/v1.5.17",
+        "https://github.com/maximhq/bifrost/commit/54ec431fc5255ff42c36420d88549477e0b33d89"
+      ],
+      "concise_factual_summary": "Bifrost's isPublicIP guard in FetchAndEncodeURL allowed CGNAT, IPv6 6to4, NAT64, and deprecated site-local addresses. A client controlling multimodal image or document URLs in Bedrock or Vertex request paths could trigger SSRF from the gateway to internal services, including cloud metadata endpoint embeddings.",
+      "evidence_classification": "NVD in-window publication plus GitHub security advisory with technical detail",
+      "affected_boundary_or_version": "Bifrost prior to core v1.5.17; GitHub advisory lists <= 1.5.15 and patched >= 1.5.16, while NVD references v1.5.17 release",
+      "why_it_matters_for_ai_security": "AI gateways that fetch multimodal inputs are network trust boundaries; IP classification must cover cloud, IPv6 transition, private, and metadata address cases.",
+      "named_entities": [
+        "Bifrost",
+        "Bedrock",
+        "Vertex",
+        "AI Gateway",
+        "SSRF"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Bifrost product/entity context belongs upstream.",
+        "ai_dev_wiki": "General multimodal gateway integration practice belongs upstream.",
+        "local_security_lens": "Retain AI gateway SSRF and cloud-metadata exposure boundary."
+      },
+      "confidence_notes": "High confidence on vulnerability mechanics; fixed-version boundary should be reconciled during ingest because GitHub advisory and NVD references differ slightly."
+    },
+    {
+      "id": "cve-2026-82270-portkey-ai-gateway-ssrf",
+      "title": "Portkey AI Gateway proxy route lacks request validation and permits SSRF",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82270",
+          "date": "2026-08-28T20:20:17.797Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82270",
+        "https://github.com/Portkey-AI/gateway",
+        "https://github.com/Portkey-AI/gateway/issues/1718",
+        "https://www.vulncheck.com/advisories/portkey-ai-gateway-server-side-request-forgery-via-v1-proxy"
+      ],
+      "concise_factual_summary": "Portkey AI Gateway through 1.15.2 has an SSRF flaw in /v1/proxy/* because the route lacks requestValidator middleware. Attackers can set x-portkey-custom-host to internal addresses.",
+      "evidence_classification": "NVD in-window publication with public repository and issue references",
+      "affected_boundary_or_version": "Portkey AI Gateway through 1.15.2",
+      "why_it_matters_for_ai_security": "Model gateway proxy routes must validate destination authority because gateway credentials and network position can expose internal infrastructure.",
+      "named_entities": [
+        "Portkey AI Gateway",
+        "NVD",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Portkey AI Gateway product context belongs upstream.",
+        "ai_dev_wiki": "General gateway deployment practice belongs upstream.",
+        "local_security_lens": "Retain route-level SSRF and request-validation implication."
+      },
+      "confidence_notes": "High confidence from NVD publication; maintainer patch status should be rechecked during ingest."
+    },
+    {
+      "id": "cve-2026-68929-fastgpt-wechat-outlink-auth-bypass",
+      "title": "FastGPT WeChat outLink endpoints allow unauthenticated cross-tenant bot hijack",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-68929",
+          "date": "2026-08-28T00:18:08.337Z",
+          "date_type": "NVD published"
+        },
+        {
+          "source_url": "https://github.com/labring/FastGPT/security/advisories/GHSA-q4pr-3qpg-9q5v",
+          "date": "2026-08-19",
+          "date_type": "GitHub advisory originally published"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-68929",
+        "https://github.com/labring/FastGPT/security/advisories/GHSA-q4pr-3qpg-9q5v",
+        "https://github.com/labring/FastGPT/commit/81d391995b1f9989455267448872ff88bb1f42c9"
+      ],
+      "concise_factual_summary": "FastGPT before v4.15.2 allowed WeChat iLink share-channel endpoints to mutate outLink bot credentials based only on public shareId values. An unauthenticated attacker could wipe a victim team's bot token or bind the victim outLink to the attacker's WeChat bot.",
+      "evidence_classification": "NVD in-window publication plus GitHub security advisory",
+      "affected_boundary_or_version": "FastGPT prior to v4.15.2; advisory describes main at commit 4066f3c1",
+      "why_it_matters_for_ai_security": "AI application channel integrations need tenant-scoped authorization; public share identifiers must not authorize bot credential writes or channel binding.",
+      "named_entities": [
+        "FastGPT",
+        "WeChat",
+        "iLink",
+        "outLink",
+        "NVD",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "FastGPT product/entity background belongs upstream.",
+        "ai_dev_wiki": "General AI app channel integration practice belongs upstream.",
+        "local_security_lens": "Retain tenant authorization, bot-token integrity, and public-shareId risk."
+      },
+      "confidence_notes": "High confidence; GitHub advisory date predates cutoff but NVD publication qualifies."
+    },
+    {
+      "id": "cve-2026-82288-stable-diffusion-webui-credential-disclosure",
+      "title": "Stable Diffusion WebUI exposes cleartext auth flags through cmd-flags endpoint",
+      "visible_dates": [
+        {
+          "source_url": "https://github.com/advisories/GHSA-75pm-v38f-v69m",
+          "date": "2026-08-28",
+          "date_type": "GitHub Advisory Database published and updated"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82288",
+          "date": "2026-08-28",
+          "date_type": "NVD published via GitHub advisory page"
+        }
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-75pm-v38f-v69m",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82288"
+      ],
+      "concise_factual_summary": "Stable Diffusion WebUI through 1.10.1 exposes parsed command-line arguments at /sdapi/v1/cmd-flags, including gradio_auth and api_auth values in cleartext. Unauthenticated attackers can retrieve credentials and use them to access the application.",
+      "evidence_classification": "GitHub Advisory Database and NVD in-window publication",
+      "affected_boundary_or_version": "Stable Diffusion WebUI through 1.10.1; patched version unknown in GitHub advisory",
+      "why_it_matters_for_ai_security": "Local or hosted model UIs often become shared AI workbenches; exposing auth flags turns configuration introspection into credential theft and unauthorized model/application access.",
+      "named_entities": [
+        "Stable Diffusion WebUI",
+        "gradio_auth",
+        "api_auth",
+        "GitHub Advisory Database",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Stable Diffusion WebUI entity coverage belongs upstream.",
+        "ai_dev_wiki": "General local AI workbench operation belongs upstream.",
+        "local_security_lens": "Retain credential disclosure and exposed AI UI configuration boundary."
+      },
+      "confidence_notes": "Medium-high confidence. Advisory is unreviewed and patched version is unknown, so ingest should verify maintainer response."
+    },
+    {
+      "id": "cve-2026-82283-voltagent-memory-ownership-bypass",
+      "title": "VoltAgent memory APIs miss conversation ownership checks",
+      "visible_dates": [
+        {
+          "source_url": "https://github.com/advisories/GHSA-ch6f-pcf5-xp4j",
+          "date": "2026-08-28",
+          "date_type": "GitHub Advisory Database published"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82283",
+          "date": "2026-08-28",
+          "date_type": "NVD published via GitHub advisory page"
+        }
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-ch6f-pcf5-xp4j",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82283",
+        "https://github.com/VoltAgent/voltagent/issues/1371"
+      ],
+      "concise_factual_summary": "VoltAgent through 2.1.20 fails to validate conversation ownership in memory API handlers. Authenticated users can read, modify, or delete other users' conversations and messages by supplying caller-controlled identifiers.",
+      "evidence_classification": "GitHub Advisory Database and NVD in-window publication",
+      "affected_boundary_or_version": "VoltAgent through 2.1.20; patched version unknown in GitHub advisory",
+      "why_it_matters_for_ai_security": "Agent memory stores are sensitive identity and context boundaries; missing object ownership checks expose cross-user conversation data and allow memory tampering.",
+      "named_entities": [
+        "VoltAgent",
+        "agent memory",
+        "GitHub Advisory Database",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "VoltAgent entity background belongs upstream.",
+        "ai_dev_wiki": "General agent memory architecture practice belongs upstream.",
+        "local_security_lens": "Retain cross-user memory authorization and tampering risk."
+      },
+      "confidence_notes": "Medium-high confidence. Advisory is unreviewed and patch boundary is unknown."
+    },
+    {
+      "id": "cve-2026-82286-gpt-crawler-arbitrary-file-write",
+      "title": "gpt-crawler outputFileName path handling permits arbitrary file writes",
+      "visible_dates": [
+        {
+          "source_url": "https://github.com/advisories/GHSA-98j5-x6wm-v8hp",
+          "date": "2026-08-28",
+          "date_type": "GitHub Advisory Database published and updated"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82286",
+          "date": "2026-08-28",
+          "date_type": "NVD published via GitHub advisory page"
+        }
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-98j5-x6wm-v8hp",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82286",
+        "https://github.com/BuilderIO/gpt-crawler/issues/418"
+      ],
+      "concise_factual_summary": "gpt-crawler through 1.5.1 fails to validate outputFileName in POST /crawl. Unauthenticated attackers can provide absolute paths or parent-directory segments and cause arbitrary file writes with content fetched from attacker-controlled URLs.",
+      "evidence_classification": "GitHub Advisory Database and NVD in-window publication",
+      "affected_boundary_or_version": "gpt-crawler through 1.5.1; patched version unknown in GitHub advisory",
+      "why_it_matters_for_ai_security": "AI data-ingestion crawlers often run near application credentials and generated corpora; arbitrary write primitives can poison artifacts, overwrite configuration, or stage execution.",
+      "named_entities": [
+        "gpt-crawler",
+        "Builder.io",
+        "GitHub Advisory Database",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "gpt-crawler entity coverage belongs upstream.",
+        "ai_dev_wiki": "General crawler-based RAG ingestion practice belongs upstream.",
+        "local_security_lens": "Retain arbitrary file-write and ingestion artifact supply-chain risk."
+      },
+      "confidence_notes": "Medium-high confidence. Advisory is unreviewed and patch boundary is unknown."
+    },
+    {
+      "id": "cve-2026-82289-gitingest-token-disclosure",
+      "title": "Gitingest host-prefix validation can disclose GitHub tokens to attacker hosts",
+      "visible_dates": [
+        {
+          "source_url": "https://github.com/advisories/GHSA-mvv9-5ggf-37rj",
+          "date": "2026-08-28",
+          "date_type": "GitHub Advisory Database published and updated"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82289",
+          "date": "2026-08-28",
+          "date_type": "NVD published via GitHub advisory page"
+        }
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-mvv9-5ggf-37rj",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82289",
+        "https://github.com/coderamp-labs/gitingest/issues/592"
+      ],
+      "concise_factual_summary": "Gitingest through 0.3.1 accepts any hostname with a git., gitlab., or github. prefix instead of enforcing known-host membership. Attackers can submit crafted URLs that trigger outbound connections to attacker-controlled hosts and disclose GitHub personal access tokens through HTTP basic credentials.",
+      "evidence_classification": "GitHub Advisory Database and NVD in-window publication",
+      "affected_boundary_or_version": "Gitingest through 0.3.1; patched version unknown in GitHub advisory",
+      "why_it_matters_for_ai_security": "Repository-to-context ingestion tools must pin trusted hosts before attaching credentials; otherwise AI context builders become credential exfiltration paths.",
+      "named_entities": [
+        "Gitingest",
+        "GitHub personal access token",
+        "GitHub Advisory Database",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Gitingest entity/background belongs upstream.",
+        "ai_dev_wiki": "General code ingestion and context-building workflow belongs upstream.",
+        "local_security_lens": "Retain credential forwarding, host validation, and AI context supply-chain implications."
+      },
+      "confidence_notes": "Medium-high confidence. Advisory is unreviewed and patch boundary is unknown."
+    },
+    {
+      "id": "cve-2026-82285-bisheng-workflow-callback-ssrf",
+      "title": "Bisheng workflow callback endpoint permits unauthenticated SSRF",
+      "visible_dates": [
+        {
+          "source_url": "https://github.com/advisories/GHSA-qch5-28r4-f5gj",
+          "date": "2026-08-28",
+          "date_type": "GitHub Advisory Database published and updated"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-82285",
+          "date": "2026-08-28",
+          "date_type": "NVD published via GitHub advisory page"
+        }
+      ],
+      "source_urls": [
+        "https://github.com/advisories/GHSA-qch5-28r4-f5gj",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82285",
+        "https://github.com/dataelement/bisheng/issues/2190"
+      ],
+      "concise_factual_summary": "Bisheng through 2.6.0-fix2 has an unauthenticated SSRF in POST /api/v1/workflow/report/callback. The endpoint lacks authentication, URL scheme restrictions, and host filtering; captured responses can be retrieved from object storage using caller-supplied object names.",
+      "evidence_classification": "GitHub Advisory Database and NVD in-window publication",
+      "affected_boundary_or_version": "Bisheng through 2.6.0-fix2; patched version unknown in GitHub advisory",
+      "why_it_matters_for_ai_security": "Workflow/report callbacks in AI application platforms need authentication and egress controls because they may bridge attacker input to internal services and stored response artifacts.",
+      "named_entities": [
+        "Bisheng",
+        "workflow callback",
+        "GitHub Advisory Database",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Bisheng entity/background belongs upstream.",
+        "ai_dev_wiki": "General workflow-platform operation belongs upstream.",
+        "local_security_lens": "Retain unauthenticated callback SSRF and object-storage response exposure."
+      },
+      "confidence_notes": "Medium-high confidence. Advisory is unreviewed and patch boundary is unknown."
+    },
+    {
+      "id": "cve-2026-18885-18886-74820-servicenow-ai-platform-advisory-cluster",
+      "title": "ServiceNow AI platform remediates code injection, access control, and SQL injection flaws",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18885",
+          "date": "2026-08-27T20:17:03.870Z",
+          "date_type": "NVD published"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-18886",
+          "date": "2026-08-27T20:17:04.020Z",
+          "date_type": "NVD published"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-74820",
+          "date": "2026-08-27T20:18:36.670Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18885",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18886",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74820",
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3152242"
+      ],
+      "concise_factual_summary": "NVD published three ServiceNow AI platform records: a code-injection vulnerability that could allow unauthenticated arbitrary code execution in certain circumstances, an improper access-control vulnerability that could allow unauthenticated creation or modification of records, and a SQL-injection vulnerability that could allow unauthenticated SQL execution. ServiceNow lists the issues as remediated.",
+      "evidence_classification": "NVD in-window publication with vendor support article reference; support article may require primary access for full detail",
+      "affected_boundary_or_version": "ServiceNow AI platform; exact affected product versions not fully visible from unauthenticated fetched sources",
+      "why_it_matters_for_ai_security": "Enterprise AI platforms often hold workflow, knowledge, and automation authority; unauthenticated code execution, record modification, and SQL execution affect the platform trust boundary.",
+      "named_entities": [
+        "ServiceNow AI platform",
+        "CVE-2026-18885",
+        "CVE-2026-18886",
+        "CVE-2026-74820",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "ServiceNow company/product background belongs upstream.",
+        "ai_dev_wiki": "General enterprise workflow adoption context belongs upstream.",
+        "local_security_lens": "Retain AI platform code/data access boundary and unauthenticated exploit implications."
+      },
+      "confidence_notes": "Medium confidence because NVD gives in-window facts, but full vendor article details may require authenticated support access."
+    },
+    {
+      "id": "cve-2026-47851-47852-59294-59319-spring-ai-advisory-cluster",
+      "title": "Spring AI advisory cluster affects PDF ingestion, ONNX cache, resource cache, and Redis chat memory",
+      "visible_dates": [
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47851",
+          "date": "2026-08-27T01:17:32.150Z",
+          "date_type": "NVD published"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-47852",
+          "date": "2026-08-27T01:17:32.320Z",
+          "date_type": "NVD published"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59294",
+          "date": "2026-08-27T20:17:55.583Z",
+          "date_type": "NVD published"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-59319",
+          "date": "2026-08-27T20:17:57.913Z",
+          "date_type": "NVD published"
+        },
+        {
+          "source_url": "https://spring.io/security/cve-2026-47851",
+          "date": "2026-08-20",
+          "date_type": "Spring advisory initial publication"
+        },
+        {
+          "source_url": "https://spring.io/security/cve-2026-47852",
+          "date": "2026-08-20",
+          "date_type": "Spring advisory initial publication"
+        },
+        {
+          "source_url": "https://spring.io/security/cve-2026-59294",
+          "date": "2026-08-20",
+          "date_type": "Spring advisory initial publication"
+        }
+      ],
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-47851",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-47852",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59294",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59319",
+        "https://spring.io/security/cve-2026-47851",
+        "https://spring.io/security/cve-2026-47852",
+        "https://spring.io/security/cve-2026-59294",
+        "https://spring.io/security/cve-2026-59319"
+      ],
+      "concise_factual_summary": "NVD published multiple Spring AI records inside the window. CVE-2026-47851 is a PDF document reader StackOverflowError caused by deeply nested or cyclic table-of-contents data. CVE-2026-47852 allows local ONNX model substitution through deterministic cache-path precreation. CVE-2026-59294 is arbitrary file write through URI fragment path traversal in ResourceCacheService for model/tokenizer resources. CVE-2026-59319 is RediSearch query injection in RedisChatMemoryRepository.findByMetadata from unescaped metadata values. Spring advisories list fixed versions including 2.0.1, 2.0.0.1, 1.1.9, and 1.0.10 for the fetched Spring pages.",
+      "evidence_classification": "NVD in-window publication plus vendor advisories with older primary publication dates",
+      "affected_boundary_or_version": "Spring AI 2.0.0, 1.1.0-1.1.8, and 1.0.x ranges vary by CVE; fixed versions include 2.0.1, 2.0.0.1, 1.1.9, and 1.0.10 for fetched advisories",
+      "why_it_matters_for_ai_security": "The cluster spans AI ingestion availability, model artifact substitution, resource-cache file writes, and chat-memory query injection, all recurring AI application trust boundaries.",
+      "named_entities": [
+        "Spring AI",
+        "PDF Document Reader",
+        "ONNX",
+        "ResourceCacheService",
+        "RedisChatMemoryRepository",
+        "NVD",
+        "Broadcom"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Spring AI framework/background belongs upstream.",
+        "ai_dev_wiki": "General Spring AI implementation practice belongs upstream.",
+        "local_security_lens": "Retain AI ingestion, model-cache, resource-cache, and memory-store security implications."
+      },
+      "confidence_notes": "High confidence on NVD publication timing. Primary Spring publication dates are outside the window, so this qualifies as in-window NVD publication rather than new vendor disclosure."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "MariaDB connector GHSA cluster from GitHub Advisory Database",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-g5xc-5w98-jfvm",
+        "https://github.com/advisories/GHSA-g9jj-cgmh-9f38"
+      ],
+      "visible_date": "2026-08-28",
+      "reason": "In-window security advisories, but generic database driver flaws without a concrete AI-system-specific delta; excluded to avoid turning the collector into a general dependency feed."
+    },
+    {
+      "candidate": "RestrictedPython GHSA-ffg3-p8fm-mjx2 / CVE-2026-55830",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-ffg3-p8fm-mjx2",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55830"
+      ],
+      "visible_date": "2026-08-28 GitHub publication; 2026-07-08 NVD publication",
+      "reason": "Potentially relevant to sandboxed agent code execution, but no specific AI product or agent runtime boundary was visible in the advisory; recorded as follow-up rather than qualifying item."
+    },
+    {
+      "candidate": "JFrog Artifactory GHSA-c5pf-6p5j-gj87 / CVE-2026-82329",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-c5pf-6p5j-gj87"
+      ],
+      "visible_date": "2026-08-28",
+      "reason": "In-window and notable because Artifactory appeared in prior AI-evaluation incident reporting, but this fetched advisory did not expose enough concrete AI-specific linkage to include."
+    },
+    {
+      "candidate": "Axios OpenAI Hugging Face technical report follow-up",
+      "source_urls": [
+        "https://www.axios.com/2026/08/26/openai-hugging-face-technical-report-ai-hack"
+      ],
+      "visible_date": "2026-08-26",
+      "reason": "Date-only August 26 is boundary-only relative to the exact cutoff of 2026-08-26T23:31:39Z; excluded despite strong security relevance because exact timestamp was not visible."
+    },
+    {
+      "candidate": "Spring AI primary security advisories dated August 20",
+      "source_urls": [
+        "https://spring.io/security/cve-2026-47851",
+        "https://spring.io/security/cve-2026-47852",
+        "https://spring.io/security/cve-2026-59294"
+      ],
+      "visible_date": "2026-08-20",
+      "reason": "Primary vendor publication dates are outside the 48-hour window. The Spring cluster was included only where NVD publication timestamps fell inside the window."
+    },
+    {
+      "candidate": "NVD keyword hits for Linux kernel airoha, mt76, and KVM records",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80617",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80632",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80684"
+      ],
+      "visible_date": "2026-08-28",
+      "reason": "Matched the string 'AI' incidentally in non-AI identifiers or text; no AI system, model, agent, or AI deployment boundary."
+    },
+    {
+      "candidate": "TinyMCE GHSA-q742-qvgc-gc2f and other generic web/application advisories",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-q742-qvgc-gc2f"
+      ],
+      "visible_date": "2026-08-28 search result",
+      "reason": "Generic web editor/application vulnerability without a visible AI-specific security delta."
+    },
+    {
+      "candidate": "Prompt-injection evergreen articles from CSO, Sysdig, Securance, and CSA Lab Space",
+      "source_urls": [
+        "https://www.csoonline.com/article/4184455/prompt-injection-breaks-todays-ai-agents-study-warns.html",
+        "https://www.sysdig.com/learn-cloud-native/prompt-injection",
+        "https://www.securance.com/blog/prompt-injection-the-owasp-1-ai-threat-in-2026/",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-indirect-prompt-injection-in-the-wild-2026/"
+      ],
+      "visible_date": "older than 48-hour window or crawl-only freshness",
+      "reason": "Useful background, but publication/update dates were outside the cutoff or only crawl freshness was visible."
+    },
+    {
+      "candidate": "Salt Security EU AI Act compliance marketing page",
+      "source_urls": [
+        "https://salt.security/eu-ai-act-compliance"
+      ],
+      "visible_date": "crawled today; page references August 2, 2026 obligations",
+      "reason": "No visible in-window publication or update date and not a primary regulatory source."
+    },
+    {
+      "candidate": "LLM Security Database",
+      "source_urls": [
+        "https://www.promptfoo.dev/lm-security-db/"
+      ],
+      "visible_date": "Last analyzed 2026-08-13",
+      "reason": "Useful research index, but visible analysis date is outside the 48-hour window."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "item": "Company and provider entities in the OpenAI collective-defense letter",
+      "route": "ai-wiki",
+      "local_action": "Keep only collective cyber-defense security control implications."
+    },
+    {
+      "item": "MCP libraries and servers such as mcp-use, mcp-go, UI-TARS-desktop, SiYuan, and Portkey",
+      "route": "ai-wiki for broad entity pages; ai-dev-wiki for general MCP deployment practice",
+      "local_action": "Keep specific vulnerability, affected boundary, mitigation, and exploit path."
+    },
+    {
+      "item": "Spring AI, FastGPT, Bisheng, VoltAgent, Gitingest, Stable Diffusion WebUI, Bifrost, and ToolUniverse",
+      "route": "ai-wiki for product/framework background; ai-dev-wiki when the item is primarily an implementation workflow",
+      "local_action": "Keep AI-specific security implications: authorization, memory isolation, ingestion integrity, gateway SSRF, credential disclosure, and sandbox escape."
+    },
+    {
+      "item": "General AI-generated code quality and secure development guidance from the collective-defense letter",
+      "route": "ai-dev-wiki",
+      "local_action": "Keep only the security governance and release-gate implications."
+    }
+  ],
+  "follow_up_actions": [
+    "During ingest, deduplicate clustered MCP transport, SSRF, and host-header records against existing local MCP pages.",
+    "Reconcile Spring AI primary advisory dates versus NVD publication dates; treat these as newly indexed by NVD, not newly disclosed by Spring.",
+    "Recheck fixed versions for Bifrost, Portkey, Stable Diffusion WebUI, VoltAgent, gpt-crawler, Gitingest, Bisheng, and ToolUniverse before creating durable pages.",
+    "Check whether ServiceNow KB3152242 is publicly accessible with full affected-version detail; if not, preserve the support-access caveat.",
+    "Review whether RestrictedPython should become a local security note if a concrete AI-agent sandbox embedding appears in later sources."
+  ],
+  "collection_notes": {
+    "public_sources_only": true,
+    "private_or_internal_content_sent_external": false,
+    "validation_planned": [
+      "jq empty",
+      "python3 -m json.tool"
+    ],
+    "blockers": [
+      "Some GitHub Advisory Database entries are unreviewed and lack patched versions.",
+      "Some vendor primary advisories were older than the 48-hour window while NVD publication was in-window.",
+      "ServiceNow support article details may require authenticated access."
+    ]
+  }
+}

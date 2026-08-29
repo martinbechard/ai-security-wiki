@@ -29,6 +29,7 @@ The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-secu
 
 ## Authoritative Sources
 
+- [August 28 topic collector source](../../../raw/processed/2026-08-28/ai-security-wiki-topic-news-collector-2026-08-28T233139Z.json)
 - [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json)
 - [NVD CVE-2026-59319](https://nvd.nist.gov/vuln/detail/CVE-2026-59319)
 - [CVE-2026-59319 record](https://www.cve.org/CVERecord?id=CVE-2026-59319)
@@ -60,6 +61,7 @@ The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-secu
 
 ## Maintenance Notes
 
+- Updated on 2026-08-29 with [August 28 topic collector](../../../raw/processed/2026-08-28/ai-security-wiki-topic-news-collector-2026-08-28T233139Z.json) provenance while preserving the existing leaf boundary and avoiding duplicate digest grouping.
 - Updated on 2026-08-28 with August 27 collector evidence for CVE-2026-59319 RediSearch metadata query injection.
 - Created on 2026-08-21 from the [August 21 topic collector](../../../raw/processed/2026-08-21/ai-security-wiki-topic-news-collector-2026-08-21T233219Z.json) as the chat-memory data-isolation member of the Spring AI 2.0.1 advisory family.
 - Updated on 2026-08-22 from the [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) with RediSearch tag-query escape mechanics.

@@ -22,6 +22,7 @@ The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-secu
 
 ## Authoritative Sources
 
+- [August 29 leaf update watch source](../../../raw/processed/2026-08-29/ai-security-wiki-leaf-update-watch-20260829T000405Z.json)
 - [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json)
 - [NVD record](https://nvd.nist.gov/vuln/detail/CVE-2026-81094)
 - [CVE record](https://www.cve.org/CVERecord?id=CVE-2026-81094)
@@ -52,4 +53,5 @@ The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-secu
 
 ## Maintenance Notes
 
+- Updated on 2026-08-29 with [August 29 watcher](../../../raw/processed/2026-08-29/ai-security-wiki-leaf-update-watch-20260829T000405Z.json) provenance for the same durable advisory boundary.
 - Created on 2026-08-28 from the [August 27 topic collector](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json) as a focused MCP aggregator authentication leaf after routing broad mcp-router context upstream; next check default bind/auth behavior in versions after 0.6.3.

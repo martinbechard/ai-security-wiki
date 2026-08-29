@@ -22,6 +22,7 @@ The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-secu
 
 ## Authoritative Sources
 
+- [August 28 topic collector source](../../../raw/processed/2026-08-28/ai-security-wiki-topic-news-collector-2026-08-28T233139Z.json)
 - [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json)
 - [NVD record](https://nvd.nist.gov/vuln/detail/CVE-2026-59294)
 - [CVE record](https://www.cve.org/CVERecord?id=CVE-2026-59294)
@@ -51,4 +52,5 @@ The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-secu
 
 ## Maintenance Notes
 
+- Updated on 2026-08-29 with [August 28 topic collector](../../../raw/processed/2026-08-28/ai-security-wiki-topic-news-collector-2026-08-28T233139Z.json) provenance while preserving the existing leaf boundary and avoiding duplicate digest grouping.
 - Created on 2026-08-28 from the [August 27 topic collector](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json) as a focused AI security leaf after routing broad Spring AI context upstream; next check fixed-version wording and exploit state once the Spring advisory exposes complete remediation detail.

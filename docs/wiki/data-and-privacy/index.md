@@ -26,6 +26,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 - [GitLab AI Gateway model metadata credential disclosure](gitlab-ai-gateway-model-metadata-credential-disclosure.md)
 - [GitLab AI Gateway inline flow Host credential disclosure](gitlab-ai-gateway-inline-flow-host-credential-disclosure.md)
+- [Stable Diffusion WebUI cmd-flags credential disclosure](stable-diffusion-webui-cmd-flags-credential-disclosure.md)
 
 ## Authoritative Sources
 
@@ -55,6 +56,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-08-29 with the Stable Diffusion WebUI credential-disclosure leaf and GitLab/Spring watcher provenance.
 - Updated on 2026-08-28 with GitLab AI Gateway credential-disclosure leaves and Spring AI Redis chat-memory query-injection enrichment.
 - Do not place private, proprietary, sensitive, PII, or company-internal source content in public collector prompts.
 - Updated on 2026-08-19 with the Oracle Siebel Artificial Intelligence data-access advisory leaf.
