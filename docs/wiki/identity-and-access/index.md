@@ -31,6 +31,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [FastGPT WeChat outLink auth bypass](fastgpt-wechat-outlink-auth-bypass.md)
 - [VoltAgent memory ownership bypass](voltagent-memory-ownership-bypass.md)
 - [Gitingest host-prefix token disclosure](gitingest-host-prefix-token-disclosure.md)
+- [astron-agent workflow ownership bypass](astron-agent-workflow-ownership-bypass.md)
+- [HEL Online Classroom AI plugin authorization cluster](hel-online-classroom-ai-plugin-authorization-cluster.md)
 
 ## Authoritative Sources
 
@@ -61,6 +63,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 ## Maintenance Notes
 
 - Updated on 2026-08-29 with FastGPT channel authorization, VoltAgent memory ownership, Gitingest token disclosure, and watcher provenance for Telnyx.
+- Updated on 2026-08-30 with astron-agent workflow ownership and HEL Online Classroom plugin authorization leaves.
 - Updated on 2026-08-28 with Telnyx MCP stored-credential auth bypass plus watcher enrichments for one-api, UniFi Protect AI Key, and PraisonAI auth-enforcement leaves.
 - Distinguish user identity, workload identity, agent identity, delegated authority, and tool credentials.
 - Updated on 2026-08-17 with MemOS internal-service identity and OpenShift AI service-account least-privilege advisory leaves.

@@ -1,0 +1,608 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "evidence_classification_legend": [
+    "confirmed exploitation",
+    "demonstrated research",
+    "disclosed vulnerability",
+    "mitigation",
+    "control change",
+    "unverified claim"
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+      "reason": "New Gemini Enterprise data stores/actions are broad product capability updates, not a same-leaf model-processing residency control change.",
+      "source_url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+      "visible_date": "2026-08-28"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+      "reason": "A2UI component catalog updates are adjacent UI/tooling metadata, not a residency boundary update.",
+      "source_url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+      "visible_date": "2026-08-26"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+      "reason": "Cloud Monitoring connector metric dimensions affect observability, but do not visibly change residency, processing-location, or fallback routing controls.",
+      "source_url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+      "visible_date": "2026-08-24"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+      "reason": "Current terms page is relevant background but lacks a visible in-window publication/update date in fetched text.",
+      "source_url": "https://cloud.google.com/terms/data-residency",
+      "visible_date": null
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+      "reason": "Relevant residency support matrix, but fetched page has no visible in-window publication/update date.",
+      "source_url": "https://docs.cloud.google.com/model-armor/feature-availability-by-region",
+      "visible_date": null
+    }
+  ],
+  "federation_boundary": "Broad AI entities, companies, products, model families, frameworks, MCP servers, and general development practice route upstream; this artifact keeps only local security-specific boundaries.",
+  "follow_up_notes": {
+    "docs_wiki": "Not edited by this raw-only watcher.",
+    "normal_ingest": "Prefer reconciling with already processed August 27/28 collector artifacts before creating duplicate wiki synthesis.",
+    "raw_processed": "Not edited by this raw-only watcher."
+  },
+  "leaf_universe_count": 222,
+  "qualifying_update_count": 14,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "SiYuan before v3.8.1 asset.upload MCP file boundary"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "Normal ingest should avoid duplicating the August 28 topic collector; only reconcile if advisory metadata changed.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-82233",
+        "siyuan",
+        "siyuan-note"
+      ],
+      "published_or_updated_at": "2026-08-28T10:49:23.913Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82233",
+      "summary": "SiYuan before v3.8.1 Path Traversal via asset.upload",
+      "supporting_source_urls": [
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-p23f-cm6q-2qp8",
+        "https://www.vulncheck.com/advisories/siyuan-before-3.8.1-path-traversal-via-asset-upload"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "Stable Diffusion WebUI through 1.10.1 /sdapi/v1/cmd-flags credential exposure"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "Check whether AUTOMATIC1111 publishes a fixed release or credential-redaction patch.",
+      "leaf_id": "docs/wiki/data-and-privacy/stable-diffusion-webui-cmd-flags-credential-disclosure.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-82288",
+        "AUTOMATIC1111",
+        "stable-diffusion-webui"
+      ],
+      "published_or_updated_at": "2026-08-28T20:22:40.670Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82288",
+      "summary": "Stable Diffusion WebUI Credential Disclosure via /sdapi/v1/cmd-flags",
+      "supporting_source_urls": [
+        "https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/17411",
+        "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+        "https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/82a973c04367123ae98bd9abdf80d9eda9b910e2/modules/api/api.py",
+        "https://www.vulncheck.com/advisories/stable-diffusion-webui-credential-disclosure-via-sdapi-v1-cmd-flags"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "FastGPT WeChat iLink outLink tenant authorization and bot binding"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability; mitigation",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "Confirm audit events for WeChat outLink bot-token mutation attempts.",
+      "leaf_id": "docs/wiki/identity-and-access/fastgpt-wechat-outlink-auth-bypass.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-68929",
+        "FastGPT",
+        "labring"
+      ],
+      "published_or_updated_at": "2026-08-28T17:48:00.135Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-68929",
+      "summary": "FastGPT: Unauthenticated WeChat channel hijack and denial of service via shareId-only authorization",
+      "supporting_source_urls": [
+        "https://github.com/labring/FastGPT/security/advisories/GHSA-q4pr-3qpg-9q5v",
+        "https://github.com/labring/FastGPT/commit/81d391995b1f9989455267448872ff88bb1f42c9"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "Gitingest through 0.3.1 trusted-host validation and GitHub token forwarding"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "Check for the first Gitingest release that enforces canonical trusted-host membership before credentials attach.",
+      "leaf_id": "docs/wiki/identity-and-access/gitingest-host-prefix-token-disclosure.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-82289",
+        "coderamp-labs",
+        "gitingest"
+      ],
+      "published_or_updated_at": "2026-08-28T20:21:01.003Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82289",
+      "summary": "Gitingest Prefix-Based Git Host Check Enables Request Forgery and Token Disclosure",
+      "supporting_source_urls": [
+        "https://github.com/coderamp-labs/gitingest/issues/592",
+        "https://github.com/coderamp-labs/gitingest",
+        "https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/src/gitingest/utils/query_parser_utils.py",
+        "https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/src/gitingest/utils/git_utils.py",
+        "https://www.vulncheck.com/advisories/gitingest-prefix-based-git-host-check-enables-request-forgery-and-token-disclosure"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "VoltAgent through 2.1.20 memory API object ownership"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "Check for the first VoltAgent release that binds memory identifiers to conversation ownership.",
+      "leaf_id": "docs/wiki/identity-and-access/voltagent-memory-ownership-bypass.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-82283",
+        "VoltAgent",
+        "voltagent"
+      ],
+      "published_or_updated_at": "2026-08-28T20:27:20.972Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82283",
+      "summary": "VoltAgent Memory API Handlers Missing Ownership Checks",
+      "supporting_source_urls": [
+        "https://github.com/VoltAgent/voltagent/issues/1371",
+        "https://github.com/VoltAgent/voltagent",
+        "https://github.com/VoltAgent/voltagent/blob/44b4c8e4998ce56095b2f0e4eaf1a988f5e6d0de/packages/server-core/src/handlers/memory.handlers.ts",
+        "https://www.vulncheck.com/advisories/voltagent-memory-api-handlers-missing-ownership-checks"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "Bifrost AI Gateway before core v1.5.17 multimodal fetch SSRF"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability; mitigation",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "Reconcile Bifrost fixed-version wording around core v1.5.17 and PR 4092.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/bifrost-ai-gateway-multimodal-ssrf.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-55245",
+        "bifrost",
+        "maximhq"
+      ],
+      "published_or_updated_at": "2026-08-28T19:54:10.966Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55245",
+      "summary": "Bifrost: SSRF deny-list incomplete: isPublicIP permits CGNAT, IPv6 6to4/NAT64, and site-local in FetchAndEncodeURL",
+      "supporting_source_urls": [
+        "https://github.com/maximhq/bifrost/security/advisories/GHSA-w98g-5w9p-p3rc",
+        "https://github.com/maximhq/bifrost/pull/4092",
+        "https://github.com/maximhq/bifrost/commit/54ec431fc5255ff42c36420d88549477e0b33d89",
+        "https://github.com/maximhq/bifrost/releases/tag/core/v1.5.17"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "Bisheng through 2.6.0-fix2 unauthenticated workflow callback SSRF"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "Check for the first Bisheng release that authenticates report callbacks and filters destinations.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/bisheng-workflow-callback-ssrf.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-82285",
+        "bisheng",
+        "dataelement"
+      ],
+      "published_or_updated_at": "2026-08-28T16:19:03.833Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82285",
+      "summary": "BISHENG Unauthenticated Server-Side Request Forgery via Workflow Report Callback",
+      "supporting_source_urls": [
+        "https://github.com/dataelement/bisheng/issues/2190",
+        "https://github.com/dataelement/bisheng",
+        "https://github.com/dataelement/bisheng/blob/3f27641987c7363d2d7b7b1a8c3c3dbe09c60fd7/src/backend/bisheng/api/v1/workflow.py",
+        "https://www.vulncheck.com/advisories/bisheng-unauthenticated-server-side-request-forgery-via-workflow-report-callback"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "gpt-crawler through 1.5.1 outputFileName artifact path handling"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "Check for the first gpt-crawler release that constrains outputFileName to a safe artifact root.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/gpt-crawler-output-filename-file-write.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-82286",
+        "BuilderIO",
+        "gpt-crawler"
+      ],
+      "published_or_updated_at": "2026-08-28T16:19:04.531Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82286",
+      "summary": "gpt-crawler Arbitrary File Write via outputFileName Parameter",
+      "supporting_source_urls": [
+        "https://github.com/BuilderIO/gpt-crawler/issues/418",
+        "https://github.com/BuilderIO/gpt-crawler",
+        "https://github.com/BuilderIO/gpt-crawler/blob/d2245d66a5ad60bf227a55c849135394cbecc9b5/src/core.ts",
+        "https://github.com/BuilderIO/gpt-crawler/blob/d2245d66a5ad60bf227a55c849135394cbecc9b5/src/config.ts",
+        "https://www.vulncheck.com/advisories/gpt-crawler-arbitrary-file-write-via-outputfilename-parameter"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "Portkey AI Gateway 1.14.0 through 1.15.2 /v1/proxy/* request validation"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "Check for the first Portkey release that applies requestValidator and destination filtering to /v1/proxy/*.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/portkey-ai-gateway-proxy-ssrf.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-82270",
+        "Portkey-AI",
+        "gateway"
+      ],
+      "published_or_updated_at": "2026-08-28T16:18:53.484Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82270",
+      "summary": "Portkey AI Gateway Server-Side Request Forgery via /v1/proxy/*",
+      "supporting_source_urls": [
+        "https://github.com/Portkey-AI/gateway/issues/1718",
+        "https://github.com/Portkey-AI/gateway",
+        "https://github.com/Portkey-AI/gateway/blob/669825cbe89ee51569918b8f78a9db486fd69dd4/src/index.ts",
+        "https://www.vulncheck.com/advisories/portkey-ai-gateway-server-side-request-forgery-via-v1-proxy"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "ServiceNow AI Platform SQL injection across affected Xanadu, Yokohama, Zurich, and Australia patch levels"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability; mitigation/control change",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "Use CVE affected-version data to replace the page open question about exact ServiceNow patch levels during normal ingest.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-74820",
+        "ServiceNow",
+        "ServiceNow AI Platform"
+      ],
+      "published_or_updated_at": "2026-08-29T03:56:10.853Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-74820",
+      "summary": "Unauthenticated SQL Injection via Dynamic Schema ORDER BY Clause",
+      "supporting_source_urls": [
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3152242"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "Spring AI 2.0.0, 1.1.0-1.1.8, and 1.0.0-1.0.9 ONNX model cache path"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability; mitigation",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "CVE/ADP enrichment is in-window; Spring advisory page itself shows an August 20 report date and should be treated as stale source detail.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-47852",
+        "Spring",
+        "Spring AI"
+      ],
+      "published_or_updated_at": "2026-08-27T15:13:55.925Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-47852",
+      "summary": "Predictable cache directory location allows local ONNX model substitution in Spring AI",
+      "supporting_source_urls": [
+        "https://spring.io/security/cve-2026-47852"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "Spring AI 2.0.0, 1.1.0-1.1.8, and 1.0.0-1.0.9 PDF Document Reader ingestion thread"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability; mitigation",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "CVE/ADP enrichment is in-window; Spring advisory page itself shows an August 20 report date and should be treated as stale source detail.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-47851",
+        "Spring",
+        "Spring AI"
+      ],
+      "published_or_updated_at": "2026-08-27T15:14:42.087Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-47851",
+      "summary": "Unbounded recursion over attacker-controlled PDF outline tree in Spring AI PDF Document Reader",
+      "supporting_source_urls": [
+        "https://spring.io/security/cve-2026-47851"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "Spring AI 2.0.0, 1.1.0-1.1.8, and 1.0.9 and earlier ResourceCacheService filename construction"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "disclosed vulnerability; mitigation",
+      "exploitation_status": "No confirmed in-the-wild exploitation found in direct public CVE/advisory evidence checked in this run.",
+      "follow_up_note": "CVE/ADP enrichment is in-window; Spring advisory page itself shows an August 20 report date and should be treated as stale source detail.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/spring-ai-resource-cache-fragment-file-write.md",
+      "mitigation_or_control_change": "See affected/fixed version metadata and referenced vendor/security advisory where present.",
+      "named_entities": [
+        "CVE-2026-59294",
+        "Spring",
+        "Spring AI"
+      ],
+      "published_or_updated_at": "2026-08-28T18:36:07.272Z",
+      "source_date_basis": "CVE record datePublished/dateUpdated from cveMetadata; direct public CVE API.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-59294",
+      "summary": "Arbitrary File Write via Path Traversal in ResourceCacheService",
+      "supporting_source_urls": [
+        "https://spring.io/security/cve-2026-59294"
+      ],
+      "upstream_routing": "Route broad company/product/framework background to ai-wiki; keep only the security-specific boundary and mitigation locally."
+    },
+    {
+      "affected_boundaries": [
+        "cyber-defense governance",
+        "critical-infrastructure readiness",
+        "incident-response defender-access programs",
+        "agent identity traceability"
+      ],
+      "already_represented_locally": true,
+      "evidence_classification": "control change; unverified claim where future attack acceleration is predicted",
+      "exploitation_status": "Governance warning and control recommendation; not a single confirmed exploit disclosure.",
+      "follow_up_note": "Normal ingest should avoid duplicate synthesis unless new signatory commitments or audit artifacts appear.",
+      "leaf_id": "docs/wiki/governance-and-compliance/collective-cyber-defense-controls.md",
+      "mitigation_or_control_change": "Map the letter to auditable least-privilege, continuous testing, traceability, defender-access, and threat-intelligence-sharing evidence.",
+      "named_entities": [
+        "OpenAI",
+        "Anthropic",
+        "AWS",
+        "Microsoft",
+        "Google",
+        "ServiceNow",
+        "GitHub",
+        "Hugging Face",
+        "CVE-2026-74820"
+      ],
+      "published_or_updated_at": "2026-08-27",
+      "source_date_basis": "Axios visible page date; OpenAI page has no visible publication timestamp in fetched text.",
+      "source_url": "https://www.axios.com/2026/08/27/openai-anthropic-issue-dire-cyber-threat-warning",
+      "summary": "OpenAI-hosted collective cyber-defense letter and coverage call for least privilege, continuous testing, defender access, traceable agent identity, and threat-intelligence sharing as AI-enabled attacks accelerate.",
+      "supporting_source_urls": [
+        "https://openai.com/collective-cyberdefense/"
+      ],
+      "upstream_routing": "Route broad signatory and model-program context upstream; retain security governance controls locally."
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-30T00:03:38Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md",
+    "docs/wiki/data-and-privacy/stable-diffusion-webui-cmd-flags-credential-disclosure.md",
+    "docs/wiki/governance-and-compliance/collective-cyber-defense-controls.md",
+    "docs/wiki/identity-and-access/fastgpt-wechat-outlink-auth-bypass.md",
+    "docs/wiki/identity-and-access/gitingest-host-prefix-token-disclosure.md",
+    "docs/wiki/identity-and-access/voltagent-memory-ownership-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/bifrost-ai-gateway-multimodal-ssrf.md",
+    "docs/wiki/infrastructure-and-supply-chain/bisheng-workflow-callback-ssrf.md",
+    "docs/wiki/infrastructure-and-supply-chain/gpt-crawler-output-filename-file-write.md",
+    "docs/wiki/infrastructure-and-supply-chain/portkey-ai-gateway-proxy-ssrf.md",
+    "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md",
+    "docs/wiki/infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md",
+    "docs/wiki/infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md",
+    "docs/wiki/infrastructure-and-supply-chain/spring-ai-resource-cache-fragment-file-write.md",
+    "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md"
+  ],
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82233",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-p23f-cm6q-2qp8",
+        "https://www.vulncheck.com/advisories/siyuan-before-3.8.1-path-traversal-via-asset-upload"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/stable-diffusion-webui-cmd-flags-credential-disclosure.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82288",
+        "https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/17411",
+        "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
+        "https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/82a973c04367123ae98bd9abdf80d9eda9b910e2/modules/api/api.py",
+        "https://www.vulncheck.com/advisories/stable-diffusion-webui-credential-disclosure-via-sdapi-v1-cmd-flags"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/fastgpt-wechat-outlink-auth-bypass.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-68929",
+        "https://github.com/labring/FastGPT/security/advisories/GHSA-q4pr-3qpg-9q5v",
+        "https://github.com/labring/FastGPT/commit/81d391995b1f9989455267448872ff88bb1f42c9"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/gitingest-host-prefix-token-disclosure.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82289",
+        "https://github.com/coderamp-labs/gitingest/issues/592",
+        "https://github.com/coderamp-labs/gitingest",
+        "https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/src/gitingest/utils/query_parser_utils.py",
+        "https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/src/gitingest/utils/git_utils.py",
+        "https://www.vulncheck.com/advisories/gitingest-prefix-based-git-host-check-enables-request-forgery-and-token-disclosure"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/voltagent-memory-ownership-bypass.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82283",
+        "https://github.com/VoltAgent/voltagent/issues/1371",
+        "https://github.com/VoltAgent/voltagent",
+        "https://github.com/VoltAgent/voltagent/blob/44b4c8e4998ce56095b2f0e4eaf1a988f5e6d0de/packages/server-core/src/handlers/memory.handlers.ts",
+        "https://www.vulncheck.com/advisories/voltagent-memory-api-handlers-missing-ownership-checks"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/bifrost-ai-gateway-multimodal-ssrf.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55245",
+        "https://github.com/maximhq/bifrost/security/advisories/GHSA-w98g-5w9p-p3rc",
+        "https://github.com/maximhq/bifrost/pull/4092",
+        "https://github.com/maximhq/bifrost/commit/54ec431fc5255ff42c36420d88549477e0b33d89",
+        "https://github.com/maximhq/bifrost/releases/tag/core/v1.5.17"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/bisheng-workflow-callback-ssrf.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82285",
+        "https://github.com/dataelement/bisheng/issues/2190",
+        "https://github.com/dataelement/bisheng",
+        "https://github.com/dataelement/bisheng/blob/3f27641987c7363d2d7b7b1a8c3c3dbe09c60fd7/src/backend/bisheng/api/v1/workflow.py",
+        "https://www.vulncheck.com/advisories/bisheng-unauthenticated-server-side-request-forgery-via-workflow-report-callback"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/gpt-crawler-output-filename-file-write.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82286",
+        "https://github.com/BuilderIO/gpt-crawler/issues/418",
+        "https://github.com/BuilderIO/gpt-crawler",
+        "https://github.com/BuilderIO/gpt-crawler/blob/d2245d66a5ad60bf227a55c849135394cbecc9b5/src/core.ts",
+        "https://github.com/BuilderIO/gpt-crawler/blob/d2245d66a5ad60bf227a55c849135394cbecc9b5/src/config.ts",
+        "https://www.vulncheck.com/advisories/gpt-crawler-arbitrary-file-write-via-outputfilename-parameter"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/portkey-ai-gateway-proxy-ssrf.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82270",
+        "https://github.com/Portkey-AI/gateway/issues/1718",
+        "https://github.com/Portkey-AI/gateway",
+        "https://github.com/Portkey-AI/gateway/blob/669825cbe89ee51569918b8f78a9db486fd69dd4/src/index.ts",
+        "https://www.vulncheck.com/advisories/portkey-ai-gateway-server-side-request-forgery-via-v1-proxy"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-74820",
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3152242"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-47852",
+        "https://spring.io/security/cve-2026-47852"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-47851",
+        "https://spring.io/security/cve-2026-47851"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/spring-ai-resource-cache-fragment-file-write.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59294",
+        "https://spring.io/security/cve-2026-59294"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/collective-cyber-defense-controls.md",
+      "result": "qualified_update_found",
+      "source_urls": [
+        "https://openai.com/collective-cyberdefense/",
+        "https://www.axios.com/2026/08/27/openai-anthropic-issue-dire-cyber-threat-warning"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+      "result": "no_new_qualifying_update",
+      "source_urls": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+        "https://cloud.google.com/terms/data-residency",
+        "https://docs.cloud.google.com/model-armor/feature-availability-by-region",
+        "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud"
+      ]
+    }
+  ],
+  "window": {
+    "end_inclusive": "2026-08-30T00:03:38Z",
+    "rule": "strict last 7 days; exclude missing, ambiguous, future, or boundary-only dates",
+    "start_exclusive": "2026-08-23T00:03:38Z"
+  }
+}

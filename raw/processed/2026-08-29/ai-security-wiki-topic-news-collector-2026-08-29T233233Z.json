@@ -1,0 +1,441 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-08-29T23:32:33Z",
+  "cutoff_window": {
+    "start_utc": "2026-08-27T23:32:33Z",
+    "end_utc": "2026-08-29T23:32:33Z",
+    "last_run_utc": "2026-08-28T23:31:05.550Z",
+    "selection_note": "Items must have a visible publication or update timestamp inside the cutoff window and a concrete AI security fact. Items already captured by the 2026-08-28 collector are recorded as exclusions or routing context rather than duplicated as fresh findings."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "repository_scope": {
+    "repository_root": "/Users/martinbechard/dev/ai-security-wiki",
+    "modified_repository_only": true,
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false,
+    "pre_existing_status_notes": [
+      "The worktree had pre-existing untracked .Codex/agent-claim/ and .agent-ops/ directories; they were not modified."
+    ]
+  },
+  "routing_context_checked": {
+    "local_federation_page": "docs/wiki/federation.md",
+    "local_topic_index": "docs/wiki/topic-index.md",
+    "upstream_ai_wiki_topic_index": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+    "upstream_ai_dev_wiki_topic_index": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+    "rule_summary": "Broad AI entities, products, model families, MCP server catalogs, companies, and developer tools route upstream to ai-wiki; general AI-assisted development practices route upstream to ai-dev-wiki; this repository keeps AI-security-specific implications, affected boundaries, mitigations, and routing notes."
+  },
+  "qualifying_findings": [
+    {
+      "id": "cve-2026-82456-argocd-mcp-unauthenticated-http-tool-control",
+      "title": "argocd-mcp 0.8.0 unauthenticated HTTP transport exposes Argo CD tool authority",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82456",
+        "https://github.com/argoproj-labs/mcp-for-argocd/security/advisories/GHSA-rp45-5x3v-48mr",
+        "https://www.vulncheck.com/advisories/argocd-mcp-0.8.0-authentication-bypass-via-unauthenticated-http",
+        "https://github.com/argoproj-labs/mcp-for-argocd"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD API",
+          "published_utc": "2026-08-29T14:16:38.767Z",
+          "last_modified_utc": "2026-08-29T14:16:38.767Z"
+        },
+        {
+          "source": "GitHub security advisory",
+          "published_date": "2026-08-11",
+          "note": "Older upstream advisory; NVD publication is the in-window visible database event."
+        }
+      ],
+      "concise_factual_summary": "NVD published CVE-2026-82456 for argocd-mcp 0.8.0. The HTTP transport binds to all network interfaces and allows MCP sessions without inbound caller authentication when ARGOCD_API_TOKEN is configured, so a reachable attacker can invoke tools using the operator's stored Argo CD token.",
+      "evidence_classification": "primary vulnerability database plus upstream project security advisory and reproducible advisory detail",
+      "affected_boundary_or_version": "argocd-mcp 0.8.0; patched version reported as 0.9.0 in the GitHub advisory; exposed boundary crosses from MCP listener to Argo CD and Kubernetes resources reachable by the stored token.",
+      "why_it_matters_for_ai_security": "It is a concrete MCP delegated-authority failure: an AI tool server turns an outbound infrastructure credential into unauthenticated inbound control of deployment actions.",
+      "named_entities": [
+        "argocd-mcp",
+        "Argo CD",
+        "Model Context Protocol",
+        "GitHub Advisory Database",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Create or update a local agent-and-tool-security or identity-and-access leaf for MCP inbound authentication, token directionality, host/origin validation, and deployment-tool authority.",
+        "ai_wiki": "If needed, route broad argocd-mcp and MCP server catalog facts upstream rather than duplicating them here.",
+        "ai_dev_wiki": "If needed, route general developer-tool MCP deployment practice upstream; keep the security failure local."
+      },
+      "confidence_notes": "High confidence for the in-window NVD publication and affected boundary. GitHub advisory predates the window, so it is supporting evidence rather than the qualifying date source.",
+      "follow_up_actions": [
+        "During ingest, deduplicate against existing MCP transport and delegated credential pages.",
+        "Verify patched-version availability and whether CVE metadata is synchronized into GitHub Advisory Database."
+      ]
+    },
+    {
+      "id": "cve-2026-82475-iflytek-astron-agent-workflow-ownership-bypass",
+      "title": "iFlytek astron-agent workflow copy endpoint misses ownership validation",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82475",
+        "https://github.com/iflytek/astron-agent",
+        "https://github.com/iflytek/astron-agent/blob/v1.1.1/console/backend/toolkit/src/main/java/com/iflytek/astron/console/toolkit/service/workflow/WorkflowService.java",
+        "https://github.com/iflytek/astron-agent/issues/1590",
+        "https://www.vulncheck.com/advisories/iflytek-astron-agent-through-1.1.1-workflow-hijacking-via-missing-ownership-check"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD API",
+          "published_utc": "2026-08-29T17:18:00.057Z",
+          "last_modified_utc": "2026-08-29T17:18:00.057Z"
+        }
+      ],
+      "concise_factual_summary": "NVD published CVE-2026-82475 for iFlytek astron-agent through 1.1.1. The copyFlow endpoint fails to validate workflow ownership, allowing authenticated attackers to enumerate workflow identifiers and overwrite or copy other tenants' workflows to read their definitions.",
+      "evidence_classification": "primary vulnerability database with upstream code and issue references",
+      "affected_boundary_or_version": "iFlytek astron-agent through 1.1.1; authenticated cross-tenant workflow ownership and integrity boundary.",
+      "why_it_matters_for_ai_security": "Agent workflow definitions encode delegated actions, model/tool orchestration, and possibly secret-bearing configuration; cross-tenant copy or overwrite is an authorization failure in an AI agent control plane.",
+      "named_entities": [
+        "iFlytek",
+        "astron-agent",
+        "NVD",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Local identity-and-access and agent-and-tool-security coverage should focus on workflow ownership checks and tenant isolation for agent control planes.",
+        "ai_wiki": "Route broad astron-agent product or company background upstream if it becomes durable.",
+        "ai_dev_wiki": "Route general workflow-authoring practice upstream only if non-security guidance is needed."
+      },
+      "confidence_notes": "High confidence for NVD publication and description. Patch status was not confirmed from a vendor release page during this run.",
+      "follow_up_actions": [
+        "Check upstream issue or release notes during ingest for fixed version and maintainer remediation.",
+        "Compare with existing workflow-ownership and delegated-agent authorization leaves before creating a new local page."
+      ]
+    },
+    {
+      "id": "cve-2026-77007-77008-77010-hel-online-classroom-ai-plugin-authorization-cluster",
+      "title": "HEL Online Classroom AI WordPress plugin exposes classroom settings and moderator joins",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77007",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77008",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77010",
+        "https://wpscan.com/vulnerability/24f1da87-4217-4876-a0f3-5e125f694651/",
+        "https://wpscan.com/vulnerability/529663a1-87ed-4cff-92f5-85641e9718b3/",
+        "https://wpscan.com/vulnerability/c50e6d2c-fe67-44d4-af10-a261d0afc6d7/"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD API",
+          "cve": "CVE-2026-77007",
+          "published_utc": "2026-08-29T06:17:34.453Z",
+          "last_modified_utc": "2026-08-29T06:17:34.453Z"
+        },
+        {
+          "source": "NVD API",
+          "cve": "CVE-2026-77008",
+          "published_utc": "2026-08-29T06:17:38.927Z",
+          "last_modified_utc": "2026-08-29T06:17:38.927Z"
+        },
+        {
+          "source": "NVD API",
+          "cve": "CVE-2026-77010",
+          "published_utc": "2026-08-29T06:17:39.037Z",
+          "last_modified_utc": "2026-08-29T06:17:39.037Z"
+        }
+      ],
+      "concise_factual_summary": "NVD published three CVEs for HEL Online Classroom: AI-powered Online Classrooms WordPress plugin through 1.0.3. The plugin lacks authorization on REST routes, allowing unauthenticated retrieval of stored settings and BigBlueButton signing secrets, unauthenticated settings overwrite to repoint classrooms, and unauthenticated signed meeting join links with moderator privileges.",
+      "evidence_classification": "primary vulnerability database with WPScan advisory references",
+      "affected_boundary_or_version": "HEL Online Classroom: AI-powered Online Classrooms WordPress plugin through 1.0.3; WordPress REST API to BigBlueButton classroom integration boundary.",
+      "why_it_matters_for_ai_security": "AI-labeled educational plugins can become credential and meeting-authority bridges; missing authorization exposes shared secrets and lets unauthenticated users take over AI-assisted classroom sessions.",
+      "named_entities": [
+        "HEL Online Classroom",
+        "WordPress",
+        "BigBlueButton",
+        "WPScan",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Local identity-and-access and data-and-privacy coverage should focus on plugin REST authorization, shared meeting secrets, and moderator privilege issuance.",
+        "ai_wiki": "Route broad WordPress plugin/product catalog detail upstream only if this plugin becomes a recurring AI product entity.",
+        "ai_dev_wiki": "No general AI-assisted development practice routing identified."
+      },
+      "confidence_notes": "High confidence for NVD publication dates and vulnerability descriptions. The WPScan pages were not fully fetched in this run; use them as referenced advisories to recheck during ingest.",
+      "follow_up_actions": [
+        "Confirm whether version 1.0.4 or later patches all three routes.",
+        "During ingest, decide whether to keep as one cluster page or split settings disclosure, settings overwrite, and moderator-join authorization bypass."
+      ]
+    },
+    {
+      "id": "cve-2026-77010-hel-online-classroom-ai-plugin-moderator-privilege-join",
+      "title": "HEL Online Classroom access-code bypass grants moderator classroom joins",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77010",
+        "https://wpscan.com/vulnerability/c50e6d2c-fe67-44d4-af10-a261d0afc6d7/"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD API",
+          "published_utc": "2026-08-29T06:17:39.037Z",
+          "last_modified_utc": "2026-08-29T06:17:39.037Z"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-77010 reports that HEL Online Classroom through 1.0.3 does not consistently enforce per-class access codes and does not authorize REST routes, allowing unauthenticated users to obtain signed join links, including moderator-privilege links.",
+      "evidence_classification": "primary vulnerability database with WPScan advisory reference",
+      "affected_boundary_or_version": "HEL Online Classroom WordPress plugin through 1.0.3; class access-code and moderator join-signature boundary.",
+      "why_it_matters_for_ai_security": "The finding is the highest-impact member of the HEL cluster because it turns an AI classroom integration into unauthorized privileged session access, not just configuration exposure.",
+      "named_entities": [
+        "HEL Online Classroom",
+        "WordPress",
+        "BigBlueButton",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_wiki": "If the cluster is split, this belongs under identity-and-access as access-code enforcement and delegated session role issuance.",
+        "ai_wiki": "Do not duplicate broad plugin catalog facts unless upstream lacks the entity and it becomes recurrent.",
+        "ai_dev_wiki": "No routing needed."
+      },
+      "confidence_notes": "High confidence for NVD date and description. It is intentionally duplicated as a sub-finding because the moderator-privilege boundary may deserve separate ingest treatment.",
+      "follow_up_actions": [
+        "Use ingest judgment to merge this sub-finding into the cluster if separate leaf granularity is not useful."
+      ]
+    },
+    {
+      "id": "nist-agentic-ai-identity-foundation-blog-2026-08-27",
+      "title": "NIST Cybersecurity Insights frames agentic AI as an identity and authorization problem",
+      "source_urls": [
+        "https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation",
+        "https://www.nist.gov/blogs"
+      ],
+      "visible_dates": [
+        {
+          "source": "NIST page structured data",
+          "published_local": "2026-08-27T08:00:00-04:00",
+          "modified_local": "2026-08-27T07:37:00-04:00"
+        },
+        {
+          "source": "HTTP header",
+          "last_modified": "Sat, 29 Aug 2026 10:08:36 GMT"
+        }
+      ],
+      "concise_factual_summary": "A NIST Cybersecurity Insights post says agentic AI deployments are repeating a pattern of prioritizing features over security and highlights identity and authorization challenges, including overbroad tokens, granular authorization, zero trust, just-in-time access, and least standing privilege for agents whose speed and scale exceed human activity.",
+      "evidence_classification": "official standards-agency cybersecurity blog with in-window HTTP last-modified evidence",
+      "affected_boundary_or_version": "Enterprise agentic AI identity, authentication, authorization, and least-privilege control design; not a CVE or patch advisory.",
+      "why_it_matters_for_ai_security": "It is official guidance signal that agent security should be governed with identity and authorization foundations rather than relying on model-only guardrails.",
+      "named_entities": [
+        "NIST",
+        "NCCoE",
+        "agentic AI",
+        "zero trust",
+        "least privilege"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Local identity-and-access and governance-and-compliance pages should capture the agent identity, authorization, least privilege, and audit-evidence implications.",
+        "ai_wiki": "Broad NIST organization context remains upstream-owned if needed.",
+        "ai_dev_wiki": "General agent operating-practice implications can route to ai-dev-wiki, but this repository owns the security-control lens."
+      },
+      "confidence_notes": "Medium confidence for in-window qualification: the article's visible publication timestamp is just outside the exact 48-hour cutoff, but the fetched HTTP Last-Modified header is inside the window. Treat as an updated guidance item during ingest.",
+      "follow_up_actions": [
+        "During ingest, verify the page still exposes an in-window Last-Modified value or record it as a dated guidance caveat.",
+        "Cross-link with local MCP tool-level IAM, production-agent identity, and downstream authorization context pages if synthesized."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "OpenAI collective cyber defense letter",
+      "source_urls": [
+        "https://openai.com/collective-cyberdefense/",
+        "https://www.axios.com/2026/08/27/openai-anthropic-issue-dire-cyber-threat-warning",
+        "https://www.businessinsider.com/openai-collective-action-cyber-defense-anthropic-hugging-face-hack-2026-8"
+      ],
+      "visible_date_or_signal": "OpenAI page fetched by web tool as crawled today; secondary reports dated 2026-08-27; prior local artifact captured this item on 2026-08-28.",
+      "reason": "Already captured in the 2026-08-28 collector artifact; OpenAI page did not expose a clear new visible publication/update date in the fetched content beyond crawler freshness."
+    },
+    {
+      "candidate": "SiYuan asset.upload MCP path traversal, CVE-2026-82233",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82233"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-28T12:16:32.953Z and modified 2026-08-28T18:45:46.953Z.",
+      "reason": "Qualifying AI/MCP security item, but already captured by the 2026-08-28 artifact."
+    },
+    {
+      "candidate": "Bifrost AI Gateway SSRF, CVE-2026-55245",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55245"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-28T20:18:26.743Z and modified 2026-08-28T22:16:50.413Z.",
+      "reason": "Qualifying AI gateway item, but already captured by the 2026-08-28 artifact."
+    },
+    {
+      "candidate": "Portkey AI Gateway SSRF, CVE-2026-82270",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82270"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-28T20:20:17.797Z.",
+      "reason": "Qualifying AI gateway item, but already captured by the 2026-08-28 artifact."
+    },
+    {
+      "candidate": "FastGPT WeChat share-channel authorization bypass, CVE-2026-68929",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-68929"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-28T00:18:08.337Z and modified 2026-08-28T20:19:38.003Z.",
+      "reason": "Qualifying AI application authorization item, but already captured by the 2026-08-28 artifact."
+    },
+    {
+      "candidate": "ServiceNow AI Platform code injection, access-control, and SQL injection cluster, CVE-2026-18885/CVE-2026-18886/CVE-2026-74820",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18885",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18886",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74820"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-27T20:17Z to 2026-08-27T20:18Z and modified 2026-08-29T04:18Z.",
+      "reason": "Qualifying AI platform cluster, but already captured by the 2026-08-28 artifact; modified timestamps remain useful for ingest recheck."
+    },
+    {
+      "candidate": "Spring AI advisory cluster, CVE-2026-47851/CVE-2026-47852/CVE-2026-59294/CVE-2026-59319",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-47851",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-47852",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59294",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59319"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-27 to 2026-08-27T20:18Z and modified through 2026-08-28T23:17Z.",
+      "reason": "Qualifying Spring AI security cluster, but already captured by the 2026-08-28 artifact."
+    },
+    {
+      "candidate": "Roo Code MCP integration trust-model code injection, CVE-2026-81835",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81835"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-28T00:18:21.593Z.",
+      "reason": "In-window MCP-related result, but no independent detail fetched before NVD rate limiting and likely overlap with prior 2026-08-28 collection; defer to ingest recheck instead of duplicating."
+    },
+    {
+      "candidate": "mcp-sequential-thinking import/export path traversal, CVE-2026-81845",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81845"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-28T00:18:22.133Z.",
+      "reason": "In-window MCP-related result, but supporting advisory detail was not fetched before rate limiting and the item predates the last run."
+    },
+    {
+      "candidate": "Hermes Agent mutable MCP catalog supply-chain vulnerability, CVE-2026-82021",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82021"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-28T20:20:14.470Z.",
+      "reason": "Potentially qualifying supply-chain item, but not independently verified before NVD rate limiting and likely included in the 2026-08-28 overlap window; route as follow-up."
+    },
+    {
+      "candidate": "Memos CGNAT SSRF, CVE-2026-82476",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82476",
+        "https://github.com/usememos/memos/issues/6099",
+        "https://www.vulncheck.com/advisories/memos-through-0.30.0-ssrf-via-omitted-cgnat-address-range"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-29T17:18:00.197Z.",
+      "reason": "Concrete security issue but no AI-specific product, model, agent, data, or tool boundary was visible in the fetched NVD description."
+    },
+    {
+      "candidate": "Linux kernel Airoha and unrelated platform CVEs returned by AI keyword search",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80617",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80632",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80684",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-16821"
+      ],
+      "visible_date_or_signal": "NVD publications on 2026-08-28.",
+      "reason": "False positives from string matching; descriptions do not identify an AI-specific security boundary."
+    },
+    {
+      "candidate": "TranslatePress AI Translation stored XSS, CVE-2026-76053",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-76053"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-28T05:16:46.087Z.",
+      "reason": "WordPress plugin includes AI Translation branding, but fetched description is a generic stored XSS parser issue with no concrete AI-system security delta."
+    },
+    {
+      "candidate": "Yu AI Code Mother path traversal, CVE-2026-75337",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75337"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-28T00:18:12.150Z.",
+      "reason": "Potentially AI-coded application surface, but item predates last run and was not independently verified before rate limiting."
+    },
+    {
+      "candidate": "vLLM multimodal media fetch denial of service, CVE-2026-37237",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-37237"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-28T16:17:46.300Z.",
+      "reason": "Qualifying model-runtime item, but it falls in the 2026-08-28 overlap and was not re-added to avoid duplicating yesterday's collector work."
+    },
+    {
+      "candidate": "23blocks-OS ai-maestro command injection, CVE-2026-37751",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-37751"
+      ],
+      "visible_date_or_signal": "NVD published 2026-08-28T16:17:46.667Z.",
+      "reason": "Potentially qualifying agent-runtime item, but it falls in the 2026-08-28 overlap and supporting primary advisory detail was not fetched before rate limiting."
+    },
+    {
+      "candidate": "Bitsight autonomous AI attack capability guide",
+      "source_urls": [
+        "https://www.bitsight.com/guides/autonomous-ai-attack-defense-capability-model-2026"
+      ],
+      "visible_date_or_signal": "Search result reports Updated: August 28, 2026.",
+      "reason": "Security guidance is relevant, but the source is vendor guide content and no concrete new advisory, standard, patch, incident, or reproducible result was identified from fetched evidence."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "argocd-mcp",
+      "route": "ai-wiki upstream owns broad MCP server/product catalog context; ai-security-wiki owns unauthenticated transport, stored-token directionality, and Argo CD/Kubernetes authority implications."
+    },
+    {
+      "entity_or_topic": "iFlytek astron-agent",
+      "route": "ai-wiki upstream owns company/product background if durable; ai-security-wiki owns tenant workflow authorization failure and agent-control-plane risk."
+    },
+    {
+      "entity_or_topic": "HEL Online Classroom and WordPress AI plugins",
+      "route": "ai-wiki may own plugin/product catalog context if recurring; ai-security-wiki owns REST authorization failures, shared secret exposure, and moderator role issuance."
+    },
+    {
+      "entity_or_topic": "NIST agentic AI identity guidance",
+      "route": "ai-dev-wiki may own general agent operating practice; ai-security-wiki owns identity, authorization, least standing privilege, zero trust, and audit-evidence implications."
+    },
+    {
+      "entity_or_topic": "OpenAI collective cyber defense letter",
+      "route": "Prior raw artifact captured this item; broad OpenAI entity context is upstream-owned by ai-wiki while security implications belong locally."
+    },
+    {
+      "entity_or_topic": "Memos CGNAT SSRF",
+      "route": "Excluded from this run because no AI-specific boundary was visible; route to a general security wiki, not this AI-security wiki, if needed."
+    }
+  ],
+  "follow_up_actions": [
+    "Recheck NVD for keyword searches that returned HTTP 429: LLM, agent, prompt, and model.",
+    "During ingest, compare today&apos;s HEL plugin cluster with existing WordPress AI plugin advisory deferral pages and decide whether one cluster leaf is enough.",
+    "During ingest, verify argocd-mcp patched version 0.9.0 and whether NVD assigns or reconciles a CVE with the GitHub advisory.",
+    "If NIST guidance is synthesized, verify that the page still exposes an in-window Last-Modified header or downgrade to a caveated routing note."
+  ],
+  "collection_notes": {
+    "public_sources_only": true,
+    "private_or_local_sensitive_content_sent_external": false,
+    "nvd_api_status": "NVD API returned results for AI and MCP keyword searches, then returned HTTP 429 for later LLM, agent, prompt, and model keyword searches. Per-CVE detail fetches succeeded after pacing for the new high-value IDs.",
+    "web_search_status": "Web search was used for public OpenAI, NIST, vulnerability-database, and security-news discovery. Fetched OpenAI content via web tool, NIST content via urllib, GitHub argocd-mcp advisory via web tool, and NVD via public API.",
+    "validation_expected": [
+      "jq empty",
+      "python3 -m json.tool"
+    ]
+  }
+}

@@ -9,7 +9,7 @@ tags: ["governance-and-compliance", "incident-response", "testing-and-assurance"
 
 ## Current Understanding
 
-The [August 28 topic collector source](../../../raw/processed/2026-08-28/ai-security-wiki-topic-news-collector-2026-08-28T233139Z.json) records an OpenAI-hosted [collective cyber-defense letter](https://openai.com/collective-cyberdefense/) and secondary [Axios coverage](https://www.axios.com/2026/08/27/openai-anthropic-issue-dire-cyber-threat-warning) as a public governance signal. Broad signatory, company, and model-program context belongs upstream; this page owns the local security-control implication: AI-enabled attacks increase pressure for least privilege, continuous testing against frontier cyber capabilities, traceable agent identity, threat-intelligence sharing, and controlled defender access during major incidents.
+The [August 28 topic collector source](../../../raw/processed/2026-08-28/ai-security-wiki-topic-news-collector-2026-08-28T233139Z.json) records an OpenAI-hosted [collective cyber-defense letter](https://openai.com/collective-cyberdefense/) and secondary [Axios coverage](https://www.axios.com/2026/08/27/openai-anthropic-issue-dire-cyber-threat-warning) as a public governance signal. The [August 29 leaf update watch source](../../../raw/processed/2026-08-29/ai-security-wiki-leaf-update-watch-20260830T000338Z.json) keeps the same item in scope without changing the control boundary. Broad signatory, company, and model-program context belongs upstream; this page owns the local security-control implication: AI-enabled attacks increase pressure for least privilege, continuous testing against frontier cyber capabilities, traceable agent identity, threat-intelligence sharing, and controlled defender access during major incidents.
 
 ## Security Impact
 
@@ -23,6 +23,7 @@ The [August 28 topic collector source](../../../raw/processed/2026-08-28/ai-secu
 ## Authoritative Sources
 
 - [August 28 topic collector source](../../../raw/processed/2026-08-28/ai-security-wiki-topic-news-collector-2026-08-28T233139Z.json)
+- [August 29 leaf update watch source](../../../raw/processed/2026-08-29/ai-security-wiki-leaf-update-watch-20260830T000338Z.json)
 - [OpenAI collective cyber-defense letter](https://openai.com/collective-cyberdefense/)
 - [Axios coverage](https://www.axios.com/2026/08/27/openai-anthropic-issue-dire-cyber-threat-warning)
 
@@ -52,3 +53,4 @@ The [August 28 topic collector source](../../../raw/processed/2026-08-28/ai-secu
 ## Maintenance Notes
 
 - Created on 2026-08-29 from the [August 28 topic collector](../../../raw/processed/2026-08-28/ai-security-wiki-topic-news-collector-2026-08-28T233139Z.json) as a governance-control leaf after routing broad signatory and model-program context upstream.
+- Updated on 2026-08-30 from the [August 29 leaf update watch](../../../raw/processed/2026-08-29/ai-security-wiki-leaf-update-watch-20260830T000338Z.json) as corroborating governance evidence without adding a duplicate digest entry.

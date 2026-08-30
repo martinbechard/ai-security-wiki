@@ -88,6 +88,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/ui-tars-desktop-mcp-unauthenticated-rce.md](agent-and-tool-security/ui-tars-desktop-mcp-unauthenticated-rce.md)
 - [agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md](agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md)
 - [agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md](agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md)
+- [agent-and-tool-security/argocd-mcp-unauthenticated-http-tool-control.md](agent-and-tool-security/argocd-mcp-unauthenticated-http-tool-control.md)
 - [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
 - [infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md](infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md)
 - [infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md](infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md)
@@ -154,6 +155,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/fastgpt-wechat-outlink-auth-bypass.md](identity-and-access/fastgpt-wechat-outlink-auth-bypass.md)
 - [identity-and-access/voltagent-memory-ownership-bypass.md](identity-and-access/voltagent-memory-ownership-bypass.md)
 - [identity-and-access/gitingest-host-prefix-token-disclosure.md](identity-and-access/gitingest-host-prefix-token-disclosure.md)
+- [identity-and-access/astron-agent-workflow-ownership-bypass.md](identity-and-access/astron-agent-workflow-ownership-bypass.md)
+- [identity-and-access/hel-online-classroom-ai-plugin-authorization-cluster.md](identity-and-access/hel-online-classroom-ai-plugin-authorization-cluster.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -260,4 +263,5 @@ description: "Navigation for locally owned AI security topics and source workflo
 - Updated on 2026-08-16 with GoMarble Facebook Ads MCP SSRF, macOS Screen Sharing AI-accelerated exploitability, and semantic governance policy telemetry.
 
 - Updated on 2026-08-29 with August 28 SiYuan, Bifrost, Portkey, FastGPT, Stable Diffusion WebUI, VoltAgent, gpt-crawler, Gitingest, Bisheng, and collective cyber-defense leaves plus watcher provenance links.
+- Updated on 2026-08-30 with argocd-mcp, astron-agent, HEL Online Classroom, and NIST agentic-AI identity guidance security leaves.
 - Updated on 2026-08-28 with August 27 Kiro, MCP transport and server, tool-execution, Spring AI, split GitLab AI Gateway, split ServiceNow AI platform, and watcher enrichment pages.
