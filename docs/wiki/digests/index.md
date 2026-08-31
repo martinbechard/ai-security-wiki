@@ -19,6 +19,8 @@ The active digest records each independently changing security item or closely c
 - [August 29 leaf update watch source](../../../raw/processed/2026-08-29/ai-security-wiki-leaf-update-watch-20260829T000405Z.json)
 - [August 29 topic collector source](../../../raw/processed/2026-08-29/ai-security-wiki-topic-news-collector-2026-08-29T233233Z.json)
 - [August 30 leaf update watch source](../../../raw/processed/2026-08-29/ai-security-wiki-leaf-update-watch-20260830T000338Z.json)
+- [August 30 topic collector source](../../../raw/processed/2026-08-30/ai-security-wiki-topic-news-collector-2026-08-30T233055Z.json)
+- [August 31 leaf update watch source](../../../raw/processed/2026-08-30/ai-security-wiki-leaf-update-watch-20260831T000130Z.json)
 - [schema.md](../schema.md)
 - [automated update feeds](../source-workflows/automated-update-feeds.md)
 - [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
@@ -57,6 +59,7 @@ The active digest records each independently changing security item or closely c
 
 - Updated on 2026-08-29 with item-level August 28 entries for [collective cyber-defense controls](../governance-and-compliance/collective-cyber-defense-controls.md), SiYuan `asset.upload`, AI gateway SSRF, channel authorization, workbench credential disclosure, agent memory ownership, code-ingestion token disclosure, crawler file writes, and workflow callback SSRF; watcher sightings were folded into existing leaves without duplicate digest items.
 - Updated on 2026-08-30 with item-level August 29 entries for argocd-mcp, astron-agent, HEL Online Classroom, and NIST agentic-AI identity guidance; watcher repeats were folded into existing leaves without duplicate digest entries.
+- Updated on 2026-08-30 with item-level August 30 entries for browser-use web-ui, Jina Reader, NextChat, and Keploy advisories plus date-placed August 29 MCP Host/Skyvern entries, August 28 Google MCP/NemoClaw entries, and August 26 AI cost-anomaly control evidence; ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-08-28 with 2026-08-27 Kiro, MCP, tool-execution, Spring AI, GitLab AI Gateway, ServiceNow AI platform, and watcher digest coverage.
 - Updated on 2026-08-27 after August 26 raw ingest; the active monthly digest uses one entry per independently changing security item or closely coupled advisory family.
 - Updated on 2026-08-26 after the August digest added item-level entries for August 24-25 MCP, agent-tool, identity, infrastructure, and verification-parser advisories plus selected watcher enrichments while folding duplicate or low-signal sightings into durable leaves.

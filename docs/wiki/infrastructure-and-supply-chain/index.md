@@ -53,6 +53,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Portkey AI Gateway proxy SSRF](portkey-ai-gateway-proxy-ssrf.md)
 - [gpt-crawler outputFileName file write](gpt-crawler-output-filename-file-write.md)
 - [Bisheng workflow callback SSRF](bisheng-workflow-callback-ssrf.md)
+- [browser-use web-ui artifact path containment](browser-use-web-ui-artifact-path-containment.md)
+- [jina-ai Reader private-address SSRF](jina-ai-reader-private-address-ssrf.md)
 
 ## Authoritative Sources
 
@@ -83,6 +85,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 ## Maintenance Notes
 
 - Updated on 2026-08-29 with Bifrost and Portkey AI gateway SSRF, gpt-crawler file-write, Bisheng callback SSRF, and watcher/topic-source provenance for Spring AI and ServiceNow.
+- Updated on 2026-08-30 with browser-use web-ui artifact path containment and jina-ai Reader private-address SSRF leaves.
 - Updated on 2026-08-28 with Spring AI PDF, ONNX, and ResourceCache leaves plus split ServiceNow AI platform code-injection, access-control, and SQL-injection leaves.
 - Record provenance, affected component, trust boundary, deployment surface, and remediation status.
 - Updated on 2026-08-17 with MLflow, atomic-agents-stack, Ray, and Kiota AI infrastructure and supply-chain advisory leaves.

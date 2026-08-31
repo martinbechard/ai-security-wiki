@@ -1,0 +1,497 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "exclusions": [
+    {
+      "classification": "stale",
+      "leaf_id": "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md",
+      "reason": "visible publication date 2026-08-07 is outside the seven-day window",
+      "source_url": "https://www.theguardian.com/technology/2026/aug/07/white-house-ai"
+    },
+    {
+      "classification": "stale",
+      "leaf_id": "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md",
+      "reason": "visible publication date is outside the seven-day window; no official in-window White House, NIST, CAISI, or Federal Register text found",
+      "source_url": "https://www.wired.com/story/the-white-house-is-going-to-expand-its-ai-policy"
+    },
+    {
+      "classification": "stale",
+      "leaf_id": "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md",
+      "reason": "visible advisory date and prior footer evidence are outside the seven-day window",
+      "source_url": "https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-008/"
+    },
+    {
+      "classification": "boundary_only_date",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md",
+      "reason": "page footer is in-window but the concrete Cursor redirect URI entry is dated 2026-07-22; retained as supporting context only",
+      "source_url": "https://docs.cloud.google.com/mcp/release-notes"
+    },
+    {
+      "classification": "stale",
+      "leaf_id": "docs/wiki/incident-response/safe-ai-incident-sharing-guidance.md",
+      "reason": "visible publication date 2026-08-05 is outside the seven-day window",
+      "source_url": "https://www.securityweek.com/cybersecurity-alliance-drafts-safe-guidelines-for-sharing-ai-incident-data/"
+    },
+    {
+      "classification": "stale",
+      "leaf_id": "docs/wiki/incident-response/safe-ai-incident-sharing-guidance.md",
+      "reason": "visible publication date 2026-08-11 is outside the seven-day window",
+      "source_url": "https://www.axios.com/2026/08/11/open-source-security-ai-agent-reporting"
+    },
+    {
+      "classification": "stale",
+      "leaf_id": "docs/wiki/incident-response/safe-ai-incident-sharing-guidance.md",
+      "reason": "visible publication date is outside the seven-day window and content already captured locally",
+      "source_url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/"
+    },
+    {
+      "classification": "stale_original",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md",
+      "reason": "original Secure.com/SharedRoot evidence is outside the seven-day window; newer NVIDIA bulletin is treated as separate in-window sandbox evidence",
+      "source_url": "https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac"
+    },
+    {
+      "classification": "stale",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md",
+      "reason": "MCP Go SDK v1.7.0 release is dated 2026-07-28; no newer same-leaf SDK transport/header update found",
+      "source_url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0"
+    },
+    {
+      "classification": "stale",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md",
+      "reason": "Network-AI CVE publication/update evidence is from July 2026 and outside the window",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58481"
+    },
+    {
+      "classification": "stale",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md",
+      "reason": "Network-AI backup manifest evidence is older than the window; no new same-leaf mitigation or exploitation update found",
+      "source_url": "https://www.tenable.com/cve/CVE-2026-58484"
+    },
+    {
+      "classification": "adjacent_not_same_leaf",
+      "leaf_id": "docs/wiki/model-and-prompt-security/evaluation-artifact-template-execution-risk.md",
+      "reason": "Hugging Face incident report is older than the window; in-window Guardian incident follow-up routes to incident-response leaves, not this artifact-template leaf",
+      "source_url": "https://huggingface.co/blog/incident-report-evals"
+    }
+  ],
+  "follow_up_notes": [
+    "Do not edit docs/wiki or raw/processed from this collector artifact; normal raw ingest owns synthesis and processed moves.",
+    "NVIDIA NemoClaw/OpenShell bulletin likely deserves split decisions across sandbox containment, runtime evidence, credential handling, and supply-chain install/deployment boundaries.",
+    "Google cost-control updates should keep pricing/product coverage upstream and localize hard caps, anomaly detection, and abuse triage evidence."
+  ],
+  "leaf_universe_count": 225,
+  "public_data_boundary": "Queries used only public leaf titles, topic names, advisory identifiers, and public URLs cited by selected leaves; whole local pages and private content were not sent externally.",
+  "qualifying_count": 12,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "argocd-mcp HTTP transport",
+        "inbound MCP caller authentication",
+        "delegated Argo CD token authority"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the August 29 topic collector ingest; ledger baselined for leaf-watch coverage.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/argocd-mcp-unauthenticated-http-tool-control.md",
+      "named_entities": [
+        "argocd-mcp",
+        "Argo CD",
+        "ARGOCD_API_TOKEN",
+        "CVE-2026-82456",
+        "GHSA-rp45-5x3v-48mr"
+      ],
+      "source_url": "https://www.vulncheck.com/advisories/argocd-mcp-0.8.0-authentication-bypass-via-unauthenticated-http",
+      "summary": "CVE-2026-82456 reports unauthenticated HTTP transport exposure in argocd-mcp 0.8.0 when ARGOCD_API_TOKEN is configured, with patched range >=0.9.0.",
+      "supporting_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-82456",
+        "https://github.com/argoproj-labs/mcp-for-argocd/security/advisories/GHSA-rp45-5x3v-48mr",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82456"
+      ],
+      "upstream_routing": "Broad Argo CD, argocd-mcp, and MCP catalog context belongs in ai-wiki; keep local delegated-token security boundary.",
+      "visible_date": "2026-08-29"
+    },
+    {
+      "affected_boundaries": [
+        "astron-agent workflow ownership checks",
+        "copyFlow endpoint",
+        "tenant workflow control-plane data"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the August 29 topic collector ingest; verify fixed release if a primary patch appears.",
+      "leaf_id": "docs/wiki/identity-and-access/astron-agent-workflow-ownership-bypass.md",
+      "named_entities": [
+        "iFlytek",
+        "astron-agent",
+        "CVE-2026-82475"
+      ],
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-82475",
+      "summary": "CVE-2026-82475 discloses an authenticated astron-agent copyFlow ownership bypass through 1.1.1 that can copy or overwrite other tenants workflows.",
+      "supporting_urls": [
+        "https://www.vulncheck.com/advisories/iflytek-astron-agent-through-1.1.1-workflow-hijacking-via-missing-ownership-check",
+        "https://github.com/iflytek/astron-agent/issues/1590",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82475"
+      ],
+      "upstream_routing": "Broad iFlytek and astron-agent product context routes upstream if durable; keep local tenant workflow authorization boundary.",
+      "visible_date": "2026-08-29"
+    },
+    {
+      "affected_boundaries": [
+        "WordPress REST authorization",
+        "HEL Online Classroom settings",
+        "BigBlueButton signing secret"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Clustered with related HEL plugin authorization CVEs already represented by the August 29 topic collector ingest.",
+      "leaf_id": "docs/wiki/identity-and-access/hel-online-classroom-ai-plugin-authorization-cluster.md",
+      "named_entities": [
+        "HEL Online Classroom: AI-powered Online Classrooms",
+        "BigBlueButton",
+        "CVE-2026-77007",
+        "WPScan"
+      ],
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-77007",
+      "summary": "CVE-2026-77007 discloses unauthenticated REST access to HEL Online Classroom stored settings and BigBlueButton signing secret.",
+      "supporting_urls": [
+        "https://wpscan.com/vulnerability/24f1da87-4217-4876-a0f3-5e125f694651/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77007"
+      ],
+      "upstream_routing": "Broad WordPress/plugin catalog context routes upstream; keep local AI-classroom secret disclosure boundary.",
+      "visible_date": "2026-08-29"
+    },
+    {
+      "affected_boundaries": [
+        "WordPress REST authorization",
+        "classroom endpoint configuration",
+        "shared-secret-backed session integrity"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Clustered with related HEL plugin authorization CVEs already represented by the August 29 topic collector ingest.",
+      "leaf_id": "docs/wiki/identity-and-access/hel-online-classroom-ai-plugin-authorization-cluster.md",
+      "named_entities": [
+        "HEL Online Classroom: AI-powered Online Classrooms",
+        "CVE-2026-77008",
+        "WPScan"
+      ],
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-77008",
+      "summary": "CVE-2026-77008 discloses unauthenticated settings overwrite that can repoint classrooms and their shared secret-backed sessions.",
+      "supporting_urls": [
+        "https://wpscan.com/vulnerability/529663a1-87ed-4cff-92f5-85641e9718b3/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77008"
+      ],
+      "upstream_routing": "Keep local same-plugin authorization cluster; route generic WordPress/plugin background upstream.",
+      "visible_date": "2026-08-29"
+    },
+    {
+      "affected_boundaries": [
+        "WordPress REST authorization",
+        "classroom join-link issuance",
+        "moderator privilege issuance"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Clustered with related HEL plugin authorization CVEs already represented by the August 29 topic collector ingest.",
+      "leaf_id": "docs/wiki/identity-and-access/hel-online-classroom-ai-plugin-authorization-cluster.md",
+      "named_entities": [
+        "HEL Online Classroom: AI-powered Online Classrooms",
+        "BigBlueButton",
+        "CVE-2026-77010",
+        "WPScan"
+      ],
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-77010",
+      "summary": "CVE-2026-77010 discloses unauthenticated signed classroom join-link issuance, including access-code bypass and moderator privileges.",
+      "supporting_urls": [
+        "https://wpscan.com/vulnerability/c50e6d2c-fe67-44d4-af10-a261d0afc6d7/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77010"
+      ],
+      "upstream_routing": "Keep local same-plugin authorization cluster; route generic WordPress/plugin background upstream.",
+      "visible_date": "2026-08-29"
+    },
+    {
+      "affected_boundaries": [
+        "MCP client OAuth redirect URI registration",
+        "Google Workspace remote MCP server OAuth clients",
+        "product-specific OAuth scopes"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Use as an in-window setup-control update distinct from older Google Cloud MCP Cursor redirect fix.",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md",
+      "named_entities": [
+        "Google Workspace MCP servers",
+        "Google Antigravity",
+        "Claude",
+        "OAuth 2.0"
+      ],
+      "source_url": "https://developers.google.com/workspace/guides/configure-mcp-servers",
+      "summary": "Google Workspace MCP setup documentation gives OAuth client redirect URIs for Antigravity and Claude and enumerates product scopes for remote Workspace MCP servers.",
+      "supporting_urls": [
+        "https://docs.cloud.google.com/mcp/release-notes"
+      ],
+      "upstream_routing": "Broad Google Workspace, Antigravity, and Claude product coverage belongs upstream; keep local redirect URI and scope boundary.",
+      "visible_date": "2026-08-28"
+    },
+    {
+      "affected_boundaries": [
+        "Google and Google Cloud remote MCP servers",
+        "agent-visible tool authorization",
+        "MCP tool-call mitigation guidance"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Pair with Workspace MCP security docs for Model Armor logging and data-residency caveats during ingest.",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md",
+      "named_entities": [
+        "Google Cloud MCP servers",
+        "Model Context Protocol",
+        "Model Armor"
+      ],
+      "source_url": "https://docs.cloud.google.com/mcp/ai-security-safety",
+      "summary": "Google Cloud MCP safety documentation was visibly updated and continues to frame MCP tool calls as reversible or irreversible user-delegated actions requiring risk mitigation.",
+      "supporting_urls": [
+        "https://developers.google.com/workspace/guides/configure-mcp-security"
+      ],
+      "upstream_routing": "Broad Google Cloud MCP product and Model Armor background routes upstream; keep local tool authorization and mitigation boundary.",
+      "visible_date": "2026-08-28"
+    },
+    {
+      "affected_boundaries": [
+        "OpenShell sandbox provisioning/runtime boundary",
+        "local agent sandbox containment",
+        "host-adjacent execution boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Consider a dedicated OpenShell sandbox CVE leaf if ingest finds enough distinct details beyond the existing generic sandbox-escape leaf.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md",
+      "named_entities": [
+        "NVIDIA OpenShell",
+        "NVIDIA NemoClaw",
+        "CVE-2026-65093"
+      ],
+      "source_url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5872/~/security-bulletin:-nvidia-nemoclaw-and-openshell---august-2026",
+      "summary": "NVIDIA disclosed CVE-2026-65093, an OpenShell Linux sandbox escape with code execution, privilege escalation, data tampering, and information disclosure impact.",
+      "supporting_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-65093",
+        "https://github.com/NVIDIA/product-security/tree/main/2026/5872"
+      ],
+      "upstream_routing": "Broad NVIDIA/OpenShell product context belongs upstream; keep local sandbox-escape control boundary.",
+      "visible_date": "2026-08-25"
+    },
+    {
+      "affected_boundaries": [
+        "NemoClaw agent runtime",
+        "OpenShell sandbox",
+        "inference server authentication",
+        "remote-access helper workflow",
+        "installation and deployment integrity"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should decide whether to split high-impact CVEs into product-specific leaves or enrich agent-runtime evidence controls.",
+      "leaf_id": "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md",
+      "named_entities": [
+        "NVIDIA NemoClaw",
+        "NVIDIA OpenShell",
+        "CVE-2026-65105",
+        "CVE-2026-65098",
+        "CVE-2026-65081",
+        "CVE-2026-65084",
+        "CVE-2026-65096",
+        "CVE-2026-65099",
+        "CVE-2026-65090",
+        "CVE-2026-65089"
+      ],
+      "source_url": "https://nvidia.custhelp.com/app/answers/detail/a_id/5872/~/security-bulletin:-nvidia-nemoclaw-and-openshell---august-2026",
+      "summary": "NVIDIA bulletin lists NemoClaw and OpenShell fixes for unauthenticated inference access, weak remote-access helper authentication, installation/deployment trust failures, command injection, credential exposure, and sandbox/network-policy defects.",
+      "supporting_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-65105",
+        "https://www.cve.org/CVERecord?id=CVE-2026-65098",
+        "https://www.cve.org/CVERecord?id=CVE-2026-65081",
+        "https://www.cve.org/CVERecord?id=CVE-2026-65084",
+        "https://github.com/NVIDIA/product-security/tree/main/2026/5872"
+      ],
+      "upstream_routing": "Broad NVIDIA, NemoClaw, OpenShell, and release catalog details route to ai-wiki; keep local runtime evidence and assurance implications.",
+      "visible_date": "2026-08-25"
+    },
+    {
+      "affected_boundaries": [
+        "agent runtime release evidence",
+        "sandbox lifecycle authority",
+        "image dependency provenance",
+        "credential placeholder binding"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Cross-check whether the security bulletin CVEs correspond to the release-note hardening items during ingest.",
+      "leaf_id": "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md",
+      "named_entities": [
+        "NVIDIA NemoClaw",
+        "OpenShell",
+        "Hermes",
+        "NemoDeepAgents"
+      ],
+      "source_url": "https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes",
+      "summary": "NemoClaw release notes add runtime evidence and lifecycle hardening around receipt-owned runner recovery, verified sandbox identity, lifecycle authority drift, checksum-pinned image dependencies, and revision-scoped credential placeholders.",
+      "supporting_urls": [
+        "https://github.com/NVIDIA/NemoClaw"
+      ],
+      "upstream_routing": "Route product/release catalog details upstream; keep local assurance-evidence checklist deltas.",
+      "visible_date": "2026-08-28"
+    },
+    {
+      "affected_boundaries": [
+        "Gemini Enterprise agent workload spend",
+        "Google Antigravity and Android Studio quota pooling",
+        "AI spend guardrails",
+        "billing anomaly response"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Ingest should separate FinOps pricing background from security-relevant hard caps and spike detection.",
+      "leaf_id": "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md",
+      "named_entities": [
+        "Google Cloud",
+        "Gemini Enterprise",
+        "Google Antigravity",
+        "Android Studio",
+        "Flexible Savings Plans"
+      ],
+      "source_url": "https://cloud.google.com/blog/products/ai-machine-learning/flexible-billing-and-cost-controls-for-agents-on-google-cloud",
+      "summary": "Google Cloud announced agent workload cost controls, including hard monthly caps, agent runtime cost estimates, pooled quotas, and spike detection before invoice finalization.",
+      "supporting_urls": [
+        "https://docs.cloud.google.com/billing/docs/how-to/manage-anomalies"
+      ],
+      "upstream_routing": "Broad Google product and pricing news routes upstream; keep local cost anomaly as abuse/runaway-agent detection control.",
+      "visible_date": "2026-08-26"
+    },
+    {
+      "affected_boundaries": [
+        "Gemini API cost anomalies",
+        "Vertex AI cost anomalies",
+        "near-real-time billing estimates",
+        "fraud and system-abuse monitoring"
+      ],
+      "evidence_classification": "control_change",
+      "follow_up_note": "Map anomaly thresholds to identity, project, service, SKU, and originating-product evidence during ingest.",
+      "leaf_id": "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md",
+      "named_entities": [
+        "Google Cloud Billing",
+        "Gemini API",
+        "Vertex AI"
+      ],
+      "source_url": "https://docs.cloud.google.com/billing/docs/how-to/manage-anomalies",
+      "summary": "Cloud Billing anomaly documentation says early AI-workload anomalies use near-real-time cost estimates for Gemini API and Vertex AI and can help detect fraud or system abuse.",
+      "supporting_urls": [
+        "https://cloud.google.com/blog/products/ai-machine-learning/flexible-billing-and-cost-controls-for-agents-on-google-cloud"
+      ],
+      "upstream_routing": "Broad Gemini and Vertex AI coverage routes upstream; keep local cost anomaly signal and incident triage boundary.",
+      "visible_date": "2026-08-26"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-08-31T00:01:30Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/argocd-mcp-unauthenticated-http-tool-control.md",
+    "docs/wiki/identity-and-access/astron-agent-workflow-ownership-bypass.md",
+    "docs/wiki/identity-and-access/hel-online-classroom-ai-plugin-authorization-cluster.md",
+    "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md",
+    "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md",
+    "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md",
+    "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md",
+    "docs/wiki/incident-response/safe-ai-incident-sharing-guidance.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md",
+    "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md",
+    "docs/wiki/model-and-prompt-security/evaluation-artifact-template-execution-risk.md",
+    "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md",
+    "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md"
+  ],
+  "selection_rule": "Unchecked leaves first, then oldest last_checked_at, with stable relative-path tie breaking.",
+  "source_urls_checked": {
+    "docs/wiki/agent-and-tool-security/argocd-mcp-unauthenticated-http-tool-control.md": [
+      "https://github.com/argoproj-labs/mcp-for-argocd/security/advisories/GHSA-rp45-5x3v-48mr",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-82456",
+      "https://www.cve.org/CVERecord?id=CVE-2026-82456",
+      "https://www.vulncheck.com/advisories/argocd-mcp-0.8.0-authentication-bypass-via-unauthenticated-http"
+    ],
+    "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md": [
+      "https://www.theguardian.com/technology/2026/aug/07/white-house-ai",
+      "https://www.wired.com/story/the-white-house-is-going-to-expand-its-ai-policy"
+    ],
+    "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md": [
+      "https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-008/"
+    ],
+    "docs/wiki/identity-and-access/astron-agent-workflow-ownership-bypass.md": [
+      "https://github.com/iflytek/astron-agent/issues/1590",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-82475",
+      "https://www.cve.org/CVERecord?id=CVE-2026-82475",
+      "https://www.vulncheck.com/advisories/iflytek-astron-agent-through-1.1.1-workflow-hijacking-via-missing-ownership-check"
+    ],
+    "docs/wiki/identity-and-access/hel-online-classroom-ai-plugin-authorization-cluster.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77007",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77008",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77010",
+      "https://wpscan.com/vulnerability/24f1da87-4217-4876-a0f3-5e125f694651/",
+      "https://wpscan.com/vulnerability/529663a1-87ed-4cff-92f5-85641e9718b3/",
+      "https://wpscan.com/vulnerability/c50e6d2c-fe67-44d4-af10-a261d0afc6d7/",
+      "https://www.cve.org/CVERecord?id=CVE-2026-77007",
+      "https://www.cve.org/CVERecord?id=CVE-2026-77008",
+      "https://www.cve.org/CVERecord?id=CVE-2026-77010"
+    ],
+    "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md": [
+      "https://developers.google.com/workspace/guides/configure-mcp-servers",
+      "https://docs.cloud.google.com/mcp/release-notes"
+    ],
+    "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md": [
+      "https://developers.google.com/workspace/guides/configure-mcp-security",
+      "https://docs.cloud.google.com/mcp/ai-security-safety"
+    ],
+    "docs/wiki/incident-response/safe-ai-incident-sharing-guidance.md": [
+      "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/",
+      "https://www.axios.com/2026/08/11/open-source-security-ai-agent-reporting",
+      "https://www.securityweek.com/cybersecurity-alliance-drafts-safe-guidelines-for-sharing-ai-incident-data/"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md": [
+      "https://github.com/NVIDIA/product-security/tree/main/2026/5872",
+      "https://nvidia.custhelp.com/app/answers/detail/a_id/5872/~/security-bulletin:-nvidia-nemoclaw-and-openshell---august-2026",
+      "https://www.cve.org/CVERecord?id=CVE-2026-65093",
+      "https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md": [
+      "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-agentruntime-sandbox-path-traversal.md": [
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-58481"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-backup-manifest-recursive-delete.md": [
+      "https://www.tenable.com/cve/CVE-2026-58484"
+    ],
+    "docs/wiki/model-and-prompt-security/evaluation-artifact-template-execution-risk.md": [
+      "https://huggingface.co/blog/incident-report-evals"
+    ],
+    "docs/wiki/testing-and-assurance/agent-runtime-security-evidence.md": [
+      "https://docs.nvidia.com/nemoclaw/user-guide/openclaw/release-notes",
+      "https://github.com/NVIDIA/NemoClaw",
+      "https://github.com/NVIDIA/product-security/tree/main/2026/5872",
+      "https://nvidia.custhelp.com/app/answers/detail/a_id/5872/~/security-bulletin:-nvidia-nemoclaw-and-openshell---august-2026",
+      "https://www.cve.org/CVERecord?id=CVE-2026-65081",
+      "https://www.cve.org/CVERecord?id=CVE-2026-65084",
+      "https://www.cve.org/CVERecord?id=CVE-2026-65098",
+      "https://www.cve.org/CVERecord?id=CVE-2026-65105"
+    ],
+    "docs/wiki/testing-and-assurance/ai-workload-cost-anomaly-monitoring.md": [
+      "https://cloud.google.com/blog/products/ai-machine-learning/flexible-billing-and-cost-controls-for-agents-on-google-cloud",
+      "https://docs.cloud.google.com/billing/docs/how-to/manage-anomalies"
+    ]
+  },
+  "window": {
+    "end_inclusive": "2026-08-31T00:01:30Z",
+    "rule": "visible publication or update date must be within the last 7 days; boundary-only, ambiguous, missing, future, and crawl-only dates are excluded",
+    "start_exclusive": "2026-08-24T00:01:30Z"
+  }
+}

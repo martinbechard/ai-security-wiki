@@ -1,0 +1,490 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-08-30T23:30:55Z",
+  "cutoff_window": {
+    "start": "2026-08-28T23:30:55Z",
+    "end": "2026-08-30T23:30:55Z",
+    "rule": "Include only public-source items with a visible publication or update timestamp inside the exact 48-hour run window and a concrete AI-security fact or change."
+  },
+  "repository_scope": "/Users/martinbechard/dev/ai-security-wiki",
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_security_wiki_owns": "AI-specific security findings, affected boundaries, mitigations, assurance implications, incident-response and control implications.",
+    "ai_wiki_upstream_owns": "Broad AI ecosystem entities such as companies, models, products, frameworks, MCP servers, developer tools, and general techniques.",
+    "ai_dev_wiki_upstream_owns": "General AI-assisted development practices, coding-agent workflows, verification patterns, adoption practices, and development governance."
+  },
+  "search_methods": [
+    {
+      "method": "NVD API",
+      "details": "Queried NVD CVE 2.0 publication and last-modified windows for 2026-08-28T23:30:55Z through 2026-08-30T23:30:55Z; filtered for AI, LLM, MCP, prompt, model, browser-use, Skyvern, Jina, NextChat, and agent terms."
+    },
+    {
+      "method": "Web search",
+      "details": "Checked public web results for exact advisory titles, GitHub advisory pages, NVD detail pages, VulnCheck advisories, CISA/NIST/OWASP/ISO AI-security updates, and reputable security news."
+    },
+    {
+      "method": "Prior-run duplicate check",
+      "details": "Compared against raw/processed/2026-08-29/ai-security-wiki-topic-news-collector-2026-08-29T233233Z.json and raw/processed/2026-08-28/ai-security-wiki-topic-news-collector-2026-08-28T233139Z.json to avoid re-capturing already collected findings."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "cve-2026-81095-pg-aiguide-mcp-dns-rebinding-host-allow-list",
+      "title": "pg-aiguide MCP HTTP transport accepted arbitrary Host headers",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81095",
+        "https://github.com/timescale/pg-aiguide",
+        "https://github.com/timescale/pg-aiguide/pull/121",
+        "https://www.vulncheck.com/advisories/timescale-pg-aiguide-through-0.5.0-dns-rebinding-via-disabled-host-header-allow-list"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T17:20:51.803Z",
+        "last_modified": "2026-08-29T04:18:06.850Z",
+        "qualifying_date": "2026-08-29T04:18:06.850Z",
+        "qualifying_date_source": "NVD lastModified"
+      },
+      "summary": "NVD records that pg-aiguide started its MCP HTTP transport without enabling the SDK host allow-list, allowing DNS rebinding through a browser-controlled hostname to drive a locally reachable MCP server. Version 0.5.1 explicitly passes the protection option.",
+      "evidence_classification": "public vulnerability database entry with vendor repository and patch pull request references",
+      "affected_boundary_or_version": "pg-aiguide through 0.5.0; fixed in 0.5.1 according to NVD description.",
+      "why_it_matters_for_ai_security": "A local MCP server can become an unauthorized tool-control endpoint when browser-origin traffic can bypass host-header protections, collapsing the boundary between web content and local AI tool authority.",
+      "named_entities": [
+        "pg-aiguide",
+        "Timescale",
+        "Model Context Protocol",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "owner": "ai-wiki",
+        "reason": "pg-aiguide as a product/MCP server is upstream-owned; this repository should retain only the MCP DNS-rebinding and host-allow-list security implication."
+      },
+      "confidence_notes": "High confidence in the technical fact from NVD and VulnCheck references; publication predates the 48-hour cutoff, but NVD exposes an exact in-window lastModified timestamp."
+    },
+    {
+      "id": "cve-2026-81100-tiger-gh-mcp-server-dns-rebinding-host-allow-list",
+      "title": "tiger-gh-mcp-server exposed a browser-drivable GitHub MCP endpoint",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81100",
+        "https://github.com/timescale/tiger-gh-mcp-server",
+        "https://github.com/timescale/tiger-gh-mcp-server/pull/36",
+        "https://www.vulncheck.com/advisories/timescale-tiger-gh-mcp-server-dns-rebinding-via-disabled-host-header-allow-list"
+      ],
+      "visible_dates": {
+        "published": "2026-08-27T17:20:52.620Z",
+        "last_modified": "2026-08-29T04:18:07.003Z",
+        "qualifying_date": "2026-08-29T04:18:07.003Z",
+        "qualifying_date_source": "NVD lastModified"
+      },
+      "summary": "NVD records that tiger-gh-mcp-server started its MCP HTTP transport without the SDK DNS-rebinding host allow-list, allowing a browser page to drive the locally reachable GitHub MCP endpoint through an attacker-controlled hostname. The fix passes the option explicitly alongside a dependency update.",
+      "evidence_classification": "public vulnerability database entry with vendor repository and patch pull request references",
+      "affected_boundary_or_version": "Commit boundary before the fix; no release bracket was published according to NVD.",
+      "why_it_matters_for_ai_security": "GitHub-scoped MCP tools often carry repository authority, so local transport host validation is a least-privilege and delegated-authority control, not just a network hardening detail.",
+      "named_entities": [
+        "tiger-gh-mcp-server",
+        "Timescale",
+        "GitHub",
+        "Model Context Protocol",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "owner": "ai-wiki",
+        "reason": "The MCP server entity belongs upstream; local retention should focus on MCP transport host validation and delegated GitHub authority."
+      },
+      "confidence_notes": "High confidence in the technical fact from NVD and VulnCheck references; publication predates the 48-hour cutoff, but NVD exposes an exact in-window lastModified timestamp."
+    },
+    {
+      "id": "cve-2026-82447-skyvern-textpromptblock-sandbox-escape",
+      "title": "Skyvern TextPromptBlock double-rendering enabled Jinja sandbox escape",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82447",
+        "https://github.com/Skyvern-AI/skyvern",
+        "https://github.com/Skyvern-AI/skyvern/commit/d723de621d5b3a340f3cc4d5b46bfe40a9a3124e",
+        "https://www.vulncheck.com/advisories/skyvern-before-1.0.45-sandbox-escape-via-textpromptblock"
+      ],
+      "visible_dates": {
+        "published": "2026-08-29T13:16:38.643Z",
+        "last_modified": "2026-08-29T13:16:38.643Z",
+        "vulncheck_date": "2026-08-29",
+        "qualifying_date": "2026-08-29T13:16:38.643Z",
+        "qualifying_date_source": "NVD published"
+      },
+      "summary": "Skyvern before 1.0.45 rendered TextPromptBlock prompts first through a sandboxed Jinja environment and then through an unsandboxed environment. Attackers could inject Jinja template syntax through workflow parameters or upstream block output to execute code with server process privileges.",
+      "evidence_classification": "public vulnerability database entry with primary advisory and patch commit references",
+      "affected_boundary_or_version": "Skyvern >= 0.2.1 and < 1.0.45 according to VulnCheck; NVD records Skyvern before 1.0.45.",
+      "why_it_matters_for_ai_security": "It turns prompt or workflow data into server-side code execution in a browser automation agent platform, making prompt handling and template rendering part of the execution sandbox boundary.",
+      "named_entities": [
+        "Skyvern",
+        "Skyvern-AI",
+        "TextPromptBlock",
+        "Jinja",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "owner": "ai-wiki",
+        "reason": "Skyvern as an AI browser automation product is upstream-owned; the prompt-template sandbox escape and workflow-boundary implication are local security material."
+      },
+      "confidence_notes": "High confidence: NVD, VulnCheck, repository, and patch commit are public and align on the affected boundary."
+    },
+    {
+      "id": "cve-2026-82637-browser-use-web-ui-arbitrary-directory-creation",
+      "title": "browser-use web-ui accepted arbitrary recording and trace paths",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82637",
+        "https://github.com/browser-use/web-ui",
+        "https://github.com/browser-use/web-ui/issues/737",
+        "https://www.vulncheck.com/advisories/browser-use-web-ui-2.0.0-through-3.0.0-arbitrary-directory-creation"
+      ],
+      "visible_dates": {
+        "published": "2026-08-30T14:17:03.470Z",
+        "last_modified": "2026-08-30T14:17:03.470Z",
+        "vulncheck_date": "2026-08-30",
+        "qualifying_date": "2026-08-30T14:17:03.470Z",
+        "qualifying_date_source": "NVD published"
+      },
+      "summary": "browser-use web-ui 2.0.0 through 3.0.0 failed to validate browser settings paths in run_agent_task. Attackers could supply absolute paths for recording, trace, history, or download locations through the unauthenticated Gradio interface and create directories where the root-running container had write access.",
+      "evidence_classification": "public vulnerability database entry with primary advisory and GitHub issue references",
+      "affected_boundary_or_version": "browser-use web-ui versions 2.0.0 through 3.0.0.",
+      "why_it_matters_for_ai_security": "Agent browsers produce recordings, traces, histories, and downloads; path controls are part of containment for autonomous browser runtimes and their forensic artifacts.",
+      "named_entities": [
+        "browser-use",
+        "browser-use web-ui",
+        "Gradio",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "owner": "ai-wiki",
+        "reason": "Browser Use product context belongs upstream; this repository keeps the browser-agent path containment failure and artifact-boundary implication."
+      },
+      "confidence_notes": "High confidence from NVD and VulnCheck; patched version was not confirmed in the fetched public sources."
+    },
+    {
+      "id": "cve-2026-82638-jina-ai-reader-private-address-ssrf",
+      "title": "jina-ai Reader disabled private-address SSRF guard outside Google Cloud",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82638",
+        "https://github.com/jina-ai/reader",
+        "https://github.com/jina-ai/reader/issues/1253",
+        "https://www.vulncheck.com/advisories/jina-ai-reader-server-side-request-forgery-via-disabled-private-address-guard"
+      ],
+      "visible_dates": {
+        "published": "2026-08-30T14:17:03.610Z",
+        "last_modified": "2026-08-30T14:17:03.610Z",
+        "vulncheck_date": "2026-08-30",
+        "qualifying_date": "2026-08-30T14:17:03.610Z",
+        "qualifying_date_source": "NVD published"
+      },
+      "summary": "jina-ai Reader disabled its private-address guard outside Google Cloud deployments, allowing unauthenticated SSRF by supplying public hostnames that resolved to private addresses and could retrieve cloud metadata or internal service content.",
+      "evidence_classification": "public vulnerability database entry with primary advisory and GitHub issue references",
+      "affected_boundary_or_version": "NVD did not expose a version range in the fetched summary; issue and advisory references need ingest-time patch-boundary reconciliation.",
+      "why_it_matters_for_ai_security": "Reader-style web retrieval services often feed model context; SSRF can turn retrieval into internal network and cloud metadata exposure, contaminating both data security and prompt-context trust boundaries.",
+      "named_entities": [
+        "Jina AI",
+        "jina-ai Reader",
+        "Google Cloud",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "owner": "ai-wiki",
+        "reason": "Jina Reader as a product/entity belongs upstream; SSRF, metadata exposure, and retrieval-boundary analysis belong locally."
+      },
+      "confidence_notes": "High confidence in the vulnerability fact; affected-version and remediation details require follow-up during ingest."
+    },
+    {
+      "id": "cve-2026-82639-nextchat-openai-api-key-disclosure",
+      "title": "NextChat proxy URL validation exposed OpenAI API keys",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82639",
+        "https://github.com/ChatGPTNextWeb/NextChat",
+        "https://github.com/ChatGPTNextWeb/NextChat/issues/6814",
+        "https://www.vulncheck.com/advisories/nextchat-2.15.8-through-2.16.1-openai-api-key-disclosure"
+      ],
+      "visible_dates": {
+        "published": "2026-08-30T14:17:03.750Z",
+        "last_modified": "2026-08-30T14:17:03.750Z",
+        "vulncheck_date": "2026-08-30",
+        "qualifying_date": "2026-08-30T14:17:03.750Z",
+        "qualifying_date_source": "NVD published"
+      },
+      "summary": "NextChat 2.15.8 through 2.16.1 used substring matching for the x-base-url proxy header instead of hostname parsing. An attacker could use any URL containing api.openai.com and receive the server's OpenAI API key in the Authorization header.",
+      "evidence_classification": "public vulnerability database entry with primary advisory and GitHub issue references",
+      "affected_boundary_or_version": "NextChat versions 2.15.8 through 2.16.1 according to NVD; VulnCheck lists NextChat <= 2.16.1.",
+      "why_it_matters_for_ai_security": "Provider API keys are delegated model authority and spend authority; proxy URL validation errors can move them to attacker-controlled infrastructure.",
+      "named_entities": [
+        "NextChat",
+        "ChatGPTNextWeb",
+        "OpenAI",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "owner": "ai-wiki",
+        "reason": "NextChat and OpenAI provider background belong upstream; this repo keeps the API-key disclosure and proxy-host validation control implication."
+      },
+      "confidence_notes": "High confidence from NVD and VulnCheck; ingestion should reconcile whether the inclusive lower bound differs between NVD and VulnCheck."
+    },
+    {
+      "id": "cve-2026-82640-browser-use-web-ui-cleartext-llm-api-key-storage",
+      "title": "browser-use web-ui stored configured LLM API keys in cleartext",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82640",
+        "https://github.com/browser-use/web-ui",
+        "https://github.com/browser-use/web-ui/issues/736",
+        "https://www.vulncheck.com/advisories/browser-use-web-ui-2.0.0-through-3.0.0-cleartext-api-key-storage"
+      ],
+      "visible_dates": {
+        "published": "2026-08-30T14:17:03.890Z",
+        "last_modified": "2026-08-30T14:17:03.890Z",
+        "vulncheck_date": "2026-08-30",
+        "qualifying_date": "2026-08-30T14:17:03.890Z",
+        "qualifying_date_source": "NVD published"
+      },
+      "summary": "browser-use web-ui 2.0.0 through 3.0.0 wrote configured LLM API keys to predictably named JSON files without encryption or access restrictions, allowing attackers with local read access to the temporary settings directory to recover provider keys.",
+      "evidence_classification": "public vulnerability database entry with primary advisory and GitHub issue references",
+      "affected_boundary_or_version": "browser-use web-ui versions 2.0.0 through 3.0.0.",
+      "why_it_matters_for_ai_security": "Browser agents often hold provider credentials for autonomous action; local secret storage decisions determine whether a compromised runtime or adjacent user can take over model/provider authority.",
+      "named_entities": [
+        "browser-use",
+        "browser-use web-ui",
+        "LLM API keys",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "owner": "ai-wiki",
+        "reason": "Browser Use product context belongs upstream; secret storage and provider-key authority boundaries are local security material."
+      },
+      "confidence_notes": "High confidence from NVD and VulnCheck; patched version was not confirmed in the fetched public sources."
+    },
+    {
+      "id": "cve-2026-82641-keploy-agent-control-plane-tls-key-exposure",
+      "title": "Keploy exposed unauthenticated agent control-plane TLS key logs",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82641",
+        "https://github.com/keploy/keploy",
+        "https://github.com/keploy/keploy/issues/4394",
+        "https://github.com/keploy/keploy/commit/a6257d2b3184b85eb30edad345464aa292297b83",
+        "https://www.vulncheck.com/advisories/keploy-3.1.0-through-3.6.25-unauthenticated-tls-key-exposure"
+      ],
+      "visible_dates": {
+        "published": "2026-08-30T14:17:04.020Z",
+        "last_modified": "2026-08-30T14:17:04.020Z",
+        "vulncheck_date": "2026-08-30",
+        "qualifying_date": "2026-08-30T14:17:04.020Z",
+        "qualifying_date_source": "NVD published"
+      },
+      "summary": "Keploy 3.1.0 through 3.6.25 bound its agent control-plane HTTP server to all interfaces without authentication. Attackers could access /agent/pcap/keylog for NSS keylog lines to decrypt recorded TLS traffic, or invoke /agent/stop and /agent/storemocks to manipulate recording sessions.",
+      "evidence_classification": "public vulnerability database entry with primary advisory, GitHub issue, and patch commit references",
+      "affected_boundary_or_version": "Keploy versions 3.1.0 through 3.6.25.",
+      "why_it_matters_for_ai_security": "AI-assisted testing and replay tools can capture sensitive traffic; unauthenticated agent control planes expose test evidence, credentials in transit, and recording integrity.",
+      "named_entities": [
+        "Keploy",
+        "NSS keylog",
+        "TLS",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "owner": "ai-dev-wiki",
+        "reason": "Keploy as a general development/testing workflow tool routes to ai-dev-wiki; this repository keeps the security-control-plane and captured-traffic exposure implication."
+      },
+      "confidence_notes": "High confidence from NVD, VulnCheck, issue, and patch commit references."
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "argocd-mcp 0.8.0 unauthenticated HTTP tool control / CVE-2026-82456",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-p2x5-x87w-v2xj",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82456",
+        "https://www.vulncheck.com/advisories/argocd-mcp-0.8.0-authentication-bypass-via-unauthenticated-http"
+      ],
+      "visible_date": "2026-08-29T14:16:38.767Z",
+      "reason": "Qualifies by date and concrete AI-security fact, but was already captured in the prior 2026-08-29 collector artifact; excluded here to avoid duplicate raw-source output."
+    },
+    {
+      "title": "iFlytek astron-agent workflow ownership bypass / CVE-2026-82475",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82475",
+        "https://github.com/iflytek/astron-agent/issues/1590",
+        "https://www.vulncheck.com/advisories/iflytek-astron-agent-through-1.1.1-workflow-hijacking-via-missing-ownership-check"
+      ],
+      "visible_date": "2026-08-29T17:18:00.057Z",
+      "reason": "Qualifies by date and concrete security fact, but was already captured in the prior 2026-08-29 collector artifact."
+    },
+    {
+      "title": "HEL Online Classroom AI-powered plugin authorization cluster / CVE-2026-77007, CVE-2026-77008, CVE-2026-77010",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77007",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77008",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77010"
+      ],
+      "visible_date": "2026-08-29T06:17:34Z through 2026-08-30T01:20:27Z",
+      "reason": "Qualifies by visible publication and update timestamps, but was already captured in the prior 2026-08-29 collector artifact."
+    },
+    {
+      "title": "ServiceNow AI platform code injection, access control, and SQL injection cluster / CVE-2026-18885, CVE-2026-18886, CVE-2026-74820",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18885",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18886",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74820"
+      ],
+      "visible_date": "2026-08-29T04:18:04Z lastModified in NVD",
+      "reason": "NVD exposes in-window modification timestamps, but the same ServiceNow AI platform cluster was already captured in the 2026-08-28 collector artifact."
+    },
+    {
+      "title": "SiteServer SSCMS Agent Installation Workflow improper access control / CVE-2026-82486",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82486",
+        "https://github.com/siteserver/cms/issues/3898"
+      ],
+      "visible_date": "2026-08-30T10:17:14.843Z",
+      "reason": "The term 'Agent Installation Workflow' appears to name a CMS component, but fetched evidence did not establish an AI system, MCP server, model, prompt, or autonomous-action boundary."
+    },
+    {
+      "title": "rust-iot-platform cleartext password storage / CVE-2026-82453",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82453"
+      ],
+      "visible_date": "2026-08-29T14:16:38.347Z",
+      "reason": "Matched the collector keyword scan through substring noise, but the vulnerability is generic IoT/API credential storage with no visible AI-security delta."
+    },
+    {
+      "title": "SiYuan template path traversal / CVE-2026-82650",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82650"
+      ],
+      "visible_date": "2026-08-30T15:16:45.610Z",
+      "reason": "Concrete vulnerability, but fetched evidence did not tie this RenderTemplate endpoint to SiYuan MCP, AI plugin authority, model context handling, or another AI-specific security boundary."
+    },
+    {
+      "title": "Qubes OS qvm-copy-to-vm command injection / CVE-2026-82636",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82636"
+      ],
+      "visible_date": "2026-08-30T14:17:03.310Z",
+      "reason": "Security-relevant virtualization issue, but no concrete AI, model, agent, MCP, dataset, or AI deployment supply-chain connection was visible in the fetched evidence."
+    },
+    {
+      "title": "NVIDIA TensorRT ONNX parsing ZDI advisories",
+      "source_urls": [
+        "https://www.zerodayinitiative.com/advisories/ZDI-26-592/",
+        "https://www.zerodayinitiative.com/advisories/ZDI-26-593/",
+        "https://www.nvidia.com/en-in/product-security/"
+      ],
+      "visible_date": "2026-08-24",
+      "reason": "Concrete model-runtime/artifact parsing issues, but the visible ZDI and NVIDIA publication dates were outside the exact 48-hour run window."
+    },
+    {
+      "title": "CISA open source software security principles and practices",
+      "source_urls": [
+        "https://www.cisa.gov/resources-tools/resources/2026-minimum-elements-software-bill-materials-sbom",
+        "https://www.cisa.gov/sites/default/files/2026-08/open-source-software-security-principles-and-practices.pdf"
+      ],
+      "visible_date": "2026-08-24 to 2026-08-29 search snippets, direct publication outside or ambiguous",
+      "reason": "Potentially useful supply-chain governance context, but direct visible qualifying timestamp inside the exact window was not clean enough for this raw collector."
+    },
+    {
+      "title": "Generic AI cybersecurity trend and prompt-injection explainers",
+      "source_urls": [
+        "https://www.expresscomputer.in/news/ai-is-breaking-the-find-and-fix-model-for-application-security/138169/",
+        "https://www.wired.com/story/security-news-this-week-the-cybersecurity-apocalypse-is-coming-in-months-ai-giants-warn",
+        "https://www.vectra.ai/topics/prompt-injection"
+      ],
+      "visible_date": "mixed in-window snippets and stale evergreen pages",
+      "reason": "Some pages were in-window news or crawled recently, but they did not add a primary concrete security delta beyond items already captured or were evergreen summaries without a qualifying direct-page date."
+    },
+    {
+      "title": "OWASP, NIST, ISO, and CISA AI security standards pages",
+      "source_urls": [
+        "https://genai.owasp.org/",
+        "https://www.nist.gov/artificial-intelligence/ai-standards",
+        "https://www.iso.org/foresight/tech-risks.html",
+        "https://www.cisa.gov/resources-tools/resources/principles-secure-integration-artificial-intelligence-operational-technology"
+      ],
+      "visible_date": "mostly older direct dates or crawl-only recency",
+      "reason": "Useful governance sources, but no direct in-window AI-security standard, regulatory change, or assurance-control update was found during this run."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity": "pg-aiguide",
+      "upstream_owner": "ai-wiki",
+      "local_note": "Keep MCP host allow-list and DNS-rebinding control implications local."
+    },
+    {
+      "entity": "tiger-gh-mcp-server",
+      "upstream_owner": "ai-wiki",
+      "local_note": "Keep delegated GitHub MCP authority and browser-origin control implications local."
+    },
+    {
+      "entity": "Skyvern",
+      "upstream_owner": "ai-wiki",
+      "local_note": "Keep TextPromptBlock double-rendering, prompt-template injection, and sandbox escape implications local."
+    },
+    {
+      "entity": "Browser Use / browser-use web-ui",
+      "upstream_owner": "ai-wiki",
+      "local_note": "Keep browser-agent path containment and provider-key storage implications local."
+    },
+    {
+      "entity": "Jina Reader",
+      "upstream_owner": "ai-wiki",
+      "local_note": "Keep SSRF, cloud metadata exposure, and retrieval-context trust-boundary implications local."
+    },
+    {
+      "entity": "NextChat",
+      "upstream_owner": "ai-wiki",
+      "local_note": "Keep proxy hostname validation and OpenAI API key disclosure implications local."
+    },
+    {
+      "entity": "OpenAI",
+      "upstream_owner": "ai-wiki",
+      "local_note": "Provider background belongs upstream; local note is limited to delegated API-key exposure through NextChat."
+    },
+    {
+      "entity": "Keploy",
+      "upstream_owner": "ai-dev-wiki",
+      "local_note": "General testing-tool workflow belongs upstream; local note is the unauthenticated agent control plane, TLS keylog exposure, and recording-integrity implication."
+    }
+  ],
+  "confidence_summary": {
+    "qualifying_count": 8,
+    "exclusion_count": 12,
+    "routing_count": 8,
+    "highest_confidence_items": [
+      "CVE-2026-82447 Skyvern TextPromptBlock sandbox escape",
+      "CVE-2026-82639 NextChat OpenAI API key disclosure",
+      "CVE-2026-82641 Keploy unauthenticated TLS key exposure"
+    ],
+    "caveats": [
+      "pg-aiguide and tiger-gh-mcp-server qualify on exact NVD lastModified timestamps while their publication timestamps predate the exact cutoff.",
+      "Browser Use CVE-2026-82637 and CVE-2026-82640 should be deduplicated during ingest because they affect the same web-ui version range but different security boundaries.",
+      "Jina Reader fixed-version and remediation boundary were not confirmed in fetched public evidence."
+    ]
+  },
+  "follow_up_actions": [
+    "During ingest, create or update local security leaves for Skyvern TextPromptBlock sandbox escape, browser-use web-ui path containment, browser-use web-ui LLM key storage, Jina Reader SSRF, NextChat API-key disclosure, and Keploy agent control-plane exposure.",
+    "During ingest, decide whether pg-aiguide and tiger-gh-mcp-server should become one MCP DNS-rebinding transport-control leaf or separate leaves because both involve disabled SDK host allow-lists.",
+    "Recheck VulnCheck and linked GitHub issues for patched-version boundaries before durable synthesis, especially Jina Reader and Browser Use.",
+    "Keep broad product/MCP server/entity background routed to ai-wiki or ai-dev-wiki per federation.md."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed"
+  }
+}

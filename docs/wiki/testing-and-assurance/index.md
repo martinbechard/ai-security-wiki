@@ -58,3 +58,4 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 - Updated on 2026-08-17 with the delegated agent cost guardrail bypass leaf.
 - Updated on 2026-08-19 with the evaluation platform control-plane RCE leaf and generated-code remediation evidence.
 - Updated on 2026-08-26 with QWED SymPy verification parser RCE plus OpenAI, Microsoft, NVD modernization, and open defensive infrastructure enrichments.
+- Updated on 2026-08-30 with NemoClaw/OpenShell runtime-assurance and AI workload cost-anomaly control evidence.

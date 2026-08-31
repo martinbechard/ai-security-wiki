@@ -94,6 +94,9 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Agno Python and Shell tools prompt-injection RCE](agno-python-shell-tools-prompt-injection-rce.md)
 - [SiYuan MCP asset upload file read](siyuan-mcp-asset-upload-file-read.md)
 - [argocd-mcp unauthenticated HTTP tool control](argocd-mcp-unauthenticated-http-tool-control.md)
+- [pg-aiguide MCP DNS rebinding Host allow-list](pg-aiguide-mcp-dns-rebinding-host-allow-list.md)
+- [tiger-gh-mcp-server DNS rebinding Host allow-list](tiger-gh-mcp-server-dns-rebinding-host-allow-list.md)
+- [Skyvern TextPromptBlock Jinja sandbox escape](skyvern-textpromptblock-jinja-sandbox-escape.md)
 
 ## Authoritative Sources
 
@@ -125,6 +128,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 - Updated on 2026-08-29 with the SiYuan `asset.upload` file-read leaf and watcher provenance for August 27 agent-tool advisories.
 - Updated on 2026-08-30 with the argocd-mcp unauthenticated HTTP tool-control leaf.
+- Updated on 2026-08-30 with pg-aiguide and tiger-gh-mcp-server Host allow-list leaves plus the Skyvern prompt-template sandbox escape.
 - Updated on 2026-08-28 with Kiro Powers prompt-injection exfiltration, MCP server/transport SSRF and exposure leaves, ToolUniverse/UI-TARS/Agno execution leaves, and watcher enrichments for mcp-fetch, Dradis, PraisonAI, and Strands Agents Tools.
 - Keep each leaf focused on a distinct security boundary or control rather than a general agent workflow.
 - Updated on 2026-08-16 with the GoMarble Facebook Ads MCP SSRF leaf.

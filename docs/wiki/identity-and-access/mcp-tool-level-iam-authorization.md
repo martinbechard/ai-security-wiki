@@ -40,10 +40,18 @@ This does not create a separate Google Cloud product leaf locally. It strengthen
 - caller identity;
 - audit evidence.
 
+The [August 30 leaf update watch source](../../../raw/processed/2026-08-30/ai-security-wiki-leaf-update-watch-20260831T000130Z.json) records visibly updated [Google Cloud MCP AI security and safety documentation](https://docs.cloud.google.com/mcp/ai-security-safety) and [Google Workspace MCP security configuration](https://developers.google.com/workspace/guides/configure-mcp-security). The local control remains tool authorization. MCP deployments should preserve:
+
+- risk classification for reversible and irreversible delegated user actions;
+- Model Armor-style screening before high-risk tool calls;
+- clear logging choices because full prompt or response logging can become a secondary sensitive-data store;
+- data-residency evidence when MCP prompt, response, or inspection payloads cross Google Cloud, Workspace, and Model Armor boundaries;
+- audit evidence proportionate to the tool's blast radius.
+
 ## Security Impact
 
 - Threat or control area: agents can discover or invoke cloud tools outside the user's intended scope when tool authorization is only enforced at the connector or server level.
-- Affected boundary: Google Cloud MCP tools, `tool.name` permission conditions, allow policies, deny policies, Cloud Logging IAM-aware responses, audit logging, and least-privilege agent access.
+- Affected boundary: Google Cloud and Google Workspace MCP tools, `tool.name` permission conditions, allow policies, deny policies, Cloud Logging IAM-aware responses, audit logging, least-privilege agent access, and mitigation evidence for reversible or irreversible delegated tool calls.
 - Exploit or incident status: official security-control documentation update; no exploit or incident is reported in the source.
 - Mitigation state:
   - Bind MCP tool access to explicit IAM conditions.
@@ -61,7 +69,9 @@ This does not create a separate Google Cloud product leaf locally. It strengthen
 - [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
 - [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json)
 - [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json)
+- [August 30 leaf update watch source](../../../raw/processed/2026-08-30/ai-security-wiki-leaf-update-watch-20260831T000130Z.json)
 - Google Cloud MCP AI security and safety documentation: https://docs.cloud.google.com/mcp/ai-security-safety
+- Google Workspace MCP security configuration: https://developers.google.com/workspace/guides/configure-mcp-security
 - Cloud Monitoring MCP documentation: https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp
 
 ## Related Code
@@ -88,8 +98,10 @@ This does not create a separate Google Cloud product leaf locally. It strengthen
 
 - Which MCP audit fields are required locally to reconstruct a tool invocation from user request through agent plan to cloud API result?
 - Which Cloud Monitoring MCP role grants are sufficient for read-only evidence collection without allowing configuration mutation?
+- Which irreversible MCP tool calls require human approval in addition to IAM conditions and deny policies?
 
 ## Maintenance Notes
 
 - Added from the [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json); enriched from the [July 29 leaf watcher](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json). Keep future updates focused on tool authorization and identity evidence, not general MCP catalog coverage.
 - Updated on 2026-08-09 from the [August 9 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) with Cloud Monitoring MCP role and `mcp.tools.call` permission evidence.
+- Updated on 2026-08-30 from the [August 30 leaf watcher](../../../raw/processed/2026-08-30/ai-security-wiki-leaf-update-watch-20260831T000130Z.json) with delegated-action mitigation evidence from Google Cloud MCP safety documentation.

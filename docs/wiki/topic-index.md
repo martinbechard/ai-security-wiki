@@ -89,6 +89,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md](agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md)
 - [agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md](agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md)
 - [agent-and-tool-security/argocd-mcp-unauthenticated-http-tool-control.md](agent-and-tool-security/argocd-mcp-unauthenticated-http-tool-control.md)
+- [agent-and-tool-security/pg-aiguide-mcp-dns-rebinding-host-allow-list.md](agent-and-tool-security/pg-aiguide-mcp-dns-rebinding-host-allow-list.md)
+- [agent-and-tool-security/tiger-gh-mcp-server-dns-rebinding-host-allow-list.md](agent-and-tool-security/tiger-gh-mcp-server-dns-rebinding-host-allow-list.md)
+- [agent-and-tool-security/skyvern-textpromptblock-jinja-sandbox-escape.md](agent-and-tool-security/skyvern-textpromptblock-jinja-sandbox-escape.md)
 - [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
 - [infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md](infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md)
 - [infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md](infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md)
@@ -96,6 +99,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [data-and-privacy/gitlab-ai-gateway-model-metadata-credential-disclosure.md](data-and-privacy/gitlab-ai-gateway-model-metadata-credential-disclosure.md)
 - [data-and-privacy/gitlab-ai-gateway-inline-flow-host-credential-disclosure.md](data-and-privacy/gitlab-ai-gateway-inline-flow-host-credential-disclosure.md)
 - [data-and-privacy/stable-diffusion-webui-cmd-flags-credential-disclosure.md](data-and-privacy/stable-diffusion-webui-cmd-flags-credential-disclosure.md)
+- [data-and-privacy/nextchat-openai-api-key-disclosure.md](data-and-privacy/nextchat-openai-api-key-disclosure.md)
+- [data-and-privacy/browser-use-web-ui-cleartext-llm-api-key-storage.md](data-and-privacy/browser-use-web-ui-cleartext-llm-api-key-storage.md)
+- [data-and-privacy/keploy-agent-control-plane-tls-key-exposure.md](data-and-privacy/keploy-agent-control-plane-tls-key-exposure.md)
 - [infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md](infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md)
 - [infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md](infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md)
 - [infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md](infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md)
@@ -103,6 +109,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [infrastructure-and-supply-chain/portkey-ai-gateway-proxy-ssrf.md](infrastructure-and-supply-chain/portkey-ai-gateway-proxy-ssrf.md)
 - [infrastructure-and-supply-chain/gpt-crawler-output-filename-file-write.md](infrastructure-and-supply-chain/gpt-crawler-output-filename-file-write.md)
 - [infrastructure-and-supply-chain/bisheng-workflow-callback-ssrf.md](infrastructure-and-supply-chain/bisheng-workflow-callback-ssrf.md)
+- [infrastructure-and-supply-chain/browser-use-web-ui-artifact-path-containment.md](infrastructure-and-supply-chain/browser-use-web-ui-artifact-path-containment.md)
+- [infrastructure-and-supply-chain/jina-ai-reader-private-address-ssrf.md](infrastructure-and-supply-chain/jina-ai-reader-private-address-ssrf.md)
 - [threats-and-attacks/ai-hosted-artifact-malware-delivery.md](threats-and-attacks/ai-hosted-artifact-malware-delivery.md)
 - [threats-and-attacks/unattended-ai-agent-attack-automation.md](threats-and-attacks/unattended-ai-agent-attack-automation.md)
 - [threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md](threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md)
@@ -264,4 +272,5 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 - Updated on 2026-08-29 with August 28 SiYuan, Bifrost, Portkey, FastGPT, Stable Diffusion WebUI, VoltAgent, gpt-crawler, Gitingest, Bisheng, and collective cyber-defense leaves plus watcher provenance links.
 - Updated on 2026-08-30 with argocd-mcp, astron-agent, HEL Online Classroom, and NIST agentic-AI identity guidance security leaves.
+- Updated on 2026-08-30 with August 30 topic and watcher ingest for MCP DNS rebinding, Skyvern template execution, browser-use web-ui, Jina Reader, NextChat, Keploy, Google MCP controls, NemoClaw/OpenShell evidence, and AI workload cost anomalies.
 - Updated on 2026-08-28 with August 27 Kiro, MCP transport and server, tool-execution, Spring AI, split GitLab AI Gateway, split ServiceNow AI platform, and watcher enrichment pages.

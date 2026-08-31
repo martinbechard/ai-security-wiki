@@ -12,10 +12,12 @@ The [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-s
 
 This page owns the identity-and-access lens only. Broad Cursor and Google Cloud MCP product coverage belongs upstream; locally, OAuth redirect URI handling matters when MCP client setup failures lead teams to weaken managed identity flows, overbroaden credentials, or rely on brittle manual workarounds.
 
+The [August 30 leaf update watch source](../../../raw/processed/2026-08-30/ai-security-wiki-leaf-update-watch-20260831T000130Z.json) adds official [Google Workspace MCP server configuration](https://developers.google.com/workspace/guides/configure-mcp-servers) evidence for remote MCP OAuth clients. It keeps product-specific Workspace, Antigravity, and Claude setup details upstream while preserving the local rule that redirect URIs and product scopes are part of the authorization boundary for remote MCP servers.
+
 ## Security Impact
 
 - Threat or control area: MCP client OAuth setup incompatibility can push users toward unmanaged credentials or incorrectly registered redirect URIs.
-- Affected boundary: Google Cloud MCP configuration setup for Cursor OAuth redirect URI handling.
+- Affected boundary: Google Cloud MCP configuration setup for Cursor OAuth redirect URI handling and Google Workspace remote MCP OAuth client redirect URIs and product scopes for Antigravity and Claude.
 - Exploit or incident status: official release-note fix; no exploit or incident is reported in the source.
 - Mitigation state: keep MCP client redirect URIs registered through the managed identity flow and avoid local workarounds that bypass OAuth policy controls.
 - Confidence: medium because the source page update is in-window but the concrete release-note entry is dated 2026-07-22.
@@ -24,7 +26,9 @@ This page owns the identity-and-access lens only. Broad Cursor and Google Cloud 
 ## Authoritative Sources
 
 - [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
+- [August 30 leaf update watch source](../../../raw/processed/2026-08-30/ai-security-wiki-leaf-update-watch-20260831T000130Z.json)
 - Google Cloud MCP release notes: https://docs.cloud.google.com/mcp/docs/release-notes
+- Google Workspace MCP server configuration: https://developers.google.com/workspace/guides/configure-mcp-servers
 
 ## Related Code
 
@@ -47,7 +51,9 @@ This page owns the identity-and-access lens only. Broad Cursor and Google Cloud 
 ## Open Questions
 
 - Should older embedded release-note entries on in-window updated pages create durable local leaves, or should they be routed to a watchlist unless they change a current security control?
+- Which redirect URI inventories prove that remote Workspace MCP clients remain bound to managed OAuth clients rather than copied local secrets?
 
 ## Maintenance Notes
 
 - Added from the [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json) to preserve the date caveat instead of manufacturing a stronger current-change claim.
+- Updated on 2026-08-30 from the [August 30 leaf watcher](../../../raw/processed/2026-08-30/ai-security-wiki-leaf-update-watch-20260831T000130Z.json) with Workspace MCP OAuth redirect URI and product-scope setup evidence.
