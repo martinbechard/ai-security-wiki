@@ -34,6 +34,8 @@ Current security reviews should preserve the distinction between documented futu
 
 The [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-security-wiki-leaf-update-watch-20260816T000321Z.json) adds visible August 12 and August 13 Junie documentation updates. [Junie Headless mode](https://junie.jetbrains.com/docs/junie-headless.html) still documents Gateway and ACP as retaining trusted behavior while the non-interactive rollout toggle is disabled, and says marker-aware restricted behavior applies without prompting when that toggle is enabled. [Junie CLI configuration](https://junie.jetbrains.com/docs/junie-cli-configuration.html) describes trust-marker integrity codes tied to a local key and exact-marker or parent-marker revocation behavior for future CLI processes. This keeps trust markers as local execution-boundary evidence, not as context-exclusion evidence owned by the data-and-privacy folder.
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-08-31/ai-security-wiki-leaf-update-watch-20260901T000350Z.json) records visible August 28 Junie documentation stating that one-shot, piped-input, ACP, and Gateway runs cannot ask for an interactive trust decision and therefore load project configuration as trusted by design. The paired [Junie CLI configuration](https://junie.jetbrains.com/docs/junie-cli-configuration.html) evidence keeps project configuration discovery, MCP/skill/agent loading, trust markers, untrusted temporary storage, and explicit configuration paths in the local execution boundary. Hook loading needs the narrower rule: hooks from default project configuration are ignored, while hooks remain enabled when an explicit configuration location is supplied. The security reading is steady-state: use non-interactive Junie only for trusted projects, and treat explicit configuration paths as a deliberate authority grant.
+
 ## Control Implications
 
 - Record local command execution, hosted model processing, and hosted agent execution as separate data-flow and authority boundaries.
@@ -45,6 +47,8 @@ The [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-se
 - Validate the rollout state explicitly. Once enforcement is enabled, verify exact-project or parent trust markers and restricted unknown-project behavior before relying on them as security boundaries.
 - For Gateway and ACP mode, record whether the documented trusted behavior or marker-aware restricted behavior applies before classifying a non-interactive task as locally constrained.
 - Preserve trust-marker integrity-code and revocation evidence with local execution controls; do not confuse it with `.aiignore` or prompt-context selection.
+- Treat one-shot, piped-input, ACP, and Gateway runs as trusted-project-only execution paths when they cannot pause for a trust prompt.
+- Review explicit Junie configuration paths as authority-bearing inputs because they can enable project configuration loading outside default discovery rules.
 
 ## Authoritative Sources
 
@@ -55,6 +59,7 @@ The [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-se
 - [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
 - [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-security-wiki-leaf-update-watch-20260816T000321Z.json)
+- [September 1 leaf update watch source](../../../raw/processed/2026-08-31/ai-security-wiki-leaf-update-watch-20260901T000350Z.json)
 - Junie Headless mode documentation: https://junie.jetbrains.com/docs/junie-headless.html
 - Junie CLI configuration documentation: https://junie.jetbrains.com/docs/junie-cli-configuration.html
 
@@ -85,3 +90,4 @@ The [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-se
 - Created on 2026-07-30 from the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md), [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md), and [IntelliJ AI Assistant](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security baselines; enriched from the [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) and [August 4 leaf watcher](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) with Junie non-interactive trust-marker evidence.
 - Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) with visible 2026-08-05 Junie documentation evidence while preserving the rollout-state caveat.
 - Updated on 2026-08-15 from the [August 15 watcher](../../../raw/processed/2026-08-15/ai-security-wiki-leaf-update-watch-20260816T000321Z.json) with Junie trust-marker integrity-code and revocation evidence while keeping context-exclusion controls separate.
+- Updated on 2026-08-31 from the [September 1 watcher](../../../raw/processed/2026-08-31/ai-security-wiki-leaf-update-watch-20260901T000350Z.json) with Junie non-interactive trusted-project behavior and explicit configuration-path authority.

@@ -17,6 +17,8 @@ The [August 15 topic news collector source](../../../raw/processed/2026-08-15/ai
 
 The [agent delegated task authorization drift](../identity-and-access/agent-delegated-task-authorization-drift.md) leaf adds a reported OpenClaw gym-booking example where a normal delegated task allegedly crossed into another user's waitlist action. This page keeps the reusable hook control: inspect subject, owner, resource, and objective drift before allowing a consequential downstream action.
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-08-31/ai-security-wiki-leaf-update-watch-20260901T000350Z.json) adds [Google Cloud governance evidence](https://cloud.google.com/blog/topics/ai-infrastructure/state-of-ai-infrastructure-report-agent-governance-and-security?e=48754805) that autonomous agents need secure-by-default design, governance and oversight, dynamic-permission management, and human-in-the-loop control before critical actions. Broad Gemini Enterprise and platform positioning routes upstream; this page keeps the action-level enforcement requirement.
+
 ## Security Impact
 
 - Threat or control area: prompt guardrails can fail open when the dangerous step is a tool call, transaction, configuration change, file write, message send, or workflow launch.
@@ -34,12 +36,15 @@ The [agent delegated task authorization drift](../identity-and-access/agent-dele
 - Escalate high-risk actions to human approval with enough context to understand the proposed side effect.
 - Log allow, block, and escalation decisions as audit evidence for incident response.
 - Pair runtime hooks with least-privilege credentials so a missed hook decision cannot authorize broader action than the workflow needs.
+- Treat dynamic permission changes as hook-relevant events that need the same audit and escalation evidence as tool execution.
 
 ## Authoritative Sources
 
 - [August 14 topic news collector source](../../../raw/processed/2026-08-14/ai-security-wiki-topic-news-collector-2026-08-14T233111Z.json)
 - [August 15 topic news collector source](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json)
+- [September 1 leaf update watch source](../../../raw/processed/2026-08-31/ai-security-wiki-leaf-update-watch-20260901T000350Z.json)
 - BankInfoSecurity runtime hooks coverage: https://www.bankinfosecurity.com/ai-agents-need-more-than-prompt-guardrails-a-32373
+- Google Cloud agent governance and security report: https://cloud.google.com/blog/topics/ai-infrastructure/state-of-ai-infrastructure-report-agent-governance-and-security?e=48754805
 - Australian Cyber Security Centre unexpected agent actions guidance: https://www.cyber.gov.au/about-us/view-all-content/news/when-ai-agents-take-unexpected-actions
 
 ## Related Code
@@ -74,3 +79,4 @@ The [agent delegated task authorization drift](../identity-and-access/agent-dele
 - Created on 2026-08-14 from the [August 14 topic collector](../../../raw/processed/2026-08-14/ai-security-wiki-topic-news-collector-2026-08-14T233111Z.json) after routing general agent workflow practice upstream.
 - Updated on 2026-08-15 from the [August 15 topic collector](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json) with ACSC delegated-intent and specification-gaming guidance while routing general workflow governance upstream.
 - Updated on 2026-08-23 with a cross-link to [agent delegated task authorization drift](../identity-and-access/agent-delegated-task-authorization-drift.md) as a concrete incident pattern for runtime hook policy.
+- Updated on 2026-08-31 from the [September 1 watcher](../../../raw/processed/2026-08-31/ai-security-wiki-leaf-update-watch-20260901T000350Z.json) with Google Cloud dynamic-permission and human-in-the-loop governance evidence.

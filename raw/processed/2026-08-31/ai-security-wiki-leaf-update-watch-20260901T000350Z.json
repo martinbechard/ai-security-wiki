@@ -1,0 +1,455 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "created_raw_path": "raw/2026-08-31/ai-security-wiki-leaf-update-watch-20260901T000350Z.json",
+  "evidence_classification_counts": {
+    "control change": 3,
+    "disclosed vulnerability": 8,
+    "mitigation": 1
+  },
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-action-runtime-hooks.md",
+      "reason": "Visible first-published 2026-08-11 and last-updated 2026-08-14 are outside the 2026-08-24 through 2026-08-31 source window.",
+      "source_url": "https://www.cyber.gov.au/about-us/view-all-content/news/when-ai-agents-take-unexpected-actions"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+      "reason": "CVE published 2026-07-21 and updated 2026-07-22; stale for the current 7-day window.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-15829"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+      "reason": "Model Armor August 31 Stable alias transition is an event date from an August 03 release note, not an in-window visible source publication/update.",
+      "source_url": "https://docs.cloud.google.com/model-armor/release-notes"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+      "reason": "August 24 agent-governance article is in-window but does not directly update API hub MCP controls; routed to agent action runtime hooks instead.",
+      "source_url": "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+      "reason": "CVE published 2026-07-21 and updated 2026-07-22; no in-window fixed-version update found.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-15829"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+      "reason": "CVE published 2026-01-23 and last updated 2026-07-22; no in-window same-leaf exploitation or mitigation change found.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-0770"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+      "reason": "CVE published and updated on 2026-07-22; no in-window GitHub/GitLab/SentinelOne advisory change found.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-65015"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/pg-aiguide-mcp-dns-rebinding-host-allow-list.md",
+      "reason": "Patch PR merged 2026-06-26; useful mitigation evidence but stale as a source update.",
+      "source_url": "https://github.com/timescale/pg-aiguide/pull/121"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/tiger-gh-mcp-server-dns-rebinding-host-allow-list.md",
+      "reason": "Fix PR merged 2026-06-26; useful mitigation evidence but stale as a source update.",
+      "source_url": "https://github.com/timescale/tiger-gh-mcp-server/pull/36"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/browser-use-web-ui-cleartext-llm-api-key-storage.md",
+      "reason": "Issue created 2026-07-05 and not updated in-window; CVE publication is the qualifying evidence.",
+      "source_url": "https://github.com/browser-use/web-ui/issues/736"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/browser-use-web-ui-artifact-path-containment.md",
+      "reason": "Issue created 2026-07-05 and not updated in-window; CVE publication is the qualifying evidence.",
+      "source_url": "https://github.com/browser-use/web-ui/issues/737"
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/jina-ai-reader-private-address-ssrf.md",
+      "reason": "Issue created and updated 2026-06-12; CVE publication is the qualifying evidence.",
+      "source_url": "https://github.com/jina-ai/reader/issues/1253"
+    }
+  ],
+  "federation_boundary": "Broad AI entities, products, frameworks, model families, general development practice, and product catalogs route to ai-wiki or ai-dev-wiki; this artifact keeps only security-specific vulnerabilities, controls, mitigations, and routing notes.",
+  "follow_up_notes": [
+    "Normal raw-source ingest should decide which qualifying records are non-duplicate because several CVE leaves were also created from the August 30 topic collector source.",
+    "No docs/wiki files or raw/processed paths were edited by this collector run."
+  ],
+  "leaf_universe_count": 233,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": "Local browser-origin to MCP HTTP transport; pg-aiguide through 0.5.0.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-81095 publishes a pg-aiguide MCP HTTP transport DNS-rebinding Host allow-list bypass through 0.5.0; the referenced patch explicitly enables the host allow-list option.",
+      "follow_up_note": "Ingest should compare against the existing August 30 page and decide whether CVE update timestamp adds anything beyond the processed topic source.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/pg-aiguide-mcp-dns-rebinding-host-allow-list.md",
+      "named_entities": [
+        "CVE-2026-81095",
+        "pg-aiguide",
+        "Timescale",
+        "MCP HTTP transport",
+        "VulnCheck"
+      ],
+      "references": [
+        "https://www.vulncheck.com/advisories/timescale-pg-aiguide-through-0.5.0-dns-rebinding-via-disabled-host-header-allow-list",
+        "https://github.com/timescale/pg-aiguide/pull/121"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-81095",
+      "upstream_routing": "Broad pg-aiguide and Timescale catalog context routes upstream; local artifact keeps the Host validation security boundary.",
+      "visible_published_or_updated_at": "2026-08-27T14:50:36.212Z; updated 2026-08-29T11:48:10.092Z"
+    },
+    {
+      "affected_boundaries": "Prompt-template rendering boundary in Skyvern workflows; versions before 1.0.45.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-82447 publishes the Skyvern TextPromptBlock double-render Jinja sandbox escape before 1.0.45, allowing injected template syntax to execute with server process privileges.",
+      "follow_up_note": "Ingest should confirm whether fixed-version and CVSS details need to enrich the leaf.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/skyvern-textpromptblock-jinja-sandbox-escape.md",
+      "named_entities": [
+        "CVE-2026-82447",
+        "Skyvern",
+        "TextPromptBlock",
+        "Jinja",
+        "VulnCheck"
+      ],
+      "references": [
+        "https://www.vulncheck.com/advisories/skyvern-before-1.0.45-sandbox-escape-via-textpromptblock",
+        "https://github.com/Skyvern-AI/skyvern/commit/d723de621d5b3a340f3cc4d5b46bfe40a9a3124e"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82447",
+      "upstream_routing": "Broad Skyvern product context routes upstream; local artifact owns prompt-template execution risk.",
+      "visible_published_or_updated_at": "2026-08-29T12:05:34.113Z"
+    },
+    {
+      "affected_boundaries": "Browser-origin to local tiger-gh-mcp-server GitHub MCP endpoint; git commits before e559b57.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-81100 publishes a tiger-gh-mcp-server DNS-rebinding Host allow-list bypass that can make a local GitHub MCP endpoint browser-drivable.",
+      "follow_up_note": "Ingest should preserve the note that dependency update alone was not the fix; explicit option enablement is the mitigation.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/tiger-gh-mcp-server-dns-rebinding-host-allow-list.md",
+      "named_entities": [
+        "CVE-2026-81100",
+        "tiger-gh-mcp-server",
+        "Timescale",
+        "GitHub MCP",
+        "VulnCheck"
+      ],
+      "references": [
+        "https://www.vulncheck.com/advisories/timescale-tiger-gh-mcp-server-dns-rebinding-via-disabled-host-header-allow-list",
+        "https://github.com/timescale/tiger-gh-mcp-server/pull/36"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-81100",
+      "upstream_routing": "Broad GitHub, Timescale, and MCP catalog context routes upstream; local artifact keeps the browser-to-tool authority boundary.",
+      "visible_published_or_updated_at": "2026-08-27T14:50:39.728Z; updated 2026-08-29T11:48:13.548Z"
+    },
+    {
+      "affected_boundaries": "Local temporary settings storage for browser-use web-ui provider credentials.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-82640 publishes cleartext LLM API-key storage in browser-use web-ui 2.0.0 through 3.0.0, with predictable JSON files and no encryption or access restrictions.",
+      "follow_up_note": "Ingest should determine whether the August 31 CVE update adds materially new metadata beyond the August 30 topic source.",
+      "leaf_id": "docs/wiki/data-and-privacy/browser-use-web-ui-cleartext-llm-api-key-storage.md",
+      "named_entities": [
+        "CVE-2026-82640",
+        "browser-use web-ui",
+        "LLM API keys",
+        "VulnCheck"
+      ],
+      "references": [
+        "https://www.vulncheck.com/advisories/browser-use-web-ui-2.0.0-through-3.0.0-cleartext-api-key-storage",
+        "https://github.com/browser-use/web-ui/issues/736"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82640",
+      "upstream_routing": "Browser Use product context routes upstream; local artifact keeps provider-key storage exposure.",
+      "visible_published_or_updated_at": "2026-08-30T13:23:39.806Z; updated 2026-08-31T18:52:36.951Z"
+    },
+    {
+      "affected_boundaries": "Keploy agent control-plane HTTP server; captured TLS traffic and recording session controls.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-82641 publishes Keploy unauthenticated agent control-plane exposure through 3.6.25, including `/agent/pcap/keylog` TLS key access and session-control endpoints.",
+      "follow_up_note": "Ingest should include the 2026-08-29 patch commit and issue closure as remediation evidence if not already covered.",
+      "leaf_id": "docs/wiki/data-and-privacy/keploy-agent-control-plane-tls-key-exposure.md",
+      "named_entities": [
+        "CVE-2026-82641",
+        "Keploy",
+        "NSS keylog",
+        "VulnCheck"
+      ],
+      "references": [
+        "https://www.vulncheck.com/advisories/keploy-3.1.0-through-3.6.25-unauthenticated-tls-key-exposure",
+        "https://github.com/keploy/keploy/issues/4394",
+        "https://github.com/keploy/keploy/commit/a6257d2b3184b85eb30edad345464aa292297b83"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82641",
+      "upstream_routing": "General Keploy testing workflow routes to ai-dev-wiki; local artifact keeps the control-plane key exposure boundary.",
+      "visible_published_or_updated_at": "2026-08-30T13:23:40.516Z; updated 2026-08-31T16:46:54.743Z"
+    },
+    {
+      "affected_boundaries": "Keploy agent API binding/authentication and TLS key endpoint handling.",
+      "evidence_classification": "mitigation",
+      "factual_summary": "Keploy patch commit a6257d2 landed in-window and issue 4394 closed at nearly the same timestamp, providing primary remediation evidence for the exposed agent API.",
+      "follow_up_note": "Ingest should check whether the fixed release version is visible elsewhere before claiming a release boundary.",
+      "leaf_id": "docs/wiki/data-and-privacy/keploy-agent-control-plane-tls-key-exposure.md",
+      "named_entities": [
+        "Keploy",
+        "GitHub issue 4394",
+        "commit a6257d2"
+      ],
+      "references": [],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://github.com/keploy/keploy/commit/a6257d2b3184b85eb30edad345464aa292297b83",
+      "upstream_routing": "General Keploy project history routes to ai-dev-wiki; local artifact keeps only remediation evidence for the security leaf.",
+      "visible_published_or_updated_at": "2026-08-29T16:46:33Z"
+    },
+    {
+      "affected_boundaries": "NextChat proxy host validation; server-side OpenAI API key forwarding.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-82639 publishes NextChat proxy URL validation that forwards the server OpenAI API key to attacker-controlled URLs containing `api.openai.com`.",
+      "follow_up_note": "Ingest should avoid broad OpenAI provider commentary and focus on proxy-host validation and credential leakage.",
+      "leaf_id": "docs/wiki/data-and-privacy/nextchat-openai-api-key-disclosure.md",
+      "named_entities": [
+        "CVE-2026-82639",
+        "NextChat",
+        "OpenAI API key",
+        "VulnCheck"
+      ],
+      "references": [
+        "https://www.vulncheck.com/advisories/nextchat-2.15.8-through-2.16.1-openai-api-key-disclosure",
+        "https://github.com/ChatGPTNextWeb/NextChat/issues/6814"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82639",
+      "upstream_routing": "OpenAI and NextChat general product context routes upstream; local artifact keeps provider-key disclosure boundary.",
+      "visible_published_or_updated_at": "2026-08-30T13:23:39.106Z; updated 2026-08-31T16:51:17.973Z"
+    },
+    {
+      "affected_boundaries": "browser-use web-ui artifact path handling in unauthenticated Gradio agent task execution.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-82637 publishes browser-use web-ui path validation failure in `run_agent_task`, allowing arbitrary directory creation through recording, trace, history, or download path parameters.",
+      "follow_up_note": "Ingest should keep this separate from the cleartext API-key storage leaf even though both affect browser-use web-ui.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/browser-use-web-ui-artifact-path-containment.md",
+      "named_entities": [
+        "CVE-2026-82637",
+        "browser-use web-ui",
+        "Gradio",
+        "VulnCheck"
+      ],
+      "references": [
+        "https://www.vulncheck.com/advisories/browser-use-web-ui-2.0.0-through-3.0.0-arbitrary-directory-creation",
+        "https://github.com/browser-use/web-ui/issues/737"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82637",
+      "upstream_routing": "Browser Use product context routes upstream; local artifact keeps filesystem path containment.",
+      "visible_published_or_updated_at": "2026-08-30T13:23:37.621Z"
+    },
+    {
+      "affected_boundaries": "Reader URL fetch path and private-address guard behavior outside Google Cloud.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-82638 publishes jina-ai Reader SSRF when the private-address guard is disabled outside Google Cloud deployments, allowing metadata or internal-service retrieval through attacker-supplied hostnames.",
+      "follow_up_note": "Ingest should preserve the deployment-boundary nuance instead of generalizing to every Reader deployment.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/jina-ai-reader-private-address-ssrf.md",
+      "named_entities": [
+        "CVE-2026-82638",
+        "jina-ai Reader",
+        "SSRF",
+        "VulnCheck"
+      ],
+      "references": [
+        "https://www.vulncheck.com/advisories/jina-ai-reader-server-side-request-forgery-via-disabled-private-address-guard",
+        "https://github.com/jina-ai/reader/issues/1253"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82638",
+      "upstream_routing": "Jina AI and Reader product coverage routes upstream; local artifact keeps retrieval SSRF and metadata exposure.",
+      "visible_published_or_updated_at": "2026-08-30T13:23:38.400Z"
+    },
+    {
+      "affected_boundaries": "Agent action approval, governance, dynamic permission, and prompt-injection oversight boundaries.",
+      "evidence_classification": "control change",
+      "factual_summary": "Google Cloud security-governance guidance frames autonomous agents as systems that need secure-by-default design, agent governance/oversight, dynamic-permission management, and human-in-the-loop control before critical actions.",
+      "follow_up_note": "Ingest should decide whether this belongs in agent action runtime hooks, production agent identity, or both; avoid duplicating broad platform marketing.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-action-runtime-hooks.md",
+      "named_entities": [
+        "Google Cloud",
+        "Gemini Enterprise Agent Platform",
+        "SAIF",
+        "agent governance",
+        "human-in-the-loop control"
+      ],
+      "references": [
+        "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cloud.google.com/blog/topics/ai-infrastructure/state-of-ai-infrastructure-report-agent-governance-and-security?e=48754805",
+      "upstream_routing": "Gemini Enterprise and broad cloud product positioning route upstream; local artifact keeps runtime hook and approval-control implications.",
+      "visible_published_or_updated_at": "2026-08-24"
+    },
+    {
+      "affected_boundaries": "Local non-interactive agent execution and project configuration loading boundary.",
+      "evidence_classification": "control change",
+      "factual_summary": "Junie Headless documentation now says non-interactive one-shot, piped-input, ACP, and Gateway runs cannot ask for a trust decision and therefore load project configuration as trusted by design; only trusted projects should be used non-interactively.",
+      "follow_up_note": "Ingest should compare against earlier Junie rollout-toggle wording and update the local page if behavior language has changed.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+      "named_entities": [
+        "JetBrains Junie",
+        "Junie CLI",
+        "ACP",
+        "Gateway",
+        "project trust"
+      ],
+      "references": [
+        "https://junie.jetbrains.com/docs/junie-cli-configuration.html"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "upstream_routing": "General Junie product context routes upstream or ai-dev-wiki; local artifact keeps local execution and trust-boundary implications.",
+      "visible_published_or_updated_at": "2026-08-28"
+    },
+    {
+      "affected_boundaries": "Project-level configuration, MCP/skill/agent/hook loading, trust markers, and explicit configuration paths.",
+      "evidence_classification": "control change",
+      "factual_summary": "Junie config documentation details project trust marker behavior, untrusted temporary storage, project config discovery, and that hooks from default project config are ignored while explicit config locations remain enabled.",
+      "follow_up_note": "Ingest should evaluate whether hook ignoring and explicit config exceptions should be added to local execution boundary notes.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+      "named_entities": [
+        "JetBrains Junie",
+        "Junie CLI",
+        "config.json",
+        "project trust",
+        "hooks"
+      ],
+      "references": [],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://junie.jetbrains.com/docs/junie-cli-configuration.html",
+      "upstream_routing": "General CLI configuration routes to ai-dev-wiki; local artifact keeps the security boundary for project-supplied configuration and hooks.",
+      "visible_published_or_updated_at": "2026-08-28"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-09-01T00:03:50Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/pg-aiguide-mcp-dns-rebinding-host-allow-list.md",
+    "docs/wiki/agent-and-tool-security/skyvern-textpromptblock-jinja-sandbox-escape.md",
+    "docs/wiki/agent-and-tool-security/tiger-gh-mcp-server-dns-rebinding-host-allow-list.md",
+    "docs/wiki/data-and-privacy/browser-use-web-ui-cleartext-llm-api-key-storage.md",
+    "docs/wiki/data-and-privacy/keploy-agent-control-plane-tls-key-exposure.md",
+    "docs/wiki/data-and-privacy/nextchat-openai-api-key-disclosure.md",
+    "docs/wiki/infrastructure-and-supply-chain/browser-use-web-ui-artifact-path-containment.md",
+    "docs/wiki/infrastructure-and-supply-chain/jina-ai-reader-private-address-ssrf.md",
+    "docs/wiki/agent-and-tool-security/agent-action-runtime-hooks.md",
+    "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md",
+    "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+    "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+    "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+    "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+    "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md"
+  ],
+  "selection_rule": "Unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "source_window": {
+    "inclusive_end": "2026-08-31",
+    "inclusive_start": "2026-08-24",
+    "rule": "Only public sources visibly published or updated within the last 7 days qualified; ambiguous, future, missing, relative, and boundary-only dates were excluded."
+  },
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/agent-action-runtime-hooks.md": [
+      "https://www.bankinfosecurity.com/ai-agents-need-more-than-prompt-guardrails-a-32373",
+      "https://www.cyber.gov.au/about-us/view-all-content/news/when-ai-agents-take-unexpected-actions",
+      "https://cloud.google.com/blog/topics/ai-infrastructure/state-of-ai-infrastructure-report-agent-governance-and-security?e=48754805"
+    ],
+    "docs/wiki/agent-and-tool-security/final-query-authorization-for-ai-data-tools.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-15829",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+      "https://github.com/googleapis/mcp-toolbox/pull/3324"
+    ],
+    "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md": [
+      "https://docs.cloud.google.com/release-notes",
+      "https://docs.cloud.google.com/mcp/release-notes",
+      "https://docs.cloud.google.com/apigee/docs/reference/apis/apihub/mcp",
+      "https://docs.cloud.google.com/model-armor/release-notes",
+      "https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud"
+    ],
+    "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-15829",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-15829",
+      "https://github.com/googleapis/mcp-toolbox/pull/3324",
+      "https://github.com/googleapis/mcp-toolbox/releases/tag/v1.4.0"
+    ],
+    "docs/wiki/agent-and-tool-security/langflow-kev-rce.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-0770",
+      "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-0770",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-0770",
+      "https://www.csa.gov.sg/alerts-and-advisories/alerts/al-2026-092/"
+    ],
+    "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md": [
+      "https://junie.jetbrains.com/docs/junie-headless.html",
+      "https://junie.jetbrains.com/docs/junie-cli-configuration.html"
+    ],
+    "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-65015",
+      "https://advisories.gitlab.com/npm/n8n/CVE-2026-65015/",
+      "https://github.com/advisories/GHSA-w46p-w7w2-fr9g",
+      "https://www.sentinelone.com/vulnerability-database/cve-2026-65015/"
+    ],
+    "docs/wiki/agent-and-tool-security/pg-aiguide-mcp-dns-rebinding-host-allow-list.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-81095",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-81095",
+      "https://www.vulncheck.com/advisories/timescale-pg-aiguide-through-0.5.0-dns-rebinding-via-disabled-host-header-allow-list",
+      "https://github.com/timescale/pg-aiguide/pull/121"
+    ],
+    "docs/wiki/agent-and-tool-security/skyvern-textpromptblock-jinja-sandbox-escape.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-82447",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-82447",
+      "https://www.vulncheck.com/advisories/skyvern-before-1.0.45-sandbox-escape-via-textpromptblock",
+      "https://github.com/Skyvern-AI/skyvern/commit/d723de621d5b3a340f3cc4d5b46bfe40a9a3124e"
+    ],
+    "docs/wiki/agent-and-tool-security/tiger-gh-mcp-server-dns-rebinding-host-allow-list.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-81100",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-81100",
+      "https://www.vulncheck.com/advisories/timescale-tiger-gh-mcp-server-dns-rebinding-via-disabled-host-header-allow-list",
+      "https://github.com/timescale/tiger-gh-mcp-server/pull/36"
+    ],
+    "docs/wiki/data-and-privacy/browser-use-web-ui-cleartext-llm-api-key-storage.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-82640",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-82640",
+      "https://www.vulncheck.com/advisories/browser-use-web-ui-2.0.0-through-3.0.0-cleartext-api-key-storage",
+      "https://github.com/browser-use/web-ui/issues/736"
+    ],
+    "docs/wiki/data-and-privacy/keploy-agent-control-plane-tls-key-exposure.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-82641",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-82641",
+      "https://www.vulncheck.com/advisories/keploy-3.1.0-through-3.6.25-unauthenticated-tls-key-exposure",
+      "https://github.com/keploy/keploy/issues/4394",
+      "https://github.com/keploy/keploy/commit/a6257d2b3184b85eb30edad345464aa292297b83"
+    ],
+    "docs/wiki/data-and-privacy/nextchat-openai-api-key-disclosure.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-82639",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-82639",
+      "https://www.vulncheck.com/advisories/nextchat-2.15.8-through-2.16.1-openai-api-key-disclosure",
+      "https://github.com/ChatGPTNextWeb/NextChat/issues/6814"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/browser-use-web-ui-artifact-path-containment.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-82637",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-82637",
+      "https://www.vulncheck.com/advisories/browser-use-web-ui-2.0.0-through-3.0.0-arbitrary-directory-creation",
+      "https://github.com/browser-use/web-ui/issues/737"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/jina-ai-reader-private-address-ssrf.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-82638",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-82638",
+      "https://www.vulncheck.com/advisories/jina-ai-reader-server-side-request-forgery-via-disabled-private-address-guard",
+      "https://github.com/jina-ai/reader/issues/1253"
+    ]
+  }
+}

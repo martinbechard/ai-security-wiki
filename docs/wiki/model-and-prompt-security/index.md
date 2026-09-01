@@ -18,6 +18,8 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - [Xinference Llama3 tool call eval RCE](xinference-llama3-tool-call-eval-rce.md)
 - [Legal filing prompt injection](legal-filing-prompt-injection.md)
 - [Langfun Python protocol model output RCE](langfun-python-protocol-model-output-rce.md)
+- [ash_ai EEx prompt template RCE](ash-ai-eex-prompt-template-rce.md)
+- [Microsoft Edge iOS LLM prompt spoofing](microsoft-edge-ios-llm-prompt-spoofing.md)
 
 ## Authoritative Sources
 
@@ -47,6 +49,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Maintenance Notes
 
+- Updated on 2026-08-31 with ash_ai prompt-template execution and Microsoft Edge iOS LLM prompt-spoofing leaves.
 - Record affected boundary, attack prerequisites, mitigation, residual risk, and evidence quality.
 - Updated on 2026-08-19 with Context7 MCP prompt-injection and vLLM multimodal input-boundary leaves.
 - Updated on 2026-08-19 after verifier correction split vLLM derender DoS and multimodal media SSRF/file-read leaves.

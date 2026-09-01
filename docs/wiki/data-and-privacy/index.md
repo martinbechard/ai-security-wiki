@@ -30,6 +30,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [NextChat OpenAI API key disclosure](nextchat-openai-api-key-disclosure.md)
 - [browser-use web-ui cleartext LLM API key storage](browser-use-web-ui-cleartext-llm-api-key-storage.md)
 - [Keploy agent control-plane TLS key exposure](keploy-agent-control-plane-tls-key-exposure.md)
+- [Aix-DB Markdown chat stored XSS](aix-db-markdown-chat-stored-xss.md)
 
 ## Authoritative Sources
 
@@ -59,6 +60,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-08-31 with the Aix-DB AI rendered-content stored-XSS leaf plus watcher enrichment for existing browser-use, Jina Reader, NextChat, and Keploy advisory leaves.
 - Updated on 2026-08-29 with the Stable Diffusion WebUI credential-disclosure leaf and GitLab/Spring watcher provenance.
 - Updated on 2026-08-30 with NextChat provider-key forwarding, browser-use web-ui cleartext provider-key storage, and Keploy TLS keylog exposure leaves.
 - Updated on 2026-08-28 with GitLab AI Gateway credential-disclosure leaves and Spring AI Redis chat-memory query-injection enrichment.

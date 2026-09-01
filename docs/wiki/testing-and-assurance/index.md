@@ -22,6 +22,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 - [Delegated agent cost guardrail bypass](delegated-agent-cost-guardrail-bypass.md)
 - [Evaluation platform control plane RCE](evaluation-platform-control-plane-rce.md)
 - [QWED SymPy verification parser RCE](qwed-sympy-verification-parser-rce.md)
+- [OpenShift AI guardrails-detectors ReDoS](../infrastructure-and-supply-chain/openshift-ai-guardrails-detectors-redos.md)
 
 ## Authoritative Sources
 
@@ -52,6 +53,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 
 ## Maintenance Notes
 
+- Updated on 2026-08-31 with OpenShift AI guardrails-detectors ReDoS and ash_ai tool-loop exhaustion as runtime assurance concerns.
 - Keep security assurance distinct from general software verification already owned by ai-dev-wiki.
 - Updated on 2026-08-11 with the Codex Security plugin workflow boundary leaf.
 - Updated on 2026-08-16 with the semantic governance policy telemetry leaf.

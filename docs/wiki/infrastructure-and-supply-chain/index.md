@@ -55,6 +55,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Bisheng workflow callback SSRF](bisheng-workflow-callback-ssrf.md)
 - [browser-use web-ui artifact path containment](browser-use-web-ui-artifact-path-containment.md)
 - [jina-ai Reader private-address SSRF](jina-ai-reader-private-address-ssrf.md)
+- [Theia AI Agent Mode workspace path traversal](theia-ai-agent-mode-workspace-path-traversal.md)
+- [OpenShift AI guardrails-detectors ReDoS](openshift-ai-guardrails-detectors-redos.md)
 
 ## Authoritative Sources
 
@@ -84,6 +86,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-08-31 with Theia AI Agent Mode workspace path traversal, OpenShift AI guardrails-detectors ReDoS, and a Kubio AI Website Builder deferral in the WordPress AI plugin advisory page.
 - Updated on 2026-08-29 with Bifrost and Portkey AI gateway SSRF, gpt-crawler file-write, Bisheng callback SSRF, and watcher/topic-source provenance for Spring AI and ServiceNow.
 - Updated on 2026-08-30 with browser-use web-ui artifact path containment and jina-ai Reader private-address SSRF leaves.
 - Updated on 2026-08-28 with Spring AI PDF, ONNX, and ResourceCache leaves plus split ServiceNow AI platform code-injection, access-control, and SQL-injection leaves.

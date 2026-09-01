@@ -97,6 +97,10 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [pg-aiguide MCP DNS rebinding Host allow-list](pg-aiguide-mcp-dns-rebinding-host-allow-list.md)
 - [tiger-gh-mcp-server DNS rebinding Host allow-list](tiger-gh-mcp-server-dns-rebinding-host-allow-list.md)
 - [Skyvern TextPromptBlock Jinja sandbox escape](skyvern-textpromptblock-jinja-sandbox-escape.md)
+- [ash_ai tool loop request exhaustion](ash-ai-tool-loop-request-exhaustion.md)
+- [ash_ai MCP origin validation DNS rebinding](ash-ai-mcp-origin-validation-dns-rebinding.md)
+- [MCPHub control plane advisory cluster](mcphub-control-plane-advisory-cluster.md)
+- [sdcb chats MCP fetch-tools SSRF](sdcb-chats-mcp-fetch-tools-ssrf.md)
 
 ## Authoritative Sources
 
@@ -126,6 +130,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-08-31 with ash_ai tool-loop and MCP-origin leaves, the MCPHub advisory-family leaf, sdcb chats MCP fetch-tools SSRF, and watcher enrichment for Junie local-execution boundaries.
 - Updated on 2026-08-29 with the SiYuan `asset.upload` file-read leaf and watcher provenance for August 27 agent-tool advisories.
 - Updated on 2026-08-30 with the argocd-mcp unauthenticated HTTP tool-control leaf.
 - Updated on 2026-08-30 with pg-aiguide and tiger-gh-mcp-server Host allow-list leaves plus the Skyvern prompt-template sandbox escape.

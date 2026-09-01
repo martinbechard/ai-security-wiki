@@ -1,0 +1,505 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-08-31T23:32:24Z",
+  "cutoff_window": {
+    "start": "2026-08-29T23:32:24Z",
+    "end": "2026-08-31T23:32:24Z",
+    "timezone": "America/Toronto",
+    "rule": "Include only public items published or visibly updated within the exact two-day window. Exclude missing, ambiguous, future-dated, boundary-only, or ordinary product announcements without a concrete security delta."
+  },
+  "repository_scope": {
+    "modified_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "raw_artifact_path": "raw/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json",
+    "raw_processed_touched": false,
+    "docs_wiki_touched": false
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_owner": "ai-security-wiki owns the security lens: AI-specific threats, model and prompt security, agent and tool security, data and privacy controls, identity and access, infrastructure and supply-chain security, testing and assurance, governance and compliance, and AI incident response.",
+    "upstream_ai_wiki": "Broad companies, models, products, frameworks, MCP servers, developer tools, and general AI techniques route to /Users/martinbechard/dev/ai-wiki.",
+    "upstream_ai_dev_wiki": "General AI-assisted development practices, coding-agent workflows, verification patterns, adoption practices, and development governance route to /Users/martinbechard/dev/ai-dev-wiki."
+  },
+  "source_queries": [
+    "NVD API pubStartDate=2026-08-29T23:32:24Z pubEndDate=2026-08-31T23:32:24Z keywordSearch=AI",
+    "NVD API lastModStartDate=2026-08-29T23:32:24Z lastModEndDate=2026-08-31T23:32:24Z keywordSearch=MCP",
+    "NVD API lastModStartDate=2026-08-29T23:32:24Z lastModEndDate=2026-08-31T23:32:24Z keywordSearch=prompt",
+    "NVD API lastModStartDate=2026-08-29T23:32:24Z lastModEndDate=2026-08-31T23:32:24Z keywordSearch=OpenShift AI",
+    "Web search for AI agent, prompt injection, and MCP security advisories dated 2026-08-30 through 2026-08-31",
+    "Web search for public AI security standards, NIST, CISA, and NCSC updates dated 2026-08-30 through 2026-08-31"
+  ],
+  "qualifying_findings": [
+    {
+      "id": "ash-ai-2026-08-31-advisory-cluster",
+      "title": "ash_ai prompt, tool-loop, and MCP origin validation vulnerabilities",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77956",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82579",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81315",
+        "https://github.com/ash-project/ash_ai/security/advisories/GHSA-2g59-hg7m-qc83",
+        "https://github.com/ash-project/ash_ai/security/advisories/GHSA-rcx7-x2w5-mmc2",
+        "https://github.com/ash-project/ash_ai/security/advisories/GHSA-c92r-f3rr-q49h"
+      ],
+      "visible_dates": [
+        "CVE-2026-77956 NVD published 2026-08-31T01:16:49.563Z; lastModified 2026-08-31T16:19:12.900Z",
+        "CVE-2026-82579 NVD published 2026-08-31T02:17:02.270Z; lastModified 2026-08-31T16:19:16.967Z",
+        "CVE-2026-81315 NVD published 2026-08-31T01:16:49.977Z; lastModified 2026-08-31T16:19:14.993Z"
+      ],
+      "summary": "ash_ai before 1.0.0 received three public CVEs: prompt text built from user input could be evaluated as EEx and execute arbitrary Elixir code; prompt-injected or malformed tool-call output could keep the tool loop recursing and resend model requests; and default MCP origin validation could be bypassed through DNS rebinding because Host and x-forwarded-proto were trusted in the decision path.",
+      "evidence_classification": "primary CVE records with project security advisory references",
+      "affected_boundary_or_version": "ash_ai from 0.1.0 before 1.0.0 for prompt RCE; from 0.6.0 before 1.0.0 for tool-loop infinite requests; from 0.8.0 before 1.0.0 for MCP origin validation",
+      "why_it_matters_for_ai_security": "The cluster joins model output, prompt templating, tool loops, and browser-origin trust into direct server-side execution and local MCP cross-site request risks.",
+      "named_entities": [
+        "ash_ai",
+        "Ash Framework",
+        "EEx",
+        "MCP",
+        "DNS rebinding"
+      ],
+      "local_topic_routes": [
+        "model-and-prompt-security",
+        "agent-and-tool-security",
+        "identity-and-access",
+        "testing-and-assurance"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "ash_ai as a broad framework/entity belongs upstream if a durable entity page is needed.",
+        "ai_dev_wiki": "General Ash/AshAI development workflow implications belong upstream; this repo keeps the security boundary."
+      },
+      "confidence_notes": "High confidence for in-window qualification from NVD published timestamps and linked GitHub Security Advisories.",
+      "follow_up_actions": [
+        "During ingest, split prompt RCE, tool-loop exhaustion, and MCP origin validation into separate durable security leaves if they need independent maintenance.",
+        "Recheck whether ash_ai 1.0.0 is the first fixed release across Hex, OSV, and GitHub advisory metadata."
+      ]
+    },
+    {
+      "id": "eclipse-theia-ai-agent-mode-workspace-containment",
+      "title": "Eclipse Theia AI Agent Mode path traversal outside workspace",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82217",
+        "https://github.com/eclipse-theia/theia/commit/28da106c254",
+        "https://gitlab.eclipse.org/security/vulnerability-reports/-/work_items/624"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-31T14:17:26.610Z; lastModified 2026-08-31T14:17:26.610Z"
+      ],
+      "summary": "Eclipse Theia 1.73.0 through versions before 1.75.0 allowed AI Agent Mode file-change tools to resolve model-supplied paths without workspace containment. Crafted relative, absolute, or home-expanded paths could write or delete files outside the workspace, and indirect prompt injection could steer the model output toward host-executed files such as shell startup files or authorized_keys.",
+      "evidence_classification": "primary CVE record with Eclipse/GitHub fix references",
+      "affected_boundary_or_version": "Eclipse Theia >=1.73.0 and <1.75.0",
+      "why_it_matters_for_ai_security": "This is a direct coding-agent approval and filesystem containment failure where model-generated paths can cross the workspace boundary without a confirmation dialog.",
+      "named_entities": [
+        "Eclipse Theia",
+        "AI Agent Mode",
+        "writeFileContent",
+        "suggestFileContent"
+      ],
+      "local_topic_routes": [
+        "agent-and-tool-security",
+        "infrastructure-and-supply-chain",
+        "identity-and-access"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Theia as a developer tool/entity belongs upstream.",
+        "ai_dev_wiki": "General AI coding-agent workflow guidance belongs upstream; workspace containment and prompt-injection write impact stay local."
+      },
+      "confidence_notes": "High confidence for in-window qualification from NVD and Eclipse CNA metadata.",
+      "follow_up_actions": [
+        "Compare with existing coding-agent command and filesystem boundary leaves before creating a new local page.",
+        "Verify patched release notes for Theia 1.75.0 during ingest."
+      ]
+    },
+    {
+      "id": "mcphub-2026-08-31-advisory-cluster",
+      "title": "MCPHub multi-CVE authorization, SSRF, prompt, and process-spawn cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79743",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79744",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79745",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79746",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79747",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79748",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79749",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79750",
+        "https://github.com/samanhappy/mcphub/security/advisories/GHSA-4gc8-885f-qj36"
+      ],
+      "visible_dates": [
+        "CVE-2026-79743 NVD published 2026-08-31T18:17:19.610Z; lastModified 2026-08-31T19:17:13.447Z",
+        "CVE-2026-79744 NVD published 2026-08-31T18:17:19.763Z; lastModified 2026-08-31T19:17:13.557Z",
+        "CVE-2026-79745 NVD published 2026-08-31T18:17:19.910Z; lastModified 2026-08-31T18:17:19.910Z",
+        "CVE-2026-79746 NVD published 2026-08-31T18:17:20.057Z; lastModified 2026-08-31T18:17:20.057Z",
+        "CVE-2026-79747 NVD published 2026-08-31T18:17:20.200Z; lastModified 2026-08-31T20:17:11.550Z",
+        "CVE-2026-79748 NVD published 2026-08-31T18:17:20.340Z; lastModified 2026-08-31T19:17:13.667Z",
+        "CVE-2026-79749 NVD published 2026-08-31T18:17:20.483Z; lastModified 2026-08-31T19:17:13.773Z",
+        "CVE-2026-79750 NVD published 2026-08-31T18:17:20.627Z; lastModified 2026-08-31T18:17:20.627Z"
+      ],
+      "summary": "MCPHub disclosed a cluster of in-window CVEs covering MCPB ZIP path traversal and cleanup path deletion, missing admin checks on system configuration, global prompt/resource shadowing by non-admins, bearer-key scope expansion across server groups, reflected and blind SSRF through attacker-controlled server URLs, non-admin creation of stdio server configurations that spawn arbitrary commands, IPv6 transition-address SSRF bypasses, and cross-tenant tool invocation against other users' MCP servers.",
+      "evidence_classification": "primary NVD records with GitHub Security Advisory and release references",
+      "affected_boundary_or_version": "MCPHub versions before 0.12.13, 0.12.15, 1.0.29, 1.0.30, 1.0.31, or 1.0.32 depending on CVE",
+      "why_it_matters_for_ai_security": "A central MCP routing hub becomes an authority multiplier: weak tenant isolation, prompt/resource integrity, process spawning, and egress filters can convert one authenticated account or bearer key into broad tool, data, and host compromise.",
+      "named_entities": [
+        "MCPHub",
+        "Model Context Protocol",
+        "MCPB",
+        "OpenAPI proxy",
+        "stdio MCP servers"
+      ],
+      "local_topic_routes": [
+        "agent-and-tool-security",
+        "identity-and-access",
+        "data-and-privacy",
+        "infrastructure-and-supply-chain"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "MCPHub as a broad MCP server/router entity belongs upstream if cataloged.",
+        "ai_dev_wiki": "General MCP governance and tool workflow patterns belong upstream; this repo keeps concrete vulnerability and control implications."
+      },
+      "confidence_notes": "High confidence for in-window publication from NVD; several referenced GitHub advisory pages intermittently returned non-JSON/blocked responses during scripted detail collection, so per-GHSA fixed-version text should be rechecked during ingest.",
+      "follow_up_actions": [
+        "Deduplicate cluster into a hub leaf plus separate high-impact leaves only where authorization, prompt shadowing, SSRF, and command spawning need independent maintenance.",
+        "Reconcile exact fixed versions from MCPHub release tags and GitHub Security Advisories."
+      ]
+    },
+    {
+      "id": "aix-db-markdown-chat-stored-xss",
+      "title": "Aix-DB markdown rendering stored XSS in chat and knowledge content",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82881",
+        "https://github.com/apconw/Aix-DB/blob/v1.2.4/web/src/components/MarkdownPreview/plugins/markdown.ts#L36",
+        "https://github.com/apconw/Aix-DB/commit/b568a0f3b18ecead9f7d38bb78017f664d54a1a9",
+        "https://github.com/apconw/Aix-DB/issues/230",
+        "https://github.com/apconw/Aix-DB/pull/231",
+        "https://www.vulncheck.com/advisories/aix-db-through-1.2.4-stored-cross-site-scripting-via-markdown"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-31T11:16:43.247Z; lastModified 2026-08-31T11:16:43.247Z"
+      ],
+      "summary": "Aix-DB through 1.2.4 rendered Markdown with raw HTML enabled into Vue v-html bindings without sanitization. Attackers could inject JavaScript through chat responses, skill descriptions, or knowledge messages that execute in users' browsers.",
+      "evidence_classification": "NVD CVE record with code, commit, issue, PR, and VulnCheck advisory references",
+      "affected_boundary_or_version": "Aix-DB <=1.2.4; fixed at git commit b568a0f3b18ecead9f7d38bb78017f664d54a1a9 per NVD affected metadata",
+      "why_it_matters_for_ai_security": "AI chat and knowledge surfaces are untrusted rendered-content boundaries; stored XSS can turn model, skill, or knowledge text into browser-session compromise.",
+      "named_entities": [
+        "Aix-DB",
+        "Markdown",
+        "Vue v-html"
+      ],
+      "local_topic_routes": [
+        "model-and-prompt-security",
+        "data-and-privacy",
+        "agent-and-tool-security"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Aix-DB as a product/entity belongs upstream if maintained.",
+        "ai_dev_wiki": "General Markdown rendering hygiene belongs upstream only as development practice; this repo owns AI chat content trust."
+      },
+      "confidence_notes": "High confidence for in-window publication from NVD and linked code evidence.",
+      "follow_up_actions": [
+        "Check whether any existing rendered AI-content trust leaf should absorb this finding."
+      ]
+    },
+    {
+      "id": "kubio-ai-website-builder-input-validation",
+      "title": "Kubio AI Website Builder improper input validation",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-83492",
+        "https://www.tenable.com/security/research/tra-2026-58"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-31T16:19:20.250Z; lastModified 2026-08-31T17:17:47.483Z"
+      ],
+      "summary": "NVD records an improper input validation vulnerability in Extend Themes Kubio AI Website Builder before 2.9.1, with Tenable TRA-2026-58 as the research reference.",
+      "evidence_classification": "NVD CVE record with Tenable research reference",
+      "affected_boundary_or_version": "Kubio AI Website Builder before 2.9.1",
+      "why_it_matters_for_ai_security": "AI-assisted website-builder plugins are part of the AI supply chain and can expose hosted CMS or generated-site control surfaces when input validation fails.",
+      "named_entities": [
+        "Kubio AI Website Builder",
+        "Extend Themes",
+        "Tenable"
+      ],
+      "local_topic_routes": [
+        "infrastructure-and-supply-chain",
+        "agent-and-tool-security"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Kubio AI Website Builder as a product/entity belongs upstream if cataloged.",
+        "ai_dev_wiki": "General WordPress development practice does not belong here unless tied to AI security controls."
+      },
+      "confidence_notes": "Medium confidence: NVD timing and affected version are clear, but the fetched detail is sparse; Tenable detail should be rechecked during ingest.",
+      "follow_up_actions": [
+        "Open Tenable TRA-2026-58 and WordPress plugin changelog during ingest to capture vulnerability class details."
+      ]
+    },
+    {
+      "id": "diboot-ai-session-authorization-bypass",
+      "title": "diboot AI Session endpoint authorization bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82816",
+        "https://vuldb.com/cve/CVE-2026-82816",
+        "https://vuldb.com/vuln/397233"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-31T18:17:24.467Z; lastModified 2026-08-31T20:56:08.800Z"
+      ],
+      "summary": "dibo-software diboot 3.8.0 has a public authorization-bypass disclosure on the /api/ai-session/ AI Session Endpoint. NVD states the attack is remote, public exploit information may be used, and the vendor did not respond to early contact.",
+      "evidence_classification": "NVD CVE record with VulDB references",
+      "affected_boundary_or_version": "dibo-software diboot 3.8.0 AI Session Endpoint",
+      "why_it_matters_for_ai_security": "AI session endpoints frequently bind user, model, tool, and history authority; authorization bypass can expose or mutate AI session state across users.",
+      "named_entities": [
+        "dibo-software",
+        "diboot",
+        "AI Session Endpoint",
+        "VulDB"
+      ],
+      "local_topic_routes": [
+        "identity-and-access",
+        "agent-and-tool-security",
+        "data-and-privacy"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "diboot as a broad software entity belongs upstream if tracked.",
+        "ai_dev_wiki": "General framework usage belongs upstream; this repo owns the AI-session authorization failure."
+      },
+      "confidence_notes": "Medium confidence: in-window NVD/VulDB metadata is clear, but vendor response and patch status are unresolved.",
+      "follow_up_actions": [
+        "During ingest, verify whether a vendor patch or repository issue appears after disclosure."
+      ]
+    },
+    {
+      "id": "sdcb-chats-mcp-fetch-tools-ssrf",
+      "title": "sdcb chats MCP fetch-tools SSRF",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82905",
+        "https://github.com/yaowenxiao721/Poc/blob/main/sdcb-chats/chats-poc-1.md",
+        "https://vuldb.com/cve/CVE-2026-82905",
+        "https://vuldb.com/vuln/397285"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-31T20:17:15.840Z; lastModified 2026-08-31T22:17:33.157Z"
+      ],
+      "summary": "sdcb chats up to 1.12.0 has a public SSRF disclosure in McpController.cs for the fetch-tools endpoint. The CVE record states the attack can be launched remotely and public exploit material is available.",
+      "evidence_classification": "NVD CVE record with VulDB and public PoC references",
+      "affected_boundary_or_version": "sdcb chats <=1.12.0, fetch-tools endpoint in src/BE/web/Controllers/Users/Mcps/McpController.cs",
+      "why_it_matters_for_ai_security": "MCP tool-discovery endpoints that fetch remote tool metadata can become internal-network read channels unless target validation and egress controls are enforced.",
+      "named_entities": [
+        "sdcb chats",
+        "MCP",
+        "McpController",
+        "SSRF"
+      ],
+      "local_topic_routes": [
+        "agent-and-tool-security",
+        "infrastructure-and-supply-chain",
+        "data-and-privacy"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "sdcb chats as an AI chat product/entity belongs upstream if cataloged.",
+        "ai_dev_wiki": "Generic MCP tool-discovery implementation practice belongs upstream; this repo keeps exploit and control implications."
+      },
+      "confidence_notes": "Medium confidence: NVD and public PoC timing are clear; vendor remediation is unknown.",
+      "follow_up_actions": [
+        "During ingest, verify whether a patched sdcb chats release appears and whether the PoC is reproducible without authenticated setup."
+      ]
+    },
+    {
+      "id": "microsoft-edge-ios-llm-prompt-spoofing",
+      "title": "Microsoft Edge for iOS LLM prompt input spoofing update",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70331",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-70331"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-28T20:19:41.820Z; lastModified 2026-08-31T19:17:10.603Z"
+      ],
+      "summary": "NVD records that improper neutralization of input used for LLM prompting in Microsoft Edge for iOS can let an unauthorized network attacker perform spoofing. The in-window qualification is the NVD lastModified timestamp; original publication predates the exact cutoff.",
+      "evidence_classification": "NVD CVE update with Microsoft MSRC reference",
+      "affected_boundary_or_version": "Microsoft Edge for iOS / Chromium-based Edge before 150.0.4078.50 according to NVD affected data",
+      "why_it_matters_for_ai_security": "Browser-integrated LLM prompting creates a spoofing boundary where network content and prompt construction can affect user trust decisions.",
+      "named_entities": [
+        "Microsoft Edge for iOS",
+        "Microsoft MSRC",
+        "LLM prompting"
+      ],
+      "local_topic_routes": [
+        "model-and-prompt-security",
+        "agent-and-tool-security",
+        "identity-and-access"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Microsoft Edge as a product/entity belongs upstream.",
+        "ai_dev_wiki": "General browser-agent workflow implications belong upstream; this repo keeps the prompt neutralization security issue."
+      },
+      "confidence_notes": "Medium confidence: NVD update is inside the window; MSRC page requires JavaScript in fetched view, so detailed Microsoft fields should be rechecked manually during ingest.",
+      "follow_up_actions": [
+        "Reconcile MSRC severity, affected platforms, and fixed build details during ingest."
+      ]
+    },
+    {
+      "id": "openshift-ai-guardrails-detectors-redos-update",
+      "title": "OpenShift AI guardrails-detectors ReDoS update",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15154",
+        "https://access.redhat.com/security/cve/CVE-2026-15154",
+        "https://access.redhat.com/errata/RHSA-2026:53261",
+        "https://access.redhat.com/errata/RHSA-2026:53262",
+        "https://access.redhat.com/errata/RHSA-2026:53263",
+        "https://access.redhat.com/errata/RHSA-2026:60520"
+      ],
+      "visible_dates": [
+        "NVD published 2026-07-08T20:16:48.430Z; lastModified 2026-08-31T15:17:11.020Z"
+      ],
+      "summary": "NVD updated CVE-2026-15154 inside the run window for a guardrails-detectors ReDoS flaw in Red Hat OpenShift AI. Crafted regular expressions sent to the public detection API can trigger catastrophic backtracking, consume a worker at 100% CPU indefinitely, and deny service to the guardrails-mediated LLM pipeline.",
+      "evidence_classification": "NVD CVE update with Red Hat CVE and errata references",
+      "affected_boundary_or_version": "guardrails-detectors before d857e059f8a2dedb5c7ea9a2c307c4cfd7983fd1; affected Red Hat OpenShift AI 2.25, 3.3, and 3.4 packages with fixed RPM versions in NVD affected data",
+      "why_it_matters_for_ai_security": "Guardrail services are security-critical AI runtime dependencies; a detector DoS can remove or degrade the control plane for LLM-mediated workloads.",
+      "named_entities": [
+        "Red Hat OpenShift AI",
+        "guardrails-detectors",
+        "TrustyAI",
+        "ReDoS"
+      ],
+      "local_topic_routes": [
+        "infrastructure-and-supply-chain",
+        "testing-and-assurance",
+        "model-and-prompt-security"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "OpenShift AI and TrustyAI broad entity coverage belongs upstream.",
+        "ai_dev_wiki": "General guardrail deployment practice belongs upstream; this repo keeps detector DoS and release-gate implications."
+      },
+      "confidence_notes": "Medium-high confidence: original disclosure is stale but NVD records an in-window modification with Red Hat errata references.",
+      "follow_up_actions": [
+        "During ingest, verify which Red Hat errata changed on 2026-08-31 and whether the update is a new fixed package, analysis change, or metadata enrichment."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Flowise Custom MCP node RCE and Airtable/CSV Agent prompt-injection code execution CVEs",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73601",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73485",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73487"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-13T12:17:24Z range; lastModified 2026-08-31T20:25:28.573Z"
+      ],
+      "reason": "Excluded from fresh qualifying findings because original publication predates the exact window and likely belongs to prior raw capture; the in-window lastModified value appears to be NVD metadata/analysis progression rather than a newly visible vendor security delta.",
+      "routing_note": "If not already ingested, route to agent-and-tool-security and model-and-prompt-security."
+    },
+    {
+      "candidate": "n8n MCP Client SSRF bypass and MCP node-schema loader RCE updates",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-72768",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77068",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77073"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-11 through 2026-08-20; lastModified 2026-08-31T20:34Z through 2026-08-31T20:37Z"
+      ],
+      "reason": "Excluded to avoid duplicate collector output because the original advisories are older than the two-day window and likely captured in previous MCP sweeps; the in-window NVD modifications should be reconciled during ingest if prior pages exist.",
+      "routing_note": "Security lens belongs in ai-security-wiki; general n8n MCP workflow coverage belongs upstream in ai-wiki or ai-dev-wiki."
+    },
+    {
+      "candidate": "ArcadeDB MCP get_server_settings cluster-token leak and MCP HTTP transport authentication bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-67357",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-68578"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-02T13:16:53Z; lastModified 2026-08-31T20:30:14.457Z"
+      ],
+      "reason": "Excluded as stale original publication with in-window NVD modification only; local topic index already has ArcadeDB MCP security leaves, so this run should not duplicate them.",
+      "routing_note": "Existing local route: identity-and-access/arcadedb-mcp-server-setting-authorization-bypass.md."
+    },
+    {
+      "candidate": "SiYuan asset.upload MCP path traversal",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82233"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-28T12:16:32.953Z; lastModified 2026-08-31T19:17:15.907Z"
+      ],
+      "reason": "Excluded because original publication predates the exact cutoff and the local topic index already contains a SiYuan MCP asset upload file-read leaf.",
+      "routing_note": "Existing local route: agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md."
+    },
+    {
+      "candidate": "UI-TARS-desktop unauthenticated MCP command/filesystem servers",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81735"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-27T17:21:03.677Z; lastModified 2026-08-31T19:17:15.000Z"
+      ],
+      "reason": "Excluded because original publication is outside the exact window and local topic index already contains a UI-TARS desktop MCP unauthenticated RCE leaf.",
+      "routing_note": "Existing local route: agent-and-tool-security/ui-tars-desktop-mcp-unauthenticated-rce.md."
+    },
+    {
+      "candidate": "TechRadar/Cybernews reports on llms.txt unclaimed package and domain execution by AI agents",
+      "source_urls": [
+        "https://www.techradar.com/pro/security/top-ai-tools-including-claude-codex-and-hermes-installed-suspicious-code-inside-corporate-networks",
+        "https://cybernews.com/security/fortune500-security-gap-ai-agents-install-malware/"
+      ],
+      "visible_dates": [
+        "TechRadar published 2026-08-30 per search result",
+        "Cybernews published 2026-08-31 per search result"
+      ],
+      "reason": "Excluded despite concrete relevance because no primary research report or reproducible primary source from the named researcher was located in this run; secondary reports can be revisited if the primary disclosure appears.",
+      "routing_note": "If primary evidence appears, likely route to threats-and-attacks and infrastructure-and-supply-chain with upstream routing to ai-dev-wiki for general agent documentation hygiene."
+    },
+    {
+      "candidate": "Operant AI Semantic Firewall launch",
+      "source_urls": [
+        "https://www.expresscomputer.in/news/operant-ai-launches-semantic-firewall-to-secure-ai-agents/138201/"
+      ],
+      "visible_dates": [
+        "Search result reported published 2026-08-31"
+      ],
+      "reason": "Excluded as an ordinary product announcement: it describes a security product/control plane but does not disclose a concrete vulnerability, incident, patch, standard, assurance result, or regulatory change.",
+      "routing_note": "Product/company coverage would route upstream to ai-wiki if needed."
+    },
+    {
+      "candidate": "Salesforce Headless 360 MCP expansion",
+      "source_urls": [
+        "https://www.expresscomputer.in/news/salesforce-expands-headless-360-to-support-ai-agents-across-enterprise-applications/138212/"
+      ],
+      "visible_dates": [
+        "Search result reported published 2026-08-31"
+      ],
+      "reason": "Excluded as a broad product/integration announcement. It mentions permissions and governance but lacks a concrete security delta, vulnerability, patch, or assurance result.",
+      "routing_note": "Salesforce and broad MCP product coverage route to ai-wiki; general enterprise agent integration practice routes to ai-dev-wiki."
+    },
+    {
+      "candidate": "NIST CSRC August 31 IoT cybersecurity catalog call for comments",
+      "source_urls": [
+        "https://csrc.nist.gov/news/2026"
+      ],
+      "visible_dates": [
+        "NIST CSRC news list shows August 31, 2026"
+      ],
+      "reason": "Excluded because the update is cybersecurity standards-related but not AI-specific within the collected evidence.",
+      "routing_note": "No local AI security route unless an AI system/device-security implication is later identified."
+    }
+  ],
+  "counts": {
+    "qualifying_count": 9,
+    "exclusion_count": 9,
+    "routing_count": 9
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed for artifact"
+  },
+  "blockers": [],
+  "confidence_summary": "High confidence for NVD-published same-day CVE clusters; medium confidence for sparse or JavaScript-gated vendor detail where ingest should recheck fixed-version and remediation specifics."
+}
