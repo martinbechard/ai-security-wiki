@@ -13,6 +13,8 @@ The [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-secu
 
 NVD and the linked [GitHub Security Advisory](https://github.com/ash-project/ash_ai/security/advisories/GHSA-c92r-f3rr-q49h) describe default MCP origin validation that could be bypassed through DNS rebinding because `Host` and `x-forwarded-proto` were trusted in the decision path.
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) adds CVEAWG publication and update evidence plus the project [fix commit](https://github.com/ash-project/ash_ai/commit/28af68d73134df0b8fb3aa6ab03e8fd795b07c21). It does not change the local affected range or mitigation state, so this page treats the watcher as corroboration.
+
 ## Security Impact
 
 - Threat: a browser-controlled origin can drive a local MCP endpoint when host validation accepts attacker-influenced request headers.
@@ -31,8 +33,10 @@ NVD and the linked [GitHub Security Advisory](https://github.com/ash-project/ash
 ## Authoritative Sources
 
 - [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json)
+- [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
 - [NVD CVE-2026-81315](https://nvd.nist.gov/vuln/detail/CVE-2026-81315)
 - [GitHub Security Advisory GHSA-c92r-f3rr-q49h](https://github.com/ash-project/ash_ai/security/advisories/GHSA-c92r-f3rr-q49h)
+- [ash_ai fix commit](https://github.com/ash-project/ash_ai/commit/28af68d73134df0b8fb3aa6ab03e8fd795b07c21)
 
 ## Related Code
 
@@ -59,3 +63,4 @@ NVD and the linked [GitHub Security Advisory](https://github.com/ash-project/ash
 ## Maintenance Notes
 
 - Created on 2026-08-31 from the [August 31 topic collector](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json) as an MCP origin-validation leaf.
+- Updated on 2026-09-01 from the [September 1 leaf watcher](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) with CVEAWG and fix-commit corroboration.

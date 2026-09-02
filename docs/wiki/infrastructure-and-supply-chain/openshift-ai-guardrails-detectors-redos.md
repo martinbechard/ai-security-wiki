@@ -13,6 +13,8 @@ The [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-secu
 
 NVD and the referenced [Red Hat CVE record](https://access.redhat.com/security/cve/CVE-2026-15154) describe crafted regular expressions sent to the public detection API that can trigger catastrophic backtracking and consume a worker at 100% CPU. The collector cites Red Hat errata [RHSA-2026:53261](https://access.redhat.com/errata/RHSA-2026:53261), [RHSA-2026:53262](https://access.redhat.com/errata/RHSA-2026:53262), [RHSA-2026:53263](https://access.redhat.com/errata/RHSA-2026:53263), and [RHSA-2026:60520](https://access.redhat.com/errata/RHSA-2026:60520) as remediation references.
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) adds CVEAWG update evidence for the same Red Hat advisory references. The CVE itself remains older, so this page treats the source as remediation tracking rather than a distinct exploit finding.
+
 ## Security Impact
 
 - Threat: malicious detector input can deny service to a guardrail worker and degrade the LLM pipeline that depends on detector availability.
@@ -31,6 +33,7 @@ NVD and the referenced [Red Hat CVE record](https://access.redhat.com/security/c
 ## Authoritative Sources
 
 - [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json)
+- [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
 - [NVD CVE-2026-15154](https://nvd.nist.gov/vuln/detail/CVE-2026-15154)
 - [Red Hat CVE-2026-15154](https://access.redhat.com/security/cve/CVE-2026-15154)
 - [RHSA-2026:53261](https://access.redhat.com/errata/RHSA-2026:53261)
@@ -63,3 +66,4 @@ NVD and the referenced [Red Hat CVE record](https://access.redhat.com/security/c
 ## Maintenance Notes
 
 - Created on 2026-08-31 from the [August 31 topic collector](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json) as a guardrail-runtime availability leaf.
+- Updated on 2026-09-01 from the [September 1 leaf watcher](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) with CVEAWG and Red Hat remediation-tracking evidence.

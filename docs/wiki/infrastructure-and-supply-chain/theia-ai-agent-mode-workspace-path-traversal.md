@@ -13,6 +13,8 @@ The [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-secu
 
 NVD, the [Eclipse vulnerability report](https://gitlab.eclipse.org/security/vulnerability-reports/-/work_items/624), and the referenced [Theia fix commit](https://github.com/eclipse-theia/theia/commit/28da106c254) describe AI Agent Mode file-change tools resolving model-supplied relative, absolute, or home-expanded paths without workspace containment. Prompt injection could steer the agent into changing host-executed files such as shell startup files or `authorized_keys`.
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) adds CVEAWG evidence and repeats the Eclipse work item and commit references. It confirms the 1.73.0 through before 1.75.0 affected range and the `writeFileContent` / `suggestFileContent` containment boundary.
+
 ## Security Impact
 
 - Threat: model-supplied file paths can write or delete files outside the approved workspace.
@@ -31,6 +33,7 @@ NVD, the [Eclipse vulnerability report](https://gitlab.eclipse.org/security/vuln
 ## Authoritative Sources
 
 - [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json)
+- [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
 - [NVD CVE-2026-82217](https://nvd.nist.gov/vuln/detail/CVE-2026-82217)
 - [Eclipse vulnerability report](https://gitlab.eclipse.org/security/vulnerability-reports/-/work_items/624)
 - [Theia fix commit](https://github.com/eclipse-theia/theia/commit/28da106c254)
@@ -60,3 +63,4 @@ NVD, the [Eclipse vulnerability report](https://gitlab.eclipse.org/security/vuln
 ## Maintenance Notes
 
 - Created on 2026-08-31 from the [August 31 topic collector](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json) as a workspace-containment leaf rather than broad Theia product coverage.
+- Updated on 2026-09-01 from the [September 1 leaf watcher](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) with CVEAWG, Eclipse work-item, and commit provenance.

@@ -13,6 +13,8 @@ The [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-secu
 
 NVD, the [VulDB record](https://vuldb.com/vuln/397285), and the referenced public [proof of concept](https://github.com/yaowenxiao721/Poc/blob/main/sdcb-chats/chats-poc-1.md) describe SSRF in `McpController.cs` for the `fetch-tools` endpoint. The issue is security-relevant because tool metadata fetching can move attacker-chosen network responses into MCP discovery and model-visible tool context.
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) adds CVEAWG publication evidence and repeats the VulDB/PoC references for the same McpController `fetch-tools` issue. It does not change the affected range captured by the August 31 source.
+
 ## Security Impact
 
 - Threat: remote callers can use MCP tool-discovery fetches to request internal or otherwise restricted URLs.
@@ -31,6 +33,7 @@ NVD, the [VulDB record](https://vuldb.com/vuln/397285), and the referenced publi
 ## Authoritative Sources
 
 - [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json)
+- [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
 - [NVD CVE-2026-82905](https://nvd.nist.gov/vuln/detail/CVE-2026-82905)
 - [Public proof of concept](https://github.com/yaowenxiao721/Poc/blob/main/sdcb-chats/chats-poc-1.md)
 - [VulDB CVE-2026-82905](https://vuldb.com/cve/CVE-2026-82905)
@@ -61,3 +64,4 @@ NVD, the [VulDB record](https://vuldb.com/vuln/397285), and the referenced publi
 ## Maintenance Notes
 
 - Created on 2026-08-31 from the [August 31 topic collector](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json) as an MCP tool-discovery SSRF leaf.
+- Updated on 2026-09-01 from the [September 1 leaf watcher](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) with CVEAWG, VulDB, and PoC provenance.

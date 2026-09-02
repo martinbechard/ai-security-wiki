@@ -13,6 +13,8 @@ Agent synthetic insider risk treats an AI agent with legitimate access as an ins
 
 This page keeps the local identity and monitoring lens. Broad agent operating models belong upstream in ai-dev-wiki, and company/product context belongs upstream in ai-wiki. Locally, the security issue is that agent access should be monitored as delegated machine activity with changing prompt context, not as a stable human identity or a passive service account.
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) adds the Above Security and Forscie [Synthetic Insider Threat Matrix](https://www.insiderisk.io/research/synthetic-insider-threat-matrix-2026) as attributed demonstrated-research evidence. The matrix frames AI agents and automated systems as insider-like actors for investigation purposes; this page treats that as a taxonomy aid, not as a replacement for local identity-provider, connector, and audit-log evidence.
+
 ## Security Impact
 
 - Threat: an agent can misuse legitimate access because malicious prompts, compromised context, tool-output injection, stale authorization, or policy drift changes what the agent attempts.
@@ -28,12 +30,15 @@ This page keeps the local identity and monitoring lens. Broad agent operating mo
 - Monitor agent actions by task, data class, destination, connector, prompt context, and delegated user.
 - Treat machine-speed access spikes, unusual connector joins, and unexpected destination changes as investigation triggers.
 - Preserve prompt and tool-call evidence needed to explain why the agent acted.
+- Map agent behavior to explicit insider-risk tactics only when the underlying audit evidence identifies task, identity, tool, data class, destination, and delegated authority.
 - Revoke or narrow delegated authority quickly when the agent's context, owner, tool set, or task scope changes.
 
 ## Authoritative Sources
 
 - [August 14 topic news collector source](../../../raw/processed/2026-08-14/ai-security-wiki-topic-news-collector-2026-08-14T233111Z.json)
-- BankInfoSecurity synthetic-insider coverage: https://www.bankinfosecurity.com/ai-agents-are-insider-risks-newest-blind-spot-a-32561
+- [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
+- [BankInfoSecurity synthetic-insider coverage](https://www.bankinfosecurity.com/ai-agents-are-insider-risks-newest-blind-spot-a-32561)
+- [Synthetic Insider Threat Matrix](https://www.insiderisk.io/research/synthetic-insider-threat-matrix-2026)
 
 ## Related Code
 
@@ -59,7 +64,9 @@ This page keeps the local identity and monitoring lens. Broad agent operating mo
 
 - Which behavior-baseline fields distinguish normal delegated agent work from synthetic-insider risk?
 - Which identity providers expose agent identity, human requester, delegated user, and connector identity in one audit trail?
+- Which Synthetic Insider Threat Matrix techniques map cleanly to available enterprise agent telemetry without overfitting vendor-sponsored taxonomy labels?
 
 ## Maintenance Notes
 
 - Created on 2026-08-14 from the [August 14 topic collector](../../../raw/processed/2026-08-14/ai-security-wiki-topic-news-collector-2026-08-14T233111Z.json) after routing general agent operating-model coverage upstream.
+- Updated on 2026-09-01 from the [September 1 leaf watcher](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) with attributed Synthetic Insider Threat Matrix evidence while preserving local audit-evidence requirements.

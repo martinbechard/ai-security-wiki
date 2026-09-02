@@ -57,6 +57,10 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [jina-ai Reader private-address SSRF](jina-ai-reader-private-address-ssrf.md)
 - [Theia AI Agent Mode workspace path traversal](theia-ai-agent-mode-workspace-path-traversal.md)
 - [OpenShift AI guardrails-detectors ReDoS](openshift-ai-guardrails-detectors-redos.md)
+- [Codex Git metadata execution boundaries](codex-git-metadata-execution-boundaries.md)
+- [Hugging Face Transformers trust_remote_code cache write](huggingface-transformers-trust-remote-code-cache-write.md)
+- [ModelScope unsafe YAML loader RCE](modelscope-unsafe-yaml-loader-rce.md)
+- [Elasticsearch ML model artifact deserialization RCE](elasticsearch-ml-model-artifact-deserialization-rce.md)
 
 ## Authoritative Sources
 
@@ -86,6 +90,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-09-01 with Codex Git metadata execution, Transformers remote-code cache persistence, ModelScope unsafe YAML, and Elasticsearch model-artifact deserialization leaves.
 - Updated on 2026-08-31 with Theia AI Agent Mode workspace path traversal, OpenShift AI guardrails-detectors ReDoS, and a Kubio AI Website Builder deferral in the WordPress AI plugin advisory page.
 - Updated on 2026-08-29 with Bifrost and Portkey AI gateway SSRF, gpt-crawler file-write, Bisheng callback SSRF, and watcher/topic-source provenance for Spring AI and ServiceNow.
 - Updated on 2026-08-30 with browser-use web-ui artifact path containment and jina-ai Reader private-address SSRF leaves.

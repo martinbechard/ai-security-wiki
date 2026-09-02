@@ -13,6 +13,8 @@ The [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-secu
 
 NVD and the linked [GitHub Security Advisory](https://github.com/ash-project/ash_ai/security/advisories/GHSA-rcx7-x2w5-mmc2) describe prompt-injected or malformed tool-call output that can keep the tool loop recursing and resend model requests. The issue is a resource-exhaustion and cost-control failure at the model-tool loop boundary.
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) adds CVEAWG publication and update evidence plus the project [fix commit](https://github.com/ash-project/ash_ai/commit/53325fdab90afab628c6a53232ef2a9001580bd9). It reinforces the same loop-termination and request-cost boundary without changing the current mitigation state.
+
 ## Security Impact
 
 - Threat: attacker-influenced tool-call output can keep model requests looping and consume compute, quota, or spend.
@@ -31,8 +33,10 @@ NVD and the linked [GitHub Security Advisory](https://github.com/ash-project/ash
 ## Authoritative Sources
 
 - [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json)
+- [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
 - [NVD CVE-2026-82579](https://nvd.nist.gov/vuln/detail/CVE-2026-82579)
 - [GitHub Security Advisory GHSA-rcx7-x2w5-mmc2](https://github.com/ash-project/ash_ai/security/advisories/GHSA-rcx7-x2w5-mmc2)
+- [ash_ai fix commit](https://github.com/ash-project/ash_ai/commit/53325fdab90afab628c6a53232ef2a9001580bd9)
 
 ## Related Code
 
@@ -58,3 +62,4 @@ NVD and the linked [GitHub Security Advisory](https://github.com/ash-project/ash
 ## Maintenance Notes
 
 - Created on 2026-08-31 from the [August 31 topic collector](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json) as a tool-loop exhaustion leaf separate from ash_ai prompt-template RCE and MCP origin validation.
+- Updated on 2026-09-01 from the [September 1 leaf watcher](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) with CVEAWG and fix-commit corroboration.

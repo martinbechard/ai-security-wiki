@@ -13,6 +13,8 @@ The [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-secu
 
 NVD records improper neutralization of input used for LLM prompting in Microsoft Edge for iOS, allowing an unauthorized network attacker to perform spoofing. The [Microsoft MSRC record](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-70331) is the vendor source, but the raw collector notes that detailed MSRC fields were JavaScript-gated during collection.
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) adds CVEAWG update evidence and the MSRC advisory reference. It confirms the LLM input-neutralization spoofing boundary without adding fixed-version detail.
+
 ## Security Impact
 
 - Threat: network-supplied content can influence an LLM prompt path in a way that creates spoofed output or user trust decisions.
@@ -31,6 +33,7 @@ NVD records improper neutralization of input used for LLM prompting in Microsoft
 ## Authoritative Sources
 
 - [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json)
+- [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
 - [NVD CVE-2026-70331](https://nvd.nist.gov/vuln/detail/CVE-2026-70331)
 - [Microsoft MSRC CVE-2026-70331](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-70331)
 
@@ -59,3 +62,4 @@ NVD records improper neutralization of input used for LLM prompting in Microsoft
 ## Maintenance Notes
 
 - Created on 2026-08-31 from the [August 31 topic collector](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json) as a browser-integrated LLM prompt-spoofing leaf.
+- Updated on 2026-09-01 from the [September 1 leaf watcher](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) with CVEAWG and MSRC provenance.

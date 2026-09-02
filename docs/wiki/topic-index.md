@@ -96,6 +96,10 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/ash-ai-mcp-origin-validation-dns-rebinding.md](agent-and-tool-security/ash-ai-mcp-origin-validation-dns-rebinding.md)
 - [agent-and-tool-security/mcphub-control-plane-advisory-cluster.md](agent-and-tool-security/mcphub-control-plane-advisory-cluster.md)
 - [agent-and-tool-security/sdcb-chats-mcp-fetch-tools-ssrf.md](agent-and-tool-security/sdcb-chats-mcp-fetch-tools-ssrf.md)
+- [agent-and-tool-security/codex-powershell-stop-parsing-approval-bypass.md](agent-and-tool-security/codex-powershell-stop-parsing-approval-bypass.md)
+- [agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md](agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md)
+- [agent-and-tool-security/runzero-platform-mcp-authorization-bypass.md](agent-and-tool-security/runzero-platform-mcp-authorization-bypass.md)
+- [agent-and-tool-security/hermes-agent-acp-mcp-dos.md](agent-and-tool-security/hermes-agent-acp-mcp-dos.md)
 - [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
 - [infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md](infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md)
 - [infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md](infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md)
@@ -171,6 +175,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/astron-agent-workflow-ownership-bypass.md](identity-and-access/astron-agent-workflow-ownership-bypass.md)
 - [identity-and-access/hel-online-classroom-ai-plugin-authorization-cluster.md](identity-and-access/hel-online-classroom-ai-plugin-authorization-cluster.md)
 - [identity-and-access/diboot-ai-session-authorization-bypass.md](identity-and-access/diboot-ai-session-authorization-bypass.md)
+- [identity-and-access/kibana-ai-assistant-knowledge-base-cross-realm-authorization.md](identity-and-access/kibana-ai-assistant-knowledge-base-cross-realm-authorization.md)
+- [identity-and-access/support-genix-ai-chatbot-admin-takeover.md](identity-and-access/support-genix-ai-chatbot-admin-takeover.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -207,6 +213,10 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md](infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md)
 - [infrastructure-and-supply-chain/theia-ai-agent-mode-workspace-path-traversal.md](infrastructure-and-supply-chain/theia-ai-agent-mode-workspace-path-traversal.md)
 - [infrastructure-and-supply-chain/openshift-ai-guardrails-detectors-redos.md](infrastructure-and-supply-chain/openshift-ai-guardrails-detectors-redos.md)
+- [infrastructure-and-supply-chain/codex-git-metadata-execution-boundaries.md](infrastructure-and-supply-chain/codex-git-metadata-execution-boundaries.md)
+- [infrastructure-and-supply-chain/huggingface-transformers-trust-remote-code-cache-write.md](infrastructure-and-supply-chain/huggingface-transformers-trust-remote-code-cache-write.md)
+- [infrastructure-and-supply-chain/modelscope-unsafe-yaml-loader-rce.md](infrastructure-and-supply-chain/modelscope-unsafe-yaml-loader-rce.md)
+- [infrastructure-and-supply-chain/elasticsearch-ml-model-artifact-deserialization-rce.md](infrastructure-and-supply-chain/elasticsearch-ml-model-artifact-deserialization-rce.md)
 - [testing-and-assurance](testing-and-assurance/index.md)
 - [testing-and-assurance/cyber-evaluation-containment.md](testing-and-assurance/cyber-evaluation-containment.md)
 - [testing-and-assurance/public-cyber-capability-assessments.md](testing-and-assurance/public-cyber-capability-assessments.md)
@@ -262,6 +272,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [model-and-prompt-security/microsoft-edge-ios-llm-prompt-spoofing.md](model-and-prompt-security/microsoft-edge-ios-llm-prompt-spoofing.md)
 - [source-workflows](source-workflows/index.md)
 - [digests](digests/index.md)
+- [digests/2026-09.md](digests/2026-09.md)
 
 ## Federation Navigation
 
@@ -272,6 +283,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 ## Maintenance Notes
 
 - Add local durable leaves here after federation routing and wiki verification.
+- Updated on 2026-09-01 with September 1 topic and watcher ingest for Astra release gates, Codex approval/Git execution boundaries, model-artifact supply-chain flaws, Kibana AI feature authorization and DoS, runZero MCP authorization, hermes-agent ACP/MCP DoS, Support Genix AI Chatbot admin takeover, and watcher provenance.
 - Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.
 - Updated on 2026-08-26 with August 25 MCP, agent-tool, identity, infrastructure, verification-parser, emergency-shutdown, and advisory-deferral leaves.
 - Updated on 2026-08-27 with August 26 MCP SSRF, Strands consent, Langfun RCE, Mage AI, one-api, Dradis AI provider, WordPress AI Engine, UniFi Protect AI Key, delegated authorization, split PraisonAI control-plane leaves, and consciousness-explorer updates.

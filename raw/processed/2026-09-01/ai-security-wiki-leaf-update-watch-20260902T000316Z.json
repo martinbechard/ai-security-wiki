@@ -1,0 +1,472 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "created_raw_path": "raw/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json",
+  "evidence_classification_counts": {
+    "control change": 2,
+    "demonstrated research": 1,
+    "disclosed vulnerability": 9,
+    "mitigation": 1
+  },
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+      "reason": "Crawled today but no visible publication or update date on the cited page; crawl dates do not qualify.",
+      "source_url": "https://junie.jetbrains.com/docs/action-allowlist.html"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+      "reason": "Visible last modified 2026-08-28, but it covers command/MCP action allowlisting rather than context-exclusion or file-processing boundaries for this selected leaf.",
+      "source_url": "https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+      "reason": "Visible last modified 2026-08-24 is outside the 2026-08-26 through 2026-09-01 source window.",
+      "source_url": "https://junie.jetbrains.com/docs/junie-plugin-project-settings.html"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/california-ai-transparency-act-provenance-controls.md",
+      "reason": "Visible publication date 2026-07-30 is outside the 2026-08-26 through 2026-09-01 source window.",
+      "source_url": "https://www.onetrust.com/blog/california-ai-transparency-act-requirements-deadlines-and-compliance-steps/"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/california-ai-transparency-act-provenance-controls.md",
+      "reason": "Search result exposed only a crawl-relative date, not a direct visible publication or update date; ambiguous dates do not qualify.",
+      "source_url": "https://www.incyan.com/resources/california-ai-transparency-matrix/"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/california-ai-transparency-act-provenance-controls.md",
+      "reason": "Official bill text is useful authority but no visible in-window publication or update date was established for this run.",
+      "source_url": "https://www.leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB853"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md",
+      "reason": "Official FAQ says it is updated regularly, but the page did not expose a direct visible in-window update date in the checked result.",
+      "source_url": "https://ai-act-service-desk.ec.europa.eu/en/faq"
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/gpai-systemic-risk-controls.md",
+      "reason": "Official FAQ did not expose a direct visible in-window update date; used only as standing authority, not as the qualifying dated source.",
+      "source_url": "https://ai-act-service-desk.ec.europa.eu/en/faq"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/agent-synthetic-insider-risk.md",
+      "reason": "Visible publication date 2026-08-14 is outside the 2026-08-26 through 2026-09-01 source window.",
+      "source_url": "https://www.bankinfosecurity.com/ai-agents-are-insider-risks-newest-blind-spot-a-32561"
+    }
+  ],
+  "federation_boundary": "Broad AI entities, products, frameworks, model families, general development practice, and product catalogs route to ai-wiki or ai-dev-wiki; this artifact keeps only security-specific vulnerabilities, controls, mitigations, demonstrated research, and routing notes.",
+  "follow_up_notes": [
+    "Unchecked leaves were checked first, then the oldest checked 2026-08-16 leaves; several CVE items may already be represented in local pages created by the latest ingest, so normal ingest should deduplicate before writing wiki pages.",
+    "No docs/wiki files or raw/processed paths were edited by this collector run."
+  ],
+  "leaf_universe_count": 243,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": "Local browser-origin to MCP HTTP transport; ash-project ash_ai MCP server origin validation.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-81315 publishes an AshAi MCP DNS-rebinding origin-check bypass using a spoofed X-Forwarded-Proto header to issue cross-site requests to a local MCP server.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ash-ai-mcp-origin-validation-dns-rebinding.md",
+      "named_entities": [
+        "CVE-2026-81315",
+        "ash_ai",
+        "AshAi",
+        "MCP",
+        "GHSA-c92r-f3rr-q49h"
+      ],
+      "references": [
+        "https://github.com/ash-project/ash_ai/security/advisories/GHSA-c92r-f3rr-q49h",
+        "https://github.com/ash-project/ash_ai/commit/28af68d73134df0b8fb3aa6ab03e8fd795b07c21"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-81315",
+      "upstream_routing": "Broad product, company, framework, model, and catalog context routes upstream; local artifact keeps the security-specific boundary and evidence classification.",
+      "visible_published_or_updated_at": "published 2026-08-31T00:57:55.910Z; updated 2026-08-31T16:02:38.700Z"
+    },
+    {
+      "affected_boundaries": "Agent tool-calling loop termination and request-cost exhaustion boundary in ash_ai.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-82579 publishes an AshAi tool-loop nontermination issue where model-influenced tool calls filtered from execution can hang the loop and drive repeated model requests.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ash-ai-tool-loop-request-exhaustion.md",
+      "named_entities": [
+        "CVE-2026-82579",
+        "ash_ai",
+        "AshAi",
+        "GHSA-rcx7-x2w5-mmc2"
+      ],
+      "references": [
+        "https://github.com/ash-project/ash_ai/security/advisories/GHSA-rcx7-x2w5-mmc2",
+        "https://github.com/ash-project/ash_ai/commit/53325fdab90afab628c6a53232ef2a9001580bd9"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82579",
+      "upstream_routing": "Broad product, company, framework, model, and catalog context routes upstream; local artifact keeps the security-specific boundary and evidence classification.",
+      "visible_published_or_updated_at": "published 2026-08-31T01:07:49.185Z; updated 2026-08-31T16:05:58.542Z"
+    },
+    {
+      "affected_boundaries": "MCPHub administration, tenant isolation, server registration, OpenAPI proxy, URL validation, and bearer-key authorization boundaries.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "MCPHub CVE records published on August 31 describe path traversal, missing authorization, server-scoped bearer-key overreach, SSRF, RCE, SSRF guard bypass, and horizontal IDOR across MCPHub control-plane endpoints.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcphub-control-plane-advisory-cluster.md",
+      "named_entities": [
+        "CVE-2026-79743",
+        "CVE-2026-79744",
+        "CVE-2026-79745",
+        "CVE-2026-79746",
+        "CVE-2026-79747",
+        "CVE-2026-79748",
+        "CVE-2026-79749",
+        "CVE-2026-79750",
+        "MCPHub"
+      ],
+      "references": [
+        "https://github.com/samanhappy/mcphub/security/advisories/GHSA-4gc8-885f-qj36",
+        "https://github.com/samanhappy/mcphub/security/advisories/GHSA-454m-4vm6-842f",
+        "https://github.com/samanhappy/mcphub/releases/tag/v1.0.32"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79746",
+      "upstream_routing": "Broad product, company, framework, model, and catalog context routes upstream; local artifact keeps the security-specific boundary and evidence classification.",
+      "visible_published_or_updated_at": "cluster published 2026-08-31; CVE-2026-79746 updated 2026-09-01T14:59:30.891Z"
+    },
+    {
+      "affected_boundaries": "MCP fetch-tools URL handling boundary in sdcb chats.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-82905 publishes an sdcb chats fetch-tools endpoint SSRF in McpController up to 1.12.0, with a public PoC reference.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/sdcb-chats-mcp-fetch-tools-ssrf.md",
+      "named_entities": [
+        "CVE-2026-82905",
+        "sdcb chats",
+        "McpController",
+        "fetch-tools",
+        "VulDB"
+      ],
+      "references": [
+        "https://vuldb.com/vuln/397285",
+        "https://github.com/yaowenxiao721/Poc/blob/main/sdcb-chats/chats-poc-1.md"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82905",
+      "upstream_routing": "Broad product, company, framework, model, and catalog context routes upstream; local artifact keeps the security-specific boundary and evidence classification.",
+      "visible_published_or_updated_at": "published 2026-08-31T19:45:08.514Z; updated 2026-08-31T21:57:50.021Z"
+    },
+    {
+      "affected_boundaries": "Markdown preview rendering and stored user-content execution boundary in Aix-DB.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-82881 publishes stored XSS in Aix-DB through 1.2.4 from raw HTML markdown rendered into v-html without sanitization; issue, pull request, and commit references identify the remediation path.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/data-and-privacy/aix-db-markdown-chat-stored-xss.md",
+      "named_entities": [
+        "CVE-2026-82881",
+        "Aix-DB",
+        "MarkdownPreview",
+        "VulnCheck"
+      ],
+      "references": [
+        "https://github.com/apconw/Aix-DB/issues/230",
+        "https://github.com/apconw/Aix-DB/pull/231",
+        "https://github.com/apconw/Aix-DB/commit/b568a0f3b18ecead9f7d38bb78017f664d54a1a9"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82881",
+      "upstream_routing": "Broad product, company, framework, model, and catalog context routes upstream; local artifact keeps the security-specific boundary and evidence classification.",
+      "visible_published_or_updated_at": "published and updated 2026-08-31T10:51:06.572Z"
+    },
+    {
+      "affected_boundaries": "Identity/session authorization boundary for AI session endpoints in diboot.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-82816 publishes an authorization weakness in diboot 3.8.0 AI Session Endpoint /api/ai-session/.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/identity-and-access/diboot-ai-session-authorization-bypass.md",
+      "named_entities": [
+        "CVE-2026-82816",
+        "dibo-software",
+        "diboot",
+        "AI Session Endpoint",
+        "VulDB"
+      ],
+      "references": [
+        "https://vuldb.com/vuln/397233",
+        "https://vuldb.com/cve/CVE-2026-82816"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82816",
+      "upstream_routing": "Broad product, company, framework, model, and catalog context routes upstream; local artifact keeps the security-specific boundary and evidence classification.",
+      "visible_published_or_updated_at": "published 2026-08-31T17:45:09.357Z; updated 2026-08-31T18:41:30.170Z"
+    },
+    {
+      "affected_boundaries": "OpenShift AI guardrails-detectors regular-expression denial-of-service remediation and packaged advisory boundary.",
+      "evidence_classification": "mitigation",
+      "factual_summary": "CVE-2026-15154 is older, but its CVE record was updated August 31 with Red Hat advisory references, including RHSA-2026:60520, for guardrails-detectors ReDoS remediation tracking.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/openshift-ai-guardrails-detectors-redos.md",
+      "named_entities": [
+        "CVE-2026-15154",
+        "Red Hat OpenShift AI",
+        "guardrails-detectors",
+        "RHSA-2026:60520"
+      ],
+      "references": [
+        "https://access.redhat.com/security/cve/CVE-2026-15154",
+        "https://access.redhat.com/errata/RHSA-2026:60520"
+      ],
+      "relevance": "Broad OpenShift AI product context routes upstream; local artifact keeps the ReDoS mitigation/advisory boundary.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-15154",
+      "upstream_routing": "Ingest should confirm whether RHSA-2026:60520 is a new local delta or only CVE reference churn.",
+      "visible_published_or_updated_at": "published 2026-07-08T19:50:51.563Z; updated 2026-08-31T14:11:47.953Z"
+    },
+    {
+      "affected_boundaries": "Agent-mode workspace file write/suggestion path containment in Eclipse Theia 1.73.0 through before 1.75.0.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-82217 publishes Eclipse Theia AI Agent Mode path traversal where model-supplied file paths in file-change tools resolve without constraining writes to the workspace root.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/theia-ai-agent-mode-workspace-path-traversal.md",
+      "named_entities": [
+        "CVE-2026-82217",
+        "Eclipse Theia",
+        "AI Agent Mode",
+        "writeFileContent",
+        "suggestFileContent"
+      ],
+      "references": [
+        "https://gitlab.eclipse.org/security/vulnerability-reports/-/work_items/624",
+        "https://github.com/eclipse-theia/theia/commit/28da106c254"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82217",
+      "upstream_routing": "Broad product, company, framework, model, and catalog context routes upstream; local artifact keeps the security-specific boundary and evidence classification.",
+      "visible_published_or_updated_at": "published 2026-08-31T13:40:56.645Z; updated 2026-09-01T03:56:19.988Z"
+    },
+    {
+      "affected_boundaries": "Prompt-template rendering and code-evaluation boundary in AshAi.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-77956 publishes remote code execution in ash_ai from EEx evaluation of prompt content in AshAi.Actions.Prompt.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/ash-ai-eex-prompt-template-rce.md",
+      "named_entities": [
+        "CVE-2026-77956",
+        "ash_ai",
+        "AshAi.Actions.Prompt",
+        "EEx",
+        "GHSA-2g59-hg7m-qc83"
+      ],
+      "references": [
+        "https://github.com/ash-project/ash_ai/security/advisories/GHSA-2g59-hg7m-qc83",
+        "https://github.com/ash-project/ash_ai/commit/e9948254b5659c1143b73dc2f59f457931e64514"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77956",
+      "upstream_routing": "Broad product, company, framework, model, and catalog context routes upstream; local artifact keeps the security-specific boundary and evidence classification.",
+      "visible_published_or_updated_at": "published 2026-08-31T00:56:26.440Z; updated 2026-08-31T16:01:41.879Z"
+    },
+    {
+      "affected_boundaries": "Mobile-browser LLM prompt handling and spoofing boundary in Microsoft Edge for iOS.",
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE-2026-70331 publishes a Microsoft Edge for iOS spoofing vulnerability involving improper neutralization of input used for LLM prompting.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/microsoft-edge-ios-llm-prompt-spoofing.md",
+      "named_entities": [
+        "CVE-2026-70331",
+        "Microsoft Edge for iOS",
+        "MSRC",
+        "LLM prompting"
+      ],
+      "references": [
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-70331"
+      ],
+      "relevance": "Same-leaf security update for the selected durable page.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-70331",
+      "upstream_routing": "Broad product, company, framework, model, and catalog context routes upstream; local artifact keeps the security-specific boundary and evidence classification.",
+      "visible_published_or_updated_at": "published 2026-08-28T17:41:29.160Z; updated 2026-08-31T20:04:23.796Z"
+    },
+    {
+      "affected_boundaries": "AI Act enforcement and transparency-control compliance boundary for local governance pages.",
+      "evidence_classification": "control change",
+      "factual_summary": "Axios reported that the EU AI Act has moved from concept into enforcement, with major transparency requirements in effect as of August 2 and companies adapting operating controls.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md",
+      "named_entities": [
+        "EU AI Act",
+        "AI Office",
+        "Article 50",
+        "Anthropic",
+        "Claude"
+      ],
+      "references": [
+        "https://ai-act-service-desk.ec.europa.eu/en/faq",
+        "https://ai-act-service-desk.ec.europa.eu/en/resources"
+      ],
+      "relevance": "Broad EU AI Act background routes upstream; local artifact keeps the security-governance enforcement/control implication.",
+      "source_url": "https://www.axios.com/2026/08/28/eu-ai-act-gets-real",
+      "upstream_routing": "Ingest should prefer official AI Act Service Desk evidence if it exposes a visible in-window update date.",
+      "visible_published_or_updated_at": "published 2026-08-28"
+    },
+    {
+      "affected_boundaries": "GPAI provider governance, systemic-risk notification, and enforcement-readiness boundary.",
+      "evidence_classification": "control change",
+      "factual_summary": "The in-window EU AI Act enforcement reporting also affects GPAI systemic-risk governance because the AI Office enforcement context is now live for general-purpose model providers, but official Service Desk pages checked did not expose a visible in-window update date.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/governance-and-compliance/gpai-systemic-risk-controls.md",
+      "named_entities": [
+        "EU AI Act",
+        "GPAI",
+        "AI Office",
+        "general-purpose AI models"
+      ],
+      "references": [
+        "https://ai-act-service-desk.ec.europa.eu/en/faq",
+        "https://artificialintelligenceact.eu/high-level-summary/"
+      ],
+      "relevance": "Broad GPAI and model-provider catalog context routes upstream; local artifact keeps systemic-risk control obligations and security governance routing.",
+      "source_url": "https://www.axios.com/2026/08/28/eu-ai-act-gets-real",
+      "upstream_routing": "Ingest should treat this as secondary current-awareness unless an official in-window source is found.",
+      "visible_published_or_updated_at": "published 2026-08-28"
+    },
+    {
+      "affected_boundaries": "Identity, insider-risk investigation, SaaS/endpoint/data-access, and autonomous-agent behavior classification boundaries.",
+      "evidence_classification": "demonstrated research",
+      "factual_summary": "Above Security and Forscie launched the Synthetic Insider Threat Matrix as an open framework for investigating AI agents and automated systems behaving as insiders.",
+      "follow_up_note": "Normal raw ingest should reconcile whether the source adds a non-duplicate local page delta.",
+      "leaf_id": "docs/wiki/identity-and-access/agent-synthetic-insider-risk.md",
+      "named_entities": [
+        "Synthetic Insider Threat Matrix",
+        "Above Security",
+        "Forscie",
+        "AI agents",
+        "Insider Threat Matrix"
+      ],
+      "references": [
+        "https://www.above.security/",
+        "https://www.citybiz.co/article/895560/above-security-and-forscie-introduce-framework-for-managing-ai-agent-insider-threats/"
+      ],
+      "relevance": "Broad vendor/company context routes upstream; local artifact keeps the synthetic-insider security taxonomy and investigation-control boundary.",
+      "source_url": "https://www.insiderisk.io/research/synthetic-insider-threat-matrix-2026",
+      "upstream_routing": "Ingest should assess whether vendor-sponsored research is durable enough for the local leaf or belongs as attributed maintenance evidence.",
+      "visible_published_or_updated_at": "published 2026-08-28; launch date 2026-08-27"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-09-02T00:03:16Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/ash-ai-mcp-origin-validation-dns-rebinding.md",
+    "docs/wiki/agent-and-tool-security/ash-ai-tool-loop-request-exhaustion.md",
+    "docs/wiki/agent-and-tool-security/mcphub-control-plane-advisory-cluster.md",
+    "docs/wiki/agent-and-tool-security/sdcb-chats-mcp-fetch-tools-ssrf.md",
+    "docs/wiki/data-and-privacy/aix-db-markdown-chat-stored-xss.md",
+    "docs/wiki/identity-and-access/diboot-ai-session-authorization-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/openshift-ai-guardrails-detectors-redos.md",
+    "docs/wiki/infrastructure-and-supply-chain/theia-ai-agent-mode-workspace-path-traversal.md",
+    "docs/wiki/model-and-prompt-security/ash-ai-eex-prompt-template-rce.md",
+    "docs/wiki/model-and-prompt-security/microsoft-edge-ios-llm-prompt-spoofing.md",
+    "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md",
+    "docs/wiki/governance-and-compliance/california-ai-transparency-act-provenance-controls.md",
+    "docs/wiki/governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md",
+    "docs/wiki/governance-and-compliance/gpai-systemic-risk-controls.md",
+    "docs/wiki/identity-and-access/agent-synthetic-insider-risk.md"
+  ],
+  "selection_rule": "Unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "source_window": {
+    "inclusive_end": "2026-09-01",
+    "inclusive_start": "2026-08-26",
+    "rule": "Only public sources visibly published or updated within the last 7 days qualified; ambiguous, future, missing, relative, crawl-only, and boundary-only dates were excluded."
+  },
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/ash-ai-mcp-origin-validation-dns-rebinding.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-81315",
+      "https://github.com/ash-project/ash_ai/security/advisories/GHSA-c92r-f3rr-q49h",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-81315"
+    ],
+    "docs/wiki/agent-and-tool-security/ash-ai-tool-loop-request-exhaustion.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-82579",
+      "https://github.com/ash-project/ash_ai/security/advisories/GHSA-rcx7-x2w5-mmc2",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-82579"
+    ],
+    "docs/wiki/agent-and-tool-security/mcphub-control-plane-advisory-cluster.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-79743",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-79744",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-79745",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-79746",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-79747",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-79748",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-79749",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-79750",
+      "https://github.com/samanhappy/mcphub/security/advisories/GHSA-4gc8-885f-qj36"
+    ],
+    "docs/wiki/agent-and-tool-security/sdcb-chats-mcp-fetch-tools-ssrf.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-82905",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-82905",
+      "https://vuldb.com/vuln/397285"
+    ],
+    "docs/wiki/data-and-privacy/ai-development-context-exclusion-controls.md": [
+      "https://junie.jetbrains.com/docs/action-allowlist.html",
+      "https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html",
+      "https://junie.jetbrains.com/docs/junie-plugin-project-settings.html"
+    ],
+    "docs/wiki/data-and-privacy/aix-db-markdown-chat-stored-xss.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-82881",
+      "https://github.com/apconw/Aix-DB/issues/230",
+      "https://github.com/apconw/Aix-DB/pull/231",
+      "https://www.vulncheck.com/advisories/aix-db-through-1.2.4-stored-cross-site-scripting-via-markdown"
+    ],
+    "docs/wiki/governance-and-compliance/california-ai-transparency-act-provenance-controls.md": [
+      "https://www.leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB853",
+      "https://www.onetrust.com/blog/california-ai-transparency-act-requirements-deadlines-and-compliance-steps/",
+      "https://www.incyan.com/resources/california-ai-transparency-matrix/"
+    ],
+    "docs/wiki/governance-and-compliance/eu-ai-act-prohibited-practices-enforcement-controls.md": [
+      "https://ai-act-service-desk.ec.europa.eu/en/faq",
+      "https://ai-act-service-desk.ec.europa.eu/en/resources",
+      "https://www.axios.com/2026/08/28/eu-ai-act-gets-real"
+    ],
+    "docs/wiki/governance-and-compliance/gpai-systemic-risk-controls.md": [
+      "https://ai-act-service-desk.ec.europa.eu/en/faq",
+      "https://artificialintelligenceact.eu/high-level-summary/",
+      "https://www.axios.com/2026/08/28/eu-ai-act-gets-real"
+    ],
+    "docs/wiki/identity-and-access/agent-synthetic-insider-risk.md": [
+      "https://www.bankinfosecurity.com/ai-agents-are-insider-risks-newest-blind-spot-a-32561",
+      "https://www.insiderisk.io/research/synthetic-insider-threat-matrix-2026",
+      "https://www.above.security/"
+    ],
+    "docs/wiki/identity-and-access/diboot-ai-session-authorization-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-82816",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-82816",
+      "https://vuldb.com/vuln/397233"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/openshift-ai-guardrails-detectors-redos.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-15154",
+      "https://access.redhat.com/security/cve/CVE-2026-15154",
+      "https://access.redhat.com/errata/RHSA-2026:60520",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-15154"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/theia-ai-agent-mode-workspace-path-traversal.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-82217",
+      "https://gitlab.eclipse.org/security/vulnerability-reports/-/work_items/624",
+      "https://github.com/eclipse-theia/theia/commit/28da106c254"
+    ],
+    "docs/wiki/model-and-prompt-security/ash-ai-eex-prompt-template-rce.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-77956",
+      "https://github.com/ash-project/ash_ai/security/advisories/GHSA-2g59-hg7m-qc83",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77956"
+    ],
+    "docs/wiki/model-and-prompt-security/microsoft-edge-ios-llm-prompt-spoofing.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-70331",
+      "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-70331",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-70331"
+    ]
+  }
+}

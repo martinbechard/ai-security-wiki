@@ -24,6 +24,8 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 
 The independently changing advanced-GPAI powers are owned by [AI Office GPAI enforcement controls](ai-office-gpai-enforcement-controls.md).
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) adds secondary [Axios reporting](https://www.axios.com/2026/08/28/eu-ai-act-gets-real) that the EU AI Act has moved into enforcement and that major transparency requirements are in effect as of 2026-08-02. Official Service Desk pages checked by the source did not expose a visible in-window update date, so this page treats the Axios item as current-awareness evidence and keeps official FAQ/resources as standing authority.
+
 ## Security Impact
 
 - Threat: an AI system can create unacceptable manipulation, exploitation, biometric, or surveillance risk when prohibited-practice checks are not part of security review.
@@ -39,6 +41,7 @@ The independently changing advanced-GPAI powers are owned by [AI Office GPAI enf
 - Preserve evidence for why a system is out of scope, permitted, remediated, or blocked.
 - Treat unresolved prohibited-practice classification as a release blocker rather than a post-release documentation task.
 - Keep monitoring and incident-response records ready for enforcement inquiries once a system is deployed.
+- Treat secondary enforcement reporting as a prompt to refresh official evidence, not as authority for unstated local legal obligations.
 - Route advanced-GPAI enforcement powers to [AI Office GPAI enforcement controls](ai-office-gpai-enforcement-controls.md) while preserving prohibited-practice classification and release-gate evidence here.
 
 ## Authoritative Sources
@@ -46,8 +49,10 @@ The independently changing advanced-GPAI powers are owned by [AI Office GPAI enf
 - [August 3 topic news collector source](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json)
 - [August 4 leaf update watch source](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
-- European Commission AI Act Service Desk FAQ: https://ai-act-service-desk.ec.europa.eu/en/faq
-- European Commission AI Act Service Desk Resources: https://ai-act-service-desk.ec.europa.eu/en/resources
+- [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
+- [European Commission AI Act Service Desk FAQ](https://ai-act-service-desk.ec.europa.eu/en/faq)
+- [European Commission AI Act Service Desk Resources](https://ai-act-service-desk.ec.europa.eu/en/resources)
+- [Axios EU AI Act enforcement reporting](https://www.axios.com/2026/08/28/eu-ai-act-gets-real)
 
 ## Related Code
 
@@ -78,3 +83,4 @@ The independently changing advanced-GPAI powers are owned by [AI Office GPAI enf
 
 - Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) to map the prohibited-practices enforcement boundary separately from transparency and GPAI controls; enriched from the [August 4 leaf watcher](../../../raw/processed/2026-08-04/ai-security-wiki-leaf-update-watch-2026-08-04T161500Z.json) with official resource-page enforcement-authority evidence.
 - Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) to link the separately owned advanced-GPAI enforcement leaf while keeping this page focused on prohibited-practices controls.
+- Updated on 2026-09-01 from the [September 1 leaf watcher](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) with secondary enforcement-current-awareness evidence while preserving the official-source boundary.

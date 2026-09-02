@@ -8,11 +8,14 @@ The active digest records each independently changing security item or closely c
 
 ## Digest Pages
 
+- [2026-09.md](2026-09.md) is the active September 2026 digest.
 - [2026-08.md](2026-08.md) is the active August 2026 digest.
 - [2026-07.md](2026-07.md) is the previous July 2026 digest.
 
 ## Authoritative Sources
 
+- [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json)
+- [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
 - [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json)
 - [September 1 leaf update watch source](../../../raw/processed/2026-08-31/ai-security-wiki-leaf-update-watch-20260901T000350Z.json)
 - [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json)
@@ -59,6 +62,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-09-01 with the first September digest, using item-level entries for Astra release gates, Codex command/Git execution boundaries, model-artifact supply-chain flaws, Kibana AI feature authorization/DoS, runZero MCP authorization, hermes-agent availability, Support Genix admin takeover, and watcher enrichments without grouping by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-08-31 with item-level August 31 entries for ash_ai, Theia AI Agent Mode, MCPHub, Aix-DB, diboot, sdcb chats, Microsoft Edge iOS, OpenShift AI guardrails-detectors, Junie non-interactive trust behavior, and date-placed watcher enrichments without grouping by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-08-29 with item-level August 28 entries for [collective cyber-defense controls](../governance-and-compliance/collective-cyber-defense-controls.md), SiYuan `asset.upload`, AI gateway SSRF, channel authorization, workbench credential disclosure, agent memory ownership, code-ingestion token disclosure, crawler file writes, and workflow callback SSRF; watcher sightings were folded into existing leaves without duplicate digest items.
 - Updated on 2026-08-30 with item-level August 29 entries for argocd-mcp, astron-agent, HEL Online Classroom, and NIST agentic-AI identity guidance; watcher repeats were folded into existing leaves without duplicate digest entries.

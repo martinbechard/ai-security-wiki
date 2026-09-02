@@ -13,6 +13,8 @@ The [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-secu
 
 The collector groups the advisories because the affected control plane can combine tenant isolation, prompt/resource integrity, outbound fetch, process spawning, bearer-key scope, and server-group authorization failures. The linked [GitHub Security Advisory](https://github.com/samanhappy/mcphub/security/advisories/GHSA-4gc8-885f-qj36) is the project advisory anchor; exact fixed versions vary by CVE and need per-advisory confirmation before operational guidance claims a single patched release.
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) adds CVEAWG update evidence for CVE-2026-79746 plus [GitHub advisory GHSA-454m-4vm6-842f](https://github.com/samanhappy/mcphub/security/advisories/GHSA-454m-4vm6-842f) and [v1.0.32 release](https://github.com/samanhappy/mcphub/releases/tag/v1.0.32) references. It strengthens the control-plane cluster provenance while leaving the per-CVE minimum fixed-version question open.
+
 ## Security Impact
 
 - Threat: a central MCP hub can turn one authenticated user or bearer key into broad tool, prompt, data, egress, and host-process authority.
@@ -38,7 +40,10 @@ The collector groups the advisories because the affected control plane can combi
 ## Authoritative Sources
 
 - [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json)
+- [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
 - [GitHub Security Advisory GHSA-4gc8-885f-qj36](https://github.com/samanhappy/mcphub/security/advisories/GHSA-4gc8-885f-qj36)
+- [GitHub Security Advisory GHSA-454m-4vm6-842f](https://github.com/samanhappy/mcphub/security/advisories/GHSA-454m-4vm6-842f)
+- [MCPHub v1.0.32 release](https://github.com/samanhappy/mcphub/releases/tag/v1.0.32)
 - [NVD CVE-2026-79743](https://nvd.nist.gov/vuln/detail/CVE-2026-79743)
 - [NVD CVE-2026-79744](https://nvd.nist.gov/vuln/detail/CVE-2026-79744)
 - [NVD CVE-2026-79745](https://nvd.nist.gov/vuln/detail/CVE-2026-79745)
@@ -73,3 +78,4 @@ The collector groups the advisories because the affected control plane can combi
 ## Maintenance Notes
 
 - Created on 2026-08-31 from the [August 31 topic collector](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json) as a closely coupled advisory-family page because the CVEs share one MCP hub control plane and compound across authorization, prompt, egress, and process-spawn boundaries.
+- Updated on 2026-09-01 from the [September 1 leaf watcher](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) with CVEAWG update and v1.0.32 release provenance while preserving per-CVE version uncertainty.

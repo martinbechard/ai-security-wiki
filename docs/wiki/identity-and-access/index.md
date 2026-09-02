@@ -34,6 +34,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [astron-agent workflow ownership bypass](astron-agent-workflow-ownership-bypass.md)
 - [HEL Online Classroom AI plugin authorization cluster](hel-online-classroom-ai-plugin-authorization-cluster.md)
 - [diboot AI Session authorization bypass](diboot-ai-session-authorization-bypass.md)
+- [Kibana AI Assistant Knowledge Base cross-realm authorization](kibana-ai-assistant-knowledge-base-cross-realm-authorization.md)
+- [Support Genix AI Chatbot admin takeover](support-genix-ai-chatbot-admin-takeover.md)
 
 ## Authoritative Sources
 
@@ -63,6 +65,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-09-01 with Kibana AI Assistant Knowledge Base cross-realm authorization, Support Genix AI Chatbot admin takeover, and Synthetic Insider Threat Matrix evidence.
 - Updated on 2026-08-31 with diboot AI Session authorization bypass and ash_ai/MCPHub identity-boundary routing.
 - Updated on 2026-08-29 with FastGPT channel authorization, VoltAgent memory ownership, Gitingest token disclosure, and watcher provenance for Telnyx.
 - Updated on 2026-08-30 with astron-agent workflow ownership and HEL Online Classroom plugin authorization leaves.

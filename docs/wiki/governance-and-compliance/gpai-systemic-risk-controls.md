@@ -17,6 +17,8 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 
 [AI Office GPAI enforcement controls](ai-office-gpai-enforcement-controls.md) owns the separately maintainable enforcement response path for AI Office information requests, model evaluation access, mitigation orders, fines, and market restrictions.
 
+The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) adds secondary [Axios reporting](https://www.axios.com/2026/08/28/eu-ai-act-gets-real) that the EU AI Act enforcement context is active for general-purpose model providers. Because official Service Desk pages checked by the source did not expose a visible in-window update date, this page treats the item as enforcement-awareness evidence and does not infer new technical thresholds beyond the official FAQ boundary.
+
 ## Security Impact
 
 - Threat: agentic systems can inherit or amplify GPAI model risks when model capability, autonomy, and mitigation evidence are not tracked as release-gate inputs.
@@ -33,12 +35,15 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 - Preserve mitigation evidence for misuse, harmful manipulation, unauthorized autonomous action, and incident escalation.
 - Include autonomy level, tool-use surface, delegated authority, and external-action controls in GPAI systemic-risk evidence for agent deployments.
 - Tie systemic-risk controls to monitoring and enforcement-response records rather than treating them as one-time procurement notes.
+- Reconfirm official AI Office evidence before converting secondary reporting into model-provider obligations or local release blockers.
 
 ## Authoritative Sources
 
 - [August 3 topic news collector source](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
-- European Commission AI Act Service Desk FAQ: https://ai-act-service-desk.ec.europa.eu/en/faq
+- [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
+- [European Commission AI Act Service Desk FAQ](https://ai-act-service-desk.ec.europa.eu/en/faq)
+- [Axios EU AI Act enforcement reporting](https://www.axios.com/2026/08/28/eu-ai-act-gets-real)
 
 ## Related Code
 
@@ -69,3 +74,4 @@ The [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-se
 
 - Created on 2026-08-03 from the [August 3 collector](../../../raw/processed/2026-08-03/ai-security-wiki-topic-news-collector-2026-08-03T151901-0400.json) after splitting GPAI systemic-risk controls from agent-interaction transparency controls.
 - Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) with AI-agent, autonomy, and tool-use systemic-risk evidence while preserving the missing page-level update-date caveat.
+- Updated on 2026-09-01 from the [September 1 leaf watcher](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) with secondary GPAI enforcement-awareness evidence while preserving the official-source caveat.

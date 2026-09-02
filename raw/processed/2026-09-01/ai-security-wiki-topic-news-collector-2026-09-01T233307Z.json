@@ -1,0 +1,696 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector"
+  },
+  "run": {
+    "run_timestamp_utc": "2026-09-01T23:33:07Z",
+    "run_timestamp_local": "2026-09-01T19:33:07-0400",
+    "cutoff_window": {
+      "start_utc": "2026-08-30T23:33:07Z",
+      "end_utc": "2026-09-01T23:33:07Z",
+      "rule": "Include only public items visibly published or visibly updated within the last 2 days relative to run time; exclude missing, ambiguous, future-dated, or boundary-only dates."
+    },
+    "repository_scope": "/Users/martinbechard/dev/ai-security-wiki",
+    "modified_repository_paths": [
+      "raw/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json"
+    ],
+    "non_repository_memory_path": "/Users/martinbechard/.codex/automations/ai-security-wiki-topic-news-collector/memory.md"
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_policy": {
+    "public_web_sources_only": true,
+    "private_or_sensitive_local_content_sent_external": false,
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false,
+    "federation_respected": true
+  },
+  "routing_context": {
+    "local_owner": "ai-security-wiki owns the security lens: threats, vulnerabilities, controls, incidents, assurance, governance, identity, privacy, supply-chain, runtime, and AI-specific security operations.",
+    "upstream_ai_wiki": "Broad ecosystem entities such as companies, products, models, model families, frameworks, MCP servers, and general AI techniques remain upstream-owned in /Users/martinbechard/dev/ai-wiki.",
+    "upstream_ai_dev_wiki": "General AI-assisted development practices, coding-agent workflows, verification patterns, and adoption practices remain upstream-owned in /Users/martinbechard/dev/ai-dev-wiki."
+  },
+  "qualifying_findings": [
+    {
+      "id": "openai-astra-critical-cyber-threshold-2026-09-01",
+      "title": "OpenAI designates Astra at the Critical cybersecurity capability threshold and adds release controls",
+      "source_urls": [
+        "https://openai.com/index/path-to-astra/"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01",
+          "date_type": "published",
+          "source_url": "https://openai.com/index/path-to-astra/",
+          "evidence": "OpenAI page visibly dated September 1, 2026."
+        }
+      ],
+      "concise_factual_summary": "OpenAI said Astra meets its Critical cybersecurity capability threshold: with tools and access it can find previously unknown flaws and develop exploits across protected systems without step-by-step human guidance. The company delayed parts of development and release, strengthened refusal behavior, added monitoring that can stop unauthorized activity, limited advanced cybersecurity access, and plans Daybreak Blue access for vetted defensive testers.",
+      "evidence_classification": "primary official AI safety and security disclosure",
+      "affected_boundary_or_version": "Astra pre-release and release path; Preparedness Framework Critical cybersecurity threshold; advanced cyber capability access via small tester group and Daybreak Blue.",
+      "why_it_matters_for_ai_security": "This is a direct release-gate and capability-threshold change for a frontier model with autonomous exploit-development potential, tying model capability evaluation to deployment restrictions, monitoring, and defensive-access policy.",
+      "named_entities": [
+        "OpenAI",
+        "Astra",
+        "Preparedness Framework",
+        "Daybreak Blue",
+        "ExploitBench",
+        "GPT-5.6 Sol",
+        "Hugging Face"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Astra as a model family/product and OpenAI provider context are upstream-owned; keep the Critical cyber threshold, safeguards, monitoring, and release-gate implications here.",
+        "ai_dev_wiki": "General coding-agent access workflows are upstream-owned; security-specific release gates and cyber misuse controls stay local."
+      },
+      "confidence_notes": "High confidence: official OpenAI page with visible in-window date and concrete security controls.",
+      "follow_up_actions": [
+        "Ingest should reconcile this with existing OpenAI/Hugging Face incident pages and any Astra model page upstream.",
+        "Check the Astra system card at launch for more detailed safeguard test results."
+      ]
+    },
+    {
+      "id": "cve-2026-19591-openai-codex-powershell-stop-parsing-approval-bypass",
+      "title": "OpenAI Codex command-safety parser misclassifies PowerShell stop-parsing commands",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19591",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-08-30T00:00:00.000&pubEndDate=2026-09-01T23:59:59.999&keywordSearch=MCP"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T18:17:40.260",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19591"
+        },
+        {
+          "date": "2026-09-01T21:03:04.987",
+          "date_type": "NVD lastModified",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19591"
+        }
+      ],
+      "concise_factual_summary": "NVD describes an OpenAI Codex CLI and Codex Desktop issue where a parser handled PowerShell's --% stop-parsing token differently than PowerShell, letting attacker-prepared repository instructions cause a file-writing Git command to run without approval. If filesystem protections permit the write, later Codex configuration loading could launch an attacker-controlled MCP server and execute code with user privileges.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "OpenAI Codex CLI for Windows, macOS, and Linux; Codex Desktop for Windows and macOS; exploitation depends on repository instructions, PowerShell behavior, filesystem protections, and later config loading.",
+      "why_it_matters_for_ai_security": "The issue crosses model-followed repository instructions, command approval, MCP server configuration, and local filesystem sandbox assumptions.",
+      "named_entities": [
+        "OpenAI Codex CLI",
+        "Codex Desktop",
+        "PowerShell",
+        "MCP"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Codex product context is upstream-owned.",
+        "ai_dev_wiki": "General coding-agent command approval practice is upstream-owned; the concrete approval-bypass vulnerability remains local."
+      },
+      "confidence_notes": "High confidence for publication and description from NVD; fixed version details were not present in fetched NVD output.",
+      "follow_up_actions": [
+        "During ingest, check OpenAI release notes or vendor advisory for patched versions and mitigation status."
+      ]
+    },
+    {
+      "id": "cve-2026-19592-openai-codex-git-fsmonitor-execution",
+      "title": "OpenAI Codex repository metadata collection can execute preserved Git fsmonitor helpers",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19592"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T18:17:40.370",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19592"
+        },
+        {
+          "date": "2026-09-01T21:03:04.987",
+          "date_type": "NVD lastModified",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19592"
+        }
+      ],
+      "concise_factual_summary": "NVD describes Codex CLI and Codex Desktop automatically collecting Git metadata without disabling repository-local core.fsmonitor. If a user opens an attacker-prepared repository whose preserved .git/config points core.fsmonitor to an attacker-controlled helper, Git can execute it outside Codex's command sandbox and without user approval.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "OpenAI Codex CLI for Windows, macOS, and Linux; Codex Desktop for Windows and macOS; requires repository copied or delivered with local .git/config intact.",
+      "why_it_matters_for_ai_security": "This is a workspace-trust and local-agent containment failure where passive metadata inspection can cross into unsandboxed code execution.",
+      "named_entities": [
+        "OpenAI Codex CLI",
+        "Codex Desktop",
+        "Git",
+        "core.fsmonitor"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Codex entity context routes upstream.",
+        "ai_dev_wiki": "General workspace-trust and coding-agent workflow guidance routes upstream; this CVE's security boundary remains local."
+      },
+      "confidence_notes": "High confidence from NVD; vendor patch detail still needs reconciliation.",
+      "follow_up_actions": [
+        "Check Codex release channels for version and mitigation mapping before durable synthesis."
+      ]
+    },
+    {
+      "id": "cve-2026-19593-openai-codex-desktop-git-attr-filter-execution",
+      "title": "OpenAI Codex Desktop can execute attacker-controlled Git attr/filter programs during workspace inspection",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19593"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T18:17:40.480",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19593"
+        },
+        {
+          "date": "2026-09-01T21:03:04.987",
+          "date_type": "NVD lastModified",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19593"
+        }
+      ],
+      "concise_factual_summary": "NVD says Codex Desktop inspects Git metadata and working-tree status when a workspace opens. If preserved attacker-controlled .git/config sets attr.tree plus a clean or process filter, Git can run an attacker-controlled program outside Codex's command sandbox without workspace-trust prompt, command approval, model interaction, or further user action.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "Codex Desktop for Windows and macOS; exploitation requires Git on PATH and a repository whose local Git configuration is preserved.",
+      "why_it_matters_for_ai_security": "The record reinforces that AI coding agents need pre-model workspace trust gates and safe Git invocation boundaries, not only model-mediated command approvals.",
+      "named_entities": [
+        "OpenAI Codex Desktop",
+        "Git",
+        "attr.tree",
+        "clean filter",
+        "process filter"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Product identity routes upstream.",
+        "ai_dev_wiki": "General repository trust workflows route upstream; this security CVE stays local."
+      },
+      "confidence_notes": "High confidence from NVD; ordinary Git clone not sufficient is explicitly part of the record.",
+      "follow_up_actions": [
+        "During ingest, cluster with CVE-2026-19592 under local agent execution and workspace trust controls."
+      ]
+    },
+    {
+      "id": "cve-2026-80047-hugging-face-transformers-trust-remote-code-cache-write",
+      "title": "Hugging Face Transformers writes custom generate code before trust_remote_code consent",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80047"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T14:17:41.943",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80047"
+        },
+        {
+          "date": "2026-09-01T19:17:27.853",
+          "date_type": "NVD lastModified",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80047"
+        }
+      ],
+      "concise_factual_summary": "NVD reports that Hugging Face Transformers versions 4.49.0 through 5.8.1 let GenerativePreTrainedModel.load_custom_generate() fetch and cache remote custom_generate/generate.py before the trust_remote_code consent check. Execution remains gated, but unauthorized files can persist in ~/.cache/huggingface/modules and collide with later trusted loads.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "Hugging Face Transformers >= 4.49.0 and <= 5.8.1; dynamic_module_utils.py custom generate path.",
+      "why_it_matters_for_ai_security": "Model-loading consent must cover artifact fetch and persistence, not only execution; cached attacker code creates a supply-chain and stale-cache execution risk.",
+      "named_entities": [
+        "Hugging Face",
+        "Transformers",
+        "GenerativePreTrainedModel.load_custom_generate",
+        "trust_remote_code"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Hugging Face and Transformers entity context route upstream.",
+        "ai_dev_wiki": "General dependency and model-loading workflow practice routes upstream; the security vulnerability remains local."
+      },
+      "confidence_notes": "High confidence from NVD; patched version was not available in fetched record.",
+      "follow_up_actions": [
+        "Check upstream advisory or release notes for fixed versions and cache cleanup guidance."
+      ]
+    },
+    {
+      "id": "cve-2026-84202-modelscope-unsafe-yaml-loader-rce",
+      "title": "ModelScope unsafe YAML loader enables malicious model repository code execution",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84202"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T16:17:34.450",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84202"
+        },
+        {
+          "date": "2026-09-01T18:17:48.503",
+          "date_type": "NVD lastModified",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84202"
+        }
+      ],
+      "concise_factual_summary": "NVD reports that ModelScope uses PyYAML's unsafe yaml.Loader to parse model configuration files, allowing Python object construction tags in malicious model repositories to execute arbitrary code when loaded.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "ModelScope model configuration parsing; affected versions not specified in fetched NVD output.",
+      "why_it_matters_for_ai_security": "AI model repositories are executable supply-chain surfaces when configuration parsing accepts unsafe object construction.",
+      "named_entities": [
+        "ModelScope",
+        "PyYAML"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "ModelScope platform context routes upstream.",
+        "ai_dev_wiki": "General dependency hygiene routes upstream; model repository RCE is local security material."
+      },
+      "confidence_notes": "Medium-high confidence from NVD; fixed version and vendor advisory need follow-up.",
+      "follow_up_actions": [
+        "Find vendor advisory or patch commit before durable fixed-version claims."
+      ]
+    },
+    {
+      "id": "cve-2026-72649-elasticsearch-ml-model-artifact-deserialization-rce",
+      "title": "Elasticsearch machine learning component can execute code from crafted trained model artifacts",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-72649"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T20:17:16.853",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72649"
+        },
+        {
+          "date": "2026-09-01T21:15:37.123",
+          "date_type": "NVD lastModified",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72649"
+        }
+      ],
+      "concise_factual_summary": "NVD describes deserialization of untrusted data in Elasticsearch's machine learning component. A specially crafted trained model artifact can cause attacker-controlled logic to execute with a broader system-call surface than intended when an authenticated user has privileges to create and deploy trained models.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "Elasticsearch machine learning component; trained model artifact deployment path.",
+      "why_it_matters_for_ai_security": "Model artifacts in production search and analytics stacks need provenance, deserialization controls, and least-privilege deployment rights.",
+      "named_entities": [
+        "Elasticsearch",
+        "Elastic",
+        "trained model artifact"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Elasticsearch product context is broad infrastructure and upstream-owned if needed.",
+        "ai_dev_wiki": "General deployment practice routes upstream; model artifact execution risk remains local."
+      },
+      "confidence_notes": "High confidence from NVD description; exact fixed versions require vendor reconciliation.",
+      "follow_up_actions": [
+        "Check Elastic security advisory for version and mitigation details."
+      ]
+    },
+    {
+      "id": "cve-2026-72644-kibana-observability-ai-assistant-dos",
+      "title": "Low-privileged Kibana Observability AI Assistant user can terminate the Kibana process",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-72644"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T20:17:16.733",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72644"
+        },
+        {
+          "date": "2026-09-01T21:15:37.123",
+          "date_type": "NVD lastModified",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72644"
+        }
+      ],
+      "concise_factual_summary": "NVD reports that an authenticated user with only low-privileged feature access for the Kibana Observability AI Assistant can submit a crafted request that triggers an unhandled error, terminates the Kibana process, and denies service to all users and spaces until restart.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "Kibana Observability AI Assistant feature access path.",
+      "why_it_matters_for_ai_security": "AI assistant features inside operational platforms need resource and error isolation so low-privileged assistant access cannot become tenant-wide service impact.",
+      "named_entities": [
+        "Kibana",
+        "Elastic",
+        "Observability AI Assistant"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Elastic/Kibana product context routes upstream only if durable broad entity coverage is needed.",
+        "ai_dev_wiki": "General observability practice routes upstream; this assistant-specific DoS control issue stays local."
+      },
+      "confidence_notes": "High confidence from NVD; needs Elastic advisory follow-up for fixed versions.",
+      "follow_up_actions": [
+        "Cluster with other Kibana AI Assistant and Agent Builder records during ingest."
+      ]
+    },
+    {
+      "id": "cve-2026-78606-kibana-ai-assistant-knowledge-base-cross-realm-authorization",
+      "title": "Kibana AI Assistant Knowledge Base can cross user boundaries when usernames collide across realms",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78606"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T20:17:23.887",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78606"
+        },
+        {
+          "date": "2026-09-01T21:05:31.423",
+          "date_type": "NVD lastModified",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-78606"
+        }
+      ],
+      "concise_factual_summary": "NVD reports incorrect authorization in Kibana where two authenticated principals from different authentication realms sharing the same username could read, modify, and delete each other's private Elastic AI Assistant Knowledge Base entries.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "Kibana Elastic AI Assistant Knowledge Base; multi-realm authentication configurations with same username values.",
+      "why_it_matters_for_ai_security": "Assistant memory and knowledge stores require stable principal identity, not display-name or username-only matching across realms.",
+      "named_entities": [
+        "Kibana",
+        "Elastic AI Assistant Knowledge Base",
+        "Elastic"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Product context routes upstream if needed.",
+        "ai_dev_wiki": "General memory governance routes upstream; concrete authorization flaw stays local."
+      },
+      "confidence_notes": "High confidence from NVD; fixed version needs vendor advisory check.",
+      "follow_up_actions": [
+        "During ingest, connect this to assistant memory ownership and identity-bound authorization controls."
+      ]
+    },
+    {
+      "id": "cve-2026-72682-kibana-agent-builder-memory-dos",
+      "title": "Low-privileged Kibana Agent Builder user can trigger unbounded memory consumption",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-72682"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T20:17:17.227",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72682"
+        },
+        {
+          "date": "2026-09-01T21:05:31.423",
+          "date_type": "NVD lastModified",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-72682"
+        }
+      ],
+      "concise_factual_summary": "NVD reports an allocation-without-limits issue in Kibana where an authenticated user holding only low, read-level Agent Builder privileges can submit a crafted request that causes unbounded memory consumption, terminates the process, and denies service to all users.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "Kibana Agent Builder read-level privilege path.",
+      "why_it_matters_for_ai_security": "Agent-builder control planes need strict resource guards and privilege-aware request limits even for read-level users.",
+      "named_entities": [
+        "Kibana",
+        "Agent Builder",
+        "Elastic"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Product context routes upstream if needed.",
+        "ai_dev_wiki": "General agent-builder workflow context routes upstream; low-privileged DoS issue remains local."
+      },
+      "confidence_notes": "High confidence from NVD; fixed version not established from fetched output.",
+      "follow_up_actions": [
+        "Reconcile with Elastic advisory and group with Kibana AI Assistant records."
+      ]
+    },
+    {
+      "id": "cve-2026-81846-runzero-platform-mcp-authorization-bypass",
+      "title": "runZero Platform MCP service fixes authorization bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81846"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T19:17:28.333",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81846"
+        },
+        {
+          "date": "2026-09-01T20:17:24.283",
+          "date_type": "NVD lastModified",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81846"
+        }
+      ],
+      "concise_factual_summary": "NVD says runZero resolved an authorization bypass in the Platform MCP service in version 5.1.260826.0. The issue is CWE-639 authorization bypass through user-controlled key, with low CVSS 3.5 but scope changed.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "runZero Platform MCP service before 5.1.260826.0; fixed in 5.1.260826.0.",
+      "why_it_matters_for_ai_security": "MCP services that expose asset or security operations need key-bound authorization checks that cannot be steered by user-controlled identifiers.",
+      "named_entities": [
+        "runZero",
+        "Platform MCP service",
+        "MCP"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "runZero product/entity context routes upstream if cataloged.",
+        "ai_dev_wiki": "General MCP operational practice routes upstream; security-specific authorization flaw remains local."
+      },
+      "confidence_notes": "High confidence from NVD, including fixed version.",
+      "follow_up_actions": [
+        "Check runZero release notes/advisory for operational upgrade guidance during ingest."
+      ]
+    },
+    {
+      "id": "cve-2026-84288-cve-2026-84289-nousresearch-hermes-agent-acp-mcp-dos",
+      "title": "NousResearch hermes-agent disclosures cover ACP prompt workflow DoS and MCP tool memory allocation",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84288",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84289",
+        "https://github.com/advisories/GHSA-fvfr-42vv-wp2g"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T22:17:18.647",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84288"
+        },
+        {
+          "date": "2026-09-01T22:17:18.813",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84289"
+        },
+        {
+          "date": "2026-09-01T21:31:52Z",
+          "date_type": "GitHub Advisory Database published",
+          "source_url": "https://github.com/advisories/GHSA-fvfr-42vv-wp2g"
+        }
+      ],
+      "concise_factual_summary": "NVD published two hermes-agent records. CVE-2026-84288 affects HermesACPAgent.prompt in acp_adapter/session.py and leads to remote denial of service through the ACP Prompt Workflow. CVE-2026-84289 affects list_tools in tools/mcp_tool.py and leads to uncontrolled memory allocation in the MCP Tool component. NVD says public exploits may be available and the vendor did not respond.",
+      "evidence_classification": "public vulnerability database records and GitHub Advisory Database listing",
+      "affected_boundary_or_version": "NousResearch hermes-agent up to 0.18.2; ACP Prompt Workflow and MCP Tool components.",
+      "why_it_matters_for_ai_security": "Agent frameworks that bridge ACP and MCP need bounded prompt and tool-list handling so remote inputs cannot degrade agent control-plane availability.",
+      "named_entities": [
+        "NousResearch",
+        "hermes-agent",
+        "ACP",
+        "MCP"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Hermes-agent and NousResearch entity context route upstream if needed.",
+        "ai_dev_wiki": "General agent-framework evaluation routes upstream; these CVEs stay local."
+      },
+      "confidence_notes": "Medium-high confidence; GitHub advisory details are sparse and NVD says vendor response was absent.",
+      "follow_up_actions": [
+        "During ingest, verify whether upstream patched releases exist despite NVD's vendor-contact note."
+      ]
+    },
+    {
+      "id": "cve-2026-19806-support-genix-ai-chatbot-auth-bypass",
+      "title": "Support Genix AI Chatbot WordPress plugin can allow administrator account takeover",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19806"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T05:17:09.487",
+          "date_type": "NVD published",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19806"
+        },
+        {
+          "date": "2026-09-01T20:47:54.130",
+          "date_type": "NVD lastModified",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-19806"
+        }
+      ],
+      "concise_factual_summary": "NVD reports that Support Genix - Helpdesk, AI Chatbot, Knowledge Base & Customer Support Ticketing System for WordPress is vulnerable through version 1.4.52. A subscriber-level attacker with a legitimate guest ticket token can brute-force a weak site-wide AES-256-CBC key derived from low-entropy wp_rand values and activation timestamp, forge a token for an administrator-owned ticket, and cause wp_set_auth_cookie() to grant administrator access.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "Support Genix WordPress plugin up to and including 1.4.52; guest_ticket_login() and public /sgnix/?p=<token> endpoint.",
+      "why_it_matters_for_ai_security": "AI chatbot and helpdesk plugins often touch customer support data and admin workflows; weak token cryptography can turn chatbot access into full site compromise.",
+      "named_entities": [
+        "Support Genix",
+        "WordPress",
+        "AI Chatbot",
+        "wp_rand",
+        "AES-256-CBC"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Product catalog context is upstream-owned if needed.",
+        "ai_dev_wiki": "General WordPress plugin development practice routes upstream; concrete credential and authorization bypass stays local."
+      },
+      "confidence_notes": "High confidence from detailed NVD record; plugin vendor advisory should be checked for patched version.",
+      "follow_up_actions": [
+        "During ingest, verify patched version and whether Wordfence or plugin repository adds mitigation guidance."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Anthropic cybersecurity evaluation incident update",
+      "source_urls": [
+        "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+        "https://www.axios.com/2026/09/01/anthropic-paused-some-ai-training-after-claude-took-unauthorized-actions",
+        "https://www.theguardian.com/technology/2026/sep/01/anthropic-claude-ai-hacking-human-values"
+      ],
+      "visible_dates": [
+        "Anthropic primary page visible date: 2026-07-30",
+        "Axios and Guardian coverage: 2026-09-01"
+      ],
+      "reason": "Excluded from qualifying findings because the primary Anthropic disclosure is outside the 48-hour window and the in-window secondary reports mainly restate previously captured July/August incident facts. Retain as a follow-up if a visible Anthropic in-window update or independent review appears."
+    },
+    {
+      "title": "MCPHub advisory cluster published August 31",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79743",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79744",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79745",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79746",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79747",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79748",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79749",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79750"
+      ],
+      "visible_dates": [
+        "2026-08-31T18:17:19Z through 2026-08-31T18:17:20Z"
+      ],
+      "reason": "Excluded as likely prior-run overlap; the 2026-08-31 collector memory names MCPHub as an ingest recheck caveat, so this run avoids duplicating the same advisory cluster."
+    },
+    {
+      "title": "ash_ai MCP DNS rebinding origin validation issue",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81315"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-31T01:16:49.977; lastModified 2026-09-01T21:15:00.147"
+      ],
+      "reason": "Excluded as likely prior-run overlap because it was already in the previous 48-hour window and the current in-window modification did not add a separately verified new security fact in fetched output."
+    },
+    {
+      "title": "browser-use web-ui cleartext LLM API key storage",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82640"
+      ],
+      "visible_dates": [
+        "NVD published 2026-08-30T14:17:03.890; lastModified 2026-08-31T19:17:22.033"
+      ],
+      "reason": "Excluded as boundary-stale for this run's exact cutoff start of 2026-08-30T23:33:07Z and likely prior-run overlap."
+    },
+    {
+      "title": "OpenAI Daybreak August expansion",
+      "source_urls": [
+        "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/"
+      ],
+      "visible_dates": [
+        "2026-08-10"
+      ],
+      "reason": "Excluded as stale, though the Astra finding records Daybreak Blue where it is part of the in-window OpenAI release-control update."
+    },
+    {
+      "title": "Shadow AI and EU AI Act opinion article",
+      "source_urls": [
+        "https://www.techradar.com/pro/shadow-ai-is-a-security-problem-but-the-eu-ai-act-makes-it-a-legal-one"
+      ],
+      "visible_dates": [
+        "2026-08-31"
+      ],
+      "reason": "Excluded because it is a secondary/opinion compliance article and did not identify an in-window official regulatory change, security advisory, patch, incident, or directly reproducible technical change."
+    },
+    {
+      "title": "Operant AI Semantic Firewall product launch",
+      "source_urls": [
+        "https://www.expresscomputer.in/news/operant-ai-launches-semantic-firewall-to-secure-ai-agents/138201/"
+      ],
+      "visible_dates": [
+        "2026-08-31"
+      ],
+      "reason": "Excluded as an ordinary product announcement; it describes a security product but not a concrete vulnerability, mitigation deployed to an affected system, standard/regulatory change, public incident, or reproducible assurance result."
+    },
+    {
+      "title": "gRPC-Go HTTP/2 DATA frame memory exhaustion",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-vp52-pcj8-j9qc"
+      ],
+      "visible_dates": [
+        "GitHub Advisory Database published 2026-09-01T21:32:41Z"
+      ],
+      "reason": "Excluded because it is a general dependency vulnerability without a concrete AI-system or AI-security boundary in the fetched advisory listing."
+    },
+    {
+      "title": "AOS-CX advisory cluster returned by broad GitHub Advisory Database search",
+      "source_urls": [
+        "https://github.com/advisories"
+      ],
+      "visible_dates": [
+        "Multiple GitHub Advisory Database entries published 2026-09-01T21:31:50Z through 2026-09-01T21:31:52Z"
+      ],
+      "reason": "Excluded as false-positive routing from broad API searches; the fetched summaries describe networking switch vulnerabilities without a concrete AI-system relevance."
+    },
+    {
+      "title": "Rejected CVE records from GitHub Advisory Database",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-ww94-2mcr-m439",
+        "https://github.com/advisories/GHSA-7rx9-9q96-wmq5"
+      ],
+      "visible_dates": [
+        "2026-09-01T21:31:50Z"
+      ],
+      "reason": "Excluded because the advisory summaries state the CVE IDs were rejected or withdrawn."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "OpenAI",
+      "route": "ai-wiki",
+      "reason": "Provider and company entity page is broad ecosystem context; only Astra's cyber threshold, monitoring, and release gates belong locally."
+    },
+    {
+      "entity_or_topic": "Astra",
+      "route": "ai-wiki",
+      "reason": "Model identity and general launch status are upstream-owned; Critical cyber capability threshold is local AI security evidence."
+    },
+    {
+      "entity_or_topic": "OpenAI Codex",
+      "route": "ai-wiki and ai-dev-wiki",
+      "reason": "Product identity belongs in ai-wiki and general coding-agent practice belongs in ai-dev-wiki; CVE-specific containment failures are local."
+    },
+    {
+      "entity_or_topic": "Hugging Face Transformers",
+      "route": "ai-wiki",
+      "reason": "Library/platform entity is upstream-owned; trust_remote_code cache-write vulnerability is local supply-chain evidence."
+    },
+    {
+      "entity_or_topic": "ModelScope",
+      "route": "ai-wiki",
+      "reason": "Platform entity belongs upstream; unsafe YAML model config RCE belongs locally."
+    },
+    {
+      "entity_or_topic": "Kibana and Elastic",
+      "route": "ai-wiki if durable AI product context is needed",
+      "reason": "Product catalog information is broad; AI Assistant, Agent Builder, and ML artifact security failures are local."
+    },
+    {
+      "entity_or_topic": "runZero",
+      "route": "ai-wiki if cataloged",
+      "reason": "Product entity is broad; Platform MCP authorization bypass is local."
+    },
+    {
+      "entity_or_topic": "NousResearch hermes-agent",
+      "route": "ai-wiki and ai-dev-wiki if durable framework coverage is needed",
+      "reason": "Framework and agent workflow context are upstream/sibling-owned; ACP/MCP DoS records are local."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check_artifact": "passed"
+  },
+  "blockers": [],
+  "collection_notes": [
+    "Used NVD public API keyword searches for AI, MCP, LLM, agent, prompt, and model across the run window.",
+    "Used GitHub Advisory Database public API/search output as corroboration and exclusion discovery, but avoided broad false positives without AI-specific boundaries.",
+    "Used official OpenAI publication for Astra because it has a visible September 1, 2026 date and concrete security capability/control changes.",
+    "Did not edit docs/wiki or raw/processed."
+  ]
+}

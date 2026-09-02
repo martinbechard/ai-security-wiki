@@ -49,6 +49,8 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 The [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json) adds [Guardian reporting](https://www.theguardian.com/technology/2026/aug/23/openai-cyber-attacks-threat-chris-lehane) that OpenAI chief global affairs officer Chris Lehane warned of persistent AI-enabled cyberattacks and connected that warning to mandatory safety standards before release or deployment. Treat this as secondary governance and release-gate evidence, not a new technical postmortem for the Hugging Face incident or Astra pause.
 
+The [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json) adds OpenAI's primary [Path to Astra](https://openai.com/index/path-to-astra/) disclosure. OpenAI says Astra meets its Preparedness Framework Critical cybersecurity capability threshold when equipped with tools and access because it can find previously unknown flaws and develop exploits across protected systems without step-by-step human guidance. The same source says OpenAI delayed parts of development and release, strengthened refusal behavior, added monitoring that can stop unauthorized activity, limited advanced cybersecurity access, and plans Daybreak Blue access for vetted defensive testers.
+
 ## Security Impact
 
 - Threat or control area: frontier cyber-capable models can move from scoring well on cyber tasks to requiring containment, access restriction, and release delay because autonomous exploitation capability cannot be excluded.
@@ -57,10 +59,12 @@ The [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai
 - Affected boundary: OpenAI post-Hugging Face safety requirements, real-world cyber-capability reassessment, Daybreak access, GPT-5.6-Cyber, Codex security workflows, and partner-mediated cyber-model operations.
 - Affected boundary: OpenAI Astra, Sol-capability-or-higher tool-using research, frontier RL workloads, code execution, internet-accessible tools, shared services, standing privileges, security logging, and monitor-triggered pause workflows.
 - Affected boundary: public release-policy and deployment-governance claims that connect persistent AI-enabled cyberattack warnings to mandatory safety standards.
+- Affected boundary: OpenAI Astra Critical-threshold designation, advanced cyber access limits, monitoring stop controls, refusal behavior, delayed release paths, and Daybreak Blue vetted defensive access.
 - Exploit or incident status: control-change and release-gate disclosure, not a public exploit incident.
 - Mitigation state: OpenAI reports pausing noncompliant Astra internal activity and strengthening isolation, access control, monitoring, sandboxing, model-weight protection, universal monitoring, and external testing.
 - Mitigation state: OpenAI reports current identity verification, approved-use restrictions, and monitoring; a 2026-09-01 hardware-security-key requirement for individual Daybreak accounts; encouraged Codex auto-review and human review; sandboxing and scoped-permission guidance; and partner-mediated workflows where approved partners retain model access.
 - Mitigation state: the August 23 Guardian item records advocacy for mandatory standards, but does not by itself define a binding control set.
+- Mitigation state: OpenAI reports development and release delays, stronger refusal behavior, unauthorized-activity monitoring, limited advanced cybersecurity access, and planned Daybreak Blue defensive access for vetted testers.
 - Confidence: high for the [OpenAI control disclosure](https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/) because the source is primary and in-window; medium for exact release-delay, media characterization, and government-notice context that comes from [Axios](https://www.axios.com/2026/08/07/openai-astra-model-delay-cybersecurity-risks), [The Verge](https://www.theverge.com/ai-artificial-intelligence/976948/openai-astra-model-pause-critical-cyber-capabilities), and [Guardian](https://www.theguardian.com/technology/2026/aug/08/openai-astra-security-concerns).
 - Residual risk: exact Astra capability results, evaluator criteria, government review requirements, and final release decision remain unresolved.
 
@@ -73,6 +77,7 @@ The [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai
 - Treat reduced-safeguard defensive cyber access as a gated release path; local review should require evidence for identity proof, account security, usage monitoring, scoped tool permissions, sandboxing, and human review, while preserving OpenAI's distinction between mandatory access controls, future account requirements, recommendations, and partner-mediated custody.
 - Treat model-internal scaling pauses, shared-service removal, privilege reduction, and monitor-triggered activity pauses as release-gate evidence when critical cyber-capability uncertainty persists.
 - Keep public policy warnings separate from primary technical control evidence; use them to track governance pressure, not to infer implementation details.
+- Treat a public Critical-threshold designation as stronger evidence than secondary release-delay reporting, but keep exact evaluator criteria and final residual-risk decisions open until the Astra system card or equivalent technical report is published.
 - Route AI-discovered browser vulnerability claims to [browser runtime patch cadence under AI bug hunting](browser-runtime-patch-cadence-under-ai-bug-hunting.md) until primary browser advisories confirm affected versions, remediation, and CVE status.
 
 ## Authoritative Sources
@@ -86,6 +91,7 @@ The [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai
 - [August 17 leaf update watch source](../../../raw/processed/2026-08-17/ai-security-wiki-leaf-update-watch-20260818T000239Z.json)
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
 - [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json)
+- [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json)
 - [OpenAI Astra cyber-capability disclosure](https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/)
 - [OpenAI pacing model development cyber-capabilities disclosure](https://openai.com/index/pacing-model-development-cyber-capabilities/)
 - [OpenAI expanded Daybreak access](https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/)
@@ -95,6 +101,7 @@ The [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai
 - [The Verge Astra reporting](https://www.theverge.com/ai-artificial-intelligence/976948/openai-astra-model-pause-critical-cyber-capabilities)
 - [Guardian Astra reporting](https://www.theguardian.com/technology/2026/aug/08/openai-astra-security-concerns)
 - [Guardian OpenAI cyberattack governance reporting](https://www.theguardian.com/technology/2026/aug/23/openai-cyber-attacks-threat-chris-lehane)
+- [OpenAI Path to Astra disclosure](https://openai.com/index/path-to-astra/)
 
 ## Related Code
 
@@ -125,6 +132,7 @@ The [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai
 - Which Daybreak controls are mandatory for partner-mediated access versus direct OpenAI-managed access?
 - Which strengthened OpenAI safety requirements changed specifically because the Hugging Face incident showed underestimated real-world cyber capability?
 - What public technical report will document the final Astra capability assessment, control implementation, and residual release decision?
+- What exact safeguards, access tiers, and monitoring triggers will Daybreak Blue use for vetted defensive testers?
 - Which mandatory safety-standard text, if any, becomes a primary source for frontier cyber release gates?
 
 ## Maintenance Notes
@@ -136,3 +144,4 @@ The [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai
 - Updated on 2026-08-17 from the [August 17 topic collector](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json) and [August 17 watcher](../../../raw/processed/2026-08-17/ai-security-wiki-leaf-update-watch-20260818T000239Z.json) with OpenAI Defender's Window post-incident safety-requirement evidence.
 - Updated on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) with OpenAI pacing, isolation, privilege, monitoring, and pause-control evidence.
 - Updated on 2026-08-23 from the [August 23 topic collector](../../../raw/processed/2026-08-23/ai-security-wiki-topic-news-collector-2026-08-23T233302Z.json) with Guardian-attributed governance evidence about persistent AI-enabled cyberattacks and mandatory safety standards.
+- Updated on 2026-09-01 from the [September 1 topic collector](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json) with OpenAI's primary Astra Critical-threshold designation, access limits, monitoring, refusal, release-delay, and Daybreak Blue evidence.
