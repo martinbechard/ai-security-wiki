@@ -24,6 +24,7 @@ The [NVD record](https://nvd.nist.gov/vuln/detail/CVE-2026-62675) describes auth
 
 ## Authoritative Sources
 
+- [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json)
 - [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json)
 - [August 23 leaf update watch source](../../../raw/processed/2026-08-23/ai-security-wiki-leaf-update-watch-20260824T000259Z.json)
 - [NVD CVE-2026-62675](https://nvd.nist.gov/vuln/detail/CVE-2026-62675)
@@ -53,4 +54,5 @@ The [NVD record](https://nvd.nist.gov/vuln/detail/CVE-2026-62675) describes auth
 
 ## Maintenance Notes
 
+- Updated on 2026-09-02 from the [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) with in-window advisory provenance while keeping broad product context upstream.
 - Created on 2026-08-22 from the [August 22 topic news collector source](../../../raw/processed/2026-08-22/ai-security-wiki-topic-news-collector-2026-08-22T233049Z.json) as the callable-path member of the Omnigent 0.3.0 advisory set.

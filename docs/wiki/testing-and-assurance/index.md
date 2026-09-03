@@ -17,6 +17,10 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 - [AI-generated code security assurance](ai-generated-code-security-assurance.md)
 - [Frontier model critical cyber release gates](frontier-model-critical-cyber-release-gates.md)
 - [Codex Security plugin workflow boundaries](codex-security-plugin-workflow-boundaries.md)
+- [AI skill scanner executable artifact coverage](ai-skill-scanner-executable-artifact-coverage.md)
+- [Tencent AI-Infra-Guard skill-scan bytecode bypass](tencent-ai-infra-guard-skill-scan-bytecode-bypass.md)
+- [claude-skill-antivirus manifest-only scan](claude-skill-antivirus-manifest-only-scan.md)
+- [agentverus-scanner compiled bytecode certification bypass](agentverus-scanner-compiled-bytecode-certification-bypass.md)
 - [AI-enabled vulnerability management modernization](ai-enabled-vulnerability-management-modernization.md)
 - [Semantic governance policy telemetry](semantic-governance-policy-telemetry.md)
 - [Delegated agent cost guardrail bypass](delegated-agent-cost-guardrail-bypass.md)
@@ -53,6 +57,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 
 ## Maintenance Notes
 
+- Updated on 2026-09-02 with AI skill scanner executable artifact coverage plus separate Tencent AI-Infra-Guard, claude-skill-antivirus, and agentverus-scanner advisory leaves.
 - Updated on 2026-08-31 with OpenShift AI guardrails-detectors ReDoS and ash_ai tool-loop exhaustion as runtime assurance concerns.
 - Keep security assurance distinct from general software verification already owned by ai-dev-wiki.
 - Updated on 2026-08-11 with the Codex Security plugin workflow boundary leaf.

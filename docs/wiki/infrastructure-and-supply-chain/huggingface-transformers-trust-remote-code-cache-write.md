@@ -30,6 +30,7 @@ NVD says Transformers versions 4.49.0 through 5.8.1 allow `GenerativePreTrainedM
 
 ## Authoritative Sources
 
+- [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json)
 - [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json)
 - [NVD CVE-2026-80047](https://nvd.nist.gov/vuln/detail/CVE-2026-80047)
 
@@ -57,4 +58,5 @@ NVD says Transformers versions 4.49.0 through 5.8.1 allow `GenerativePreTrainedM
 
 ## Maintenance Notes
 
+- Updated on 2026-09-02 from the [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json) with direct in-window provenance while preserving the existing security boundary.
 - Created on 2026-09-01 from the [September 1 topic collector](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json) as a model-loading consent and cache-boundary leaf.

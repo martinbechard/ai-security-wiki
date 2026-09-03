@@ -102,6 +102,9 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [MCPHub control plane advisory cluster](mcphub-control-plane-advisory-cluster.md)
 - [sdcb chats MCP fetch-tools SSRF](sdcb-chats-mcp-fetch-tools-ssrf.md)
 - [Codex PowerShell stop-parsing approval bypass](codex-powershell-stop-parsing-approval-bypass.md)
+- [LiteLLM MCP authentication bypass KEV](litellm-mcp-authentication-bypass-kev.md)
+- [CowAgent tool denial of service](cowagent-tool-denial-of-service.md)
+- [aichat API endpoint memory allocation DoS](aichat-api-endpoint-memory-allocation-dos.md)
 - [Kibana AI Assistant and Agent Builder DoS](kibana-ai-assistant-and-agent-builder-dos.md)
 - [runZero Platform MCP authorization bypass](runzero-platform-mcp-authorization-bypass.md)
 - [hermes-agent ACP MCP DoS](hermes-agent-acp-mcp-dos.md)
@@ -134,6 +137,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-09-02 with LiteLLM MCP KEV authentication bypass, CowAgent tool DoS, and aichat API memory-allocation leaves.
 - Updated on 2026-09-01 with Codex PowerShell approval bypass, Kibana AI feature DoS, runZero Platform MCP authorization, and hermes-agent ACP/MCP availability leaves.
 - Updated on 2026-08-31 with ash_ai tool-loop and MCP-origin leaves, the MCPHub advisory-family leaf, sdcb chats MCP fetch-tools SSRF, and watcher enrichment for Junie local-execution boundaries.
 - Updated on 2026-08-29 with the SiYuan `asset.upload` file-read leaf and watcher provenance for August 27 agent-tool advisories.

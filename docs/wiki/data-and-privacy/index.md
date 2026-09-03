@@ -23,6 +23,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [Spring AI Redis chat memory query injection](spring-ai-redis-chat-memory-query-injection.md)
 - [Private Safety Processing ZDR](private-safety-processing-zdr.md)
 - [FiftyOne local AI dataset server exposure](fiftyone-local-ai-dataset-server-exposure.md)
+- [LiteLLM provider credential routing leak](litellm-provider-credential-routing-leak.md)
 
 - [GitLab AI Gateway model metadata credential disclosure](gitlab-ai-gateway-model-metadata-credential-disclosure.md)
 - [GitLab AI Gateway inline flow Host credential disclosure](gitlab-ai-gateway-inline-flow-host-credential-disclosure.md)
@@ -60,6 +61,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-09-02 with the LiteLLM provider credential routing leak leaf.
 - Updated on 2026-08-31 with the Aix-DB AI rendered-content stored-XSS leaf plus watcher enrichment for existing browser-use, Jina Reader, NextChat, and Keploy advisory leaves.
 - Updated on 2026-08-29 with the Stable Diffusion WebUI credential-disclosure leaf and GitLab/Spring watcher provenance.
 - Updated on 2026-08-30 with NextChat provider-key forwarding, browser-use web-ui cleartext provider-key storage, and Keploy TLS keylog exposure leaves.

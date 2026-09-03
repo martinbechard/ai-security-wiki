@@ -1,0 +1,540 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "blockers": [],
+  "created_raw_path": "raw/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json",
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/hidden-context-exposure-reconnaissance.md",
+      "reason": "stale: outside the seven-day window for this run; already represented in the existing leaf.",
+      "source_url": "https://www.akamai.com/blog/ai/owasp-top-10-llm-applications-2026-realistic-security-model",
+      "visible_date": "2026-08-14"
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/hidden-context-exposure-reconnaissance.md",
+      "reason": "stale: outside the seven-day window; no directly visible in-window update captured.",
+      "source_url": "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/",
+      "visible_date": "2026-08-03"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+      "reason": "stale same-leaf evidence; no in-window Kimi Code FetchURL SSRF update found.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-17534",
+      "visible_date": "published 2026-07-27; updated 2026-07-27"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+      "reason": "stale primary research/fix boundary; no in-window update.",
+      "source_url": "https://research.jfrog.com/vulnerabilities/kimi-code-is-vulnerable-to-a-fetchurl-ssrf-protection-bypass-via-dns-resolving-hostnames-and-redirects-cve-2026-17534/",
+      "visible_date": "published 2026-07-27; updated 2026-07-27"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+      "reason": "stale same-leaf evidence for CVE-2026-54149.",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-4pr3-9xhm-98x5",
+      "visible_date": "published 2026-07-10 via CVE metadata/advisory lineage"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md",
+      "reason": "different older MaxKB MCP workflow RCE advisory (CVE-2026-39417), not an in-window update for CVE-2026-54149.",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-pw52-326g-r5xj",
+      "visible_date": "published 2026-04-13"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md",
+      "reason": "secondary reporting retained as checked source but not a separate qualifying record because the primary OpenAI Path to Astra post covers the same release-gate facts more directly.",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/988334/openai-astra-ai-monitoring-safety",
+      "visible_date": "published 2026-09-02"
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md",
+      "reason": "stale official affected-version evidence; used only as context for the in-window Reco posture-control update.",
+      "source_url": "https://www.zoom.com/en/trust/security-bulletin/zsb-26015/",
+      "visible_date": "published/updated 2026-08-11 via CVE metadata"
+    }
+  ],
+  "federation_notes": [
+    "Broad companies, products, models, frameworks, and general AI-development practices route to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+    "Local records keep security-specific boundaries, exploitation/mitigation/control evidence, and follow-up notes only."
+  ],
+  "leaf_universe_count": 253,
+  "local_run_time": "2026-09-02 20:03:47 -0400",
+  "qualifying_update_count": 15,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "Codex command approval parser",
+        "PowerShell shell semantics",
+        "Codex configuration/MCP startup",
+        "local filesystem sandbox"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE record states Codex CLI/Desktop misclassified PowerShell --% stop-parsing commands, allowing attacker-prepared repository instructions to run file-writing Git commands without approval; exploitation on macOS/Linux additionally depends on separately installed PowerShell and filesystem permissions.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/codex-powershell-stop-parsing-approval-bypass.md",
+      "named_entities": [
+        "CVE-2026-19591",
+        "OpenAI Codex CLI",
+        "OpenAI Codex Desktop",
+        "PowerShell",
+        "MCP"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-19591",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-02"
+    },
+    {
+      "affected_boundaries": [
+        "hermes-agent ACP Prompt Workflow",
+        "remote prompt handling",
+        "agent control-plane availability"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE record reports remote denial of service in NousResearch hermes-agent through 0.18.2 via HermesACPAgent.prompt in the ACP Prompt Workflow, with public exploit disclosure noted.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/hermes-agent-acp-mcp-dos.md",
+      "named_entities": [
+        "CVE-2026-84288",
+        "NousResearch",
+        "hermes-agent",
+        "ACP"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-84288",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-02"
+    },
+    {
+      "affected_boundaries": [
+        "hermes-agent MCP Tool component",
+        "MCP tool-list parsing",
+        "agent control-plane availability"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE record reports remote uncontrolled memory allocation in hermes-agent through 0.18.2 via list_tools in tools/mcp_tool.py, with public exploit disclosure noted.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/hermes-agent-acp-mcp-dos.md",
+      "named_entities": [
+        "CVE-2026-84289",
+        "NousResearch",
+        "hermes-agent",
+        "MCP"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-84289",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-02"
+    },
+    {
+      "affected_boundaries": [
+        "Kibana Observability AI Assistant",
+        "shared Kibana process availability",
+        "low-privileged feature access"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE record and Elastic advisory reference report low-privileged Observability AI Assistant crafted requests can trigger an unhandled error and terminate Kibana for all users and spaces until restart.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md",
+      "named_entities": [
+        "CVE-2026-72644",
+        "Elastic",
+        "Kibana",
+        "Observability AI Assistant"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-72644",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-01"
+    },
+    {
+      "affected_boundaries": [
+        "Kibana Agent Builder",
+        "shared Kibana process availability",
+        "read-level Agent Builder privileges"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE record and Elastic advisory reference report low read-level Agent Builder privileges can cause unbounded memory consumption and terminate the Kibana process.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md",
+      "named_entities": [
+        "CVE-2026-72682",
+        "Elastic",
+        "Kibana",
+        "Agent Builder"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-72682",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-01"
+    },
+    {
+      "affected_boundaries": [
+        "runZero Platform MCP service",
+        "object-level authorization",
+        "findings-summary data boundary"
+      ],
+      "evidence_classification": "mitigation",
+      "factual_summary": "CVE record says runZero resolved a Platform MCP authorization bypass through user-controlled key in version 5.1.260826.0.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/runzero-platform-mcp-authorization-bypass.md",
+      "named_entities": [
+        "CVE-2026-81846",
+        "runZero",
+        "MCP",
+        "CWE-639"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-81846",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-01"
+    },
+    {
+      "affected_boundaries": [
+        "Kibana Elastic AI Assistant Knowledge Base",
+        "multi-realm identity binding",
+        "private assistant-memory ACLs"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE record reports cross-realm username collision can let one Kibana AI Assistant user read, modify, or delete another principal's private Knowledge Base entries.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/identity-and-access/kibana-ai-assistant-knowledge-base-cross-realm-authorization.md",
+      "named_entities": [
+        "CVE-2026-78606",
+        "Elastic",
+        "Kibana",
+        "Elastic AI Assistant Knowledge Base"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-78606",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-01"
+    },
+    {
+      "affected_boundaries": [
+        "Support Genix guest-ticket authentication",
+        "WordPress administrator session boundary",
+        "AI helpdesk/customer-support data boundary"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE record reports Support Genix WordPress AI Chatbot plugin through 1.4.52 can allow subscriber-level administrator takeover via weak guest-ticket token cryptography and public token login.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/identity-and-access/support-genix-ai-chatbot-admin-takeover.md",
+      "named_entities": [
+        "CVE-2026-19806",
+        "Support Genix",
+        "WordPress",
+        "AI Chatbot",
+        "Wordfence"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-19806",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-02"
+    },
+    {
+      "affected_boundaries": [
+        "Codex pre-trust Git metadata collection",
+        "repository-local .git/config",
+        "core.fsmonitor",
+        "command sandbox boundary"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE record states Codex CLI/Desktop collected Git metadata without disabling repository-local core.fsmonitor, allowing attacker-controlled fsmonitor helpers to execute outside command sandbox and approval prompts.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/codex-git-metadata-execution-boundaries.md",
+      "named_entities": [
+        "CVE-2026-19592",
+        "OpenAI Codex",
+        "Git",
+        "core.fsmonitor"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-19592",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-02"
+    },
+    {
+      "affected_boundaries": [
+        "Codex Desktop workspace inspection",
+        "Git attributes and filters",
+        "workspace trust",
+        "command approval"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE record states Codex Desktop Git metadata/status inspection can execute attacker-controlled attr.tree clean/process filters before workspace trust or command approval.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/codex-git-metadata-execution-boundaries.md",
+      "named_entities": [
+        "CVE-2026-19593",
+        "OpenAI Codex Desktop",
+        "Git",
+        "attr.tree"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-19593",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-02"
+    },
+    {
+      "affected_boundaries": [
+        "Elasticsearch machine learning",
+        "trained model artifact deployment",
+        "model provenance",
+        "deployment privilege"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CVE record reports Elasticsearch machine-learning trained-model artifact deserialization can execute attacker-controlled logic when an authenticated user with trained-model deployment privileges provides a crafted artifact.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/elasticsearch-ml-model-artifact-deserialization-rce.md",
+      "named_entities": [
+        "CVE-2026-72649",
+        "Elastic",
+        "Elasticsearch",
+        "machine learning"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-72649",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-02"
+    },
+    {
+      "affected_boundaries": [
+        "Transformers load_custom_generate",
+        "trust_remote_code consent",
+        "Hugging Face module cache",
+        "untrusted model repository loading"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "CERT/CC VU#456290 states Hugging Face Transformers 4.49.0 through 5.8.1 writes remote custom_generate Python files to local disk before trust_remote_code consent; no vendor patch/advisory was available at publication.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/huggingface-transformers-trust-remote-code-cache-write.md",
+      "named_entities": [
+        "VU#456290",
+        "CVE-2026-80047",
+        "Hugging Face Transformers",
+        "CERT/CC"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://kb.cert.org/vuls/id/456290",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "original release 2026-09-01; last revised 2026-09-01"
+    },
+    {
+      "affected_boundaries": [
+        "ModelScope model configuration parsing",
+        "PyYAML object construction",
+        "model repository loading"
+      ],
+      "evidence_classification": "disclosed vulnerability",
+      "factual_summary": "GitHub Advisory Database entry for CVE-2026-84202 reports ModelScope uses unsafe PyYAML yaml.Loader for model configuration files, with affected and patched versions still unknown.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/modelscope-unsafe-yaml-loader-rce.md",
+      "named_entities": [
+        "GHSA-pq5m-26pg-cxxp",
+        "CVE-2026-84202",
+        "ModelScope",
+        "PyYAML"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://github.com/advisories/GHSA-pq5m-26pg-cxxp",
+      "upstream_routing": "Security-specific update stays local; broad product/entity context routes upstream per federation.",
+      "visible_published_or_updated_at": "published 2026-09-01; updated 2026-09-01"
+    },
+    {
+      "affected_boundaries": [
+        "frontier cyber-capability release gates",
+        "Astra tool-enabled access",
+        "RL training and evaluations",
+        "misalignment monitoring",
+        "Daybreak Blue access"
+      ],
+      "evidence_classification": "control change",
+      "factual_summary": "OpenAI says Astra meets the Preparedness Framework Critical cybersecurity threshold, delayed parts of development/release, added stronger refusal, monitoring and controls, restarted one large frontier RL run on 2026-08-28 after new requirements, and will initially limit advanced cybersecurity access.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md",
+      "named_entities": [
+        "OpenAI",
+        "Astra",
+        "Preparedness Framework",
+        "Daybreak Blue",
+        "GPT-5.6 Sol"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://openai.com/index/path-to-astra/",
+      "upstream_routing": "Broad OpenAI/Astra/model context routes upstream; security release-gate and monitoring controls stay local.",
+      "visible_published_or_updated_at": "published 2026-09-01"
+    },
+    {
+      "affected_boundaries": [
+        "Zoom annotation vulnerability management",
+        "SaaS posture checks",
+        "screen-share and annotation configuration drift",
+        "branch-aware patch verification"
+      ],
+      "evidence_classification": "control change",
+      "factual_summary": "Reco reports customer-base posture checks for the Zoomsday annotation CVE chain: high observed exposure, six posture checks, two alerts for risky annotation/screen-share changes, and branch-aware version comparison to reduce false positives.",
+      "follow_up_note": "Ingest should reconcile this with existing leaf text and preserve direct source dates.",
+      "leaf_id": "docs/wiki/threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md",
+      "named_entities": [
+        "Reco",
+        "Zoomsday",
+        "CVE-2026-53413",
+        "CVE-2026-53414",
+        "CVE-2026-53415",
+        "A Security"
+      ],
+      "relevance": "Same durable security leaf; published or visibly updated within the seven-day window.",
+      "source_url": "https://www.reco.ai/blog/zoomsday-what-we-found-in-our-customers-zoom-configurations",
+      "upstream_routing": "Broad Zoom product context routes upstream; security posture-control evidence stays local.",
+      "visible_published_or_updated_at": "updated 2026-08-30; published 2026-08-30"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-09-03T00:03:47Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/codex-powershell-stop-parsing-approval-bypass.md",
+    "docs/wiki/agent-and-tool-security/hermes-agent-acp-mcp-dos.md",
+    "docs/wiki/agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md",
+    "docs/wiki/agent-and-tool-security/runzero-platform-mcp-authorization-bypass.md",
+    "docs/wiki/identity-and-access/kibana-ai-assistant-knowledge-base-cross-realm-authorization.md",
+    "docs/wiki/identity-and-access/support-genix-ai-chatbot-admin-takeover.md",
+    "docs/wiki/infrastructure-and-supply-chain/codex-git-metadata-execution-boundaries.md",
+    "docs/wiki/infrastructure-and-supply-chain/elasticsearch-ml-model-artifact-deserialization-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/huggingface-transformers-trust-remote-code-cache-write.md",
+    "docs/wiki/infrastructure-and-supply-chain/modelscope-unsafe-yaml-loader-rce.md",
+    "docs/wiki/model-and-prompt-security/hidden-context-exposure-reconnaissance.md",
+    "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md",
+    "docs/wiki/threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md",
+    "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md",
+    "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md"
+  ],
+  "selection_rule": "unchecked leaves first, then oldest last_checked_at, ties by stable relative path",
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/codex-powershell-stop-parsing-approval-bypass.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-19591",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-19591",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-19591",
+      "https://github.com/openai/codex/pull/22643"
+    ],
+    "docs/wiki/agent-and-tool-security/hermes-agent-acp-mcp-dos.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-84288",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-84288",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-84288",
+      "https://www.cve.org/CVERecord?id=CVE-2026-84289",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-84289",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-84289",
+      "https://github.com/advisories/GHSA-fvfr-42vv-wp2g"
+    ],
+    "docs/wiki/agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-72644",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-72644",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-72644",
+      "https://discuss.elastic.co/t/kibana-9-4-5-9-5-1-security-update-esa-2026-115/390088",
+      "https://www.cve.org/CVERecord?id=CVE-2026-72682",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-72682",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-72682",
+      "https://discuss.elastic.co/t/kibana-9-4-6-security-update-esa-2026-84/390054"
+    ],
+    "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-17534",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-17534",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-17534",
+      "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%400.27.0",
+      "https://research.jfrog.com/vulnerabilities/kimi-code-is-vulnerable-to-a-fetchurl-ssrf-protection-bypass-via-dns-resolving-hostnames-and-redirects-cve-2026-17534/"
+    ],
+    "docs/wiki/agent-and-tool-security/maxkb-mcp-tool-import-rce.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-54149",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-54149",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-54149",
+      "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-4pr3-9xhm-98x5",
+      "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-pw52-326g-r5xj",
+      "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.0-lts"
+    ],
+    "docs/wiki/agent-and-tool-security/runzero-platform-mcp-authorization-bypass.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-81846",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-81846",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-81846",
+      "https://www.runzero.com/advisories/runzero-mcp-findings-summaries-data-leak-cve-2026-81846",
+      "https://help.runzero.com/docs/release-notes/#512608260",
+      "https://github.com/advisories/GHSA-29cr-9cjx-c8cg"
+    ],
+    "docs/wiki/identity-and-access/kibana-ai-assistant-knowledge-base-cross-realm-authorization.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-78606",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-78606",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-78606",
+      "https://discuss.elastic.co/t/kibana-8-19-21-9-4-6-9-5-2-security-update-esa-2026-142/390093",
+      "https://www.elastic.co/docs/solutions/security/ai/ai-assistant-knowledge-base"
+    ],
+    "docs/wiki/identity-and-access/support-genix-ai-chatbot-admin-takeover.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-19806",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-19806",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-19806",
+      "https://www.wordfence.com/threat-intel/vulnerabilities/id/188f7c1d-e8ad-4114-9aa4-c3e8b51c5f2c?source=cve"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/codex-git-metadata-execution-boundaries.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-19592",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-19592",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-19592",
+      "https://github.com/openai/codex/pull/22652",
+      "https://www.cve.org/CVERecord?id=CVE-2026-19593",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-19593",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-19593",
+      "https://openai.com/codex"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/elasticsearch-ml-model-artifact-deserialization-rce.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-72649",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-72649",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-72649",
+      "https://discuss.elastic.co/t/elasticsearch-8-19-20-9-4-5-9-5-1-security-update-esa-2026-114/390087"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/huggingface-transformers-trust-remote-code-cache-write.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-80047",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-80047",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-80047",
+      "https://kb.cert.org/vuls/id/456290",
+      "https://github.com/huggingface/transformers"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/modelscope-unsafe-yaml-loader-rce.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-84202",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-84202",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-84202",
+      "https://github.com/advisories/GHSA-pq5m-26pg-cxxp",
+      "https://github.com/modelscope/modelscope/issues/1660",
+      "https://www.vulncheck.com/advisories/modelscope-through-1.40.0-unsafe-yaml-deserialization-in-model-config-loading"
+    ],
+    "docs/wiki/model-and-prompt-security/hidden-context-exposure-reconnaissance.md": [
+      "https://www.akamai.com/blog/ai/owasp-top-10-llm-applications-2026-realistic-security-model",
+      "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/"
+    ],
+    "docs/wiki/testing-and-assurance/frontier-model-critical-cyber-release-gates.md": [
+      "https://openai.com/index/path-to-astra/",
+      "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/",
+      "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+      "https://www.axios.com/2026/09/01/openai-astras-cyber-critical",
+      "https://www.theverge.com/ai-artificial-intelligence/988334/openai-astra-ai-monitoring-safety"
+    ],
+    "docs/wiki/threats-and-attacks/zoom-annotation-rce-ai-assisted-research.md": [
+      "https://www.zoom.com/en/trust/security-bulletin/zsb-26015/",
+      "https://www.zoom.com/en/trust/security-bulletin/zsb-26016/",
+      "https://www.zoom.com/en/trust/security-bulletin/zsb-26017/",
+      "https://a.security/blog/asecurity-zoomsday",
+      "https://www.reco.ai/blog/zoomsday-what-we-found-in-our-customers-zoom-configurations"
+    ]
+  },
+  "window": {
+    "end": "2026-09-02",
+    "rule": "include only sources published or visibly updated within the last 7 days; exclude ambiguous, missing, future, or boundary-only dates",
+    "start": "2026-08-27"
+  }
+}

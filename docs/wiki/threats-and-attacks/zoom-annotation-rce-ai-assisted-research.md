@@ -22,6 +22,8 @@ The [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-se
 - anti-malware coverage;
 - managed-device update checks.
 
+The [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json) adds [Reco operational posture coverage](https://www.reco.ai/blog/zoomsday-what-we-found-in-our-customers-zoom-configurations) for Zoomsday. Reco reports high observed exposure across its customer base, six posture checks, two alerts for risky annotation or screen-share configuration changes, and branch-aware version comparison intended to reduce false positives. Treat this as SaaS posture-control evidence for triage and rollout verification, while Zoom bulletins remain the affected-version authority.
+
 ## Security Impact
 
 - Threat: AI-assisted vulnerability research can shorten the time between annotator bug discovery and practical exploit construction against meeting clients.
@@ -40,14 +42,16 @@ The [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-se
 
 ## Authoritative Sources
 
+- [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json)
 - [August 14 topic news collector source](../../../raw/processed/2026-08-14/ai-security-wiki-topic-news-collector-2026-08-14T233111Z.json)
-- Zoom ZSB-26015 CVE-2026-53413 bulletin: https://www.zoom.com/en/trust/security-bulletin/zsb-26015/
-- Zoom ZSB-26016 CVE-2026-53414 bulletin: https://www.zoom.com/en/trust/security-bulletin/zsb-26016/
-- Zoom ZSB-26017 CVE-2026-53415 bulletin: https://www.zoom.com/en/trust/security-bulletin/zsb-26017/
-- A.Security Zoomsday research: https://a.security/blog/asecurity-zoomsday
-- Tom's Hardware coverage: https://www.tomshardware.com/tech-industry/cyber-security/zoomsday-vulnerability-let-anyone-in-a-zoom-meeting-take-over-anybody-else-ai-assisted-research-only-used-20-prompts-to-find-an-exploit-to-hack-hundred-of-millions-of-people
+- [Zoom ZSB-26015 CVE-2026-53413 bulletin](https://www.zoom.com/en/trust/security-bulletin/zsb-26015/)
+- [Zoom ZSB-26016 CVE-2026-53414 bulletin](https://www.zoom.com/en/trust/security-bulletin/zsb-26016/)
+- [Zoom ZSB-26017 CVE-2026-53415 bulletin](https://www.zoom.com/en/trust/security-bulletin/zsb-26017/)
+- [A.Security Zoomsday research](https://a.security/blog/asecurity-zoomsday)
+- [Tom's Hardware coverage](https://www.tomshardware.com/tech-industry/cyber-security/zoomsday-vulnerability-let-anyone-in-a-zoom-meeting-take-over-anybody-else-ai-assisted-research-only-used-20-prompts-to-find-an-exploit-to-hack-hundred-of-millions-of-people)
 - [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-security-wiki-leaf-update-watch-20260816T000321Z.json)
-- Malwarebytes operational mitigation coverage: https://www.malwarebytes.com/blog/bugs/2026/08/zoomsday-flaws-could-let-one-zoom-participant-attack-another
+- [Malwarebytes operational mitigation coverage](https://www.malwarebytes.com/blog/bugs/2026/08/zoomsday-flaws-could-let-one-zoom-participant-attack-another)
+- [Reco Zoomsday posture coverage](https://www.reco.ai/blog/zoomsday-what-we-found-in-our-customers-zoom-configurations)
 
 ## Related Code
 
@@ -75,5 +79,6 @@ The [August 15 leaf update watch source](../../../raw/processed/2026-08-15/ai-se
 
 ## Maintenance Notes
 
+- Updated on 2026-09-02 from the [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json) with Reco posture-control evidence while preserving Zoom bulletins as affected-version authority.
 - Created on 2026-08-14 from the [August 14 topic collector](../../../raw/processed/2026-08-14/ai-security-wiki-topic-news-collector-2026-08-14T233111Z.json) after checking upstream ownership and routing broad Zoom context outside this local security leaf.
 - Updated on 2026-08-15 from the [August 15 watcher](../../../raw/processed/2026-08-15/ai-security-wiki-leaf-update-watch-20260816T000321Z.json) with Malwarebytes mitigation and triage coverage while keeping Zoom bulletins as affected-version authority.

@@ -31,6 +31,7 @@ NVD says Codex parsed PowerShell's `--%` stop-parsing token differently from Pow
 
 ## Authoritative Sources
 
+- [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json)
 - [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json)
 - [NVD CVE-2026-19591](https://nvd.nist.gov/vuln/detail/CVE-2026-19591)
 
@@ -60,4 +61,5 @@ NVD says Codex parsed PowerShell's `--%` stop-parsing token differently from Pow
 
 ## Maintenance Notes
 
+- Updated on 2026-09-02 from the [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json) with direct in-window provenance while preserving the existing security boundary.
 - Created on 2026-09-01 from the [September 1 topic collector](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json) as the PowerShell-specific Codex approval-bypass leaf.

@@ -1,0 +1,755 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "agent_identifier": "Northstar",
+  "run_timestamp_utc": "2026-09-02T23:31:20Z",
+  "cutoff_window": {
+    "start_utc": "2026-08-31T23:31:20Z",
+    "end_utc": "2026-09-02T23:31:20Z",
+    "policy": "Only include public items visibly published or updated within the last 2 days relative to run time. Exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "federation_rule": "This repository keeps only the AI-security implication, affected boundary, mitigation, evidence, and operational note. Broad AI ecosystem entities route to ai-wiki; general AI-assisted development practices route to ai-dev-wiki.",
+    "checked_indexes": [
+      "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/federation.md",
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ]
+  },
+  "search_methods": [
+    {
+      "method": "NVD CVE API keyword searches",
+      "queries": [
+        "MCP",
+        "AI",
+        "LLM",
+        "agent",
+        "prompt",
+        "model"
+      ],
+      "date_bounds": "lastModStartDate=2026-08-31T23:31:58.000 and lastModEndDate=2026-09-02T23:59:59.000"
+    },
+    {
+      "method": "CISA Known Exploited Vulnerabilities catalog",
+      "queries": [
+        "dateAdded >= 2026-09-01"
+      ]
+    },
+    {
+      "method": "GitHub Advisory Database API",
+      "queries": [
+        "published=2026-09-01..2026-09-02 with AI, MCP, LLM, agent, prompt, model, OpenAI, Kibana, LiteLLM, LangChain, Spring AI, and Pydantic filters"
+      ]
+    },
+    {
+      "method": "Public web search and direct page fetches",
+      "queries": [
+        "OpenAI Astra official critical cyber September 1 2026",
+        "Anthropic cyber evaluation incidents official September 2026",
+        "AI Security Institute frontier AI cyber evaluation September 2026"
+      ]
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "openai-astra-critical-cyber-release-gate-2026-09-01",
+      "title": "OpenAI designates Astra at the Critical cybersecurity capability threshold",
+      "source_urls": [
+        "https://openai.com/index/path-to-astra/"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01",
+          "type": "published",
+          "evidence": "OpenAI page header shows September 1, 2026."
+        }
+      ],
+      "concise_factual_summary": "OpenAI states Astra meets its Critical cybersecurity capability threshold because, with suitable tools and access, it can find previously unknown security flaws and develop exploits across many well-protected systems without step-by-step human guidance. OpenAI delayed parts of development and release, applied stronger cyber-abuse refusal training, cross-conversation monitoring, misalignment monitoring, and limited advanced cybersecurity access to initial testers and Daybreak Blue expansion.",
+      "evidence_classification": "official product safety and release-gate disclosure",
+      "affected_boundary_or_version": "Astra pre-release; advanced cybersecurity capabilities restricted at launch.",
+      "why_it_matters_for_ai_security": "This is a concrete frontier-model release gate for cyber-critical capability, with explicit containment, monitoring, and access-control controls that should inform local release-gate and cyber-evaluation pages.",
+      "named_entities": [
+        "OpenAI",
+        "Astra",
+        "Preparedness Framework",
+        "Daybreak Blue",
+        "Hugging Face incident",
+        "ExploitBench"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "OpenAI and Astra as broad provider/model entities.",
+        "ai_dev_wiki": "General agent workflow and Codex user-experience implications.",
+        "ai_security_wiki": "Critical cyber-capability threshold, restricted access, monitoring, and misalignment containment."
+      },
+      "confidence_notes": "High confidence from official OpenAI page with visible date and concrete security controls."
+    },
+    {
+      "id": "CVE-2026-59822",
+      "title": "CISA adds LiteLLM MCP authentication bypass to KEV",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59822",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-59822",
+        "https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q",
+        "https://github.com/BerriAI/litellm/releases/tag/v1.84.0"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T20:16:18.523Z",
+          "type": "NVD lastModified",
+          "evidence": "NVD API lastModified timestamp."
+        },
+        {
+          "date": "2026-09-02",
+          "type": "CISA KEV dateAdded",
+          "evidence": "CISA KEV JSON dateAdded value."
+        }
+      ],
+      "concise_factual_summary": "LiteLLM before 1.84.0 allowed an unauthenticated attacker to send a fabricated Authorization header to the MCP Streamable HTTP endpoint, trigger OAuth2 passthrough fallback, replace failed LiteLLM key validation with an empty UserAPIKeyAuth object, and reach MCP tooling without a valid LiteLLM key. CISA marked exploitation active and added the issue to KEV on 2026-09-02.",
+      "evidence_classification": "government vulnerability database and exploited-vulnerability catalog with vendor advisory references",
+      "affected_boundary_or_version": "BerriAI LiteLLM versions before 1.84.0; MCP Streamable HTTP endpoint.",
+      "why_it_matters_for_ai_security": "The issue converts a model gateway's MCP endpoint into an unauthenticated tool-access path and has active-exploitation evidence, making it a priority for MCP auth and gateway pages.",
+      "named_entities": [
+        "LiteLLM",
+        "BerriAI",
+        "Model Context Protocol",
+        "CISA KEV",
+        "OAuth2 passthrough",
+        "UserAPIKeyAuth"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "LiteLLM as a broad AI gateway entity.",
+        "ai_dev_wiki": "General model-router practice and MCP deployment pattern.",
+        "ai_security_wiki": "MCP authentication bypass, active exploitation, and mitigation to 1.84.0."
+      },
+      "confidence_notes": "High confidence from NVD plus CISA KEV. Original publication predates the window, but the CISA KEV addition and NVD modification are in-window concrete security changes."
+    },
+    {
+      "id": "CVE-2026-84377",
+      "title": "LiteLLM proxy can leak configured provider credentials through user-controlled routing",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84377"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T18:21:28.997Z",
+          "type": "NVD published",
+          "evidence": "NVD API published timestamp."
+        }
+      ],
+      "concise_factual_summary": "LiteLLM before 1.88.6 and 1.96.2 allowed any authenticated proxy user to redirect outbound provider calls to a user-controlled destination and cause the proxy to send configured provider credentials. Incomplete validation covered request fields such as api_base, base_url, model_list, fallbacks, and litellm_credential_name across nested request fields, path values, and bracket-notation form data.",
+      "evidence_classification": "government vulnerability database",
+      "affected_boundary_or_version": "LiteLLM proxy before 1.88.6 and 1.96.2.",
+      "why_it_matters_for_ai_security": "Provider keys inside model-routing proxies are high-value cross-boundary secrets; this record belongs in AI gateway credential and SSRF routing controls.",
+      "named_entities": [
+        "LiteLLM",
+        "OpenAI-compatible API",
+        "AI Gateway",
+        "provider credentials"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "LiteLLM product/entity context.",
+        "ai_dev_wiki": "General model routing and provider replacement patterns.",
+        "ai_security_wiki": "Credential forwarding, SSRF, and proxy-secret isolation."
+      },
+      "confidence_notes": "High confidence from in-window NVD publication; vendor fixed-version details should be reconciled during ingest."
+    },
+    {
+      "id": "CVE-2026-84452",
+      "title": "Windows ML CLI localhost API can enable trust-remote-code RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84452"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T20:17:41.350Z",
+          "type": "NVD published",
+          "evidence": "NVD API published timestamp."
+        }
+      ],
+      "concise_factual_summary": "Windows ML CLI before 0.4.0 exposes CLI commands through a localhost HTTP API without authentication and configures wildcard CORS origins. A malicious website can send cross-origin requests to build or config endpoints, set trust_remote_code to true, and reach AutoConfig.from_pretrained with trust_remote_code=True, importing Python code from an attacker-controlled model repository.",
+      "evidence_classification": "government vulnerability database",
+      "affected_boundary_or_version": "Windows ML CLI before 0.4.0; localhost HTTP API.",
+      "why_it_matters_for_ai_security": "This joins browser-origin abuse, localhost control planes, and model-repository code execution in one AI development-runtime boundary.",
+      "named_entities": [
+        "Windows ML CLI",
+        "Windows ML",
+        "AutoConfig.from_pretrained",
+        "trust_remote_code"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Windows ML CLI as a product/runtime entity.",
+        "ai_dev_wiki": "Local model-building workflow and development-runtime implications.",
+        "ai_security_wiki": "Unauthenticated localhost API, wildcard CORS, and remote model-code execution."
+      },
+      "confidence_notes": "High confidence from in-window NVD publication."
+    },
+    {
+      "id": "CVE-2026-62674",
+      "title": "Omnigent shared agent bundle overwrite leads to authenticated runner RCE",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-jrrm-9hc7-2v3h"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T21:55:11Z",
+          "type": "GitHub Advisory published",
+          "evidence": "GitHub Advisory API published_at timestamp."
+        }
+      ],
+      "concise_factual_summary": "An authenticated user with edit access to their own Omnigent session can upload a full agent bundle through PUT /sessions/{session_id}/agent and overwrite a shared/template agent even though shared agents are not intended to be MCP-editable. Adding a stdio MCP server to the shared agent can make future runner sessions start an attacker-controlled command.",
+      "evidence_classification": "GitHub Advisory Database",
+      "affected_boundary_or_version": "omnigent pip package before 0.3.0; shared/template agent bundle upload route.",
+      "why_it_matters_for_ai_security": "Shared agent templates are delegated execution roots; overwriting them turns session-level edit rights into code execution for later users.",
+      "named_entities": [
+        "Omnigent",
+        "MCP server",
+        "agent bundle",
+        "stdio"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Omnigent product/entity context.",
+        "ai_dev_wiki": "General multi-agent harness practice.",
+        "ai_security_wiki": "Agent-template ownership boundary and runner RCE."
+      },
+      "confidence_notes": "High confidence from GitHub Advisory Database; NVD enrichment may lag."
+    },
+    {
+      "id": "CVE-2026-62675",
+      "title": "Omnigent uploaded agent bundle allows authenticated Python callable runner RCE",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-756x-9hf6-q4h4"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T21:54:52Z",
+          "type": "GitHub Advisory published",
+          "evidence": "GitHub Advisory API published_at timestamp."
+        }
+      ],
+      "concise_factual_summary": "GitHub Advisory Database reports that Omnigent before 0.3.0 permits authenticated runner RCE through uploaded agent bundles and Python callable tools.",
+      "evidence_classification": "GitHub Advisory Database",
+      "affected_boundary_or_version": "omnigent pip package before 0.3.0; uploaded agent bundles and Python callable tools.",
+      "why_it_matters_for_ai_security": "Agent bundles that define callable tools are executable supply-chain artifacts; upload paths need trust, review, and runtime isolation controls.",
+      "named_entities": [
+        "Omnigent",
+        "Python callable tools",
+        "agent bundle"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Omnigent entity context.",
+        "ai_dev_wiki": "Reusable agent-bundle workflow context.",
+        "ai_security_wiki": "Executable agent-artifact trust boundary and RCE."
+      },
+      "confidence_notes": "High confidence from GitHub Advisory Database; details should be consolidated with the Omnigent cluster during ingest."
+    },
+    {
+      "id": "CVE-2026-62676",
+      "title": "Omnigent shell-command parser fails open and bypasses guardrail policy",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-7mqg-cx4g-x2rf"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T22:40:07Z",
+          "type": "GitHub Advisory published",
+          "evidence": "GitHub Advisory API published_at timestamp."
+        }
+      ],
+      "concise_factual_summary": "Omnigent before 0.3.0 has a shared shell-command parser that can fail open. When a gated command is not recognized, the parser emits no operation, policy evaluation abstains, and the command is allowed, bypassing GitHub repository or branch allowlists and working-directory confinement.",
+      "evidence_classification": "GitHub Advisory Database",
+      "affected_boundary_or_version": "omnigent pip package before 0.3.0; policies/builtins/_shell.py.",
+      "why_it_matters_for_ai_security": "Parser mismatch in agent command-approval systems can turn policy gaps into writes, pushes, workspace escapes, or exfiltration by prompt-injected agents.",
+      "named_entities": [
+        "Omnigent",
+        "Claude Code",
+        "Codex",
+        "GitHub allowlist",
+        "working-directory confinement"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Omnigent broad entity context.",
+        "ai_dev_wiki": "General command-approval and coding-agent workflow practice.",
+        "ai_security_wiki": "Fail-open guardrail parser and delegated command authorization."
+      },
+      "confidence_notes": "High confidence from GitHub Advisory Database; cluster should be linked to existing local Omnigent and shell-policy leaves during ingest."
+    },
+    {
+      "id": "CVE-2026-62677",
+      "title": "Omnigent agent bundle cwd value can escape runner workspace containment",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-p8rw-8qj3-hf33"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T22:00:54Z",
+          "type": "GitHub Advisory published",
+          "evidence": "GitHub Advisory API published_at timestamp."
+        }
+      ],
+      "concise_factual_summary": "Omnigent before 0.3.0 accepts an unvalidated os_env.cwd value in an agent bundle, yielding arbitrary host filesystem access on runners without OMNIGENT_RUNNER_WORKSPACE.",
+      "evidence_classification": "GitHub Advisory Database",
+      "affected_boundary_or_version": "omnigent pip package before 0.3.0; runner workspace cwd handling.",
+      "why_it_matters_for_ai_security": "Runner workspace containment is a core boundary for delegated autonomous action; cwd authority inside imported agent bundles should not select host paths.",
+      "named_entities": [
+        "Omnigent",
+        "OMNIGENT_RUNNER_WORKSPACE",
+        "agent bundle"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Omnigent entity context.",
+        "ai_dev_wiki": "General agent workspace containment pattern.",
+        "ai_security_wiki": "Agent-bundle cwd trust and host filesystem boundary."
+      },
+      "confidence_notes": "High confidence from GitHub Advisory Database."
+    },
+    {
+      "id": "CVE-2026-84202",
+      "title": "ModelScope unsafe YAML loader enables model-configuration RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84202"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-01T16:17:34.450Z",
+          "type": "NVD published",
+          "evidence": "NVD API published timestamp."
+        }
+      ],
+      "concise_factual_summary": "ModelScope uses PyYAML's unsafe yaml.Loader to parse model configuration files. Attackers can craft malicious model repositories with Python object construction tags that execute code when loaded.",
+      "evidence_classification": "government vulnerability database",
+      "affected_boundary_or_version": "ModelScope model configuration loading; affected version not fully resolved in fetched NVD summary.",
+      "why_it_matters_for_ai_security": "Model repositories are executable supply-chain surfaces when runtime loaders execute configuration files; this belongs in model-artifact supply-chain controls.",
+      "named_entities": [
+        "ModelScope",
+        "PyYAML",
+        "yaml.Loader",
+        "model repositories"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "ModelScope as broad model hub/runtime context.",
+        "ai_dev_wiki": "General model-loading developer workflow.",
+        "ai_security_wiki": "Unsafe model-configuration parsing and artifact supply-chain RCE."
+      },
+      "confidence_notes": "Medium-high confidence from NVD; fixed-version and vendor advisory should be reconciled during ingest."
+    },
+    {
+      "id": "CVE-2026-82404",
+      "title": "TOON decoder prototype pollution affects LLM prompt serialization",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82404"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T17:18:00.223Z",
+          "type": "NVD published",
+          "evidence": "NVD API published timestamp."
+        }
+      ],
+      "concise_factual_summary": "TOON before 2.3.1, a compact JSON serialization for LLM prompts, wrote attacker-controlled __proto__, constructor, or prototype keys through the object prototype chain during decoding. Services decoding untrusted TOON could experience denial of service or remote code execution when a downstream gadget is present.",
+      "evidence_classification": "government vulnerability database",
+      "affected_boundary_or_version": "TOON before 2.3.1; decoder expandPaths safe path and insertPathSafe function.",
+      "why_it_matters_for_ai_security": "Prompt serialization formats are part of the model-input supply chain; decoding untrusted prompt artifacts can cross from data parsing into runtime compromise.",
+      "named_entities": [
+        "TOON",
+        "LLM prompts",
+        "Object.prototype",
+        "prototype pollution"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "TOON as a prompt/data serialization entity if durable coverage is needed.",
+        "ai_dev_wiki": "General structured-output and prompt-serialization practice.",
+        "ai_security_wiki": "Prototype pollution in prompt serialization and untrusted decoder boundaries."
+      },
+      "confidence_notes": "High confidence from in-window NVD publication."
+    },
+    {
+      "id": "CVE-2026-84809",
+      "title": "Tencent AI-Infra-Guard skill scanner misses compiled Python bytecode",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-7vc4-66f2-3f5f",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84809"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T18:32:29Z",
+          "type": "GitHub Advisory published",
+          "evidence": "GitHub Advisory API published_at timestamp."
+        },
+        {
+          "date": "2026-09-02T17:18:05.150Z",
+          "type": "NVD published",
+          "evidence": "NVD API published timestamp."
+        }
+      ],
+      "concise_factual_summary": "Tencent AI-Infra-Guard's skill-scan component hardcodes __pycache__ directories and .pyc, .pyo, and .pyd extensions into skip lists. Attackers can distribute skills with benign source files and malicious compiled bytecode that executes on import while the scanner reports a safe verdict.",
+      "evidence_classification": "GitHub Advisory Database and government vulnerability database",
+      "affected_boundary_or_version": "Tencent AI-Infra-Guard skill-scan component.",
+      "why_it_matters_for_ai_security": "Skill and plugin scanners are release-gate controls; unchecked executable payload classes can invalidate a reported safe verdict.",
+      "named_entities": [
+        "Tencent AI-Infra-Guard",
+        "skill-scan",
+        "compiled Python bytecode",
+        "__pycache__"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Tencent AI-Infra-Guard entity context.",
+        "ai_dev_wiki": "General skill/plugin installation workflow.",
+        "ai_security_wiki": "Skill scanning blind spot and executable artifact gate."
+      },
+      "confidence_notes": "High confidence from two public advisory sources."
+    },
+    {
+      "id": "CVE-2026-84810",
+      "title": "claude-skill-antivirus ignores executable files in local skill directories",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-gvgj-r6pg-m42w",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84810"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T18:32:29Z",
+          "type": "GitHub Advisory published",
+          "evidence": "GitHub Advisory API published_at timestamp."
+        },
+        {
+          "date": "2026-09-02T21:32:07Z",
+          "type": "GitHub Advisory updated",
+          "evidence": "GitHub Advisory API updated_at timestamp."
+        }
+      ],
+      "concise_factual_summary": "claude-skill-antivirus reads only SKILL.md when scanning local skill directories and ignores Python source, bytecode, and other artifacts in scripts directories. Attackers can ship malicious code outside the manifest and still receive a SAFE verdict with a 100/100 trust score.",
+      "evidence_classification": "GitHub Advisory Database and government vulnerability database",
+      "affected_boundary_or_version": "claude-skill-antivirus local skill directory scanning.",
+      "why_it_matters_for_ai_security": "Manifest-only review is insufficient for agent skill supply chains; scanners need full artifact coverage and safe-verdict provenance.",
+      "named_entities": [
+        "claude-skill-antivirus",
+        "SKILL.md",
+        "Python scripts",
+        "SAFE verdict"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Claude and skill packaging as broad entities.",
+        "ai_dev_wiki": "General skill authoring and installation practice.",
+        "ai_security_wiki": "Skill-scanner coverage, executable artifact trust, and false assurance."
+      },
+      "confidence_notes": "High confidence from advisory details; package ecosystem and fixed version were not exposed in the brief fetched result."
+    },
+    {
+      "id": "CVE-2026-84811",
+      "title": "agentverus-scanner can certify malicious compiled companion bytecode",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-7r9q-g8p5-w7pp",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84811"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T18:32:29Z",
+          "type": "GitHub Advisory published",
+          "evidence": "GitHub Advisory API published_at timestamp."
+        },
+        {
+          "date": "2026-09-02T17:18:05.447Z",
+          "type": "NVD published",
+          "evidence": "NVD API published timestamp."
+        }
+      ],
+      "concise_factual_summary": "agentverus-scanner fails to analyze compiled Python bytecode files in companion code directories. Attackers can ship malicious __pycache__ entries alongside benign source files and obtain a CERTIFIED verdict with high trust scores in static and semantic analysis modes.",
+      "evidence_classification": "GitHub Advisory Database and government vulnerability database",
+      "affected_boundary_or_version": "agentverus-scanner companion code directory scanning.",
+      "why_it_matters_for_ai_security": "AI-agent certification pipelines can be bypassed when executable artifacts are omitted from analysis, creating a false security signal for downstream operators.",
+      "named_entities": [
+        "agentverus-scanner",
+        "CERTIFIED verdict",
+        "__pycache__",
+        "compiled Python bytecode"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "agentverus-scanner entity context if tracked.",
+        "ai_dev_wiki": "General certification workflow and plugin install practice.",
+        "ai_security_wiki": "Scanner completeness and AI-agent supply-chain assurance."
+      },
+      "confidence_notes": "High confidence from two advisory feeds."
+    },
+    {
+      "id": "CVE-2026-84425",
+      "title": "CowAgent BrowserTool remote denial of service disclosed",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84425"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T01:17:23.710Z",
+          "type": "NVD published",
+          "evidence": "NVD API published timestamp."
+        },
+        {
+          "date": "2026-09-02T13:55:27.963Z",
+          "type": "NVD lastModified",
+          "evidence": "NVD API lastModified timestamp."
+        }
+      ],
+      "concise_factual_summary": "NVD reports that zhayujie CowAgent up to 2.1.3 has a remotely exploitable denial-of-service issue in agent/tools/browser/browser_tool.py in the Browser Tool component. The exploit has been publicly disclosed and the vendor did not respond to early contact.",
+      "evidence_classification": "government vulnerability database",
+      "affected_boundary_or_version": "CowAgent up to 2.1.3; Browser Tool.",
+      "why_it_matters_for_ai_security": "Browser tools are high-risk agent surfaces; remotely triggerable resource exhaustion can disrupt delegated browsing or automation workflows.",
+      "named_entities": [
+        "CowAgent",
+        "BrowserTool",
+        "browser_tool.py"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "CowAgent as broad agent framework/tool entity.",
+        "ai_dev_wiki": "General browser-agent workflow context.",
+        "ai_security_wiki": "Browser tool resource-exhaustion boundary."
+      },
+      "confidence_notes": "Medium confidence: NVD is authoritative for timing, but the summary is sparse and vendor response/fixed version need ingest-time reconciliation."
+    },
+    {
+      "id": "CVE-2026-84427",
+      "title": "CowAgent Bash Tool remote denial of service disclosed",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84427"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T01:17:23.887Z",
+          "type": "NVD published",
+          "evidence": "NVD API published timestamp."
+        },
+        {
+          "date": "2026-09-02T13:55:27.963Z",
+          "type": "NVD lastModified",
+          "evidence": "NVD API lastModified timestamp."
+        }
+      ],
+      "concise_factual_summary": "NVD reports that zhayujie CowAgent up to 2.1.7 has a remotely exploitable denial-of-service issue in agent/tools/bash/bash.py in the Bash Tool component. The exploit has been publicly disclosed and the vendor did not respond to early contact.",
+      "evidence_classification": "government vulnerability database",
+      "affected_boundary_or_version": "CowAgent up to 2.1.7; Bash Tool.",
+      "why_it_matters_for_ai_security": "Bash tools represent direct execution-adjacent agent authority; even availability failures matter for safe autonomous action and tool-loop containment.",
+      "named_entities": [
+        "CowAgent",
+        "Bash Tool",
+        "bash.py"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "CowAgent entity context.",
+        "ai_dev_wiki": "General tool-use workflow context.",
+        "ai_security_wiki": "Agent shell-tool resilience and public exploit handling."
+      },
+      "confidence_notes": "Medium confidence due to sparse NVD details; fixed-version state should be checked during ingest."
+    },
+    {
+      "id": "CVE-2026-84857",
+      "title": "aichat API endpoint uncontrolled memory allocation disclosed",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-w2m4-pj9f-6rwh",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84857"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-09-02T21:32:08Z",
+          "type": "GitHub Advisory published",
+          "evidence": "GitHub Advisory API published_at timestamp."
+        },
+        {
+          "date": "2026-09-02T20:17:42.753Z",
+          "type": "NVD published",
+          "evidence": "NVD API published timestamp."
+        }
+      ],
+      "concise_factual_summary": "sigoden aichat up to 0.30.4 has an uncontrolled memory allocation flaw in src/serve.rs in the API Endpoint component. The attack can be initiated remotely, the exploit has been published, and the vendor did not respond to early contact.",
+      "evidence_classification": "GitHub Advisory Database and government vulnerability database",
+      "affected_boundary_or_version": "aichat up to 0.30.4; API Endpoint in src/serve.rs.",
+      "why_it_matters_for_ai_security": "Local and self-hosted chat/agent endpoints need availability guardrails, especially when exposed as automation or assistant backends.",
+      "named_entities": [
+        "aichat",
+        "sigoden",
+        "src/serve.rs"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "aichat as a broad tool/entity if tracked.",
+        "ai_dev_wiki": "General local assistant runtime practice.",
+        "ai_security_wiki": "Remote availability failure in assistant API endpoint."
+      },
+      "confidence_notes": "Medium-high confidence from GitHub and NVD; sparse vendor detail should be reconciled during ingest."
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Anthropic July cybersecurity evaluation incidents",
+      "source_urls": [
+        "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals"
+      ],
+      "visible_date": "2026-07-30",
+      "reason": "Official source is outside the two-day window. In-window secondary coverage was excluded because the concrete primary disclosure date is stale."
+    },
+    {
+      "title": "OpenAI Hugging Face incident and the road ahead",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+      ],
+      "visible_date": "2026-08-26",
+      "reason": "Official incident update is outside the two-day window and was covered by earlier collector context."
+    },
+    {
+      "title": "METR Hugging Face incident report",
+      "source_urls": [
+        "https://metr.org/hugging-face-incident-report-aug-2026.pdf"
+      ],
+      "visible_date": "2026-08-26 inferred from search result",
+      "reason": "Outside the two-day window; not included as a fresh item."
+    },
+    {
+      "title": "OpenAI Daybreak cyber defense expansion",
+      "source_urls": [
+        "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/"
+      ],
+      "visible_date": "2026-08-10",
+      "reason": "Strong security-control source, but stale for this run."
+    },
+    {
+      "title": "CVE-2026-19591, CVE-2026-19592, and CVE-2026-19593 OpenAI Codex records",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19591",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19592",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19593"
+      ],
+      "visible_date": "2026-09-01T18:17:40Z published",
+      "reason": "In-window by publication date but likely already captured in the prior run per automation memory; excluded to avoid duplicate recurring collector output."
+    },
+    {
+      "title": "CVE-2026-81846 runZero Platform MCP authorization bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81846"
+      ],
+      "visible_date": "2026-09-01T19:17:28.333Z published",
+      "reason": "In-window but published before the last run and likely included in the missing September 1 artifact; exclude as overlap."
+    },
+    {
+      "title": "CVE-2026-18885 and CVE-2026-18886 ServiceNow AI platform vulnerabilities",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18885",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18886"
+      ],
+      "visible_date": "2026-08-27 published; 2026-09-01 modified",
+      "reason": "Concrete AI platform vulnerabilities, but prior memory shows ServiceNow AI platform items were already captured earlier; in-window modification did not expose a distinct new security fact in the fetched summary."
+    },
+    {
+      "title": "CVE-2026-48746 vLLM OpenAI API authentication bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-48746"
+      ],
+      "visible_date": "2026-09-01T13:19:37.290Z lastModified",
+      "reason": "Modification is in-window, but publication is stale and likely previous raw coverage; no distinct in-window delta found."
+    },
+    {
+      "title": "CVE-2026-41523 vLLM malicious Hugging Face model RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-41523"
+      ],
+      "visible_date": "2026-09-02T13:17:45.843Z lastModified",
+      "reason": "Modification is in-window, but publication is stale and the fetched summary does not show a new concrete security change distinct from previously known coverage."
+    },
+    {
+      "title": "FT letter on living off the agents",
+      "source_urls": [
+        "https://www.ft.com/content/943e0a27-0147-4654-b4e8-551533dcded9"
+      ],
+      "visible_date": "2026-09-02 per search result",
+      "reason": "Relevant commentary but not a primary advisory, vulnerability, incident report, mitigation, patch, control result, or regulatory change."
+    },
+    {
+      "title": "Nvidia and CrowdStrike SafeMind coverage",
+      "source_urls": [
+        "https://www.wsj.com/cio-journal/nvidia-and-crowdstrike-develop-new-cybersecurity-ai-models-937bb2aa"
+      ],
+      "visible_date": "2026-09-02 per search result",
+      "reason": "Product and partnership coverage without an accessible primary page or concrete security delta suitable for this raw collector."
+    },
+    {
+      "title": "Generic GitHub Advisory Database results for Scrapy, DiceBear, Plate, Handlebars.java, Grav, Jenkins, Starlette, Kestra, JFrog Artifactory, SonicWall, and non-AI package issues",
+      "source_urls": [
+        "https://api.github.com/advisories?published=2026-09-01..2026-09-02&per_page=100",
+        "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+      ],
+      "visible_date": "2026-09-02",
+      "reason": "Security relevant generally, but no concrete AI-system, model, agent, MCP, prompt, AI runtime, or AI supply-chain relevance in the fetched summaries."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "OpenAI and Astra",
+      "owner": "ai-wiki",
+      "security_specific_note": "Keep the critical cyber-capability threshold, safety monitoring, and restricted access controls in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "LiteLLM",
+      "owner": "ai-wiki",
+      "security_specific_note": "Keep MCP authentication bypass, provider credential leakage, and proxy-secret isolation in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "Omnigent",
+      "owner": "ai-wiki",
+      "security_specific_note": "Keep agent bundle overwrite, runner RCE, cwd containment, and shell-policy bypass facts in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "ModelScope",
+      "owner": "ai-wiki",
+      "security_specific_note": "Keep unsafe YAML loader and model-repository RCE implications in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "Windows ML CLI",
+      "owner": "ai-wiki",
+      "security_specific_note": "Keep localhost API, CORS, and trust_remote_code RCE boundary in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "AI skill/plugin scanning workflows",
+      "owner": "ai-dev-wiki",
+      "security_specific_note": "Keep scanner false-assurance, executable payload coverage, and artifact trust gates in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "CowAgent",
+      "owner": "ai-wiki",
+      "security_specific_note": "Keep browser and Bash tool availability vulnerabilities in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "aichat",
+      "owner": "ai-wiki",
+      "security_specific_note": "Keep remotely triggerable assistant API resource exhaustion in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "TOON prompt serialization",
+      "owner": "ai-dev-wiki",
+      "security_specific_note": "Keep prototype-pollution and untrusted prompt-decoder security boundary in ai-security-wiki."
+    }
+  ],
+  "follow_up_actions": [
+    "During ingest, reconcile fixed-version and vendor-primary details for ModelScope, CowAgent, aichat, and skill-scanner advisories.",
+    "Deduplicate the four Omnigent records against existing Omnigent shell policy, bundle, and cwd leaves instead of creating isolated duplicate pages.",
+    "Treat CVE-2026-59822 as higher priority because CISA KEV marks active exploitation on 2026-09-02.",
+    "Route broad OpenAI/Astra model profile updates to ai-wiki while retaining the release-gate and monitoring facts locally.",
+    "Investigate why the September 1 raw artifact named in automation memory is not present in the local checkout before relying on exact prior-run deduplication."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed for artifact"
+  },
+  "blockers": [
+    "The automation memory references /Users/martinbechard/dev/ai-security-wiki/raw/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json, but that file was not present in the checkout during this run. Duplicate-avoidance used the memory note rather than exact prior artifact content."
+  ]
+}

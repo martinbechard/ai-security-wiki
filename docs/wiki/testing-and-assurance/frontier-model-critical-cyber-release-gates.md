@@ -51,6 +51,8 @@ The [August 23 topic news collector source](../../../raw/processed/2026-08-23/ai
 
 The [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json) adds OpenAI's primary [Path to Astra](https://openai.com/index/path-to-astra/) disclosure. OpenAI says Astra meets its Preparedness Framework Critical cybersecurity capability threshold when equipped with tools and access because it can find previously unknown flaws and develop exploits across protected systems without step-by-step human guidance. The same source says OpenAI delayed parts of development and release, strengthened refusal behavior, added monitoring that can stop unauthorized activity, limited advanced cybersecurity access, and plans Daybreak Blue access for vetted defensive testers.
 
+The [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json) preserves the same [Path to Astra](https://openai.com/index/path-to-astra/) lifecycle evidence and adds that OpenAI restarted one large frontier reinforcement-learning run on 2026-08-28 after the new requirements were in place. Locally, that detail makes the release gate operational rather than only documentary: paused frontier work can resume only after control requirements are applied to the run.
+
 ## Security Impact
 
 - Threat or control area: frontier cyber-capable models can move from scoring well on cyber tasks to requiring containment, access restriction, and release delay because autonomous exploitation capability cannot be excluded.
@@ -82,6 +84,8 @@ The [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-se
 
 ## Authoritative Sources
 
+- [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json)
+- [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json)
 - [August 7 topic news collector source](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json)
 - [August 8 topic news collector source](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json)
 - [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json)
@@ -137,6 +141,8 @@ The [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-se
 
 ## Maintenance Notes
 
+- Updated on 2026-09-02 from the [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) with in-window advisory provenance while keeping broad product context upstream.
+- Updated on 2026-09-02 from the [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json) with Astra frontier RL restart lifecycle evidence after new requirements.
 - Created on 2026-08-07 from the [August 7 topic collector](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) after routing broad OpenAI, model, and framework coverage upstream.
 - Updated on 2026-08-08 from the [August 8 topic collector](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json) and [August 9 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json) with additional in-window corroboration and the same Critical-threshold halt-control boundary.
 - Updated on 2026-08-09 from the [August 9 topic collector](../../../raw/processed/2026-08-09/ai-security-wiki-topic-news-collector-2026-08-09T233156Z.json) with additional secondary reporting while preserving the primary-source caveat and upstream routing for broad OpenAI and Astra coverage.

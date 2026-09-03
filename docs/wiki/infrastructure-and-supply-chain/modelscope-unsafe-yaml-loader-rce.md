@@ -30,6 +30,8 @@ NVD says ModelScope uses PyYAML's unsafe `yaml.Loader` when parsing model config
 
 ## Authoritative Sources
 
+- [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json)
+- [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json)
 - [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json)
 - [NVD CVE-2026-84202](https://nvd.nist.gov/vuln/detail/CVE-2026-84202)
 
@@ -57,4 +59,6 @@ NVD says ModelScope uses PyYAML's unsafe `yaml.Loader` when parsing model config
 
 ## Maintenance Notes
 
+- Updated on 2026-09-02 from the [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) with in-window advisory provenance while keeping broad product context upstream.
+- Updated on 2026-09-02 from the [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json) with direct in-window provenance while preserving the existing security boundary.
 - Created on 2026-09-01 from the [September 1 topic collector](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json) as a model-repository configuration execution leaf.

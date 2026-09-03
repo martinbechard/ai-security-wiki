@@ -20,6 +20,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - [Langfun Python protocol model output RCE](langfun-python-protocol-model-output-rce.md)
 - [ash_ai EEx prompt template RCE](ash-ai-eex-prompt-template-rce.md)
 - [Microsoft Edge iOS LLM prompt spoofing](microsoft-edge-ios-llm-prompt-spoofing.md)
+- [TOON decoder prototype pollution](toon-decoder-prototype-pollution.md)
 
 ## Authoritative Sources
 
@@ -49,6 +50,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Maintenance Notes
 
+- Updated on 2026-09-02 with the TOON decoder prototype pollution prompt-serialization leaf.
 - Updated on 2026-08-31 with ash_ai prompt-template execution and Microsoft Edge iOS LLM prompt-spoofing leaves.
 - Record affected boundary, attack prerequisites, mitigation, residual risk, and evidence quality.
 - Updated on 2026-08-19 with Context7 MCP prompt-injection and vLLM multimodal input-boundary leaves.
