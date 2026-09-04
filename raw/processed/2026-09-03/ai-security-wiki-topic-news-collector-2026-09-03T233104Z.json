@@ -1,0 +1,466 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "agent_identifier": "Northstar",
+  "run_timestamp_utc": "2026-09-03T23:31:04Z",
+  "cutoff_window": {
+    "start_utc": "2026-09-01T23:31:04Z",
+    "end_utc": "2026-09-03T23:31:04Z",
+    "policy": "Include only public items with direct visible publication or update evidence strictly within the last two days. Exclude missing, ambiguous, future-dated, stale, snippet-only, header-only, and boundary-only dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "local_federation_file": "docs/wiki/federation.md",
+    "local_topic_index": "docs/wiki/topic-index.md",
+    "upstream_ai_wiki_topic_index": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+    "upstream_ai_dev_wiki_topic_index": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+    "summary": "Broad AI companies, models, products, frameworks, MCP servers, and general development practices are upstream-owned. This artifact keeps only security-specific facts, affected boundaries, exploit or mitigation context, and routing notes for ai-security-wiki."
+  },
+  "search_methods": [
+    "Read automation memory before collection and checked the prior processed collector artifact for overlap.",
+    "Read docs/wiki/federation.md and the local, ai-wiki, and ai-dev-wiki topic indexes for ownership boundaries.",
+    "Queried NVD CVE API for strict-window terms including mcp, llm, agent, prompt, and model.",
+    "Fetched direct CVE JSON from cveawg.mitre.org for qualifying CVEs.",
+    "Checked public OpenAI pages and Deployment Safety Hub content for direct September 3 safety and cyber-defense updates.",
+    "Searched local raw, raw/processed, and docs/wiki for selected CVE identifiers and entity names before classifying items as fresh."
+  ],
+  "qualifying_findings": [
+    {
+      "id": "openai-gpt-6-astra-safety-overview-2026-09-03",
+      "title": "OpenAI releases GPT-6 Astra with Critical cybersecurity capability and new deployment safeguards",
+      "source_urls": [
+        "https://openai.com/index/safety-overview-gpt-6-astra/",
+        "https://deploymentsafety.openai.com/gpt-6-astra"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://openai.com/index/safety-overview-gpt-6-astra/",
+          "date": "2026-09-03",
+          "date_basis": "Visible page date on OpenAI safety overview"
+        }
+      ],
+      "factual_summary": "OpenAI says GPT-6 Astra is its first broadly deployed model to reach the Preparedness Framework Critical cybersecurity capability threshold. The safety overview states the model can, with tools and access, find previously unknown flaws and develop new exploit paths across protected systems, and describes stricter internal isolation, checkpoint encryption, trajectory monitoring, blocking alignment evaluations, external deployment misalignment monitoring, improved prompt-injection robustness, and residual monitorability concerns.",
+      "evidence_classification": "primary model safety and deployment-control disclosure",
+      "affected_boundary_or_version": "GPT-6 Astra external deployment; Critical cybersecurity capability threshold under OpenAI Preparedness Framework",
+      "why_it_matters_for_ai_security": "This is a security capability threshold change for a frontier model, with concrete release-gate, monitoring, prompt-injection, browsing/workplace-action, and model-misuse controls that affect AI security risk management.",
+      "named_entities": [
+        "OpenAI",
+        "GPT-6 Astra",
+        "Preparedness Framework",
+        "GPT-5.6 Sol",
+        "Deployment Safety Hub"
+      ],
+      "upstream_routing": "Broad OpenAI and GPT-6 Astra model coverage belongs in ai-wiki; ai-security-wiki should keep the Critical cyber capability threshold, safeguards, monitorability limits, and deployment-gate implications.",
+      "confidence_notes": "High confidence from primary OpenAI pages with visible September 3, 2026 date; deeper system-card metrics should be rechecked during ingest if quoted."
+    },
+    {
+      "id": "openai-daybreak-frontline-defenders-2026-09-03",
+      "title": "OpenAI commits $1B Daybreak access and support for frontline cyber defenders",
+      "source_urls": [
+        "https://openai.com/index/daybreak-for-frontline-defenders/",
+        "https://openai.com/daybreak/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://openai.com/index/daybreak-for-frontline-defenders/",
+          "date": "2026-09-03",
+          "date_basis": "Visible page date on OpenAI security post"
+        }
+      ],
+      "factual_summary": "OpenAI announced Daybreak for Frontline Defenders, committing $1 billion in subsidized Daybreak access, training, technical support, and partnerships for essential-service defenders. The post names U.S. water and wastewater systems, electric grid operators, state and local governments, community and regional banks, nonprofits, and open-source maintainers, and says Daybreak access can help review legacy code, analyze suspicious activity, identify and validate vulnerabilities, prioritize risks, and develop and test fixes.",
+      "evidence_classification": "primary mitigation and cyber-defense access-control program announcement",
+      "affected_boundary_or_version": "Daybreak, Daybreak Blue, Daybreak Red, Daybreak for America, Daybreak Defense Network, MS-ISAC pilot",
+      "why_it_matters_for_ai_security": "The item is a concrete mitigation and assurance workflow change for AI-enabled cyber defense, including authorized access, training, technical assistance, remediation support, and partner delivery into defender workflows.",
+      "named_entities": [
+        "OpenAI",
+        "Daybreak",
+        "Daybreak Blue",
+        "Daybreak Red",
+        "MS-ISAC",
+        "Daybreak Defense Network"
+      ],
+      "upstream_routing": "General OpenAI product and partner ecosystem details belong in ai-wiki; ai-security-wiki owns the governed cyber-defense access, remediation, essential-services, and release-gate implications.",
+      "confidence_notes": "High confidence from primary OpenAI source with visible September 3, 2026 date."
+    },
+    {
+      "id": "cve-2026-85166-n8n-workflow-tool-credential-exfiltration",
+      "title": "n8n Workflow Tool node can exfiltrate credentials through inline sub-workflow references",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85166",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85166",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-4r56-g65c-fm83",
+        "https://www.vulncheck.com/advisories/n8n-before-2.36.2-credential-exfiltration-via-workflow-tool-node"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-85166",
+          "date": "2026-09-03T13:06:23.867Z",
+          "date_basis": "NVD published timestamp"
+        },
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85166",
+          "date": "2026-09-03T11:22:16.613Z",
+          "date_basis": "CVE datePublished timestamp"
+        }
+      ],
+      "factual_summary": "CVE-2026-85166 describes n8n failing to validate credential references in inline workflow JSON for nodes that execute inline sub-workflows, including the Workflow Tool node. A shared-workflow editor or API user can persist a node referencing a credential they do not own; later execution under an identity that does hold the credential can resolve and send the secret to an attacker-controlled endpoint.",
+      "evidence_classification": "NVD and CVE vulnerability record with vendor advisory references",
+      "affected_boundary_or_version": "n8n before 2.35.4 and 2.36.x before 2.36.2; NVD CVSS 7.2 HIGH; CWE-863",
+      "why_it_matters_for_ai_security": "n8n is an agent/workflow automation surface where model-triggered tool execution can cross credential ownership boundaries, making least privilege and workflow review critical.",
+      "named_entities": [
+        "n8n",
+        "Workflow Tool node",
+        "VulnCheck",
+        "GitHub Security Advisory"
+      ],
+      "upstream_routing": "Broad n8n workflow-product coverage belongs upstream; ai-security-wiki should keep the credential exfiltration, inline sub-workflow, delegated identity, and fixed-version facts.",
+      "confidence_notes": "High confidence from direct NVD and CVE timestamps plus GitHub advisory reference; ingest should reconcile the two version trains."
+    },
+    {
+      "id": "cve-2026-85180-ollama-tensor-blob-redirect-ssrf",
+      "title": "Ollama tensor-layer model pulls can be redirected to internal hosts",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85180",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85180",
+        "https://github.com/ollama/ollama/issues/17041",
+        "https://www.vulncheck.com/advisories/ollama-0.30.0-through-0.33.2-ssrf-via-cross-host-tensor-blob-redirect"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-85180",
+          "date": "2026-09-03T15:17:39.250Z",
+          "date_basis": "NVD published timestamp"
+        },
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85180",
+          "date": "2026-09-03T14:12:19.048Z",
+          "date_basis": "CVE datePublished timestamp"
+        }
+      ],
+      "factual_summary": "CVE-2026-85180 describes Ollama failing to validate redirect destinations when pulling tensor-layer models. An unauthenticated attacker who controls a registry can serve a malicious tensor-layer manifest and cause the server to issue GET requests to arbitrary destinations, including internal hosts and cloud metadata endpoints.",
+      "evidence_classification": "NVD and CVE vulnerability record with public issue and advisory references",
+      "affected_boundary_or_version": "Ollama 0.30.0 through 0.33.2; NVD CVSS 7.5 HIGH; CWE-918",
+      "why_it_matters_for_ai_security": "Model artifact acquisition becomes a network egress and cloud-metadata SSRF boundary, connecting model supply chain trust to runtime infrastructure exposure.",
+      "named_entities": [
+        "Ollama",
+        "VulnCheck",
+        "GitHub issue 17041"
+      ],
+      "upstream_routing": "General Ollama product and model-runtime coverage belongs in ai-wiki; ai-security-wiki owns the model-pull SSRF, registry trust, metadata endpoint, and fixed-boundary implications.",
+      "confidence_notes": "High confidence from direct NVD and CVE timestamps; GitHub issue predates the window and is included only as technical reference, not as date qualification."
+    },
+    {
+      "id": "cve-2026-84779-agentimus-mcp-wordpress-broken-access-control",
+      "title": "Agentimus AI SEO and MCP WordPress plugin has subscriber broken access control",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84779",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84779",
+        "https://patchstack.com/database/wordpress/plugin/agentimus/vulnerability/wordpress-agentimus-ai-seo-llms-txt-mcp-for-ai-agents-plugin-1-51-0-broken-access-control-vulnerability?_s_id=cve"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-84779",
+          "date": "2026-09-03T17:17:28.880Z",
+          "date_basis": "NVD published timestamp"
+        },
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-84779",
+          "date": "2026-09-03T16:31:56.043Z",
+          "date_basis": "CVE datePublished timestamp"
+        }
+      ],
+      "factual_summary": "CVE-2026-84779 reports broken access control for the Agentimus - AI SEO, llms.txt & MCP for AI Agents WordPress plugin. The CVE marks versions through 1.51.0 as affected and records a change to unaffected status at 1.51.1.",
+      "evidence_classification": "NVD and CVE vulnerability record with Patchstack advisory reference",
+      "affected_boundary_or_version": "Agentimus - AI SEO, llms.txt & MCP for AI Agents WordPress plugin through 1.51.0; fixed at 1.51.1; NVD CVSS 8.1 HIGH; CWE-862",
+      "why_it_matters_for_ai_security": "A public CMS plugin that exposes MCP/AI-agent functionality expands tool authority to web roles; subscriber-level broken access control is a direct least-privilege risk.",
+      "named_entities": [
+        "Agentimus",
+        "WordPress",
+        "Patchstack",
+        "MCP"
+      ],
+      "upstream_routing": "Broad WordPress plugin cataloging belongs upstream; ai-security-wiki should keep the MCP plugin role-boundary and authorization failure.",
+      "confidence_notes": "High confidence for CVE metadata; Patchstack detail may need ingest-time review for exact endpoint and privilege prerequisites."
+    },
+    {
+      "id": "cve-2026-85306-mountdev-ai-mcp-connector-broken-access-control",
+      "title": "MountDev AI MCP Connector for WordPress has missing authorization",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85306",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85306",
+        "https://patchstack.com/database/wordpress/plugin/mountdev-ai-mcp-connector/vulnerability/wordpress-mountdev-ai-mcp-connector-for-wordpress-plugin-1-6-5-broken-access-control-vulnerability?_s_id=cve"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-85306",
+          "date": "2026-09-03T17:17:30.833Z",
+          "date_basis": "NVD published timestamp"
+        },
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85306",
+          "date": "2026-09-03T16:53:00.347Z",
+          "date_basis": "CVE datePublished timestamp"
+        }
+      ],
+      "factual_summary": "CVE-2026-85306 describes missing authorization in the MountDev AI MCP Connector for WordPress plugin. The record marks versions through 1.6.5 as affected and 1.6.6 as unaffected.",
+      "evidence_classification": "NVD and CVE vulnerability record with Patchstack advisory reference",
+      "affected_boundary_or_version": "MountDev AI MCP Connector for WordPress through 1.6.5; fixed at 1.6.6; NVD CVSS 6.5 MEDIUM; CWE-862",
+      "why_it_matters_for_ai_security": "The connector is explicitly an AI MCP bridge for WordPress, so missing authorization can expose delegated tool or content actions beyond intended CMS roles.",
+      "named_entities": [
+        "MountDev AI MCP Connector for WordPress",
+        "Cascadia Web Services",
+        "WordPress",
+        "Patchstack",
+        "MCP"
+      ],
+      "upstream_routing": "Broad plugin and WordPress ecosystem coverage belongs upstream; ai-security-wiki should keep the MCP connector authorization-control implication.",
+      "confidence_notes": "High confidence for CVE metadata; plugin endpoint details should be confirmed from Patchstack during ingest if available."
+    },
+    {
+      "id": "cve-2026-84887-simular-ai-agent-s-gui-action-dos",
+      "title": "Agent-S model-generated GUI action workflow can be driven into denial of service",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84887",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84887",
+        "https://vuldb.com/vuln/398136",
+        "https://github.com/outlookgp/CVE/tree/main/AgentS_Action_Parameter_Budget_DoS_Report"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-84887",
+          "date": "2026-09-03T05:16:47.333Z",
+          "date_basis": "NVD published timestamp"
+        },
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-84887",
+          "date": "2026-09-02T21:00:08.337Z",
+          "date_basis": "CVE datePublished timestamp"
+        }
+      ],
+      "factual_summary": "CVE-2026-84887 reports a remotely exploitable denial-of-service issue in simular-ai Agent-S through 0.3.2. The affected component is grounding.py in the model-generated GUI action execution workflow; the exploit is public and vendor response was not recorded in the CVE data.",
+      "evidence_classification": "NVD and CVE vulnerability record with VulDB and public proof-of-concept references",
+      "affected_boundary_or_version": "simular-ai Agent-S 0.3.0, 0.3.1, and 0.3.2; NVD CVSS 4.3 MEDIUM; CWE-404",
+      "why_it_matters_for_ai_security": "GUI action agents need bounded model-generated action parameters and resource controls; this record ties model-generated desktop/browser action execution to availability risk.",
+      "named_entities": [
+        "simular-ai",
+        "Agent-S",
+        "VulDB"
+      ],
+      "upstream_routing": "General Agent-S framework coverage belongs in ai-wiki or ai-dev-wiki depending on existing ownership; ai-security-wiki should keep the model-generated GUI action and DoS control boundary.",
+      "confidence_notes": "Medium-high confidence from NVD and CVE metadata; fixed-version status is not identified and needs ingest-time reconciliation."
+    },
+    {
+      "id": "cve-2026-84833-openbrowser-browser-agent-message-dos",
+      "title": "openbrowser browser-agent message construction can consume resources",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84833",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84833",
+        "https://vuldb.com/vuln/398080",
+        "https://github.com/outlookgp/CVE/tree/main/OpenBrowser_Message_Budget_DoS_Report"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-01T23%3A31%3A04.000Z&pubEndDate=2026-09-03T23%3A31%3A04.000Z&keywordSearch=agent",
+          "date": "2026-09-02T18:21:33.370Z",
+          "date_basis": "NVD keyword query published timestamp"
+        },
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-84833",
+          "date": "2026-09-02T17:00:11.250Z",
+          "date_basis": "CVE datePublished timestamp"
+        }
+      ],
+      "factual_summary": "CVE-2026-84833 reports a remotely triggerable resource-consumption vulnerability in ntegrals openbrowser, affecting packages/core/src/agent/agent.ts in the Browser Agent Message Construction component. The CVE notes a rolling-release model with no clean affected or updated release boundary and public exploit availability.",
+      "evidence_classification": "NVD keyword query evidence and CVE vulnerability record with VulDB and public proof-of-concept references",
+      "affected_boundary_or_version": "ntegrals openbrowser commit 067fc45d649baa961750da8e2f4a75d87c5c75c8; no fixed release identified",
+      "why_it_matters_for_ai_security": "Browser agents process untrusted web and task context into action-planning messages; message budget failures can become denial-of-service controls failures in autonomous browsing workflows.",
+      "named_entities": [
+        "ntegrals",
+        "openbrowser",
+        "VulDB"
+      ],
+      "upstream_routing": "General openbrowser framework coverage belongs upstream; ai-security-wiki should keep the browser-agent message-budget and availability-control issue.",
+      "confidence_notes": "Medium confidence; NVD per-CVE fetch hit HTTP 429 later in the run, so the artifact records the earlier NVD query timestamp plus direct CVE JSON."
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "LiteLLM authenticated SSRF and provider credential exfiltration",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84377",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84377"
+      ],
+      "visible_date": "2026-09-02T17:18:32.728Z",
+      "reason": "Strict-window item but already captured in the 2026-09-02 collector artifact; excluded to avoid duplicate recurring collector output."
+    },
+    {
+      "title": "Windows ML CLI localhost CORS RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84452",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84452"
+      ],
+      "visible_date": "2026-09-02T19:22:55.672Z",
+      "reason": "Strict-window item but already captured in the 2026-09-02 collector artifact; excluded to avoid duplicate recurring collector output."
+    },
+    {
+      "title": "TOON decoder prototype pollution for LLM prompt serialization",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82404",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82404"
+      ],
+      "visible_date": "2026-09-02T16:30:54.876Z",
+      "reason": "Strict-window item but already captured in the 2026-09-02 collector artifact; excluded to avoid duplicate recurring collector output."
+    },
+    {
+      "title": "agentverus-scanner compiled Python bytecode analysis bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84811",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84811"
+      ],
+      "visible_date": "2026-09-02T16:59:50.188Z",
+      "reason": "Strict-window item but already captured in the 2026-09-02 collector artifact; excluded to avoid duplicate recurring collector output."
+    },
+    {
+      "title": "CowAgent BrowserTool and Bash Tool denial-of-service CVEs",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84425",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84427",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84425",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84427"
+      ],
+      "visible_date": "2026-09-02T00:15:11.549Z and 2026-09-02T00:30:07.139Z",
+      "reason": "Strict-window items but already captured in the 2026-09-02 collector artifact; excluded to avoid duplicate recurring collector output."
+    },
+    {
+      "title": "OpenAI Path to Astra: critical capabilities and frontier safeguards",
+      "source_urls": [
+        "https://openai.com/index/path-to-astra/"
+      ],
+      "visible_date": "2026-09-01",
+      "reason": "Date-only September 1 source is boundary-ambiguous for the 2026-09-01T23:31:04Z cutoff and was also captured by prior collector context."
+    },
+    {
+      "title": "Axios exclusive on proposed Stop Rogue AI Act",
+      "source_urls": [
+        "https://www.axios.com/2026/09/03/house-bill-ai-agents-security"
+      ],
+      "visible_date": "2026-09-03",
+      "reason": "Secondary report only during this run; no primary bill text or official congressional source was located before closeout, so it is excluded pending primary-source confirmation."
+    },
+    {
+      "title": "The Verge report on simultaneous ChatGPT, Grok, and Claude outages",
+      "source_urls": [
+        "https://www.theverge.com/ai-artificial-intelligence/989503/chatgpt-grok-claude-outage-down"
+      ],
+      "visible_date": "2026-09-03",
+      "reason": "Public operational incident, but no concrete security cause, attack, vulnerability, mitigation, or control change was visible in the report."
+    },
+    {
+      "title": "Financial Times report on AI finding cyber gaps faster than financial firms can fix them",
+      "source_urls": [
+        "https://www.ft.com/content/c4f84da3-bfc6-49a0-90bd-9a1611864ac4"
+      ],
+      "visible_date": "2026-09-02",
+      "reason": "Potentially relevant risk-management item, but the accessible evidence was secondary/paywalled and no primary FCA or Bank of England publication was located in-window."
+    },
+    {
+      "title": "CISA Vulnerability Summary for the Week of August 24, 2026",
+      "source_urls": [
+        "https://www.cisa.gov/news-events/bulletins/sb26-243"
+      ],
+      "visible_date": "2026-09-01",
+      "reason": "Weekly bulletin is outside or boundary-ambiguous for this run and largely summarizes older records; individual fresh CVEs were collected directly from NVD/CVE instead."
+    },
+    {
+      "title": "MintMCP production agent security playbook",
+      "source_urls": [
+        "https://www.mintmcp.com/"
+      ],
+      "visible_date": "relative date only",
+      "reason": "Search result exposed only a relative date and marketing/playbook positioning; excluded because there was no direct visible concrete date or security delta."
+    },
+    {
+      "title": "NIST AI Standards page and COSAiS project pages",
+      "source_urls": [
+        "https://www.nist.gov/artificial-intelligence/ai-standards",
+        "https://csrc.nist.gov/projects/cosais"
+      ],
+      "visible_date": "2026-07-29 and 2025-07-10",
+      "reason": "Authoritative AI governance context, but no visible update within the strict two-day window."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity": "OpenAI",
+      "upstream_owner": "ai-wiki",
+      "security_specific_local_note": "Keep only Astra cyber capability threshold, deployment safeguards, Daybreak defense-access controls, and monitorability risk in ai-security-wiki."
+    },
+    {
+      "entity": "GPT-6 Astra",
+      "upstream_owner": "ai-wiki",
+      "security_specific_local_note": "Broad model-family/product coverage routes upstream; local coverage should focus on Critical cyber capability, prompt-injection robustness, browsing/workplace action safety, and chain-of-thought monitorability limitations."
+    },
+    {
+      "entity": "Daybreak",
+      "upstream_owner": "ai-wiki",
+      "security_specific_local_note": "Product and partner network background routes upstream; local coverage should focus on authorized defender access, vulnerability validation, remediation support, and release-gate implications."
+    },
+    {
+      "entity": "n8n",
+      "upstream_owner": "ai-wiki or ai-dev-wiki depending on existing workflow/product ownership",
+      "security_specific_local_note": "Local security lens is credential ownership validation in inline sub-workflows and MCP/API execution paths."
+    },
+    {
+      "entity": "Ollama",
+      "upstream_owner": "ai-wiki",
+      "security_specific_local_note": "Local security lens is model-pull redirect validation, registry trust, SSRF, and cloud metadata exposure."
+    },
+    {
+      "entity": "Agentimus WordPress plugin",
+      "upstream_owner": "ai-wiki",
+      "security_specific_local_note": "Local security lens is subscriber broken access control in an MCP/AI-agent WordPress plugin."
+    },
+    {
+      "entity": "MountDev AI MCP Connector for WordPress",
+      "upstream_owner": "ai-wiki",
+      "security_specific_local_note": "Local security lens is missing authorization in an AI MCP connector for CMS actions."
+    },
+    {
+      "entity": "Agent-S",
+      "upstream_owner": "ai-wiki or ai-dev-wiki depending on framework/adoption context",
+      "security_specific_local_note": "Local security lens is model-generated GUI action parameter/resource controls."
+    },
+    {
+      "entity": "openbrowser",
+      "upstream_owner": "ai-wiki or ai-dev-wiki depending on browser-agent framework coverage",
+      "security_specific_local_note": "Local security lens is browser-agent message construction budget and availability controls."
+    }
+  ],
+  "follow_up_actions": [
+    "During ingest, deduplicate OpenAI Astra coverage against the September 2 collector item so the durable page keeps one coherent capability-threshold story.",
+    "Recheck Patchstack pages for exact Agentimus and MountDev endpoint, privilege, and exploit preconditions before writing local leaves.",
+    "Recheck whether Agent-S and openbrowser have upstream durable entity pages before creating or updating local security leaves.",
+    "Recheck NVD per-CVE detail for CVE-2026-84833 because the direct per-CVE API request hit HTTP 429 after the initial keyword query.",
+    "Keep date-only September 1 OpenAI Path to Astra content as prior context unless a source exposes an exact timestamp after the cutoff."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check_artifact": "passed"
+  },
+  "blockers": [
+    "NVD returned HTTP 429 on a later per-CVE request for CVE-2026-84833; the artifact uses earlier NVD keyword-query evidence plus direct CVE JSON.",
+    "No primary official source was located for the Axios-reported Stop Rogue AI Act item during the run, so it was excluded."
+  ]
+}

@@ -53,6 +53,8 @@ The [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-se
 
 The [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json) preserves the same [Path to Astra](https://openai.com/index/path-to-astra/) lifecycle evidence and adds that OpenAI restarted one large frontier reinforcement-learning run on 2026-08-28 after the new requirements were in place. Locally, that detail makes the release gate operational rather than only documentary: paused frontier work can resume only after control requirements are applied to the run.
 
+The [September 3 topic collector source](../../../raw/processed/2026-09-03/ai-security-wiki-topic-news-collector-2026-09-03T233104Z.json) adds OpenAI's primary [GPT-6 Astra safety overview](https://openai.com/index/safety-overview-gpt-6-astra/) and [Deployment Safety Hub entry](https://deploymentsafety.openai.com/gpt-6-astra). OpenAI says GPT-6 Astra is broadly deployed while meeting the Preparedness Framework Critical cybersecurity threshold, with controls for internal isolation, encrypted checkpoints, trajectory monitoring, blocking alignment evaluations, external deployment misalignment monitoring, improved prompt-injection robustness, and residual monitorability concerns. Broad GPT-6 Astra model coverage belongs upstream; this page owns the release-gate implication that Critical-threshold deployment requires documented control evidence and live monitorability.
+
 ## Security Impact
 
 - Threat or control area: frontier cyber-capable models can move from scoring well on cyber tasks to requiring containment, access restriction, and release delay because autonomous exploitation capability cannot be excluded.
@@ -62,11 +64,13 @@ The [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-
 - Affected boundary: OpenAI Astra, Sol-capability-or-higher tool-using research, frontier RL workloads, code execution, internet-accessible tools, shared services, standing privileges, security logging, and monitor-triggered pause workflows.
 - Affected boundary: public release-policy and deployment-governance claims that connect persistent AI-enabled cyberattack warnings to mandatory safety standards.
 - Affected boundary: OpenAI Astra Critical-threshold designation, advanced cyber access limits, monitoring stop controls, refusal behavior, delayed release paths, and Daybreak Blue vetted defensive access.
+- Affected boundary: GPT-6 Astra external deployment, Critical cybersecurity capability threshold, Deployment Safety Hub control disclosure, internal model-development isolation, checkpoint custody, and deployment monitoring.
 - Exploit or incident status: control-change and release-gate disclosure, not a public exploit incident.
 - Mitigation state: OpenAI reports pausing noncompliant Astra internal activity and strengthening isolation, access control, monitoring, sandboxing, model-weight protection, universal monitoring, and external testing.
 - Mitigation state: OpenAI reports current identity verification, approved-use restrictions, and monitoring; a 2026-09-01 hardware-security-key requirement for individual Daybreak accounts; encouraged Codex auto-review and human review; sandboxing and scoped-permission guidance; and partner-mediated workflows where approved partners retain model access.
 - Mitigation state: the August 23 Guardian item records advocacy for mandatory standards, but does not by itself define a binding control set.
 - Mitigation state: OpenAI reports development and release delays, stronger refusal behavior, unauthorized-activity monitoring, limited advanced cybersecurity access, and planned Daybreak Blue defensive access for vetted testers.
+- Mitigation state: OpenAI reports GPT-6 Astra deployment safeguards including isolation, encrypted checkpoints, trajectory monitoring, blocking alignment evaluations, external deployment misalignment monitoring, and prompt-injection robustness improvements.
 - Confidence: high for the [OpenAI control disclosure](https://openai.com/index/responding-next-frontier-critical-cyber-capabilities/) because the source is primary and in-window; medium for exact release-delay, media characterization, and government-notice context that comes from [Axios](https://www.axios.com/2026/08/07/openai-astra-model-delay-cybersecurity-risks), [The Verge](https://www.theverge.com/ai-artificial-intelligence/976948/openai-astra-model-pause-critical-cyber-capabilities), and [Guardian](https://www.theguardian.com/technology/2026/aug/08/openai-astra-security-concerns).
 - Residual risk: exact Astra capability results, evaluator criteria, government review requirements, and final release decision remain unresolved.
 
@@ -80,12 +84,14 @@ The [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-
 - Treat model-internal scaling pauses, shared-service removal, privilege reduction, and monitor-triggered activity pauses as release-gate evidence when critical cyber-capability uncertainty persists.
 - Keep public policy warnings separate from primary technical control evidence; use them to track governance pressure, not to infer implementation details.
 - Treat a public Critical-threshold designation as stronger evidence than secondary release-delay reporting, but keep exact evaluator criteria and final residual-risk decisions open until the Astra system card or equivalent technical report is published.
+- Treat Deployment Safety Hub control descriptions as operational release evidence only when they name concrete monitors, access restrictions, evaluator gates, and residual risks for the deployed model.
 - Route AI-discovered browser vulnerability claims to [browser runtime patch cadence under AI bug hunting](browser-runtime-patch-cadence-under-ai-bug-hunting.md) until primary browser advisories confirm affected versions, remediation, and CVE status.
 
 ## Authoritative Sources
 
 - [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json)
 - [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json)
+- [September 3 topic collector source](../../../raw/processed/2026-09-03/ai-security-wiki-topic-news-collector-2026-09-03T233104Z.json)
 - [August 7 topic news collector source](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json)
 - [August 8 topic news collector source](../../../raw/processed/2026-08-08/ai-security-wiki-topic-news-collector-2026-08-08T233412Z.json)
 - [August 9 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260809T000323Z.json)
@@ -106,6 +112,8 @@ The [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-
 - [Guardian Astra reporting](https://www.theguardian.com/technology/2026/aug/08/openai-astra-security-concerns)
 - [Guardian OpenAI cyberattack governance reporting](https://www.theguardian.com/technology/2026/aug/23/openai-cyber-attacks-threat-chris-lehane)
 - [OpenAI Path to Astra disclosure](https://openai.com/index/path-to-astra/)
+- [OpenAI GPT-6 Astra safety overview](https://openai.com/index/safety-overview-gpt-6-astra/)
+- [OpenAI GPT-6 Astra Deployment Safety Hub entry](https://deploymentsafety.openai.com/gpt-6-astra)
 
 ## Related Code
 
@@ -138,9 +146,11 @@ The [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-
 - What public technical report will document the final Astra capability assessment, control implementation, and residual release decision?
 - What exact safeguards, access tiers, and monitoring triggers will Daybreak Blue use for vetted defensive testers?
 - Which mandatory safety-standard text, if any, becomes a primary source for frontier cyber release gates?
+- Which GPT-6 Astra monitorability limits remain after deployment, and what event thresholds trigger rollback or access reduction?
 
 ## Maintenance Notes
 
+- Updated on 2026-09-03 from the [September 3 topic collector source](../../../raw/processed/2026-09-03/ai-security-wiki-topic-news-collector-2026-09-03T233104Z.json) with GPT-6 Astra safety-overview and Deployment Safety Hub evidence while routing broad model and OpenAI product coverage upstream.
 - Updated on 2026-09-02 from the [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) with in-window advisory provenance while keeping broad product context upstream.
 - Updated on 2026-09-02 from the [September 2 leaf update watch source](../../../raw/processed/2026-09-02/ai-security-wiki-leaf-update-watch-20260903T000347Z.json) with Astra frontier RL restart lifecycle evidence after new requirements.
 - Created on 2026-08-07 from the [August 7 topic collector](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) after routing broad OpenAI, model, and framework coverage upstream.

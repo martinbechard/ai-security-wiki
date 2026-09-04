@@ -57,6 +57,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 
 ## Maintenance Notes
 
+- Updated on 2026-09-03 with GPT-6 Astra deployment-safety evidence and agentverus scanner update evidence without duplicating the scanner-family digest item.
 - Updated on 2026-09-02 with AI skill scanner executable artifact coverage plus separate Tencent AI-Infra-Guard, claude-skill-antivirus, and agentverus-scanner advisory leaves.
 - Updated on 2026-08-31 with OpenShift AI guardrails-detectors ReDoS and ash_ai tool-loop exhaustion as runtime assurance concerns.
 - Keep security assurance distinct from general software verification already owned by ai-dev-wiki.

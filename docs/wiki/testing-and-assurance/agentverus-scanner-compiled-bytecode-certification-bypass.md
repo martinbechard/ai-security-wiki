@@ -13,6 +13,8 @@ The [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-se
 
 The advisory says agentverus-scanner fails to analyze compiled Python bytecode in companion code directories. A malicious package can include benign source and malicious `__pycache__` bytecode while receiving a CERTIFIED verdict with high trust scores in static and semantic analysis modes.
 
+The [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json) records [direct CVE update evidence](https://cveawg.mitre.org/api/cve/CVE-2026-84811) for CVE-2026-84811. The update does not identify a fixed scanner release, so certification consumers still need a compensating policy that either rejects companion bytecode or verifies bytecode-source consistency before trusting scanner verdicts.
+
 ## Security Impact
 
 - Threat: certification pipelines can approve malicious executable artifacts when analysis omits companion bytecode.
@@ -25,6 +27,7 @@ The advisory says agentverus-scanner fails to analyze compiled Python bytecode i
 ## Authoritative Sources
 
 - [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json)
+- [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json)
 - [GitHub advisory GHSA-7r9q-g8p5-w7pp](https://github.com/advisories/GHSA-7r9q-g8p5-w7pp)
 - [NVD CVE-2026-84811](https://nvd.nist.gov/vuln/detail/CVE-2026-84811)
 
@@ -52,3 +55,4 @@ The advisory says agentverus-scanner fails to analyze compiled Python bytecode i
 ## Maintenance Notes
 
 - Created on 2026-09-02 from the [September 2 topic collector](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) as the certification member of the skill-scanner executable-artifact coverage set.
+- Updated on 2026-09-03 from the [September 3 leaf update watch](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json) with direct CVE update evidence and unchanged fixed-version uncertainty.

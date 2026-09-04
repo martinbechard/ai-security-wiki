@@ -62,6 +62,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [ModelScope unsafe YAML loader RCE](modelscope-unsafe-yaml-loader-rce.md)
 - [Elasticsearch ML model artifact deserialization RCE](elasticsearch-ml-model-artifact-deserialization-rce.md)
 - [Windows ML CLI localhost trust_remote_code RCE](windows-ml-cli-localhost-trust-remote-code-rce.md)
+- [Ollama tensor blob redirect SSRF](ollama-tensor-blob-redirect-ssrf.md)
 
 ## Authoritative Sources
 
@@ -91,6 +92,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-09-03 with the Ollama tensor blob redirect SSRF leaf and Windows ML CLI fixed-version evidence.
 - Updated on 2026-09-02 with the Windows ML CLI localhost trust_remote_code RCE leaf and ModelScope advisory provenance.
 - Updated on 2026-09-01 with Codex Git metadata execution, Transformers remote-code cache persistence, ModelScope unsafe YAML, and Elasticsearch model-artifact deserialization leaves.
 - Updated on 2026-08-31 with Theia AI Agent Mode workspace path traversal, OpenShift AI guardrails-detectors ReDoS, and a Kubio AI Website Builder deferral in the WordPress AI plugin advisory page.

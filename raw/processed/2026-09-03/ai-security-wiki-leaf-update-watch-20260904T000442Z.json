@@ -1,0 +1,430 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-09-04T00:04:42Z",
+  "local_run_time": "2026-09-03 20:04:42 -0400",
+  "window": {
+    "start": "2026-08-28",
+    "end": "2026-09-03",
+    "rule": "Require direct visible publication or update dates within the last seven days; reject ambiguous, future, missing, boundary-only, and header-only dates."
+  },
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "leaf_universe_count": 263,
+  "selection_rule": "Unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/aichat-api-endpoint-memory-allocation-dos.md",
+    "docs/wiki/agent-and-tool-security/cowagent-tool-denial-of-service.md",
+    "docs/wiki/agent-and-tool-security/litellm-mcp-authentication-bypass-kev.md",
+    "docs/wiki/data-and-privacy/litellm-provider-credential-routing-leak.md",
+    "docs/wiki/infrastructure-and-supply-chain/windows-ml-cli-localhost-trust-remote-code-rce.md",
+    "docs/wiki/model-and-prompt-security/toon-decoder-prototype-pollution.md",
+    "docs/wiki/testing-and-assurance/agentverus-scanner-compiled-bytecode-certification-bypass.md",
+    "docs/wiki/testing-and-assurance/ai-skill-scanner-executable-artifact-coverage.md",
+    "docs/wiki/testing-and-assurance/claude-skill-antivirus-manifest-only-scan.md",
+    "docs/wiki/testing-and-assurance/tencent-ai-infra-guard-skill-scan-bytecode-bypass.md",
+    "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+    "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+    "docs/wiki/agent-and-tool-security/swagger-testcase-mcp-swagger-parser-ssrf.md",
+    "docs/wiki/agent-and-tool-security/token-optimizer-mcp-command-injection.md",
+    "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md"
+  ],
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/aichat-api-endpoint-memory-allocation-dos.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84857",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84857",
+        "https://github.com/advisories/GHSA-w2m4-pj9f-6rwh"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cowagent-tool-denial-of-service.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84425",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84427",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84425",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84427"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/litellm-mcp-authentication-bypass-kev.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59822",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59822",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-59822",
+        "https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/litellm-provider-credential-routing-leak.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84377",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84377",
+        "https://github.com/BerriAI/litellm/security/advisories/GHSA-3cv6-jpf6-8222"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/windows-ml-cli-localhost-trust-remote-code-rce.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84452",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84452",
+        "https://github.com/microsoft/winml-cli/security/advisories/GHSA-96p9-rh4f-92cf"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/toon-decoder-prototype-pollution.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82404",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82404",
+        "https://github.com/toon-format/toon/security/advisories/GHSA-p95v-992w-h6c3"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/agentverus-scanner-compiled-bytecode-certification-bypass.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84811",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84811",
+        "https://github.com/advisories/GHSA-7r9q-g8p5-w7pp"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/ai-skill-scanner-executable-artifact-coverage.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84809",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84810",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84811",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84809",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84810",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84811"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/claude-skill-antivirus-manifest-only-scan.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84810",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84810",
+        "https://github.com/advisories/GHSA-gvgj-r6pg-m42w"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/tencent-ai-infra-guard-skill-scan-bytecode-bypass.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84809",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84809",
+        "https://github.com/advisories/GHSA-7vc4-66f2-3f5f"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-65056",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-65056",
+        "https://www.npmjs.com/package/@mzxrai/mcp-webresearch",
+        "https://www.vulncheck.com/advisories/mcp-webresearch-server-side-request-forgery-in-visit-page-due-to-missing-internal-ip-filtering"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-64622",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-m4jg-6w3q-gm86",
+        "https://www.npmjs.com/package/network-ai"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/swagger-testcase-mcp-swagger-parser-ssrf.md",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-19765",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-19765",
+        "https://security.snyk.io/vuln/SNYK-PYTHON-SWAGGERTESTCASEMCP-13016954",
+        "https://vuldb.com/cve/CVE-2026-19765"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/token-optimizer-mcp-command-injection.md",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-86qw-c7qw-gp4c",
+        "https://www.cve.org/CVERecord?id=CVE-2026-55157",
+        "https://advisories.gitlab.com/npm/%40ooples/token-optimizer-mcp/CVE-2026-55157/",
+        "https://www.tenable.com/plugins/cloud-security/445980"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md",
+      "source_urls": [
+        "https://www.dash0.com/newsletter/code-red-newsletter-30"
+      ]
+    }
+  ],
+  "qualifying_updates": [
+    {
+      "id": "cve-2026-84857-aichat-api-memory-allocation-dos-cve-update",
+      "affected_leaf_ids": [
+        "docs/wiki/agent-and-tool-security/aichat-api-endpoint-memory-allocation-dos.md"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84857",
+      "supporting_source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84857",
+        "https://github.com/advisories/GHSA-w2m4-pj9f-6rwh"
+      ],
+      "visible_date": "2026-09-03T15:36:18.054Z",
+      "date_basis": "CVE cveMetadata.dateUpdated from direct CVE JSON; publication was 2026-09-02T20:00:08.589Z.",
+      "evidence_classification": "disclosed vulnerability with public exploit references",
+      "summary": "CVE-2026-84857 remains a remotely triggerable uncontrolled-memory-allocation issue in sigoden aichat API Endpoint handling through 0.30.4; the CVE record updated on 2026-09-03 and references public exploit material.",
+      "affected_boundaries": [
+        "sigoden aichat through 0.30.4",
+        "API Endpoint component",
+        "src/serve.rs request handling",
+        "self-hosted assistant API availability"
+      ],
+      "named_entities": [
+        "sigoden",
+        "aichat",
+        "VulDB",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": "General aichat product coverage routes to ai-wiki; keep the API endpoint availability and resource-control boundary locally.",
+      "follow_up_note": "Ingest should check whether a vendor release fixes CVE-2026-84857 and whether API request-size limits are documented."
+    },
+    {
+      "id": "cve-2026-59822-litellm-mcp-kev-cve-update",
+      "affected_leaf_ids": [
+        "docs/wiki/agent-and-tool-security/litellm-mcp-authentication-bypass-kev.md"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-59822",
+      "supporting_source_urls": [
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-59822",
+        "https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q"
+      ],
+      "visible_date": "2026-09-03T03:56:05.174Z",
+      "date_basis": "CVE cveMetadata.dateUpdated; CISA KEV row dateAdded is 2026-09-02.",
+      "evidence_classification": "confirmed exploitation and mitigation reference update",
+      "summary": "The LiteLLM MCP authentication-bypass CVE was updated after the prior run and CISA KEV lists CVE-2026-59822 as exploited with a 2026-09-16 due date; CVE references include the vendor advisory, fixing pull request, commit, and v1.84.0 release.",
+      "affected_boundaries": [
+        "LiteLLM before 1.84.0",
+        "MCP Streamable HTTP endpoint",
+        "OAuth2 passthrough fallback",
+        "tool-session authentication"
+      ],
+      "named_entities": [
+        "BerriAI",
+        "LiteLLM",
+        "CISA KEV",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": "Broad LiteLLM gateway coverage belongs in ai-wiki; the exploited MCP authentication and tool-control boundary remains local.",
+      "follow_up_note": "Ingest should preserve active-exploitation priority and link the fixed release or commit if the leaf lacks it."
+    },
+    {
+      "id": "cve-2026-84377-litellm-provider-credential-routing-cve-update",
+      "affected_leaf_ids": [
+        "docs/wiki/data-and-privacy/litellm-provider-credential-routing-leak.md"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84377",
+      "supporting_source_urls": [
+        "https://github.com/BerriAI/litellm/security/advisories/GHSA-3cv6-jpf6-8222",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84377"
+      ],
+      "visible_date": "2026-09-03T14:31:30.548Z",
+      "date_basis": "CVE cveMetadata.dateUpdated from direct CVE JSON; publication was 2026-09-02T17:18:32.728Z.",
+      "evidence_classification": "disclosed vulnerability with mitigation references",
+      "summary": "CVE-2026-84377 updated on 2026-09-03 with vendor advisory and fix references for LiteLLM provider-credential exfiltration via user-controlled outbound provider routing fields.",
+      "affected_boundaries": [
+        "LiteLLM proxy before 1.88.6 and 1.96.2",
+        "provider credential routing",
+        "OpenAI-compatible outbound requests",
+        "authenticated proxy users"
+      ],
+      "named_entities": [
+        "BerriAI",
+        "LiteLLM",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": "General provider routing practice routes upstream; the provider-credential leakage boundary stays in data-and-privacy.",
+      "follow_up_note": "This can answer the leaf open question about vendor advisory and fixed-version split during ingest."
+    },
+    {
+      "id": "cve-2026-84452-windows-ml-cli-localhost-rce-cve-update",
+      "affected_leaf_ids": [
+        "docs/wiki/infrastructure-and-supply-chain/windows-ml-cli-localhost-trust-remote-code-rce.md"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84452",
+      "supporting_source_urls": [
+        "https://github.com/microsoft/winml-cli/security/advisories/GHSA-96p9-rh4f-92cf",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84452"
+      ],
+      "visible_date": "2026-09-03T16:01:26.554Z",
+      "date_basis": "CVE cveMetadata.dateUpdated from direct CVE JSON; publication was 2026-09-02T19:22:55.672Z.",
+      "evidence_classification": "disclosed vulnerability with fix reference",
+      "summary": "CVE-2026-84452 updated on 2026-09-03 with Microsoft advisory and commit references for a Windows ML CLI localhost API/CORS path that can set trust_remote_code and execute attacker-controlled model code; fixed version is 0.4.0.",
+      "affected_boundaries": [
+        "Windows ML CLI before 0.4.0",
+        "localhost HTTP API",
+        "wildcard CORS",
+        "trust_remote_code model loading",
+        "developer workstation execution boundary"
+      ],
+      "named_entities": [
+        "Microsoft",
+        "Windows ML CLI",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": "Broad Windows ML product context routes to ai-wiki or ai-dev-wiki; the localhost control-plane RCE boundary is local security content.",
+      "follow_up_note": "Ingest should update the fixed-version/open-question section with GHSA-96p9-rh4f-92cf and the fixing commit."
+    },
+    {
+      "id": "cve-2026-84811-agentverus-scanner-bytecode-coverage-cve-update",
+      "affected_leaf_ids": [
+        "docs/wiki/testing-and-assurance/agentverus-scanner-compiled-bytecode-certification-bypass.md",
+        "docs/wiki/testing-and-assurance/ai-skill-scanner-executable-artifact-coverage.md"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84811",
+      "supporting_source_urls": [
+        "https://github.com/advisories/GHSA-7r9q-g8p5-w7pp",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84811"
+      ],
+      "visible_date": "2026-09-03T14:31:50.007Z",
+      "date_basis": "CVE cveMetadata.dateUpdated from direct CVE JSON; publication was 2026-09-02T16:59:50.188Z.",
+      "evidence_classification": "disclosed vulnerability and demonstrated scanner-bypass research",
+      "summary": "CVE-2026-84811 updated on 2026-09-03 for agentverus-scanner companion-code bytecode omission, where malicious __pycache__ entries can evade certification-style static and semantic scanner verdicts.",
+      "affected_boundaries": [
+        "agentverus-scanner companion code directories",
+        "compiled Python bytecode",
+        "AI skill scanner certification verdicts",
+        "supply-chain assurance gates"
+      ],
+      "named_entities": [
+        "agentverus",
+        "agentverus-scanner",
+        "VulnCheck",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": "General scanner product catalog coverage routes upstream; executable-artifact coverage and certification trust remain local testing-and-assurance content.",
+      "follow_up_note": "Ingest should update both the agentverus leaf and the scanner-family coverage leaf while avoiding duplicate digest wording."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cowagent-tool-denial-of-service.md",
+      "title": "CowAgent BrowserTool and Bash Tool denial-of-service CVEs",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84425",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84427",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84425",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84427"
+      ],
+      "visible_date": "2026-09-02T00:15:11.549Z and 2026-09-02T00:30:07.139Z",
+      "reason": "Strict-window CVE publications were already captured in raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json and no newer visible update was found during this run."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/toon-decoder-prototype-pollution.md",
+      "title": "TOON decoder prototype pollution",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82404",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82404",
+        "https://github.com/toon-format/toon/security/advisories/GHSA-p95v-992w-h6c3"
+      ],
+      "visible_date": "2026-09-02T16:30:54.876Z",
+      "reason": "Strict-window CVE publication and fixed-version evidence were already captured in the September 2 processed collector; no newer visible update beyond 2026-09-02 was found."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/claude-skill-antivirus-manifest-only-scan.md",
+      "title": "claude-skill-antivirus manifest-only scan",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84810",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84810",
+        "https://github.com/advisories/GHSA-gvgj-r6pg-m42w"
+      ],
+      "visible_date": "2026-09-02T16:59:49.506Z / 2026-09-02T18:02:22.959Z",
+      "reason": "Strict-window CVE evidence was already captured in the September 2 processed collector and family leaf; no separate newer visible update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/tencent-ai-infra-guard-skill-scan-bytecode-bypass.md",
+      "title": "Tencent AI-Infra-Guard skill-scan bytecode bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84809",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84809",
+        "https://github.com/advisories/GHSA-7vc4-66f2-3f5f"
+      ],
+      "visible_date": "2026-09-02T16:59:48.800Z",
+      "reason": "Strict-window CVE evidence was already captured in the September 2 processed collector and family leaf; no separate newer visible update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-webresearch-browser-ssrf.md",
+      "title": "mcp-webresearch browser SSRF",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-65056",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-65056",
+        "https://www.npmjs.com/package/@mzxrai/mcp-webresearch",
+        "https://www.vulncheck.com/advisories/mcp-webresearch-server-side-request-forgery-in-visit-page-due-to-missing-internal-ip-filtering"
+      ],
+      "visible_date": "CVE dateUpdated 2026-07-22T15:01:19.864Z; npm modified 2024-12-18T03:38:42.957Z",
+      "reason": "No source with a direct visible update date inside the 2026-08-28 to 2026-09-03 window was found."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/network-ai-approval-inbox-authorization-bypass.md",
+      "title": "Network-AI ApprovalInbox authorization bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-64622",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-64622",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-m4jg-6w3q-gm86",
+        "https://www.npmjs.com/package/network-ai"
+      ],
+      "visible_date": "CVE dateUpdated 2026-08-14T16:50:36.297Z; npm modified 2026-07-28T19:02:38.089Z",
+      "reason": "No source with a direct visible update date inside the 2026-08-28 to 2026-09-03 window was found."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/swagger-testcase-mcp-swagger-parser-ssrf.md",
+      "title": "swagger-testcase-mcp Swagger Parser SSRF",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-19765",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-19765",
+        "https://security.snyk.io/vuln/SNYK-PYTHON-SWAGGERTESTCASEMCP-13016954",
+        "https://vuldb.com/cve/CVE-2026-19765"
+      ],
+      "visible_date": "CVE dateUpdated 2026-08-18T13:39:32.454Z",
+      "reason": "No source with a direct visible update date inside the 2026-08-28 to 2026-09-03 window was found; Snyk URL returned HTTP 404 during this run."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/token-optimizer-mcp-command-injection.md",
+      "title": "token-optimizer-mcp command injection",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-86qw-c7qw-gp4c",
+        "https://www.cve.org/CVERecord?id=CVE-2026-55157",
+        "https://advisories.gitlab.com/npm/%40ooples/token-optimizer-mcp/CVE-2026-55157/",
+        "https://www.tenable.com/plugins/cloud-security/445980"
+      ],
+      "visible_date": "GitLab HTTP Last-Modified 2026-09-03T12:18:35Z only; CVE Program lookup for CVE-2026-55157 returned no CVE AWG JSON record",
+      "reason": "Header-only freshness is not accepted as direct visible-date evidence; previously captured GitLab fixed-version evidence remains the durable source."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-coding-telemetry-access-controls.md",
+      "title": "AI coding telemetry access controls",
+      "source_urls": [
+        "https://www.dash0.com/newsletter/code-red-newsletter-30"
+      ],
+      "visible_date": "HTTP Date 2026-09-03 only; no direct visible content update date identified",
+      "reason": "Header-only freshness is not accepted as direct visible-date evidence, and no new security control change was visible beyond prior Dash0 newsletter coverage."
+    }
+  ],
+  "federation_notes": [
+    "Broad AI companies, products, model gateways, developer tools, MCP server catalogs, and general development practices route to upstream ai-wiki or ai-dev-wiki. This artifact keeps only security-specific vulnerabilities, affected boundaries, mitigation evidence, exploit status, and routing notes."
+  ],
+  "raw_boundary": "No docs/wiki pages were edited and nothing was written under raw/processed.",
+  "follow_up_notes": [
+    "Prioritize ingest for LiteLLM MCP KEV and Windows ML CLI fixed-version/advisory evidence.",
+    "When synthesizing scanner CVEs, update the individual leaves and the family coverage leaf without creating bundled digest prose.",
+    "Search both raw and raw/processed before treating September 2 CVE evidence as novel in future runs."
+  ]
+}

@@ -46,5 +46,6 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 
 ## Maintenance Notes
 
+- Updated on 2026-09-03 with Daybreak frontline-defender access evidence in the collective cyber-defense controls leaf.
 - Updated on 2026-08-29 with the collective cyber-defense controls leaf from the OpenAI-hosted public letter.
 - Verify current law, regulation, and standard text from authoritative sources before durable synthesis.

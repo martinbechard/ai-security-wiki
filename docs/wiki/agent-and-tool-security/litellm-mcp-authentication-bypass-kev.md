@@ -11,7 +11,9 @@ tags: ["agent-and-tool-security", "identity-and-access"]
 
 The [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) records [CVE-2026-59822](https://nvd.nist.gov/vuln/detail/CVE-2026-59822) for LiteLLM before 1.84.0. Broad LiteLLM model-gateway coverage stays upstream; this page owns the local security boundary where the MCP Streamable HTTP endpoint can be reached without a valid LiteLLM key.
 
-NVD and the linked [GitHub advisory GHSA-7488-6r32-c95q](https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q) describe a fabricated `Authorization` header that triggers OAuth2 passthrough fallback, replaces failed LiteLLM key validation with an empty `UserAPIKeyAuth` object, and permits access to MCP tools. [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-59822) added the vulnerability on 2026-09-02, so this page treats exploitation as active rather than only theoretically disclosed.
+[NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-59822) and the linked [GitHub advisory GHSA-7488-6r32-c95q](https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q) describe a fabricated `Authorization` header that triggers OAuth2 passthrough fallback, replaces failed LiteLLM key validation with an empty `UserAPIKeyAuth` object, and permits access to MCP tools. [CISA KEV](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-59822) added the vulnerability on 2026-09-02, so this page treats exploitation as active rather than only theoretically disclosed.
+
+The [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json) records a [direct CVE update](https://cveawg.mitre.org/api/cve/CVE-2026-59822) on 2026-09-03 and preserves the CISA KEV due date of 2026-09-16. The same evidence adds fix references for the vendor advisory, pull request, commit, and v1.84.0 release, making the mitigation state concrete enough for upgrade-tracking and exposed-endpoint audit work.
 
 ## Security Impact
 
@@ -31,6 +33,7 @@ NVD and the linked [GitHub advisory GHSA-7488-6r32-c95q](https://github.com/Berr
 ## Authoritative Sources
 
 - [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json)
+- [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json)
 - [NVD CVE-2026-59822](https://nvd.nist.gov/vuln/detail/CVE-2026-59822)
 - [CISA KEV CVE-2026-59822](https://www.cisa.gov/known-exploited-vulnerabilities-catalog?field_cve=CVE-2026-59822)
 - [GitHub advisory GHSA-7488-6r32-c95q](https://github.com/BerriAI/litellm/security/advisories/GHSA-7488-6r32-c95q)
@@ -60,3 +63,4 @@ NVD and the linked [GitHub advisory GHSA-7488-6r32-c95q](https://github.com/Berr
 ## Maintenance Notes
 
 - Created on 2026-09-02 from the [September 2 topic collector](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) after routing broad LiteLLM and model-gateway context upstream.
+- Updated on 2026-09-03 from the [September 3 leaf update watch](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json) with CVE update evidence, CISA KEV remediation due date, and concrete v1.84.0 fix references.

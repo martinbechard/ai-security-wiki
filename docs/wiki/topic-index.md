@@ -98,6 +98,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/sdcb-chats-mcp-fetch-tools-ssrf.md](agent-and-tool-security/sdcb-chats-mcp-fetch-tools-ssrf.md)
 - [agent-and-tool-security/codex-powershell-stop-parsing-approval-bypass.md](agent-and-tool-security/codex-powershell-stop-parsing-approval-bypass.md)
 - [agent-and-tool-security/litellm-mcp-authentication-bypass-kev.md](agent-and-tool-security/litellm-mcp-authentication-bypass-kev.md)
+- [agent-and-tool-security/n8n-workflow-tool-credential-exfiltration.md](agent-and-tool-security/n8n-workflow-tool-credential-exfiltration.md)
+- [agent-and-tool-security/agent-s-gui-action-denial-of-service.md](agent-and-tool-security/agent-s-gui-action-denial-of-service.md)
+- [agent-and-tool-security/openbrowser-browser-agent-message-denial-of-service.md](agent-and-tool-security/openbrowser-browser-agent-message-denial-of-service.md)
 - [agent-and-tool-security/cowagent-tool-denial-of-service.md](agent-and-tool-security/cowagent-tool-denial-of-service.md)
 - [agent-and-tool-security/aichat-api-endpoint-memory-allocation-dos.md](agent-and-tool-security/aichat-api-endpoint-memory-allocation-dos.md)
 - [agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md](agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md)
@@ -181,6 +184,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/diboot-ai-session-authorization-bypass.md](identity-and-access/diboot-ai-session-authorization-bypass.md)
 - [identity-and-access/kibana-ai-assistant-knowledge-base-cross-realm-authorization.md](identity-and-access/kibana-ai-assistant-knowledge-base-cross-realm-authorization.md)
 - [identity-and-access/support-genix-ai-chatbot-admin-takeover.md](identity-and-access/support-genix-ai-chatbot-admin-takeover.md)
+- [identity-and-access/agentimus-ai-seo-mcp-wordpress-broken-access-control.md](identity-and-access/agentimus-ai-seo-mcp-wordpress-broken-access-control.md)
+- [identity-and-access/mountdev-ai-mcp-connector-wordpress-authorization-bypass.md](identity-and-access/mountdev-ai-mcp-connector-wordpress-authorization-bypass.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -222,6 +227,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [infrastructure-and-supply-chain/modelscope-unsafe-yaml-loader-rce.md](infrastructure-and-supply-chain/modelscope-unsafe-yaml-loader-rce.md)
 - [infrastructure-and-supply-chain/elasticsearch-ml-model-artifact-deserialization-rce.md](infrastructure-and-supply-chain/elasticsearch-ml-model-artifact-deserialization-rce.md)
 - [infrastructure-and-supply-chain/windows-ml-cli-localhost-trust-remote-code-rce.md](infrastructure-and-supply-chain/windows-ml-cli-localhost-trust-remote-code-rce.md)
+- [infrastructure-and-supply-chain/ollama-tensor-blob-redirect-ssrf.md](infrastructure-and-supply-chain/ollama-tensor-blob-redirect-ssrf.md)
 - [testing-and-assurance](testing-and-assurance/index.md)
 - [testing-and-assurance/cyber-evaluation-containment.md](testing-and-assurance/cyber-evaluation-containment.md)
 - [testing-and-assurance/public-cyber-capability-assessments.md](testing-and-assurance/public-cyber-capability-assessments.md)
@@ -293,6 +299,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 ## Maintenance Notes
 
 - Add local durable leaves here after federation routing and wiki verification.
+- Updated on 2026-09-03 with September 3 topic and watcher ingest for GPT-6 Astra deployment controls, Daybreak frontline-defender access, n8n credential exfiltration, Ollama model-pull SSRF, WordPress AI/MCP authorization, Agent-S GUI action DoS, openbrowser message-budget DoS, and watcher provenance.
 - Updated on 2026-09-01 with September 1 topic and watcher ingest for Astra release gates, Codex approval/Git execution boundaries, model-artifact supply-chain flaws, Kibana AI feature authorization and DoS, runZero MCP authorization, hermes-agent ACP/MCP DoS, Support Genix AI Chatbot admin takeover, and watcher provenance.
 - Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.
 - Updated on 2026-08-26 with August 25 MCP, agent-tool, identity, infrastructure, verification-parser, emergency-shutdown, and advisory-deferral leaves.

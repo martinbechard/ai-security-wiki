@@ -11,7 +11,9 @@ tags: ["agent-and-tool-security", "infrastructure-and-supply-chain"]
 
 The [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) records [CVE-2026-84857](https://nvd.nist.gov/vuln/detail/CVE-2026-84857) for sigoden aichat through 0.30.4. Broad aichat tool context routes upstream if it becomes durable; this page owns the local assistant API availability boundary.
 
-NVD and the [GitHub advisory GHSA-w2m4-pj9f-6rwh](https://github.com/advisories/GHSA-w2m4-pj9f-6rwh) describe uncontrolled memory allocation in `src/serve.rs` in the API Endpoint component. The attack can be initiated remotely, public exploit material exists, and the fetched advisory text records no early vendor response.
+[NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-84857) and the [GitHub advisory GHSA-w2m4-pj9f-6rwh](https://github.com/advisories/GHSA-w2m4-pj9f-6rwh) describe uncontrolled memory allocation in `src/serve.rs` in the API Endpoint component. The attack can be initiated remotely, public exploit material exists, and the fetched advisory text records no early vendor response.
+
+The [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json) confirms the [direct CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-84857) was updated on 2026-09-03 after publication. It keeps the same affected boundary through 0.30.4 and reinforces that public exploit references are available, so the operational posture remains exposure review and compensating resource limits until a fixed release is identified.
 
 ## Security Impact
 
@@ -31,6 +33,7 @@ NVD and the [GitHub advisory GHSA-w2m4-pj9f-6rwh](https://github.com/advisories/
 ## Authoritative Sources
 
 - [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json)
+- [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json)
 - [NVD CVE-2026-84857](https://nvd.nist.gov/vuln/detail/CVE-2026-84857)
 - [GitHub advisory GHSA-w2m4-pj9f-6rwh](https://github.com/advisories/GHSA-w2m4-pj9f-6rwh)
 
@@ -59,3 +62,4 @@ NVD and the [GitHub advisory GHSA-w2m4-pj9f-6rwh](https://github.com/advisories/
 ## Maintenance Notes
 
 - Created on 2026-09-02 from the [September 2 topic collector](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) as a local assistant API availability leaf.
+- Updated on 2026-09-03 from the [September 3 leaf update watch](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json) with direct CVE update evidence and unchanged fixed-version uncertainty.

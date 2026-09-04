@@ -13,6 +13,8 @@ The [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-se
 
 The advisories describe three variants of the same control failure: Tencent AI-Infra-Guard skips `__pycache__` and compiled Python extensions, claude-skill-antivirus scans only `SKILL.md` in local skill directories, and agentverus-scanner can certify benign source while malicious compiled bytecode is present in companion directories. The shared security lesson is that manifest-only or source-only skill review is insufficient for executable agent artifacts.
 
+The [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json) updates only the agentverus-scanner member of the family. It leaves the family-level rule unchanged: scanner evidence is usable only when it declares the artifact classes inspected, the executable classes omitted, and the policy response for bytecode, binaries, archives, and hidden companion paths.
+
 ## Security Impact
 
 - Threat: malicious code can hide in bytecode, scripts, or companion artifacts while scanners report trusted verdicts.
@@ -31,6 +33,7 @@ The advisories describe three variants of the same control failure: Tencent AI-I
 ## Authoritative Sources
 
 - [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json)
+- [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json)
 - [GitHub advisory GHSA-7vc4-66f2-3f5f](https://github.com/advisories/GHSA-7vc4-66f2-3f5f)
 - [GitHub advisory GHSA-gvgj-r6pg-m42w](https://github.com/advisories/GHSA-gvgj-r6pg-m42w)
 - [GitHub advisory GHSA-7r9q-g8p5-w7pp](https://github.com/advisories/GHSA-7r9q-g8p5-w7pp)
@@ -66,3 +69,4 @@ The advisories describe three variants of the same control failure: Tencent AI-I
 ## Maintenance Notes
 
 - Created on 2026-09-02 from the [September 2 topic collector](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) as a single closely coupled scanner-assurance advisory family.
+- Updated on 2026-09-03 from the [September 3 leaf update watch](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json) with agentverus CVE update evidence while avoiding a duplicate digest item for the same closely coupled scanner family.
