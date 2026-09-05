@@ -15,6 +15,8 @@ The [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-se
 
 Broad Pax Silica company or platform background belongs upstream if it becomes durable ecosystem context. This local page owns the security-control lens: AI supply-chain provenance and credentialing need to bind model, dataset, dependency, artifact, runtime, deployment, and evaluator evidence to verifiable identities and review gates.
 
+The [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json) adds [OpenAI Enterprise and Edu release-note evidence](https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes) for centrally importing and syncing plugin marketplaces from public or private GitHub repositories. Repository provenance and daily sync are not enough by themselves: workspace admins and owners still control installation policies, eligible roles, app access, app permissions, and authentication requirements, and repository policy values do not override workspace settings.
+
 ## Security Impact
 
 - Threat or control area: weak provenance can let unverified model artifacts, datasets, generated code, MCP packages, plugins, or deployment components enter AI systems without traceable trust evidence.
@@ -30,12 +32,14 @@ Broad Pax Silica company or platform background belongs upstream if it becomes d
 - Require credential issuers, signing keys, verification policy, revocation path, and audit retention to be explicit.
 - Keep funding, proposal, standard, and deployed-control evidence distinct in governance records.
 - Link provenance checks to release gates so unverifiable artifacts cannot silently enter production or evaluation environments.
+- For synced plugin marketplaces, bind repository provenance to workspace installation policy, eligible roles, app access, permissions, authentication, and revocation.
 
 ## Authoritative Sources
 
 - [August 15 topic news collector source](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json)
 - [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json)
 - Grants.gov opportunity: https://simpler.grants.gov/opportunity/2f434e81-c476-49bb-a7e6-9a320c907cd9
+- [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json)
 
 ## Related Code
 
@@ -60,8 +64,10 @@ Broad Pax Silica company or platform background belongs upstream if it becomes d
 ## Open Questions
 
 - Which agency, award scope, architecture, or public implementation evidence will show whether the provenance platform produces reusable security controls?
+- Which repository review and permission-diff evidence should be required before a synced plugin marketplace can distribute new or changed plugins?
 
 ## Maintenance Notes
 
 - Created on 2026-08-15 from the [August 15 topic collector](../../../raw/processed/2026-08-15/ai-security-wiki-topic-news-collector-2026-08-15T233140Z.json) as a security-control signal, not as a deployed-product endorsement.
 - Updated on 2026-08-16 from the [August 16 leaf watcher](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) with cryptographic cargo verification and AI-expedited risk-assessment scope evidence.
+- Updated on 2026-09-04 from the [September 4 leaf watcher](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json) with GitHub-synced plugin marketplace provenance and workspace policy boundaries.

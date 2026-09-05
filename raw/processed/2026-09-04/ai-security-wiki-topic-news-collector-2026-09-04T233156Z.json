@@ -1,0 +1,800 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "agent_identifier": "Northstar",
+  "run_timestamp_utc": "2026-09-04T23:31:56Z",
+  "cutoff_window": {
+    "start_utc": "2026-09-02T23:31:56Z",
+    "end_utc": "2026-09-04T23:31:56Z",
+    "policy": "Include only public items with direct visible publication or update evidence strictly within the last two days. Exclude missing, ambiguous, future-dated, stale, snippet-only, header-only, and boundary-only dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "local_federation_file": "docs/wiki/federation.md",
+    "local_topic_index": "docs/wiki/topic-index.md",
+    "upstream_ai_wiki_topic_index": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+    "upstream_ai_dev_wiki_topic_index": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+    "summary": "Broad AI companies, models, products, frameworks, MCP servers, and general AI-assisted development practices are upstream-owned. This artifact keeps only security-specific facts, affected boundaries, exploit or mitigation context, and routing notes for ai-security-wiki."
+  },
+  "search_methods": [
+    "Read the automation memory before collection and checked local raw, raw/processed, and docs/wiki for selected CVE identifiers before classifying items as fresh.",
+    "Read docs/wiki/federation.md and local, ai-wiki, and ai-dev-wiki topic indexes for ownership boundaries.",
+    "Queried NVD CVE API for strict-window terms including AI, MCP, agent, prompt, LLM, model, OpenAI, Azure AI, aider, and Cheshire Cat AI.",
+    "Fetched direct CVE JSON from cveawg.mitre.org for selected candidate CVEs.",
+    "Opened primary OpenAI September 3 pages and treated already-captured items as overlap exclusions.",
+    "Used public web search for current AI security, MCP, prompt-injection, CISA, and NIST candidates."
+  ],
+  "qualifying_findings": [
+    {
+      "id": "cve-2026-85093-cheshire-cat-ai-memory-points-disclosure",
+      "title": "Cheshire Cat AI memory endpoint exposes other users' episodic messages",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85093",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85093",
+        "https://github.com/cheshire-cat-ai/core/issues/1136",
+        "https://www.vulncheck.com/advisories/cheshire-cat-ai-memory-collection-endpoint-information-disclosure"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85093",
+          "date": "2026-09-03T01:04:45.860Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-85093",
+          "date": "2026-09-03T13:06:20.883Z",
+          "date_basis": "NVD published timestamp"
+        }
+      ],
+      "factual_summary": "CVE-2026-85093 says Cheshire Cat AI's GET /memory/collections/{collection_id}/points endpoint does not apply per-user filtering to episodic memory points. An authenticated attacker with MEMORY:READ can paginate through the collection and retrieve all users' stored conversation messages and personal data.",
+      "evidence_classification": "direct CVE and NVD vulnerability record with public issue references",
+      "affected_boundary_or_version": "Cheshire Cat AI core 1.9.2 memory points endpoint; affected version range needs ingest-time confirmation.",
+      "why_it_matters_for_ai_security": "Agent memory is a high-risk data boundary; cross-user memory disclosure can expose prompts, personal data, and operational context retained by an AI assistant.",
+      "named_entities": [
+        "Cheshire Cat AI",
+        "CVE-2026-85093",
+        "VulnCheck"
+      ],
+      "upstream_routing": "Broad Cheshire Cat AI framework coverage belongs in ai-wiki; ai-security-wiki owns the memory-isolation and assistant-data privacy boundary.",
+      "confidence_notes": "High confidence on vulnerability fact and dates from direct CVE and NVD records; affected fixed version should be rechecked during ingest."
+    },
+    {
+      "id": "cve-2026-85580-siyuan-mcp-file-access-case-bypass",
+      "title": "SiYuan MCP file handler case mismatch bypass exposes publish configuration",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85580",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85580",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-mmgw-3mx9-cfwp",
+        "https://www.vulncheck.com/advisories/siyuan-before-3.8.2-path-guard-bypass-via-case-mismatch"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85580",
+          "date": "2026-09-04T11:29:49.503Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=MCP",
+          "date": "2026-09-04T12:17:19.917Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-85580 says SiYuan versions before v3.8.2 use case-sensitive matching in an MCP file-access handler on Linux filesystems. Case-variant path requests such as PublishAccess.json can bypass the guard and disclose publish-access configuration and metadata.",
+      "evidence_classification": "direct CVE vulnerability record with GitHub security advisory reference",
+      "affected_boundary_or_version": "SiYuan before v3.8.2 MCP file-access handler.",
+      "why_it_matters_for_ai_security": "The issue is a concrete MCP file-boundary failure where a tool-facing file handler can leak sensitive configuration through path normalization mismatch.",
+      "named_entities": [
+        "SiYuan",
+        "MCP",
+        "CVE-2026-85580",
+        "VulnCheck"
+      ],
+      "upstream_routing": "Broad SiYuan product coverage belongs upstream; ai-security-wiki owns MCP path-guard and protected-file disclosure implications.",
+      "confidence_notes": "High confidence from direct CVE and public advisory references."
+    },
+    {
+      "id": "cve-2026-85620-postgres-mcp-pro-rangefunction-bypass",
+      "title": "Postgres MCP Pro restricted-mode SQL validation misses FROM-clause functions",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85620",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85620",
+        "https://github.com/crystaldba/postgres-mcp/issues/178",
+        "https://www.vulncheck.com/advisories/postgres-mcp-pro-0.3.0-restricted-mode-bypass-via-from-clause-function"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85620",
+          "date": "2026-09-04T14:32:11.907Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=MCP",
+          "date": "2026-09-04T15:17:42.150Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-85620 says Postgres MCP Pro 0.3.0 does not apply function-name validation to RangeFunction nodes in FROM clauses. Attackers can use functions such as pg_read_file through FROM-clause syntax to read arbitrary files despite restricted-mode protections.",
+      "evidence_classification": "direct CVE vulnerability record with public issue and code references",
+      "affected_boundary_or_version": "Postgres MCP Pro 0.3.0 restricted SQL validation.",
+      "why_it_matters_for_ai_security": "Database MCP servers are high-authority tool surfaces; incomplete SQL AST validation can convert a read-only or restricted data tool into a host file-read path.",
+      "named_entities": [
+        "Postgres MCP Pro",
+        "MCP",
+        "PostgreSQL",
+        "CVE-2026-85620",
+        "VulnCheck"
+      ],
+      "upstream_routing": "General PostgreSQL and MCP-server catalog coverage belongs upstream; ai-security-wiki owns the final-query authorization and SQL-tool containment boundary.",
+      "confidence_notes": "High confidence from direct CVE and linked public issue; patched-version details should be checked during ingest."
+    },
+    {
+      "id": "cve-2026-85666-ogx-mcp-server-url-ssrf",
+      "title": "OGX OpenAI-compatible responses endpoint allows SSRF through MCP server_url",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85666",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85666",
+        "https://github.com/ogx-ai/ogx/issues/6287",
+        "https://www.vulncheck.com/advisories/ogx-1.3.1-server-side-request-forgery-via-mcp-tool-server-url"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85666",
+          "date": "2026-09-04T14:32:22.307Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=MCP",
+          "date": "2026-09-04T15:17:44.397Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-85666 says OGX 1.3.1, formerly Llama Stack, accepts MCP tool definitions with a caller-supplied server_url on the OpenAI-compatible POST /v1/responses endpoint. The server fetches that URL without the private-destination guard used for other URL inputs, enabling unauthenticated SSRF.",
+      "evidence_classification": "direct CVE vulnerability record with public issue and code references",
+      "affected_boundary_or_version": "OGX 1.3.1 /v1/responses MCP tool server_url handling.",
+      "why_it_matters_for_ai_security": "An OpenAI-compatible agent/runtime API that accepts MCP tool URLs must treat tool descriptors as untrusted input; missing destination validation can expose internal networks and metadata services.",
+      "named_entities": [
+        "OGX",
+        "Llama Stack",
+        "OpenAI-compatible API",
+        "MCP",
+        "CVE-2026-85666"
+      ],
+      "upstream_routing": "Broad OGX/Llama Stack framework coverage belongs in ai-wiki; ai-security-wiki owns the MCP URL-fetch and private-network SSRF boundary.",
+      "confidence_notes": "High confidence from direct CVE and linked public issue."
+    },
+    {
+      "id": "cve-2026-9186-langflow-mcp-localhost-spoofed-header",
+      "title": "IBM Langflow allows localhost-only MCP config writes through spoofed proxy header",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-9186",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-9186",
+        "https://www.ibm.com/support/pages/node/7285646"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-9186",
+          "date": "2026-09-04T14:23:20.117Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=MCP",
+          "date": "2026-09-04T15:17:50.860Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-9186 says IBM Langflow OSS 1.0.0 through 1.11.2 lets authenticated remote attackers bypass localhost-only MCP configuration installation by spoofing X-Forwarded-For: 127.0.0.1. The bypass can enable arbitrary writes to IDE configuration files such as ~/.cursor/mcp.json.",
+      "evidence_classification": "direct CVE vulnerability record with IBM advisory reference",
+      "affected_boundary_or_version": "IBM Langflow OSS 1.0.0 through 1.11.2; localhost-only MCP configuration installation.",
+      "why_it_matters_for_ai_security": "IDE MCP configuration files define future tool authority; spoofable locality checks can let a remote user persist tool configuration into a developer-agent environment.",
+      "named_entities": [
+        "IBM Langflow",
+        "MCP",
+        "Cursor",
+        "CVE-2026-9186"
+      ],
+      "upstream_routing": "Broad Langflow product/framework context belongs upstream; ai-security-wiki owns MCP config-write locality, proxy-header trust, and IDE tool-authority persistence.",
+      "confidence_notes": "High confidence from direct CVE and IBM advisory reference; IBM page detail should be rechecked during ingest if accessible."
+    },
+    {
+      "id": "cve-2026-18905-contextforge-tool-invocation-dns-rebinding",
+      "title": "IBM ContextForge MCP Gateway tool invocation is vulnerable to DNS rebinding SSRF",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-18905",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18905",
+        "https://www.ibm.com/support/pages/node/7286053"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-18905",
+          "date": "2026-09-04T15:56:28.239Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=MCP",
+          "date": "2026-09-04T16:17:21.517Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-18905 says IBM ContextForge MCP Gateway versions through 1.0.6 can allow an authenticated remote attacker to obtain sensitive information through DNS rebinding during tool invocation.",
+      "evidence_classification": "direct CVE vulnerability record with IBM advisory reference",
+      "affected_boundary_or_version": "IBM ContextForge MCP Gateway <= 1.0.6 tool invocation path.",
+      "why_it_matters_for_ai_security": "MCP gateway invocation paths mediate delegated tool access; DNS rebinding at invocation time can defeat private-network protections after initial validation.",
+      "named_entities": [
+        "IBM ContextForge MCP Gateway",
+        "MCP Context Forge",
+        "CVE-2026-18905"
+      ],
+      "upstream_routing": "Broad IBM ContextForge product coverage belongs upstream; ai-security-wiki owns MCP gateway DNS-rebinding and sensitive-information exposure boundaries.",
+      "confidence_notes": "High confidence on CVE timing and summary; IBM advisory detail should be rechecked during ingest."
+    },
+    {
+      "id": "cve-2026-77822-contextforge-a2a-dns-rebinding",
+      "title": "IBM ContextForge A2A agent invocation endpoint has DNS rebinding SSRF",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77822",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77822",
+        "https://www.ibm.com/support/pages/node/7286055"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-77822",
+          "date": "2026-09-04T15:15:35.403Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=MCP",
+          "date": "2026-09-04T16:17:59.550Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-77822 says IBM ContextForge MCP Gateway can allow a remote authenticated attacker to obtain sensitive information through server-side request forgery via DNS rebinding on the A2A agent invocation endpoint.",
+      "evidence_classification": "direct CVE vulnerability record with IBM advisory reference",
+      "affected_boundary_or_version": "IBM ContextForge MCP Gateway A2A agent invocation endpoint; exact affected versions need ingest-time advisory confirmation.",
+      "why_it_matters_for_ai_security": "Agent-to-agent invocation endpoints are delegated-authority chokepoints; DNS rebinding can turn a gateway into a probe against private services during agent calls.",
+      "named_entities": [
+        "IBM ContextForge MCP Gateway",
+        "A2A",
+        "MCP Context Forge",
+        "CVE-2026-77822"
+      ],
+      "upstream_routing": "General A2A and gateway product context belongs upstream; ai-security-wiki owns invocation-time SSRF and delegated-agent boundary implications.",
+      "confidence_notes": "High confidence from direct CVE timing; exact version and patch mapping should be checked against IBM advisory during ingest."
+    },
+    {
+      "id": "cve-2026-18486-contextforge-jq-filter-credential-disclosure",
+      "title": "IBM ContextForge jq filter execution can disclose credentials and escalate privilege",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-18486",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18486",
+        "https://www.ibm.com/support/pages/node/7286052"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-18486",
+          "date": "2026-09-04T16:24:45.432Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=MCP",
+          "date": "2026-09-04T17:16:56.420Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-18486 says IBM ContextForge MCP Gateway versions through 1.0.7 can allow a remote authenticated attacker to obtain sensitive credentials and escalate privileges because jq filters are not properly validated.",
+      "evidence_classification": "direct CVE vulnerability record with IBM advisory reference",
+      "affected_boundary_or_version": "IBM ContextForge MCP Gateway <= 1.0.7 jq filter execution.",
+      "why_it_matters_for_ai_security": "Gateway-side filter languages can become a capability expansion path when agent tool responses and credentials share a processing boundary.",
+      "named_entities": [
+        "IBM ContextForge MCP Gateway",
+        "jq",
+        "CVE-2026-18486"
+      ],
+      "upstream_routing": "Broad product coverage belongs upstream; ai-security-wiki owns credential disclosure, privilege escalation, and tool-response transformation risks.",
+      "confidence_notes": "High confidence from direct CVE; exploit mechanics and remediation should be reconciled from IBM advisory during ingest."
+    },
+    {
+      "id": "cve-2026-18489-contextforge-translate-session-confusion",
+      "title": "IBM ContextForge Translate exposes data across client sessions",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-18489",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18489",
+        "https://www.ibm.com/support/pages/node/7286056"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-18489",
+          "date": "2026-09-04T16:23:08.905Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=MCP",
+          "date": "2026-09-04T17:16:56.550Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-18489 says IBM ContextForge MCP Gateway Translate utility versions through 1.0.8 can allow a remote attacker to obtain sensitive information from other sessions because data elements are exposed to the wrong session.",
+      "evidence_classification": "direct CVE vulnerability record with IBM advisory reference",
+      "affected_boundary_or_version": "IBM ContextForge MCP Gateway Translate utility <= 1.0.8.",
+      "why_it_matters_for_ai_security": "Cross-session data exposure in an MCP gateway can leak prompts, tool outputs, credentials, or translated payloads between agent clients.",
+      "named_entities": [
+        "IBM ContextForge MCP Gateway",
+        "MCP Context Forge Translate",
+        "CVE-2026-18489"
+      ],
+      "upstream_routing": "Broad ContextForge utility coverage belongs upstream; ai-security-wiki owns session isolation and sensitive-data leakage implications.",
+      "confidence_notes": "High confidence on direct CVE timing and summary; IBM advisory should be checked for exact remediation."
+    },
+    {
+      "id": "cve-2026-85787-aws-postgres-mcp-server-readonly-bypass",
+      "title": "AWS Labs postgres-mcp-server SQL validation bypass can modify data beyond read-only scope",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85787",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85787",
+        "https://pypi.org/project/awslabs.postgres-mcp-server/1.1.7/",
+        "https://aws.amazon.com/security/security-bulletins/2026-101-aws/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85787",
+          "date": "2026-09-04T20:03:58.194Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=MCP",
+          "date": "2026-09-04T21:17:27.057Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-85787 says Amazon awslabs postgres-mcp-server before 1.1.7 has an incomplete disallowed-input list in SQL validation. An unauthenticated actor might modify data beyond read-only scope by placing crafted SQL into content submitted when an authenticated user interacts with the MCP server; the CVE recommends upgrading to 1.1.7 or later.",
+      "evidence_classification": "direct CVE vulnerability record with AWS security bulletin and PyPI release references",
+      "affected_boundary_or_version": "awslabs.postgres-mcp-server before 1.1.7 SQL validation/read-only scope.",
+      "why_it_matters_for_ai_security": "This is a concrete data-integrity failure in a database MCP server: untrusted content entering an agent-mediated SQL tool can exceed its declared read-only authority.",
+      "named_entities": [
+        "Amazon",
+        "AWS Labs",
+        "awslabs.postgres-mcp-server",
+        "MCP",
+        "CVE-2026-85787"
+      ],
+      "upstream_routing": "Broad AWS Labs MCP server coverage belongs in ai-wiki; ai-security-wiki owns SQL validation, read-only scope enforcement, and content-to-tool injection risk.",
+      "confidence_notes": "High confidence from direct CVE; AWS bulletin should be rechecked for exact package and mitigation text during ingest."
+    },
+    {
+      "id": "cve-2026-85668-xinference-auto-register-file-read",
+      "title": "Xinference LLM auto-register endpoint reads arbitrary local model paths",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85668",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85668",
+        "https://github.com/xorbitsai/inference/issues/5176",
+        "https://www.vulncheck.com/advisories/xinference-3.3.0-unauthenticated-arbitrary-path-file-read-via-v1-models-llm-auto-register"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85668",
+          "date": "2026-09-04T14:32:23.954Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=model",
+          "date": "2026-09-04T15:17:44.693Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-85668 says Xinference v3.x at commit 4a94832 exposes an unauthenticated arbitrary-path file read through POST /v1/models/llm/auto-register. The endpoint accepts a caller-supplied model_path, reads config.json, tokenizer_config.json, and chat_template.jinja, and reflects parsed content back to the caller.",
+      "evidence_classification": "direct CVE vulnerability record with public issue and code references",
+      "affected_boundary_or_version": "Xinference 3.3.0/v3.x LLM auto-register endpoint at affected commit 4a94832.",
+      "why_it_matters_for_ai_security": "Model registration surfaces bridge model metadata and host files; unauthenticated path reads can expose local model configuration, templates, tokens, or deployment secrets.",
+      "named_entities": [
+        "Xinference",
+        "xorbitsai/inference",
+        "CVE-2026-85668"
+      ],
+      "upstream_routing": "Broad Xinference product/runtime coverage belongs upstream; ai-security-wiki owns model-registration path containment and local-file disclosure implications.",
+      "confidence_notes": "High confidence from direct CVE and linked public issue."
+    },
+    {
+      "id": "cve-2026-85694-lavague-indirect-prompt-injection-rce",
+      "title": "LaVague evaluates untrusted model output from web content as Python",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85694",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85694",
+        "https://github.com/lavague-ai/LaVague/issues/650",
+        "https://www.vulncheck.com/advisories/lavague-0.2.35-remote-code-execution-via-eval-extraction"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85694",
+          "date": "2026-09-04T14:32:37.407Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=prompt",
+          "date": "2026-09-04T15:17:47.540Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-85694 says LaVague 0.2.35 evaluates untrusted language-model output derived from web page content in PythonFromMarkdownExtractor.extract_as_object. Attackers can use indirect prompt injection through web pages to execute arbitrary code on the operator's host without review.",
+      "evidence_classification": "direct CVE vulnerability record with public issue and code references",
+      "affected_boundary_or_version": "LaVague 0.2.35 PythonFromMarkdownExtractor.extract_as_object.",
+      "why_it_matters_for_ai_security": "This is a direct prompt-injection-to-code-execution chain where untrusted web content influences model output that is then evaluated as host code.",
+      "named_entities": [
+        "LaVague",
+        "PythonFromMarkdownExtractor",
+        "CVE-2026-85694",
+        "VulnCheck"
+      ],
+      "upstream_routing": "General LaVague framework coverage belongs upstream; ai-security-wiki owns indirect prompt-injection, model-output trust, and host-code execution implications.",
+      "confidence_notes": "High confidence from direct CVE and linked public issue."
+    },
+    {
+      "id": "cve-2026-85695-fastchat-worker-registration-ssrf-model-spoofing",
+      "title": "FastChat unauthenticated worker registration enables SSRF and model spoofing",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85695",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85695",
+        "https://github.com/lm-sys/FastChat/issues/3886",
+        "https://www.vulncheck.com/advisories/fastchat-unauthenticated-worker-registration-ssrf-and-model-spoofing"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85695",
+          "date": "2026-09-04T14:32:38.104Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=model",
+          "date": "2026-09-04T15:17:47.690Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-85695 says FastChat's /register_worker endpoint allows unauthenticated attackers to register arbitrary worker addresses. Attackers can perform SSRF, register malicious workers under victim model names, intercept prompts, images, and responses, or probe internal network ports across the worker mesh.",
+      "evidence_classification": "direct CVE vulnerability record with public issue and code references",
+      "affected_boundary_or_version": "FastChat v0.2.36 controller worker-registration path; fixed version needs ingest-time confirmation.",
+      "why_it_matters_for_ai_security": "Model-serving controllers must authenticate worker identity; spoofed workers can compromise prompt confidentiality, response integrity, and internal service boundaries.",
+      "named_entities": [
+        "FastChat",
+        "lm-sys",
+        "CVE-2026-85695"
+      ],
+      "upstream_routing": "Broad FastChat/model-serving framework coverage belongs upstream; ai-security-wiki owns worker identity, model spoofing, and prompt confidentiality implications.",
+      "confidence_notes": "High confidence from direct CVE and linked public issue."
+    },
+    {
+      "id": "cve-2026-85674-aider-conf-repository-command-execution",
+      "title": "aider automatically runs repository-supplied shell commands from .aider.conf.yml",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85674",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85674",
+        "https://github.com/Aider-AI/aider/issues/5254",
+        "https://www.vulncheck.com/advisories/aider-0.86.2-remote-code-execution-via-aider-conf-yml"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85674",
+          "date": "2026-09-04T14:32:28.178Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=LLM",
+          "date": "2026-09-04T15:17:45.597Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-85674 says aider 0.86.2 automatically loads .aider.conf.yml from a repository root. A crafted repository can set test-cmd or lint-cmd values that aider runs through a shell without user confirmation, LLM interaction, or an API key, resulting in arbitrary command execution when a user runs aider in the repository.",
+      "evidence_classification": "direct CVE vulnerability record with public issue and code references",
+      "affected_boundary_or_version": "aider 0.86.2 repository configuration loading and test/lint command execution.",
+      "why_it_matters_for_ai_security": "Coding-agent configuration files are part of the repository supply chain; automatic shell execution from untrusted repos violates agent workstation containment and approval boundaries.",
+      "named_entities": [
+        "aider",
+        "Aider-AI",
+        "CVE-2026-85674"
+      ],
+      "upstream_routing": "Broad aider coding-agent coverage belongs in ai-dev-wiki or ai-wiki; ai-security-wiki owns repository-supplied command execution and approval-boundary risk.",
+      "confidence_notes": "High confidence from direct CVE and linked public issue."
+    },
+    {
+      "id": "cve-2026-19645-ibm-mq-agent-llm-worker-exhaustion",
+      "title": "IBM MQ Agent LLM workers can be exhausted by expensive authenticated requests",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-19645",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19645",
+        "https://www.ibm.com/support/pages/node/7285394"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-19645",
+          "date": "2026-09-04T15:20:24.432Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=LLM",
+          "date": "2026-09-04T16:17:24.923Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-19645 says IBM MQ Agent CD v1.0.0, v1.0.1, v2.0.0, and v2.0.1 allow an authenticated user with a valid session cookie to submit large or computationally expensive requests that hold LLM agent workers for tens of seconds to over ten minutes. Concurrent requests can exhaust the worker pool and degrade or deny the AI Agent feature for other IBM MQ Console users.",
+      "evidence_classification": "direct CVE vulnerability record with IBM advisory reference",
+      "affected_boundary_or_version": "IBM MQ Agent CD v1.0.0, v1.0.1, v2.0.0, v2.0.1.",
+      "why_it_matters_for_ai_security": "LLM worker pools are a runtime availability boundary; expensive prompts and work requests need quota, cancellation, and admission controls.",
+      "named_entities": [
+        "IBM MQ Agent CD",
+        "IBM MQ Console",
+        "LLM agent workers",
+        "CVE-2026-19645"
+      ],
+      "upstream_routing": "Broad IBM MQ product details belong upstream; ai-security-wiki owns LLM-worker exhaustion and AI-console availability controls.",
+      "confidence_notes": "High confidence from direct CVE; IBM advisory should be checked for remediation during ingest."
+    },
+    {
+      "id": "cve-2026-70352-azure-ai-language-missing-authentication",
+      "title": "Azure AI Language missing authentication permits network privilege elevation",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-70352",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70352",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-70352"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-70352",
+          "date": "2026-09-03T22:59:12.503Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=AI",
+          "date": "2026-09-03T23:17:20.213Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-70352 says Azure AI Language has a missing-authentication-for-critical-function vulnerability that lets an unauthorized network attacker elevate privileges.",
+      "evidence_classification": "direct CVE vulnerability record with Microsoft MSRC advisory reference",
+      "affected_boundary_or_version": "Azure AI Language; affected service boundary and patch state need MSRC reconciliation during ingest.",
+      "why_it_matters_for_ai_security": "Managed AI-language services often sit behind enterprise data and workflow integrations; missing authentication on a critical function is a direct cloud AI service authorization risk.",
+      "named_entities": [
+        "Microsoft",
+        "Azure AI Language",
+        "MSRC",
+        "CVE-2026-70352"
+      ],
+      "upstream_routing": "Broad Microsoft Azure AI product context belongs in ai-wiki; ai-security-wiki owns missing-authentication and cloud-AI service privilege boundaries.",
+      "confidence_notes": "Medium-high confidence from CVE and NVD timing; MSRC page may require JavaScript and should be checked during ingest for service remediation details."
+    },
+    {
+      "id": "cve-2026-82923-ai-website-builder-unprotected-rest-rce",
+      "title": "AI Website Builder GitHub build exposes unauthenticated WordPress REST routes",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82923",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82923",
+        "https://wpscan.com/vulnerability/663e7004-1cca-4c0f-8d54-7298d40fe179/"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-82923",
+          "date": "2026-09-04T10:00:35.005Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=AI",
+          "date": "2026-09-04T10:17:13.340Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-82923 says AI Website Builder WordPress plugin GitHub build 1.0.0 lacks authorization and nonce checks on REST API routes. Unauthenticated attackers can install and activate plugins and themes, import attacker-controlled URL content, write chosen files into uploads, and delete site content; if PHP is served from uploads, the file write becomes RCE.",
+      "evidence_classification": "direct CVE vulnerability record with WPScan reference",
+      "affected_boundary_or_version": "AI Website Builder WordPress plugin GitHub build 1.0.0.",
+      "why_it_matters_for_ai_security": "AI builder plugins often receive delegated site-editing authority; unauthenticated REST routes can convert AI-assisted site generation tooling into site takeover or code execution.",
+      "named_entities": [
+        "AI Website Builder",
+        "WordPress",
+        "WPScan",
+        "CVE-2026-82923"
+      ],
+      "upstream_routing": "Broad WordPress plugin ecosystem context belongs upstream; ai-security-wiki owns AI-builder delegated authority, REST authorization, and RCE implications.",
+      "confidence_notes": "High confidence from direct CVE and WPScan reference."
+    },
+    {
+      "id": "cve-2026-85242-playwrightcapture-favicon-redirect-ssrf",
+      "title": "PlaywrightCapture favicon redirects bypass private-address SSRF checks",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85242",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85242",
+        "https://github.com/Lookyloo/PlaywrightCapture/commit/b912a04f7b190807b5e14e497048896bc5016fb9"
+      ],
+      "visible_dates": [
+        {
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85242",
+          "date": "2026-09-03T16:17:20.128Z",
+          "date_basis": "CVE datePublished timestamp"
+        },
+        {
+          "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=AI",
+          "date": "2026-09-03T17:17:30.177Z",
+          "date_basis": "NVD published timestamp from keyword result"
+        }
+      ],
+      "factual_summary": "CVE-2026-85242 says PlaywrightCapture validates only the initial favicon URL when only_global_lookup is enabled. Because redirects followed by aiohttp are not revalidated, attacker-controlled page content can point to a public favicon URL that redirects to localhost, loopback, or other non-public network resources.",
+      "evidence_classification": "direct CVE and NVD vulnerability record with public patch commit",
+      "affected_boundary_or_version": "PlaywrightCapture favicon retrieval with only_global_lookup enabled; fixed by commit b912a04f7b190807b5e14e497048896bc5016fb9.",
+      "why_it_matters_for_ai_security": "Browser and capture tools used by agents must apply egress checks after redirects; otherwise untrusted web content can make agent infrastructure probe private services.",
+      "named_entities": [
+        "PlaywrightCapture",
+        "Lookyloo",
+        "aiohttp",
+        "CVE-2026-85242"
+      ],
+      "upstream_routing": "Broad Playwright/capture tooling context belongs upstream; ai-security-wiki owns browser-agent SSRF redirect controls and private-network egress.",
+      "confidence_notes": "High confidence from direct CVE, NVD timestamp, and patch commit."
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "cve-2026-85166-n8n-workflow-tool-credential-exfiltration",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85166",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85166"
+      ],
+      "visible_dates": [
+        "2026-09-03T11:22:16.613Z",
+        "2026-09-03T13:06:23.867Z"
+      ],
+      "reason": "Qualifies by date and security relevance, but already captured in raw/processed/2026-09-03/ai-security-wiki-topic-news-collector-2026-09-03T233104Z.json and docs/wiki; excluded to avoid duplicate collector output."
+    },
+    {
+      "id": "cve-2026-85180-ollama-tensor-blob-redirect-ssrf",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85180",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85180"
+      ],
+      "visible_dates": [
+        "2026-09-03T14:12:19.048Z",
+        "2026-09-03T15:17:39.250Z"
+      ],
+      "reason": "Qualifies by date and security relevance, but already captured in the September 3 processed collector artifact and synthesized wiki leaf; excluded as overlap."
+    },
+    {
+      "id": "cve-2026-85306-mountdev-ai-mcp-connector-auth-bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85306",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85306"
+      ],
+      "visible_dates": [
+        "2026-09-03T16:53:00.347Z",
+        "2026-09-03T17:17:30.833Z"
+      ],
+      "reason": "Qualifies by date and security relevance, but already captured in the September 3 processed collector artifact and synthesized wiki leaf; excluded as overlap."
+    },
+    {
+      "id": "openai-gpt-6-astra-safety-overview",
+      "source_urls": [
+        "https://openai.com/index/safety-overview-gpt-6-astra/",
+        "https://deploymentsafety.openai.com/gpt-6-astra"
+      ],
+      "visible_dates": [
+        "2026-09-03"
+      ],
+      "reason": "Primary OpenAI pages have direct in-window dates and concrete AI security controls, but they were already captured in the September 3 processed collector artifact; excluded as overlap."
+    },
+    {
+      "id": "openai-daybreak-frontline-defenders",
+      "source_urls": [
+        "https://openai.com/index/daybreak-for-frontline-defenders/",
+        "https://openai.com/daybreak/"
+      ],
+      "visible_dates": [
+        "2026-09-03"
+      ],
+      "reason": "Primary OpenAI page has a direct in-window date and a concrete cyber-defense mitigation program, but it was already captured in the September 3 processed collector artifact; excluded as overlap."
+    },
+    {
+      "id": "axios-stop-rogue-ai-act",
+      "source_urls": [
+        "https://www.axios.com/2026/09/03/house-bill-ai-agents-security"
+      ],
+      "visible_dates": [
+        "2026-09-03"
+      ],
+      "reason": "Secondary report is in-window and relevant, but no primary bill text or official sponsor/NIST source was located during this run; excluded pending primary-source confirmation."
+    },
+    {
+      "id": "cisa-post-quantum-call-to-action",
+      "source_urls": [
+        "https://www.cisa.gov/resources-tools/resources/preparing-post-quantum-era-call-action"
+      ],
+      "visible_dates": [
+        "2026-09-03"
+      ],
+      "reason": "Official and in-window, but the fetched source is general post-quantum cybersecurity guidance rather than a concrete AI-system security change."
+    },
+    {
+      "id": "gfi-exinda-ai-clearview-cve-cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74235",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74236",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74237"
+      ],
+      "visible_dates": [
+        "2026-09-04T13:20:08Z"
+      ],
+      "reason": "The product name contains AI, but the visible descriptions describe general appliance path traversal and argument injection without an AI-system, model, agent, tool, data, or AI governance security delta."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity": "Cheshire Cat AI",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "assistant memory isolation, cross-user conversation disclosure, personal-data leakage"
+    },
+    {
+      "entity": "SiYuan",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "MCP file-access path normalization and protected configuration disclosure"
+    },
+    {
+      "entity": "Postgres MCP Pro and awslabs.postgres-mcp-server",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "database MCP SQL validation, read-only scope enforcement, host file access, and data modification boundary"
+    },
+    {
+      "entity": "OGX / Llama Stack",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "OpenAI-compatible responses endpoint MCP tool URL SSRF"
+    },
+    {
+      "entity": "IBM Langflow",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "MCP configuration locality checks, file read through agent graph inputs, and IDE tool authority persistence"
+    },
+    {
+      "entity": "IBM ContextForge MCP Gateway",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "gateway DNS rebinding, credential disclosure, session isolation, jq filter validation, and A2A invocation boundaries"
+    },
+    {
+      "entity": "Xinference and FastChat",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "model-serving registration trust, arbitrary-path model metadata reads, worker identity, and prompt confidentiality"
+    },
+    {
+      "entity": "LaVague and aider",
+      "upstream_owner": "ai-dev-wiki",
+      "local_security_lens": "coding/browser-agent prompt injection to code execution, repository configuration trust, and user confirmation boundaries"
+    },
+    {
+      "entity": "Azure AI Language",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "managed cloud AI service authentication and network privilege elevation"
+    },
+    {
+      "entity": "AI Website Builder WordPress plugin and PlaywrightCapture",
+      "upstream_owner": "ai-wiki",
+      "local_security_lens": "AI builder delegated site authority, REST authorization, and browser/capture SSRF redirect controls"
+    }
+  ],
+  "confidence_notes": [
+    "Direct CVE JSON was available for every qualifying CVE and provided concrete in-window datePublished timestamps.",
+    "NVD keyword queries provided additional published timestamps for candidate discovery, but later per-CVE NVD requests returned HTTP 429 and direct CVE JSON was used instead for detailed evidence.",
+    "IBM support pages, Microsoft MSRC, AWS bulletin, GitHub advisories, WPScan, and VulnCheck references should be rechecked during ingest for fixed versions, scores, and mitigation wording before durable synthesis.",
+    "OpenAI September 3 primary pages were verified as in-window but excluded from new findings because the prior processed collector artifact already captured them."
+  ],
+  "follow_up_actions": [
+    "During ingest, deduplicate the IBM ContextForge cluster into one or more focused leaves only if session confusion, DNS rebinding, jq filter execution, and A2A invocation require separate durable boundaries.",
+    "Recheck IBM, Microsoft MSRC, AWS, GitHub advisory, WPScan, and VulnCheck pages for remediation versions and vendor severity before writing durable pages.",
+    "For coding-agent items, keep broad tool pages upstream and preserve only the security-specific repository trust, prompt-injection, and command-execution implications locally.",
+    "For database MCP items, reconcile whether existing final-query authorization and MCP SQL validation leaves should absorb the item before creating new local leaves."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  }
+}

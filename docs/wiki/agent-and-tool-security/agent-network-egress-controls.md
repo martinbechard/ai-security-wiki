@@ -34,6 +34,8 @@ The [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-se
 
 The [August 16 topic news collector source](../../../raw/processed/2026-08-16/ai-security-wiki-topic-news-collector-2026-08-16T233129Z.json) adds [GoMarble Facebook Ads MCP SSRF](gomarble-facebook-ads-mcp-ssrf.md) as a provider-pagination example. The shared egress rule is that continuation URLs, redirect targets, and provider-supplied fetch URLs need final-destination allowlisting; validating only the visible tool name or intended API family is not enough.
 
+The [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json) adds [OpenAI Enterprise and Edu release-note evidence](https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes) for supported desktop clients: admins can set website defaults and exceptions, restrict uploads, downloads, browser history, developer access, automatic review, saved approvals, and site-approval duration, and allow or block specific macOS and Windows native apps. The local security implication is policy composition: allowing a site or native app is not the same as bypassing approvals, upload/download restrictions, or other workspace controls.
+
 ## Control Implications
 
 - Block loopback, link-local, private, reserved, and cloud metadata ranges unless the tool has an explicit internal-access purpose.
@@ -48,6 +50,7 @@ The [August 16 topic news collector source](../../../raw/processed/2026-08-16/ai
 - Treat package proxies, sandbox APIs, and benchmark services as egress destinations with their own deny rules and monitoring, even when direct public internet access is blocked.
 - Record every agent network move during testing and production rollout, especially when reduced safeguards, cyber tooling, or privileged connectors are enabled.
 - Revalidate continuation and redirect destinations after URL parsing, DNS resolution, and redirect handling, especially for provider-specific MCP servers.
+- Model enterprise desktop website, native-app, upload, download, history, saved-approval, and approval-duration settings as layered controls rather than a single allow or deny switch.
 
 ## Authoritative Sources
 
@@ -58,6 +61,7 @@ The [August 16 topic news collector source](../../../raw/processed/2026-08-16/ai
 - [July 30 topic news collector source](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json)
 - [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json)
 - [August 16 topic news collector source](../../../raw/processed/2026-08-16/ai-security-wiki-topic-news-collector-2026-08-16T233129Z.json)
+- [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json)
 - Stride guidance: https://www.stride.build/blog/network-egress-control-ai-agents
 - [Codex Development Security Guide](../../../guides/agent-security/Codex-Development-Security-Guide.md)
 - [JetBrains AI Development Security Guide - Junie profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
@@ -89,3 +93,4 @@ The [August 16 topic news collector source](../../../raw/processed/2026-08-16/ai
 
 - Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) with default-deny, allowlist, metadata-blocking, and dependency-inventory guidance, extended on 2026-07-30 with local development service, artifact, Git, and web-search boundaries from the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md) and [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides, updated from the [July 30 topic collector](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json) with package-proxy and sandbox-endpoint egress evidence, and enriched on 2026-08-11 from the [August 11 watcher](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) with Black Hat practitioner logging and permission-limit evidence.
 - Updated on 2026-08-16 from the [August 16 topic collector](../../../raw/processed/2026-08-16/ai-security-wiki-topic-news-collector-2026-08-16T233129Z.json) with provider-pagination SSRF allowlisting evidence from the GoMarble Facebook Ads MCP advisory.
+- Updated on 2026-09-04 from the [September 4 leaf watcher](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json) with ChatGPT Enterprise and Edu desktop website, native-app, upload/download, approval, and saved-approval policy boundaries.

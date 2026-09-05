@@ -22,6 +22,8 @@ Credentials are injected through an approved local secret mechanism and are not 
 
 The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) adds [Junie CLI reference](https://junie.jetbrains.com/docs/parameters.html) evidence for separate Junie tokens, license keys, and BYOK provider API keys. It also identifies configurable cache, MCP, model, skill, command, and agent discovery paths as credential-isolation boundaries because those paths decide which local inputs and secrets the agent can find.
 
+The [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json) adds current [Junie config.json documentation](https://junie.jetbrains.com/docs/junie-cli-configuration.html): untrusted projects use temporary Junie storage outside the repository and do not implicitly load project configuration, MCP servers, hooks, extensions, models, plans, demos, custom agents or commands, skills, guidelines, memory, or onboarding sources. Trust markers are protected through native secure storage or an owner-only authentication-key fallback. Default project config hooks are ignored in untrusted projects, while explicitly supplied config locations remain enabled and should be reviewed as deliberate credential and tool-discovery inputs.
+
 ## Control Implications
 
 - Separate model access, artifact download, application database, and remote repository identities. Keep Codex on its documented DML-only identity; treat any DDL or migration authority as a separate developer decision outside that baseline.
@@ -32,6 +34,7 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 - Inject short-lived or scoped credentials outside the repository and avoid putting secrets in launchers, profiles, allowlists, logs, or prompts.
 - Separate product tokens, license keys, model-provider BYOK keys, and per-project configuration paths instead of treating all agent authentication as one credential class.
 - Review cache, MCP, model, skill, command, and agent discovery paths as identity boundaries because repository-controlled paths can change which credentials or tools are loaded.
+- Treat project-trust markers as credential-loading controls: untrusted projects must not implicitly load repository-supplied configuration, hooks, tools, skills, memory, or onboarding sources.
 
 ## Authoritative Sources
 
@@ -39,6 +42,7 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 - [JetBrains AI Development Security Guide - Junie profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
 - [JetBrains AI Development Security Guide - AI Assistant profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
 - [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json)
+- [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json)
 
 ## Related Code
 
@@ -62,7 +66,9 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 
 - Which exact minimum MySQL grants should the Junie application identity receive for the approved application and test workflow?
 - Which local secret-injection mechanism provides the required audit and expiry evidence for interactive and headless agent sessions?
+- Which explicit Junie config-location overrides are approved for untrusted-project runs, and who reviews them?
 
 ## Maintenance Notes
 
 - Created on 2026-07-30 from the credential, MySQL, artifact, Git, and headless-token controls in the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md), [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md), and [IntelliJ AI Assistant](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides; enriched from the [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) with Junie token, BYOK, and discovery-path evidence.
+- Updated on 2026-09-04 from the [September 4 leaf watcher](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json) with Junie config trust-marker and untrusted-project loading boundaries.

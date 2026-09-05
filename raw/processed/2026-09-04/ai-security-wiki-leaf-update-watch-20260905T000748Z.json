@@ -1,0 +1,344 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "agent_identifier": "Northstar",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-09-05T00:07:48Z",
+  "local_run_time": "2026-09-04 20:07:48 -0400",
+  "window": {
+    "start": "2026-08-28T00:00:00-04:00",
+    "end": "2026-09-05T00:07:48Z",
+    "rule": "Only public sources with direct visible publication or update dates within the last seven days were retained."
+  },
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "selection_rule": "Unchecked leaves first, then oldest last_checked_at, with stable relative path tie-breaking; reserved/index/digest/source-workflow/schema/glossary/known-defects/open-decisions/maintenance/topic-index/federation and dated source-synthesis pages excluded unless durable leaves.",
+  "leaf_universe_count": 269,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/agent-s-gui-action-denial-of-service.md",
+    "docs/wiki/agent-and-tool-security/n8n-workflow-tool-credential-exfiltration.md",
+    "docs/wiki/agent-and-tool-security/openbrowser-browser-agent-message-denial-of-service.md",
+    "docs/wiki/identity-and-access/agentimus-ai-seo-mcp-wordpress-broken-access-control.md",
+    "docs/wiki/identity-and-access/mountdev-ai-mcp-connector-wordpress-authorization-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/ollama-tensor-blob-redirect-ssrf.md",
+    "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md",
+    "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+    "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+    "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+    "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-supply-chain-provenance-credentialing.md",
+    "docs/wiki/threats-and-attacks/agentic-ai-threat-cluster.md",
+    "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md"
+  ],
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/agent-s-gui-action-denial-of-service.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-84887",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-84887",
+      "https://vuldb.com/vuln/398136",
+      "https://github.com/outlookgp/CVE/tree/main/AgentS_Action_Parameter_Budget_DoS_Report"
+    ],
+    "docs/wiki/agent-and-tool-security/n8n-workflow-tool-credential-exfiltration.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-85166",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-85166",
+      "https://github.com/n8n-io/n8n/security/advisories/GHSA-4r56-g65c-fm83",
+      "https://www.vulncheck.com/advisories/n8n-before-2.36.2-credential-exfiltration-via-workflow-tool-node"
+    ],
+    "docs/wiki/agent-and-tool-security/openbrowser-browser-agent-message-denial-of-service.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-84833",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-84833",
+      "https://vuldb.com/vuln/398080",
+      "https://github.com/outlookgp/CVE/tree/main/OpenBrowser_Message_Budget_DoS_Report"
+    ],
+    "docs/wiki/identity-and-access/agentimus-ai-seo-mcp-wordpress-broken-access-control.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-84779",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-84779",
+      "https://patchstack.com/database/wordpress/plugin/agentimus/vulnerability/wordpress-agentimus-ai-seo-llms-txt-mcp-for-ai-agents-plugin-1-51-0-broken-access-control-vulnerability?_s_id=cve"
+    ],
+    "docs/wiki/identity-and-access/mountdev-ai-mcp-connector-wordpress-authorization-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-85306",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-85306",
+      "https://patchstack.com/database/wordpress/plugin/mountdev-ai-mcp-connector/vulnerability/wordpress-mountdev-ai-mcp-connector-for-wordpress-plugin-1-6-5-broken-access-control-vulnerability?_s_id=cve"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/ollama-tensor-blob-redirect-ssrf.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-85180",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-85180",
+      "https://github.com/ollama/ollama/issues/17041",
+      "https://www.vulncheck.com/advisories/ollama-0.30.0-through-0.33.2-ssrf-via-cross-host-tensor-blob-redirect"
+    ],
+    "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md": [
+      "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+      "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan",
+      "https://help.openai.com/en/articles/5722486-api-data-usage-policies",
+      "https://platform.openai.com/docs/guides/your-data"
+    ],
+    "docs/wiki/identity-and-access/development-agent-credential-isolation.md": [
+      "https://junie.jetbrains.com/docs/parameters.html",
+      "https://junie.jetbrains.com/docs/junie-cli-configuration.html"
+    ],
+    "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md": [
+      "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+      "https://github.com/modelcontextprotocol/go-sdk/releases"
+    ],
+    "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md": [
+      "https://openai.com/index/path-to-astra/",
+      "https://openai.com/index/safety-overview-gpt-6-astra/",
+      "https://openai.com/index/daybreak-for-frontline-defenders/",
+      "https://www.businessinsider.com/hugging-face-ceo-hack-openai-mandatory-transparency-law-ai-2026-8"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md": [
+      "https://junie.jetbrains.com/docs/action-allowlist.html",
+      "https://junie.jetbrains.com/docs/junie-cli.html",
+      "https://junie.jetbrains.com/docs/junie-cli-configuration.html",
+      "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md": [
+      "https://junie.jetbrains.com/docs/junie-headless.html",
+      "https://junie.jetbrains.com/docs/junie-cli-configuration.html",
+      "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/ai-supply-chain-provenance-credentialing.md": [
+      "https://simpler.grants.gov/opportunity/2f434e81-c476-49bb-a7e6-9a320c907cd9",
+      "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes"
+    ],
+    "docs/wiki/threats-and-attacks/agentic-ai-threat-cluster.md": [
+      "https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean",
+      "https://openai.com/index/safety-overview-gpt-6-astra/",
+      "https://openai.com/index/daybreak-for-frontline-defenders/"
+    ],
+    "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md": [
+      "https://www.stride.build/blog/network-egress-control-ai-agents",
+      "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing",
+      "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+      "https://openai.com/index/path-to-astra/"
+    ]
+  },
+  "qualifying_update_count": 4,
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+      "source_title": "Junie Documentation - config.json",
+      "source_url": "https://junie.jetbrains.com/docs/junie-cli-configuration.html",
+      "visible_dates": [
+        {
+          "date": "2026-09-01",
+          "date_basis": "visible page date at bottom of JetBrains documentation"
+        }
+      ],
+      "evidence_classification": "control change / product security documentation",
+      "classification": "control change",
+      "factual_summary": "JetBrains documents Junie CLI project-trust handling for config.json: untrusted projects use temporary Junie storage outside the repository, do not implicitly load project configuration, MCP servers, hooks, extensions, models, plans, demos, custom agents or commands, skills, guidelines, memory, or onboarding sources; trust markers are integrity-protected through native secure storage or an owner-only authentication-key fallback; default project config hooks are ignored while explicitly supplied config locations remain enabled.",
+      "affected_boundary": "Junie CLI configuration loading, project trust markers, BYOK/provider credentials, proxy settings, hooks, MCP/skill/command/model/agent discovery paths, and untrusted-project temporary storage.",
+      "named_entities": [
+        "JetBrains Junie CLI",
+        "config.json",
+        "MCP servers",
+        "BYOK provider keys",
+        "hooks"
+      ],
+      "relevance": "Same-leaf credential-isolation update because configuration, BYOK, proxy, and discovery paths decide which credentials and tool definitions a development agent can load from a project or user scope.",
+      "upstream_routing": "Broad Junie CLI product documentation belongs upstream; ai-security-wiki keeps credential, trust-marker, hook, and discovery-path isolation implications.",
+      "follow_up_note": "Ingest should reconcile with the existing credential-isolation open question about local secret injection and with the prior local-agent execution boundary capture."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md",
+      "source_title": "Junie Documentation - Headless mode",
+      "source_url": "https://junie.jetbrains.com/docs/junie-headless.html",
+      "visible_dates": [
+        {
+          "date": "2026-09-01",
+          "date_basis": "visible page date at bottom of JetBrains documentation"
+        }
+      ],
+      "evidence_classification": "control change / product security documentation",
+      "classification": "control change",
+      "factual_summary": "JetBrains says interactive Junie CLI launches enforce project trust before loading project-scoped inputs, but non-interactive one-shot prompts, piped-input tasks, ACP, and Gateway cannot ask for a trust decision and are trusted by design, loading project Junie configuration, MCP servers, hooks, agents, skills, and guidelines without prompting. The page advises only running non-interactively in trusted projects and managing trust markers under Junie Home.",
+      "affected_boundary": "Junie CLI headless execution, CI/CD and build-pipeline prompts, ACP and Gateway launches, project trust markers, project-scoped MCP/hook/agent/skill/guideline loading.",
+      "named_entities": [
+        "JetBrains Junie CLI",
+        "ACP",
+        "Gateway",
+        "MCP servers",
+        "hooks",
+        "agents",
+        "skills"
+      ],
+      "relevance": "Same-leaf workstation-containment update because non-interactive agent execution changes whether repository-controlled configuration loads before a human trust prompt can occur.",
+      "upstream_routing": "General Junie headless usage belongs upstream; ai-security-wiki keeps the workstation containment and non-interactive trust-boundary warning.",
+      "follow_up_note": "Ingest should compare this September 1 wording with older restricted-mode notes already on the workstation-containment page."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-network-egress-controls.md",
+      "source_title": "ChatGPT Enterprise & Edu Release Notes - More control over browser and computer use",
+      "source_url": "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+      "visible_dates": [
+        {
+          "date": "2026-09-03",
+          "date_basis": "visible release-note section date"
+        }
+      ],
+      "evidence_classification": "control change / enterprise policy documentation",
+      "classification": "control change",
+      "factual_summary": "OpenAI release notes describe new enterprise policy settings for supported desktop clients that let admins set website defaults and exceptions, restrict uploads, downloads, browser history and developer access, control automatic review, saved approvals, and site-approval duration, and allow or block specific macOS and Windows native apps. The notes state the controls apply on supported clients and that allowing a site or app does not bypass other policies or approval prompts.",
+      "affected_boundary": "Codex and ChatGPT desktop browser/computer-use policy, website allow/deny defaults and exceptions, uploads/downloads, browser history, developer access, app allow/block rules, automatic review, saved approvals, and approval lifetimes.",
+      "named_entities": [
+        "OpenAI",
+        "ChatGPT Enterprise",
+        "ChatGPT Edu",
+        "Codex",
+        "ChatGPT desktop app",
+        "macOS",
+        "Windows"
+      ],
+      "relevance": "Same-leaf agent egress-control update because admin-managed website/app policies and approval lifetimes constrain where browser and computer-use agents can connect or move data.",
+      "upstream_routing": "Broad ChatGPT/Codex release-note context belongs upstream; ai-security-wiki keeps the egress, data-movement, and approval-control boundaries.",
+      "follow_up_note": "Ingest may also cross-link workstation containment if the policy surface is added to that leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-supply-chain-provenance-credentialing.md",
+      "source_title": "ChatGPT Enterprise & Edu Release Notes - Import and sync plugin marketplaces from GitHub",
+      "source_url": "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+      "visible_dates": [
+        {
+          "date": "2026-08-28",
+          "date_basis": "visible release-note section date"
+        }
+      ],
+      "evidence_classification": "control change / enterprise supply-chain policy documentation",
+      "classification": "control change",
+      "factual_summary": "OpenAI release notes say workspace admins and owners can centrally distribute plugin marketplaces from public or private GitHub repositories and keep plugins up to date with automatic daily sync. Admins and owners still control installation policies for eligible roles and required app access; repository policy values do not override workspace settings, and app permissions and authentication requirements continue to apply.",
+      "affected_boundary": "ChatGPT/Codex plugin marketplace distribution, public/private GitHub source repositories, automatic daily sync, workspace installation policy, role eligibility, required app access, app permissions, and authentication requirements.",
+      "named_entities": [
+        "OpenAI",
+        "ChatGPT Enterprise",
+        "ChatGPT Edu",
+        "Codex",
+        "GitHub",
+        "plugin marketplaces"
+      ],
+      "relevance": "Same-leaf provenance/credentialing update because plugin supply-chain distribution now depends on repository provenance plus workspace-controlled role, app-access, permission, and authentication gates.",
+      "upstream_routing": "General plugin marketplace feature coverage belongs upstream; ai-security-wiki keeps supply-chain provenance, role-gated distribution, and app-permission control implications.",
+      "follow_up_note": "Ingest should keep this as a control-surface note, not as proof that repository-hosted plugins are trusted by default."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agent-s-gui-action-denial-of-service.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84887",
+      "visible_dates": [
+        "2026-09-02T21:00:08.337Z",
+        "2026-09-03T12:52:04.451Z"
+      ],
+      "reason": "Qualifies by direct CVE date and security relevance, but already captured in raw/processed/2026-09-03/ai-security-wiki-topic-news-collector-2026-09-03T233104Z.json and synthesized into the leaf; excluded from this leaf-watch artifact to avoid duplicate output."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/n8n-workflow-tool-credential-exfiltration.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-85166",
+      "visible_dates": [
+        "2026-09-03T11:22:16.613Z",
+        "2026-09-03T14:30:17.597Z"
+      ],
+      "reason": "Qualifies by date and security relevance, but already captured in the September 3 processed collector artifact and also listed as an overlap exclusion in raw/2026-09-04/ai-security-wiki-topic-news-collector-2026-09-04T233156Z.json."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/openbrowser-browser-agent-message-denial-of-service.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84833",
+      "visible_dates": [
+        "2026-09-02T17:00:11.250Z",
+        "2026-09-03T14:31:43.872Z"
+      ],
+      "reason": "Qualifies by direct CVE date and security relevance, but already captured in the September 3 processed collector artifact and synthesized into the leaf; excluded as duplicate collector output."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/agentimus-ai-seo-mcp-wordpress-broken-access-control.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84779",
+      "visible_dates": [
+        "2026-09-03T16:31:56.043Z",
+        "2026-09-03T17:34:02.104Z"
+      ],
+      "reason": "Qualifies by direct CVE date and security relevance, but already captured in the September 3 processed collector artifact and synthesized into the leaf; excluded as duplicate collector output."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mountdev-ai-mcp-connector-wordpress-authorization-bypass.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-85306",
+      "visible_dates": [
+        "2026-09-03T16:53:00.347Z",
+        "2026-09-04T13:42:18.681Z"
+      ],
+      "reason": "Direct CVE has a September 4 update timestamp, but the vulnerability was already captured in the September 3 processed collector artifact and listed as overlap in the September 4 topic collector; no distinct same-leaf delta was identified for this leaf-watch artifact."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ollama-tensor-blob-redirect-ssrf.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-85180",
+      "visible_dates": [
+        "2026-09-03T14:12:19.048Z",
+        "2026-09-03T14:41:50.099Z"
+      ],
+      "reason": "Qualifies by direct CVE date and security relevance, but already captured in the September 3 processed collector artifact and also listed as an overlap exclusion in the September 4 topic collector."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md",
+      "source_url": "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-edu-release-notes",
+      "visible_dates": [
+        "2026-09-03"
+      ],
+      "reason": "Release notes include browser/computer-use data-movement controls, but they do not change Codex training-data use, retention, or API data-usage policy; excluded as adjacent but not same-leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+      "source_url": "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+      "visible_dates": [
+        "2026-07-28 release in page title/content"
+      ],
+      "reason": "The MCP Go SDK v1.7.0 OAuth/protocol release is outside the seven-day source window for this run; no later visible release or issuer-binding update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+      "source_url": "https://openai.com/index/safety-overview-gpt-6-astra/",
+      "visible_dates": [
+        "2026-09-03"
+      ],
+      "reason": "OpenAI Astra/Daybreak incident-response and monitorability details are in-window and relevant, but already captured in the September 3 processed topic collector and listed as overlap in the September 4 topic collector."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+      "source_url": "https://junie.jetbrains.com/docs/junie-cli-configuration.html",
+      "visible_dates": [
+        "2026-09-01"
+      ],
+      "reason": "Junie config documents hooks and explicit configuration locations, but the strongest same-leaf deltas are credential isolation and workstation trust; no distinct build/dependency execution update was retained."
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/agentic-ai-threat-cluster.md",
+      "source_url": "https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean",
+      "visible_dates": [
+        "2026-08-14"
+      ],
+      "reason": "The Tenable threat-cluster source is outside the strict seven-day window; later OpenAI Astra/Daybreak material is adjacent control context and already captured in prior raw artifacts."
+    }
+  ],
+  "evidence_classification_counts": {
+    "control change / product security documentation": 2,
+    "control change / enterprise policy documentation": 1,
+    "control change / enterprise supply-chain policy documentation": 1
+  },
+  "federation_notes": [
+    "Broad OpenAI, ChatGPT, Codex, Junie, GitHub, MCP SDK, Ollama, n8n, Agent-S, openbrowser, and WordPress product/entity coverage routes upstream when not security-specific.",
+    "Local retained updates are limited to credential isolation, workstation containment, egress policy, plugin supply-chain provenance, affected security boundaries, and duplicate/routing notes."
+  ],
+  "follow_up_notes": [
+    "Ingest Junie September 1 trust/config documentation into credential-isolation and workstation-containment leaves, checking older restricted-mode wording for drift.",
+    "Ingest OpenAI September 3 browser/computer-use controls into agent network egress controls and consider a cross-link to workstation containment.",
+    "Ingest OpenAI August 28 plugin marketplace sync as a supply-chain provenance control note, preserving the point that repository policy cannot override workspace policy."
+  ],
+  "blockers": [],
+  "created_raw_path": "raw/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json"
+}

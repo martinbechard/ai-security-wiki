@@ -106,6 +106,15 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [n8n Workflow Tool credential exfiltration](n8n-workflow-tool-credential-exfiltration.md)
 - [Agent-S GUI action denial of service](agent-s-gui-action-denial-of-service.md)
 - [openbrowser Browser Agent message denial of service](openbrowser-browser-agent-message-denial-of-service.md)
+- [Postgres MCP Pro RangeFunction bypass](postgres-mcp-pro-rangefunction-bypass.md)
+- [OGX MCP server_url SSRF](ogx-mcp-server-url-ssrf.md)
+- [IBM Langflow MCP localhost header bypass](ibm-langflow-mcp-localhost-header-bypass.md)
+- [IBM ContextForge tool invocation DNS rebinding](ibm-contextforge-tool-invocation-dns-rebinding.md)
+- [IBM ContextForge A2A DNS rebinding](ibm-contextforge-a2a-dns-rebinding.md)
+- [AWS Labs Postgres MCP Server readonly bypass](awslabs-postgres-mcp-server-readonly-bypass.md)
+- [FastChat worker registration SSRF and model spoofing](fastchat-worker-registration-ssrf-model-spoofing.md)
+- [IBM MQ Agent LLM worker exhaustion](ibm-mq-agent-llm-worker-exhaustion.md)
+- [PlaywrightCapture favicon redirect SSRF](playwrightcapture-favicon-redirect-ssrf.md)
 - [CowAgent tool denial of service](cowagent-tool-denial-of-service.md)
 - [aichat API endpoint memory allocation DoS](aichat-api-endpoint-memory-allocation-dos.md)
 - [Kibana AI Assistant and Agent Builder DoS](kibana-ai-assistant-and-agent-builder-dos.md)
@@ -141,6 +150,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 ## Maintenance Notes
 
 - Updated on 2026-09-03 with n8n Workflow Tool credential exfiltration, Agent-S GUI action DoS, and openbrowser browser-agent message DoS leaves.
+- Updated on 2026-09-04 with Postgres MCP Pro, OGX, IBM Langflow, IBM ContextForge, AWS Labs postgres-mcp-server, FastChat, IBM MQ Agent, PlaywrightCapture, and SiYuan MCP containment updates.
 - Updated on 2026-09-02 with LiteLLM MCP KEV authentication bypass, CowAgent tool DoS, and aichat API memory-allocation leaves.
 - Updated on 2026-09-01 with Codex PowerShell approval bypass, Kibana AI feature DoS, runZero Platform MCP authorization, and hermes-agent ACP/MCP availability leaves.
 - Updated on 2026-08-31 with ash_ai tool-loop and MCP-origin leaves, the MCPHub advisory-family leaf, sdcb chats MCP fetch-tools SSRF, and watcher enrichment for Junie local-execution boundaries.
