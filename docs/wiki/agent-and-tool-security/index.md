@@ -115,6 +115,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [FastChat worker registration SSRF and model spoofing](fastchat-worker-registration-ssrf-model-spoofing.md)
 - [IBM MQ Agent LLM worker exhaustion](ibm-mq-agent-llm-worker-exhaustion.md)
 - [PlaywrightCapture favicon redirect SSRF](playwrightcapture-favicon-redirect-ssrf.md)
+- [Rowboat custom MCP server SSRF](rowboat-custom-mcp-server-ssrf.md)
+- [cli-mcp-server command allowlist bypass](cli-mcp-server-command-allowlist-bypass.md)
 - [CowAgent tool denial of service](cowagent-tool-denial-of-service.md)
 - [aichat API endpoint memory allocation DoS](aichat-api-endpoint-memory-allocation-dos.md)
 - [Kibana AI Assistant and Agent Builder DoS](kibana-ai-assistant-and-agent-builder-dos.md)
@@ -151,6 +153,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 - Updated on 2026-09-03 with n8n Workflow Tool credential exfiltration, Agent-S GUI action DoS, and openbrowser browser-agent message DoS leaves.
 - Updated on 2026-09-04 with Postgres MCP Pro, OGX, IBM Langflow, IBM ContextForge, AWS Labs postgres-mcp-server, FastChat, IBM MQ Agent, PlaywrightCapture, and SiYuan MCP containment updates.
+- Updated on 2026-09-05 with Rowboat custom MCP server SSRF and cli-mcp-server shell-substitution allowlist bypass leaves.
 - Updated on 2026-09-02 with LiteLLM MCP KEV authentication bypass, CowAgent tool DoS, and aichat API memory-allocation leaves.
 - Updated on 2026-09-01 with Codex PowerShell approval bypass, Kibana AI feature DoS, runZero Platform MCP authorization, and hermes-agent ACP/MCP availability leaves.
 - Updated on 2026-08-31 with ash_ai tool-loop and MCP-origin leaves, the MCPHub advisory-family leaf, sdcb chats MCP fetch-tools SSRF, and watcher enrichment for Junie local-execution boundaries.

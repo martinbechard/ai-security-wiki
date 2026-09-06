@@ -1,0 +1,310 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-09-05T23:32:31Z",
+  "collector_identity": "Northstar",
+  "cutoff_window": {
+    "start_utc": "2026-09-03T23:32:31Z",
+    "end_utc": "2026-09-05T23:32:31Z",
+    "policy": "Include only public items with visible publication or update evidence inside the exact 48-hour window. Exclude missing, ambiguous, future-dated, header-only, crawl-only, stale, or boundary-only dates."
+  },
+  "searched_topics": [
+    "AI threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "method": {
+    "public_sources_only": true,
+    "local_private_content_sent_external": false,
+    "repo_modified_scope": [
+      "raw/2026-09-05/ai-security-wiki-topic-news-collector-2026-09-05T233231Z.json"
+    ],
+    "repo_paths_not_modified": [
+      "docs/wiki",
+      "raw/processed"
+    ],
+    "source_checks": [
+      {
+        "kind": "api",
+        "url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+        "notes": "Queried exact-window keyword searches for AI, MCP, LLM, agent, prompt, machine learning, and model. Later repeated NVD keyword calls returned HTTP 429, so direct CVE JSON was used for item detail."
+      },
+      {
+        "kind": "api",
+        "url": "https://cveawg.mitre.org/api/cve/CVE-2026-85660",
+        "notes": "Used for publication timestamp, affected version, description, references, and title."
+      },
+      {
+        "kind": "api",
+        "url": "https://cveawg.mitre.org/api/cve/CVE-2026-86122",
+        "notes": "Used for publication timestamp, affected version, description, references, and title."
+      },
+      {
+        "kind": "web",
+        "url": "https://github.com/MladenSU/cli-mcp-server/issues/17",
+        "notes": "Public issue URL was reachable but fetched HTML was not parsed as authoritative detail; CVE Services and CVE Record are the reliable evidence."
+      },
+      {
+        "kind": "web",
+        "url": "https://github.com/rowboatlabs/rowboat/issues/621",
+        "notes": "Public issue URL was reachable but fetched HTML was not parsed as authoritative detail; CVE Services and CVE Record are the reliable evidence."
+      },
+      {
+        "kind": "web",
+        "url": "https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/",
+        "notes": "Checked for in-window governance updates; visible item date was June 1, 2026, with related resources dated September 1, 2026, outside this exact window."
+      },
+      {
+        "kind": "web",
+        "url": "https://www.nccoe.nist.gov/projects/cyber-ai-profile",
+        "notes": "Checked for in-window Cyber AI Profile updates; page status is reviewing comments and visible session dates are outside the window."
+      }
+    ]
+  },
+  "findings": [
+    {
+      "id": "CVE-2026-86122",
+      "title": "Rowboat through 0.9.1 custom MCP server SSRF",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86122",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86122",
+        "https://github.com/rowboatlabs/rowboat/issues/621",
+        "https://github.com/rowboatlabs/rowboat/blob/v0.9.1/apps/rowboat/src/application/use-cases/projects/add-custom-mcp-server.use-case.ts",
+        "https://github.com/rowboatlabs/rowboat/blob/v0.9.1/apps/rowboat/src/application/lib/agents-runtime/agent-tools.ts",
+        "https://www.vulncheck.com/advisories/rowboat-through-0.9.1-server-side-request-forgery-via-custom-mcp-server"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Record",
+          "date": "2026-09-05T09:59:10.757Z",
+          "meaning": "datePublished"
+        },
+        {
+          "source": "CVE Record",
+          "date": "2026-09-05T09:59:10.757Z",
+          "meaning": "dateUpdated"
+        },
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-05T10:16:43.610",
+          "meaning": "published and lastModified"
+        }
+      ],
+      "evidence_classification": "direct CVE JSON plus NVD publication record with public issue and code references",
+      "factual_summary": "Rowboat through 0.9.1 does not sufficiently validate custom MCP server and webhook URLs. Authenticated users can configure arbitrary destinations, allowing SSRF against internal services and cloud metadata endpoints and enabling internal network-topology enumeration.",
+      "affected_boundary_or_version": "rowboatlabs/rowboat through 0.9.1; custom MCP server and webhook URL handling",
+      "security_delta": "New CVE publication for an MCP configuration path that turns delegated agent connectivity into internal network reachability.",
+      "why_it_matters_for_ai_security": "Agent platforms that let users attach MCP servers or webhooks need URL, host, IP-range, and metadata-service controls because an apparently delegated integration can become an SSRF path from the agent runtime.",
+      "named_entities": [
+        "Rowboat",
+        "rowboatlabs/rowboat",
+        "Model Context Protocol",
+        "MCP",
+        "CVE-2026-86122",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Rowboat as a product or broad agent platform entity is upstream-owned if durable product coverage is needed.",
+        "ai_dev_wiki": "General MCP server integration practice is upstream-owned by ai-dev-wiki when framed as development workflow governance.",
+        "ai_security_wiki_local_scope": "Keep the SSRF boundary, affected version, MCP URL-validation failure, cloud metadata exposure risk, and mitigation follow-up here."
+      },
+      "confidence": "high",
+      "confidence_notes": "CVE Record and NVD agree on in-window publication timing and core vulnerability description. Ingest should recheck the GitHub issue and vendor repository for any fixed version or maintainer remediation that was not in the CVE Record.",
+      "follow_up_actions": [
+        "During ingest, check whether a Rowboat release after 0.9.1 adds URL/IP allow-listing, metadata endpoint blocking, DNS rebinding defenses, or per-connector egress policy.",
+        "Consider a durable local leaf under agent-and-tool-security for custom MCP server SSRF if no exact leaf already owns this boundary."
+      ]
+    },
+    {
+      "id": "CVE-2026-85660",
+      "title": "cli-mcp-server 0.2.5 command allowlist bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85660",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85660",
+        "https://github.com/MladenSU/cli-mcp-server/issues/17",
+        "https://github.com/MladenSU/cli-mcp-server",
+        "https://github.com/MladenSU/cli-mcp-server/blob/main/src/cli_mcp_server/server.py",
+        "https://www.vulncheck.com/advisories/cli-mcp-server-0.2.5-command-allowlist-bypass-via-shell-substitution"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Record",
+          "date": "2026-09-04T14:32:18.149Z",
+          "meaning": "datePublished"
+        },
+        {
+          "source": "CVE Record",
+          "date": "2026-09-04T17:50:30.858Z",
+          "meaning": "dateUpdated"
+        },
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-04T15:17:43.490",
+          "meaning": "published"
+        },
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-04T18:18:06.293",
+          "meaning": "lastModified"
+        }
+      ],
+      "evidence_classification": "direct CVE JSON plus NVD publication record with public issue, product, code, and third-party advisory references",
+      "factual_summary": "cli-mcp-server 0.2.5 allows a command allowlist bypass in _validate_command_with_operators when ALLOW_SHELL_OPERATORS is enabled. Shell substitution syntax can execute commands outside ALLOWED_COMMANDS.",
+      "affected_boundary_or_version": "MladenSU cli-mcp-server 0.2.5; ALLOW_SHELL_OPERATORS-enabled command validation path",
+      "security_delta": "New CVE publication for an MCP command-execution server where allowlist enforcement fails when shell operators are allowed.",
+      "why_it_matters_for_ai_security": "MCP servers that broker shell access for agents need parser-equivalent command policy, because shell substitution can turn a seemingly constrained tool call into arbitrary command execution.",
+      "named_entities": [
+        "cli-mcp-server",
+        "MladenSU",
+        "Model Context Protocol",
+        "MCP",
+        "CVE-2026-85660",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "cli-mcp-server as an MCP server catalog item is upstream-owned if durable product coverage is needed.",
+        "ai_dev_wiki": "General shell-tool governance and command approval practices route to ai-dev-wiki when framed as AI-assisted development workflow.",
+        "ai_security_wiki_local_scope": "Keep the shell-substitution bypass, affected version, allowlist failure mode, and MCP tool-execution security implication here."
+      },
+      "confidence": "medium-high",
+      "confidence_notes": "CVE Record and NVD agree on the in-window dates and vulnerability description. Because publication preceded the previous automation run by roughly nine hours and the prior raw artifact is absent from this checkout, ingest should deduplicate against any off-checkout September 4 collector artifact before creating a new durable leaf.",
+      "follow_up_actions": [
+        "During ingest, verify whether the September 4 collector already captured this CVE in another checkout state.",
+        "Check maintainer issue and package release history for a fixed version or recommended configuration change."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-18406 SureForms AI Forms WordPress stored XSS",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-18406",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18406"
+      ],
+      "visible_dates": [
+        "CVE Record datePublished 2026-09-05T06:37:57.921Z",
+        "NVD published 2026-09-05T07:17:11.040"
+      ],
+      "reason": "Excluded because the concrete vulnerability is generic WordPress stored XSS in a form plugin whose name includes AI; no AI system, model, agent, prompt, data, credential, or AI deployment security boundary was identified."
+    },
+    {
+      "candidate": "OWASP State of Agentic AI Security and Governance 2.01",
+      "source_urls": [
+        "https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/"
+      ],
+      "visible_dates": [
+        "June 1, 2026"
+      ],
+      "reason": "Excluded as stale relative to the exact 48-hour window. Related additional resources on the page were dated September 1, 2026, also outside the window."
+    },
+    {
+      "candidate": "OWASP Agent Control Standard and GenAI Security Industry Framework Crosswalk",
+      "source_urls": [
+        "https://genai.owasp.org/resource/state-of-agentic-ai-security-and-governance/"
+      ],
+      "visible_dates": [
+        "September 1, 2026"
+      ],
+      "reason": "Excluded because visible dates are before 2026-09-03T23:32:31Z."
+    },
+    {
+      "candidate": "NIST NCCoE Cyber AI Profile project page",
+      "source_urls": [
+        "https://www.nccoe.nist.gov/projects/cyber-ai-profile"
+      ],
+      "visible_dates": [
+        "April 28, 2026",
+        "May 5, 2026",
+        "May 12, 2026"
+      ],
+      "reason": "Excluded because the page exposes no in-window publication or update date; current status says comments are being reviewed."
+    },
+    {
+      "candidate": "Google Cloud Agent Search answer documentation crawl result",
+      "source_urls": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer"
+      ],
+      "visible_dates": [
+        "crawled today only"
+      ],
+      "reason": "Excluded because crawler freshness is not a visible publication or update date and the page describes product behavior rather than a concrete AI security delta."
+    },
+    {
+      "candidate": "September 4 MCP/NVD cluster already visible before the last run",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-03T23:32:31.000Z&pubEndDate=2026-09-05T23:32:31.000Z&keywordSearch=MCP&resultsPerPage=20"
+      ],
+      "visible_dates": [
+        "NVD published 2026-09-04 for CVE-2026-85580, CVE-2026-85620, CVE-2026-85666, CVE-2026-9186, CVE-2026-18905, CVE-2026-77822, CVE-2026-18486, CVE-2026-18489, and CVE-2026-85787"
+      ],
+      "reason": "Excluded from this artifact to avoid repeating the previous September 4 collector output; automation memory says that run saved 18 findings and names IBM ContextForge, IBM Langflow, AWS bulletin, Microsoft MSRC, WPScan, GitHub, and VulnCheck recheck follow-ups. Rowboat was retained because it was published after the previous run."
+    },
+    {
+      "candidate": "Secondary blog roundups and marketing posts dated September 5, 2026",
+      "source_urls": [
+        "https://bostoninstituteofanalytics.org/blog/cybersecurity-this-week-august-29-september-4-2026-major-attacks-zero-days-data-breaches-and-ai-security/",
+        "https://stackmaven.io/news/openai-lockdown-mode-launch/",
+        "https://www.linkedin.com/pulse/black-hat-2026-signals-new-era-ai-cybersecurity-mark-smith-cogie"
+      ],
+      "visible_dates": [
+        "September 5, 2026 or crawl-date snippets"
+      ],
+      "reason": "Excluded because primary in-window evidence for the described security changes was not established from these secondary or marketing-style sources during this run."
+    },
+    {
+      "candidate": "NVD keyword searches after initial successful calls",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0"
+      ],
+      "visible_dates": [],
+      "reason": "Recorded as a collection caveat rather than a qualifying item because repeated keyword and per-CVE searches returned HTTP 429 Too Many Requests."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_topic": "Rowboat",
+      "classification": "upstream-owned entity with local security implication",
+      "route": "ai-wiki owns broad product/entity coverage; ai-security-wiki owns the custom MCP server SSRF finding."
+    },
+    {
+      "entity_or_topic": "cli-mcp-server",
+      "classification": "upstream-owned MCP server with local security implication",
+      "route": "ai-wiki owns broad MCP server catalog context; ai-security-wiki owns the command allowlist bypass and shell-execution boundary."
+    },
+    {
+      "entity_or_topic": "MCP command and URL validation controls",
+      "classification": "shared concept with local security lens",
+      "route": "ai-dev-wiki owns general development workflow/tool-governance practice; ai-security-wiki owns exploit classes, affected versions, mitigations, and residual risk."
+    },
+    {
+      "entity_or_topic": "OWASP agentic AI governance resources",
+      "classification": "security governance topic but stale for this run",
+      "route": "If ingested from an in-window future update, keep security-control deltas local and route broad framework background upstream only as needed."
+    }
+  ],
+  "confidence_summary": {
+    "qualifying_count": 2,
+    "exclusion_count": 8,
+    "routing_count": 4,
+    "overall_confidence": "medium-high",
+    "blockers_or_caveats": [
+      "NVD returned HTTP 429 during later repeated keyword searches.",
+      "The prior September 4 raw artifact is not present in this checkout, so one September 4 item has a deduplication caveat.",
+      "GitHub issue pages were reachable but not parsed for authoritative details; direct CVE JSON and NVD were used instead."
+    ]
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  }
+}

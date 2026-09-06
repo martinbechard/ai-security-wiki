@@ -110,6 +110,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/fastchat-worker-registration-ssrf-model-spoofing.md](agent-and-tool-security/fastchat-worker-registration-ssrf-model-spoofing.md)
 - [agent-and-tool-security/ibm-mq-agent-llm-worker-exhaustion.md](agent-and-tool-security/ibm-mq-agent-llm-worker-exhaustion.md)
 - [agent-and-tool-security/playwrightcapture-favicon-redirect-ssrf.md](agent-and-tool-security/playwrightcapture-favicon-redirect-ssrf.md)
+- [agent-and-tool-security/rowboat-custom-mcp-server-ssrf.md](agent-and-tool-security/rowboat-custom-mcp-server-ssrf.md)
+- [agent-and-tool-security/cli-mcp-server-command-allowlist-bypass.md](agent-and-tool-security/cli-mcp-server-command-allowlist-bypass.md)
 - [agent-and-tool-security/cowagent-tool-denial-of-service.md](agent-and-tool-security/cowagent-tool-denial-of-service.md)
 - [agent-and-tool-security/aichat-api-endpoint-memory-allocation-dos.md](agent-and-tool-security/aichat-api-endpoint-memory-allocation-dos.md)
 - [agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md](agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md)
