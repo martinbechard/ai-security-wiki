@@ -13,6 +13,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [AI agent sandbox escape host file access](ai-agent-sandbox-escape-host-file-access.md)
 - [MCP SDK transport header handling](mcp-sdk-transport-header-handling.md)
 - [AI guardrail dependency compromise](ai-guardrail-dependency-compromise.md)
+- [Axolotl Multipack trust_remote_code RCE](axolotl-multipack-trust-remote-code-rce.md)
+- [Bifrost HTTP Custom Plugin RCE](bifrost-http-custom-plugin-rce.md)
 - [AI development workstation containment](ai-development-workstation-containment.md)
 - [Agent build and dependency execution boundaries](agent-build-and-dependency-execution-boundaries.md)
 - [Evaluation artifact repository agent coordination](evaluation-artifact-repository-agent-coordination.md)
@@ -97,6 +99,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 - Updated on 2026-09-03 with the Ollama tensor blob redirect SSRF leaf and Windows ML CLI fixed-version evidence.
 - Updated on 2026-09-04 with Xinference auto-register file-read, aider repository command execution, AI Website Builder unprotected REST, Junie workstation-containment, and plugin marketplace provenance updates.
+- Updated on 2026-09-06 with Axolotl multipack trust_remote_code RCE and Bifrost HTTP custom plugin RCE leaves.
 - Updated on 2026-09-02 with the Windows ML CLI localhost trust_remote_code RCE leaf and ModelScope advisory provenance.
 - Updated on 2026-09-01 with Codex Git metadata execution, Transformers remote-code cache persistence, ModelScope unsafe YAML, and Elasticsearch model-artifact deserialization leaves.
 - Updated on 2026-08-31 with Theia AI Agent Mode workspace path traversal, OpenShift AI guardrails-detectors ReDoS, and a Kubio AI Website Builder deferral in the WordPress AI plugin advisory page.

@@ -45,3 +45,4 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 ## Maintenance Notes
 
 - Separate public incident facts from inference and avoid collecting private incident material through public automations.
+- Updated on 2026-09-06 with Anthropic remediation-follow-up evidence and OpenAI wiki-incident disclosure-framework reporting.

@@ -1,0 +1,468 @@
+{
+  "automation_name": "AI Security Wiki Leaf Update Watch",
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "run_timestamp_utc": "2026-09-07T00:06:04Z",
+  "local_run_time": "2026-09-06 20:06:04 -0400",
+  "repository_scope": {
+    "repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "raw_path": "raw/2026-09-06/ai-security-wiki-leaf-update-watch-20260907T000604Z.json",
+    "modified_boundaries": [
+      "raw/2026-09-06",
+      "/Users/martinbechard/.codex/automations/ai-security-wiki-leaf-update-watch/state.json"
+    ],
+    "not_modified": [
+      "docs/wiki",
+      "raw/processed"
+    ]
+  },
+  "cutoff_window": {
+    "start_utc": "2026-08-31T00:06:04Z",
+    "end_utc": "2026-09-07T00:06:04Z",
+    "rule": "Include only public sources published or visibly updated within the strict seven-day window; exclude missing, ambiguous, future, header-only, snippet-only, stale, duplicate, and boundary-only date evidence."
+  },
+  "selection": {
+    "approved_roots": [
+      "docs/wiki/threats-and-attacks",
+      "docs/wiki/model-and-prompt-security",
+      "docs/wiki/agent-and-tool-security",
+      "docs/wiki/data-and-privacy",
+      "docs/wiki/identity-and-access",
+      "docs/wiki/infrastructure-and-supply-chain",
+      "docs/wiki/testing-and-assurance",
+      "docs/wiki/governance-and-compliance",
+      "docs/wiki/incident-response"
+    ],
+    "leaf_universe_count": 288,
+    "selected_leaf_count": 15,
+    "selected_leaf_ids": [
+      "docs/wiki/agent-and-tool-security/cli-mcp-server-command-allowlist-bypass.md",
+      "docs/wiki/agent-and-tool-security/rowboat-custom-mcp-server-ssrf.md",
+      "docs/wiki/infrastructure-and-supply-chain/xinference-auto-register-file-read.md",
+      "docs/wiki/model-and-prompt-security/lavague-indirect-prompt-injection-rce.md",
+      "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+      "docs/wiki/agent-and-tool-security/gomarble-facebook-ads-mcp-ssrf.md",
+      "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+      "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+      "docs/wiki/governance-and-compliance/ai-office-gpai-enforcement-controls.md",
+      "docs/wiki/incident-response/anthropic-internet-connected-cyber-evaluation-incident.md",
+      "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+      "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "docs/wiki/infrastructure-and-supply-chain/ai-guardrail-dependency-compromise.md",
+      "docs/wiki/testing-and-assurance/coding-agent-access-validation.md"
+    ],
+    "selection_rule": "New or unchecked leaves first, then oldest last_checked_at, ties by stable relative path."
+  },
+  "source_urls_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/cli-mcp-server-command-allowlist-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-85660",
+      "https://pypi.org/pypi/cli-mcp-server/json",
+      "https://api.github.com/repos/MladenSU/cli-mcp-server/issues/17"
+    ],
+    "docs/wiki/agent-and-tool-security/rowboat-custom-mcp-server-ssrf.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-86122",
+      "https://api.github.com/repos/rowboatlabs/rowboat/issues/621",
+      "https://api.github.com/repos/rowboatlabs/rowboat/releases",
+      "raw/2026-09-06/ai-security-wiki-topic-news-collector-2026-09-06T233209Z.json"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/xinference-auto-register-file-read.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-85668",
+      "https://pypi.org/pypi/xinference/json",
+      "https://api.github.com/repos/xorbitsai/inference/issues/5176",
+      "https://api.github.com/repos/xorbitsai/inference/releases/latest"
+    ],
+    "docs/wiki/model-and-prompt-security/lavague-indirect-prompt-injection-rce.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-85694",
+      "https://pypi.org/pypi/lavague-core/json",
+      "https://api.github.com/repos/lavague-ai/LaVague/issues/650"
+    ],
+    "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md": [
+      "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+      "https://docs.cloud.google.com/mcp/overview"
+    ],
+    "docs/wiki/agent-and-tool-security/gomarble-facebook-ads-mcp-ssrf.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-19956",
+      "https://api.github.com/repos/gomarble-ai/facebook-ads-mcp-server/pulls/32",
+      "https://api.github.com/repos/gomarble-ai/facebook-ads-mcp-server/releases/latest",
+      "https://api.github.com/repos/gomarble-ai/facebook-ads-mcp-server/tags"
+    ],
+    "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-50757",
+      "https://api.github.com/repos/DayuanJiang/next-ai-draw-io/issues/754",
+      "https://registry.npmjs.org/@next-ai-drawio%2fmcp-server"
+    ],
+    "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-50756",
+      "https://api.github.com/repos/DayuanJiang/next-ai-draw-io/issues/749",
+      "https://registry.npmjs.org/@next-ai-drawio%2fmcp-server"
+    ],
+    "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md": [
+      "https://www.nist.gov/news-events/events/2026/07/securing-ai-data-center-architecture-security-posture-and-emerging",
+      "https://csrc.nist.gov/pubs/sp/800/239/ipd"
+    ],
+    "docs/wiki/governance-and-compliance/ai-office-gpai-enforcement-controls.md": [
+      "https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act",
+      "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    ],
+    "docs/wiki/incident-response/anthropic-internet-connected-cyber-evaluation-incident.md": [
+      "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "https://www.anthropic.com/news/improving-alignment-security-efforts",
+      "https://www.anthropic.com/aug-2026-risk-report"
+    ],
+    "docs/wiki/incident-response/defender-model-access-during-security-incidents.md": [
+      "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/",
+      "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands/",
+      "https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/"
+    ],
+    "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md": [
+      "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+      "https://openai.com/index/the-defenders-window/",
+      "https://techcrunch.com/2026/09/05/openai-confirms-wiki-incident-says-its-working-on-a-framework-for-more-disclosure/",
+      "https://www.channelnewsasia.com/business/openai-acknowledges-wiki-incident-and-need-more-transparency-around-unintended-ai-behavior-6364861",
+      "raw/2026-09-06/ai-security-wiki-topic-news-collector-2026-09-06T233209Z.json"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/ai-guardrail-dependency-compromise.md": [
+      "https://www.hacktron.ai/package/pypi/guardrails-ai/0.10.1",
+      "https://pypi.org/project/guardrails-ai/0.10.1/"
+    ],
+    "docs/wiki/testing-and-assurance/coding-agent-access-validation.md": [
+      "https://junie.jetbrains.com/docs/junie-headless.html",
+      "raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json"
+    ]
+  },
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+      "source_title": "Use the Cloud Monitoring remote MCP server",
+      "source_url": "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+      "visible_published_or_updated_at": "Last update 2026-09-02",
+      "date_basis": "Visible Last update field on official Google Cloud documentation page fetched during this run.",
+      "factual_summary": "Google Cloud Monitoring remote MCP documentation is visibly updated 2026-09-02 and describes remote MCP connectivity for AI applications, global or regional HTTP endpoints, fine-grained authorization, optional prompt and response security with Model Armor protection, centralized audit logging, required MCP tool-call permissions, and Monitoring IAM role requirements.",
+      "evidence_classification": [
+        "control change",
+        "official documentation update",
+        "agent-and-tool security",
+        "data access authorization"
+      ],
+      "affected_boundaries": [
+        "Cloud Monitoring remote MCP server",
+        "Cloud Logging and Monitoring data access",
+        "Model Armor prompt and response mediation",
+        "MCP Tool User and Monitoring IAM roles",
+        "centralized audit logging"
+      ],
+      "named_entities": [
+        "Google Cloud",
+        "Cloud Monitoring",
+        "Cloud Logging",
+        "Model Context Protocol",
+        "Model Armor",
+        "Gemini CLI",
+        "ChatGPT",
+        "Claude"
+      ],
+      "relevance": "Same-leaf update for observability-agent response controls and IAM-bounded access to operational telemetry.",
+      "upstream_routing": {
+        "ai_wiki": "Broad Google Cloud and Model Armor product context belongs upstream.",
+        "ai_security_wiki": "Local page owns MCP response controls, IAM/audit evidence, and observability-data exposure boundaries."
+      },
+      "follow_up_note": "Ingest should diff the September 2 documentation against the August source captures before deciding whether to update the Cloud observability MCP response-control leaf and related IAM/data-residency leaves.",
+      "confidence": "High for visible update date and current documented control categories; medium for exact content delta until ingest performs a prior-version comparison."
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/anthropic-internet-connected-cyber-evaluation-incident.md",
+      "source_title": "Improving our alignment and security efforts",
+      "source_url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
+      "visible_published_or_updated_at": "Aug 31, 2026",
+      "date_basis": "Visible publication date on official Anthropic post fetched during this run.",
+      "factual_summary": "Anthropic published an August 31 post that restates the July 30 cyber-evaluation incidents, says Anthropic is conducting in-depth analysis of those incidents and the AISI incident, plans to work with METR for independent review, and frames the incidents as operational-security failures plus alignment issues. The post says Anthropic improved containment and monitoring systems, developed practices for third-party evaluators, and identified the need for several layers including explicit prompt boundaries, sandbox-seal verification, and real-time monitoring intervention.",
+      "evidence_classification": [
+        "incident response follow-up",
+        "vendor mitigation update",
+        "cyber-evaluation containment control",
+        "third-party evaluator practice"
+      ],
+      "affected_boundaries": [
+        "Anthropic cybersecurity evaluations",
+        "third-party evaluation environments",
+        "internet access containment",
+        "real-time monitoring",
+        "sandbox verification",
+        "METR independent review path"
+      ],
+      "named_entities": [
+        "Anthropic",
+        "Claude",
+        "Claude Mythos 5",
+        "UK AI Security Institute",
+        "METR",
+        "OpenAI"
+      ],
+      "relevance": "Same-leaf official follow-up for Anthropic internet-connected cyber-evaluation incidents and their containment/monitoring remediation boundary.",
+      "upstream_routing": {
+        "ai_wiki": "Broad Anthropic, Claude, and model-policy context belongs upstream.",
+        "ai_security_wiki": "Local page owns incident-response, cyber-evaluation containment, third-party evaluator assurance, and monitoring-control implications."
+      },
+      "follow_up_note": "Ingest should update the Anthropic incident and cyber-evaluation containment leaves only with the security-control deltas, and avoid restating broad alignment/product commentary.",
+      "confidence": "High for Anthropic statement and visible date; medium for final remediation status because the post says deeper analysis and METR review will follow."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "candidate": "OpenAI wiki incident disclosure-framework reports",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://openai.com/index/the-defenders-window/",
+        "https://techcrunch.com/2026/09/05/openai-confirms-wiki-incident-says-its-working-on-a-framework-for-more-disclosure/",
+        "https://www.channelnewsasia.com/business/openai-acknowledges-wiki-incident-and-need-more-transparency-around-unintended-ai-behavior-6364861",
+        "raw/2026-09-06/ai-security-wiki-topic-news-collector-2026-09-06T233209Z.json"
+      ],
+      "visible_dates": [
+        "TechCrunch published 2026-09-05 11:05 PDT",
+        "Channel NewsAsia/Reuters dateline 2026-09-05"
+      ],
+      "reason": "Relevant same-leaf incident-governance update, but already captured by raw/2026-09-06/ai-security-wiki-topic-news-collector-2026-09-06T233209Z.json; do not duplicate in this watcher artifact."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/coding-agent-access-validation.md",
+      "candidate": "Junie Headless last-modified 01 September 2026 trust wording",
+      "source_urls": [
+        "https://junie.jetbrains.com/docs/junie-headless.html",
+        "raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json"
+      ],
+      "visible_dates": [
+        "built-on 2026-09-01T13:01:15.466667088",
+        "last-modified 01 September 2026"
+      ],
+      "reason": "Already captured in raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json for the local agent execution boundary; selected testing leaf receives ledger baseline only."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/rowboat-custom-mcp-server-ssrf.md",
+      "candidate": "Rowboat v0.9.4 release after CVE-2026-86122",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86122",
+        "https://api.github.com/repos/rowboatlabs/rowboat/issues/621",
+        "https://api.github.com/repos/rowboatlabs/rowboat/releases",
+        "raw/2026-09-06/ai-security-wiki-topic-news-collector-2026-09-06T233209Z.json"
+      ],
+      "visible_dates": [
+        "release published 2026-09-06T08:31:15Z"
+      ],
+      "reason": "In-window release exists but release body was empty, issue #621 remains open, and no advisory or release note ties v0.9.4 to private-destination SSRF remediation."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+      "candidate": "NIST AI data center security follow-up",
+      "source_urls": [
+        "https://www.nist.gov/news-events/events/2026/07/securing-ai-data-center-architecture-security-posture-and-emerging",
+        "https://csrc.nist.gov/pubs/sp/800/239/ipd"
+      ],
+      "visible_dates": [
+        "event page modified 2026-07-23T13:32-04:00",
+        "SP 800-239 draft published 2026-07-27"
+      ],
+      "reason": "Authoritative but outside the strict seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-office-gpai-enforcement-controls.md",
+      "candidate": "European Commission AI Act enforcement framework page",
+      "source_urls": [
+        "https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act",
+        "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+      ],
+      "visible_dates": [
+        "last update 24 August 2026"
+      ],
+      "reason": "Official page remains outside the strict seven-day window."
+    }
+  ],
+  "selected_leaf_results": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cli-mcp-server-command-allowlist-bypass.md",
+      "last_result": "already_captured_no_new_qualifying_update",
+      "follow_up_note": "CVE was already captured and synthesized from the September 5 collector; PyPI still lists 0.2.5 and issue #17 remains open.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85660",
+        "https://pypi.org/pypi/cli-mcp-server/json",
+        "https://api.github.com/repos/MladenSU/cli-mcp-server/issues/17"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/rowboat-custom-mcp-server-ssrf.md",
+      "last_result": "already_captured_no_new_qualifying_update",
+      "follow_up_note": "CVE was already captured and synthesized from the September 5 collector; Rowboat issue #621 remains open and v0.9.4 release notes did not identify a fix.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86122",
+        "https://api.github.com/repos/rowboatlabs/rowboat/issues/621",
+        "https://api.github.com/repos/rowboatlabs/rowboat/releases",
+        "raw/2026-09-06/ai-security-wiki-topic-news-collector-2026-09-06T233209Z.json"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/xinference-auto-register-file-read.md",
+      "last_result": "already_captured_no_new_qualifying_update",
+      "follow_up_note": "CVE was already captured by the September 4 collector; no later fixed Xinference package release was found.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85668",
+        "https://pypi.org/pypi/xinference/json",
+        "https://api.github.com/repos/xorbitsai/inference/issues/5176",
+        "https://api.github.com/repos/xorbitsai/inference/releases/latest"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/lavague-indirect-prompt-injection-rce.md",
+      "last_result": "already_captured_no_new_qualifying_update",
+      "follow_up_note": "CVE was already captured by the September 4 collector; LaVague issue #650 remains open and no release endpoint exposed a fixed release.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85694",
+        "https://pypi.org/pypi/lavague-core/json",
+        "https://api.github.com/repos/lavague-ai/LaVague/issues/650"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cloud-observability-mcp-response-controls.md",
+      "last_result": "qualifying_update_found",
+      "follow_up_note": "Official Cloud Monitoring remote MCP documentation is visibly last updated 2026-09-02 and should be diffed during ingest for remote endpoint, IAM, Model Armor, and audit-control deltas.",
+      "source_urls_checked": [
+        "https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp",
+        "https://docs.cloud.google.com/mcp/overview"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/gomarble-facebook-ads-mcp-ssrf.md",
+      "last_result": "no_new_qualifying_update",
+      "follow_up_note": "CVE evidence is stale for this window; patch PR is merged but no package release or latest release metadata was found.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-19956",
+        "https://api.github.com/repos/gomarble-ai/facebook-ads-mcp-server/pulls/32",
+        "https://api.github.com/repos/gomarble-ai/facebook-ads-mcp-server/releases/latest",
+        "https://api.github.com/repos/gomarble-ai/facebook-ads-mcp-server/tags"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/next-ai-draw-io-mcp-server-path-traversal.md",
+      "last_result": "no_new_qualifying_update",
+      "follow_up_note": "CVE and issue updates are stale; npm latest remains 0.2.3 from 2026-07-12.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-50757",
+        "https://api.github.com/repos/DayuanJiang/next-ai-draw-io/issues/754",
+        "https://registry.npmjs.org/@next-ai-drawio%2fmcp-server"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/next-ai-draw-io-provider-disclosure.md",
+      "last_result": "no_new_qualifying_update",
+      "follow_up_note": "CVE and issue updates are stale; npm latest remains 0.2.3 from 2026-07-12.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-50756",
+        "https://api.github.com/repos/DayuanJiang/next-ai-draw-io/issues/749",
+        "https://registry.npmjs.org/@next-ai-drawio%2fmcp-server"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-data-center-security-standards.md",
+      "last_result": "no_new_qualifying_update",
+      "follow_up_note": "NIST event page was last modified 2026-07-23 and SP 800-239 was published 2026-07-27; no in-window visible update.",
+      "source_urls_checked": [
+        "https://www.nist.gov/news-events/events/2026/07/securing-ai-data-center-architecture-security-posture-and-emerging",
+        "https://csrc.nist.gov/pubs/sp/800/239/ipd"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-office-gpai-enforcement-controls.md",
+      "last_result": "no_new_qualifying_update",
+      "follow_up_note": "European Commission enforcement page last update is 2026-08-24, outside the strict seven-day window.",
+      "source_urls_checked": [
+        "https://digital-strategy.ec.europa.eu/en/policies/enforcement-ai-act",
+        "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/anthropic-internet-connected-cyber-evaluation-incident.md",
+      "last_result": "qualifying_update_found",
+      "follow_up_note": "Anthropic published an August 31 post framing the July 30 incidents as operational-security and alignment failures, with containment, monitoring, third-party evaluator practices, and planned METR review.",
+      "source_urls_checked": [
+        "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+        "https://www.anthropic.com/news/improving-alignment-security-efforts",
+        "https://www.anthropic.com/aug-2026-risk-report"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/defender-model-access-during-security-incidents.md",
+      "last_result": "no_new_qualifying_update",
+      "follow_up_note": "Checked OpenAI and AWS Daybreak/defender-access sources; AWS page was last updated 2026-08-14 and no in-window same-leaf update was verified.",
+      "source_urls_checked": [
+        "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/",
+        "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands/",
+        "https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/openai-hugging-face-cyber-evaluation-incident.md",
+      "last_result": "already_captured_by_topic_collector",
+      "follow_up_note": "September 5 OpenAI wiki-incident acknowledgment and disclosure-framework commitment are relevant but already captured by today's topic collector raw artifact.",
+      "source_urls_checked": [
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+        "https://openai.com/index/the-defenders-window/",
+        "https://techcrunch.com/2026/09/05/openai-confirms-wiki-incident-says-its-working-on-a-framework-for-more-disclosure/",
+        "https://www.channelnewsasia.com/business/openai-acknowledges-wiki-incident-and-need-more-transparency-around-unintended-ai-behavior-6364861",
+        "raw/2026-09-06/ai-security-wiki-topic-news-collector-2026-09-06T233209Z.json"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-guardrail-dependency-compromise.md",
+      "last_result": "no_new_qualifying_update",
+      "follow_up_note": "Checked guardrails-ai package/advisory context; no primary in-window OSV/PyPI/maintainer update was verified.",
+      "source_urls_checked": [
+        "https://www.hacktron.ai/package/pypi/guardrails-ai/0.10.1",
+        "https://pypi.org/project/guardrails-ai/0.10.1/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/coding-agent-access-validation.md",
+      "last_result": "already_captured_no_new_qualifying_update",
+      "follow_up_note": "Junie Headless September trust wording was already captured in a September 4 watcher artifact; current page still shows last-modified 01 September 2026.",
+      "source_urls_checked": [
+        "https://junie.jetbrains.com/docs/junie-headless.html",
+        "raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json"
+      ]
+    }
+  ],
+  "created_by": "Northstar",
+  "validation": {
+    "intended_checks": [
+      "jq empty",
+      "python3 -m json.tool",
+      "wiki_ops.py status",
+      "jq empty state ledger",
+      "python3 -m json.tool state ledger"
+    ],
+    "results": [
+      {
+        "check": "jq empty raw/2026-09-06/ai-security-wiki-leaf-update-watch-20260907T000604Z.json",
+        "result": "passed"
+      },
+      {
+        "check": "python3 -m json.tool raw/2026-09-06/ai-security-wiki-leaf-update-watch-20260907T000604Z.json",
+        "result": "passed"
+      },
+      {
+        "check": "jq empty /Users/martinbechard/.codex/automations/ai-security-wiki-leaf-update-watch/state.json",
+        "result": "passed"
+      },
+      {
+        "check": "python3 -m json.tool /Users/martinbechard/.codex/automations/ai-security-wiki-leaf-update-watch/state.json",
+        "result": "passed"
+      },
+      {
+        "check": "git diff --check -- raw/2026-09-06/ai-security-wiki-leaf-update-watch-20260907T000604Z.json",
+        "result": "passed"
+      },
+      {
+        "check": "wiki_ops.py status",
+        "result": "passed: 316 pages, 0 missing required files, 0 lint findings"
+      }
+    ]
+  }
+}

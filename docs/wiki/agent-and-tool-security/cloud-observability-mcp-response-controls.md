@@ -24,6 +24,17 @@ The [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-secu
 - data-residency review for observability payloads;
 - explicit handling for Model Armor logging because full payload logging can itself become a sensitive-data sink.
 
+The [September 6 leaf update watch source](../../../raw/processed/2026-09-06/ai-security-wiki-leaf-update-watch-20260907T000604Z.json) records a visible 2026-09-02 update to the official [Cloud Monitoring remote MCP documentation](https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp). It keeps the same control boundary but adds current evidence for:
+
+- global or regional HTTP endpoints for AI applications;
+- fine-grained authorization;
+- optional Model Armor prompt and response protection;
+- centralized audit logging;
+- required MCP tool-call permissions;
+- Monitoring IAM role requirements.
+
+Treat the September update as a response-control and observability-data exposure signal, not as broad Google Cloud product coverage.
+
 ## Security Impact
 
 - Threat: AI-generated observability responses can expose sensitive logs, amplify prompt injection from log content, or summarize data the user is not authorized to inspect.
@@ -42,6 +53,7 @@ The [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-secu
 - [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
 - [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json)
 - [August 6 leaf update watch source](../../../raw/processed/2026-08-06/ai-security-wiki-leaf-update-watch-20260807T000542Z.json)
+- [September 6 leaf update watch source](../../../raw/processed/2026-09-06/ai-security-wiki-leaf-update-watch-20260907T000604Z.json)
 - Cloud Monitoring MCP documentation: https://docs.cloud.google.com/monitoring/docs/use-monitoring-mcp
 
 ## Related Code
@@ -71,3 +83,4 @@ The [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-secu
 
 - Added from the [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json); enriched from the [July 29 leaf watcher](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json). Keep this page focused on response filtering and IAM-bounded observability output.
 - Updated on 2026-08-06 from the [August 6 leaf watcher](../../../raw/processed/2026-08-06/ai-security-wiki-leaf-update-watch-20260807T000542Z.json) to keep managed MCP endpoints, fine-grained authorization, Model Armor prompt/response controls, audit logging, payload logging, and data residency in the same response-control boundary. Next check should compare future Google documentation changes against these control categories.
+- Updated on 2026-09-06 from the [September 6 leaf watcher](../../../raw/processed/2026-09-06/ai-security-wiki-leaf-update-watch-20260907T000604Z.json) with the September 2 official documentation evidence for remote endpoints, IAM roles, tool-call permissions, Model Armor, and centralized audit logging.
