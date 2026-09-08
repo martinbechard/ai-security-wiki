@@ -68,6 +68,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Xinference auto-register file read](xinference-auto-register-file-read.md)
 - [aider conf repository command execution](aider-conf-repository-command-execution.md)
 - [AI Website Builder unprotected REST RCE](ai-website-builder-unprotected-rest-rce.md)
+- [GPTQModel Triton dequantization OOB read](gptqmodel-triton-dequantization-oob-read.md)
+- [Igniter install confirmation prompt forgery](igniter-install-confirmation-prompt-forgery.md)
 
 ## Authoritative Sources
 
@@ -100,6 +102,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - Updated on 2026-09-03 with the Ollama tensor blob redirect SSRF leaf and Windows ML CLI fixed-version evidence.
 - Updated on 2026-09-04 with Xinference auto-register file-read, aider repository command execution, AI Website Builder unprotected REST, Junie workstation-containment, and plugin marketplace provenance updates.
 - Updated on 2026-09-06 with Axolotl multipack trust_remote_code RCE and Bifrost HTTP custom plugin RCE leaves.
+- Updated on 2026-09-07 with GPTQModel Triton dequantization OOB read and Igniter install confirmation prompt forgery leaves.
 - Updated on 2026-09-02 with the Windows ML CLI localhost trust_remote_code RCE leaf and ModelScope advisory provenance.
 - Updated on 2026-09-01 with Codex Git metadata execution, Transformers remote-code cache persistence, ModelScope unsafe YAML, and Elasticsearch model-artifact deserialization leaves.
 - Updated on 2026-08-31 with Theia AI Agent Mode workspace path traversal, OpenShift AI guardrails-detectors ReDoS, and a Kubio AI Website Builder deferral in the WordPress AI plugin advisory page.

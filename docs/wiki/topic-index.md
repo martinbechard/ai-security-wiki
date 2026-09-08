@@ -117,6 +117,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md](agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md)
 - [agent-and-tool-security/runzero-platform-mcp-authorization-bypass.md](agent-and-tool-security/runzero-platform-mcp-authorization-bypass.md)
 - [agent-and-tool-security/hermes-agent-acp-mcp-dos.md](agent-and-tool-security/hermes-agent-acp-mcp-dos.md)
+- [agent-and-tool-security/knowns-mcp-doc-memory-path-traversal.md](agent-and-tool-security/knowns-mcp-doc-memory-path-traversal.md)
 - [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
 - [infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md](infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md)
 - [infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md](infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md)
@@ -128,6 +129,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [data-and-privacy/browser-use-web-ui-cleartext-llm-api-key-storage.md](data-and-privacy/browser-use-web-ui-cleartext-llm-api-key-storage.md)
 - [data-and-privacy/keploy-agent-control-plane-tls-key-exposure.md](data-and-privacy/keploy-agent-control-plane-tls-key-exposure.md)
 - [data-and-privacy/aix-db-markdown-chat-stored-xss.md](data-and-privacy/aix-db-markdown-chat-stored-xss.md)
+- [data-and-privacy/sureforms-ai-forms-stored-xss.md](data-and-privacy/sureforms-ai-forms-stored-xss.md)
 - [infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md](infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md)
 - [infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md](infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md)
 - [infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md](infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md)
@@ -203,6 +205,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/azure-ai-language-missing-authentication.md](identity-and-access/azure-ai-language-missing-authentication.md)
 - [identity-and-access/copilot-studio-signature-verification-privilege-elevation.md](identity-and-access/copilot-studio-signature-verification-privilege-elevation.md)
 - [identity-and-access/jeecgboot-airag-exportxls-access-control.md](identity-and-access/jeecgboot-airag-exportxls-access-control.md)
+- [identity-and-access/openshift-ai-nim-secret-authorization-bypass.md](identity-and-access/openshift-ai-nim-secret-authorization-bypass.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -250,6 +253,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [infrastructure-and-supply-chain/xinference-auto-register-file-read.md](infrastructure-and-supply-chain/xinference-auto-register-file-read.md)
 - [infrastructure-and-supply-chain/aider-conf-repository-command-execution.md](infrastructure-and-supply-chain/aider-conf-repository-command-execution.md)
 - [infrastructure-and-supply-chain/ai-website-builder-unprotected-rest-rce.md](infrastructure-and-supply-chain/ai-website-builder-unprotected-rest-rce.md)
+- [infrastructure-and-supply-chain/gptqmodel-triton-dequantization-oob-read.md](infrastructure-and-supply-chain/gptqmodel-triton-dequantization-oob-read.md)
+- [infrastructure-and-supply-chain/igniter-install-confirmation-prompt-forgery.md](infrastructure-and-supply-chain/igniter-install-confirmation-prompt-forgery.md)
 - [testing-and-assurance](testing-and-assurance/index.md)
 - [testing-and-assurance/cyber-evaluation-containment.md](testing-and-assurance/cyber-evaluation-containment.md)
 - [testing-and-assurance/public-cyber-capability-assessments.md](testing-and-assurance/public-cyber-capability-assessments.md)
@@ -324,6 +329,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - Add local durable leaves here after federation routing and wiki verification.
 - Updated on 2026-09-03 with September 3 topic and watcher ingest for GPT-6 Astra deployment controls, Daybreak frontline-defender access, n8n credential exfiltration, Ollama model-pull SSRF, WordPress AI/MCP authorization, Agent-S GUI action DoS, openbrowser message-budget DoS, and watcher provenance.
 - Updated on 2026-09-06 with Axolotl, Bifrost plugin-loading, JeecgBoot Airag, Copilot Studio, OpenAI wiki-incident, Cloud Monitoring MCP, and Anthropic follow-up security pages.
+- Updated on 2026-09-07 with knowns MCP path traversal, OpenShift AI NIM Secret authorization, GPTQModel Triton OOB read, Igniter prompt forgery, and SureForms AI Forms stored XSS leaves.
 - Updated on 2026-09-01 with September 1 topic and watcher ingest for Astra release gates, Codex approval/Git execution boundaries, model-artifact supply-chain flaws, Kibana AI feature authorization and DoS, runZero MCP authorization, hermes-agent ACP/MCP DoS, Support Genix AI Chatbot admin takeover, and watcher provenance.
 - Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.
 - Updated on 2026-08-26 with August 25 MCP, agent-tool, identity, infrastructure, verification-parser, emergency-shutdown, and advisory-deferral leaves.

@@ -35,6 +35,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [browser-use web-ui cleartext LLM API key storage](browser-use-web-ui-cleartext-llm-api-key-storage.md)
 - [Keploy agent control-plane TLS key exposure](keploy-agent-control-plane-tls-key-exposure.md)
 - [Aix-DB Markdown chat stored XSS](aix-db-markdown-chat-stored-xss.md)
+- [SureForms AI Forms stored XSS](sureforms-ai-forms-stored-xss.md)
 
 ## Authoritative Sources
 
@@ -66,6 +67,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 - Updated on 2026-09-02 with the LiteLLM provider credential routing leak leaf.
 - Updated on 2026-09-04 with the Cheshire Cat AI memory points disclosure leaf.
+- Updated on 2026-09-07 with SureForms AI Forms stored XSS as an AI-enabled form data-contamination boundary.
 - Updated on 2026-08-31 with the Aix-DB AI rendered-content stored-XSS leaf plus watcher enrichment for existing browser-use, Jina Reader, NextChat, and Keploy advisory leaves.
 - Updated on 2026-08-29 with the Stable Diffusion WebUI credential-disclosure leaf and GitLab/Spring watcher provenance.
 - Updated on 2026-08-30 with NextChat provider-key forwarding, browser-use web-ui cleartext provider-key storage, and Keploy TLS keylog exposure leaves.

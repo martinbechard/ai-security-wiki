@@ -41,6 +41,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [Azure AI Language missing authentication](azure-ai-language-missing-authentication.md)
 - [Copilot Studio signature verification privilege elevation](copilot-studio-signature-verification-privilege-elevation.md)
 - [JeecgBoot Airag exportXls access control](jeecgboot-airag-exportxls-access-control.md)
+- [OpenShift AI NIM Secret authorization bypass](openshift-ai-nim-secret-authorization-bypass.md)
 
 ## Authoritative Sources
 
@@ -73,6 +74,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - Updated on 2026-09-03 with Agentimus and MountDev AI/MCP WordPress authorization leaves.
 - Updated on 2026-09-04 with Azure AI Language missing-authentication coverage and Junie config trust-marker evidence.
 - Updated on 2026-09-06 with Copilot Studio signature-verification privilege elevation and JeecgBoot Airag exportXls access-control leaves.
+- Updated on 2026-09-07 with the OpenShift AI NIM Secret authorization bypass leaf.
 - Updated on 2026-09-01 with Kibana AI Assistant Knowledge Base cross-realm authorization, Support Genix AI Chatbot admin takeover, and Synthetic Insider Threat Matrix evidence.
 - Updated on 2026-08-31 with diboot AI Session authorization bypass and ash_ai/MCPHub identity-boundary routing.
 - Updated on 2026-08-29 with FastGPT channel authorization, VoltAgent memory ownership, Gitingest token disclosure, and watcher provenance for Telnyx.

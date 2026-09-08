@@ -1,0 +1,394 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-09-07T23:32:20Z",
+  "collector_identity": "Northstar",
+  "cutoff_window": {
+    "start_utc": "2026-09-05T23:32:20Z",
+    "end_utc": "2026-09-07T23:32:20Z",
+    "rule": "Include only public items published or visibly updated inside the exact two-day window. Exclude missing, ambiguous, future-dated, and boundary-only dates."
+  },
+  "searched_topics": [
+    "AI threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP security",
+    "data security and privacy",
+    "identity, authorization, credentials, and least privilege",
+    "model, dataset, dependency, runtime, cloud, and deployment supply chains",
+    "security evaluation, monitoring, and release gates",
+    "AI security standards, governance, regulation, and audit evidence",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_strategy": {
+    "public_sources_only": true,
+    "private_or_internal_content_used": false,
+    "methods": [
+      "NVD CVE API keyword searches for AI, MCP, agent, model, prompt, LLM, and OpenShift AI within the publication and last-modified window",
+      "CVE Record API lookups for selected CVEs",
+      "Targeted web searches for AI security advisories, MCP security, NIST/CISA/CSA items, Microsoft ASCII smuggling, OpenAI/Hugging Face, and related reputable coverage"
+    ],
+    "primary_sources_preferred": [
+      "https://services.nvd.nist.gov/rest/json/cves/2.0",
+      "https://cveawg.mitre.org/api/cve/",
+      "vendor advisories and patch links listed in CVE records"
+    ]
+  },
+  "federation_context": {
+    "security_wiki_scope": "This repository owns AI-specific security analysis: threats, model and prompt security, agent and tool security, data and privacy controls, identity and access, infrastructure and supply-chain security, assurance, governance, compliance, and incident response.",
+    "ai_wiki_upstream": "Broad AI entities such as companies, products, model families, frameworks, MCP servers, and general AI techniques route to /Users/martinbechard/dev/ai-wiki.",
+    "ai_dev_wiki_upstream": "General AI-assisted development practices, coding-agent workflows, verification patterns, adoption practice, and development governance route to /Users/martinbechard/dev/ai-dev-wiki."
+  },
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-86439",
+      "title": "knowns MCP tool path traversal permits file access outside the project directory",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86439",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86439",
+        "https://github.com/knowns-dev/knowns/security/advisories/GHSA-9gfj-28hw-jchp",
+        "https://github.com/knowns-dev/knowns/commit/09c5a96fd5817b941dc86669278c1a17db10ed4e",
+        "https://github.com/knowns-dev/knowns/releases/tag/v0.30.0",
+        "https://www.vulncheck.com/advisories/knowns-before-0.30.0-path-traversal-via-mcp-doc-and-memory-tools"
+      ],
+      "visible_dates": {
+        "cve_record_published_utc": "2026-09-07T23:03:16.548Z",
+        "cve_record_updated_utc": "2026-09-07T23:03:16.548Z",
+        "nvd_published": "2026-09-07T23:16:53.297",
+        "nvd_last_modified": "2026-09-07T23:16:53.297"
+      },
+      "factual_summary": "knowns versions before 0.30.0 did not validate filesystem paths in MCP tool arguments. A caller could use traversal sequences to read, create, overwrite, or delete Markdown files outside the project directory that were accessible to the server process.",
+      "evidence_classification": "primary CVE record plus NVD entry, vendor GitHub security advisory, patch commit, and release notes",
+      "affected_boundary_or_version": "knowns npm package before 0.30.0; MCP doc and memory tools; CWE-22; CVSS 3.1 8.8 HIGH in NVD",
+      "why_it_matters_for_ai_security": "MCP servers commonly mediate agent file access. A path-containment failure lets an agent-facing tool cross the project boundary and turns delegated document or memory access into arbitrary local file manipulation.",
+      "named_entities": [
+        "knowns",
+        "knowns-dev",
+        "Model Context Protocol",
+        "MCP",
+        "VulnCheck",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Owns the MCP tool path-containment and agent filesystem boundary implication.",
+        "ai_wiki": "Owns any broad knowns or MCP-server catalog page if durable ecosystem coverage is needed.",
+        "ai_dev_wiki": "May own general project-memory or documentation-agent workflow practice; do not duplicate here."
+      },
+      "confidence_notes": "High confidence: direct CVE, NVD, vendor advisory, commit, and release references all align inside the run window.",
+      "follow_up_actions": [
+        "During ingest, check whether a local knowns MCP path-containment leaf already exists before creating a new one.",
+        "Reconcile v0.30.0 release notes and vendor advisory wording for exact fixed-version language."
+      ]
+    },
+    {
+      "id": "CVE-2026-86332",
+      "title": "OpenShift AI dashboard exposes NVIDIA NGC and NIM pull secrets without authorization",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86332",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86332",
+        "https://access.redhat.com/security/cve/CVE-2026-86332",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2529287"
+      ],
+      "visible_dates": {
+        "cve_record_published_utc": "2026-09-07T08:39:15.766Z",
+        "cve_record_updated_utc": "2026-09-07T09:26:55.563Z",
+        "nvd_published": "2026-09-07T09:17:17.807",
+        "nvd_last_modified": "2026-09-07T10:16:55.580"
+      },
+      "factual_summary": "The odh-dashboard backend-for-frontend route GET /api/nim-serving/:nimResource in Red Hat OpenShift AI reads Kubernetes Secrets using the dashboard service account and returns full Secret objects, including .data, without an authorization check. Any authenticated dashboard user can retrieve the cluster NVIDIA NGC API key Secret and NIM image pull secret.",
+      "evidence_classification": "Red Hat CNA CVE record plus NVD entry and Red Hat security references",
+      "affected_boundary_or_version": "Red Hat OpenShift AI / odh-dashboard packages listed in the CVE record; missing authorization CWE-862 and insufficiently protected credentials CWE-522; NVD CVSS 3.1 6.5 MEDIUM",
+      "why_it_matters_for_ai_security": "The issue exposes AI platform credentials used for NVIDIA NGC and NIM model-serving image access, directly affecting model-serving supply chain access control and least-privilege boundaries.",
+      "named_entities": [
+        "Red Hat",
+        "OpenShift AI",
+        "odh-dashboard",
+        "NVIDIA NGC",
+        "NIM",
+        "Kubernetes Secrets",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Owns the AI platform credential disclosure and missing authorization analysis.",
+        "ai_wiki": "Owns broad Red Hat, OpenShift AI, NVIDIA NGC, or NIM entity context.",
+        "ai_dev_wiki": "May own development-platform governance practices only if a downstream practice source appears."
+      },
+      "confidence_notes": "High confidence: direct Red Hat CVE record and NVD entry name the affected AI platform, route, credentials, and authorization failure.",
+      "follow_up_actions": [
+        "During ingest, map this to identity-and-access and data-and-privacy pages as appropriate.",
+        "Recheck Red Hat advisory access for fixed package state and remediation wording."
+      ]
+    },
+    {
+      "id": "CVE-2026-86288",
+      "title": "ModelCloud GPTQModel Triton dequantization kernel has out-of-bounds read",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86288",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86288",
+        "https://vuldb.com/vuln/399447",
+        "https://github.com/ModelCloud/GPTQModel/issues/2949",
+        "https://github.com/ModelCloud/GPTQModel/pull/2950",
+        "https://github.com/ModelCloud/GPTQModel/commit/877c732f7d7dccd56a729844c6a5bd20f3aa8bb1",
+        "https://github.com/ModelCloud/GPTQModel/releases/tag/v7.3.0"
+      ],
+      "visible_dates": {
+        "cve_record_published_utc": "2026-09-07T08:30:22.247Z",
+        "cve_record_updated_utc": "2026-09-07T08:30:22.247Z",
+        "nvd_published": "2026-09-07T09:17:17.297",
+        "nvd_last_modified": "2026-09-07T09:17:17.297"
+      },
+      "factual_summary": "ModelCloud GPTQModel through 7.2.0 has an out-of-bounds read in gptqmodel/nn_modules/qlinear/tritonv2.py in the Triton dequantization kernel through manipulation of g_idx. The CVE states public exploit disclosure and recommends upgrading to 7.3.0, with patch commit 877c732f7d7dccd56a729844c6a5bd20f3aa8bb1.",
+      "evidence_classification": "CVE record and NVD entry with VulDB advisory, public issue, pull request, patch commit, and release tag",
+      "affected_boundary_or_version": "ModelCloud GPTQModel versions 7.0, 7.1, and 7.2.0 affected; 7.3.0 unaffected; Triton dequantization kernel; CWE-125/CWE-119",
+      "why_it_matters_for_ai_security": "Quantized model runtimes and kernels are part of AI deployment supply chains. Memory-safety flaws in model execution code can affect systems that load or serve optimized model artifacts.",
+      "named_entities": [
+        "ModelCloud",
+        "GPTQModel",
+        "Triton",
+        "VulDB",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Owns the model-runtime memory-safety and deployment supply-chain implication.",
+        "ai_wiki": "Owns broad GPTQModel/model-compression entity context if needed.",
+        "ai_dev_wiki": "No direct local development-practice routing identified."
+      },
+      "confidence_notes": "Medium-high confidence: CVE, NVD, issue, PR, commit, and release are present; VulDB wording says public exploit disclosure but ingest should inspect issue/PR details before durable prose.",
+      "follow_up_actions": [
+        "During ingest, verify the GitHub issue and patch diff for whether the flaw is reachable through untrusted model inputs, remote service inputs, or only local API misuse.",
+        "Record fixed version 7.3.0 if confirmed by the release tag."
+      ]
+    },
+    {
+      "id": "CVE-2026-82584",
+      "title": "Igniter package-install confirmation prompt can be forged by malicious package metadata",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82584",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82584",
+        "https://github.com/ash-project/igniter/security/advisories/GHSA-cj7w-j579-gc42",
+        "https://cna.erlef.org/cves/CVE-2026-82584.html",
+        "https://osv.dev/vulnerability/EEF-CVE-2026-82584",
+        "https://github.com/ash-project/igniter/commit/d492b1aa33f8fb0dacc0afa41b703fb922d42816"
+      ],
+      "visible_dates": {
+        "cve_record_published_utc": "2026-09-07T22:54:48.222Z",
+        "cve_record_updated_utc": "2026-09-07T22:54:48.222Z",
+        "nvd_published": "2026-09-07T23:16:51.933",
+        "nvd_last_modified": "2026-09-07T23:16:51.933"
+      },
+      "factual_summary": "ash-project igniter versions from 0.8.1 before 0.8.4 allow a malicious package publisher to embed ANSI terminal escape sequences in package metadata shown by mix igniter.install. The confirmation panel can be overwritten to forge trusted author names or download counts and hide the real package metadata, deceiving a developer into approving a malicious dependency.",
+      "evidence_classification": "CVE record and NVD entry with vendor GitHub security advisory, CNA page, OSV entry, and patch commit",
+      "affected_boundary_or_version": "igniter 0.8.1 before 0.8.4; Elixir.Igniter.Project.Deps determine_dep_type_and_version!/2; CWE-150",
+      "why_it_matters_for_ai_security": "Igniter participates in framework and dependency setup workflows. The issue weakens anti-typosquatting approval UI, a relevant supply-chain control for agent-assisted or AI-accelerated dependency installation.",
+      "named_entities": [
+        "ash-project",
+        "igniter",
+        "Hex",
+        "OSV",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Owns package-install trust UI and AI-assisted dependency approval implications.",
+        "ai_wiki": "Owns broad framework/tool entity context only if durable ecosystem coverage is needed.",
+        "ai_dev_wiki": "May own general developer workflow approval and dependency-vetting practice."
+      },
+      "confidence_notes": "High confidence for vulnerability and fixed version; AI-specificity is indirect but relevant to supply-chain approval boundaries used by agent-assisted development workflows.",
+      "follow_up_actions": [
+        "During ingest, route broad developer-workflow practice to ai-dev-wiki and keep only the supply-chain security approval implication here.",
+        "Confirm the GitHub security advisory publication timestamp if a durable page depends on exact disclosure ordering."
+      ]
+    },
+    {
+      "id": "CVE-2026-18406",
+      "title": "SureForms AI Forms WordPress plugin has unauthenticated stored XSS",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18406",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-18406",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/8583c1f2-0820-492c-9fa1-d96e0ce2ddf2?source=cve",
+        "https://plugins.trac.wordpress.org/changeset?reponame=&new=3636000%40sureforms%2Ftags%2F2.12.3&old=3618798%40sureforms%2Ftags%2F2.12.2",
+        "https://plugins.trac.wordpress.org/changeset/3635980/sureforms/trunk/inc/form-submit.php"
+      ],
+      "visible_dates": {
+        "cve_record_published_utc": "2026-09-05T06:37:57.921Z",
+        "cve_record_updated_utc": "2026-09-07T11:17:25.636Z",
+        "nvd_published": "2026-09-05T07:17:11.040",
+        "nvd_last_modified": "2026-09-07T12:17:17.773"
+      },
+      "factual_summary": "The SureForms - Contact Form Builder, AI Forms, Payment Form, Survey & Quiz WordPress plugin through 2.12.2 is vulnerable to unauthenticated stored cross-site scripting via text-field entity-encoded payloads because of insufficient input sanitization and output escaping. WordPress Trac references show changes for 2.12.3.",
+      "evidence_classification": "Wordfence CNA CVE record and NVD entry with Wordfence threat-intel reference and WordPress Trac code-change references",
+      "affected_boundary_or_version": "SureForms WordPress plugin up to and including 2.12.2; fixed changes in 2.12.3 references; CWE-79",
+      "why_it_matters_for_ai_security": "AI-enabled form plugins can collect user prompts, survey data, and contact/payment workflow data. Stored XSS in that surface can compromise users or administrative sessions and can become a prompt/data contamination path for AI-assisted form workflows.",
+      "named_entities": [
+        "SureForms",
+        "Brainstorm Force",
+        "Wordfence",
+        "WordPress",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Owns the AI-enabled plugin web security and data-contamination implication.",
+        "ai_wiki": "Owns broad product/provider context for SureForms or Brainstorm Force if needed.",
+        "ai_dev_wiki": "No direct local development-practice routing identified."
+      },
+      "confidence_notes": "Medium confidence: the publication timestamp is before the exact cutoff, but both CVE and NVD records have visible in-window update timestamps. The cveawg detail fetch intermittently returned HTTP 429 after initial successful retrieval, so ingest should recheck details.",
+      "follow_up_actions": [
+        "During ingest, verify whether the in-window update changed fixed-version or reference state.",
+        "Avoid overstating AI-specific impact unless the AI Forms data path is confirmed from product documentation."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Eclipse Ankaios CVE-2026-84173",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84173",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84173"
+      ],
+      "visible_dates": {
+        "cve_record_published_utc": "2026-09-07T09:42:03.424Z",
+        "nvd_published": "2026-09-07T10:16:54.823"
+      },
+      "reason": "In-window and security-relevant, but the affected agent is a workload-orchestration component rather than an AI agent, MCP tool, model, AI plugin, or AI platform boundary."
+    },
+    {
+      "title": "Eclipse Ankaios CVE-2026-85201",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85201",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85201"
+      ],
+      "visible_dates": {
+        "cve_record_published_utc": "2026-09-07T10:01:07.356Z",
+        "nvd_published": "2026-09-07T11:17:37.490"
+      },
+      "reason": "In-window but not AI-specific; 'agent' refers to an orchestration runtime process."
+    },
+    {
+      "title": "Zohocorp ManageEngine Endpoint Central CVE-2026-77698",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77698",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77698"
+      ],
+      "visible_dates": {
+        "cve_record_published_utc": "2026-09-07T09:51:04.151Z",
+        "nvd_published": "2026-09-07T10:16:53.673"
+      },
+      "reason": "In-window local privilege escalation due to endpoint agent upgrade, but no AI, MCP, model, AI plugin, or AI platform security boundary was identified."
+    },
+    {
+      "title": "Tempo Operator CVE-2025-2786",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-2786",
+        "https://cveawg.mitre.org/api/cve/CVE-2025-2786"
+      ],
+      "visible_dates": {
+        "cve_record_published_utc": "2025-04-02T11:07:43.285Z",
+        "cve_record_updated_utc": "2026-09-07T21:37:17.466Z",
+        "nvd_last_modified": "2026-09-07T22:17:20.340"
+      },
+      "reason": "In-window update and access-control relevance, but the record is for observability operator service-account behavior, not an AI security item."
+    },
+    {
+      "title": "Tobit TeamDavid Webbox CVE-2026-54201",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54201",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54201"
+      ],
+      "visible_dates": {
+        "cve_record_updated_utc": "2026-09-07T12:45:29.829",
+        "nvd_last_modified": "2026-09-07T13:20:25.317"
+      },
+      "reason": "In-window CVE update, but no AI-specific affected boundary or security implication was identified."
+    },
+    {
+      "title": "Microsoft ASCII smuggling blog",
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/09/03/ascii-smuggling-crosses-over-from-ai-prompt-injection-to-phishing-evasion/"
+      ],
+      "visible_dates": {
+        "search_visible_publication": "2026-09-03"
+      },
+      "reason": "Strong AI-security-relevant primary research, but the visible publication date is before the exact 2026-09-05T23:32:20Z cutoff. Later secondary coverage was excluded as re-reporting of the older primary item."
+    },
+    {
+      "title": "OpenAI/Hugging Face AI-agent incident secondary articles",
+      "source_urls": [
+        "https://www.businessinsider.com/ai-agents-rogue-strategies-cheating-lying-german-wiki-openai-anthropic-2026-9",
+        "https://openai.com/index/hugging-face-model-evaluation-security-incident/"
+      ],
+      "visible_dates": {
+        "secondary_search_visible_publication": "2026-09-06",
+        "primary_search_visible_publication": "2026-07-21"
+      },
+      "reason": "The secondary article appears in-window, but the underlying OpenAI primary incident disclosure is older and this run did not locate a new in-window primary security change."
+    },
+    {
+      "title": "Protectt.ai MCP Security Solution launch",
+      "source_urls": [
+        "https://www.expresscomputer.in/news/protectt-ai-launches-mcp-security-solution-for-bfsi-sector/138510/",
+        "https://protectt.ai/"
+      ],
+      "visible_dates": {
+        "secondary_search_visible_publication": "2026-09-07"
+      },
+      "reason": "In-window and MCP-security-themed, but treated as a product launch without an independently verifiable advisory, incident, patch, standard, or reproducible technical security delta."
+    },
+    {
+      "title": "Darktrace OpenAI Daybreak AI-agent security post",
+      "source_urls": [
+        "https://www.darktrace.com/blog/darktrace-advances-incident-investigation-and-ai-agent-security-with-openai-daybreak-models"
+      ],
+      "visible_dates": {
+        "search_visible_publication": "2026-09-03"
+      },
+      "reason": "Security-themed partnership and product workflow signal, but outside the exact two-day cutoff and not a new concrete vulnerability, mitigation, standard, or public incident inside the window."
+    },
+    {
+      "title": "NIST Security Considerations for Multi-Agent AI Systems presentation",
+      "source_urls": [
+        "https://csrc.nist.gov/Presentations/2026/security-considerations-for-multi-agent-ai-systems"
+      ],
+      "visible_dates": {
+        "visible_publication": "2026-09-01"
+      },
+      "reason": "Relevant governance and threat-modeling material, but the visible date is outside the exact two-day cutoff."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_topic": "knowns",
+      "security_specific_implication": "MCP tool path validation and agent-accessible filesystem containment are local security-wiki concerns.",
+      "upstream_owner": "ai-wiki for broad knowns/MCP-server catalog context"
+    },
+    {
+      "entity_or_topic": "Red Hat OpenShift AI, NVIDIA NGC, and NIM",
+      "security_specific_implication": "AI platform secret exposure and dashboard route authorization are local security-wiki concerns.",
+      "upstream_owner": "ai-wiki for broad platform and provider context"
+    },
+    {
+      "entity_or_topic": "ModelCloud GPTQModel",
+      "security_specific_implication": "Model-runtime kernel memory safety and fixed-version tracking are local security-wiki concerns.",
+      "upstream_owner": "ai-wiki for broad model-compression/runtime catalog context"
+    },
+    {
+      "entity_or_topic": "ash-project igniter",
+      "security_specific_implication": "Supply-chain approval prompt forgery belongs here only as a security control issue.",
+      "upstream_owner": "ai-dev-wiki for general dependency-install workflow and developer approval practice"
+    },
+    {
+      "entity_or_topic": "SureForms AI Forms",
+      "security_specific_implication": "Stored XSS in an AI-enabled form workflow is local only for the AI/data-contamination and plugin-security angle.",
+      "upstream_owner": "ai-wiki for broad product/provider context if needed"
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": [],
+  "collector_notes": [
+    "NVD and CVE API evidence was available for all five qualifying findings.",
+    "NVD repeated keyword searches did not hit a 429 during the main collection pass; cveawg later returned 429 once for CVE-2026-18406 after an earlier successful detail retrieval.",
+    "docs/wiki and raw/processed were intentionally not edited."
+  ]
+}
