@@ -118,6 +118,11 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/runzero-platform-mcp-authorization-bypass.md](agent-and-tool-security/runzero-platform-mcp-authorization-bypass.md)
 - [agent-and-tool-security/hermes-agent-acp-mcp-dos.md](agent-and-tool-security/hermes-agent-acp-mcp-dos.md)
 - [agent-and-tool-security/knowns-mcp-doc-memory-path-traversal.md](agent-and-tool-security/knowns-mcp-doc-memory-path-traversal.md)
+- [agent-and-tool-security/open-webui-fetch-and-rag-ssrf.md](agent-and-tool-security/open-webui-fetch-and-rag-ssrf.md)
+- [agent-and-tool-security/open-webui-terminal-execution-boundaries.md](agent-and-tool-security/open-webui-terminal-execution-boundaries.md)
+- [agent-and-tool-security/open-webui-automation-scheduler-dos.md](agent-and-tool-security/open-webui-automation-scheduler-dos.md)
+- [agent-and-tool-security/flowise-agent-node-code-execution.md](agent-and-tool-security/flowise-agent-node-code-execution.md)
+- [agent-and-tool-security/flowise-http-mcp-document-loader-ssrf.md](agent-and-tool-security/flowise-http-mcp-document-loader-ssrf.md)
 - [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
 - [infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md](infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md)
 - [infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md](infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md)
@@ -171,6 +176,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [data-and-privacy/cheshire-cat-ai-memory-points-disclosure.md](data-and-privacy/cheshire-cat-ai-memory-points-disclosure.md)
 - [data-and-privacy/ibm-contextforge-jq-filter-credential-disclosure.md](data-and-privacy/ibm-contextforge-jq-filter-credential-disclosure.md)
 - [data-and-privacy/ibm-contextforge-translate-session-confusion.md](data-and-privacy/ibm-contextforge-translate-session-confusion.md)
+- [data-and-privacy/llmware-collection-filter-sql-injection.md](data-and-privacy/llmware-collection-filter-sql-injection.md)
+- [data-and-privacy/open-webui-knowledge-object-access-control.md](data-and-privacy/open-webui-knowledge-object-access-control.md)
 - [identity-and-access](identity-and-access/index.md)
 - [identity-and-access/mcp-tool-level-iam-authorization.md](identity-and-access/mcp-tool-level-iam-authorization.md)
 - [identity-and-access/mcp-client-oauth-redirect-uri-handling.md](identity-and-access/mcp-client-oauth-redirect-uri-handling.md)
@@ -206,6 +213,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/copilot-studio-signature-verification-privilege-elevation.md](identity-and-access/copilot-studio-signature-verification-privilege-elevation.md)
 - [identity-and-access/jeecgboot-airag-exportxls-access-control.md](identity-and-access/jeecgboot-airag-exportxls-access-control.md)
 - [identity-and-access/openshift-ai-nim-secret-authorization-bypass.md](identity-and-access/openshift-ai-nim-secret-authorization-bypass.md)
+- [identity-and-access/open-webui-oauth-token-audience-binding.md](identity-and-access/open-webui-oauth-token-audience-binding.md)
+- [identity-and-access/open-webui-chat-channel-authorization.md](identity-and-access/open-webui-chat-channel-authorization.md)
+- [identity-and-access/flowise-chatflow-agentflow-deletion-authorization.md](identity-and-access/flowise-chatflow-agentflow-deletion-authorization.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -255,6 +265,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [infrastructure-and-supply-chain/ai-website-builder-unprotected-rest-rce.md](infrastructure-and-supply-chain/ai-website-builder-unprotected-rest-rce.md)
 - [infrastructure-and-supply-chain/gptqmodel-triton-dequantization-oob-read.md](infrastructure-and-supply-chain/gptqmodel-triton-dequantization-oob-read.md)
 - [infrastructure-and-supply-chain/igniter-install-confirmation-prompt-forgery.md](infrastructure-and-supply-chain/igniter-install-confirmation-prompt-forgery.md)
+- [infrastructure-and-supply-chain/flowise-pickle-deserialization-rce.md](infrastructure-and-supply-chain/flowise-pickle-deserialization-rce.md)
+- [infrastructure-and-supply-chain/flowise-custom-mcp-npx-auto-install-bypass.md](infrastructure-and-supply-chain/flowise-custom-mcp-npx-auto-install-bypass.md)
 - [testing-and-assurance](testing-and-assurance/index.md)
 - [testing-and-assurance/cyber-evaluation-containment.md](testing-and-assurance/cyber-evaluation-containment.md)
 - [testing-and-assurance/public-cyber-capability-assessments.md](testing-and-assurance/public-cyber-capability-assessments.md)
@@ -314,6 +326,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [model-and-prompt-security/microsoft-edge-ios-llm-prompt-spoofing.md](model-and-prompt-security/microsoft-edge-ios-llm-prompt-spoofing.md)
 - [model-and-prompt-security/toon-decoder-prototype-pollution.md](model-and-prompt-security/toon-decoder-prototype-pollution.md)
 - [model-and-prompt-security/lavague-indirect-prompt-injection-rce.md](model-and-prompt-security/lavague-indirect-prompt-injection-rce.md)
+- [model-and-prompt-security/ascii-smuggling-ai-ingestion-normalization.md](model-and-prompt-security/ascii-smuggling-ai-ingestion-normalization.md)
+- [model-and-prompt-security/open-webui-rendering-and-search-input-risks.md](model-and-prompt-security/open-webui-rendering-and-search-input-risks.md)
 - [source-workflows](source-workflows/index.md)
 - [digests](digests/index.md)
 - [digests/2026-09.md](digests/2026-09.md)
@@ -330,6 +344,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - Updated on 2026-09-03 with September 3 topic and watcher ingest for GPT-6 Astra deployment controls, Daybreak frontline-defender access, n8n credential exfiltration, Ollama model-pull SSRF, WordPress AI/MCP authorization, Agent-S GUI action DoS, openbrowser message-budget DoS, and watcher provenance.
 - Updated on 2026-09-06 with Axolotl, Bifrost plugin-loading, JeecgBoot Airag, Copilot Studio, OpenAI wiki-incident, Cloud Monitoring MCP, and Anthropic follow-up security pages.
 - Updated on 2026-09-07 with knowns MCP path traversal, OpenShift AI NIM Secret authorization, GPTQModel Triton OOB read, Igniter prompt forgery, and SureForms AI Forms stored XSS leaves.
+- Updated on 2026-09-08 with focused Open WebUI, Flowise, llmware, and ASCII smuggling leaves plus Agno and PraisonAI evidence updates.
 - Updated on 2026-09-01 with September 1 topic and watcher ingest for Astra release gates, Codex approval/Git execution boundaries, model-artifact supply-chain flaws, Kibana AI feature authorization and DoS, runZero MCP authorization, hermes-agent ACP/MCP DoS, Support Genix AI Chatbot admin takeover, and watcher provenance.
 - Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.
 - Updated on 2026-08-26 with August 25 MCP, agent-tool, identity, infrastructure, verification-parser, emergency-shutdown, and advisory-deferral leaves.

@@ -42,6 +42,9 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [Copilot Studio signature verification privilege elevation](copilot-studio-signature-verification-privilege-elevation.md)
 - [JeecgBoot Airag exportXls access control](jeecgboot-airag-exportxls-access-control.md)
 - [OpenShift AI NIM Secret authorization bypass](openshift-ai-nim-secret-authorization-bypass.md)
+- [Open WebUI OAuth token audience binding](open-webui-oauth-token-audience-binding.md)
+- [Open WebUI chat channel authorization](open-webui-chat-channel-authorization.md)
+- [Flowise chatflow and agentflow deletion authorization](flowise-chatflow-agentflow-deletion-authorization.md)
 
 ## Authoritative Sources
 
@@ -75,6 +78,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - Updated on 2026-09-04 with Azure AI Language missing-authentication coverage and Junie config trust-marker evidence.
 - Updated on 2026-09-06 with Copilot Studio signature-verification privilege elevation and JeecgBoot Airag exportXls access-control leaves.
 - Updated on 2026-09-07 with the OpenShift AI NIM Secret authorization bypass leaf.
+- Updated on 2026-09-08 with Open WebUI OAuth/chat-channel authorization and Flowise destructive-flow authorization leaves.
 - Updated on 2026-09-01 with Kibana AI Assistant Knowledge Base cross-realm authorization, Support Genix AI Chatbot admin takeover, and Synthetic Insider Threat Matrix evidence.
 - Updated on 2026-08-31 with diboot AI Session authorization bypass and ash_ai/MCPHub identity-boundary routing.
 - Updated on 2026-08-29 with FastGPT channel authorization, VoltAgent memory ownership, Gitingest token disclosure, and watcher provenance for Telnyx.

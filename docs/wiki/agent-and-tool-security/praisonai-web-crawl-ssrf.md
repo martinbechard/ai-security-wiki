@@ -1,7 +1,7 @@
 ---
 type: "Topic"
 title: "PraisonAI web_crawl SSRF"
-description: "Security analysis for CVE-2026-55525 redirect-following SSRF in PraisonAI web_crawl."
+description: "Security analysis for PraisonAI web_crawl SSRF and patch-bypass advisories CVE-2026-55523, CVE-2026-55524, and CVE-2026-55525."
 tags: ["agent-and-tool-security", "infrastructure-and-supply-chain"]
 ---
 
@@ -9,7 +9,7 @@ tags: ["agent-and-tool-security", "infrastructure-and-supply-chain"]
 
 ## Current Understanding
 
-CVE-2026-55525 maps to [GHSA-5r34-2g38-6569](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-5r34-2g38-6569) and affects `praisonaiagents` before 1.6.58. Broad PraisonAI framework context belongs upstream; this page owns the local agent retrieval and private-network egress boundary. The [August 26 leaf update watch source](../../../raw/processed/2026-08-26/ai-security-wiki-leaf-update-watch-20260827T000538Z.json) and [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json) provide the current evidence.
+CVE-2026-55525 maps to [GHSA-5r34-2g38-6569](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-5r34-2g38-6569) and affects `praisonaiagents` before 1.6.58. The [September 8 topic collector source](../../../raw/processed/2026-09-08/ai-security-wiki-topic-news-collector-2026-09-08T233200Z.json) adds in-window NVD updates for CVE-2026-55523 and CVE-2026-55524, which describe incomplete-fix and patch-bypass variants where SSRF checks apply only to the initially supplied URL while redirects or later resolution reach loopback, private-network, or cloud metadata endpoints. Broad PraisonAI framework context belongs upstream; this page owns the local agent retrieval and private-network egress boundary. The [August 26 leaf update watch source](../../../raw/processed/2026-08-26/ai-security-wiki-leaf-update-watch-20260827T000538Z.json) and [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json) provide the earlier evidence.
 
 The issue is distinct from the PraisonAI MCP origin/session leaves because it concerns an agent web-crawling tool following attacker-controlled redirects into destinations that the original request policy should have excluded. The exploit path is:
 
@@ -31,6 +31,11 @@ It belongs near [agent network egress controls](agent-network-egress-controls.md
 ## Authoritative Sources
 
 - [August 27 leaf update watch source](../../../raw/processed/2026-08-27/ai-security-wiki-leaf-update-watch-20260828T000238Z.json)
+- [September 8 topic collector source](../../../raw/processed/2026-09-08/ai-security-wiki-topic-news-collector-2026-09-08T233200Z.json)
+- [CVE-2026-55523 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-55523)
+- [CVE-2026-55524 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-55524)
+- [GHSA-8hjw-25cg-g52h](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-8hjw-25cg-g52h)
+- [GHSA-vg6p-v9vm-6fgj](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-vg6p-v9vm-6fgj)
 - [CVE-2026-55525 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-55525)
 - [August 26 leaf update watch source](../../../raw/processed/2026-08-26/ai-security-wiki-leaf-update-watch-20260827T000538Z.json)
 - [GHSA-5r34-2g38-6569](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-5r34-2g38-6569)
@@ -62,5 +67,6 @@ It belongs near [agent network egress controls](agent-network-egress-controls.md
 
 ## Maintenance Notes
 
+- Updated on 2026-09-08 with NVD in-window update provenance for CVE-2026-55523 and CVE-2026-55524 patch-bypass variants; the durable control remains final-destination validation after redirects and DNS/address normalization.
 - Updated on 2026-08-28 with August 27 leaf-update evidence for CVE-2026-55525.
 - Created on 2026-08-27 from the [August 26 leaf watcher](../../../raw/processed/2026-08-26/ai-security-wiki-leaf-update-watch-20260827T000538Z.json) after verifier correction split resolved PraisonAI advisory mappings into focused leaves.

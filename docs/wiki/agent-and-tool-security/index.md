@@ -123,6 +123,11 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [runZero Platform MCP authorization bypass](runzero-platform-mcp-authorization-bypass.md)
 - [hermes-agent ACP MCP DoS](hermes-agent-acp-mcp-dos.md)
 - [knowns MCP doc and memory path traversal](knowns-mcp-doc-memory-path-traversal.md)
+- [Open WebUI fetch and RAG SSRF](open-webui-fetch-and-rag-ssrf.md)
+- [Open WebUI terminal execution boundaries](open-webui-terminal-execution-boundaries.md)
+- [Open WebUI automation scheduler denial of service](open-webui-automation-scheduler-dos.md)
+- [Flowise agent node code execution](flowise-agent-node-code-execution.md)
+- [Flowise HTTP MCP document-loader SSRF](flowise-http-mcp-document-loader-ssrf.md)
 
 ## Authoritative Sources
 
@@ -157,6 +162,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Updated on 2026-09-05 with Rowboat custom MCP server SSRF and cli-mcp-server shell-substitution allowlist bypass leaves.
 - Updated on 2026-09-06 with Cloud Monitoring remote MCP response-control evidence from the September 2 documentation update.
 - Updated on 2026-09-07 with knowns MCP doc and memory path traversal.
+- Updated on 2026-09-08 with focused Open WebUI and Flowise security-boundary leaves plus Agno and PraisonAI NVD update provenance.
 - Updated on 2026-09-02 with LiteLLM MCP KEV authentication bypass, CowAgent tool DoS, and aichat API memory-allocation leaves.
 - Updated on 2026-09-01 with Codex PowerShell approval bypass, Kibana AI feature DoS, runZero Platform MCP authorization, and hermes-agent ACP/MCP availability leaves.
 - Updated on 2026-08-31 with ash_ai tool-loop and MCP-origin leaves, the MCPHub advisory-family leaf, sdcb chats MCP fetch-tools SSRF, and watcher enrichment for Junie local-execution boundaries.

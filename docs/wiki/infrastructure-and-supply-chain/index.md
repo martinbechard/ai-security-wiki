@@ -70,6 +70,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [AI Website Builder unprotected REST RCE](ai-website-builder-unprotected-rest-rce.md)
 - [GPTQModel Triton dequantization OOB read](gptqmodel-triton-dequantization-oob-read.md)
 - [Igniter install confirmation prompt forgery](igniter-install-confirmation-prompt-forgery.md)
+- [Flowise pickle deserialization RCE](flowise-pickle-deserialization-rce.md)
+- [Flowise Custom MCP npx auto-install bypass](flowise-custom-mcp-npx-auto-install-bypass.md)
 
 ## Authoritative Sources
 
@@ -103,6 +105,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - Updated on 2026-09-04 with Xinference auto-register file-read, aider repository command execution, AI Website Builder unprotected REST, Junie workstation-containment, and plugin marketplace provenance updates.
 - Updated on 2026-09-06 with Axolotl multipack trust_remote_code RCE and Bifrost HTTP custom plugin RCE leaves.
 - Updated on 2026-09-07 with GPTQModel Triton dequantization OOB read and Igniter install confirmation prompt forgery leaves.
+- Updated on 2026-09-08 with Flowise pickle deserialization and Custom MCP npx auto-install bypass leaves.
 - Updated on 2026-09-02 with the Windows ML CLI localhost trust_remote_code RCE leaf and ModelScope advisory provenance.
 - Updated on 2026-09-01 with Codex Git metadata execution, Transformers remote-code cache persistence, ModelScope unsafe YAML, and Elasticsearch model-artifact deserialization leaves.
 - Updated on 2026-08-31 with Theia AI Agent Mode workspace path traversal, OpenShift AI guardrails-detectors ReDoS, and a Kubio AI Website Builder deferral in the WordPress AI plugin advisory page.

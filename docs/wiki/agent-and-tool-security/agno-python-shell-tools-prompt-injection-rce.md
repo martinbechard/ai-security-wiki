@@ -9,7 +9,7 @@ tags: ["agent-and-tool-security", "model-and-prompt-security"]
 
 ## Current Understanding
 
-The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json) records [CVE-2026-37003](https://nvd.nist.gov/vuln/detail/CVE-2026-37003) for Agno up to and including 2.5.8. Broad [Agno framework coverage](../../../upstream-ai-wiki/agentic-frameworks/agno.md) belongs upstream; this page owns the model-generated tool-argument execution boundary.
+The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json) records [CVE-2026-37003](https://nvd.nist.gov/vuln/detail/CVE-2026-37003) for Agno up to and including 2.5.8, and the [September 8 topic collector source](../../../raw/processed/2026-09-08/ai-security-wiki-topic-news-collector-2026-09-08T233200Z.json) records an in-window NVD update for the same advisory. Broad [Agno framework coverage](../../../upstream-ai-wiki/agentic-frameworks/agno.md) belongs upstream; this page owns the model-generated tool-argument execution boundary.
 
 ## Security Impact
 
@@ -23,6 +23,7 @@ The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-secu
 ## Authoritative Sources
 
 - [August 29 leaf update watch source](../../../raw/processed/2026-08-29/ai-security-wiki-leaf-update-watch-20260829T000405Z.json)
+- [September 8 topic collector source](../../../raw/processed/2026-09-08/ai-security-wiki-topic-news-collector-2026-09-08T233200Z.json)
 - [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json)
 - [NVD record](https://nvd.nist.gov/vuln/detail/CVE-2026-37003)
 - [CVE record](https://www.cve.org/CVERecord?id=CVE-2026-37003)
@@ -52,5 +53,6 @@ The [August 27 topic collector source](../../../raw/processed/2026-08-27/ai-secu
 
 ## Maintenance Notes
 
+- Updated on 2026-09-08 with in-window NVD update provenance from the September 8 topic collector; the affected execution boundary remains Agno through 2.5.8 and fixed-version details remain unresolved in local evidence.
 - Updated on 2026-08-29 with [August 29 watcher](../../../raw/processed/2026-08-29/ai-security-wiki-leaf-update-watch-20260829T000405Z.json) provenance for the same durable advisory boundary.
 - Created on 2026-08-28 from the [August 27 topic collector](../../../raw/processed/2026-08-27/ai-security-wiki-topic-news-collector-2026-08-27T233104Z.json) as a focused execution-boundary leaf after routing broad Agno context upstream; next check patched-release adoption and whether public exploit evidence appears for prompt-influenced PythonTools or ShellTools calls.

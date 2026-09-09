@@ -22,6 +22,8 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - [Microsoft Edge iOS LLM prompt spoofing](microsoft-edge-ios-llm-prompt-spoofing.md)
 - [TOON decoder prototype pollution](toon-decoder-prototype-pollution.md)
 - [LaVague indirect prompt injection RCE](lavague-indirect-prompt-injection-rce.md)
+- [ASCII smuggling AI ingestion normalization](ascii-smuggling-ai-ingestion-normalization.md)
+- [Open WebUI rendering and search input risks](open-webui-rendering-and-search-input-risks.md)
 
 ## Authoritative Sources
 
@@ -53,6 +55,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 - Updated on 2026-09-02 with the TOON decoder prototype pollution prompt-serialization leaf.
 - Updated on 2026-09-04 with the LaVague model-output Python execution leaf.
+- Updated on 2026-09-08 with the ASCII smuggling AI-ingestion normalization leaf and Open WebUI rendering/search input leaf.
 - Updated on 2026-08-31 with ash_ai prompt-template execution and Microsoft Edge iOS LLM prompt-spoofing leaves.
 - Record affected boundary, attack prerequisites, mitigation, residual risk, and evidence quality.
 - Updated on 2026-08-19 with Context7 MCP prompt-injection and vLLM multimodal input-boundary leaves.

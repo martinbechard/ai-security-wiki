@@ -1,0 +1,450 @@
+{
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "collector_identity": "Northstar",
+  "run_timestamp_utc": "2026-09-08T23:32:00Z",
+  "cutoff_window": {
+    "start_utc": "2026-09-06T23:32:00Z",
+    "end_utc": "2026-09-08T23:32:00Z",
+    "policy": "Include only public-source items published or visibly updated inside this exact 48-hour window. Exclude missing, ambiguous, future-dated, stale, boundary-only, and duplicate prior-run items."
+  },
+  "searched_topics": [
+    "AI threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "AI supply chain, runtime, cloud, model, dataset, dependency, and deployment security",
+    "AI security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_strategy": {
+    "public_sources_only": true,
+    "private_content_handling": "No private, proprietary, sensitive, PII, or company-internal local content was sent to external services.",
+    "primary_source_preference": [
+      "NVD CVE API and NVD vulnerability detail pages",
+      "CVEAWG/CNA JSON records",
+      "vendor GitHub security advisories, patch commits, and release tags",
+      "official security research or threat-intelligence posts",
+      "reputable secondary reporting only when primary publication timing was outside the window or not fetchable"
+    ],
+    "searched_source_families": [
+      "NVD keyword API searches for AI, MCP, LLM, and agent",
+      "CVEAWG direct CVE JSON lookups",
+      "GitHub security advisory references from CVE records",
+      "Microsoft Security Blog and reputable secondary reporting on ASCII smuggling",
+      "CISA and MSRC web searches for in-window AI security deltas"
+    ]
+  },
+  "federation_context": {
+    "security_wiki_scope": "Owns concrete AI security deltas, affected security boundaries, mitigations, assurance controls, and operational implications.",
+    "ai_wiki_upstream_scope": "Owns broad company, product, model, framework, MCP server, and AI ecosystem entity context.",
+    "ai_dev_wiki_upstream_scope": "Owns general AI-assisted development practice, agent workflow, verification, adoption, and development-governance context.",
+    "routing_rule_used": "Keep the security-specific implication locally and record broad ecosystem or development-practice context as upstream-owned."
+  },
+  "qualifying_findings": [
+    {
+      "id": "open-webui-0-11-0-security-wave-2026-09-08",
+      "title": "Open WebUI 0.11.0 vulnerability records receive in-window NVD updates across RAG, OAuth, tools, knowledge, terminal, and chat boundaries",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-06T23:32:00.000&lastModEndDate=2026-09-08T23:32:00.000&keywordSearch=AI",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54020",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70479",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70480",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70481",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70482",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70483",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70484",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70485",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70486",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70487",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70488",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70489",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70490",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70491",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70492",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70493",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54020",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-70479",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-70482",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-70485",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-70491",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-70493",
+        "https://github.com/open-webui/open-webui/releases/tag/v0.11.0"
+      ],
+      "visible_dates": {
+        "nvd_last_modified_cluster": "2026-09-08T20:41:31.497",
+        "representative_cve_publication_range_utc": "2026-08-04T20:38:27.215Z to 2026-08-04T20:56:20.541Z",
+        "representative_cve_update_range_utc": "2026-08-05T13:55:01.253Z to 2026-08-06T03:55:22.402Z"
+      },
+      "factual_summary": "NVD updated an Open WebUI 0.11.0 security wave inside the run window. The updated records include DNS-rebinding and IPv6-transition SSRF through URL/RAG/image/OAuth fetch paths, sub-resource validation gaps in the Playwright web loader, OAuth token-exchange audience binding failure, cross-user knowledge attachment reads, knowledge-base cleanup object-ownership gaps, terminal preview origin script execution, terminal WebSocket approval-boundary loss, tool-source disclosure to non-admins, KaTeX stored XSS, regex denial of service in knowledge search, automation recurrence event-loop exhaustion, chat task cancellation before authorization, image-generation permission bypass, and standard-channel message authorship failures.",
+      "evidence_classification": "NVD in-window update wave plus CVEAWG records, GitHub security advisories, patch commits, and Open WebUI v0.11.0 release references",
+      "affected_boundary_or_version": "Open WebUI versions before 0.11.0 across web loader, URL/RAG ingestion, OAuth, chat, channels, knowledge, terminal, tools, markdown rendering, and automation scheduler paths; fixed in 0.11.0 according to records.",
+      "why_it_matters_for_ai_security": "Self-hosted AI chat and RAG systems combine browser fetches, retrieval indexes, user content, OAuth, terminal access, and server-side tools. This cluster shows how weak per-boundary validation can turn ordinary AI platform features into SSRF, credential exposure, cross-user data access, session takeover, permission bypass, and service-wide denial of service.",
+      "named_entities": [
+        "Open WebUI",
+        "NVD",
+        "CVEAWG",
+        "GitHub Security Advisories",
+        "OAuth",
+        "RAG",
+        "Playwright",
+        "Vega",
+        "KaTeX"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Owns the AI platform boundary cluster and the security implications for RAG, OAuth, terminal, tool, and shared-chat controls.",
+        "ai_wiki": "Owns broad Open WebUI product/entity context if a general product page is needed.",
+        "ai_dev_wiki": "May own general self-hosted assistant operation practice; do not duplicate broad workflow guidance here."
+      },
+      "confidence_notes": "High confidence that NVD records were updated inside the window and identify concrete security fixes. Ingest should distinguish NVD update timing from original August disclosure timing.",
+      "follow_up_actions": [
+        "Deduplicate into one or more durable Open WebUI security leaves instead of one page per low-level route unless independent maintenance needs require splits.",
+        "During ingest, inspect GitHub advisories and v0.11.0 release notes for exact patched-version and remediation language.",
+        "Route broad Open WebUI product coverage upstream to ai-wiki."
+      ]
+    },
+    {
+      "id": "flowise-3-1-3-agent-and-mcp-security-wave-2026-09-08",
+      "title": "Flowise 3.1.3 vulnerability records receive in-window NVD updates for agent, memory, tool, CSV, MCP, and SSRF paths",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-06T23:32:00.000&lastModEndDate=2026-09-08T23:32:00.000&keywordSearch=agent",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-06T23:32:00.000&lastModEndDate=2026-09-08T23:32:00.000&keywordSearch=LLM",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69251",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69253",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69255",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69256",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69257",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69262",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69263",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69264",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70477",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-69251",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-69253",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-69255",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-69257",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-69263",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-70477",
+        "https://github.com/FlowiseAI/Flowise/releases/tag/flowise@3.1.3"
+      ],
+      "visible_dates": {
+        "nvd_last_modified_cluster": "2026-09-08T20:41:31.497",
+        "representative_cve_publication_range_utc": "2026-08-04T14:27:55.102Z to 2026-08-04T19:29:14.796Z",
+        "representative_cve_update_range_utc": "2026-08-04T15:35:08.974Z to 2026-08-05T14:42:10.411Z"
+      },
+      "factual_summary": "NVD updated Flowise vulnerabilities inside the run window. The records cover RCE and code injection in agent memory/record-manager DataSource options, custom tool baseURL source interpolation, CSVAgent/Pyodide and prompt-injection execution paths, read_pickle deserialization, chatflow/agentflow deletion authorization confusion, IPv4-mapped IPv6 SSRF in HTTP/MCP/document-loader paths, and a Custom MCP server npx auto-install bypass using npm_config_yes.",
+      "evidence_classification": "NVD in-window update wave plus CVEAWG records, Flowise GitHub security advisories, patch pull requests, commits, and Flowise 3.1.3 release references",
+      "affected_boundary_or_version": "Flowise versions before 3.1.3 across chatflows, agentflows, CSVAgent, memory nodes, record-manager nodes, custom tools, HTTP security, document loaders, API chains, and MCP tool launch paths; fixed in 3.1.3 according to records.",
+      "why_it_matters_for_ai_security": "Flowise is an LLM flow and agent builder where user-configurable nodes can become execution, fetch, memory, and tool-launch boundaries. This wave shows that AI builder features need strict separation between untrusted prompt/data inputs, code templates, dependency installation, internal network fetches, and workspace authorization.",
+      "named_entities": [
+        "Flowise",
+        "FlowiseAI",
+        "NVD",
+        "CVEAWG",
+        "MCP",
+        "Pyodide",
+        "TypeORM",
+        "vm2",
+        "npx"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Owns Flowise agent-builder security boundaries, especially prompt-to-code execution, MCP launch controls, SSRF filtering, and workspace authorization.",
+        "ai_wiki": "Owns broad Flowise product/framework context if needed.",
+        "ai_dev_wiki": "May own general low-code agent-builder workflow practices."
+      },
+      "confidence_notes": "High confidence that NVD updated the records inside the window and the CVE/GitHub references identify concrete fixed-version security changes. Ingest should distinguish September NVD update timing from the original August advisories.",
+      "follow_up_actions": [
+        "During ingest, cluster the CSVAgent/Pyodide items carefully to avoid repeated prose.",
+        "Recheck Flowise 3.1.3 release and linked PRs for exact remediation wording.",
+        "Route general Flowise entity context upstream to ai-wiki."
+      ]
+    },
+    {
+      "id": "agno-python-shell-tools-prompt-injection-rce-nvd-update-2026-09-08",
+      "title": "Agno PythonTools and ShellTools prompt-injection RCE receives in-window NVD update",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-06T23:32:00.000&lastModEndDate=2026-09-08T23:32:00.000&keywordSearch=LLM",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-37003",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-37003",
+        "https://yerangamage.com/cves/detail/?slug=agno-rce-tools",
+        "http://agno.com"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-08-27T20:17:41.107",
+        "nvd_last_modified": "2026-09-08T19:29:09.680",
+        "cve_record_published_utc": "2026-08-27T00:00:00.000Z",
+        "cve_record_updated_utc": "2026-09-01T19:34:17.910Z"
+      },
+      "factual_summary": "NVD's in-window update for CVE-2026-37003 describes Agno up to and including 2.5.8 as vulnerable to unauthenticated remote code execution through prompt injection. PythonTools and ShellTools pass unsanitized LLM-generated arguments to exec(), runpy.run_path(), and subprocess.run(), allowing malicious instructions embedded in processed web pages or documents to trigger arbitrary code or OS command execution on the host server.",
+      "evidence_classification": "NVD in-window update plus CVEAWG record and researcher detail reference",
+      "affected_boundary_or_version": "Agno up to and including 2.5.8; PythonTools and ShellTools; LLM-generated arguments to Python and shell execution sinks.",
+      "why_it_matters_for_ai_security": "The finding is a direct prompt-to-execution boundary failure in an agent framework. It shows why execution tools must enforce typed arguments, approval gates, sandboxing, and untrusted-content separation even when the model selects tool parameters.",
+      "named_entities": [
+        "Agno",
+        "PythonTools",
+        "ShellTools",
+        "NVD",
+        "CVEAWG"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Owns the prompt-injection-to-RCE and agent execution sink control implications.",
+        "ai_wiki": "Owns broad Agno framework/entity coverage.",
+        "ai_dev_wiki": "May own general agent-framework selection and execution-tool workflow guidance."
+      },
+      "confidence_notes": "Medium-high confidence: NVD has an in-window update and concrete technical description, but the CVEAWG record predates the window and the vendor fixed-version state should be rechecked during ingest.",
+      "follow_up_actions": [
+        "Recheck Agno release/advisory state for patched version and maintainer acknowledgement.",
+        "Map to existing agent-and-tool-security execution-boundary leaves if they already cover prompt-injection RCE."
+      ]
+    },
+    {
+      "id": "llmware-sql-injection-custom-filter-nvd-update-2026-09-08",
+      "title": "llmware 0.4.6 collection filters allow SQL injection and cross-document disclosure",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-06T23:32:00.000&lastModEndDate=2026-09-08T23:32:00.000&keywordSearch=LLM",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85689",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85689",
+        "https://github.com/llmware-ai/llmware/issues/1304",
+        "https://github.com/llmware-ai/llmware/blob/v0.4.6/llmware/resources.py",
+        "https://www.vulncheck.com/advisories/llmware-0.4.6-sql-injection-via-unescaped-filter-values"
+      ],
+      "visible_dates": {
+        "nvd_published": "2026-09-04T15:17:46.803",
+        "nvd_last_modified": "2026-09-08T18:21:13.273",
+        "cve_record_published_utc": "2026-09-04T14:32:33.799Z",
+        "cve_record_updated_utc": "2026-09-08T17:10:27.342Z"
+      },
+      "factual_summary": "CVE-2026-85689 was visibly updated by CVEAWG and NVD inside the run window. llmware 0.4.6 interpolates filter and lookup values directly into SQL WHERE clauses in SQLite and PostgreSQL collection database paths. The key allow-list does not sanitize values, so attacker-controlled filters reaching Library.block_lookup and Query text-query helpers can bypass intended collection/document scoping and, on PostgreSQL, enable boolean- and UNION-based SQL injection.",
+      "evidence_classification": "CVEAWG in-window update, NVD in-window update, public GitHub issue, source-file reference, and VulnCheck advisory",
+      "affected_boundary_or_version": "llmware 0.4.6; llmware/resources.py; Library.block_lookup; Query.text_query_with_custom_filter; Query.text_query_by_author_or_speaker; SQLite and PostgreSQL backends.",
+      "why_it_matters_for_ai_security": "Retrieval libraries often enforce document, collection, tenant, or user boundaries through metadata filters. SQL injection in those filters can disclose rows outside the intended retrieval scope and contaminate or exfiltrate private context supplied to LLM workflows.",
+      "named_entities": [
+        "llmware",
+        "llmware-ai",
+        "NVD",
+        "CVEAWG",
+        "VulnCheck",
+        "SQLite",
+        "PostgreSQL"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Owns retrieval filter trust boundaries, SQL injection, and cross-document disclosure implications.",
+        "ai_wiki": "Owns broad llmware framework/entity coverage if needed.",
+        "ai_dev_wiki": "May own general RAG library selection and metadata-filter governance practice."
+      },
+      "confidence_notes": "High confidence: both CVEAWG and NVD show in-window updates and the record contains concrete affected APIs and impact. Fixed-version state was not established from the fetched data.",
+      "follow_up_actions": [
+        "During ingest, verify whether a fixed version exists and whether the GitHub issue names affected/fixed releases.",
+        "Route general RAG library selection guidance upstream to ai-dev-wiki."
+      ]
+    },
+    {
+      "id": "praisonai-web-crawl-ssrf-patch-bypass-nvd-update-2026-09-08",
+      "title": "PraisonAI web_crawl SSRF patch-bypass records receive in-window NVD updates",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-06T23:32:00.000&lastModEndDate=2026-09-08T23:32:00.000&keywordSearch=agent",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55523",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55524",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55523",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55524",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-8hjw-25cg-g52h",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-vg6p-v9vm-6fgj"
+      ],
+      "visible_dates": {
+        "nvd_last_modified_cluster": "2026-09-08T20:51:43.490",
+        "cve_record_publication_range_utc": "2026-08-05T19:26:22.324Z to 2026-08-05T19:58:46.038Z",
+        "cve_record_update_range_utc": "2026-08-06T14:38:08.242Z to 2026-08-06T14:43:50.259Z"
+      },
+      "factual_summary": "NVD updated CVE-2026-55523 and CVE-2026-55524 inside the run window. PraisonAI versions before 1.6.58 and 1.5.128 through 1.6.57 perform SSRF checks only on initially supplied URLs in the web_crawl tool. The fetch path follows redirects or re-resolves hostnames without revalidating the final destination, allowing attacker-influenced agent/tool URLs to reach loopback, private-network, or cloud metadata endpoints and return the body in tool results. One record frames the issue as an incomplete fix and patch bypass for earlier web_crawl SSRF advisories.",
+      "evidence_classification": "NVD in-window update plus CVEAWG records and PraisonAI GitHub security advisories",
+      "affected_boundary_or_version": "PraisonAI before 1.6.58 and 1.5.128 through 1.6.57; praisonaiagents.tools.web_crawl_tools.web_crawl(); httpx and urllib redirect/fetch paths; fixed in 1.6.58 according to records.",
+      "why_it_matters_for_ai_security": "Agent web-crawl tools are often exposed to model-selected URLs and untrusted web content. A validate-here/fetch-there gap lets agent browsing cross network trust boundaries and leak internal service or metadata responses back into the model/tool result stream.",
+      "named_entities": [
+        "PraisonAI",
+        "MervinPraison",
+        "NVD",
+        "CVEAWG",
+        "GitHub Security Advisories",
+        "httpx",
+        "urllib"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Owns web-crawl SSRF, patch-bypass, and agent browsing network-boundary implications.",
+        "ai_wiki": "Owns broad PraisonAI framework/entity context.",
+        "ai_dev_wiki": "May own general agent web-crawl workflow design and operational practice."
+      },
+      "confidence_notes": "High confidence for the in-window NVD update and fixed version; original CVE/GitHub advisory timing predates the collection window, so durable synthesis should say newly updated by NVD rather than newly disclosed.",
+      "follow_up_actions": [
+        "During ingest, reconcile with any existing PraisonAI web_crawl SSRF leaves to avoid duplicating earlier advisories.",
+        "Check whether earlier GHSA/CVE identifiers are already represented and link this as a patch-bypass update."
+      ]
+    },
+    {
+      "id": "ascii-smuggling-phishing-evasion-secondary-2026-09-07",
+      "title": "ASCII smuggling technique from prompt injection is reported in active phishing-filter evasion campaigns",
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/09/03/ascii-smuggling-crosses-over-from-ai-prompt-injection-to-phishing-evasion/",
+        "https://www.itpro.com/security/cyber-crime/cyber-criminals-are-adapting-ascii-smuggling-for-mass-phishing-campaigns",
+        "https://www.techradar.com/pro/security/hackers-are-using-invisible-unicode-characters-to-sneak-phishing-lures-into-emails",
+        "https://indianexpress.com/article/technology/tech-news-technology/what-is-ascii-smuggling-spam-ai-email-filters-10865353/"
+      ],
+      "visible_dates": {
+        "microsoft_primary_publication": "2026-09-03",
+        "itpro_secondary_publication_utc": "2026-09-07T10:54:06Z",
+        "techradar_secondary_publication_utc": "2026-09-07T13:20:00Z",
+        "indian_express_secondary_publication": "2026-09-06T11:18:04+05:30"
+      },
+      "factual_summary": "In-window secondary reports summarize Microsoft Security Research's September 3 primary post on a high-volume phishing campaign using invisible Unicode tag characters. The technique, previously popularized for AI prompt injection and XPIA, was used to split finance-themed lure words so recipients saw normal text while raw-text keyword detectors saw obfuscated tokens. The reports cite Microsoft telemetry showing a February spike from roughly 21,000 daily signature hits to more than 1.3 million, a later peak above 2.3 million, and about 150 finance-themed sender domains accounting for most detected volume. Microsoft recommends stripping or normalizing Unicode tag characters and other invisible code points before filtering and before AI ingestion.",
+      "evidence_classification": "Official Microsoft primary research outside the exact window plus in-window reputable secondary coverage",
+      "affected_boundary_or_version": "Email filtering and AI-assistant ingestion pipelines that process raw text containing Unicode Tags block characters U+E0000 to U+E007F or other invisible code points.",
+      "why_it_matters_for_ai_security": "The same invisible-text mechanism that can hide instructions from users while exposing them to models is now being repurposed for phishing evasion. Defenders should normalize text before both traditional detection and AI-assistant summarization so hidden characters do not become an evasion or XPIA channel.",
+      "named_entities": [
+        "Microsoft Security Research",
+        "Microsoft Defender for Office 365",
+        "ASCII smuggling",
+        "Unicode Tags block",
+        "ActiveCampaign",
+        "ITPro",
+        "TechRadar",
+        "Indian Express"
+      ],
+      "upstream_routing": {
+        "security_wiki": "Owns the prompt-injection/XPIA evasion mechanism and AI ingestion normalization control.",
+        "ai_wiki": "No broad AI entity update needed except Microsoft provider context if relevant upstream.",
+        "ai_dev_wiki": "May own general agent content-ingestion and tool-output normalization practice."
+      },
+      "confidence_notes": "Medium confidence for in-window inclusion: primary Microsoft publication is outside the exact 48-hour window, but multiple secondary reports with visible September 7 publication times brought the finding back into the window. The item is best treated as an in-window reporting update on older primary research.",
+      "follow_up_actions": [
+        "During ingest, avoid presenting the Microsoft primary post as newly published inside this run window.",
+        "Extract the durable control as text normalization before email filtering and AI ingestion."
+      ]
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_topic": "Open WebUI",
+      "routing": "security_wiki owns the vulnerability cluster; ai-wiki owns broad product/entity context.",
+      "reason": "The collected item is a security update wave, not a general product announcement."
+    },
+    {
+      "entity_or_topic": "Flowise",
+      "routing": "security_wiki owns agent-builder vulnerability boundaries; ai-wiki owns broad framework/product context; ai-dev-wiki may own general low-code agent workflow practice.",
+      "reason": "The security deltas are concrete RCE, SSRF, MCP launch, prompt-injection, and authorization failures."
+    },
+    {
+      "entity_or_topic": "Agno",
+      "routing": "security_wiki owns prompt-injection-to-execution risk; ai-wiki owns broad framework context; ai-dev-wiki may own framework selection and safe tool-use practice.",
+      "reason": "The local relevance is the security boundary around Python and shell tools."
+    },
+    {
+      "entity_or_topic": "llmware",
+      "routing": "security_wiki owns retrieval filter/data-isolation failure; ai-wiki owns broad framework context; ai-dev-wiki may own RAG metadata-filter practice.",
+      "reason": "The finding affects cross-document disclosure and SQL injection in LLM retrieval paths."
+    },
+    {
+      "entity_or_topic": "PraisonAI",
+      "routing": "security_wiki owns agent web-crawl SSRF patch-bypass; ai-wiki owns broad framework context; ai-dev-wiki may own web-crawl workflow practice.",
+      "reason": "The source describes a concrete fetch-boundary vulnerability in an agent tool."
+    },
+    {
+      "entity_or_topic": "Microsoft ASCII smuggling research",
+      "routing": "security_wiki owns the XPIA/evasion and normalization control; ai-dev-wiki may own general content-ingestion hygiene.",
+      "reason": "The concrete delta is a threat technique and control relevant to AI assistant ingestion."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-86439 knowns MCP path traversal",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86439",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86439"
+      ],
+      "visible_dates": {
+        "nvd_last_modified": "2026-09-08T19:56:50.950",
+        "previous_collector_artifact": "raw/processed/2026-09-07/ai-security-wiki-topic-news-collector-2026-09-07T233220Z.json"
+      },
+      "reason": "Excluded as prior-run overlap; the September 7 artifact already captured this finding, and the in-window NVD update did not establish a distinct new security delta during this run."
+    },
+    {
+      "candidate": "MCPHub CVE-2026-79743 through CVE-2026-79750 September 8 NVD updates",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79743",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79750"
+      ],
+      "visible_dates": {
+        "nvd_last_modified_cluster": "2026-09-08T21:08:37.320",
+        "previous_collector_artifact": "raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json",
+        "previous_leaf_watch_artifact": "raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json"
+      },
+      "reason": "Excluded as duplicate coverage; local raw artifacts already captured this MCPHub cluster, and the September 8 NVD update appears to be enrichment rather than a distinct new security fact for this collector."
+    },
+    {
+      "candidate": "Red Hat OpenShift AI guardrails-detectors ReDoS CVE-2026-15154",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15154",
+        "https://access.redhat.com/security/cve/CVE-2026-15154"
+      ],
+      "visible_dates": {
+        "nvd_last_modified": "2026-09-08T23:17:21.743",
+        "previous_leaf_watch_artifact": "raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json"
+      },
+      "reason": "Excluded as duplicate local coverage; the September 1 leaf-watch source already recorded the Red Hat advisory/remediation update for this CVE."
+    },
+    {
+      "candidate": "IBM MQ Agent LLM worker exhaustion CVE-2026-19645",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19645",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-19645"
+      ],
+      "visible_dates": {
+        "nvd_last_modified": "2026-09-08T14:17:08.940",
+        "previous_collector_artifact": "raw/processed/2026-09-04/ai-security-wiki-topic-news-collector-2026-09-04T233156Z.json"
+      },
+      "reason": "Excluded as prior collector coverage; no distinct new AI-security fact was identified beyond the already captured IBM MQ Agent availability issue."
+    },
+    {
+      "candidate": "CodeWhale exec_shell_interact and rlm_eval approval bypass CVE-2026-75857/CVE-2026-75858",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75857",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75858"
+      ],
+      "visible_dates": {
+        "nvd_last_modified": "2026-09-08T20:32:39.347"
+      },
+      "reason": "Excluded to avoid likely duplicate coverage with existing CodeWhale local leaves and prior August raw artifacts; in-window NVD changes appear to update metadata rather than disclose a fresh security fact."
+    },
+    {
+      "candidate": "Tenable/OpenAI CyberAgents Exchange AI Inspector",
+      "source_urls": [
+        "https://investors.tenable.com/news-releases/news-release-details/tenable-uses-openai-gpt-cyber-models-help-defenders-inspect",
+        "https://www.globenewswire.com/news-release/2026/09/03/tenable-uses-openai-gpt-cyber-models-to-help-defenders-inspect-community-built-ai-components.html",
+        "https://www.expresscomputer.in/news/tenable-and-openai-launch-ai-security-review-process-for-community-built-components/138538/"
+      ],
+      "visible_dates": {
+        "primary_announcement": "2026-09-03",
+        "secondary_report": "2026-09-08"
+      },
+      "reason": "Excluded from qualifying findings because the primary announcement date is outside the exact 48-hour window and the accessible in-window report did not add a distinct security delta beyond the earlier announcement. Record as a routing note during any broader assurance-controls research if needed."
+    },
+    {
+      "candidate": "CISA and MSRC AI security searches",
+      "source_urls": [
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://msrc.microsoft.com/"
+      ],
+      "visible_dates": {},
+      "reason": "Excluded because no in-window, AI-specific primary advisory or KEV item with a concrete security delta was located in the searched results."
+    }
+  ],
+  "blockers": [
+    "No collection blockers. Some included CVE clusters depend on NVD in-window update timing while original CNA/GitHub advisories are older, so ingest should phrase them as in-window record updates rather than newly disclosed vulnerabilities.",
+    "NVD detail pages and API were reachable for keyword searches. CVEAWG detail fetches were reachable for sampled representative CVEs."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check_artifact": "passed"
+  }
+}
