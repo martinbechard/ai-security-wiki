@@ -45,6 +45,12 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [Open WebUI OAuth token audience binding](open-webui-oauth-token-audience-binding.md)
 - [Open WebUI chat channel authorization](open-webui-chat-channel-authorization.md)
 - [Flowise chatflow and agentflow deletion authorization](flowise-chatflow-agentflow-deletion-authorization.md)
+- [IBM ContextForge default credentials](ibm-contextforge-default-credentials.md)
+- [Flowise node-load-method credential IDOR](flowise-node-load-method-credential-idor.md)
+- [WPBot AI provider API-key spend](wpbot-ai-provider-api-key-spend.md)
+- [Cheshire Cat AI default identity bypass](cheshire-cat-ai-default-identity-bypass.md)
+- [MCPHub OAuth code redemption bypass](mcphub-oauth-code-redemption-bypass.md)
+- [n8n Instance AI credential-origin confusion](n8n-instance-ai-credential-origin-confusion.md)
 
 ## Authoritative Sources
 
@@ -79,6 +85,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - Updated on 2026-09-06 with Copilot Studio signature-verification privilege elevation and JeecgBoot Airag exportXls access-control leaves.
 - Updated on 2026-09-07 with the OpenShift AI NIM Secret authorization bypass leaf.
 - Updated on 2026-09-08 with Open WebUI OAuth/chat-channel authorization and Flowise destructive-flow authorization leaves.
+- Updated on 2026-09-13 with ContextForge default credentials, Flowise credential IDOR, WPBot provider-key spend, Cheshire Cat AI default identity, MCPHub OAuth, n8n credential-origin, ArcadeDB, and NIST identity-control updates.
 - Updated on 2026-09-01 with Kibana AI Assistant Knowledge Base cross-realm authorization, Support Genix AI Chatbot admin takeover, and Synthetic Insider Threat Matrix evidence.
 - Updated on 2026-08-31 with diboot AI Session authorization bypass and ash_ai/MCPHub identity-boundary routing.
 - Updated on 2026-08-29 with FastGPT channel authorization, VoltAgent memory ownership, Gitingest token disclosure, and watcher provenance for Telnyx.

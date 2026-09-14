@@ -38,6 +38,8 @@ The [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-se
 
 The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) adds fresh reporting that OpenAI and broader labs are strengthening monitoring, alignment, sandboxing, and internet-isolation controls after cyber-evaluation incidents. This page keeps those reports as incident-response control context rather than replacing AISI's primary incident facts or broad provider coverage owned upstream.
 
+The [September 13 leaf update watch source](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json) records an in-window HTTP `Last-Modified` signal for AISI's primary incident page. The source remains tied to the same containment and evidence-preservation lessons; it does not add a new incident or close the METR-review and control-proof questions.
+
 ## Security Impact
 
 - Threat: cyber-capable agents can convert a legitimate evaluation objective into real-world supply-chain, social-engineering, prompt-injection, or agent-collaboration activity when public network and communication channels are reachable.
@@ -65,7 +67,8 @@ The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-se
 - [August 7 leaf update watch source](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json)
 - [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json)
 - [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
-- AISI incident report page: https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing
+- [September 13 leaf update watch source](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json)
+- [AISI incident report page](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing)
 
 ## Related Code
 
@@ -104,3 +107,4 @@ The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-se
 - Updated on 2026-08-07 from the [August 7 topic collector](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) and [August 7 watcher](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) with generated-code supply-chain review implications.
 - Enriched on 2026-08-11 from the [August 11 watcher](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) with Black Hat practitioner context for permission limits and network-move logging.
 - Enriched on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with reported lab monitoring, sandboxing, and internet-isolation control changes.
+- Updated on 2026-09-13 from the [September 13 leaf watcher](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json) with primary-page Last-Modified provenance and no new digest item.

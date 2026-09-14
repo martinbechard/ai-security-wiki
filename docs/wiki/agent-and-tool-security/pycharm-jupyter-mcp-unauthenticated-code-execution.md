@@ -15,19 +15,22 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 The [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) confirms in-window [CVE Program](https://www.cve.org/CVERecord?id=CVE-2026-75060) and [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-75060) publication and keeps [JetBrains' fixed-issues page](https://www.jetbrains.com/privacy-security/issues-fixed/) as the primary fixed-build source for PyCharm 2026.2.1.
 
+The [September 13 leaf update watch source](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json) records that NVD now lists [CVE-2026-75060](https://nvd.nist.gov/vuln/detail/CVE-2026-75060) as Analyzed, with CVSS v3.1 HIGH 8.4 and CWE-306. This strengthens the missing-authentication classification while leaving the exact local listener exposure detail with JetBrains' fixed-issues page.
+
 ## Security Impact
 
 - Threat: unauthenticated MCP endpoints in an IDE can bridge notebook, project, and local runtime authority into code execution.
 - Affected boundary: JetBrains PyCharm before 2026.2.1 and Jupyter MCP tool surfaces.
 - Exploit or incident status: public CVE record; no local exploitation evidence is recorded.
 - Mitigation state: update to PyCharm 2026.2.1 or later and restrict local MCP listener reachability.
-- Confidence: medium-high because NVD is terse but vendor fixed-issues evidence exists.
+- Confidence: high for missing authentication, affected PyCharm boundary, and severity classification; medium for exact listener and tool invocation details until the JetBrains entry is directly reconciled.
 - Residual risk: IDE-integrated tool servers need independent authentication even when they are expected to be local-only.
 
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
 - [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
+- [September 13 leaf update watch source](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json)
 - [NVD CVE-2026-75060](https://nvd.nist.gov/vuln/detail/CVE-2026-75060)
 - [JetBrains fixed issues](https://www.jetbrains.com/privacy-security/issues-fixed/)
 
@@ -57,3 +60,4 @@ The [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-se
 
 - Created on 2026-08-19 from the [August 18 topic collector](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json) with a conservative affected-boundary statement.
 - Updated on 2026-08-20 from the [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) with additional publication confirmation and fixed-build source routing.
+- Updated on 2026-09-13 from the [September 13 leaf watcher](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json) with NVD Analyzed status, CVSS, and CWE-306 evidence.

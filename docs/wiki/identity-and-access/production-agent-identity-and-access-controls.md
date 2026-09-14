@@ -26,13 +26,15 @@ The [August 6 leaf update watch source](../../../raw/processed/2026-08-06/ai-sec
 
 The [August 29 topic collector source](../../../raw/processed/2026-08-29/ai-security-wiki-topic-news-collector-2026-08-29T233233Z.json) adds a [NIST Cybersecurity Insights signal](https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation) with an in-window HTTP `Last-Modified` value. NIST frames agentic AI as an identity and authorization problem where overbroad tokens, standing privilege, and missing granular authorization become harder to control when agents act faster and at larger scale than human users. This evidence reinforces the existing control rule rather than creating a broad NIST page locally.
 
+The [September 13 leaf update watch source](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json) records another in-window HTTP `Last-Modified` signal for the same NIST Cybersecurity Insights page. Because the raw source captured header-level freshness rather than a verified content diff, it is supporting provenance only; it does not prove a substantive guidance update or change the control model.
+
 ## Security Impact
 
 - Threat: agents with shared service-account credentials can overreach across tenants, tools, data classes, or user authority when prompts, tool outputs, or delegated tasks are hostile.
 - Affected boundary: production agent principals, cloud IAM roles, STS sessions, secrets, OAuth delegation, SAML/OIDC federation, audit logs, and evidence stores.
 - Exploit or incident status: control guidance, not an incident disclosure.
 - Mitigation state: guidance-level mitigations include least privilege, short-lived credentials, tenant isolation, credential-exfiltration filtering, non-repudiable logging, and immutable evidence retention.
-- Confidence: medium-high for AWS and NIST control recommendations because the sources are official and dated; NIST is treated as an updated guidance item because the page returned an in-window HTTP `Last-Modified` header.
+- Confidence: medium-high for AWS and NIST control recommendations because the sources are official and dated; the September 13 NIST signal is provenance only because no content delta was verified from the HTTP `Last-Modified` header.
 - Residual risk: exact minimum permissions, token lifetime, delegated-user mapping, and prompt-injection credential filters remain workload-specific.
 
 ## Control Implications
@@ -49,6 +51,7 @@ The [August 29 topic collector source](../../../raw/processed/2026-08-29/ai-secu
 
 - [August 6 leaf update watch source](../../../raw/processed/2026-08-06/ai-security-wiki-leaf-update-watch-20260807T000542Z.json)
 - [August 29 topic collector source](../../../raw/processed/2026-08-29/ai-security-wiki-topic-news-collector-2026-08-29T233233Z.json)
+- [September 13 leaf update watch source](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json)
 - [August 5 topic news collector source](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json)
 - [AWS agent identity and access-management guidance](https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-identity-access-management?sc_channel=el&trk=7e3e88d0-f8b6-47e7-aa65-f49a94b86088)
 - [NIST agentic AI identity foundation blog](https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation)
@@ -85,3 +88,4 @@ The [August 29 topic collector source](../../../raw/processed/2026-08-29/ai-secu
 - Created on 2026-08-05 from the [August 5 topic collector](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json) as a production identity-control leaf after routing broad AWS and vendor catalog coverage upstream.
 - Updated on 2026-08-06 from the [August 6 leaf watcher](../../../raw/processed/2026-08-06/ai-security-wiki-leaf-update-watch-20260807T000542Z.json) to record supporting provenance for prompt-injection credential-theft filtering without creating a separate digest item. Next check should look for cross-cloud equivalents to AWS IAM, STS, CloudTrail, and S3 Object Lock guidance.
 - Updated on 2026-08-30 from the [August 29 topic collector](../../../raw/processed/2026-08-29/ai-security-wiki-topic-news-collector-2026-08-29T233233Z.json) with NIST agentic-AI identity and least-standing-privilege guidance.
+- Updated on 2026-09-13 from the [September 13 leaf watcher](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json) with header-only NIST Last-Modified provenance and no separate digest item.

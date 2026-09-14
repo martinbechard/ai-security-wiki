@@ -15,19 +15,22 @@ The [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai
 
 The [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) adds [CVE Program](https://www.cve.org/CVERecord?id=CVE-2026-75859), [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-75859), and [VulnCheck](https://www.vulncheck.com/advisories/codewhale-before-arbitrary-file-read-via-instructions) evidence that `.codewhale/config.toml` can drive file reads through `instructions` and shell enablement through `allow_shell` in versions before 0.8.64.
 
+The [September 13 leaf update watch source](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json) adds NVD analysis metadata for two separable configuration-authority CVEs. [CodeWhale instructions file-read authority](codewhale-instructions-file-read-authority.md) owns CVE-2026-75859. [CodeWhale allow_shell validation bypass](codewhale-allow-shell-validation-bypass.md) owns CVE-2026-75911. This router page remains only for the shared repository-controlled configuration trust model.
+
 ## Security Impact
 
 - Threat: repository-controlled configuration or instructions can escalate from local project content into shell execution or arbitrary file reads.
-- Affected boundary: CodeWhale before 0.8.64 or `>=0.8.41` and `<0.8.64`, depending on the exact CVE.
+- Affected boundary: CodeWhale before 0.8.64 or `>=0.8.41` and `<0.8.64`, depending on the exact CVE; focused file-read and shell-enablement details now live in separate leaves.
 - Exploit or incident status: public CVE/NVD records and VulnCheck advisory coverage; no local exploitation evidence is recorded.
 - Mitigation state: update to 0.8.64 or later and treat project config as untrusted until explicitly promoted.
-- Confidence: high for configuration-authority mechanics from CVE/NVD/VulnCheck evidence; exact CVSS/CWE fields still need source reconciliation.
+- Confidence: high for configuration-authority mechanics and severity metadata from CVE/NVD/VulnCheck evidence.
 - Residual risk: agents that load repository instructions before trust classification can let the repository redefine its own authority.
 
 ## Authoritative Sources
 
 - [August 18 topic news collector source](../../../raw/processed/2026-08-18/ai-security-wiki-topic-news-collector-2026-08-18T233017Z.json)
 - [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json)
+- [September 13 leaf update watch source](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json)
 - [NVD CVE-2026-75859](https://nvd.nist.gov/vuln/detail/CVE-2026-75859)
 - [NVD CVE-2026-75911](https://nvd.nist.gov/vuln/detail/CVE-2026-75911)
 
@@ -47,6 +50,8 @@ The [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-se
 
 - [agent and tool security](index.md)
 - [CodeWhale agent control plane vulnerabilities](codewhale-agent-control-plane-vulnerabilities.md)
+- [CodeWhale instructions file-read authority](codewhale-instructions-file-read-authority.md)
+- [CodeWhale allow_shell validation bypass](codewhale-allow-shell-validation-bypass.md)
 - [local agent execution and processing boundaries](local-agent-execution-and-processing-boundaries.md)
 
 ## Open Questions
@@ -57,3 +62,4 @@ The [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-se
 
 - Created on 2026-08-19 after verifier correction split the CodeWhale advisory cluster.
 - Updated on 2026-08-20 from the [August 20 leaf update watch source](../../../raw/processed/2026-08-20/ai-security-wiki-leaf-update-watch-20260821T000216Z.json) with additional advisory evidence for repository-controlled configuration and shell enablement.
+- Updated on 2026-09-13 from the [September 13 leaf watcher](../../../raw/processed/2026-09-13/ai-security-wiki-leaf-update-watch-20260914T000631Z.json) to route CVE-2026-75859 and CVE-2026-75911 into separate focused leaves.

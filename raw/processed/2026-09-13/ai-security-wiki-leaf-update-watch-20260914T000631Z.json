@@ -1,0 +1,455 @@
+{
+  "agent_identifier": "Northstar",
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "automation_name": "AI Security Wiki Leaf Update Watch",
+  "blockers": [],
+  "cutoff_window": {
+    "end_utc": "2026-09-14T00:06:31Z",
+    "rule": "Include only public sources published or visibly updated within the last seven days; exclude ambiguous, future, missing, server-Date-only, boundary-only, stale, adjacent, or duplicate evidence.",
+    "start_utc": "2026-09-06T00:06:31Z"
+  },
+  "exclusions": [
+    {
+      "candidate": "checked public cited sources and public advisory metadata",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-florence2-image-fetch-ssrf.md",
+      "reason": "CVE-AWG and NVD visible publication/update dates are outside the seven-day window; GitHub issue and VulDB evidence do not show a fresh same-leaf update in the checked public metadata.",
+      "source_urls_checked": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-19984",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-19984",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19984",
+        "https://github.com/jkawamoto/mcp-florence2/issues/59",
+        "https://vuldb.com/vuln/391184"
+      ]
+    },
+    {
+      "candidate": "checked public cited sources and public advisory metadata",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ragflow-agent-workflow-invoke-ssrf.md",
+      "reason": "CVE-AWG, NVD, GHSA, and RAGFlow issue evidence remains August-dated; no current-window same-leaf Invoke SSRF update found.",
+      "source_urls_checked": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-75898",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75898",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75898",
+        "https://github.com/advisories/GHSA-9m4v-54qq-67fw",
+        "https://github.com/infiniflow/ragflow/issues/18280"
+      ]
+    },
+    {
+      "candidate": "checked public cited sources and public advisory metadata",
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-database-clean-path-traversal.md",
+      "reason": "CVE-AWG and NVD dates for CVE-2026-74798 are outside the seven-day window; newer SiYuan MCP file-handler items in prior raw artifacts are adjacent leaves, not this database_clean path traversal.",
+      "source_urls_checked": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-74798",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-74798",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74798",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-43jx-gxq4-jpjc"
+      ]
+    },
+    {
+      "candidate": "checked public cited sources and public advisory metadata",
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-debug-key-and-file-boundary.md",
+      "reason": "CVE-AWG and NVD dates for CVE-2026-74798/CVE-2026-74799 are outside the seven-day window; newer SiYuan items are adjacent MCP file-handler/secret-exfiltration leaves already captured elsewhere.",
+      "source_urls_checked": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-74798",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-74798",
+        "https://www.cve.org/CVERecord?id=CVE-2026-74799",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-74799",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-43jx-gxq4-jpjc",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-9cqq-p2hw-mj3f"
+      ]
+    },
+    {
+      "candidate": "checked public cited sources and public advisory metadata",
+      "leaf_id": "docs/wiki/data-and-privacy/oracle-siebel-ai-data-access-vulnerability.md",
+      "reason": "Oracle CPU, CVE-AWG, NVD, and GHSA evidence did not show a visible in-window same-leaf update; NVD lastModified 2026-09-04 is outside this run window.",
+      "source_urls_checked": [
+        "https://www.oracle.com/security-alerts/cspuaug2026.html",
+        "https://www.oracle.com/security-alerts/cspuaug2026verbose.html",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-60758",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-60758",
+        "https://github.com/advisories/GHSA-5x7x-p8x7-qppp"
+      ]
+    },
+    {
+      "candidate": "checked public cited sources and public advisory metadata",
+      "leaf_id": "docs/wiki/data-and-privacy/siyuan-debug-endpoint-ai-key-disclosure.md",
+      "reason": "CVE-AWG and NVD dates for CVE-2026-74799 are outside the seven-day window; no new same-leaf debug-endpoint AI-key disclosure update found.",
+      "source_urls_checked": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-74799",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-74799",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-74799",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-9cqq-p2hw-mj3f"
+      ]
+    },
+    {
+      "candidate": "checked public cited sources and public advisory metadata",
+      "leaf_id": "docs/wiki/identity-and-access/9router-oidc-test-ssrf.md",
+      "reason": "CVE-AWG, NVD, GHSA, and GitLab advisory dates are outside the seven-day window; no new same-leaf OIDC test SSRF update found.",
+      "source_urls_checked": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-56677",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-56677",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-56677",
+        "https://github.com/advisories/GHSA-8g4w-4ffg-8vgx",
+        "https://advisories.gitlab.com/npm/9router/CVE-2026-56677/"
+      ]
+    },
+    {
+      "candidate": "checked public cited sources and public advisory metadata",
+      "leaf_id": "docs/wiki/identity-and-access/apify-mcp-token-authority-leak.md",
+      "reason": "CVE-AWG, NVD, GHSA, and Apify advisory dates are outside the seven-day window; no new same-leaf token-authority leak update found.",
+      "source_urls_checked": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-50143",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-50143",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-50143",
+        "https://github.com/advisories/GHSA-6gr2-qh89-hxwm",
+        "https://github.com/apify/apify-mcp-server/security/advisories/GHSA-6gr2-qh89-hxwm"
+      ]
+    },
+    {
+      "candidate": "checked public cited sources and public advisory metadata",
+      "leaf_id": "docs/wiki/identity-and-access/onyx-mcp-oauth-token-isolation.md",
+      "reason": "CVE-AWG, NVD, GitHub advisory, and Strix evidence are outside the seven-day window; no new same-leaf Onyx OAuth token-isolation update found.",
+      "source_urls_checked": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-71424",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-71424",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71424",
+        "https://github.com/onyx-dot-app/onyx/security/advisories/GHSA-q62f-rv3h-f822",
+        "https://www.strix.ai/cve/CVE-2026-71424"
+      ]
+    },
+    {
+      "candidate": "AWS agent identity page HEAD response",
+      "leaf_id": "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+      "reason": "The AWS page returned a current HTTP Date header but no Last-Modified header; server Date is not a visible publication or update date and was not used as freshness evidence.",
+      "source_urls_checked": [
+        "https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-identity-access-management?sc_channel=el&trk=7e3e88d0-f8b6-47e7-aa65-f49a94b86088"
+      ]
+    },
+    {
+      "candidate": "Axios sandbox coverage HEAD response",
+      "leaf_id": "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md",
+      "reason": "Axios returned HTTP 403 to the HEAD request during this run; no current visible update date was available from that source path.",
+      "source_urls_checked": [
+        "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing"
+      ]
+    }
+  ],
+  "leaf_universe_count": 311,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "CodeWhale before 0.8.64",
+        "js_execution tool",
+        "parent-process environment variables",
+        "API keys, cloud credentials, authentication tokens in model context"
+      ],
+      "evidence_classification": [
+        "disclosed vulnerability",
+        "metadata/control evidence enrichment"
+      ],
+      "factual_summary": "NVD now exposes an in-window lastModified timestamp for CVE-2026-75915 with the CodeWhale before-0.8.64 js_execution environment-variable exposure description, CVSS v4.0 HIGH 8.7, CVSS v3.1 HIGH 7.5, CWE-200, and references to the GitHub commit, GHSA-h539-c7r8-3xq4, and VulnCheck advisory.",
+      "follow_up_note": "During ingest, compare against the August 20 source and only add NVD-enrichment details that change severity, affected boundary, CWE, or reference provenance.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/codewhale-js-execution-environment-exposure.md",
+      "named_entities": [
+        "CodeWhale",
+        "CVE-2026-75915",
+        "NVD",
+        "VulnCheck",
+        "GitHub Security Advisory Database"
+      ],
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75915",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75915"
+      ],
+      "update_title": "NVD enriched CodeWhale js_execution environment-variable exposure record",
+      "upstream_routing": "Broad CodeWhale product context routes to ai-wiki; local security wiki owns tool-environment credential exposure and mitigation implications.",
+      "visible_update_date": "2026-09-08T20:32:39.347"
+    },
+    {
+      "affected_boundaries": [
+        "CodeWhale before 0.8.64",
+        ".codewhale/config.toml instructions",
+        "allow_shell configuration",
+        "exec_shell and task_shell tools",
+        "system prompt file inclusion"
+      ],
+      "evidence_classification": [
+        "disclosed vulnerability",
+        "metadata/control evidence enrichment"
+      ],
+      "factual_summary": "NVD now exposes in-window lastModified timestamps for CVE-2026-75859 and CVE-2026-75911. CVE-2026-75859 describes malicious .codewhale/config.toml instructions reading files outside the workspace into the AI system prompt, with CVSS v4.0 HIGH 8.7, CVSS v3.1 HIGH 7.5, and CWE-22. CVE-2026-75911 describes project config allow_shell validation failure enabling exec_shell and task_shell access, with CVSS v4.0 HIGH 8.5, CVSS v3.1 HIGH 7.8, and CWE-94.",
+      "follow_up_note": "During ingest, avoid duplicating the existing August CodeWhale cluster and preserve the split between arbitrary file read and shell-enablement authority.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/codewhale-project-configuration-authority.md",
+      "named_entities": [
+        "CodeWhale",
+        "CVE-2026-75859",
+        "CVE-2026-75911",
+        "NVD",
+        "VulnCheck",
+        "GitHub Security Advisory Database"
+      ],
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75859",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75911",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75859",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75911"
+      ],
+      "update_title": "NVD enriched CodeWhale project-configuration authority records",
+      "upstream_routing": "Broad CodeWhale product context routes to ai-wiki; local security wiki owns project-trust, shell-enablement, and prompt/file authority boundaries.",
+      "visible_update_date": "2026-09-08T20:32:39.347"
+    },
+    {
+      "affected_boundaries": [
+        "JetBrains PyCharm before 2026.2.1",
+        "Jupyter MCP tools",
+        "unauthenticated local code-execution boundary"
+      ],
+      "evidence_classification": [
+        "disclosed vulnerability",
+        "metadata/control evidence enrichment"
+      ],
+      "factual_summary": "NVD now lists CVE-2026-75060 as Analyzed with an in-window lastModified timestamp. The record keeps JetBrains PyCharm before 2026.2.1 as affected, describes code execution through unauthenticated Jupyter MCP tools, and adds CVSS v3.1 HIGH 8.4 with CWE-306.",
+      "follow_up_note": "During ingest, check JetBrains fixed-issues text for the exact fixed build and listener/tool boundary before adding durable mitigation prose.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/pycharm-jupyter-mcp-unauthenticated-code-execution.md",
+      "named_entities": [
+        "JetBrains PyCharm",
+        "CVE-2026-75060",
+        "NVD",
+        "JetBrains"
+      ],
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75060",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75060",
+        "https://www.jetbrains.com/privacy-security/issues-fixed/"
+      ],
+      "update_title": "NVD analyzed PyCharm Jupyter MCP unauthenticated code-execution record",
+      "upstream_routing": "General PyCharm/developer-tool context belongs in ai-dev-wiki; local security wiki owns the unauthenticated MCP tool-execution boundary.",
+      "visible_update_date": "2026-09-10T14:09:33.207"
+    },
+    {
+      "affected_boundaries": [
+        "ArcadeDB 26.4.2 through 26.7.3",
+        "MCP set_server_setting tool",
+        "allowAdmin=true deployments",
+        "non-root allowedUsers",
+        "server GlobalConfiguration"
+      ],
+      "evidence_classification": [
+        "disclosed vulnerability",
+        "metadata/control evidence enrichment"
+      ],
+      "factual_summary": "NVD now exposes an in-window lastModified timestamp for CVE-2026-75845. The record describes ArcadeDB 26.4.2 through 26.7.3 MCP set_server_setting authorization bypass when allowAdmin=true and non-root allowedUsers are configured, fixed in 26.8.1, with CVSS v4.0 MEDIUM 5.3, CVSS v3.1 MEDIUM 6.3, and CWE-269.",
+      "follow_up_note": "During ingest, verify the GitHub advisory and fixed 26.8.1 release before changing the durable leaf.",
+      "leaf_id": "docs/wiki/identity-and-access/arcadedb-mcp-server-setting-authorization-bypass.md",
+      "named_entities": [
+        "ArcadeDB",
+        "CVE-2026-75845",
+        "NVD",
+        "VulnCheck",
+        "GitHub Security Advisory Database"
+      ],
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75845",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75845",
+        "https://github.com/ArcadeData/arcadedb/security/advisories/GHSA-pff6-hp53-pj54"
+      ],
+      "update_title": "NVD enriched ArcadeDB MCP set_server_setting authorization-bypass record",
+      "upstream_routing": "Broad ArcadeDB database context routes to ai-wiki; local security wiki owns MCP tool-level least-privilege and authorization-bypass implications.",
+      "visible_update_date": "2026-09-08T20:32:39.347"
+    },
+    {
+      "affected_boundaries": [
+        "production AI agent principals",
+        "authorization granularity",
+        "standing credentials",
+        "audit and identity controls"
+      ],
+      "evidence_classification": [
+        "control change",
+        "official guidance update signal"
+      ],
+      "factual_summary": "The cited NIST Cybersecurity Insights page for agentic-AI identity controls returned HTTP Last-Modified Sun, 13 Sep 2026 09:13:51 GMT. The page remains relevant to production-agent identity because it frames agentic AI as an identity and authorization problem involving overbroad tokens, standing privilege, and missing granular authorization.",
+      "follow_up_note": "During ingest, compare current page content against the existing August 29 synthesis before changing local guidance; do not treat the AWS server Date header as freshness.",
+      "leaf_id": "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+      "named_entities": [
+        "NIST",
+        "Cybersecurity Insights",
+        "agentic AI"
+      ],
+      "source_urls": [
+        "https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation"
+      ],
+      "update_title": "NIST agentic-AI identity guidance returned in-window Last-Modified",
+      "upstream_routing": "Broad NIST and agentic-AI governance context can route upstream; local security wiki owns the production-agent identity, credential, and audit-control lens.",
+      "visible_update_date": "2026-09-13T09:13:51Z"
+    },
+    {
+      "affected_boundaries": [
+        "AISI cyber evaluation environment",
+        "live-internet access controls",
+        "agent monitoring",
+        "incident-response evidence preservation"
+      ],
+      "evidence_classification": [
+        "incident-response source update signal"
+      ],
+      "factual_summary": "The AISI primary incident page for unsanctioned agent behaviour during cyber testing returned HTTP Last-Modified Wed, 09 Sep 2026 14:48:37 GMT. The source remains tied to the same incident-response leaf covering autonomous live-internet action, evaluation containment, monitoring, and evidence-preservation controls.",
+      "follow_up_note": "During ingest, diff or manually recheck the primary AISI page before asserting content changed; Last-Modified is a freshness signal, not by itself a new incident fact.",
+      "leaf_id": "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md",
+      "named_entities": [
+        "AISI",
+        "Anthropic",
+        "OpenAI",
+        "cyber evaluation agents"
+      ],
+      "source_urls": [
+        "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing"
+      ],
+      "update_title": "AISI cyber-evaluation incident page returned in-window Last-Modified",
+      "upstream_routing": "Broad model and organization context routes upstream; local security wiki owns incident-response and evaluation-containment implications.",
+      "visible_update_date": "2026-09-09T14:48:37Z"
+    }
+  ],
+  "repository_scope": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_timestamp_local": "2026-09-13 20:06:31 -0400",
+  "run_timestamp_utc": "2026-09-14T00:06:31Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/codewhale-js-execution-environment-exposure.md",
+    "docs/wiki/agent-and-tool-security/codewhale-project-configuration-authority.md",
+    "docs/wiki/agent-and-tool-security/mcp-florence2-image-fetch-ssrf.md",
+    "docs/wiki/agent-and-tool-security/pycharm-jupyter-mcp-unauthenticated-code-execution.md",
+    "docs/wiki/agent-and-tool-security/ragflow-agent-workflow-invoke-ssrf.md",
+    "docs/wiki/agent-and-tool-security/siyuan-mcp-database-clean-path-traversal.md",
+    "docs/wiki/agent-and-tool-security/siyuan-mcp-debug-key-and-file-boundary.md",
+    "docs/wiki/data-and-privacy/oracle-siebel-ai-data-access-vulnerability.md",
+    "docs/wiki/data-and-privacy/siyuan-debug-endpoint-ai-key-disclosure.md",
+    "docs/wiki/identity-and-access/9router-oidc-test-ssrf.md",
+    "docs/wiki/identity-and-access/apify-mcp-token-authority-leak.md",
+    "docs/wiki/identity-and-access/arcadedb-mcp-server-setting-authorization-bypass.md",
+    "docs/wiki/identity-and-access/onyx-mcp-oauth-token-isolation.md",
+    "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md",
+    "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md"
+  ],
+  "selection_rule": "Unchecked leaves first, then oldest last_checked_at, with stable relative-path tie-breaks.",
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/codewhale-js-execution-environment-exposure.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-75915",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75915",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-75915",
+      "https://www.rapid7.com/db/vulnerabilities/cve-2026-75915/"
+    ],
+    "docs/wiki/agent-and-tool-security/codewhale-project-configuration-authority.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-75859",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75859",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-75859",
+      "https://www.cve.org/CVERecord?id=CVE-2026-75911",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75911",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-75911"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-florence2-image-fetch-ssrf.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-19984",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-19984",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-19984",
+      "https://github.com/jkawamoto/mcp-florence2/issues/59",
+      "https://vuldb.com/vuln/391184"
+    ],
+    "docs/wiki/agent-and-tool-security/pycharm-jupyter-mcp-unauthenticated-code-execution.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-75060",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75060",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-75060",
+      "https://www.jetbrains.com/privacy-security/issues-fixed/"
+    ],
+    "docs/wiki/agent-and-tool-security/ragflow-agent-workflow-invoke-ssrf.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-75898",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75898",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-75898",
+      "https://github.com/advisories/GHSA-9m4v-54qq-67fw",
+      "https://github.com/infiniflow/ragflow/issues/18280"
+    ],
+    "docs/wiki/agent-and-tool-security/siyuan-mcp-database-clean-path-traversal.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-74798",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-74798",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-74798",
+      "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-43jx-gxq4-jpjc"
+    ],
+    "docs/wiki/agent-and-tool-security/siyuan-mcp-debug-key-and-file-boundary.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-74798",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-74798",
+      "https://www.cve.org/CVERecord?id=CVE-2026-74799",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-74799",
+      "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-43jx-gxq4-jpjc",
+      "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-9cqq-p2hw-mj3f"
+    ],
+    "docs/wiki/data-and-privacy/oracle-siebel-ai-data-access-vulnerability.md": [
+      "https://www.oracle.com/security-alerts/cspuaug2026.html",
+      "https://www.oracle.com/security-alerts/cspuaug2026verbose.html",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-60758",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-60758",
+      "https://github.com/advisories/GHSA-5x7x-p8x7-qppp"
+    ],
+    "docs/wiki/data-and-privacy/siyuan-debug-endpoint-ai-key-disclosure.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-74799",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-74799",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-74799",
+      "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-9cqq-p2hw-mj3f"
+    ],
+    "docs/wiki/identity-and-access/9router-oidc-test-ssrf.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-56677",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-56677",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-56677",
+      "https://github.com/advisories/GHSA-8g4w-4ffg-8vgx",
+      "https://advisories.gitlab.com/npm/9router/CVE-2026-56677/"
+    ],
+    "docs/wiki/identity-and-access/apify-mcp-token-authority-leak.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-50143",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-50143",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-50143",
+      "https://github.com/advisories/GHSA-6gr2-qh89-hxwm",
+      "https://github.com/apify/apify-mcp-server/security/advisories/GHSA-6gr2-qh89-hxwm"
+    ],
+    "docs/wiki/identity-and-access/arcadedb-mcp-server-setting-authorization-bypass.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-75845",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75845",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-75845",
+      "https://github.com/ArcadeData/arcadedb/security/advisories/GHSA-pff6-hp53-pj54"
+    ],
+    "docs/wiki/identity-and-access/onyx-mcp-oauth-token-isolation.md": [
+      "https://www.cve.org/CVERecord?id=CVE-2026-71424",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-71424",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-71424",
+      "https://github.com/onyx-dot-app/onyx/security/advisories/GHSA-q62f-rv3h-f822",
+      "https://www.strix.ai/cve/CVE-2026-71424"
+    ],
+    "docs/wiki/identity-and-access/production-agent-identity-and-access-controls.md": [
+      "https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-identity-access-management?sc_channel=el&trk=7e3e88d0-f8b6-47e7-aa65-f49a94b86088",
+      "https://www.nist.gov/blogs/cybersecurity-insights/back-future-why-agentic-ai-needs-strong-identity-foundation"
+    ],
+    "docs/wiki/incident-response/aisi-live-internet-cyber-evaluation-incident.md": [
+      "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "https://www.theguardian.com/technology/2026/aug/05/openai-anthropic-models-went-rogue-cybersecurity-test-ai-security-institute",
+      "https://www.axios.com/2026/08/11/ai-agent-sandbox-cybersecurity-testing"
+    ]
+  },
+  "upstream_routing_notes": [
+    "Broad company, product, IDE, database, model, and framework context remains upstream-owned by ai-wiki or ai-dev-wiki. This artifact keeps only same-leaf security metadata, control, and incident-response implications.",
+    "Today's topic-news collector artifacts under raw/2026-09-13 were checked to avoid recapturing separate Anthropic, Flowise, WPBot, n8n, Cheshire Cat AI, MCPHub, and RubyGems/OpenAI-agent findings as leaf-watch findings."
+  ],
+  "validation": {
+    "created_by": "raw-only leaf update watch; docs/wiki and raw/processed were not edited",
+    "planned_checks": [
+      "jq empty",
+      "python3 -m json.tool",
+      "wiki_ops.py status"
+    ]
+  }
+}

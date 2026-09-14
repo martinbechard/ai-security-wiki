@@ -1,0 +1,757 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "agent_identifier": "Northstar",
+  "run_timestamp_utc": "2026-09-13T17:15:40Z",
+  "cutoff_window": {
+    "start_utc": "2026-09-11T17:15:40Z",
+    "end_utc": "2026-09-13T17:15:40Z",
+    "rule": "Include only public items published or visibly updated inside the exact two-day window; exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "searched_topics": [
+    "AI cyber operations and threat actor misuse",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP servers and gateways",
+    "AI gateway authentication and execution controls",
+    "AI credential, identity, authorization, and least-privilege failures",
+    "AI application data security and privacy",
+    "AI dependency and artifact supply-chain security",
+    "security assurance, monitoring, and release gates",
+    "public vulnerability databases, primary advisories, and reputable public reporting"
+  ],
+  "repository_scope": {
+    "target_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "raw_only": true,
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false,
+    "federation_observed": true,
+    "federation_summary": "ai-wiki owns broad AI companies, products, models, frameworks, MCP servers, and ecosystem catalogs; ai-dev-wiki owns general AI-assisted-development practice. This artifact keeps only security-specific facts, boundaries, mitigations, and routing notes."
+  },
+  "source_queries": [
+    {
+      "source": "NVD CVE API 2.0",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-11T17:15:40.000&lastModEndDate=2026-09-13T17:15:40.000&keywordSearch=AI",
+      "classification": "official vulnerability database query"
+    },
+    {
+      "source": "NVD CVE API 2.0",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-11T17:15:40.000&lastModEndDate=2026-09-13T17:15:40.000&keywordSearch=MCP",
+      "classification": "official vulnerability database query"
+    },
+    {
+      "source": "NVD CVE API 2.0",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-11T17:15:40.000&lastModEndDate=2026-09-13T17:15:40.000&keywordSearch=LLM",
+      "classification": "official vulnerability database query"
+    },
+    {
+      "source": "NVD CVE API 2.0",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-11T17:15:40.000&lastModEndDate=2026-09-13T17:15:40.000&keywordSearch=prompt",
+      "classification": "official vulnerability database query"
+    },
+    {
+      "source": "NVD CVE API 2.0",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-11T17:15:40.000&lastModEndDate=2026-09-13T17:15:40.000&keywordSearch=agent",
+      "classification": "official vulnerability database query"
+    },
+    {
+      "source": "NVD CVE API 2.0",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-11T17:15:40.000&lastModEndDate=2026-09-13T17:15:40.000&keywordSearch=Langflow",
+      "classification": "official vulnerability database query"
+    },
+    {
+      "source": "CISA Known Exploited Vulnerabilities catalog",
+      "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "classification": "official exploited-vulnerability catalog"
+    },
+    {
+      "source": "Anthropic Threat Intelligence",
+      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+      "classification": "primary AI misuse and threat-intelligence report"
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "anthropic-threat-intelligence-september-2026",
+      "title": "Anthropic reports disrupted Claude misuse across cyber, surveillance, influence, conventional-weapons, biological, fraud, and distillation cases",
+      "source_urls": [
+        "https://www.anthropic.com/threat-intelligence-report-september-2026",
+        "https://www.anthropic.com/threat-intelligence",
+        "https://www.theguardian.com/world/2026/sep/12/ukraine-war-briefing-russian-developers-used-ai-to-build-kamikaze-attack-drone-software-anthropic-says",
+        "https://apnews.com/article/00266dca90e4f8853f669648998d3bda"
+      ],
+      "visible_dates": [
+        {
+          "source": "Anthropic Threat Intelligence index",
+          "date": "2026-09-10",
+          "type": "published"
+        },
+        {
+          "source": "Guardian",
+          "date": "2026-09-12T04:12:00+02:00",
+          "type": "published"
+        },
+        {
+          "source": "Guardian",
+          "date": "2026-09-12T04:17:00+02:00",
+          "type": "last_modified"
+        },
+        {
+          "source": "AP via web search result",
+          "date": "2026-09-11",
+          "type": "published_date_visible_as_two_days_ago_at_run_time"
+        }
+      ],
+      "factual_summary": "Anthropic's September 2026 threat-intelligence report says its team identified and disrupted Claude misuse from December 2025 through August 2026 across seven harm areas. The report describes AI-augmented cyber operations, including Russian-state-nexus activity consistent with Midnight Blizzard, AI-driven phishing, credential theft, malware evasion loops, data exfiltration, and compromised hotel WiFi/DNS hijacking. It also describes Russian developers using Claude for autonomous drone software, biological-misuse attempts, surveillance systems, influence operations, scams, and illicit distillation.",
+      "concrete_security_delta": "Primary public threat report added case studies, IOCs, affected threat boundaries, disrupted activity, and safeguards/partner-sharing claims.",
+      "evidence_classification": "primary threat-intelligence report with reputable public reporting corroboration",
+      "affected_boundary_or_version": "Claude Haiku, Sonnet, and Opus were used in cases covered by the report; Anthropic states Claude Fable and Mythos were not involved except for one illicit distillation case.",
+      "why_it_matters_for_ai_security": "The report gives concrete evidence that AI tools are used not only as assistants but as orchestration layers across reconnaissance, exploitation, exfiltration, malware retooling, surveillance, and weapons-related software tasks.",
+      "named_entities": [
+        "Anthropic",
+        "Claude",
+        "Claude Haiku",
+        "Claude Sonnet",
+        "Claude Opus",
+        "Claude Fable",
+        "Claude Mythos",
+        "GTG-20006",
+        "Midnight Blizzard",
+        "ShinyHunters",
+        "Ukraine",
+        "Russia",
+        "Claude Code",
+        "PentAGI",
+        "WPPConnect",
+        "Microsoft 365"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Anthropic and Claude product/model background"
+        ],
+        "ai_dev_wiki": [
+          "General agent orchestration and workflow practice"
+        ],
+        "local_security_lens": [
+          "AI-enabled cyber operations",
+          "model misuse detection",
+          "agentic malware retooling",
+          "surveillance and exfiltration boundaries",
+          "frontier-model misuse reporting"
+        ]
+      },
+      "confidence_notes": "High confidence on Anthropic publication and content because the primary page was fetched. AP and Guardian items are used only as corroborating public reporting, not as the primary source.",
+      "follow_up_actions": [
+        "During ingest, decide whether to split into separate leaves for AI-augmented cyber operations, autonomous weapons misuse, biological misuse controls, and Claude misuse reporting.",
+        "Check the downloadable report and IOCs for stable indicators and avoid over-quoting operational details in durable wiki prose."
+      ]
+    },
+    {
+      "id": "CVE-2026-88062",
+      "title": "OmniRoute ACP custom-agent endpoint allows remote code execution through attacker-controlled interpreter arguments",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=OmniRoute",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-88062",
+        "https://github.com/diegosouzapw/OmniRoute/security/advisories/GHSA-hf57-cqmx-p4gr",
+        "https://github.com/diegosouzapw/OmniRoute/commit/60829241fd64d0317aa6a0dd8cd7a445a5287fed",
+        "https://github.com/diegosouzapw/OmniRoute/pull/11028"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-09-10T19:14:17.508Z",
+          "type": "published"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-09-11T20:32:43.070Z",
+          "type": "updated"
+        },
+        {
+          "source": "NVD",
+          "date": "2026-09-11T21:17:54.803Z",
+          "type": "last_modified"
+        }
+      ],
+      "factual_summary": "OmniRoute 3.8.49 and earlier accepted attacker-controlled binary and versionCommand values at POST /api/acp/agents and reached an execFileSync sink after only limited filtering and a self-consistency check. The advisory states anonymous exploitation was possible when requireLogin=false or during a fresh-instance bootstrap window; otherwise exploitation required a management session or management-scoped API key. No fixed version was available as of the advisory review.",
+      "concrete_security_delta": "New/updated public CVE record for critical remote code execution in an AI gateway custom-agent endpoint.",
+      "evidence_classification": "CVE Services record plus NVD enrichment and GitHub advisory links",
+      "affected_boundary_or_version": "OmniRoute <= 3.8.49; no fixed version available as of advisory review.",
+      "why_it_matters_for_ai_security": "AI gateways mediate model-provider access and agent endpoints; command execution in a gateway container can expose credentials, traffic, model-routing controls, and downstream integrations.",
+      "named_entities": [
+        "OmniRoute",
+        "ACP",
+        "CVE-2026-88062",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "OmniRoute as a broad AI gateway product"
+        ],
+        "ai_dev_wiki": [
+          "General gateway and agent endpoint design practices"
+        ],
+        "local_security_lens": [
+          "AI gateway unauthenticated execution boundary",
+          "agent endpoint command execution"
+        ]
+      },
+      "confidence_notes": "High confidence; direct CVE Services and NVD records were fetched.",
+      "follow_up_actions": [
+        "During ingest, recheck the GitHub advisory for any patched version after the CVE publication.",
+        "Assess whether an AI gateway execution-control leaf already exists before creating a local leaf."
+      ]
+    },
+    {
+      "id": "CVE-2026-88938",
+      "title": "knowns MCP code.find tool permits path traversal outside the project root",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-88938",
+        "https://www.vulncheck.com/advisories/knowns-through-0.33.0-path-traversal-via-code-find-mcp-tool",
+        "https://github.com/knowns-dev/knowns/security/advisories/GHSA-5cj9-fcqq-g2h7",
+        "https://github.com/knowns-dev/knowns/blob/v0.33.0/internal/mcp/handlers/code.go#L873-L902",
+        "https://github.com/knowns-dev/knowns/blob/v0.33.0/internal/mcp/handlers/code.go#L1293-L1354"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-09-10T15:28:53.161Z",
+          "type": "published"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-09-11T19:20:52.053Z",
+          "type": "updated"
+        },
+        {
+          "source": "NVD",
+          "date": "2026-09-11T20:19:22.313Z",
+          "type": "last_modified"
+        }
+      ],
+      "factual_summary": "knowns through 0.33.0 fails to restrict the path argument of the code.find MCP tool to the project root. The record says an attacker can supply absolute paths or traversal sequences and retrieve full file contents outside the intended project directory.",
+      "concrete_security_delta": "In-window CVE update for MCP tool path traversal with proof-of-concept exploitation noted in CISA ADP enrichment.",
+      "evidence_classification": "CVE Services record, VulnCheck advisory, and GitHub advisory references",
+      "affected_boundary_or_version": "knowns npm package <= 0.33.0.",
+      "why_it_matters_for_ai_security": "MCP tools that read project files are delegated-authority boundaries; path traversal turns a project-scoped read tool into a host-level disclosure path for AI agent sessions.",
+      "named_entities": [
+        "knowns",
+        "MCP",
+        "code.find",
+        "VulnCheck",
+        "CVE-2026-88938",
+        "CISA ADP"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "knowns as a broad MCP/tooling entity if durable coverage is needed"
+        ],
+        "ai_dev_wiki": [
+          "General code-search tool governance"
+        ],
+        "local_security_lens": [
+          "MCP project-root confinement",
+          "host file disclosure through tool arguments"
+        ]
+      },
+      "confidence_notes": "High confidence; direct CVE Services record was fetched and includes title, affected package, references, and CISA ADP enrichment.",
+      "follow_up_actions": [
+        "During ingest, check whether there is a general MCP filesystem confinement leaf and fold this in there.",
+        "Recheck the GHSA for patched-version information."
+      ]
+    },
+    {
+      "id": "ibm-langflow-mcp-and-code-execution-cluster-2026-09-12",
+      "title": "IBM Langflow OSS receives multiple code-execution and MCP endpoint CVEs",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=Langflow",
+        "https://www.ibm.com/support/pages/node/7286666",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85025",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76059",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78569",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78575",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-81941"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-09-10T21:32:36.983Z through 2026-09-10T21:43:50.333Z",
+          "type": "published_range_for_sampled_records"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-09-12T03:55:22.828Z through 2026-09-12T15:36:04.467Z",
+          "type": "updated_range_for_sampled_records"
+        },
+        {
+          "source": "NVD",
+          "date": "2026-09-12T04:16:37.820Z through 2026-09-12T16:16:39.500Z",
+          "type": "last_modified_range_for_sampled_records"
+        }
+      ],
+      "factual_summary": "NVD returned 15 Langflow records in the in-window query. Sampled direct CVE records describe IBM Langflow OSS 1.0.0 through 1.11.5 vulnerabilities including unauthenticated code execution and chat-session access via publicly shared MCP project endpoints, static security scanner bypass leading to OS command execution, incomplete denylist code execution, improper validation of MCP stdio command-line arguments, and bypass of server-side controls intended to block local subprocess transport through MCP Tools components.",
+      "concrete_security_delta": "Multiple public CVE records for Langflow code-execution, session-isolation, scanner-bypass, and MCP subprocess controls were published or updated in the window.",
+      "evidence_classification": "IBM PSIRT-sourced CVE records via CVE Services and NVD",
+      "affected_boundary_or_version": "IBM Langflow OSS 1.0.0 through 1.11.5.",
+      "why_it_matters_for_ai_security": "Langflow is an LLM application builder; public-flow MCP endpoints, custom-component scanners, and MCP stdio subprocess configuration are core AI application security boundaries.",
+      "named_entities": [
+        "IBM",
+        "Langflow OSS",
+        "MCP",
+        "CVE-2026-85025",
+        "CVE-2026-76059",
+        "CVE-2026-78569",
+        "CVE-2026-78575",
+        "CVE-2026-81941"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Langflow as a broad AI application builder entity"
+        ],
+        "ai_dev_wiki": [
+          "General low-code LLM app-building workflow"
+        ],
+        "local_security_lens": [
+          "MCP endpoint exposure",
+          "custom component execution controls",
+          "security scanner bypass",
+          "session isolation"
+        ]
+      },
+      "confidence_notes": "High confidence on sampled CVE records. Ingest should enumerate all 15 Langflow records from the NVD query before durable synthesis.",
+      "follow_up_actions": [
+        "During ingest, fetch IBM support node 7286666 directly and enumerate every CVE in the bulletin.",
+        "Deduplicate related scanner-bypass and MCP subprocess issues into the smallest useful durable leaves."
+      ]
+    },
+    {
+      "id": "CVE-2026-78573",
+      "title": "IBM ContextForge MCP Gateway default credentials allow administrative access",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=ContextForge",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78573",
+        "https://www.ibm.com/support/pages/node/7286834"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-09-10T21:42:36.717Z",
+          "type": "published"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-09-11T20:31:29.613Z",
+          "type": "updated"
+        },
+        {
+          "source": "NVD",
+          "date": "2026-09-11T21:17:16.610Z",
+          "type": "last_modified"
+        }
+      ],
+      "factual_summary": "IBM ContextForge MCP Gateway 1.0.0 through 1.0.7 could allow a remote attacker to gain administrative access because of default credentials. NVD reports a CVSS 3.1 score of 9.8 and CISA ADP marks the issue automatable with total technical impact.",
+      "concrete_security_delta": "In-window CVE publication/update for default-credential administrative access in an MCP gateway.",
+      "evidence_classification": "IBM PSIRT-sourced CVE record via CVE Services and NVD",
+      "affected_boundary_or_version": "IBM ContextForge MCP Gateway 1.0.0 through 1.0.7.",
+      "why_it_matters_for_ai_security": "MCP gateways concentrate delegated tool access, identity, and audit controls; default admin credentials compromise the mediator rather than a single downstream tool.",
+      "named_entities": [
+        "IBM",
+        "ContextForge MCP Gateway",
+        "MCP",
+        "CVE-2026-78573",
+        "CISA ADP"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "ContextForge MCP Gateway as a product/tool entity"
+        ],
+        "ai_dev_wiki": [
+          "General MCP gateway deployment practice"
+        ],
+        "local_security_lens": [
+          "MCP gateway administrative access",
+          "default credential controls"
+        ]
+      },
+      "confidence_notes": "High confidence from direct CVE Services record and NVD query; IBM support page detail should be rechecked during ingest.",
+      "follow_up_actions": [
+        "During ingest, reconcile IBM support details and any fixed version or mitigation text.",
+        "Connect with existing MCP gateway authorization and least-privilege pages if present."
+      ]
+    },
+    {
+      "id": "CVE-2026-90534",
+      "title": "Flowise node-load-method allows cross-workspace credential IDOR and confused-deputy provider calls",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-90534",
+        "https://www.vulncheck.com/advisories/flowise-before-3.1.4-cross-workspace-credential-idor-via-node-load-method",
+        "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-hqvm-7539-v83j"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-09-12T12:08:43.354Z",
+          "type": "published"
+        },
+        {
+          "source": "NVD",
+          "date": "2026-09-12T13:16:51.247Z",
+          "type": "published"
+        }
+      ],
+      "factual_summary": "Flowise up to and including 3.1.3 exposes POST /api/v1/node-load-method/:name without route-level permission checks and decrypts credentials by raw Credential.id without verifying workspace ownership. A low-privilege user or workspace API key in one workspace can supply another workspace's credential ID and make Flowise perform provider calls, including Google Drive, Google Sheets, and AWS DynamoDB metadata calls, using victim credentials. The raw secret is not returned. The issue is fixed in Flowise 3.1.4.",
+      "concrete_security_delta": "New public CVE for cross-workspace credential authorization failure in an LLM application builder.",
+      "evidence_classification": "CVE Services record and VulnCheck advisory with GitHub advisory reference",
+      "affected_boundary_or_version": "Flowise < 3.1.4; version 3.1.4 marked unaffected.",
+      "why_it_matters_for_ai_security": "Flowise credentials connect AI workflows to external data providers; cross-workspace confused-deputy calls break tenant isolation and least-privilege boundaries for AI tool integrations.",
+      "named_entities": [
+        "Flowise",
+        "FlowiseAI",
+        "Google Drive",
+        "Google Sheets",
+        "AWS DynamoDB",
+        "CVE-2026-90534",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Flowise as an AI application builder"
+        ],
+        "ai_dev_wiki": [
+          "General low-code workflow-builder practice"
+        ],
+        "local_security_lens": [
+          "workspace authorization",
+          "credential isolation",
+          "AI tool confused-deputy risk"
+        ]
+      },
+      "confidence_notes": "High confidence; direct CVE Services record was fetched.",
+      "follow_up_actions": [
+        "During ingest, check Flowise 3.1.4 release notes and GHSA for final remediation wording.",
+        "Deduplicate with previous Flowise credential and prompt-injection records from earlier collector runs."
+      ]
+    },
+    {
+      "id": "CVE-2026-87918",
+      "title": "WPBot unauthenticated AJAX actions can spend configured AI provider API keys",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-87918",
+        "https://wpscan.com/vulnerability/d6b3745b-bda1-4734-b39c-75376477ba0a/"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-09-12T06:00:13.576Z",
+          "type": "published"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-09-12T15:28:19.145Z",
+          "type": "updated"
+        },
+        {
+          "source": "NVD",
+          "date": "2026-09-12T16:16:43.610Z",
+          "type": "last_modified"
+        }
+      ],
+      "factual_summary": "WPBot before 8.5.7 lacks authorization or nonce checks on several AJAX actions that relay prompts to configured AI providers. Unauthenticated attackers can make third-party AI provider API calls using the site's configured API keys and consume associated cost.",
+      "concrete_security_delta": "New public CVE for unauthenticated AI provider API abuse in a WordPress chatbot plugin.",
+      "evidence_classification": "WPScan CVE Services record with NVD enrichment",
+      "affected_boundary_or_version": "WPBot < 8.5.7.",
+      "why_it_matters_for_ai_security": "The issue turns site-owned AI provider credentials into an unauthenticated spend and API-abuse surface, directly implicating credential scoping and cost-control boundaries.",
+      "named_entities": [
+        "WPBot",
+        "WPScan",
+        "WordPress",
+        "CVE-2026-87918",
+        "AI provider API keys"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "WPBot as an AI-enabled product if durable entity coverage is needed"
+        ],
+        "ai_dev_wiki": [
+          "General API key cost-control practice"
+        ],
+        "local_security_lens": [
+          "unauthenticated AI API spend",
+          "nonce and authorization checks for AI prompt relays"
+        ]
+      },
+      "confidence_notes": "High confidence; direct CVE Services record was fetched.",
+      "follow_up_actions": [
+        "During ingest, recheck WPScan entry for exploit details and patch notes.",
+        "Consider pairing with WPBot chat-session disclosure CVE-2026-87916."
+      ]
+    },
+    {
+      "id": "CVE-2026-87916",
+      "title": "WPBot chat-session listing exposes visitor contact data without authorization",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=WPBot",
+        "https://wpscan.com/vulnerability/"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "date": "2026-09-12T06:16:28.317Z",
+          "type": "published"
+        },
+        {
+          "source": "NVD",
+          "date": "2026-09-12T16:16:43.467Z",
+          "type": "last_modified"
+        }
+      ],
+      "factual_summary": "NVD reports that WPBot before 8.6.0 lacks capability or nonce checks on the AJAX action that lists stored chat sessions. Unauthenticated attackers can retrieve the name, email address, and phone number of every chat visitor by requesting a wide date range.",
+      "concrete_security_delta": "New public NVD record for unauthenticated disclosure of chatbot visitor personal data.",
+      "evidence_classification": "NVD record sourced from WPScan",
+      "affected_boundary_or_version": "WPBot < 8.6.0.",
+      "why_it_matters_for_ai_security": "Chatbots often collect support, sales, or identity context; unauthenticated session export exposes AI interaction metadata and visitor PII.",
+      "named_entities": [
+        "WPBot",
+        "WPScan",
+        "WordPress",
+        "CVE-2026-87916"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "WPBot as a product entity if durable coverage is needed"
+        ],
+        "ai_dev_wiki": [
+          "General chatbot deployment practice"
+        ],
+        "local_security_lens": [
+          "AI chat-session privacy",
+          "unauthenticated PII disclosure"
+        ]
+      },
+      "confidence_notes": "Medium-high confidence; NVD keyword query exposed the facts, but the direct CVE Services record was not separately fetched during this run.",
+      "follow_up_actions": [
+        "During ingest, fetch direct CVE Services and WPScan detail page before durable synthesis.",
+        "Assess whether this belongs in a chatbot privacy leaf or WPBot-specific note."
+      ]
+    },
+    {
+      "id": "n8n-instance-ai-cve-cluster-2026-09-11",
+      "title": "n8n Instance AI vulnerabilities receive in-window NVD updates",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=AI",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86074",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86078",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-q5wm-mgqx-fv2f",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-679f-58pq-4v2c",
+        "https://github.com/n8n-io/n8n/releases/tag/n8n@2.37.7",
+        "https://github.com/n8n-io/n8n/releases/tag/n8n@2.38.2"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "date": "2026-09-11T18:20:24.770Z",
+          "type": "last_modified_for_CVE-2026-86074"
+        },
+        {
+          "source": "NVD",
+          "date": "2026-09-11T18:21:20.657Z",
+          "type": "last_modified_for_CVE-2026-86078"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-09-08T17:38:11.915Z and 2026-09-08T21:27:21.351Z",
+          "type": "published_outside_current_window"
+        }
+      ],
+      "factual_summary": "NVD updated two n8n Instance AI records inside the window. CVE-2026-86074 describes a credential setup flow that accepted a fetched credential test or verification URL without ensuring it matched the workflow node origin, enabling attacker-controlled content to influence authenticated requests, redirects, or probes to another origin. CVE-2026-86078 describes prototype pollution in Instance AI workflow summaries where submitted workflow node names and connection keys could write to Object.prototype and disrupt later requests. Both are fixed in n8n 2.37.7 and 2.38.2.",
+      "concrete_security_delta": "Official NVD enrichment/analysis changed inside the window for two AI workflow automation vulnerabilities.",
+      "evidence_classification": "NVD records plus direct CVE Services and GitHub advisory references",
+      "affected_boundary_or_version": "n8n < 2.37.7 and >= 2.38.0 < 2.38.2.",
+      "why_it_matters_for_ai_security": "Instance AI bridges workflow-generated content, credential testing, and workflow summarization; the records touch origin validation, SSRF-like probing, prototype pollution, and availability of AI-enabled automation services.",
+      "named_entities": [
+        "n8n",
+        "Instance AI",
+        "CVE-2026-86074",
+        "CVE-2026-86078",
+        "GitHub Advisory Database"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "n8n as a broad automation platform"
+        ],
+        "ai_dev_wiki": [
+          "General workflow automation and AI-assisted development practice"
+        ],
+        "local_security_lens": [
+          "credential test origin validation",
+          "AI workflow summary prototype pollution",
+          "workflow-node trust boundaries"
+        ]
+      },
+      "confidence_notes": "Medium-high confidence. The direct CVE Services records were fetched but their own update timestamps are September 9; current-window qualification relies on visible NVD lastModified values.",
+      "follow_up_actions": [
+        "During ingest, verify whether these records were already captured in prior September 8 collector output and only synthesize changed NVD analysis if new.",
+        "Reconcile GitHub advisory fixed-version wording."
+      ]
+    },
+    {
+      "id": "CVE-2026-70477-nvd-update",
+      "title": "Flowise CSV Agent prompt-injection RCE receives in-window NVD update",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=prompt",
+        "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-5xvg-pmgg-3mxr",
+        "https://github.com/FlowiseAI/Flowise/releases/tag/flowise@3.1.3",
+        "https://github.com/FlowiseAI/Flowise/commit/f4e2794f6a576b94578f2fdafbf49c2fb304626c"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "date": "2026-09-11T21:09:26.917Z",
+          "type": "last_modified"
+        },
+        {
+          "source": "NVD",
+          "date": "2026-08-04T20:16:54.473Z",
+          "type": "published_outside_current_window"
+        }
+      ],
+      "factual_summary": "NVD's prompt query returned an in-window update for CVE-2026-70477. The record describes Flowise before 3.1.3, where prompt injection against a chatflow using the CSV Agent node can make the LLM produce malicious Python that bypasses a blocklist validator and executes in an unsandboxed Pyodide environment. NVD reports CVSS 3.1 9.8 critical and points to the Flowise 3.1.3 fix.",
+      "concrete_security_delta": "In-window NVD update for an existing critical prompt-injection-to-code-execution record.",
+      "evidence_classification": "NVD record with GitHub advisory, commit, pull request, and release-note references",
+      "affected_boundary_or_version": "Flowise < 3.1.3.",
+      "why_it_matters_for_ai_security": "This is a direct example of prompt injection crossing into executable code in an AI application builder, showing why generated-code execution needs sandbox and validator controls.",
+      "named_entities": [
+        "Flowise",
+        "CSV Agent",
+        "Pyodide",
+        "CVE-2026-70477",
+        "GHSA-5xvg-pmgg-3mxr"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Flowise as broad product coverage"
+        ],
+        "ai_dev_wiki": [
+          "General workflow-builder development practice"
+        ],
+        "local_security_lens": [
+          "prompt-injection to RCE",
+          "LLM-generated Python execution controls"
+        ]
+      },
+      "confidence_notes": "Medium confidence for current-window novelty: the vulnerability itself was published on 2026-08-04, so only the NVD update qualifies for this run. It may already have been captured in earlier collector output.",
+      "follow_up_actions": [
+        "During ingest, deduplicate against existing Flowise prompt-injection records.",
+        "If already synthesized, treat this as an NVD enrichment update rather than a new incident."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "CISA KEV September 11 additions for ConnectWise, JFrog Artifactory, GitLab, MikroTik, Citrix, Fortinet, Chrome, Cisco, Adobe Commerce, Microsoft Windows, and N-able",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "visible_date": "2026-09-11T19:32:16.8993Z",
+      "reason": "Excluded from qualifying findings because the visible KEV additions were general exploited software vulnerabilities without a concrete AI-system security delta in the fetched catalog data. JFrog Artifactory and GitLab may matter to artifact supply chains generally, but the current prompt asks for AI-security-specific facts."
+    },
+    {
+      "title": "Linux kernel hid-mcp2221 CVE records returned by MCP keyword search",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=MCP",
+      "visible_date": "2026-09-11T20:19:47Z to 2026-09-13T07:17:27Z",
+      "reason": "Excluded because mcp2221 is a USB/HID device identifier, not Model Context Protocol or AI agent/tool security."
+    },
+    {
+      "title": "CVE-2026-86668 aircheng-org iWebShop-5 XSS",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=AI",
+      "visible_date": "2026-09-11T21:17:47.733Z",
+      "reason": "Excluded because the keyword match is incidental to the vendor/product text and no AI-specific security delta was identified."
+    },
+    {
+      "title": "Generic prompt-injection explainers crawled or updated outside the exact source window",
+      "source_url": "https://www.obsidiansecurity.com/blog/prompt-injection",
+      "visible_date": "2026-09-07",
+      "reason": "Excluded because the visible update date predates the 2026-09-11T17:15:40Z cutoff and the article is explanatory rather than a new advisory, mitigation, incident, or standard."
+    },
+    {
+      "title": "Older AI prompt-injection and OWASP overview articles returned by search",
+      "source_url": "https://genai.owasp.org/",
+      "visible_date": "2026-04-14",
+      "reason": "Excluded because visible dates are outside the two-day window or too broad/category-like for this collector run."
+    },
+    {
+      "title": "GitHub Advisory API enrichment",
+      "source_url": "https://api.github.com/advisories",
+      "visible_date": null,
+      "reason": "Excluded as a source path because the unauthenticated GitHub API returned a rate-limit error. GitHub advisory URLs carried by CVE/NVD records remain recorded for ingest recheck."
+    },
+    {
+      "title": "AP and other secondary stories about Anthropic biological misuse",
+      "source_url": "https://apnews.com/article/00266dca90e4f8853f669648998d3bda",
+      "visible_date": "2026-09-11",
+      "reason": "Not recorded as separate findings because they summarize the same Anthropic primary report; retained as corroborating links under the Anthropic finding."
+    },
+    {
+      "title": "Guardian September 13 commentary on AI slowdown and catastrophic-risk debate",
+      "source_url": "https://www.theguardian.com/technology/2026/sep/13/openai-sam-altman-elon-musk-back-anthropic-calls-brakes-ai-development",
+      "visible_date": "2026-09-13",
+      "reason": "Excluded as ordinary governance commentary without a distinct concrete security control, advisory, vulnerability, mitigation, standard, or incident beyond the Anthropic report already captured."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity": "Anthropic and Claude",
+      "owner": "ai-wiki",
+      "security_repository_note": "Only model misuse, safeguards, threat actor behavior, and security implications belong locally."
+    },
+    {
+      "entity": "Flowise",
+      "owner": "ai-wiki",
+      "security_repository_note": "Keep broad product and builder positioning upstream; keep prompt-injection, credential isolation, and tenant-boundary failures locally."
+    },
+    {
+      "entity": "n8n",
+      "owner": "ai-wiki or ai-dev-wiki depending on product vs workflow-practice context",
+      "security_repository_note": "Keep Instance AI origin-validation and prototype-pollution vulnerabilities locally."
+    },
+    {
+      "entity": "Langflow",
+      "owner": "ai-wiki",
+      "security_repository_note": "Keep MCP endpoint exposure, custom-component execution, and scanner-bypass facts locally."
+    },
+    {
+      "entity": "ContextForge MCP Gateway",
+      "owner": "ai-wiki for product catalog, ai-dev-wiki for general gateway deployment practice",
+      "security_repository_note": "Keep default-credential administrative-access risk locally."
+    },
+    {
+      "entity": "OmniRoute",
+      "owner": "ai-wiki",
+      "security_repository_note": "Keep ACP custom-agent RCE and AI gateway execution boundary locally."
+    },
+    {
+      "entity": "WPBot",
+      "owner": "ai-wiki if tracked as an AI-enabled product",
+      "security_repository_note": "Keep unauthenticated AI API-key abuse and chat-session privacy exposure locally."
+    },
+    {
+      "entity": "knowns",
+      "owner": "ai-wiki if tracked as an MCP/tooling entity",
+      "security_repository_note": "Keep MCP filesystem confinement and host-file disclosure locally."
+    }
+  ],
+  "confidence_notes": [
+    "The strict source window was anchored at 2026-09-11T17:15:40Z to 2026-09-13T17:15:40Z.",
+    "NVD and CVE Services records were treated as public authoritative vulnerability evidence.",
+    "Some older vulnerabilities qualify only as in-window NVD updates; those are explicitly marked to avoid presenting older disclosures as newly disclosed.",
+    "GitHub Advisory API was rate-limited, so GHSA links should be rechecked during ingest where detailed remediation text matters.",
+    "No private, proprietary, sensitive, PII, or company-internal local content was sent to external services."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": [
+    "Unauthenticated GitHub Advisory API returned a rate-limit error during enrichment.",
+    "Some IBM support pages require ingest-time direct recheck for complete fixed-version and mitigation wording."
+  ]
+}

@@ -16,6 +16,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 - [Autonomous CI/CD exploit adaptation](autonomous-ci-cd-exploit-adaptation.md)
 - [AI-generated OT exploit scripts](ai-generated-ot-exploit-scripts.md)
 - [AI-themed installer malware lures](ai-themed-installer-malware-lures.md)
+- [Anthropic Claude misuse disruption report](anthropic-claude-misuse-disruption-report.md)
 
 ## Authoritative Sources
 
@@ -50,3 +51,4 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 - Updated on 2026-08-19 with the autonomous CI/CD exploit adaptation leaf.
 - Updated on 2026-08-21 with AI-generated OT exploit-script and AI-themed installer malware-lure leaves.
 - Updated on 2026-08-22 with watcher provenance for AI-generated OT exploit scripts and AI-themed installer malware lures.
+- Updated on 2026-09-13 with Anthropic's Claude misuse disruption report as threat-intelligence evidence.

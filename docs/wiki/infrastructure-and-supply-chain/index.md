@@ -72,6 +72,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Igniter install confirmation prompt forgery](igniter-install-confirmation-prompt-forgery.md)
 - [Flowise pickle deserialization RCE](flowise-pickle-deserialization-rce.md)
 - [Flowise Custom MCP npx auto-install bypass](flowise-custom-mcp-npx-auto-install-bypass.md)
+- [RubyGems spam-publishing agent attribution](../incident-response/rubygems-spam-publishing-agent-attribution.md)
 
 ## Authoritative Sources
 
@@ -106,6 +107,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - Updated on 2026-09-06 with Axolotl multipack trust_remote_code RCE and Bifrost HTTP custom plugin RCE leaves.
 - Updated on 2026-09-07 with GPTQModel Triton dequantization OOB read and Igniter install confirmation prompt forgery leaves.
 - Updated on 2026-09-08 with Flowise pickle deserialization and Custom MCP npx auto-install bypass leaves.
+- Updated on 2026-09-13 with RubyGems package-publishing attribution conflict and adjacent package-build execution risk.
 - Updated on 2026-09-02 with the Windows ML CLI localhost trust_remote_code RCE leaf and ModelScope advisory provenance.
 - Updated on 2026-09-01 with Codex Git metadata execution, Transformers remote-code cache persistence, ModelScope unsafe YAML, and Elasticsearch model-artifact deserialization leaves.
 - Updated on 2026-08-31 with Theia AI Agent Mode workspace path traversal, OpenShift AI guardrails-detectors ReDoS, and a Kubio AI Website Builder deferral in the WordPress AI plugin advisory page.
