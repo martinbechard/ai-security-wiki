@@ -132,6 +132,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/ibm-langflow-scanner-code-execution-bypasses.md](agent-and-tool-security/ibm-langflow-scanner-code-execution-bypasses.md)
 - [agent-and-tool-security/ibm-langflow-mcp-stdio-command-execution.md](agent-and-tool-security/ibm-langflow-mcp-stdio-command-execution.md)
 - [agent-and-tool-security/ibm-langflow-file-and-endpoint-disclosure.md](agent-and-tool-security/ibm-langflow-file-and-endpoint-disclosure.md)
+- [agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md](agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md)
+- [agent-and-tool-security/praisonai-imap-command-injection.md](agent-and-tool-security/praisonai-imap-command-injection.md)
+- [agent-and-tool-security/ibm-langflow-flow-component-ssrf.md](agent-and-tool-security/ibm-langflow-flow-component-ssrf.md)
 - [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
 - [infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md](infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md)
 - [infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md](infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md)
@@ -233,6 +236,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/ibm-contextforge-default-credentials.md](identity-and-access/ibm-contextforge-default-credentials.md)
 - [identity-and-access/mcphub-oauth-code-redemption-bypass.md](identity-and-access/mcphub-oauth-code-redemption-bypass.md)
 - [identity-and-access/n8n-instance-ai-credential-origin-confusion.md](identity-and-access/n8n-instance-ai-credential-origin-confusion.md)
+- [identity-and-access/praisonai-jobs-api-unauthenticated-execution.md](identity-and-access/praisonai-jobs-api-unauthenticated-execution.md)
+- [identity-and-access/ibm-langflow-mcp-tools-cache-isolation.md](identity-and-access/ibm-langflow-mcp-tools-cache-isolation.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -284,6 +289,10 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [infrastructure-and-supply-chain/igniter-install-confirmation-prompt-forgery.md](infrastructure-and-supply-chain/igniter-install-confirmation-prompt-forgery.md)
 - [infrastructure-and-supply-chain/flowise-pickle-deserialization-rce.md](infrastructure-and-supply-chain/flowise-pickle-deserialization-rce.md)
 - [infrastructure-and-supply-chain/flowise-custom-mcp-npx-auto-install-bypass.md](infrastructure-and-supply-chain/flowise-custom-mcp-npx-auto-install-bypass.md)
+- [infrastructure-and-supply-chain/lightllm-config-server-pickle-rce.md](infrastructure-and-supply-chain/lightllm-config-server-pickle-rce.md)
+- [infrastructure-and-supply-chain/praisonai-file-mention-path-traversal.md](infrastructure-and-supply-chain/praisonai-file-mention-path-traversal.md)
+- [infrastructure-and-supply-chain/praisonai-code-tools-workspace-fail-open.md](infrastructure-and-supply-chain/praisonai-code-tools-workspace-fail-open.md)
+- [infrastructure-and-supply-chain/praisonai-multiedit-file-boundary-bypass.md](infrastructure-and-supply-chain/praisonai-multiedit-file-boundary-bypass.md)
 - [testing-and-assurance](testing-and-assurance/index.md)
 - [testing-and-assurance/cyber-evaluation-containment.md](testing-and-assurance/cyber-evaluation-containment.md)
 - [testing-and-assurance/public-cyber-capability-assessments.md](testing-and-assurance/public-cyber-capability-assessments.md)
@@ -347,6 +356,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [model-and-prompt-security/ascii-smuggling-ai-ingestion-normalization.md](model-and-prompt-security/ascii-smuggling-ai-ingestion-normalization.md)
 - [model-and-prompt-security/open-webui-rendering-and-search-input-risks.md](model-and-prompt-security/open-webui-rendering-and-search-input-risks.md)
 - [model-and-prompt-security/n8n-instance-ai-summary-prototype-pollution.md](model-and-prompt-security/n8n-instance-ai-summary-prototype-pollution.md)
+- [model-and-prompt-security/praisonai-execute-code-sandbox-bypass.md](model-and-prompt-security/praisonai-execute-code-sandbox-bypass.md)
+- [model-and-prompt-security/apple-intelligence-security-prompt-bypass.md](model-and-prompt-security/apple-intelligence-security-prompt-bypass.md)
 - [source-workflows](source-workflows/index.md)
 - [digests](digests/index.md)
 - [digests/2026-09.md](digests/2026-09.md)
@@ -365,6 +376,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - Updated on 2026-09-07 with knowns MCP path traversal, OpenShift AI NIM Secret authorization, GPTQModel Triton OOB read, Igniter prompt forgery, and SureForms AI Forms stored XSS leaves.
 - Updated on 2026-09-08 with focused Open WebUI, Flowise, llmware, and ASCII smuggling leaves plus Agno and PraisonAI evidence updates.
 - Updated on 2026-09-13 with Anthropic threat intelligence, OmniRoute, knowns, split CodeWhale, IBM Langflow/ContextForge, Flowise, WPBot, n8n, Cheshire Cat AI, MCPHub, RubyGems, and watcher evidence updates.
+- Updated on 2026-09-15 with Bifrost, LightLLM, PraisonAI, IBM Langflow, Apple Intelligence, and watcher metadata security leaves.
 - Updated on 2026-09-01 with September 1 topic and watcher ingest for Astra release gates, Codex approval/Git execution boundaries, model-artifact supply-chain flaws, Kibana AI feature authorization and DoS, runZero MCP authorization, hermes-agent ACP/MCP DoS, Support Genix AI Chatbot admin takeover, and watcher provenance.
 - Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.
 - Updated on 2026-08-26 with August 25 MCP, agent-tool, identity, infrastructure, verification-parser, emergency-shutdown, and advisory-deferral leaves.

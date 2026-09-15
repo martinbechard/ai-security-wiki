@@ -13,6 +13,8 @@ The [September 13 topic collector source](../../../raw/processed/2026-09-13/ai-s
 
 NVD says WPBot does not perform capability or nonce checks on the AJAX action that lists stored chat sessions. Unauthenticated attackers can retrieve every chat visitor's name, email address, and phone number by requesting a wide date range.
 
+The [September 15 leaf update watch source](../../../raw/processed/2026-09-15/ai-security-wiki-leaf-update-watch-20260915T000244Z.json) records NVD's 2026-09-14 enrichment: the record shows Deferred status, CVSS v3.1, SSVC metadata, CWE-200, and WPScan as the reference for the unauthenticated chat-session contact disclosure.
+
 ## Security Impact
 
 - Threat: unauthenticated chat-session export can expose visitor contact data collected by an AI chatbot.
@@ -25,6 +27,7 @@ NVD says WPBot does not perform capability or nonce checks on the AJAX action th
 ## Authoritative Sources
 
 - [September 13 topic collector source](../../../raw/processed/2026-09-13/ai-security-wiki-topic-news-collector-2026-09-13T171540Z.json)
+- [September 15 leaf update watch source](../../../raw/processed/2026-09-15/ai-security-wiki-leaf-update-watch-20260915T000244Z.json)
 - [NVD CVE-2026-87916](https://nvd.nist.gov/vuln/detail/CVE-2026-87916)
 - [WPScan CVE-2026-87916 advisory](https://wpscan.com/vulnerability/31d65e66-10b1-467a-8b20-ecf4880359e0/)
 
@@ -52,4 +55,5 @@ NVD says WPBot does not perform capability or nonce checks on the AJAX action th
 
 ## Maintenance Notes
 
+- Updated on 2026-09-15 from the [September 15 leaf update watch](../../../raw/processed/2026-09-15/ai-security-wiki-leaf-update-watch-20260915T000244Z.json) with NVD Deferred, CVSS, SSVC, CWE-200, and WPScan-reference enrichment.
 - Created on 2026-09-13 from the [September 13 topic collector](../../../raw/processed/2026-09-13/ai-security-wiki-topic-news-collector-2026-09-13T171540Z.json) and direct NVD recheck after verifier correction split chat-session disclosure from provider-key spend.

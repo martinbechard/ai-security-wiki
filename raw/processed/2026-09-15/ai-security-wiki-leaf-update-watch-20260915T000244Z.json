@@ -1,0 +1,352 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-09-15T00:02:44Z",
+  "strict_window": {
+    "start": "2026-09-08T00:02:44Z",
+    "end": "2026-09-15T00:02:44Z",
+    "policy": "direct visible publication or update dates only; header-only freshness is excluded"
+  },
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "leaf_universe_count": 330,
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, then stable relative path",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/codewhale-allow-shell-validation-bypass.md",
+    "docs/wiki/agent-and-tool-security/codewhale-instructions-file-read-authority.md",
+    "docs/wiki/agent-and-tool-security/flowise-csv-agent-prompt-injection-rce.md",
+    "docs/wiki/agent-and-tool-security/ibm-langflow-file-and-endpoint-disclosure.md",
+    "docs/wiki/agent-and-tool-security/ibm-langflow-mcp-stdio-command-execution.md",
+    "docs/wiki/agent-and-tool-security/ibm-langflow-public-mcp-endpoint-rce.md",
+    "docs/wiki/agent-and-tool-security/ibm-langflow-scanner-code-execution-bypasses.md",
+    "docs/wiki/agent-and-tool-security/knowns-code-find-path-traversal.md",
+    "docs/wiki/agent-and-tool-security/omniroute-acp-custom-agent-rce.md",
+    "docs/wiki/data-and-privacy/wpbot-chat-session-contact-disclosure.md",
+    "docs/wiki/identity-and-access/cheshire-cat-ai-default-identity-bypass.md",
+    "docs/wiki/identity-and-access/flowise-node-load-method-credential-idor.md",
+    "docs/wiki/identity-and-access/ibm-contextforge-default-credentials.md",
+    "docs/wiki/identity-and-access/mcphub-oauth-code-redemption-bypass.md",
+    "docs/wiki/identity-and-access/n8n-instance-ai-credential-origin-confusion.md"
+  ],
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/codewhale-allow-shell-validation-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-75911",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75911",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-75911"
+    ],
+    "docs/wiki/agent-and-tool-security/codewhale-instructions-file-read-authority.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-75859",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75859",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-75859"
+    ],
+    "docs/wiki/agent-and-tool-security/flowise-csv-agent-prompt-injection-rce.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-70477",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-70477",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-70477",
+      "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-5xvg-pmgg-3mxr",
+      "https://github.com/FlowiseAI/Flowise/releases/tag/flowise@3.1.3"
+    ],
+    "docs/wiki/agent-and-tool-security/ibm-langflow-file-and-endpoint-disclosure.md": [
+      "https://www.ibm.com/support/pages/node/7286666",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=Langflow"
+    ],
+    "docs/wiki/agent-and-tool-security/ibm-langflow-mcp-stdio-command-execution.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-78575",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-81941",
+      "https://www.ibm.com/support/pages/node/7286666"
+    ],
+    "docs/wiki/agent-and-tool-security/ibm-langflow-public-mcp-endpoint-rce.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-85025",
+      "https://www.ibm.com/support/pages/node/7286666"
+    ],
+    "docs/wiki/agent-and-tool-security/ibm-langflow-scanner-code-execution-bypasses.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-76059",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-78569",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-78571",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-78571",
+      "https://www.ibm.com/support/pages/node/7286666"
+    ],
+    "docs/wiki/agent-and-tool-security/knowns-code-find-path-traversal.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-88938",
+      "https://www.vulncheck.com/advisories/knowns-through-0.33.0-path-traversal-via-code-find-mcp-tool",
+      "https://github.com/knowns-dev/knowns/security/advisories/GHSA-5cj9-fcqq-g2h7"
+    ],
+    "docs/wiki/agent-and-tool-security/omniroute-acp-custom-agent-rce.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-88062",
+      "https://github.com/diegosouzapw/OmniRoute/security/advisories/GHSA-hf57-cqmx-p4gr",
+      "https://github.com/diegosouzapw/OmniRoute/commit/60829241fd64d0317aa6a0dd8cd7a445a5287fed",
+      "https://github.com/diegosouzapw/OmniRoute/pull/11028"
+    ],
+    "docs/wiki/data-and-privacy/wpbot-chat-session-contact-disclosure.md": [
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-87916",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-87916",
+      "https://wpscan.com/vulnerability/31d65e66-10b1-467a-8b20-ecf4880359e0/"
+    ],
+    "docs/wiki/identity-and-access/cheshire-cat-ai-default-identity-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-90579",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-90579",
+      "https://github.com/cheshire-cat-ai/core/issues/1137",
+      "https://vuldb.com/cve/CVE-2026-90579",
+      "https://vuldb.com/vuln/403164"
+    ],
+    "docs/wiki/identity-and-access/flowise-node-load-method-credential-idor.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-90534",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-90534",
+      "https://www.vulncheck.com/advisories/flowise-before-3.1.4-cross-workspace-credential-idor-via-node-load-method",
+      "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-hqvm-7539-v83j",
+      "https://github.com/FlowiseAI/Flowise/releases/tag/flowise@3.1.4"
+    ],
+    "docs/wiki/identity-and-access/ibm-contextforge-default-credentials.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-78573",
+      "https://www.ibm.com/support/pages/node/7286834"
+    ],
+    "docs/wiki/identity-and-access/mcphub-oauth-code-redemption-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-90474",
+      "https://github.com/samanhappy/mcphub/security/advisories/GHSA-3m7m-37xf-xp9x",
+      "https://github.com/samanhappy/mcphub/commit/e927620cd1a80e8691213b01eb8cd6ffa1a66e9f",
+      "https://github.com/samanhappy/mcphub/releases/tag/v1.0.32",
+      "https://www.vulncheck.com/advisories/mcphub-before-1.0.32-oauth-2.0-authentication-bypass"
+    ],
+    "docs/wiki/identity-and-access/n8n-instance-ai-credential-origin-confusion.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-86074",
+      "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-86074",
+      "https://github.com/n8n-io/n8n/security/advisories/GHSA-q5wm-mgqx-fv2f",
+      "https://github.com/n8n-io/n8n/releases/tag/n8n@2.37.7",
+      "https://github.com/n8n-io/n8n/releases/tag/n8n@2.38.2"
+    ]
+  },
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/wpbot-chat-session-contact-disclosure.md",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-87916",
+      "visible_date": "2026-09-14T21:10:17.423",
+      "date_type": "lastModified",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "NVD visibly modified CVE-2026-87916 on 2026-09-14 and shows Deferred status, CVSS v3.1, SSVC metadata, CWE-200, and WPScan as the reference for unauthenticated WPBot chat-session contact disclosure.",
+      "named_entities": [
+        "WPBot",
+        "NVD",
+        "WPScan",
+        "CVE-2026-87916",
+        "CWE-200"
+      ],
+      "affected_boundaries": [
+        "AI chatbot WordPress plugin chat-session listing and visitor contact-data disclosure before WPBot 8.6.0"
+      ],
+      "relevance": "Same local data-and-privacy leaf; adds fresh NVD enrichment after the September 13 topic collector source.",
+      "upstream_routing": "Broad WordPress plugin or chatbot product context belongs upstream; local capture is limited to the personal-data disclosure boundary."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/cheshire-cat-ai-default-identity-bypass.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-90579",
+      "visible_date": "2026-09-14T17:08:09.709Z",
+      "date_type": "dateUpdated",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "CVE-AWG visibly updated CVE-2026-90579 on 2026-09-14; the record still lists Cheshire Cat AI 1.9.0 through 1.9.2 affected, describes client-controlled user_id missing authentication in custom_auth_handler.py, and says the public issue remains unanswered.",
+      "named_entities": [
+        "Cheshire Cat AI",
+        "CVE-2026-90579",
+        "VulDB",
+        "GitHub issue 1137"
+      ],
+      "affected_boundaries": [
+        "Default authentication and client-controlled identity in Cheshire Cat AI custom_auth_handler.py for versions 1.9.0 through 1.9.2"
+      ],
+      "relevance": "Same local identity-and-access leaf; fresh visible CVE metadata after the September 13 late topic collector source.",
+      "upstream_routing": "Broad Cheshire Cat AI framework coverage belongs upstream; local capture is limited to the default-authentication bypass boundary."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/cheshire-cat-ai-default-identity-bypass.md",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-90579",
+      "visible_date": "2026-09-14T20:56:48.220",
+      "date_type": "lastModified",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "NVD visibly modified CVE-2026-90579 on 2026-09-14 and now carries Deferred status plus CVSS v4.0, CVSS v3.1, CVSS v2, SSVC, CWE-287, and CWE-306 metadata for the Cheshire Cat AI identity bypass.",
+      "named_entities": [
+        "NVD",
+        "Cheshire Cat AI",
+        "CVE-2026-90579",
+        "CWE-287",
+        "CWE-306"
+      ],
+      "affected_boundaries": [
+        "Default authentication and missing-authentication weakness in Cheshire Cat AI through 1.9.2"
+      ],
+      "relevance": "Same local identity-and-access leaf; complements the CVE-AWG September 14 update.",
+      "upstream_routing": "Keep only the security metadata and authentication-control implication locally."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/flowise-node-load-method-credential-idor.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-90534",
+      "visible_date": "2026-09-14T18:16:57.345Z",
+      "date_type": "dateUpdated",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "CVE-AWG visibly updated CVE-2026-90534 on 2026-09-14 and records the fixed boundary as Flowise 3.1.4 unaffected, with versions below 3.1.4 affected by cross-workspace credential IDOR through node-load-method.",
+      "named_entities": [
+        "Flowise",
+        "CVE-2026-90534",
+        "VulnCheck",
+        "GHSA-hqvm-7539-v83j"
+      ],
+      "affected_boundaries": [
+        "Flowise node-load-method credential resolution across workspaces before 3.1.4"
+      ],
+      "relevance": "Same local identity-and-access leaf; adds fresh fixed-version metadata after the September 13 topic collector source.",
+      "upstream_routing": "Broad Flowise product context belongs upstream; local capture is limited to cross-workspace credential authorization."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/flowise-node-load-method-credential-idor.md",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-90534",
+      "visible_date": "2026-09-14T21:08:51.177",
+      "date_type": "lastModified",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "NVD visibly modified CVE-2026-90534 on 2026-09-14 and shows Awaiting Analysis status with CVSS v4.0, SSVC, and CWE-639 metadata for the Flowise cross-workspace credential IDOR.",
+      "named_entities": [
+        "NVD",
+        "Flowise",
+        "CVE-2026-90534",
+        "CWE-639"
+      ],
+      "affected_boundaries": [
+        "Flowise credential workspace isolation and node-load-method authorization before 3.1.4"
+      ],
+      "relevance": "Same local identity-and-access leaf; complements the CVE-AWG September 14 update.",
+      "upstream_routing": "Keep the credential-boundary and authorization-control implications locally."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/codewhale-allow-shell-validation-bypass.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-75911",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75911",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75911"
+      ],
+      "reason": "Cited CVE/NVD evidence was already captured by prior September 13 raw artifacts; no newer same-leaf visible update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/codewhale-instructions-file-read-authority.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-75859",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-75859",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75859"
+      ],
+      "reason": "Cited CVE/NVD evidence was already captured by prior September 13 raw artifacts; no newer same-leaf visible update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/flowise-csv-agent-prompt-injection-rce.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-70477",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-70477",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70477",
+        "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-5xvg-pmgg-3mxr",
+        "https://github.com/FlowiseAI/Flowise/releases/tag/flowise@3.1.3"
+      ],
+      "reason": "Cited CVE/NVD evidence was already captured by prior September 13 raw artifacts; no newer same-leaf visible update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ibm-langflow-file-and-endpoint-disclosure.md",
+      "sources_checked": [
+        "https://www.ibm.com/support/pages/node/7286666",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=Langflow"
+      ],
+      "reason": "IBM support page visible date remains September 8 initial publication and selected CVE-AWG records show September 10-12 updates already captured by the September 13 topic collector; September 14 HTTP Last-Modified was header-only and excluded."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ibm-langflow-mcp-stdio-command-execution.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78575",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-81941",
+        "https://www.ibm.com/support/pages/node/7286666"
+      ],
+      "reason": "IBM support page visible date remains September 8 initial publication and selected CVE-AWG records show September 10-12 updates already captured by the September 13 topic collector; September 14 HTTP Last-Modified was header-only and excluded."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ibm-langflow-public-mcp-endpoint-rce.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85025",
+        "https://www.ibm.com/support/pages/node/7286666"
+      ],
+      "reason": "IBM support page visible date remains September 8 initial publication and selected CVE-AWG records show September 10-12 updates already captured by the September 13 topic collector; September 14 HTTP Last-Modified was header-only and excluded."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ibm-langflow-scanner-code-execution-bypasses.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76059",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78569",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78571",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-78571",
+        "https://www.ibm.com/support/pages/node/7286666"
+      ],
+      "reason": "IBM support page visible date remains September 8 initial publication and selected CVE-AWG records show September 10-12 updates already captured by the September 13 topic collector; September 14 HTTP Last-Modified was header-only and excluded."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/knowns-code-find-path-traversal.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-88938",
+        "https://www.vulncheck.com/advisories/knowns-through-0.33.0-path-traversal-via-code-find-mcp-tool",
+        "https://github.com/knowns-dev/knowns/security/advisories/GHSA-5cj9-fcqq-g2h7"
+      ],
+      "reason": "Public advisory/release/CVE evidence was already captured by the September 13 topic collector or is stale for the strict window; no newer same-leaf visible update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omniroute-acp-custom-agent-rce.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-88062",
+        "https://github.com/diegosouzapw/OmniRoute/security/advisories/GHSA-hf57-cqmx-p4gr",
+        "https://github.com/diegosouzapw/OmniRoute/commit/60829241fd64d0317aa6a0dd8cd7a445a5287fed",
+        "https://github.com/diegosouzapw/OmniRoute/pull/11028"
+      ],
+      "reason": "Public advisory/release/CVE evidence was already captured by the September 13 topic collector or is stale for the strict window; no newer same-leaf visible update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/ibm-contextforge-default-credentials.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78573",
+        "https://www.ibm.com/support/pages/node/7286834"
+      ],
+      "reason": "No uncaptured same-leaf public update with a qualifying visible date was found in this run."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcphub-oauth-code-redemption-bypass.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-90474",
+        "https://github.com/samanhappy/mcphub/security/advisories/GHSA-3m7m-37xf-xp9x",
+        "https://github.com/samanhappy/mcphub/commit/e927620cd1a80e8691213b01eb8cd6ffa1a66e9f",
+        "https://github.com/samanhappy/mcphub/releases/tag/v1.0.32",
+        "https://www.vulncheck.com/advisories/mcphub-before-1.0.32-oauth-2.0-authentication-bypass"
+      ],
+      "reason": "Public advisory/release/CVE evidence was already captured by the September 13 topic collector or is stale for the strict window; no newer same-leaf visible update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/n8n-instance-ai-credential-origin-confusion.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86074",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-86074",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-q5wm-mgqx-fv2f",
+        "https://github.com/n8n-io/n8n/releases/tag/n8n@2.37.7",
+        "https://github.com/n8n-io/n8n/releases/tag/n8n@2.38.2"
+      ],
+      "reason": "Public advisory/release/CVE evidence was already captured by the September 13 topic collector or is stale for the strict window; no newer same-leaf visible update was found."
+    }
+  ],
+  "evidence_classification_counts": {
+    "disclosed vulnerability metadata update": 5
+  },
+  "federation_notes": [
+    "Broad product, framework, and plugin context routes to ai-wiki or ai-dev-wiki; this artifact keeps only security-specific vulnerability, control, identity, and privacy boundaries."
+  ],
+  "follow_up_notes": [
+    "Ingest should update WPBot, Cheshire Cat AI, and Flowise credential IDOR leaves if these metadata changes are material to the current understanding or maintenance notes.",
+    "IBM support pages exposed fresh HTTP Last-Modified headers on 2026-09-14, but visible page dates remain September 8/9 and header-only freshness was excluded."
+  ]
+}

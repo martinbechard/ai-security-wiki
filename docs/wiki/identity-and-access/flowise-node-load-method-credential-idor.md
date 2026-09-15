@@ -13,6 +13,8 @@ The [September 13 topic collector source](../../../raw/processed/2026-09-13/ai-s
 
 The CVE, VulnCheck advisory, and GitHub advisory say `POST /api/v1/node-load-method/:name` lacked route-level permission checks and decrypted credentials by raw `Credential.id` without verifying workspace ownership. A low-privilege user or workspace API key in one workspace could supply another workspace's credential ID and make Flowise perform provider calls, including Google Drive, Google Sheets, and AWS DynamoDB metadata calls, using victim credentials. The raw secret was not returned. Flowise 3.1.4 is listed as fixed.
 
+The [September 15 leaf update watch source](../../../raw/processed/2026-09-15/ai-security-wiki-leaf-update-watch-20260915T000244Z.json) adds in-window CVE-AWG and NVD metadata: CVE-AWG records Flowise 3.1.4 as unaffected and versions below 3.1.4 as affected, while NVD shows Awaiting Analysis status with CVSS v4.0, SSVC, and CWE-639 metadata.
+
 ## Security Impact
 
 - Threat: cross-workspace IDOR can turn provider credential identifiers into confused-deputy calls against a victim's connected data sources.
@@ -25,7 +27,9 @@ The CVE, VulnCheck advisory, and GitHub advisory say `POST /api/v1/node-load-met
 ## Authoritative Sources
 
 - [September 13 topic collector source](../../../raw/processed/2026-09-13/ai-security-wiki-topic-news-collector-2026-09-13T171540Z.json)
+- [September 15 leaf update watch source](../../../raw/processed/2026-09-15/ai-security-wiki-leaf-update-watch-20260915T000244Z.json)
 - [CVE-2026-90534 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-90534)
+- [NVD CVE-2026-90534](https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-90534)
 - [VulnCheck Flowise credential IDOR advisory](https://www.vulncheck.com/advisories/flowise-before-3.1.4-cross-workspace-credential-idor-via-node-load-method)
 - [Flowise GitHub advisory GHSA-hqvm-7539-v83j](https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-hqvm-7539-v83j)
 
@@ -54,4 +58,5 @@ The CVE, VulnCheck advisory, and GitHub advisory say `POST /api/v1/node-load-met
 
 ## Maintenance Notes
 
+- Updated on 2026-09-15 from the [September 15 leaf update watch](../../../raw/processed/2026-09-15/ai-security-wiki-leaf-update-watch-20260915T000244Z.json) with CVE-AWG fixed-boundary confirmation and NVD CVSS/CWE enrichment.
 - Created on 2026-09-13 from the [September 13 topic collector](../../../raw/processed/2026-09-13/ai-security-wiki-topic-news-collector-2026-09-13T171540Z.json) as a cross-workspace credential-authorization leaf.

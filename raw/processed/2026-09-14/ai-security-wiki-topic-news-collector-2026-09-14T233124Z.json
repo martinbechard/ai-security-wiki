@@ -1,0 +1,512 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp_utc": "2026-09-14T23:31:24Z",
+  "collector_identity": "Northstar",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "cutoff_window": {
+    "start_utc": "2026-09-12T23:31:24Z",
+    "end_utc": "2026-09-14T23:31:24Z",
+    "rule": "Include only public items published or visibly updated within the last 2 days relative to run time; exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "searched_topics": [
+    "AI threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP and plugin security",
+    "browser and delegated-authority security",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_security_wiki": "Owns AI-specific security findings, affected boundaries, mitigations, assurance implications, and incident lessons.",
+    "upstream_ai_wiki": "Owns broad AI companies, models, products, frameworks, MCP servers, developer tools, and general techniques.",
+    "upstream_ai_dev_wiki": "Owns general AI-assisted development practices, coding-agent workflows, verification patterns, adoption practices, and development governance.",
+    "routing_sources_checked": [
+      "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/federation.md",
+      "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ]
+  },
+  "collection_methods": [
+    "Paced NVD CVE API keyword searches for MCP, AI, LLM, Open WebUI, Langflow, Flowise, agent, prompt, Copilot, RAG, and model over the exact 48-hour lastModified window.",
+    "Direct CVEAWG JSON lookups for selected candidate CVEs to confirm publication and update timestamps, affected versions, titles, descriptions, and primary references.",
+    "Targeted public web searches for GitHub Advisory Database, NVD, vendor advisory, and reputable security-reporting candidates.",
+    "Local topic-index and automation-memory review to avoid duplicating already-owned durable topics where possible."
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-90898",
+      "title": "Bifrost unauthenticated remote code execution via MCP stdio client registration",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-90898",
+        "https://github.com/maximhq/bifrost/pull/6757",
+        "https://github.com/maximhq/bifrost/commit/12e170352bd25eab1ae9ba16611f1797d1fd8fdc",
+        "https://github.com/maximhq/bifrost/releases/tag/transports/v2.1.0"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T10:18:53.454Z",
+        "cveawg_date_updated": "2026-09-14T11:19:46.276Z"
+      },
+      "factual_summary": "Bifrost MCP client registration accepted stdio client command definitions through the management API; with default governance authentication disabled, a caller could register a command that the gateway executed immediately.",
+      "evidence_classification": "primary vulnerability record with upstream patch and release references",
+      "affected_boundary_or_version": "maximhq Bifrost transports before 2.1.0 on Linux and macOS; management API, MCP registration, and gateway command execution boundary.",
+      "why_it_matters_for_ai_security": "An MCP gateway turns tool registration into code execution unless client registration is authenticated and constrained; this is a direct agent-tool control-plane risk.",
+      "named_entities": [
+        "Bifrost",
+        "MCP",
+        "maximhq",
+        "CVE-2026-90898"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the unauthenticated MCP stdio registration RCE and gateway control-plane lesson in ai-security-wiki.",
+        "upstream_ai_wiki": "Bifrost as a broad AI gateway/product entity is upstream-owned if durable product context is needed.",
+        "upstream_ai_dev_wiki": "General MCP gateway operation and deployment workflow patterns are upstream to ai-dev-wiki when not security-specific."
+      },
+      "confidence_notes": "High confidence: direct CVEAWG record and upstream patch/release references are in-window."
+    },
+    {
+      "id": "CVE-2026-90919",
+      "title": "LightLLM unauthenticated RCE through Config Server pickle deserialization",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-90919",
+        "https://github.com/ModelTC/LightLLM/issues/1563",
+        "https://github.com/ModelTC/LightLLM/blob/v1.2.0/lightllm/server/config_server/api_http.py#L79-L86",
+        "https://www.vulncheck.com/advisories/lightllm-through-1.2.0-unauthenticated-remote-code-execution-via-config-server-pickle-deserialization"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T11:30:59.783Z",
+        "cveawg_date_updated": "2026-09-14T14:24:32.920Z"
+      },
+      "factual_summary": "LightLLM through 1.2.0 exposed an unauthenticated Config Server WebSocket endpoint that passed the first client frame to pickle.loads(), enabling a malicious serialized payload to execute code.",
+      "evidence_classification": "primary vulnerability record with project issue and code reference",
+      "affected_boundary_or_version": "ModelTC LightLLM through 1.2.0; Config Server /visual_register WebSocket endpoint.",
+      "why_it_matters_for_ai_security": "Lightweight model-serving infrastructure is part of the AI runtime supply chain; unauthenticated deserialization on a serving control plane can compromise model hosts.",
+      "named_entities": [
+        "LightLLM",
+        "ModelTC",
+        "VulnCheck",
+        "CVE-2026-90919"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the runtime RCE and model-serving control-plane implication in ai-security-wiki.",
+        "upstream_ai_wiki": "LightLLM as a serving framework/tool entity is upstream-owned for general background.",
+        "upstream_ai_dev_wiki": "Model-serving deployment workflow notes route upstream only if they become general practice guidance."
+      },
+      "confidence_notes": "High confidence: in-window CVEAWG publication includes affected version and source references."
+    },
+    {
+      "id": "CVE-2026-57120",
+      "title": "PraisonAI execute_code sandbox bypass via str.format dunder access",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57120",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pv2j-rghr-v5r9",
+        "https://github.com/MervinPraison/PraisonAI/commit/2adfe7e8323f6deec66925cf15a885b6238895e9",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T14:48:14.932Z",
+        "cveawg_date_updated": "2026-09-14T14:48:14.932Z"
+      },
+      "factual_summary": "PraisonAI Agents before 1.6.59 allowed execute_code sandbox mode to assemble blocklisted dunder names at runtime and use str.format or str.format_map dotted-field access to bypass _safe_getattr.",
+      "evidence_classification": "primary vulnerability record with GitHub advisory, patch, and release references",
+      "affected_boundary_or_version": "praisonaiagents before 1.6.59; execute_code sandbox boundary.",
+      "why_it_matters_for_ai_security": "LLM-controlled code execution sandboxes need semantic containment, not just string blocklists, because prompt-influenced payloads can rebuild forbidden object access paths.",
+      "named_entities": [
+        "PraisonAI",
+        "praisonaiagents",
+        "CVE-2026-57120"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the sandbox bypass and prompt-to-code containment lesson in ai-security-wiki.",
+        "upstream_ai_wiki": "PraisonAI as a broad agent framework entity is upstream-owned for general product/framework context.",
+        "upstream_ai_dev_wiki": "General multi-agent framework usage patterns route to ai-dev-wiki unless framed as a security control."
+      },
+      "confidence_notes": "High confidence: direct in-window CVEAWG publication and upstream advisory references."
+    },
+    {
+      "id": "CVE-2026-57129",
+      "title": "PraisonAI file mention path traversal enables arbitrary file read",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57129",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-2rcg-mm5h-xchx",
+        "https://github.com/MervinPraison/PraisonAI/commit/b4270173d4123fb1ee8910588f0896668ee21b59",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T14:54:47.832Z",
+        "cveawg_date_updated": "2026-09-14T15:19:46.234Z"
+      },
+      "factual_summary": "PraisonAI Agents before 1.6.59 accepted @file: mention values and fell back to Path(file_path) without traversal, symlink, or workspace-boundary validation.",
+      "evidence_classification": "primary vulnerability record with GitHub advisory, patch, and release references",
+      "affected_boundary_or_version": "praisonaiagents before 1.6.59; MentionsParser file-mention handling.",
+      "why_it_matters_for_ai_security": "Prompt-addressable file references are an agent context-ingestion boundary; missing workspace containment can expose host files to model or tool flows.",
+      "named_entities": [
+        "PraisonAI",
+        "praisonaiagents",
+        "CVE-2026-57129"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the arbitrary-file-read and workspace-boundary lesson in ai-security-wiki.",
+        "upstream_ai_wiki": "PraisonAI framework background belongs upstream if needed.",
+        "upstream_ai_dev_wiki": "General file-mention UX or context patterns belong upstream unless tied to security controls."
+      },
+      "confidence_notes": "High confidence: direct in-window CVEAWG publication and upstream advisory references."
+    },
+    {
+      "id": "CVE-2026-56839",
+      "title": "PraisonAI code-agent tools fail open without a workspace boundary",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-56839",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-gcq3-mfvh-3x25",
+        "https://github.com/MervinPraison/PraisonAI/commit/b4270173d4123fb1ee8910588f0896668ee21b59",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T15:00:45.357Z",
+        "cveawg_date_updated": "2026-09-14T16:27:09.329Z"
+      },
+      "factual_summary": "PraisonAI before 4.6.59 passed workspace=None to code_read_file, code_search_replace, and code_apply_diff helper paths, so containment checks only ran when a workspace was truthy.",
+      "evidence_classification": "primary vulnerability record with GitHub advisory, patch, and release references",
+      "affected_boundary_or_version": "PraisonAI before 4.6.59; CODE_TOOLS wrappers and workspace containment.",
+      "why_it_matters_for_ai_security": "Agent code tools should fail closed when workspace roots are missing; fail-open containment lets prompt-influenced tools reach unintended files.",
+      "named_entities": [
+        "PraisonAI",
+        "CVE-2026-56839"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the code-tool fail-open boundary and mitigation implications in ai-security-wiki.",
+        "upstream_ai_wiki": "PraisonAI framework context is upstream-owned.",
+        "upstream_ai_dev_wiki": "General coding-agent workspace workflows route upstream when not vulnerability-specific."
+      },
+      "confidence_notes": "High confidence: direct in-window CVEAWG publication and upstream advisory references."
+    },
+    {
+      "id": "CVE-2026-57131",
+      "title": "PraisonAI Jobs API exposes unauthenticated agent-execution endpoints",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57131",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-fq2m-6wqh-x44g",
+        "https://github.com/MervinPraison/PraisonAI/commit/2f9677abb2ea68eab864ee8b6a828fd0141612e1",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T15:06:20.246Z",
+        "cveawg_date_updated": "2026-09-14T16:28:08.459Z"
+      },
+      "factual_summary": "PraisonAI before 4.6.58 mounted /api/v1/runs without authentication or per-job authorization, allowing network clients to submit prompts and agent configuration and inspect job data.",
+      "evidence_classification": "primary vulnerability record with GitHub advisory, patch, and release references",
+      "affected_boundary_or_version": "PraisonAI before 4.6.58; jobs server /api/v1/runs API.",
+      "why_it_matters_for_ai_security": "Agent job APIs are delegated-action surfaces; unauthenticated run creation can turn hosted agents into attacker-operated automation.",
+      "named_entities": [
+        "PraisonAI",
+        "CVE-2026-57131"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the unauthenticated agent-execution API issue and delegated-action implications in ai-security-wiki.",
+        "upstream_ai_wiki": "PraisonAI product/framework context is upstream-owned.",
+        "upstream_ai_dev_wiki": "General jobs API design patterns route upstream unless focused on security gates."
+      },
+      "confidence_notes": "High confidence: direct in-window CVEAWG publication and upstream advisory references. The CVE affected-version text says product before 4.6.58 while the version entry displays lessThan 4.6.48; recheck during ingest."
+    },
+    {
+      "id": "CVE-2026-57145",
+      "title": "PraisonAI multiedit tool allows LLM-controlled arbitrary file read and write",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57145",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-29w3-p9w9-wc47",
+        "https://github.com/MervinPraison/PraisonAI/commit/2a855c470077c7d2e2479a575f7ef7f548d51c33",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.62"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T15:10:45.705Z",
+        "cveawg_date_updated": "2026-09-14T18:11:30.131Z"
+      },
+      "factual_summary": "PraisonAI before 4.6.62 passed an LLM-controlled filepath directly to multiedit file reads and writes without traversal rejection, symlink resolution, workspace boundary checks, or protected-path checks.",
+      "evidence_classification": "primary vulnerability record with GitHub advisory, patch, and release references",
+      "affected_boundary_or_version": "PraisonAI before 4.6.62; multiedit tool filepath handling.",
+      "why_it_matters_for_ai_security": "LLM-directed editing tools need explicit filesystem authority boundaries; otherwise prompt influence can become arbitrary host-file modification.",
+      "named_entities": [
+        "PraisonAI",
+        "CVE-2026-57145"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the LLM-controlled file-write boundary issue in ai-security-wiki.",
+        "upstream_ai_wiki": "PraisonAI broad framework context is upstream-owned.",
+        "upstream_ai_dev_wiki": "General code-editing workflow patterns route upstream unless tied to containment controls."
+      },
+      "confidence_notes": "High confidence: direct in-window CVEAWG publication and upstream advisory references."
+    },
+    {
+      "id": "CVE-2026-57130",
+      "title": "PraisonAI IMAP command injection via LLM-controlled email search parameters",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57130",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-c969-5x3p-vq3v",
+        "https://github.com/MervinPraison/PraisonAI/commit/b4270173d4123fb1ee8910588f0896668ee21b59",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T14:28:09.634Z",
+        "cveawg_date_updated": "2026-09-14T14:47:00.197Z"
+      },
+      "factual_summary": "PraisonAI Agents before 1.6.59 interpolated LLM-controlled from_addr, subject, and query values directly into quoted IMAP SEARCH criteria, allowing command injection through quote, backslash, newline, or null characters.",
+      "evidence_classification": "primary vulnerability record with GitHub advisory, patch, and release references",
+      "affected_boundary_or_version": "praisonaiagents before 1.6.59; email_tools.py IMAP search construction.",
+      "why_it_matters_for_ai_security": "Email tools are high-value agent connectors; LLM-controlled query strings must be parsed as data, not command syntax.",
+      "named_entities": [
+        "PraisonAI",
+        "praisonaiagents",
+        "IMAP",
+        "CVE-2026-57130"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the connector command-injection issue and agent-email boundary in ai-security-wiki.",
+        "upstream_ai_wiki": "PraisonAI broad framework context is upstream-owned.",
+        "upstream_ai_dev_wiki": "General connector workflow design routes upstream unless focused on injection controls."
+      },
+      "confidence_notes": "High confidence: direct in-window CVEAWG publication and upstream advisory references."
+    },
+    {
+      "id": "CVE-2026-12944",
+      "title": "IBM Langflow scanner blocklist bypass enables root code execution",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-12944",
+        "https://www.ibm.com/support/pages/node/7278919"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T21:30:58.290Z",
+        "cveawg_date_updated": "2026-09-14T21:30:58.290Z"
+      },
+      "factual_summary": "IBM Langflow OSS 1.0.0 through 1.10.0 allowed arbitrary Python code execution with root privileges by submitting components containing socket or urllib imports that bypassed an incomplete security-scanner blocklist.",
+      "evidence_classification": "primary vulnerability record with IBM advisory reference",
+      "affected_boundary_or_version": "IBM Langflow OSS 1.0.0 through 1.10.0; component scanner and Python execution boundary.",
+      "why_it_matters_for_ai_security": "Low-code AI workflow builders execute user-authored components; scanner blocklists are fragile when they mediate network, cloud metadata, and root-level code execution.",
+      "named_entities": [
+        "IBM Langflow OSS",
+        "Langflow",
+        "CVE-2026-12944"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the Langflow code-execution scanner-bypass issue in ai-security-wiki.",
+        "upstream_ai_wiki": "Langflow as a framework/product entity is upstream-owned for general context.",
+        "upstream_ai_dev_wiki": "General low-code workflow-building practice routes upstream if separated from the vulnerability."
+      },
+      "confidence_notes": "High confidence: direct in-window CVEAWG publication and IBM support reference. Ingest should recheck IBM page for remediation wording."
+    },
+    {
+      "id": "CVE-2026-12763",
+      "title": "IBM Langflow MCP Tools cache isolation exposes another user's MCP context",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-12763",
+        "https://www.ibm.com/support/pages/node/7286662"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T20:32:35.232Z",
+        "cveawg_date_updated": "2026-09-14T20:32:35.232Z"
+      },
+      "factual_summary": "IBM Langflow OSS 1.0.0 through 1.11.5 allowed an authenticated attacker to access another user's MCP server context because the MCP Tools component used improper cache-key isolation.",
+      "evidence_classification": "primary vulnerability record with IBM advisory reference",
+      "affected_boundary_or_version": "IBM Langflow OSS 1.0.0 through 1.11.5; MCP Tools component cache isolation.",
+      "why_it_matters_for_ai_security": "MCP server context can carry delegated tool authority and sensitive connection state; per-user cache isolation is an access-control boundary.",
+      "named_entities": [
+        "IBM Langflow OSS",
+        "Langflow",
+        "MCP Tools",
+        "CVE-2026-12763"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the MCP context isolation issue in ai-security-wiki.",
+        "upstream_ai_wiki": "Langflow broad framework context is upstream-owned.",
+        "upstream_ai_dev_wiki": "General MCP development workflow notes route upstream if not security-specific."
+      },
+      "confidence_notes": "High confidence: direct in-window CVEAWG publication and IBM support reference."
+    },
+    {
+      "id": "CVE-2026-12765",
+      "title": "IBM Langflow unauthenticated SSRF through flow components",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-12765",
+        "https://www.ibm.com/support/pages/node/7285644"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T20:31:13.522Z",
+        "cveawg_date_updated": "2026-09-14T20:31:27.744Z"
+      },
+      "factual_summary": "IBM Langflow OSS 1.0.0 through 1.10.2 was vulnerable to unauthenticated SSRF because flow components lacked URL validation, enabling unauthorized requests from the system and possible network enumeration.",
+      "evidence_classification": "primary vulnerability record with IBM advisory reference",
+      "affected_boundary_or_version": "IBM Langflow OSS 1.0.0 through 1.10.2; flow component URL validation.",
+      "why_it_matters_for_ai_security": "Agent workflow components often fetch external resources; missing egress and private-address controls can expose internal network surfaces.",
+      "named_entities": [
+        "IBM Langflow OSS",
+        "Langflow",
+        "SSRF",
+        "CVE-2026-12765"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the SSRF and egress-control implication in ai-security-wiki.",
+        "upstream_ai_wiki": "Langflow broad framework context is upstream-owned.",
+        "upstream_ai_dev_wiki": "General workflow component usage routes upstream when not security-specific."
+      },
+      "confidence_notes": "High confidence: direct in-window CVEAWG publication and IBM support reference."
+    },
+    {
+      "id": "CVE-2026-84601",
+      "title": "Apple Intelligence security prompt bypass fixed in macOS Golden Gate 27",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84601",
+        "https://support.apple.com/en-us/149035"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T20:50:32.552Z",
+        "cveawg_date_updated": "2026-09-14T20:50:32.552Z"
+      },
+      "factual_summary": "Apple fixed a permissions issue in macOS Golden Gate 27 with improved state management; the CVE states that an app may have been able to bypass Apple Intelligence security prompts.",
+      "evidence_classification": "primary vulnerability record with vendor support reference",
+      "affected_boundary_or_version": "macOS versions before Golden Gate 27; Apple Intelligence security prompt state management.",
+      "why_it_matters_for_ai_security": "Local AI assistant prompts are permission gates; prompt-bypass bugs weaken user consent for AI-mediated actions or data access.",
+      "named_entities": [
+        "Apple",
+        "Apple Intelligence",
+        "macOS Golden Gate 27",
+        "CVE-2026-84601"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the AI security prompt bypass and local-assistant permission-gate implication in ai-security-wiki.",
+        "upstream_ai_wiki": "Apple Intelligence as a broad product/entity is upstream-owned for general product context.",
+        "upstream_ai_dev_wiki": "General desktop-agent workflow implications route upstream only if converted into practice guidance."
+      },
+      "confidence_notes": "Medium-high confidence: direct in-window CVEAWG publication and Apple support reference; vendor description is sparse and should be expanded during ingest only if Apple page adds details."
+    },
+    {
+      "id": "CVE-2026-90534",
+      "title": "Flowise cross-workspace credential IDOR via node-load-method",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-90534",
+        "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-hqvm-7539-v83j",
+        "https://www.vulncheck.com/advisories/flowise-before-3.1.4-cross-workspace-credential-idor-via-node-load-method"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-12T12:08:43.354Z",
+        "cveawg_date_updated": "2026-09-14T18:16:57.345Z",
+        "nvd_last_modified_seen": "2026-09-14T21:08:51.177Z"
+      },
+      "factual_summary": "Flowise through 3.1.3 exposed POST /api/v1/node-load-method/:name without route-level permission checks, allowing attacker-controlled node and credential inputs that could cross workspace boundaries.",
+      "evidence_classification": "primary vulnerability record visibly updated inside the run window",
+      "affected_boundary_or_version": "Flowise up to and including 3.1.3; fixed in 3.1.4; node-load-method and credential workspace boundary.",
+      "why_it_matters_for_ai_security": "Low-code LLM builders bind credentials to nodes and workspaces; cross-workspace IDOR can leak or misuse provider and connector credentials.",
+      "named_entities": [
+        "Flowise",
+        "FlowiseAI",
+        "VulnCheck",
+        "CVE-2026-90534"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the credential-boundary and workspace-IDOR finding in ai-security-wiki.",
+        "upstream_ai_wiki": "Flowise as a framework/product entity is upstream-owned.",
+        "upstream_ai_dev_wiki": "General low-code LLM workflow practice routes upstream when not vulnerability-specific."
+      },
+      "confidence_notes": "High confidence for security content; timing qualifies by visible in-window update rather than first publication."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "WPBot unauthenticated AI provider API abuse",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-87918",
+        "https://wpscan.com/vulnerability/d6b3745b-bda1-4734-b39c-75376477ba0a/"
+      ],
+      "reason": "Concrete AI-provider-spend vulnerability, but CVEAWG datePublished 2026-09-12T06:00:13.576Z and dateUpdated 2026-09-12T15:28:19.145Z are before the exact 2026-09-12T23:31:24Z lower bound."
+    },
+    {
+      "candidate": "Gemini CLI and GitHub Action CVE-2026-13745",
+      "urls": [
+        "https://github.com/advisories?query=cwe%3A20"
+      ],
+      "reason": "Search result showed publication on 2026-09-10, outside the 48-hour window; no in-window primary update was verified."
+    },
+    {
+      "candidate": "FrontMCP and mcp-from-openapi external $ref SSRF bypass CVE-2026-59973",
+      "urls": [
+        "https://github.com/advisories"
+      ],
+      "reason": "Relevant MCP security issue, but search result showed publication on 2026-09-11, outside the exact 48-hour window; no in-window primary update was verified."
+    },
+    {
+      "candidate": "MySQL MCP Server missing Origin/Host validation CVE-2026-59971",
+      "urls": [
+        "https://github.com/advisories"
+      ],
+      "reason": "Relevant MCP security issue, but search result showed publication on 2026-09-11, outside the exact 48-hour window; no in-window primary update was verified."
+    },
+    {
+      "candidate": "AP and WSJ AI governance and rogue-agent debate articles",
+      "urls": [
+        "https://apnews.com/article/b85df16775ff7e9611a456b061a0e4b9",
+        "https://apnews.com/article/98316b0d64de17191f33c0fbf1d37858",
+        "https://www.wsj.com/tech/ai/cyberattack-by-rogue-ai-swarm-stokes-fears-of-out-of-control-agents-473a0352"
+      ],
+      "reason": "Articles were current or recent but either policy/debate oriented without a new concrete security control/advisory delta, paywalled, or outside the exact two-day window for the cited incident details."
+    },
+    {
+      "candidate": "Open WebUI CVE updates",
+      "urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=open%20webui"
+      ],
+      "reason": "Several Open WebUI CVEs had in-window NVD lastModified timestamps, but publication dates were September 9 and topic index already contains multiple Open WebUI security leaves; excluded this run to reduce duplicate capture pending exact prior-artifact reconciliation."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity": "Bifrost",
+      "owner": "ai-wiki for broad product context; ai-security-wiki for MCP registration RCE and gateway authority boundaries"
+    },
+    {
+      "entity": "LightLLM",
+      "owner": "ai-wiki for general model-serving context; ai-security-wiki for unauthenticated model-runtime RCE"
+    },
+    {
+      "entity": "PraisonAI",
+      "owner": "ai-wiki for broad framework context; ai-dev-wiki for ordinary multi-agent workflow usage; ai-security-wiki for sandbox, file-boundary, connector-injection, and unauthenticated job-execution vulnerabilities"
+    },
+    {
+      "entity": "IBM Langflow OSS",
+      "owner": "ai-wiki for framework/product context; ai-security-wiki for scanner-bypass RCE, MCP context isolation, and SSRF findings"
+    },
+    {
+      "entity": "Apple Intelligence",
+      "owner": "ai-wiki for broad product context; ai-security-wiki for security-prompt bypass and assistant permission-gate implications"
+    },
+    {
+      "entity": "Flowise",
+      "owner": "ai-wiki for framework/product context; ai-security-wiki for credential and workspace authorization failures"
+    }
+  ],
+  "confidence_and_blockers": {
+    "overall_confidence": "High for CVE-backed findings; medium-high for sparse vendor descriptions where CVEAWG provides limited detail.",
+    "blockers": [
+      "The September 13 raw artifact named in automation memory was not present in this checkout, so exact prior-run deduplication used memory summary and topic-index review rather than prior JSON contents.",
+      "Some IBM support pages should be rechecked during ingest for final remediation wording and fixed-version detail.",
+      "Flowise CVE-2026-90534 qualifies by in-window visible update rather than first publication."
+    ],
+    "nvd_caveats": [
+      "NVD keyword searches were paced and succeeded for the selected terms in this run.",
+      "Direct CVEAWG JSON was used for detailed evidence to avoid relying on search snippets."
+    ]
+  },
+  "follow_up_actions": [
+    "During ingest, deduplicate the PraisonAI cluster into coherent local leaves by boundary: sandbox escape, workspace/file containment, unauthenticated jobs API, and connector command injection.",
+    "Recheck IBM support references for Langflow fixed versions and remediation language before durable synthesis.",
+    "Reconcile Flowise CVE-2026-90534 with existing Flowise security pages because it qualifies by update timestamp.",
+    "If the missing September 13 raw artifact is restored, compare it against this run for duplicate Open WebUI or Flowise captures."
+  ],
+  "counts": {
+    "qualifying_findings": 13,
+    "exclusions": 6,
+    "routing_notes": 6
+  }
+}

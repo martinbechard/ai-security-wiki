@@ -13,6 +13,8 @@ The [September 13 late topic collector source](../../../raw/processed/2026-09-13
 
 The CVE and public issue say `core/cat/factory/custom_auth_handler.py` can accept a caller-controlled `user_id` value as identity in the default configuration when API keys are not configured. A remote unauthenticated attacker can read or modify data for the named user and gain full permissions. The public issue reports a proof of concept against v1.9.2 and says the project had not responded.
 
+The [September 15 leaf update watch source](../../../raw/processed/2026-09-15/ai-security-wiki-leaf-update-watch-20260915T000244Z.json) adds in-window CVE-AWG and NVD enrichment. CVE-AWG still lists Cheshire Cat AI 1.9.0 through 1.9.2 affected and says the public issue remains unanswered. NVD now carries Deferred status plus CVSS v4.0, CVSS v3.1, CVSS v2, SSVC, CWE-287, and CWE-306 metadata.
+
 ## Security Impact
 
 - Threat: client-controlled identity in a default auth mode can turn unauthenticated requests into full user impersonation.
@@ -25,6 +27,7 @@ The CVE and public issue say `core/cat/factory/custom_auth_handler.py` can accep
 ## Authoritative Sources
 
 - [September 13 late topic collector source](../../../raw/processed/2026-09-13/ai-security-wiki-topic-news-collector-2026-09-13T233340Z.json)
+- [September 15 leaf update watch source](../../../raw/processed/2026-09-15/ai-security-wiki-leaf-update-watch-20260915T000244Z.json)
 - [CVE-2026-90579 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-90579)
 - [NVD CVE-2026-90579](https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-90579)
 - [Cheshire Cat AI issue 1137](https://github.com/cheshire-cat-ai/core/issues/1137)
@@ -54,4 +57,5 @@ The CVE and public issue say `core/cat/factory/custom_auth_handler.py` can accep
 
 ## Maintenance Notes
 
+- Updated on 2026-09-15 from the [September 15 leaf update watch](../../../raw/processed/2026-09-15/ai-security-wiki-leaf-update-watch-20260915T000244Z.json) with CVE-AWG status continuity and NVD CVSS/CWE enrichment.
 - Created on 2026-09-13 from the [September 13 late topic collector](../../../raw/processed/2026-09-13/ai-security-wiki-topic-news-collector-2026-09-13T233340Z.json) as a default-authentication identity-boundary leaf.

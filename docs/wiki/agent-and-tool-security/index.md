@@ -56,6 +56,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [PraisonAI agent control plane advisory deferrals](praisonai-agent-control-plane-advisory-deferrals.md)
 - [PraisonAI web_crawl SSRF](praisonai-web-crawl-ssrf.md)
 - [PraisonAI ast_grep_rewrite approval bypass](praisonai-ast-grep-rewrite-approval-bypass.md)
+- [PraisonAI IMAP command injection](praisonai-imap-command-injection.md)
 - [agentic AI emergency shutdown controls](agentic-ai-emergency-shutdown-controls.md)
 - [browse-mcp file path boundary](browse-mcp-file-path-boundary.md)
 - [Nextcloud MCP webhook vector index auth](nextcloud-mcp-webhook-vector-index-auth.md)
@@ -137,6 +138,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [IBM Langflow scanner code-execution bypasses](ibm-langflow-scanner-code-execution-bypasses.md)
 - [IBM Langflow MCP stdio command execution](ibm-langflow-mcp-stdio-command-execution.md)
 - [IBM Langflow file and endpoint disclosure](ibm-langflow-file-and-endpoint-disclosure.md)
+- [Bifrost MCP stdio registration RCE](bifrost-mcp-stdio-registration-rce.md)
+- [IBM Langflow flow component SSRF](ibm-langflow-flow-component-ssrf.md)
 
 ## Authoritative Sources
 
@@ -173,6 +176,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Updated on 2026-09-07 with knowns MCP doc and memory path traversal.
 - Updated on 2026-09-08 with focused Open WebUI and Flowise security-boundary leaves plus Agno and PraisonAI NVD update provenance.
 - Updated on 2026-09-13 with split CodeWhale, Flowise CSV Agent, knowns `code.find`, OmniRoute ACP, IBM Langflow, n8n Instance AI, and PyCharm advisory updates.
+- Updated on 2026-09-15 with Bifrost MCP stdio registration RCE, PraisonAI IMAP command injection, IBM Langflow flow-component SSRF, and Langflow scanner-bypass enrichment.
 - Updated on 2026-09-02 with LiteLLM MCP KEV authentication bypass, CowAgent tool DoS, and aichat API memory-allocation leaves.
 - Updated on 2026-09-01 with Codex PowerShell approval bypass, Kibana AI feature DoS, runZero Platform MCP authorization, and hermes-agent ACP/MCP availability leaves.
 - Updated on 2026-08-31 with ash_ai tool-loop and MCP-origin leaves, the MCPHub advisory-family leaf, sdcb chats MCP fetch-tools SSRF, and watcher enrichment for Junie local-execution boundaries.
