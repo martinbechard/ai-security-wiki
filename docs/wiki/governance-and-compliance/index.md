@@ -17,6 +17,7 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 - [Frontier model cybersecurity review transparency](frontier-model-cybersecurity-review-transparency.md)
 - [Cloud AI system compromise threat taxonomy](cloud-ai-system-compromise-threat-taxonomy.md)
 - [Collective cyber-defense controls](collective-cyber-defense-controls.md)
+- [UK frontier AI oversight](uk-frontier-ai-oversight.md)
 
 ## Authoritative Sources
 
@@ -47,5 +48,6 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 ## Maintenance Notes
 
 - Updated on 2026-09-03 with Daybreak frontline-defender access evidence in the collective cyber-defense controls leaf.
+- Updated on 2026-09-16 with UK frontier AI statutory oversight and model-testing authority proposals.
 - Updated on 2026-08-29 with the collective cyber-defense controls leaf from the OpenAI-hosted public letter.
 - Verify current law, regulation, and standard text from authoritative sources before durable synthesis.

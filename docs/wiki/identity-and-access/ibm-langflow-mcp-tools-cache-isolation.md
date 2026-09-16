@@ -13,6 +13,8 @@ The [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-s
 
 The CVE says an authenticated attacker could access another user's MCP server context because the MCP Tools component used improper cache-key isolation. MCP server context can include delegated tool authority and connection state, so cache keys are an authorization boundary rather than only a performance detail.
 
+The [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json) adds later CVE Services and NVD metadata from September 15. Both retain the Langflow OSS 1.0.0 through 1.11.5 affected range, CWE-306 Missing Authentication for Critical Function classification, and IBM advisory reference, so they enrich provenance without changing the local per-user MCP context boundary.
+
 ## Security Impact
 
 - Threat: authenticated users can cross into another user's MCP context when cache entries are not scoped by stable user and workspace principals.
@@ -25,7 +27,9 @@ The CVE says an authenticated attacker could access another user's MCP server co
 ## Authoritative Sources
 
 - [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json)
+- [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json)
 - [CVE-2026-12763 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-12763)
+- [NVD CVE-2026-12763 record](https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-12763)
 - [IBM support advisory](https://www.ibm.com/support/pages/node/7286662)
 
 ## Related Code
@@ -53,3 +57,4 @@ The CVE says an authenticated attacker could access another user's MCP server co
 ## Maintenance Notes
 
 - Created on 2026-09-15 from the [September 14 topic collector](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json) as a per-user MCP context isolation leaf.
+- Updated on 2026-09-16 with CVE Services and NVD September 15 metadata from the [September 16 leaf update watch](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json).

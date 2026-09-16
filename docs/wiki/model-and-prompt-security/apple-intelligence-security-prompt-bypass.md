@@ -13,6 +13,8 @@ The [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-s
 
 Apple's CVE text is sparse: a permissions issue was addressed with improved state management, and an app may have been able to bypass Apple Intelligence security prompts. The local security lesson is that local AI assistant prompts are consent and authorization gates, so prompt state must be bound to the app, requested action, data scope, and user decision.
 
+The [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json) adds NVD's September 15 Undergoing Analysis metadata and Apple support reference. That enriches analysis state without changing the prompt-permission boundary.
+
 ## Security Impact
 
 - Threat: an app can bypass an Apple Intelligence security prompt and weaken user consent for AI-mediated action or data access.
@@ -25,7 +27,9 @@ Apple's CVE text is sparse: a permissions issue was addressed with improved stat
 ## Authoritative Sources
 
 - [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json)
+- [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json)
 - [CVE-2026-84601 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-84601)
+- [NVD CVE-2026-84601 record](https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-84601)
 - [Apple security updates for macOS Golden Gate 27](https://support.apple.com/en-us/149035)
 
 ## Related Code
@@ -53,3 +57,4 @@ Apple's CVE text is sparse: a permissions issue was addressed with improved stat
 ## Maintenance Notes
 
 - Created on 2026-09-15 from the [September 14 topic collector](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json) as a local-assistant permission-prompt boundary leaf.
+- Updated on 2026-09-16 with NVD analysis-state metadata from the [September 16 leaf update watch](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json).

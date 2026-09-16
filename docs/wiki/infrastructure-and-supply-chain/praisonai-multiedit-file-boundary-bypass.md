@@ -13,6 +13,8 @@ The [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-s
 
 The CVE says the multiedit tool passed an LLM-controlled filepath directly to reads and writes without traversal rejection, symlink resolution, workspace checks, or protected-path checks. That makes model-influenced editing authority broader than the intended project workspace.
 
+The [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json) adds NVD's September 15 metadata, including Deferred status, CWE-22, and PraisonAI advisory, release, and patch references. That enriches taxonomy without changing the filesystem authority boundary.
+
 ## Security Impact
 
 - Threat: LLM-directed editing can read or modify arbitrary host files when filepath authority is unchecked.
@@ -25,7 +27,9 @@ The CVE says the multiedit tool passed an LLM-controlled filepath directly to re
 ## Authoritative Sources
 
 - [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json)
+- [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json)
 - [CVE-2026-57145 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-57145)
+- [NVD CVE-2026-57145 record](https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57145)
 - [GitHub advisory GHSA-29w3-p9w9-wc47](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-29w3-p9w9-wc47)
 - [PraisonAI patch commit](https://github.com/MervinPraison/PraisonAI/commit/2a855c470077c7d2e2479a575f7ef7f548d51c33)
 - [PraisonAI 4.6.62 release](https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.62)
@@ -56,3 +60,4 @@ The CVE says the multiedit tool passed an LLM-controlled filepath directly to re
 ## Maintenance Notes
 
 - Created on 2026-09-15 from the [September 14 topic collector](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json) as an LLM-directed edit authority leaf.
+- Updated on 2026-09-16 with NVD Deferred/CWE metadata from the [September 16 leaf update watch](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json).

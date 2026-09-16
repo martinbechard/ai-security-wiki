@@ -39,6 +39,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [SureForms AI Forms stored XSS](sureforms-ai-forms-stored-xss.md)
 - [llmware collection filter SQL injection](llmware-collection-filter-sql-injection.md)
 - [Open WebUI knowledge object access control](open-webui-knowledge-object-access-control.md)
+- [Flowise MongoDBMemory session leak](flowise-mongodbmemory-session-leak.md)
 - [Flowise node-load-method credential IDOR](../identity-and-access/flowise-node-load-method-credential-idor.md)
 - [WPBot chat-session contact disclosure](wpbot-chat-session-contact-disclosure.md)
 
@@ -75,6 +76,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - Updated on 2026-09-07 with SureForms AI Forms stored XSS as an AI-enabled form data-contamination boundary.
 - Updated on 2026-09-08 with the llmware collection-filter SQL injection leaf and Open WebUI knowledge-object access-control leaf for retrieval and assistant-workspace data boundaries.
 - Updated on 2026-09-13 with Flowise credential IDOR, WPBot chat-session contact disclosure, and Cheshire Cat AI identity/data exposure links.
+- Updated on 2026-09-16 with the Flowise MongoDBMemory session leak leaf and watcher metadata enrichment for WPBot provider-key spend.
 - Updated on 2026-09-15 with WPBot chat-session contact disclosure NVD metadata enrichment and PraisonAI file-boundary privacy implications through linked infrastructure leaves.
 - Updated on 2026-08-31 with the Aix-DB AI rendered-content stored-XSS leaf plus watcher enrichment for existing browser-use, Jina Reader, NextChat, and Keploy advisory leaves.
 - Updated on 2026-08-29 with the Stable Diffusion WebUI credential-disclosure leaf and GitLab/Spring watcher provenance.

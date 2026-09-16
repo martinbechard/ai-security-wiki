@@ -1,0 +1,316 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector",
+    "agent": "Northstar",
+    "run_timestamp_utc": "2026-09-15T23:31:12Z",
+    "repository": "/Users/martinbechard/dev/ai-security-wiki"
+  },
+  "cutoff_window": {
+    "start_utc": "2026-09-13T23:31:12Z",
+    "end_utc": "2026-09-15T23:31:12Z",
+    "rule": "Include only public items published or visibly updated inside the exact two-day window. Exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "searched_topics": [
+    "AI security vulnerabilities and advisories",
+    "Model Context Protocol and agent tool security",
+    "Prompt injection, SSRF, command injection, and data leakage in AI systems",
+    "AI agent delegated authority, browser and tool boundaries",
+    "AI security governance, audit evidence, and regulatory controls",
+    "Public incidents, mitigations, patches, and lessons learned for AI systems"
+  ],
+  "source_policy": {
+    "public_sources_only": true,
+    "local_private_content_sent_external": false,
+    "notes": "Search and evidence collection used public web search, public GitHub advisories, CVE.org/CVE Services records, NVD search attempts, and public news pages. No docs/wiki pages were edited."
+  },
+  "federation_context": {
+    "downstream_scope": "This repository owns the security lens: AI-specific threats, vulnerabilities, mitigations, control evidence, governance, and incident-response implications.",
+    "upstream_ai_wiki_scope": "Broad AI entities, companies, products, models, frameworks, MCP servers, and ecosystem catalogs are upstream-owned by /Users/martinbechard/dev/ai-wiki.",
+    "upstream_ai_dev_wiki_scope": "General AI-assisted development practices, coding-agent workflows, verification patterns, and development governance are upstream-owned by /Users/martinbechard/dev/ai-dev-wiki."
+  },
+  "qualifying_findings": [
+    {
+      "id": "cve-2026-55887-docker-mcp-gateway-oci-label-argument-injection",
+      "title": "Docker MCP Gateway OCI label parsing allows docker run argument injection",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55887",
+        "https://github.com/docker/mcp-gateway/security/advisories/GHSA-r2xf-7jw5-pjg6",
+        "https://github.com/docker/mcp-gateway/releases/tag/v0.42.2",
+        "https://github.com/docker/mcp-gateway/pull/498"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services cveMetadata.datePublished",
+          "date": "2026-09-15T15:45:36.420Z"
+        },
+        {
+          "source": "CVE Services cveMetadata.dateUpdated",
+          "date": "2026-09-15T18:02:09.186Z"
+        },
+        {
+          "source": "GitHub advisory visible publication date",
+          "date": "2026-06-16"
+        },
+        {
+          "source": "GitHub release page visible release date",
+          "date": "2026-05-28"
+        }
+      ],
+      "qualification_basis": "CVE publication and update timestamps are inside the collector window; the GitHub advisory and release are older provenance and patch evidence.",
+      "evidence_classification": "primary vulnerability record plus maintainer advisory and patch/release references",
+      "concise_factual_summary": "CVE-2026-55887 reports that Docker MCP Gateway versions from 0.21.0 before 0.42.2 unmarshalled attacker-controlled OCI image label YAML into a broad server structure. Runtime fields such as volumes, user, command, extra hosts, allow-hosts, network, environment, remote endpoint, OAuth, secrets, long-lived mode, and policy could reach container launch behavior. The GitHub advisory describes host-impacting arbitrary code execution when a malicious image injects docker run arguments such as host filesystem or docker socket mounts.",
+      "affected_boundary_or_version": "docker/mcp-gateway >= 0.21.0 and < 0.42.2; patched in 0.42.2 according to advisory and release references.",
+      "security_delta": "New CVE publication for an MCP runtime supply-chain flaw where metadata from a referenced image can reshape local container execution.",
+      "why_it_matters_for_ai_security": "MCP gateways mediate AI agent tools. Treating image metadata as trusted runtime configuration can let a tool source cross the agent-to-host boundary and gain host access, so MCP catalog and image provenance need strict allowlisting and origin separation.",
+      "named_entities": [
+        "Docker",
+        "Docker MCP Gateway",
+        "Model Context Protocol",
+        "OCI image labels",
+        "GitHub Security Advisories",
+        "CVE-2026-55887",
+        "GHSA-r2xf-7jw5-pjg6",
+        "TrendAI Zero Day Initiative",
+        "Jabr Al-Otaibi"
+      ],
+      "upstream_routing": {
+        "broad_entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "Keep broad Docker/MCP Gateway product coverage upstream; local ingest should retain the image-metadata trust boundary, affected versions, patch, and agent-host execution implication."
+      },
+      "confidence_notes": "High confidence for CVE publication timing and affected range from CVE Services; GitHub advisory page is older than the window but corroborates impact and patched version.",
+      "follow_up_actions": [
+        "During ingest, map this to MCP supply-chain and hosted MCP runtime security leaves.",
+        "Recheck whether local pages already have a Docker MCP Gateway or MCP gateway security lens before creating a new leaf.",
+        "Capture patch reference v0.42.2 and note that older advisory/release dates should not be treated as new September disclosures."
+      ]
+    },
+    {
+      "id": "cve-2026-58485-mcp-searxng-dns-rebinding-ssrf",
+      "title": "mcp-searxng web_url_read allows DNS-resolved private-hostname SSRF",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-58485",
+        "https://github.com/ihor-sokoliuk/mcp-searxng/security/advisories/GHSA-mrvx-jmjw-vggc",
+        "https://github.com/ihor-sokoliuk/mcp-searxng/pull/120",
+        "https://github.com/ihor-sokoliuk/mcp-searxng/releases/tag/v1.7.1"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services cveMetadata.datePublished",
+          "date": "2026-09-15T17:47:20.398Z"
+        },
+        {
+          "source": "CVE Services cveMetadata.dateUpdated",
+          "date": "2026-09-15T18:31:03.944Z"
+        },
+        {
+          "source": "GitHub advisory visible publication date",
+          "date": "2026-06-18"
+        }
+      ],
+      "qualification_basis": "CVE publication and update timestamps are inside the collector window; the GitHub advisory is older corroborating primary detail.",
+      "evidence_classification": "primary vulnerability record plus maintainer advisory with proof-of-concept details",
+      "concise_factual_summary": "CVE-2026-58485 reports that mcp-searxng before 1.7.1 validates only the literal hostname in web_url_read before the fetch layer performs operating-system DNS resolution. A public-looking attacker-controlled hostname that resolves to private, loopback, link-local, or cloud metadata addresses can pass the policy check and make the MCP server read internal HTTP resources. The GitHub advisory states that default HTTP mode lacks authentication and that STDIO exploitation can occur when an AI agent is induced to call the tool with attacker-controlled URLs.",
+      "affected_boundary_or_version": "mcp-searxng < 1.7.1; patched in 1.7.1 according to CVE and GitHub advisory references.",
+      "security_delta": "New CVE publication for SSRF in an MCP web-reading tool, with DNS rebinding/private-address bypass detail.",
+      "why_it_matters_for_ai_security": "Web-reading tools are common AI-agent capabilities. If prompt injection or malicious page content can steer an agent into a crafted URL, the MCP server may become a bridge from untrusted web content to internal services, secrets, or cloud metadata.",
+      "named_entities": [
+        "mcp-searxng",
+        "SearXNG",
+        "Model Context Protocol",
+        "web_url_read",
+        "CVE-2026-58485",
+        "GHSA-mrvx-jmjw-vggc",
+        "DNS rebinding",
+        "Server-Side Request Forgery"
+      ],
+      "upstream_routing": {
+        "broad_entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "Keep broad MCP server catalog coverage upstream; local ingest should retain the SSRF, DNS-resolution, tool-authentication, and prompt-injection exploitability implications."
+      },
+      "confidence_notes": "High confidence for CVE timing and vulnerable range from CVE Services; GitHub advisory provides older but detailed primary proof and mitigation context.",
+      "follow_up_actions": [
+        "During ingest, deduplicate against any existing MCP SSRF/private-network leaf or create a focused MCP web-reading SSRF note.",
+        "Record default HTTP authentication posture and STDIO prompt-injection pathway as separate deployment-boundary considerations.",
+        "Recheck release v1.7.1 for final remediation wording."
+      ]
+    },
+    {
+      "id": "cve-2026-91937-flowise-mongodbmemory-nosql-session-leak",
+      "title": "Flowise MongoDBMemory NoSQL injection leaks cross-session chat history",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91937",
+        "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-wpvf-4vfx-rgxm",
+        "https://www.vulncheck.com/advisories/flowise-before-3.1.4-nosql-injection-via-sessionid"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services cveMetadata.datePublished",
+          "date": "2026-09-15T15:17:59.687Z"
+        },
+        {
+          "source": "CVE Services cveMetadata.dateUpdated",
+          "date": "2026-09-15T17:02:01.493Z"
+        },
+        {
+          "source": "GitHub advisory visible publication date",
+          "date": "2026-08-31"
+        }
+      ],
+      "qualification_basis": "CVE publication and update timestamps are inside the collector window; the GitHub advisory is older corroborating primary detail.",
+      "evidence_classification": "primary vulnerability record plus maintainer advisory and external advisory reference",
+      "concise_factual_summary": "CVE-2026-91937 reports that Flowise before 3.1.4 fails to sanitize overrideConfig.sessionId before using it in MongoDBMemory queries. Unauthenticated attackers can send MongoDB operator objects through the prediction API and read chat-history records for other users from the shared collection. The GitHub advisory describes the issue as a cross-session data leak through public chatflows and recommends coercing the session identifier to a string before it reaches the MongoDB query.",
+      "affected_boundary_or_version": "Flowise versions before 3.1.4; 3.1.4 listed as unaffected in CVE Services.",
+      "security_delta": "New CVE publication for an AI workflow product data-isolation flaw affecting chat memory confidentiality.",
+      "why_it_matters_for_ai_security": "AI agent and chatflow memory can contain API keys, passwords, internal configuration, and sensitive user prompts. Session isolation failures turn shared memory backends into data-exposure risks even when the model layer is behaving as intended.",
+      "named_entities": [
+        "Flowise",
+        "MongoDBMemory",
+        "MongoDB Atlas Chat Memory",
+        "Prediction API",
+        "CVE-2026-91937",
+        "GHSA-wpvf-4vfx-rgxm",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "broad_entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "Keep broad Flowise product/framework coverage upstream; local ingest should retain the chat-memory isolation, unauthenticated prediction API, and sensitive prompt/data leakage implications."
+      },
+      "confidence_notes": "High confidence for CVE timing and affected version from CVE Services; GitHub advisory is archived/older but contains detailed primary exploit chain.",
+      "follow_up_actions": [
+        "During ingest, connect this to AI data security/privacy and agent memory isolation leaves.",
+        "Recheck whether the Flowise repository archive status affects remediation availability or migration guidance.",
+        "Treat the GitHub advisory's 'No known CVE' display as stale against the newer CVE Services publication."
+      ]
+    },
+    {
+      "id": "uk-ai-oversight-openai-guardian-2026-09-14",
+      "title": "OpenAI publicly backs stronger UK frontier AI rules while parliamentary committee seeks independent oversight",
+      "source_urls": [
+        "https://www.theguardian.com/technology/2026/sep/14/ai-regulation-anthropic-uk-human-rights-committee-mps-lords"
+      ],
+      "visible_dates": [
+        {
+          "source": "The Guardian article timestamp",
+          "date": "2026-09-14T10:01:00-04:00"
+        },
+        {
+          "source": "The Guardian first-published timestamp",
+          "date": "2026-09-14T07:07:00-04:00"
+        }
+      ],
+      "qualification_basis": "Article publication timestamp is inside the collector window and reports concrete proposed governance controls for high-risk/frontier AI systems.",
+      "evidence_classification": "reputable public secondary reporting on policy and governance controls",
+      "concise_factual_summary": "The Guardian reported that OpenAI urged UK lawmakers to legislate for the most powerful AI labs, while a UK parliamentary human-rights committee called for a new AI bill, mandatory transparency requirements, and an independent oversight body with enforcement power. The article also notes that the UK AI Security Institute currently tests advanced models but lacks power to compel developers such as Anthropic to submit systems for scrutiny.",
+      "affected_boundary_or_version": "UK frontier AI governance and advanced model oversight; not a software version.",
+      "security_delta": "In-window public policy signal for mandatory transparency, independent oversight, and stronger authority over advanced AI testing.",
+      "why_it_matters_for_ai_security": "The item changes the governance and assurance discussion from voluntary frontier-lab safety practices toward enforceable oversight, testing access, and evidence requirements for high-risk AI systems.",
+      "named_entities": [
+        "OpenAI",
+        "Anthropic",
+        "UK Parliament Joint Committee on Human Rights",
+        "AI Security Institute",
+        "Tom Duff Gordon",
+        "Alex Sobel"
+      ],
+      "upstream_routing": {
+        "broad_entity_owner": "ai-wiki",
+        "security_lens_owner": "ai-security-wiki",
+        "routing_note": "Keep broad OpenAI, Anthropic, and UK AI Act/policy entity coverage upstream; local ingest should retain the assurance, model-testing authority, transparency, and security-governance implication."
+      },
+      "confidence_notes": "Moderate confidence: article has clear visible dates and named actors, but primary committee text and OpenAI statement should be located during ingest before durable synthesis.",
+      "follow_up_actions": [
+        "During ingest, locate the UK committee primary report or bill text before writing durable governance claims.",
+        "Separate voluntary frontier-lab commitments from statutory testing/oversight proposals.",
+        "Route broad company-policy background upstream and keep the security assurance controls locally."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Anthropic Detecting and countering misuse of AI: September 2026",
+      "source_url": "https://www.anthropic.com/",
+      "visible_date": "Search result indicated 2 hours ago, but direct canonical page URL was not located during this run.",
+      "reason": "Excluded because the collector could not fetch a stable source URL with visible publication date and article body. Secondary results also suggested the underlying report may have been published on 2026-09-10, outside the exact two-day window.",
+      "routing_note": "If primary report is found later, cyber misuse case studies belong locally while broad Anthropic entity coverage remains upstream."
+    },
+    {
+      "title": "Dario Amodei: We Must Pace the Frontier",
+      "source_url": "https://darioamodei.com/post/we-must-pace-the-frontier",
+      "visible_date": "September 2026",
+      "reason": "Excluded as a standalone qualifying item because the page exposes only a month-level visible date, not a concrete in-window publication or update timestamp. It was used only as context for broader governance searches.",
+      "routing_note": "If a concrete in-window timestamp is verified later, the safety-governance control implications may belong locally while broad frontier-model policy discussion remains upstream."
+    },
+    {
+      "title": "OpenAI home page recent-news entries for Astra safeguards and Hugging Face incident",
+      "source_url": "https://openai.com/",
+      "visible_date": "Recent entries listed Sep 1, 2026 and Aug 26, 2026 for relevant safety/security posts.",
+      "reason": "Excluded because the visible dates are outside the two-day collector window, even though the topics are security-relevant.",
+      "routing_note": "Prior OpenAI incident and frontier-safeguard items may already belong in earlier raw artifacts; avoid duplicate September 15 capture unless a fresh update is found."
+    },
+    {
+      "title": "Express Computer guest post on MCP as API layer for AI agents",
+      "source_url": "https://www.expresscomputer.in/guest-blogs/why-mcp-is-becoming-the-api-layer-for-ai-agents/138722/",
+      "visible_date": "Search result: today",
+      "reason": "Excluded because it is explanatory/positioning content and did not provide a concrete new vulnerability, mitigation, patch, incident, standard, or regulatory change.",
+      "routing_note": "General MCP architecture positioning belongs upstream; security gateway implications are already covered by local MCP security topics."
+    },
+    {
+      "title": "GitHub advisory for Open WebUI SSRF CVE-2026-45338",
+      "source_url": "https://github.com/open-webui/open-webui/security/advisories/GHSA-24c9-2m8q-qhmh",
+      "visible_date": "CVE Services published 2026-05-15T21:46:32.132Z and updated 2026-05-15T22:21:22.453Z",
+      "reason": "Excluded because the CVE and advisory timestamps are outside the exact two-day window; search result freshness alone is not enough.",
+      "routing_note": "If not already ingested, this belongs under AI application SSRF or Open WebUI security, but not this run."
+    },
+    {
+      "title": "LangChain OpenAI SSRF CVE-2026-41488",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-41488",
+      "visible_date": "CVE Services published 2026-04-24T20:57:25.658Z and updated 2026-04-27T13:40:42.065Z",
+      "reason": "Excluded because the CVE publication and update timestamps are outside the exact two-day window.",
+      "routing_note": "Broad LangChain ownership is upstream; security lens would be local only if a fresh update appears."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity": "Docker MCP Gateway",
+      "owner": "ai-wiki",
+      "local_security_lens": "MCP gateway supply-chain metadata trust and host execution boundary."
+    },
+    {
+      "entity": "mcp-searxng",
+      "owner": "ai-wiki",
+      "local_security_lens": "MCP web-read SSRF, DNS resolution, authentication posture, and prompt-injection exploit path."
+    },
+    {
+      "entity": "Flowise",
+      "owner": "ai-wiki",
+      "local_security_lens": "AI chat memory isolation and unauthenticated prediction API data leakage."
+    },
+    {
+      "entity": "OpenAI, Anthropic, UK AI Security Institute",
+      "owner": "ai-wiki",
+      "local_security_lens": "Security assurance, independent testing authority, transparency obligations, and audit evidence."
+    }
+  ],
+  "collection_notes": {
+    "nvd_api_attempt": "NVD API requests for future-dated 2026 keyword windows returned HTTP 404 during this run; direct CVE Services records were used for CVE timing and details.",
+    "dedupe_basis": "Previous run memory was checked; this run avoided recapturing OpenAI/Hugging Face and older Open WebUI/LangChain items without fresh in-window dates.",
+    "blockers": [
+      "Could not fetch a stable Anthropic canonical page for the September 2026 misuse report.",
+      "NVD API returned HTTP 404 for the exact future-dated window in this environment."
+    ]
+  },
+  "validation_plan": [
+    "jq empty raw/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json",
+    "python3 -m json.tool raw/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json",
+    "git diff --check -- raw/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json"
+  ],
+  "counts": {
+    "qualifying_findings": 4,
+    "exclusions": 6,
+    "upstream_routing_notes": 4
+  }
+}

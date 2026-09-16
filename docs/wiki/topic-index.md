@@ -133,6 +133,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/ibm-langflow-mcp-stdio-command-execution.md](agent-and-tool-security/ibm-langflow-mcp-stdio-command-execution.md)
 - [agent-and-tool-security/ibm-langflow-file-and-endpoint-disclosure.md](agent-and-tool-security/ibm-langflow-file-and-endpoint-disclosure.md)
 - [agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md](agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md)
+- [agent-and-tool-security/docker-mcp-gateway-oci-label-argument-injection.md](agent-and-tool-security/docker-mcp-gateway-oci-label-argument-injection.md)
+- [agent-and-tool-security/mcp-searxng-web-url-read-ssrf.md](agent-and-tool-security/mcp-searxng-web-url-read-ssrf.md)
 - [agent-and-tool-security/praisonai-imap-command-injection.md](agent-and-tool-security/praisonai-imap-command-injection.md)
 - [agent-and-tool-security/ibm-langflow-flow-component-ssrf.md](agent-and-tool-security/ibm-langflow-flow-component-ssrf.md)
 - [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
@@ -192,6 +194,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [data-and-privacy/ibm-contextforge-translate-session-confusion.md](data-and-privacy/ibm-contextforge-translate-session-confusion.md)
 - [data-and-privacy/llmware-collection-filter-sql-injection.md](data-and-privacy/llmware-collection-filter-sql-injection.md)
 - [data-and-privacy/open-webui-knowledge-object-access-control.md](data-and-privacy/open-webui-knowledge-object-access-control.md)
+- [data-and-privacy/flowise-mongodbmemory-session-leak.md](data-and-privacy/flowise-mongodbmemory-session-leak.md)
 - [identity-and-access/flowise-node-load-method-credential-idor.md](identity-and-access/flowise-node-load-method-credential-idor.md)
 - [identity-and-access/wpbot-ai-provider-api-key-spend.md](identity-and-access/wpbot-ai-provider-api-key-spend.md)
 - [data-and-privacy/wpbot-chat-session-contact-disclosure.md](data-and-privacy/wpbot-chat-session-contact-disclosure.md)
@@ -326,6 +329,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [governance-and-compliance/frontier-model-cybersecurity-review-transparency.md](governance-and-compliance/frontier-model-cybersecurity-review-transparency.md)
 - [governance-and-compliance/cloud-ai-system-compromise-threat-taxonomy.md](governance-and-compliance/cloud-ai-system-compromise-threat-taxonomy.md)
 - [governance-and-compliance/collective-cyber-defense-controls.md](governance-and-compliance/collective-cyber-defense-controls.md)
+- [governance-and-compliance/uk-frontier-ai-oversight.md](governance-and-compliance/uk-frontier-ai-oversight.md)
 - [incident-response](incident-response/index.md)
 - [incident-response/openai-hugging-face-cyber-evaluation-incident.md](incident-response/openai-hugging-face-cyber-evaluation-incident.md)
 - [incident-response/anthropic-internet-connected-cyber-evaluation-incident.md](incident-response/anthropic-internet-connected-cyber-evaluation-incident.md)
@@ -376,6 +380,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - Updated on 2026-09-07 with knowns MCP path traversal, OpenShift AI NIM Secret authorization, GPTQModel Triton OOB read, Igniter prompt forgery, and SureForms AI Forms stored XSS leaves.
 - Updated on 2026-09-08 with focused Open WebUI, Flowise, llmware, and ASCII smuggling leaves plus Agno and PraisonAI evidence updates.
 - Updated on 2026-09-13 with Anthropic threat intelligence, OmniRoute, knowns, split CodeWhale, IBM Langflow/ContextForge, Flowise, WPBot, n8n, Cheshire Cat AI, MCPHub, RubyGems, and watcher evidence updates.
+- Updated on 2026-09-16 with Docker MCP Gateway, mcp-searxng, Flowise MongoDBMemory, UK frontier AI oversight, and watcher metadata security leaves.
 - Updated on 2026-09-15 with Bifrost, LightLLM, PraisonAI, IBM Langflow, Apple Intelligence, and watcher metadata security leaves.
 - Updated on 2026-09-01 with September 1 topic and watcher ingest for Astra release gates, Codex approval/Git execution boundaries, model-artifact supply-chain flaws, Kibana AI feature authorization and DoS, runZero MCP authorization, hermes-agent ACP/MCP DoS, Support Genix AI Chatbot admin takeover, and watcher provenance.
 - Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.

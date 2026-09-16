@@ -1,0 +1,447 @@
+{
+  "automation_name": "AI Security Wiki Leaf Update Watch",
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "run_started_at": "2026-09-16T00:07:40Z",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "strict_window": {
+    "start": "2026-09-08T00:00:00-04:00",
+    "end": "2026-09-16T00:07:40Z",
+    "policy": "direct visible publication or update dates only; header-only freshness and snippets are excluded"
+  },
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "leaf_universe_count": 341,
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, then stable relative path; durable leaf pages only",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md",
+    "docs/wiki/agent-and-tool-security/ibm-langflow-flow-component-ssrf.md",
+    "docs/wiki/agent-and-tool-security/praisonai-imap-command-injection.md",
+    "docs/wiki/identity-and-access/ibm-langflow-mcp-tools-cache-isolation.md",
+    "docs/wiki/identity-and-access/praisonai-jobs-api-unauthenticated-execution.md",
+    "docs/wiki/identity-and-access/wpbot-ai-provider-api-key-spend.md",
+    "docs/wiki/incident-response/rubygems-spam-publishing-agent-attribution.md",
+    "docs/wiki/infrastructure-and-supply-chain/lightllm-config-server-pickle-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/praisonai-code-tools-workspace-fail-open.md",
+    "docs/wiki/infrastructure-and-supply-chain/praisonai-file-mention-path-traversal.md",
+    "docs/wiki/infrastructure-and-supply-chain/praisonai-multiedit-file-boundary-bypass.md",
+    "docs/wiki/model-and-prompt-security/apple-intelligence-security-prompt-bypass.md",
+    "docs/wiki/model-and-prompt-security/n8n-instance-ai-summary-prototype-pollution.md",
+    "docs/wiki/model-and-prompt-security/praisonai-execute-code-sandbox-bypass.md",
+    "docs/wiki/threats-and-attacks/anthropic-claude-misuse-disruption-report.md"
+  ],
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-90898",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-90898",
+        "https://github.com/maximhq/bifrost/pull/6757",
+        "https://github.com/maximhq/bifrost/releases/tag/transports/v2.1.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ibm-langflow-flow-component-ssrf.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-12765",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-12765",
+        "https://www.ibm.com/support/pages/node/7285644"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-imap-command-injection.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57130",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57130",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-c969-5x3p-vq3v",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/ibm-langflow-mcp-tools-cache-isolation.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-12763",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-12763",
+        "https://www.ibm.com/support/pages/node/7286662"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-jobs-api-unauthenticated-execution.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57131",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57131",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-fq2m-6wqh-x44g",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wpbot-ai-provider-api-key-spend.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-87918",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-87918",
+        "https://wpscan.com/vulnerability/d6b3745b-bda1-4734-b39c-75376477ba0a/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/rubygems-spam-publishing-agent-attribution.md",
+      "source_urls": [
+        "https://blog.rubygems.org/2026/09/11/update-may-spam-publishing-campaign.html",
+        "https://www.worldprogramming.org/posts/openai-agents-carried-out-an-undisclosed-attack-on-rubygems-g6i8cx",
+        "https://www.theverge.com/ai-artificial-intelligence/994383/openais-rogue-ai-rubygems-hack",
+        "https://www.wsj.com/tech/ai/cyberattack-by-rogue-ai-swarm-stokes-fears-of-out-of-control-agents-473a0352"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/lightllm-config-server-pickle-rce.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-90919",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-90919",
+        "https://github.com/ModelTC/LightLLM/issues/1563",
+        "https://www.vulncheck.com/advisories/lightllm-through-1.2.0-unauthenticated-remote-code-execution-via-config-server-pickle-deserialization"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/praisonai-code-tools-workspace-fail-open.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-56839",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-56839",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-gcq3-mfvh-3x25",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/praisonai-file-mention-path-traversal.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57129",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57129",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-2rcg-mm5h-xchx",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/praisonai-multiedit-file-boundary-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57145",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57145",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-29w3-p9w9-wc47",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.62"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/apple-intelligence-security-prompt-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84601",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-84601",
+        "https://support.apple.com/en-us/149035"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/n8n-instance-ai-summary-prototype-pollution.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86078",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-86078",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-679f-58pq-4v2c",
+        "https://github.com/n8n-io/n8n/releases/tag/n8n@2.38.2"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/praisonai-execute-code-sandbox-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57120",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57120",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pv2j-rghr-v5r9",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/anthropic-claude-misuse-disruption-report.md",
+      "source_urls": [
+        "https://www.anthropic.com/threat-intelligence-report-september-2026",
+        "https://www.anthropic.com/threat-intelligence",
+        "https://www.theguardian.com/world/2026/sep/12/ukraine-war-briefing-russian-developers-used-ai-to-build-kamikaze-attack-drone-software-anthropic-says",
+        "https://apnews.com/article/00266dca90e4f8853f669648998d3bda"
+      ]
+    }
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ibm-langflow-flow-component-ssrf.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-12765",
+      "visible_date": "2026-09-15T18:04:36.368Z",
+      "date_type": "dateUpdated",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "CVE Services visibly updated IBM Langflow OSS CVE-2026-12765 on September 15, retaining the affected range 1.0.0 through 1.10.2, CWE-918 SSRF classification, and IBM vendor advisory patch reference.",
+      "named_entities": [
+        "IBM",
+        "IBM Langflow OSS",
+        "CVE-2026-12765",
+        "CWE-918",
+        "CVE Services"
+      ],
+      "affected_boundaries": [
+        "Langflow flow component URL handling, server-side egress, and SSRF controls for IBM Langflow OSS 1.0.0 through 1.10.2"
+      ],
+      "relevance": "Same local flow-component SSRF leaf; adds a later CVE Services update after the September 14 topic collector capture.",
+      "upstream_routing": "Broad Langflow product context remains upstream; keep the SSRF and egress-control metadata locally."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ibm-langflow-flow-component-ssrf.md",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-12765",
+      "visible_date": "2026-09-15T19:17:15.883",
+      "date_type": "lastModified",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "NVD visibly modified CVE-2026-12765 on September 15 with Received status, CWE-918, and the IBM advisory reference for Langflow flow-component SSRF.",
+      "named_entities": [
+        "NVD",
+        "IBM",
+        "IBM Langflow OSS",
+        "CVE-2026-12765",
+        "CWE-918"
+      ],
+      "affected_boundaries": [
+        "Langflow flow-component URL validation and private-network request boundary"
+      ],
+      "relevance": "Same local SSRF leaf; complements the CVE Services September 15 update with NVD enrichment.",
+      "upstream_routing": "Keep only security metadata and egress-control implications locally."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-imap-command-injection.md",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57130",
+      "visible_date": "2026-09-15T14:45:28.563",
+      "date_type": "lastModified",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "NVD visibly modified CVE-2026-57130 on September 15, marked the record Deferred, and lists CWE-20 and CWE-77 with PraisonAI advisory, release, and patch references.",
+      "named_entities": [
+        "NVD",
+        "PraisonAI",
+        "CVE-2026-57130",
+        "CWE-20",
+        "CWE-77"
+      ],
+      "affected_boundaries": [
+        "PraisonAI email_tools.py IMAP SEARCH construction and model-controlled search parameter handling"
+      ],
+      "relevance": "Same local IMAP command-injection leaf; NVD update is later than the September 14 collector evidence.",
+      "upstream_routing": "Broad PraisonAI connector workflow context belongs upstream; local capture is the IMAP protocol-syntax security boundary."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/ibm-langflow-mcp-tools-cache-isolation.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-12763",
+      "visible_date": "2026-09-15T17:31:48.027Z",
+      "date_type": "dateUpdated",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "CVE Services visibly updated IBM Langflow OSS CVE-2026-12763 on September 15, retaining the affected range 1.0.0 through 1.11.5, CWE-306 Missing Authentication for Critical Function, and the IBM vendor advisory patch reference.",
+      "named_entities": [
+        "IBM",
+        "IBM Langflow OSS",
+        "CVE-2026-12763",
+        "CWE-306",
+        "CVE Services"
+      ],
+      "affected_boundaries": [
+        "Langflow MCP Tools cache-key isolation and per-user MCP server context authorization"
+      ],
+      "relevance": "Same local MCP context isolation leaf; adds later CVE Services metadata after the September 14 topic collector capture.",
+      "upstream_routing": "Broad Langflow and MCP workflow context remains upstream; local capture is the per-user cache isolation control."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/ibm-langflow-mcp-tools-cache-isolation.md",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-12763",
+      "visible_date": "2026-09-15T18:17:15.613",
+      "date_type": "lastModified",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "NVD visibly modified CVE-2026-12763 on September 15 with Received status, CWE-306, and the IBM advisory reference for Langflow MCP Tools cache isolation.",
+      "named_entities": [
+        "NVD",
+        "IBM",
+        "IBM Langflow OSS",
+        "CVE-2026-12763",
+        "CWE-306"
+      ],
+      "affected_boundaries": [
+        "MCP Tools cache key construction and cross-user MCP server context isolation"
+      ],
+      "relevance": "Same local identity-and-access leaf; complements the CVE Services September 15 update with NVD enrichment.",
+      "upstream_routing": "Keep only the security metadata and authorization-control implication locally."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wpbot-ai-provider-api-key-spend.md",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-87918",
+      "visible_date": "2026-09-14T21:10:17.423",
+      "date_type": "lastModified",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "NVD visibly modified CVE-2026-87918 on September 14 and now shows Deferred status, CWE-284, and WPScan as the reference for unauthenticated WPBot AI provider API-key spend.",
+      "named_entities": [
+        "NVD",
+        "WPBot",
+        "WPScan",
+        "CVE-2026-87918",
+        "CWE-284"
+      ],
+      "affected_boundaries": [
+        "WPBot unauthenticated AJAX prompt-relay actions and configured AI provider API-key spend before 8.5.7"
+      ],
+      "relevance": "Same local provider-key-spend leaf; NVD enrichment was not part of the September 13 topic collector source.",
+      "upstream_routing": "Broad WordPress plugin or chatbot product context belongs upstream; local capture is limited to provider credential-use and cost abuse."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/praisonai-multiedit-file-boundary-bypass.md",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57145",
+      "visible_date": "2026-09-15T14:45:28.563",
+      "date_type": "lastModified",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "NVD visibly modified CVE-2026-57145 on September 15, marked the record Deferred, and lists CWE-22 with PraisonAI advisory, release 4.6.62, and patch references.",
+      "named_entities": [
+        "NVD",
+        "PraisonAI",
+        "CVE-2026-57145",
+        "CWE-22"
+      ],
+      "affected_boundaries": [
+        "PraisonAI multiedit file path handling, workspace-root checks, and LLM-directed file mutation authority"
+      ],
+      "relevance": "Same local multiedit file-boundary leaf; NVD update is later than the September 14 collector evidence.",
+      "upstream_routing": "Broad code-editing workflow belongs upstream; local capture is the filesystem authority boundary."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/apple-intelligence-security-prompt-bypass.md",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-84601",
+      "visible_date": "2026-09-15T14:38:06.923",
+      "date_type": "lastModified",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "NVD visibly modified CVE-2026-84601 on September 15 and shows Undergoing Analysis status with Apple support reference for the Apple Intelligence security prompt bypass fixed in macOS Golden Gate 27.",
+      "named_entities": [
+        "NVD",
+        "Apple",
+        "Apple Intelligence",
+        "macOS Golden Gate 27",
+        "CVE-2026-84601"
+      ],
+      "affected_boundaries": [
+        "macOS Apple Intelligence security prompt state management and app-to-assistant permission boundary"
+      ],
+      "relevance": "Same local prompt-bypass leaf; NVD analysis state update is later than the September 14 topic collector capture.",
+      "upstream_routing": "Broad Apple Intelligence product context belongs upstream; local capture is the assistant permission-prompt control boundary."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/praisonai-execute-code-sandbox-bypass.md",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57120",
+      "visible_date": "2026-09-15T14:45:28.563",
+      "date_type": "lastModified",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "NVD visibly modified CVE-2026-57120 on September 15, marked the record Deferred, and lists CWE-693 with PraisonAI advisory, release, and patch references for the execute_code sandbox bypass.",
+      "named_entities": [
+        "NVD",
+        "PraisonAI",
+        "CVE-2026-57120",
+        "CWE-693"
+      ],
+      "affected_boundaries": [
+        "PraisonAI execute_code sandbox mode, dunder-name filtering, str.format, and str.format_map object traversal"
+      ],
+      "relevance": "Same local sandbox-bypass leaf; NVD update is later than the September 14 collector evidence.",
+      "upstream_routing": "Broad PraisonAI framework context belongs upstream; local capture is the prompt-to-code sandbox control boundary."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-90898",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-90898",
+        "https://github.com/maximhq/bifrost/pull/6757",
+        "https://github.com/maximhq/bifrost/releases/tag/transports/v2.1.0"
+      ],
+      "reason": "CVE Services and NVD September 14 publication/update evidence appears already captured by the September 14 topic collector; no later same-leaf visible update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-jobs-api-unauthenticated-execution.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57131",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57131",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-fq2m-6wqh-x44g",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58"
+      ],
+      "reason": "CVE Services and NVD September 14 publication/update evidence appears already captured by the September 14 topic collector; no later same-leaf visible update was found for the Jobs API authentication boundary."
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/rubygems-spam-publishing-agent-attribution.md",
+      "sources_checked": [
+        "https://blog.rubygems.org/2026/09/11/update-may-spam-publishing-campaign.html",
+        "https://www.worldprogramming.org/posts/openai-agents-carried-out-an-undisclosed-attack-on-rubygems-g6i8cx",
+        "https://www.theverge.com/ai-artificial-intelligence/994383/openais-rogue-ai-rubygems-hack",
+        "https://www.wsj.com/tech/ai/cyberattack-by-rogue-ai-swarm-stokes-fears-of-out-of-control-agents-473a0352"
+      ],
+      "reason": "RubyGems, research, and press sources were already captured by the September 13 late topic collector; no newer primary same-leaf incident update with a concrete visible date was found."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/lightllm-config-server-pickle-rce.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-90919",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-90919",
+        "https://github.com/ModelTC/LightLLM/issues/1563",
+        "https://www.vulncheck.com/advisories/lightllm-through-1.2.0-unauthenticated-remote-code-execution-via-config-server-pickle-deserialization"
+      ],
+      "reason": "CVE Services, NVD, GitHub issue, and VulnCheck September 14 evidence appears already captured by the September 14 topic collector; no later same-leaf visible update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/praisonai-code-tools-workspace-fail-open.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-56839",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-56839",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-gcq3-mfvh-3x25",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59"
+      ],
+      "reason": "CVE Services and NVD September 14 publication/update evidence appears already captured by the September 14 topic collector; no later same-leaf visible update was found for workspace fail-open handling."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/praisonai-file-mention-path-traversal.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57129",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57129",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-2rcg-mm5h-xchx",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59"
+      ],
+      "reason": "CVE Services and NVD September 14 publication/update evidence appears already captured by the September 14 topic collector; no later same-leaf visible update was found for file-mention traversal."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/n8n-instance-ai-summary-prototype-pollution.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86078",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-86078",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-679f-58pq-4v2c",
+        "https://github.com/n8n-io/n8n/releases/tag/n8n@2.38.2"
+      ],
+      "reason": "NVD lastModified 2026-09-11 and CVE Services September 8-9 evidence were already captured by the September 13 topic collector; no newer same-leaf visible update was found."
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/anthropic-claude-misuse-disruption-report.md",
+      "sources_checked": [
+        "https://www.anthropic.com/threat-intelligence-report-september-2026",
+        "https://www.anthropic.com/threat-intelligence",
+        "https://www.theguardian.com/world/2026/sep/12/ukraine-war-briefing-russian-developers-used-ai-to-build-kamikaze-attack-drone-software-anthropic-says",
+        "https://apnews.com/article/00266dca90e4f8853f669648998d3bda"
+      ],
+      "reason": "Anthropic threat-intelligence and press sources were already captured by the September 13 topic collector; the September 15 topic collector could not verify a newer stable canonical update, so no duplicate leaf-watch capture was made."
+    }
+  ],
+  "counts": {
+    "selected_leaf_count": 15,
+    "qualifying_update_count": 9,
+    "qualifying_leaf_count": 7,
+    "exclusion_count": 8
+  },
+  "upstream_routing_summary": "Broad companies, products, frameworks, MCP servers, and development practices remain upstream-owned; this artifact keeps only same-leaf security metadata, affected boundaries, and control implications.",
+  "follow_up_notes": [
+    "Ingest should reconcile whether September 15 NVD/CVE metadata warrants wiki page maintenance beyond the already-created September 13-14 leaves.",
+    "NVD rate limiting occurred during collection; calls were paced and retried for the selected CVEs."
+  ]
+}

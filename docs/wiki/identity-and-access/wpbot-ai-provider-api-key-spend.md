@@ -13,6 +13,8 @@ The [September 13 topic collector source](../../../raw/processed/2026-09-13/ai-s
 
 The CVE and WPScan advisory say several unauthenticated AJAX actions lacked authorization or nonce checks while relaying prompts to configured AI providers. Attackers could make third-party AI provider API calls using the site's configured API keys and consume associated cost.
 
+The [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json) adds NVD's September 14 metadata, including Deferred status, CWE-284, and WPScan as the reference. That enriches taxonomy and provenance without changing the provider-key spend boundary.
+
 ## Security Impact
 
 - Threat: unauthenticated prompt relay can spend site-owned AI provider API keys and create provider-side abuse records.
@@ -25,7 +27,9 @@ The CVE and WPScan advisory say several unauthenticated AJAX actions lacked auth
 ## Authoritative Sources
 
 - [September 13 topic collector source](../../../raw/processed/2026-09-13/ai-security-wiki-topic-news-collector-2026-09-13T171540Z.json)
+- [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json)
 - [CVE-2026-87918 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-87918)
+- [NVD CVE-2026-87918 record](https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-87918)
 - [WPScan CVE-2026-87918 advisory](https://wpscan.com/vulnerability/d6b3745b-bda1-4734-b39c-75376477ba0a/)
 
 ## Related Code
@@ -53,3 +57,4 @@ The CVE and WPScan advisory say several unauthenticated AJAX actions lacked auth
 ## Maintenance Notes
 
 - Created on 2026-09-13 from the [September 13 topic collector](../../../raw/processed/2026-09-13/ai-security-wiki-topic-news-collector-2026-09-13T171540Z.json) after verifier correction split provider-key spend from chat-session disclosure.
+- Updated on 2026-09-16 with NVD Deferred/CWE metadata from the [September 16 leaf update watch](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json).

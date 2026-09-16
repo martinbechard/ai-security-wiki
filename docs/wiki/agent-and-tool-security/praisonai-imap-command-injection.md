@@ -13,6 +13,8 @@ The [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-s
 
 The CVE says `email_tools.py` interpolated LLM-controlled `from_addr`, `subject`, and `query` values directly into quoted IMAP `SEARCH` criteria. Quote, backslash, newline, or null characters could break out of the intended string data and inject IMAP command syntax.
 
+The [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json) adds NVD's September 15 metadata, including Deferred status and CWE-20/CWE-77 classifications. That enriches vulnerability taxonomy without changing the agent-email connector boundary.
+
 ## Security Impact
 
 - Threat: prompt-influenced email search parameters can alter IMAP command semantics and expose or manipulate mailbox data outside the intended query.
@@ -25,7 +27,9 @@ The CVE says `email_tools.py` interpolated LLM-controlled `from_addr`, `subject`
 ## Authoritative Sources
 
 - [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json)
+- [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json)
 - [CVE-2026-57130 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-57130)
+- [NVD CVE-2026-57130 record](https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57130)
 - [GitHub advisory GHSA-c969-5x3p-vq3v](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-c969-5x3p-vq3v)
 - [PraisonAI patch commit](https://github.com/MervinPraison/PraisonAI/commit/b4270173d4123fb1ee8910588f0896668ee21b59)
 - [PraisonAI 4.6.59 release](https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59)
@@ -55,3 +59,4 @@ The CVE says `email_tools.py` interpolated LLM-controlled `from_addr`, `subject`
 ## Maintenance Notes
 
 - Created on 2026-09-15 from the [September 14 topic collector](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json) as an agent-email connector injection leaf.
+- Updated on 2026-09-16 with NVD Deferred/CWE metadata from the [September 16 leaf update watch](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json).

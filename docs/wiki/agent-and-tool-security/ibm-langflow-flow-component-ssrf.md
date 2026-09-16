@@ -13,6 +13,8 @@ The [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-s
 
 The CVE says flow components lacked URL validation, allowing unauthenticated SSRF and unauthorized requests from the Langflow system. That can support internal network enumeration or access to internal-only services from a trusted runtime.
 
+The [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json) adds later CVE Services and NVD metadata from September 15. Both retain the Langflow OSS 1.0.0 through 1.10.2 affected range, CWE-918 classification, and IBM advisory reference, so they enrich provenance without changing the local boundary.
+
 ## Security Impact
 
 - Threat: unauthenticated users can make Langflow issue server-side requests into internal networks or protected service surfaces.
@@ -25,7 +27,9 @@ The CVE says flow components lacked URL validation, allowing unauthenticated SSR
 ## Authoritative Sources
 
 - [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json)
+- [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json)
 - [CVE-2026-12765 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-12765)
+- [NVD CVE-2026-12765 record](https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-12765)
 - [IBM support advisory](https://www.ibm.com/support/pages/node/7285644)
 
 ## Related Code
@@ -54,3 +58,4 @@ The CVE says flow components lacked URL validation, allowing unauthenticated SSR
 ## Maintenance Notes
 
 - Created on 2026-09-15 from the [September 14 topic collector](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json) as a flow-component egress-control leaf.
+- Updated on 2026-09-16 with CVE Services and NVD September 15 metadata from the [September 16 leaf update watch](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json).

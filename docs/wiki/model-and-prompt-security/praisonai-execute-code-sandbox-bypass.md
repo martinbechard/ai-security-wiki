@@ -13,6 +13,8 @@ The [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-s
 
 The CVE, GitHub advisory, patch, and release evidence say `execute_code` sandbox mode could assemble blocklisted dunder names at runtime and use `str.format` or `str.format_map` dotted-field access to bypass `_safe_getattr`. The weakness matters because LLM-controlled code snippets can reconstruct forbidden object access paths even when string filters block obvious tokens.
 
+The [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json) adds NVD's September 15 metadata, including Deferred status and CWE-693. That enriches taxonomy without changing the prompt-to-code sandbox boundary.
+
 ## Security Impact
 
 - Threat: prompt-influenced code can bypass syntactic sandbox filters and regain unsafe Python object access.
@@ -25,7 +27,9 @@ The CVE, GitHub advisory, patch, and release evidence say `execute_code` sandbox
 ## Authoritative Sources
 
 - [September 14 topic collector source](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json)
+- [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json)
 - [CVE-2026-57120 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-57120)
+- [NVD CVE-2026-57120 record](https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-57120)
 - [GitHub advisory GHSA-pv2j-rghr-v5r9](https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pv2j-rghr-v5r9)
 - [PraisonAI patch commit](https://github.com/MervinPraison/PraisonAI/commit/2adfe7e8323f6deec66925cf15a885b6238895e9)
 - [PraisonAI 4.6.59 release](https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.59)
@@ -55,3 +59,4 @@ The CVE, GitHub advisory, patch, and release evidence say `execute_code` sandbox
 ## Maintenance Notes
 
 - Created on 2026-09-15 from the [September 14 topic collector](../../../raw/processed/2026-09-14/ai-security-wiki-topic-news-collector-2026-09-14T233124Z.json) as a prompt-to-code sandbox bypass leaf.
+- Updated on 2026-09-16 with NVD Deferred/CWE metadata from the [September 16 leaf update watch](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json).
