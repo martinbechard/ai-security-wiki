@@ -9,16 +9,18 @@ tags: ["data-and-privacy", "infrastructure-and-supply-chain"]
 
 ## Current Understanding
 
-The [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) records [CVE-2026-84377](https://nvd.nist.gov/vuln/detail/CVE-2026-84377) for LiteLLM proxy versions before 1.88.6 and 1.96.2. Broad LiteLLM routing and provider-selection practice remains upstream; this page owns the local data boundary where configured provider credentials can be forwarded to an attacker-controlled endpoint.
+The [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) records [CVE-2026-84377](https://nvd.nist.gov/vuln/detail/CVE-2026-84377) for LiteLLM proxy versions before 1.88.6 and 1.96.2. Broad [LiteLLM](../../../upstream-ai-wiki/developer-tools/litellm.md) routing and provider-selection practice remains upstream; this page owns the local data boundary where configured provider credentials can be forwarded to an attacker-controlled endpoint.
 
 [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-84377) says any authenticated proxy user can redirect outbound provider calls by controlling routing fields such as `api_base`, `base_url`, `model_list`, `fallbacks`, and `litellm_credential_name`, including nested, path, and bracket-notation form-data variants. The issue is a credential-disclosure flaw because the proxy sends configured provider secrets while following attacker-selected routing.
 
 The [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json) adds [direct CVE update evidence](https://cveawg.mitre.org/api/cve/CVE-2026-84377) and the vendor advisory reference [GHSA-3cv6-jpf6-8222](https://github.com/BerriAI/litellm/security/advisories/GHSA-3cv6-jpf6-8222). It resolves the earlier fixed-version uncertainty enough to keep the split boundary: both pre-1.88.6 and pre-1.96.2 proxy lines are affected until the matching fixed train is deployed.
 
+The [September 16 topic collector source](../../../raw/processed/2026-09-16/ai-security-wiki-topic-news-collector-2026-09-16T233115Z.json) adds [CVE-2026-59823](https://cveawg.mitre.org/api/cve/CVE-2026-59823), a related but narrower LiteLLM proxy finding affecting versions before 1.83.9. In that record, authenticated callers with a valid virtual key could place `api_base` inside nested `user_config`, bypassing checks that blocked top-level `api_base` and `base_url`, and redirect outbound router requests to attacker-selected internal or external hosts. This reinforces the same local control: every parsed routing field, including nested configuration, must be evaluated before configured provider credentials or gateway network authority are used.
+
 ## Security Impact
 
 - Threat: authenticated proxy users can exfiltrate provider credentials by steering model calls to attacker-controlled destinations.
-- Affected boundary: LiteLLM proxy before 1.88.6 and 1.96.2; configured provider credentials; OpenAI-compatible routing fields.
+- Affected boundary: LiteLLM proxy before 1.83.9 for nested `user_config.api_base` request redirection and before 1.88.6 and 1.96.2 for broader provider-credential routing leakage; configured provider credentials; OpenAI-compatible routing fields.
 - Exploit or incident status: public NVD vulnerability record; no local exploitation evidence is recorded.
 - Mitigation state: upgrade to fixed versions, deny per-request provider base overrides unless explicitly trusted, and audit nested routing fields.
 - Confidence: high for NVD/CVE publication, affected fields, and vendor advisory reference; medium for local deployment exposure until configured LiteLLM versions and routing overrides are audited.
@@ -34,7 +36,9 @@ The [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-
 
 - [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json)
 - [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json)
+- [September 16 topic collector source](../../../raw/processed/2026-09-16/ai-security-wiki-topic-news-collector-2026-09-16T233115Z.json)
 - [NVD CVE-2026-84377](https://nvd.nist.gov/vuln/detail/CVE-2026-84377)
+- [CVE-2026-59823 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-59823)
 - [GitHub advisory GHSA-3cv6-jpf6-8222](https://github.com/BerriAI/litellm/security/advisories/GHSA-3cv6-jpf6-8222)
 
 ## Related Code
@@ -63,3 +67,4 @@ The [September 3 leaf update watch source](../../../raw/processed/2026-09-03/ai-
 
 - Created on 2026-09-02 from the [September 2 topic collector](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json) as a credential-routing leaf separate from the earlier LiteLLM PyPI compromise.
 - Updated on 2026-09-03 from the [September 3 leaf update watch](../../../raw/processed/2026-09-03/ai-security-wiki-leaf-update-watch-20260904T000442Z.json) with vendor advisory evidence and fixed-version split confirmation.
+- Updated on 2026-09-17 from the [September 16 topic collector](../../../raw/processed/2026-09-16/ai-security-wiki-topic-news-collector-2026-09-16T233115Z.json) with CVE-2026-59823 nested `user_config.api_base` request-redirection evidence.

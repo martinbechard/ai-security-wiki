@@ -11,7 +11,9 @@ tags: ["agent-and-tool-security", "infrastructure-and-supply-chain"]
 
 The [September 15 topic collector source](../../../raw/processed/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json) records [CVE-2026-55887](https://cveawg.mitre.org/api/cve/CVE-2026-55887) for Docker MCP Gateway 0.21.0 through versions before 0.42.2. Broad Docker and MCP Gateway product coverage belongs upstream; this page owns the local image-metadata trust and agent-host execution boundary.
 
-The CVE and GitHub advisory say Docker MCP Gateway unmarshalled attacker-controlled OCI image-label YAML into a broad server configuration structure. Runtime fields such as volumes, user, command, extra hosts, allow-hosts, network, environment, remote endpoint, OAuth, secrets, long-lived mode, and policy could reach container launch behavior. A malicious MCP image could therefore reshape `docker run` arguments and cross from tool catalog metadata into host-impacting execution.
+The CVE and [GitHub advisory](https://github.com/docker/mcp-gateway/security/advisories/GHSA-r2xf-7jw5-pjg6) say Docker MCP Gateway unmarshalled attacker-controlled OCI image-label YAML into a broad server configuration structure. Runtime fields such as volumes, user, command, extra hosts, allow-hosts, network, environment, remote endpoint, OAuth, secrets, long-lived mode, and policy could reach container launch behavior. A malicious MCP image could therefore reshape `docker run` arguments and cross from tool catalog metadata into host-impacting execution.
+
+The [September 17 leaf update watch source](../../../raw/processed/2026-09-17/ai-security-wiki-leaf-update-watch-20260917T000423Z.json) adds the direct CVE Services publication timestamp and confirms the affected range as 0.21.0 through before 0.42.2, with 0.42.2 identified as patched.
 
 ## Security Impact
 
@@ -25,6 +27,7 @@ The CVE and GitHub advisory say Docker MCP Gateway unmarshalled attacker-control
 ## Authoritative Sources
 
 - [September 15 topic collector source](../../../raw/processed/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json)
+- [September 17 leaf update watch source](../../../raw/processed/2026-09-17/ai-security-wiki-leaf-update-watch-20260917T000423Z.json)
 - [CVE-2026-55887 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-55887)
 - [GitHub advisory GHSA-r2xf-7jw5-pjg6](https://github.com/docker/mcp-gateway/security/advisories/GHSA-r2xf-7jw5-pjg6)
 - [Docker MCP Gateway 0.42.2 release](https://github.com/docker/mcp-gateway/releases/tag/v0.42.2)
@@ -56,3 +59,4 @@ The CVE and GitHub advisory say Docker MCP Gateway unmarshalled attacker-control
 ## Maintenance Notes
 
 - Created on 2026-09-16 from the [September 15 topic collector](../../../raw/processed/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json) as an MCP image-metadata trust-boundary leaf.
+- Updated on 2026-09-17 from the [September 17 leaf update watch](../../../raw/processed/2026-09-17/ai-security-wiki-leaf-update-watch-20260917T000423Z.json) with direct CVE Services publication metadata and patched-version confirmation.

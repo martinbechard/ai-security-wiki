@@ -53,6 +53,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [MCPHub OAuth code redemption bypass](mcphub-oauth-code-redemption-bypass.md)
 - [n8n Instance AI credential-origin confusion](n8n-instance-ai-credential-origin-confusion.md)
 - [IBM Langflow MCP Tools cache isolation](ibm-langflow-mcp-tools-cache-isolation.md)
+- [macOS secure-prompt clickjacking bypass](macos-secure-prompt-clickjacking-bypass.md)
 
 ## Authoritative Sources
 
@@ -89,6 +90,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - Updated on 2026-09-08 with Open WebUI OAuth/chat-channel authorization and Flowise destructive-flow authorization leaves.
 - Updated on 2026-09-13 with ContextForge default credentials, Flowise credential IDOR, WPBot provider-key spend, Cheshire Cat AI default identity, MCPHub OAuth, n8n credential-origin, ArcadeDB, and NIST identity-control updates.
 - Updated on 2026-09-15 with PraisonAI Jobs API unauthenticated execution, IBM Langflow MCP Tools cache isolation, and watcher metadata for Flowise, WPBot, and Cheshire Cat AI leaves.
+- Updated on 2026-09-17 with the macOS secure-prompt clickjacking bypass leaf.
 - Updated on 2026-09-01 with Kibana AI Assistant Knowledge Base cross-realm authorization, Support Genix AI Chatbot admin takeover, and Synthetic Insider Threat Matrix evidence.
 - Updated on 2026-08-31 with diboot AI Session authorization bypass and ash_ai/MCPHub identity-boundary routing.
 - Updated on 2026-08-29 with FastGPT channel authorization, VoltAgent memory ownership, Gitingest token disclosure, and watcher provenance for Telnyx.

@@ -17,6 +17,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 - [AI-generated OT exploit scripts](ai-generated-ot-exploit-scripts.md)
 - [AI-themed installer malware lures](ai-themed-installer-malware-lures.md)
 - [Anthropic Claude misuse disruption report](anthropic-claude-misuse-disruption-report.md)
+- [PhantomRaven likely LLM-generated npm stealer](phantomraven-llm-generated-npm-stealer.md)
 
 ## Authoritative Sources
 
@@ -52,3 +53,4 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 - Updated on 2026-08-21 with AI-generated OT exploit-script and AI-themed installer malware-lure leaves.
 - Updated on 2026-08-22 with watcher provenance for AI-generated OT exploit scripts and AI-themed installer malware lures.
 - Updated on 2026-09-13 with Anthropic's Claude misuse disruption report as threat-intelligence evidence.
+- Updated on 2026-09-17 with PhantomRaven as a likely LLM-generated npm information-stealer supply-chain threat.

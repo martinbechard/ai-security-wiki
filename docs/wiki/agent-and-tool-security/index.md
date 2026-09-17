@@ -141,6 +141,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Bifrost MCP stdio registration RCE](bifrost-mcp-stdio-registration-rce.md)
 - [Docker MCP Gateway OCI label argument injection](docker-mcp-gateway-oci-label-argument-injection.md)
 - [mcp-searxng web_url_read SSRF](mcp-searxng-web-url-read-ssrf.md)
+- [Contentful MCP Server network option injection](contentful-mcp-server-network-option-injection.md)
+- [MCP Memory Keeper context import path traversal](mcp-memory-keeper-context-import-path-traversal.md)
 - [IBM Langflow flow component SSRF](ibm-langflow-flow-component-ssrf.md)
 
 ## Authoritative Sources
@@ -179,6 +181,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Updated on 2026-09-08 with focused Open WebUI and Flowise security-boundary leaves plus Agno and PraisonAI NVD update provenance.
 - Updated on 2026-09-13 with split CodeWhale, Flowise CSV Agent, knowns `code.find`, OmniRoute ACP, IBM Langflow, n8n Instance AI, and PyCharm advisory updates.
 - Updated on 2026-09-16 with Docker MCP Gateway image-label runtime argument injection, mcp-searxng `web_url_read` SSRF, and watcher metadata enrichment for IBM Langflow and PraisonAI leaves.
+- Updated on 2026-09-17 with Contentful MCP Server network-option injection, MCP Memory Keeper context-import path traversal, and watcher metadata enrichment for Docker MCP Gateway and mcp-searxng leaves.
 - Updated on 2026-09-15 with Bifrost MCP stdio registration RCE, PraisonAI IMAP command injection, IBM Langflow flow-component SSRF, and Langflow scanner-bypass enrichment.
 - Updated on 2026-09-02 with LiteLLM MCP KEV authentication bypass, CowAgent tool DoS, and aichat API memory-allocation leaves.
 - Updated on 2026-09-01 with Codex PowerShell approval bypass, Kibana AI feature DoS, runZero Platform MCP authorization, and hermes-agent ACP/MCP availability leaves.

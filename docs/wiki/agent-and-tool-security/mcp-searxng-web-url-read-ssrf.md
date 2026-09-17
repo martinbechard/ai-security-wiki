@@ -11,7 +11,9 @@ tags: ["agent-and-tool-security", "data-and-privacy"]
 
 The [September 15 topic collector source](../../../raw/processed/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json) records [CVE-2026-58485](https://cveawg.mitre.org/api/cve/CVE-2026-58485) for mcp-searxng before 1.7.1. Broad MCP server catalog and SearXNG coverage belongs upstream; this page owns the local web-reading tool, DNS resolution, and prompt-injection-to-private-network boundary.
 
-The CVE says `web_url_read` validated only the literal hostname before the fetch layer performed operating-system DNS resolution. An attacker-controlled hostname can appear public during validation but resolve to private, loopback, link-local, or cloud metadata addresses at fetch time. The GitHub advisory also records deployment differences: default HTTP mode lacks authentication, while STDIO exploitation can occur when an AI agent is induced to call the tool with attacker-controlled URLs.
+The CVE says `web_url_read` validated only the literal hostname before the fetch layer performed operating-system DNS resolution. An attacker-controlled hostname can appear public during validation but resolve to private, loopback, link-local, or cloud metadata addresses at fetch time. The [GitHub advisory](https://github.com/ihor-sokoliuk/mcp-searxng/security/advisories/GHSA-mrvx-jmjw-vggc) also records deployment differences: default HTTP mode lacks authentication, while STDIO exploitation can occur when an AI agent is induced to call the tool with attacker-controlled URLs.
+
+The [September 17 leaf update watch source](../../../raw/processed/2026-09-17/ai-security-wiki-leaf-update-watch-20260917T000423Z.json) adds the direct CVE Services publication timestamp and confirms affected versions through 1.6.0, with 1.7.1 identified as the patched version.
 
 ## Security Impact
 
@@ -25,6 +27,7 @@ The CVE says `web_url_read` validated only the literal hostname before the fetch
 ## Authoritative Sources
 
 - [September 15 topic collector source](../../../raw/processed/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json)
+- [September 17 leaf update watch source](../../../raw/processed/2026-09-17/ai-security-wiki-leaf-update-watch-20260917T000423Z.json)
 - [CVE-2026-58485 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-58485)
 - [GitHub advisory GHSA-mrvx-jmjw-vggc](https://github.com/ihor-sokoliuk/mcp-searxng/security/advisories/GHSA-mrvx-jmjw-vggc)
 - [mcp-searxng patch pull request](https://github.com/ihor-sokoliuk/mcp-searxng/pull/120)
@@ -56,3 +59,4 @@ The CVE says `web_url_read` validated only the literal hostname before the fetch
 ## Maintenance Notes
 
 - Created on 2026-09-16 from the [September 15 topic collector](../../../raw/processed/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json) as an MCP web-reading SSRF leaf.
+- Updated on 2026-09-17 from the [September 17 leaf update watch](../../../raw/processed/2026-09-17/ai-security-wiki-leaf-update-watch-20260917T000423Z.json) with direct CVE Services publication metadata and patched-version confirmation.

@@ -1,0 +1,339 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp_utc": "2026-09-16T23:31:15Z",
+  "collector_identity": "Northstar",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "cutoff_window": {
+    "start_utc": "2026-09-14T23:31:15Z",
+    "end_utc": "2026-09-16T23:31:15Z",
+    "rule": "Include only public items published or visibly updated within the last 2 days relative to run time; exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "searched_topics": [
+    "AI threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_security_wiki": "Owns AI-specific security findings, affected boundaries, mitigations, assurance implications, and incident lessons.",
+    "upstream_ai_wiki": "Owns broad AI companies, models, products, frameworks, MCP servers, developer tools, and general techniques.",
+    "upstream_ai_dev_wiki": "Owns general AI-assisted development practices, coding-agent workflows, verification patterns, adoption practices, and development governance.",
+    "routing_sources_checked": [
+      "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/federation.md",
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ]
+  },
+  "collection_methods": [
+    "Read automation memory before collection to avoid repeating recent focus.",
+    "Checked ai-security-wiki federation rules and upstream ai-wiki and ai-dev-wiki topic indexes for routing context.",
+    "Ran paced NVD CVE API keyword searches over the exact lastModified window for AI, MCP, LLM, prompt, agent, LangChain, LiteLLM, Open WebUI, Flowise, Copilot, model, embedding, RAG, ChatGPT, Claude, and Gemini.",
+    "Fetched direct CVEAWG records and NVD records for selected CVEs to verify public timestamps, affected versions, descriptions, and reference URLs.",
+    "Used public web searches and direct source pages for in-window public incident/research candidates.",
+    "Searched raw, raw/processed, and docs/wiki locally for selected IDs before classifying findings as fresh collector output."
+  ],
+  "privacy_and_source_boundary": "Public web sources only. No private, proprietary, sensitive, PII, or company-internal local content was sent to an external service. docs/wiki was not edited.",
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-53957",
+      "title": "Contentful MCP Server exposes LLM-controlled network options in migration tools",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53957",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-53957"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-15T14:34:53.699Z",
+        "cveawg_date_updated": "2026-09-15T14:34:53.699Z",
+        "nvd_published": "2026-09-15T15:17:17.367",
+        "nvd_last_modified": "2026-09-15T15:17:17.367"
+      },
+      "factual_summary": "Contentful MCP Server before @contentful/mcp-server 1.7.19 and @contentful/mcp-tools 0.4.5 allowed export_space and import_space to pass LLM-controlled host, proxy, rawProxy, and insecure network options into Contentful Management API requests.",
+      "evidence_classification": "primary CVE record and NVD vulnerability record",
+      "affected_boundary_or_version": "Contentful MCP Server and @contentful/mcp-server before 1.7.19; @contentful/mcp-tools before 0.4.5; MCP migration tools and outbound Contentful Management API request boundary.",
+      "why_it_matters_for_ai_security": "Tool arguments generated or selected by an LLM can redirect server-side network requests and expose management tokens unless MCP tools separate model-controlled parameters from privileged client configuration.",
+      "named_entities": [
+        "Contentful",
+        "Contentful MCP Server",
+        "Model Context Protocol",
+        "CVE-2026-53957"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the LLM-controlled network-option boundary and MCP credential-risk implication in ai-security-wiki.",
+        "upstream_ai_wiki": "Contentful and broad MCP server/product context are upstream-owned if durable entity background is needed.",
+        "upstream_ai_dev_wiki": "General MCP migration workflow guidance belongs upstream only when not security-specific."
+      },
+      "confidence_notes": "High confidence: direct CVEAWG and NVD timestamps are inside the run window."
+    },
+    {
+      "id": "CVE-2026-91935",
+      "title": "Flowise chat-model baseURL validation gap can exfiltrate LLM provider keys",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91935",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-91935"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-15T15:17:58.325Z",
+        "cveawg_date_updated": "2026-09-15T15:17:58.325Z",
+        "nvd_published": "2026-09-15T16:17:44.867",
+        "nvd_last_modified": "2026-09-16T20:15:51.310"
+      },
+      "factual_summary": "Flowise before 3.1.4 failed to validate baseURL parameters in chat-model nodes, allowing authenticated users with chatflows:create or chatflows:update permissions to redirect requests to arbitrary hosts and exfiltrate LLM provider API keys.",
+      "evidence_classification": "primary CVE record and NVD vulnerability record",
+      "affected_boundary_or_version": "Flowise and flowise-components before 3.1.4; chat-model node request destination validation and provider credential boundary.",
+      "why_it_matters_for_ai_security": "Low-code LLM builders often hold provider credentials; redirectable model-node traffic can turn ordinary builder permissions into key exfiltration and internal-host access.",
+      "named_entities": [
+        "Flowise",
+        "FlowiseAI",
+        "LLM provider API keys",
+        "CVE-2026-91935"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the credential-exfiltration and model-node destination-control lesson in ai-security-wiki.",
+        "upstream_ai_wiki": "Flowise as a broad low-code LLM product/framework is upstream-owned for general background.",
+        "upstream_ai_dev_wiki": "General low-code LLM workflow usage belongs upstream unless framed as a security gate."
+      },
+      "confidence_notes": "High confidence: CVEAWG publication and NVD update are inside the exact run window."
+    },
+    {
+      "id": "CVE-2026-54561",
+      "title": "MCP Memory Keeper context_import allows path traversal into server-readable files",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54561",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-54561"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-15T16:32:01.307Z",
+        "cveawg_date_updated": "2026-09-15T17:28:58.028Z",
+        "nvd_published": "2026-09-15T17:17:21.220",
+        "nvd_last_modified": "2026-09-15T18:17:23.207"
+      },
+      "factual_summary": "MCP Memory Keeper before 0.13.0 passed caller-controlled filePath directly to fs.readFileSync in context_import without restricting it to an export directory, letting an MCP client or induced LLM agent use traversal or absolute paths to import files readable by the server process.",
+      "evidence_classification": "primary CVE record and NVD vulnerability record",
+      "affected_boundary_or_version": "mkreyman mcp-memory-keeper before 0.13.0; context_import file-read boundary.",
+      "why_it_matters_for_ai_security": "Persistent memory tools are high-risk agent context surfaces; unsafe import paths can leak local files into an agent session and then into downstream model/tool flows.",
+      "named_entities": [
+        "MCP Memory Keeper",
+        "Model Context Protocol",
+        "mkreyman",
+        "CVE-2026-54561"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the MCP memory-file boundary and induced-agent file-read implication in ai-security-wiki.",
+        "upstream_ai_wiki": "MCP Memory Keeper as a tool entity is upstream-owned if broad tool catalog context is needed.",
+        "upstream_ai_dev_wiki": "General memory-tool workflow guidance belongs upstream when not vulnerability-specific."
+      },
+      "confidence_notes": "High confidence: direct CVEAWG and NVD timestamps are inside the run window."
+    },
+    {
+      "id": "CVE-2026-59823",
+      "title": "LiteLLM nested user_config api_base bypass enables SSRF-style request redirection",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59823",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-59823"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-16T18:36:21.105Z",
+        "cveawg_date_updated": "2026-09-16T18:36:21.105Z",
+        "nvd_published": "2026-09-16T19:17:21.377",
+        "nvd_last_modified": "2026-09-16T19:17:21.377"
+      },
+      "factual_summary": "LiteLLM before 1.83.9 allowed an authenticated proxy caller with a valid virtual key to place api_base inside user_config, bypassing checks that blocked top-level api_base and base_url and redirecting outbound router requests to attacker-selected internal or external hosts.",
+      "evidence_classification": "primary CVE record and NVD vulnerability record",
+      "affected_boundary_or_version": "BerriAI LiteLLM before 1.83.9; proxy virtual-key request-body validation and outbound router destination boundary.",
+      "why_it_matters_for_ai_security": "AI gateways mediate credentials and model traffic; nested configuration fields need the same destination controls as top-level fields or authenticated tenants can pivot through the gateway.",
+      "named_entities": [
+        "LiteLLM",
+        "BerriAI",
+        "AI Gateway",
+        "CVE-2026-59823"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the AI-gateway request-redirection and virtual-key boundary finding in ai-security-wiki.",
+        "upstream_ai_wiki": "LiteLLM as a broad AI proxy/gateway entity is upstream-owned for general product context.",
+        "upstream_ai_dev_wiki": "General model-routing operations belong upstream unless tied to security controls."
+      },
+      "confidence_notes": "High confidence: direct CVEAWG and NVD publication timestamps are inside the run window."
+    },
+    {
+      "id": "CVE-2026-86911",
+      "title": "macOS Golden Gate fixes secure-prompt clickjacking bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86911",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-86911",
+        "https://www.cve.org/CVERecord?id=CVE-2026-86911"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T20:48:00.714Z",
+        "cveawg_date_updated": "2026-09-16T13:53:28.364Z",
+        "nvd_published": "2026-09-14T21:17:41.657",
+        "nvd_last_modified": "2026-09-16T14:17:12.247"
+      },
+      "factual_summary": "Apple fixed a macOS issue in Golden Gate 27 where a malicious app could bypass clickjacking protections for secure prompts; the CVE record says improved state management addressed the issue.",
+      "evidence_classification": "primary CVE record with NVD update corroboration",
+      "affected_boundary_or_version": "Apple macOS versions before Golden Gate 27; secure-prompt clickjacking protection boundary.",
+      "why_it_matters_for_ai_security": "Assistant and secure-prompt UI boundaries depend on clickjacking-resistant consent flows; local app bypasses can weaken human approval gates around sensitive actions.",
+      "named_entities": [
+        "Apple",
+        "macOS Golden Gate 27",
+        "secure prompts",
+        "CVE-2026-86911"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the secure-prompt approval-boundary implication in ai-security-wiki.",
+        "upstream_ai_wiki": "Broad Apple Intelligence/macOS product context belongs upstream if needed.",
+        "upstream_ai_dev_wiki": "General approval UX practice belongs upstream only when not tied to this security fix."
+      },
+      "confidence_notes": "Moderate-high confidence: original publication was before the exact window, but the primary CVE record and NVD both show visible in-window updates."
+    },
+    {
+      "id": "phantomraven-llm-generated-information-stealer-2026-09-15",
+      "title": "CrowdStrike reports LLM-generated PhantomRaven npm information stealer used for bug bounty hunting",
+      "source_urls": [
+        "https://www.crowdstrike.com/en-us/blog/phantomraven-llm-generated-information-stealer-for-bug-bounty-hunting/",
+        "https://www.axios.com/2026/09/15/crowdstrike-bug-bounty-ai-malware-research"
+      ],
+      "visible_dates": {
+        "crowdstrike_blog_date": "September 15, 2026",
+        "axios_article_date": "Sep 15, 2026"
+      },
+      "factual_summary": "CrowdStrike Counter Adversary Operations identified PhantomRaven, a JavaScript information stealer distributed through npm packages; CrowdStrike assesses with high confidence that the malware was likely LLM-generated based on verbose comments, placeholder code, and statistical token-analysis patterns. The malware collected system, runtime, Git/npm identity, and CI/CD environment data and exfiltrated it by HTTP GET and POST.",
+      "evidence_classification": "primary security research report with secondary reputable news corroboration",
+      "affected_boundary_or_version": "npm dependency installation and JavaScript package supply chain; malicious packages identified by CrowdStrike include transform-jsbi-to-bigint and sort-imports-es6-autofix.",
+      "why_it_matters_for_ai_security": "The report is a concrete public example of LLM-assisted malware lowering the barrier for software supply-chain compromise and credential collection from development and CI/CD environments.",
+      "named_entities": [
+        "CrowdStrike",
+        "PhantomRaven",
+        "npm",
+        "LLM-generated malware",
+        "Bugcrowd",
+        "Intigriti",
+        "YesWeHack",
+        "HackerOne"
+      ],
+      "upstream_routing": {
+        "local_action": "Keep the AI-assisted malware and development-supply-chain credential-risk implication in ai-security-wiki.",
+        "upstream_ai_wiki": "CrowdStrike company background and broad AI threat-intelligence product context are upstream-owned if needed.",
+        "upstream_ai_dev_wiki": "General developer package-install workflow guidance belongs upstream; security-specific npm malware lessons remain local."
+      },
+      "confidence_notes": "High confidence for the public report and date. Attribution to LLM generation remains CrowdStrike's assessment, not independently reproduced in this run."
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "CVE-2026-84601 Apple Intelligence security prompt bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84601",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-84601"
+      ],
+      "visible_dates": {
+        "cveawg_date_published": "2026-09-14T20:50:32.552Z",
+        "nvd_last_modified": "2026-09-16T15:30:29.527"
+      },
+      "reason": "Excluded from fresh topic-collector findings because local raw/processed and docs/wiki already contain this item from prior collection and leaf-watch ingest evidence."
+    },
+    {
+      "title": "OpenAI reports additional safety incidents and reporting rules",
+      "source_urls": [
+        "https://www.axios.com/2026/09/16/openai-testing-safety-incidents-disclosure",
+        "https://www.wsj.com/tech/ai/openai-shares-more-safety-incidents-and-adopts-new-rules-for-reporting-them-d1ea1b09"
+      ],
+      "visible_dates": {
+        "axios_visible_date": "Published today in search result",
+        "wsj_visible_date": "Published today in search result"
+      },
+      "reason": "Excluded because a stable primary OpenAI disclosure page for the specific new incident set was not located during this run; secondary reports should be rechecked against primary disclosure before ingest."
+    },
+    {
+      "title": "OpenAI AI policy window post",
+      "source_urls": [
+        "https://openai.com/index/ai-policy-window/"
+      ],
+      "visible_dates": {
+        "openai_visible_date": "September 9, 2026"
+      },
+      "reason": "Excluded as outside the exact two-day window despite containing relevant frontier-monitoring and incident-reporting governance text."
+    },
+    {
+      "title": "Google Home MCP integration for third-party AI agents",
+      "source_urls": [
+        "https://www.theverge.com/tech/996310/google-home-mcp-integration-agentic-ai-smart-home-price-release-date"
+      ],
+      "visible_dates": {
+        "verge_visible_date": "Published today in search result"
+      },
+      "reason": "Excluded because the accessible source is a product report with some safety controls, not a concrete vulnerability, incident, mitigation, patch, standard, or regulatory change."
+    },
+    {
+      "title": "General AI agent governance survey/reporting articles",
+      "source_urls": [
+        "https://www.itpro.com/software/development/agents-have-hit-the-mainstream-in-software-engineering-but-security-and-governance-practices-arent-evolving-fast-enough"
+      ],
+      "visible_dates": {
+        "search_result_visible_date": "5 days ago"
+      },
+      "reason": "Excluded as outside the exact two-day window and not tied to a directly verified primary security change."
+    },
+    {
+      "title": "NVD keyword results for older AI/MCP CVEs updated in bulk",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0"
+      ],
+      "visible_dates": {
+        "nvd_last_modified_window": "2026-09-14T23:31:15Z to 2026-09-16T23:31:15Z"
+      },
+      "reason": "Excluded individual older records when they appeared to be enrichment or bulk metadata churn without a fresh AI-security fact beyond already processed or stale publication evidence."
+    }
+  ],
+  "routing_notes": [
+    {
+      "topic": "MCP product and tool catalog context",
+      "classification": "upstream-owned entity context",
+      "route": "/Users/martinbechard/dev/ai-wiki",
+      "note": "Contentful MCP Server and MCP Memory Keeper broad entity descriptions belong upstream; this artifact keeps only security-specific tool-boundary findings."
+    },
+    {
+      "topic": "Flowise and LiteLLM general product/framework context",
+      "classification": "upstream-owned entity context",
+      "route": "/Users/martinbechard/dev/ai-wiki",
+      "note": "General product positioning belongs upstream; key-exfiltration, AI-gateway request redirection, and affected-version details remain local security evidence."
+    },
+    {
+      "topic": "Developer package-install and CI/CD workflow practice",
+      "classification": "shared with ai-dev-wiki",
+      "route": "/Users/martinbechard/dev/ai-dev-wiki",
+      "note": "General dependency workflow hardening belongs upstream; the LLM-generated malware and credential-exfiltration threat lesson remains local to ai-security-wiki."
+    },
+    {
+      "topic": "Apple Intelligence and macOS product background",
+      "classification": "upstream-owned product/entity context",
+      "route": "/Users/martinbechard/dev/ai-wiki",
+      "note": "Broad Apple Intelligence/macOS context is upstream-owned; secure-prompt approval-boundary implications remain local."
+    },
+    {
+      "topic": "OpenAI incident reporting and frontier governance",
+      "classification": "security governance candidate pending primary evidence",
+      "route": "/Users/martinbechard/dev/ai-security-wiki",
+      "note": "Recheck for a primary OpenAI incident disclosure or reporting framework page before ingesting the secondary September 16 incident reports."
+    }
+  ],
+  "follow_up_actions": [
+    "During ingest, recheck direct vendor/GitHub advisories for CVE-2026-53957, CVE-2026-91935, CVE-2026-54561, and CVE-2026-59823 for fixed-version and remediation wording.",
+    "Recheck whether OpenAI publishes a primary incident-disclosure/reporting-framework page corresponding to the September 16 secondary reports.",
+    "Deduplicate Apple secure-prompt content against the existing Apple Intelligence security prompt bypass page before creating any new local leaf.",
+    "If PhantomRaven is ingested, separate LLM-generated malware attribution from confirmed npm package behavior and keep CrowdStrike's attribution as sourced assessment."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": [
+    "NVD began returning HTTP 429 on later keyword searches for model, embedding, RAG, ChatGPT, Claude, and Gemini after earlier successful broad searches.",
+    "Stable primary OpenAI page for the September 16 secondary-reported incident set was not located during this run."
+  ]
+}

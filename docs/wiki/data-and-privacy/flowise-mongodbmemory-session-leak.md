@@ -11,7 +11,9 @@ tags: ["data-and-privacy", "identity-and-access"]
 
 The [September 15 topic collector source](../../../raw/processed/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json) records [CVE-2026-91937](https://cveawg.mitre.org/api/cve/CVE-2026-91937) for Flowise versions before 3.1.4. Broad Flowise product and workflow-builder coverage belongs upstream; this page owns the local chat-memory isolation and prompt/data confidentiality boundary.
 
-The CVE says Flowise failed to sanitize `overrideConfig.sessionId` before using it in MongoDBMemory queries. Unauthenticated attackers could pass MongoDB operator objects through the prediction API and read other users' chat-history records from the shared collection. The GitHub advisory describes the affected surface as public chatflows and recommends coercing session identifiers to strings before they reach MongoDB queries.
+The CVE says Flowise failed to sanitize `overrideConfig.sessionId` before using it in MongoDBMemory queries. Unauthenticated attackers could pass MongoDB operator objects through the prediction API and read other users' chat-history records from the shared collection. The [GitHub advisory](https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-wpvf-4vfx-rgxm) describes the affected surface as public chatflows and recommends coercing session identifiers to strings before they reach MongoDB queries.
+
+The [September 17 leaf update watch source](../../../raw/processed/2026-09-17/ai-security-wiki-leaf-update-watch-20260917T000423Z.json) adds the direct CVE Services publication timestamp and confirms the before-3.1.4 affected boundary for unsanitized `overrideConfig.sessionId` reaching MongoDBMemory queries.
 
 ## Security Impact
 
@@ -25,6 +27,7 @@ The CVE says Flowise failed to sanitize `overrideConfig.sessionId` before using 
 ## Authoritative Sources
 
 - [September 15 topic collector source](../../../raw/processed/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json)
+- [September 17 leaf update watch source](../../../raw/processed/2026-09-17/ai-security-wiki-leaf-update-watch-20260917T000423Z.json)
 - [CVE-2026-91937 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-91937)
 - [GitHub advisory GHSA-wpvf-4vfx-rgxm](https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-wpvf-4vfx-rgxm)
 - [VulnCheck Flowise NoSQL injection advisory](https://www.vulncheck.com/advisories/flowise-before-3.1.4-nosql-injection-via-sessionid)
@@ -55,3 +58,4 @@ The CVE says Flowise failed to sanitize `overrideConfig.sessionId` before using 
 ## Maintenance Notes
 
 - Created on 2026-09-16 from the [September 15 topic collector](../../../raw/processed/2026-09-15/ai-security-wiki-topic-news-collector-2026-09-15T233112Z.json) as a chat-memory data-isolation leaf.
+- Updated on 2026-09-17 from the [September 17 leaf update watch](../../../raw/processed/2026-09-17/ai-security-wiki-leaf-update-watch-20260917T000423Z.json) with direct CVE Services publication metadata for CVE-2026-91937.

@@ -1,0 +1,368 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "automation_name": "AI Security Wiki Leaf Update Watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-09-17T00:04:23Z",
+  "strict_window": {
+    "current_date": "2026-09-16",
+    "included_visible_dates": "2026-09-10 through 2026-09-16",
+    "excluded_boundary_policy": "Excluded stale, missing, ambiguous, future, header-only, and boundary-only dates."
+  },
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "selection_policy": "New or unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "leaf_universe_count": 345,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/docker-mcp-gateway-oci-label-argument-injection.md",
+    "docs/wiki/agent-and-tool-security/mcp-searxng-web-url-read-ssrf.md",
+    "docs/wiki/data-and-privacy/flowise-mongodbmemory-session-leak.md",
+    "docs/wiki/governance-and-compliance/uk-frontier-ai-oversight.md",
+    "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md",
+    "docs/wiki/infrastructure-and-supply-chain/huggingface-transformers-checkpoint-shard-file-read.md",
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-dataset-lineage-authorization-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-model-artifact-source-validation-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-webhook-test-ssrf.md",
+    "docs/wiki/model-and-prompt-security/context7-mcp-custom-instructions-prompt-injection.md",
+    "docs/wiki/model-and-prompt-security/vllm-derender-denial-of-service.md",
+    "docs/wiki/model-and-prompt-security/vllm-multimodal-input-boundary-vulnerabilities.md",
+    "docs/wiki/model-and-prompt-security/vllm-multimodal-media-ssrf-file-read.md",
+    "docs/wiki/testing-and-assurance/evaluation-platform-control-plane-rce.md",
+    "docs/wiki/threats-and-attacks/autonomous-ci-cd-exploit-adaptation.md"
+  ],
+  "counts": {
+    "selected_leaf_count": 15,
+    "qualifying_update_count": 4,
+    "qualifying_leaf_count": 4,
+    "exclusion_count": 11
+  },
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/docker-mcp-gateway-oci-label-argument-injection.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55887",
+        "https://github.com/docker/mcp-gateway/security/advisories/GHSA-r2xf-7jw5-pjg6",
+        "https://api.github.com/repos/docker/mcp-gateway/pulls/498",
+        "https://api.github.com/repos/docker/mcp-gateway/releases/tags/v0.42.2"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-searxng-web-url-read-ssrf.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-58485",
+        "https://github.com/ihor-sokoliuk/mcp-searxng/security/advisories/GHSA-mrvx-jmjw-vggc",
+        "https://api.github.com/repos/ihor-sokoliuk/mcp-searxng/pulls/120",
+        "https://api.github.com/repos/ihor-sokoliuk/mcp-searxng/releases/tags/v1.7.1"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/flowise-mongodbmemory-session-leak.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91937",
+        "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-wpvf-4vfx-rgxm",
+        "https://www.vulncheck.com/advisories/flowise-before-3.1.4-nosql-injection-via-sessionid"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/uk-frontier-ai-oversight.md",
+      "source_urls": [
+        "https://publications.parliament.uk/pa/jt5902/jtselect/jtrights/160/report.html",
+        "https://www.theguardian.com/technology/2026/sep/14/ai-regulation-anthropic-uk-human-rights-committee-mps-lords"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md",
+      "source_urls": [
+        "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/huggingface-transformers-checkpoint-shard-file-read.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-75104",
+        "https://github.com/advisories/GHSA-fv5v-hfxp-5379",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75104"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-dataset-lineage-authorization-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-69146",
+        "https://github.com/advisories/GHSA-3p64-6gvh-82v5",
+        "https://github.com/mlflow/mlflow/releases/tag/v3.15.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-model-artifact-source-validation-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-69148",
+        "https://github.com/advisories/GHSA-gqch-g4w5-7qcw",
+        "https://github.com/mlflow/mlflow/releases/tag/v3.15.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-webhook-test-ssrf.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-64849",
+        "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
+        "https://github.com/mlflow/mlflow/releases/tag/v3.15.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/context7-mcp-custom-instructions-prompt-injection.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-75130",
+        "https://github.com/advisories/GHSA-97r6-3rgm-v39r",
+        "https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75130"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-derender-denial-of-service.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-71486",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71486"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-multimodal-input-boundary-vulnerabilities.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-71486",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73560",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71486",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73560",
+        "https://www.strix.ai/cve/CVE-2026-73560"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-multimodal-media-ssrf-file-read.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73560",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73560",
+        "https://www.strix.ai/cve/CVE-2026-73560"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/evaluation-platform-control-plane-rce.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-27621",
+        "https://cveawg.mitre.org/api/cve/CVE-2025-27770",
+        "https://cveawg.mitre.org/api/cve/CVE-2025-27771",
+        "https://cveawg.mitre.org/api/cve/CVE-2025-27772",
+        "https://securitylab.github.com/advisories/GHSL-2024-198_GHSL-2024-199_Uptrain/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/autonomous-ci-cd-exploit-adaptation.md",
+      "source_urls": [
+        "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug",
+        "https://github.com/snowflakedb/snowflake-connector-net/pull/1218",
+        "https://github.com/snowflakedb/snowflake-connector-net/pull/1402"
+      ]
+    }
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/docker-mcp-gateway-oci-label-argument-injection.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55887",
+      "visible_date": "2026-09-15T15:45:36.420Z",
+      "date_type": "datePublished",
+      "evidence_classification": "disclosed vulnerability",
+      "summary": "CVE Services published CVE-2026-55887 for Docker MCP Gateway argument injection through attacker-controlled OCI image label YAML. Affected versions are 0.21.0 through before 0.42.2, with v0.42.2 identified as patched.",
+      "named_entities": [
+        "Docker",
+        "Docker MCP Gateway",
+        "CVE-2026-55887",
+        "GHSA-r2xf-7jw5-pjg6",
+        "OCI image labels"
+      ],
+      "affected_boundaries": [
+        "MCP server container launch arguments",
+        "host filesystem mount exposure",
+        "Docker runtime privilege boundary"
+      ],
+      "relevance": "Same local Docker MCP Gateway OCI-label argument-injection leaf; September 15 CVE publication adds in-window public vulnerability metadata.",
+      "upstream_routing": "Docker and MCP Gateway product background remains upstream; keep host-execution and tool-gateway boundary implications locally."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-searxng-web-url-read-ssrf.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-58485",
+      "visible_date": "2026-09-15T17:47:20.398Z",
+      "date_type": "datePublished",
+      "evidence_classification": "disclosed vulnerability",
+      "summary": "CVE Services published CVE-2026-58485 for mcp-searxng web_url_read SSRF via DNS-resolved private hostname bypass. The advisory maps affected versions through 1.6.0 and patched version 1.7.1.",
+      "named_entities": [
+        "mcp-searxng",
+        "CVE-2026-58485",
+        "GHSA-mrvx-jmjw-vggc",
+        "web_url_read",
+        "DNS rebinding"
+      ],
+      "affected_boundaries": [
+        "MCP URL-reading tool egress controls",
+        "private network and loopback service access",
+        "default HTTP fetch policy"
+      ],
+      "relevance": "Same local mcp-searxng SSRF leaf; September 15 CVE publication adds in-window public vulnerability metadata.",
+      "upstream_routing": "MCP server catalog/product background remains upstream; keep SSRF egress-control details locally."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/flowise-mongodbmemory-session-leak.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-91937",
+      "visible_date": "2026-09-15T15:17:59.687Z",
+      "date_type": "datePublished",
+      "evidence_classification": "disclosed vulnerability",
+      "summary": "CVE Services published CVE-2026-91937 for Flowise before 3.1.4, where unsanitized overrideConfig.sessionId reaches MongoDBMemory queries and can leak cross-session chat history.",
+      "named_entities": [
+        "Flowise",
+        "MongoDBMemory",
+        "CVE-2026-91937",
+        "GHSA-wpvf-4vfx-rgxm",
+        "VulnCheck"
+      ],
+      "affected_boundaries": [
+        "Prediction API memory override handling",
+        "MongoDB query predicate construction",
+        "cross-session chat-history confidentiality"
+      ],
+      "relevance": "Same local Flowise MongoDBMemory session-leak leaf; September 15 CVE publication adds in-window public vulnerability metadata.",
+      "upstream_routing": "Flowise product background remains upstream; keep memory-isolation and data-leak boundary locally."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/uk-frontier-ai-oversight.md",
+      "source_url": "https://publications.parliament.uk/pa/jt5902/jtselect/jtrights/160/report.html",
+      "visible_date": "2026-09-14",
+      "date_type": "Date Published",
+      "evidence_classification": "control change",
+      "summary": "The UK Joint Committee on Human Rights published a September 14 report recommending a dedicated AI Bill, a new regulator, bans for the most dangerous AI uses, risk-based regulation, stronger sanctions, and clearer accountability across the AI supply chain.",
+      "named_entities": [
+        "UK Joint Committee on Human Rights",
+        "UK Parliament",
+        "AI Bill",
+        "AI Security Institute",
+        "OpenAI",
+        "Anthropic"
+      ],
+      "affected_boundaries": [
+        "frontier AI oversight",
+        "human-rights and safety regulatory governance",
+        "independent oversight authority and enforcement powers"
+      ],
+      "relevance": "Same local UK frontier AI oversight leaf; September 14 report and Guardian coverage add in-window governance-control evidence.",
+      "upstream_routing": "General UK AI policy and company positioning route upstream; keep security-governance, oversight, and enforcement implications locally."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/incident-response/irregular-real-site-cyber-evaluation-scope-collision.md",
+      "sources_checked": [
+        "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/"
+      ],
+      "reason": "OpenAI page has a visible August 4, 2026 publication date and no visible in-window update for the Irregular incident leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/huggingface-transformers-checkpoint-shard-file-read.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-75104",
+        "https://github.com/advisories/GHSA-fv5v-hfxp-5379",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75104"
+      ],
+      "reason": "CVE Services dates for CVE-2026-75104 are August 17-18, 2026; no visible in-window same-leaf update found."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-dataset-lineage-authorization-bypass.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-69146",
+        "https://github.com/advisories/GHSA-3p64-6gvh-82v5",
+        "https://github.com/mlflow/mlflow/releases/tag/v3.15.0"
+      ],
+      "reason": "CVE Services dates for CVE-2026-69146 are August 17-18, 2026 and the MLflow 3.15.0 release is older; no visible in-window same-leaf update found."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-model-artifact-source-validation-bypass.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-69148",
+        "https://github.com/advisories/GHSA-gqch-g4w5-7qcw",
+        "https://github.com/mlflow/mlflow/releases/tag/v3.15.0"
+      ],
+      "reason": "CVE Services dates for CVE-2026-69148 are August 17-18, 2026 and the MLflow 3.15.0 release is older; no visible in-window same-leaf update found."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-webhook-test-ssrf.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-64849",
+        "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
+        "https://github.com/mlflow/mlflow/releases/tag/v3.15.0"
+      ],
+      "reason": "CVE Services dates for CVE-2026-64849 are August 17-20, 2026 and the MLflow 3.15.0 release is older; no visible in-window same-leaf update found."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/context7-mcp-custom-instructions-prompt-injection.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-75130",
+        "https://github.com/advisories/GHSA-97r6-3rgm-v39r",
+        "https://noma.security/blog/contextcrush-context7-the-mcp-server-vulnerability",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75130"
+      ],
+      "reason": "CVE Services dates for CVE-2026-75130 are August 18-19, 2026; no visible in-window same-leaf update found."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-derender-denial-of-service.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-71486",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71486"
+      ],
+      "reason": "CVE Services dates for CVE-2026-71486 are August 17-18, 2026; no visible in-window same-leaf update found."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-multimodal-input-boundary-vulnerabilities.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-71486",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73560",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71486",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73560",
+        "https://www.strix.ai/cve/CVE-2026-73560"
+      ],
+      "reason": "CVE Services dates for CVE-2026-71486 and CVE-2026-73560 are August 17-18, 2026; no visible in-window same-leaf update found."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-multimodal-media-ssrf-file-read.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73560",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73560",
+        "https://www.strix.ai/cve/CVE-2026-73560"
+      ],
+      "reason": "CVE Services dates for CVE-2026-73560 are August 17-18, 2026; no visible in-window same-leaf update found."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/evaluation-platform-control-plane-rce.md",
+      "sources_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-27621",
+        "https://cveawg.mitre.org/api/cve/CVE-2025-27770",
+        "https://cveawg.mitre.org/api/cve/CVE-2025-27771",
+        "https://cveawg.mitre.org/api/cve/CVE-2025-27772",
+        "https://securitylab.github.com/advisories/GHSL-2024-198_GHSL-2024-199_Uptrain/"
+      ],
+      "reason": "UpTrain CVE Services publication/update dates are August 17-18, 2026; no visible in-window same-leaf update found."
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/autonomous-ci-cd-exploit-adaptation.md",
+      "sources_checked": [
+        "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug",
+        "https://github.com/snowflakedb/snowflake-connector-net/pull/1218",
+        "https://github.com/snowflakedb/snowflake-connector-net/pull/1402"
+      ],
+      "reason": "Wiz Red Agent article has a visible August 17, 2026 publication/update date; GitHub PR remediation evidence is June 2026, so no visible in-window same-leaf update found."
+    }
+  ],
+  "upstream_routing_summary": "Broad companies, products, frameworks, MCP servers, and general AI policy context remain upstream-owned; this artifact keeps only same-leaf security metadata, affected boundaries, controls, and routing notes.",
+  "follow_up_notes": "Ingest should reconcile the three September 15 CVE publications plus the September 14 UK frontier oversight report with existing local leaves. Do not duplicate today's topic collector routing notes for broad OpenAI/frontier governance outside same-leaf security implications."
+}

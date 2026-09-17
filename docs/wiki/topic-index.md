@@ -135,6 +135,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md](agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md)
 - [agent-and-tool-security/docker-mcp-gateway-oci-label-argument-injection.md](agent-and-tool-security/docker-mcp-gateway-oci-label-argument-injection.md)
 - [agent-and-tool-security/mcp-searxng-web-url-read-ssrf.md](agent-and-tool-security/mcp-searxng-web-url-read-ssrf.md)
+- [agent-and-tool-security/contentful-mcp-server-network-option-injection.md](agent-and-tool-security/contentful-mcp-server-network-option-injection.md)
+- [agent-and-tool-security/mcp-memory-keeper-context-import-path-traversal.md](agent-and-tool-security/mcp-memory-keeper-context-import-path-traversal.md)
 - [agent-and-tool-security/praisonai-imap-command-injection.md](agent-and-tool-security/praisonai-imap-command-injection.md)
 - [agent-and-tool-security/ibm-langflow-flow-component-ssrf.md](agent-and-tool-security/ibm-langflow-flow-component-ssrf.md)
 - [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
@@ -169,6 +171,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [threats-and-attacks/ai-generated-ot-exploit-scripts.md](threats-and-attacks/ai-generated-ot-exploit-scripts.md)
 - [threats-and-attacks/ai-themed-installer-malware-lures.md](threats-and-attacks/ai-themed-installer-malware-lures.md)
 - [threats-and-attacks/anthropic-claude-misuse-disruption-report.md](threats-and-attacks/anthropic-claude-misuse-disruption-report.md)
+- [threats-and-attacks/phantomraven-llm-generated-npm-stealer.md](threats-and-attacks/phantomraven-llm-generated-npm-stealer.md)
 - [data-and-privacy](data-and-privacy/index.md)
 - [data-and-privacy/next-ai-draw-io-provider-disclosure.md](data-and-privacy/next-ai-draw-io-provider-disclosure.md)
 - [data-and-privacy/ai-provider-override-trust-boundaries.md](data-and-privacy/ai-provider-override-trust-boundaries.md)
@@ -195,6 +198,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [data-and-privacy/llmware-collection-filter-sql-injection.md](data-and-privacy/llmware-collection-filter-sql-injection.md)
 - [data-and-privacy/open-webui-knowledge-object-access-control.md](data-and-privacy/open-webui-knowledge-object-access-control.md)
 - [data-and-privacy/flowise-mongodbmemory-session-leak.md](data-and-privacy/flowise-mongodbmemory-session-leak.md)
+- [data-and-privacy/flowise-chat-model-baseurl-key-exfiltration.md](data-and-privacy/flowise-chat-model-baseurl-key-exfiltration.md)
 - [identity-and-access/flowise-node-load-method-credential-idor.md](identity-and-access/flowise-node-load-method-credential-idor.md)
 - [identity-and-access/wpbot-ai-provider-api-key-spend.md](identity-and-access/wpbot-ai-provider-api-key-spend.md)
 - [data-and-privacy/wpbot-chat-session-contact-disclosure.md](data-and-privacy/wpbot-chat-session-contact-disclosure.md)
@@ -241,6 +245,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/n8n-instance-ai-credential-origin-confusion.md](identity-and-access/n8n-instance-ai-credential-origin-confusion.md)
 - [identity-and-access/praisonai-jobs-api-unauthenticated-execution.md](identity-and-access/praisonai-jobs-api-unauthenticated-execution.md)
 - [identity-and-access/ibm-langflow-mcp-tools-cache-isolation.md](identity-and-access/ibm-langflow-mcp-tools-cache-isolation.md)
+- [identity-and-access/macos-secure-prompt-clickjacking-bypass.md](identity-and-access/macos-secure-prompt-clickjacking-bypass.md)
 - [infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md](infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md)
 - [infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md](infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md)
 - [infrastructure-and-supply-chain](infrastructure-and-supply-chain/index.md)
@@ -381,6 +386,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - Updated on 2026-09-08 with focused Open WebUI, Flowise, llmware, and ASCII smuggling leaves plus Agno and PraisonAI evidence updates.
 - Updated on 2026-09-13 with Anthropic threat intelligence, OmniRoute, knowns, split CodeWhale, IBM Langflow/ContextForge, Flowise, WPBot, n8n, Cheshire Cat AI, MCPHub, RubyGems, and watcher evidence updates.
 - Updated on 2026-09-16 with Docker MCP Gateway, mcp-searxng, Flowise MongoDBMemory, UK frontier AI oversight, and watcher metadata security leaves.
+- Updated on 2026-09-17 with Contentful MCP Server, MCP Memory Keeper, Flowise chat-model baseURL, LiteLLM nested-routing, macOS secure-prompt, PhantomRaven, and watcher metadata security leaves.
 - Updated on 2026-09-15 with Bifrost, LightLLM, PraisonAI, IBM Langflow, Apple Intelligence, and watcher metadata security leaves.
 - Updated on 2026-09-01 with September 1 topic and watcher ingest for Astra release gates, Codex approval/Git execution boundaries, model-artifact supply-chain flaws, Kibana AI feature authorization and DoS, runZero MCP authorization, hermes-agent ACP/MCP DoS, Support Genix AI Chatbot admin takeover, and watcher provenance.
 - Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.
