@@ -16,6 +16,7 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 - [Meta Irregular third-party evaluation scope failure](meta-irregular-third-party-evaluation-scope-failure.md)
 - [SAFE AI incident sharing guidance](safe-ai-incident-sharing-guidance.md)
 - [RubyGems spam-publishing agent attribution](rubygems-spam-publishing-agent-attribution.md)
+- [Model misalignment reporting framework](model-misalignment-reporting-framework.md)
 
 ## Authoritative Sources
 
@@ -48,3 +49,4 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 - Separate public incident facts from inference and avoid collecting private incident material through public automations.
 - Updated on 2026-09-06 with Anthropic remediation-follow-up evidence and OpenAI wiki-incident disclosure-framework reporting.
 - Updated on 2026-09-13 with RubyGems spam-publishing campaign attribution-conflict coverage and AISI primary-page provenance.
+- Updated on 2026-09-18 with OpenAI model-misalignment reporting framework incident-disclosure evidence.

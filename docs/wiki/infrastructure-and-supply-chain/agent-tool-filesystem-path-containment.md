@@ -25,6 +25,8 @@ The [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-s
 
 The [MCP Atlassian Confluence attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md) advisory adds the same rule for MCP attachment uploads: a client-supplied path must be validated before the server reads and uploads it to a SaaS destination.
 
+The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) adds three same-rule examples: [AI Agent Automation file-step path traversal](ai-agent-automation-file-step-path-traversal.md) for authenticated workflow file steps, [MCPVault recursive metadata path filtering](../agent-and-tool-security/mcpvault-recursive-metadata-path-filtering.md) for nested `.git`, `.obsidian`, and `node_modules` directories, and [atomic-agents-stack dashboard path traversal](atomic-agents-stack-dashboard-path-traversal.md) for dashboard reads outside an `agents_root`.
+
 ## Control Implications
 
 - Resolve paths against an explicit base directory and verify the result remains inside that base before read, write, copy, export, or restore.
@@ -34,6 +36,8 @@ The [MCP Atlassian Confluence attachment file read](../agent-and-tool-security/m
 - Test traversal, absolute-path, symlink, and cross-project cases for every file-capable agent tool.
 - Treat manifests, restore records, and backup metadata as untrusted input; validate derived paths before deletion as strictly as before reads or writes.
 - Treat attachment, export, and upload tools as file-read boundaries when a model, client, ticket, page, or alert can influence the source path.
+- Apply deny-list path rules recursively, not only at the root; nested repository and note metadata directories are sensitive even when the top-level directory is allowed.
+- Treat agent dashboards and workflow file steps as workspace-containment boundaries when they render, read, or write files under an agent root.
 
 ## Authoritative Sources
 
@@ -44,6 +48,10 @@ The [MCP Atlassian Confluence attachment file read](../agent-and-tool-security/m
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
 - [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json)
 - [MCP Atlassian Confluence attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md)
+- [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json)
+- [AI Agent Automation file-step path traversal](ai-agent-automation-file-step-path-traversal.md)
+- [MCPVault recursive metadata path filtering](../agent-and-tool-security/mcpvault-recursive-metadata-path-filtering.md)
+- [atomic-agents-stack dashboard path traversal](atomic-agents-stack-dashboard-path-traversal.md)
 
 ## Related Code
 
@@ -70,8 +78,10 @@ The [MCP Atlassian Confluence attachment file read](../agent-and-tool-security/m
 ## Open Questions
 
 - Which local MCP clients expose user-visible consent metadata for file writes outside an expected base directory?
+- Which agent dashboards and workflow file tools resolve symlinks and nested metadata paths before authorization?
 
 ## Maintenance Notes
 
 - Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) with post-join containment evidence, the [July 25 topic news collector](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) with prefix-check and backup-manifest deletion evidence, and the [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) with adjacent Mondoo coverage.
 - Updated on 2026-08-13 with the [MCP Atlassian Confluence attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md) advisory as MCP upload-path containment evidence.
+- Updated on 2026-09-18 from the [September 17 topic collector](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) with AI Agent Automation, MCPVault, and atomic-agents-stack containment examples.

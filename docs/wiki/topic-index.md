@@ -139,6 +139,27 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/mcp-memory-keeper-context-import-path-traversal.md](agent-and-tool-security/mcp-memory-keeper-context-import-path-traversal.md)
 - [agent-and-tool-security/praisonai-imap-command-injection.md](agent-and-tool-security/praisonai-imap-command-injection.md)
 - [agent-and-tool-security/ibm-langflow-flow-component-ssrf.md](agent-and-tool-security/ibm-langflow-flow-component-ssrf.md)
+- [agent-and-tool-security/mcp-gitlab-transport-exposure-and-pat-theft.md](agent-and-tool-security/mcp-gitlab-transport-exposure-and-pat-theft.md)
+- [agent-and-tool-security/mkp-kubernetes-log-tool-dos.md](agent-and-tool-security/mkp-kubernetes-log-tool-dos.md)
+- [agent-and-tool-security/mcpvault-recursive-metadata-path-filtering.md](agent-and-tool-security/mcpvault-recursive-metadata-path-filtering.md)
+- [agent-and-tool-security/sentry-seer-telemetry-agent-execution.md](agent-and-tool-security/sentry-seer-telemetry-agent-execution.md)
+- [data-and-privacy/mcp-documentation-server-knowledge-base-exposure.md](data-and-privacy/mcp-documentation-server-knowledge-base-exposure.md)
+- [data-and-privacy/sqlbot-assistant-svg-stored-xss.md](data-and-privacy/sqlbot-assistant-svg-stored-xss.md)
+- [data-and-privacy/sqlbot-previewdata-sql-file-disclosure.md](data-and-privacy/sqlbot-previewdata-sql-file-disclosure.md)
+- [data-and-privacy/ai-agent-automation-memory-ownership-bypass.md](data-and-privacy/ai-agent-automation-memory-ownership-bypass.md)
+- [identity-and-access/netlicensing-mcp-server-operator-key-fallback.md](identity-and-access/netlicensing-mcp-server-operator-key-fallback.md)
+- [infrastructure-and-supply-chain/gemini-enterprise-agent-sdk-bucket-squatting-rce.md](infrastructure-and-supply-chain/gemini-enterprise-agent-sdk-bucket-squatting-rce.md)
+- [infrastructure-and-supply-chain/stanza-model-archive-zip-slip.md](infrastructure-and-supply-chain/stanza-model-archive-zip-slip.md)
+- [infrastructure-and-supply-chain/kedro-datasets-pytorchdataset-model-deserialization.md](infrastructure-and-supply-chain/kedro-datasets-pytorchdataset-model-deserialization.md)
+- [infrastructure-and-supply-chain/atomic-agents-stack-dashboard-path-traversal.md](infrastructure-and-supply-chain/atomic-agents-stack-dashboard-path-traversal.md)
+- [infrastructure-and-supply-chain/ai-agent-automation-file-step-path-traversal.md](infrastructure-and-supply-chain/ai-agent-automation-file-step-path-traversal.md)
+- [infrastructure-and-supply-chain/rmcp-streamable-http-session-retention-dos.md](infrastructure-and-supply-chain/rmcp-streamable-http-session-retention-dos.md)
+- [infrastructure-and-supply-chain/rmcp-custom-header-redirect-leakage.md](infrastructure-and-supply-chain/rmcp-custom-header-redirect-leakage.md)
+- [infrastructure-and-supply-chain/sqlbot-parseexcel-file-write-rce.md](infrastructure-and-supply-chain/sqlbot-parseexcel-file-write-rce.md)
+- [infrastructure-and-supply-chain/sqlbot-excel-cleanup-copy-program-execution.md](infrastructure-and-supply-chain/sqlbot-excel-cleanup-copy-program-execution.md)
+- [model-and-prompt-security/vllm-audio-input-decompression-dos.md](model-and-prompt-security/vllm-audio-input-decompression-dos.md)
+- [model-and-prompt-security/vllm-video-decoder-vram-exhaustion.md](model-and-prompt-security/vllm-video-decoder-vram-exhaustion.md)
+- [incident-response/model-misalignment-reporting-framework.md](incident-response/model-misalignment-reporting-framework.md)
 - [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
 - [infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md](infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md)
 - [infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md](infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md)
@@ -387,6 +408,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - Updated on 2026-09-13 with Anthropic threat intelligence, OmniRoute, knowns, split CodeWhale, IBM Langflow/ContextForge, Flowise, WPBot, n8n, Cheshire Cat AI, MCPHub, RubyGems, and watcher evidence updates.
 - Updated on 2026-09-16 with Docker MCP Gateway, mcp-searxng, Flowise MongoDBMemory, UK frontier AI oversight, and watcher metadata security leaves.
 - Updated on 2026-09-17 with Contentful MCP Server, MCP Memory Keeper, Flowise chat-model baseURL, LiteLLM nested-routing, macOS secure-prompt, PhantomRaven, and watcher metadata security leaves.
+- Updated on 2026-09-18 with September 17 MCP, model-serving, model-artifact, Text-to-SQL/RAG, agent-memory, and model-misalignment reporting leaves.
 - Updated on 2026-09-15 with Bifrost, LightLLM, PraisonAI, IBM Langflow, Apple Intelligence, and watcher metadata security leaves.
 - Updated on 2026-09-01 with September 1 topic and watcher ingest for Astra release gates, Codex approval/Git execution boundaries, model-artifact supply-chain flaws, Kibana AI feature authorization and DoS, runZero MCP authorization, hermes-agent ACP/MCP DoS, Support Genix AI Chatbot admin takeover, and watcher provenance.
 - Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.

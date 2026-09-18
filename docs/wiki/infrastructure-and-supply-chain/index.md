@@ -77,6 +77,15 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Flowise pickle deserialization RCE](flowise-pickle-deserialization-rce.md)
 - [Flowise Custom MCP npx auto-install bypass](flowise-custom-mcp-npx-auto-install-bypass.md)
 - [RubyGems spam-publishing agent attribution](../incident-response/rubygems-spam-publishing-agent-attribution.md)
+- [Gemini Enterprise Agent SDK bucket-squatting RCE](gemini-enterprise-agent-sdk-bucket-squatting-rce.md)
+- [Stanza model archive Zip Slip](stanza-model-archive-zip-slip.md)
+- [Kedro-Datasets PyTorchDataset model deserialization](kedro-datasets-pytorchdataset-model-deserialization.md)
+- [atomic-agents-stack dashboard path traversal](atomic-agents-stack-dashboard-path-traversal.md)
+- [AI Agent Automation file-step path traversal](ai-agent-automation-file-step-path-traversal.md)
+- [RMCP Streamable HTTP session retention DoS](rmcp-streamable-http-session-retention-dos.md)
+- [RMCP custom-header redirect leakage](rmcp-custom-header-redirect-leakage.md)
+- [SQLBot parseExcel file write RCE](sqlbot-parseexcel-file-write-rce.md)
+- [SQLBot Excel cleanup COPY PROGRAM execution](sqlbot-excel-cleanup-copy-program-execution.md)
 
 ## Authoritative Sources
 
@@ -113,6 +122,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - Updated on 2026-09-08 with Flowise pickle deserialization and Custom MCP npx auto-install bypass leaves.
 - Updated on 2026-09-13 with RubyGems package-publishing attribution conflict and adjacent package-build execution risk.
 - Updated on 2026-09-15 with LightLLM Config Server pickle RCE and split PraisonAI file/workspace/multiedit containment leaves.
+- Updated on 2026-09-18 with Gemini Enterprise Agent SDK, Stanza, Kedro-Datasets, atomic-agents-stack dashboard, AI Agent Automation, vLLM, RMCP, and filesystem-containment evidence.
 - Updated on 2026-09-02 with the Windows ML CLI localhost trust_remote_code RCE leaf and ModelScope advisory provenance.
 - Updated on 2026-09-01 with Codex Git metadata execution, Transformers remote-code cache persistence, ModelScope unsafe YAML, and Elasticsearch model-artifact deserialization leaves.
 - Updated on 2026-08-31 with Theia AI Agent Mode workspace path traversal, OpenShift AI guardrails-detectors ReDoS, and a Kubio AI Website Builder deferral in the WordPress AI plugin advisory page.

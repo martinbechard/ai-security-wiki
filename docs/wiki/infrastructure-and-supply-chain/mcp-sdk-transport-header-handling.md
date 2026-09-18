@@ -33,18 +33,20 @@ Broad [Model Context Protocol](../../../upstream-ai-wiki/techniques/mcp-protocol
 - Authentication mediation.
 - Audit metadata in deployed agent tools.
 
+The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) adds two RMCP transport CVEs as focused child leaves. [RMCP Streamable HTTP session retention DoS](rmcp-streamable-http-session-retention-dos.md) owns CVE-2026-63128, where failed initialization could retain session state until process lifetime. [RMCP custom-header redirect leakage](rmcp-custom-header-redirect-leakage.md) owns CVE-2026-64684, where cross-origin redirects could receive custom API keys or authentication tokens. These are vulnerability evidence for the same local upgrade rule: Streamable HTTP state and header propagation are security boundaries, not only transport conveniences.
+
 ## Security Impact
 
-- Threat or control area: transport and header changes can silently alter authentication context, audit header propagation, gateway behavior, and cross-server discovery exposure.
-- Affected boundary: modelcontextprotocol/go-sdk v1.7.0, MCP protocol 2026-07-28, streamable HTTP sessions, request and response headers, server discovery, and deprecated SSE support.
-- Exploit or incident status: primary open-source release note; no vulnerability advisory is reported in the source.
+- Threat or control area: transport and header changes can silently alter authentication context, audit header propagation, gateway behavior, memory lifetime, redirect handling, and cross-server discovery exposure.
+- Affected boundary: modelcontextprotocol/go-sdk v1.7.0, MCP protocol 2026-07-28, streamable HTTP sessions, request and response headers, server discovery, deprecated SSE support, RMCP before 2.0.0 session creation, and RMCP before 2.1.0 custom-header redirects.
+- Exploit or incident status: primary open-source release note plus public RMCP CVE records; no local exploitation incident is recorded.
 - Mitigation state:
   - Review gateway and client assumptions before upgrading.
   - Test authentication and audit headers end to end.
   - Enforce request body limits before model-visible parsing or tool execution.
   - Disable unintended discovery exposure.
   - Remove dependencies on deprecated header hooks or SSE behavior.
-- Confidence: high for release facts from the GitHub release; medium for security impact because it is an inference from transport and header-handling changes.
+- Confidence: high for release facts from the GitHub release and RMCP CVE publication; medium for deployment exposure until transport defaults and custom-header use are audited.
 - Residual risk: local MCP clients and gateways can mis-handle identity or audit headers if SDK upgrade testing covers function calls but not transport metadata.
 
 ## Authoritative Sources
@@ -52,7 +54,10 @@ Broad [Model Context Protocol](../../../upstream-ai-wiki/techniques/mcp-protocol
 - [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
 - [July 29 topic news collector source](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json)
 - [July 29 leaf update watch source](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json)
-- MCP Go SDK v1.7.0 release: https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0
+- [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json)
+- [MCP Go SDK v1.7.0 release](https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0)
+- [CVE-2026-63128 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-63128)
+- [CVE-2026-64684 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-64684)
 
 ## Related Code
 
@@ -71,6 +76,8 @@ Broad [Model Context Protocol](../../../upstream-ai-wiki/techniques/mcp-protocol
 - [infrastructure and supply chain](index.md)
 - [MCP tool-level IAM authorization](../identity-and-access/mcp-tool-level-iam-authorization.md)
 - [MCP SDK OAuth issuer binding](../identity-and-access/mcp-sdk-oauth-issuer-binding.md)
+- [RMCP Streamable HTTP session retention DoS](rmcp-streamable-http-session-retention-dos.md)
+- [RMCP custom-header redirect leakage](rmcp-custom-header-redirect-leakage.md)
 - [agent and tool security](../agent-and-tool-security/index.md)
 - Upstream AI wiki owns [MCP protocol versioning](../../../upstream-ai-wiki/techniques/mcp-protocol-versioning.md) and [MCP transports](../../../upstream-ai-wiki/techniques/mcp-transports.md).
 
@@ -78,7 +85,9 @@ Broad [Model Context Protocol](../../../upstream-ai-wiki/techniques/mcp-protocol
 
 - Which local MCP clients or gateways depend on pre-1.7.0 Go SDK header hooks, SSE behavior, or stateful streamable HTTP sessions?
 - Which local MCP gateways validate request-size limits and cross-origin assumptions across both streamable HTTP and SSE paths?
+- Which clients attach custom authentication headers to MCP Streamable HTTP transports that follow cross-origin redirects?
 
 ## Maintenance Notes
 
 - Added from the [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json); enriched from the [July 29 topic collector](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json) and [July 29 leaf watcher](../../../raw/processed/2026-07-29/ai-security-wiki-leaf-update-watch-2026-07-29T200338-0400.json). Keep future updates tied to transport, identity, audit, and upgrade-risk evidence.
+- Updated on 2026-09-18 from the [September 17 topic collector](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) with RMCP Streamable HTTP session-retention and custom-header redirect leakage evidence.

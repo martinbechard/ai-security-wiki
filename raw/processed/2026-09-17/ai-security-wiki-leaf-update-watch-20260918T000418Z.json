@@ -1,0 +1,284 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-09-18T00:04:18Z",
+  "local_run_time": "2026-09-17 20:04:18 -0400",
+  "strict_window": {
+    "start": "2026-09-11T00:04:18Z",
+    "end": "2026-09-18T00:04:18Z",
+    "rule": "Include only sources published or visibly updated within the last seven days; exclude ambiguous, future, missing, or boundary-only dates."
+  },
+  "selection": {
+    "leaf_universe_count": 350,
+    "selected_leaf_count": 15,
+    "ordering": "unchecked leaves first, then oldest last_checked_at, then stable relative path",
+    "selected_leaf_ids": [
+      "docs/wiki/agent-and-tool-security/contentful-mcp-server-network-option-injection.md",
+      "docs/wiki/agent-and-tool-security/mcp-memory-keeper-context-import-path-traversal.md",
+      "docs/wiki/data-and-privacy/flowise-chat-model-baseurl-key-exfiltration.md",
+      "docs/wiki/identity-and-access/macos-secure-prompt-clickjacking-bypass.md",
+      "docs/wiki/threats-and-attacks/phantomraven-llm-generated-npm-stealer.md",
+      "docs/wiki/agent-and-tool-security/agentic-browser-intent-collision.md",
+      "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "docs/wiki/agent-and-tool-security/claude-code-templates-studio-rce.md",
+      "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md",
+      "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+      "docs/wiki/agent-and-tool-security/spring-ai-tool-dispatch-authorization-bypass.md",
+      "docs/wiki/data-and-privacy/private-safety-processing-zdr.md",
+      "docs/wiki/data-and-privacy/spring-ai-redis-chat-memory-query-injection.md",
+      "docs/wiki/data-and-privacy/spring-ai-semantic-cache-cross-context-leakage.md",
+      "docs/wiki/identity-and-access/downstream-agent-authorization-context.md"
+    ]
+  },
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/contentful-mcp-server-network-option-injection.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-53957",
+      "https://github.com/contentful/contentful-mcp-server/security/advisories/GHSA-2xhg-73j7-rrgx",
+      "https://github.com/contentful/contentful-mcp-server/releases/tag/mcp-server@1.7.19",
+      "https://github.com/contentful/contentful-mcp-server/releases/tag/mcp-tools@0.4.5"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-memory-keeper-context-import-path-traversal.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-54561",
+      "https://github.com/mkreyman/mcp-memory-keeper/security/advisories/GHSA-f7wf-v2vw-mpcx",
+      "https://github.com/mkreyman/mcp-memory-keeper/releases/tag/v0.13.0"
+    ],
+    "docs/wiki/data-and-privacy/flowise-chat-model-baseurl-key-exfiltration.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-91935",
+      "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-hx55-h48h-7rw9",
+      "https://www.vulncheck.com/advisories/flowise-before-3.1.4-ssrf-and-api-key-exfiltration-via-chat-model-nodes"
+    ],
+    "docs/wiki/identity-and-access/macos-secure-prompt-clickjacking-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-86911",
+      "https://support.apple.com/en-us/149035"
+    ],
+    "docs/wiki/threats-and-attacks/phantomraven-llm-generated-npm-stealer.md": [
+      "https://www.crowdstrike.com/en-us/blog/phantomraven-llm-generated-information-stealer-for-bug-bounty-hunting/",
+      "https://www.axios.com/2026/09/15/crowdstrike-bug-bounty-ai-malware-research",
+      "https://securitybrief.com.au/story/crowdstrike-links-phantomraven-malware-to-bug-bounty-scheme"
+    ],
+    "docs/wiki/agent-and-tool-security/agentic-browser-intent-collision.md": [
+      "https://www.wired.com/story/openais-browser-could-be-hijacked-to-spam-your-whatsapp-contacts/",
+      "https://zenity.io/research/pleasefix-vulnerabilities"
+    ],
+    "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md": [
+      "https://www.vulncheck.com/advisories/network-ai-before-cryptographic-signature-verification-bypass"
+    ],
+    "docs/wiki/agent-and-tool-security/claude-code-templates-studio-rce.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-73222",
+      "https://github.com/davila7/claude-code-templates/security/advisories/GHSA-79wm-x847-7cvg",
+      "https://advisories.gitlab.com/pkg/npm/claude-code-templates/CVE-2026-73222/"
+    ],
+    "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md": [
+      "https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html",
+      "https://junie.jetbrains.com/docs/action-allowlist.html",
+      "https://junie.jetbrains.com/docs/junie-cli.html"
+    ],
+    "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md": [
+      "https://zenity.io/company-overview/newsroom/company-news/zenity-labs-uncovers-agentforger-a-chatgpt-vulnerability",
+      "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery",
+      "https://labs.zenity.io/p/agentforger-part-2-the-autonomous-insider"
+    ],
+    "docs/wiki/agent-and-tool-security/spring-ai-tool-dispatch-authorization-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-59318",
+      "https://spring.io/security/cve-2026-59318",
+      "https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/"
+    ],
+    "docs/wiki/data-and-privacy/private-safety-processing-zdr.md": [
+      "https://openai.com/index/offering-zero-data-retention-for-frontier-models/",
+      "https://www.helpnetsecurity.com/2026/08/20/openai-private-safety-processing-zdr/"
+    ],
+    "docs/wiki/data-and-privacy/spring-ai-redis-chat-memory-query-injection.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-59319",
+      "https://spring.io/security/cve-2026-59319",
+      "https://www.cve.org/CVERecord?id=CVE-2026-59319"
+    ],
+    "docs/wiki/data-and-privacy/spring-ai-semantic-cache-cross-context-leakage.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-59308",
+      "https://spring.io/security/cve-2026-59308",
+      "https://github.com/advisories/GHSA-h4jw-w55g-65gf"
+    ],
+    "docs/wiki/identity-and-access/downstream-agent-authorization-context.md": [
+      "https://aws.amazon.com/blogs/machine-learning/manage-end-user-oauth-consent-for-ai-agents-with-amazon-bedrock-agentcore/",
+      "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-outbound-auth.html",
+      "https://aws.amazon.com/blogs/security/propagate-user-authorization-context-in-ai-agents-with-amazon-bedrock-agentcore/"
+    ]
+  },
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/identity-and-access/downstream-agent-authorization-context.md",
+      "source_title": "Manage end-user OAuth consent for AI agents with Amazon Bedrock AgentCore",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/manage-end-user-oauth-consent-for-ai-agents-with-amazon-bedrock-agentcore/",
+      "visible_date": "2026-09-14",
+      "evidence_classification": "control_change",
+      "concise_factual_summary": "AWS published an AgentCore Identity Consent portal pattern for AgentCore Gateway. The portal provides a managed web experience and session binding endpoint for three-legged OAuth, authenticates users through the organization IdP, lets users grant provider-specific consent, stores resulting user tokens in the AgentCore Identity token vault, and records consent operations in CloudTrail.",
+      "relevance_to_leaf": "Updates the downstream-agent authorization context leaf because per-user OAuth grants, session binding, and token-vault storage make downstream tool access user-bound rather than broad shared agent authority.",
+      "affected_boundaries": [
+        "Amazon Bedrock AgentCore Gateway targets that use OAuth authorization-code grants",
+        "AgentCore Identity consent/session binding for IDE and MCP clients",
+        "Per-user GitHub, Slack, or similar provider tokens stored for agent tool calls"
+      ],
+      "named_entities": [
+        "AWS",
+        "Amazon Bedrock AgentCore",
+        "AgentCore Identity",
+        "AgentCore Gateway",
+        "OAuth 2.0 authorization code flow",
+        "MCP clients",
+        "Kiro",
+        "Claude Code",
+        "Cursor",
+        "Visual Studio Code",
+        "GitHub",
+        "Slack",
+        "AWS CloudTrail"
+      ],
+      "upstream_routing": "Broad AWS and Amazon Bedrock AgentCore product context belongs upstream in ai-wiki; local handling should keep the security-specific consent, session-binding, token-vault, and downstream authorization implications.",
+      "follow_up_note": "During ingest, compare with the existing downstream-agent authorization context and MCP tool-level IAM authorization leaves; add the Consent portal as a managed user-consent/session-binding implementation if not already covered by a newer source."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/contentful-mcp-server-network-option-injection.md",
+      "candidate": "CVE-2026-53957 Contentful MCP Server network option injection",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53957",
+        "https://github.com/contentful/contentful-mcp-server/security/advisories/GHSA-2xhg-73j7-rrgx",
+        "https://github.com/contentful/contentful-mcp-server/releases/tag/mcp-server@1.7.19",
+        "https://github.com/contentful/contentful-mcp-server/releases/tag/mcp-tools@0.4.5"
+      ],
+      "reason": "Duplicate of September 16 topic collector coverage already synthesized into the durable leaf; the CVE metadata update did not add a distinct local security boundary beyond the already captured CNA facts."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-memory-keeper-context-import-path-traversal.md",
+      "candidate": "CVE-2026-54561 MCP Memory Keeper context import path traversal",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54561",
+        "https://github.com/mkreyman/mcp-memory-keeper/security/advisories/GHSA-f7wf-v2vw-mpcx",
+        "https://github.com/mkreyman/mcp-memory-keeper/releases/tag/v0.13.0"
+      ],
+      "reason": "Already captured by the September 16 topic collector and synthesized into the durable leaf; no newer same-leaf mitigation, exploitation, or affected-version update found."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/flowise-chat-model-baseurl-key-exfiltration.md",
+      "candidate": "CVE-2026-91935 Flowise chat-model baseURL key exfiltration",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91935",
+        "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-hx55-h48h-7rw9",
+        "https://www.vulncheck.com/advisories/flowise-before-3.1.4-ssrf-and-api-key-exfiltration-via-chat-model-nodes"
+      ],
+      "reason": "Duplicate of already captured September 16/17 topic collector coverage; secondary writeups did not add a new local security delta beyond the CVE and advisory."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/macos-secure-prompt-clickjacking-bypass.md",
+      "candidate": "CVE-2026-86911 macOS secure-prompt clickjacking bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86911",
+        "https://support.apple.com/en-us/149035"
+      ],
+      "reason": "Already captured by prior September Apple security artifacts and durable macOS secure-prompt coverage; no new same-leaf detail beyond fixed macOS Golden Gate 27 boundary."
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/phantomraven-llm-generated-npm-stealer.md",
+      "candidate": "PhantomRaven likely LLM-generated npm stealer",
+      "source_urls": [
+        "https://www.crowdstrike.com/en-us/blog/phantomraven-llm-generated-information-stealer-for-bug-bounty-hunting/",
+        "https://www.axios.com/2026/09/15/crowdstrike-bug-bounty-ai-malware-research",
+        "https://securitybrief.com.au/story/crowdstrike-links-phantomraven-malware-to-bug-bounty-scheme"
+      ],
+      "reason": "CrowdStrike and Axios September 15 evidence is already captured by the September 16 topic collector and durable leaf; later syndication was secondary and added no distinct local facts."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agentic-browser-intent-collision.md",
+      "candidate": "Zenity PleaseFix / agentic browser intent collision",
+      "source_urls": [
+        "https://www.wired.com/story/openais-browser-could-be-hijacked-to-spam-your-whatsapp-contacts/",
+        "https://zenity.io/research/pleasefix-vulnerabilities"
+      ],
+      "reason": "Relevant primary and Black Hat coverage is from August 2026, outside the strict seven-day window; no new in-window primary update found."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+      "candidate": "Approval metadata access control follow-up candidates",
+      "source_urls": [
+        "https://www.vulncheck.com/advisories/network-ai-before-cryptographic-signature-verification-bypass"
+      ],
+      "reason": "No public in-window visible-date update for the approval metadata leaf was found; earlier APSAdapter candidate remains deferred without current visible-date confirmation."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/claude-code-templates-studio-rce.md",
+      "candidate": "CVE-2026-73222 Claude Code Templates Studio RCE",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73222",
+        "https://github.com/davila7/claude-code-templates/security/advisories/GHSA-79wm-x847-7cvg",
+        "https://advisories.gitlab.com/pkg/npm/claude-code-templates/CVE-2026-73222/"
+      ],
+      "reason": "CVE, GitHub advisory, and GitLab advisory evidence is stale for this run and already captured in August raw/processed artifacts."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/coding-agent-command-approval-boundaries.md",
+      "candidate": "Junie action allowlist / coding-agent approval boundaries",
+      "source_urls": [
+        "https://junie.jetbrains.com/docs/action-allowlist-junie-cli.html",
+        "https://junie.jetbrains.com/docs/action-allowlist.html",
+        "https://junie.jetbrains.com/docs/junie-cli.html"
+      ],
+      "reason": "No in-window visible update to the cited Junie approval/allowlist documentation was found; August watcher evidence remains current."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-site-agent-forgery.md",
+      "candidate": "AgentForger cross-site agent forgery",
+      "source_urls": [
+        "https://zenity.io/company-overview/newsroom/company-news/zenity-labs-uncovers-agentforger-a-chatgpt-vulnerability",
+        "https://labs.zenity.io/p/agentforger-part-1-chatgpt-cross-site-agent-forgery",
+        "https://labs.zenity.io/p/agentforger-part-2-the-autonomous-insider"
+      ],
+      "reason": "Zenity AgentForger primary disclosures are July 2026 and already captured; no newer OpenAI confirmation or same-leaf remediation update found."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/spring-ai-tool-dispatch-authorization-bypass.md",
+      "candidate": "CVE-2026-59318 Spring AI tool dispatch authorization bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59318",
+        "https://spring.io/security/cve-2026-59318",
+        "https://spring.io/blog/2026/08/21/spring-ai-2-0-1-available-now/"
+      ],
+      "reason": "Spring/CVE evidence is August 2026 and already captured; no in-window same-leaf update found."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/private-safety-processing-zdr.md",
+      "candidate": "OpenAI Private Safety Processing ZDR",
+      "source_urls": [
+        "https://openai.com/index/offering-zero-data-retention-for-frontier-models/",
+        "https://www.helpnetsecurity.com/2026/08/20/openai-private-safety-processing-zdr/"
+      ],
+      "reason": "OpenAI and secondary visible dates are August 2026 and already captured; no in-window ZDR/private-safety processing change found."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/spring-ai-redis-chat-memory-query-injection.md",
+      "candidate": "CVE-2026-59319 Spring AI Redis chat memory query injection",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59319",
+        "https://spring.io/security/cve-2026-59319",
+        "https://www.cve.org/CVERecord?id=CVE-2026-59319"
+      ],
+      "reason": "CVE/Spring evidence is August 2026 and already captured; no in-window same-leaf update found."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/spring-ai-semantic-cache-cross-context-leakage.md",
+      "candidate": "CVE-2026-59308 Spring AI semantic cache cross-context leakage",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59308",
+        "https://spring.io/security/cve-2026-59308",
+        "https://github.com/advisories/GHSA-h4jw-w55g-65gf"
+      ],
+      "reason": "Duplicate/stale original disclosure already captured in prior artifacts and durable page; in-window metadata sightings did not add a new local fact."
+    }
+  ],
+  "validation_plan": [
+    "jq empty",
+    "python3 -m json.tool",
+    "git diff --check --no-index for this artifact",
+    "wiki_ops.py status"
+  ],
+  "notes": "Raw-only collector output. docs/wiki and raw/processed were not edited."
+}
