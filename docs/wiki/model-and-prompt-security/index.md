@@ -16,6 +16,9 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - [vLLM multimodal media SSRF file read](vllm-multimodal-media-ssrf-file-read.md)
 - [vLLM audio input decompression DoS](vllm-audio-input-decompression-dos.md)
 - [vLLM video decoder VRAM exhaustion](vllm-video-decoder-vram-exhaustion.md)
+- [vLLM sampler state corruption](vllm-sampler-state-corruption.md)
+- [vLLM allowed_token_ids logits corruption](vllm-allowed-token-ids-logits-corruption.md)
+- [vLLM prompt-token sampler state corruption](vllm-prompt-token-sampler-state-corruption.md)
 - [Cryptographic Context Injection](cryptographic-context-injection.md)
 - [Xinference Llama3 tool call eval RCE](xinference-llama3-tool-call-eval-rce.md)
 - [Legal filing prompt injection](legal-filing-prompt-injection.md)
@@ -64,6 +67,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - Updated on 2026-09-13 with the n8n Instance AI workflow-summary prototype-pollution leaf.
 - Updated on 2026-09-15 with PraisonAI execute_code sandbox bypass and Apple Intelligence security prompt bypass leaves.
 - Updated on 2026-09-18 with vLLM audio decompression and video decoder availability leaves.
+- Updated on 2026-09-19 with split vLLM sampler-state corruption leaves.
 - Updated on 2026-08-31 with ash_ai prompt-template execution and Microsoft Edge iOS LLM prompt-spoofing leaves.
 - Record affected boundary, attack prerequisites, mitigation, residual risk, and evidence quality.
 - Updated on 2026-08-19 with Context7 MCP prompt-injection and vLLM multimodal input-boundary leaves.

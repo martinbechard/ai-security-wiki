@@ -23,6 +23,8 @@ The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-s
 - [vLLM audio input decompression DoS](vllm-audio-input-decompression-dos.md) owns CVE-2026-57173, where audio input handling before 0.24.0 failed to pass decode-duration limits into shared decoding.
 - [vLLM video decoder VRAM exhaustion](vllm-video-decoder-vram-exhaustion.md) owns CVE-2026-69147, where request-selected PyNvVideoCodec paths before 0.28.0 could bypass GPU-memory reservations.
 
+The [vLLM sampler state corruption](vllm-sampler-state-corruption.md) router owns the separate output allowlist and prompt-token kernel corruption family. This multimodal page links it for navigation but keeps its own boundary limited to multimodal fetch, derender, decoder, and media availability controls.
+
 ## Security Impact
 
 - Threat: model-serving endpoints can treat multimodal references, generated response objects, compressed media, or request-selected decoder backends as trusted enough to bypass size, network, local-file, CPU, memory, or VRAM controls; linked leaves own issue-specific details.
@@ -64,6 +66,7 @@ The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-s
 - [vLLM multimodal media SSRF file read](vllm-multimodal-media-ssrf-file-read.md)
 - [vLLM audio input decompression DoS](vllm-audio-input-decompression-dos.md)
 - [vLLM video decoder VRAM exhaustion](vllm-video-decoder-vram-exhaustion.md)
+- [vLLM sampler state corruption](vllm-sampler-state-corruption.md)
 
 ## Open Questions
 
@@ -76,3 +79,4 @@ The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-s
 - Split on 2026-08-19 after verifier correction into separate derender DoS and multimodal media SSRF/file-read leaves.
 - Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with vLLM 0.26.0 family-level CVE publication evidence.
 - Updated on 2026-09-18 from the [September 17 topic collector](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) with audio decompression-bomb and video decoder GPU-memory exhaustion evidence.
+- Updated on 2026-09-19 with a navigation-only link to the separate sampler-state corruption router.

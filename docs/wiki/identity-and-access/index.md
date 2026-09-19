@@ -40,6 +40,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [Agentimus AI SEO MCP WordPress broken access control](agentimus-ai-seo-mcp-wordpress-broken-access-control.md)
 - [MountDev AI MCP Connector WordPress authorization bypass](mountdev-ai-mcp-connector-wordpress-authorization-bypass.md)
 - [Azure AI Language missing authentication](azure-ai-language-missing-authentication.md)
+- [Azure AI Foundry missing authentication](azure-ai-foundry-missing-authentication.md)
 - [Copilot Studio signature verification privilege elevation](copilot-studio-signature-verification-privilege-elevation.md)
 - [JeecgBoot Airag exportXls access control](jeecgboot-airag-exportxls-access-control.md)
 - [OpenShift AI NIM Secret authorization bypass](openshift-ai-nim-secret-authorization-bypass.md)
@@ -49,12 +50,19 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [IBM ContextForge default credentials](ibm-contextforge-default-credentials.md)
 - [Flowise node-load-method credential IDOR](flowise-node-load-method-credential-idor.md)
 - [WPBot AI provider API-key spend](wpbot-ai-provider-api-key-spend.md)
+- [WPBot Claude provider settings overwrite](wpbot-claude-provider-settings-overwrite.md)
+- [CordysCRM AI CRM authorization cluster](cordyscrm-ai-crm-authorization-cluster.md)
+- [CordysCRM MCP form config metadata exposure](cordyscrm-mcp-form-config-metadata-exposure.md)
+- [CordysCRM SSE workflow event authorization](cordyscrm-sse-workflow-event-authorization.md)
+- [CordysCRM record read authorization bypass](cordyscrm-record-read-authorization-bypass.md)
+- [CordysCRM attachment preview authorization bypass](cordyscrm-attachment-preview-authorization-bypass.md)
 - [Cheshire Cat AI default identity bypass](cheshire-cat-ai-default-identity-bypass.md)
 - [MCPHub OAuth code redemption bypass](mcphub-oauth-code-redemption-bypass.md)
 - [n8n Instance AI credential-origin confusion](n8n-instance-ai-credential-origin-confusion.md)
 - [IBM Langflow MCP Tools cache isolation](ibm-langflow-mcp-tools-cache-isolation.md)
 - [macOS secure-prompt clickjacking bypass](macos-secure-prompt-clickjacking-bypass.md)
 - [NetLicensing MCP Server operator key fallback](netlicensing-mcp-server-operator-key-fallback.md)
+- [Meta Ads MCP operator token fallback](meta-ads-mcp-operator-token-fallback.md)
 
 ## Authoritative Sources
 
@@ -93,6 +101,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - Updated on 2026-09-15 with PraisonAI Jobs API unauthenticated execution, IBM Langflow MCP Tools cache isolation, and watcher metadata for Flowise, WPBot, and Cheshire Cat AI leaves.
 - Updated on 2026-09-17 with the macOS secure-prompt clickjacking bypass leaf.
 - Updated on 2026-09-18 with NetLicensing operator-key fallback, RMCP OAuth protected-resource binding, and AgentCore consent portal evidence.
+- Updated on 2026-09-19 with Azure AI Foundry missing authentication, split CordysCRM authorization leaves, WPBot Claude settings overwrite, and Meta Ads MCP operator-token fallback leaves.
 - Updated on 2026-09-01 with Kibana AI Assistant Knowledge Base cross-realm authorization, Support Genix AI Chatbot admin takeover, and Synthetic Insider Threat Matrix evidence.
 - Updated on 2026-08-31 with diboot AI Session authorization bypass and ash_ai/MCPHub identity-boundary routing.
 - Updated on 2026-08-29 with FastGPT channel authorization, VoltAgent memory ownership, Gitingest token disclosure, and watcher provenance for Telnyx.

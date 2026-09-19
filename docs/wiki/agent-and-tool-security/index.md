@@ -57,6 +57,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [PraisonAI web_crawl SSRF](praisonai-web-crawl-ssrf.md)
 - [PraisonAI ast_grep_rewrite approval bypass](praisonai-ast-grep-rewrite-approval-bypass.md)
 - [PraisonAI IMAP command injection](praisonai-imap-command-injection.md)
+- [cc-connect card callback command authorization](cc-connect-card-callback-command-authorization.md)
 - [agentic AI emergency shutdown controls](agentic-ai-emergency-shutdown-controls.md)
 - [browse-mcp file path boundary](browse-mcp-file-path-boundary.md)
 - [Nextcloud MCP webhook vector index auth](nextcloud-mcp-webhook-vector-index-auth.md)
@@ -145,6 +146,9 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [MCP Memory Keeper context import path traversal](mcp-memory-keeper-context-import-path-traversal.md)
 - [IBM Langflow flow component SSRF](ibm-langflow-flow-component-ssrf.md)
 - [mcp-gitlab transport exposure and PAT theft](mcp-gitlab-transport-exposure-and-pat-theft.md)
+- [mcp-gitlab SSE unauthenticated file access](mcp-gitlab-sse-unauthenticated-file-access.md)
+- [mcp-gitlab Streamable HTTP DNS rebinding](mcp-gitlab-streamable-http-dns-rebinding.md)
+- [mcp-gitlab dynamic API URL PAT exfiltration](mcp-gitlab-dynamic-api-url-pat-exfiltration.md)
 - [MKP Kubernetes log tool DoS](mkp-kubernetes-log-tool-dos.md)
 - [MCPVault recursive metadata path filtering](mcpvault-recursive-metadata-path-filtering.md)
 - [Sentry Seer telemetry agent execution](sentry-seer-telemetry-agent-execution.md)
@@ -187,6 +191,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Updated on 2026-09-13 with split CodeWhale, Flowise CSV Agent, knowns `code.find`, OmniRoute ACP, IBM Langflow, n8n Instance AI, and PyCharm advisory updates.
 - Updated on 2026-09-16 with Docker MCP Gateway image-label runtime argument injection, mcp-searxng `web_url_read` SSRF, and watcher metadata enrichment for IBM Langflow and PraisonAI leaves.
 - Updated on 2026-09-17 with Contentful MCP Server network-option injection, MCP Memory Keeper context-import path traversal, and watcher metadata enrichment for Docker MCP Gateway and mcp-searxng leaves.
+- Updated on 2026-09-19 with cc-connect card callback authorization, split mcp-gitlab leaves, and mcp-searxng enrichment from the September 18 collector.
 - Updated on 2026-09-15 with Bifrost MCP stdio registration RCE, PraisonAI IMAP command injection, IBM Langflow flow-component SSRF, and Langflow scanner-bypass enrichment.
 - Updated on 2026-09-02 with LiteLLM MCP KEV authentication bypass, CowAgent tool DoS, and aichat API memory-allocation leaves.
 - Updated on 2026-09-01 with Codex PowerShell approval bypass, Kibana AI feature DoS, runZero Platform MCP authorization, and hermes-agent ACP/MCP availability leaves.

@@ -1,0 +1,673 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "agent_identifier": "Northstar",
+  "run_timestamp_utc": "2026-09-18T23:31:35Z",
+  "run_timestamp_local": "2026-09-18T19:31:35-04:00",
+  "cutoff_window": {
+    "start_utc": "2026-09-16T23:31:35Z",
+    "end_utc": "2026-09-18T23:31:35Z",
+    "rule": "Include only public items published or visibly updated inside this exact two-day window; exclude missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_boundaries": {
+    "public_sources_only": true,
+    "local_private_content_sent_external": false,
+    "raw_only": true,
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false,
+    "federation_applied": true,
+    "routing_context": {
+      "ai_wiki": "Broad AI ecosystem entities, companies, products, model families, frameworks, MCP servers, and general techniques.",
+      "ai_dev_wiki": "General AI-assisted development practices, coding-agent workflows, verification patterns, adoption practices, and development governance.",
+      "ai_security_wiki": "Security-specific threats, vulnerabilities, controls, incident lessons, and assurance implications for AI systems."
+    }
+  },
+  "collection_methods": [
+    {
+      "method": "Local federation and duplicate check",
+      "sources": [
+        "docs/wiki/federation.md",
+        "docs/wiki/topic-index.md",
+        "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+        "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+        "raw/processed/2026-09-16",
+        "raw/processed/2026-09-17"
+      ]
+    },
+    {
+      "method": "NVD keyword and date-window queries",
+      "queries": [
+        "lastModStartDate=2026-09-16T23:31:35.000Z&lastModEndDate=2026-09-18T23:31:35.000Z&keywordSearch=AI",
+        "lastModStartDate=2026-09-16T23:31:35.000Z&lastModEndDate=2026-09-18T23:31:35.000Z&keywordSearch=MCP",
+        "lastModStartDate=2026-09-16T23:31:35.000Z&lastModEndDate=2026-09-18T23:31:35.000Z&keywordSearch=agent",
+        "lastModStartDate=2026-09-16T23:31:35.000Z&lastModEndDate=2026-09-18T23:31:35.000Z&keywordSearch=LLM",
+        "follow-up keyword queries for prompt, model, OpenAI, Copilot, Gemini, Claude, vLLM, LiteLLM, Firecrawl, AnythingLLM, Jan, SiYuan, and related AI-security terms"
+      ],
+      "caveat": "Several later NVD keyword queries returned HTTP 429 after the first successful pass; direct CVE Services JSON and captured NVD output were used for selected records."
+    },
+    {
+      "method": "Public web search",
+      "queries": [
+        "AI security vulnerability MCP agent prompt injection September 18 2026",
+        "Microsoft Azure AI Foundry missing authentication critical function September 2026 CVE",
+        "Hacktron AI OpenAI Claude bug bounty September 18 2026",
+        "OpenAI model misalignment reporting framework September 17 2026",
+        "Spain AI agent hack AEPD September 17 2026"
+      ]
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-85889",
+      "title": "Azure AI Foundry missing authentication enables critical privilege escalation",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85889",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85889",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85889"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-09-17T22:55:58.597Z",
+          "updated": "2026-09-18T20:38:07.648Z"
+        },
+        {
+          "source": "Microsoft CNA record",
+          "datePublic": "2026-09-17T14:00:00.000Z"
+        },
+        {
+          "source": "MSRC response headers",
+          "last-modified": "Friday, 18-Sep-2026 23:32:51 GMT"
+        }
+      ],
+      "concise_factual_summary": "Microsoft's CVE record says Azure AI Foundry has missing authentication for a critical function that allows an unauthenticated network attacker to elevate privileges. The CVSS v3.1 score is 10.0 and the CVE is tagged as an exclusively hosted service with a vendor advisory and patch reference.",
+      "concrete_security_fact_or_change": "In-window Microsoft-published critical vulnerability and hosted-service patch/advisory for Azure AI Foundry.",
+      "evidence_classification": "primary vendor/CNA advisory",
+      "affected_boundary_or_version": "Microsoft Azure AI Foundry hosted service; missing authentication for critical function.",
+      "why_it_matters_for_ai_security": "Azure AI Foundry is used to build and manage generative AI applications and agents; unauthenticated privilege escalation affects the platform control plane for AI workloads.",
+      "named_entities": [
+        "Microsoft",
+        "Azure AI Foundry",
+        "CVE-2026-85889",
+        "CWE-306"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad Azure AI Foundry product context.",
+        "ai_security_wiki": "Hosted AI platform privilege-escalation boundary, patch evidence, and control-plane risk."
+      },
+      "confidence_notes": "High confidence; primary CVE and MSRC pages are in-window. MSRC detailed page is JavaScript-heavy, so the CVE Services record carries the structured detail.",
+      "follow_up_actions": [
+        "During ingest, check whether Azure AI Foundry already has an upstream product page and create only a security lens locally.",
+        "Verify whether Microsoft later publishes tenant-scoped mitigation or incident detail beyond the hosted-service CVE."
+      ]
+    },
+    {
+      "id": "CVE-2026-93839",
+      "title": "LightLLM PD Master registration endpoint lacks authentication",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93839",
+        "https://github.com/ModelTC/LightLLM/issues/1576",
+        "https://www.vulncheck.com/advisories/lightllm-through-1.2.0-missing-authentication-in-pd-master-pd-register-websocket-endpoint",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-93839"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-09-18T19:06:05.152Z",
+          "updated": "2026-09-18T19:06:05.152Z",
+          "datePublic": "2026-09-16T00:00:00.000Z"
+        }
+      ],
+      "concise_factual_summary": "VulnCheck's CVE record says LightLLM through 1.2.0 allows unauthenticated attackers to register arbitrary nodes at the PD Master /pd_register WebSocket endpoint. The impact includes disclosure of user prompts routed to the attacker's socket, denial of service by replacing nodes, and induced requests to internal network addresses.",
+      "concrete_security_fact_or_change": "In-window CVE publication for missing authentication in an LLM serving control-plane endpoint.",
+      "evidence_classification": "CNA advisory with technical references",
+      "affected_boundary_or_version": "ModelTC LightLLM through 1.2.0; PD Master /pd_register WebSocket endpoint.",
+      "why_it_matters_for_ai_security": "LLM serving infrastructure can leak prompts and route internal requests when worker-registration control planes do not authenticate peers.",
+      "named_entities": [
+        "LightLLM",
+        "ModelTC",
+        "VulnCheck",
+        "CVE-2026-93839"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad LightLLM runtime/entity context if tracked.",
+        "ai_security_wiki": "Prompt disclosure, node-registration authentication, DoS, and internal-request risk."
+      },
+      "confidence_notes": "High confidence; CVE publication timestamp is inside the run window.",
+      "follow_up_actions": [
+        "During ingest, check for a LightLLM/vLLM runtime family page and avoid duplicating broad model-serving background."
+      ]
+    },
+    {
+      "id": "CVE-2026-93840",
+      "title": "vLLM allowed_token_ids validation can corrupt cross-request logits state",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93840",
+        "https://github.com/vllm-project/vllm/pull/49080",
+        "https://github.com/vllm-project/vllm/commit/5b0e5b69ac1a3884a6479c9537789c95263cc804",
+        "https://www.vulncheck.com/advisories/vllm-before-0.29.0-cross-request-logits-corruption-via-allowed-token-ids",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-93840"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-09-18T19:06:06.001Z",
+          "updated": "2026-09-18T19:06:06.001Z",
+          "datePublic": "2026-07-19T00:00:00.000Z"
+        }
+      ],
+      "concise_factual_summary": "VulnCheck's CVE record says vLLM before 0.29.0 validates allowed_token_ids against tokenizer length rather than model output logits width. Attackers can submit token IDs that pass validation but exceed the output vocabulary, corrupting GPU logits state and allowing concurrent requests to sample outside their allowlists.",
+      "concrete_security_fact_or_change": "In-window CVE publication for cross-request model-serving integrity corruption.",
+      "evidence_classification": "CNA advisory with upstream patch reference",
+      "affected_boundary_or_version": "vLLM before 0.29.0; SamplingParams allowed_token_ids validation and LogitBiasState.",
+      "why_it_matters_for_ai_security": "Cross-request sampling-state corruption weakens output constraints and tenant isolation in shared LLM serving deployments.",
+      "named_entities": [
+        "vLLM",
+        "VulnCheck",
+        "CVE-2026-93840"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad vLLM runtime context.",
+        "ai_security_wiki": "Model-serving isolation, output-constraint integrity, and shared GPU state boundaries."
+      },
+      "confidence_notes": "High for CVE publication; datePublic predates the run window, so durable synthesis should note that the public technical issue may have existed before CVE publication.",
+      "follow_up_actions": [
+        "Pair with CVE-2026-93841 during ingest if one vLLM sampling-state security leaf is sufficient."
+      ]
+    },
+    {
+      "id": "CVE-2026-93841",
+      "title": "vLLM prompt token ID handling can corrupt sampler state",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93841",
+        "https://github.com/vllm-project/vllm",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-93841"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD/CVE Services captured output",
+          "published": "2026-09-18T20:17:34.357Z",
+          "updated": "2026-09-18T20:17:34.357Z"
+        }
+      ],
+      "concise_factual_summary": "NVD output for CVE-2026-93841 says vLLM through 0.29.0 has memory corruption in the Triton _bincount_kernel because prompt token IDs index the penalty prompt-presence bitset without bounds checking against vocabulary size. Crafted multimodal audio requests can corrupt concurrent requests' sampler state and alter repetition penalty behavior.",
+      "concrete_security_fact_or_change": "In-window CVE publication for prompt-driven sampler-state corruption in an LLM runtime.",
+      "evidence_classification": "vulnerability database with upstream technical references",
+      "affected_boundary_or_version": "vLLM through 0.29.0; Triton _bincount_kernel and repetition-penalty sampler state.",
+      "why_it_matters_for_ai_security": "Prompt token validation becomes an isolation boundary in shared LLM serving; corruption can affect unrelated concurrent requests.",
+      "named_entities": [
+        "vLLM",
+        "Triton",
+        "CVE-2026-93841"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad vLLM and LLM runtime context.",
+        "ai_security_wiki": "Prompt-token validation, GPU memory safety, and cross-request isolation."
+      },
+      "confidence_notes": "Moderate-high; NVD captured the in-window details, but a direct CVE Services re-fetch should be repeated during ingest because later rate limiting interrupted enrichment.",
+      "follow_up_actions": [
+        "Re-fetch direct CVE JSON and upstream patch references before durable page synthesis."
+      ]
+    },
+    {
+      "id": "CVE-2026-63646",
+      "title": "CordysCRM exposes MCP form configuration without authentication",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-63646",
+        "https://github.com/1Panel-dev/CordysCRM/commit/ea8d5f128b94659ce881e9d034a37c18fa86bbbc",
+        "https://github.com/1Panel-dev/CordysCRM/pull/2725",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.2",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-63646"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD captured output",
+          "published": "2026-09-18T20:17:20.627Z",
+          "updated": "2026-09-18T20:17:20.627Z"
+        }
+      ],
+      "concise_factual_summary": "NVD output says CordysCRM before 1.7.2 exposes GET /mcp/form/config/{formKey} without authentication because /mcp/** is marked anonymous and the controller lacks a permission annotation. Attackers can retrieve CRM field names, types, required flags, defaults, options, validation rules, and binding sources.",
+      "concrete_security_fact_or_change": "In-window CVE publication for unauthenticated MCP metadata exposure in an AI-powered CRM.",
+      "evidence_classification": "vulnerability database with upstream patch references",
+      "affected_boundary_or_version": "CordysCRM before 1.7.2; /mcp/form/config/{formKey}.",
+      "why_it_matters_for_ai_security": "MCP endpoints expose application structure to agents and clients; anonymous metadata access helps attackers map high-value CRM data paths.",
+      "named_entities": [
+        "CordysCRM",
+        "1Panel-dev",
+        "MCP",
+        "CVE-2026-63646"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad CordysCRM product context if tracked.",
+        "ai_security_wiki": "MCP endpoint authentication and CRM metadata exposure."
+      },
+      "confidence_notes": "Moderate-high; in-window NVD output and upstream references were captured, but direct CVE re-fetch should be repeated during ingest.",
+      "follow_up_actions": [
+        "Consider clustering CordysCRM CVEs into one local AI CRM access-control page if the same product boundary recurs."
+      ]
+    },
+    {
+      "id": "CVE-2026-63647",
+      "title": "CordysCRM anonymous SSE endpoints leak workflow events",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-63647",
+        "https://github.com/1Panel-dev/CordysCRM/commit/6cb81deb53434ae7792673c50312ff91685d7f9d",
+        "https://github.com/1Panel-dev/CordysCRM/pull/2719",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.2",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-63647"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD captured output",
+          "published": "2026-09-18T20:17:20.773Z",
+          "updated": "2026-09-18T21:17:04.883Z"
+        }
+      ],
+      "concise_factual_summary": "NVD output says CordysCRM before 1.7.2 exposes anonymous /sse/subscribe, /sse/broadcast, and /sse/close endpoints and trusts caller-controlled userId rather than deriving identity from an authenticated principal. Attackers can read workflow events, approval requests, mentions, and alerts for another user, inject heartbeat messages, or close channels.",
+      "concrete_security_fact_or_change": "In-window CVE publication for unauthenticated event-stream access in an AI-powered CRM.",
+      "evidence_classification": "vulnerability database with upstream patch references",
+      "affected_boundary_or_version": "CordysCRM before 1.7.2; SSE subscription, broadcast, and close endpoints.",
+      "why_it_matters_for_ai_security": "AI-enabled CRM workflow streams may carry approval, mention, and workflow context that can be used for social engineering, data discovery, or agent workflow manipulation.",
+      "named_entities": [
+        "CordysCRM",
+        "1Panel-dev",
+        "SSE",
+        "CVE-2026-63647"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad CordysCRM product context if tracked.",
+        "ai_security_wiki": "Workflow-event privacy, identity binding, and anonymous stream controls."
+      },
+      "confidence_notes": "Moderate-high; in-window NVD output and upstream references were captured.",
+      "follow_up_actions": [
+        "During ingest, evaluate whether this belongs under data-and-privacy or identity-and-access."
+      ]
+    },
+    {
+      "id": "cordyscrm-2026-09-18-cve-cluster",
+      "title": "CordysCRM publishes additional AI CRM SQL injection, SSRF, and IDOR CVEs",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-52745",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76899",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76900",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76901",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76902",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.4"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD captured output",
+          "published": "2026-09-18T20:17:16Z to 2026-09-18T20:17:22Z",
+          "updated": "2026-09-18T20:17:16Z to 2026-09-18T20:17:22Z"
+        }
+      ],
+      "concise_factual_summary": "NVD output listed several same-day CordysCRM CVEs affecting an open source AI-powered CRM: dynamic SQL ORDER BY injection in account-pool pages, arbitrary database functions in sort.name, webhook SSRF through approval flow configuration, unscoped lead/account record reads, and anonymous attachment preview downloads across organizations.",
+      "concrete_security_fact_or_change": "In-window publication of a clustered access-control and injection vulnerability set in an AI-powered CRM.",
+      "evidence_classification": "vulnerability database with upstream patch references",
+      "affected_boundary_or_version": "CordysCRM before 1.7.0, before 1.7.2, version 1.7.3, and before 1.7.4 depending on CVE.",
+      "why_it_matters_for_ai_security": "The cluster shows how AI-labeled business applications combine ordinary CRM data sensitivity with MCP/workflow automation and server-side action surfaces that need strict authorization and SSRF controls.",
+      "named_entities": [
+        "CordysCRM",
+        "1Panel-dev",
+        "CVE-2026-52745",
+        "CVE-2026-76899",
+        "CVE-2026-76900",
+        "CVE-2026-76901",
+        "CVE-2026-76902"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad CordysCRM product context if tracked.",
+        "ai_security_wiki": "AI CRM authorization, SQL injection, SSRF, and data-exposure cluster."
+      },
+      "confidence_notes": "Moderate; the same-day NVD records are concrete, but the cluster should be split during ingest only if each CVE needs a separate durable leaf.",
+      "follow_up_actions": [
+        "Re-fetch direct CVE JSON for each CordysCRM CVE during ingest.",
+        "Deduplicate with any future leaf-watch artifact that may capture the same same-day CVEs."
+      ]
+    },
+    {
+      "id": "CVE-2026-87959",
+      "title": "WPBot subscribers can overwrite Claude AI provider settings",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-87959",
+        "https://wpscan.com/vulnerability/3d42171d-6335-4bd3-bbed-fc446da3f945/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-87959"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD captured output",
+          "published": "2026-09-16T06:16:35.610Z",
+          "updated": "2026-09-17T13:16:57.220Z"
+        }
+      ],
+      "concise_factual_summary": "NVD output says WPBot before 8.7.6 lacks a capability check on the AJAX action that saves Claude AI provider settings, allowing subscriber-level users to overwrite settings including the API key used for outgoing AI requests.",
+      "concrete_security_fact_or_change": "In-window update for an AI provider settings authorization flaw.",
+      "evidence_classification": "vulnerability database and WPScan advisory",
+      "affected_boundary_or_version": "WPBot WordPress plugin before 8.7.6; Claude AI provider settings AJAX action.",
+      "why_it_matters_for_ai_security": "AI provider settings are credential and routing control planes; low-privilege overwrite can redirect model traffic, replace credentials, or disrupt assistant behavior.",
+      "named_entities": [
+        "WPBot",
+        "WordPress",
+        "Claude",
+        "WPScan",
+        "CVE-2026-87959"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad Claude/provider context.",
+        "ai_security_wiki": "Provider credential authorization and plugin configuration risk."
+      },
+      "confidence_notes": "Moderate; publication is within the two-day window but near the older side. Retain because the update timestamp is in-window and the security fact is AI-provider-specific.",
+      "follow_up_actions": [
+        "Check whether WordPress plugin provider-credential controls deserve a local recurring leaf or a one-off digest note."
+      ]
+    },
+    {
+      "id": "CVE-2026-92801",
+      "title": "cc-connect card callbacks bypass per-user agent command allowlists",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-92801",
+        "https://github.com/chenhg5/cc-connect",
+        "https://github.com/chenhg5/cc-connect/issues/1852",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-92801"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD captured output",
+          "published": "2026-09-16T21:17:29.680Z",
+          "updated": "2026-09-17T14:17:56.463Z"
+        }
+      ],
+      "concise_factual_summary": "NVD output says cc-connect through 1.5.0 fails to enforce per-user allowlist filtering in the Feishu interactive-card onCardAction handler. Attackers can trigger card actions in admitted chats and dispatch agent commands while bypassing per-user access controls that protect the text-message handler.",
+      "concrete_security_fact_or_change": "In-window update for chat-card to agent-command authorization bypass.",
+      "evidence_classification": "vulnerability database with upstream issue/code references",
+      "affected_boundary_or_version": "cc-connect through 1.5.0; Feishu interactive card callbacks.",
+      "why_it_matters_for_ai_security": "Shared chat surfaces and card callbacks can become alternate command paths for agents; every interaction path needs equivalent authorization checks.",
+      "named_entities": [
+        "cc-connect",
+        "Feishu",
+        "agent commands",
+        "CVE-2026-92801"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General chat-agent workflow and shared-channel interaction pattern.",
+        "ai_security_wiki": "Per-user command authorization and alternate callback-path bypass."
+      },
+      "confidence_notes": "Moderate; publication is before the exact run cutoff by about two hours, but the update timestamp is in-window and the alternate command path is concrete.",
+      "follow_up_actions": [
+        "During ingest, inspect whether cc-connect is an AI/coding-agent bridge and route broad workflow context upstream to ai-dev-wiki."
+      ]
+    },
+    {
+      "id": "CVE-2026-54547",
+      "title": "Meta Ads MCP can fall back to operator Meta credentials",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54547",
+        "https://github.com/pipeboard-co/meta-ads-mcp/commit/95e852793b7ff8604a8132e85d5facd08c91a36e",
+        "https://github.com/pipeboard-co/meta-ads-mcp/pull/137",
+        "https://github.com/pipeboard-co/meta-ads-mcp/releases/tag/1.0.115",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54547"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD captured output",
+          "published": "2026-09-15T18:17:22.927Z",
+          "updated": "2026-09-17T17:16:42.293Z"
+        }
+      ],
+      "concise_factual_summary": "NVD output says Meta Ads MCP before 1.0.115 rejects HTTP MCP requests only when both auth_token and pipeboard_token are absent, while not recognizing X-Pipeboard-Token as a primary credential. A streamable-http caller can pass the guard and make tools fall back to the server operator's META_ACCESS_TOKEN, allowing Meta Ads reads or modifications under operator credentials.",
+      "concrete_security_fact_or_change": "In-window NVD update for MCP credential fallback and operator-token confusion.",
+      "evidence_classification": "vulnerability database with upstream patch references",
+      "affected_boundary_or_version": "Meta Ads MCP before 1.0.115; streamable-http AuthInjectionMiddleware and operator META_ACCESS_TOKEN fallback.",
+      "why_it_matters_for_ai_security": "MCP servers that bind business accounts to operator credentials must fail closed; token-fallback bugs turn unauthenticated or weakly authenticated tool calls into delegated ad-account authority.",
+      "named_entities": [
+        "Meta Ads MCP",
+        "Pipeboard",
+        "Meta Ads",
+        "CVE-2026-54547"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad Meta Ads MCP server entity context.",
+        "ai_security_wiki": "Operator credential fallback and MCP delegated authority."
+      },
+      "confidence_notes": "Medium; original publication predates the exact two-day window, but NVD shows an in-window update and no local duplicate was found.",
+      "follow_up_actions": [
+        "During ingest, verify direct GitHub advisory details and check whether this should be deduplicated with other MCP operator-token fallback pages."
+      ]
+    },
+    {
+      "id": "CVE-2026-54689",
+      "title": "mcp-searxng URL policy bypass enables internal resource reads",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54689",
+        "https://github.com/ihor-sokoliuk/mcp-searxng/commit/48e5ecdcb4166a60b94c252dbe74b0a318110ac4",
+        "https://github.com/ihor-sokoliuk/mcp-searxng/pull/79",
+        "https://github.com/ihor-sokoliuk/mcp-searxng/releases/tag/v1.2.0",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54689"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD captured output",
+          "published": "2026-09-15T18:17:23.477Z",
+          "updated": "2026-09-17T17:16:44.163Z"
+        }
+      ],
+      "concise_factual_summary": "NVD output says mcp-searxng before 1.2.0 lets web_url_read URL policy be bypassed while hardening is enabled because redirect targets are not revalidated, 0.0.0.0 is not treated as internal, and IPv4-mapped IPv6 literals are missed. Attacker-influenced tool calls can fetch loopback, internal services, private APIs, service-mesh endpoints, or cloud metadata and return content.",
+      "concrete_security_fact_or_change": "In-window NVD update for MCP web URL-read SSRF/private-address bypass.",
+      "evidence_classification": "vulnerability database with upstream patch references",
+      "affected_boundary_or_version": "mcp-searxng before 1.2.0; web_url_read URL policy.",
+      "why_it_matters_for_ai_security": "Search and URL-reading MCP servers often process attacker-influenced content; private-address and redirect revalidation failures become agent-readable SSRF paths.",
+      "named_entities": [
+        "mcp-searxng",
+        "SearXNG",
+        "MCP",
+        "CVE-2026-54689"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad mcp-searxng MCP server context if tracked.",
+        "ai_security_wiki": "MCP URL-read SSRF, redirect validation, and private network controls."
+      },
+      "confidence_notes": "Medium; original publication predates the exact two-day window, but the NVD update is in-window and the security delta is concrete.",
+      "follow_up_actions": [
+        "Compare with existing MCP fetch/private-address leaves during ingest."
+      ]
+    },
+    {
+      "id": "CVE-2026-61559",
+      "title": "mcp-gitlab dynamic API URL leaks GitLab private tokens",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61559",
+        "https://github.com/zereight/gitlab-mcp/commit/6ffb4cc70706fd05b1ab80901676bc2998b6db6d",
+        "https://github.com/zereight/gitlab-mcp/pull/625",
+        "https://github.com/zereight/gitlab-mcp/releases/tag/v2.1.27",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61559"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD captured output",
+          "published": "2026-09-15T21:16:41.390Z",
+          "updated": "2026-09-17T17:16:44.757Z"
+        }
+      ],
+      "concise_factual_summary": "NVD output says @zereight/mcp-gitlab before 2.1.27 reads X-GitLab-API-URL when ENABLE_DYNAMIC_API_URL=true and applies no host allowlist. A caller who reaches the HTTP transport can redirect GitLab API calls to an attacker-controlled host and receive the victim's Private-Token.",
+      "concrete_security_fact_or_change": "In-window NVD update for MCP dynamic endpoint header leading to PAT exfiltration.",
+      "evidence_classification": "vulnerability database with upstream patch references",
+      "affected_boundary_or_version": "@zereight/mcp-gitlab before 2.1.27 with ENABLE_DYNAMIC_API_URL=true.",
+      "why_it_matters_for_ai_security": "MCP server dynamic endpoint features must not let tool callers redirect credentialed API traffic; GitLab PAT leakage creates repository and CI supply-chain risk.",
+      "named_entities": [
+        "@zereight/mcp-gitlab",
+        "GitLab",
+        "MCP",
+        "CVE-2026-61559"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad GitLab MCP server context if tracked.",
+        "ai_dev_wiki": "General repository-agent workflow implications.",
+        "ai_security_wiki": "Credential exfiltration, dynamic endpoint allowlists, and repository supply-chain risk."
+      },
+      "confidence_notes": "Medium; original publication predates the exact two-day window, but the NVD update is in-window and no local duplicate was found.",
+      "follow_up_actions": [
+        "During ingest, route any general GitLab MCP server description upstream and keep only the security control locally."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-53556 SQLBot previewData SQL file disclosure",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53556"
+      ],
+      "reason": "Already captured in the September 17 topic collector and synthesized into docs/wiki/data-and-privacy/sqlbot-previewdata-sql-file-disclosure.md; exclude to avoid duplicate current-run output."
+    },
+    {
+      "candidate": "CVE-2026-59823 LiteLLM nested user_config.api_base routing leak",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59823"
+      ],
+      "reason": "Already captured in the September 16 topic collector and referenced in the September 17 artifact exclusions; exclude duplicate."
+    },
+    {
+      "candidate": "CVE-2026-53957 Contentful MCP network option token leak",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53957"
+      ],
+      "reason": "Publication predates this run window and the September 16 collector memory/follow-up already names it for ingest recheck; exclude duplicate/stale item."
+    },
+    {
+      "candidate": "CVE-2026-57139 PraisonAI MCP HTTP binding exposure",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57139"
+      ],
+      "reason": "Publication predates the exact two-day window and local docs already contain PraisonAI MCP control-plane pages; no distinct in-window security delta found beyond database enrichment."
+    },
+    {
+      "candidate": "CVE-2026-91931 Flowise Custom MCP node RCE",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91931"
+      ],
+      "reason": "Publication predates the exact two-day window and Flowise MCP/code-execution coverage already exists locally; no new visible patch fact beyond database update was confirmed."
+    },
+    {
+      "candidate": "CVE-2026-72904 Firecrawl JSON schema file read and SSRF",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-72904"
+      ],
+      "reason": "AI/LLM-relevant, but original CVE publication was 2026-08-10 and CVE Services updated before this window; NVD last-modified enrichment alone was insufficient for a new finding."
+    },
+    {
+      "candidate": "CVE-2026-72917 AnythingLLM password recovery bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-72917"
+      ],
+      "reason": "AI/LLM-relevant, but original CVE publication and CVE Services update were outside this run window; no new primary update found."
+    },
+    {
+      "candidate": "CVE-2026-62997 Kedro-Datasets PyTorchDataset unsafe model deserialization",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-62997"
+      ],
+      "reason": "Model supply-chain relevant, but publication was about two hours before the exact cutoff and no distinct in-window update beyond NVD enrichment was verified."
+    },
+    {
+      "candidate": "CVE-2026-92790 Higress AI token rate-limit bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-92790"
+      ],
+      "reason": "AI gateway/cost-control relevant, but publication was just before the exact cutoff and no stronger primary in-window patch/advisory page was located."
+    },
+    {
+      "candidate": "CVE records containing generic agent/model words such as Zabbix Agent, ASUS Control Center Express Agent, Oracle Remote Diagnostic Agent, Arista DHCP relay agent, Linux prompt text, and Autodesk MODEL file parsing",
+      "reason": "Excluded because the term match was generic software vocabulary, not concrete AI-system, LLM, model-serving, MCP, prompt, or AI supply-chain relevance."
+    },
+    {
+      "candidate": "Anthropic Claude helps build next model",
+      "source_urls": [
+        "https://apnews.com/article/4d3a7430f57cbc7c39e1c5f2b7d7e132"
+      ],
+      "reason": "In-window AI governance/safety context, but the fetched summary was primarily product/process progress and oversight discussion without a concrete security incident, patch, vulnerability, or enforceable control change specific enough for this collector."
+    },
+    {
+      "candidate": "OpenAI/Microsoft copyright and publisher legal filings",
+      "reason": "In-window AI governance/legal news but not a concrete AI security delta for this repository's security topics."
+    },
+    {
+      "candidate": "Hacktron reports AI-assisted OpenAI bug-bounty intrusion through Discourse",
+      "source_urls": [
+        "https://www.theguardian.com/technology/2026/sep/18/openai-hacked-anthropic-claude-chatbot",
+        "https://www.businessinsider.com/hacktron-ai-cybersecurity-startup-hack-openai-using-claude-2026-9",
+        "https://www.theverge.com/ai-artificial-intelligence/997444/openai-hack-claude-heif-heist",
+        "https://www.wsj.com/tech/ai/hackers-used-anthropics-claude-to-break-into-openai-b40ba883"
+      ],
+      "reason": "Secondary-only incident reporting; primary OpenAI, Hacktron, Discourse, or CVE advisory was not located during this run, so prior collector rules require exclusion pending primary-source verification."
+    },
+    {
+      "candidate": "OpenAI reports model misalignment cases and tracking framework",
+      "source_urls": [
+        "https://apnews.com/article/089e75b95bc935af092da7b79d92706d",
+        "https://www.financialexpress.com/world-news/us-news/self-generated-prompts-amp-deception-openai-discloses-6-unexpected-ai-failures-in-6-months/4342036/"
+      ],
+      "reason": "Secondary-only reporting of a provider framework/control change; primary OpenAI framework text was not located during this run, so exclude pending primary-source verification."
+    },
+    {
+      "candidate": "Spanish DPA reports autonomous AI-agent breach claim",
+      "source_urls": [
+        "https://www.techradar.com/pro/security/autonomous-ai-agent-hit-spanish-firm-with-vulnerability-scans-before-accessing-files-and-data",
+        "https://www.itpro.com/security/cyber-attacks/spain-says-it-has-seen-first-ai-agent-hack"
+      ],
+      "reason": "Secondary-only regulator-attributed incident reporting; primary AEPD publication, named victim, model provider, and technical indicators were not located during this run."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "Azure AI Foundry",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep CVE-2026-85889 and hosted AI platform privilege-escalation controls in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "LightLLM and vLLM",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep prompt disclosure, sampler-state corruption, and shared inference-runtime isolation in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "MCP servers for Meta Ads, SearXNG, GitLab, Contentful, PraisonAI, and similar products",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep authentication, credential fallback, endpoint allowlist, SSRF, and token exfiltration findings locally; broad MCP server catalogs remain upstream."
+    },
+    {
+      "entity_or_topic": "cc-connect shared chat/card workflows",
+      "upstream_owner": "ai-dev-wiki",
+      "security_specific_note": "Keep alternate callback-path command authorization bypass in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "OpenAI, Anthropic Claude, Codex, and model families",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep incident lessons, bug-bounty intrusion chain, model-behavior incident reporting, and release-gate implications in ai-security-wiki."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed 2026-09-18T23:50:00Z after final rewrite",
+    "python_json_tool": "passed 2026-09-18T23:50:00Z after final rewrite",
+    "git_diff_check_artifact": "passed 2026-09-18T23:50:00Z after final rewrite"
+  },
+  "blockers_and_caveats": [
+    "NVD returned HTTP 429 during later keyword enrichment after the first successful passes; direct CVE Services and captured NVD output were used where available.",
+    "Several MCP records qualify only through in-window database updates while original publication predates the exact two-day window; confidence notes mark those cases for ingest-time recheck.",
+    "Unrelated local untracked directories .Codex/agent-claim/ and .agent-ops/ were present before this run and were not modified.",
+    "OpenAI/Hacktron, OpenAI misalignment-framework, and Spain AI-agent breach reports were moved to exclusions because primary sources were not located during this run."
+  ],
+  "follow_up_actions": [
+    "During ingest, re-fetch direct CVE JSON for CordysCRM, vLLM, LightLLM, Meta Ads MCP, mcp-searxng, and mcp-gitlab and decide whether clustered findings need separate leaves.",
+    "Search for primary OpenAI, Hacktron, AEPD, and Microsoft detail pages before converting secondary incident reports into durable wiki prose.",
+    "Deduplicate any future leaf-watch artifacts against this raw source before processing."
+  ]
+}

@@ -15,6 +15,8 @@ The CVE and WPScan advisory say several unauthenticated AJAX actions lacked auth
 
 The [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json) adds NVD's September 14 metadata, including Deferred status, CWE-284, and WPScan as the reference. That enriches taxonomy and provenance without changing the provider-key spend boundary.
 
+[WPBot Claude Provider Settings Overwrite](wpbot-claude-provider-settings-overwrite.md) owns the separate CVE-2026-87959 boundary where subscriber-level users can overwrite Claude provider settings before 8.7.6. Together, the two leaves distinguish unauthenticated API-key spend from authenticated low-privilege provider settings writes.
+
 ## Security Impact
 
 - Threat: unauthenticated prompt relay can spend site-owned AI provider API keys and create provider-side abuse records.
@@ -49,6 +51,7 @@ The [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai
 - [identity and access](index.md)
 - [WPBot chat-session contact disclosure](../data-and-privacy/wpbot-chat-session-contact-disclosure.md)
 - [AI provider override trust boundaries](../data-and-privacy/ai-provider-override-trust-boundaries.md)
+- [WPBot Claude Provider Settings Overwrite](wpbot-claude-provider-settings-overwrite.md)
 
 ## Open Questions
 
@@ -58,3 +61,4 @@ The [September 16 leaf update watch source](../../../raw/processed/2026-09-16/ai
 
 - Created on 2026-09-13 from the [September 13 topic collector](../../../raw/processed/2026-09-13/ai-security-wiki-topic-news-collector-2026-09-13T171540Z.json) after verifier correction split provider-key spend from chat-session disclosure.
 - Updated on 2026-09-16 with NVD Deferred/CWE metadata from the [September 16 leaf update watch](../../../raw/processed/2026-09-16/ai-security-wiki-leaf-update-watch-20260916T000740Z.json).
+- Updated on 2026-09-19 with a link to the separate WPBot Claude provider settings overwrite leaf.

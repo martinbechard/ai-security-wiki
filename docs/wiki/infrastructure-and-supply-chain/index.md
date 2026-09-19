@@ -16,6 +16,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [Axolotl Multipack trust_remote_code RCE](axolotl-multipack-trust-remote-code-rce.md)
 - [Bifrost HTTP Custom Plugin RCE](bifrost-http-custom-plugin-rce.md)
 - [LightLLM Config Server pickle RCE](lightllm-config-server-pickle-rce.md)
+- [LightLLM PD Master registration auth bypass](lightllm-pd-master-registration-auth-bypass.md)
 - [PraisonAI file mention path traversal](praisonai-file-mention-path-traversal.md)
 - [PraisonAI code tools workspace fail-open](praisonai-code-tools-workspace-fail-open.md)
 - [PraisonAI multiedit file boundary bypass](praisonai-multiedit-file-boundary-bypass.md)
@@ -86,6 +87,10 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [RMCP custom-header redirect leakage](rmcp-custom-header-redirect-leakage.md)
 - [SQLBot parseExcel file write RCE](sqlbot-parseexcel-file-write-rce.md)
 - [SQLBot Excel cleanup COPY PROGRAM execution](sqlbot-excel-cleanup-copy-program-execution.md)
+- [CordysCRM AI CRM injection and SSRF](cordyscrm-ai-crm-injection-and-ssrf.md)
+- [CordysCRM ORDER BY SQL injection](cordyscrm-orderby-sql-injection.md)
+- [CordysCRM sort.name database function injection](cordyscrm-sort-name-database-function-injection.md)
+- [CordysCRM workflow webhook SSRF](cordyscrm-workflow-webhook-ssrf.md)
 
 ## Authoritative Sources
 
@@ -123,6 +128,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - Updated on 2026-09-13 with RubyGems package-publishing attribution conflict and adjacent package-build execution risk.
 - Updated on 2026-09-15 with LightLLM Config Server pickle RCE and split PraisonAI file/workspace/multiedit containment leaves.
 - Updated on 2026-09-18 with Gemini Enterprise Agent SDK, Stanza, Kedro-Datasets, atomic-agents-stack dashboard, AI Agent Automation, vLLM, RMCP, and filesystem-containment evidence.
+- Updated on 2026-09-19 with LightLLM PD Master registration and split CordysCRM injection/SSRF leaves.
 - Updated on 2026-09-02 with the Windows ML CLI localhost trust_remote_code RCE leaf and ModelScope advisory provenance.
 - Updated on 2026-09-01 with Codex Git metadata execution, Transformers remote-code cache persistence, ModelScope unsafe YAML, and Elasticsearch model-artifact deserialization leaves.
 - Updated on 2026-08-31 with Theia AI Agent Mode workspace path traversal, OpenShift AI guardrails-detectors ReDoS, and a Kubio AI Website Builder deferral in the WordPress AI plugin advisory page.
