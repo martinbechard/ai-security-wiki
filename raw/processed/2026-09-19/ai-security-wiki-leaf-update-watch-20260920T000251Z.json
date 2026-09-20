@@ -1,0 +1,225 @@
+{
+  "automation_name": "AI Security Wiki Leaf Update Watch",
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "agent_identifier": "Northstar",
+  "run_timestamp_utc": "2026-09-20T00:02:51Z",
+  "run_timestamp_local": "2026-09-19T20:02:51-0400",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "cutoff_window": {
+    "included_visible_dates": "2026-09-13 through 2026-09-19 America/Toronto",
+    "excluded": "ambiguous, future, missing, stale, and boundary-only dates"
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/cc-connect-card-callback-command-authorization.md",
+    "docs/wiki/agent-and-tool-security/mcp-gitlab-dynamic-api-url-pat-exfiltration.md",
+    "docs/wiki/agent-and-tool-security/mcp-gitlab-sse-unauthenticated-file-access.md",
+    "docs/wiki/agent-and-tool-security/mcp-gitlab-streamable-http-dns-rebinding.md",
+    "docs/wiki/identity-and-access/azure-ai-foundry-missing-authentication.md",
+    "docs/wiki/identity-and-access/cordyscrm-ai-crm-authorization-cluster.md",
+    "docs/wiki/identity-and-access/cordyscrm-attachment-preview-authorization-bypass.md",
+    "docs/wiki/identity-and-access/cordyscrm-mcp-form-config-metadata-exposure.md",
+    "docs/wiki/identity-and-access/cordyscrm-record-read-authorization-bypass.md",
+    "docs/wiki/identity-and-access/cordyscrm-sse-workflow-event-authorization.md",
+    "docs/wiki/identity-and-access/meta-ads-mcp-operator-token-fallback.md",
+    "docs/wiki/identity-and-access/wpbot-claude-provider-settings-overwrite.md",
+    "docs/wiki/infrastructure-and-supply-chain/cordyscrm-ai-crm-injection-and-ssrf.md",
+    "docs/wiki/infrastructure-and-supply-chain/cordyscrm-orderby-sql-injection.md",
+    "docs/wiki/infrastructure-and-supply-chain/cordyscrm-sort-name-database-function-injection.md"
+  ],
+  "source_boundaries": {
+    "local_content_sent_external": "Only public topic names, CVE IDs, advisory identifiers, and cited public URLs were used for external checks.",
+    "raw_only": "This artifact is source material only; docs/wiki and raw/processed were not edited."
+  },
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cc-connect-card-callback-command-authorization.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-92801",
+        "https://github.com/chenhg5/cc-connect/issues/1852",
+        "https://github.com/chenhg5/cc-connect"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-gitlab-dynamic-api-url-pat-exfiltration.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61559",
+        "https://github.com/zereight/gitlab-mcp/security/advisories/GHSA-2h44-8472-frjj",
+        "https://github.com/zereight/gitlab-mcp/releases/tag/v2.1.27"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-gitlab-sse-unauthenticated-file-access.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61560",
+        "https://github.com/zereight/gitlab-mcp/security/advisories/GHSA-cv3r-c5h8-f4g5",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61560"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-gitlab-streamable-http-dns-rebinding.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61568",
+        "https://github.com/zereight/gitlab-mcp/security/advisories/GHSA-vmp7-252j-cwp7",
+        "https://github.com/zereight/gitlab-mcp/releases/tag/v2.1.30"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/azure-ai-foundry-missing-authentication.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85889",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85889",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85889"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/cordyscrm-ai-crm-authorization-cluster.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-63646",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-63647",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76901",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76902",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.4"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/cordyscrm-attachment-preview-authorization-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76902",
+        "https://github.com/1Panel-dev/CordysCRM/security/advisories/GHSA-93p7-j9r5-jc7q",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.4"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/cordyscrm-mcp-form-config-metadata-exposure.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-63646",
+        "https://github.com/1Panel-dev/CordysCRM/security/advisories/GHSA-46p5-m7pq-82hm",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.2"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/cordyscrm-record-read-authorization-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76901",
+        "https://github.com/1Panel-dev/CordysCRM/security/advisories/GHSA-hxp2-5w5p-2grq",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.4"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/cordyscrm-sse-workflow-event-authorization.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-63647",
+        "https://github.com/1Panel-dev/CordysCRM/security/advisories/GHSA-9qg8-cm35-xqp4",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.2"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/meta-ads-mcp-operator-token-fallback.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54547",
+        "https://github.com/pipeboard-co/meta-ads-mcp/security/advisories/GHSA-2v2f-mvfg-ph56",
+        "https://github.com/pipeboard-co/meta-ads-mcp/releases/tag/1.0.115"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wpbot-claude-provider-settings-overwrite.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-87959",
+        "https://wpscan.com/vulnerability/3d42171d-6335-4bd3-bbed-fc446da3f945/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-87959"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/cordyscrm-ai-crm-injection-and-ssrf.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-52745",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76899",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76900",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.4"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/cordyscrm-orderby-sql-injection.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-52745",
+        "https://github.com/1Panel-dev/CordysCRM/security/advisories/GHSA-xrcr-hj37-q83j",
+        "https://github.com/1Panel-dev/CordysCRM/pull/2418",
+        "https://github.com/1Panel-dev/CordysCRM/commit/b5b9272c016550d80a789fd8ffbf3d5a4c4bab52",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/cordyscrm-sort-name-database-function-injection.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76899",
+        "https://github.com/1Panel-dev/CordysCRM/security/advisories/GHSA-x6p7-vhgp-6r3q",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.4"
+      ]
+    }
+  ],
+  "qualifying_updates": [
+    {
+      "id": "cordyscrm-cve-2026-52745-cve-services-2026-09-19-patch-reference-enrichment",
+      "leaf_ids": [
+        "docs/wiki/infrastructure-and-supply-chain/cordyscrm-ai-crm-injection-and-ssrf.md",
+        "docs/wiki/infrastructure-and-supply-chain/cordyscrm-orderby-sql-injection.md"
+      ],
+      "title": "CordysCRM ORDER BY SQL injection record gains concrete patch references",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-52745",
+        "https://github.com/1Panel-dev/CordysCRM/security/advisories/GHSA-xrcr-hj37-q83j",
+        "https://github.com/1Panel-dev/CordysCRM/pull/2418",
+        "https://github.com/1Panel-dev/CordysCRM/commit/b5b9272c016550d80a789fd8ffbf3d5a4c4bab52",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-09-18T19:51:17.097Z",
+          "updated": "2026-09-19T14:01:29.368Z"
+        }
+      ],
+      "concise_factual_summary": "CVE Services updated CVE-2026-52745 on 2026-09-19 and now links the CordysCRM GHSA, pull request 2418, commit b5b9272c016550d80a789fd8ffbf3d5a4c4bab52, and release v1.7.0 for the customer public pool sorting SQL injection.",
+      "concrete_security_fact_or_change": "Patch-level evidence for the CordysCRM account-pool ORDER BY SQL injection is now publicly visible in the primary CVE record.",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "CordysCRM customer public pool sorting field",
+        "account-pool query construction",
+        "SQL ORDER BY expression handling"
+      ],
+      "named_entities": [
+        "CordysCRM",
+        "1Panel-dev",
+        "CVE-2026-52745",
+        "GHSA-xrcr-hj37-q83j"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad CordysCRM product context only if tracked upstream.",
+        "ai_security_wiki": "SQL injection remediation boundary and patch provenance remain local security evidence."
+      },
+      "follow_up_note": "During ingest, reconcile the ORDER BY SQL injection leaf open question with the GHSA, PR 2418, commit b5b9272c016550d80a789fd8ffbf3d5a4c4bab52, and release v1.7.0."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/identity-and-access/azure-ai-foundry-missing-authentication.md",
+      "reason": "Azure AI Foundry CVE-2026-85889 remains in-window, but the current local topic collector already captured the same advisory under raw/2026-09-19; no duplicate leaf-watch artifact record was created."
+    },
+    {
+      "leaf_id": "multiple selected September 17/18 CVE leaves",
+      "reason": "CVE publications and patch references for cc-connect, mcp-gitlab, Meta Ads MCP, WPBot, and most CordysCRM leaves were already represented by raw/processed/2026-09-17 or raw/processed/2026-09-18 collector artifacts; no distinct same-leaf delta was identified."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/cordyscrm-ai-crm-injection-and-ssrf.md",
+      "reason": "CordysCRM CVE-2026-76900 webhook SSRF is relevant to the router leaf but the dedicated webhook leaf was not in this deterministic slice; do not update docs/wiki from this raw collector."
+    }
+  ],
+  "validation": {
+    "planned": [
+      "jq empty",
+      "python3 -m json.tool"
+    ],
+    "status": "pending at artifact creation"
+  },
+  "blockers_and_caveats": []
+}

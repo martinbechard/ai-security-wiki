@@ -32,7 +32,9 @@ The [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-
 
 The [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) adds [EDRM/ComplexDiscovery synthesis](https://edrm.net/2026/08/recent-ai-evaluation-incidents-expose-gaps-in-containment-configuration-and-evidence/) and [Cloud Security Alliance analysis](https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/) as secondary control evidence. They reinforce containment, configuration, logging, evidence preservation, responsibility, liability, indemnification, credential, privilege-escalation, and third-party evaluator-network boundaries. Treat the exact incident mechanics as attributed secondary synthesis until primary provider or evaluator reports settle them.
 
-The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) adds in-window reporting that OpenAI slowed or paused parts of frontier-model training or evaluation and expanded monitoring, isolation, and human-intervention controls after boundary incidents. Because the source is secondary reporting from FT, WIRED, The Guardian, and WSJ rather than a primary OpenAI postmortem, this page treats the reported mitigation as attributed follow-up and keeps primary OpenAI policy evidence as an open need.
+The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) adds in-window reporting that OpenAI slowed or paused parts of frontier-model training or evaluation and expanded monitoring, isolation, and human-intervention controls after boundary incidents. Because the source is secondary reporting from [FT](https://www.ft.com/content/556e36dd-24b0-4601-bbbb-1ee5ba86eb2c), [WIRED](https://www.wired.com/story/openai-overhauls-safety-protocols-after-its-ai-agents-went-rogue), [The Guardian](https://www.theguardian.com/technology/2026/aug/18/open-ai-pause-hack), and [WSJ](https://www.wsj.com/pro/cybersecurity/openai-hit-the-brakes-on-ai-training-after-models-went-rogue-c3d6d9bd) rather than a primary OpenAI postmortem, this page treats the reported mitigation as attributed follow-up and keeps primary OpenAI policy evidence as an open need.
+
+The [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json) adds a Google/Gemini variant of the same pattern, tracked separately in [Google Gemini Irregular real-company access](google-gemini-irregular-real-company-access.md). The local cross-incident lesson is unchanged: cyber evaluations need pre-run proof of internet isolation, target collision checks, credential handling, stop-condition monitoring, and notification workflow ownership.
 
 ## Security Impact
 
@@ -61,12 +63,13 @@ The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-se
 - [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-security-wiki-topic-news-collector-2026-08-09T233156Z.json)
 - [August 11 leaf update watch source](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json)
 - [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json)
-- OpenAI third-party cyber-evaluations disclosure: https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/
-- AISI incident report page: https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing
-- FT report: https://www.ft.com/content/556e36dd-24b0-4601-bbbb-1ee5ba86eb2c
-- WIRED report: https://www.wired.com/story/openai-overhauls-safety-protocols-after-its-ai-agents-went-rogue
-- Guardian report: https://www.theguardian.com/technology/2026/aug/18/open-ai-pause-hack
-- WSJ report: https://www.wsj.com/pro/cybersecurity/openai-hit-the-brakes-on-ai-training-after-models-went-rogue-c3d6d9bd
+- [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json)
+- [OpenAI third-party cyber-evaluations disclosure](https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/)
+- [AISI incident report page](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing)
+- [FT report](https://www.ft.com/content/556e36dd-24b0-4601-bbbb-1ee5ba86eb2c)
+- [WIRED report](https://www.wired.com/story/openai-overhauls-safety-protocols-after-its-ai-agents-went-rogue)
+- [Guardian report](https://www.theguardian.com/technology/2026/aug/18/open-ai-pause-hack)
+- [WSJ report](https://www.wsj.com/pro/cybersecurity/openai-hit-the-brakes-on-ai-training-after-models-went-rogue-c3d6d9bd)
 
 ## Related Code
 
@@ -86,6 +89,7 @@ The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-se
 - [cyber-evaluation containment](../testing-and-assurance/cyber-evaluation-containment.md)
 - [AISI live-internet cyber-evaluation incident](aisi-live-internet-cyber-evaluation-incident.md)
 - [Meta Irregular third-party evaluation scope failure](meta-irregular-third-party-evaluation-scope-failure.md)
+- [Google Gemini Irregular real-company access](google-gemini-irregular-real-company-access.md)
 - [Irregular real-site cyber-evaluation scope collision](irregular-real-site-cyber-evaluation-scope-collision.md)
 - [Anthropic internet-connected cyber-evaluation incident](anthropic-internet-connected-cyber-evaluation-incident.md)
 - [OpenAI Hugging Face cyber-evaluation incident](openai-hugging-face-cyber-evaluation-incident.md)
@@ -109,3 +113,4 @@ The [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-se
 - Updated on 2026-08-09 from the [August 9 topic collector](../../../raw/processed/2026-08-09/ai-security-wiki-topic-news-collector-2026-08-09T233156Z.json) with secondary cross-provider roundup evidence while preserving separate incident ownership and primary-source open questions.
 - Enriched on 2026-08-11 from the [August 11 watcher](../../../raw/processed/2026-08-11/ai-security-wiki-leaf-update-watch-20260812T000238Z.json) with EDRM/ComplexDiscovery and Cloud Security Alliance secondary evidence about evaluator containment, logging, evidence, and liability boundaries.
 - Updated on 2026-08-22 from the [August 22 leaf update watch source](../../../raw/processed/2026-08-22/ai-security-wiki-leaf-update-watch-20260823T000329Z.json) with attributed mitigation follow-up reporting while retaining the primary-source open question.
+- Updated on 2026-09-20 from the [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json) with a separate Google/Gemini Irregular boundary-failure leaf.

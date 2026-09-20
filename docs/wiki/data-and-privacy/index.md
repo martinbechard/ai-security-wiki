@@ -44,6 +44,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [Flowise node-load-method credential IDOR](../identity-and-access/flowise-node-load-method-credential-idor.md)
 - [WPBot chat-session contact disclosure](wpbot-chat-session-contact-disclosure.md)
 - [MCP Documentation Server knowledge base exposure](mcp-documentation-server-knowledge-base-exposure.md)
+- [OpenPanel MCP token query logging](openpanel-mcp-token-query-logging.md)
 - [SQLBot Assistant SVG stored XSS](sqlbot-assistant-svg-stored-xss.md)
 - [SQLBot previewData SQL file disclosure](sqlbot-previewdata-sql-file-disclosure.md)
 - [AI Agent Automation memory ownership bypass](ai-agent-automation-memory-ownership-bypass.md)
@@ -84,6 +85,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - Updated on 2026-09-16 with the Flowise MongoDBMemory session leak leaf and watcher metadata enrichment for WPBot provider-key spend.
 - Updated on 2026-09-17 with Flowise chat-model baseURL key exfiltration, LiteLLM nested `user_config.api_base` request-redirection evidence, and Flowise MongoDBMemory watcher metadata.
 - Updated on 2026-09-18 with MCP Documentation Server knowledge-base exposure, split SQLBot data/privacy leaves, and AI Agent Automation memory ownership evidence.
+- Updated on 2026-09-20 with OpenPanel MCP token query logging and links from new assistant-conversation authorization leaves.
 - Updated on 2026-09-15 with WPBot chat-session contact disclosure NVD metadata enrichment and PraisonAI file-boundary privacy implications through linked infrastructure leaves.
 - Updated on 2026-08-31 with the Aix-DB AI rendered-content stored-XSS leaf plus watcher enrichment for existing browser-use, Jina Reader, NextChat, and Keploy advisory leaves.
 - Updated on 2026-08-29 with the Stable Diffusion WebUI credential-disclosure leaf and GitLab/Spring watcher provenance.

@@ -17,6 +17,7 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 - [SAFE AI incident sharing guidance](safe-ai-incident-sharing-guidance.md)
 - [RubyGems spam-publishing agent attribution](rubygems-spam-publishing-agent-attribution.md)
 - [Model misalignment reporting framework](model-misalignment-reporting-framework.md)
+- [Google Gemini Irregular real-company access](google-gemini-irregular-real-company-access.md)
 
 ## Authoritative Sources
 
@@ -50,3 +51,4 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 - Updated on 2026-09-06 with Anthropic remediation-follow-up evidence and OpenAI wiki-incident disclosure-framework reporting.
 - Updated on 2026-09-13 with RubyGems spam-publishing campaign attribution-conflict coverage and AISI primary-page provenance.
 - Updated on 2026-09-18 with OpenAI model-misalignment reporting framework incident-disclosure evidence.
+- Updated on 2026-09-20 with Google/Gemini Irregular real-company access as a separate cyber-evaluation boundary incident leaf.

@@ -152,6 +152,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [MKP Kubernetes log tool DoS](mkp-kubernetes-log-tool-dos.md)
 - [MCPVault recursive metadata path filtering](mcpvault-recursive-metadata-path-filtering.md)
 - [Sentry Seer telemetry agent execution](sentry-seer-telemetry-agent-execution.md)
+- [Plugin4Shell coding-agent plugin version bypass](plugin4shell-coding-agent-plugin-version-bypass.md)
 
 ## Authoritative Sources
 
@@ -192,6 +193,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Updated on 2026-09-16 with Docker MCP Gateway image-label runtime argument injection, mcp-searxng `web_url_read` SSRF, and watcher metadata enrichment for IBM Langflow and PraisonAI leaves.
 - Updated on 2026-09-17 with Contentful MCP Server network-option injection, MCP Memory Keeper context-import path traversal, and watcher metadata enrichment for Docker MCP Gateway and mcp-searxng leaves.
 - Updated on 2026-09-19 with cc-connect card callback authorization, split mcp-gitlab leaves, and mcp-searxng enrichment from the September 18 collector.
+- Updated on 2026-09-20 with Plugin4Shell coding-agent plugin supply-chain coverage and cross-links from new AI chat authorization leaves.
 - Updated on 2026-09-15 with Bifrost MCP stdio registration RCE, PraisonAI IMAP command injection, IBM Langflow flow-component SSRF, and Langflow scanner-bypass enrichment.
 - Updated on 2026-09-02 with LiteLLM MCP KEV authentication bypass, CowAgent tool DoS, and aichat API memory-allocation leaves.
 - Updated on 2026-09-01 with Codex PowerShell approval bypass, Kibana AI feature DoS, runZero Platform MCP authorization, and hermes-agent ACP/MCP availability leaves.

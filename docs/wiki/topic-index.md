@@ -147,12 +147,17 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [agent-and-tool-security/mkp-kubernetes-log-tool-dos.md](agent-and-tool-security/mkp-kubernetes-log-tool-dos.md)
 - [agent-and-tool-security/mcpvault-recursive-metadata-path-filtering.md](agent-and-tool-security/mcpvault-recursive-metadata-path-filtering.md)
 - [agent-and-tool-security/sentry-seer-telemetry-agent-execution.md](agent-and-tool-security/sentry-seer-telemetry-agent-execution.md)
+- [agent-and-tool-security/plugin4shell-coding-agent-plugin-version-bypass.md](agent-and-tool-security/plugin4shell-coding-agent-plugin-version-bypass.md)
 - [data-and-privacy/mcp-documentation-server-knowledge-base-exposure.md](data-and-privacy/mcp-documentation-server-knowledge-base-exposure.md)
+- [data-and-privacy/openpanel-mcp-token-query-logging.md](data-and-privacy/openpanel-mcp-token-query-logging.md)
 - [data-and-privacy/sqlbot-assistant-svg-stored-xss.md](data-and-privacy/sqlbot-assistant-svg-stored-xss.md)
 - [data-and-privacy/sqlbot-previewdata-sql-file-disclosure.md](data-and-privacy/sqlbot-previewdata-sql-file-disclosure.md)
 - [data-and-privacy/ai-agent-automation-memory-ownership-bypass.md](data-and-privacy/ai-agent-automation-memory-ownership-bypass.md)
 - [identity-and-access/netlicensing-mcp-server-operator-key-fallback.md](identity-and-access/netlicensing-mcp-server-operator-key-fallback.md)
 - [identity-and-access/meta-ads-mcp-operator-token-fallback.md](identity-and-access/meta-ads-mcp-operator-token-fallback.md)
+- [identity-and-access/arcadedb-ai-chat-query-database-authorization.md](identity-and-access/arcadedb-ai-chat-query-database-authorization.md)
+- [identity-and-access/online-scheduling-ai-booking-conversation-authorization.md](identity-and-access/online-scheduling-ai-booking-conversation-authorization.md)
+- [identity-and-access/better-messages-ai-chatbot-authorization-cluster.md](identity-and-access/better-messages-ai-chatbot-authorization-cluster.md)
 - [identity-and-access/azure-ai-foundry-missing-authentication.md](identity-and-access/azure-ai-foundry-missing-authentication.md)
 - [identity-and-access/cordyscrm-ai-crm-authorization-cluster.md](identity-and-access/cordyscrm-ai-crm-authorization-cluster.md)
 - [identity-and-access/cordyscrm-mcp-form-config-metadata-exposure.md](identity-and-access/cordyscrm-mcp-form-config-metadata-exposure.md)
@@ -180,6 +185,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [model-and-prompt-security/vllm-allowed-token-ids-logits-corruption.md](model-and-prompt-security/vllm-allowed-token-ids-logits-corruption.md)
 - [model-and-prompt-security/vllm-prompt-token-sampler-state-corruption.md](model-and-prompt-security/vllm-prompt-token-sampler-state-corruption.md)
 - [incident-response/model-misalignment-reporting-framework.md](incident-response/model-misalignment-reporting-framework.md)
+- [incident-response/google-gemini-irregular-real-company-access.md](incident-response/google-gemini-irregular-real-company-access.md)
 - [identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md](identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md)
 - [infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md](infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md)
 - [infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md](infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md)
@@ -253,6 +259,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/memos-internal-service-secret-auth-bypass.md](identity-and-access/memos-internal-service-secret-auth-bypass.md)
 - [identity-and-access/openshift-ai-service-account-excessive-permissions.md](identity-and-access/openshift-ai-service-account-excessive-permissions.md)
 - [identity-and-access/arcadedb-mcp-server-setting-authorization-bypass.md](identity-and-access/arcadedb-mcp-server-setting-authorization-bypass.md)
+- [identity-and-access/arcadedb-ai-chat-query-database-authorization.md](identity-and-access/arcadedb-ai-chat-query-database-authorization.md)
 - [identity-and-access/apify-mcp-token-authority-leak.md](identity-and-access/apify-mcp-token-authority-leak.md)
 - [identity-and-access/onyx-mcp-oauth-token-isolation.md](identity-and-access/onyx-mcp-oauth-token-isolation.md)
 - [identity-and-access/9router-oidc-test-ssrf.md](identity-and-access/9router-oidc-test-ssrf.md)
@@ -429,6 +436,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - Updated on 2026-09-16 with Docker MCP Gateway, mcp-searxng, Flowise MongoDBMemory, UK frontier AI oversight, and watcher metadata security leaves.
 - Updated on 2026-09-17 with Contentful MCP Server, MCP Memory Keeper, Flowise chat-model baseURL, LiteLLM nested-routing, macOS secure-prompt, PhantomRaven, and watcher metadata security leaves.
 - Updated on 2026-09-18 with September 17 MCP, model-serving, model-artifact, Text-to-SQL/RAG, agent-memory, and model-misalignment reporting leaves.
+- Updated on 2026-09-20 with item-level September 19 coverage for ArcadeDB AI chat authorization, OpenPanel MCP token logging, Online Scheduling AI booking conversations, Better Messages AI chat-bot authorization, Google/Gemini evaluation-boundary access, Plugin4Shell, and CordysCRM patch provenance.
 - Updated on 2026-09-15 with Bifrost, LightLLM, PraisonAI, IBM Langflow, Apple Intelligence, and watcher metadata security leaves.
 - Updated on 2026-09-01 with September 1 topic and watcher ingest for Astra release gates, Codex approval/Git execution boundaries, model-artifact supply-chain flaws, Kibana AI feature authorization and DoS, runZero MCP authorization, hermes-agent ACP/MCP DoS, Support Genix AI Chatbot admin takeover, and watcher provenance.
 - Updated on 2026-08-23 with MCP context-injection transparency and agent delegated task authorization drift leaves.

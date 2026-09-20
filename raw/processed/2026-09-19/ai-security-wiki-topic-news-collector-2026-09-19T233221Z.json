@@ -1,0 +1,527 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-09-19T23:32:21Z",
+  "run_timestamp_local": "2026-09-19T19:32:21-0400",
+  "cutoff_window": {
+    "start_utc": "2026-09-17T23:32:21Z",
+    "end_utc": "2026-09-19T23:32:21Z",
+    "policy": "Include only public sources with visible publication or update evidence inside the exact two-day run window. Exclude missing, ambiguous, future-dated, and boundary-only dates."
+  },
+  "repository_scope": {
+    "repo": "/Users/martinbechard/dev/ai-security-wiki",
+    "raw_only": true,
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false
+  },
+  "searched_topics": [
+    "AI threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "Model Context Protocol security",
+    "AI coding-agent plugin and marketplace security",
+    "AI chat and assistant authorization",
+    "AI data security and privacy",
+    "identity and least privilege for AI systems",
+    "AI runtime, model-serving, and deployment supply chain",
+    "AI security incidents and evaluation boundary failures",
+    "AI security standards, regulation, and governance"
+  ],
+  "local_context_checked": {
+    "project_wiki_status": "docs/wiki exists; wiki_ops.py status reported 419 pages and 0 lint findings before raw-only collection.",
+    "federation_file": "docs/wiki/federation.md",
+    "local_topic_index": "docs/wiki/topic-index.md",
+    "upstream_ai_wiki_topic_index": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+    "upstream_ai_dev_wiki_topic_index": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+    "dedupe_scope": "Searched docs/wiki, raw, and raw/processed for candidate CVEs and named incidents before qualifying fresh items."
+  },
+  "source_searches": [
+    {
+      "source": "NVD CVE API",
+      "queries": [
+        "keywordSearch=AI, lastModStartDate=2026-09-17T00:00:00Z",
+        "keywordSearch=MCP, lastModStartDate=2026-09-17T23:32:21Z",
+        "keywordSearch=LLM, lastModStartDate=2026-09-17T23:32:21Z",
+        "keywordSearch=Open WebUI, lastModStartDate=2026-09-17T23:32:21Z",
+        "keywordSearch=agent, lastModStartDate=2026-09-17T23:32:21Z",
+        "keywordSearch=model, lastModStartDate=2026-09-17T23:32:21Z",
+        "keywordSearch=prompt, lastModStartDate=2026-09-17T23:32:21Z",
+        "keywordSearch=RAG, lastModStartDate=2026-09-17T23:32:21Z"
+      ]
+    },
+    {
+      "source": "GitHub Advisory Database API",
+      "queries": [
+        "updated=2026-09-17..2026-09-19",
+        "cve_id filters for selected candidates"
+      ]
+    },
+    {
+      "source": "CVE Services API",
+      "queries": [
+        "CVE-2026-93595",
+        "CVE-2026-93982",
+        "CVE-2026-91847",
+        "CVE-2026-89334",
+        "CVE-2026-89093",
+        "CVE-2026-9289",
+        "CVE-2026-15946",
+        "CVE-2026-85889",
+        "CVE-2026-93839",
+        "CVE-2026-93841"
+      ]
+    },
+    {
+      "source": "Public web search",
+      "queries": [
+        "AI security vulnerability MCP September 19 2026",
+        "AI agent security September 18 2026 vulnerability",
+        "Plugin4Shell AI coding agents Air Security September 18 2026 Claude Code Codex Copilot Gemini CLI",
+        "Google Gemini hacked companies Irregular September 2026",
+        "CVE-2026-85889 Azure AI Foundry privilege escalation MSRC September 18 2026"
+      ]
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-93595",
+      "title": "ArcadeDB AI chat query_database tool bypasses per-tenant authorization",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93595",
+        "https://github.com/ArcadeData/arcadedb/security/advisories/GHSA-chrr-vr3p-crcc",
+        "https://www.vulncheck.com/advisories/arcadedb-before-26.9.1-acl-bypass-via-query-database-tool"
+      ],
+      "visible_dates": {
+        "cve_published": "2026-09-18T13:20:07.472Z",
+        "cve_updated": "2026-09-18T13:20:07.472Z"
+      },
+      "concise_factual_summary": "CVE Services reports that ArcadeDB before 26.9.1 exposes an access-control bypass in the `query_database` tool used by AI chat endpoints. The tool executes queries without binding the authenticated principal to DatabaseContext, which can cause per-tenant authorization checks to be skipped.",
+      "concrete_security_fact_or_change": "In-window CVE publication for an AI chat endpoint tool authorization bypass fixed in ArcadeDB 26.9.1.",
+      "evidence_classification": "primary CVE record plus vendor advisory reference",
+      "affected_boundary_or_version": "ArcadeDB before 26.9.1; AI chat `query_database` tool and DatabaseContext authorization binding.",
+      "why_it_matters_for_ai_security": "It is a direct AI-chat tool execution boundary failure: natural-language database access must enforce the same authenticated principal and tenant boundaries as ordinary database APIs.",
+      "named_entities": [
+        "ArcadeDB",
+        "ArcadeData",
+        "AI chat endpoints",
+        "query_database",
+        "CVE-2026-93595",
+        "GHSA-chrr-vr3p-crcc"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad ArcadeDB product background, if needed.",
+        "ai_dev_wiki": "General Text-to-SQL or database-agent practice only if later framed as a development pattern.",
+        "ai_security_wiki": "Owns the AI chat tool authorization and tenant-boundary security analysis."
+      },
+      "confidence_notes": "High confidence for the CVE timing and affected boundary from CVE Services; ingest should recheck vendor advisory details and patch wording.",
+      "follow_up_actions": [
+        "Create or update a local identity/data-boundary leaf for ArcadeDB AI chat query authorization.",
+        "During ingest, verify the ArcadeDB 26.9.1 release or advisory for exact remediation language."
+      ]
+    },
+    {
+      "id": "CVE-2026-93982",
+      "title": "OpenPanel logs MCP authentication tokens from query parameters",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93982",
+        "https://github.com/Openpanel-dev/openpanel/security/advisories/GHSA-8wx6-g25r-2943",
+        "https://www.vulncheck.com/advisories/openpanel-mcp-authentication-token-in-query-parameter-logged-plaintext",
+        "https://github.com/advisories/GHSA-xvpp-2hfw-c93c"
+      ],
+      "visible_dates": {
+        "cve_published": "2026-09-19T11:53:34.982Z",
+        "cve_updated": "2026-09-19T11:53:34.982Z",
+        "github_advisory_published": "2026-09-19T12:32:11Z",
+        "github_advisory_updated": "2026-09-19T12:32:18Z"
+      },
+      "concise_factual_summary": "CVE Services and GitHub Advisory Database report that OpenPanel through commit bad75bdd logs Model Context Protocol authentication tokens supplied in URL query parameters. Anyone with access to application stdout or centralized logs can capture the base64-encoded credentials and replay MCP requests to access project analytics.",
+      "concrete_security_fact_or_change": "In-window CVE/GHSA publication for plaintext MCP credential logging.",
+      "evidence_classification": "primary CVE record plus GitHub Advisory Database and vendor advisory reference",
+      "affected_boundary_or_version": "OpenPanel through commit bad75bdd; MCP authentication token handling and application logging.",
+      "why_it_matters_for_ai_security": "MCP credentials extend agent/tool authority into analytics systems; logging bearer material turns ordinary observability access into delegated tool access.",
+      "named_entities": [
+        "OpenPanel",
+        "Model Context Protocol",
+        "MCP authentication token",
+        "CVE-2026-93982",
+        "GHSA-8wx6-g25r-2943",
+        "GHSA-xvpp-2hfw-c93c"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad OpenPanel product background if an entity leaf is needed.",
+        "ai_dev_wiki": "General MCP credential hygiene practice only if later reused as development guidance.",
+        "ai_security_wiki": "Owns the local MCP credential logging and replay-risk boundary."
+      },
+      "confidence_notes": "High confidence for timing and vulnerability summary from CVE and GHSA data; fixed version was not identified in fetched metadata.",
+      "follow_up_actions": [
+        "Create or update an MCP credential-handling leaf for OpenPanel.",
+        "Check the OpenPanel repository advisory for fixed commit or release details during ingest."
+      ]
+    },
+    {
+      "id": "CVE-2026-91847",
+      "title": "AI booking-assistant conversations lack requester ownership checks",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91847",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-91847",
+        "https://wpscan.com/vulnerability/9eef3086-3a67-4ee2-bd78-e346e7b05d62",
+        "https://github.com/advisories/GHSA-mj5r-8jcf-67xr"
+      ],
+      "visible_dates": {
+        "cve_published": "2026-09-19T06:00:17.100Z",
+        "cve_updated": "2026-09-19T13:18:25.713Z",
+        "github_advisory_published": "2026-09-19T09:32:10Z",
+        "github_advisory_updated": "2026-09-19T15:31:24Z",
+        "nvd_published": "2026-09-19T07:16:33Z"
+      },
+      "concise_factual_summary": "The Online Scheduling and Appointment Booking System WordPress plugin before 28.2 does not verify that a requester owns the AI booking-assistant conversation referenced by unauthenticated conversation actions. An unauthenticated visitor can read another visitor's assistant messages and inject messages into an active conversation.",
+      "concrete_security_fact_or_change": "In-window CVE/GHSA publication for unauthenticated AI assistant conversation access and message injection.",
+      "evidence_classification": "primary CVE record plus WPScan and GitHub Advisory Database records",
+      "affected_boundary_or_version": "Online Scheduling and Appointment Booking System WordPress plugin before 28.2; unauthenticated AI booking-assistant conversation actions.",
+      "why_it_matters_for_ai_security": "Assistant conversation state can contain personal scheduling context and operational instructions; ownership checks must bind every assistant-thread action to the correct visitor/session.",
+      "named_entities": [
+        "Online Scheduling and Appointment Booking System",
+        "WordPress",
+        "AI booking assistant",
+        "WPScan",
+        "CVE-2026-91847",
+        "GHSA-mj5r-8jcf-67xr"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad plugin/product background only if useful.",
+        "ai_dev_wiki": "General assistant-session design practice if later generalized.",
+        "ai_security_wiki": "Owns the assistant conversation authorization, privacy, and injection boundary."
+      },
+      "confidence_notes": "High confidence for in-window publication and affected version from CVE/GHSA metadata.",
+      "follow_up_actions": [
+        "Create a local assistant-conversation authorization leaf or group with similar AI chatbot plugin issues.",
+        "During ingest, verify whether version 28.2 fully remediates both read and injection paths."
+      ]
+    },
+    {
+      "id": "CVE-2026-89334",
+      "title": "Better Messages exposes AI chat-room transcripts through authorization bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-89334",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-89334",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/b3243fe4-9d11-49f0-884b-0162cd776993?source=cve",
+        "https://github.com/advisories/GHSA-4f44-p79q-6vj4"
+      ],
+      "visible_dates": {
+        "cve_published": "2026-09-19T02:27:10.950Z",
+        "cve_updated": "2026-09-19T14:01:26.491Z",
+        "github_advisory_published": "2026-09-19T03:32:03Z",
+        "github_advisory_updated": "2026-09-19T03:32:13Z",
+        "nvd_published": "2026-09-19T03:17:16Z"
+      },
+      "concise_factual_summary": "Better Messages - Chat Rooms, Group Chat, Private Messages & AI Chat Bots for WordPress is vulnerable through 2.15.33 because it does not properly verify authorization for chat-room thread access. Authenticated attackers with custom-level access or above can access the full message transcript, thread metadata, and user data of any chat-room thread when the default read setting permits it.",
+      "concrete_security_fact_or_change": "In-window CVE/GHSA publication for AI chat-bot plugin transcript and user-data exposure.",
+      "evidence_classification": "primary CVE record plus GitHub Advisory Database and Wordfence reference",
+      "affected_boundary_or_version": "Better Messages WordPress plugin through 2.15.33; chat-room thread REST/API access and default `only_joined_can_read` setting.",
+      "why_it_matters_for_ai_security": "AI chat-bot plugins often hold support, sales, or private conversation context; thread-level authorization must isolate AI-assisted chat transcripts from unrelated users.",
+      "named_entities": [
+        "Better Messages",
+        "WordPlus",
+        "WordPress",
+        "AI Chat Bots",
+        "CVE-2026-89334",
+        "GHSA-4f44-p79q-6vj4"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad plugin/product background only if useful.",
+        "ai_dev_wiki": "General chat-agent session access-control practice if later generalized.",
+        "ai_security_wiki": "Owns the transcript authorization and AI chat data exposure boundary."
+      },
+      "confidence_notes": "High confidence for vulnerability timing and affected product; ingest should check the plugin changeset for the exact fixed version and whether 3.0.0 is the remediation boundary.",
+      "follow_up_actions": [
+        "Consider grouping with CVE-2026-89093 under a Better Messages AI chat-bot authorization cluster.",
+        "Verify whether the default setting and custom-level access condition should be preserved in the local leaf title or body."
+      ]
+    },
+    {
+      "id": "CVE-2026-89093",
+      "title": "Better Messages lets unauthenticated guests spoof internal AI bot identity",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-89093",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-89093",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/df28ecd7-d463-48b7-95e6-8adc9f34d6bd?source=cve",
+        "https://github.com/advisories/GHSA-53vp-fjc5-cqj6"
+      ],
+      "visible_dates": {
+        "cve_published": "2026-09-19T02:27:11.997Z",
+        "cve_updated": "2026-09-19T14:01:26.022Z",
+        "github_advisory_published": "2026-09-19T03:32:03Z",
+        "github_advisory_updated": "2026-09-19T03:32:11Z",
+        "nvd_published": "2026-09-19T03:17:16Z"
+      },
+      "concise_factual_summary": "Better Messages - Chat Rooms, Group Chat, Private Messages & AI Chat Bots for WordPress is vulnerable through 2.15.33 because `is_ai_bot_user()` identifies internal AI bot accounts by checking for an `ai-chat-bot-` prefix in a guest record IP address populated from the client-controlled `X-Real-IP` header. Unauthenticated attackers can register a guest identity treated as an internal AI bot and bypass role, draft-status, and join filters.",
+      "concrete_security_fact_or_change": "In-window CVE/GHSA publication for spoofed internal AI bot identity and room-access bypass.",
+      "evidence_classification": "primary CVE record plus GitHub Advisory Database and Wordfence reference",
+      "affected_boundary_or_version": "Better Messages WordPress plugin through 2.15.33; AI bot identity check, guest registration, and chat-room join authorization.",
+      "why_it_matters_for_ai_security": "It is an AI-specific identity confusion flaw: code treats an untrusted client-controlled field as proof that a user is an internal AI bot and grants privileged conversation access.",
+      "named_entities": [
+        "Better Messages",
+        "WordPlus",
+        "WordPress",
+        "AI Chat Bots",
+        "X-Real-IP",
+        "CVE-2026-89093",
+        "GHSA-53vp-fjc5-cqj6"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad plugin/product background only if useful.",
+        "ai_dev_wiki": "General agent identity and delegated-authority practice if later generalized.",
+        "ai_security_wiki": "Owns the internal-AI-bot identity spoofing and least-privilege boundary."
+      },
+      "confidence_notes": "High confidence for vulnerability timing and AI-specific identity flaw from CVE/GHSA metadata.",
+      "follow_up_actions": [
+        "Group with CVE-2026-89334 if ingest creates a Better Messages AI chat-bot authorization cluster.",
+        "Preserve the AI bot identity prefix detail because it is the reusable security lesson."
+      ]
+    },
+    {
+      "id": "google-gemini-irregular-real-company-breach-2026-09-18",
+      "title": "Google confirmed Gemini accessed three real companies during Irregular cyber evaluation",
+      "source_urls": [
+        "https://www.theguardian.com/technology/2026/sep/18/google-gemini-ai-hack",
+        "https://www.axios.com/2026/09/19/google-safety-incidents-testing-hacks",
+        "https://www.ft.com/content/158740d1-fde7-4dbc-a282-5830c3201189"
+      ],
+      "visible_dates": {
+        "guardian_published": "2026-09-18T20:53:00-04:00",
+        "guardian_last_modified": "2026-09-18T20:54:00-04:00",
+        "axios_published": "2026-09-19",
+        "ft_published": "2026-09-19"
+      },
+      "concise_factual_summary": "The Guardian reported that Google confirmed Gemini breached three real companies in May during an Irregular cybersecurity evaluation. The report says internet access was unintentionally available in a closed evaluation environment; one case involved a fake company name colliding with a real company service, and two involved public repositories containing credentials. Google said the model stopped after recognizing the companies were real and that affected companies were notified.",
+      "concrete_security_fact_or_change": "In-window public incident disclosure for autonomous model cyber-evaluation scope failure and real-company access.",
+      "evidence_classification": "reputable secondary reporting with company confirmation; primary Google or Irregular technical postmortem not located",
+      "affected_boundary_or_version": "Google Gemini model under Irregular cybersecurity evaluation; internet isolation, target naming, public credential discovery, and real-company access.",
+      "why_it_matters_for_ai_security": "It extends the recurring third-party cyber-evaluation boundary failure pattern to Google Gemini and reinforces that internet isolation, target registry control, credential handling, and stop-condition monitoring are AI security controls.",
+      "named_entities": [
+        "Google",
+        "Gemini",
+        "Irregular",
+        "Heather Adkins",
+        "Wall Street Journal",
+        "Axios",
+        "Financial Times",
+        "The Guardian"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad Google/Gemini provider and model background belongs upstream.",
+        "ai_dev_wiki": "General evaluation-workflow practice belongs upstream only if turned into AI-assisted development methodology.",
+        "ai_security_wiki": "Owns the incident-response, cyber-evaluation containment, target-scope, and credential-boundary analysis."
+      },
+      "confidence_notes": "Medium-high confidence: multiple reputable reports and Guardian says Google confirmed the incidents, but no primary Google or Irregular postmortem was found in this run.",
+      "follow_up_actions": [
+        "During ingest, update third-party cyber-evaluation boundary failure pages or create a Google/Gemini-specific incident leaf if independently maintainable.",
+        "Recheck for primary Google, Irregular, or WSJ-accessible details naming remediation controls and exact affected scope."
+      ]
+    },
+    {
+      "id": "plugin4shell-ai-coding-agent-plugin-version-lock-bypass-2026-09-18",
+      "title": "Plugin4Shell lets plugin repositories bypass pinned AI coding-agent plugin versions",
+      "source_urls": [
+        "https://www.air.security/blog/plugin4shell",
+        "https://thehackernews.com/2026/09/plugin4shell-lets-repository-owners.html",
+        "https://www.helpnetsecurity.com/2026/09/18/plugin4shell-ai-coding-agents/"
+      ],
+      "visible_dates": {
+        "air_security_visible_date": "2026-09-17",
+        "the_hacker_news_published": "2026-09-18",
+        "help_net_security_visible_date": "2026-09-18"
+      },
+      "concise_factual_summary": "Public reporting on Air Security's Plugin4Shell disclosure says four AI coding agents, Claude Code, Codex, GitHub Copilot, and Gemini CLI, can fetch an approved plugin snapshot but fail to verify that the installed code matches the pinned commit. A plugin repository owner can create a branch name that resembles the trusted commit and cause malicious plugin code execution. Reports say Claude Code 2.1.179 and Codex 0.146.0 are fixed, while GitHub Copilot and Gemini CLI remained unfixed or would not be patched in the captured reporting.",
+      "concrete_security_fact_or_change": "In-window disclosure of an AI coding-agent plugin supply-chain and zero-click RCE class with named fixed versions for two agents.",
+      "evidence_classification": "primary vendor blog discovered by search plus reputable secondary reporting; primary page content not fully fetched in this run",
+      "affected_boundary_or_version": "Claude Code before 2.1.179, Codex before 0.146.0, GitHub Copilot plugin handling, and Gemini CLI plugin handling; plugin marketplace commit-pinning and repository fetch verification.",
+      "why_it_matters_for_ai_security": "Coding-agent plugins run in developer environments with repository, shell, and credential adjacency; commit pinning is not a control unless the installed bytes are verified against the pinned identity.",
+      "named_entities": [
+        "Plugin4Shell",
+        "Air Security",
+        "Claude Code",
+        "Codex",
+        "GitHub Copilot",
+        "Gemini CLI",
+        "AI coding agents"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad product pages for Claude Code, Codex, Copilot, and Gemini CLI belong upstream.",
+        "ai_dev_wiki": "General coding-agent plugin governance and version-locking practice belongs in ai-dev-wiki.",
+        "ai_security_wiki": "Owns the local plugin supply-chain exploit, zero-click execution, and agent marketplace security boundary."
+      },
+      "confidence_notes": "Medium confidence for exact fixed-version matrix because the primary Air Security article was not fully fetched; secondary reports consistently name the affected agents and fixed Codex/Claude Code versions.",
+      "follow_up_actions": [
+        "During ingest, fetch the Air Security primary article and vendor patch notes before durable synthesis.",
+        "Consider a local AI coding-agent plugin supply-chain leaf and link broad workflow governance to ai-dev-wiki."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-85889 Azure AI Foundry missing authentication",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85889",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-85889"
+      ],
+      "visible_dates": {
+        "cve_published": "2026-09-17T22:55:58.597Z",
+        "cve_updated": "2026-09-19T03:56:30.125Z"
+      },
+      "reason": "Qualifying AI security issue, but already captured in raw/processed/2026-09-18 and synthesized into docs/wiki/identity-and-access/azure-ai-foundry-missing-authentication.md; current update was treated as duplicate enrichment rather than a fresh finding."
+    },
+    {
+      "candidate": "CVE-2026-93839 LightLLM PD Master registration authentication bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93839"
+      ],
+      "visible_dates": {
+        "cve_published": "2026-09-18T19:06:05.152Z"
+      },
+      "reason": "Already captured in raw/processed/2026-09-18 and synthesized into docs/wiki/infrastructure-and-supply-chain/lightllm-pd-master-registration-auth-bypass.md."
+    },
+    {
+      "candidate": "CVE-2026-93841 vLLM prompt-token sampler state corruption",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93841"
+      ],
+      "visible_dates": {
+        "cve_published": "2026-09-18T19:06:06.636Z"
+      },
+      "reason": "Already captured in raw/processed/2026-09-18 and synthesized into docs/wiki/model-and-prompt-security/vllm-prompt-token-sampler-state-corruption.md."
+    },
+    {
+      "candidate": "SQLBot CVE-2026-53554, CVE-2026-53555, CVE-2026-53556",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53554",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53555",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53556"
+      ],
+      "visible_dates": {
+        "cve_published": "2026-09-17T22:16:59Z to 2026-09-17T22:17:00Z",
+        "nvd_or_cve_update": "2026-09-18"
+      },
+      "reason": "Already captured in the September 17 raw source and local SQLBot leaves; current NVD/API hits were duplicate update evidence."
+    },
+    {
+      "candidate": "Open WebUI CVE-2026-70479 through CVE-2026-70491 update cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-70479"
+      ],
+      "visible_dates": {
+        "nvd_last_modified": "2026-09-18"
+      },
+      "reason": "Mostly older August disclosures with in-window NVD metadata updates; local Open WebUI leaves already exist for the material security boundaries found in this run."
+    },
+    {
+      "candidate": "Keycloak CVE-2026-93999, CVE-2026-94000, CVE-2026-94001",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-82wc-7jr6-wxgm",
+        "https://github.com/advisories/GHSA-3g7j-6fqv-v2q4",
+        "https://github.com/advisories/GHSA-p353-3p63-7h28"
+      ],
+      "visible_dates": {
+        "github_advisory_published": "2026-09-19"
+      },
+      "reason": "Concrete identity and authorization vulnerabilities, but no AI-specific product, agent, MCP, model, prompt, or AI deployment boundary was identified."
+    },
+    {
+      "candidate": "CVE-2026-9289 WordLift AI powered SEO plugin information exposure",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-9289"
+      ],
+      "visible_dates": {
+        "cve_published": "2026-09-19T08:27:22.515Z"
+      },
+      "reason": "The product is AI-branded, but the captured flaw is ordinary unauthenticated JSON-LD REST information exposure without a distinct AI-system security boundary."
+    },
+    {
+      "candidate": "CVE-2026-15946 Search Atlas AI SEO plugin authorization bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-15946"
+      ],
+      "visible_dates": {
+        "cve_published": "2026-09-19T07:43:15.963Z"
+      },
+      "reason": "The product is AI-branded, but the captured flaw is a WordPress whitelabel settings password authorization bypass without a concrete AI-agent, model, prompt, data, or tool security delta."
+    },
+    {
+      "candidate": "Hacktron/OpenAI breach using Claude reports",
+      "source_urls": [
+        "https://www.theguardian.com/technology/2026/sep/18/openai-hacked-anthropic-claude-chatbot",
+        "https://www.businessinsider.com/hacktron-ai-cybersecurity-startup-hack-openai-using-claude-2026-9"
+      ],
+      "visible_dates": {
+        "reported": "2026-09-18"
+      },
+      "reason": "Potentially qualifying AI-assisted offensive-security incident, but the prior run already excluded OpenAI/Hacktron without primary OpenAI or Hacktron technical source; this run found additional secondary reports but no stable primary technical disclosure."
+    },
+    {
+      "candidate": "NIST/CISA AI security standards or regulatory updates",
+      "source_urls": [
+        "https://www.cisa.gov/",
+        "https://www.nist.gov/"
+      ],
+      "visible_dates": {
+        "search_window": "2026-09-17T23:32:21Z to 2026-09-19T23:32:21Z"
+      },
+      "reason": "Searches found no concrete in-window AI-specific standard, regulation, advisory, or governance change suitable for this collector artifact."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "ArcadeDB",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep the AI chat `query_database` authorization bypass in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "OpenPanel",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep MCP token logging, credential replay, and log-redaction controls in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "Online Scheduling and Appointment Booking System plugin",
+      "upstream_owner": "ai-wiki if broad product context is needed",
+      "security_specific_note": "Keep AI booking-assistant conversation ownership and message injection in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "Better Messages AI Chat Bots plugin",
+      "upstream_owner": "ai-wiki if broad product context is needed",
+      "security_specific_note": "Keep AI bot identity spoofing and AI chat transcript access controls in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "Google Gemini",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep cyber-evaluation containment, real-company access, and incident-response evidence in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "Irregular",
+      "upstream_owner": "ai-wiki if evaluator-company background matures",
+      "security_specific_note": "Keep incident-specific evaluation-boundary facts locally."
+    },
+    {
+      "entity_or_topic": "Claude Code, Codex, GitHub Copilot, Gemini CLI",
+      "upstream_owner": "ai-wiki for product pages; ai-dev-wiki for general coding-agent workflow governance",
+      "security_specific_note": "Keep Plugin4Shell exploit mechanics and agent plugin supply-chain controls in ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "Model Context Protocol",
+      "upstream_owner": "ai-wiki for protocol background",
+      "security_specific_note": "Keep specific MCP credential, authentication, SSRF, and tool-authority vulnerabilities in ai-security-wiki."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": [],
+  "confidence_summary": "High confidence for CVE/GHSA-derived findings; medium confidence for Google Gemini and Plugin4Shell because primary detailed postmortems were not fully captured, though reputable in-window reporting and/or company-confirmed statements were available.",
+  "follow_up_actions": [
+    "Ingest should dedupe against the September 18 processed source before creating new leaves.",
+    "Recheck primary vendor pages for Plugin4Shell and Google/Irregular before durable synthesis.",
+    "Consider grouping Better Messages CVE-2026-89334 and CVE-2026-89093 as one AI chat-bot authorization cluster with two leaf-level subissues.",
+    "Verify fixed versions or patch commits for ArcadeDB, OpenPanel, and WordPress plugin findings."
+  ]
+}

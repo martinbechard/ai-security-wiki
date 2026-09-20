@@ -15,6 +15,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [MemOS internal service secret auth bypass](memos-internal-service-secret-auth-bypass.md)
 - [OpenShift AI service account excessive permissions](openshift-ai-service-account-excessive-permissions.md)
 - [ArcadeDB MCP server setting authorization bypass](arcadedb-mcp-server-setting-authorization-bypass.md)
+- [ArcadeDB AI chat query_database authorization](arcadedb-ai-chat-query-database-authorization.md)
 - [Apify MCP token authority leak](apify-mcp-token-authority-leak.md)
 - [Onyx MCP OAuth token isolation](onyx-mcp-oauth-token-isolation.md)
 - [9Router OIDC test SSRF](9router-oidc-test-ssrf.md)
@@ -63,6 +64,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [macOS secure-prompt clickjacking bypass](macos-secure-prompt-clickjacking-bypass.md)
 - [NetLicensing MCP Server operator key fallback](netlicensing-mcp-server-operator-key-fallback.md)
 - [Meta Ads MCP operator token fallback](meta-ads-mcp-operator-token-fallback.md)
+- [Online Scheduling AI booking conversation authorization](online-scheduling-ai-booking-conversation-authorization.md)
+- [Better Messages AI chatbot authorization cluster](better-messages-ai-chatbot-authorization-cluster.md)
 
 ## Authoritative Sources
 
@@ -102,6 +105,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - Updated on 2026-09-17 with the macOS secure-prompt clickjacking bypass leaf.
 - Updated on 2026-09-18 with NetLicensing operator-key fallback, RMCP OAuth protected-resource binding, and AgentCore consent portal evidence.
 - Updated on 2026-09-19 with Azure AI Foundry missing authentication, split CordysCRM authorization leaves, WPBot Claude settings overwrite, and Meta Ads MCP operator-token fallback leaves.
+- Updated on 2026-09-20 with ArcadeDB AI chat tool authorization, Online Scheduling AI booking conversation ownership, and Better Messages AI chatbot authorization leaves.
 - Updated on 2026-09-01 with Kibana AI Assistant Knowledge Base cross-realm authorization, Support Genix AI Chatbot admin takeover, and Synthetic Insider Threat Matrix evidence.
 - Updated on 2026-08-31 with diboot AI Session authorization bypass and ash_ai/MCPHub identity-boundary routing.
 - Updated on 2026-08-29 with FastGPT channel authorization, VoltAgent memory ownership, Gitingest token disclosure, and watcher provenance for Telnyx.
