@@ -9,6 +9,8 @@ tags: ["identity-and-access", "data-and-privacy", "agent-and-tool-security"]
 
 ## Current Understanding
 
+The [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) adds disclosed vulnerability evidence dated 2026-09-19T13:18:25.713Z: CVE Services published an unauthenticated ownership-check failure in Online Scheduling before 28.2 that lets visitors read or mutate another visitor's AI booking-assistant conversation.
+
 The [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json) records [CVE-2026-91847](https://cveawg.mitre.org/api/cve/CVE-2026-91847) for the Online Scheduling and Appointment Booking System WordPress plugin before 28.2. Broad plugin or WordPress product context belongs upstream; this page owns the assistant-conversation ownership, privacy, and injection boundary.
 
 The advisory evidence says unauthenticated conversation actions do not verify that the requester owns the referenced AI booking-assistant conversation. An unauthenticated visitor can read another visitor's assistant messages and inject messages into an active assistant thread.
@@ -24,6 +26,7 @@ The advisory evidence says unauthenticated conversation actions do not verify th
 
 ## Authoritative Sources
 
+- [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json)
 - [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json)
 - [CVE-2026-91847 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-91847)
 - [NVD CVE-2026-91847](https://nvd.nist.gov/vuln/detail/CVE-2026-91847)
@@ -54,4 +57,5 @@ The advisory evidence says unauthenticated conversation actions do not verify th
 
 ## Maintenance Notes
 
+- Updated on 2026-09-20 from the [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) with in-window disclosed vulnerability evidence while preserving local security-boundary scope.
 - Created on 2026-09-20 from the [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json) as an AI booking-assistant conversation authorization leaf.

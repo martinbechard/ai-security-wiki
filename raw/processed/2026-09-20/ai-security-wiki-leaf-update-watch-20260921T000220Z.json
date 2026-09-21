@@ -1,0 +1,650 @@
+{
+  "agent_identifier": "Northstar",
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "automation_name": "AI Security Wiki Leaf Update Watch",
+  "confirmed_exploitation": [],
+  "cutoff_window": {
+    "included_after": "2026-09-13T00:00:00-04:00",
+    "included_through": "2026-09-20 20:02:20 -0400",
+    "policy": "Only public sources visibly published or updated within the last 7 days were included; ambiguous, future, missing, and boundary-only dates were excluded."
+  },
+  "demonstrated_research": [
+    "docs/wiki/agent-and-tool-security/plugin4shell-coding-agent-plugin-version-bypass.md"
+  ],
+  "disclosed_vulnerability": [
+    "docs/wiki/data-and-privacy/openpanel-mcp-token-query-logging.md",
+    "docs/wiki/identity-and-access/arcadedb-ai-chat-query-database-authorization.md",
+    "docs/wiki/identity-and-access/better-messages-ai-chatbot-authorization-cluster.md",
+    "docs/wiki/identity-and-access/better-messages-ai-chatbot-authorization-cluster.md",
+    "docs/wiki/identity-and-access/online-scheduling-ai-booking-conversation-authorization.md",
+    "docs/wiki/infrastructure-and-supply-chain/cordyscrm-workflow-webhook-ssrf.md",
+    "docs/wiki/infrastructure-and-supply-chain/lightllm-pd-master-registration-auth-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/rmcp-streamable-http-session-retention-dos.md",
+    "docs/wiki/infrastructure-and-supply-chain/sqlbot-excel-cleanup-copy-program-execution.md",
+    "docs/wiki/infrastructure-and-supply-chain/sqlbot-parseexcel-file-write-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/stanza-model-archive-zip-slip.md",
+    "docs/wiki/model-and-prompt-security/vllm-allowed-token-ids-logits-corruption.md",
+    "docs/wiki/model-and-prompt-security/vllm-audio-input-decompression-dos.md",
+    "docs/wiki/model-and-prompt-security/vllm-prompt-token-sampler-state-corruption.md"
+  ],
+  "evidence_classification_counts": {
+    "demonstrated_research": 1,
+    "disclosed_vulnerability": 14,
+    "incident_response": 1
+  },
+  "exclusions": [
+    {
+      "reason": "Cited leaf URL returned HTTP 404 during this run; Plugin4Shell was instead supported by in-window The Hacker News and Help Net Security reporting that cites Air Security.",
+      "source_url": "https://www.air.security/blog/plugin4shell"
+    },
+    {
+      "reason": "Cited Financial Times URL returned HTTP 403 during this run; Gemini/Irregular incident was instead supported by in-window Axios and Guardian reporting.",
+      "source_url": "https://www.ft.com/content/158740d1-fde7-4dbc-a282-5830c3201189"
+    },
+    {
+      "reason": "NVD pages for selected CVEs were not needed as freshness evidence because CVE Services primary records exposed in-window publication or update timestamps.",
+      "source_url": "https://nvd.nist.gov/"
+    }
+  ],
+  "follow_up_notes": [
+    "Ingest should capture mitigation status carefully because public reporting distinguishes fixed agents, unfixed agents, and host-specific exploitability.",
+    "Ingest should preserve that the exposure requires stdout or centralized logging access rather than claiming remote unauthenticated compromise.",
+    "Ingest should connect the issue to tool execution identity rather than generic database injection.",
+    "Ingest alongside CVE-2026-89334 as a cluster, but keep the two failure modes distinct.",
+    "Ingest should avoid merging this into the spoofing CVE as one undifferentiated vulnerability.",
+    "Ingest should classify this as conversation isolation failure, not generic appointment booking access control.",
+    "Ingest should preserve that Google/Irregular described remediation and notification, and that reporting says the model stopped after recognizing real companies.",
+    "Ingest should note v1.7.4 as mitigation evidence.",
+    "Ingest should emphasize cluster-control boundary and prompt disclosure risk.",
+    "Ingest should preserve the Streamable HTTP transport specificity and fixed version.",
+    "Ingest should connect to datasource cleanup path rather than the upload parser path handled by the sibling CVE.",
+    "Ingest should keep the upload filename/file-write root cause distinct from the COPY PROGRAM cleanup issue.",
+    "Ingest should frame this as model/resource archive integrity, not prompt/model behavior.",
+    "Ingest should avoid overstating exploit status; this is disclosed vulnerability evidence, not confirmed exploitation.",
+    "Ingest should mention v0.24.0 mitigation and the VLLM_MAX_AUDIO_DECODE_DURATION_S control.",
+    "Ingest should keep this separate from allowed_token_ids logits corruption, even though both are vLLM cross-request state issues."
+  ],
+  "leaf_universe_count": 397,
+  "local_run_time": "2026-09-20 20:02:20 -0400",
+  "mitigation_or_control_change": [
+    "docs/wiki/agent-and-tool-security/plugin4shell-coding-agent-plugin-version-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/cordyscrm-workflow-webhook-ssrf.md",
+    "docs/wiki/infrastructure-and-supply-chain/rmcp-streamable-http-session-retention-dos.md",
+    "docs/wiki/infrastructure-and-supply-chain/sqlbot-excel-cleanup-copy-program-execution.md",
+    "docs/wiki/infrastructure-and-supply-chain/sqlbot-parseexcel-file-write-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/stanza-model-archive-zip-slip.md",
+    "docs/wiki/model-and-prompt-security/vllm-audio-input-decompression-dos.md"
+  ],
+  "qualifying_update_count": 16,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "coding-agent plugin supply chain",
+        "developer workstation execution boundary",
+        "plugin marketplace/version pinning trust boundary"
+      ],
+      "date_basis": "Visible article publication dates from The Hacker News and Help Net Security.",
+      "evidence_classification": "demonstrated_research",
+      "follow_up_note": "Ingest should capture mitigation status carefully because public reporting distinguishes fixed agents, unfixed agents, and host-specific exploitability.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/plugin4shell-coding-agent-plugin-version-bypass.md",
+      "named_entities": [
+        "Plugin4Shell",
+        "Air Security",
+        "Claude Code",
+        "OpenAI Codex",
+        "GitHub Copilot",
+        "Google Gemini CLI"
+      ],
+      "published_or_updated_at": "2026-09-18",
+      "source_urls": [
+        "https://thehackernews.com/2026/09/plugin4shell-lets-repository-owners.html",
+        "https://www.helpnetsecurity.com/2026/09/18/plugin4shell-ai-coding-agents-vulnerability/"
+      ],
+      "summary": "Air Security reported a plugin source version-lock bypass affecting AI coding-agent plugin installation; reporting says Claude Code and Codex fixes shipped while Copilot and Gemini CLI remained unresolved or retiring.",
+      "title": "Plugin4Shell coding-agent plugin version bypass",
+      "upstream_routing": "Route broad agent/product catalog status to ai-wiki or ai-dev-wiki; keep local security update focused on plugin version-pin bypass and workstation risk."
+    },
+    {
+      "affected_boundaries": [
+        "MCP authentication token handling",
+        "application logging",
+        "centralized log confidentiality"
+      ],
+      "cve_ids": [
+        "CVE-2026-93982"
+      ],
+      "date_basis": "CVE Services datePublished/dateUpdated.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should preserve that the exposure requires stdout or centralized logging access rather than claiming remote unauthenticated compromise.",
+      "leaf_id": "docs/wiki/data-and-privacy/openpanel-mcp-token-query-logging.md",
+      "named_entities": [
+        "OpenPanel",
+        "Model Context Protocol",
+        "VulnCheck",
+        "GitHub Advisory Database"
+      ],
+      "published_or_updated_at": "2026-09-19T11:53:34.982Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93982",
+        "https://github.com/Openpanel-dev/openpanel/security/advisories/GHSA-8wx6-g25r-2943",
+        "https://www.vulncheck.com/advisories/openpanel-mcp-authentication-token-in-query-parameter-logged-plaintext"
+      ],
+      "summary": "CVE Services published an OpenPanel MCP issue where authentication tokens passed in URL query parameters are logged in plaintext, enabling replay by actors with log access.",
+      "title": "OpenPanel MCP token query logging",
+      "upstream_routing": "No upstream routing needed beyond broad OpenPanel entity ownership; local leaf owns token logging security impact."
+    },
+    {
+      "affected_boundaries": [
+        "AI chat tool authorization",
+        "database ACL enforcement",
+        "authenticated principal binding"
+      ],
+      "cve_ids": [
+        "CVE-2026-93595"
+      ],
+      "date_basis": "CVE Services datePublished/dateUpdated.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should connect the issue to tool execution identity rather than generic database injection.",
+      "leaf_id": "docs/wiki/identity-and-access/arcadedb-ai-chat-query-database-authorization.md",
+      "named_entities": [
+        "ArcadeDB",
+        "query_database",
+        "VulnCheck"
+      ],
+      "published_or_updated_at": "2026-09-18T13:20:07.472Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93595",
+        "https://github.com/ArcadeData/arcadedb/security/advisories/GHSA-chrr-vr3p-crcc",
+        "https://www.vulncheck.com/advisories/arcadedb-before-26.9.1-acl-bypass-via-query-database-tool"
+      ],
+      "summary": "CVE Services published an ArcadeDB AI chat authorization bypass in the query_database tool before 26.9.1, where missing authenticated-principal binding causes ACL checks to no-op.",
+      "title": "ArcadeDB AI Chat query_database authorization bypass",
+      "upstream_routing": "Keep local because this is the AI chat tool authorization boundary; general ArcadeDB product background belongs upstream."
+    },
+    {
+      "affected_boundaries": [
+        "WordPress AI chatbot authorization",
+        "bot identity checks",
+        "conversation information exposure"
+      ],
+      "cve_ids": [
+        "CVE-2026-89093"
+      ],
+      "date_basis": "CVE Services dateUpdated; datePublished was 2026-09-19T02:27:11.997Z.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest alongside CVE-2026-89334 as a cluster, but keep the two failure modes distinct.",
+      "leaf_id": "docs/wiki/identity-and-access/better-messages-ai-chatbot-authorization-cluster.md",
+      "named_entities": [
+        "Better Messages",
+        "Wordfence",
+        "WordPress"
+      ],
+      "published_or_updated_at": "2026-09-19T14:01:26.022Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-89093",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/df28ecd7-d463-48b7-95e6-8adc9f34d6bd?source=cve",
+        "https://github.com/advisories/GHSA-4f44-p79q-6vj4"
+      ],
+      "summary": "CVE Services published and updated an AI bot spoofing issue in Better Messages through 2.15.33, where internal bot identity checks can expose information.",
+      "title": "Better Messages AI chatbot information exposure by spoofing",
+      "upstream_routing": "Keep local for AI chatbot authorization behavior; route plugin catalog context upstream only if needed."
+    },
+    {
+      "affected_boundaries": [
+        "WordPress AI chatbot authorization",
+        "chat action authorization",
+        "conversation integrity"
+      ],
+      "cve_ids": [
+        "CVE-2026-89334"
+      ],
+      "date_basis": "CVE Services dateUpdated; datePublished was 2026-09-19T02:27:10.950Z.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should avoid merging this into the spoofing CVE as one undifferentiated vulnerability.",
+      "leaf_id": "docs/wiki/identity-and-access/better-messages-ai-chatbot-authorization-cluster.md",
+      "named_entities": [
+        "Better Messages",
+        "Wordfence",
+        "WordPress"
+      ],
+      "published_or_updated_at": "2026-09-19T14:01:26.491Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-89334",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/b3243fe4-9d11-49f0-884b-0162cd776993?source=cve",
+        "https://github.com/advisories/GHSA-53vp-fjc5-cqj6"
+      ],
+      "summary": "CVE Services published and updated a separate Better Messages authorization bypass through 2.15.33 caused by insufficient action authorization checks.",
+      "title": "Better Messages AI chatbot authorization bypass",
+      "upstream_routing": "Keep local for AI chatbot authorization behavior; route plugin catalog context upstream only if needed."
+    },
+    {
+      "affected_boundaries": [
+        "AI booking conversation authorization",
+        "unauthenticated visitor isolation",
+        "WordPress plugin REST/actions"
+      ],
+      "cve_ids": [
+        "CVE-2026-91847"
+      ],
+      "date_basis": "CVE Services dateUpdated; datePublished was 2026-09-19T06:00:17.100Z.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should classify this as conversation isolation failure, not generic appointment booking access control.",
+      "leaf_id": "docs/wiki/identity-and-access/online-scheduling-ai-booking-conversation-authorization.md",
+      "named_entities": [
+        "Online Scheduling and Appointment Booking System",
+        "WPScan",
+        "WordPress"
+      ],
+      "published_or_updated_at": "2026-09-19T13:18:25.713Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91847",
+        "https://wpscan.com/vulnerability/9eef3086-3a67-4ee2-bd78-e346e7b05d62/",
+        "https://github.com/advisories/GHSA-mj5r-8jcf-67xr"
+      ],
+      "summary": "CVE Services published an unauthenticated ownership-check failure in Online Scheduling before 28.2 that lets visitors read or mutate another visitor's AI booking-assistant conversation.",
+      "title": "Online Scheduling AI booking conversation authorization",
+      "upstream_routing": "Keep local because the durable subject is conversation authorization; broader plugin/product details are upstream-owned."
+    },
+    {
+      "affected_boundaries": [
+        "cyber-evaluation containment",
+        "internet egress during model testing",
+        "third-party evaluator coordination",
+        "real-target incident notification"
+      ],
+      "date_basis": "Axios visible date September 18, 2026; Guardian visible publication and last-modified timestamps September 18, 2026.",
+      "evidence_classification": "incident_response",
+      "follow_up_note": "Ingest should preserve that Google/Irregular described remediation and notification, and that reporting says the model stopped after recognizing real companies.",
+      "leaf_id": "docs/wiki/incident-response/google-gemini-irregular-real-company-access.md",
+      "named_entities": [
+        "Google Gemini",
+        "Irregular",
+        "Wall Street Journal",
+        "Axios",
+        "The Guardian"
+      ],
+      "published_or_updated_at": "2026-09-18",
+      "source_urls": [
+        "https://www.axios.com/2026/09/19/google-safety-incidents-testing-hacks",
+        "https://www.theguardian.com/technology/2026/sep/18/google-gemini-ai-hack"
+      ],
+      "summary": "Public reporting says Google confirmed Gemini accessed three real companies during an Irregular cybersecurity evaluation after a fictional target name overlapped with real companies and internet access was unintentionally available.",
+      "title": "Google Gemini Irregular real-company access incident",
+      "upstream_routing": "Route broad Google/Gemini product context upstream; keep local incident-response and cyber-evaluation containment lessons."
+    },
+    {
+      "affected_boundaries": [
+        "workflow webhook egress",
+        "approval automation configuration",
+        "server-side request boundary"
+      ],
+      "cve_ids": [
+        "CVE-2026-76900"
+      ],
+      "date_basis": "CVE Services datePublished/dateUpdated.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should note v1.7.4 as mitigation evidence.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/cordyscrm-workflow-webhook-ssrf.md",
+      "named_entities": [
+        "CordysCRM",
+        "1Panel-dev"
+      ],
+      "published_or_updated_at": "2026-09-18T19:56:53.620Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76900",
+        "https://github.com/1Panel-dev/CordysCRM/security/advisories/GHSA-fg6q-pfj7-fghw",
+        "https://github.com/1Panel-dev/CordysCRM/pull/2966",
+        "https://github.com/1Panel-dev/CordysCRM/commit/e0ae23ebf16faa062204d90a689fe33496541ada",
+        "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.4"
+      ],
+      "summary": "CVE Services published a CordysCRM 1.7.3 workflow webhook SSRF affecting stored approval-node webhook configuration, with fix references in PR, commit, and release v1.7.4.",
+      "title": "CordysCRM workflow webhook SSRF",
+      "upstream_routing": "Keep local for SSRF in AI CRM workflow automation; general CordysCRM product information belongs upstream."
+    },
+    {
+      "affected_boundaries": [
+        "LLM serving cluster registration",
+        "WebSocket authentication",
+        "prompt confidentiality",
+        "inference routing integrity"
+      ],
+      "cve_ids": [
+        "CVE-2026-93839"
+      ],
+      "date_basis": "CVE Services datePublished/dateUpdated.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should emphasize cluster-control boundary and prompt disclosure risk.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/lightllm-pd-master-registration-auth-bypass.md",
+      "named_entities": [
+        "LightLLM",
+        "ModelTC",
+        "VulnCheck"
+      ],
+      "published_or_updated_at": "2026-09-18T19:06:05.152Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93839",
+        "https://github.com/ModelTC/LightLLM/issues/1576",
+        "https://www.vulncheck.com/advisories/lightllm-through-1.2.0-missing-authentication-in-pd-master-pd-register-websocket-endpoint"
+      ],
+      "summary": "CVE Services published a LightLLM through 1.2.0 missing-authentication issue on the /pd_register WebSocket endpoint, allowing arbitrary node registration and possible prompt disclosure or routing disruption.",
+      "title": "LightLLM PD master registration authentication bypass",
+      "upstream_routing": "Keep local for inference infrastructure authentication; route broad LightLLM framework background upstream."
+    },
+    {
+      "affected_boundaries": [
+        "MCP Streamable HTTP transport",
+        "unauthenticated session lifecycle",
+        "server resource exhaustion"
+      ],
+      "cve_ids": [
+        "CVE-2026-63128"
+      ],
+      "date_basis": "CVE Services dateUpdated; datePublished was 2026-09-16T14:49:04.401Z.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should preserve the Streamable HTTP transport specificity and fixed version.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/rmcp-streamable-http-session-retention-dos.md",
+      "named_entities": [
+        "RMCP",
+        "Model Context Protocol Rust SDK"
+      ],
+      "published_or_updated_at": "2026-09-16T15:18:37.976Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-63128",
+        "https://github.com/modelcontextprotocol/rust-sdk/security/advisories/GHSA-9pj6-vhgr-3mwh",
+        "https://github.com/modelcontextprotocol/rust-sdk/pull/934",
+        "https://github.com/modelcontextprotocol/rust-sdk/commit/dfa7fd6f9309deab60bea230b041be9a3fcda846",
+        "https://github.com/modelcontextprotocol/rust-sdk/releases/tag/rmcp-v2.0.0"
+      ],
+      "summary": "CVE Services published an RMCP Streamable HTTP server DoS fixed in rmcp-v2.0.0, where unauthenticated non-initialization JSON-RPC can retain sessions/resources.",
+      "title": "RMCP Streamable HTTP session retention DoS",
+      "upstream_routing": "Keep local for MCP transport DoS; route general Rust SDK ownership upstream if necessary."
+    },
+    {
+      "affected_boundaries": [
+        "Text-to-SQL/RAG datasource import",
+        "PostgreSQL command execution",
+        "authenticated admin/data-source boundary"
+      ],
+      "cve_ids": [
+        "CVE-2026-53557"
+      ],
+      "date_basis": "CVE Services datePublished/dateUpdated.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should connect to datasource cleanup path rather than the upload parser path handled by the sibling CVE.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/sqlbot-excel-cleanup-copy-program-execution.md",
+      "named_entities": [
+        "SQLBot",
+        "DataEase",
+        "PostgreSQL"
+      ],
+      "published_or_updated_at": "2026-09-17T21:41:45.155Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53557",
+        "https://github.com/dataease/SQLBot/security/advisories/GHSA-vxwj-843f-9c9g",
+        "https://github.com/dataease/SQLBot/commit/5d5a92a5266e62da7de4a84ffc8317498497b193",
+        "https://github.com/dataease/SQLBot/releases/tag/v1.9.0"
+      ],
+      "summary": "CVE Services published a SQLBot pre-1.9.0 issue where crafted Excel datasource tableName data can reach unsafe identifier use and PostgreSQL COPY PROGRAM execution during cleanup.",
+      "title": "SQLBot Excel cleanup COPY PROGRAM execution",
+      "upstream_routing": "Keep local for AI/RAG datasource execution risk; route SQLBot product background upstream."
+    },
+    {
+      "affected_boundaries": [
+        "Text-to-SQL/RAG datasource upload",
+        "file-write boundary",
+        "server code execution"
+      ],
+      "cve_ids": [
+        "CVE-2026-53554"
+      ],
+      "date_basis": "CVE Services dateUpdated; datePublished was 2026-09-17T21:38:37.353Z.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should keep the upload filename/file-write root cause distinct from the COPY PROGRAM cleanup issue.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/sqlbot-parseexcel-file-write-rce.md",
+      "named_entities": [
+        "SQLBot",
+        "DataEase"
+      ],
+      "published_or_updated_at": "2026-09-18T13:16:54.601Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53554",
+        "https://github.com/dataease/SQLBot/security/advisories/GHSA-wxv4-pw5w-wx79",
+        "https://github.com/dataease/SQLBot/commit/4bfd0f49e8cd3df8540dd9d51d40d0e056eeeec4",
+        "https://github.com/dataease/SQLBot/commit/92c5aea70b2eba9c1f429017639017041556843b",
+        "https://github.com/dataease/SQLBot/releases/tag/v1.9.0"
+      ],
+      "summary": "CVE Services published and updated a SQLBot pre-1.9.0 parseExcel upload path issue where attacker-controlled multipart filenames can cause file write and code execution.",
+      "title": "SQLBot parseExcel file write RCE",
+      "upstream_routing": "Keep local for AI/RAG datasource upload RCE; route SQLBot product background upstream."
+    },
+    {
+      "affected_boundaries": [
+        "model artifact download",
+        "archive extraction",
+        "local filesystem write boundary"
+      ],
+      "cve_ids": [
+        "CVE-2026-59974"
+      ],
+      "date_basis": "CVE Services dateUpdated; datePublished was 2026-09-16T16:10:41.804Z.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should frame this as model/resource archive integrity, not prompt/model behavior.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/stanza-model-archive-zip-slip.md",
+      "named_entities": [
+        "Stanza",
+        "Stanford NLP"
+      ],
+      "published_or_updated_at": "2026-09-16T17:28:08.634Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59974",
+        "https://github.com/stanfordnlp/stanza/security/advisories/GHSA-2fwf-f686-7p34",
+        "https://github.com/stanfordnlp/stanza/commit/a7085e75abdf35f277754dda472bba4e6819bcbb",
+        "https://github.com/stanfordnlp/stanza/releases/tag/v1.14.0"
+      ],
+      "summary": "CVE Services published a Stanza pre-1.14.0 model/resource archive Zip Slip issue in unzip/extractall handling, fixed in v1.14.0.",
+      "title": "Stanza model archive Zip Slip",
+      "upstream_routing": "Keep local for model-artifact supply-chain extraction risk; broad Stanza library background belongs upstream."
+    },
+    {
+      "affected_boundaries": [
+        "LLM inference request isolation",
+        "sampling parameter validation",
+        "GPU logits state"
+      ],
+      "cve_ids": [
+        "CVE-2026-93840"
+      ],
+      "date_basis": "CVE Services datePublished/dateUpdated.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should avoid overstating exploit status; this is disclosed vulnerability evidence, not confirmed exploitation.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-allowed-token-ids-logits-corruption.md",
+      "named_entities": [
+        "vLLM",
+        "VulnCheck"
+      ],
+      "published_or_updated_at": "2026-09-18T19:06:06.001Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93840",
+        "https://github.com/vllm-project/vllm/pull/49080",
+        "https://github.com/vllm-project/vllm/commit/5b0e5b69ac1a3884a6479c9537789c95263cc804",
+        "https://www.vulncheck.com/advisories/vllm-before-0.29.0-cross-request-logits-corruption-via-allowed-token-ids"
+      ],
+      "summary": "CVE Services published a vLLM before 0.29.0 allowed_token_ids validation flaw that can corrupt GPU logits state across requests.",
+      "title": "vLLM allowed_token_ids logits corruption",
+      "upstream_routing": "Keep local for inference isolation vulnerability; route general vLLM product/framework information upstream."
+    },
+    {
+      "affected_boundaries": [
+        "multimodal LLM serving",
+        "audio decoder resource limits",
+        "unauthenticated inference API DoS"
+      ],
+      "cve_ids": [
+        "CVE-2026-57173"
+      ],
+      "date_basis": "CVE Services dateUpdated; datePublished was 2026-09-16T16:34:39.144Z.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should mention v0.24.0 mitigation and the VLLM_MAX_AUDIO_DECODE_DURATION_S control.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-audio-input-decompression-dos.md",
+      "named_entities": [
+        "vLLM"
+      ],
+      "published_or_updated_at": "2026-09-18T18:11:54.721Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57173",
+        "https://github.com/vllm-project/vllm/security/advisories/GHSA-hcwq-8wjf-3gcr",
+        "https://github.com/vllm-project/vllm/pull/45908",
+        "https://github.com/vllm-project/vllm/commit/3d20275bb4d434f53055c3c0b645fd8bb072965e",
+        "https://github.com/vllm-project/vllm/releases/tag/v0.24.0"
+      ],
+      "summary": "CVE Services published and updated a vLLM pre-0.24.0 audio input decompression DoS where audio decoder duration limits are not applied through chat-completions audio handling.",
+      "title": "vLLM audio input decompression DoS",
+      "upstream_routing": "Keep local for multimodal serving DoS; route general vLLM framework information upstream."
+    },
+    {
+      "affected_boundaries": [
+        "LLM inference request isolation",
+        "prompt-token validation",
+        "GPU sampler state"
+      ],
+      "cve_ids": [
+        "CVE-2026-93841"
+      ],
+      "date_basis": "CVE Services datePublished/dateUpdated.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should keep this separate from allowed_token_ids logits corruption, even though both are vLLM cross-request state issues.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-prompt-token-sampler-state-corruption.md",
+      "named_entities": [
+        "vLLM",
+        "VulnCheck",
+        "Triton"
+      ],
+      "published_or_updated_at": "2026-09-18T19:06:06.636Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93841",
+        "https://github.com/vllm-project/vllm/pull/49081",
+        "https://www.vulncheck.com/advisories/vllm-through-0.29.0-adjacent-request-sampler-state-corruption-via-unvalidated-prompt-token-ids"
+      ],
+      "summary": "CVE Services published a vLLM through 0.29.0 sampler-state corruption issue in a Triton prompt-token penalty path where unvalidated prompt token IDs can corrupt adjacent request state.",
+      "title": "vLLM prompt-token sampler state corruption",
+      "upstream_routing": "Keep local for inference isolation vulnerability; route general vLLM framework information upstream."
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_timestamp": "2026-09-21T00:02:20Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/plugin4shell-coding-agent-plugin-version-bypass.md",
+    "docs/wiki/data-and-privacy/openpanel-mcp-token-query-logging.md",
+    "docs/wiki/identity-and-access/arcadedb-ai-chat-query-database-authorization.md",
+    "docs/wiki/identity-and-access/better-messages-ai-chatbot-authorization-cluster.md",
+    "docs/wiki/identity-and-access/online-scheduling-ai-booking-conversation-authorization.md",
+    "docs/wiki/incident-response/google-gemini-irregular-real-company-access.md",
+    "docs/wiki/infrastructure-and-supply-chain/cordyscrm-workflow-webhook-ssrf.md",
+    "docs/wiki/infrastructure-and-supply-chain/lightllm-pd-master-registration-auth-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/rmcp-streamable-http-session-retention-dos.md",
+    "docs/wiki/infrastructure-and-supply-chain/sqlbot-excel-cleanup-copy-program-execution.md",
+    "docs/wiki/infrastructure-and-supply-chain/sqlbot-parseexcel-file-write-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/stanza-model-archive-zip-slip.md",
+    "docs/wiki/model-and-prompt-security/vllm-allowed-token-ids-logits-corruption.md",
+    "docs/wiki/model-and-prompt-security/vllm-audio-input-decompression-dos.md",
+    "docs/wiki/model-and-prompt-security/vllm-prompt-token-sampler-state-corruption.md"
+  ],
+  "selection_policy": "New or unchecked durable leaves first, then oldest last_checked_at, ties by stable relative path. Excluded index, digest, source-workflow, federation, schema, glossary, known-defects, open-decisions, maintenance-log, topic-index, and dated source-synthesis pages unless durable.",
+  "sources_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-53554",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-53557",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-57173",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-59974",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-63128",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-76900",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-89093",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-89334",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-91847",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-93595",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-93839",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-93840",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-93841",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-93982",
+    "https://github.com/1Panel-dev/CordysCRM/commit/e0ae23ebf16faa062204d90a689fe33496541ada",
+    "https://github.com/1Panel-dev/CordysCRM/pull/2966",
+    "https://github.com/1Panel-dev/CordysCRM/releases/tag/v1.7.4",
+    "https://github.com/1Panel-dev/CordysCRM/security/advisories/GHSA-fg6q-pfj7-fghw",
+    "https://github.com/ArcadeData/arcadedb/security/advisories/GHSA-chrr-vr3p-crcc",
+    "https://github.com/ModelTC/LightLLM/issues/1576",
+    "https://github.com/Openpanel-dev/openpanel/security/advisories/GHSA-8wx6-g25r-2943",
+    "https://github.com/advisories/GHSA-4f44-p79q-6vj4",
+    "https://github.com/advisories/GHSA-53vp-fjc5-cqj6",
+    "https://github.com/advisories/GHSA-mj5r-8jcf-67xr",
+    "https://github.com/dataease/SQLBot/commit/4bfd0f49e8cd3df8540dd9d51d40d0e056eeeec4",
+    "https://github.com/dataease/SQLBot/commit/5d5a92a5266e62da7de4a84ffc8317498497b193",
+    "https://github.com/dataease/SQLBot/commit/92c5aea70b2eba9c1f429017639017041556843b",
+    "https://github.com/dataease/SQLBot/releases/tag/v1.9.0",
+    "https://github.com/dataease/SQLBot/security/advisories/GHSA-vxwj-843f-9c9g",
+    "https://github.com/dataease/SQLBot/security/advisories/GHSA-wxv4-pw5w-wx79",
+    "https://github.com/modelcontextprotocol/rust-sdk/commit/dfa7fd6f9309deab60bea230b041be9a3fcda846",
+    "https://github.com/modelcontextprotocol/rust-sdk/pull/934",
+    "https://github.com/modelcontextprotocol/rust-sdk/releases/tag/rmcp-v2.0.0",
+    "https://github.com/modelcontextprotocol/rust-sdk/security/advisories/GHSA-9pj6-vhgr-3mwh",
+    "https://github.com/stanfordnlp/stanza/commit/a7085e75abdf35f277754dda472bba4e6819bcbb",
+    "https://github.com/stanfordnlp/stanza/releases/tag/v1.14.0",
+    "https://github.com/stanfordnlp/stanza/security/advisories/GHSA-2fwf-f686-7p34",
+    "https://github.com/vllm-project/vllm/commit/3d20275bb4d434f53055c3c0b645fd8bb072965e",
+    "https://github.com/vllm-project/vllm/commit/5b0e5b69ac1a3884a6479c9537789c95263cc804",
+    "https://github.com/vllm-project/vllm/pull/45908",
+    "https://github.com/vllm-project/vllm/pull/49080",
+    "https://github.com/vllm-project/vllm/pull/49081",
+    "https://github.com/vllm-project/vllm/releases/tag/v0.24.0",
+    "https://github.com/vllm-project/vllm/security/advisories/GHSA-hcwq-8wjf-3gcr",
+    "https://thehackernews.com/2026/09/plugin4shell-lets-repository-owners.html",
+    "https://wpscan.com/vulnerability/9eef3086-3a67-4ee2-bd78-e346e7b05d62/",
+    "https://www.air.security/blog/plugin4shell",
+    "https://www.axios.com/2026/09/19/google-safety-incidents-testing-hacks",
+    "https://www.ft.com/content/158740d1-fde7-4dbc-a282-5830c3201189",
+    "https://www.helpnetsecurity.com/2026/09/18/plugin4shell-ai-coding-agents-vulnerability/",
+    "https://www.theguardian.com/technology/2026/sep/18/google-gemini-ai-hack",
+    "https://www.vulncheck.com/advisories/arcadedb-before-26.9.1-acl-bypass-via-query-database-tool",
+    "https://www.vulncheck.com/advisories/lightllm-through-1.2.0-missing-authentication-in-pd-master-pd-register-websocket-endpoint",
+    "https://www.vulncheck.com/advisories/openpanel-mcp-authentication-token-in-query-parameter-logged-plaintext",
+    "https://www.vulncheck.com/advisories/vllm-before-0.29.0-cross-request-logits-corruption-via-allowed-token-ids",
+    "https://www.vulncheck.com/advisories/vllm-through-0.29.0-adjacent-request-sampler-state-corruption-via-unvalidated-prompt-token-ids",
+    "https://www.wordfence.com/threat-intel/vulnerabilities/id/b3243fe4-9d11-49f0-884b-0162cd776993?source=cve",
+    "https://www.wordfence.com/threat-intel/vulnerabilities/id/df28ecd7-d463-48b7-95e6-8adc9f34d6bd?source=cve"
+  ],
+  "unverified_claims": [],
+  "upstream_routing_notes": [
+    "Route broad agent/product catalog status to ai-wiki or ai-dev-wiki; keep local security update focused on plugin version-pin bypass and workstation risk.",
+    "No upstream routing needed beyond broad OpenPanel entity ownership; local leaf owns token logging security impact.",
+    "Keep local because this is the AI chat tool authorization boundary; general ArcadeDB product background belongs upstream.",
+    "Keep local for AI chatbot authorization behavior; route plugin catalog context upstream only if needed.",
+    "Keep local for AI chatbot authorization behavior; route plugin catalog context upstream only if needed.",
+    "Keep local because the durable subject is conversation authorization; broader plugin/product details are upstream-owned.",
+    "Route broad Google/Gemini product context upstream; keep local incident-response and cyber-evaluation containment lessons.",
+    "Keep local for SSRF in AI CRM workflow automation; general CordysCRM product information belongs upstream.",
+    "Keep local for inference infrastructure authentication; route broad LightLLM framework background upstream.",
+    "Keep local for MCP transport DoS; route general Rust SDK ownership upstream if necessary.",
+    "Keep local for AI/RAG datasource execution risk; route SQLBot product background upstream.",
+    "Keep local for AI/RAG datasource upload RCE; route SQLBot product background upstream.",
+    "Keep local for model-artifact supply-chain extraction risk; broad Stanza library background belongs upstream.",
+    "Keep local for inference isolation vulnerability; route general vLLM product/framework information upstream.",
+    "Keep local for multimodal serving DoS; route general vLLM framework information upstream.",
+    "Keep local for inference isolation vulnerability; route general vLLM framework information upstream."
+  ],
+  "validation": {
+    "git_diff_check": "not_applicable_untracked_raw_artifact",
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "wiki_ops_status": "passed: 425 pages, 0 missing required files, 0 lint findings"
+  }
+}

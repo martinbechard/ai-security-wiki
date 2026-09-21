@@ -9,6 +9,8 @@ tags: ["identity-and-access", "data-and-privacy", "agent-and-tool-security"]
 
 ## Current Understanding
 
+The [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) adds in-window CVE Services update evidence for both Better Messages issues: CVE-2026-89093 covers AI bot spoofing through 2.15.33, and CVE-2026-89334 covers a separate action-authorization failure through 2.15.33. The two failure modes stay clustered because they share the AI chatbot authorization surface but should not be treated as one undifferentiated vulnerability.
+
 The [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json) records [CVE-2026-89334](https://cveawg.mitre.org/api/cve/CVE-2026-89334) and [CVE-2026-89093](https://cveawg.mitre.org/api/cve/CVE-2026-89093) for Better Messages - Chat Rooms, Group Chat, Private Messages & AI Chat Bots for WordPress through 2.15.33. Broad WordPress-plugin background belongs upstream; this page owns the tightly coupled AI chat-bot authorization, identity, and transcript-exposure boundary.
 
 CVE-2026-89334 is a chat-room thread authorization failure: authenticated custom-level users can access message transcripts, thread metadata, and user data for chat-room threads when the default read setting permits it. CVE-2026-89093 is an AI-specific identity confusion issue: `is_ai_bot_user()` recognizes internal AI bot accounts from an `ai-chat-bot-` prefix in a guest record IP address populated from client-controlled `X-Real-IP`, letting unauthenticated guests spoof internal bot identity and bypass room filters.
@@ -24,6 +26,7 @@ CVE-2026-89334 is a chat-room thread authorization failure: authenticated custom
 
 ## Authoritative Sources
 
+- [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json)
 - [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json)
 - [CVE-2026-89334 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-89334)
 - [CVE-2026-89093 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-89093)
@@ -56,4 +59,5 @@ CVE-2026-89334 is a chat-room thread authorization failure: authenticated custom
 
 ## Maintenance Notes
 
+- Updated on 2026-09-20 from the [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) with in-window disclosed vulnerability evidence while preserving local security-boundary scope.
 - Created on 2026-09-20 from the [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json) as one closely coupled AI chat-bot authorization cluster rather than two digest-batch pages.

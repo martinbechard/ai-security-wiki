@@ -1,0 +1,576 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "agent_identifier": "Northstar",
+  "run_timestamp": "2026-09-20T23:32:26Z",
+  "cutoff_window": {
+    "start": "2026-09-18T23:32:26Z",
+    "end": "2026-09-20T23:32:26Z",
+    "policy": "Include only public items published or visibly updated inside the exact 48-hour run window. Exclude missing, ambiguous, future-dated, boundary-only, duplicate, or non-AI-security records."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "federation_file": "docs/wiki/federation.md",
+    "upstream_indexes_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "routing_rule": "Broad AI entities, products, companies, frameworks, models, MCP servers, and general AI-development practices route upstream; this artifact keeps only the security-specific facts, affected boundary, mitigation, and ingest routing notes for ai-security-wiki."
+  },
+  "collection_methods": [
+    {
+      "method": "NVD CVE API keyword searches",
+      "queries": [
+        "AI",
+        "MCP",
+        "LLM",
+        "agent",
+        "model",
+        "Flowise",
+        "Spring AI",
+        "Gemini",
+        "vLLM",
+        "Kibana AI",
+        "Copilot"
+      ],
+      "notes": "Used lastModifiedStartDate=2026-09-18T23:32:26.000Z and lastModifiedEndDate=2026-09-20T23:32:26.000Z. Later repeated keyword calls returned HTTP 429 for several keywords after useful results were captured."
+    },
+    {
+      "method": "CVE Services API per-CVE records",
+      "queries": [
+        "CVE-2026-93965",
+        "CVE-2026-94031",
+        "CVE-2026-94037",
+        "CVE-2026-94044",
+        "CVE-2026-94046",
+        "CVE-2026-94047",
+        "CVE-2026-94111",
+        "CVE-2026-93989",
+        "CVE-2026-94091"
+      ],
+      "notes": "Used direct CVE JSON for publication dates, affected products, summaries, CVSS snippets, and public references."
+    },
+    {
+      "method": "Public web search",
+      "queries": [
+        "AI security vulnerability advisory September 20 2026 MCP CVE",
+        "AI security incident September 20 2026 prompt injection agent MCP",
+        "Hacktron OpenAI Claude bug bounty September 2026 primary disclosure",
+        "Google Gemini Irregular hacked real companies September 2026 primary Google Irregular"
+      ],
+      "notes": "Used to check for non-CVE incident candidates and primary-source availability; no non-duplicate primary incident source was added as a qualifying finding."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-93965",
+      "title": "SxDevOps MCP STDIO server command injection",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93965",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-93965",
+        "https://vuldb.com/vuln/407924",
+        "https://github.com/aiyiyi121/sxdevops/issues/16"
+      ],
+      "visible_dates": {
+        "published": "2026-09-20T05:45:10.959Z",
+        "updated": "2026-09-20T05:45:10.959Z"
+      },
+      "concise_factual_summary": "CVE Services records command injection in aiyiyi121 SxDevOps 1.0 and 1.1, affecting subprocess.Popen in backend/aiops/services.py for the MCP STDIO Server Management component. Manipulation of endpoint_or_command can be initiated remotely, and the record names patch 2b4bf8585c3e731e7a8af30801ea46680bc783f9.",
+      "evidence_classification": "CVE Services primary record with VulDB technical reference and public issue-tracker reference.",
+      "affected_boundary_or_version": "aiyiyi121 SxDevOps 1.0 and 1.1; MCP STDIO Server Management command-launch path.",
+      "why_it_matters_for_ai_security": "MCP server management is a delegated tool-execution boundary; argument injection into a stdio server launcher can convert tool configuration or remote requests into host command execution.",
+      "named_entities": [
+        "SxDevOps",
+        "MCP",
+        "aiyiyi121",
+        "subprocess.Popen"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad SxDevOps or MCP server catalog context, if needed.",
+        "ai_dev_wiki": "General MCP server development practice, if needed.",
+        "ai_security_wiki": "MCP stdio server command-injection boundary and patch evidence."
+      },
+      "confidence_notes": "High confidence on CVE publication date and affected boundary; fixed-version semantics should be rechecked during ingest because the CVE names a patch hash rather than a release.",
+      "follow_up_actions": [
+        "Check the issue and patch hash during ingest for release or tag mapping.",
+        "Consider whether this belongs under agent-and-tool-security or infrastructure-and-supply-chain depending on final patch evidence."
+      ]
+    },
+    {
+      "id": "CVE-2026-94031",
+      "title": "nexus-mcp nexus_reauth command injection",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94031",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94031",
+        "https://vuldb.com/vuln/407959",
+        "https://github.com/0-Gaurav-0/nexus-mcp/issues/1"
+      ],
+      "visible_dates": {
+        "published": "2026-09-20T14:00:10.406Z",
+        "updated": "2026-09-20T14:00:10.406Z"
+      },
+      "concise_factual_summary": "CVE Services records command injection in 0-Gaurav-0 nexus-mcp commit aed0026e7ac1f23dc940e46e9fd3a2da6904f914. The affected nexus_reauth MCP tool calls child_process.exec in src/auth/browser.ts with attacker-manipulable url input. The record says the exploit is public and the project had not responded.",
+      "evidence_classification": "CVE Services primary record with VulDB technical reference and public issue-tracker reference.",
+      "affected_boundary_or_version": "nexus-mcp rolling release at commit aed0026e7ac1f23dc940e46e9fd3a2da6904f914; nexus_reauth MCP tool.",
+      "why_it_matters_for_ai_security": "Authentication helper tools inside MCP servers can become command-execution surfaces if they shell out with untrusted URL input.",
+      "named_entities": [
+        "nexus-mcp",
+        "nexus_reauth",
+        "MCP",
+        "child_process.exec"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad MCP server entity context.",
+        "ai_dev_wiki": "General TypeScript MCP implementation practice.",
+        "ai_security_wiki": "Tool-auth command injection and public exploit status."
+      },
+      "confidence_notes": "High confidence for the disclosure record; release remediation is unknown because the project uses rolling releases and the CVE says no response yet.",
+      "follow_up_actions": [
+        "During ingest, preserve unresolved remediation status if no fixed commit or release is available.",
+        "Cross-link with MCP shell/command policy pages if synthesized."
+      ]
+    },
+    {
+      "id": "CVE-2026-94037",
+      "title": "mcp-file-analyzer CSV tool path traversal",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94037",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94037",
+        "https://vuldb.com/vuln/407966",
+        "https://github.com/00Kisumi00/mcp-file-analyzer/issues/1"
+      ],
+      "visible_dates": {
+        "published": "2026-09-20T16:15:10.164Z",
+        "updated": "2026-09-20T16:15:10.164Z"
+      },
+      "concise_factual_summary": "CVE Services records path traversal in 00Kisumi00 mcp-file-analyzer up to commit 84740852f0cf0cf5db4781b1ca6d7c6a6d210405. The affected analyze_csv_data MCP tool in main.py lets filename manipulation traverse paths. The record says remote exploitation is possible and a public exploit exists.",
+      "evidence_classification": "CVE Services primary record with VulDB technical reference and issue-tracker reference.",
+      "affected_boundary_or_version": "mcp-file-analyzer through commit 84740852f0cf0cf5db4781b1ca6d7c6a6d210405; analyze_csv_data MCP tool.",
+      "why_it_matters_for_ai_security": "File-analysis tools offered to agents must confine input paths; traversal can expose host files through an agent-readable analysis tool.",
+      "named_entities": [
+        "mcp-file-analyzer",
+        "analyze_csv_data",
+        "MCP",
+        "path traversal"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "MCP server catalog context.",
+        "ai_dev_wiki": "General file-tool design practice.",
+        "ai_security_wiki": "Agent file-tool containment and public exploit evidence."
+      },
+      "confidence_notes": "High confidence on CVE timing and boundary; fixed release not available in the CVE record.",
+      "follow_up_actions": [
+        "Check issue thread for maintainer response before durable synthesis.",
+        "Route under agent-and-tool-security or data-and-privacy depending on whether exploit evidence emphasizes file read or write."
+      ]
+    },
+    {
+      "id": "CVE-2026-94044",
+      "title": "03-lovepreetSingh MCP create_file path traversal",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94044",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94044",
+        "https://vuldb.com/vuln/407973",
+        "https://github.com/03-lovepreetSingh/MCP/issues/3"
+      ],
+      "visible_dates": {
+        "published": "2026-09-20T18:15:11.404Z",
+        "updated": "2026-09-20T18:15:11.404Z"
+      },
+      "concise_factual_summary": "CVE Services records path traversal in 03-lovepreetSingh MCP up to commit f95d035c5317fad81af9828286631053ccb23546. The affected create_file function in app/api/mcp/route.ts allows filePath/content manipulation, can be exploited remotely, and has public exploit material.",
+      "evidence_classification": "CVE Services primary record with VulDB technical reference and public issue-tracker reference.",
+      "affected_boundary_or_version": "03-lovepreetSingh MCP through commit f95d035c5317fad81af9828286631053ccb23546; create_file API route.",
+      "why_it_matters_for_ai_security": "Agent-exposed file creation is a host-integrity boundary; path traversal can let an MCP caller write outside the intended workspace.",
+      "named_entities": [
+        "03-lovepreetSingh MCP",
+        "create_file",
+        "MCP",
+        "path traversal"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "MCP implementation entity context, if tracked.",
+        "ai_dev_wiki": "General server implementation practice.",
+        "ai_security_wiki": "MCP file-write containment and public exploit status."
+      },
+      "confidence_notes": "High confidence from CVE Services; no versioning means the fixed boundary is unavailable.",
+      "follow_up_actions": [
+        "Preserve unknown fixed-version state during ingest unless repository evidence identifies a remediation commit.",
+        "Deduplicate with other September 20 MCP file-boundary records only if codebase evidence shows the same project."
+      ]
+    },
+    {
+      "id": "CVE-2026-94046",
+      "title": "ACE-MCP get_file_snippet projectRootPath traversal",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94046",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94046",
+        "https://vuldb.com/vuln/407975",
+        "https://github.com/0215AndrewFeng/ACE-MCP/issues/1"
+      ],
+      "visible_dates": {
+        "published": "2026-09-20T18:45:09.014Z",
+        "updated": "2026-09-20T18:45:09.014Z"
+      },
+      "concise_factual_summary": "CVE Services records path traversal in ACE-MCP versions 4.10.0 through 4.10.8. The get_file_snippet tool accepts projectRootPath and filePath; the CVE says isPathInsideProjectRoot only checks filePath against the attacker-chosen root, so setting projectRootPath to a sensitive directory can bypass the guard.",
+      "evidence_classification": "CVE Services primary record with VulDB technical reference and public issue-tracker reference.",
+      "affected_boundary_or_version": "0215AndrewFeng ACE-MCP 4.10.0 through 4.10.8; MCP get_file_snippet tool.",
+      "why_it_matters_for_ai_security": "Workspace roots are authority boundaries for coding and analysis agents; accepting caller-chosen roots can expose arbitrary host snippets through a benign-looking file snippet tool.",
+      "named_entities": [
+        "ACE-MCP",
+        "get_file_snippet",
+        "projectRootPath",
+        "MCP"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad ACE-MCP entity context, if needed.",
+        "ai_dev_wiki": "General coding-agent file-tool practice.",
+        "ai_security_wiki": "Workspace-root trust boundary and file-read containment."
+      },
+      "confidence_notes": "High confidence from the CVE text because it includes the bypass mechanism; fixed release is not present in the captured record.",
+      "follow_up_actions": [
+        "During ingest, compare against existing MCP file-context/path traversal leaves for reusable root-validation guidance.",
+        "Check whether 4.10.9 or later exists before naming remediation."
+      ]
+    },
+    {
+      "id": "CVE-2026-94047",
+      "title": "MCPHub template import privilege management flaw",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94047",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94047",
+        "https://vuldb.com/vuln/407976",
+        "https://github.com/samanhappy/mcphub/issues/1094"
+      ],
+      "visible_dates": {
+        "published": "2026-09-20T19:00:13.466Z",
+        "updated": "2026-09-20T19:00:13.466Z"
+      },
+      "concise_factual_summary": "CVE Services records improper privilege management in samanhappy MCPHub up to 1.0.32. The affected importTemplate function in src/services/templateService.ts handles the Template Import Endpoint. The record says remote exploitation and public exploit material are available, and upgrade to 1.0.33 fixes the issue via patch 18a4467bc4ec6390b1f841d8a468a37e9922f837.",
+      "evidence_classification": "CVE Services primary record with VulDB technical reference and public issue-tracker reference.",
+      "affected_boundary_or_version": "samanhappy MCPHub 1.0.0 through 1.0.32; Template Import Endpoint; fixed in 1.0.33.",
+      "why_it_matters_for_ai_security": "Template import is an agent/tool supply-chain boundary because imported templates can carry executable or privileged tool configuration into an MCP hub.",
+      "named_entities": [
+        "MCPHub",
+        "Template Import Endpoint",
+        "importTemplate",
+        "MCP"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "MCPHub entity and product context.",
+        "ai_dev_wiki": "General template-import workflow practice.",
+        "ai_security_wiki": "Privilege management and template import supply-chain boundary."
+      },
+      "confidence_notes": "High confidence on version boundary and fixed version from CVE text; ingest should verify whether the VulDB 'RCE' submit label reflects the public issue details.",
+      "follow_up_actions": [
+        "Reconcile improper-privilege wording against issue and patch details before creating a durable leaf.",
+        "Deduplicate with existing MCPHub advisory cluster only if this is part of the same template-import flaw."
+      ]
+    },
+    {
+      "id": "CVE-2026-94111",
+      "title": "Tencent BrowserSkill local WebSocket origin bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94111",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94111",
+        "https://github.com/Tencent/BrowserSkill/issues/273",
+        "https://github.com/Tencent/BrowserSkill/blob/cli-v0.3.0/crates/bsk-cli/src/daemon/ws.rs#L36-L57",
+        "https://www.vulncheck.com/advisories/tencent-browserskill-through-0.3.0-origin-validation-error-in-local-websocket-daemon"
+      ],
+      "visible_dates": {
+        "published": "2026-09-20T11:56:07.027Z",
+        "updated": "2026-09-20T11:56:07.027Z"
+      },
+      "concise_factual_summary": "CVE Services records an authentication bypass in Tencent BrowserSkill through 0.3.0. The local daemon WebSocket origin validation accepts any chrome-extension origin with 32 characters in range a-p, letting attackers register a malicious extension as a browser client and intercept or manipulate page content, DOM, and screenshots returned to the AI agent.",
+      "evidence_classification": "CVE Services primary record with issue, code, and VulnCheck advisory references.",
+      "affected_boundary_or_version": "Tencent BrowserSkill through 0.3.0; local daemon WebSocket browser-client origin validation.",
+      "why_it_matters_for_ai_security": "Browser agents depend on faithful page state and screenshots; a malicious extension accepted as a client can alter the agent's perception and actions at the browser-control boundary.",
+      "named_entities": [
+        "Tencent BrowserSkill",
+        "browser agent",
+        "local WebSocket daemon",
+        "chrome-extension origin"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad BrowserSkill product or browser-agent entity context.",
+        "ai_dev_wiki": "General browser-agent workflow practice.",
+        "ai_security_wiki": "Browser-agent origin validation and observation integrity."
+      },
+      "confidence_notes": "High confidence from CVE text and code reference; remediation version is not identified in the captured record.",
+      "follow_up_actions": [
+        "During ingest, check issue #273 and releases for a fixed version.",
+        "Consider linking to existing agentic browser intent-collision or browser-runtime boundary pages."
+      ]
+    },
+    {
+      "id": "CVE-2026-93989",
+      "title": "vLLM bad_words cross-request logits corruption",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93989",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-93989",
+        "https://github.com/vllm-project/vllm/pull/48824",
+        "https://github.com/vllm-project/vllm/blob/98dff2a81d747d1dba01a47f939f48c3526d4206/vllm/v1/worker/gpu/sample/bad_words.py",
+        "https://www.vulncheck.com/advisories/vllm-through-0.29.0-cross-request-logits-corruption-via-bad-words"
+      ],
+      "visible_dates": {
+        "published": "2026-09-19T22:58:10.572Z",
+        "updated": "2026-09-19T22:58:10.572Z"
+      },
+      "concise_factual_summary": "CVE Services records cross-request logits corruption in vLLM through 0.29.0. SamplingParams.update_from_tokenizer fails to validate bad_words token indices against model generation output width, allowing authenticated attackers to supply out-of-bounds token indices that corrupt logits memory of concurrent HTTP requests and cause incorrect tokens.",
+      "evidence_classification": "CVE Services primary record with upstream pull request, code references, and VulnCheck advisory reference.",
+      "affected_boundary_or_version": "vLLM through 0.29.0; bad_words sampling and concurrent HTTP request generation path.",
+      "why_it_matters_for_ai_security": "Multi-tenant model serving needs request isolation; cross-request logits corruption can undermine output integrity for other users even when confidentiality impact is not recorded.",
+      "named_entities": [
+        "vLLM",
+        "bad_words",
+        "SamplingParams.update_from_tokenizer",
+        "model serving"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "vLLM model-serving framework entity context.",
+        "ai_dev_wiki": "General model-serving deployment practice.",
+        "ai_security_wiki": "Model-serving request isolation and output integrity flaw."
+      },
+      "confidence_notes": "High confidence from CVE text and upstream PR reference; exact fixed release should be verified because the record references a PR rather than an unaffected version.",
+      "follow_up_actions": [
+        "Check PR #48824 merge status and release notes during ingest.",
+        "Route under model-and-prompt-security or infrastructure-and-supply-chain depending on local page granularity."
+      ]
+    },
+    {
+      "id": "CVE-2026-94091",
+      "title": "gensim model loader unsafe deserialization",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94091",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94091",
+        "https://vuldb.com/vuln/408020",
+        "https://github.com/piskvorky/gensim/issues/3663"
+      ],
+      "visible_dates": {
+        "published": "2026-09-20T22:15:11.503Z",
+        "updated": "2026-09-20T22:15:11.503Z"
+      },
+      "concise_factual_summary": "CVE Services records unsafe deserialization in piskvorky gensim through 4.4.0. The affected Load function in gensim/utils.py handles Model Loader fname input. The record says remote attack is possible, public exploit material exists, and the issue was closed same-day without a comment, PR, or fix while unsafe pickle.load remained at develop HEAD.",
+      "evidence_classification": "CVE Services primary record with VulDB technical reference and issue-tracker reference.",
+      "affected_boundary_or_version": "gensim 4.0 through 4.4.0; Model Loader SaveLoad.load path.",
+      "why_it_matters_for_ai_security": "Model and embedding artifact loaders are supply-chain execution boundaries; unsafe pickle loading can turn untrusted model artifacts into code execution.",
+      "named_entities": [
+        "gensim",
+        "Model Loader",
+        "pickle.load",
+        "model artifact"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad gensim or model artifact ecosystem context.",
+        "ai_dev_wiki": "General dependency and artifact-loading practice.",
+        "ai_security_wiki": "Model-artifact deserialization and unresolved remediation state."
+      },
+      "confidence_notes": "High confidence on CVE timing and affected versions; remediation is explicitly uncertain and should not be inferred.",
+      "follow_up_actions": [
+        "Verify issue #3663 and current gensim releases before durable synthesis.",
+        "Preserve remediation as unknown unless a later patch or advisory appears."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "OpenPanel MCP token logging",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93982",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-93982"
+      ],
+      "visible_dates": {
+        "published": "2026-09-19T11:53:34.982Z",
+        "updated": "2026-09-19T11:53:34.982Z"
+      },
+      "reason": "Qualifies by date and AI security relevance, but this checkout already has September 20 wiki coverage and prior raw/processed evidence for OpenPanel MCP token logging; excluded to avoid duplicating the previous run's work."
+    },
+    {
+      "title": "Better Messages AI Chat Bots authorization and spoofing records",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-89093",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-89334"
+      ],
+      "visible_dates": {
+        "published": "2026-09-19T03:17:16Z",
+        "updated": "2026-09-19T14:17:03Z"
+      },
+      "reason": "Qualifies by date and was already represented in the local September 20 topic-index maintenance note from the prior run; excluded as duplicate recent work."
+    },
+    {
+      "title": "Online Scheduling AI booking conversation authorization",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-91847"
+      ],
+      "visible_dates": {
+        "published": "2026-09-19T07:16:33.480Z",
+        "updated": "2026-09-19T14:17:03.600Z"
+      },
+      "reason": "Qualifies by date and was already represented in local September 20 wiki maintenance notes from the prior run; excluded as duplicate recent work."
+    },
+    {
+      "title": "Search Atlas SEO integrated AI optimization whitelabel password modification",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-15946",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15946"
+      ],
+      "visible_dates": {
+        "published": "2026-09-19T07:43:15.963Z",
+        "updated": "2026-09-19T14:01:23.525Z"
+      },
+      "reason": "In-window WordPress plugin authorization issue with AI-branded SEO positioning, but the captured record affects whitelabel settings password modification rather than a concrete AI model, agent, prompt, MCP, data-governance, or AI supply-chain boundary."
+    },
+    {
+      "title": "WordLift AI powered SEO JSON-LD REST API exposure",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-9289",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-9289"
+      ],
+      "visible_dates": {
+        "published": "2026-09-19T08:27:22.515Z",
+        "updated": "2026-09-19T13:51:19.390Z"
+      },
+      "reason": "In-window data-exposure issue in an AI-branded SEO plugin, but the captured vulnerable boundary is generic WordPress JSON-LD endpoint authorization rather than a distinct AI-system security boundary."
+    },
+    {
+      "title": "IBM ContextForge MCP Gateway nested payload filter bypass update",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-11918",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-11918",
+        "https://www.ibm.com/support/pages/node/7285720"
+      ],
+      "visible_dates": {
+        "published": "2026-09-15T17:28:57.954Z",
+        "updated": "2026-09-20T00:45:43.821Z"
+      },
+      "reason": "Updated inside the run window, but the issue family is already represented in local wiki and processed September evidence; excluded as duplicate recent work rather than a new September 20 finding."
+    },
+    {
+      "title": "Flowise before 3.1.4 chat-model baseURL SSRF and API-key exfiltration",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91935",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-91935"
+      ],
+      "visible_dates": {
+        "published": "2026-09-15T15:17:58.325Z",
+        "updated": "2026-09-20T00:35:29.975Z"
+      },
+      "reason": "Updated inside the run window, but the local topic index already records September 17 coverage for Flowise chat-model baseURL security; excluded as duplicate recent work."
+    },
+    {
+      "title": "Flowise before 3.1.4 cross-tenant organization admin takeover",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91930",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-91930"
+      ],
+      "visible_dates": {
+        "published": "2026-09-15T15:17:54.942Z",
+        "updated": "2026-09-20T00:35:30.161Z"
+      },
+      "reason": "Updated inside the run window, but original publication predates the window and the local wiki has recent Flowise security coverage; excluded pending ingest-time reconciliation rather than duplicating collector output."
+    },
+    {
+      "title": "Hacktron/OpenAI incident coverage",
+      "source_urls": [
+        "https://www.hacktron.ai/",
+        "https://www.businessinsider.com/hacktron-ai-cybersecurity-startup-hack-openai-using-claude-2026-9",
+        "https://www.tomshardware.com/tech-industry/cyber-security/hackers-breach-openai-using-claude-tools-gaining-access-to-employee-accounts-and-the-companys-internal-codebase-initiating-a-harmless-pull-request-as-proof-of-the-hack"
+      ],
+      "visible_dates": {
+        "primary_page": "8 days ago in search result",
+        "secondary_coverage": "2 days ago in search result"
+      },
+      "reason": "Security-relevant AI-assisted incident, but primary Hacktron page is outside the exact two-day window and no in-window primary OpenAI or Hacktron update was located; secondary coverage alone was excluded for this collector pass."
+    },
+    {
+      "title": "Google Gemini / Irregular real-company access incident",
+      "source_urls": [
+        "https://www.ft.com/content/158740d1-fde7-4dbc-a282-5830c3201189"
+      ],
+      "visible_dates": {
+        "secondary_coverage": "yesterday in search result"
+      },
+      "reason": "Security-relevant incident, but this checkout already has September 20 local wiki coverage for Google/Gemini Irregular real-company access and no new primary Google or Irregular source was located in this pass."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "SxDevOps",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep MCP stdio command injection and patch hash locally."
+    },
+    {
+      "entity_or_topic": "nexus-mcp",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep nexus_reauth command-injection boundary locally."
+    },
+    {
+      "entity_or_topic": "mcp-file-analyzer",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep analyze_csv_data path traversal locally."
+    },
+    {
+      "entity_or_topic": "03-lovepreetSingh MCP",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep create_file path traversal and unknown fixed boundary locally."
+    },
+    {
+      "entity_or_topic": "ACE-MCP",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep caller-chosen workspace root traversal locally."
+    },
+    {
+      "entity_or_topic": "MCPHub",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep template import privilege and fixed-version evidence locally."
+    },
+    {
+      "entity_or_topic": "Tencent BrowserSkill",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep browser-agent local daemon origin validation flaw locally."
+    },
+    {
+      "entity_or_topic": "vLLM",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep cross-request logits corruption and model-serving isolation implication locally."
+    },
+    {
+      "entity_or_topic": "gensim",
+      "upstream_owner": "ai-wiki",
+      "security_specific_note": "Keep model-loader deserialization and artifact supply-chain implication locally."
+    }
+  ],
+  "confidence_summary": {
+    "overall": "High for CVE publication timing and affected boundaries because qualifying findings use CVE Services/NVD-backed records. Medium for fixed-version details where CVE records name only a patch hash, issue, pull request, or rolling-release commit.",
+    "blockers": [
+      "NVD began returning HTTP 429 for later repeated keyword searches after useful results were captured.",
+      "No in-window primary Hacktron/OpenAI or Google/Irregular incident update was located for incident candidates.",
+      "Several duplicate candidates were already represented in local processed raw or docs/wiki maintenance notes."
+    ]
+  },
+  "follow_up_actions": [
+    "During ingest, deduplicate the September 20 MCP path traversal cluster against existing MCP file-boundary leaves before creating new pages.",
+    "Recheck issue threads and release tags for SxDevOps, nexus-mcp, mcp-file-analyzer, ACE-MCP, BrowserSkill, vLLM, and gensim before naming remediation versions.",
+    "Treat gensim remediation as unknown unless a later maintainer fix appears.",
+    "Preserve upstream routing: product and framework entity descriptions belong upstream; security boundaries and mitigation evidence stay local."
+  ],
+  "counts": {
+    "qualifying_findings": 9,
+    "exclusions": 10,
+    "upstream_routing_notes": 9
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  }
+}

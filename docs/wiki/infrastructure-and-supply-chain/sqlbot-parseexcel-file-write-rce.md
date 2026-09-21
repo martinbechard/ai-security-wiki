@@ -9,6 +9,8 @@ tags: ["infrastructure-and-supply-chain", "data-and-privacy"]
 
 ## Current Understanding
 
+The [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) adds disclosed vulnerability evidence dated 2026-09-18T13:16:54.601Z: CVE Services published and updated a SQLBot pre-1.9.0 parseExcel upload path issue where attacker-controlled multipart filenames can cause file write and code execution.
+
 The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) records CVE-2026-53554 for SQLBot before 1.9.0. Broad SQLBot product context belongs upstream; this page owns the local file-write-to-code-execution boundary in datasource upload handling.
 
 The collector summarizes the issue as arbitrary file write through `parseExcel` that can reach Alembic import code execution.
@@ -24,6 +26,7 @@ The collector summarizes the issue as arbitrary file write through `parseExcel` 
 
 ## Authoritative Sources
 
+- [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json)
 - [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json)
 - [CVE-2026-53554 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-53554)
 
@@ -50,4 +53,5 @@ The collector summarizes the issue as arbitrary file write through `parseExcel` 
 
 ## Maintenance Notes
 
+- Updated on 2026-09-20 from the [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) with in-window disclosed vulnerability evidence while preserving local security-boundary scope.
 - Created on 2026-09-18 from the [September 17 topic collector](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) after verifier correction split the SQLBot CVE cluster into focused leaves.

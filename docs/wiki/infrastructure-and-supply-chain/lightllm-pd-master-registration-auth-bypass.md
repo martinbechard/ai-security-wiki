@@ -9,6 +9,8 @@ tags: ["infrastructure-and-supply-chain", "agent-and-tool-security", "data-and-p
 
 ## Current Understanding
 
+The [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) adds disclosed vulnerability evidence dated 2026-09-18T19:06:05.152Z: CVE Services published a LightLLM through 1.2.0 missing-authentication issue on the /pd_register WebSocket endpoint, allowing arbitrary node registration and possible prompt disclosure or routing disruption.
+
 The [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json) records [CVE-2026-93839](https://cveawg.mitre.org/api/cve/CVE-2026-93839) for LightLLM through 1.2.0. Broad LightLLM runtime background belongs upstream; this page owns the local PD Master registration, prompt-routing, and model-serving control-plane boundary.
 
 The CVE and [VulnCheck advisory](https://www.vulncheck.com/advisories/lightllm-through-1.2.0-missing-authentication-in-pd-master-pd-register-websocket-endpoint) say the PD Master `/pd_register` WebSocket endpoint accepts unauthenticated node registration. An attacker who reaches the endpoint can register arbitrary nodes, receive prompts routed to the attacker's socket, replace legitimate nodes for denial of service, and induce internal requests.
@@ -24,6 +26,7 @@ The CVE and [VulnCheck advisory](https://www.vulncheck.com/advisories/lightllm-t
 
 ## Authoritative Sources
 
+- [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json)
 - [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json)
 - [CVE-2026-93839 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-93839)
 - [LightLLM issue 1576](https://github.com/ModelTC/LightLLM/issues/1576)
@@ -53,4 +56,5 @@ The CVE and [VulnCheck advisory](https://www.vulncheck.com/advisories/lightllm-t
 
 ## Maintenance Notes
 
+- Updated on 2026-09-20 from the [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) with in-window disclosed vulnerability evidence while preserving local security-boundary scope.
 - Created on 2026-09-19 from the [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json).

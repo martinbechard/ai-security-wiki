@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [gensim model loader unsafe deserialization](gensim-model-loader-unsafe-deserialization.md)
+
 This topic owns model, dataset, dependency, artifact, plugin, runtime, deployment, hardware, and service supply-chain security for AI systems.
 
 ## Leaf Pages

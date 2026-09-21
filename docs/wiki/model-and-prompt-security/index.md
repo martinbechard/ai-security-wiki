@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [vLLM bad_words logits corruption](vllm-bad-words-logits-corruption.md)
+
 This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, adversarial inputs, unsafe outputs, and model-boundary mitigations. General model and technique background remains in ai-wiki.
 
 ## Leaf Pages

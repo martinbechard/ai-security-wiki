@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [September 2026 digest](2026-09.md) includes September 20 item-level MCP, browser-agent, model-runtime, and model-loader security updates.
+
 Monthly digests summarize processed security updates and link to durable local leaves for detail. Collectors save raw evidence first; ingest updates a digest only after the local security analysis and federation routing are complete.
 
 The active digest records each independently changing security item or closely coupled advisory family separately, not by collector run or raw artifact.
@@ -14,6 +16,7 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [September 20 topic collector source](../../../raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json)
 - [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json)
 - [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
 - [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json)

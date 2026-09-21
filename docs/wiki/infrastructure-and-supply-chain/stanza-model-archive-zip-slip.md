@@ -9,6 +9,8 @@ tags: ["infrastructure-and-supply-chain"]
 
 ## Current Understanding
 
+The [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) adds disclosed vulnerability evidence dated 2026-09-16T17:28:08.634Z: CVE Services published a Stanza pre-1.14.0 model/resource archive Zip Slip issue in unzip/extractall handling, fixed in v1.14.0.
+
 The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) records CVE-2026-59974 for Stanford Stanza before 1.14.0. Broad NLP library context belongs upstream; this page owns the local model/resource artifact extraction boundary.
 
 The CVE says `stanza.download` and `stanza.install_corenlp` passed downloaded model and resource archives to `ZipFile.extractall` without validating member paths. A malicious archive could write outside the model directory and potentially overwrite shell configuration, SSH authorization data, Python packages, or executable scripts.
@@ -24,6 +26,7 @@ The CVE says `stanza.download` and `stanza.install_corenlp` passed downloaded mo
 
 ## Authoritative Sources
 
+- [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json)
 - [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json)
 - [CVE-2026-59974 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-59974)
 
@@ -51,4 +54,5 @@ The CVE says `stanza.download` and `stanza.install_corenlp` passed downloaded mo
 
 ## Maintenance Notes
 
+- Updated on 2026-09-20 from the [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) with in-window disclosed vulnerability evidence while preserving local security-boundary scope.
 - Created on 2026-09-18 from the [September 17 topic collector](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) as a model-artifact extraction leaf.

@@ -2,6 +2,14 @@
 
 ## Current Understanding
 
+- [SxDevOps MCP STDIO command injection](sxdevops-mcp-stdio-command-injection.md)
+- [nexus-mcp nexus_reauth command injection](nexus-mcp-reauth-command-injection.md)
+- [mcp-file-analyzer CSV tool path traversal](mcp-file-analyzer-csv-path-traversal.md)
+- [03-lovepreetSingh MCP create_file path traversal](lovepreetsingh-mcp-create-file-path-traversal.md)
+- [ACE-MCP get_file_snippet root traversal](ace-mcp-get-file-snippet-root-traversal.md)
+- [MCPHub template import privilege management](mcphub-template-import-privilege-management.md)
+- [Tencent BrowserSkill WebSocket origin bypass](tencent-browserskill-websocket-origin-bypass.md)
+
 This topic owns security boundaries for autonomous action, tool calls, MCP, delegated authority, sandboxing, human approval, and cross-agent trust. General agent workflows stay in ai-dev-wiki; broad products and tools stay in ai-wiki.
 
 ## Leaf Pages

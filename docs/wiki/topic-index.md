@@ -8,6 +8,15 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [agent-and-tool-security/sxdevops-mcp-stdio-command-injection.md](agent-and-tool-security/sxdevops-mcp-stdio-command-injection.md)
+- [agent-and-tool-security/nexus-mcp-reauth-command-injection.md](agent-and-tool-security/nexus-mcp-reauth-command-injection.md)
+- [agent-and-tool-security/mcp-file-analyzer-csv-path-traversal.md](agent-and-tool-security/mcp-file-analyzer-csv-path-traversal.md)
+- [agent-and-tool-security/lovepreetsingh-mcp-create-file-path-traversal.md](agent-and-tool-security/lovepreetsingh-mcp-create-file-path-traversal.md)
+- [agent-and-tool-security/ace-mcp-get-file-snippet-root-traversal.md](agent-and-tool-security/ace-mcp-get-file-snippet-root-traversal.md)
+- [agent-and-tool-security/mcphub-template-import-privilege-management.md](agent-and-tool-security/mcphub-template-import-privilege-management.md)
+- [agent-and-tool-security/tencent-browserskill-websocket-origin-bypass.md](agent-and-tool-security/tencent-browserskill-websocket-origin-bypass.md)
+- [model-and-prompt-security/vllm-bad-words-logits-corruption.md](model-and-prompt-security/vllm-bad-words-logits-corruption.md)
+- [infrastructure-and-supply-chain/gensim-model-loader-unsafe-deserialization.md](infrastructure-and-supply-chain/gensim-model-loader-unsafe-deserialization.md)
 - [threats-and-attacks](threats-and-attacks/index.md)
 - [model-and-prompt-security](model-and-prompt-security/index.md)
 - [agent-and-tool-security](agent-and-tool-security/index.md)

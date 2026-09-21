@@ -9,6 +9,8 @@ tags: ["model-and-prompt-security", "infrastructure-and-supply-chain"]
 
 ## Current Understanding
 
+The [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) adds disclosed vulnerability evidence dated 2026-09-18T19:06:06.001Z: CVE Services published a vLLM before 0.29.0 allowed_token_ids validation flaw that can corrupt GPU logits state across requests.
+
 The [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json) records [CVE-2026-93840](https://cveawg.mitre.org/api/cve/CVE-2026-93840) for vLLM before 0.29.0. Broad vLLM serving-engine context belongs upstream; this page owns the local output-allowlist validation and logits-state isolation boundary.
 
 The CVE and [VulnCheck advisory](https://www.vulncheck.com/advisories/vllm-before-0.29.0-cross-request-logits-corruption-via-allowed-token-ids) say `allowed_token_ids` validates against tokenizer length rather than model output logits width. Crafted token IDs can pass validation, exceed the output vocabulary, corrupt GPU logits state, and let concurrent requests sample outside their allowlists.
@@ -24,6 +26,7 @@ The CVE and [VulnCheck advisory](https://www.vulncheck.com/advisories/vllm-befor
 
 ## Authoritative Sources
 
+- [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json)
 - [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json)
 - [CVE-2026-93840 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-93840)
 - [vLLM pull request 49080](https://github.com/vllm-project/vllm/pull/49080)
@@ -53,4 +56,5 @@ The CVE and [VulnCheck advisory](https://www.vulncheck.com/advisories/vllm-befor
 
 ## Maintenance Notes
 
+- Updated on 2026-09-20 from the [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) with in-window disclosed vulnerability evidence while preserving local security-boundary scope.
 - Created on 2026-09-19 from the [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json) after verifier correction split the vLLM sampler-state family.

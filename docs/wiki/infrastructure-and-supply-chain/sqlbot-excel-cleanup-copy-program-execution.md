@@ -9,6 +9,8 @@ tags: ["infrastructure-and-supply-chain", "agent-and-tool-security"]
 
 ## Current Understanding
 
+The [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) adds disclosed vulnerability evidence dated 2026-09-17T21:41:45.155Z: CVE Services published a SQLBot pre-1.9.0 issue where crafted Excel datasource tableName data can reach unsafe identifier use and PostgreSQL COPY PROGRAM execution during cleanup.
+
 The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) records CVE-2026-53557 for SQLBot before 1.9.0. Broad SQLBot product context belongs upstream; this page owns the local second-order SQL and database-command-execution boundary.
 
 The collector summarizes the issue as second-order SQL injection through Excel datasource cleanup that can invoke PostgreSQL `COPY TO PROGRAM` for command execution.
@@ -24,6 +26,7 @@ The collector summarizes the issue as second-order SQL injection through Excel d
 
 ## Authoritative Sources
 
+- [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json)
 - [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json)
 - [CVE-2026-53557 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-53557)
 
@@ -50,4 +53,5 @@ The collector summarizes the issue as second-order SQL injection through Excel d
 
 ## Maintenance Notes
 
+- Updated on 2026-09-20 from the [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) with in-window disclosed vulnerability evidence while preserving local security-boundary scope.
 - Created on 2026-09-18 from the [September 17 topic collector](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) after verifier correction split the SQLBot CVE cluster into focused leaves.

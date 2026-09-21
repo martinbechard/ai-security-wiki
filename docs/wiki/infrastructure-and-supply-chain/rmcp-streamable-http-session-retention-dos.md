@@ -9,6 +9,8 @@ tags: ["infrastructure-and-supply-chain", "agent-and-tool-security"]
 
 ## Current Understanding
 
+The [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) adds disclosed vulnerability evidence dated 2026-09-16T15:18:37.976Z: CVE Services published an RMCP Streamable HTTP server DoS fixed in rmcp-v2.0.0, where unauthenticated non-initialization JSON-RPC can retain sessions/resources.
+
 The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) records CVE-2026-63128 for RMCP before 2.0.0. Broad RMCP and MCP transport context belongs upstream; this page owns the local session-lifetime and unauthenticated memory-exhaustion boundary.
 
 The CVE says RMCP could create a `LocalSessionHandle` before validating non-initialization or malformed initialization requests on the stateful Streamable HTTP transport. Failed requests could leave session and channel state retained for process lifetime.
@@ -24,6 +26,7 @@ The CVE says RMCP could create a `LocalSessionHandle` before validating non-init
 
 ## Authoritative Sources
 
+- [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json)
 - [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json)
 - [CVE-2026-63128 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-63128)
 
@@ -50,4 +53,5 @@ The CVE says RMCP could create a `LocalSessionHandle` before validating non-init
 
 ## Maintenance Notes
 
+- Updated on 2026-09-20 from the [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) with in-window disclosed vulnerability evidence while preserving local security-boundary scope.
 - Created on 2026-09-18 from the [September 17 topic collector](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) after verifier correction split RMCP transport issues into focused leaves.

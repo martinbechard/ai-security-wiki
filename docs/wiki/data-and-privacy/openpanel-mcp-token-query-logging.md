@@ -9,6 +9,8 @@ tags: ["data-and-privacy", "identity-and-access", "agent-and-tool-security"]
 
 ## Current Understanding
 
+The [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) adds disclosed vulnerability evidence dated 2026-09-19T11:53:34.982Z: CVE Services published an OpenPanel MCP issue where authentication tokens passed in URL query parameters are logged in plaintext, enabling replay by actors with log access.
+
 The [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json) records [CVE-2026-93982](https://cveawg.mitre.org/api/cve/CVE-2026-93982) for OpenPanel through commit `bad75bdd`. Broad OpenPanel analytics-product context belongs upstream; this page owns the local MCP credential logging and replay-risk boundary.
 
 The CVE and advisory evidence say MCP authentication tokens supplied in URL query parameters are written to plaintext application logs. For an analytics MCP server, log access can therefore become delegated tool access: anyone with stdout or centralized-log access may replay the token and query project analytics through MCP.
@@ -24,6 +26,7 @@ The CVE and advisory evidence say MCP authentication tokens supplied in URL quer
 
 ## Authoritative Sources
 
+- [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json)
 - [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json)
 - [CVE-2026-93982 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-93982)
 - [OpenPanel advisory GHSA-8wx6-g25r-2943](https://github.com/Openpanel-dev/openpanel/security/advisories/GHSA-8wx6-g25r-2943)
@@ -54,4 +57,5 @@ The CVE and advisory evidence say MCP authentication tokens supplied in URL quer
 
 ## Maintenance Notes
 
+- Updated on 2026-09-20 from the [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) with in-window disclosed vulnerability evidence while preserving local security-boundary scope.
 - Created on 2026-09-20 from the [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json) as an MCP credential logging leaf.

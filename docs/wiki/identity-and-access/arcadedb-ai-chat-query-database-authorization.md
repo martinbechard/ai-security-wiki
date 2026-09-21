@@ -9,6 +9,8 @@ tags: ["identity-and-access", "agent-and-tool-security", "data-and-privacy"]
 
 ## Current Understanding
 
+The [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) adds disclosed vulnerability evidence dated 2026-09-18T13:20:07.472Z: CVE Services published an ArcadeDB AI chat authorization bypass in the query_database tool before 26.9.1, where missing authenticated-principal binding causes ACL checks to no-op.
+
 The [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json) records [CVE-2026-93595](https://cveawg.mitre.org/api/cve/CVE-2026-93595) for ArcadeDB before 26.9.1. Broad ArcadeDB product context belongs upstream; this page owns the local AI-chat database-tool authorization and tenant-boundary issue.
 
 The advisory evidence says the AI chat `query_database` tool can execute database queries without binding the authenticated principal to `DatabaseContext`. That makes natural-language database access a privileged execution path: the chat tool must carry the same tenant, role, and object-scope checks as direct database APIs.
@@ -24,6 +26,7 @@ The advisory evidence says the AI chat `query_database` tool can execute databas
 
 ## Authoritative Sources
 
+- [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json)
 - [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json)
 - [CVE-2026-93595 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-93595)
 - [ArcadeDB advisory GHSA-chrr-vr3p-crcc](https://github.com/ArcadeData/arcadedb/security/advisories/GHSA-chrr-vr3p-crcc)
@@ -54,4 +57,5 @@ The advisory evidence says the AI chat `query_database` tool can execute databas
 
 ## Maintenance Notes
 
+- Updated on 2026-09-20 from the [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) with in-window disclosed vulnerability evidence while preserving local security-boundary scope.
 - Created on 2026-09-20 from the [September 19 topic collector source](../../../raw/processed/2026-09-19/ai-security-wiki-topic-news-collector-2026-09-19T233221Z.json) as a focused AI chat database-tool authorization leaf.

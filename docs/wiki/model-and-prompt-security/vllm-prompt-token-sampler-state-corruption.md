@@ -9,6 +9,8 @@ tags: ["model-and-prompt-security", "infrastructure-and-supply-chain"]
 
 ## Current Understanding
 
+The [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) adds disclosed vulnerability evidence dated 2026-09-18T19:06:06.636Z: CVE Services published a vLLM through 0.29.0 sampler-state corruption issue in a Triton prompt-token penalty path where unvalidated prompt token IDs can corrupt adjacent request state.
+
 The [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json) records [CVE-2026-93841](https://cveawg.mitre.org/api/cve/CVE-2026-93841) for vLLM through 0.29.0. Broad vLLM serving-engine context belongs upstream; this page owns the local prompt-token bounds and repetition-penalty sampler-state boundary.
 
 The CVE says prompt token IDs index the Triton `_bincount_kernel` prompt-presence bitset without checking against vocabulary size. Crafted multimodal audio requests can corrupt concurrent requests' sampler state and alter repetition-penalty behavior.
@@ -24,6 +26,7 @@ The CVE says prompt token IDs index the Triton `_bincount_kernel` prompt-presenc
 
 ## Authoritative Sources
 
+- [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json)
 - [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json)
 - [CVE-2026-93841 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-93841)
 - [vLLM repository](https://github.com/vllm-project/vllm)
@@ -51,4 +54,5 @@ The CVE says prompt token IDs index the Triton `_bincount_kernel` prompt-presenc
 
 ## Maintenance Notes
 
+- Updated on 2026-09-20 from the [September 20 leaf update watch source](../../../raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json) with in-window disclosed vulnerability evidence while preserving local security-boundary scope.
 - Created on 2026-09-19 from the [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json) after verifier correction split the vLLM sampler-state family.
