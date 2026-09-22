@@ -1,0 +1,522 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "excluded_count": 4,
+  "exclusions": [
+    {
+      "candidate": "Third-Party Cyber-Evaluation Boundary Failures",
+      "leaf_id": "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md",
+      "reason": "No cited source in the page showed a new visible publication or update date inside the current seven-day window beyond already processed September 19 Google/Gemini topic evidence.",
+      "source_urls_checked": [
+        "https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514",
+        "https://edrm.net/2026/08/recent-ai-evaluation-incidents-expose-gaps-in-containment-configuration-and-evidence/",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/",
+        "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+        "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+        "https://www.businessinsider.com/ai-cybersecurity-incidents-openai-astra-anthropic-kimi-meta-2026-8",
+        "https://www.ft.com/content/556e36dd-24b0-4601-bbbb-1ee5ba86eb2c",
+        "https://www.theguardian.com/technology/2026/aug/05/openai-anthropic-models-went-rogue-cybersecurity-test-ai-security-institute",
+        "https://www.theguardian.com/technology/2026/aug/18/open-ai-pause-hack",
+        "https://www.wired.com/story/openai-overhauls-safety-protocols-after-its-ai-agents-went-rogue",
+        "https://www.wsj.com/pro/cybersecurity/openai-hit-the-brakes-on-ai-training-after-models-went-rogue-c3d6d9bd"
+      ]
+    },
+    {
+      "candidate": "Cryptographic Context Injection",
+      "leaf_id": "docs/wiki/model-and-prompt-security/cryptographic-context-injection.md",
+      "reason": "Cited public sources were August 2026 disclosures/reports, outside the seven-day window.",
+      "source_urls_checked": [
+        "https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/",
+        "https://thehackernews.com/2026/08/new-cryptographic-context-injection.html",
+        "https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/"
+      ]
+    },
+    {
+      "candidate": "Codex Security Plugin Workflow Boundaries",
+      "leaf_id": "docs/wiki/testing-and-assurance/codex-security-plugin-workflow-boundaries.md",
+      "reason": "Leaf has no direct public URLs in the local page; the durable source is a processed clipping and no public same-leaf update was checked externally.",
+      "source_urls_checked": []
+    },
+    {
+      "candidate": "AI-Generated OT Exploit Scripts",
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-generated-ot-exploit-scripts.md",
+      "reason": "Cited public sources were August 2026 advisory/reporting, outside the seven-day window.",
+      "source_urls_checked": [
+        "https://media.defense.gov/2026/Aug/18/2003983494/-1/-1/0/CSA_Active_Threat_to_Siemens_S7_Series_PLCs.PDF",
+        "https://qz.com/us-agencies-warn-ai-hackers-siemens-plcs-water-plants-082026",
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a",
+        "https://www.helpnetsecurity.com/2026/08/20/usa-ai-attacks-siemens-s7-plcs-critical-infrastructure/"
+      ]
+    }
+  ],
+  "federation_boundary": "Security-specific vulnerability, exploit, mitigation, control, assurance, and incident-response evidence stays local; broad AI entities route to ai-wiki and general AI-development practices route to ai-dev-wiki.",
+  "follow_up_notes": [
+    "Most selected CVE leaves were already synthesized from processed September 17/18/20 raw artifacts; ingest should avoid duplicate digest prose unless the September 21 CVE metadata updates add a real content delta.",
+    "No docs/wiki or raw/processed files were edited by this collector run."
+  ],
+  "leaf_universe_count": 406,
+  "qualifying_count": 12,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": "ACE-MCP 4.10.0 through 4.10.8; get_file_snippet workspace-root boundary",
+      "already_captured_by": [
+        "raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-94046 as PUBLISHED for 0215AndrewFeng ACE-MCP MCP Tool getFileSnippet.ts get_file_snippet path traversal. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/ace-mcp-get-file-snippet-root-traversal.md",
+      "named_entities": [
+        "ACE-MCP",
+        "get_file_snippet",
+        "MCP"
+      ],
+      "public_identifier": "CVE-2026-94046",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94046",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94046",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94046"
+      ],
+      "title": "0215AndrewFeng ACE-MCP MCP Tool getFileSnippet.ts get_file_snippet path traversal",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-20T18:45:09.014Z",
+      "visible_updated_at": "2026-09-21T16:25:01.410Z"
+    },
+    {
+      "affected_boundaries": "03-lovepreetSingh MCP through commit f95d035c5317fad81af9828286631053ccb23546; create_file route",
+      "already_captured_by": [
+        "raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-94044 as PUBLISHED for 03-lovepreetSingh MCP route.ts create_file path traversal. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/lovepreetsingh-mcp-create-file-path-traversal.md",
+      "named_entities": [
+        "03-lovepreetSingh MCP",
+        "create_file",
+        "MCP"
+      ],
+      "public_identifier": "CVE-2026-94044",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94044",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94044",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94044"
+      ],
+      "title": "03-lovepreetSingh MCP route.ts create_file path traversal",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-20T18:15:11.404Z",
+      "visible_updated_at": "2026-09-21T14:01:59.953Z"
+    },
+    {
+      "affected_boundaries": "mcp-file-analyzer through commit 84740852f0cf0cf5db4781b1ca6d7c6a6d210405; analyze_csv_data tool",
+      "already_captured_by": [
+        "raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-94037 as PUBLISHED for 00Kisumi00 mcp-file-analyzer analyze_csv_data MCP tool main.py ControlFlowNode path traversal. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-file-analyzer-csv-path-traversal.md",
+      "named_entities": [
+        "mcp-file-analyzer",
+        "analyze_csv_data",
+        "MCP"
+      ],
+      "public_identifier": "CVE-2026-94037",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94037",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94037",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94037"
+      ],
+      "title": "00Kisumi00 mcp-file-analyzer analyze_csv_data MCP tool main.py ControlFlowNode path traversal",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-20T16:15:10.164Z",
+      "visible_updated_at": "2026-09-20T16:15:10.164Z"
+    },
+    {
+      "affected_boundaries": "MCPHub 1.0.0 through 1.0.32; template import endpoint; fixed in 1.0.33 per captured page",
+      "already_captured_by": [
+        "raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-94047 as PUBLISHED for samanhappy MCPHub Template Import Endpoint templateService.ts importTemplate privileges management. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcphub-template-import-privilege-management.md",
+      "named_entities": [
+        "MCPHub",
+        "template import endpoint",
+        "MCP"
+      ],
+      "public_identifier": "CVE-2026-94047",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94047",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94047",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94047"
+      ],
+      "title": "samanhappy MCPHub Template Import Endpoint templateService.ts importTemplate privileges management",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-20T19:00:13.466Z",
+      "visible_updated_at": "2026-09-20T19:00:13.466Z"
+    },
+    {
+      "affected_boundaries": "nexus-mcp commit aed0026e7ac1f23dc940e46e9fd3a2da6904f914; nexus_reauth tool",
+      "already_captured_by": [
+        "raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-94031 as PUBLISHED for 0-Gaurav-0 nexus-mcp nexus_reauth MCP tool browser.ts child_process.exec command injection. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/nexus-mcp-reauth-command-injection.md",
+      "named_entities": [
+        "nexus-mcp",
+        "nexus_reauth",
+        "MCP"
+      ],
+      "public_identifier": "CVE-2026-94031",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94031",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94031",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94031"
+      ],
+      "title": "0-Gaurav-0 nexus-mcp nexus_reauth MCP tool browser.ts child_process.exec command injection",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-20T14:00:10.406Z",
+      "visible_updated_at": "2026-09-21T16:37:49.660Z"
+    },
+    {
+      "affected_boundaries": "SxDevOps 1.0 and 1.1; STDIO server management command-launch path",
+      "already_captured_by": [
+        "raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-93965 as PUBLISHED for aiyiyi121 SxDevOps MCP STDIO Server Management services.py subprocess.Popen command injection. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/sxdevops-mcp-stdio-command-injection.md",
+      "named_entities": [
+        "SxDevOps",
+        "MCP STDIO Server Management"
+      ],
+      "public_identifier": "CVE-2026-93965",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-93965",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93965",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-93965"
+      ],
+      "title": "aiyiyi121 SxDevOps MCP STDIO Server Management services.py subprocess.Popen command injection",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-20T05:45:10.959Z",
+      "visible_updated_at": "2026-09-21T20:08:04.380Z"
+    },
+    {
+      "affected_boundaries": "Tencent BrowserSkill through 0.3.0; local daemon WebSocket origin validation",
+      "already_captured_by": [
+        "raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-94111 as PUBLISHED for Tencent BrowserSkill through 0.3.0 Origin Validation Error in Local WebSocket Daemon. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/tencent-browserskill-websocket-origin-bypass.md",
+      "named_entities": [
+        "Tencent BrowserSkill",
+        "WebSocket local daemon"
+      ],
+      "public_identifier": "CVE-2026-94111",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94111",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94111",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94111"
+      ],
+      "title": "Tencent BrowserSkill through 0.3.0 Origin Validation Error in Local WebSocket Daemon",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-20T11:56:07.027Z",
+      "visible_updated_at": "2026-09-21T14:18:11.209Z"
+    },
+    {
+      "affected_boundaries": "gensim 4.0 through 4.4.0; SaveLoad.load/model loader path",
+      "already_captured_by": [
+        "raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-94091 as PUBLISHED for piskvorky gensim Model Loader utils.py load deserialization. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/gensim-model-loader-unsafe-deserialization.md",
+      "named_entities": [
+        "gensim",
+        "model loader",
+        "pickle"
+      ],
+      "public_identifier": "CVE-2026-94091",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94091",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94091",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94091"
+      ],
+      "title": "piskvorky gensim Model Loader utils.py load deserialization",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-20T22:15:11.503Z",
+      "visible_updated_at": "2026-09-21T10:58:22.685Z"
+    },
+    {
+      "affected_boundaries": "vLLM through 0.29.0; bad_words sampling and concurrent HTTP request generation path",
+      "already_captured_by": [
+        "raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-93989 as PUBLISHED for vLLM through 0.29.0 Cross-Request Logits Corruption via bad_words. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-bad-words-logits-corruption.md",
+      "named_entities": [
+        "vLLM",
+        "bad_words",
+        "sampling state"
+      ],
+      "public_identifier": "CVE-2026-93989",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-93989",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93989",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-93989"
+      ],
+      "title": "vLLM through 0.29.0 Cross-Request Logits Corruption via bad_words",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-19T22:58:10.572Z",
+      "visible_updated_at": "2026-09-19T22:58:10.572Z"
+    },
+    {
+      "affected_boundaries": "vLLM before 0.29.0; allowed_token_ids/logit bias sampling state",
+      "already_captured_by": [
+        "raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json",
+        "raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-93840 as PUBLISHED for vLLM before 0.29.0 Cross-Request Logits Corruption via allowed_token_ids. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-sampler-state-corruption.md",
+      "named_entities": [
+        "vLLM",
+        "allowed_token_ids",
+        "LogitBiasState"
+      ],
+      "public_identifier": "CVE-2026-93840",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-93840",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93840"
+      ],
+      "title": "vLLM before 0.29.0 Cross-Request Logits Corruption via allowed_token_ids",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-18T19:06:06.001Z",
+      "visible_updated_at": "2026-09-21T18:30:02.425Z"
+    },
+    {
+      "affected_boundaries": "vLLM through 0.29.0; prompt-token penalty sampler state",
+      "already_captured_by": [
+        "raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json",
+        "raw/processed/2026-09-20/ai-security-wiki-leaf-update-watch-20260921T000220Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-93841 as PUBLISHED for vLLM through 0.29.0 Adjacent-Request Sampler State Corruption via Unvalidated Prompt Token IDs. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-sampler-state-corruption.md",
+      "named_entities": [
+        "vLLM",
+        "prompt token IDs",
+        "sampler state"
+      ],
+      "public_identifier": "CVE-2026-93841",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-93841",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93841"
+      ],
+      "title": "vLLM through 0.29.0 Adjacent-Request Sampler State Corruption via Unvalidated Prompt Token IDs",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-18T19:06:06.636Z",
+      "visible_updated_at": "2026-09-21T20:48:23.522Z"
+    },
+    {
+      "affected_boundaries": "vLLM before 0.28.0; PyNvVideoCodec GPU decode VRAM reservation boundary",
+      "already_captured_by": [
+        "raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json"
+      ],
+      "concise_factual_summary": "CVE Services currently lists CVE-2026-69147 as PUBLISHED for vLLM: Request-selected PyNvVideoCodec GPU decode bypasses static VRAM reservation. The record is within the seven-day window; local ingest should compare against already captured sources before changing wiki text.",
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Verify whether the visible CVE update added material beyond already processed local artifacts before durable synthesis.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-video-decoder-vram-exhaustion.md",
+      "named_entities": [
+        "vLLM",
+        "PyNvVideoCodec",
+        "VRAM reservation"
+      ],
+      "public_identifier": "CVE-2026-69147",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-69147",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-69147"
+      ],
+      "title": "vLLM: Request-selected PyNvVideoCodec GPU decode bypasses static VRAM reservation",
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow practice remains upstream; this run keeps only security-specific vulnerability/control evidence locally.",
+        "ai_wiki": "Broad product, project, model, or framework background remains upstream when needed."
+      },
+      "visible_published_at": "2026-09-16T17:49:20.427Z",
+      "visible_updated_at": "2026-09-16T18:37:14.118Z"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-09-22T00:02:19Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/ace-mcp-get-file-snippet-root-traversal.md",
+    "docs/wiki/agent-and-tool-security/lovepreetsingh-mcp-create-file-path-traversal.md",
+    "docs/wiki/agent-and-tool-security/mcp-file-analyzer-csv-path-traversal.md",
+    "docs/wiki/agent-and-tool-security/mcphub-template-import-privilege-management.md",
+    "docs/wiki/agent-and-tool-security/nexus-mcp-reauth-command-injection.md",
+    "docs/wiki/agent-and-tool-security/sxdevops-mcp-stdio-command-injection.md",
+    "docs/wiki/agent-and-tool-security/tencent-browserskill-websocket-origin-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/gensim-model-loader-unsafe-deserialization.md",
+    "docs/wiki/model-and-prompt-security/vllm-bad-words-logits-corruption.md",
+    "docs/wiki/model-and-prompt-security/vllm-sampler-state-corruption.md",
+    "docs/wiki/model-and-prompt-security/vllm-video-decoder-vram-exhaustion.md",
+    "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md",
+    "docs/wiki/model-and-prompt-security/cryptographic-context-injection.md",
+    "docs/wiki/testing-and-assurance/codex-security-plugin-workflow-boundaries.md",
+    "docs/wiki/threats-and-attacks/ai-generated-ot-exploit-scripts.md"
+  ],
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/ace-mcp-get-file-snippet-root-traversal.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-94046",
+      "https://github.com/0215AndrewFeng/ACE-MCP/issues/1",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-94046",
+      "https://vuldb.com/vuln/407975"
+    ],
+    "docs/wiki/agent-and-tool-security/lovepreetsingh-mcp-create-file-path-traversal.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-94044",
+      "https://github.com/03-lovepreetSingh/MCP/issues/3",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-94044",
+      "https://vuldb.com/vuln/407973"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-file-analyzer-csv-path-traversal.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-94037",
+      "https://github.com/00Kisumi00/mcp-file-analyzer/issues/1",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-94037",
+      "https://vuldb.com/vuln/407966"
+    ],
+    "docs/wiki/agent-and-tool-security/mcphub-template-import-privilege-management.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-94047",
+      "https://github.com/samanhappy/mcphub/issues/1094",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-94047",
+      "https://vuldb.com/vuln/407976"
+    ],
+    "docs/wiki/agent-and-tool-security/nexus-mcp-reauth-command-injection.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-94031",
+      "https://github.com/0-Gaurav-0/nexus-mcp/issues/1",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-94031",
+      "https://vuldb.com/vuln/407959"
+    ],
+    "docs/wiki/agent-and-tool-security/sxdevops-mcp-stdio-command-injection.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-93965",
+      "https://github.com/aiyiyi121/sxdevops/issues/16",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-93965",
+      "https://vuldb.com/vuln/407924"
+    ],
+    "docs/wiki/agent-and-tool-security/tencent-browserskill-websocket-origin-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-94111",
+      "https://github.com/Tencent/BrowserSkill/blob/cli-v0.3.0/crates/bsk-cli/src/daemon/ws.rs#L36-L57",
+      "https://github.com/Tencent/BrowserSkill/issues/273",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-94111",
+      "https://www.vulncheck.com/advisories/tencent-browserskill-through-0.3.0-origin-validation-error-in-local-websocket-daemon"
+    ],
+    "docs/wiki/incident-response/third-party-cyber-evaluation-boundary-failures.md": [
+      "https://apnews.com/article/meta-ai-hacking-anthropic-irregular-openai-0e8061437da6779be962b24ac134a514",
+      "https://edrm.net/2026/08/recent-ai-evaluation-incidents-expose-gaps-in-containment-configuration-and-evidence/",
+      "https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/",
+      "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+      "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+      "https://www.businessinsider.com/ai-cybersecurity-incidents-openai-astra-anthropic-kimi-meta-2026-8",
+      "https://www.ft.com/content/556e36dd-24b0-4601-bbbb-1ee5ba86eb2c",
+      "https://www.theguardian.com/technology/2026/aug/05/openai-anthropic-models-went-rogue-cybersecurity-test-ai-security-institute",
+      "https://www.theguardian.com/technology/2026/aug/18/open-ai-pause-hack",
+      "https://www.wired.com/story/openai-overhauls-safety-protocols-after-its-ai-agents-went-rogue",
+      "https://www.wsj.com/pro/cybersecurity/openai-hit-the-brakes-on-ai-training-after-models-went-rogue-c3d6d9bd"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/gensim-model-loader-unsafe-deserialization.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-94091",
+      "https://github.com/piskvorky/gensim/issues/3663",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-94091",
+      "https://vuldb.com/vuln/408020"
+    ],
+    "docs/wiki/model-and-prompt-security/cryptographic-context-injection.md": [
+      "https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/",
+      "https://thehackernews.com/2026/08/new-cryptographic-context-injection.html",
+      "https://www.securityweek.com/encrypted-prompts-bypass-ai-safety-guardrails-in-grok-and-gemini/"
+    ],
+    "docs/wiki/model-and-prompt-security/vllm-bad-words-logits-corruption.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-93989",
+      "https://github.com/vllm-project/vllm/blob/98dff2a81d747d1dba01a47f939f48c3526d4206/vllm/v1/worker/gpu/sample/bad_words.py",
+      "https://github.com/vllm-project/vllm/pull/48824",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-93989",
+      "https://www.vulncheck.com/advisories/vllm-through-0.29.0-cross-request-logits-corruption-via-bad-words"
+    ],
+    "docs/wiki/model-and-prompt-security/vllm-sampler-state-corruption.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-93840",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-93841",
+      "https://github.com/vllm-project/vllm/commit/5b0e5b69ac1a3884a6479c9537789c95263cc804",
+      "https://github.com/vllm-project/vllm/pull/49080",
+      "https://www.vulncheck.com/advisories/vllm-before-0.29.0-cross-request-logits-corruption-via-allowed-token-ids"
+    ],
+    "docs/wiki/model-and-prompt-security/vllm-video-decoder-vram-exhaustion.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-69147"
+    ],
+    "docs/wiki/testing-and-assurance/codex-security-plugin-workflow-boundaries.md": [],
+    "docs/wiki/threats-and-attacks/ai-generated-ot-exploit-scripts.md": [
+      "https://media.defense.gov/2026/Aug/18/2003983494/-1/-1/0/CSA_Active_Threat_to_Siemens_S7_Series_PLCs.PDF",
+      "https://qz.com/us-agencies-warn-ai-hackers-siemens-plcs-water-plants-082026",
+      "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a",
+      "https://www.helpnetsecurity.com/2026/08/20/usa-ai-attacks-siemens-s7-plcs-critical-infrastructure/"
+    ]
+  },
+  "strict_window": {
+    "end": "2026-09-22T00:02:19Z",
+    "rule": "visible publication or update date must fall within the last 7 days; missing, ambiguous, future, and boundary-only dates are excluded",
+    "start": "2026-09-15T00:02:19Z"
+  }
+}

@@ -2,6 +2,13 @@
 
 ## Current Understanding
 
+- [Feast privileged CI credential exposure](feast-privileged-ci-credential-exposure.md)
+- [Chartbrew AI query SQL control bypass](chartbrew-ai-query-sql-control-bypass.md)
+- [MaxKB knowledge crawler SSRF](maxkb-knowledge-crawler-ssrf.md)
+- [MaxKB function library sandbox escape](maxkb-function-library-sandbox-escape.md)
+- [MaxKB fexecve sandbox escape](maxkb-fexecve-sandbox-escape.md)
+- [MaxKB AWS Bedrock credential process RCE](maxkb-aws-bedrock-credential-process-rce.md)
+- [Hatchet SNS metadata SSRF](hatchet-sns-metadata-ssrf.md)
 - [gensim model loader unsafe deserialization](gensim-model-loader-unsafe-deserialization.md)
 
 This topic owns model, dataset, dependency, artifact, plugin, runtime, deployment, hardware, and service supply-chain security for AI systems.
@@ -10,6 +17,13 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 - [Network-AI environment restore path traversal](network-ai-environment-restore-path-traversal.md)
 - [Agent tool filesystem path containment](agent-tool-filesystem-path-containment.md)
+- [Hatchet SNS metadata SSRF](hatchet-sns-metadata-ssrf.md)
+- [MaxKB AWS Bedrock credential process RCE](maxkb-aws-bedrock-credential-process-rce.md)
+- [MaxKB fexecve sandbox escape](maxkb-fexecve-sandbox-escape.md)
+- [MaxKB function library sandbox escape](maxkb-function-library-sandbox-escape.md)
+- [MaxKB knowledge crawler SSRF](maxkb-knowledge-crawler-ssrf.md)
+- [Chartbrew AI query SQL control bypass](chartbrew-ai-query-sql-control-bypass.md)
+- [Feast privileged CI credential exposure](feast-privileged-ci-credential-exposure.md)
 - [Network-AI AgentRuntime sandbox path traversal](network-ai-agentruntime-sandbox-path-traversal.md)
 - [Network-AI backup manifest recursive delete](network-ai-backup-manifest-recursive-delete.md)
 - [AI agent sandbox escape host file access](ai-agent-sandbox-escape-host-file-access.md)

@@ -6,6 +6,14 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [1millionbot AI chat client XSS](1millionbot-ai-chat-client-xss.md)
+- [Hatchet durable task event log disclosure](hatchet-durable-task-event-log-disclosure.md)
+- [Hatchet durable callback payload disclosure](hatchet-durable-callback-payload-disclosure.md)
+- [Hatchet worker status event disclosure](hatchet-worker-status-event-disclosure.md)
+- [MaxKB MCP tool code exposure](maxkb-mcp-tool-code-exposure.md)
+- [MaxKB knowledge object IDOR](maxkb-knowledge-object-idor.md)
+- [MaxKB chat record IDOR](maxkb-chat-record-idor.md)
+- [MaxKB chat share link owner bypass](maxkb-chat-share-link-owner-bypass.md)
 - [next-ai-draw-io provider disclosure](next-ai-draw-io-provider-disclosure.md)
 - [AI provider override trust boundaries](ai-provider-override-trust-boundaries.md)
 - [ATO-approved sensitive data use](ato-approved-sensitive-data-use.md)
@@ -86,6 +94,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - Updated on 2026-09-17 with Flowise chat-model baseURL key exfiltration, LiteLLM nested `user_config.api_base` request-redirection evidence, and Flowise MongoDBMemory watcher metadata.
 - Updated on 2026-09-18 with MCP Documentation Server knowledge-base exposure, split SQLBot data/privacy leaves, and AI Agent Automation memory ownership evidence.
 - Updated on 2026-09-20 with OpenPanel MCP token query logging and links from new assistant-conversation authorization leaves.
+- Updated on 2026-09-21 with Hatchet durable event disclosure, MaxKB knowledge/chat IDOR, and 1millionbot chat rendering XSS leaves.
 - Updated on 2026-09-15 with WPBot chat-session contact disclosure NVD metadata enrichment and PraisonAI file-boundary privacy implications through linked infrastructure leaves.
 - Updated on 2026-08-31 with the Aix-DB AI rendered-content stored-XSS leaf plus watcher enrichment for existing browser-use, Jina Reader, NextChat, and Keploy advisory leaves.
 - Updated on 2026-08-29 with the Stable Diffusion WebUI credential-disclosure leaf and GitLab/Spring watcher provenance.

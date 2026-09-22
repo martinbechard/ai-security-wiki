@@ -2,6 +2,9 @@
 
 ## Current Understanding
 
+- [MaxKB prompt-injectable shell execution](maxkb-prompt-injectable-shell-execution.md)
+- [NotebookLM MCP vault export path traversal](notebooklm-mcp-vault-export-path-traversal.md)
+- [MCP-for-Stata package install command injection](mcp-for-stata-package-install-command-injection.md)
 - [SxDevOps MCP STDIO command injection](sxdevops-mcp-stdio-command-injection.md)
 - [nexus-mcp nexus_reauth command injection](nexus-mcp-reauth-command-injection.md)
 - [mcp-file-analyzer CSV tool path traversal](mcp-file-analyzer-csv-path-traversal.md)
@@ -22,7 +25,10 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Google MCP Toolbox BigQuery forecast boundary bypass](google-mcp-toolbox-bigquery-forecast-boundary-bypass.md)
 - [final query authorization for AI data tools](final-query-authorization-for-ai-data-tools.md)
 - [next-ai-draw-io MCP server path traversal](next-ai-draw-io-mcp-server-path-traversal.md)
+- [MCP-for-Stata package install command injection](mcp-for-stata-package-install-command-injection.md)
+- [NotebookLM MCP vault export path traversal](notebooklm-mcp-vault-export-path-traversal.md)
 - [MaxKB MCP tool import remote code execution](maxkb-mcp-tool-import-rce.md)
+- [MaxKB prompt-injectable shell execution](maxkb-prompt-injectable-shell-execution.md)
 - [cross-site agent forgery](cross-site-agent-forgery.md)
 - [n8n AI Agent Project Viewer privilege escalation](n8n-ai-agent-project-viewer-privilege-escalation.md)
 - [Google API hub MCP security controls](google-api-hub-mcp-security-controls.md)
@@ -202,6 +208,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - Updated on 2026-09-17 with Contentful MCP Server network-option injection, MCP Memory Keeper context-import path traversal, and watcher metadata enrichment for Docker MCP Gateway and mcp-searxng leaves.
 - Updated on 2026-09-19 with cc-connect card callback authorization, split mcp-gitlab leaves, and mcp-searxng enrichment from the September 18 collector.
 - Updated on 2026-09-20 with Plugin4Shell coding-agent plugin supply-chain coverage and cross-links from new AI chat authorization leaves.
+- Updated on 2026-09-21 with MCP-for-Stata command injection, NotebookLM MCP vault export path traversal, and MaxKB sandbox command execution leaves.
 - Updated on 2026-09-15 with Bifrost MCP stdio registration RCE, PraisonAI IMAP command injection, IBM Langflow flow-component SSRF, and Langflow scanner-bypass enrichment.
 - Updated on 2026-09-02 with LiteLLM MCP KEV authentication bypass, CowAgent tool DoS, and aichat API memory-allocation leaves.
 - Updated on 2026-09-01 with Codex PowerShell approval bypass, Kibana AI feature DoS, runZero Platform MCP authorization, and hermes-agent ACP/MCP availability leaves.
