@@ -8,6 +8,15 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [identity-and-access/9router-public-llm-api-auth-bypass.md](identity-and-access/9router-public-llm-api-auth-bypass.md)
+- [agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md](agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md)
+- [model-and-prompt-security/vllm-nixl-prefix-cache-worker-dos.md](model-and-prompt-security/vllm-nixl-prefix-cache-worker-dos.md)
+- [model-and-prompt-security/vllm-mooncake-kv-cache-exhaustion.md](model-and-prompt-security/vllm-mooncake-kv-cache-exhaustion.md)
+- [agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md](agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md)
+- [identity-and-access/mcp-atlassian-toolset-authorization-bypass.md](identity-and-access/mcp-atlassian-toolset-authorization-bypass.md)
+- [identity-and-access/mcp-atlassian-http-auth-bypass.md](identity-and-access/mcp-atlassian-http-auth-bypass.md)
+- [identity-and-access/mcp-atlassian-oauth-token-file-exposure.md](identity-and-access/mcp-atlassian-oauth-token-file-exposure.md)
+- [data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md](data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md)
 - [agent-and-tool-security/mcp-for-stata-package-install-command-injection.md](agent-and-tool-security/mcp-for-stata-package-install-command-injection.md)
 - [agent-and-tool-security/notebooklm-mcp-vault-export-path-traversal.md](agent-and-tool-security/notebooklm-mcp-vault-export-path-traversal.md)
 - [agent-and-tool-security/maxkb-prompt-injectable-shell-execution.md](agent-and-tool-security/maxkb-prompt-injectable-shell-execution.md)

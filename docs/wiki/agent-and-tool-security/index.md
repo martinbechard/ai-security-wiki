@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [FastGPT safe Axios DNS rebinding SSRF](fastgpt-safe-axios-dns-rebinding-ssrf.md)
+- [MCP Atlassian SSRF validation bypasses](mcp-atlassian-ssrf-validation-bypasses.md)
 - [MaxKB prompt-injectable shell execution](maxkb-prompt-injectable-shell-execution.md)
 - [NotebookLM MCP vault export path traversal](notebooklm-mcp-vault-export-path-traversal.md)
 - [MCP-for-Stata package install command injection](mcp-for-stata-package-install-command-injection.md)
@@ -43,7 +45,9 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [Ghostjacking poisoned operational log agent hijack](ghostjacking-poisoned-operational-log-agent-hijack.md)
 - [Cursor Auto-Run Sandbox escapes](cursor-auto-run-sandbox-escapes.md)
 - [Claude Code Templates Studio remote code execution](claude-code-templates-studio-rce.md)
-- [MCP Atlassian Confluence attachment file read](mcp-atlassian-confluence-attachment-file-read.md)
+- [MCP Atlassian attachment file read](mcp-atlassian-confluence-attachment-file-read.md)
+- [MCP Atlassian SSRF validation bypasses](mcp-atlassian-ssrf-validation-bypasses.md)
+- [FastGPT safe Axios DNS rebinding SSRF](fastgpt-safe-axios-dns-rebinding-ssrf.md)
 - [Agent action runtime hooks](agent-action-runtime-hooks.md)
 - [token-optimizer-mcp command injection](token-optimizer-mcp-command-injection.md)
 - [swagger-testcase-mcp Swagger parser SSRF](swagger-testcase-mcp-swagger-parser-ssrf.md)

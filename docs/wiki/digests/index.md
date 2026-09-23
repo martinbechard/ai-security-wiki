@@ -2,7 +2,7 @@
 
 ## Current Understanding
 
-- [September 2026 digest](2026-09.md) includes September 21 item-level MCP, agent-workflow, assistant-platform, SQL-tool, CI, and chat-rendering security updates.
+- [September 2026 digest](2026-09.md) includes September 22 item-level 9Router, FastGPT, vLLM connector, and MCP Atlassian advisory-boundary updates.
 
 Monthly digests summarize processed security updates and link to durable local leaves for detail. Collectors save raw evidence first; ingest updates a digest only after the local security analysis and federation routing are complete.
 
@@ -19,6 +19,8 @@ The active digest records each independently changing security item or closely c
 - [September 20 topic collector source](../../../raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json)
 - [September 21 topic collector source](../../../raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json)
 - [September 21 leaf update watch source](../../../raw/processed/2026-09-21/ai-security-wiki-leaf-update-watch-20260922T000219Z.json)
+- [September 22 topic collector source](../../../raw/processed/2026-09-22/ai-security-wiki-topic-news-collector-2026-09-22T233219Z.json)
+- [September 22 leaf update watch source](../../../raw/processed/2026-09-22/ai-security-wiki-leaf-update-watch-20260923T000353Z.json)
 - [September 1 topic collector source](../../../raw/processed/2026-09-01/ai-security-wiki-topic-news-collector-2026-09-01T233307Z.json)
 - [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
 - [September 2 topic collector source](../../../raw/processed/2026-09-02/ai-security-wiki-topic-news-collector-2026-09-02T233120Z.json)
@@ -104,6 +106,7 @@ The active digest records each independently changing security item or closely c
 - Updated on 2026-09-18 with item-level September entries for OpenAI model-misalignment reporting, MCP transport and authorization CVEs, model-serving and model-artifact vulnerabilities, Text-to-SQL/RAG input boundaries, agent-memory ownership, filesystem containment, and AgentCore consent portal evidence.
 - Updated on 2026-09-20 with item-level September 19 entries for ArcadeDB, OpenPanel, Online Scheduling, Better Messages, Google/Gemini evaluation-boundary access, Plugin4Shell, and CordysCRM patch provenance; ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-09-21 with item-level September entries for MCP-for-Stata, CKAN, NotebookLM MCP, Hatchet, MaxKB, Chartbrew, Feast, and 1millionbot; watcher-only duplicate CVE metadata remained leaf-level without duplicate digest entries.
+- Updated on 2026-09-23 with item-level September entries for 9Router, FastGPT, vLLM NIXL/Mooncake, and split MCP Atlassian advisory boundaries; ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-09-19 with item-level September entries for Azure AI Foundry, LightLLM, split vLLM, CordysCRM, and mcp-gitlab issues, WPBot, cc-connect, Meta Ads MCP, and mcp-searxng; ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-09-15 with item-level September entries for Bifrost, LightLLM, PraisonAI, IBM Langflow, and Apple Intelligence security items; watcher metadata remained leaf-level unless it changed the item-level current understanding.
 - Updated on 2026-09-02 with item-level September entries for LiteLLM, Windows ML CLI, TOON, Tencent AI-Infra-Guard, claude-skill-antivirus, agentverus-scanner, CowAgent, and aichat security items; Omnigent and watcher corroboration remained leaf-level without duplicate digest items.

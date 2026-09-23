@@ -47,7 +47,7 @@ This belongs in local agent and tool security because the affected surface is an
 
 - [agent and tool security](index.md)
 - [Agent tool filesystem path containment](../infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md)
-- [MCP Atlassian Confluence attachment file read](mcp-atlassian-confluence-attachment-file-read.md)
+- [MCP Atlassian attachment file read](mcp-atlassian-confluence-attachment-file-read.md)
 
 ## Open Questions
 

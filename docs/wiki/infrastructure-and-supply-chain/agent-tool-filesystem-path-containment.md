@@ -23,7 +23,7 @@ The [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-secu
 
 The [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) adds two related Network-AI issues. [Network-AI AgentRuntime sandbox path traversal](network-ai-agentruntime-sandbox-path-traversal.md) shows raw string prefix checks allowing out-of-sandbox reads before 5.12.2, while [Network-AI backup manifest recursive delete](network-ai-backup-manifest-recursive-delete.md) shows serialized backup metadata becoming authority for destructive recursive deletion. The [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) separately records [Mondoo coverage](https://mondoo.com/vulnerability-intelligence/vulnerability/CVE-2026-58484) of CVE-2026-58484 as adjacent filesystem-containment evidence.
 
-The [MCP Atlassian Confluence attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md) advisory adds the same rule for MCP attachment uploads: a client-supplied path must be validated before the server reads and uploads it to a SaaS destination.
+The [MCP Atlassian attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md) advisory adds the same rule for MCP attachment uploads: a client-supplied path must be validated before the server reads and uploads it to a SaaS destination.
 
 The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) adds three same-rule examples: [AI Agent Automation file-step path traversal](ai-agent-automation-file-step-path-traversal.md) for authenticated workflow file steps, [MCPVault recursive metadata path filtering](../agent-and-tool-security/mcpvault-recursive-metadata-path-filtering.md) for nested `.git`, `.obsidian`, and `node_modules` directories, and [atomic-agents-stack dashboard path traversal](atomic-agents-stack-dashboard-path-traversal.md) for dashboard reads outside an `agents_root`.
 
@@ -47,7 +47,7 @@ The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-s
 - [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json)
 - [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json)
 - [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json)
-- [MCP Atlassian Confluence attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md)
+- [MCP Atlassian attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md)
 - [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json)
 - [AI Agent Automation file-step path traversal](ai-agent-automation-file-step-path-traversal.md)
 - [MCPVault recursive metadata path filtering](../agent-and-tool-security/mcpvault-recursive-metadata-path-filtering.md)
@@ -73,7 +73,7 @@ The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-s
 - [Network-AI AgentRuntime sandbox path traversal](network-ai-agentruntime-sandbox-path-traversal.md)
 - [Network-AI backup manifest recursive delete](network-ai-backup-manifest-recursive-delete.md)
 - [AI agent sandbox escape host file access](ai-agent-sandbox-escape-host-file-access.md)
-- [MCP Atlassian Confluence attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md)
+- [MCP Atlassian attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md)
 
 ## Open Questions
 
@@ -83,5 +83,5 @@ The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-s
 ## Maintenance Notes
 
 - Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) with post-join containment evidence, the [July 25 topic news collector](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) with prefix-check and backup-manifest deletion evidence, and the [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) with adjacent Mondoo coverage.
-- Updated on 2026-08-13 with the [MCP Atlassian Confluence attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md) advisory as MCP upload-path containment evidence.
+- Updated on 2026-08-13 with the [MCP Atlassian attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md) advisory as MCP upload-path containment evidence.
 - Updated on 2026-09-18 from the [September 17 topic collector](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) with AI Agent Automation, MCPVault, and atomic-agents-stack containment examples.

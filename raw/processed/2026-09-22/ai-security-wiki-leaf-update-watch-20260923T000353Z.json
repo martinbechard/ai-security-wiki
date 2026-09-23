@@ -1,0 +1,603 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "automation_name": "AI Security Wiki Leaf Update Watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_timestamp_utc": "2026-09-23T00:03:53Z",
+  "cutoff_window": {
+    "start_inclusive": "2026-09-16T00:03:53Z",
+    "end_inclusive": "2026-09-23T00:03:53Z",
+    "policy": "visible publication or update dates must fall within the last 7 days; ambiguous, future, missing, and boundary-only dates are excluded"
+  },
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "leaf_universe_count": 429,
+  "selection_policy": "Unchecked leaves first, then oldest last_checked_at, ties by stable relative path.",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/maxkb-prompt-injectable-shell-execution.md",
+    "docs/wiki/agent-and-tool-security/mcp-for-stata-package-install-command-injection.md",
+    "docs/wiki/agent-and-tool-security/notebooklm-mcp-vault-export-path-traversal.md",
+    "docs/wiki/data-and-privacy/1millionbot-ai-chat-client-xss.md",
+    "docs/wiki/data-and-privacy/hatchet-durable-callback-payload-disclosure.md",
+    "docs/wiki/data-and-privacy/hatchet-durable-task-event-log-disclosure.md",
+    "docs/wiki/data-and-privacy/hatchet-worker-status-event-disclosure.md",
+    "docs/wiki/data-and-privacy/maxkb-chat-record-idor.md",
+    "docs/wiki/data-and-privacy/maxkb-chat-share-link-owner-bypass.md",
+    "docs/wiki/data-and-privacy/maxkb-knowledge-object-idor.md",
+    "docs/wiki/data-and-privacy/maxkb-mcp-tool-code-exposure.md",
+    "docs/wiki/identity-and-access/hatchet-oauth-state-reuse.md",
+    "docs/wiki/identity-and-access/maxkb-application-node-authorization-bypass.md",
+    "docs/wiki/identity-and-access/maxkb-expired-mcp-application-key.md",
+    "docs/wiki/identity-and-access/maxkb-model-parameter-form-cross-workspace-write.md"
+  ],
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/maxkb-prompt-injectable-shell-execution.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-77521",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77521",
+      "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-f36j-f34j-h3rx",
+      "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.5-lts",
+      "https://github.com/1Panel-dev/MaxKB/commit/594f50f2ea80a502d1c955371ba0438b277c30ea"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-for-stata-package-install-command-injection.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55071",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-55071",
+      "https://github.com/SepineTam/mcp-for-stata/security/advisories/GHSA-49m4-vp58-wgc9",
+      "https://github.com/SepineTam/mcp-for-stata/releases/tag/v1.19.0"
+    ],
+    "docs/wiki/agent-and-tool-security/notebooklm-mcp-vault-export-path-traversal.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-61647",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-61647",
+      "https://github.com/roomi-fields/notebooklm-mcp/security/advisories/GHSA-jjhp-8crj-mppq"
+    ],
+    "docs/wiki/data-and-privacy/1millionbot-ai-chat-client-xss.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-91921",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-91921",
+      "https://www.incibe.es/en/incibe-cert/notices/aviso/cross-site-scripting-xss-1millionbots-ai-chatbot-platform"
+    ],
+    "docs/wiki/data-and-privacy/hatchet-durable-callback-payload-disclosure.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-84298",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-84298",
+      "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-9q4h-f4x5-ffq8",
+      "https://github.com/hatchet-dev/hatchet/commit/9555bfdd1e97f61d25e614ccaa107c5fb7dc4976"
+    ],
+    "docs/wiki/data-and-privacy/hatchet-durable-task-event-log-disclosure.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-63342",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-63342",
+      "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-g26x-m427-f48f",
+      "https://github.com/hatchet-dev/hatchet/commit/06c1fe43543e853ea98ecc2e6a575e2b8310bbeb"
+    ],
+    "docs/wiki/data-and-privacy/hatchet-worker-status-event-disclosure.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-88978",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-88978",
+      "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-992g-9cr3-vm5x",
+      "https://github.com/hatchet-dev/hatchet/commit/15bc7923d3a8ebfeb0d88c19160dd24828921e85"
+    ],
+    "docs/wiki/data-and-privacy/maxkb-chat-record-idor.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-77525",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77525",
+      "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-7fmh-98f2-2cfg"
+    ],
+    "docs/wiki/data-and-privacy/maxkb-chat-share-link-owner-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-79917",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-79917",
+      "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-m8gr-554p-8r82"
+    ],
+    "docs/wiki/data-and-privacy/maxkb-knowledge-object-idor.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-77517",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77517",
+      "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-58cm-c5jq-96vf"
+    ],
+    "docs/wiki/data-and-privacy/maxkb-mcp-tool-code-exposure.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-77518",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77518",
+      "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-x65c-w438-c58f"
+    ],
+    "docs/wiki/identity-and-access/hatchet-oauth-state-reuse.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-61687",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-61687",
+      "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-phg3-3g28-wq9v",
+      "https://github.com/hatchet-dev/hatchet/commit/f90464189ad642251e09412d0f99fde353036428"
+    ],
+    "docs/wiki/identity-and-access/maxkb-application-node-authorization-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-77520",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77520",
+      "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-4w4r-h4x8-mg7h"
+    ],
+    "docs/wiki/identity-and-access/maxkb-expired-mcp-application-key.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-77519",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77519",
+      "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-r6g6-69fh-c39q"
+    ],
+    "docs/wiki/identity-and-access/maxkb-model-parameter-form-cross-workspace-write.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-77523",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77523",
+      "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-g888-8cvh-9284"
+    ]
+  },
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/maxkb-prompt-injectable-shell-execution.md",
+      "public_identifier": "CVE-2026-77521",
+      "title": "MaxKB: Prompt-injectable agent can lead to command execution",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77521",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77521",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-f36j-f34j-h3rx",
+        "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.5-lts",
+        "https://github.com/1Panel-dev/MaxKB/commit/594f50f2ea80a502d1c955371ba0438b277c30ea"
+      ],
+      "visible_published_at": "2026-09-21T20:45:14.750Z",
+      "visible_updated_at": "2026-09-22T13:32:19.198Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "agent tool execution boundary; sandbox shell backend command execution"
+      ],
+      "named_entities": [
+        "MaxKB",
+        "1Panel-dev",
+        "SandboxShellBackend",
+        "Model Context Protocol"
+      ],
+      "summary": "MaxKB is an open-source AI assistant for enterprise. Prior to version 2.10.5-lts, assistants with a tool, MCP tool, skill, or sub-application use SandboxShellBackend, which exposes an execute shell tool without excluding it and omits execute from interrupt_on, so human approval is not required. Untrusted chat or ingested content can therefore cause command execution; source deployments with MAXKB_SANDBOX disabled run commands directly as the application user, while the official root container's string-based gosu wrapper allowed shell metacharacters to execute outside the intended sandbox. This issue is fixed in version 2.10.5-lts.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-for-stata-package-install-command-injection.md",
+      "public_identifier": "CVE-2026-55071",
+      "title": "MCP-for-Stata: Stata Command Injection via Unsanitized `package` in `ado_package_install`",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55071",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55071",
+        "https://github.com/SepineTam/mcp-for-stata/security/advisories/GHSA-49m4-vp58-wgc9",
+        "https://github.com/SepineTam/mcp-for-stata/releases/tag/v1.19.0"
+      ],
+      "visible_published_at": "2026-09-21T14:09:30.169Z",
+      "visible_updated_at": "2026-09-21T14:56:37.752Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "MCP package-install tool command execution boundary"
+      ],
+      "named_entities": [
+        "MCP-for-Stata",
+        "Stata-MCP",
+        "Model Context Protocol",
+        "SepineTam"
+      ],
+      "summary": "MCP-for-Stata is a MCP server for integrating Stata into agent loops with a safety-first design. Prior to version 1.19.0, the ado_package_install MCP tool in stata-mcp concatenates user-controlled input directly into a Stata command string without any validation or sanitization. An attacker who can invoke the MCP tool or the equivalent Python API can embed newline characters in the package argument to inject arbitrary Stata commands. Because Stata supports a shell escape command, this leads to full OS-level arbitrary command execution (RCE) under the account running the Stata-MCP server. The tool is registered in the default all profile, so no non-default configuration is required. This issue has been patched in version 1.19.0.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/notebooklm-mcp-vault-export-path-traversal.md",
+      "public_identifier": "CVE-2026-61647",
+      "title": "@roomi-fields/notebooklm-mcp has path traversal in vault.batch tool that allows arbitrary file write outside intended vault directory",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61647",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61647",
+        "https://github.com/roomi-fields/notebooklm-mcp/security/advisories/GHSA-jjhp-8crj-mppq"
+      ],
+      "visible_published_at": "2026-09-21T21:00:58.673Z",
+      "visible_updated_at": "2026-09-22T15:38:52.069Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "MCP vault export filesystem path containment boundary"
+      ],
+      "named_entities": [
+        "NotebookLM MCP",
+        "Google NotebookLM",
+        "Model Context Protocol",
+        "roomi-fields"
+      ],
+      "summary": "NotebookLM MCP is an MCP server and HTTP service for interacting with Google NotebookLM and exporting generated content to local vault directories. Versions 1.6.0 through 2.0.2 contain a path traversal vulnerability in the `POST /batch-to-vault` endpoint, also exposed through the `batch_to_vault` MCP tool beginning in version 1.7.0, because attacker-controlled `vault_dir` and `slug_prefix` values can cause Markdown and JSON files to be written outside the intended vault directory to any location writable by the server process. Version 2.0.3 sanitizes `slug_prefix` and supports vault containment when `NOTEBOOKLM_VAULT_ROOT` is configured; containment is not enabled if that variable is unset. Users unable to upgrade should run the server as a dedicated unprivileged account restricted to the intended vault, keep the HTTP endpoint limited to localhost, and validate `vault_dir` values supplied by LLMs processing untrusted content.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/1millionbot-ai-chat-client-xss.md",
+      "public_identifier": "CVE-2026-91921",
+      "title": "Cross-Site Scripting (XSS) in 1millionbot’s AI chatbot platform",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91921",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-91921",
+        "https://www.incibe.es/en/incibe-cert/notices/aviso/cross-site-scripting-xss-1millionbots-ai-chatbot-platform"
+      ],
+      "visible_published_at": "2026-09-21T09:43:37.622Z",
+      "visible_updated_at": "2026-09-21T11:12:43.964Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "AI chat client browser execution and user-content rendering boundary"
+      ],
+      "named_entities": [
+        "1millionbot AI Chat Platform",
+        "INCIBE"
+      ],
+      "summary": "Cross-Site Scripting (XSS) vulnerability due to inadequate input sanitisation in the client-side rendering engine of the 1millionbot AI Chat Platform. An unauthenticated remote user could cause external hyperlinks to be rendered in the web interface by sending messages containing Markdown syntax and certain unsanitised content blocks. The impact is limited to the user’s own interactive session; no compromise of internal infrastructure, access to third-party data or impact on administrative panels has been identified.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/hatchet-durable-callback-payload-disclosure.md",
+      "public_identifier": "CVE-2026-84298",
+      "title": "Hatchet: Cross-tenant durable callback payload disclosure in Hatchet V1 Dispatcher",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84298",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84298",
+        "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-9q4h-f4x5-ffq8",
+        "https://github.com/hatchet-dev/hatchet/commit/9555bfdd1e97f61d25e614ccaa107c5fb7dc4976"
+      ],
+      "visible_published_at": "2026-09-21T15:47:50.252Z",
+      "visible_updated_at": "2026-09-21T18:49:20.918Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "cross-tenant durable callback payload authorization boundary"
+      ],
+      "named_entities": [
+        "Hatchet",
+        "hatchet-dev",
+        "durable workflows"
+      ],
+      "summary": "Hatchet is a platform for orchestrating background tasks, AI agents, and durable workflows at scale. Prior to 0.95.3, the V1 DurableTask stream handler stores worker-supplied task_external_id values in the durableInvocations routing map before tenant ownership is verified, and callback delivery resolves that map by task UUID without tenant identity. An authenticated tenant worker that knows another tenant's durable task UUID and keeps a stream open on the same dispatcher process can receive that task's durable callback result payload. UUIDv4 values are not enumerable, and single-tenant deployments are unaffected in practice. This issue is fixed in version 0.95.3.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/hatchet-durable-task-event-log-disclosure.md",
+      "public_identifier": "CVE-2026-63342",
+      "title": "Hatchet: Cross-Tenant Durable Task Event Log Disclosure via Missing Authorization Check",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-63342",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-63342",
+        "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-g26x-m427-f48f",
+        "https://github.com/hatchet-dev/hatchet/commit/06c1fe43543e853ea98ecc2e6a575e2b8310bbeb"
+      ],
+      "visible_published_at": "2026-09-21T15:44:07.494Z",
+      "visible_updated_at": "2026-09-21T15:44:07.494Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "cross-tenant durable task event-log authorization boundary"
+      ],
+      "named_entities": [
+        "Hatchet",
+        "hatchet-dev",
+        "durable workflows"
+      ],
+      "summary": "Hatchet is a platform for orchestrating background tasks, AI agents, and durable workflows at scale. Prior to 0.91.1, api-contracts/openapi/paths/v1/workflow-runs/workflow_run.yaml defines the GET /api/v1/stable/durable-tasks/{durable-task} endpoint implemented by listDurableEventLog without requiring the target tenant as a parent resource, allowing an authenticated user who obtains another tenant's durable task UUID to read that task's event log. Disclosed data can include task display names, workflow identifiers, user messages, wait conditions, branching logic, and timing information. This issue is fixed in version 0.91.1.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/hatchet-worker-status-event-disclosure.md",
+      "public_identifier": "CVE-2026-88978",
+      "title": "Hatchet DurableTask WorkerStatus gRPC resolves caller-supplied durable-task UUIDs via ListSatisfiedEntries with no tenant_id filter",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-88978",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-88978",
+        "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-992g-9cr3-vm5x",
+        "https://github.com/hatchet-dev/hatchet/commit/15bc7923d3a8ebfeb0d88c19160dd24828921e85"
+      ],
+      "visible_published_at": "2026-09-21T15:49:12.735Z",
+      "visible_updated_at": "2026-09-21T15:49:12.735Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "cross-tenant durable task WorkerStatus event authorization boundary"
+      ],
+      "named_entities": [
+        "Hatchet",
+        "hatchet-dev",
+        "durable workflows"
+      ],
+      "summary": "Hatchet is a platform for orchestrating background tasks, AI agents, and durable workflows at scale. Prior to 0.106.1, the WorkerStatus gRPC polling path in pkg/repository/durable_events.go passes caller-supplied durable task, node, and branch identifiers to ListSatisfiedEntries without a tenant filter, allowing an authenticated tenant worker that knows another tenant's durable-task UUID to retrieve matching durable event-log records. The UUIDv4 requirement makes exploitation unlikely, and single-tenant deployments are unaffected in practice. This issue is fixed in version 0.106.1.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/maxkb-chat-record-idor.md",
+      "public_identifier": "CVE-2026-77525",
+      "title": "MaxKB: Management chat-record routes trust path application_id but load ChatRecord by global chat_id",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77525",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77525",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-7fmh-98f2-2cfg"
+      ],
+      "visible_published_at": "2026-09-21T20:37:49.415Z",
+      "visible_updated_at": "2026-09-21T20:37:49.415Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "chat-record object authorization boundary"
+      ],
+      "named_entities": [
+        "MaxKB",
+        "1Panel-dev"
+      ],
+      "summary": "MaxKB is an open-source AI assistant for enterprise. In 2.10.2-lts and earlier, management chat-record routes authorize the path application_id but load records using global chat_id and chat_record_id values without confirming that the chat belongs to the authorized application. A normal user in the same workspace who knows the chat_id of a persisted non-debug record for a victim's published application can place it under a separate attacker-owned application path to read victim chat records. An attacker with an owned knowledge base and document can also use add_knowledge to copy victim answers while updating the victim record's improve_paragraph_id_list. No fixed version is available as of this review.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/maxkb-chat-share-link-owner-bypass.md",
+      "public_identifier": "CVE-2026-79917",
+      "title": "MaxKB: Chat share-link endpoint missing owner check: a chat token can publish another user's conversation",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79917",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79917",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-m8gr-554p-8r82"
+      ],
+      "visible_published_at": "2026-09-21T20:43:27.292Z",
+      "visible_updated_at": "2026-09-22T15:39:11.594Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "chat share-link ownership and publication boundary"
+      ],
+      "named_entities": [
+        "MaxKB",
+        "1Panel-dev"
+      ],
+      "summary": "MaxKB is an open-source AI assistant for enterprise. In 2.7.0 through 2.10.4-lts, POST /chat/api/{application_id}/chat/{chat_id}/share_chat verifies that a conversation exists but does not verify that it belongs to the authenticated chat_user_id or to the application bound to the caller's token. An attacker with any chat token and a known victim chat_id can create an unauthenticated public ChatShareLink exposing the victim's conversation and can create PublicFileAccess state that makes associated files retrievable without credentials, with no available revoke path. No fixed version is available as of this review.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/maxkb-knowledge-object-idor.md",
+      "public_identifier": "CVE-2026-77517",
+      "title": "MaxKB cross-knowledge IDOR lets a normal user read and modify documents and paragraphs in another knowledge base",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77517",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77517",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-58cm-c5jq-96vf"
+      ],
+      "visible_published_at": "2026-09-21T20:46:19.540Z",
+      "visible_updated_at": "2026-09-22T13:17:22.344Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "knowledge document and paragraph object authorization boundary"
+      ],
+      "named_entities": [
+        "MaxKB",
+        "1Panel-dev"
+      ],
+      "summary": "MaxKB is an open-source AI assistant for enterprise. From version 2.0.0 through 2.10.2-lts, document and paragraph operate routes authorize only knowledge_id in the request path, then query the target Document by document_id or Paragraph by paragraph_id without confirming that the object belongs to that knowledge base. A normal workspace user with a known victim document or paragraph UUID can use an attacker-owned knowledge-base path to read or modify content in another user's knowledge base. No fixed version is available as of this review.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/maxkb-mcp-tool-code-exposure.md",
+      "public_identifier": "CVE-2026-77518",
+      "title": "MaxKB: Known MCP tool IDs expose owner Tool.code and can be referenced by attacker workflows",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77518",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77518",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-x65c-w438-c58f"
+      ],
+      "visible_published_at": "2026-09-21T20:36:26.835Z",
+      "visible_updated_at": "2026-09-22T13:19:07.350Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "MCP tool configuration disclosure and workflow reuse boundary"
+      ],
+      "named_entities": [
+        "MaxKB",
+        "1Panel-dev",
+        "Model Context Protocol",
+        "ToolExecutor"
+      ],
+      "summary": "MaxKB is an open-source AI assistant for enterprise. In 2.10.2-lts and earlier, a normal workspace user who knows another user's active MCP tool_id in the same workspace can retrieve the hidden tool through the tool-detail route because it does not apply the per-resource authorization used by the list route. The response includes Tool.code, which may contain MCP server configuration and headers, and an attacker who can create or edit an attacker-owned workflow can place the same foreign mcp_tool_id in a workflow mcp-node so workflow debug uses the owner's MCP configuration without verifying permission to use that tool. No fixed version is available as of this review.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/hatchet-oauth-state-reuse.md",
+      "public_identifier": "CVE-2026-61687",
+      "title": "hatchet - Unauthenticated OAuth state CSRF / login-CSRF via empty-state collision in ValidateOAuthState",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61687",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61687",
+        "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-phg3-3g28-wq9v",
+        "https://github.com/hatchet-dev/hatchet/commit/f90464189ad642251e09412d0f99fde353036428"
+      ],
+      "visible_published_at": "2026-09-21T15:45:27.610Z",
+      "visible_updated_at": "2026-09-21T20:45:49.510Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "OAuth state validation and login-CSRF boundary"
+      ],
+      "named_entities": [
+        "Hatchet",
+        "hatchet-dev",
+        "OAuth"
+      ],
+      "summary": "Hatchet is a platform for orchestrating background tasks, AI agents, and durable workflows at scale. Prior to 0.91.1, ValidateOAuthState clears the oauth_state_ session value to an empty string after a successful OAuth callback and later accepts an empty state parameter as equal, allowing an unauthenticated attacker to bind a victim's Hatchet session to an attacker-controlled OAuth identity. Exploitation requires the victim to have completed an OAuth flow in the current session and the deployment to enable auth.google.enabled, auth.github.enabled, or the Slack integration. This issue is fixed in version 0.91.1.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/maxkb-application-node-authorization-bypass.md",
+      "public_identifier": "CVE-2026-77520",
+      "title": "MaxKB: Homepage ranking leaks application IDs that workflow application-nodes can use to invoke another user's application",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77520",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77520",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-4w4r-h4x8-mg7h"
+      ],
+      "visible_published_at": "2026-09-21T20:28:08.442Z",
+      "visible_updated_at": "2026-09-22T15:39:25.576Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "workflow application-node invocation authorization boundary"
+      ],
+      "named_entities": [
+        "MaxKB",
+        "1Panel-dev"
+      ],
+      "summary": "MaxKB is an open-source AI assistant for enterprise. In 2.10.2-lts and earlier, a normal user in the same workspace can obtain another user's application_id from the homepage application question-ranking endpoint when the published victim application has ranking activity in the selected date range and the attacker knows or guesses its name, even though direct application detail and debug-open routes deny access. An attacker who can create and publish a workflow application can place the disclosed identifier in an attacker-owned workflow application-node, trigger that workflow, receive output generated by the victim application, and create durable application_chat and application_chat_record rows under the victim application because save and runtime paths do not verify permission to use the referenced application. No fixed version is available as of this review.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/maxkb-expired-mcp-application-key.md",
+      "public_identifier": "CVE-2026-77519",
+      "title": "MaxKB: Expired application API keys remain usable on `/chat/api/mcp`",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77519",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77519",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-r6g6-69fh-c39q"
+      ],
+      "visible_published_at": "2026-09-21T20:26:27.820Z",
+      "visible_updated_at": "2026-09-21T20:26:27.820Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "expired application API key enforcement boundary"
+      ],
+      "named_entities": [
+        "MaxKB",
+        "1Panel-dev",
+        "Model Context Protocol"
+      ],
+      "summary": "MaxKB is an open-source AI assistant for enterprise. In 2.10.2-lts and earlier, the /chat/api/mcp authentication path looks up an ApplicationApiKey using only its secret and active status, without enforcing the is_permanent and expire_time checks used by the standard chat API. A previously valid, non-permanent application key that remains active after expiration can initialize the MCP endpoint, list the published application's tool metadata, invoke tools/call, and create durable application_chat and application_chat_record state even though /chat/api/open rejects the same key. No fixed version is available as of this review.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/maxkb-model-parameter-form-cross-workspace-write.md",
+      "public_identifier": "CVE-2026-77523",
+      "title": "MaxKB: Cross-workspace model parameter form write",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77523",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77523",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-g888-8cvh-9284"
+      ],
+      "visible_published_at": "2026-09-21T20:39:36.806Z",
+      "visible_updated_at": "2026-09-22T13:33:00.363Z",
+      "state": "PUBLISHED",
+      "evidence_classification": "disclosed_vulnerability",
+      "evidence_status": "qualifying_in_window_already_captured_by_topic_collector",
+      "affected_boundaries": [
+        "cross-workspace model parameter form read/write authorization boundary"
+      ],
+      "named_entities": [
+        "MaxKB",
+        "1Panel-dev"
+      ],
+      "summary": "MaxKB is an open-source AI assistant for enterprise. In version 2.10.3-lts and earlier, the model parameter form route authorizes the path workspace but ModelSerializer.ModelParams loads and saves a Model by id alone without including workspace_id in the query. An authenticated user with model read permission in an attacker-controlled workspace can supply a known victim model_id to read or overwrite the victim's model_params_form in another workspace, potentially altering workflows that use those defaults. No fixed version is available as of this review.",
+      "already_captured_by": "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json",
+      "upstream_routing": "Keep security-specific vulnerability and affected boundary locally; broad product/project facts route upstream per docs/wiki/federation.md.",
+      "follow_up_note": "Compare CVE metadata changes against the processed September 21 source before wiki ingest; avoid duplicate digest prose unless the live metadata update adds a material local security delta."
+    }
+  ],
+  "qualifying_count": 15,
+  "exclusions": [
+    {
+      "reason": "already captured by processed topic collector",
+      "detail": "All 15 visible in-window CVE/GitHub advisory records are security-specific but already represented by raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json; ingest should diff metadata before adding prose."
+    },
+    {
+      "reason": "federation routing",
+      "detail": "Broad product, project, and MCP ecosystem facts remain upstream-owned; this artifact keeps only vulnerability, control, and affected-boundary details for the security wiki."
+    }
+  ],
+  "evidence_classification_summary": {
+    "disclosed_vulnerability": 15,
+    "confirmed_exploitation": 0,
+    "demonstrated_research": 0,
+    "mitigation_or_control_change": 0,
+    "unverified_claim": 0
+  },
+  "affected_boundaries": [
+    "AI chat client browser execution and user-content rendering boundary",
+    "MCP package-install tool command execution boundary",
+    "MCP tool configuration disclosure and workflow reuse boundary",
+    "MCP vault export filesystem path containment boundary",
+    "OAuth state validation and login-CSRF boundary",
+    "agent tool execution boundary; sandbox shell backend command execution",
+    "chat share-link ownership and publication boundary",
+    "chat-record object authorization boundary",
+    "cross-tenant durable callback payload authorization boundary",
+    "cross-tenant durable task WorkerStatus event authorization boundary",
+    "cross-tenant durable task event-log authorization boundary",
+    "cross-workspace model parameter form read/write authorization boundary",
+    "expired application API key enforcement boundary",
+    "knowledge document and paragraph object authorization boundary",
+    "workflow application-node invocation authorization boundary"
+  ],
+  "named_entities": [
+    "1Panel-dev",
+    "1millionbot AI Chat Platform",
+    "Google NotebookLM",
+    "Hatchet",
+    "INCIBE",
+    "MCP-for-Stata",
+    "MaxKB",
+    "Model Context Protocol",
+    "NotebookLM MCP",
+    "OAuth",
+    "SandboxShellBackend",
+    "SepineTam",
+    "Stata-MCP",
+    "ToolExecutor",
+    "durable workflows",
+    "hatchet-dev",
+    "roomi-fields"
+  ],
+  "upstream_routing_notes": [
+    "No broad AI entity or general development-practice page should be created locally from this run; route only non-security product/project context upstream if needed."
+  ],
+  "follow_up_notes": [
+    "Normal raw ingest can use this artifact as a dedupe checklist against the processed September 21 topic collector. Prioritize only material CVE metadata deltas or missing leaf links; do not duplicate digest entries for the same disclosure cluster."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed",
+    "wiki_ops_status": "passed: 457 pages, 0 missing required files, 0 lint findings"
+  }
+}

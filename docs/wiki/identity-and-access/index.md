@@ -6,6 +6,10 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [9Router public LLM API auth bypass](9router-public-llm-api-auth-bypass.md)
+- [MCP Atlassian toolset authorization bypass](mcp-atlassian-toolset-authorization-bypass.md)
+- [MCP Atlassian HTTP auth bypass](mcp-atlassian-http-auth-bypass.md)
+- [MCP Atlassian OAuth token file exposure](mcp-atlassian-oauth-token-file-exposure.md)
 - [Hatchet OAuth state reuse](hatchet-oauth-state-reuse.md)
 - [MaxKB tool dispatch grant bypass](maxkb-tool-dispatch-grant-bypass.md)
 - [MaxKB expired MCP application key](maxkb-expired-mcp-application-key.md)
@@ -112,6 +116,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - Updated on 2026-09-19 with Azure AI Foundry missing authentication, split CordysCRM authorization leaves, WPBot Claude settings overwrite, and Meta Ads MCP operator-token fallback leaves.
 - Updated on 2026-09-20 with ArcadeDB AI chat tool authorization, Online Scheduling AI booking conversation ownership, and Better Messages AI chatbot authorization leaves.
 - Updated on 2026-09-21 with Hatchet OAuth state reuse and MaxKB tool/MCP authorization leaves.
+- Updated on 2026-09-23 with 9Router public LLM API auth bypass and MCP Atlassian authorization, HTTP auth, and OAuth token-file leaves.
 - Updated on 2026-09-01 with Kibana AI Assistant Knowledge Base cross-realm authorization, Support Genix AI Chatbot admin takeover, and Synthetic Insider Threat Matrix evidence.
 - Updated on 2026-08-31 with diboot AI Session authorization bypass and ash_ai/MCPHub identity-boundary routing.
 - Updated on 2026-08-29 with FastGPT channel authorization, VoltAgent memory ownership, Gitingest token disclosure, and watcher provenance for Telnyx.

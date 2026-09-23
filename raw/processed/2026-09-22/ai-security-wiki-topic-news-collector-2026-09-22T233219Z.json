@@ -1,0 +1,486 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-09-22T23:32:19Z",
+  "cutoff_window": {
+    "start_utc": "2026-09-20T23:32:19Z",
+    "end_utc": "2026-09-22T23:32:19Z",
+    "rule": "Include only public sources with visible publication or update timestamps inside the exact 48-hour run window; exclude missing, ambiguous, future-dated, stale, duplicate, boundary-only, or non-AI-security items."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "federation_context": {
+    "local_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "local_ownership": "Security-specific threats, vulnerabilities, controls, affected boundaries, mitigations, evidence quality, and incident lessons for AI systems.",
+    "upstream_ai_wiki": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md owns broad companies, products, models, frameworks, MCP servers, and ecosystem entity catalogs.",
+    "upstream_ai_dev_wiki": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md owns general AI-assisted development practices and coding-agent workflow governance.",
+    "routing_rule": "Keep only the security-specific implication here; route broad product/entity background and general development practice context upstream."
+  },
+  "source_queries": [
+    {
+      "method": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+      "keywords": [
+        "AI",
+        "LLM",
+        "MCP",
+        "MaxKB",
+        "Open WebUI",
+        "prompt",
+        "model"
+      ],
+      "notes": "Later repeated NVD keyword searches returned HTTP 429, but initial AI, LLM, MCP, MaxKB, prompt, model, and Open WebUI queries returned usable candidate records."
+    },
+    {
+      "method": "CVE Services direct JSON",
+      "url": "https://cveawg.mitre.org/api/cve/<CVE>",
+      "notes": "Used for CVE publication/update timestamps, titles, affected versions, descriptions, and advisory references."
+    },
+    {
+      "method": "Web search",
+      "url": "https://apnews.com/; https://www.cyber.gov.au/; https://unit42.paloaltonetworks.com/; https://github.com/advisories/",
+      "notes": "Used to check for in-window governance, guidance, incident, and research coverage; stale or secondary-only items were excluded unless they had a qualifying concrete security delta in-window."
+    },
+    {
+      "method": "Local dedupe search",
+      "url": "raw/ and raw/processed/ under /Users/martinbechard/dev/ai-security-wiki",
+      "notes": "Searched prior local raw and processed artifacts plus docs/wiki for CVE IDs, product names, and advisory families before classifying findings as new."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "2026-09-22-01-cve-2026-56681-9router-public-llm-api-auth-bypass",
+      "title": "9Router public LLM API can trust spoofed local-client headers",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-56681",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-56681",
+        "https://github.com/decolua/9router/security/advisories/GHSA-5mj8-gf6m-fhw8",
+        "https://github.com/decolua/9router/commit/efd20be8d81ef2e256a7037f3aa78e6b567b5fd3",
+        "https://github.com/decolua/9router/releases/tag/v0.5.6"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services cveMetadata",
+          "published": "2026-09-22T16:02:25.018Z",
+          "updated": "2026-09-22T16:02:25.018Z"
+        },
+        {
+          "source": "NVD CVE API",
+          "published": "2026-09-22T16:17:48.350Z",
+          "updated": "2026-09-22T16:17:48.497Z"
+        }
+      ],
+      "concise_factual_summary": "9Router before 0.5.6 can classify a remote request as local when a deployment lets traffic reach Next.js without the sanitizing custom-server.js wrapper. The vulnerable guard trusts a client-supplied X-9r-Real-Ip value, allowing an unauthenticated caller to set 127.0.0.1 and bypass API-key validation for public LLM API routes such as GET /api/v1/models.",
+      "evidence_classification": "primary CVE record with GitHub security advisory, patch commit, and release reference",
+      "affected_boundary_or_version": "decolua/9router versions before 0.5.6; public LLM API authorization path; src/dashboardGuard.js local-request decision.",
+      "why_it_matters_for_ai_security": "An AI router's model API boundary can be crossed without an API key when deployment topology exposes the unsanitized Next.js route, turning network/header trust into model-access authorization.",
+      "named_entities": [
+        "9Router",
+        "decolua/9router",
+        "CVE-2026-56681",
+        "GHSA-5mj8-gf6m-fhw8",
+        "Next.js",
+        "LLM API"
+      ],
+      "upstream_routing": {
+        "ai_security_wiki": "Owns the spoofed-header authentication bypass and LLM API authorization boundary.",
+        "ai_wiki": "Broad 9Router product/entity background belongs upstream if durable coverage is needed.",
+        "ai_dev_wiki": "No general AI-assisted development practice routing identified."
+      },
+      "confidence_notes": "High confidence on dates and affected version from CVE Services and NVD. Prior local coverage exists for a different 9Router OIDC SSRF, but this CVE ID and API-key bypass were not found in raw, raw/processed, or docs/wiki.",
+      "follow_up_actions": [
+        "During ingest, decide whether to enrich the existing 9Router security leaf or create a separate identity-and-access leaf for CVE-2026-56681.",
+        "Recheck the GitHub advisory for CVSS, patched-version wording, and deployment preconditions."
+      ]
+    },
+    {
+      "id": "2026-09-22-02-cve-2026-84301-fastgpt-safe-axios-dns-rebinding-ssrf",
+      "title": "FastGPT safe Axios guard permits DNS-rebinding SSRF",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84301",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84301",
+        "https://github.com/labring/FastGPT/security/advisories/GHSA-6jwp-qf29-hpj9",
+        "https://github.com/labring/FastGPT/pull/7261",
+        "https://github.com/labring/FastGPT/commit/0a38565c9d1f790045636bd9d55f8d2296c938c7",
+        "https://github.com/labring/FastGPT/releases/tag/v4.15.2"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services cveMetadata",
+          "published": "2026-09-22T16:50:19.790Z",
+          "updated": "2026-09-22T16:50:19.790Z"
+        },
+        {
+          "source": "NVD CVE API",
+          "published": "2026-09-22T17:17:26.860Z",
+          "updated": "2026-09-22T17:17:26.987Z"
+        }
+      ],
+      "concise_factual_summary": "FastGPT before 4.15.2 checks a hostname with isInternalAddress() in its safe Axios interceptor before a later HTTP connection performs a separate DNS lookup. An authenticated attacker controlling a hostname can pass the check with a public address and then rebind to loopback, private, link-local, or metadata addresses during connection.",
+      "evidence_classification": "primary CVE record with GitHub security advisory, pull request, patch commit, and release reference",
+      "affected_boundary_or_version": "labring/FastGPT versions before 4.15.2; packages/service/common/api/axios.ts safe Axios outbound-request guard.",
+      "why_it_matters_for_ai_security": "Knowledge-base AI applications often fetch user-controlled URLs for retrieval, plugin, or workflow actions; a DNS-rebinding SSRF bypass can expose cloud metadata, private services, or internal endpoints through an AI application backend.",
+      "named_entities": [
+        "FastGPT",
+        "labring/FastGPT",
+        "CVE-2026-84301",
+        "GHSA-6jwp-qf29-hpj9",
+        "Axios",
+        "DNS rebinding",
+        "SSRF"
+      ],
+      "upstream_routing": {
+        "ai_security_wiki": "Owns the SSRF guard bypass, affected FastGPT boundary, and mitigation evidence.",
+        "ai_wiki": "Broad FastGPT product coverage belongs upstream; this item should not duplicate product background.",
+        "ai_dev_wiki": "No general coding-practice routing beyond optional secure outbound-request pattern references."
+      },
+      "confidence_notes": "High confidence on publication date and version from CVE Services. Prior local FastGPT coverage exists for CVE-2026-68929 WeChat outLink authorization, but CVE-2026-84301 was not found in local raw or wiki pages.",
+      "follow_up_actions": [
+        "During ingest, compare with existing FastGPT leaf to decide whether SSRF merits a separate agent-and-tool-security or infrastructure-and-supply-chain page.",
+        "Recheck GitHub advisory and release notes for fixed-version and configuration details."
+      ]
+    },
+    {
+      "id": "2026-09-22-03-cve-2026-94623-vllm-nixl-multi-prompt-dos",
+      "title": "vLLM NIXL prefix caching can terminate decode workers",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94623",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94623",
+        "https://github.com/vllm-project/vllm/pull/51505",
+        "https://github.com/vllm-project/vllm/blob/v0.29.0/vllm/distributed/kv_transfer/kv_connector/v1/nixl/base_worker.py#L2642-L2646",
+        "https://www.vulncheck.com/advisories/vllm-through-0.29.0-denial-of-service-via-nixl-multi-prompt-assertion-failure"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services cveMetadata",
+          "published": "2026-09-21T22:04:12.106Z",
+          "updated": "2026-09-22T17:44:56.345Z"
+        },
+        {
+          "source": "NVD CVE API",
+          "published": "2026-09-21T22:17:01.123Z",
+          "updated": "2026-09-22T20:25:55.870Z"
+        }
+      ],
+      "concise_factual_summary": "vLLM through 0.29.0 fails to validate block counts correctly in the NIXL connector's prefix caching path for multi-prompt completion requests in prefill/decode disaggregated deployments. Attackers can submit prompts of varying lengths to trigger an assertion failure in NixlBaseConnectorWorker._apply_prefix_caching, terminating the decode worker until restart.",
+      "evidence_classification": "CVE Services record with VulnCheck advisory and upstream code/pull-request references",
+      "affected_boundary_or_version": "vllm-project/vllm 0.29.0 and earlier; NIXL KV-transfer connector; prefill/decode disaggregated deployments using prefix caching.",
+      "why_it_matters_for_ai_security": "Shared model-serving infrastructure can be made unavailable through model-runtime request shape rather than conventional network overload, making inference capacity and release gates part of AI security assurance.",
+      "named_entities": [
+        "vLLM",
+        "NIXL",
+        "CVE-2026-94623",
+        "VulnCheck",
+        "KV cache",
+        "prefill/decode disaggregation"
+      ],
+      "upstream_routing": {
+        "ai_security_wiki": "Owns the model-runtime denial-of-service and deployment-boundary implications.",
+        "ai_wiki": "Broad vLLM runtime/entity context belongs upstream.",
+        "ai_dev_wiki": "No general AI-assisted development practice routing identified."
+      },
+      "confidence_notes": "High confidence on CVE timing and affected version from CVE Services. The exact fixed release should be rechecked because the CVE references an upstream pull request rather than a release tag in the fetched metadata.",
+      "follow_up_actions": [
+        "During ingest, reconcile whether the fix has shipped in a vLLM release after 0.29.0.",
+        "Check whether existing vLLM security leaves should be enriched or whether NIXL connector DoS deserves a distinct model-and-prompt-security leaf."
+      ]
+    },
+    {
+      "id": "2026-09-22-04-cve-2026-94627-vllm-mooncake-kv-cache-leak",
+      "title": "vLLM Mooncake transfer IDs can leak GPU KV cache blocks",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94627",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94627",
+        "https://github.com/vllm-project/vllm/pull/49796",
+        "https://github.com/vllm-project/vllm/blob/v0.29.0/vllm/distributed/kv_transfer/kv_connector/v1/mooncake/mooncake_connector.py#L1978-L1989",
+        "https://www.vulncheck.com/advisories/vllm-through-0.29.0-gpu-kv-cache-leak-via-mooncake-transfer-id-collision"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services cveMetadata",
+          "published": "2026-09-21T22:04:16.559Z",
+          "updated": "2026-09-22T12:51:23.062Z"
+        },
+        {
+          "source": "NVD CVE API",
+          "published": "2026-09-21T22:17:01.740Z",
+          "updated": "2026-09-22T20:25:55.870Z"
+        }
+      ],
+      "concise_factual_summary": "vLLM Mooncake connector through 0.29.0 does not properly manage GPU KV cache block ownership when concurrent child requests share a transfer ID in prefill/decode disaggregated deployments. Attackers can send multi-prompt completion requests that leave orphaned KV cache blocks, exhausting GPU memory until restart.",
+      "evidence_classification": "CVE Services record with VulnCheck advisory and upstream code/pull-request references",
+      "affected_boundary_or_version": "vllm-project/vllm 0.29.0 and earlier; Mooncake KV-transfer connector; GPU KV cache ownership in prefill/decode disaggregated deployments.",
+      "why_it_matters_for_ai_security": "A model-serving connector can lose GPU memory through attacker-shaped inference requests, creating an availability and capacity-isolation risk for hosted LLM deployments.",
+      "named_entities": [
+        "vLLM",
+        "Mooncake",
+        "CVE-2026-94627",
+        "VulnCheck",
+        "GPU KV cache",
+        "prefill/decode disaggregation"
+      ],
+      "upstream_routing": {
+        "ai_security_wiki": "Owns the GPU-memory exhaustion and model-runtime security implication.",
+        "ai_wiki": "Broad vLLM runtime/entity context belongs upstream.",
+        "ai_dev_wiki": "No general AI-assisted development practice routing identified."
+      },
+      "confidence_notes": "High confidence on CVE timing and affected version from CVE Services. Fixed-release status needs ingest-time reconciliation against vLLM release notes.",
+      "follow_up_actions": [
+        "During ingest, evaluate whether this should be paired with CVE-2026-94623 in one vLLM connector-risk page or split by connector.",
+        "Recheck vLLM release notes for the first release containing the referenced fix."
+      ]
+    },
+    {
+      "id": "2026-09-22-05-mcp-atlassian-0-22-0-cve-cluster",
+      "title": "MCP Atlassian publishes a 0.22.0 advisory cluster for SSRF, auth, token, filter, and file-read boundaries",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77242",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77243",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77244",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77250",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77251",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77252",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77258",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77260",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77261",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77265",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77267",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77270",
+        "https://github.com/sooperset/mcp-atlassian/pull/1448",
+        "https://github.com/sooperset/mcp-atlassian/commit/b041733473f95119dd539542a43c280737a8e460",
+        "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services cveMetadata",
+          "published_range": "2026-09-22T17:39:28.501Z to 2026-09-22T18:06:20.640Z",
+          "updated_range": "2026-09-22T17:39:28.501Z to 2026-09-22T19:02:45.226Z"
+        },
+        {
+          "source": "NVD CVE API",
+          "published_range": "2026-09-22T18:17:16.430Z to 2026-09-22T18:17:18.947Z",
+          "updated_range": "2026-09-22T18:17:17.560Z to 2026-09-22T19:16:51.067Z"
+        }
+      ],
+      "related_cves": [
+        {
+          "cve": "CVE-2026-77242",
+          "title": "Incomplete fix for CVE-2026-27826: DNS rebinding bypasses SSRF validation because the validated IP is not pinned"
+        },
+        {
+          "cve": "CVE-2026-77243",
+          "title": "ENABLED_TOOLS and TOOLSETS authorization bypass allows direct invocation of hidden tools"
+        },
+        {
+          "cve": "CVE-2026-77244",
+          "title": "HTTP transport authentication bypass accepts any non-empty Atlassian opaque token"
+        },
+        {
+          "cve": "CVE-2026-77250",
+          "title": "OAuth fallback token storage writes plaintext access and refresh tokens with group-readable permissions"
+        },
+        {
+          "cve": "CVE-2026-77251",
+          "title": "JIRA_PROJECTS_FILTER and CONFLUENCE_SPACES_FILTER allow forbidden-project content exfiltration"
+        },
+        {
+          "cve": "CVE-2026-77252",
+          "title": "Caller-supplied search filters can replace administrator-configured Jira and Confluence allowlists"
+        },
+        {
+          "cve": "CVE-2026-77258",
+          "title": "Confluence upload_attachment accepts arbitrary server-local file paths"
+        },
+        {
+          "cve": "CVE-2026-77260",
+          "title": "Confluence and Jira upload_attachment implementations permit arbitrary local file read"
+        },
+        {
+          "cve": "CVE-2026-77261",
+          "title": "SSRF redirect protection is missing for basic-auth and OAuth branches"
+        },
+        {
+          "cve": "CVE-2026-77265",
+          "title": "Header-based authentication flow permits DNS-rebinding SSRF"
+        },
+        {
+          "cve": "CVE-2026-77267",
+          "title": "Header-supplied Jira and Confluence URLs bypass SSRF validation"
+        },
+        {
+          "cve": "CVE-2026-77270",
+          "title": "Attachment upload tools trust caller-controlled server-local file paths"
+        }
+      ],
+      "concise_factual_summary": "MCP Atlassian versions before 0.22.0 published a same-window advisory cluster covering SSRF validation gaps, DNS rebinding, toolset authorization bypass, HTTP transport authentication bypass, plaintext OAuth fallback token storage, Jira/Confluence filter bypasses, and arbitrary local file read through attachment upload tools. The shared patch reference is PR 1448 and commit b041733473f95119dd539542a43c280737a8e460.",
+      "evidence_classification": "multiple primary CVE Services records with GitHub security advisory references, shared patch PR, commit, and release boundary",
+      "affected_boundary_or_version": "sooperset/mcp-atlassian versions before 0.22.0; Jira and Confluence MCP transports, fetchers, auth headers, tool dispatch, OAuth token storage, search filters, and attachment upload tools.",
+      "why_it_matters_for_ai_security": "An MCP server often sits between agents and high-value Jira/Confluence workspaces. This cluster crosses authentication, delegated-tool authorization, data allowlists, SSRF protections, local file reads, and credential storage, so an agent or attacker-controlled MCP caller could exceed intended authority and expose workspace or host data.",
+      "named_entities": [
+        "MCP Atlassian",
+        "sooperset/mcp-atlassian",
+        "Model Context Protocol",
+        "Jira",
+        "Confluence",
+        "CVE-2026-77242",
+        "CVE-2026-77243",
+        "CVE-2026-77244",
+        "CVE-2026-77250",
+        "CVE-2026-77251",
+        "CVE-2026-77252",
+        "CVE-2026-77258",
+        "CVE-2026-77260",
+        "CVE-2026-77261",
+        "CVE-2026-77265",
+        "CVE-2026-77267",
+        "CVE-2026-77270"
+      ],
+      "upstream_routing": {
+        "ai_security_wiki": "Owns the advisory cluster, affected MCP authority boundaries, and security-specific ingest.",
+        "ai_wiki": "MCP Atlassian as a durable MCP-server entity belongs upstream; route broad server catalog/background there if missing.",
+        "ai_dev_wiki": "General MCP governance practices may be referenced upstream, but these CVE facts stay security-specific."
+      },
+      "confidence_notes": "High confidence on in-window timing from CVE Services and NVD. Local wiki already has CVE-2026-73498 for an older MCP Atlassian file-read advisory and a v0.22.0 release reference; these September 22 CVEs were not found locally and should be reconciled carefully to avoid duplicate prose.",
+      "follow_up_actions": [
+        "During ingest, decide whether to expand the existing MCP Atlassian file-read leaf into a cluster page or split identity, SSRF, token-storage, filter-bypass, and file-read leaves.",
+        "Check each GitHub advisory for CVSS, proof status, and whether v0.22.0 fully remediates all listed CVEs.",
+        "Route broad MCP Atlassian entity coverage to ai-wiki if no durable upstream page exists."
+      ]
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "item": "9Router",
+      "security_specific_local_note": "CVE-2026-56681 LLM API authentication bypass belongs locally.",
+      "upstream_owner": "ai-wiki for 9Router product/entity background"
+    },
+    {
+      "item": "FastGPT",
+      "security_specific_local_note": "CVE-2026-84301 safe Axios DNS-rebinding SSRF belongs locally.",
+      "upstream_owner": "ai-wiki for FastGPT product/entity background"
+    },
+    {
+      "item": "vLLM",
+      "security_specific_local_note": "CVE-2026-94623 and CVE-2026-94627 model-runtime DoS and GPU memory exhaustion belong locally.",
+      "upstream_owner": "ai-wiki for vLLM runtime/entity background"
+    },
+    {
+      "item": "MCP Atlassian",
+      "security_specific_local_note": "September 22 CVE cluster belongs locally as MCP authority, SSRF, credential, allowlist, and file-read evidence.",
+      "upstream_owner": "ai-wiki for MCP server catalog/background"
+    },
+    {
+      "item": "MCP governance practices",
+      "security_specific_local_note": "Concrete CVEs and affected boundaries stay local.",
+      "upstream_owner": "ai-dev-wiki for general MCP governance practices if later synthesis needs cross-links"
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "MaxKB September 21 CVE cluster",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77518",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77523",
+        "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json"
+      ],
+      "visible_dates": "CVE Services and NVD dates are inside the current 48-hour window, but the local September 21 collector already captured the MaxKB cluster.",
+      "reason": "Duplicate of local processed raw evidence; exclude from fresh collector output to avoid repeating already captured findings."
+    },
+    {
+      "candidate": "Hatchet AI-agent workflow platform CVE cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61681",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61687",
+        "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json"
+      ],
+      "visible_dates": "NVD publication dates are September 21, 2026.",
+      "reason": "Duplicate of local September 21 processed raw artifact."
+    },
+    {
+      "candidate": "MCP-for-Stata, CKAN MCP Server, NotebookLM MCP, Feast, Chartbrew, and 1millionbot September 21 records",
+      "source_urls": [
+        "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json"
+      ],
+      "visible_dates": "NVD publication dates are September 21, 2026.",
+      "reason": "Already captured in the prior local topic-news collector and processed source."
+    },
+    {
+      "candidate": "Apache Airflow API authorization records surfaced by AI keyword search",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75158",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82355",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86473"
+      ],
+      "visible_dates": "NVD publication dates are September 21, 2026.",
+      "reason": "The fetched summaries are general Airflow API/session vulnerabilities and do not establish a concrete AI-system, model, agent, MCP, or AI-security boundary."
+    },
+    {
+      "candidate": "ZenHive mpp payment-channel records from prompt/model keyword search",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-87119",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-89420"
+      ],
+      "visible_dates": "NVD publication dates are September 22, 2026.",
+      "reason": "Keyword collision; fetched summaries describe payment-channel accounting/authentication issues without a concrete AI security relationship."
+    },
+    {
+      "candidate": "ASD agentic AI harness guidance reported by iTnews on September 22",
+      "source_urls": [
+        "https://www.cyber.gov.au/business-government/secure-design/artificial-intelligence/agentic-ai-harnesses",
+        "https://www.itnews.com.au/newsletter/archive/scweekly_2026_09_22.html"
+      ],
+      "visible_dates": "Official ASD page shows first published and last updated September 11, 2026; iTnews newsletter is September 22, 2026.",
+      "reason": "Security-relevant but official source is stale outside the cutoff and the in-window newsletter is secondary coverage without a new official security delta."
+    },
+    {
+      "candidate": "AWS AgentCore Harness credential-exfiltration research",
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/",
+        "https://quidproquo.cc/posts/daily/2026-09-22-security-aws-agentcore-shell-credential-exfiltration-en/",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-aws-agentcore-credential-exfiltration-2026/"
+      ],
+      "visible_dates": "Secondary recaps were visible on September 21-22, 2026; the original Unit 42 research was reported as published September 18, 2026 and CSA as September 19, 2026.",
+      "reason": "High-signal AI security issue, but the concrete primary disclosure predates the 48-hour cutoff; in-window recaps do not add a clearly new primary security change."
+    },
+    {
+      "candidate": "U.S.-China AI incident alert mechanism reported by AP",
+      "source_urls": [
+        "https://apnews.com/article/2c7f54f07e755f506d9db9b91df282bd"
+      ],
+      "visible_dates": "AP search result shows September 21, 2026.",
+      "reason": "Potential AI-security governance item, but no primary official mechanism text or implementation details were located in this run; keep as a follow-up rather than a qualifying finding."
+    }
+  ],
+  "confidence_notes": [
+    "Direct CVE Services JSON was used for selected CVEs because it exposes publication/update timestamps, affected versions, titles, and advisory references.",
+    "NVD keyword searches returned useful initial evidence but later repeated keyword requests hit HTTP 429; selected CVEs were cross-checked through CVE Services.",
+    "The MCP Atlassian finding is intentionally clustered because the CVEs share project, patch boundary, release gate, and ingest routing, while preserving individual CVE IDs.",
+    "Local dedupe checked raw, raw/processed, and docs/wiki for selected CVE IDs and product names before creating the artifact."
+  ],
+  "follow_up_actions": [
+    "Ingest should reconcile MCP Atlassian with the existing CVE-2026-73498 page and avoid duplicating v0.22.0 release context.",
+    "Ingest should recheck GitHub advisories for severity, proof status, and fixed-release wording before durable synthesis.",
+    "Route broad product/entity background for 9Router, FastGPT, vLLM, and MCP Atlassian to ai-wiki rather than duplicating it locally.",
+    "Watch for an official primary source on the reported U.S.-China AI incident notification mechanism."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed for this artifact"
+  },
+  "artifact_scope": {
+    "docs_wiki_modified": false,
+    "raw_processed_modified": false,
+    "public_sources_only": true,
+    "private_or_sensitive_local_content_sent_external": false
+  }
+}

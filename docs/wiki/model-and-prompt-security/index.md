@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [vLLM NIXL prefix cache worker DoS](vllm-nixl-prefix-cache-worker-dos.md)
+- [vLLM Mooncake KV cache exhaustion](vllm-mooncake-kv-cache-exhaustion.md)
 - [vLLM bad_words logits corruption](vllm-bad-words-logits-corruption.md)
 
 This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, adversarial inputs, unsafe outputs, and model-boundary mitigations. General model and technique background remains in ai-wiki.
@@ -21,6 +23,8 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - [vLLM sampler state corruption](vllm-sampler-state-corruption.md)
 - [vLLM allowed_token_ids logits corruption](vllm-allowed-token-ids-logits-corruption.md)
 - [vLLM prompt-token sampler state corruption](vllm-prompt-token-sampler-state-corruption.md)
+- [vLLM NIXL prefix cache worker DoS](vllm-nixl-prefix-cache-worker-dos.md)
+- [vLLM Mooncake KV cache exhaustion](vllm-mooncake-kv-cache-exhaustion.md)
 - [Cryptographic Context Injection](cryptographic-context-injection.md)
 - [Xinference Llama3 tool call eval RCE](xinference-llama3-tool-call-eval-rce.md)
 - [Legal filing prompt injection](legal-filing-prompt-injection.md)
@@ -70,6 +74,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - Updated on 2026-09-15 with PraisonAI execute_code sandbox bypass and Apple Intelligence security prompt bypass leaves.
 - Updated on 2026-09-18 with vLLM audio decompression and video decoder availability leaves.
 - Updated on 2026-09-19 with split vLLM sampler-state corruption leaves.
+- Updated on 2026-09-23 with vLLM NIXL and Mooncake connector availability leaves.
 - Updated on 2026-08-31 with ash_ai prompt-template execution and Microsoft Edge iOS LLM prompt-spoofing leaves.
 - Record affected boundary, attack prerequisites, mitigation, residual risk, and evidence quality.
 - Updated on 2026-08-19 with Context7 MCP prompt-injection and vLLM multimodal input-boundary leaves.

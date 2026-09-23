@@ -1,11 +1,11 @@
 ---
 type: "Topic"
-title: "MCP Atlassian Confluence Attachment File Read"
-description: "Security analysis for CVE-2026-73498 in mcp-atlassian Confluence attachment uploads."
+title: "MCP Atlassian Attachment File Read"
+description: "Security analysis for mcp-atlassian Confluence and Jira attachment upload local-file-read advisories."
 tags: ["agent-and-tool-security", "identity-and-access", "infrastructure-and-supply-chain"]
 ---
 
-# MCP Atlassian Confluence Attachment File Read
+# MCP Atlassian Attachment File Read
 
 ## Current Understanding
 
@@ -15,11 +15,13 @@ Broad Atlassian, Jira, Confluence, and MCP server catalog context belongs upstre
 
 The [August 14 leaf update watch source](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json) adds CVE List publication evidence and CISA ADP proof-of-concept tagging for the same advisory. That changes confidence in public exploitability evidence but does not create a separate local item: this remains one CVE-2026-73498 MCP attachment file-read leaf anchored to the pre-0.22.0 fix boundary.
 
+The [September 22 topic collector source](../../../raw/processed/2026-09-22/ai-security-wiki-topic-news-collector-2026-09-22T233219Z.json) adds a same-release file-read subset in the mcp-atlassian 0.22.0 advisory cluster: [CVE-2026-77258](https://cveawg.mitre.org/api/cve/CVE-2026-77258), [CVE-2026-77260](https://cveawg.mitre.org/api/cve/CVE-2026-77260), and [CVE-2026-77270](https://cveawg.mitre.org/api/cve/CVE-2026-77270). These records preserve the same local security boundary: attachment upload tools trusting caller-controlled server-local file paths can read files available to the MCP server and move them into Jira or Confluence contexts.
+
 ## Security Impact
 
-- Threat: prompt-injection or malicious client input can turn a legitimate Confluence attachment tool into arbitrary server-side file read.
-- Affected boundary: `mcp-atlassian` versions before 0.22.0, `confluence_upload_attachment`, `src/mcp_atlassian/confluence/attachments.py`, local files readable by the MCP server process, Confluence attachment storage, and environment credentials such as `CONFLUENCE_API_TOKEN`.
-- Exploit or incident status: public vulnerability advisory, CVE-2026-73498 and GHSA-g5r6-gv6m-f5jv; CISA ADP tagged proof-of-concept evidence in the CVE List record, but no confirmed in-the-wild exploitation was captured by the raw sources.
+- Threat: prompt-injection or malicious client input can turn legitimate Jira or Confluence attachment tools into arbitrary server-side file read.
+- Affected boundary: `mcp-atlassian` versions before 0.22.0, Confluence and Jira attachment upload tools, local files readable by the MCP server process, Atlassian attachment storage, and environment credentials such as `CONFLUENCE_API_TOKEN`.
+- Exploit or incident status: public vulnerability advisory, CVE-2026-73498 and GHSA-g5r6-gv6m-f5jv; CISA ADP tagged proof-of-concept evidence in the CVE List record; September 22 CVE cluster evidence for related attachment upload file-read paths; no confirmed in-the-wild exploitation was captured by the raw sources.
 - Mitigation state: upgrade to `mcp-atlassian` 0.22.0 or later and reduce the server process file and credential scope.
 - Confidence: high for the affected version, fix version, CWE-22 path-containment class, and CVSS 7.7 high rating because the source records CVE metadata and advisory references with in-window publication/update timestamps.
 - Residual risk: authenticated MCP clients may still bridge untrusted workspace, ticket, wiki, or page content into privileged SaaS/file actions unless tool parameters are validated and approval context is explicit.
@@ -36,8 +38,12 @@ The [August 14 leaf update watch source](../../../raw/processed/2026-08-14/ai-se
 
 - [August 13 topic news collector source](../../../raw/processed/2026-08-13/ai-security-wiki-topic-news-collector-2026-08-13T233150Z.json)
 - [August 14 leaf update watch source](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json)
+- [September 22 topic collector source](../../../raw/processed/2026-09-22/ai-security-wiki-topic-news-collector-2026-09-22T233219Z.json)
 - NVD CVE-2026-73498 entry: https://nvd.nist.gov/vuln/detail/CVE-2026-73498
 - CVE.org CVE-2026-73498 record: https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/73xxx/CVE-2026-73498.json
+- [CVE-2026-77258 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-77258)
+- [CVE-2026-77260 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-77260)
+- [CVE-2026-77270 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-77270)
 - GitHub Security Advisory GHSA-g5r6-gv6m-f5jv: https://github.com/sooperset/mcp-atlassian/security/advisories/GHSA-g5r6-gv6m-f5jv
 - mcp-atlassian v0.22.0 release: https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0
 
@@ -58,6 +64,7 @@ The [August 14 leaf update watch source](../../../raw/processed/2026-08-14/ai-se
 - [agent and tool security](index.md)
 - [agent tool filesystem path containment](../infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md)
 - [MCP tool-level IAM authorization](../identity-and-access/mcp-tool-level-iam-authorization.md)
+- [MCP Atlassian SSRF validation bypasses](mcp-atlassian-ssrf-validation-bypasses.md)
 - [RovoBlast enterprise data exfiltration](rovoblast-enterprise-data-exfiltration.md)
 - Upstream AI wiki owns broad Atlassian, Jira, Confluence, and MCP server catalog context.
 - Upstream AI development wiki owns general MCP server selection and workflow governance.
@@ -71,3 +78,4 @@ The [August 14 leaf update watch source](../../../raw/processed/2026-08-14/ai-se
 
 - Created on 2026-08-13 from the [August 13 topic collector](../../../raw/processed/2026-08-13/ai-security-wiki-topic-news-collector-2026-08-13T233150Z.json) after routing broad Atlassian and MCP server catalog context upstream.
 - Updated on 2026-08-14 from the [August 14 watcher](../../../raw/processed/2026-08-14/ai-security-wiki-leaf-update-watch-20260815T000408Z.json) with CVE List publication and CISA ADP proof-of-concept tagging while keeping the advisory family consolidated.
+- Updated on 2026-09-23 from the [September 22 topic collector](../../../raw/processed/2026-09-22/ai-security-wiki-topic-news-collector-2026-09-22T233219Z.json) with related mcp-atlassian 0.22.0 attachment upload file-read CVEs while keeping file-read details in one leaf.
