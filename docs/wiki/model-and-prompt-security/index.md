@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [IBM FTM AI Agent RAG poisoning](ibm-ftm-ai-agent-rag-poisoning.md)
 - [vLLM NIXL prefix cache worker DoS](vllm-nixl-prefix-cache-worker-dos.md)
 - [vLLM Mooncake KV cache exhaustion](vllm-mooncake-kv-cache-exhaustion.md)
 - [vLLM bad_words logits corruption](vllm-bad-words-logits-corruption.md)
@@ -38,6 +39,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - [n8n Instance AI summary prototype pollution](n8n-instance-ai-summary-prototype-pollution.md)
 - [PraisonAI execute_code sandbox bypass](praisonai-execute-code-sandbox-bypass.md)
 - [Apple Intelligence security prompt bypass](apple-intelligence-security-prompt-bypass.md)
+- [IBM FTM AI Agent RAG poisoning](ibm-ftm-ai-agent-rag-poisoning.md)
 
 ## Authoritative Sources
 
@@ -75,6 +77,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - Updated on 2026-09-18 with vLLM audio decompression and video decoder availability leaves.
 - Updated on 2026-09-19 with split vLLM sampler-state corruption leaves.
 - Updated on 2026-09-23 with vLLM NIXL and Mooncake connector availability leaves.
+- Updated on 2026-09-24 with IBM FTM AI agent RAG poisoning as a retrieval-integrity-to-MCP-action boundary.
 - Updated on 2026-08-31 with ash_ai prompt-template execution and Microsoft Edge iOS LLM prompt-spoofing leaves.
 - Record affected boundary, attack prerequisites, mitigation, residual risk, and evidence quality.
 - Updated on 2026-08-19 with Context7 MCP prompt-injection and vLLM multimodal input-boundary leaves.

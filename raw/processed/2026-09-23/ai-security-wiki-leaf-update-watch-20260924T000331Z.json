@@ -1,0 +1,2036 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "exclusion_count": 30,
+  "exclusions": [
+    {
+      "evidence_date": "2026-07-17T11:19:38Z",
+      "leaf_id": "docs/wiki/agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md",
+      "leaf_title": "FastGPT Safe Axios DNS Rebinding SSRF",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/labring/FastGPT/releases/tag/v4.15.2"
+    },
+    {
+      "evidence_date": "2026-08-19T01:27:25Z",
+      "leaf_id": "docs/wiki/agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md",
+      "leaf_title": "FastGPT Safe Axios DNS Rebinding SSRF",
+      "reason": "GitHub advisory visible date is stale or not extractable for the strict seven-day window.",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/labring/FastGPT/security/advisories/GHSA-6jwp-qf29-hpj9"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "reason": "No direct visible publication/update date was extracted; headers/crawl dates are not sufficient.",
+      "source_kind": "public page",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/pull/1448"
+    },
+    {
+      "evidence_date": "2026-07-10T13:39:54Z",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md",
+      "leaf_title": "MCP Atlassian Jira Confluence Filter Bypass",
+      "reason": "No direct visible publication/update date was extracted; headers/crawl dates are not sufficient.",
+      "source_kind": "public page",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/pull/1448"
+    },
+    {
+      "evidence_date": "2026-07-10T13:39:54Z",
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md",
+      "leaf_title": "MCP Atlassian Jira Confluence Filter Bypass",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+    },
+    {
+      "evidence_date": "2026-06-20T09:13:12Z",
+      "leaf_id": "docs/wiki/identity-and-access/9router-public-llm-api-auth-bypass.md",
+      "leaf_title": "9Router Public LLM API Auth Bypass",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/decolua/9router/releases/tag/v0.5.6"
+    },
+    {
+      "evidence_date": "2026-07-16T08:25:39Z",
+      "leaf_id": "docs/wiki/identity-and-access/9router-public-llm-api-auth-bypass.md",
+      "leaf_title": "9Router Public LLM API Auth Bypass",
+      "reason": "GitHub advisory visible date is stale or not extractable for the strict seven-day window.",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/decolua/9router/security/advisories/GHSA-5mj8-gf6m-fhw8"
+    },
+    {
+      "evidence_date": "2026-09-02T07:43:00Z",
+      "leaf_id": "docs/wiki/identity-and-access/maxkb-tool-dispatch-grant-bypass.md",
+      "leaf_title": "MaxKB Tool Dispatch Grant Bypass",
+      "reason": "GitHub advisory visible date is stale or not extractable for the strict seven-day window.",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-383v-fx78-pphm"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-http-auth-bypass.md",
+      "leaf_title": "MCP Atlassian HTTP Auth Bypass",
+      "reason": "No direct visible publication/update date was extracted; headers/crawl dates are not sufficient.",
+      "source_kind": "public page",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/pull/1448"
+    },
+    {
+      "evidence_date": "2026-07-10T13:39:54Z",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-http-auth-bypass.md",
+      "leaf_title": "MCP Atlassian HTTP Auth Bypass",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-oauth-token-file-exposure.md",
+      "leaf_title": "MCP Atlassian OAuth Token File Exposure",
+      "reason": "No direct visible publication/update date was extracted; headers/crawl dates are not sufficient.",
+      "source_kind": "public page",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/pull/1448"
+    },
+    {
+      "evidence_date": "2026-07-10T13:39:54Z",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-oauth-token-file-exposure.md",
+      "leaf_title": "MCP Atlassian OAuth Token File Exposure",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-toolset-authorization-bypass.md",
+      "leaf_title": "MCP Atlassian Toolset Authorization Bypass",
+      "reason": "No direct visible publication/update date was extracted; headers/crawl dates are not sufficient.",
+      "source_kind": "public page",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/pull/1448"
+    },
+    {
+      "evidence_date": "2026-07-10T13:39:54Z",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-toolset-authorization-bypass.md",
+      "leaf_title": "MCP Atlassian Toolset Authorization Bypass",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+    },
+    {
+      "evidence_date": "2026-06-18T06:07:39Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "reason": "GitHub commit date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub commit API",
+      "source_url": "https://github.com/chartbrew/chartbrew/commit/8c8412edce56093e81b524e0235a796c7dd42336"
+    },
+    {
+      "evidence_date": "2026-06-24T04:26:11Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/chartbrew/chartbrew/releases/tag/v5.2.2"
+    },
+    {
+      "evidence_date": "2026-07-06T06:46:46Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "reason": "GitHub advisory visible date is stale or not extractable for the strict seven-day window.",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/chartbrew/chartbrew/security/advisories/GHSA-cp8j-2xwc-hxg8"
+    },
+    {
+      "evidence_date": "2026-06-13T19:42:44Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "leaf_title": "Feast Privileged CI Credential Exposure",
+      "reason": "GitHub commit date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub commit API",
+      "source_url": "https://github.com/feast-dev/feast/commit/76192229eca01661109ed56e0dd0cf8f732975f6"
+    },
+    {
+      "evidence_date": "2026-07-20T13:28:11Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "leaf_title": "Feast Privileged CI Credential Exposure",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/feast-dev/feast/releases/tag/v0.65.0"
+    },
+    {
+      "evidence_date": "2026-06-23T03:54:27Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "leaf_title": "Feast Privileged CI Credential Exposure",
+      "reason": "GitHub advisory visible date is stale or not extractable for the strict seven-day window.",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/feast-dev/feast/security/advisories/GHSA-2j2x-r73g-hrr5"
+    },
+    {
+      "evidence_date": "2026-06-30T14:46:56Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/hatchet-sns-metadata-ssrf.md",
+      "leaf_title": "Hatchet SNS Metadata SSRF",
+      "reason": "GitHub commit date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub commit API",
+      "source_url": "https://github.com/hatchet-dev/hatchet/commit/2d211bce16e5022afaf95780de82dc30e0bcba98"
+    },
+    {
+      "evidence_date": "2026-06-30T17:54:18Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/hatchet-sns-metadata-ssrf.md",
+      "leaf_title": "Hatchet SNS Metadata SSRF",
+      "reason": "GitHub advisory visible date is stale or not extractable for the strict seven-day window.",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-fjwv-jf2v-j499"
+    },
+    {
+      "evidence_date": "2026-08-06T06:41:52Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-aws-bedrock-credential-process-rce.md",
+      "leaf_title": "MaxKB AWS Bedrock Credential Process RCE",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.5-lts"
+    },
+    {
+      "evidence_date": "2026-09-02T07:47:13Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-aws-bedrock-credential-process-rce.md",
+      "leaf_title": "MaxKB AWS Bedrock Credential Process RCE",
+      "reason": "GitHub advisory visible date is stale or not extractable for the strict seven-day window.",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-2324-7xjr-9qxg"
+    },
+    {
+      "evidence_date": "2026-09-03T03:55:38Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-fexecve-sandbox-escape.md",
+      "leaf_title": "MaxKB fexecve Sandbox Escape",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.6-lts"
+    },
+    {
+      "evidence_date": "2026-09-03T08:16:23Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-fexecve-sandbox-escape.md",
+      "leaf_title": "MaxKB fexecve Sandbox Escape",
+      "reason": "GitHub advisory visible date is stale or not extractable for the strict seven-day window.",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-9mh9-v949-fwqh"
+    },
+    {
+      "evidence_date": "2026-09-03T03:55:38Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-function-library-sandbox-escape.md",
+      "leaf_title": "MaxKB Function Library Sandbox Escape",
+      "reason": "GitHub release date is stale or missing for the strict seven-day window.",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.6-lts"
+    },
+    {
+      "evidence_date": "2026-09-03T08:14:03Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-function-library-sandbox-escape.md",
+      "leaf_title": "MaxKB Function Library Sandbox Escape",
+      "reason": "GitHub advisory visible date is stale or not extractable for the strict seven-day window.",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-6h35-c779-4v37"
+    },
+    {
+      "evidence_date": "2026-09-02T07:45:58Z",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-knowledge-crawler-ssrf.md",
+      "leaf_title": "MaxKB Knowledge Crawler SSRF",
+      "reason": "GitHub advisory visible date is stale or not extractable for the strict seven-day window.",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-ffxw-frpx-8rww"
+    }
+  ],
+  "federation_boundary": "Broad AI entities route to ai-wiki and general AI-development practices route to ai-dev-wiki; this artifact keeps only security-specific evidence, affected boundaries, mitigations, and follow-up notes.",
+  "follow_up_notes": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md",
+      "note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "note": "4 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md",
+      "note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/9router-public-llm-api-auth-bypass.md",
+      "note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/maxkb-tool-dispatch-grant-bypass.md",
+      "note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-http-auth-bypass.md",
+      "note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-oauth-token-file-exposure.md",
+      "note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-toolset-authorization-bypass.md",
+      "note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "note": "4 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/hatchet-sns-metadata-ssrf.md",
+      "note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-aws-bedrock-credential-process-rce.md",
+      "note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-fexecve-sandbox-escape.md",
+      "note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-function-library-sandbox-escape.md",
+      "note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-knowledge-crawler-ssrf.md",
+      "note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest."
+    }
+  ],
+  "leaf_summaries": [
+    {
+      "follow_up_note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-22T17:17:26.987",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md",
+      "qualifying_update_count": 2,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84301",
+        "https://github.com/labring/FastGPT/releases/tag/v4.15.2",
+        "https://github.com/labring/FastGPT/security/advisories/GHSA-6jwp-qf29-hpj9",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84301"
+      ],
+      "title": "FastGPT Safe Axios DNS Rebinding SSRF"
+    },
+    {
+      "follow_up_note": "4 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-23T14:38:03.319Z",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "qualifying_update_count": 4,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77242",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77261",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77265",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77267",
+        "https://github.com/sooperset/mcp-atlassian/pull/1448",
+        "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+      ],
+      "title": "MCP Atlassian SSRF Validation Bypasses"
+    },
+    {
+      "follow_up_note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-23T14:38:13.093Z",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md",
+      "qualifying_update_count": 2,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77251",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77252",
+        "https://github.com/sooperset/mcp-atlassian/pull/1448",
+        "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+      ],
+      "title": "MCP Atlassian Jira Confluence Filter Bypass"
+    },
+    {
+      "follow_up_note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-22T16:17:48.497",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/identity-and-access/9router-public-llm-api-auth-bypass.md",
+      "qualifying_update_count": 2,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-56681",
+        "https://github.com/decolua/9router/releases/tag/v0.5.6",
+        "https://github.com/decolua/9router/security/advisories/GHSA-5mj8-gf6m-fhw8",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-56681"
+      ],
+      "title": "9Router Public LLM API Auth Bypass"
+    },
+    {
+      "follow_up_note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-21T20:40:44.213Z",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/identity-and-access/maxkb-tool-dispatch-grant-bypass.md",
+      "qualifying_update_count": 1,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77516",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-383v-fx78-pphm"
+      ],
+      "title": "MaxKB Tool Dispatch Grant Bypass"
+    },
+    {
+      "follow_up_note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-23T14:38:20.138Z",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-http-auth-bypass.md",
+      "qualifying_update_count": 1,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77244",
+        "https://github.com/sooperset/mcp-atlassian/pull/1448",
+        "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+      ],
+      "title": "MCP Atlassian HTTP Auth Bypass"
+    },
+    {
+      "follow_up_note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-22T18:42:59.068Z",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-oauth-token-file-exposure.md",
+      "qualifying_update_count": 1,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77250",
+        "https://github.com/sooperset/mcp-atlassian/pull/1448",
+        "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+      ],
+      "title": "MCP Atlassian OAuth Token File Exposure"
+    },
+    {
+      "follow_up_note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-22T19:02:45.226Z",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-toolset-authorization-bypass.md",
+      "qualifying_update_count": 1,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77243",
+        "https://github.com/sooperset/mcp-atlassian/pull/1448",
+        "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0"
+      ],
+      "title": "MCP Atlassian Toolset Authorization Bypass"
+    },
+    {
+      "follow_up_note": "4 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-22T16:17:50.300",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "qualifying_update_count": 4,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61851",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61852",
+        "https://github.com/chartbrew/chartbrew/commit/8c8412edce56093e81b524e0235a796c7dd42336",
+        "https://github.com/chartbrew/chartbrew/releases/tag/v5.2.2",
+        "https://github.com/chartbrew/chartbrew/security/advisories/GHSA-cp8j-2xwc-hxg8",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61851",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61852"
+      ],
+      "title": "Chartbrew AI Query SQL Control Bypass"
+    },
+    {
+      "follow_up_note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-21T18:17:08.923",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "qualifying_update_count": 2,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55563",
+        "https://github.com/feast-dev/feast/commit/76192229eca01661109ed56e0dd0cf8f732975f6",
+        "https://github.com/feast-dev/feast/releases/tag/v0.65.0",
+        "https://github.com/feast-dev/feast/security/advisories/GHSA-2j2x-r73g-hrr5",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55563"
+      ],
+      "title": "Feast Privileged CI Credential Exposure"
+    },
+    {
+      "follow_up_note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-23T18:26:49.087",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/hatchet-sns-metadata-ssrf.md",
+      "qualifying_update_count": 2,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61681",
+        "https://github.com/hatchet-dev/hatchet/commit/2d211bce16e5022afaf95780de82dc30e0bcba98",
+        "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-fjwv-jf2v-j499",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61681"
+      ],
+      "title": "Hatchet SNS Metadata SSRF"
+    },
+    {
+      "follow_up_note": "2 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-22T16:17:57.193",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-aws-bedrock-credential-process-rce.md",
+      "qualifying_update_count": 2,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79916",
+        "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.5-lts",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-2324-7xjr-9qxg",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79916"
+      ],
+      "title": "MaxKB AWS Bedrock Credential Process RCE"
+    },
+    {
+      "follow_up_note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-21T20:47:13.575Z",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-fexecve-sandbox-escape.md",
+      "qualifying_update_count": 1,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79918",
+        "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.6-lts",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-9mh9-v949-fwqh"
+      ],
+      "title": "MaxKB fexecve Sandbox Escape"
+    },
+    {
+      "follow_up_note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-22T15:39:00.922Z",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-function-library-sandbox-escape.md",
+      "qualifying_update_count": 1,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79919",
+        "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.6-lts",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-6h35-c779-4v37"
+      ],
+      "title": "MaxKB Function Library Sandbox Escape"
+    },
+    {
+      "follow_up_note": "1 qualifying public update records found; keep security-specific delta local and check for duplicate prior raw coverage before ingest.",
+      "last_qualified_update_at": "2026-09-21T20:44:17.597Z",
+      "last_result": "qualified_updates_found",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-knowledge-crawler-ssrf.md",
+      "qualifying_update_count": 1,
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77522",
+        "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-ffxw-frpx-8rww"
+      ],
+      "title": "MaxKB Knowledge Crawler SSRF"
+    }
+  ],
+  "leaf_universe_count": 438,
+  "qualifying_count": 27,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "network egress",
+        "SSRF validation",
+        "internal-resource boundary"
+      ],
+      "affected_products": [
+        "FastGPT"
+      ],
+      "cve_id": "CVE-2026-84301",
+      "date_published": "2026-09-22T16:50:19.790Z",
+      "date_updated": "2026-09-22T16:50:19.790Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84301",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md",
+      "leaf_title": "FastGPT Safe Axios DNS Rebinding SSRF",
+      "named_entities": [
+        "CVE-2026-84301",
+        "FastGPT"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84301",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "FastGPT safe axios SSRF guard still allows DNS rebinding TOCTOU on protected outbound requests",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "network egress",
+        "SSRF validation",
+        "internal-resource boundary"
+      ],
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-84301",
+      "cve_id": "CVE-2026-84301",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-84301",
+      "follow_up_note": "Use as enrichment evidence only; prefer CVE Services/GHSA details for vulnerability semantics.",
+      "last_modified": "2026-09-22T17:17:26.987",
+      "leaf_id": "docs/wiki/agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md",
+      "leaf_title": "FastGPT Safe Axios DNS Rebinding SSRF",
+      "named_entities": [
+        "CVE-2026-84301",
+        "FastGPT"
+      ],
+      "published": "2026-09-22T17:17:26.860",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84301",
+      "status": 200,
+      "upstream_routing": "NVD enrichment is local security metadata; no broad upstream product update required.",
+      "vuln_status": "Deferred"
+    },
+    {
+      "affected_boundaries": [
+        "network egress",
+        "SSRF validation",
+        "internal-resource boundary"
+      ],
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77242",
+      "date_published": "2026-09-22T17:58:41.813Z",
+      "date_updated": "2026-09-22T18:49:13.059Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77242",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "named_entities": [
+        "CVE-2026-77242",
+        "mcp-atlassian"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77242",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: Incomplete fix for CVE-2026-27826: DNS rebinding bypasses SSRF validation (validated IP not pinned)",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "network egress",
+        "SSRF validation",
+        "internal-resource boundary"
+      ],
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77261",
+      "date_published": "2026-09-22T18:06:20.640Z",
+      "date_updated": "2026-09-23T14:38:03.319Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77261",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "named_entities": [
+        "CVE-2026-77261",
+        "mcp-atlassian"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77261",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: SSRF redirect protection missing for basic-auth and OAuth authentication branches",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "network egress",
+        "SSRF validation",
+        "internal-resource boundary"
+      ],
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77265",
+      "date_published": "2026-09-22T17:47:58.553Z",
+      "date_updated": "2026-09-22T17:47:58.553Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77265",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "named_entities": [
+        "CVE-2026-77265",
+        "mcp-atlassian"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77265",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: SSRF via DNS Rebinding in Header-Based Authentication Flow",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "network egress",
+        "SSRF validation",
+        "internal-resource boundary"
+      ],
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77267",
+      "date_published": "2026-09-22T17:52:25.730Z",
+      "date_updated": "2026-09-22T17:52:25.730Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77267",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "named_entities": [
+        "CVE-2026-77267",
+        "mcp-atlassian"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77267",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "mcp-atlassian has an incomplete SSRF remediation",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "data access filter",
+        "tenant/project boundary"
+      ],
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77251",
+      "date_published": "2026-09-22T17:55:37.810Z",
+      "date_updated": "2026-09-22T17:55:37.810Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77251",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md",
+      "leaf_title": "MCP Atlassian Jira Confluence Filter Bypass",
+      "named_entities": [
+        "CVE-2026-77251",
+        "mcp-atlassian"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77251",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: JIRA_PROJECTS_FILTER / CONFLUENCE_SPACES_FILTER allow forbidden-project content exfiltration (one LIVE-proven on Atlassian Cloud)",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "data access filter",
+        "tenant/project boundary"
+      ],
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77252",
+      "date_published": "2026-09-22T17:54:02.250Z",
+      "date_updated": "2026-09-23T14:38:13.093Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77252",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md",
+      "leaf_title": "MCP Atlassian Jira Confluence Filter Bypass",
+      "named_entities": [
+        "CVE-2026-77252",
+        "mcp-atlassian"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77252",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: JIRA_PROJECTS_FILTER and CONFLUENCE_SPACES_FILTER can be bypassed in search tools",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "identity and access",
+        "authorization boundary"
+      ],
+      "affected_products": [
+        "9router"
+      ],
+      "cve_id": "CVE-2026-56681",
+      "date_published": "2026-09-22T16:02:25.018Z",
+      "date_updated": "2026-09-22T16:02:25.018Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-56681",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/identity-and-access/9router-public-llm-api-auth-bypass.md",
+      "leaf_title": "9Router Public LLM API Auth Bypass",
+      "named_entities": [
+        "9router",
+        "CVE-2026-56681"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-56681",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "9Router: Authentication Bypass in Public LLM API via Spoofable X-9r-Real-Ip Header",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "identity and access",
+        "authorization boundary"
+      ],
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-56681",
+      "cve_id": "CVE-2026-56681",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-56681",
+      "follow_up_note": "Use as enrichment evidence only; prefer CVE Services/GHSA details for vulnerability semantics.",
+      "last_modified": "2026-09-22T16:17:48.497",
+      "leaf_id": "docs/wiki/identity-and-access/9router-public-llm-api-auth-bypass.md",
+      "leaf_title": "9Router Public LLM API Auth Bypass",
+      "named_entities": [
+        "9Router",
+        "CVE-2026-56681"
+      ],
+      "published": "2026-09-22T16:17:48.350",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56681",
+      "status": 200,
+      "upstream_routing": "NVD enrichment is local security metadata; no broad upstream product update required.",
+      "vuln_status": "Deferred"
+    },
+    {
+      "affected_boundaries": [
+        "identity and access",
+        "authorization boundary"
+      ],
+      "affected_products": [
+        "MaxKB"
+      ],
+      "cve_id": "CVE-2026-77516",
+      "date_published": "2026-09-21T20:40:44.213Z",
+      "date_updated": "2026-09-21T20:40:44.213Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77516",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/identity-and-access/maxkb-tool-dispatch-grant-bypass.md",
+      "leaf_title": "MaxKB Tool Dispatch Grant Bypass",
+      "named_entities": [
+        "CVE-2026-77516",
+        "MaxKB"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77516",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MaxKB: Missing per-tool authorization in the agent and workflow tool-dispatch path",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "identity and access",
+        "authorization boundary"
+      ],
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77244",
+      "date_published": "2026-09-22T17:49:38.296Z",
+      "date_updated": "2026-09-23T14:38:20.138Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77244",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-http-auth-bypass.md",
+      "leaf_title": "MCP Atlassian HTTP Auth Bypass",
+      "named_entities": [
+        "CVE-2026-77244",
+        "mcp-atlassian"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77244",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "[mcp-atlassian] Authentication bypass in HTTP transport: AtlassianOpaqueTokenVerifier accepts any non-empty token",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "identity and access",
+        "authorization boundary"
+      ],
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77250",
+      "date_published": "2026-09-22T17:51:02.674Z",
+      "date_updated": "2026-09-22T18:42:59.068Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77250",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-oauth-token-file-exposure.md",
+      "leaf_title": "MCP Atlassian OAuth Token File Exposure",
+      "named_entities": [
+        "CVE-2026-77250",
+        "mcp-atlassian"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77250",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: OAuth fallback token storage writes plaintext access and refresh tokens with group-readable permissions",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "identity and access",
+        "authorization boundary"
+      ],
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77243",
+      "date_published": "2026-09-22T17:57:26.122Z",
+      "date_updated": "2026-09-22T19:02:45.226Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77243",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-toolset-authorization-bypass.md",
+      "leaf_title": "MCP Atlassian Toolset Authorization Bypass",
+      "named_entities": [
+        "CVE-2026-77243",
+        "mcp-atlassian"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77243",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: ENABLED_TOOLS / Toolset authorization bypass",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "database query execution",
+        "AI SQL tool controls"
+      ],
+      "affected_products": [
+        "chartbrew"
+      ],
+      "cve_id": "CVE-2026-61851",
+      "date_published": "2026-09-21T21:40:53.699Z",
+      "date_updated": "2026-09-22T15:38:35.549Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61851",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "named_entities": [
+        "CVE-2026-61851",
+        "chartbrew"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61851",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "Chartbrew: Incomplete Read-Only Keyword Blocklist in AI runQuery Tool",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "database query execution",
+        "AI SQL tool controls"
+      ],
+      "affected_products": [
+        "chartbrew"
+      ],
+      "cve_id": "CVE-2026-61852",
+      "date_published": "2026-09-21T21:39:52.579Z",
+      "date_updated": "2026-09-21T21:39:52.579Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61852",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "named_entities": [
+        "CVE-2026-61852",
+        "chartbrew"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61852",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "Chartbrew: SQL Injection via row_limit Parameter in AI runQuery Tool",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "database query execution",
+        "AI SQL tool controls"
+      ],
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61851",
+      "cve_id": "CVE-2026-61851",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61851",
+      "follow_up_note": "Use as enrichment evidence only; prefer CVE Services/GHSA details for vulnerability semantics.",
+      "last_modified": "2026-09-22T16:17:50.300",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "named_entities": [
+        "CVE-2026-61851",
+        "Chartbrew"
+      ],
+      "published": "2026-09-21T22:16:58.000",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61851",
+      "status": 200,
+      "upstream_routing": "NVD enrichment is local security metadata; no broad upstream product update required.",
+      "vuln_status": "Received"
+    },
+    {
+      "affected_boundaries": [
+        "database query execution",
+        "AI SQL tool controls"
+      ],
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61852",
+      "cve_id": "CVE-2026-61852",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61852",
+      "follow_up_note": "Use as enrichment evidence only; prefer CVE Services/GHSA details for vulnerability semantics.",
+      "last_modified": "2026-09-21T22:16:58.163",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "named_entities": [
+        "CVE-2026-61852",
+        "Chartbrew"
+      ],
+      "published": "2026-09-21T22:16:58.163",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61852",
+      "status": 200,
+      "upstream_routing": "NVD enrichment is local security metadata; no broad upstream product update required.",
+      "vuln_status": "Received"
+    },
+    {
+      "affected_boundaries": [
+        "supply chain CI",
+        "secret exposure"
+      ],
+      "affected_products": [
+        "feast"
+      ],
+      "cve_id": "CVE-2026-55563",
+      "date_published": "2026-09-21T15:51:06.794Z",
+      "date_updated": "2026-09-21T17:58:47.036Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55563",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "leaf_title": "Feast Privileged CI Credential Exposure",
+      "named_entities": [
+        "CVE-2026-55563",
+        "feast"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55563",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "Feast: `pull_request_target` integration tests run untrusted fork code with production cloud secrets; the `ok-to-test` label guard is bypassable via label persistence on `synchronize`",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "supply chain CI",
+        "secret exposure"
+      ],
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-55563",
+      "cve_id": "CVE-2026-55563",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-55563",
+      "follow_up_note": "Use as enrichment evidence only; prefer CVE Services/GHSA details for vulnerability semantics.",
+      "last_modified": "2026-09-21T18:17:08.923",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "leaf_title": "Feast Privileged CI Credential Exposure",
+      "named_entities": [
+        "CVE-2026-55563",
+        "Feast"
+      ],
+      "published": "2026-09-21T16:17:09.390",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55563",
+      "status": 200,
+      "upstream_routing": "NVD enrichment is local security metadata; no broad upstream product update required.",
+      "vuln_status": "Received"
+    },
+    {
+      "affected_boundaries": [
+        "network egress",
+        "SSRF validation",
+        "internal-resource boundary"
+      ],
+      "affected_products": [
+        "hatchet"
+      ],
+      "cve_id": "CVE-2026-61681",
+      "date_published": "2026-09-21T15:42:21.803Z",
+      "date_updated": "2026-09-21T15:42:21.803Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61681",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/hatchet-sns-metadata-ssrf.md",
+      "leaf_title": "Hatchet SNS Metadata SSRF",
+      "named_entities": [
+        "CVE-2026-61681",
+        "hatchet"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61681",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "Hatchet: SSRF via Unsigned UnsubscribeURL in SNS UnsubscribeConfirmation Handler",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "network egress",
+        "SSRF validation",
+        "internal-resource boundary"
+      ],
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61681",
+      "cve_id": "CVE-2026-61681",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61681",
+      "follow_up_note": "Use as enrichment evidence only; prefer CVE Services/GHSA details for vulnerability semantics.",
+      "last_modified": "2026-09-23T18:26:49.087",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/hatchet-sns-metadata-ssrf.md",
+      "leaf_title": "Hatchet SNS Metadata SSRF",
+      "named_entities": [
+        "CVE-2026-61681",
+        "Hatchet"
+      ],
+      "published": "2026-09-21T16:17:09.823",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61681",
+      "status": 200,
+      "upstream_routing": "NVD enrichment is local security metadata; no broad upstream product update required.",
+      "vuln_status": "Deferred"
+    },
+    {
+      "affected_boundaries": [
+        "code execution",
+        "sandbox or workload isolation"
+      ],
+      "affected_products": [
+        "MaxKB"
+      ],
+      "cve_id": "CVE-2026-79916",
+      "date_published": "2026-09-21T20:34:47.530Z",
+      "date_updated": "2026-09-22T15:39:19.409Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79916",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-aws-bedrock-credential-process-rce.md",
+      "leaf_title": "MaxKB AWS Bedrock Credential Process RCE",
+      "named_entities": [
+        "CVE-2026-79916",
+        "MaxKB"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79916",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MaxKB AWS Bedrock model credential injection leads to remote code execution",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "code execution",
+        "sandbox or workload isolation"
+      ],
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-79916",
+      "cve_id": "CVE-2026-79916",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-79916",
+      "follow_up_note": "Use as enrichment evidence only; prefer CVE Services/GHSA details for vulnerability semantics.",
+      "last_modified": "2026-09-22T16:17:57.193",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-aws-bedrock-credential-process-rce.md",
+      "leaf_title": "MaxKB AWS Bedrock Credential Process RCE",
+      "named_entities": [
+        "CVE-2026-79916",
+        "MaxKB"
+      ],
+      "published": "2026-09-21T21:17:12.450",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79916",
+      "status": 200,
+      "upstream_routing": "NVD enrichment is local security metadata; no broad upstream product update required.",
+      "vuln_status": "Deferred"
+    },
+    {
+      "affected_boundaries": [
+        "code execution",
+        "sandbox or workload isolation"
+      ],
+      "affected_products": [
+        "MaxKB"
+      ],
+      "cve_id": "CVE-2026-79918",
+      "date_published": "2026-09-21T20:47:13.575Z",
+      "date_updated": "2026-09-21T20:47:13.575Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79918",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-fexecve-sandbox-escape.md",
+      "leaf_title": "MaxKB fexecve Sandbox Escape",
+      "named_entities": [
+        "CVE-2026-79918",
+        "MaxKB"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79918",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MaxKB: Sandbox escape via unhooked fexecve",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "code execution",
+        "sandbox or workload isolation"
+      ],
+      "affected_products": [
+        "MaxKB"
+      ],
+      "cve_id": "CVE-2026-79919",
+      "date_published": "2026-09-21T20:48:02.944Z",
+      "date_updated": "2026-09-22T15:39:00.922Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79919",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-function-library-sandbox-escape.md",
+      "leaf_title": "MaxKB Function Library Sandbox Escape",
+      "named_entities": [
+        "CVE-2026-79919",
+        "MaxKB"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79919",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MaxKB function-library sandbox escape: dlopen stack-check bypass via importlib meta-path callbacks and unhooked dlsym(RTLD_NEXT)",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    },
+    {
+      "affected_boundaries": [
+        "network egress",
+        "SSRF validation",
+        "internal-resource boundary"
+      ],
+      "affected_products": [
+        "MaxKB"
+      ],
+      "cve_id": "CVE-2026-77522",
+      "date_published": "2026-09-21T20:44:17.597Z",
+      "date_updated": "2026-09-21T20:44:17.597Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77522",
+      "follow_up_note": "Ingest should compare against existing September raw artifacts before changing docs/wiki to avoid duplicate digest prose.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-knowledge-crawler-ssrf.md",
+      "leaf_title": "MaxKB Knowledge Crawler SSRF",
+      "named_entities": [
+        "CVE-2026-77522",
+        "MaxKB"
+      ],
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77522",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MaxKB: Authenticated full-read SSRF via the knowledge web-document import/sync crawler (Fork.fork requests.get, no internal-IP guard, non-blind)",
+      "upstream_routing": "security-specific CVE/advisory metadata kept locally; product-catalog facts remain upstream-owned"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-09-24T00:03:31Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md",
+    "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+    "docs/wiki/data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md",
+    "docs/wiki/identity-and-access/9router-public-llm-api-auth-bypass.md",
+    "docs/wiki/identity-and-access/maxkb-tool-dispatch-grant-bypass.md",
+    "docs/wiki/identity-and-access/mcp-atlassian-http-auth-bypass.md",
+    "docs/wiki/identity-and-access/mcp-atlassian-oauth-token-file-exposure.md",
+    "docs/wiki/identity-and-access/mcp-atlassian-toolset-authorization-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+    "docs/wiki/infrastructure-and-supply-chain/hatchet-sns-metadata-ssrf.md",
+    "docs/wiki/infrastructure-and-supply-chain/maxkb-aws-bedrock-credential-process-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/maxkb-fexecve-sandbox-escape.md",
+    "docs/wiki/infrastructure-and-supply-chain/maxkb-function-library-sandbox-escape.md",
+    "docs/wiki/infrastructure-and-supply-chain/maxkb-knowledge-crawler-ssrf.md"
+  ],
+  "selection_rule": "unchecked leaves first, then oldest last_checked_at, stable relative path tie-breaker",
+  "sources_checked": [
+    {
+      "affected_products": [
+        "FastGPT"
+      ],
+      "cve_id": "CVE-2026-84301",
+      "date_published": "2026-09-22T16:50:19.790Z",
+      "date_updated": "2026-09-22T16:50:19.790Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84301",
+      "leaf_id": "docs/wiki/agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md",
+      "leaf_title": "FastGPT Safe Axios DNS Rebinding SSRF",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84301",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "FastGPT safe axios SSRF guard still allows DNS rebinding TOCTOU on protected outbound requests"
+    },
+    {
+      "api_url": "https://api.github.com/repos/labring/FastGPT/releases/tags/v4.15.2",
+      "created_at": "2026-07-17T11:17:14Z",
+      "final_url": "https://api.github.com/repos/labring/FastGPT/releases/tags/v4.15.2",
+      "leaf_id": "docs/wiki/agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md",
+      "leaf_title": "FastGPT Safe Axios DNS Rebinding SSRF",
+      "published_at": "2026-07-17T11:19:38Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/labring/FastGPT/releases/tag/v4.15.2",
+      "status": 200,
+      "tag_name": "v4.15.2"
+    },
+    {
+      "final_url": "https://github.com/labring/FastGPT/security/advisories/GHSA-6jwp-qf29-hpj9",
+      "leaf_id": "docs/wiki/agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md",
+      "leaf_title": "FastGPT Safe Axios DNS Rebinding SSRF",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/labring/FastGPT/security/advisories/GHSA-6jwp-qf29-hpj9",
+      "status": 200,
+      "visible_dates_extracted": [
+        "2026-08-19T01:27:25Z"
+      ]
+    },
+    {
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-84301",
+      "cve_id": "CVE-2026-84301",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-84301",
+      "last_modified": "2026-09-22T17:17:26.987",
+      "leaf_id": "docs/wiki/agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md",
+      "leaf_title": "FastGPT Safe Axios DNS Rebinding SSRF",
+      "published": "2026-09-22T17:17:26.860",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-84301",
+      "status": 200,
+      "vuln_status": "Deferred"
+    },
+    {
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77242",
+      "date_published": "2026-09-22T17:58:41.813Z",
+      "date_updated": "2026-09-22T18:49:13.059Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77242",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77242",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: Incomplete fix for CVE-2026-27826: DNS rebinding bypasses SSRF validation (validated IP not pinned)"
+    },
+    {
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77261",
+      "date_published": "2026-09-22T18:06:20.640Z",
+      "date_updated": "2026-09-23T14:38:03.319Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77261",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77261",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: SSRF redirect protection missing for basic-auth and OAuth authentication branches"
+    },
+    {
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77265",
+      "date_published": "2026-09-22T17:47:58.553Z",
+      "date_updated": "2026-09-22T17:47:58.553Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77265",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77265",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: SSRF via DNS Rebinding in Header-Based Authentication Flow"
+    },
+    {
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77267",
+      "date_published": "2026-09-22T17:52:25.730Z",
+      "date_updated": "2026-09-22T17:52:25.730Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77267",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77267",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "mcp-atlassian has an incomplete SSRF remediation"
+    },
+    {
+      "final_url": "https://github.com/sooperset/mcp-atlassian/pull/1448",
+      "last_modified_header": null,
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "source_kind": "public page",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/pull/1448",
+      "status": 200
+    },
+    {
+      "api_url": "https://api.github.com/repos/sooperset/mcp-atlassian/releases/tags/v0.22.0",
+      "created_at": "2026-07-10T13:38:07Z",
+      "final_url": "https://api.github.com/repos/sooperset/mcp-atlassian/releases/tags/v0.22.0",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-ssrf-validation-bypasses.md",
+      "leaf_title": "MCP Atlassian SSRF Validation Bypasses",
+      "published_at": "2026-07-10T13:39:54Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0",
+      "status": 200,
+      "tag_name": "v0.22.0"
+    },
+    {
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77251",
+      "date_published": "2026-09-22T17:55:37.810Z",
+      "date_updated": "2026-09-22T17:55:37.810Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77251",
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md",
+      "leaf_title": "MCP Atlassian Jira Confluence Filter Bypass",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77251",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: JIRA_PROJECTS_FILTER / CONFLUENCE_SPACES_FILTER allow forbidden-project content exfiltration (one LIVE-proven on Atlassian Cloud)"
+    },
+    {
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77252",
+      "date_published": "2026-09-22T17:54:02.250Z",
+      "date_updated": "2026-09-23T14:38:13.093Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77252",
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md",
+      "leaf_title": "MCP Atlassian Jira Confluence Filter Bypass",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77252",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: JIRA_PROJECTS_FILTER and CONFLUENCE_SPACES_FILTER can be bypassed in search tools"
+    },
+    {
+      "final_url": "https://github.com/sooperset/mcp-atlassian/pull/1448",
+      "last_modified_header": null,
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md",
+      "leaf_title": "MCP Atlassian Jira Confluence Filter Bypass",
+      "source_kind": "public page",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/pull/1448",
+      "status": 200
+    },
+    {
+      "api_url": "https://api.github.com/repos/sooperset/mcp-atlassian/releases/tags/v0.22.0",
+      "created_at": "2026-07-10T13:38:07Z",
+      "final_url": "https://api.github.com/repos/sooperset/mcp-atlassian/releases/tags/v0.22.0",
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-atlassian-jira-confluence-filter-bypass.md",
+      "leaf_title": "MCP Atlassian Jira Confluence Filter Bypass",
+      "published_at": "2026-07-10T13:39:54Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0",
+      "status": 200,
+      "tag_name": "v0.22.0"
+    },
+    {
+      "affected_products": [
+        "9router"
+      ],
+      "cve_id": "CVE-2026-56681",
+      "date_published": "2026-09-22T16:02:25.018Z",
+      "date_updated": "2026-09-22T16:02:25.018Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-56681",
+      "leaf_id": "docs/wiki/identity-and-access/9router-public-llm-api-auth-bypass.md",
+      "leaf_title": "9Router Public LLM API Auth Bypass",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-56681",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "9Router: Authentication Bypass in Public LLM API via Spoofable X-9r-Real-Ip Header"
+    },
+    {
+      "api_url": "https://api.github.com/repos/decolua/9router/releases/tags/v0.5.6",
+      "created_at": "2026-06-20T09:13:06Z",
+      "final_url": "https://api.github.com/repos/decolua/9router/releases/tags/v0.5.6",
+      "leaf_id": "docs/wiki/identity-and-access/9router-public-llm-api-auth-bypass.md",
+      "leaf_title": "9Router Public LLM API Auth Bypass",
+      "published_at": "2026-06-20T09:13:12Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/decolua/9router/releases/tag/v0.5.6",
+      "status": 200,
+      "tag_name": "v0.5.6"
+    },
+    {
+      "final_url": "https://github.com/decolua/9router/security/advisories/GHSA-5mj8-gf6m-fhw8",
+      "leaf_id": "docs/wiki/identity-and-access/9router-public-llm-api-auth-bypass.md",
+      "leaf_title": "9Router Public LLM API Auth Bypass",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/decolua/9router/security/advisories/GHSA-5mj8-gf6m-fhw8",
+      "status": 200,
+      "visible_dates_extracted": [
+        "2026-07-16T08:25:39Z"
+      ]
+    },
+    {
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-56681",
+      "cve_id": "CVE-2026-56681",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-56681",
+      "last_modified": "2026-09-22T16:17:48.497",
+      "leaf_id": "docs/wiki/identity-and-access/9router-public-llm-api-auth-bypass.md",
+      "leaf_title": "9Router Public LLM API Auth Bypass",
+      "published": "2026-09-22T16:17:48.350",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56681",
+      "status": 200,
+      "vuln_status": "Deferred"
+    },
+    {
+      "affected_products": [
+        "MaxKB"
+      ],
+      "cve_id": "CVE-2026-77516",
+      "date_published": "2026-09-21T20:40:44.213Z",
+      "date_updated": "2026-09-21T20:40:44.213Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77516",
+      "leaf_id": "docs/wiki/identity-and-access/maxkb-tool-dispatch-grant-bypass.md",
+      "leaf_title": "MaxKB Tool Dispatch Grant Bypass",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77516",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MaxKB: Missing per-tool authorization in the agent and workflow tool-dispatch path"
+    },
+    {
+      "final_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-383v-fx78-pphm",
+      "leaf_id": "docs/wiki/identity-and-access/maxkb-tool-dispatch-grant-bypass.md",
+      "leaf_title": "MaxKB Tool Dispatch Grant Bypass",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-383v-fx78-pphm",
+      "status": 200,
+      "visible_dates_extracted": [
+        "2026-09-02T07:43:00Z"
+      ]
+    },
+    {
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77244",
+      "date_published": "2026-09-22T17:49:38.296Z",
+      "date_updated": "2026-09-23T14:38:20.138Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77244",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-http-auth-bypass.md",
+      "leaf_title": "MCP Atlassian HTTP Auth Bypass",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77244",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "[mcp-atlassian] Authentication bypass in HTTP transport: AtlassianOpaqueTokenVerifier accepts any non-empty token"
+    },
+    {
+      "final_url": "https://github.com/sooperset/mcp-atlassian/pull/1448",
+      "last_modified_header": null,
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-http-auth-bypass.md",
+      "leaf_title": "MCP Atlassian HTTP Auth Bypass",
+      "source_kind": "public page",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/pull/1448",
+      "status": 200
+    },
+    {
+      "api_url": "https://api.github.com/repos/sooperset/mcp-atlassian/releases/tags/v0.22.0",
+      "created_at": "2026-07-10T13:38:07Z",
+      "final_url": "https://api.github.com/repos/sooperset/mcp-atlassian/releases/tags/v0.22.0",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-http-auth-bypass.md",
+      "leaf_title": "MCP Atlassian HTTP Auth Bypass",
+      "published_at": "2026-07-10T13:39:54Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0",
+      "status": 200,
+      "tag_name": "v0.22.0"
+    },
+    {
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77250",
+      "date_published": "2026-09-22T17:51:02.674Z",
+      "date_updated": "2026-09-22T18:42:59.068Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77250",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-oauth-token-file-exposure.md",
+      "leaf_title": "MCP Atlassian OAuth Token File Exposure",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77250",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: OAuth fallback token storage writes plaintext access and refresh tokens with group-readable permissions"
+    },
+    {
+      "final_url": "https://github.com/sooperset/mcp-atlassian/pull/1448",
+      "last_modified_header": null,
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-oauth-token-file-exposure.md",
+      "leaf_title": "MCP Atlassian OAuth Token File Exposure",
+      "source_kind": "public page",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/pull/1448",
+      "status": 200
+    },
+    {
+      "api_url": "https://api.github.com/repos/sooperset/mcp-atlassian/releases/tags/v0.22.0",
+      "created_at": "2026-07-10T13:38:07Z",
+      "final_url": "https://api.github.com/repos/sooperset/mcp-atlassian/releases/tags/v0.22.0",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-oauth-token-file-exposure.md",
+      "leaf_title": "MCP Atlassian OAuth Token File Exposure",
+      "published_at": "2026-07-10T13:39:54Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0",
+      "status": 200,
+      "tag_name": "v0.22.0"
+    },
+    {
+      "affected_products": [
+        "mcp-atlassian"
+      ],
+      "cve_id": "CVE-2026-77243",
+      "date_published": "2026-09-22T17:57:26.122Z",
+      "date_updated": "2026-09-22T19:02:45.226Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77243",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-toolset-authorization-bypass.md",
+      "leaf_title": "MCP Atlassian Toolset Authorization Bypass",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77243",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MCP Atlassian: ENABLED_TOOLS / Toolset authorization bypass"
+    },
+    {
+      "final_url": "https://github.com/sooperset/mcp-atlassian/pull/1448",
+      "last_modified_header": null,
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-toolset-authorization-bypass.md",
+      "leaf_title": "MCP Atlassian Toolset Authorization Bypass",
+      "source_kind": "public page",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/pull/1448",
+      "status": 200
+    },
+    {
+      "api_url": "https://api.github.com/repos/sooperset/mcp-atlassian/releases/tags/v0.22.0",
+      "created_at": "2026-07-10T13:38:07Z",
+      "final_url": "https://api.github.com/repos/sooperset/mcp-atlassian/releases/tags/v0.22.0",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-atlassian-toolset-authorization-bypass.md",
+      "leaf_title": "MCP Atlassian Toolset Authorization Bypass",
+      "published_at": "2026-07-10T13:39:54Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0",
+      "status": 200,
+      "tag_name": "v0.22.0"
+    },
+    {
+      "affected_products": [
+        "chartbrew"
+      ],
+      "cve_id": "CVE-2026-61851",
+      "date_published": "2026-09-21T21:40:53.699Z",
+      "date_updated": "2026-09-22T15:38:35.549Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61851",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61851",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "Chartbrew: Incomplete Read-Only Keyword Blocklist in AI runQuery Tool"
+    },
+    {
+      "affected_products": [
+        "chartbrew"
+      ],
+      "cve_id": "CVE-2026-61852",
+      "date_published": "2026-09-21T21:39:52.579Z",
+      "date_updated": "2026-09-21T21:39:52.579Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61852",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61852",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "Chartbrew: SQL Injection via row_limit Parameter in AI runQuery Tool"
+    },
+    {
+      "api_url": "https://api.github.com/repos/chartbrew/chartbrew/commits/8c8412edce56093e81b524e0235a796c7dd42336",
+      "author_date": "2026-06-18T06:07:39Z",
+      "committer_date": "2026-06-18T06:07:39Z",
+      "final_url": "https://api.github.com/repos/chartbrew/chartbrew/commits/8c8412edce56093e81b524e0235a796c7dd42336",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "sha": "8c8412edce56093e81b524e0235a796c7dd42336",
+      "source_kind": "GitHub commit API",
+      "source_url": "https://github.com/chartbrew/chartbrew/commit/8c8412edce56093e81b524e0235a796c7dd42336",
+      "status": 200
+    },
+    {
+      "api_url": "https://api.github.com/repos/chartbrew/chartbrew/releases/tags/v5.2.2",
+      "created_at": "2026-06-24T04:24:31Z",
+      "final_url": "https://api.github.com/repos/chartbrew/chartbrew/releases/tags/v5.2.2",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "published_at": "2026-06-24T04:26:11Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/chartbrew/chartbrew/releases/tag/v5.2.2",
+      "status": 200,
+      "tag_name": "v5.2.2"
+    },
+    {
+      "final_url": "https://github.com/chartbrew/chartbrew/security/advisories/GHSA-cp8j-2xwc-hxg8",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/chartbrew/chartbrew/security/advisories/GHSA-cp8j-2xwc-hxg8",
+      "status": 200,
+      "visible_dates_extracted": [
+        "2026-07-06T06:46:46Z"
+      ]
+    },
+    {
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61851",
+      "cve_id": "CVE-2026-61851",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61851",
+      "last_modified": "2026-09-22T16:17:50.300",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "published": "2026-09-21T22:16:58.000",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61851",
+      "status": 200,
+      "vuln_status": "Received"
+    },
+    {
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61852",
+      "cve_id": "CVE-2026-61852",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61852",
+      "last_modified": "2026-09-21T22:16:58.163",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/chartbrew-ai-query-sql-control-bypass.md",
+      "leaf_title": "Chartbrew AI Query SQL Control Bypass",
+      "published": "2026-09-21T22:16:58.163",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61852",
+      "status": 200,
+      "vuln_status": "Received"
+    },
+    {
+      "affected_products": [
+        "feast"
+      ],
+      "cve_id": "CVE-2026-55563",
+      "date_published": "2026-09-21T15:51:06.794Z",
+      "date_updated": "2026-09-21T17:58:47.036Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55563",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "leaf_title": "Feast Privileged CI Credential Exposure",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55563",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "Feast: `pull_request_target` integration tests run untrusted fork code with production cloud secrets; the `ok-to-test` label guard is bypassable via label persistence on `synchronize`"
+    },
+    {
+      "api_url": "https://api.github.com/repos/feast-dev/feast/commits/76192229eca01661109ed56e0dd0cf8f732975f6",
+      "author_date": "2026-06-13T19:42:44Z",
+      "committer_date": "2026-06-13T19:42:44Z",
+      "final_url": "https://api.github.com/repos/feast-dev/feast/commits/76192229eca01661109ed56e0dd0cf8f732975f6",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "leaf_title": "Feast Privileged CI Credential Exposure",
+      "sha": "76192229eca01661109ed56e0dd0cf8f732975f6",
+      "source_kind": "GitHub commit API",
+      "source_url": "https://github.com/feast-dev/feast/commit/76192229eca01661109ed56e0dd0cf8f732975f6",
+      "status": 200
+    },
+    {
+      "api_url": "https://api.github.com/repos/feast-dev/feast/releases/tags/v0.65.0",
+      "created_at": "2026-07-20T13:28:00Z",
+      "final_url": "https://api.github.com/repos/feast-dev/feast/releases/tags/v0.65.0",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "leaf_title": "Feast Privileged CI Credential Exposure",
+      "published_at": "2026-07-20T13:28:11Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/feast-dev/feast/releases/tag/v0.65.0",
+      "status": 200,
+      "tag_name": "v0.65.0"
+    },
+    {
+      "final_url": "https://github.com/feast-dev/feast/security/advisories/GHSA-2j2x-r73g-hrr5",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "leaf_title": "Feast Privileged CI Credential Exposure",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/feast-dev/feast/security/advisories/GHSA-2j2x-r73g-hrr5",
+      "status": 200,
+      "visible_dates_extracted": [
+        "2026-06-23T03:54:27Z"
+      ]
+    },
+    {
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-55563",
+      "cve_id": "CVE-2026-55563",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-55563",
+      "last_modified": "2026-09-21T18:17:08.923",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/feast-privileged-ci-credential-exposure.md",
+      "leaf_title": "Feast Privileged CI Credential Exposure",
+      "published": "2026-09-21T16:17:09.390",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55563",
+      "status": 200,
+      "vuln_status": "Received"
+    },
+    {
+      "affected_products": [
+        "hatchet"
+      ],
+      "cve_id": "CVE-2026-61681",
+      "date_published": "2026-09-21T15:42:21.803Z",
+      "date_updated": "2026-09-21T15:42:21.803Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61681",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/hatchet-sns-metadata-ssrf.md",
+      "leaf_title": "Hatchet SNS Metadata SSRF",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61681",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "Hatchet: SSRF via Unsigned UnsubscribeURL in SNS UnsubscribeConfirmation Handler"
+    },
+    {
+      "api_url": "https://api.github.com/repos/hatchet-dev/hatchet/commits/2d211bce16e5022afaf95780de82dc30e0bcba98",
+      "author_date": "2026-06-30T14:46:56Z",
+      "committer_date": "2026-06-30T14:46:56Z",
+      "final_url": "https://api.github.com/repos/hatchet-dev/hatchet/commits/2d211bce16e5022afaf95780de82dc30e0bcba98",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/hatchet-sns-metadata-ssrf.md",
+      "leaf_title": "Hatchet SNS Metadata SSRF",
+      "sha": "2d211bce16e5022afaf95780de82dc30e0bcba98",
+      "source_kind": "GitHub commit API",
+      "source_url": "https://github.com/hatchet-dev/hatchet/commit/2d211bce16e5022afaf95780de82dc30e0bcba98",
+      "status": 200
+    },
+    {
+      "final_url": "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-fjwv-jf2v-j499",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/hatchet-sns-metadata-ssrf.md",
+      "leaf_title": "Hatchet SNS Metadata SSRF",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/hatchet-dev/hatchet/security/advisories/GHSA-fjwv-jf2v-j499",
+      "status": 200,
+      "visible_dates_extracted": [
+        "2026-06-30T17:54:18Z"
+      ]
+    },
+    {
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61681",
+      "cve_id": "CVE-2026-61681",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-61681",
+      "last_modified": "2026-09-23T18:26:49.087",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/hatchet-sns-metadata-ssrf.md",
+      "leaf_title": "Hatchet SNS Metadata SSRF",
+      "published": "2026-09-21T16:17:09.823",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-61681",
+      "status": 200,
+      "vuln_status": "Deferred"
+    },
+    {
+      "affected_products": [
+        "MaxKB"
+      ],
+      "cve_id": "CVE-2026-79916",
+      "date_published": "2026-09-21T20:34:47.530Z",
+      "date_updated": "2026-09-22T15:39:19.409Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79916",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-aws-bedrock-credential-process-rce.md",
+      "leaf_title": "MaxKB AWS Bedrock Credential Process RCE",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79916",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MaxKB AWS Bedrock model credential injection leads to remote code execution"
+    },
+    {
+      "api_url": "https://api.github.com/repos/1Panel-dev/MaxKB/releases/tags/v2.10.5-lts",
+      "created_at": "2026-08-06T02:17:23Z",
+      "final_url": "https://api.github.com/repos/1Panel-dev/MaxKB/releases/tags/v2.10.5-lts",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-aws-bedrock-credential-process-rce.md",
+      "leaf_title": "MaxKB AWS Bedrock Credential Process RCE",
+      "published_at": "2026-08-06T06:41:52Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.5-lts",
+      "status": 200,
+      "tag_name": "v2.10.5-lts"
+    },
+    {
+      "final_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-2324-7xjr-9qxg",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-aws-bedrock-credential-process-rce.md",
+      "leaf_title": "MaxKB AWS Bedrock Credential Process RCE",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-2324-7xjr-9qxg",
+      "status": 200,
+      "visible_dates_extracted": [
+        "2026-09-02T07:47:13Z"
+      ]
+    },
+    {
+      "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-79916",
+      "cve_id": "CVE-2026-79916",
+      "final_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-79916",
+      "last_modified": "2026-09-22T16:17:57.193",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-aws-bedrock-credential-process-rce.md",
+      "leaf_title": "MaxKB AWS Bedrock Credential Process RCE",
+      "published": "2026-09-21T21:17:12.450",
+      "source_kind": "NVD API",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-79916",
+      "status": 200,
+      "vuln_status": "Deferred"
+    },
+    {
+      "affected_products": [
+        "MaxKB"
+      ],
+      "cve_id": "CVE-2026-79918",
+      "date_published": "2026-09-21T20:47:13.575Z",
+      "date_updated": "2026-09-21T20:47:13.575Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79918",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-fexecve-sandbox-escape.md",
+      "leaf_title": "MaxKB fexecve Sandbox Escape",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79918",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MaxKB: Sandbox escape via unhooked fexecve"
+    },
+    {
+      "api_url": "https://api.github.com/repos/1Panel-dev/MaxKB/releases/tags/v2.10.6-lts",
+      "created_at": "2026-09-03T03:26:56Z",
+      "final_url": "https://api.github.com/repos/1Panel-dev/MaxKB/releases/tags/v2.10.6-lts",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-fexecve-sandbox-escape.md",
+      "leaf_title": "MaxKB fexecve Sandbox Escape",
+      "published_at": "2026-09-03T03:55:38Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.6-lts",
+      "status": 200,
+      "tag_name": "v2.10.6-lts"
+    },
+    {
+      "final_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-9mh9-v949-fwqh",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-fexecve-sandbox-escape.md",
+      "leaf_title": "MaxKB fexecve Sandbox Escape",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-9mh9-v949-fwqh",
+      "status": 200,
+      "visible_dates_extracted": [
+        "2026-09-03T08:16:23Z"
+      ]
+    },
+    {
+      "affected_products": [
+        "MaxKB"
+      ],
+      "cve_id": "CVE-2026-79919",
+      "date_published": "2026-09-21T20:48:02.944Z",
+      "date_updated": "2026-09-22T15:39:00.922Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79919",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-function-library-sandbox-escape.md",
+      "leaf_title": "MaxKB Function Library Sandbox Escape",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-79919",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MaxKB function-library sandbox escape: dlopen stack-check bypass via importlib meta-path callbacks and unhooked dlsym(RTLD_NEXT)"
+    },
+    {
+      "api_url": "https://api.github.com/repos/1Panel-dev/MaxKB/releases/tags/v2.10.6-lts",
+      "created_at": "2026-09-03T03:26:56Z",
+      "final_url": "https://api.github.com/repos/1Panel-dev/MaxKB/releases/tags/v2.10.6-lts",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-function-library-sandbox-escape.md",
+      "leaf_title": "MaxKB Function Library Sandbox Escape",
+      "published_at": "2026-09-03T03:55:38Z",
+      "source_kind": "GitHub release API",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/releases/tag/v2.10.6-lts",
+      "status": 200,
+      "tag_name": "v2.10.6-lts"
+    },
+    {
+      "final_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-6h35-c779-4v37",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-function-library-sandbox-escape.md",
+      "leaf_title": "MaxKB Function Library Sandbox Escape",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-6h35-c779-4v37",
+      "status": 200,
+      "visible_dates_extracted": [
+        "2026-09-03T08:14:03Z"
+      ]
+    },
+    {
+      "affected_products": [
+        "MaxKB"
+      ],
+      "cve_id": "CVE-2026-77522",
+      "date_published": "2026-09-21T20:44:17.597Z",
+      "date_updated": "2026-09-21T20:44:17.597Z",
+      "final_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77522",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-knowledge-crawler-ssrf.md",
+      "leaf_title": "MaxKB Knowledge Crawler SSRF",
+      "source_kind": "CVE Services",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77522",
+      "state": "PUBLISHED",
+      "status": 200,
+      "title": "MaxKB: Authenticated full-read SSRF via the knowledge web-document import/sync crawler (Fork.fork requests.get, no internal-IP guard, non-blind)"
+    },
+    {
+      "final_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-ffxw-frpx-8rww",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/maxkb-knowledge-crawler-ssrf.md",
+      "leaf_title": "MaxKB Knowledge Crawler SSRF",
+      "source_kind": "GitHub security advisory page",
+      "source_url": "https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-ffxw-frpx-8rww",
+      "status": 200,
+      "visible_dates_extracted": [
+        "2026-09-02T07:45:58Z"
+      ]
+    }
+  ],
+  "upstream_routing": [
+    {
+      "note": "Do not duplicate product catalog or release chronology locally.",
+      "owner": "ai-wiki",
+      "scope": "broad product/project facts"
+    },
+    {
+      "note": "Route non-security development-practice updates upstream.",
+      "owner": "ai-dev-wiki",
+      "scope": "general coding-agent and development workflow practices"
+    },
+    {
+      "note": "Security-specific evidence in this artifact is local raw material for later ingest.",
+      "owner": "ai-security-wiki",
+      "scope": "CVE, GHSA, NVD, exploitability, affected boundary, mitigation/control delta"
+    }
+  ],
+  "window": {
+    "end": "2026-09-24T00:03:31Z",
+    "rule": "Only public sources visibly published or updated within the last 7 days qualify; crawl dates, missing dates, future dates, and boundary-only dates are excluded.",
+    "start": "2026-09-16T00:00:00Z"
+  }
+}

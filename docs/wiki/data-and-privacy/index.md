@@ -6,6 +6,8 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [Kotaemon multi-user chat authorization bypass](kotaemon-multi-user-chat-authorization-bypass.md)
+- [OpenClaw iOS deep link key log disclosure](openclaw-ios-deep-link-key-log-disclosure.md)
 - [MCP Atlassian Jira Confluence filter bypass](mcp-atlassian-jira-confluence-filter-bypass.md)
 - [1millionbot AI chat client XSS](1millionbot-ai-chat-client-xss.md)
 - [Hatchet durable task event log disclosure](hatchet-durable-task-event-log-disclosure.md)
@@ -97,6 +99,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - Updated on 2026-09-20 with OpenPanel MCP token query logging and links from new assistant-conversation authorization leaves.
 - Updated on 2026-09-21 with Hatchet durable event disclosure, MaxKB knowledge/chat IDOR, and 1millionbot chat rendering XSS leaves.
 - Updated on 2026-09-23 with the MCP Atlassian Jira/Confluence filter bypass leaf.
+- Updated on 2026-09-24 with Kotaemon RAG chat ownership and OpenClaw iOS deep-link bearer-key disclosure leaves.
 - Updated on 2026-09-15 with WPBot chat-session contact disclosure NVD metadata enrichment and PraisonAI file-boundary privacy implications through linked infrastructure leaves.
 - Updated on 2026-08-31 with the Aix-DB AI rendered-content stored-XSS leaf plus watcher enrichment for existing browser-use, Jina Reader, NextChat, and Keploy advisory leaves.
 - Updated on 2026-08-29 with the Stable Diffusion WebUI credential-disclosure leaf and GitLab/Spring watcher provenance.

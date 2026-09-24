@@ -8,6 +8,14 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [identity-and-access/9router-login-lockout-bypass.md](identity-and-access/9router-login-lockout-bypass.md)
+- [agent-and-tool-security/kimi-code-mcp-configuration-loader-command-injection.md](agent-and-tool-security/kimi-code-mcp-configuration-loader-command-injection.md)
+- [identity-and-access/mcp-toolbox-sdk-python-google-id-token-audience-confusion.md](identity-and-access/mcp-toolbox-sdk-python-google-id-token-audience-confusion.md)
+- [model-and-prompt-security/ibm-ftm-ai-agent-rag-poisoning.md](model-and-prompt-security/ibm-ftm-ai-agent-rag-poisoning.md)
+- [data-and-privacy/kotaemon-multi-user-chat-authorization-bypass.md](data-and-privacy/kotaemon-multi-user-chat-authorization-bypass.md)
+- [identity-and-access/wsp-mcp-ai-agents-connector-broken-access-control.md](identity-and-access/wsp-mcp-ai-agents-connector-broken-access-control.md)
+- [identity-and-access/wordpress-ai-engine-unauthenticated-idor.md](identity-and-access/wordpress-ai-engine-unauthenticated-idor.md)
+- [data-and-privacy/openclaw-ios-deep-link-key-log-disclosure.md](data-and-privacy/openclaw-ios-deep-link-key-log-disclosure.md)
 - [identity-and-access/9router-public-llm-api-auth-bypass.md](identity-and-access/9router-public-llm-api-auth-bypass.md)
 - [agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md](agent-and-tool-security/fastgpt-safe-axios-dns-rebinding-ssrf.md)
 - [model-and-prompt-security/vllm-nixl-prefix-cache-worker-dos.md](model-and-prompt-security/vllm-nixl-prefix-cache-worker-dos.md)

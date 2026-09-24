@@ -6,6 +6,10 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [9Router login lockout bypass](9router-login-lockout-bypass.md)
+- [MCP Toolbox SDK Python Google ID token audience confusion](mcp-toolbox-sdk-python-google-id-token-audience-confusion.md)
+- [WSP MCP AI Agents Connector broken access control](wsp-mcp-ai-agents-connector-broken-access-control.md)
+- [WordPress AI Engine unauthenticated IDOR](wordpress-ai-engine-unauthenticated-idor.md)
 - [9Router public LLM API auth bypass](9router-public-llm-api-auth-bypass.md)
 - [MCP Atlassian toolset authorization bypass](mcp-atlassian-toolset-authorization-bypass.md)
 - [MCP Atlassian HTTP auth bypass](mcp-atlassian-http-auth-bypass.md)
@@ -117,6 +121,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - Updated on 2026-09-20 with ArcadeDB AI chat tool authorization, Online Scheduling AI booking conversation ownership, and Better Messages AI chatbot authorization leaves.
 - Updated on 2026-09-21 with Hatchet OAuth state reuse and MaxKB tool/MCP authorization leaves.
 - Updated on 2026-09-23 with 9Router public LLM API auth bypass and MCP Atlassian authorization, HTTP auth, and OAuth token-file leaves.
+- Updated on 2026-09-24 with 9Router login lockout, MCP Toolbox SDK audience isolation, WSP MCP connector role authorization, and WordPress AI Engine unauthenticated IDOR leaves.
 - Updated on 2026-09-01 with Kibana AI Assistant Knowledge Base cross-realm authorization, Support Genix AI Chatbot admin takeover, and Synthetic Insider Threat Matrix evidence.
 - Updated on 2026-08-31 with diboot AI Session authorization bypass and ash_ai/MCPHub identity-boundary routing.
 - Updated on 2026-08-29 with FastGPT channel authorization, VoltAgent memory ownership, Gitingest token disclosure, and watcher provenance for Telnyx.

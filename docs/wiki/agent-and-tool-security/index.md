@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [Kimi Code MCP Configuration Loader command injection](kimi-code-mcp-configuration-loader-command-injection.md)
 - [FastGPT safe Axios DNS rebinding SSRF](fastgpt-safe-axios-dns-rebinding-ssrf.md)
 - [MCP Atlassian SSRF validation bypasses](mcp-atlassian-ssrf-validation-bypasses.md)
 - [MaxKB prompt-injectable shell execution](maxkb-prompt-injectable-shell-execution.md)
@@ -35,6 +36,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [n8n AI Agent Project Viewer privilege escalation](n8n-ai-agent-project-viewer-privilege-escalation.md)
 - [Google API hub MCP security controls](google-api-hub-mcp-security-controls.md)
 - [Kimi Code FetchURL SSRF](kimi-code-fetchurl-ssrf.md)
+- [Kimi Code MCP Configuration Loader command injection](kimi-code-mcp-configuration-loader-command-injection.md)
 - [Cloud observability MCP response controls](cloud-observability-mcp-response-controls.md)
 - [Local agent execution and processing boundaries](local-agent-execution-and-processing-boundaries.md)
 - [Coding agent command approval boundaries](coding-agent-command-approval-boundaries.md)
@@ -200,6 +202,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-09-24 with Kimi Code MCP configuration loader command injection and cross-links from new MCP Toolbox, WSP MCP connector, IBM FTM, and OpenClaw credential-boundary leaves.
 - Updated on 2026-09-03 with n8n Workflow Tool credential exfiltration, Agent-S GUI action DoS, and openbrowser browser-agent message DoS leaves.
 - Updated on 2026-09-04 with Postgres MCP Pro, OGX, IBM Langflow, IBM ContextForge, AWS Labs postgres-mcp-server, FastChat, IBM MQ Agent, PlaywrightCapture, and SiYuan MCP containment updates.
 - Updated on 2026-09-05 with Rowboat custom MCP server SSRF and cli-mcp-server shell-substitution allowlist bypass leaves.
