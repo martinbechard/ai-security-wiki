@@ -2,6 +2,12 @@
 
 ## Current Understanding
 
+- [mcp-remote OAuth metadata SSRF](mcp-remote-oauth-metadata-ssrf.md)
+- [mcp-remote browser open code execution](mcp-remote-browser-open-code-execution.md)
+- [DBHub HTTP transport DNS rebinding](dbhub-http-transport-dns-rebinding.md)
+- [DBHub read-only database enforcement failure](dbhub-readonly-database-enforcement-failure.md)
+- [TREK LLM base URL SSRF](trek-llm-base-url-ssrf.md)
+- [Amazon Kiro global configuration agent context injection](amazon-kiro-global-configuration-agent-context-injection.md)
 - [Kimi Code MCP Configuration Loader command injection](kimi-code-mcp-configuration-loader-command-injection.md)
 - [FastGPT safe Axios DNS rebinding SSRF](fastgpt-safe-axios-dns-rebinding-ssrf.md)
 - [MCP Atlassian SSRF validation bypasses](mcp-atlassian-ssrf-validation-bypasses.md)
@@ -20,6 +26,12 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [mcp-remote OAuth metadata SSRF](mcp-remote-oauth-metadata-ssrf.md)
+- [mcp-remote browser open code execution](mcp-remote-browser-open-code-execution.md)
+- [DBHub HTTP transport DNS rebinding](dbhub-http-transport-dns-rebinding.md)
+- [DBHub read-only database enforcement failure](dbhub-readonly-database-enforcement-failure.md)
+- [TREK LLM base URL SSRF](trek-llm-base-url-ssrf.md)
+- [Amazon Kiro global configuration agent context injection](amazon-kiro-global-configuration-agent-context-injection.md)
 - [mcp-webresearch browser SSRF](mcp-webresearch-browser-ssrf.md)
 - [Langflow KEV remote code execution](langflow-kev-rce.md)
 - [agent network egress controls](agent-network-egress-controls.md)
@@ -202,6 +214,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-09-25 with split mcp-remote OAuth/transport, DBHub transport/read-only, TREK LLM endpoint SSRF, and Kiro global agent-context injection leaves.
 - Updated on 2026-09-24 with Kimi Code MCP configuration loader command injection and cross-links from new MCP Toolbox, WSP MCP connector, IBM FTM, and OpenClaw credential-boundary leaves.
 - Updated on 2026-09-03 with n8n Workflow Tool credential exfiltration, Agent-S GUI action DoS, and openbrowser browser-agent message DoS leaves.
 - Updated on 2026-09-04 with Postgres MCP Pro, OGX, IBM Langflow, IBM ContextForge, AWS Labs postgres-mcp-server, FastChat, IBM MQ Agent, PlaywrightCapture, and SiYuan MCP containment updates.

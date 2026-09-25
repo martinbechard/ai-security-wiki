@@ -1,0 +1,782 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "agent_identifier": "Northstar",
+  "run_timestamp": "2026-09-24T23:32:11Z",
+  "cutoff_window": {
+    "start": "2026-09-22T23:32:11Z",
+    "end": "2026-09-24T23:32:11Z",
+    "basis": "Strict 48-hour public-source window relative to run time; date-only, missing-date, future-dated, stale, duplicate, and boundary-ambiguous candidates are excluded."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "local_context_checked": {
+    "repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "wiki_status": {
+      "page_count": 474,
+      "missing_required_files": 0,
+      "lint_findings": 0
+    },
+    "federation_file": "docs/wiki/federation.md",
+    "local_topic_index": "docs/wiki/topic-index.md",
+    "upstream_ai_wiki_topic_index": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+    "upstream_ai_dev_wiki_topic_index": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+    "pre_existing_worktree_entries": [
+      "?? .Codex/agent-claim/",
+      "?? .agent-ops/"
+    ],
+    "repo_scope_note": "Only this raw artifact was added under ai-security-wiki. docs/wiki and raw/processed were not edited."
+  },
+  "source_searches": [
+    {
+      "query": "NVD API keywordSearch=MCP with pubStartDate=2026-09-22T23:32:11Z and pubEndDate=2026-09-24T23:32:11Z",
+      "result": "14 records returned; stale duplicates from September 23 were excluded and new September 24 MCP records were retained or grouped."
+    },
+    {
+      "query": "NVD API keywordSearch=AI, LLM, prompt, agent, model, RAG, ChatGPT, Copilot, MCP, machine learning in the same window",
+      "result": "AI, agent, model, prompt, RAG, LLM, and MCP returned candidate records; ChatGPT and Copilot returned zero; the final machine-learning query hit HTTP 429 after useful evidence was already captured."
+    },
+    {
+      "query": "Direct CVE Services lookups for retained CVEs",
+      "result": "CVE Services JSON supplied publication/update timestamps, summaries, affected versions, and references for retained findings."
+    },
+    {
+      "query": "Local rg over raw and docs/wiki for retained candidate CVEs",
+      "result": "CVE-2026-18875, CVE-2026-86867, CVE-2026-93529, and CVE-2026-93623 were already represented in the processed September 23 source and docs/wiki leaves, so they were excluded as duplicates."
+    }
+  ],
+  "findings": [
+    {
+      "id": "gitlab-mcp-search-and-scope-boundary-2026-09-24",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-92628",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-92628",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-92874",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-92874",
+        "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE-2026-92628 CVE Services",
+          "published": "2026-09-23T23:04:50.132Z",
+          "updated": "2026-09-24T13:11:17.094Z"
+        },
+        {
+          "source": "CVE-2026-92874 CVE Services",
+          "published": "2026-09-23T23:04:55.130Z",
+          "updated": "2026-09-24T13:09:46.640Z"
+        }
+      ],
+      "concise_factual_summary": "GitLab remediated two MCP authorization and data-boundary flaws: one race in MCP search shared-state handling could return search results under the wrong user context, and one improper authorization check could let an authenticated MCP-scoped token perform actions outside its intended scope.",
+      "evidence_classification": "primary vulnerability records plus vendor release reference",
+      "affected_boundary_or_version": "GitLab CE/EE: CVE-2026-92628 affects 18.6 before 19.2.7, 19.3 before 19.3.3, and 19.4 before 19.4.1; CVE-2026-92874 affects 18.3 before 19.2.7, 19.3 before 19.3.3, and 19.4 before 19.4.1.",
+      "why_it_matters_for_ai_security": "GitLab's MCP layer mediates agent access to repository search and actions; the records show why scoped MCP tokens and per-user tool state must be isolated at execution time, not only at token issuance.",
+      "named_entities": [
+        "GitLab",
+        "GitLab CE/EE",
+        "Model Context Protocol",
+        "MCP search tool",
+        "MCP-scoped token",
+        "CVE-2026-92628",
+        "CVE-2026-92874"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "identity-and-access and agent-and-tool-security should own the MCP token-scope and search-result isolation analysis.",
+        "upstream_ai_wiki": "Broad GitLab product and MCP ecosystem context belongs upstream if needed.",
+        "upstream_ai_dev_wiki": "General coding-agent repository workflow implications belong upstream if not framed as a security control."
+      },
+      "confidence_notes": "High confidence from direct CVE Services data and GitLab release reference; vendor work item links may require GitLab access or change visibility.",
+      "follow_up_actions": [
+        "During ingest, decide whether these remain one GitLab MCP control-plane leaf or split into search isolation and scoped-token authorization leaves.",
+        "Verify the GitLab patch release page exposes both CVEs and fixed versions before durable synthesis."
+      ]
+    },
+    {
+      "id": "mcp-remote-oauth-security-cluster-2026-09-24",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-51994",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-51994",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-51995",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-51995",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-51996",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-51996",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-51997",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-51997",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-52001",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-52001",
+        "https://github.com/playb0t/mcp-remote-oauth-security#readme"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services records",
+          "published": "2026-09-24T00:00:00.000Z",
+          "updated_range": "2026-09-24T14:37:51.392Z to 2026-09-24T14:58:22.250Z"
+        },
+        {
+          "source": "NVD records",
+          "published_range": "2026-09-24T15:17:22.947Z to 2026-09-24T15:17:23.520Z",
+          "last_modified": "2026-09-24T21:08:55.030Z"
+        }
+      ],
+      "concise_factual_summary": "Five CVEs describe mcp-remote OAuth and transport flaws, including SSRF through OAuth metadata URLs, sensitive information exposure through authorization-server metadata and SSE token-origin handling, and code-execution paths tied to server URL hashing or browser URL validation.",
+      "evidence_classification": "primary CVE records plus public research/advisory repository references",
+      "affected_boundary_or_version": "mcp-remote 0.1.32 through 0.1.38 for CVE-2026-51994 and CVE-2026-51995; 0.1.16 through 0.1.38 for CVE-2026-51996 and CVE-2026-51997; 0.1.18 through 0.1.38 for CVE-2026-52001.",
+      "why_it_matters_for_ai_security": "mcp-remote is a client-side bridge that brokers remote MCP server authorization; metadata, token, URL, and browser-open handling bugs can turn server discovery and delegated authorization into SSRF, token exposure, or code execution boundaries.",
+      "named_entities": [
+        "mcp-remote",
+        "geelen/mcp-remote",
+        "Model Context Protocol",
+        "OAuth metadata",
+        "SSE transport",
+        "CVE-2026-51994",
+        "CVE-2026-51995",
+        "CVE-2026-51996",
+        "CVE-2026-51997",
+        "CVE-2026-52001"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "agent-and-tool-security and identity-and-access own OAuth metadata, token-origin, SSRF, and code-execution boundaries for MCP client bridges.",
+        "upstream_ai_wiki": "Broad mcp-remote package background belongs upstream if the entity is cataloged.",
+        "upstream_ai_dev_wiki": "General MCP client troubleshooting or developer setup belongs upstream."
+      },
+      "confidence_notes": "High confidence that records are in-window and AI-security relevant; affected arrays in CVE Services are sparse, so ingest should verify patched release information from GitHub advisories or commits.",
+      "follow_up_actions": [
+        "Fetch the referenced GitHub Security Advisories during ingest to identify patched versions and remediation text.",
+        "Consider one cluster leaf because all five records share the same client bridge and OAuth/remote-server trust boundary."
+      ]
+    },
+    {
+      "id": "ibm-contextforge-mcp-gateway-log-path-traversal-2026-09-24",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77825",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77825",
+        "https://www.ibm.com/support/pages/node/7289314"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-09-24T14:21:18.507Z",
+          "updated": "2026-09-24T14:21:18.507Z"
+        },
+        {
+          "source": "NVD",
+          "published": "2026-09-24T15:17:38.560Z",
+          "last_modified": "2026-09-24T19:41:16.513Z"
+        }
+      ],
+      "concise_factual_summary": "IBM ContextForge MCP Gateway exposed a path traversal in its Admin API log-download endpoint because path confinement used string-prefix comparison instead of boundary-aware validation, allowing an authenticated admin to read certain log-like files outside the configured log directory.",
+      "evidence_classification": "primary vendor/CVE vulnerability record",
+      "affected_boundary_or_version": "IBM ContextForge MCP Gateway 1.0.0 through 1.0.8.",
+      "why_it_matters_for_ai_security": "MCP gateways often centralize agent traffic, tool calls, and audit logs; path traversal in log retrieval can expose model/tool traces, request metadata, or secrets accidentally written to logs.",
+      "named_entities": [
+        "IBM ContextForge MCP Gateway",
+        "Model Context Protocol",
+        "Admin API",
+        "CVE-2026-77825"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "agent-and-tool-security owns gateway log-access boundaries and path traversal analysis.",
+        "upstream_ai_wiki": "General IBM ContextForge entity context belongs upstream.",
+        "upstream_ai_dev_wiki": "General MCP gateway deployment practice belongs upstream unless framed as a security control."
+      },
+      "confidence_notes": "High confidence from IBM PSIRT-sourced CVE record; IBM support page should be refetched during ingest for fixed version and workaround wording.",
+      "follow_up_actions": [
+        "Verify whether IBM lists a fixed ContextForge MCP Gateway release after 1.0.8.",
+        "During synthesis, connect to local MCP gateway logging and audit-evidence pages if present."
+      ]
+    },
+    {
+      "id": "dbhub-mcp-http-and-readonly-boundary-2026-09-24",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61742",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61742",
+        "https://github.com/bytebase/dbhub/security/advisories/GHSA-fm8p-53ww-hf6w",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61788",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61788",
+        "https://github.com/bytebase/dbhub/security/advisories/GHSA-mwwr-p57h-56pf"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE-2026-61742 CVE Services",
+          "published": "2026-09-24T17:30:11.283Z",
+          "updated": "2026-09-24T17:42:27.772Z"
+        },
+        {
+          "source": "CVE-2026-61788 CVE Services",
+          "published": "2026-09-24T17:37:40.409Z",
+          "updated": "2026-09-24T17:37:40.409Z"
+        }
+      ],
+      "concise_factual_summary": "DBHub had two MCP database-boundary flaws: HTTP transport before 0.22.5 could be reached through DNS rebinding despite Origin/Host checks, and read-only mode before 0.22.6 failed to make the database connection read-only, leaving only SQL keyword classification as enforcement.",
+      "evidence_classification": "primary GitHub/CVE vulnerability records",
+      "affected_boundary_or_version": "DBHub before 0.22.5 for HTTP transport DNS rebinding; DBHub before 0.22.6 for read-only enforcement failure.",
+      "why_it_matters_for_ai_security": "Database MCP servers turn model or browser-mediated tool calls into database reads and writes; these records show that transport-origin checks and advertised read-only settings are security-critical enforcement points.",
+      "named_entities": [
+        "DBHub",
+        "bytebase/dbhub",
+        "Model Context Protocol",
+        "Postgres",
+        "MySQL",
+        "SQL Server",
+        "Oracle",
+        "MariaDB",
+        "SQLite",
+        "CVE-2026-61742",
+        "CVE-2026-61788"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "agent-and-tool-security and data-and-privacy own DB MCP transport, read-only, and delegated database-access boundaries.",
+        "upstream_ai_wiki": "Broad DBHub entity page belongs upstream if cataloged.",
+        "upstream_ai_dev_wiki": "General developer database-agent workflow belongs upstream."
+      },
+      "confidence_notes": "High confidence from direct CVE Services and GitHub advisory URLs; GitHub advisory content should be read during ingest for exact patched release notes.",
+      "follow_up_actions": [
+        "Synthesize as one DBHub MCP database-boundary leaf unless the read-only control needs a separate durable page.",
+        "Record that DNS rebinding is browser-origin exploitation without prompt injection or model involvement."
+      ]
+    },
+    {
+      "id": "decepticon-chatml-role-boundary-forgery-2026-09-24",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61732",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61732",
+        "https://github.com/BitterSecurity/Decepticon/security/advisories/GHSA-g5f9-3xfg-p9mf",
+        "https://github.com/BitterSecurity/Decepticon/commit/79ee2aaf22f4c36a5b1968f6ca3f8086b6e35b67"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-09-24T17:40:51.248Z",
+          "updated": "2026-09-24T18:00:43.383Z"
+        },
+        {
+          "source": "NVD",
+          "published": "2026-09-24T18:17:15.860Z",
+          "last_modified": "2026-09-24T19:17:14.910Z"
+        }
+      ],
+      "concise_factual_summary": "Decepticon before 1.1.17 composed web-crawl output into LLM messages without neutralizing ChatML special-token literals, allowing attacker content planted on a target page to forge a new operator turn for providers that parse those literals into role-boundary tokens.",
+      "evidence_classification": "primary GitHub/CVE vulnerability record",
+      "affected_boundary_or_version": "BitterSecurity Decepticon and decepticon-core before 1.1.17.",
+      "why_it_matters_for_ai_security": "The record is a concrete prompt/content-boundary vulnerability in an autonomous red-team agent, linking retrieved web content, model-provider tokenization behavior, and command execution inside a Kali sandbox.",
+      "named_entities": [
+        "BitterSecurity Decepticon",
+        "decepticon-core",
+        "ChatML",
+        "vLLM",
+        "SGLang",
+        "Ollama",
+        "LM Studio",
+        "text-generation-webui",
+        "CVE-2026-61732"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "model-and-prompt-security and agent-and-tool-security own role-boundary forgery and autonomous-agent command-execution analysis.",
+        "upstream_ai_wiki": "Broad Decepticon and model-provider catalog context belongs upstream.",
+        "upstream_ai_dev_wiki": "General red-team-agent practice belongs upstream unless focused on security-control design."
+      },
+      "confidence_notes": "High confidence from direct CVE Services data; ingest should verify exact remediation behavior from the GitHub advisory/commit.",
+      "follow_up_actions": [
+        "Link to any existing prompt-injection or content-boundary pages during synthesis.",
+        "Record provider-dependent caveat: exploitability depends on model endpoint special-token filtering."
+      ]
+    },
+    {
+      "id": "amazon-kiro-global-configuration-agent-context-injection-2026-09-24",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-95985",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-95985",
+        "https://aws.amazon.com/security/security-bulletins/2026-117-aws/",
+        "https://kiro.dev/changelog/ide/1-0-242/"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-09-24T17:07:47.783Z",
+          "updated": "2026-09-24T17:24:09.224Z"
+        },
+        {
+          "source": "NVD",
+          "published": "2026-09-24T18:19:08.357Z",
+          "last_modified": "2026-09-24T19:36:39.327Z"
+        }
+      ],
+      "concise_factual_summary": "Amazon Kiro IDE before 1.0.242 could allow crafted instructions in an untrusted repository to cause agent modifications to auto-loaded global configuration paths, injecting content into the agent's future context.",
+      "evidence_classification": "primary AWS/CVE vulnerability record",
+      "affected_boundary_or_version": "Amazon Kiro IDE before 1.0.242 on macOS, Windows, and Linux.",
+      "why_it_matters_for_ai_security": "Coding agents often load global instructions across workspaces; this record makes the untrusted-repository to persistent-global-context boundary a concrete security control.",
+      "named_entities": [
+        "Amazon Kiro IDE",
+        "AWS",
+        "global configuration",
+        "untrusted workspace",
+        "CVE-2026-95985"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "agent-and-tool-security and data-and-privacy own persistent instruction/context modification and untrusted workspace boundaries.",
+        "upstream_ai_wiki": "Broad Amazon Kiro product context belongs upstream.",
+        "upstream_ai_dev_wiki": "General coding-agent workspace practice belongs upstream; keep the vulnerability and mitigation boundary here."
+      },
+      "confidence_notes": "High confidence from AWS-referenced CVE record; AWS bulletin should be refetched during ingest for exact operator guidance.",
+      "follow_up_actions": [
+        "Compare against existing local pages on coding-agent command approval and local agent execution boundaries.",
+        "During synthesis, capture AWS guidance to review global context files after using older versions in untrusted workspaces."
+      ]
+    },
+    {
+      "id": "servicenow-ai-platform-access-control-cluster-2026-09-24",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-13016",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-13016",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86857",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86857",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86858",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86858",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86859",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86859",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86860",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86860",
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3159623"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published_range": "2026-09-24T18:37:47.129Z to 2026-09-24T18:56:54.876Z",
+          "updated_range": "2026-09-24T18:46:08.827Z to 2026-09-24T19:26:56.070Z"
+        },
+        {
+          "source": "NVD",
+          "published_range": "2026-09-24T19:17:11.820Z to 2026-09-24T19:17:18.733Z",
+          "last_modified_range": "2026-09-24T21:00:46.893Z to 2026-09-24T21:00:46.893Z"
+        }
+      ],
+      "concise_factual_summary": "ServiceNow published/remediated an AI Platform cluster covering unauthenticated SQL injection, authenticated and unauthenticated authorization bypasses, unauthenticated GraphQL privilege escalation, arbitrary record disclosure, and sensitive data disclosure; the records say hosted instances were updated and partner/self-hosted updates were provided.",
+      "evidence_classification": "primary vendor/CVE vulnerability records",
+      "affected_boundary_or_version": "ServiceNow AI Platform below named Yokohama and Zurich hot-fix levels including Yokohama Patch 13 Hot Fix 5a, Zurich Patch 10 Hot Fix 3b, Zurich Patch 10 Hot Fix 4a W32, and Zurich Patch 11 Hot Fix 3 thresholds as listed in the CVE records.",
+      "why_it_matters_for_ai_security": "The cluster is a concrete enterprise AI platform authorization, data-access, and SQL execution failure set, relevant to release gates for hosted and self-hosted AI control planes.",
+      "named_entities": [
+        "ServiceNow AI Platform",
+        "Yokohama",
+        "Zurich",
+        "GraphQL",
+        "CVE-2026-13016",
+        "CVE-2026-86857",
+        "CVE-2026-86858",
+        "CVE-2026-86859",
+        "CVE-2026-86860"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "identity-and-access, data-and-privacy, and governance/release-gates should own this AI Platform security cluster.",
+        "upstream_ai_wiki": "Broad ServiceNow company/product context belongs upstream if needed.",
+        "upstream_ai_dev_wiki": "General enterprise platform administration practice belongs upstream unless tied to security release gates."
+      },
+      "confidence_notes": "High confidence from direct CVE Services; ServiceNow KB may require account or dynamic access, so ingest should recheck advisory visibility and exact hot-fix names.",
+      "follow_up_actions": [
+        "Treat as one cluster unless ingest needs separate SQL injection, authorization bypass, and disclosure leaves.",
+        "Confirm whether the CVE phrase 'not currently aware of malicious exploitation' is still present in the ServiceNow KB."
+      ]
+    },
+    {
+      "id": "discourse-ai-reviewables-private-message-exposure-2026-09-24",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84302",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84302",
+        "https://github.com/discourse/discourse/security/advisories/GHSA-3rx9-fqgh-wfpc",
+        "https://github.com/discourse/discourse/pull/42091"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-09-24T16:49:56.499Z",
+          "updated": "2026-09-24T17:04:51.257Z"
+        },
+        {
+          "source": "NVD",
+          "published": "2026-09-24T17:17:06.793Z",
+          "last_modified": "2026-09-24T18:19:03.923Z"
+        }
+      ],
+      "concise_factual_summary": "Discourse AI reviewables associated with private messages could appear in a moderator review queue for a moderator who was not a message participant, allowing private-message content exposure and possible edit/delete capability depending on reviewable actions.",
+      "evidence_classification": "primary GitHub/CVE vulnerability record",
+      "affected_boundary_or_version": "Discourse before 2026.1.6, 2026.5.2, 2026.6.1, and 2026.7.0.",
+      "why_it_matters_for_ai_security": "AI review queues can become a secondary access path to private user content; reviewable visibility must inherit the underlying conversation authorization boundary.",
+      "named_entities": [
+        "Discourse",
+        "Discourse AI",
+        "AI reviewables",
+        "private messages",
+        "CVE-2026-84302"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "data-and-privacy and identity-and-access own AI reviewable visibility and private-message authorization analysis.",
+        "upstream_ai_wiki": "Broad Discourse product context belongs upstream if needed.",
+        "upstream_ai_dev_wiki": "General moderation workflow practice belongs upstream unless framed as AI security access control."
+      },
+      "confidence_notes": "High confidence from direct CVE Services and GitHub advisory references.",
+      "follow_up_actions": [
+        "During ingest, compare with local pages for AI moderation or review queues if present.",
+        "Capture whether patched releases make reviewable visibility follow private-message topic permissions."
+      ]
+    },
+    {
+      "id": "mlflow-dspy-pickle-control-bypass-2026-09-23",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-96775",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96775",
+        "https://kb.cert.org/vuls/id/369093"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-09-23T16:28:59.493Z",
+          "updated": "2026-09-23T17:22:35.232Z"
+        },
+        {
+          "source": "NVD",
+          "published": "2026-09-23T17:17:25.407Z",
+          "last_modified": "2026-09-23T18:17:12.323Z"
+        }
+      ],
+      "concise_factual_summary": "MLflow's dspy flavor applies the MLFLOW_ALLOW_PICKLE_DESERIALIZATION=False control only when a model_path ends in .pkl, allowing remote code execution through a crafted MLmodel artifact.",
+      "evidence_classification": "primary CVE/CERT vulnerability record",
+      "affected_boundary_or_version": "MLflow dspy flavor versions >= 2.0 according to the CVE record.",
+      "why_it_matters_for_ai_security": "Model artifacts are executable supply-chain inputs; extension-based enforcement can fail when metadata or artifact formats route around the intended deserialization gate.",
+      "named_entities": [
+        "MLflow",
+        "dspy",
+        "MLmodel",
+        "MLFLOW_ALLOW_PICKLE_DESERIALIZATION",
+        "CVE-2026-96775"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "infrastructure-and-supply-chain owns model artifact deserialization and runtime execution risk.",
+        "upstream_ai_wiki": "Broad MLflow and DSPy framework context belongs upstream.",
+        "upstream_ai_dev_wiki": "General MLOps/development workflow context belongs upstream."
+      },
+      "confidence_notes": "High confidence that the CVE is in-window and AI supply-chain relevant; ingest should verify patched versions from CERT or MLflow advisory material.",
+      "follow_up_actions": [
+        "Recheck CERT VU#369093 and MLflow upstream advisories for fix version and workaround wording.",
+        "Connect to existing model artifact unsafe deserialization pages if present."
+      ]
+    },
+    {
+      "id": "trek-mcp-oauth-and-llm-url-boundaries-2026-09-24",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77321",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77321",
+        "https://github.com/liketrek/TREK/security/advisories/GHSA-qvw8-w937-vcmq",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77294",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77294",
+        "https://github.com/liketrek/TREK/security/advisories/GHSA-fmq9-ggh3-647p",
+        "https://github.com/liketrek/TREK/releases/tag/v3.3.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE-2026-77321 CVE Services",
+          "published": "2026-09-24T18:04:05.947Z",
+          "updated": "2026-09-24T18:04:05.947Z"
+        },
+        {
+          "source": "CVE-2026-77294 CVE Services",
+          "published": "2026-09-24T18:04:02.393Z",
+          "updated": "2026-09-24T18:35:42.537Z"
+        }
+      ],
+      "concise_factual_summary": "TREK before 3.3.0 had two AI-tooling boundary flaws: its get_trip_summary MCP tool did not require trips:read for scoped OAuth tokens and returned trip metadata/member emails, and an authenticated user could set an attacker-controlled llm_base_url that the AI-assisted import path consumed, creating SSRF risk.",
+      "evidence_classification": "primary GitHub/CVE vulnerability records",
+      "affected_boundary_or_version": "TREK before 3.3.0.",
+      "why_it_matters_for_ai_security": "The records combine delegated MCP OAuth scope enforcement and user-configurable LLM endpoint trust, two recurring security boundaries for AI-enabled applications.",
+      "named_entities": [
+        "TREK",
+        "Model Context Protocol",
+        "OAuth",
+        "LLM_PARSING",
+        "OpenAI-compatible client",
+        "Anthropic client",
+        "CVE-2026-77321",
+        "CVE-2026-77294"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "identity-and-access, data-and-privacy, and agent-and-tool-security own the MCP scope and LLM endpoint SSRF analysis.",
+        "upstream_ai_wiki": "Broad TREK product context belongs upstream only if needed.",
+        "upstream_ai_dev_wiki": "General app development use of LLM parsing belongs upstream."
+      },
+      "confidence_notes": "High confidence from direct CVE Services; ingest should verify v3.3.0 release contents and GitHub advisories.",
+      "follow_up_actions": [
+        "Decide whether to synthesize one TREK AI-tool boundary leaf or split OAuth scope and LLM-base-url SSRF.",
+        "Capture delegated-token examples without exposing operational exploit detail beyond public records."
+      ]
+    },
+    {
+      "id": "openwa-mcp-invite-code-role-boundary-2026-09-24",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91161",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-91161",
+        "https://github.com/rmyndharis/OpenWA/security/advisories/GHSA-45fh-xj7x-vj2x"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-09-24T16:46:33.707Z",
+          "updated": "2026-09-24T16:46:33.707Z"
+        },
+        {
+          "source": "NVD",
+          "published": "2026-09-24T17:17:09.437Z",
+          "last_modified": "2026-09-24T17:17:09.437Z"
+        }
+      ],
+      "concise_factual_summary": "OpenWA before 0.23.5 allowed a VIEWER-scoped API key to call the GroupGetInviteCode MCP tool and retrieve transferable WhatsApp group invite codes because the endpoint/tool lacked an OPERATOR role requirement.",
+      "evidence_classification": "primary GitHub/CVE vulnerability record",
+      "affected_boundary_or_version": "OpenWA before 0.23.5.",
+      "why_it_matters_for_ai_security": "MCP tools can expose bearer-like social or collaboration capabilities; role checks must map to the sensitivity of the external action or token returned.",
+      "named_entities": [
+        "OpenWA",
+        "WhatsApp",
+        "GroupGetInviteCode MCP tool",
+        "VIEWER key",
+        "OPERATOR role",
+        "CVE-2026-91161"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "identity-and-access and agent-and-tool-security own MCP role-to-action mapping and transferable invite-code exposure.",
+        "upstream_ai_wiki": "Broad OpenWA product context belongs upstream if needed.",
+        "upstream_ai_dev_wiki": "General messaging automation workflow context belongs upstream."
+      },
+      "confidence_notes": "High confidence from direct CVE Services and GitHub advisory reference.",
+      "follow_up_actions": [
+        "Check whether this should link to existing pages on MCP token or capability leakage.",
+        "Verify the 0.23.5 patch notes and whether invite-code retrieval now requires OPERATOR."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-18875 IBM FTM AI agent RAG poisoning",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-18875",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18875"
+      ],
+      "visible_dates": [
+        "2026-09-23T16:16:41.850 NVD published"
+      ],
+      "reason": "Already captured and synthesized from the September 23 collector source; local docs/wiki leaf and processed raw artifact exist."
+    },
+    {
+      "candidate": "CVE-2026-86867 Kotaemon multi-user chat authorization bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86867",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86867"
+      ],
+      "visible_dates": [
+        "2026-09-23T18:17:09.323 NVD published"
+      ],
+      "reason": "Already captured and synthesized from the September 23 collector source; local docs/wiki leaf and processed raw artifact exist."
+    },
+    {
+      "candidate": "CVE-2026-93529 WSP MCP AI Agents Connector broken access control",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93529",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-93529"
+      ],
+      "visible_dates": [
+        "2026-09-23T19:19:45.717 NVD published"
+      ],
+      "reason": "Already captured and synthesized from the September 23 collector source; local docs/wiki leaf and processed raw artifact exist."
+    },
+    {
+      "candidate": "CVE-2026-93623 WordPress AI Engine unauthenticated IDOR",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93623",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-93623"
+      ],
+      "visible_dates": [
+        "2026-09-23T19:19:46.327 NVD published"
+      ],
+      "reason": "Already captured and synthesized from the September 23 collector source; local docs/wiki leaf and processed raw artifact exist."
+    },
+    {
+      "candidate": "Directorist AI-Powered Business Directory WordPress CVE cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/search/results?query=Directorist%20AI-Powered%20Business%20Directory"
+      ],
+      "visible_dates": [
+        "2026-09-23 NVD publications in keywordSearch=AI"
+      ],
+      "reason": "AI-branded plugin name, but candidate records describe generic WordPress REST authorization, user-record, order, SSRF, and ownership flaws without a distinct AI-system security boundary in the visible metadata."
+    },
+    {
+      "candidate": "CVE-2026-77285 OpenBao Agent exec rendering",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77285"
+      ],
+      "visible_dates": [
+        "2026-09-23T19:19:15.180 NVD published"
+      ],
+      "reason": "Security-relevant secret handling, but not AI-specific in the visible record; the keyword hit came from the generic word agent."
+    },
+    {
+      "candidate": "CVE-2026-61811 Wazuh XML parser recursion",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61811"
+      ],
+      "visible_dates": [
+        "2026-09-24T18:17:16.990 NVD published"
+      ],
+      "reason": "Security tooling issue, but no visible AI, model, prompt, MCP, or agentic boundary in the record."
+    },
+    {
+      "candidate": "CVE-2026-89325 Rapid7 Insight Agent search path element",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-89325"
+      ],
+      "visible_dates": [
+        "2026-09-24T19:17:19.580 NVD published"
+      ],
+      "reason": "Generic endpoint agent software issue; the visible record is not AI-agent related."
+    },
+    {
+      "candidate": "CVE-2026-56739 and CVE-2026-63203 Logto",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-56739",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-63203"
+      ],
+      "visible_dates": [
+        "2026-09-24 NVD publications"
+      ],
+      "reason": "Logto describes itself as auth infrastructure for SaaS and AI apps, but the visible vulnerability facts are generic webhook/third-party-token issues without a concrete AI-specific security delta."
+    },
+    {
+      "candidate": "CVE-2026-97636 Apache Airflow HashiCorp provider",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-97636"
+      ],
+      "visible_dates": [
+        "2026-09-24T22:17:02.660 NVD published"
+      ],
+      "reason": "Credential-boundary issue in workflow infrastructure, but no visible AI, model, prompt, MCP, or agentic boundary."
+    },
+    {
+      "candidate": "CVE-2026-96446 Keycloak prompt=none PAR",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96446"
+      ],
+      "visible_dates": [
+        "2026-09-23T12:17:08.913 NVD published"
+      ],
+      "reason": "False-positive prompt keyword; record concerns OAuth prompt=none, not prompt security for AI systems."
+    },
+    {
+      "candidate": "GitLab MCP issue #583935",
+      "source_urls": [
+        "https://gitlab.com/gitlab-org/gitlab/-/issues/583935"
+      ],
+      "visible_dates": [
+        "No current visible publication/update timestamp in fetched search result"
+      ],
+      "reason": "Potentially relevant MCP toolset configuration issue, but excluded from findings because the fetched source did not expose an in-window publication or update date."
+    },
+    {
+      "candidate": "MCPpedia security advisory scan",
+      "source_urls": [
+        "https://mcppedia.org/security"
+      ],
+      "visible_dates": [
+        "Last scan: 2026-09-23T14:43:00Z according to search result"
+      ],
+      "reason": "Useful discovery surface but not a primary advisory source; retained findings were verified against CVE Services, NVD, vendor, or GitHub advisory URLs instead."
+    },
+    {
+      "candidate": "NVD keywordSearch=machine learning",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0"
+      ],
+      "visible_dates": [],
+      "reason": "NVD returned HTTP 429 after the AI, MCP, LLM, prompt, agent, model, and RAG searches had already captured relevant candidate records."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "GitLab",
+      "upstream_owner": "ai-wiki for broad product context; ai-dev-wiki for general repository-agent workflows",
+      "local_security_note": "Keep MCP search isolation and scoped-token authorization under ai-security-wiki."
+    },
+    {
+      "entity_or_topic": "mcp-remote",
+      "upstream_owner": "ai-wiki for package/entity cataloging",
+      "local_security_note": "Keep OAuth metadata SSRF, token-origin, and code-execution trust boundaries locally."
+    },
+    {
+      "entity_or_topic": "IBM ContextForge MCP Gateway",
+      "upstream_owner": "ai-wiki for product/entity context",
+      "local_security_note": "Keep Admin API log path traversal and audit-log exposure implications locally."
+    },
+    {
+      "entity_or_topic": "DBHub",
+      "upstream_owner": "ai-wiki for MCP server cataloging; ai-dev-wiki for general database-agent workflow",
+      "local_security_note": "Keep HTTP transport DNS rebinding and read-only enforcement failures locally."
+    },
+    {
+      "entity_or_topic": "Decepticon",
+      "upstream_owner": "ai-wiki for product/framework context",
+      "local_security_note": "Keep ChatML role-boundary forgery and autonomous-agent command execution locally."
+    },
+    {
+      "entity_or_topic": "Amazon Kiro IDE",
+      "upstream_owner": "ai-wiki for product context; ai-dev-wiki for coding-agent workspace practice",
+      "local_security_note": "Keep untrusted repository to global agent-context modification locally."
+    },
+    {
+      "entity_or_topic": "ServiceNow AI Platform",
+      "upstream_owner": "ai-wiki for provider/product context",
+      "local_security_note": "Keep authorization, SQL injection, GraphQL, and sensitive data disclosure release-gate analysis locally."
+    },
+    {
+      "entity_or_topic": "Discourse AI",
+      "upstream_owner": "ai-wiki for product context",
+      "local_security_note": "Keep private-message reviewable visibility and AI moderation access boundaries locally."
+    },
+    {
+      "entity_or_topic": "MLflow and DSPy",
+      "upstream_owner": "ai-wiki for framework context; ai-dev-wiki for MLOps workflow practice",
+      "local_security_note": "Keep model artifact deserialization control bypass and supply-chain risk locally."
+    },
+    {
+      "entity_or_topic": "TREK",
+      "upstream_owner": "ai-wiki for product context if needed",
+      "local_security_note": "Keep delegated MCP OAuth and user-configurable LLM endpoint SSRF boundaries locally."
+    },
+    {
+      "entity_or_topic": "OpenWA",
+      "upstream_owner": "ai-wiki for product context if needed",
+      "local_security_note": "Keep MCP role check and transferable invite-code exposure locally."
+    }
+  ],
+  "confidence_notes": [
+    "Retained findings have visible in-window publication or update dates from CVE Services and/or NVD within 2026-09-22T23:32:11Z to 2026-09-24T23:32:11Z.",
+    "Closely related records were grouped when they share a product, patch boundary, and security-control theme.",
+    "GitHub advisory URLs and some vendor support pages should be refetched during ingest for patched-version and mitigation wording.",
+    "The NVD machine-learning keyword query was rate-limited, but the preceding AI/MCP/LLM/prompt/agent/model/RAG searches and direct CVE lookups produced a broad candidate set."
+  ],
+  "follow_up_actions": [
+    "Ingest should prioritize direct vendor/GitHub advisory pages for patched versions and remediation wording.",
+    "Deduplicate against existing September 23 leaves before creating new pages.",
+    "Consider cluster leaves for GitLab MCP, mcp-remote, DBHub, ServiceNow AI Platform, and TREK where one release gate covers multiple CVEs.",
+    "Do not synthesize AI-branded but generic plugin findings unless later evidence shows a distinct AI security boundary."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  }
+}

@@ -6,6 +6,10 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [IBM ContextForge MCP Gateway log path traversal](ibm-contextforge-mcp-gateway-log-path-traversal.md)
+- [Discourse AI reviewables private message exposure](discourse-ai-reviewables-private-message-exposure.md)
+- [mcp-remote authorization server metadata disclosure](mcp-remote-authorization-server-metadata-disclosure.md)
+- [mcp-remote SSE token origin disclosure](mcp-remote-sse-token-origin-disclosure.md)
 - [Kotaemon multi-user chat authorization bypass](kotaemon-multi-user-chat-authorization-bypass.md)
 - [OpenClaw iOS deep link key log disclosure](openclaw-ios-deep-link-key-log-disclosure.md)
 - [MCP Atlassian Jira Confluence filter bypass](mcp-atlassian-jira-confluence-filter-bypass.md)
@@ -88,6 +92,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-09-25 with IBM ContextForge MCP Gateway log traversal, Discourse AI private-message reviewable exposure, and mcp-remote disclosure leaves.
 - Updated on 2026-09-02 with the LiteLLM provider credential routing leak leaf.
 - Updated on 2026-09-04 with the Cheshire Cat AI memory points disclosure leaf.
 - Updated on 2026-09-07 with SureForms AI Forms stored XSS as an AI-enabled form data-contamination boundary.

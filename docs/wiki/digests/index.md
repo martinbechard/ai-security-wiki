@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [September 2026 digest](2026-09.md) includes September 24 item-level GitLab MCP, mcp-remote, ContextForge, DBHub, Decepticon, Kiro, ServiceNow, Discourse AI, MLflow DSPy, TREK, and OpenWA advisory updates; watcher-only September 24 sightings remained provenance-only.
 - [September 2026 digest](2026-09.md) includes September 23 item-level 9Router, Kimi Code, MCP Toolbox SDK, IBM FTM, Kotaemon, WordPress AI connector/plugin, and OpenClaw advisory updates.
 - [September 2026 digest](2026-09.md) includes September 22 item-level 9Router, FastGPT, vLLM connector, and MCP Atlassian advisory-boundary updates.
 
@@ -17,6 +18,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [September 24 topic collector source](../../../raw/processed/2026-09-24/ai-security-wiki-topic-news-collector-2026-09-24T233211Z.json)
+- [September 24 leaf update watch source](../../../raw/processed/2026-09-24/ai-security-wiki-leaf-update-watch-20260924T213500Z.json)
 - [September 20 topic collector source](../../../raw/processed/2026-09-20/ai-security-wiki-topic-news-collector-2026-09-20T233226Z.json)
 - [September 21 topic collector source](../../../raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json)
 - [September 21 leaf update watch source](../../../raw/processed/2026-09-21/ai-security-wiki-leaf-update-watch-20260922T000219Z.json)
@@ -97,6 +100,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-09-25 with item-level September 24 digest entries and September 24 watcher provenance; the watcher's 11 qualifying updates were already captured in prior leaves and did not produce duplicate digest items.
 - Updated on 2026-09-03 with item-level September entries for GPT-6 Astra deployment safety, Daybreak frontline-defender access, n8n credential exfiltration, Ollama model-pull SSRF, WordPress MCP authorization, Agent-S GUI action DoS, and openbrowser message-budget DoS; watcher enrichments remained leaf-level without duplicate digest items.
 - Updated on 2026-09-04 with item-level September entries for memory disclosure, MCP and SQL-tool containment, split ContextForge gateway and data-isolation advisories, model-output code execution, worker registration spoofing, repository command execution, AI worker exhaustion, Azure AI authentication, WordPress AI-builder REST authorization, and browser-capture redirect SSRF; watcher-only Junie/OpenAI control evidence stayed in durable leaves without duplicate digest items.
 - Updated on 2026-09-05 with item-level September entries for [Rowboat custom MCP server SSRF](../agent-and-tool-security/rowboat-custom-mcp-server-ssrf.md) and [cli-mcp-server command allowlist bypass](../agent-and-tool-security/cli-mcp-server-command-allowlist-bypass.md); entries remain organized by independently changing security item rather than the source artifact.

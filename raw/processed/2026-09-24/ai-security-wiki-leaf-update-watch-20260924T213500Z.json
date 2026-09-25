@@ -1,0 +1,815 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-09-24T21:35:00Z",
+  "selection_policy": "Unchecked leaves first, then oldest last_checked_at, ties by stable relative path; index/reserved/digest/source-workflow/federation/schema/glossary/known-defects/open-decisions/maintenance-log/topic-index and dated source-synthesis pages excluded unless durable security leaves.",
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "leaf_universe_count": 446,
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/kimi-code-mcp-configuration-loader-command-injection.md",
+    "docs/wiki/data-and-privacy/kotaemon-multi-user-chat-authorization-bypass.md",
+    "docs/wiki/data-and-privacy/openclaw-ios-deep-link-key-log-disclosure.md",
+    "docs/wiki/identity-and-access/9router-login-lockout-bypass.md",
+    "docs/wiki/identity-and-access/mcp-toolbox-sdk-python-google-id-token-audience-confusion.md",
+    "docs/wiki/identity-and-access/wordpress-ai-engine-unauthenticated-idor.md",
+    "docs/wiki/identity-and-access/wsp-mcp-ai-agents-connector-broken-access-control.md",
+    "docs/wiki/model-and-prompt-security/ibm-ftm-ai-agent-rag-poisoning.md",
+    "docs/wiki/model-and-prompt-security/vllm-mooncake-kv-cache-exhaustion.md",
+    "docs/wiki/model-and-prompt-security/vllm-nixl-prefix-cache-worker-dos.md",
+    "docs/wiki/threats-and-attacks/ai-themed-installer-malware-lures.md",
+    "docs/wiki/agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md",
+    "docs/wiki/agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md",
+    "docs/wiki/agent-and-tool-security/omnigent-callable-path-runner-rce.md",
+    "docs/wiki/agent-and-tool-security/omnigent-shared-agent-bundle-overwrite-rce.md"
+  ],
+  "window": {
+    "start": "2026-09-17T00:00:00Z",
+    "end": "2026-09-24T21:35:00Z",
+    "rule": "Only sources published or visibly updated within the last 7 days qualified; ambiguous, future, missing, stale, and boundary-only dates were excluded."
+  },
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-mcp-configuration-loader-command-injection.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-95660",
+        "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%400.31.1",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-95660"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/kotaemon-multi-user-chat-authorization-bypass.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86867",
+        "https://kb.cert.org/vuls/id/754548",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-86867"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/openclaw-ios-deep-link-key-log-disclosure.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-95815",
+        "https://github.com/openclaw/openclaw/commit/8361f3704dd5e151ff1325e62ff5de658b6c62e6",
+        "https://github.com/openclaw/openclaw/security/advisories/GHSA-5j57-84cx-r295",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-95815"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/9router-login-lockout-bypass.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-56682",
+        "https://github.com/decolua/9router/releases/tag/v0.5.6",
+        "https://github.com/decolua/9router/security/advisories/GHSA-32gc-64m7-hj7v",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-56682"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-toolbox-sdk-python-google-id-token-audience-confusion.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-19202",
+        "https://github.com/googleapis/mcp-toolbox-sdk-python/pull/675",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-19202"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wordpress-ai-engine-unauthenticated-idor.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93623",
+        "https://patchstack.com/database/wordpress/plugin/ai-engine/vulnerability/wordpress-ai-engine-plugin-3-7-8-insecure-direct-object-references-idor-vulnerability?_s_id=cve",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-93623"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wsp-mcp-ai-agents-connector-broken-access-control.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93529",
+        "https://patchstack.com/database/wordpress/plugin/wsp-mcp-ai-agents-connector/vulnerability/wordpress-wsp-mcp-8211-ai-agents-connector-plugin-2-7-0-broken-access-control-vulnerability?_s_id=cve",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-93529"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/ibm-ftm-ai-agent-rag-poisoning.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-18875",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-18875",
+        "https://www.ibm.com/support/pages/node/7288641"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-mooncake-kv-cache-exhaustion.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94627",
+        "https://github.com/vllm-project/vllm/pull/49796",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-94627",
+        "https://www.vulncheck.com/advisories/vllm-through-0.29.0-gpu-kv-cache-leak-via-mooncake-transfer-id-collision"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-nixl-prefix-cache-worker-dos.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94623",
+        "https://github.com/vllm-project/vllm/pull/51505",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-94623",
+        "https://www.vulncheck.com/advisories/vllm-through-0.29.0-denial-of-service-via-nixl-multi-prompt-assertion-failure"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-themed-installer-malware-lures.md",
+      "source_urls_checked": [
+        "https://www.darktrace.com/blog/when-ai-becomes-the-lure-a-fake-gemini-installer-delivers-vidar",
+        "https://www.helpnetsecurity.com/2026/08/20/fake-google-gemini-installer-vidar-infostealer/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53509",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61612",
+        "https://github.com/ondata/ckan-mcp-server/releases/tag/v0.4.106",
+        "https://github.com/ondata/ckan-mcp-server/releases/tag/v0.4.108",
+        "https://github.com/ondata/ckan-mcp-server/security/advisories/GHSA-798p-78g2-v556",
+        "https://github.com/ondata/ckan-mcp-server/security/advisories/GHSA-g84h-j7jj-x32p"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-62677",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-p8rw-8qj3-hf33"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-callable-path-runner-rce.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-62675",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-756x-9hf6-q4h4"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-shared-agent-bundle-overwrite-rce.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-62674",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-jrrm-9hc7-2v3h"
+      ]
+    }
+  ],
+  "qualifying_update_count": 11,
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-mcp-configuration-loader-command-injection.md",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-95660",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-95660",
+        "https://github.com/MoonshotAI/kimi-code/releases/tag/%40moonshot-ai%2Fkimi-code%400.31.1"
+      ],
+      "published_or_updated_at": "2026-09-22T19:16:59.953Z",
+      "date_basis": "CVE Services published 2026-09-22T18:00:11.243Z/updated 2026-09-22T19:05:35.649Z; NVD published 2026-09-22T18:17:37.750/lastModified 2026-09-22T19:16:59.953.",
+      "summary": "Kimi Code MCP configuration loader command injection remains in the seven-day window; fixed release reference is public.",
+      "affected_boundaries": [
+        "Kimi Code 0.1 through 0.31.0",
+        "MCP configuration loader",
+        ".mcp.json auto-spawn behavior",
+        "helper binary PATH resolution"
+      ],
+      "named_entities": [
+        "Moonshot AI",
+        "Kimi Code",
+        "CVE-2026-95660"
+      ],
+      "upstream_routing": {
+        "ai-wiki": "Broad Moonshot AI and Kimi Code product context belongs upstream.",
+        "local_security": "Keep MCP configuration trust-boundary and command-injection evidence locally."
+      },
+      "already_captured_by": [
+        "raw/processed/2026-09-23/ai-security-wiki-topic-news-collector-2026-09-23T233151Z.json"
+      ],
+      "follow_up_note": "Ingest should compare patch/release details only; avoid duplicate prose unless the Kimi Code 0.31.1 fix mechanics materially changed."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/kotaemon-multi-user-chat-authorization-bypass.md",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86867",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-86867",
+        "https://kb.cert.org/vuls/id/754548"
+      ],
+      "published_or_updated_at": "2026-09-24T15:17:49.290Z",
+      "date_basis": "CVE Services published 2026-09-23T17:44:52.482Z/updated 2026-09-24T14:37:20.022Z; NVD lastModified 2026-09-24T15:17:49.290.",
+      "summary": "Kotaemon multi-user chat authorization bypass has same-leaf CVE/NVD updates in-window.",
+      "affected_boundaries": [
+        "Kotaemon through v0.12.0",
+        "multi-user chat handlers",
+        "Conversation ownership",
+        "RAG retrieval history and generated artifacts"
+      ],
+      "named_entities": [
+        "Cinnamon AI",
+        "Kotaemon",
+        "CERT/CC VU#754548",
+        "CVE-2026-86867"
+      ],
+      "upstream_routing": {
+        "ai-wiki": "Broad Kotaemon product context belongs upstream if needed.",
+        "local_security": "Keep chat data ownership and RAG privacy impact locally."
+      },
+      "already_captured_by": [
+        "raw/processed/2026-09-23/ai-security-wiki-topic-news-collector-2026-09-23T233151Z.json"
+      ],
+      "follow_up_note": "Check whether the September 24 metadata identifies a fixed release or patch; avoid duplicate leaf prose without a remediation delta."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/openclaw-ios-deep-link-key-log-disclosure.md",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-95815",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-95815",
+        "https://github.com/openclaw/openclaw/security/advisories/GHSA-5j57-84cx-r295",
+        "https://github.com/openclaw/openclaw/commit/8361f3704dd5e151ff1325e62ff5de658b6c62e6"
+      ],
+      "published_or_updated_at": "2026-09-24T21:08:55.030Z",
+      "date_basis": "CVE Services published 2026-09-22T20:21:15.030Z/updated 2026-09-23T14:35:59.404Z; NVD lastModified 2026-09-24T21:08:55.030.",
+      "summary": "OpenClaw iOS deep-link key logging disclosure has in-window CVE/NVD metadata and patch references.",
+      "affected_boundaries": [
+        "OpenClaw iOS before 2026.8.11",
+        "agent deep-link bearer keys",
+        "iOS unified logs",
+        "local confirmation prompts"
+      ],
+      "named_entities": [
+        "OpenClaw",
+        "GHSA-5j57-84cx-r295",
+        "CVE-2026-95815"
+      ],
+      "upstream_routing": {
+        "ai-wiki": "Broad OpenClaw product context belongs upstream.",
+        "local_security": "Keep credential logging and delegated-action replay risk locally."
+      },
+      "already_captured_by": [
+        "raw/processed/2026-09-23/ai-security-wiki-topic-news-collector-2026-09-23T233151Z.json"
+      ],
+      "follow_up_note": "Review NVD September 24 enrichment for scoring or reference changes before deciding whether docs/wiki needs a small delta."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/9router-login-lockout-bypass.md",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-56682",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-56682",
+        "https://github.com/decolua/9router/security/advisories/GHSA-32gc-64m7-hj7v",
+        "https://github.com/decolua/9router/releases/tag/v0.5.6"
+      ],
+      "published_or_updated_at": "2026-09-22T18:17:15.100Z",
+      "date_basis": "CVE Services published 2026-09-22T16:09:07.512Z/updated 2026-09-22T17:23:12.515Z; NVD lastModified 2026-09-22T18:17:15.100.",
+      "summary": "9Router login lockout bypass remains an in-window disclosed vulnerability with fixed release evidence.",
+      "affected_boundaries": [
+        "9Router before 0.5.6",
+        "dashboard login limiter",
+        "caller-controlled X-9r-Real-Ip",
+        "POST /api/auth/login"
+      ],
+      "named_entities": [
+        "9Router",
+        "GHSA-32gc-64m7-hj7v",
+        "CVE-2026-56682"
+      ],
+      "upstream_routing": {
+        "ai-wiki": "Broad 9Router product context belongs upstream.",
+        "local_security": "Keep login throttling and spoofed-client-IP boundary locally."
+      },
+      "already_captured_by": [
+        "raw/processed/2026-09-23/ai-security-wiki-topic-news-collector-2026-09-23T233151Z.json"
+      ],
+      "follow_up_note": "No duplicate ingest unless advisory/release details clarify vulnerable deployment modes."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-toolbox-sdk-python-google-id-token-audience-confusion.md",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-19202",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-19202",
+        "https://github.com/googleapis/mcp-toolbox-sdk-python/pull/675"
+      ],
+      "published_or_updated_at": "2026-09-23T19:42:48.540Z",
+      "date_basis": "CVE Services published 2026-09-22T21:48:26.539Z/updated 2026-09-23T15:01:51.542Z; NVD lastModified 2026-09-23T19:42:48.540.",
+      "summary": "MCP Toolbox SDK Python token audience confusion has in-window Google CNA/NVD evidence.",
+      "affected_boundaries": [
+        "mcp-toolbox-sdk-python toolbox-core through 1.1.0",
+        "Google ID token cache",
+        "multiple service audiences in one process"
+      ],
+      "named_entities": [
+        "Google",
+        "MCP Toolbox for Databases",
+        "mcp-toolbox-sdk-python",
+        "CVE-2026-19202"
+      ],
+      "upstream_routing": {
+        "ai-wiki": "Broad MCP Toolbox product context belongs upstream.",
+        "local_security": "Keep credential audience-isolation boundary locally."
+      },
+      "already_captured_by": [
+        "raw/processed/2026-09-23/ai-security-wiki-topic-news-collector-2026-09-23T233151Z.json"
+      ],
+      "follow_up_note": "Check for first fixed package release after PR 675 before changing docs/wiki."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wordpress-ai-engine-unauthenticated-idor.md",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93623",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-93623",
+        "https://patchstack.com/database/wordpress/plugin/ai-engine/vulnerability/wordpress-ai-engine-plugin-3-7-8-insecure-direct-object-references-idor-vulnerability?_s_id=cve"
+      ],
+      "published_or_updated_at": "2026-09-23T19:39:08.847Z",
+      "date_basis": "CVE Services published 2026-09-23T18:14:17.778Z/updated 2026-09-23T18:46:53.207Z; NVD lastModified 2026-09-23T19:39:08.847.",
+      "summary": "WordPress AI Engine unauthenticated IDOR remains in-window but public impact details are sparse.",
+      "affected_boundaries": [
+        "WordPress AI Engine plugin through 3.7.8",
+        "unauthenticated object authorization",
+        "fixed version 3.7.9"
+      ],
+      "named_entities": [
+        "WordPress AI Engine",
+        "Patchstack",
+        "CVE-2026-93623"
+      ],
+      "upstream_routing": {
+        "ai-wiki": "Broad WordPress/plugin catalog context belongs upstream only if needed.",
+        "local_security": "Keep unauthenticated object authorization impact locally."
+      },
+      "already_captured_by": [
+        "raw/processed/2026-09-23/ai-security-wiki-topic-news-collector-2026-09-23T233151Z.json"
+      ],
+      "follow_up_note": "Monitor Patchstack/CVE for exact exposed object class and read/write impact."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wsp-mcp-ai-agents-connector-broken-access-control.md",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-93529",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-93529",
+        "https://patchstack.com/database/wordpress/plugin/wsp-mcp-ai-agents-connector/vulnerability/wordpress-wsp-mcp-8211-ai-agents-connector-plugin-2-7-0-broken-access-control-vulnerability?_s_id=cve"
+      ],
+      "published_or_updated_at": "2026-09-23T20:17:22.837Z",
+      "date_basis": "CVE Services published 2026-09-23T18:14:14.854Z/updated 2026-09-23T19:24:50.495Z; NVD lastModified 2026-09-23T20:17:22.837.",
+      "summary": "WSP MCP AI Agents Connector broken access control has in-window Patchstack/CVE/NVD evidence.",
+      "affected_boundaries": [
+        "WordPress WSP MCP - AI Agents Connector through 2.7.0",
+        "Contributor-reachable plugin capability",
+        "fixed version 2.7.1"
+      ],
+      "named_entities": [
+        "WSP MCP - AI Agents Connector",
+        "Patchstack",
+        "CVE-2026-93529"
+      ],
+      "upstream_routing": {
+        "ai-wiki": "Broad WordPress plugin catalog context belongs upstream only if needed.",
+        "local_security": "Keep contributor role and MCP connector access-control boundary locally."
+      },
+      "already_captured_by": [
+        "raw/processed/2026-09-23/ai-security-wiki-topic-news-collector-2026-09-23T233151Z.json"
+      ],
+      "follow_up_note": "Monitor for public endpoint/capability detail before changing impact language."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/ibm-ftm-ai-agent-rag-poisoning.md",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-18875",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-18875",
+        "https://www.ibm.com/support/pages/node/7288641"
+      ],
+      "published_or_updated_at": "2026-09-23T19:17:29.603Z",
+      "date_basis": "CVE Services published 2026-09-23T15:47:25.191Z/updated 2026-09-23T18:56:57.557Z; NVD lastModified 2026-09-23T19:17:29.603.",
+      "summary": "IBM FTM AI agent RAG poisoning has in-window IBM CNA/NVD evidence.",
+      "affected_boundaries": [
+        "IBM Financial Transaction Manager for Red Hat OpenShift 4.0.6.0 through 4.0.10.0",
+        "FTM AI agent server",
+        "vector database runbooks",
+        "payment-operation MCP tools"
+      ],
+      "named_entities": [
+        "IBM",
+        "Financial Transaction Manager",
+        "CVE-2026-18875"
+      ],
+      "upstream_routing": {
+        "ai-wiki": "Broad IBM/product context belongs upstream only if needed.",
+        "local_security": "Keep retrieval-integrity and payment-tool action boundary locally."
+      },
+      "already_captured_by": [
+        "raw/processed/2026-09-23/ai-security-wiki-topic-news-collector-2026-09-23T233151Z.json"
+      ],
+      "follow_up_note": "Review IBM support page for fixed version/interim fix detail before docs/wiki edits."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-mooncake-kv-cache-exhaustion.md",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94627",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-94627",
+        "https://github.com/vllm-project/vllm/pull/49796",
+        "https://www.vulncheck.com/advisories/vllm-through-0.29.0-gpu-kv-cache-leak-via-mooncake-transfer-id-collision"
+      ],
+      "published_or_updated_at": "2026-09-22T20:25:55.870Z",
+      "date_basis": "CVE Services published 2026-09-21T22:04:16.559Z/updated 2026-09-22T12:51:23.062Z; NVD lastModified 2026-09-22T20:25:55.870.",
+      "summary": "vLLM Mooncake transfer-ID KV cache exhaustion has in-window CVE/NVD evidence.",
+      "affected_boundaries": [
+        "vLLM 0.29.0 and earlier",
+        "Mooncake KV-transfer connector",
+        "GPU KV cache block ownership",
+        "prefill/decode disaggregated serving"
+      ],
+      "named_entities": [
+        "vLLM",
+        "Mooncake",
+        "VulnCheck",
+        "CVE-2026-94627"
+      ],
+      "upstream_routing": {
+        "ai-wiki": "Broad vLLM serving-engine context belongs upstream.",
+        "local_security": "Keep connector-specific GPU memory isolation boundary locally."
+      },
+      "already_captured_by": [
+        "raw/processed/2026-09-22/ai-security-wiki-topic-news-collector-2026-09-22T233219Z.json"
+      ],
+      "follow_up_note": "Monitor release notes for first fixed vLLM release; current page already records PR-level evidence."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-nixl-prefix-cache-worker-dos.md",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94623",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-94623",
+        "https://github.com/vllm-project/vllm/pull/51505",
+        "https://www.vulncheck.com/advisories/vllm-through-0.29.0-denial-of-service-via-nixl-multi-prompt-assertion-failure"
+      ],
+      "published_or_updated_at": "2026-09-22T20:25:55.870Z",
+      "date_basis": "CVE Services published 2026-09-21T22:04:12.106Z/updated 2026-09-22T17:44:56.345Z; NVD lastModified 2026-09-22T20:25:55.870.",
+      "summary": "vLLM NIXL prefix-cache worker DoS has in-window CVE/NVD evidence.",
+      "affected_boundaries": [
+        "vLLM 0.29.0 and earlier",
+        "NIXL KV-transfer connector",
+        "prefix caching",
+        "decode workers in prefill/decode disaggregated serving"
+      ],
+      "named_entities": [
+        "vLLM",
+        "NIXL",
+        "VulnCheck",
+        "CVE-2026-94623"
+      ],
+      "upstream_routing": {
+        "ai-wiki": "Broad vLLM serving-engine context belongs upstream.",
+        "local_security": "Keep connector-specific request-shape availability boundary locally."
+      },
+      "already_captured_by": [
+        "raw/processed/2026-09-22/ai-security-wiki-topic-news-collector-2026-09-22T233219Z.json"
+      ],
+      "follow_up_note": "Monitor release notes for first fixed vLLM release; current page already records PR-level evidence."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61612",
+        "https://github.com/ondata/ckan-mcp-server/security/advisories/GHSA-798p-78g2-v556",
+        "https://github.com/ondata/ckan-mcp-server/releases/tag/v0.4.108"
+      ],
+      "published_or_updated_at": "2026-09-21T20:44:57.500Z",
+      "date_basis": "CVE Services published 2026-09-21T17:37:17.030Z/updated 2026-09-21T20:44:57.500Z. NVD was not rechecked in this run because NVD returned HTTP 429 after earlier successful selected-leaf calls.",
+      "summary": "CKAN MCP Server follow-on DNS-resolution SSRF bypass remains an in-window disclosed vulnerability.",
+      "affected_boundaries": [
+        "CKAN MCP Server before 0.4.108",
+        "validateServerUrl hostname checks",
+        "DNS resolution to loopback/private/metadata addresses",
+        "agent-facing server_url inputs"
+      ],
+      "named_entities": [
+        "CKAN MCP Server",
+        "GHSA-798p-78g2-v556",
+        "CVE-2026-61612"
+      ],
+      "upstream_routing": {
+        "ai-wiki": "Broad MCP catalog coverage belongs upstream.",
+        "local_security": "Keep connector SSRF and final-destination validation locally."
+      },
+      "already_captured_by": [
+        "raw/processed/2026-09-21/ai-security-wiki-topic-news-collector-2026-09-21T233156Z.json"
+      ],
+      "follow_up_note": "No duplicate docs/wiki work unless NVD/GitHub add materially new CVSS, affected-version, or exploit-status data."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-themed-installer-malware-lures.md",
+      "source_urls": [
+        "https://www.darktrace.com/blog/when-ai-becomes-the-lure-a-fake-gemini-installer-delivers-vidar",
+        "https://www.helpnetsecurity.com/2026/08/20/fake-google-gemini-installer-vidar-infostealer/"
+      ],
+      "reason": "stale_visible_dates",
+      "details": "Cited public incident reporting is from August 2026, outside the 2026-09-17 through 2026-09-24 seven-day window; no same-leaf in-window public update was identified."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53509",
+        "https://github.com/ondata/ckan-mcp-server/security/advisories/GHSA-g84h-j7jj-x32p",
+        "https://github.com/ondata/ckan-mcp-server/releases/tag/v0.4.106"
+      ],
+      "reason": "stale_visible_dates",
+      "details": "CVE-2026-53509 was published/updated on 2026-08-21, outside the strict seven-day window; only CVE-2026-61612 qualified for this leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-62677",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-p8rw-8qj3-hf33",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0"
+      ],
+      "reason": "stale_visible_dates",
+      "details": "CVE Services shows 2026-08-21 publication/update dates, outside the strict seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-callable-path-runner-rce.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-62675",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-756x-9hf6-q4h4",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0"
+      ],
+      "reason": "stale_visible_dates",
+      "details": "CVE Services shows 2026-08-21 publication/update dates, outside the strict seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-shared-agent-bundle-overwrite-rce.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-62674",
+        "https://github.com/omnigent-ai/omnigent/security/advisories/GHSA-jrrm-9hc7-2v3h",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0"
+      ],
+      "reason": "stale_visible_dates",
+      "details": "CVE Services latest update was 2026-08-25, outside the strict seven-day window."
+    },
+    {
+      "leaf_id": "multiple selected leaves",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0"
+      ],
+      "reason": "rate_limited_after_partial_success",
+      "details": "NVD returned HTTP 429 after ten selected CVE lookups; CVE Services and cited canonical advisory URLs remained available, and earlier successful NVD checks are recorded per qualifying update where available."
+    }
+  ],
+  "evidence_classification_counts": {
+    "disclosed_vulnerability": 11,
+    "confirmed_exploitation": 0,
+    "demonstrated_research": 0,
+    "mitigation": 0,
+    "control_change": 0,
+    "unverified_claim": 0
+  },
+  "affected_boundaries": [
+    ".mcp.json auto-spawn behavior",
+    "9Router before 0.5.6",
+    "CKAN MCP Server before 0.4.108",
+    "Contributor-reachable plugin capability",
+    "Conversation ownership",
+    "DNS resolution to loopback/private/metadata addresses",
+    "FTM AI agent server",
+    "GPU KV cache block ownership",
+    "Google ID token cache",
+    "IBM Financial Transaction Manager for Red Hat OpenShift 4.0.6.0 through 4.0.10.0",
+    "Kimi Code 0.1 through 0.31.0",
+    "Kotaemon through v0.12.0",
+    "MCP configuration loader",
+    "Mooncake KV-transfer connector",
+    "NIXL KV-transfer connector",
+    "OpenClaw iOS before 2026.8.11",
+    "POST /api/auth/login",
+    "RAG retrieval history and generated artifacts",
+    "WordPress AI Engine plugin through 3.7.8",
+    "WordPress WSP MCP - AI Agents Connector through 2.7.0",
+    "agent deep-link bearer keys",
+    "agent-facing server_url inputs",
+    "caller-controlled X-9r-Real-Ip",
+    "dashboard login limiter",
+    "decode workers in prefill/decode disaggregated serving",
+    "fixed version 2.7.1",
+    "fixed version 3.7.9",
+    "helper binary PATH resolution",
+    "iOS unified logs",
+    "local confirmation prompts",
+    "mcp-toolbox-sdk-python toolbox-core through 1.1.0",
+    "multi-user chat handlers",
+    "multiple service audiences in one process",
+    "payment-operation MCP tools",
+    "prefill/decode disaggregated serving",
+    "prefix caching",
+    "unauthenticated object authorization",
+    "vLLM 0.29.0 and earlier",
+    "validateServerUrl hostname checks",
+    "vector database runbooks"
+  ],
+  "named_entities": [
+    "9Router",
+    "CERT/CC VU#754548",
+    "CKAN MCP Server",
+    "CVE-2026-18875",
+    "CVE-2026-19202",
+    "CVE-2026-56682",
+    "CVE-2026-61612",
+    "CVE-2026-86867",
+    "CVE-2026-93529",
+    "CVE-2026-93623",
+    "CVE-2026-94623",
+    "CVE-2026-94627",
+    "CVE-2026-95660",
+    "CVE-2026-95815",
+    "Cinnamon AI",
+    "Financial Transaction Manager",
+    "GHSA-32gc-64m7-hj7v",
+    "GHSA-5j57-84cx-r295",
+    "GHSA-798p-78g2-v556",
+    "Google",
+    "IBM",
+    "Kimi Code",
+    "Kotaemon",
+    "MCP Toolbox for Databases",
+    "Mooncake",
+    "Moonshot AI",
+    "NIXL",
+    "OpenClaw",
+    "Patchstack",
+    "VulnCheck",
+    "WSP MCP - AI Agents Connector",
+    "WordPress AI Engine",
+    "mcp-toolbox-sdk-python",
+    "vLLM"
+  ],
+  "upstream_routing": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-mcp-configuration-loader-command-injection.md",
+      "routing": {
+        "ai-wiki": "Broad Moonshot AI and Kimi Code product context belongs upstream.",
+        "local_security": "Keep MCP configuration trust-boundary and command-injection evidence locally."
+      }
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/kotaemon-multi-user-chat-authorization-bypass.md",
+      "routing": {
+        "ai-wiki": "Broad Kotaemon product context belongs upstream if needed.",
+        "local_security": "Keep chat data ownership and RAG privacy impact locally."
+      }
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/openclaw-ios-deep-link-key-log-disclosure.md",
+      "routing": {
+        "ai-wiki": "Broad OpenClaw product context belongs upstream.",
+        "local_security": "Keep credential logging and delegated-action replay risk locally."
+      }
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/9router-login-lockout-bypass.md",
+      "routing": {
+        "ai-wiki": "Broad 9Router product context belongs upstream.",
+        "local_security": "Keep login throttling and spoofed-client-IP boundary locally."
+      }
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-toolbox-sdk-python-google-id-token-audience-confusion.md",
+      "routing": {
+        "ai-wiki": "Broad MCP Toolbox product context belongs upstream.",
+        "local_security": "Keep credential audience-isolation boundary locally."
+      }
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wordpress-ai-engine-unauthenticated-idor.md",
+      "routing": {
+        "ai-wiki": "Broad WordPress/plugin catalog context belongs upstream only if needed.",
+        "local_security": "Keep unauthenticated object authorization impact locally."
+      }
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wsp-mcp-ai-agents-connector-broken-access-control.md",
+      "routing": {
+        "ai-wiki": "Broad WordPress plugin catalog context belongs upstream only if needed.",
+        "local_security": "Keep contributor role and MCP connector access-control boundary locally."
+      }
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/ibm-ftm-ai-agent-rag-poisoning.md",
+      "routing": {
+        "ai-wiki": "Broad IBM/product context belongs upstream only if needed.",
+        "local_security": "Keep retrieval-integrity and payment-tool action boundary locally."
+      }
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-mooncake-kv-cache-exhaustion.md",
+      "routing": {
+        "ai-wiki": "Broad vLLM serving-engine context belongs upstream.",
+        "local_security": "Keep connector-specific GPU memory isolation boundary locally."
+      }
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-nixl-prefix-cache-worker-dos.md",
+      "routing": {
+        "ai-wiki": "Broad vLLM serving-engine context belongs upstream.",
+        "local_security": "Keep connector-specific request-shape availability boundary locally."
+      }
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md",
+      "routing": {
+        "ai-wiki": "Broad MCP catalog coverage belongs upstream.",
+        "local_security": "Keep connector SSRF and final-destination validation locally."
+      }
+    }
+  ],
+  "follow_up_notes": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/kimi-code-mcp-configuration-loader-command-injection.md",
+      "note": "Ingest should compare patch/release details only; avoid duplicate prose unless the Kimi Code 0.31.1 fix mechanics materially changed."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/kotaemon-multi-user-chat-authorization-bypass.md",
+      "note": "Check whether the September 24 metadata identifies a fixed release or patch; avoid duplicate leaf prose without a remediation delta."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/openclaw-ios-deep-link-key-log-disclosure.md",
+      "note": "Review NVD September 24 enrichment for scoring or reference changes before deciding whether docs/wiki needs a small delta."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/9router-login-lockout-bypass.md",
+      "note": "No duplicate ingest unless advisory/release details clarify vulnerable deployment modes."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-toolbox-sdk-python-google-id-token-audience-confusion.md",
+      "note": "Check for first fixed package release after PR 675 before changing docs/wiki."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wordpress-ai-engine-unauthenticated-idor.md",
+      "note": "Monitor Patchstack/CVE for exact exposed object class and read/write impact."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wsp-mcp-ai-agents-connector-broken-access-control.md",
+      "note": "Monitor for public endpoint/capability detail before changing impact language."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/ibm-ftm-ai-agent-rag-poisoning.md",
+      "note": "Review IBM support page for fixed version/interim fix detail before docs/wiki edits."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-mooncake-kv-cache-exhaustion.md",
+      "note": "Monitor release notes for first fixed vLLM release; current page already records PR-level evidence."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-nixl-prefix-cache-worker-dos.md",
+      "note": "Monitor release notes for first fixed vLLM release; current page already records PR-level evidence."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md",
+      "note": "No duplicate docs/wiki work unless NVD/GitHub add materially new CVSS, affected-version, or exploit-status data."
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-themed-installer-malware-lures.md",
+      "note": "Cited public incident reporting is from August 2026, outside the 2026-09-17 through 2026-09-24 seven-day window; no same-leaf in-window public update was identified."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ckan-mcp-server-ssrf-filter-bypass.md",
+      "note": "CVE-2026-53509 was published/updated on 2026-08-21, outside the strict seven-day window; only CVE-2026-61612 qualified for this leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-agent-bundle-cwd-workspace-bypass.md",
+      "note": "CVE Services shows 2026-08-21 publication/update dates, outside the strict seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-callable-path-runner-rce.md",
+      "note": "CVE Services shows 2026-08-21 publication/update dates, outside the strict seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-shared-agent-bundle-overwrite-rce.md",
+      "note": "CVE Services latest update was 2026-08-25, outside the strict seven-day window."
+    },
+    {
+      "leaf_id": "multiple selected leaves",
+      "note": "NVD returned HTTP 429 after ten selected CVE lookups; CVE Services and cited canonical advisory URLs remained available, and earlier successful NVD checks are recorded per qualifying update where available."
+    }
+  ],
+  "privacy_and_sensitivity": "Searches and source checks used public leaf titles, advisory IDs, and public URLs cited by pages; no private page bodies, proprietary content, PII, or company-internal content were sent as search payloads.",
+  "docs_wiki_edited": false,
+  "raw_processed_edited": false
+}

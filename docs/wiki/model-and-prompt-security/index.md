@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [Decepticon ChatML role boundary forgery](decepticon-chatml-role-boundary-forgery.md)
 - [IBM FTM AI Agent RAG poisoning](ibm-ftm-ai-agent-rag-poisoning.md)
 - [vLLM NIXL prefix cache worker DoS](vllm-nixl-prefix-cache-worker-dos.md)
 - [vLLM Mooncake KV cache exhaustion](vllm-mooncake-kv-cache-exhaustion.md)
@@ -11,6 +12,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Leaf Pages
 
+- [Decepticon ChatML role boundary forgery](decepticon-chatml-role-boundary-forgery.md)
 - [Evaluation artifact template execution risk](evaluation-artifact-template-execution-risk.md)
 - [PapersGPT Zotero LLM response remote code execution](papersgpt-zotero-llm-response-rce.md)
 - [Encrypted reasoning trace replay](encrypted-reasoning-trace-replay.md)
@@ -69,6 +71,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Maintenance Notes
 
+- Updated on 2026-09-25 with Decepticon ChatML role-boundary forgery as a retrieved-content prompt boundary.
 - Updated on 2026-09-02 with the TOON decoder prototype pollution prompt-serialization leaf.
 - Updated on 2026-09-04 with the LaVague model-output Python execution leaf.
 - Updated on 2026-09-08 with the ASCII smuggling AI-ingestion normalization leaf and Open WebUI rendering/search input leaf.

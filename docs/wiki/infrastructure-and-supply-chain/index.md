@@ -2,6 +2,9 @@
 
 ## Current Understanding
 
+- [ServiceNow AI Platform Yokohama Zurich SQL injection](servicenow-ai-platform-yokohama-zurich-sql-injection.md)
+- [mcp-remote server URL hash code execution](mcp-remote-server-url-hash-code-execution.md)
+- [MLflow DSPy pickle control bypass](mlflow-dspy-pickle-control-bypass.md)
 - [Feast privileged CI credential exposure](feast-privileged-ci-credential-exposure.md)
 - [Chartbrew AI query SQL control bypass](chartbrew-ai-query-sql-control-bypass.md)
 - [MaxKB knowledge crawler SSRF](maxkb-knowledge-crawler-ssrf.md)
@@ -15,6 +18,9 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
+- [ServiceNow AI Platform Yokohama Zurich SQL injection](servicenow-ai-platform-yokohama-zurich-sql-injection.md)
+- [mcp-remote server URL hash code execution](mcp-remote-server-url-hash-code-execution.md)
+- [MLflow DSPy pickle control bypass](mlflow-dspy-pickle-control-bypass.md)
 - [Network-AI environment restore path traversal](network-ai-environment-restore-path-traversal.md)
 - [Agent tool filesystem path containment](agent-tool-filesystem-path-containment.md)
 - [Hatchet SNS metadata SSRF](hatchet-sns-metadata-ssrf.md)
@@ -136,6 +142,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-09-25 with split September ServiceNow AI Platform SQL/authorization leaves, MLflow DSPy pickle-control bypass, and mcp-remote server URL hash execution leaves.
 - Updated on 2026-09-03 with the Ollama tensor blob redirect SSRF leaf and Windows ML CLI fixed-version evidence.
 - Updated on 2026-09-04 with Xinference auto-register file-read, aider repository command execution, AI Website Builder unprotected REST, Junie workstation-containment, and plugin marketplace provenance updates.
 - Updated on 2026-09-06 with Axolotl multipack trust_remote_code RCE and Bifrost HTTP custom plugin RCE leaves.

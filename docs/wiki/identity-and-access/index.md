@@ -6,6 +6,14 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [GitLab MCP search state user context race](gitlab-mcp-search-state-user-context-race.md)
+- [GitLab MCP scoped token authorization bypass](gitlab-mcp-scoped-token-authorization-bypass.md)
+- [TREK MCP trip summary scope bypass](trek-mcp-trip-summary-scope-bypass.md)
+- [ServiceNow AI Platform authenticated authorization bypass](servicenow-ai-platform-authenticated-authorization-bypass.md)
+- [ServiceNow AI Platform unauthenticated data modification](servicenow-ai-platform-unauthenticated-data-modification.md)
+- [ServiceNow AI Platform unauthenticated data access](servicenow-ai-platform-unauthenticated-data-access.md)
+- [ServiceNow AI Platform missing authorization data extraction](servicenow-ai-platform-missing-authorization-data-extraction.md)
+- [OpenWA MCP invite code role boundary](openwa-mcp-invite-code-role-boundary.md)
 - [9Router login lockout bypass](9router-login-lockout-bypass.md)
 - [MCP Toolbox SDK Python Google ID token audience confusion](mcp-toolbox-sdk-python-google-id-token-audience-confusion.md)
 - [WSP MCP AI Agents Connector broken access control](wsp-mcp-ai-agents-connector-broken-access-control.md)
@@ -108,6 +116,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-09-25 with split GitLab MCP token/search isolation, TREK MCP scope, ServiceNow authorization, and OpenWA MCP role-boundary leaves.
 - Updated on 2026-09-03 with Agentimus and MountDev AI/MCP WordPress authorization leaves.
 - Updated on 2026-09-04 with Azure AI Language missing-authentication coverage and Junie config trust-marker evidence.
 - Updated on 2026-09-06 with Copilot Studio signature-verification privilege elevation and JeecgBoot Airag exportXls access-control leaves.
