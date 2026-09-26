@@ -1,0 +1,525 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation": "AI Security Wiki Leaf Update Watch",
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "blockers": [],
+  "exclusions": [],
+  "notes": [
+    "Only public CVE identifiers and public source URLs cited by selected leaves were used for external checks.",
+    "No local page bodies or private/internal content were sent to external services.",
+    "All qualifying records were visible in CVE Services within the strict seven-day window and were classified as disclosed vulnerabilities.",
+    "Broad entity/product context is routed upstream per docs/wiki/federation.md; local follow-up is limited to the security-specific boundary."
+  ],
+  "qualifying_count": 15,
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/amazon-kiro-global-configuration-agent-context-injection.md",
+      "qualifying_update": {
+        "affected_boundary": "agent persistent global configuration integrity",
+        "assigner": "AMZN",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-95985",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "Amazon Kiro IDE"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-95985",
+        "summary": "The file write tool in Amazon Kiro IDE versions before 1.0.242 might allow remote unauthenticated actors to inject crafted instructions into the agent's context. When a user runs the agent in a crafted repository as an untrusted workspace, sending any message can cause agent modifications to auto-loaded global configuration paths.\n\n\n\nWe recommend you upgrade to Kiro IDE version 1.0.242 or later. Users who ran the agent in an untrusted workspace on an earlier version should also review the global Kiro configuration directory (~/.kiro) for entries they did not create.",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific leaf kept locally; broad Amazon Kiro product context routes upstream",
+        "visible_published_at": "2026-09-24T17:07:47.783Z",
+        "visible_updated_at": "2026-09-24T17:24:09.224Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-95985"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://aws.amazon.com/security/security-bulletins/2026-117-aws/",
+        "https://kiro.dev/changelog/ide/1-0-242/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/dbhub-http-transport-dns-rebinding.md",
+      "qualifying_update": {
+        "affected_boundary": "HTTP MCP transport browser-origin/DNS-rebinding boundary",
+        "assigner": "GitHub_M",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-61742",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "DBHub"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61742",
+        "summary": "DBHub is a database MCP server for Postgres, MySQL, SQL Server, Oracle, MariaDB, SQLite. Versions prior to 0.22.5 expose an unauthenticated HTTP MCP endpoint when started with the documented HTTP transport mode, for example `--transport http --port 8080`. The HTTP server attempts to protect browser-origin access by checking whether the `Origin` hostname equals the `Host` hostname, then reflecting the validated `Origin` into `Access-Control-Allow-Origin`. This does not stop DNS rebinding. After an attacker-controlled hostname rebinds to a victim-accessible DBHub HTTP server, both `Origin` and `Host` can contain the attacker-controlled hostname, so DBHub accepts the request and dispatches MCP tool calls. As a result, a malicious website can deterministically invoke DBHub MCP tools from the victim's browser without prompt injection or model involvement. With the default demo configuration this can read and write the demo SQLite database; with a real configured database, the same primitive can read, enumerate, and potentially write database contents depending on DBHub's configured tool permissions and database credentials. Version 0.22.5 fixes the issue.",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific HTTP transport exposure kept locally; broad DBHub MCP catalog routes upstream",
+        "visible_published_at": "2026-09-24T17:30:11.283Z",
+        "visible_updated_at": "2026-09-24T17:42:27.772Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61742"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://github.com/bytebase/dbhub/security/advisories/GHSA-fm8p-53ww-hf6w"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/dbhub-readonly-database-enforcement-failure.md",
+      "qualifying_update": {
+        "affected_boundary": "database-native read-only enforcement boundary",
+        "assigner": "GitHub_M",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-61788",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "DBHub"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-61788",
+        "summary": "DBHub is a database MCP server for Postgres, MySQL, SQL Server, Oracle, MariaDB, SQLite. Prior to version 0.22.6, setting `readonly = true` on the `execute_sql` tool does not make the connection read-only. The connectors are written to set PostgreSQL `default_transaction_read_only=on` (and open SQLite in `readOnly` mode), but that code is gated on a config value that is never populated, so it never runs. The only thing left enforcing read-only is a classifier that inspects the first keyword of each statement. Any `SELECT` that writes or has side effects through a function call passes it. With an ordinary role this allows sequence tampering; with a privileged role it allows writing arbitrary files on the server (`lo_export`), reading arbitrary host files (`pg_read_file`), and remote code execution (`dblink` + `COPY ... TO PROGRAM`). The HTTP transport is unauthenticated and binds to `0.0.0.0` by default, so this is reachable by any network caller of `/mcp`. Version 0.22.6 patches the issue.",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific authorization/enforcement boundary kept locally; broad DBHub MCP catalog routes upstream",
+        "visible_published_at": "2026-09-24T17:37:40.409Z",
+        "visible_updated_at": "2026-09-24T17:37:40.409Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61788"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://github.com/bytebase/dbhub/security/advisories/GHSA-mwwr-p57h-56pf"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-remote-browser-open-code-execution.md",
+      "qualifying_update": {
+        "affected_boundary": "local browser-open helper target boundary in MCP OAuth flows",
+        "assigner": "mitre",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-51997",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "mcp-remote"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-51997",
+        "summary": "An issue in geelen mcp-remote 0.1.16 through 0.1.38 allows a remote attacker to execute arbitrary code via the open() functions",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific local execution boundary kept locally; broad package catalog routes upstream",
+        "visible_published_at": "2026-09-24T00:00:00.000Z",
+        "visible_updated_at": "2026-09-25T16:30:52.599Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-51997"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://github.com/geelen/mcp-remote",
+        "https://github.com/geelen/mcp-remote/security/advisories",
+        "https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.1/advisories/F-08-browser-url-validation.md"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-remote-oauth-metadata-ssrf.md",
+      "qualifying_update": {
+        "affected_boundary": "OAuth resource metadata URL fetching and SSRF boundary",
+        "assigner": "mitre",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-51994",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "mcp-remote"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-51994",
+        "summary": "mcp-remote versions 0.1.32 through 0.1.38 are vulnerable to Server-Side Request Forgery (SSRF) via the resource_metadata URL extracted from a remote MCP server's WWW-Authenticate header",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific OAuth metadata SSRF kept locally; broad package catalog routes upstream",
+        "visible_published_at": "2026-09-24T00:00:00.000Z",
+        "visible_updated_at": "2026-09-25T18:12:07.474Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-51994"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://github.com/geelen/mcp-remote",
+        "https://github.com/geelen/mcp-remote/security/advisories",
+        "https://github.com/playb0t/mcp-remote-oauth-security#readme",
+        "https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.1/advisories/F-01-resource-metadata-ssrf.md"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/trek-llm-base-url-ssrf.md",
+      "qualifying_update": {
+        "affected_boundary": "user-configurable LLM endpoint SSRF boundary",
+        "assigner": "GitHub_M",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-77294",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "TREK"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77294",
+        "summary": "TREK is a collaborative travel planner. Prior to 3.3.0, TREK allows an authenticated user to store an attacker-controlled llm_base_url through the settings API when the LLM_PARSING feature is enabled. Write permission to the target trip instance is required to trigger the vulnerable AI-assisted import path. The value is consumed by the clients in server/src/nest/llm-parse/clients/openai-compatible.client.ts, server/src/nest/llm-parse/clients/anthropic.client.ts, and server/src/nest/llm-parse/router/ollama-format.client.ts without applying the server-side request forgery guard. Triggering AI-assisted trip parsing causes the server to request the supplied destination, and upstream error response text can be returned in parsing warnings. This permits internal service discovery and access to link-local cloud metadata, with possible disclosure of infrastructure credentials and subsequent modification of protected cloud resources. This issue is fixed in version 3.3.0.",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific LLM endpoint SSRF kept locally; broad TREK product context routes upstream",
+        "visible_published_at": "2026-09-24T18:04:02.393Z",
+        "visible_updated_at": "2026-09-24T18:35:42.537Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77294"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://github.com/liketrek/TREK/security/advisories/GHSA-fmq9-ggh3-647p",
+        "https://github.com/liketrek/TREK/pull/1520",
+        "https://github.com/liketrek/TREK/commit/19064b39176660f3be3a2df198c87949504046e2",
+        "https://github.com/liketrek/TREK/releases/tag/v3.3.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/discourse-ai-reviewables-private-message-exposure.md",
+      "qualifying_update": {
+        "affected_boundary": "AI moderation reviewable visibility over private messages",
+        "assigner": "GitHub_M",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-84302",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "Discourse AI"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84302",
+        "summary": "Discourse is an open-source discussion platform. Prior to 2026.1.6, 2026.5.2, 2026.6.1, and 2026.7.0, Discourse AI reviewables associated with private messages could appear in the moderator review queue of a moderator who was not a participant in the message. Reviewable visibility filtering did not restrict private-message reviewables to the audience permitted to access the underlying private-message topic, allowing the moderator to read otherwise confidential content. Depending on the available reviewable action, the moderator could also modify the private message by closing its topic or deleting a post. Exploitation requires an authenticated moderator account and a pre-existing Discourse AI reviewable associated with a private message. This issue is fixed in versions 2026.1.6, 2026.5.2, 2026.6.1, and 2026.7.0.",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific privacy/authorization boundary kept locally; broad Discourse product context routes upstream",
+        "visible_published_at": "2026-09-24T16:49:56.499Z",
+        "visible_updated_at": "2026-09-24T17:04:51.257Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84302"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://github.com/discourse/discourse/security/advisories/GHSA-3rx9-fqgh-wfpc",
+        "https://github.com/discourse/discourse/pull/42091",
+        "https://github.com/discourse/discourse/commit/1566d04524c01472375944bbf7b198dd09a99427",
+        "https://github.com/discourse/discourse/commit/23488b72a200228e805c4e6d970fbad216d328c5",
+        "https://github.com/discourse/discourse/commit/38d10c0e5d1b76540d2860455e0290f8e975c9fd",
+        "https://github.com/discourse/discourse/commit/b323702d87cd82c327c116d9566477f3c4f9635f"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ibm-contextforge-mcp-gateway-log-path-traversal.md",
+      "qualifying_update": {
+        "affected_boundary": "Admin API log-download path confinement and agent/tool trace exposure",
+        "assigner": "ibm",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-77825",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "IBM ContextForge MCP Gateway"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77825",
+        "summary": "IBM ContextForge MCP Gateway 1.0.0 through 1.0.8 was vulnerable to path traversal in its Admin API log-download endpoint (`GET /v1/admin/logs/file`). The path confinement check uses `str.startswith()` rather than proper boundary validation, allowing an authenticated admin to read `.log`, `.jsonl`, and `.json` files outside the configured `LOG_FOLDER` by supplying a filename that resolves into a sibling directory whose absolute path shares the log directory's string prefix.",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific log data boundary kept locally; broad ContextForge product context routes upstream",
+        "visible_published_at": "2026-09-24T14:21:18.507Z",
+        "visible_updated_at": "2026-09-24T14:21:18.507Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77825"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://www.ibm.com/support/pages/node/7289314"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-remote-authorization-server-metadata-disclosure.md",
+      "qualifying_update": {
+        "affected_boundary": "authorization-server metadata exposure in remote MCP OAuth flows",
+        "assigner": "mitre",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-51995",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "mcp-remote"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-51995",
+        "summary": "An issue in geelen mcp-remote 0.1.32 through 0.1.38 allows a remote attacker to obtain sensitive information via the src/lib/authorization-server-metadata.ts, src/lib/utils.ts components",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific disclosure boundary kept locally; broad package catalog routes upstream",
+        "visible_published_at": "2026-09-24T00:00:00.000Z",
+        "visible_updated_at": "2026-09-24T14:58:22.250Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-51995"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://github.com/geelen/mcp-remote",
+        "https://github.com/geelen/mcp-remote/security/advisories",
+        "https://github.com/playb0t/mcp-remote-oauth-security#readme",
+        "https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.1/advisories/F-02-authorization-server-ssrf.md"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-remote-sse-token-origin-disclosure.md",
+      "qualifying_update": {
+        "affected_boundary": "SSE transport token-origin binding/disclosure boundary",
+        "assigner": "mitre",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-52001",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "mcp-remote"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-52001",
+        "summary": "An issue in geelen mcp-remote 0.1.18 through 0.1.38 allows a remote attacker to obtain sensitive information via the SSE transport eventSourceInit fetch wrapper \" src/lib/utils.ts",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific SSE token-origin boundary kept locally; broad package catalog routes upstream",
+        "visible_published_at": "2026-09-24T00:00:00.000Z",
+        "visible_updated_at": "2026-09-24T14:40:37.251Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-52001"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://github.com/geelen/mcp-remote",
+        "https://github.com/geelen/mcp-remote/security/advisories",
+        "https://github.com/playb0t/mcp-remote-oauth-security#readme",
+        "https://github.com/playb0t/mcp-remote-oauth-security/blob/v1.0.1/advisories/F-11-sse-token-origin-scope.md"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/gitlab-mcp-scoped-token-authorization-bypass.md",
+      "qualifying_update": {
+        "affected_boundary": "MCP-scoped token final action authorization boundary",
+        "assigner": "GitLab",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-92874",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "GitLab CE/EE"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-92874",
+        "summary": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 18.3 before 19.2.7, 19.3 before 19.3.3, and 19.4 before 19.4.1 that under certain conditions could have allowed an authenticated user with an MCP-scoped token to perform actions beyond the intended scope of that token due to improper authorization checks.",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific MCP token authorization kept locally; broad GitLab product/workflow context routes upstream",
+        "visible_published_at": "2026-09-23T23:04:55.130Z",
+        "visible_updated_at": "2026-09-24T13:09:46.640Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-92874"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://gitlab.com/gitlab-org/gitlab/-/work_items/618614",
+        "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/gitlab-mcp-search-state-user-context-race.md",
+      "qualifying_update": {
+        "affected_boundary": "per-request MCP search user-context isolation boundary",
+        "assigner": "GitLab",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-92628",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "GitLab CE/EE"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-92628",
+        "summary": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 18.6 before 19.2.7, 19.3 before 19.3.3, and 19.4 before 19.4.1 that under a race condition, the MCP search tool's shared state handling could have caused search results to be returned under an incorrect user context.",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific MCP search isolation kept locally; broad GitLab product/workflow context routes upstream",
+        "visible_published_at": "2026-09-23T23:04:50.132Z",
+        "visible_updated_at": "2026-09-24T13:11:17.094Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-92628"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://gitlab.com/gitlab-org/gitlab/-/work_items/621933",
+        "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/openwa-mcp-invite-code-role-boundary.md",
+      "qualifying_update": {
+        "affected_boundary": "MCP tool role check for transferable WhatsApp group invite codes",
+        "assigner": "GitHub_M",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-91161",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "OpenWA"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-91161",
+        "summary": "OpenWA is a free, open source, self-hosted WhatsApp API gateway. Prior to 0.23.5, the GET /api/sessions/{sessionId}/groups/{groupId}/invite-code endpoint and the GroupGetInviteCode MCP tool have no OPERATOR role requirement, allowing a valid VIEWER key scoped to a session to retrieve an active group invite code. The invite code is a transferable WhatsApp bearer capability, so an external account can join a group administered by the session without an OpenWA credential, gain read and post access to the group, and retain membership after the VIEWER key is revoked. Affected deployments are those that issue VIEWER keys to parties who should not be able to add accounts to administered groups; OPERATOR and ADMIN access is intended. This issue is fixed in version 0.23.5.",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific role-to-capability mapping kept locally; broad OpenWA product context routes upstream",
+        "visible_published_at": "2026-09-24T16:46:33.707Z",
+        "visible_updated_at": "2026-09-24T16:46:33.707Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91161"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://github.com/rmyndharis/OpenWA/security/advisories/GHSA-45fh-xj7x-vj2x",
+        "https://github.com/rmyndharis/OpenWA/pull/1572",
+        "https://github.com/rmyndharis/OpenWA/commit/a888a0121543426d4e1bf55f9edaed8306ae2699",
+        "https://github.com/rmyndharis/OpenWA/commit/d66439db9653c7aa7cbfb763003c8d3cbc8f623c",
+        "https://github.com/rmyndharis/OpenWA/releases/tag/v0.23.5"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/servicenow-ai-platform-authenticated-authorization-bypass.md",
+      "qualifying_update": {
+        "affected_boundary": "authenticated ServiceNow AI Platform data authorization boundary",
+        "assigner": "SN",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-86857",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "ServiceNow AI Platform"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-86857",
+        "summary": "ServiceNow has remediated an authorization bypass security issue that was identified in the ServiceNow AI Platform. This security issue, if exploited, could enable an authenticated user to access data within the ServiceNow AI Platform that the user otherwise would not be entitled to access, potentially enabling further unintended access.\n\n\n\n\n\nServiceNow deployed an update to hosted instances, and ServiceNow provided the update to our partners and self-hosted customers. We are not currently aware of malicious exploitation against ServiceNow instances. We recommend customers promptly apply appropriate updates or upgrade to a patched release if they have not already done so.",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific AI Platform authorization bypass kept locally; broad ServiceNow platform context routes upstream",
+        "visible_published_at": "2026-09-24T18:37:47.129Z",
+        "visible_updated_at": "2026-09-25T12:30:11.668Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86857"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3159623"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/servicenow-ai-platform-missing-authorization-data-extraction.md",
+      "qualifying_update": {
+        "affected_boundary": "unauthenticated ServiceNow AI Platform data extraction and privilege-escalation boundary",
+        "assigner": "SN",
+        "classification": "disclosed_vulnerability",
+        "confirmed_exploitation": false,
+        "cve_id": "CVE-2026-86860",
+        "cve_state": "PUBLISHED",
+        "demonstrated_research": false,
+        "follow_up_note": "Already represented by the processed 2026-09-24 topic collector source; ingest should compare for material metadata, remediation, or affected-boundary deltas before changing docs/wiki.",
+        "named_entities": [
+          "ServiceNow AI Platform"
+        ],
+        "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-86860",
+        "summary": "ServiceNow has remediated a missing authorization vulnerability that was identified in the ServiceNow AI Platform. This vulnerability could enable an unauthenticated user, in certain circumstances, to extract instance data beyond what was intended, resulting in privilege escalation.\n\n\n\n\n\nServiceNow deployed a security update to hosted instances and ServiceNow provided the update to our partners and self-hosted customers. We are not currently aware of malicious exploitation against ServiceNow instances. We recommend customers promptly apply appropriate updates or upgrade to a patched release if they have not already done so.",
+        "unverified_claim": false,
+        "upstream_routing": "security-specific missing authorization/data extraction kept locally; broad ServiceNow platform context routes upstream",
+        "visible_published_at": "2026-09-24T18:56:54.876Z",
+        "visible_updated_at": "2026-09-25T03:55:29.102Z",
+        "window": "2026-09-18 through 2026-09-25 UTC-inclusive by visible CVE Services publication/update timestamp"
+      },
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86860"
+      ],
+      "supporting_public_urls_from_cve_record": [
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3159623"
+      ]
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-09-26T00:03:30Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/amazon-kiro-global-configuration-agent-context-injection.md",
+    "docs/wiki/agent-and-tool-security/dbhub-http-transport-dns-rebinding.md",
+    "docs/wiki/agent-and-tool-security/dbhub-readonly-database-enforcement-failure.md",
+    "docs/wiki/agent-and-tool-security/mcp-remote-browser-open-code-execution.md",
+    "docs/wiki/agent-and-tool-security/mcp-remote-oauth-metadata-ssrf.md",
+    "docs/wiki/agent-and-tool-security/trek-llm-base-url-ssrf.md",
+    "docs/wiki/data-and-privacy/discourse-ai-reviewables-private-message-exposure.md",
+    "docs/wiki/data-and-privacy/ibm-contextforge-mcp-gateway-log-path-traversal.md",
+    "docs/wiki/data-and-privacy/mcp-remote-authorization-server-metadata-disclosure.md",
+    "docs/wiki/data-and-privacy/mcp-remote-sse-token-origin-disclosure.md",
+    "docs/wiki/identity-and-access/gitlab-mcp-scoped-token-authorization-bypass.md",
+    "docs/wiki/identity-and-access/gitlab-mcp-search-state-user-context-race.md",
+    "docs/wiki/identity-and-access/openwa-mcp-invite-code-role-boundary.md",
+    "docs/wiki/identity-and-access/servicenow-ai-platform-authenticated-authorization-bypass.md",
+    "docs/wiki/identity-and-access/servicenow-ai-platform-missing-authorization-data-extraction.md"
+  ],
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, then stable relative path",
+  "source_urls_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-95985",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-61742",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-61788",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-51997",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-51994",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-77294",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-84302",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-77825",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-51995",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-52001",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-92874",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-92628",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-91161",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-86857",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-86860"
+  ]
+}

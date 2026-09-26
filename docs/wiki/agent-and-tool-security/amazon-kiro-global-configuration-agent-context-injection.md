@@ -18,7 +18,7 @@ The issue is separate from [Amazon Kiro Powers prompt injection exfiltration](am
 - Threat: a repository can persist instructions into global agent context and affect future workspaces beyond the original trust boundary.
 - Affected boundary: Amazon Kiro IDE before 1.0.242, global configuration paths, repository instructions, and auto-loaded agent context on macOS, Windows, and Linux.
 - Exploit or incident status: public CVE, NVD, AWS security bulletin, and Kiro changelog evidence; no local in-the-wild exploitation evidence is recorded.
-- Mitigation state: upgrade to Kiro IDE 1.0.242 or later; prevent untrusted workspace instructions from writing global agent configuration without explicit review.
+- Mitigation state: upgrade to Kiro IDE 1.0.242 or later; prevent untrusted workspace instructions from writing global agent configuration without explicit review; users who ran earlier Kiro versions in untrusted workspaces should review `~/.kiro` for entries they did not create.
 - Confidence: high for affected version and platform scope from AWS and CVE evidence; medium for exact write path details until patch internals are reviewed.
 - Residual risk: coding-agent global instructions are a supply-chain surface because they can outlive a single repository checkout.
 
@@ -56,3 +56,4 @@ The issue is separate from [Amazon Kiro Powers prompt injection exfiltration](am
 ## Maintenance Notes
 
 - Created on 2026-09-25 from the [September 24 topic collector source](../../../raw/processed/2026-09-24/ai-security-wiki-topic-news-collector-2026-09-24T233211Z.json); maintain this as persistent agent-context integrity, not broad Kiro product behavior.
+- Updated on 2026-09-26 from the leaf-watch source to preserve the post-exposure `~/.kiro` review guidance from the CVE record.
