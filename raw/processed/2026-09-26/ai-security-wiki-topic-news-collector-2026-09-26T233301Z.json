@@ -1,0 +1,657 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector",
+    "run_timestamp": "2026-09-26T23:33:01Z",
+    "last_run": "2026-09-25T23:30:33.310Z"
+  },
+  "cutoff_window": {
+    "basis": "Include public items published or visibly updated within the last 2 days relative to run time.",
+    "start_inclusive": "2026-09-24T23:33:01Z",
+    "end_inclusive": "2026-09-26T23:33:01Z",
+    "date_policy": "Exact timestamps qualify. Date-only September 24 items are included only when the visible source also supplied an in-window timestamp or the item was visibly updated inside the window; date-only or ambiguous boundary candidates are listed as exclusions."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "federation_basis": "docs/wiki/federation.md says this wiki owns the security lens while ai-wiki owns broad AI entities and ai-dev-wiki owns general AI-assisted development practices.",
+    "upstream_indexes_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "local_index_checked": "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/topic-index.md"
+  },
+  "qualifying_findings": [
+    {
+      "id": "gitlab-19-4-1-ai-and-mcp-security-fixes",
+      "title": "GitLab 19.4.1, 19.3.3, and 19.2.7 patched Duo AI, Duo Workflow, and MCP authorization issues",
+      "source_urls": [
+        "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=MCP"
+      ],
+      "visible_dates": [
+        "GitLab release page: September 23, 2026",
+        "NVD publication timestamps: 2026-09-24T00:17:22Z for CVE-2026-92470, CVE-2026-92529, CVE-2026-92628, and CVE-2026-92874",
+        "NVD last-modified timestamps: 2026-09-24"
+      ],
+      "evidence_classification": "primary vendor patch release corroborated by NVD CVE records",
+      "affected_boundary_or_version": "GitLab CE/EE and EE ranges before 19.2.7, 19.3.3, and 19.4.1, depending on CVE.",
+      "summary": "GitLab disclosed a patch release with four AI/MCP-relevant flaws: Duo AI troubleshooting could expose CI/CD variable values from debug-mode job traces; Duo Workflow Service token governance could be bypassed by a developer-role user in namespaces they did not control; MCP-scoped tokens could perform actions beyond intended scope; and the MCP gitlab_search tool could return search results under the wrong user context under a race condition.",
+      "why_it_matters_for_ai_security": "The patch cluster hits the exact boundaries this wiki tracks: AI troubleshooting access to secrets, AI workflow governance enforcement, scoped MCP token least privilege, and user-context isolation for agent search tools.",
+      "named_entities": [
+        "GitLab",
+        "GitLab Duo AI",
+        "Duo Workflow Service",
+        "MCP API",
+        "gitlab_search MCP tool",
+        "CVE-2026-92470",
+        "CVE-2026-92529",
+        "CVE-2026-92628",
+        "CVE-2026-92874"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the AI and MCP authorization, context-isolation, and secret-exposure implications here.",
+        "ai_wiki": "GitLab as a company/product and broad Duo positioning belong upstream if needed.",
+        "ai_dev_wiki": "General GitLab workflow or development-practice material belongs upstream; only security gate implications stay local."
+      },
+      "confidence_notes": "High confidence. GitLab and NVD agree on versions, dates, and security impact."
+    },
+    {
+      "id": "mcp-remote-september-24-advisory-cluster",
+      "title": "mcp-remote advisory cluster covered SSRF, authorization metadata disclosure, and remote code execution paths",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=MCP"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-51994, CVE-2026-51995, CVE-2026-51996, CVE-2026-51997, and CVE-2026-52001 on 2026-09-24T15:17:22Z through 2026-09-24T15:17:23Z",
+        "NVD last modified: 2026-09-24 and 2026-09-25"
+      ],
+      "evidence_classification": "vulnerability database record",
+      "affected_boundary_or_version": "geelen mcp-remote versions 0.1.16 through 0.1.38 or 0.1.32 through 0.1.38, depending on CVE.",
+      "summary": "NVD published five mcp-remote records covering SSRF through a resource_metadata URL in a remote MCP server WWW-Authenticate header, authorization-server metadata information disclosure, arbitrary code execution through server URL hashing and browser open paths, and SSE transport token-origin disclosure.",
+      "why_it_matters_for_ai_security": "Remote MCP clients ingest metadata and transport details from untrusted or semi-trusted remote servers; these flaws show how discovery, OAuth metadata, URL hashing, and browser-opening helpers can cross network, credential, and code-execution boundaries.",
+      "named_entities": [
+        "mcp-remote",
+        "geelen",
+        "CVE-2026-51994",
+        "CVE-2026-51995",
+        "CVE-2026-51996",
+        "CVE-2026-51997",
+        "CVE-2026-52001"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the MCP remote-connection threat boundary, SSRF, metadata disclosure, and RCE implications here.",
+        "ai_wiki": "mcp-remote as a package/tool entity belongs upstream if broad coverage is needed.",
+        "ai_dev_wiki": "General MCP client setup practice belongs upstream unless tied to these security controls."
+      },
+      "confidence_notes": "Medium-high confidence from NVD records. Follow-up should fetch GitHub or maintainer advisories for fixed versions and remediation wording."
+    },
+    {
+      "id": "ibm-contextforge-mcp-gateway-path-traversal",
+      "title": "IBM ContextForge MCP Gateway 1.0.0 through 1.0.8 path traversal in Admin API log download",
+      "source_urls": [
+        "https://www.ibm.com/support/pages/node/7289314",
+        "https://www.cve.org/CVERecord?id=CVE-2026-77825"
+      ],
+      "visible_dates": [
+        "IBM initial publication: 24 September 2026",
+        "IBM modified date: 24 September 2026",
+        "NVD published: 2026-09-24T15:17:38Z",
+        "NVD last modified: 2026-09-26T23:16:35Z"
+      ],
+      "evidence_classification": "primary vendor security bulletin with CVE corroboration",
+      "affected_boundary_or_version": "IBM ContextForge MCP Gateway v1.0.0 through v1.0.8; fixed in v1.0.9 or later.",
+      "summary": "IBM disclosed that an authenticated administrative user could exploit string-prefix path confinement in GET /v1/admin/logs/file to retrieve .log, .jsonl, and .json files from sibling directories outside LOG_FOLDER. IBM recommends upgrading to 1.0.9 or later and disabling the Admin API when administrative endpoints are not required.",
+      "why_it_matters_for_ai_security": "MCP gateways aggregate tool calls, logs, and credentials. Administrative log-read boundaries need real path confinement because log and JSONL files may contain tool requests, prompts, credentials, or audit evidence.",
+      "named_entities": [
+        "IBM",
+        "IBM ContextForge MCP Gateway",
+        "CVE-2026-77825",
+        "mcpgateway/admin.py"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the gateway log-download path traversal and admin API mitigation here.",
+        "ai_wiki": "IBM and ContextForge product/entity background belongs upstream if needed.",
+        "ai_dev_wiki": "General MCP gateway operations belong upstream unless framed as a security control."
+      },
+      "confidence_notes": "High confidence from IBM bulletin and CVE record. Local topic index already has an IBM ContextForge security neighborhood, so ingest should dedupe."
+    },
+    {
+      "id": "dbhub-http-and-readonly-security-boundaries",
+      "title": "DBHub MCP server published critical HTTP DNS-rebinding and read-only enforcement advisories",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-fm8p-53ww-hf6w",
+        "https://github.com/advisories/GHSA-mwwr-p57h-56pf",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61742",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61788"
+      ],
+      "visible_dates": [
+        "GitHub Advisory Database published to GHSA and reviewed: 2026-09-24 for both advisories",
+        "NVD published CVE-2026-61742 and CVE-2026-61788 on 2026-09-24T18:17:16Z"
+      ],
+      "evidence_classification": "GitHub reviewed advisories with NVD corroboration and reproducible PoC detail",
+      "affected_boundary_or_version": "@bytebase/dbhub before 0.22.5 for CVE-2026-61742; before 0.22.6 for CVE-2026-61788.",
+      "summary": "DBHub's documented HTTP MCP transport exposed unauthenticated /mcp tool calls to DNS rebinding because Host and Origin equality was treated as trust. Separately, readonly=true on execute_sql did not actually enforce database-level read-only operation, so SELECT statements with side effects could mutate data, read host files, write files, or reach command execution with privileged PostgreSQL roles. Fixes landed in 0.22.5 and 0.22.6.",
+      "why_it_matters_for_ai_security": "Database MCP servers are high-impact delegated-authority surfaces. Browser-origin trust and model-facing read-only claims are not enough; dispatch must enforce auth, allowed origins/hosts, and database-level least privilege.",
+      "named_entities": [
+        "DBHub",
+        "Bytebase",
+        "@bytebase/dbhub",
+        "CVE-2026-61742",
+        "CVE-2026-61788",
+        "GHSA-fm8p-53ww-hf6w",
+        "GHSA-mwwr-p57h-56pf"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the DNS rebinding, unauthenticated HTTP MCP, and read-only enforcement failures here.",
+        "ai_wiki": "DBHub as an MCP server/tool entity belongs upstream if broad product coverage is needed.",
+        "ai_dev_wiki": "General database-tooling workflow guidance belongs upstream unless tied to security enforcement."
+      },
+      "confidence_notes": "High confidence. GitHub reviewed advisories include detailed impact, versions, references, and fixes."
+    },
+    {
+      "id": "decepticon-chatml-role-boundary-forgery",
+      "title": "Decepticon patched ChatML special-token role-boundary forgery leading to sandbox command execution",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-g5f9-3xfg-p9mf",
+        "https://www.cve.org/CVERecord?id=CVE-2026-61732"
+      ],
+      "visible_dates": [
+        "GitHub advisory updated, reviewed, and published to GitHub Advisory Database: 2026-09-24",
+        "CVE Program published and updated: 2026-09-24",
+        "NVD publication noted by GitHub: 2026-09-24"
+      ],
+      "evidence_classification": "GitHub reviewed advisory with CVE record and reproduction details",
+      "affected_boundary_or_version": "decepticon, decepticon-core, and decepticon-sdk <= 1.1.16; fixed in 1.1.17.",
+      "summary": "Decepticon wrapped web crawl results into LLM messages without neutralizing ChatML special-token literals. In BYOK deployments using OpenAI-compatible backends that preserve special-token IDs, attacker-planted webpage content could forge a structural operator turn, bypass guardrails, and trigger arbitrary command execution inside the Kali Linux sandbox. The advisory recommends filtering or escaping special-token literals before composing untrusted external content into LLM messages.",
+      "why_it_matters_for_ai_security": "This is a concrete model-context integrity failure, not just generic prompt injection: untrusted tool output can become structural role metadata if the application layer does not neutralize tokenizer special tokens.",
+      "named_entities": [
+        "Decepticon",
+        "BitterSecurity",
+        "PurpleAILAB",
+        "ChatML",
+        "Qwen",
+        "vLLM",
+        "SGLang",
+        "TGI",
+        "CVE-2026-61732",
+        "GHSA-g5f9-3xfg-p9mf"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the special-token injection and command-execution boundary here.",
+        "ai_wiki": "Decepticon as a red-team agent product and model-provider background belong upstream if needed.",
+        "ai_dev_wiki": "General agent skill/tool-output handling practice belongs upstream only when not security-specific."
+      },
+      "confidence_notes": "High confidence from detailed reviewed advisory and CVE record."
+    },
+    {
+      "id": "servicenow-ai-platform-september-24-security-cluster",
+      "title": "ServiceNow AI Platform published SQL injection, authorization bypass, access control, and data-extraction CVEs",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-13016, CVE-2026-86857, CVE-2026-86858, CVE-2026-86859, and CVE-2026-86860 on 2026-09-24T19:17:11Z through 2026-09-24T19:17:18Z",
+        "NVD last modified: 2026-09-24 and 2026-09-25"
+      ],
+      "evidence_classification": "vulnerability database records referencing vendor remediation",
+      "affected_boundary_or_version": "ServiceNow AI Platform; hosted instances received security updates and partners/self-hosted customers were provided updates.",
+      "summary": "NVD published a ServiceNow AI Platform cluster covering unauthenticated SQL injection, authenticated and unauthenticated authorization bypass, improper access control enabling data modification, and missing authorization that could allow unauthenticated extraction of instance data. The records state ServiceNow deployed hosted updates, provided updates to partners and self-hosted customers, and was not aware of malicious exploitation.",
+      "why_it_matters_for_ai_security": "Enterprise AI platforms become high-value data and workflow control planes; unauthenticated SQL, authorization bypass, and data extraction flaws directly affect AI platform confidentiality, integrity, and least-privilege guarantees.",
+      "named_entities": [
+        "ServiceNow AI Platform",
+        "CVE-2026-13016",
+        "CVE-2026-86857",
+        "CVE-2026-86858",
+        "CVE-2026-86859",
+        "CVE-2026-86860"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the AI Platform vulnerability cluster and update/mitigation implications here.",
+        "ai_wiki": "ServiceNow as a company/product belongs upstream if broader platform context is needed.",
+        "ai_dev_wiki": "General enterprise workflow adoption belongs upstream."
+      },
+      "confidence_notes": "Medium-high confidence from NVD records. Follow-up should fetch ServiceNow primary bulletin pages if accessible during ingest."
+    },
+    {
+      "id": "trek-ai-and-mcp-least-privilege-failures",
+      "title": "TREK 3.3.0 fixed LLM base URL SSRF and MCP trip-summary scope bypass",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=MCP"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-77294 and CVE-2026-77321 on 2026-09-24T19:17:16Z",
+        "NVD last modified: 2026-09-25T13:17:26Z"
+      ],
+      "evidence_classification": "vulnerability database records",
+      "affected_boundary_or_version": "TREK before 3.3.0; fixed in 3.3.0.",
+      "summary": "TREK allowed an authenticated trip writer to store an attacker-controlled llm_base_url that was later consumed by AI-assisted parsing clients without the intended SSRF guard, enabling internal-service or cloud-metadata access. Separately, the get_trip_summary MCP tool was registered for scoped OAuth MCP tokens without requiring trips:read, exposing trip metadata, member email addresses, itinerary days, and accommodations to an MCP client with unrelated scopes.",
+      "why_it_matters_for_ai_security": "The pair shows both sides of delegated AI data access: LLM provider URL routing must enforce SSRF controls, and MCP tool registration must enforce per-tool OAuth scopes rather than relying on broader user authorization.",
+      "named_entities": [
+        "TREK",
+        "CVE-2026-77294",
+        "CVE-2026-77321",
+        "llm_base_url",
+        "get_trip_summary"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep LLM URL SSRF and MCP OAuth scope-bypass implications here.",
+        "ai_wiki": "TREK as a product/entity belongs upstream only if broad ecosystem coverage is needed.",
+        "ai_dev_wiki": "General collaborative app or workflow context belongs upstream."
+      },
+      "confidence_notes": "Medium-high confidence from NVD records. Follow-up should check maintainer advisory for additional fixed-version detail."
+    },
+    {
+      "id": "openwa-mcp-invite-code-role-boundary",
+      "title": "OpenWA 0.23.5 fixed MCP invite-code role boundary failure",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=MCP"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-91161 on 2026-09-24T17:17:09Z",
+        "NVD last modified: 2026-09-24T17:17:09Z"
+      ],
+      "evidence_classification": "vulnerability database record",
+      "affected_boundary_or_version": "OpenWA before 0.23.5; fixed in 0.23.5.",
+      "summary": "OpenWA's GET invite-code endpoint and GroupGetInviteCode MCP tool lacked the intended OPERATOR role requirement. A VIEWER key scoped to a session could retrieve a transferable WhatsApp group invite code, letting an external account join and retain group access after the VIEWER key was revoked.",
+      "why_it_matters_for_ai_security": "MCP tools can mint or disclose bearer capabilities outside the application credential system; role checks must protect capability-producing tool calls, not only API sessions.",
+      "named_entities": [
+        "OpenWA",
+        "GroupGetInviteCode MCP tool",
+        "CVE-2026-91161"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the MCP role boundary and transferable invite-code capability risk here.",
+        "ai_wiki": "OpenWA product context belongs upstream if needed.",
+        "ai_dev_wiki": "General messaging automation practice belongs upstream."
+      },
+      "confidence_notes": "Medium confidence from NVD. Maintainer advisory should be checked during ingest."
+    },
+    {
+      "id": "rapid7-bulk-export-mcp-graphql-query-injection",
+      "title": "Rapid7 Bulk Export MCP 0.6.2 fixed tool-argument GraphQL query injection",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=MCP"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-97228 on 2026-09-25T11:17:02Z",
+        "NVD last modified: 2026-09-25T13:26:09Z"
+      ],
+      "evidence_classification": "vulnerability database record",
+      "affected_boundary_or_version": "Rapid7 Bulk Export MCP versions 0.2.5 through 0.6.1; fixed in 0.6.2.",
+      "summary": "The get_export_status path interpolated an unvalidated export_id MCP tool argument directly into a GraphQL query sent with the operator's Rapid7 API key. A crafted export_id could append additional root-level selections such as schema introspection. The fix parameterizes export_id as a GraphQL variable.",
+      "why_it_matters_for_ai_security": "Even when an injected query stays within the operator's own API scope, compromised MCP clients or indirect prompt injection can transform untrusted tool arguments into privileged API calls.",
+      "named_entities": [
+        "Rapid7 Bulk Export MCP",
+        "CVE-2026-97228",
+        "GraphQL"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep MCP tool-argument injection and operator-key execution implications here.",
+        "ai_wiki": "Rapid7 product context belongs upstream if needed.",
+        "ai_dev_wiki": "General GraphQL coding patterns belong upstream only if not security-specific."
+      },
+      "confidence_notes": "Medium-high confidence from NVD; primary project advisory should be fetched during ingest."
+    },
+    {
+      "id": "openclaw-agent-authority-and-approval-cluster",
+      "title": "OpenClaw September 26 CVE cluster covered ACP file reads, command approval bypasses, MCP policy bypass, and owner authorization gaps",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=MCP"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-100547, CVE-2026-100559, CVE-2026-100560, CVE-2026-100561, CVE-2026-100573, CVE-2026-100585, CVE-2026-100587, CVE-2026-100594, and CVE-2026-100596 on 2026-09-26T03:17:00Z through 2026-09-26T03:17:08Z"
+      ],
+      "evidence_classification": "vulnerability database records",
+      "affected_boundary_or_version": "OpenClaw npm package and runtime versions before 2026.7.1 or 2026.8.1 depending on CVE.",
+      "summary": "NVD published an OpenClaw cluster spanning alternate file: URL path classification leading to out-of-workdir reads, escaped-newline command allowlist bypass, persistent Allow Always grants becoming path-only approvals, wrapper trust gaps, denied MCP tool invocation from sandboxed sessions, Claude Code permission prompt owner-check failures over the MCP bridge, non-owner computer-use plugin installation, trajectory export authorization bypass, and non-owner /mcp configuration changes that could persist stdio MCP commands.",
+      "why_it_matters_for_ai_security": "This is a broad delegated-authority cluster for coding agents: approval prompts, ACP file access, MCP tool policy, owner-only actions, and persisted MCP configuration all need independent authorization checks.",
+      "named_entities": [
+        "OpenClaw",
+        "ACP",
+        "MCP",
+        "Claude Code",
+        "CVE-2026-100547",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100587",
+        "CVE-2026-100594",
+        "CVE-2026-100596"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep approval-bypass, ACP, MCP policy, owner authorization, and tool-deny enforcement implications here.",
+        "ai_wiki": "OpenClaw as a tool/product entity belongs upstream if broad coverage is needed.",
+        "ai_dev_wiki": "General coding-agent workflow and OpenClaw practice belongs upstream; only the security control failures stay local."
+      },
+      "confidence_notes": "Medium confidence from NVD. High-volume cluster should be deduplicated into security-control themes during ingest and cross-checked against OpenClaw primary advisories."
+    },
+    {
+      "id": "mcp-server-for-wordpress-1-8-2-authorization-cluster",
+      "title": "MCP Server for WordPress 1.8.2 fixed REST nonce, workflow ownership, and object authorization flaws",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=MCP"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-96524, CVE-2026-96525, and CVE-2026-96526 on 2026-09-26T07:17:03Z",
+        "NVD last modified: 2026-09-26T23:16:40Z through 2026-09-26T23:16:41Z"
+      ],
+      "evidence_classification": "vulnerability database records",
+      "affected_boundary_or_version": "MCP Server for WordPress plugin before 1.8.2; fixed in 1.8.2.",
+      "summary": "The MCP Server for WordPress plugin had three in-window CVEs: REST API nonce verification could be bypassed for cookie-authenticated requests, allowing attacker-induced administrator actions including administrator account creation; Contributors could create, modify, or delete site-wide workflow configuration; and a workflow route lacked object-level authorization, exposing titles and publication status for private, draft, pending, and scheduled content.",
+      "why_it_matters_for_ai_security": "CMS-hosted MCP servers combine web CSRF/nonce semantics with agent workflow configuration; workflow and object authorization failures can turn low-privilege users or browser attacks into agent-control-plane changes.",
+      "named_entities": [
+        "MCP Server for WordPress",
+        "WordPress",
+        "CVE-2026-96524",
+        "CVE-2026-96525",
+        "CVE-2026-96526"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep MCP server control-plane and workflow authorization implications here.",
+        "ai_wiki": "WordPress plugin ecosystem context belongs upstream only if broad AI plugin coverage is needed.",
+        "ai_dev_wiki": "General CMS workflow development practice belongs upstream."
+      },
+      "confidence_notes": "Medium confidence from NVD; Patchstack/Wordfence or maintainer records should be checked during ingest."
+    },
+    {
+      "id": "siyuan-recursive-mcp-file-sensitive-path-bypass",
+      "title": "SiYuan 3.8.4 fixed recursive MCP file sensitive-path guard bypass",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=MCP"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-100633 on 2026-09-26T14:16:44Z",
+        "NVD last modified: 2026-09-26T14:16:44Z"
+      ],
+      "evidence_classification": "vulnerability database record",
+      "affected_boundary_or_version": "SiYuan 3.8.0 through 3.8.3; fixed in 3.8.4.",
+      "summary": "SiYuan applied the MCP file tool sensitive-path guard only to the allowed root of recursive operations, not each resolved descendant. An authenticated administrator using the in-app Agent or external MCP server could use file.grep, file.copy, or unzip to expose or overwrite protected descendants such as conf/conf.json, TLS keys, snippets, templates, notebook internals, or logs. Some actions were marked safe or had confirmation cards that hid descendant paths.",
+      "why_it_matters_for_ai_security": "Recursive file tools must enforce deny lists on every resolved path and show accurate approval evidence; otherwise apparently safe agent file actions can disclose credentials and configuration.",
+      "named_entities": [
+        "SiYuan",
+        "CVE-2026-100633",
+        "MCP file tool"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep MCP file-tool sensitive-path and approval-evidence implications here.",
+        "ai_wiki": "SiYuan product context belongs upstream if needed.",
+        "ai_dev_wiki": "General personal knowledge management workflow belongs upstream."
+      },
+      "confidence_notes": "Medium-high confidence from detailed NVD record."
+    },
+    {
+      "id": "zammad-ai-agent-7-1-2-security-fixes",
+      "title": "Zammad 7.1.2 fixed AI Agent command execution, analytics error disclosure, and admin UI XSS issues",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-84462, CVE-2026-63204, and CVE-2026-63216 on 2026-09-25T18:17:30Z through 2026-09-25T19:17:55Z",
+        "NVD last modified: 2026-09-25"
+      ],
+      "evidence_classification": "vulnerability database records",
+      "affected_boundary_or_version": "Zammad before 7.1.2; fixed in 7.1.2.",
+      "summary": "Zammad fixed an AI Agent configuration-filter bypass that allowed an administrator creating or editing AI Agents to run arbitrary server commands when the affected agent next processed a ticket. It also fixed an AI analytics run identifier authorization gap that disclosed provider error messages, plus unsanitized option labels rendered as raw HTML in AI Agent configuration dialogs.",
+      "why_it_matters_for_ai_security": "AI agent configuration fields are execution-adjacent policy surfaces. Admin-only does not eliminate the need for sandboxing and sanitization when the configuration later runs automatically in ticket-processing flows.",
+      "named_entities": [
+        "Zammad",
+        "Zammad AI Agent",
+        "CVE-2026-84462",
+        "CVE-2026-63204",
+        "CVE-2026-63216"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep AI Agent command-execution, configuration sanitization, and provider-error disclosure implications here.",
+        "ai_wiki": "Zammad as a product/entity belongs upstream if broad coverage is needed.",
+        "ai_dev_wiki": "General support-ticket workflow belongs upstream."
+      },
+      "confidence_notes": "Medium-high confidence from NVD records; vendor release notes should be checked during ingest."
+    },
+    {
+      "id": "litellm-semantic-cache-tenant-isolation-bypass",
+      "title": "LiteLLM before 1.101.0-rc.1 disclosed cross-tenant cached responses and tool-call payloads",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=prompt"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-89032 on 2026-09-25T17:17:18Z",
+        "NVD last modified: 2026-09-25T17:17:18Z"
+      ],
+      "evidence_classification": "vulnerability database record",
+      "affected_boundary_or_version": "BerriAI LiteLLM before 1.101.0-rc.1.",
+      "summary": "LiteLLM's semantic cache had a tenant-isolation bypass caused by a metadata-key mismatch between tenant-scope calculation and metadata variable naming. Authenticated users with valid virtual keys could submit semantically similar prompts to retrieve other tenants' cached responses containing sensitive data, and agentic front ends could auto-execute cached function_call or tool_calls payloads under a different principal.",
+      "why_it_matters_for_ai_security": "Semantic caches are model-facing shared state. Tenant scoping must cover both text and tool-call payloads, because cached function calls can become delegated actions under the wrong identity.",
+      "named_entities": [
+        "LiteLLM",
+        "BerriAI",
+        "semantic cache",
+        "CVE-2026-89032"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep cache tenant isolation and cross-principal tool-call replay implications here.",
+        "ai_wiki": "LiteLLM product/entity context belongs upstream.",
+        "ai_dev_wiki": "General model proxy operations belong upstream unless framed as a security control."
+      },
+      "confidence_notes": "Medium-high confidence from NVD; primary advisory should be fetched before durable synthesis."
+    },
+    {
+      "id": "flowise-3-1-4-chat-history-and-queue-dashboard-rbac",
+      "title": "Flowise through 3.1.4 exposed chat histories and queue payloads through missing RBAC checks",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-100605 and CVE-2026-100608 on 2026-09-26T14:16:40Z through 2026-09-26T14:16:41Z"
+      ],
+      "evidence_classification": "vulnerability database records",
+      "affected_boundary_or_version": "Flowise through 3.1.4; no patched version available for the BullMQ dashboard record as of the advisory text.",
+      "summary": "Flowise allowed low-privileged API keys to read and delete chat history because chat-message endpoints lacked route-level RBAC. Separately, when queue mode and the BullMQ dashboard were enabled outside cloud mode, any authenticated user could access the dashboard without role, workspace, or organization scoping, exposing queues and job payloads including chat inputs, prompts, model responses, overrideConfig values, credential IDs, files, and workspace identifiers, with write actions also available.",
+      "why_it_matters_for_ai_security": "AI workflow builders hold prompts, model outputs, credentials, and queued jobs. Route-level RBAC and tenant scoping must apply to both normal APIs and operational dashboards.",
+      "named_entities": [
+        "Flowise",
+        "BullMQ",
+        "CVE-2026-100605",
+        "CVE-2026-100608"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep chat-history RBAC and AI workflow queue dashboard exposure here.",
+        "ai_wiki": "Flowise as a product/framework belongs upstream.",
+        "ai_dev_wiki": "General workflow-builder usage belongs upstream."
+      },
+      "confidence_notes": "Medium-high confidence from NVD records; maintainer status and patch availability need ingest-time recheck."
+    },
+    {
+      "id": "vllm-disaggregated-serving-multimodal-prompt-length-dos",
+      "title": "vLLM 0.29.0 fixed multimodal decoder prompt-length validation DoS",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI"
+      ],
+      "visible_dates": [
+        "NVD published CVE-2026-100651 on 2026-09-26T14:16:47Z",
+        "NVD last modified: 2026-09-26T14:16:47Z"
+      ],
+      "evidence_classification": "vulnerability database record",
+      "affected_boundary_or_version": "vLLM before 0.29.0; fixed in 0.29.0.",
+      "summary": "vLLM's disaggregated serving endpoint /inference/v1/generate failed to enforce decoder prompt-length validation when multimodal features were supplied. For processors such as Nemotron Parse, Whisper, and FireRedLID that skip prompt-length checks, an overlong token_ids list could reach a fixed max_model_len-wide worker buffer and crash the worker.",
+      "why_it_matters_for_ai_security": "Model serving endpoints need consistent prompt-length enforcement across multimodal and disaggregated paths; otherwise malformed requests can cause denial of service in inference workers.",
+      "named_entities": [
+        "vLLM",
+        "Nemotron Parse",
+        "Whisper",
+        "FireRedLID",
+        "CVE-2026-100651"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep inference-runtime DoS and release-gate implications here.",
+        "ai_wiki": "vLLM and model/runtime entity background belongs upstream.",
+        "ai_dev_wiki": "General serving implementation practice belongs upstream unless security-specific."
+      },
+      "confidence_notes": "Medium-high confidence from NVD; primary vLLM advisory or release note should be checked during ingest."
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "AIL Framework CVE set",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI",
+      "visible_date": "2026-09-25T14:17:15Z through 2026-09-25T14:17:17Z",
+      "reason": "Excluded as an acronym collision: AIL Framework is a threat-intelligence/crawler framework, not an artificial-intelligence system, model, agent, or AI security control."
+    },
+    {
+      "title": "Linux kernel records mentioning patches written with AI assistance",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI",
+      "visible_date": "2026-09-25T11:17Z",
+      "reason": "Excluded because 'AI assistance' appears only as patch authorship context; the vulnerability is not in an AI system or AI security boundary."
+    },
+    {
+      "title": "WPForms AI Form Builder reflected XSS",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI",
+      "visible_date": "2026-09-25T08:16:40Z",
+      "reason": "Excluded as AI-branded plugin exposure without a distinct AI-specific security delta; it is a conventional reflected XSS in page_title smart tag rendering."
+    },
+    {
+      "title": "Better Messages AI Chat Bots WordPress SQL injection and DOM XSS",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI",
+      "visible_date": "2026-09-25T07:16:56Z",
+      "reason": "Excluded as AI-branded chat plugin issues where the concrete bugs are ordinary SQL injection and display-name DOM XSS, not an AI/agent/model boundary."
+    },
+    {
+      "title": "OpenStation AI moderation verdict exposure",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00:00:00.000&pubEndDate=2026-09-26T23:59:59.999&keywordSearch=AI",
+      "visible_date": "2026-09-25T07:16:53Z",
+      "reason": "Excluded as a WordPress authorization bypass whose AI aspect is incidental to exposed comment moderation metadata; no distinct AI system control or model boundary was identified."
+    },
+    {
+      "title": "GitLab non-AI/non-MCP patch-release CVEs",
+      "source_url": "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/",
+      "visible_date": "September 23, 2026 release page; NVD publication in the collection window",
+      "reason": "Excluded from this artifact because they are general GitLab security fixes outside the locally owned AI/MCP security topics, despite sharing the same patch release."
+    },
+    {
+      "title": "mcp-fetch IPv6 SSRF from August 2026",
+      "source_url": "https://mcpsecurityproject.com/mcp-cve-project/cves/CVE-2026-80347.html",
+      "visible_date": "Published or indexed 2026-08-26; search result crawled recently",
+      "reason": "Excluded as stale relative to the exact 48-hour window, though it remains relevant background for MCP SSRF guard patterns."
+    },
+    {
+      "title": "GitHub repository update pages for MCP/browser/agent topics",
+      "source_url": "https://github.com/topics/browser?o=desc",
+      "visible_date": "Updated September 25, 2026",
+      "reason": "Excluded because repository activity alone is not a concrete security fact, patch, incident, or control change."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity": "GitLab",
+      "owner": "ai-wiki",
+      "note": "Broad GitLab and Duo product context belongs upstream; this repo should keep only Duo AI and MCP authorization/control failures."
+    },
+    {
+      "entity": "mcp-remote",
+      "owner": "ai-wiki",
+      "note": "Package/tool entity context belongs upstream; security handling of remote MCP metadata, OAuth discovery, SSRF, and RCE belongs local."
+    },
+    {
+      "entity": "IBM ContextForge MCP Gateway",
+      "owner": "ai-wiki",
+      "note": "Product/entity background belongs upstream; gateway log-download path traversal and admin API mitigation belong local."
+    },
+    {
+      "entity": "DBHub",
+      "owner": "ai-wiki",
+      "note": "MCP server product background belongs upstream; unauthenticated HTTP, DNS rebinding, and read-only enforcement failures belong local."
+    },
+    {
+      "entity": "Decepticon",
+      "owner": "ai-wiki",
+      "note": "Red-team agent product context belongs upstream; ChatML role-boundary forgery and sandbox command execution belong local."
+    },
+    {
+      "entity": "ServiceNow AI Platform",
+      "owner": "ai-wiki",
+      "note": "Company/product context belongs upstream; SQL injection, authorization bypass, and data-extraction implications belong local."
+    },
+    {
+      "entity": "TREK",
+      "owner": "ai-wiki",
+      "note": "Product context belongs upstream if needed; LLM URL SSRF and MCP scope enforcement belong local."
+    },
+    {
+      "entity": "OpenWA",
+      "owner": "ai-wiki",
+      "note": "Messaging gateway product context belongs upstream; MCP role check and transferable invite-code capability belong local."
+    },
+    {
+      "entity": "Rapid7 Bulk Export MCP",
+      "owner": "ai-wiki",
+      "note": "Rapid7 product context belongs upstream; MCP tool-argument GraphQL injection belongs local."
+    },
+    {
+      "entity": "OpenClaw",
+      "owner": "ai-dev-wiki",
+      "note": "General coding-agent workflows and tool usage belong ai-dev-wiki; approval bypass, owner authorization, ACP file boundaries, and MCP policy failures belong local."
+    },
+    {
+      "entity": "MCP Server for WordPress",
+      "owner": "ai-wiki",
+      "note": "Broad plugin catalog context belongs upstream; workflow authorization and MCP control-plane security belong local."
+    },
+    {
+      "entity": "SiYuan",
+      "owner": "ai-wiki",
+      "note": "Product context belongs upstream; MCP recursive file-tool path-guard failure belongs local."
+    },
+    {
+      "entity": "Zammad",
+      "owner": "ai-wiki",
+      "note": "Support product context belongs upstream; AI Agent config execution and provider-error disclosure belong local."
+    },
+    {
+      "entity": "LiteLLM",
+      "owner": "ai-wiki",
+      "note": "Model proxy entity background belongs upstream; semantic-cache tenant isolation and cross-principal tool-call replay belong local."
+    },
+    {
+      "entity": "Flowise",
+      "owner": "ai-wiki",
+      "note": "Workflow-builder product context belongs upstream; chat-history and queue-dashboard RBAC failures belong local."
+    },
+    {
+      "entity": "vLLM",
+      "owner": "ai-wiki",
+      "note": "Inference runtime context belongs upstream; prompt-length validation denial-of-service belongs local."
+    }
+  ],
+  "follow_up_actions": [
+    "During ingest, deduplicate findings already represented in docs/wiki/topic-index.md before creating new durable leaves.",
+    "Fetch primary maintainer advisories for mcp-remote, TREK, OpenWA, Rapid7 Bulk Export MCP, OpenClaw, MCP Server for WordPress, SiYuan, Zammad, LiteLLM, Flowise, and vLLM to confirm fixed versions and remediation text.",
+    "For high-volume clusters such as OpenClaw and ServiceNow, consider grouped leaves by security-control boundary rather than one leaf per CVE when the root control is shared.",
+    "Recheck ServiceNow primary advisory availability because this collection used NVD text for the detailed source facts.",
+    "Do not move this raw artifact to raw/processed until the wiki ingest workflow updates durable leaves, digest entries, and verification passes."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed on artifact"
+  },
+  "counts": {
+    "qualifying_findings": 16,
+    "exclusions": 8,
+    "upstream_routing_notes": 16
+  }
+}

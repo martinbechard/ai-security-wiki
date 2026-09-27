@@ -6,6 +6,10 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [GitLab Duo Workflow token governance bypass](gitlab-duo-workflow-token-governance-bypass.md)
+- [MCP Server for WordPress REST nonce bypass](mcp-server-for-wordpress-rest-nonce-bypass.md)
+- [MCP Server for WordPress workflow configuration authorization](mcp-server-for-wordpress-workflow-configuration-authorization.md)
+- [OpenClaw non owner plugin installation](openclaw-non-owner-plugin-installation.md)
 - [GitLab MCP search state user context race](gitlab-mcp-search-state-user-context-race.md)
 - [GitLab MCP scoped token authorization bypass](gitlab-mcp-scoped-token-authorization-bypass.md)
 - [TREK MCP trip summary scope bypass](trek-mcp-trip-summary-scope-bypass.md)
@@ -116,6 +120,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-09-27 with GitLab Duo Workflow token governance, split MCP Server for WordPress authorization leaves, OpenClaw plugin-installation ownership, and ServiceNow CIS patch-threshold metadata.
 - Updated on 2026-09-25 with split GitLab MCP token/search isolation, TREK MCP scope, ServiceNow authorization, and OpenWA MCP role-boundary leaves.
 - Updated on 2026-09-03 with Agentimus and MountDev AI/MCP WordPress authorization leaves.
 - Updated on 2026-09-04 with Azure AI Language missing-authentication coverage and Junie config trust-marker evidence.

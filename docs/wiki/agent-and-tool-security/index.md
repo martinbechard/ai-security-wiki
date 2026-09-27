@@ -2,6 +2,14 @@
 
 ## Current Understanding
 
+- [OpenClaw agent authority and approval cluster](openclaw-agent-authority-and-approval-cluster.md)
+- [OpenClaw ACP file URL workdir read bypass](openclaw-acp-file-url-workdir-read-bypass.md)
+- [OpenClaw command approval bypasses](openclaw-command-approval-bypasses.md)
+- [OpenClaw MCP policy and bridge owner check bypasses](openclaw-mcp-policy-and-bridge-owner-check-bypasses.md)
+- [OpenClaw MCP configuration owner bypass](openclaw-mcp-configuration-owner-bypass.md)
+- [Rapid7 Bulk Export MCP GraphQL query injection](rapid7-bulk-export-mcp-graphql-query-injection.md)
+- [Zammad AI Agent command execution](zammad-ai-agent-command-execution.md)
+- [Zammad AI Agent configuration dialog XSS](zammad-ai-agent-configuration-dialog-xss.md)
 - [mcp-remote OAuth metadata SSRF](mcp-remote-oauth-metadata-ssrf.md)
 - [mcp-remote browser open code execution](mcp-remote-browser-open-code-execution.md)
 - [DBHub HTTP transport DNS rebinding](dbhub-http-transport-dns-rebinding.md)
@@ -26,6 +34,14 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [OpenClaw agent authority and approval cluster](openclaw-agent-authority-and-approval-cluster.md)
+- [OpenClaw ACP file URL workdir read bypass](openclaw-acp-file-url-workdir-read-bypass.md)
+- [OpenClaw command approval bypasses](openclaw-command-approval-bypasses.md)
+- [OpenClaw MCP policy and bridge owner check bypasses](openclaw-mcp-policy-and-bridge-owner-check-bypasses.md)
+- [OpenClaw MCP configuration owner bypass](openclaw-mcp-configuration-owner-bypass.md)
+- [Rapid7 Bulk Export MCP GraphQL query injection](rapid7-bulk-export-mcp-graphql-query-injection.md)
+- [Zammad AI Agent command execution](zammad-ai-agent-command-execution.md)
+- [Zammad AI Agent configuration dialog XSS](zammad-ai-agent-configuration-dialog-xss.md)
 - [mcp-remote OAuth metadata SSRF](mcp-remote-oauth-metadata-ssrf.md)
 - [mcp-remote browser open code execution](mcp-remote-browser-open-code-execution.md)
 - [DBHub HTTP transport DNS rebinding](dbhub-http-transport-dns-rebinding.md)
@@ -214,6 +230,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-09-27 with Rapid7 Bulk Export MCP GraphQL query injection, split OpenClaw authority/approval leaves, split Zammad AI Agent execution/XSS leaves, and SiYuan recursive file-tool guard evidence.
 - Updated on 2026-09-25 with split mcp-remote OAuth/transport, DBHub transport/read-only, TREK LLM endpoint SSRF, and Kiro global agent-context injection leaves.
 - Updated on 2026-09-24 with Kimi Code MCP configuration loader command injection and cross-links from new MCP Toolbox, WSP MCP connector, IBM FTM, and OpenClaw credential-boundary leaves.
 - Updated on 2026-09-03 with n8n Workflow Tool credential exfiltration, Agent-S GUI action DoS, and openbrowser browser-agent message DoS leaves.

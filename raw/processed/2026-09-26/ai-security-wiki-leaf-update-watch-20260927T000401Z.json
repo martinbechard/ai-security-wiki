@@ -1,0 +1,529 @@
+{
+  "automation": {
+    "id": "ai-security-wiki-leaf-update-watch",
+    "name": "AI Security Wiki Leaf Update Watch",
+    "repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "run_timestamp": "2026-09-27T00:04:01Z"
+  },
+  "counts": {
+    "exclusion_count": 7,
+    "qualifying_update_count": 8,
+    "selected_leaf_count": 15,
+    "source_url_count": 52
+  },
+  "cutoff_window": {
+    "basis": "Include public sources published or visibly updated within the last 7 days relative to this run.",
+    "date_policy": "Exact visible timestamps qualify. Date-only items qualify only when the visible source date falls inside the window. Ambiguous, missing, future, stale, or boundary-only dates are excluded with reasons.",
+    "end_inclusive": "2026-09-27T00:04:01Z",
+    "start_inclusive": "2026-09-20T00:04:01Z"
+  },
+  "exclusions": [
+    {
+      "checked_identifiers": [
+        "CVE-2026-62676"
+      ],
+      "leaf_id": "docs/wiki/agent-and-tool-security/omnigent-shell-policy-parser-bypass.md",
+      "reason": "Excluded as stale outside the seven-day window; no visible in-window public update found.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-62676",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-62676",
+        "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0"
+      ],
+      "visible_dates": [
+        "CVE Services published 2026-08-21T17:42:21.563Z and updated 2026-08-26T17:32:00.761Z"
+      ]
+    },
+    {
+      "checked_identifiers": [
+        "CVE-2026-59809"
+      ],
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-http-request-secret-exfiltration.md",
+      "reason": "Excluded as stale outside the seven-day window; no visible in-window public update found.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59809",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59809",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-853m-gvvm-6rvx",
+        "https://www.vulncheck.com/advisories/siyuan-before-secret-exfiltration-via-http-request-url"
+      ],
+      "visible_dates": [
+        "CVE Services published 2026-08-22T12:26:35.098Z and updated 2026-08-26T16:16:52.009Z"
+      ]
+    },
+    {
+      "checked_identifiers": [
+        "CVE-2026-59279"
+      ],
+      "leaf_id": "docs/wiki/agent-and-tool-security/spring-ai-mcp-streamable-http-session-dos.md",
+      "reason": "Excluded as stale outside the seven-day window.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59279",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59279",
+        "https://spring.io/security/cve-2026-59279/"
+      ],
+      "visible_dates": [
+        "CVE Services published 2026-08-21T12:07:05.567Z and updated 2026-08-21T14:28:41.415Z",
+        "Spring advisory was crawlable but its advisory date is outside the current seven-day window."
+      ]
+    },
+    {
+      "checked_identifiers": [
+        "CVE-2026-53656"
+      ],
+      "leaf_id": "docs/wiki/data-and-privacy/fiftyone-local-ai-dataset-server-exposure.md",
+      "reason": "Excluded as stale outside the seven-day window; no visible in-window public update found.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53656",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53656"
+      ],
+      "visible_dates": [
+        "CVE Services published 2026-08-21T20:34:55.783Z and updated 2026-08-21T21:42:44.374Z"
+      ]
+    },
+    {
+      "checked_identifiers": [
+        "CVE-2026-77776"
+      ],
+      "leaf_id": "docs/wiki/identity-and-access/headroom-llm-memory-owner-header-bypass.md",
+      "reason": "Excluded as stale outside the seven-day window; no visible in-window public update found.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77776",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77776",
+        "https://www.cve.org/CVERecord?id=CVE-2026-77776",
+        "https://app.opencve.io/cve/CVE-2026-77776"
+      ],
+      "visible_dates": [
+        "CVE Services published 2026-08-21T11:22:51.779Z and updated 2026-08-21T21:44:30.707Z"
+      ]
+    },
+    {
+      "checked_identifiers": [
+        "CVE-2026-77775"
+      ],
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/headroom-llm-proxy-upstream-ssrf.md",
+      "reason": "Excluded as stale outside the seven-day window; no visible in-window public update found.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77775",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77775",
+        "https://www.cve.org/CVERecord?id=CVE-2026-77775",
+        "https://www.vulncheck.com/advisories/headroom-proxy-sends-upstream-requests-to-a-client-supplied-base-url-without-address-validation"
+      ],
+      "visible_dates": [
+        "CVE Services published 2026-08-21T11:22:51.107Z and updated 2026-08-21T11:44:34.968Z"
+      ]
+    },
+    {
+      "checked_identifiers": [
+        "CVE-2026-71493"
+      ],
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/infracost-template-symlink-file-read.md",
+      "reason": "Excluded as stale outside the seven-day window; no visible in-window public update found.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-71493",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71493"
+      ],
+      "visible_dates": [
+        "CVE Services published 2026-08-21T17:52:29.001Z and updated 2026-08-26T17:33:14.286Z"
+      ]
+    }
+  ],
+  "follow_up_notes": [
+    "Do not edit docs/wiki from this raw collector. Normal ingest should compare ServiceNow, TREK, mcp-remote, MLflow, and Decepticon records against already processed September 24 and September 26 collector artifacts before writing duplicate prose.",
+    "CIS advisory 2026-102 adds ServiceNow affected platform patch thresholds that may be a material metadata delta for the three selected ServiceNow leaves.",
+    "CVE-2026-100633 is a material same-boundary update for the SiYuan MCP file-tool containment leaf and may deserve either an update there or a split recursive-operation leaf."
+  ],
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "ServiceNow AI Platform",
+        "Yokohama before Patch 13 Hot Fix 5a",
+        "Zurich before Patch 10 Hot Fix 4a W32",
+        "Australia before Patch 2 Hot Fix 4b W32"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation/control change; no confirmed exploitation",
+      "follow_up_note": "Compare against processed September 24 ServiceNow cluster before any ingest to avoid duplicate prose; CIS adds fixed platform patch thresholds worth checking against the page.",
+      "id": "servicenow-ai-platform-unauthenticated-data-access-cve-2026-86859",
+      "leaf_id": "docs/wiki/identity-and-access/servicenow-ai-platform-unauthenticated-data-access.md",
+      "named_entities": [
+        "ServiceNow AI Platform",
+        "CVE-2026-86859",
+        "KB3159623",
+        "CIS advisory 2026-102"
+      ],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86859",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86859",
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3159623",
+        "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-servicenows-ai-platform-could-allow-for-unauthorized-access_2026-102"
+      ],
+      "summary": "CVE Services and CIS describe unauthenticated access to AI Platform data outside the caller entitlement boundary; CIS repeats that no in-the-wild exploitation is reported and recommends applying ServiceNow workarounds/updates.",
+      "title": "ServiceNow AI Platform unauthenticated record disclosure",
+      "upstream_routing": "Keep the unauthorized AI Platform data-access boundary local; broad ServiceNow product context belongs to ai-wiki.",
+      "visible_dates": [
+        "CVE Services published 2026-09-24T18:52:51.511Z and updated 2026-09-24T19:16:40.228Z",
+        "CIS advisory issued 09/25/2026"
+      ]
+    },
+    {
+      "affected_boundaries": [
+        "ServiceNow AI Platform",
+        "Yokohama before Patch 13 Hot Fix 5a",
+        "Zurich before Patch 10 Hot Fix 4a W32",
+        "Australia before Patch 2 Hot Fix 4b W32"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation/control change; no confirmed exploitation",
+      "follow_up_note": "Processed September 24 coverage already has the disclosure; CIS patch-threshold detail may be the only material delta.",
+      "id": "servicenow-ai-platform-unauthenticated-data-modification-cve-2026-86858",
+      "leaf_id": "docs/wiki/identity-and-access/servicenow-ai-platform-unauthenticated-data-modification.md",
+      "named_entities": [
+        "ServiceNow AI Platform",
+        "CVE-2026-86858",
+        "KB3159623",
+        "CIS advisory 2026-102"
+      ],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86858",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86858",
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3159623",
+        "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-servicenows-ai-platform-could-allow-for-unauthorized-access_2026-102"
+      ],
+      "summary": "CVE Services and CIS describe improper access control allowing unauthenticated create, modify, or delete operations against unintended instance data.",
+      "title": "ServiceNow AI Platform unauthenticated data modification",
+      "upstream_routing": "Keep the data-changing authorization boundary local; broad ServiceNow product context belongs to ai-wiki.",
+      "visible_dates": [
+        "CVE Services published 2026-09-24T18:42:40.766Z and updated 2026-09-24T19:18:52.579Z",
+        "CIS advisory issued 09/25/2026"
+      ]
+    },
+    {
+      "affected_boundaries": [
+        "TREK before 3.3.0",
+        "get_trip_summary MCP tool",
+        "trips:read delegated OAuth scope"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation/control change; unverified exploitation claim absent",
+      "follow_up_note": "Already represented by the processed September 24 collector; only ingest if maintainer advisory/release text adds material scope or remediation detail.",
+      "id": "trek-mcp-trip-summary-scope-bypass-cve-2026-77321",
+      "leaf_id": "docs/wiki/identity-and-access/trek-mcp-trip-summary-scope-bypass.md",
+      "named_entities": [
+        "TREK",
+        "CVE-2026-77321",
+        "GHSA-qvw8-w937-vcmq",
+        "get_trip_summary"
+      ],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77321",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77321",
+        "https://github.com/liketrek/TREK/security/advisories/GHSA-qvw8-w937-vcmq",
+        "https://github.com/liketrek/TREK/releases/tag/v3.3.0"
+      ],
+      "summary": "CVE Services confirms the MCP tool did not require trips:read, so scoped OAuth tokens with unrelated capability could receive trip details and member email data.",
+      "title": "TREK MCP trip summary delegated-scope bypass",
+      "upstream_routing": "Keep delegated MCP authorization local; broad TREK product context belongs upstream only if needed.",
+      "visible_dates": [
+        "CVE Services published and updated 2026-09-24T18:04:05.947Z"
+      ]
+    },
+    {
+      "affected_boundaries": [
+        "mcp-remote 0.1.16 through 0.1.38",
+        "server URL hashing",
+        "local MCP bridge execution boundary"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation/control change; unverified exploitation claim absent",
+      "follow_up_note": "Same-day topic collector already captured the mcp-remote cluster; follow-up should seek maintainer fixed-version/remediation text before docs/wiki edits.",
+      "id": "mcp-remote-server-url-hash-code-execution-cve-2026-51996",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mcp-remote-server-url-hash-code-execution.md",
+      "named_entities": [
+        "mcp-remote",
+        "CVE-2026-51996",
+        "getServerUrlHash"
+      ],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-51996",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-51996",
+        "https://github.com/playb0t/mcp-remote-oauth-security#readme"
+      ],
+      "summary": "CVE Services identifies arbitrary code execution tied to mcp-remote server URL hashing; this belongs to the local remote-MCP metadata and code-execution boundary.",
+      "title": "mcp-remote server URL hash code execution",
+      "upstream_routing": "Keep security handling of remote MCP metadata and local execution here; package catalog context belongs to ai-wiki.",
+      "visible_dates": [
+        "CVE Services published 2026-09-24T00:00:00.000Z and updated 2026-09-24T14:38:54.206Z",
+        "NVD topic collector observed last modified 2026-09-24/2026-09-25 for the mcp-remote cluster"
+      ]
+    },
+    {
+      "affected_boundaries": [
+        "MLflow dspy flavor versions greater than or equal to 2.0",
+        "MLFLOW_ALLOW_PICKLE_DESERIALIZATION=False",
+        "MLmodel artifact loading"
+      ],
+      "evidence_classification": "disclosed vulnerability; control bypass; no KEV/confirmed exploitation in checked public source",
+      "follow_up_note": "This is already represented by the September 24 collector source; ingest should check whether the statsmodels flavor from CERT VU#369093 needs its own leaf or upstream routing.",
+      "id": "mlflow-dspy-pickle-control-bypass-cve-2026-96775",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-dspy-pickle-control-bypass.md",
+      "named_entities": [
+        "MLflow",
+        "DSPy",
+        "CVE-2026-96775",
+        "CERT VU#369093",
+        "OpenCVE"
+      ],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-96775",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96775",
+        "https://kb.cert.org/vuls/id/369093",
+        "https://app.opencve.io/cve/CVE-2026-96775"
+      ],
+      "summary": "Public records state the dspy flavor enforces the pickle-deserialization safety flag only for .pkl model paths, allowing crafted MLmodel artifacts to trigger remote code execution. OpenCVE notes no vendor fix/workaround yet in its visible page.",
+      "title": "MLflow DSPy pickle deserialization control bypass",
+      "upstream_routing": "Keep model-artifact deserialization control local; broad MLflow/DSPy framework context belongs upstream.",
+      "visible_dates": [
+        "CVE Services published 2026-09-23T16:28:59.493Z and updated 2026-09-23T17:22:35.232Z",
+        "OpenCVE published 2026-09-23 and generated enrichment 2026-09-23T21:09Z"
+      ]
+    },
+    {
+      "affected_boundaries": [
+        "ServiceNow AI Platform database execution boundary",
+        "Yokohama before Patch 13 Hot Fix 5a",
+        "Zurich before Patch 10 Hot Fix 4a W32",
+        "Australia before Patch 2 Hot Fix 4b W32"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation/control change; no confirmed exploitation",
+      "follow_up_note": "Processed September 24 source already contains the CVE; CIS patch thresholds are the likely material metadata delta.",
+      "id": "servicenow-ai-platform-yokohama-zurich-sql-injection-cve-2026-13016",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-yokohama-zurich-sql-injection.md",
+      "named_entities": [
+        "ServiceNow AI Platform",
+        "CVE-2026-13016",
+        "KB3159623",
+        "CIS advisory 2026-102"
+      ],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-13016",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-13016",
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3159623",
+        "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-servicenows-ai-platform-could-allow-for-unauthorized-access_2026-102"
+      ],
+      "summary": "CVE Services and CIS describe unauthenticated SQL execution that can access or modify ServiceNow AI Platform instance data. CIS adds explicit affected platform patch thresholds.",
+      "title": "ServiceNow AI Platform unauthenticated SQL injection",
+      "upstream_routing": "Keep SQL/database execution impact local; ServiceNow company/product background belongs to ai-wiki.",
+      "visible_dates": [
+        "CVE Services published 2026-09-24T18:48:50.070Z and updated 2026-09-25T12:30:40.103Z",
+        "CIS advisory issued 09/25/2026"
+      ]
+    },
+    {
+      "affected_boundaries": [
+        "Decepticon, decepticon-core, and decepticon-sdk <= 1.1.16",
+        "ChatML special-token literals in crawled/tool output",
+        "agent sandbox command execution"
+      ],
+      "evidence_classification": "disclosed vulnerability; demonstrated research/reproduction; mitigation/control change",
+      "follow_up_note": "Already captured by the September 26 topic collector; no docs/wiki edit unless ingest wants to add CVE Services date provenance.",
+      "id": "decepticon-chatml-role-boundary-forgery-cve-2026-61732",
+      "leaf_id": "docs/wiki/model-and-prompt-security/decepticon-chatml-role-boundary-forgery.md",
+      "named_entities": [
+        "Decepticon",
+        "CVE-2026-61732",
+        "GHSA-g5f9-3xfg-p9mf",
+        "ChatML",
+        "Qwen",
+        "vLLM",
+        "SGLang"
+      ],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61732",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61732",
+        "https://github.com/BitterSecurity/Decepticon/security/advisories/GHSA-g5f9-3xfg-p9mf",
+        "https://github.com/BitterSecurity/Decepticon/commit/79ee2aaf22f4c36a5b1968f6ca3f8086b6e35b67"
+      ],
+      "summary": "CVE Services provides the in-window CVE publication while the GitHub advisory details a reproduced special-token role-boundary forgery path from untrusted crawl output into agent command execution, fixed in 1.1.17.",
+      "title": "Decepticon ChatML role-boundary forgery",
+      "upstream_routing": "Keep role-boundary forgery and security mitigation local; broad red-team-agent product context belongs upstream.",
+      "visible_dates": [
+        "CVE Services published 2026-09-24T17:40:51.248Z and updated 2026-09-24T18:00:43.383Z",
+        "GitHub advisory page visible publish date Jun 24, 2026; CVE Services provides the in-window update signal"
+      ]
+    },
+    {
+      "affected_boundaries": [
+        "SiYuan 3.8.0 through 3.8.3",
+        "MCP recursive file operations",
+        "file.grep, file.copy, and unzip descendant paths",
+        "protected workspace configuration, key, snippet, template, notebook, and log paths"
+      ],
+      "evidence_classification": "disclosed vulnerability; mitigation/control change; unverified exploitation claim absent",
+      "follow_up_note": "This is a material same-boundary update for the existing SiYuan file-tool leaf; ingest should compare whether it belongs in that page or a split recursive-operation leaf.",
+      "id": "siyuan-recursive-mcp-file-sensitive-path-bypass-cve-2026-100633",
+      "leaf_id": "docs/wiki/agent-and-tool-security/siyuan-mcp-file-tool-blocklist-bypass.md",
+      "named_entities": [
+        "SiYuan",
+        "CVE-2026-100633",
+        "MCP file tool"
+      ],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-60083",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-85580",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100633",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-60083",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-85580",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-c8r8-95hg-mp34",
+        "https://www.vulncheck.com/advisories/siyuan-before-incomplete-path-blocklist-via-mcp-file-tool"
+      ],
+      "summary": "CVE Services describes recursive MCP file operations applying sensitive-path guards to the root but not each resolved descendant, enabling protected-file exposure or overwrite in SiYuan 3.8.0 through 3.8.3.",
+      "title": "SiYuan recursive MCP file sensitive-path guard bypass",
+      "upstream_routing": "Keep recursive MCP file-tool containment local; broad SiYuan product context belongs ai-wiki.",
+      "visible_dates": [
+        "CVE Services published and updated 2026-09-26T13:23:08.505Z",
+        "Same-day topic collector observed NVD publication 2026-09-26T14:16:44Z"
+      ]
+    }
+  ],
+  "selection": {
+    "leaf_universe_count": 468,
+    "selected_leaf_count": 15,
+    "selected_leaf_ids": [
+      "docs/wiki/identity-and-access/servicenow-ai-platform-unauthenticated-data-access.md",
+      "docs/wiki/identity-and-access/servicenow-ai-platform-unauthenticated-data-modification.md",
+      "docs/wiki/identity-and-access/trek-mcp-trip-summary-scope-bypass.md",
+      "docs/wiki/infrastructure-and-supply-chain/mcp-remote-server-url-hash-code-execution.md",
+      "docs/wiki/infrastructure-and-supply-chain/mlflow-dspy-pickle-control-bypass.md",
+      "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-yokohama-zurich-sql-injection.md",
+      "docs/wiki/model-and-prompt-security/decepticon-chatml-role-boundary-forgery.md",
+      "docs/wiki/agent-and-tool-security/omnigent-shell-policy-parser-bypass.md",
+      "docs/wiki/agent-and-tool-security/siyuan-mcp-file-tool-blocklist-bypass.md",
+      "docs/wiki/agent-and-tool-security/siyuan-mcp-http-request-secret-exfiltration.md",
+      "docs/wiki/agent-and-tool-security/spring-ai-mcp-streamable-http-session-dos.md",
+      "docs/wiki/data-and-privacy/fiftyone-local-ai-dataset-server-exposure.md",
+      "docs/wiki/identity-and-access/headroom-llm-memory-owner-header-bypass.md",
+      "docs/wiki/infrastructure-and-supply-chain/headroom-llm-proxy-upstream-ssrf.md",
+      "docs/wiki/infrastructure-and-supply-chain/infracost-template-symlink-file-read.md"
+    ],
+    "selection_rule": "Unchecked leaves first, then oldest last_checked_at, with stable relative-path tie-breaks."
+  },
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/omnigent-shell-policy-parser-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-62676",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-62676",
+      "https://github.com/omnigent-ai/omnigent/releases/tag/v0.3.0"
+    ],
+    "docs/wiki/agent-and-tool-security/siyuan-mcp-file-tool-blocklist-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-60083",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-85580",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-100633",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-60083",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-85580",
+      "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-c8r8-95hg-mp34",
+      "https://www.vulncheck.com/advisories/siyuan-before-incomplete-path-blocklist-via-mcp-file-tool"
+    ],
+    "docs/wiki/agent-and-tool-security/siyuan-mcp-http-request-secret-exfiltration.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-59809",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-59809",
+      "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-853m-gvvm-6rvx",
+      "https://www.vulncheck.com/advisories/siyuan-before-secret-exfiltration-via-http-request-url"
+    ],
+    "docs/wiki/agent-and-tool-security/spring-ai-mcp-streamable-http-session-dos.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-59279",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-59279",
+      "https://spring.io/security/cve-2026-59279/"
+    ],
+    "docs/wiki/data-and-privacy/fiftyone-local-ai-dataset-server-exposure.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-53656",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-53656"
+    ],
+    "docs/wiki/identity-and-access/headroom-llm-memory-owner-header-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-77776",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77776",
+      "https://www.cve.org/CVERecord?id=CVE-2026-77776",
+      "https://app.opencve.io/cve/CVE-2026-77776"
+    ],
+    "docs/wiki/identity-and-access/servicenow-ai-platform-unauthenticated-data-access.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-86859",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-86859",
+      "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3159623",
+      "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-servicenows-ai-platform-could-allow-for-unauthorized-access_2026-102"
+    ],
+    "docs/wiki/identity-and-access/servicenow-ai-platform-unauthenticated-data-modification.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-86858",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-86858",
+      "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3159623",
+      "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-servicenows-ai-platform-could-allow-for-unauthorized-access_2026-102"
+    ],
+    "docs/wiki/identity-and-access/trek-mcp-trip-summary-scope-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-77321",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77321",
+      "https://github.com/liketrek/TREK/security/advisories/GHSA-qvw8-w937-vcmq",
+      "https://github.com/liketrek/TREK/releases/tag/v3.3.0"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/headroom-llm-proxy-upstream-ssrf.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-77775",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-77775",
+      "https://www.cve.org/CVERecord?id=CVE-2026-77775",
+      "https://www.vulncheck.com/advisories/headroom-proxy-sends-upstream-requests-to-a-client-supplied-base-url-without-address-validation"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/infracost-template-symlink-file-read.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-71493",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-71493"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/mcp-remote-server-url-hash-code-execution.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-51996",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-51996",
+      "https://github.com/playb0t/mcp-remote-oauth-security#readme"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-dspy-pickle-control-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-96775",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-96775",
+      "https://kb.cert.org/vuls/id/369093",
+      "https://app.opencve.io/cve/CVE-2026-96775"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-yokohama-zurich-sql-injection.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-13016",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-13016",
+      "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3159623",
+      "https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-servicenows-ai-platform-could-allow-for-unauthorized-access_2026-102"
+    ],
+    "docs/wiki/model-and-prompt-security/decepticon-chatml-role-boundary-forgery.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-61732",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-61732",
+      "https://github.com/BitterSecurity/Decepticon/security/advisories/GHSA-g5f9-3xfg-p9mf",
+      "https://github.com/BitterSecurity/Decepticon/commit/79ee2aaf22f4c36a5b1968f6ca3f8086b6e35b67"
+    ]
+  },
+  "upstream_routing_notes": [
+    {
+      "entity": "ServiceNow AI Platform",
+      "note": "Broad company/product context belongs upstream; SQL injection and AI Platform authorization/data boundaries stay local.",
+      "owner": "ai-wiki"
+    },
+    {
+      "entity": "TREK",
+      "note": "Broad product context belongs upstream only if needed; MCP delegated-scope failure stays local.",
+      "owner": "ai-wiki"
+    },
+    {
+      "entity": "mcp-remote",
+      "note": "Package/tool context belongs upstream; remote MCP metadata, SSRF, and execution boundaries stay local.",
+      "owner": "ai-wiki"
+    },
+    {
+      "entity": "MLflow and DSPy",
+      "note": "Framework catalog context belongs upstream; model-artifact deserialization control stays local.",
+      "owner": "ai-wiki"
+    },
+    {
+      "entity": "Decepticon",
+      "note": "Red-team agent product context belongs upstream; ChatML role-boundary forgery stays local.",
+      "owner": "ai-wiki"
+    },
+    {
+      "entity": "SiYuan",
+      "note": "Product context belongs upstream; MCP file-tool containment stays local.",
+      "owner": "ai-wiki"
+    }
+  ],
+  "validation": {
+    "created_by": "Northstar",
+    "notes": "Validate with jq empty and python3 -m json.tool before ingest."
+  }
+}

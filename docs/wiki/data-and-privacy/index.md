@@ -6,6 +6,13 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [LiteLLM semantic cache tenant isolation bypass](litellm-semantic-cache-tenant-isolation-bypass.md)
+- [GitLab Duo AI trace secret disclosure](gitlab-duo-ai-trace-secret-disclosure.md)
+- [Flowise chat history RBAC bypass](flowise-chat-history-rbac-bypass.md)
+- [Flowise BullMQ dashboard tenant authorization bypass](flowise-bullmq-dashboard-tenant-authorization-bypass.md)
+- [MCP Server for WordPress content object authorization](mcp-server-for-wordpress-content-object-authorization.md)
+- [OpenClaw trajectory export authorization bypass](openclaw-trajectory-export-authorization-bypass.md)
+- [Zammad AI analytics error disclosure](zammad-ai-analytics-error-disclosure.md)
 - [IBM ContextForge MCP Gateway log path traversal](ibm-contextforge-mcp-gateway-log-path-traversal.md)
 - [Discourse AI reviewables private message exposure](discourse-ai-reviewables-private-message-exposure.md)
 - [mcp-remote authorization server metadata disclosure](mcp-remote-authorization-server-metadata-disclosure.md)
@@ -92,6 +99,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-09-27 with GitLab Duo trace-secret disclosure, LiteLLM semantic cache tenant isolation, split Flowise chat-history and queue-dashboard leaves, MCP Server for WordPress content-object authorization, OpenClaw trajectory export authorization, and Zammad AI analytics error disclosure.
 - Updated on 2026-09-25 with IBM ContextForge MCP Gateway log traversal, Discourse AI private-message reviewable exposure, and mcp-remote disclosure leaves.
 - Updated on 2026-09-02 with the LiteLLM provider credential routing leak leaf.
 - Updated on 2026-09-04 with the Cheshire Cat AI memory points disclosure leaf.

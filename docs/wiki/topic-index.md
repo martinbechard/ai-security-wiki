@@ -8,6 +8,26 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [agent-and-tool-security/openclaw-agent-authority-and-approval-cluster.md](agent-and-tool-security/openclaw-agent-authority-and-approval-cluster.md)
+- [agent-and-tool-security/openclaw-acp-file-url-workdir-read-bypass.md](agent-and-tool-security/openclaw-acp-file-url-workdir-read-bypass.md)
+- [agent-and-tool-security/openclaw-command-approval-bypasses.md](agent-and-tool-security/openclaw-command-approval-bypasses.md)
+- [agent-and-tool-security/openclaw-mcp-policy-and-bridge-owner-check-bypasses.md](agent-and-tool-security/openclaw-mcp-policy-and-bridge-owner-check-bypasses.md)
+- [identity-and-access/openclaw-non-owner-plugin-installation.md](identity-and-access/openclaw-non-owner-plugin-installation.md)
+- [data-and-privacy/openclaw-trajectory-export-authorization-bypass.md](data-and-privacy/openclaw-trajectory-export-authorization-bypass.md)
+- [agent-and-tool-security/openclaw-mcp-configuration-owner-bypass.md](agent-and-tool-security/openclaw-mcp-configuration-owner-bypass.md)
+- [identity-and-access/mcp-server-for-wordpress-rest-nonce-bypass.md](identity-and-access/mcp-server-for-wordpress-rest-nonce-bypass.md)
+- [identity-and-access/mcp-server-for-wordpress-workflow-configuration-authorization.md](identity-and-access/mcp-server-for-wordpress-workflow-configuration-authorization.md)
+- [data-and-privacy/mcp-server-for-wordpress-content-object-authorization.md](data-and-privacy/mcp-server-for-wordpress-content-object-authorization.md)
+- [model-and-prompt-security/vllm-multimodal-decoder-prompt-length-dos.md](model-and-prompt-security/vllm-multimodal-decoder-prompt-length-dos.md)
+- [data-and-privacy/flowise-chat-history-rbac-bypass.md](data-and-privacy/flowise-chat-history-rbac-bypass.md)
+- [data-and-privacy/flowise-bullmq-dashboard-tenant-authorization-bypass.md](data-and-privacy/flowise-bullmq-dashboard-tenant-authorization-bypass.md)
+- [agent-and-tool-security/rapid7-bulk-export-mcp-graphql-query-injection.md](agent-and-tool-security/rapid7-bulk-export-mcp-graphql-query-injection.md)
+- [agent-and-tool-security/zammad-ai-agent-command-execution.md](agent-and-tool-security/zammad-ai-agent-command-execution.md)
+- [data-and-privacy/zammad-ai-analytics-error-disclosure.md](data-and-privacy/zammad-ai-analytics-error-disclosure.md)
+- [agent-and-tool-security/zammad-ai-agent-configuration-dialog-xss.md](agent-and-tool-security/zammad-ai-agent-configuration-dialog-xss.md)
+- [data-and-privacy/litellm-semantic-cache-tenant-isolation-bypass.md](data-and-privacy/litellm-semantic-cache-tenant-isolation-bypass.md)
+- [data-and-privacy/gitlab-duo-ai-trace-secret-disclosure.md](data-and-privacy/gitlab-duo-ai-trace-secret-disclosure.md)
+- [identity-and-access/gitlab-duo-workflow-token-governance-bypass.md](identity-and-access/gitlab-duo-workflow-token-governance-bypass.md)
 - [identity-and-access/gitlab-mcp-search-state-user-context-race.md](identity-and-access/gitlab-mcp-search-state-user-context-race.md)
 - [identity-and-access/gitlab-mcp-scoped-token-authorization-bypass.md](identity-and-access/gitlab-mcp-scoped-token-authorization-bypass.md)
 - [agent-and-tool-security/mcp-remote-oauth-metadata-ssrf.md](agent-and-tool-security/mcp-remote-oauth-metadata-ssrf.md)
@@ -498,6 +518,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-09-27 with September 25 and 26 Rapid7, OpenClaw, MCP Server for WordPress, SiYuan, Zammad, LiteLLM, Flowise, and vLLM security leaves plus watcher enrichment.
 - Add local durable leaves here after federation routing and wiki verification.
 - Updated on 2026-09-03 with September 3 topic and watcher ingest for GPT-6 Astra deployment controls, Daybreak frontline-defender access, n8n credential exfiltration, Ollama model-pull SSRF, WordPress AI/MCP authorization, Agent-S GUI action DoS, openbrowser message-budget DoS, and watcher provenance.
 - Updated on 2026-09-06 with Axolotl, Bifrost plugin-loading, JeecgBoot Airag, Copilot Studio, OpenAI wiki-incident, Cloud Monitoring MCP, and Anthropic follow-up security pages.

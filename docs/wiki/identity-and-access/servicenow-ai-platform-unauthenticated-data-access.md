@@ -13,10 +13,12 @@ The [September 24 topic collector source](../../../raw/processed/2026-09-24/ai-s
 
 ServiceNow records that an unauthenticated user could access AI Platform data they were not entitled to access, potentially enabling further unintended access.
 
+The [September 26 leaf update watch source](../../../raw/processed/2026-09-26/ai-security-wiki-leaf-update-watch-20260927T000401Z.json) adds CIS advisory 2026-102 as secondary patch-threshold evidence for Yokohama before Patch 13 Hot Fix 5a, Zurich before Patch 10 Hot Fix 4a W32, and Australia before Patch 2 Hot Fix 4b W32. Treat CIS as corroborating mitigation metadata until ServiceNow's primary KB is fully accessible.
+
 ## Security Impact
 
 - Threat: unauthenticated callers can read ServiceNow AI Platform data outside intended authorization.
-- Affected boundary: ServiceNow AI Platform below the September 2026 Yokohama and Zurich hot-fix thresholds listed in the CVE records.
+- Affected boundary: ServiceNow AI Platform below the September 2026 hot-fix thresholds listed in the CVE and CIS records: Yokohama before Patch 13 Hot Fix 5a, Zurich before Patch 10 Hot Fix 4a W32, and Australia before Patch 2 Hot Fix 4b W32.
 - Exploit or incident status: ServiceNow reports hosted updates and no known malicious exploitation in the checked public source.
 - Mitigation state: apply ServiceNow advisory KB3159623 updates and review anonymous data-access routes.
 - Confidence: high for advisory existence and unauthenticated data-access class; medium for exact object classes exposed.
@@ -28,6 +30,8 @@ ServiceNow records that an unauthenticated user could access AI Platform data th
 - [CVE-2026-86859 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-86859)
 - [NVD CVE-2026-86859](https://nvd.nist.gov/vuln/detail/CVE-2026-86859)
 - [ServiceNow support advisory KB3159623](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3159623)
+- [September 26 leaf update watch source](../../../raw/processed/2026-09-26/ai-security-wiki-leaf-update-watch-20260927T000401Z.json)
+- [CIS advisory 2026-102](https://www.cisecurity.org/advisory/multiple-vulnerabilities-in-servicenows-ai-platform-could-allow-for-unauthorized-access_2026-102)
 
 ## Related Code
 
@@ -53,3 +57,4 @@ ServiceNow records that an unauthenticated user could access AI Platform data th
 ## Maintenance Notes
 
 - Created on 2026-09-25 from the [September 24 topic collector source](../../../raw/processed/2026-09-24/ai-security-wiki-topic-news-collector-2026-09-24T233211Z.json) after splitting the September ServiceNow cluster by CVE.
+- Updated on 2026-09-27 from the [September 26 leaf update watch source](../../../raw/processed/2026-09-26/ai-security-wiki-leaf-update-watch-20260927T000401Z.json) with CIS patch-threshold metadata.
