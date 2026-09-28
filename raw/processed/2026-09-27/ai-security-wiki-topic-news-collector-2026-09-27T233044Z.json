@@ -1,0 +1,278 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector",
+    "run_timestamp_utc": "2026-09-27T23:30:44Z",
+    "last_run_timestamp_utc": "2026-09-26T23:30:39.875Z"
+  },
+  "cutoff_window": {
+    "window_start_utc": "2026-09-25T23:30:44Z",
+    "window_end_utc": "2026-09-27T23:30:44Z",
+    "dedupe_policy": "Items visibly published or updated in the 48-hour window were considered, but candidates already captured by the 2026-09-26 collector memory were excluded from this run's fresh findings unless they had a later public timestamp.",
+    "date_policy": "Excluded candidates with missing, ambiguous, future-dated, or boundary-only dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_policy": {
+    "public_sources_only": true,
+    "external_service_privacy_note": "No private, proprietary, sensitive, PII, or company-internal local content was sent to external services.",
+    "preferred_source_types": [
+      "NVD CVE API",
+      "CVE Services mirrored through NVD records",
+      "GitHub Security Advisories",
+      "VulnCheck advisories",
+      "vendor or project security advisories linked from CVE records"
+    ]
+  },
+  "federation_context": {
+    "local_owner": "ai-security-wiki owns the security-specific implications, affected boundaries, controls, mitigations, assurance notes, and incident lessons.",
+    "upstream_ai_wiki": "Broad AI entities, products, models, frameworks, MCP servers, and companies route to /Users/martinbechard/dev/ai-wiki.",
+    "upstream_ai_dev_wiki": "General AI-assisted development practices, coding-agent workflows, verification patterns, adoption practices, and development governance route to /Users/martinbechard/dev/ai-dev-wiki."
+  },
+  "findings": [
+    {
+      "id": "nvd-2026-09-27-obot-mcp-authz-cluster",
+      "title": "Obot MCP platform published multiple access-control and SSRF CVEs",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:39.875Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=MCP",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-jj4w-pfgv-4mrm",
+        "https://www.vulncheck.com/advisories/obot-quickstart-docker-deployment-unauthenticated-admin-access"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-27T21:17:01.617Z through 2026-09-27T21:17:02.163Z",
+          "date_type": "published and lastModified timestamps for CVE-2026-101062, CVE-2026-101063, CVE-2026-101064, CVE-2026-101065, and CVE-2026-101084"
+        }
+      ],
+      "evidence_classification": "Primary vulnerability database records with linked project and VulnCheck advisories",
+      "named_entities": [
+        "Obot",
+        "obot-platform/obot",
+        "MCP",
+        "VulnCheck",
+        "GitHub Security Advisories",
+        "Docker"
+      ],
+      "affected_boundary_or_version": "Obot before v0.23.0 for OAuth registration, registry authentication, and remote MCP SSRF; before v0.21.1 for /mcp-connect access-control bypass; Docker quickstart through commit d7e6970 documented unauthenticated 0.0.0.0:8080 deployment with /var/run/docker.sock mounted.",
+      "concise_factual_summary": "NVD records published on 2026-09-27 describe Obot flaws allowing attacker OAuth client registration and token misuse, unauthenticated MCP Registry metadata reads, SSRF through remote MCP server registration, unauthenticated administrative access from the Docker quickstart, and bypass of Access Control Rules on /mcp-connect.",
+      "why_it_matters_for_ai_security": "Obot is an AI agent/MCP platform, so these issues directly affect delegated authority, MCP server registration, OAuth scoping, registry exposure, and host control-plane safety for agent systems.",
+      "upstream_routing": {
+        "route": "local-security-lens-with-upstream-entity-note",
+        "ai_wiki_note": "Obot as a broad AI agent/MCP platform entity belongs upstream if a durable product/framework page is needed.",
+        "ai_dev_wiki_note": "General deployment practice and agent workflow governance should route to ai-dev-wiki; this repo should keep the authentication, MCP, SSRF, and Docker-socket risk analysis."
+      },
+      "confidence_notes": "High confidence on dates and security content because the NVD API returned exact in-window timestamps and concrete vulnerability descriptions. Follow linked GitHub/VulnCheck pages during ingest for fixed-version wording and advisory identifiers.",
+      "follow_up_actions": [
+        "During ingest, split into local leaves for Obot MCP OAuth token scoping, registry authentication, remote MCP SSRF, quickstart unauthenticated admin exposure, and /mcp-connect access-control bypass if each remains independently useful.",
+        "Check whether upstream ai-wiki already owns Obot as an entity before creating local navigation text.",
+        "Verify final fixed versions and whether docker-socket exposure is documentation-only or has runtime guardrails."
+      ]
+    },
+    {
+      "id": "nvd-2026-09-27-heym-llm-mcp-ssrf-and-secrets",
+      "title": "Heym LLM and MCP workflow CVEs covered SSRF and plaintext capability secrets",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:39.875Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=MCP",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:39.875Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=LLM",
+        "https://github.com/heymrun/heym/security/advisories/GHSA-6rph-qqcv-jqh4",
+        "https://www.vulncheck.com/advisories/heym-before-0.0.91-ssrf-via-image-fetching-and-ipv6-validation"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-27T02:17:25.340Z through 2026-09-27T02:17:26.117Z",
+          "date_type": "published and lastModified timestamps for CVE-2026-100858, CVE-2026-100862, and CVE-2026-100863"
+        }
+      ],
+      "evidence_classification": "Primary vulnerability database records with linked GitHub and VulnCheck advisories",
+      "named_entities": [
+        "Heym",
+        "heymrun/heym",
+        "LLM image-edit workflow",
+        "MCP API keys",
+        "Slack workflow node",
+        "Discord workflow node",
+        "Crawler workflow node",
+        "VulnCheck"
+      ],
+      "affected_boundary_or_version": "heym before 0.0.109 for Slack, Discord, and Crawler workflow-node SSRF; heym before 0.0.91 for LLM image-edit SSRF/IP validation and plaintext capability secret handling.",
+      "concise_factual_summary": "NVD records published on 2026-09-27 describe Heym SSRF gaps in Slack, Discord, Crawler, and LLM image-edit workflow paths, plus plaintext storage or return of capability secrets including MCP API keys, webhook auth values, portal session tokens, workflow execution JWTs, Discord interaction tokens, and global variables.",
+      "why_it_matters_for_ai_security": "Workflow systems that connect LLM, MCP, webhook, and crawler nodes need egress controls and secret handling that survive user-authored workflows; these CVEs expose cloud metadata/internal services and reusable agent capability credentials.",
+      "upstream_routing": {
+        "route": "local-security-lens-with-upstream-entity-note",
+        "ai_wiki_note": "Heym as a workflow automation/AI integration product can route upstream if durable product coverage is needed.",
+        "ai_dev_wiki_note": "General workflow-authoring and automation patterns route to ai-dev-wiki; this repo should retain SSRF, MCP API key, and workflow-secret controls."
+      },
+      "confidence_notes": "High confidence on in-window dates and affected versions from NVD. Ingest should refetch GitHub advisories because the linked pages may contain clearer patched-version and mitigation wording than the API snippets.",
+      "follow_up_actions": [
+        "Create or update local leaves for workflow-node SSRF guard bypasses, LLM image-fetch egress validation, and MCP/workflow capability secret handling.",
+        "Check whether CVE-2026-100858 was already captured in the upstream ai-wiki strict raw research and avoid duplicating non-security entity text.",
+        "Confirm whether heym 0.0.109 and 0.0.91 are both current remediations or separate patch branches."
+      ]
+    },
+    {
+      "id": "nvd-2026-09-27-utcp-tool-url-validation",
+      "title": "UTCP MCP and HTTP plugins published tool URL validation CVEs",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:39.875Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=MCP",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:39.875Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=agent"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-27T18:16:31.823Z through 2026-09-27T18:16:31.973Z",
+          "date_type": "published and lastModified timestamps for CVE-2026-101057 and CVE-2026-101058"
+        }
+      ],
+      "evidence_classification": "Primary vulnerability database records",
+      "named_entities": [
+        "UTCP",
+        "python-utcp",
+        "utcp-mcp",
+        "utcp-http",
+        "MCP",
+        "SSE",
+        "streamable_http"
+      ],
+      "affected_boundary_or_version": "utcp-mcp through 1.1.2 fixed in 1.1.3; python-utcp package utcp-http before 1.1.12 fixed in 1.1.12.",
+      "concise_factual_summary": "NVD records published on 2026-09-27 describe utcp-mcp dialing configured MCP server URLs without the same secure URL validation used by HTTP-family plugins, and utcp-http accepting remote manuals that declare loopback tool URLs, enabling loopback SSRF when a victim registers an attacker-served manual.",
+      "why_it_matters_for_ai_security": "Tool-calling protocols need strict URL provenance and loopback handling because remote manuals and MCP server configurations become delegated tool authority inside agent clients.",
+      "upstream_routing": {
+        "route": "local-security-lens-with-upstream-entity-note",
+        "ai_wiki_note": "UTCP as a tool-calling protocol/entity belongs upstream if durable ecosystem coverage is needed.",
+        "ai_dev_wiki_note": "General tool-calling implementation practice routes to ai-dev-wiki; this repo should retain SSRF, cleartext MCP connection, and local-loopback policy implications."
+      },
+      "confidence_notes": "Medium-high confidence. NVD provides exact dates and concrete affected versions, but no GitHub advisory URL was captured in the quick API evidence; ingest should enrich references.",
+      "follow_up_actions": [
+        "Refetch CVE detail records for linked references before durable synthesis.",
+        "Compare UTCP URL-validation lessons with existing MCP URL, OAuth, and SSRF leaves.",
+        "Route broad UTCP protocol context upstream if it is not already represented."
+      ]
+    },
+    {
+      "id": "nvd-2026-09-27-penpot-mcp-websocket-bridge",
+      "title": "Penpot MCP server plugin WebSocket bridge lacked authentication in single-user mode",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:39.875Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=MCP"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-27T13:16:37.960Z",
+          "date_type": "published and lastModified timestamp for CVE-2026-100868"
+        }
+      ],
+      "evidence_classification": "Primary vulnerability database record",
+      "named_entities": [
+        "Penpot",
+        "MCP server plugin",
+        "WebSocket bridge"
+      ],
+      "affected_boundary_or_version": "Penpot before 2.18.0 in single-user mode.",
+      "concise_factual_summary": "NVD records published on 2026-09-27 describe Penpot before 2.18.0 binding the MCP server plugin WebSocket bridge to all network interfaces without authentication in single-user mode, allowing adjacent-network attackers to impersonate the browser plugin, intercept task payloads, and forge results returned to the MCP client.",
+      "why_it_matters_for_ai_security": "MCP bridges that connect desktop or browser plugins to design tools become agent trust boundaries; unauthenticated network listeners can compromise tool outputs and task payload integrity.",
+      "upstream_routing": {
+        "route": "local-security-lens-with-upstream-entity-note",
+        "ai_wiki_note": "Penpot as a product/entity belongs upstream if general product coverage is needed.",
+        "ai_dev_wiki_note": "General plugin bridge design may route to ai-dev-wiki; this repo owns MCP bridge authentication and task-output integrity implications."
+      },
+      "confidence_notes": "Medium-high confidence from exact NVD timestamp and concrete affected version. Ingest should enrich with vendor release or advisory links.",
+      "follow_up_actions": [
+        "Refetch CVE detail for references and fixed-release evidence.",
+        "Consider a local leaf for MCP WebSocket bridge listener authentication if similar bridge issues recur.",
+        "Check whether Penpot already exists upstream before adding entity navigation text."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "MCP Atlassian advisory cluster, including CVE-2026-77251, CVE-2026-77255, CVE-2026-77258, CVE-2026-77259, CVE-2026-77260, and CVE-2026-77269",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-25T23:30:44.000Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=MCP",
+      "visible_date": "NVD lastModified timestamps around 2026-09-26T00:16Z to 2026-09-26T01:17Z",
+      "reason": "Recent and AI-security relevant, but the automation memory says the 2026-09-26 run captured a high-volume NVD cluster with MCP Atlassian 0.22.0 recheck guidance; excluded here to avoid duplicating the previous run."
+    },
+    {
+      "candidate": "OpenClaw CVE-2026-100573, CVE-2026-100585, CVE-2026-100587, and CVE-2026-100596",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-25T23:30:44.000Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=MCP",
+      "visible_date": "NVD published timestamps around 2026-09-26T03:17Z",
+      "reason": "Recent and AI-security relevant, but the automation memory says the 2026-09-26 run captured 16 qualifying findings and specifically covered high-volume NVD clusters; excluded as likely overlap with that run's OpenClaw entries."
+    },
+    {
+      "candidate": "MCP Server for WordPress CVE-2026-96524 and CVE-2026-96526",
+      "source_url": "https://freshysites.com/security-bulletins/mcp-server-for-wordpress-plugin-vulnerability-cve-2026-96526/",
+      "visible_date": "Freshy published 2026-09-26T07:17:03 and NVD received/modified 2026-09-26",
+      "reason": "Recent and security relevant, but likely captured in the 2026-09-26 collector run; kept out of this fresh artifact to avoid duplicate output."
+    },
+    {
+      "candidate": "Contrast confidential-computing Kata agent CVEs, including CVE-2025-71424, CVE-2026-100833, CVE-2026-100838, and CVE-2026-100839",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:39.875Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=agent",
+      "visible_date": "NVD published timestamps on 2026-09-27T02:17Z",
+      "reason": "The records use 'agent' in the Kata/container runtime sense and concern confidential containers rather than AI agents or AI systems; excluded as outside this wiki's AI-security topic boundary."
+    },
+    {
+      "candidate": "Nezha Dashboard CVE-2026-101086 and CVE-2026-101088",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:39.875Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=agent",
+      "visible_date": "NVD published timestamps on 2026-09-27T21:17Z",
+      "reason": "The records concern monitoring agents and service tasks, not AI agents or AI security; excluded as out of scope."
+    },
+    {
+      "candidate": "vulnerability-lookup account recovery CVE-2026-101041",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:39.875Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=model",
+      "visible_date": "NVD published 2026-09-27T15:16:27.190Z",
+      "reason": "Security relevant but not AI-specific; keyword match came from a source-code file path and not an AI system boundary."
+    },
+    {
+      "candidate": "CloudClassroom-PHP-Project CVE-2026-100874",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:39.875Z&lastModEndDate=2026-09-27T23:30:44.000Z&keywordSearch=model",
+      "visible_date": "NVD published 2026-09-27T19:16:53.920Z",
+      "reason": "Ordinary SQL injection in a non-AI classroom application; excluded as outside the AI-security scope."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity": "Obot",
+      "routing": "Broad product/platform entity upstream to ai-wiki; local security leaves should cover MCP OAuth, registry auth, SSRF, docker-socket quickstart, and MCP access-control implications."
+    },
+    {
+      "entity": "Heym",
+      "routing": "Broad workflow automation/product entity upstream to ai-wiki if needed; local security leaves should cover LLM/MCP workflow egress and capability-secret controls."
+    },
+    {
+      "entity": "UTCP",
+      "routing": "Broad protocol/tool-calling ecosystem context upstream to ai-wiki or ai-dev-wiki depending on lens; local security leaves should cover URL validation and loopback policy."
+    },
+    {
+      "entity": "Penpot",
+      "routing": "Broad design-tool product context upstream to ai-wiki if needed; local security note should focus on MCP plugin bridge authentication and task-result integrity."
+    },
+    {
+      "entity": "MCP",
+      "routing": "Broad MCP protocol and server ecosystem coverage belongs upstream; this repository owns concrete MCP security failures, mitigations, and control implications."
+    }
+  ],
+  "confidence_summary": {
+    "qualifying_count": 4,
+    "exclusion_count": 7,
+    "routing_count": 5,
+    "overall_confidence": "Medium-high",
+    "blockers": [
+      "NVD API records provided exact dates and concrete facts, but some detail enrichment should be rerun during ingest against linked GitHub, VulnCheck, or vendor pages.",
+      "The prior 2026-09-26 raw artifact was not present in this checkout, so duplicate suppression used automation memory rather than direct artifact comparison."
+    ]
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  }
+}

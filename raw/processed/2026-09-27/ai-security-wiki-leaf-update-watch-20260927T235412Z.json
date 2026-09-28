@@ -1,0 +1,1554 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "blockers": [],
+  "cutoff_window": {
+    "basis": "visible publication or update date within last 7 days as of 2026-09-27",
+    "end": "2026-09-27T23:59:59Z",
+    "start": "2026-09-21T00:00:00Z"
+  },
+  "exclusions": [],
+  "federation_notes": [
+    "Security-specific CVE boundaries remain local; broad OpenClaw, Rapid7, Zammad, Flowise, GitLab, LiteLLM, and WordPress entity coverage routes to upstream wikis per docs/wiki/federation.md."
+  ],
+  "qualifying_count": 15,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=2026.7.1-2, lessThan=2026.8.1, status=affected",
+            "version=2026.8.1, status=unaffected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/openclaw-acp-file-url-workdir-read-bypass.md",
+      "leaf_title": "OpenClaw ACP File URL Workdir Read Bypass",
+      "named_entities": [
+        "OpenClaw",
+        "ACP",
+        "MCP",
+        "Claude Code",
+        "CVE-2026-100547",
+        "CVE-2026-100547",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100587",
+        "CVE-2026-100594",
+        "CVE-2026-100596",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100596",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100594"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-100547",
+          "published_at": "2026-09-26T02:18:43.254Z",
+          "updated_at": "2026-09-26T02:18:43.254Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-26T02:18:43.254Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=2026.7.1-2, lessThan=2026.8.1, status=affected",
+                "version=2026.8.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100547",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:18:43.254Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-356g-m7rx-7pm3",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.8.1-authentication-bypass-via-file-url"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100547",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw is a coding agent distributed as the npm package `openclaw`. In affected versions (2026.7.1 through 2026.7.2), alternate but valid `file:` URL spellings supplied over the Agent Client Protocol (ACP) were treated as relative paths and were incorrectly classified as reads scoped to the session working directory. When an operator connected `openclaw acp client` to an untrusted or compromised ACP peer, that peer could request a read of a file outside the session working directory without the approval prompt normally required for that path, resulting in disclosure of local file contents. The demonstrated impact is limited to file confidentiality; mutating and command-capable tool classes are not affected. This issue is fixed in OpenClaw 2026.8.1.",
+          "updated_at": "2026-09-26T02:18:43.254Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100547"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=2026.7.1-2, lessThan=2026.8.1, status=affected",
+            "version=2026.8.1, status=unaffected"
+          ]
+        },
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.8.1, status=affected",
+            "version=2026.8.1, status=unaffected"
+          ]
+        },
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.8.1, status=affected",
+            "version=2026.8.1, status=unaffected"
+          ]
+        },
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=2026.3.22, lessThan=2026.8.1, status=affected",
+            "version=2026.8.1, status=unaffected"
+          ]
+        },
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.8.1, status=affected",
+            "version=2026.8.1, status=unaffected"
+          ]
+        },
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.7.1, status=affected",
+            "version=2026.7.1, status=unaffected"
+          ]
+        },
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.7.1, status=affected",
+            "version=2026.7.1, status=unaffected"
+          ]
+        },
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.7.1, status=affected",
+            "version=2026.7.1, status=unaffected"
+          ]
+        },
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.7.1, status=affected",
+            "version=2026.7.1, status=unaffected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/openclaw-agent-authority-and-approval-cluster.md",
+      "leaf_title": "OpenClaw Agent Authority And Approval Cluster",
+      "named_entities": [
+        "OpenClaw",
+        "ACP",
+        "MCP",
+        "Claude Code",
+        "CVE-2026-100547",
+        "CVE-2026-100547",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100587",
+        "CVE-2026-100594",
+        "CVE-2026-100596",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100596",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100594"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-100547",
+          "published_at": "2026-09-26T02:18:43.254Z",
+          "updated_at": "2026-09-26T02:18:43.254Z"
+        },
+        {
+          "cve_id": "CVE-2026-100559",
+          "published_at": "2026-09-26T02:18:52.489Z",
+          "updated_at": "2026-09-26T02:18:52.489Z"
+        },
+        {
+          "cve_id": "CVE-2026-100560",
+          "published_at": "2026-09-26T02:18:53.219Z",
+          "updated_at": "2026-09-26T02:18:53.219Z"
+        },
+        {
+          "cve_id": "CVE-2026-100561",
+          "published_at": "2026-09-26T02:18:53.923Z",
+          "updated_at": "2026-09-26T02:18:53.923Z"
+        },
+        {
+          "cve_id": "CVE-2026-100573",
+          "published_at": "2026-09-26T02:19:01.589Z",
+          "updated_at": "2026-09-26T02:19:01.589Z"
+        },
+        {
+          "cve_id": "CVE-2026-100585",
+          "published_at": "2026-09-26T02:19:09.595Z",
+          "updated_at": "2026-09-26T02:19:09.595Z"
+        },
+        {
+          "cve_id": "CVE-2026-100587",
+          "published_at": "2026-09-26T02:19:10.955Z",
+          "updated_at": "2026-09-26T02:19:10.955Z"
+        },
+        {
+          "cve_id": "CVE-2026-100594",
+          "published_at": "2026-09-26T02:19:15.641Z",
+          "updated_at": "2026-09-26T02:19:15.641Z"
+        },
+        {
+          "cve_id": "CVE-2026-100596",
+          "published_at": "2026-09-26T02:19:16.957Z",
+          "updated_at": "2026-09-26T02:19:16.957Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-26T02:19:16.957Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=2026.7.1-2, lessThan=2026.8.1, status=affected",
+                "version=2026.8.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100547",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:18:43.254Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-356g-m7rx-7pm3",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.8.1-authentication-bypass-via-file-url"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100547",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw is a coding agent distributed as the npm package `openclaw`. In affected versions (2026.7.1 through 2026.7.2), alternate but valid `file:` URL spellings supplied over the Agent Client Protocol (ACP) were treated as relative paths and were incorrectly classified as reads scoped to the session working directory. When an operator connected `openclaw acp client` to an untrusted or compromised ACP peer, that peer could request a read of a file outside the session working directory without the approval prompt normally required for that path, resulting in disclosure of local file contents. The demonstrated impact is limited to file confidentiality; mutating and command-capable tool classes are not affected. This issue is fixed in OpenClaw 2026.8.1.",
+          "updated_at": "2026-09-26T02:18:43.254Z"
+        },
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.8.1, status=affected",
+                "version=2026.8.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100559",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:18:52.489Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-9f86-pvv5-rxfw",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.8.1-command-injection-via-escaped-newlines"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100559",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw versions before 2026.8.1 contain a command parser vulnerability where escaped newlines confuse exec allowlist parsing, allowing hidden commands to execute. Attackers can craft input with escaped newlines to bypass allowlist validation and execute additional commands without expected authorization prompts.",
+          "updated_at": "2026-09-26T02:18:52.489Z"
+        },
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.8.1, status=affected",
+                "version=2026.8.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100560",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:18:53.219Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-74gc-hg2m-79p9",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.8.1-reusable-exec-approvals-authorization-bypass"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100560",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw versions before 2026.8.1 contain an authorization bypass vulnerability where Allow Always approvals for exact commands persist as path-only grants on macOS and Linux. Attackers can reuse the same executable with different arguments to execute commands without triggering new approval prompts, potentially accessing files or internal services.",
+          "updated_at": "2026-09-26T02:18:53.219Z"
+        },
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=2026.3.22, lessThan=2026.8.1, status=affected",
+                "version=2026.8.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100561",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:18:53.923Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-ghpx-6xwq-2w4w",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.8.1-authentication-bypass-via-exec-wrapper"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100561",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw (npm package 'openclaw') versions >= 2026.3.22 and < 2026.8.1 contain an approval-bypass flaw in the exec approval policy: the policy could trust a command-running wrapper without inspecting the command carried in its arguments. After an operator allowlisted or permanently approved a benign wrapper invocation, a later agent turn could substitute an arbitrary inner command and execute it with the OpenClaw process's host privileges without a further approval prompt. Exploitation requires the relevant wrapper to resolve on the host and a prior operator decision allowing that wrapper. Transparent shell carriers and opaque utilities such as process monitors, tracers, namespace tools, and proxy wrappers were affected through related trust-resolution gaps. Fixed in 2026.8.1.",
+          "updated_at": "2026-09-26T02:18:53.923Z"
+        },
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.8.1, status=affected",
+                "version=2026.8.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100573",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:19:01.589Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-5m4g-88rg-69pj",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.8.1-sandbox-policy-bypass-via-mcp-loopback"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100573",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw versions before 2026.8.1 contain a sandbox policy bypass vulnerability in the MCP loopback component that allows sandboxed coding-agent sessions to invoke tools explicitly denied by sandbox.tools.deny policy. Attackers can list and invoke denied tools to access data or perform actions the operator intended to exclude from the sandbox.",
+          "updated_at": "2026-09-26T02:19:01.589Z"
+        },
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.7.1, status=affected",
+                "version=2026.7.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100585",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:19:09.595Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-p5g8-m35v-7m82",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.7.1-authentication-bypass-via-mcp-channel"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100585",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw (npm package `openclaw`) before 2026.7.1 fails to enforce the owner-only authorization requirement for Claude Code permission prompts delivered through the MCP channel bridge. An authorized non-owner channel sender with channel command access can approve or deny a pending permission request intended for the owner, causing the requested action to proceed without owner consent. The practical impact depends on the pending action and the host capabilities requested by the Claude Code run. The issue is fixed in version 2026.7.1.",
+          "updated_at": "2026-09-26T02:19:09.595Z"
+        },
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.7.1, status=affected",
+                "version=2026.7.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100587",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:19:10.955Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-pjjr-5qhr-5w6r",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.7.1-authorization-bypass-via-codex-install"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100587",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw versions before 2026.7.1 fail to properly validate owner authorization in the Codex computer-use installation command. Non-owner channel senders can install arbitrary plugins and execute MCP processes with OpenClaw user privileges, affecting host confidentiality, integrity, and availability.",
+          "updated_at": "2026-09-26T02:19:10.955Z"
+        },
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.7.1, status=affected",
+                "version=2026.7.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100594",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:19:15.641Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-89cw-7452-cfrf",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.7.1-authorization-bypass-via-trajectory-export"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100594",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw versions before 2026.7.1 contain an authorization bypass vulnerability in the /export-trajectory endpoint that allows non-owner senders to request and receive owner-only trajectory bundles. Attackers can access prompts, model messages, tool schemas, runtime events, and local path metadata from affected sessions by exploiting insufficient authorization checks.",
+          "updated_at": "2026-09-26T02:19:15.641Z"
+        },
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.7.1, status=affected",
+                "version=2026.7.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100596",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:19:16.957Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-wwx7-573h-pqwc",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.7.1-authorization-bypass-via-mcp-configuration"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100596",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw versions before 2026.7.1 fail to properly authorize non-owner users executing MCP configuration changes through /mcp set and /mcp unset commands. Attackers can persist arbitrary stdio MCP commands that execute with OpenClaw process privileges when configuration loads, compromising host confidentiality, integrity, and availability.",
+          "updated_at": "2026-09-26T02:19:16.957Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100547",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100559",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100560",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100561",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100573",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100585",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100587",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100594",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100596"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.8.1, status=affected",
+            "version=2026.8.1, status=unaffected"
+          ]
+        },
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.8.1, status=affected",
+            "version=2026.8.1, status=unaffected"
+          ]
+        },
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=2026.3.22, lessThan=2026.8.1, status=affected",
+            "version=2026.8.1, status=unaffected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/openclaw-command-approval-bypasses.md",
+      "leaf_title": "OpenClaw Command Approval Bypasses",
+      "named_entities": [
+        "OpenClaw",
+        "ACP",
+        "MCP",
+        "Claude Code",
+        "CVE-2026-100547",
+        "CVE-2026-100547",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100587",
+        "CVE-2026-100594",
+        "CVE-2026-100596",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100596",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100594"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-100559",
+          "published_at": "2026-09-26T02:18:52.489Z",
+          "updated_at": "2026-09-26T02:18:52.489Z"
+        },
+        {
+          "cve_id": "CVE-2026-100560",
+          "published_at": "2026-09-26T02:18:53.219Z",
+          "updated_at": "2026-09-26T02:18:53.219Z"
+        },
+        {
+          "cve_id": "CVE-2026-100561",
+          "published_at": "2026-09-26T02:18:53.923Z",
+          "updated_at": "2026-09-26T02:18:53.923Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-26T02:18:53.923Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.8.1, status=affected",
+                "version=2026.8.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100559",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:18:52.489Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-9f86-pvv5-rxfw",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.8.1-command-injection-via-escaped-newlines"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100559",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw versions before 2026.8.1 contain a command parser vulnerability where escaped newlines confuse exec allowlist parsing, allowing hidden commands to execute. Attackers can craft input with escaped newlines to bypass allowlist validation and execute additional commands without expected authorization prompts.",
+          "updated_at": "2026-09-26T02:18:52.489Z"
+        },
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.8.1, status=affected",
+                "version=2026.8.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100560",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:18:53.219Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-74gc-hg2m-79p9",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.8.1-reusable-exec-approvals-authorization-bypass"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100560",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw versions before 2026.8.1 contain an authorization bypass vulnerability where Allow Always approvals for exact commands persist as path-only grants on macOS and Linux. Attackers can reuse the same executable with different arguments to execute commands without triggering new approval prompts, potentially accessing files or internal services.",
+          "updated_at": "2026-09-26T02:18:53.219Z"
+        },
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=2026.3.22, lessThan=2026.8.1, status=affected",
+                "version=2026.8.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100561",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:18:53.923Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-ghpx-6xwq-2w4w",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.8.1-authentication-bypass-via-exec-wrapper"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100561",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw (npm package 'openclaw') versions >= 2026.3.22 and < 2026.8.1 contain an approval-bypass flaw in the exec approval policy: the policy could trust a command-running wrapper without inspecting the command carried in its arguments. After an operator allowlisted or permanently approved a benign wrapper invocation, a later agent turn could substitute an arbitrary inner command and execute it with the OpenClaw process's host privileges without a further approval prompt. Exploitation requires the relevant wrapper to resolve on the host and a prior operator decision allowing that wrapper. Transparent shell carriers and opaque utilities such as process monitors, tracers, namespace tools, and proxy wrappers were affected through related trust-resolution gaps. Fixed in 2026.8.1.",
+          "updated_at": "2026-09-26T02:18:53.923Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100559",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100560",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100561"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.7.1, status=affected",
+            "version=2026.7.1, status=unaffected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/openclaw-mcp-configuration-owner-bypass.md",
+      "leaf_title": "OpenClaw MCP Configuration Owner Bypass",
+      "named_entities": [
+        "OpenClaw",
+        "ACP",
+        "MCP",
+        "Claude Code",
+        "CVE-2026-100547",
+        "CVE-2026-100547",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100587",
+        "CVE-2026-100594",
+        "CVE-2026-100596",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100596",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100594"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-100596",
+          "published_at": "2026-09-26T02:19:16.957Z",
+          "updated_at": "2026-09-26T02:19:16.957Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-26T02:19:16.957Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.7.1, status=affected",
+                "version=2026.7.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100596",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:19:16.957Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-wwx7-573h-pqwc",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.7.1-authorization-bypass-via-mcp-configuration"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100596",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw versions before 2026.7.1 fail to properly authorize non-owner users executing MCP configuration changes through /mcp set and /mcp unset commands. Attackers can persist arbitrary stdio MCP commands that execute with OpenClaw process privileges when configuration loads, compromising host confidentiality, integrity, and availability.",
+          "updated_at": "2026-09-26T02:19:16.957Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100596"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.8.1, status=affected",
+            "version=2026.8.1, status=unaffected"
+          ]
+        },
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.7.1, status=affected",
+            "version=2026.7.1, status=unaffected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/openclaw-mcp-policy-and-bridge-owner-check-bypasses.md",
+      "leaf_title": "OpenClaw MCP Policy And Bridge Owner Check Bypasses",
+      "named_entities": [
+        "OpenClaw",
+        "ACP",
+        "MCP",
+        "Claude Code",
+        "CVE-2026-100547",
+        "CVE-2026-100547",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100587",
+        "CVE-2026-100594",
+        "CVE-2026-100596",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100596",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100594"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-100573",
+          "published_at": "2026-09-26T02:19:01.589Z",
+          "updated_at": "2026-09-26T02:19:01.589Z"
+        },
+        {
+          "cve_id": "CVE-2026-100585",
+          "published_at": "2026-09-26T02:19:09.595Z",
+          "updated_at": "2026-09-26T02:19:09.595Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-26T02:19:09.595Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.8.1, status=affected",
+                "version=2026.8.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100573",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:19:01.589Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-5m4g-88rg-69pj",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.8.1-sandbox-policy-bypass-via-mcp-loopback"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100573",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw versions before 2026.8.1 contain a sandbox policy bypass vulnerability in the MCP loopback component that allows sandboxed coding-agent sessions to invoke tools explicitly denied by sandbox.tools.deny policy. Attackers can list and invoke denied tools to access data or perform actions the operator intended to exclude from the sandbox.",
+          "updated_at": "2026-09-26T02:19:01.589Z"
+        },
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.7.1, status=affected",
+                "version=2026.7.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100585",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:19:09.595Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-p5g8-m35v-7m82",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.7.1-authentication-bypass-via-mcp-channel"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100585",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw (npm package `openclaw`) before 2026.7.1 fails to enforce the owner-only authorization requirement for Claude Code permission prompts delivered through the MCP channel bridge. An authorized non-owner channel sender with channel command access can approve or deny a pending permission request intended for the owner, causing the requested action to proceed without owner consent. The practical impact depends on the pending action and the host capabilities requested by the Claude Code run. The issue is fixed in version 2026.7.1.",
+          "updated_at": "2026-09-26T02:19:09.595Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100573",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100585"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "Platform",
+          "vendor": "Rapid7",
+          "versions": [
+            "version=0, lessThan=0.6.2, status=affected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/rapid7-bulk-export-mcp-graphql-query-injection.md",
+      "leaf_title": "Rapid7 Bulk Export MCP GraphQL Query Injection",
+      "named_entities": [
+        "Rapid7 Bulk Export MCP",
+        "GraphQL",
+        "CVE-2026-97228"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-97228",
+          "published_at": "2026-09-25T10:25:43.159Z",
+          "updated_at": "2026-09-25T11:21:15.908Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-25T11:21:15.908Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "Platform",
+              "vendor": "Rapid7",
+              "versions": [
+                "version=0, lessThan=0.6.2, status=affected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-97228",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-25T10:25:43.159Z",
+          "references": [
+            "https://github.com/rapid7/rapid7-bulk-export-mcp/releases/tag/v0.6.2"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-97228",
+          "state": "PUBLISHED",
+          "summary": "Rapid7 Bulk Export MCP versions 0.2.5 through 0.6.1 suffer from a GraphQL query injection issue in the export-status component (`get_export_status` in `src/export_manager.py`), whereby the `export_id` value \u2014 an unvalidated MCP tool argument reaching the function via the `check_rapid7_export_status` and `download_rapid7_export` tools \u2014 is interpolated directly into the GraphQL query string. A crafted `export_id` containing quote and brace characters can terminate the intended `export(id: \"...\")` selection early and append attacker-controlled root-level selections (for example, schema introspection), producing a single well-formed GraphQL document that is then sent to the Rapid7 export API under the operator's own API key.\n\nNotably, this issue does not grant an existing actor any access they do not already have: every injected query executes within the operator's own already-authenticated API scope, using the operator's own valid API key, and cannot cross a tenant or account boundary. A directly-malicious operator gains nothing they could not already do by calling the API directly; the realistic exposure is limited to a compromised or careless upstream MCP client, or indirect prompt injection forwarding an unvalidated identifier. This is fixed in version 0.6.2, which passes `export_id` as a parameterized GraphQL variable (`$exportId: ID!`).",
+          "updated_at": "2026-09-25T11:21:15.908Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-97228"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "zammad",
+          "vendor": "zammad",
+          "versions": [
+            "version=< 7.1.2, status=affected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/zammad-ai-agent-command-execution.md",
+      "leaf_title": "Zammad AI Agent Command Execution",
+      "named_entities": [
+        "Zammad",
+        "Zammad AI Agent",
+        "CVE-2026-84462",
+        "CVE-2026-63216",
+        "CVE-2026-63204"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-84462",
+          "published_at": "2026-09-25T17:29:15.837Z",
+          "updated_at": "2026-09-25T18:11:30.745Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-25T18:11:30.745Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "zammad",
+              "vendor": "zammad",
+              "versions": [
+                "version=< 7.1.2, status=affected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-84462",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-25T17:29:15.837Z",
+          "references": [
+            "https://github.com/zammad/zammad/security/advisories/GHSA-gp3x-9xm8-rcj6",
+            "https://github.com/zammad/zammad/commit/e3b0c8df91ad2108c8305be23e8fe6f73fb9718d"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-84462",
+          "state": "PUBLISHED",
+          "summary": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, a security filter that protects Zammad's AI Agent configuration can be bypassed by entering specially crafted text into one of an AI Agent's fields. An administrator with permission to create or edit AI Agents could exploit this to run arbitrary commands on the server that hosts Zammad, potentially reading, modifying, or destroying all data stored on that server. No interaction from other users is needed; the malicious code runs automatically the next time the affected AI Agent processes a ticket. This issue is fixed in version 7.1.2.",
+          "updated_at": "2026-09-25T18:11:30.745Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84462"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "zammad",
+          "vendor": "zammad",
+          "versions": [
+            "version=< 7.1.2, status=affected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/zammad-ai-agent-configuration-dialog-xss.md",
+      "leaf_title": "Zammad AI Agent Configuration Dialog XSS",
+      "named_entities": [
+        "Zammad",
+        "Zammad AI Agent",
+        "CVE-2026-84462",
+        "CVE-2026-63216",
+        "CVE-2026-63204"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-63216",
+          "published_at": "2026-09-25T18:16:01.483Z",
+          "updated_at": "2026-09-25T18:16:01.483Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-25T18:16:01.483Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "zammad",
+              "vendor": "zammad",
+              "versions": [
+                "version=< 7.1.2, status=affected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-63216",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-25T18:16:01.483Z",
+          "references": [
+            "https://github.com/zammad/zammad/security/advisories/GHSA-r95m-ghj7-646x",
+            "https://github.com/zammad/zammad/commit/74b4fd4db62dc3652bb9db24096a2fbd1b56dc7f"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-63216",
+          "state": "PUBLISHED",
+          "summary": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, unsanitized option labels are rendered in the configuration dialogs of AI Agents within Zammad's admin UI. When rendering the list of selected options, the option label is output as raw HTML without escaping. An attacker who can control an option label, for example by setting a malicious string as a user or organization name used in a relation attribute, or by supplying a crafted custom attribute option value, can inject arbitrary HTML and JavaScript. The payload executes in the browser of any admin or agent who opens the affected object attribute configuration view. This issue is fixed in version 7.1.2.",
+          "updated_at": "2026-09-25T18:16:01.483Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-63216"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "Flowise",
+          "vendor": "FlowiseAI",
+          "versions": [
+            "version=0, lessThanOrEqual=3.1.4, status=affected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/data-and-privacy/flowise-bullmq-dashboard-tenant-authorization-bypass.md",
+      "leaf_title": "Flowise BullMQ Dashboard Tenant Authorization Bypass",
+      "named_entities": [
+        "Flowise",
+        "BullMQ",
+        "CVE-2026-100608",
+        "CVE-2026-100605"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-100608",
+          "published_at": "2026-09-26T13:22:51.224Z",
+          "updated_at": "2026-09-26T13:22:51.224Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-26T13:22:51.224Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "Flowise",
+              "vendor": "FlowiseAI",
+              "versions": [
+                "version=0, lessThanOrEqual=3.1.4, status=affected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100608",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T13:22:51.224Z",
+          "references": [
+            "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-rpcc-gw54-mfgx",
+            "https://www.vulncheck.com/advisories/flowise-through-3.1.4-authorization-bypass-via-bullmq-dashboard"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100608",
+          "state": "PUBLISHED",
+          "summary": "Flowise through 3.1.4 does not enforce authorization on the BullMQ admin dashboard. When the server runs in queue mode with the dashboard enabled and not in cloud mode (MODE=queue, ENABLE_BULLMQ_DASHBOARD=true, and !isCloud()), the /admin/queues mount is protected only by the verifyTokenForBullMQDashboard middleware, which validates the JWT but performs no role, permission, or workspace/organization scoping check; the mount also lies outside /api/v1/* so the global API gate does not apply. As a result, any authenticated user \u2014 including the lowest-privileged member of any tenant \u2014 can reach the full Bull-Board UI and view all queues and job payloads across the entire instance, including chat inputs and overrideConfig (which may carry credentials and prompts), chatflow.flowData graph definitions with custom function source code, credential IDs and system prompts, chatIds, files, and the originating orgId/workspaceId. The dashboard's write actions (retry, remove, promote, clean) are likewise usable across tenants. No patched version is available as of the advisory.",
+          "updated_at": "2026-09-26T13:22:51.224Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100608"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "Flowise",
+          "vendor": "FlowiseAI",
+          "versions": [
+            "version=0, lessThanOrEqual=3.1.4, status=affected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/data-and-privacy/flowise-chat-history-rbac-bypass.md",
+      "leaf_title": "Flowise Chat History RBAC Bypass",
+      "named_entities": [
+        "Flowise",
+        "BullMQ",
+        "CVE-2026-100608",
+        "CVE-2026-100605"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-100605",
+          "published_at": "2026-09-26T13:22:49.124Z",
+          "updated_at": "2026-09-26T13:22:49.124Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-26T13:22:49.124Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "Flowise",
+              "vendor": "FlowiseAI",
+              "versions": [
+                "version=0, lessThanOrEqual=3.1.4, status=affected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100605",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T13:22:49.124Z",
+          "references": [
+            "https://github.com/FlowiseAI/Flowise/security/advisories/GHSA-ppmg-4cx6-95hh",
+            "https://www.vulncheck.com/advisories/flowise-through-3.1.4-missing-authorization-via-chat-message-routes"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100605",
+          "state": "PUBLISHED",
+          "summary": "Flowise through 3.1.4 contains missing route-level RBAC checks on chat message endpoints that allow low-privileged API keys to read and delete chat history. Attackers with valid but low-privileged API keys can access GET and DELETE chat message routes without required flow permissions to read chat histories, prompts, model responses, and delete messages.",
+          "updated_at": "2026-09-26T13:22:49.124Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100605"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "GitLab",
+          "vendor": "GitLab",
+          "versions": [
+            "version=18.7, lessThan=19.2.7, status=affected",
+            "version=19.3, lessThan=19.3.3, status=affected",
+            "version=19.4, lessThan=19.4.1, status=affected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/data-and-privacy/gitlab-duo-ai-trace-secret-disclosure.md",
+      "leaf_title": "GitLab Duo AI Trace Secret Disclosure",
+      "named_entities": [
+        "GitLab",
+        "GitLab Duo AI",
+        "CVE-2026-92470"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-92470",
+          "published_at": "2026-09-23T23:05:10.131Z",
+          "updated_at": "2026-09-24T14:38:46.234Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-24T14:38:46.234Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "GitLab",
+              "vendor": "GitLab",
+              "versions": [
+                "version=18.7, lessThan=19.2.7, status=affected",
+                "version=19.3, lessThan=19.3.3, status=affected",
+                "version=19.4, lessThan=19.4.1, status=affected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-92470",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-23T23:05:10.131Z",
+          "references": [
+            "https://gitlab.com/gitlab-org/gitlab/-/work_items/617719",
+            "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-92470",
+          "state": "PUBLISHED",
+          "summary": "GitLab has remediated an issue in GitLab EE affecting all versions from 18.7 before 19.2.7, 19.3 before 19.3.3, and 19.4 before 19.4.1 that under certain conditions could have allowed an authenticated user to access sensitive CI/CD variable values from debug-mode job traces through the Duo AI troubleshooting feature due to missing authorization checks.",
+          "updated_at": "2026-09-24T14:38:46.234Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-92470"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "litellm",
+          "vendor": "BerriAI",
+          "versions": [
+            "version=0, lessThan=1.101.0-rc.1, status=affected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/data-and-privacy/litellm-semantic-cache-tenant-isolation-bypass.md",
+      "leaf_title": "LiteLLM Semantic Cache Tenant Isolation Bypass",
+      "named_entities": [
+        "LiteLLM",
+        "BerriAI",
+        "semantic cache",
+        "CVE-2026-89032"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-89032",
+          "published_at": "2026-09-25T16:04:47.964Z",
+          "updated_at": "2026-09-26T13:29:58.738Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-26T13:29:58.738Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "litellm",
+              "vendor": "BerriAI",
+              "versions": [
+                "version=0, lessThan=1.101.0-rc.1, status=affected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-89032",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-25T16:04:47.964Z",
+          "references": [
+            "https://github.com/BerriAI/litellm/releases/tag/v1.101.0-rc.1",
+            "https://github.com/BerriAI/litellm/pull/39590",
+            "https://github.com/BerriAI/litellm/commit/16db51e2cfc28e02bd460481e634a8403ea9265e",
+            "https://www.vulncheck.com/advisories/berriai-litellm-rc-1-tenant-isolation-bypass-via-semantic-cache-layer"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-89032",
+          "state": "PUBLISHED",
+          "summary": "BerriAI LiteLLM before 1.101.0-rc.1 contains a tenant isolation bypass vulnerability in the semantic cache layer that allows authenticated users to read other tenants' cached responses by exploiting a metadata key mismatch between _get_semantic_cache_tenant_scope() and _get_metadata_variable_name(). Attackers holding a valid virtual key can submit semantically similar prompts on affected routes such as /v1/responses and /bedrock/* to retrieve cached responses containing other tenants' personally identifiable information, financial data, or source code, and can cause agentic front-ends to auto-execute attacker-supplied tool calls under victim credentials by returning cached function_call or tool_calls payloads to a different principal.",
+          "updated_at": "2026-09-26T13:29:58.738Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-89032"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "MCP Server for WordPress",
+          "vendor": "Unknown",
+          "versions": [
+            "version=0, lessThan=1.8.2, status=affected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/data-and-privacy/mcp-server-for-wordpress-content-object-authorization.md",
+      "leaf_title": "MCP Server For WordPress Content Object Authorization",
+      "named_entities": [
+        "MCP Server for WordPress",
+        "WordPress",
+        "CVE-2026-96526"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-96526",
+          "published_at": "2026-09-26T06:00:20.949Z",
+          "updated_at": "2026-09-26T22:41:14.081Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-26T22:41:14.081Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "MCP Server for WordPress",
+              "vendor": "Unknown",
+              "versions": [
+                "version=0, lessThan=1.8.2, status=affected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-96526",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T06:00:20.949Z",
+          "references": [
+            "https://wpscan.com/vulnerability/79c3ae87-fc63-42b1-bb68-c7420060f9d4/"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-96526",
+          "state": "PUBLISHED",
+          "summary": "The MCP Server for WordPress  WordPress plugin before 1.8.2 does not perform an object-level authorization check on one of its workflow REST routes, allowing users with the Contributor role to disclose the title and publication status of any post, page or custom post type, including other users' private, draft, pending and scheduled content.",
+          "updated_at": "2026-09-26T22:41:14.081Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-96526"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "OpenClaw",
+          "vendor": "OpenClaw",
+          "versions": [
+            "version=0, lessThan=2026.7.1, status=affected",
+            "version=2026.7.1, status=unaffected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/data-and-privacy/openclaw-trajectory-export-authorization-bypass.md",
+      "leaf_title": "OpenClaw Trajectory Export Authorization Bypass",
+      "named_entities": [
+        "OpenClaw",
+        "ACP",
+        "MCP",
+        "Claude Code",
+        "CVE-2026-100547",
+        "CVE-2026-100547",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100587",
+        "CVE-2026-100594",
+        "CVE-2026-100596",
+        "CVE-2026-100559",
+        "CVE-2026-100560",
+        "CVE-2026-100561",
+        "CVE-2026-100596",
+        "CVE-2026-100573",
+        "CVE-2026-100585",
+        "CVE-2026-100594"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-100594",
+          "published_at": "2026-09-26T02:19:15.641Z",
+          "updated_at": "2026-09-26T02:19:15.641Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-26T02:19:15.641Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "OpenClaw",
+              "vendor": "OpenClaw",
+              "versions": [
+                "version=0, lessThan=2026.7.1, status=affected",
+                "version=2026.7.1, status=unaffected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-100594",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-26T02:19:15.641Z",
+          "references": [
+            "https://github.com/openclaw/openclaw/security/advisories/GHSA-89cw-7452-cfrf",
+            "https://www.vulncheck.com/advisories/openclaw-before-2026.7.1-authorization-bypass-via-trajectory-export"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100594",
+          "state": "PUBLISHED",
+          "summary": "OpenClaw versions before 2026.7.1 contain an authorization bypass vulnerability in the /export-trajectory endpoint that allows non-owner senders to request and receive owner-only trajectory bundles. Attackers can access prompts, model messages, tool schemas, runtime events, and local path metadata from affected sessions by exploiting insufficient authorization checks.",
+          "updated_at": "2026-09-26T02:19:15.641Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100594"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    },
+    {
+      "affected_boundaries": [
+        {
+          "product": "zammad",
+          "vendor": "zammad",
+          "versions": [
+            "version=< 7.1.2, status=affected"
+          ]
+        }
+      ],
+      "evidence_classification": [
+        "disclosed_vulnerability"
+      ],
+      "follow_up_note": "Overlaps the processed 2026-09-26 topic collector source; later ingest should compare for material CVE metadata, primary advisory, or remediation deltas before editing docs/wiki.",
+      "leaf_id": "docs/wiki/data-and-privacy/zammad-ai-analytics-error-disclosure.md",
+      "leaf_title": "Zammad AI Analytics Error Disclosure",
+      "named_entities": [
+        "Zammad",
+        "Zammad AI Agent",
+        "CVE-2026-84462",
+        "CVE-2026-63216",
+        "CVE-2026-63204"
+      ],
+      "qualifying_source_dates": [
+        {
+          "cve_id": "CVE-2026-63204",
+          "published_at": "2026-09-25T18:22:40.491Z",
+          "updated_at": "2026-09-25T18:41:43.228Z"
+        }
+      ],
+      "qualifying_update_at": "2026-09-25T18:41:43.228Z",
+      "qualifying_updates": [
+        {
+          "affected": [
+            {
+              "product": "zammad",
+              "vendor": "zammad",
+              "versions": [
+                "version=< 7.1.2, status=affected"
+              ]
+            }
+          ],
+          "cve_id": "CVE-2026-63204",
+          "evidence_classification": "disclosed_vulnerability",
+          "published_at": "2026-09-25T18:22:40.491Z",
+          "references": [
+            "https://github.com/zammad/zammad/security/advisories/GHSA-75j9-hpg4-j9f8",
+            "https://github.com/zammad/zammad/commit/849191c32a76f62fbd7cf4582a2b1e05e25f25ed"
+          ],
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-63204",
+          "state": "PUBLISHED",
+          "summary": "Zammad is a web based open source helpdesk/customer support system. Prior to 7.1.2, an authenticated user with agent permissions can supply an arbitrary AI analytics run identifier to the ticket summarize endpoint and receive the AI provider error message stored for that run, even if the run belongs to a ticket the agent is not authorized to access. The disclosure is limited to the provider error string; ticket content is not exposed. This issue is fixed in version 7.1.2.",
+          "updated_at": "2026-09-25T18:41:43.228Z"
+        }
+      ],
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-63204"
+      ],
+      "upstream_routing": {
+        "ai_dev_wiki": "General development workflow, adoption, or operations guidance routes upstream unless it is a security control.",
+        "ai_wiki": "Broad product, company, package, and framework context routes upstream if needed.",
+        "security_local": "Keep only the security boundary, affected versions, mitigation implications, and follow-up notes in ai-security-wiki."
+      }
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-09-28T00:05:04Z",
+  "selection": {
+    "leaf_universe_count": 488,
+    "ordering": "unchecked first, then oldest last_checked_at, then stable relative path",
+    "selected_leaf_count": 15,
+    "selected_leaf_ids": [
+      "docs/wiki/agent-and-tool-security/openclaw-acp-file-url-workdir-read-bypass.md",
+      "docs/wiki/agent-and-tool-security/openclaw-agent-authority-and-approval-cluster.md",
+      "docs/wiki/agent-and-tool-security/openclaw-command-approval-bypasses.md",
+      "docs/wiki/agent-and-tool-security/openclaw-mcp-configuration-owner-bypass.md",
+      "docs/wiki/agent-and-tool-security/openclaw-mcp-policy-and-bridge-owner-check-bypasses.md",
+      "docs/wiki/agent-and-tool-security/rapid7-bulk-export-mcp-graphql-query-injection.md",
+      "docs/wiki/agent-and-tool-security/zammad-ai-agent-command-execution.md",
+      "docs/wiki/agent-and-tool-security/zammad-ai-agent-configuration-dialog-xss.md",
+      "docs/wiki/data-and-privacy/flowise-bullmq-dashboard-tenant-authorization-bypass.md",
+      "docs/wiki/data-and-privacy/flowise-chat-history-rbac-bypass.md",
+      "docs/wiki/data-and-privacy/gitlab-duo-ai-trace-secret-disclosure.md",
+      "docs/wiki/data-and-privacy/litellm-semantic-cache-tenant-isolation-bypass.md",
+      "docs/wiki/data-and-privacy/mcp-server-for-wordpress-content-object-authorization.md",
+      "docs/wiki/data-and-privacy/openclaw-trajectory-export-authorization-bypass.md",
+      "docs/wiki/data-and-privacy/zammad-ai-analytics-error-disclosure.md"
+    ]
+  },
+  "source_safety": {
+    "basis": "Used public leaf ids, titles, CVE/advisory identifiers, and public source URLs only.",
+    "local_page_content_sent_external": false,
+    "public_only": true
+  },
+  "sources_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100547",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100559",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100560",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100561",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100573",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100585",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100587",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100594",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100596",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100605",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100608",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-63204",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-63216",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-84462",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-89032",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-92470",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-96526",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-97228",
+    "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/"
+  ],
+  "validation": {
+    "git_diff_check": "passed for raw/2026-09-27/ai-security-wiki-leaf-update-watch-20260927T235412Z.json",
+    "jq_empty": "passed",
+    "project_wiki_status": "native project-wiki command unavailable; fallback wiki_ops.py status reported 516 pages, 0 missing required files, 0 lint findings",
+    "python_json_tool": "passed"
+  }
+}

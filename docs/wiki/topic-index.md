@@ -8,6 +8,17 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [identity-and-access/obot-mcp-oauth-dynamic-client-registration.md](identity-and-access/obot-mcp-oauth-dynamic-client-registration.md)
+- [identity-and-access/obot-mcp-registry-authentication-bypass.md](identity-and-access/obot-mcp-registry-authentication-bypass.md)
+- [agent-and-tool-security/obot-remote-mcp-server-registration-ssrf.md](agent-and-tool-security/obot-remote-mcp-server-registration-ssrf.md)
+- [identity-and-access/obot-mcp-quickstart-unauthenticated-admin-exposure.md](identity-and-access/obot-mcp-quickstart-unauthenticated-admin-exposure.md)
+- [identity-and-access/obot-mcp-connect-access-control-bypass.md](identity-and-access/obot-mcp-connect-access-control-bypass.md)
+- [agent-and-tool-security/heym-workflow-node-ssrf-guards.md](agent-and-tool-security/heym-workflow-node-ssrf-guards.md)
+- [agent-and-tool-security/heym-llm-image-fetch-ssrf.md](agent-and-tool-security/heym-llm-image-fetch-ssrf.md)
+- [data-and-privacy/heym-workflow-capability-secret-plaintext-exposure.md](data-and-privacy/heym-workflow-capability-secret-plaintext-exposure.md)
+- [agent-and-tool-security/utcp-mcp-server-url-validation.md](agent-and-tool-security/utcp-mcp-server-url-validation.md)
+- [agent-and-tool-security/utcp-remote-http-manual-loopback-ssrf.md](agent-and-tool-security/utcp-remote-http-manual-loopback-ssrf.md)
+- [agent-and-tool-security/penpot-mcp-websocket-bridge-authentication.md](agent-and-tool-security/penpot-mcp-websocket-bridge-authentication.md)
 - [agent-and-tool-security/openclaw-agent-authority-and-approval-cluster.md](agent-and-tool-security/openclaw-agent-authority-and-approval-cluster.md)
 - [agent-and-tool-security/openclaw-acp-file-url-workdir-read-bypass.md](agent-and-tool-security/openclaw-acp-file-url-workdir-read-bypass.md)
 - [agent-and-tool-security/openclaw-command-approval-bypasses.md](agent-and-tool-security/openclaw-command-approval-bypasses.md)

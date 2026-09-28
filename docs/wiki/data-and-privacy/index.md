@@ -6,6 +6,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [Heym workflow capability secret plaintext exposure](heym-workflow-capability-secret-plaintext-exposure.md)
 - [LiteLLM semantic cache tenant isolation bypass](litellm-semantic-cache-tenant-isolation-bypass.md)
 - [GitLab Duo AI trace secret disclosure](gitlab-duo-ai-trace-secret-disclosure.md)
 - [Flowise chat history RBAC bypass](flowise-chat-history-rbac-bypass.md)

@@ -2,6 +2,12 @@
 
 ## Current Understanding
 
+- [Obot remote MCP server registration SSRF](obot-remote-mcp-server-registration-ssrf.md)
+- [Heym workflow node SSRF guards](heym-workflow-node-ssrf-guards.md)
+- [Heym LLM image fetch SSRF](heym-llm-image-fetch-ssrf.md)
+- [UTCP MCP server URL validation](utcp-mcp-server-url-validation.md)
+- [UTCP remote HTTP manual loopback SSRF](utcp-remote-http-manual-loopback-ssrf.md)
+- [Penpot MCP WebSocket bridge authentication](penpot-mcp-websocket-bridge-authentication.md)
 - [OpenClaw agent authority and approval cluster](openclaw-agent-authority-and-approval-cluster.md)
 - [OpenClaw ACP file URL workdir read bypass](openclaw-acp-file-url-workdir-read-bypass.md)
 - [OpenClaw command approval bypasses](openclaw-command-approval-bypasses.md)
@@ -34,6 +40,12 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [Obot remote MCP server registration SSRF](obot-remote-mcp-server-registration-ssrf.md)
+- [Heym workflow node SSRF guards](heym-workflow-node-ssrf-guards.md)
+- [Heym LLM image fetch SSRF](heym-llm-image-fetch-ssrf.md)
+- [UTCP MCP server URL validation](utcp-mcp-server-url-validation.md)
+- [UTCP remote HTTP manual loopback SSRF](utcp-remote-http-manual-loopback-ssrf.md)
+- [Penpot MCP WebSocket bridge authentication](penpot-mcp-websocket-bridge-authentication.md)
 - [OpenClaw agent authority and approval cluster](openclaw-agent-authority-and-approval-cluster.md)
 - [OpenClaw ACP file URL workdir read bypass](openclaw-acp-file-url-workdir-read-bypass.md)
 - [OpenClaw command approval bypasses](openclaw-command-approval-bypasses.md)
@@ -230,6 +242,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-09-27 with Obot remote MCP SSRF, split Heym workflow and LLM image-fetch SSRF guards, UTCP URL-validation, and Penpot MCP bridge authentication leaves.
 - Updated on 2026-09-27 with Rapid7 Bulk Export MCP GraphQL query injection, split OpenClaw authority/approval leaves, split Zammad AI Agent execution/XSS leaves, and SiYuan recursive file-tool guard evidence.
 - Updated on 2026-09-25 with split mcp-remote OAuth/transport, DBHub transport/read-only, TREK LLM endpoint SSRF, and Kiro global agent-context injection leaves.
 - Updated on 2026-09-24 with Kimi Code MCP configuration loader command injection and cross-links from new MCP Toolbox, WSP MCP connector, IBM FTM, and OpenClaw credential-boundary leaves.
