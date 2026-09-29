@@ -1,0 +1,382 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector",
+    "run_timestamp_utc": "2026-09-28T23:30:57Z",
+    "repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "artifact_path": "raw/2026-09-28/ai-security-wiki-topic-news-collector-2026-09-28T233057Z.json"
+  },
+  "cutoff_window": {
+    "relative_window": "last 2 days relative to run time",
+    "start_utc": "2026-09-26T23:30:57Z",
+    "end_utc": "2026-09-28T23:30:57Z",
+    "strict_date_policy": "Included only public items with visible publication or update timestamps inside the window and a concrete AI security fact or change. Boundary-only, ambiguous, future-dated, duplicate, and non-security-delta items were excluded with reasons."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_wiki": "docs/wiki/topic-index.md and docs/wiki/federation.md in ai-security-wiki",
+    "upstream_ai_wiki_index": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+    "upstream_ai_dev_wiki_index": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+    "federation_summary": "The ai-security-wiki owns the security lens. Broad AI entities, companies, models, products, frameworks, MCP servers, and generic tooling context route to ai-wiki. General AI-assisted development practices route to ai-dev-wiki. This artifact keeps the concrete security implication, affected boundary, mitigation, and follow-up routing note locally."
+  },
+  "counts": {
+    "qualifying_findings": 5,
+    "exclusions": 11,
+    "upstream_routing_notes": 5
+  },
+  "qualifying_findings": [
+    {
+      "id": "nvd-2026-09-28-zscaler-mcp-hmac-token-unbinding",
+      "title": "Zscaler MCP Server fixed HMAC confirmation tokens not bound to target resources",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-27T23:30:16.000Z&pubEndDate=2026-09-28T23:30:57.000Z&keywordSearch=MCP",
+        "https://www.cve.org/CVERecord?id=CVE-2026-59563",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59563",
+        "https://github.com/zscaler/zscaler-mcp-server/pull/41"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Program API",
+          "date": "2026-09-28T12:54:52.446Z",
+          "date_type": "datePublished"
+        },
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-28T13:17:22.160Z",
+          "date_type": "published"
+        },
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-28T15:17:17.493Z",
+          "date_type": "lastModified"
+        }
+      ],
+      "evidence_classification": "CVE Program and NVD vulnerability records with upstream repository pull request reference",
+      "affected_boundary_or_version": "zscaler-mcp-server versions 0.7.0 and 0.7.1; fixed in 0.7.2.",
+      "summary": "Zscaler MCP Server confirmation tokens were HMAC-protected but not bound to the target resource identifier. An MCP client or agent could replay a token generated for one resource against another resource of the same type, crossing the intended confirmation boundary.",
+      "why_it_matters_for_ai_security": "MCP tools often use confirmation tokens as delegated-action safety gates. Tokens that are not resource-bound can turn user confirmation for one action into authority over a different action.",
+      "named_entities": [
+        "Zscaler",
+        "zscaler-mcp-server",
+        "Model Context Protocol",
+        "MCP",
+        "HMAC confirmation token",
+        "CVE-2026-59563"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the resource-bound confirmation-token flaw, affected MCP action boundary, and 0.7.2 mitigation here.",
+        "ai_wiki": "Zscaler and the MCP server as broad ecosystem entities belong upstream if durable product coverage is needed.",
+        "ai_dev_wiki": "General MCP confirmation UX and agent workflow practice belong upstream unless framed as this security control."
+      },
+      "confidence_notes": "High confidence from CVE Program and NVD timestamps in-window. Repository PR reference should be rechecked during ingest for exact patch mechanics."
+    },
+    {
+      "id": "nvd-2026-09-28-fast-mcp-telegram-ssrf",
+      "title": "fast-mcp-telegram patched exfiltrating SSRF in MCP file URL downloads",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-27T23:30:16.000Z&pubEndDate=2026-09-28T23:30:57.000Z&keywordSearch=MCP",
+        "https://www.cve.org/CVERecord?id=CVE-2026-55096",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55096",
+        "https://github.com/leshchenko1979/fast-mcp-telegram/security/advisories/GHSA-xr72-j7vj-vp7g",
+        "https://github.com/leshchenko1979/fast-mcp-telegram/commit/e6b3032cfc906e14f5b84f2c2b8ec378eb457e57",
+        "https://github.com/leshchenko1979/fast-mcp-telegram/releases/tag/0.30.1"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Program API",
+          "date": "2026-09-28T16:38:26.730Z",
+          "date_type": "datePublished"
+        },
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-28T17:17:50.007Z",
+          "date_type": "published"
+        }
+      ],
+      "evidence_classification": "CVE Program and NVD vulnerability records with GitHub advisory, patch commit, and release references",
+      "affected_boundary_or_version": "fast-mcp-telegram versions before 30.1; fixed in 30.1 / release tag 0.30.1.",
+      "summary": "The Telegram MCP server accepted HTTP(S) URLs for files passed to send_message and send_message_to_phone. Its _validate_url_security denylist checked only the literal hostname string and did not resolve DNS before httpx fetched the target, so a hostname resolving to loopback, private, link-local, or metadata IPs could pass validation. Because the fetched body was returned as a Telegram attachment, the SSRF was exfiltrating rather than blind.",
+      "why_it_matters_for_ai_security": "MCP messaging tools can become network egress and data-exfiltration bridges when tool inputs trigger server-side fetches. DNS-aware egress pinning is required at dial time, not only at URL-parse time.",
+      "named_entities": [
+        "fast-mcp-telegram",
+        "Telegram MCP Server",
+        "MCP",
+        "httpx",
+        "SSRF",
+        "CVE-2026-55096",
+        "GHSA-xr72-j7vj-vp7g"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the SSRF, egress validation, exfiltration, and fixed-version detail here.",
+        "ai_wiki": "The MCP server entity and Telegram integration background belong upstream if needed.",
+        "ai_dev_wiki": "General agent messaging workflow practice belongs upstream unless tied to SSRF prevention controls."
+      },
+      "confidence_notes": "High confidence from CVE Program, NVD, and GitHub advisory references. Ingest should reconcile the version spelling difference between CVE '< 30.1' and GitHub release tag '0.30.1'."
+    },
+    {
+      "id": "nvd-2026-09-28-token-optimizer-mcp-dashboard-and-command-injection",
+      "title": "Token Optimizer MCP patched unauthenticated dashboard log traversal and smart_user command injection",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-27T23:30:16.000Z&pubEndDate=2026-09-28T23:30:57.000Z&keywordSearch=MCP",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-27T23:30:16.000Z&pubEndDate=2026-09-28T23:30:57.000Z&keywordSearch=AI",
+        "https://www.cve.org/CVERecord?id=CVE-2026-55156",
+        "https://www.cve.org/CVERecord?id=CVE-2026-55157",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55156",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55157",
+        "https://github.com/ooples/token-optimizer-mcp/security/advisories/GHSA-76pc-mqxp-3rq5",
+        "https://github.com/ooples/token-optimizer-mcp/security/advisories/GHSA-49mq-fc6q-3h46",
+        "https://github.com/ooples/token-optimizer-mcp/commit/b4ee96dac799cbfba0a9f9c17844ce9d613cbcc7",
+        "https://github.com/ooples/token-optimizer-mcp/releases/tag/v5.1.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Program API",
+          "date": "2026-09-28T17:48:21.086Z",
+          "date_type": "datePublished for CVE-2026-55156"
+        },
+        {
+          "source": "CVE Program API",
+          "date": "2026-09-28T17:48:16.422Z",
+          "date_type": "datePublished for CVE-2026-55157"
+        },
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-28T18:17:23.203Z and 2026-09-28T18:17:23.373Z",
+          "date_type": "published"
+        }
+      ],
+      "evidence_classification": "CVE Program and NVD vulnerability records with GitHub advisories, patch commit, and fixed release reference",
+      "affected_boundary_or_version": "token-optimizer-mcp versions before 5.1.0; fixed in 5.1.0.",
+      "summary": "Token Optimizer MCP exposed dashboard session-summary and session-events endpoints without authentication and joined caller-controlled sessionId values into filesystem paths, allowing unauthenticated reads of reachable .jsonl files. A second CVE covered OS command injection in the smart_user tool, where an MCP client that could call get-user-info could execute shell commands through the username argument as the token-optimizer-mcp server user.",
+      "why_it_matters_for_ai_security": "The product stores and serves coding-agent session telemetry and live knowledge-graph context. Unauthenticated log traversal exposes prompts, events, and local session traces, while command injection in an MCP tool converts delegated context optimization into host command execution.",
+      "named_entities": [
+        "Token Optimizer MCP",
+        "token-optimizer-mcp",
+        "MCP",
+        "AI coding agents",
+        "smart_user",
+        "CVE-2026-55156",
+        "CVE-2026-55157",
+        "GHSA-76pc-mqxp-3rq5",
+        "GHSA-49mq-fc6q-3h46"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the unauthenticated dashboard path traversal, session-log exposure, command injection, and v5.1.0 mitigation here.",
+        "ai_wiki": "Token Optimizer MCP as a product/entity belongs upstream if broad catalog coverage is needed.",
+        "ai_dev_wiki": "General coding-agent context optimization practice belongs upstream; this repository owns the security failure modes."
+      },
+      "confidence_notes": "High confidence from two in-window CVE publications and matching GitHub advisory references."
+    },
+    {
+      "id": "nvd-2026-09-28-tencent-ai-infra-guard-path-traversal",
+      "title": "Tencent AI-Infra-Guard disclosed File Access path traversal in dir_actions.py",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-27T23:30:16.000Z&pubEndDate=2026-09-28T23:30:57.000Z&keywordSearch=AI",
+        "https://www.cve.org/CVERecord?id=CVE-2026-101080",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-101080",
+        "https://vuldb.com/vuln/410952",
+        "https://github.com/Tencent/AI-Infra-Guard/issues/538",
+        "https://github.com/Tencent/AI-Infra-Guard/pull/539",
+        "https://github.com/Tencent/AI-Infra-Guard/commit/ac0384edc9dbea3b226edefcf50613bd8509134f",
+        "https://github.com/Tencent/AI-Infra-Guard/releases/tag/v4.6.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Program API",
+          "date": "2026-09-28T16:00:14.987Z",
+          "date_type": "datePublished"
+        },
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-28T16:17:12.820Z",
+          "date_type": "published"
+        },
+        {
+          "source": "CVE Program API",
+          "date": "2026-09-28T17:36:43.700Z",
+          "date_type": "dateUpdated"
+        }
+      ],
+      "evidence_classification": "CVE Program and NVD vulnerability records with VulDB and upstream issue, pull request, commit, and release references",
+      "affected_boundary_or_version": "Tencent AI-Infra-Guard 4.5.0, 4.5.1, 4.5.2, 4.6.1, and 4.6.2 are listed as affected; CVE data also lists 4.6.0 inconsistently as both affected and unaffected. NVD says versions up to 4.5.2/4.6.2 and upgrade to 4.6.0 mitigates.",
+      "summary": "Tencent AI-Infra-Guard's File Access component in skill_scan/tools/dir/dir_actions.py used startsWith-style path validation that allowed local path traversal. The exploit was listed as public, with references to a GitHub issue, pull request, patch commit, and release.",
+      "why_it_matters_for_ai_security": "AI infrastructure scanning tools often inspect project, model, and deployment artifacts. A file-access path traversal inside a security scanner can break the expected repository/artifact boundary and expose local files to an attacker with local or tool-invocation access.",
+      "named_entities": [
+        "Tencent",
+        "AI-Infra-Guard",
+        "skill_scan",
+        "dir_actions.py",
+        "File Access",
+        "VulDB",
+        "CVE-2026-101080"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the scanner file-access traversal, local boundary, and version reconciliation follow-up here.",
+        "ai_wiki": "Tencent and AI-Infra-Guard as broad AI/security tool entities belong upstream if needed.",
+        "ai_dev_wiki": "General scanner usage and development workflow guidance belongs upstream unless tied to scanner trust boundaries."
+      },
+      "confidence_notes": "Medium-high confidence. The CVE and NVD records are in-window and concrete, but affected/fixed version fields conflict and require ingest-time reconciliation against the release and patch."
+    },
+    {
+      "id": "nvd-2026-09-28-agentverus-scanner-untrusted-input-security-decision",
+      "title": "agentverus-scanner disclosed untrusted-input reliance in security-defense classification",
+      "source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-27T23:30:16.000Z&pubEndDate=2026-09-28T23:30:57.000Z&keywordSearch=agent",
+        "https://www.cve.org/CVERecord?id=CVE-2026-101079",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-101079",
+        "https://vuldb.com/vuln/410950",
+        "https://github.com/agentverus/agentverus-scanner/issues/28",
+        "https://github.com/agentverus/agentverus-scanner/"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Program API",
+          "date": "2026-09-28T15:45:10.884Z",
+          "date_type": "datePublished"
+        },
+        {
+          "source": "NVD CVE API",
+          "date": "2026-09-28T16:17:12.590Z",
+          "date_type": "published"
+        }
+      ],
+      "evidence_classification": "CVE Program and NVD vulnerability records with VulDB and upstream issue references",
+      "affected_boundary_or_version": "agentverus-scanner 0.8.0 and 0.8.1; no fixed version identified in the CVE record.",
+      "summary": "agentverus-scanner's dist/scanner/analyzers/context.js isSecurityDefenseSkill path was reported to rely on untrusted inputs in a security decision. The NVD record says exploitation is local, public exploit information exists, and the project had not responded at publication time.",
+      "why_it_matters_for_ai_security": "AI or agent security scanners must not let analyzed content or local untrusted inputs influence security-defense classification decisions. A scanner that trusts the subject being scanned can create false assurance or suppress findings.",
+      "named_entities": [
+        "agentverus",
+        "agentverus-scanner",
+        "isSecurityDefenseSkill",
+        "context.js",
+        "VulDB",
+        "CVE-2026-101079"
+      ],
+      "upstream_routing": {
+        "security_local": "Keep the scanner trust-boundary and assurance implication here.",
+        "ai_wiki": "agentverus as a product/entity belongs upstream if broad ecosystem coverage is needed.",
+        "ai_dev_wiki": "General scanner integration practice belongs upstream unless tied to assurance control failure."
+      },
+      "confidence_notes": "Medium confidence. The CVE fact is concrete and in-window, but available public detail is sparse and no vendor fix is listed."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Heym CVE-2026-100863",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:57.000Z&lastModEndDate=2026-09-28T23:30:57.000Z&keywordSearch=LLM",
+      "visible_date": "NVD published 2026-09-27T02:17:26.117Z; lastModified 2026-09-28T20:57:50.143Z",
+      "reason": "Excluded as duplicate of the September 27 collector finding for Heym LLM/MCP SSRF and secrets; the current NVD metadata update did not establish a distinct new security fact for this raw-only collector."
+    },
+    {
+      "candidate": "OpenClaw September 26 CVE cluster",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:57.000Z&lastModEndDate=2026-09-28T23:30:57.000Z&keywordSearch=MCP",
+      "visible_date": "NVD records lastModified 2026-09-28 for multiple CVEs",
+      "reason": "Excluded as duplicate of the September 26 processed collector artifact, which already captured the OpenClaw ACP, command approval, MCP policy, and owner-authorization cluster."
+    },
+    {
+      "candidate": "GitLab Duo AI and MCP CVEs CVE-2026-92470, CVE-2026-92529, CVE-2026-92628, and CVE-2026-92874",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:57.000Z&lastModEndDate=2026-09-28T23:30:57.000Z&keywordSearch=AI",
+      "visible_date": "NVD lastModified values on 2026-09-28",
+      "reason": "Excluded as duplicate of the September 26 processed collector artifact; the current metadata refresh did not add a separate security event."
+    },
+    {
+      "candidate": "vLLM CVE-2026-100651 and older vLLM prompt-related records",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:57.000Z&lastModEndDate=2026-09-28T23:30:57.000Z&keywordSearch=prompt",
+      "visible_date": "NVD lastModified values on 2026-09-28",
+      "reason": "Excluded as duplicate of the September 26 collector vLLM disaggregated serving finding or as older records with in-window metadata refresh only."
+    },
+    {
+      "candidate": "MCP Atlassian CVE cluster",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:57.000Z&lastModEndDate=2026-09-28T23:30:57.000Z&keywordSearch=MCP",
+      "visible_date": "NVD lastModified values on 2026-09-28",
+      "reason": "Excluded as already captured and synthesized in local topic pages; the current update window showed metadata changes rather than a new disclosure or mitigation boundary."
+    },
+    {
+      "candidate": "MaxKB CVE-2026-77516",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:57.000Z&lastModEndDate=2026-09-28T23:30:57.000Z&keywordSearch=MCP",
+      "visible_date": "NVD published 2026-09-21T21:17:10.143Z; lastModified 2026-09-28T21:17:18.890Z",
+      "reason": "Excluded because the local wiki already has MaxKB security pages and the in-window signal was an NVD metadata update, not a new concrete disclosure."
+    },
+    {
+      "candidate": "9Router CVE-2026-56681",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:57.000Z&lastModEndDate=2026-09-28T23:30:57.000Z&keywordSearch=LLM",
+      "visible_date": "NVD published 2026-09-22T16:17:48.350Z; lastModified 2026-09-28T20:17:10.540Z",
+      "reason": "Excluded as an older disclosure with an in-window metadata update and existing local topic-index coverage; no distinct new security delta was identified."
+    },
+    {
+      "candidate": "Logto CVE-2026-56739",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:57.000Z&lastModEndDate=2026-09-28T23:30:57.000Z&keywordSearch=AI",
+      "visible_date": "NVD published 2026-09-24T16:17:07.803Z; lastModified 2026-09-28T21:17:18.067Z",
+      "reason": "Excluded because it is an auth platform for SaaS and AI apps but the concrete issue is an administrator-configured outbound SSRF boundary with only a metadata refresh in-window; not enough AI-specific delta for this collector."
+    },
+    {
+      "candidate": "Rolantis Agentis CVE-2026-87752",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-27T23:30:16.000Z&pubEndDate=2026-09-28T23:30:57.000Z&keywordSearch=agent",
+      "visible_date": "NVD published 2026-09-28T12:17:41.093Z",
+      "reason": "Excluded because Agentis appears to be a tourism software product name and the XSS record lacks an AI, MCP, model, or agent-security boundary."
+    },
+    {
+      "candidate": "SUSE Rancher Fleet agent records CVE-2026-93538 and CVE-2026-88808",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-27T23:30:16.000Z&pubEndDate=2026-09-28T23:30:57.000Z&keywordSearch=agent",
+      "visible_date": "NVD published 2026-09-28T15:17:24.927Z and 2026-09-28T16:17:16.150Z",
+      "reason": "Excluded because these are Kubernetes/Rancher Fleet software-agent multi-tenancy issues, not AI agent or AI-system security findings."
+    },
+    {
+      "candidate": "spaceship-prompt CVE-2026-100867",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-26T23:30:57.000Z&lastModEndDate=2026-09-28T23:30:57.000Z&keywordSearch=prompt",
+      "visible_date": "NVD published 2026-09-27T13:16:37.810Z",
+      "reason": "Excluded because 'prompt' refers to a shell prompt theme, not model/prompt-injection security."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity": "Zscaler MCP Server",
+      "local_security_note": "Resource-bound confirmation-token enforcement remains local.",
+      "upstream_owner": "ai-wiki for product/entity background"
+    },
+    {
+      "entity": "fast-mcp-telegram",
+      "local_security_note": "Server-side URL fetch egress and exfiltrating SSRF remain local.",
+      "upstream_owner": "ai-wiki for MCP server catalog background"
+    },
+    {
+      "entity": "Token Optimizer MCP",
+      "local_security_note": "Unauthenticated dashboard log traversal and MCP command injection remain local.",
+      "upstream_owner": "ai-wiki for product background; ai-dev-wiki for generic context-optimization practice"
+    },
+    {
+      "entity": "Tencent AI-Infra-Guard",
+      "local_security_note": "Scanner file-access path traversal and version reconciliation remain local.",
+      "upstream_owner": "ai-wiki for vendor/tool background; ai-dev-wiki for general scanner workflow practice"
+    },
+    {
+      "entity": "agentverus-scanner",
+      "local_security_note": "Scanner trust-boundary and assurance failure remain local.",
+      "upstream_owner": "ai-wiki for tool/entity background; ai-dev-wiki for general scanner integration practice"
+    }
+  ],
+  "follow_up_actions": [
+    "During ingest, reconcile Tencent AI-Infra-Guard affected versus fixed version inconsistency in CVE data and NVD wording.",
+    "During ingest, reconcile fast-mcp-telegram fixed-version notation between '< 30.1' and release tag '0.30.1'.",
+    "Fetch GitHub advisories for Token Optimizer MCP and fast-mcp-telegram for remediation wording and severity before durable synthesis.",
+    "Dedupe against existing Token Optimizer MCP, MCP server, scanner assurance, and egress-control pages before creating new leaves.",
+    "Keep broad product/entity background routed to ai-wiki and general coding-agent context optimization practice routed to ai-dev-wiki."
+  ],
+  "validation": {
+    "jq_empty": "passed on 2026-09-28T23:30:57Z artifact",
+    "python_json_tool": "passed on 2026-09-28T23:30:57Z artifact",
+    "git_diff_check": "passed for artifact path",
+    "notes": "Artifact created raw-only. docs/wiki and raw/processed were intentionally not edited."
+  },
+  "blockers": []
+}

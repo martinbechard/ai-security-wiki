@@ -92,6 +92,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [FastGPT safe Axios DNS rebinding SSRF](fastgpt-safe-axios-dns-rebinding-ssrf.md)
 - [Agent action runtime hooks](agent-action-runtime-hooks.md)
 - [token-optimizer-mcp command injection](token-optimizer-mcp-command-injection.md)
+- [fast-mcp-telegram file URL SSRF](fast-mcp-telegram-file-url-ssrf.md)
 - [swagger-testcase-mcp Swagger parser SSRF](swagger-testcase-mcp-swagger-parser-ssrf.md)
 - [GoMarble Facebook Ads MCP SSRF](gomarble-facebook-ads-mcp-ssrf.md)
 - [chrome-devtools-mcp symlink root bypass](chrome-devtools-mcp-symlink-root-bypass.md)
@@ -242,6 +243,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-09-29 with fast-mcp-telegram file URL SSRF and Token Optimizer MCP command-injection reconciliation.
 - Updated on 2026-09-27 with Obot remote MCP SSRF, split Heym workflow and LLM image-fetch SSRF guards, UTCP URL-validation, and Penpot MCP bridge authentication leaves.
 - Updated on 2026-09-27 with Rapid7 Bulk Export MCP GraphQL query injection, split OpenClaw authority/approval leaves, split Zammad AI Agent execution/XSS leaves, and SiYuan recursive file-tool guard evidence.
 - Updated on 2026-09-25 with split mcp-remote OAuth/transport, DBHub transport/read-only, TREK LLM endpoint SSRF, and Kiro global agent-context injection leaves.

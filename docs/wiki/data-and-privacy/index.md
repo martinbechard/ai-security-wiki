@@ -6,6 +6,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [Token Optimizer MCP dashboard log traversal](token-optimizer-mcp-dashboard-log-traversal.md)
 - [Heym workflow capability secret plaintext exposure](heym-workflow-capability-secret-plaintext-exposure.md)
 - [LiteLLM semantic cache tenant isolation bypass](litellm-semantic-cache-tenant-isolation-bypass.md)
 - [GitLab Duo AI trace secret disclosure](gitlab-duo-ai-trace-secret-disclosure.md)
@@ -100,6 +101,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-09-29 with Token Optimizer MCP unauthenticated dashboard log traversal.
 - Updated on 2026-09-27 with GitLab Duo trace-secret disclosure, LiteLLM semantic cache tenant isolation, split Flowise chat-history and queue-dashboard leaves, MCP Server for WordPress content-object authorization, OpenClaw trajectory export authorization, and Zammad AI analytics error disclosure.
 - Updated on 2026-09-25 with IBM ContextForge MCP Gateway log traversal, Discourse AI private-message reviewable exposure, and mcp-remote disclosure leaves.
 - Updated on 2026-09-02 with the LiteLLM provider credential routing leak leaf.

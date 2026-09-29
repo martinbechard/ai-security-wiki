@@ -2,10 +2,7 @@
 
 ## Current Understanding
 
-- [September 2026 digest](2026-09.md) includes September 25 and 26 item-level Rapid7, split OpenClaw, split MCP Server for WordPress, SiYuan, split Zammad, LiteLLM, split Flowise, and vLLM advisory updates.
-- [September 2026 digest](2026-09.md) includes September 24 item-level GitLab MCP, mcp-remote, ContextForge, DBHub, Decepticon, Kiro, ServiceNow, Discourse AI, MLflow DSPy, TREK, and OpenWA advisory updates; watcher-only September 24 sightings remained provenance-only.
-- [September 2026 digest](2026-09.md) includes September 23 item-level 9Router, Kimi Code, MCP Toolbox SDK, IBM FTM, Kotaemon, WordPress AI connector/plugin, and OpenClaw advisory updates.
-- [September 2026 digest](2026-09.md) includes September 22 item-level 9Router, FastGPT, vLLM connector, and MCP Atlassian advisory-boundary updates.
+The active September 2026 digest currently includes item-level September 22 through September 28 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
 
 Monthly digests summarize processed security updates and link to durable local leaves for detail. Collectors save raw evidence first; ingest updates a digest only after the local security analysis and federation routing are complete.
 
@@ -19,6 +16,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [September 28 topic collector source](../../../raw/processed/2026-09-28/ai-security-wiki-topic-news-collector-2026-09-28T233057Z.json)
+- [September 29 leaf update watch source](../../../raw/processed/2026-09-29/ai-security-wiki-leaf-update-watch-20260929T000436Z.json)
 - [September 27 topic collector source](../../../raw/processed/2026-09-27/ai-security-wiki-topic-news-collector-2026-09-27T233044Z.json)
 - [September 27 leaf update watch source](../../../raw/processed/2026-09-27/ai-security-wiki-leaf-update-watch-20260927T235412Z.json)
 - [September 26 topic collector source](../../../raw/processed/2026-09-26/ai-security-wiki-topic-news-collector-2026-09-26T233301Z.json)
@@ -105,6 +104,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-09-29 with item-level September 28 security updates and leaf-level September 29 watcher reconciliation.
 - Updated on 2026-09-27 with September 27 Obot, Heym, UTCP, and Penpot item-level advisory entries; September 27 watcher evidence remained provenance-only.
 - Updated on 2026-09-27 with September 25 and 26 item-level advisory entries after durable leaves held the details, plus missing GitLab Duo AI and Duo Workflow leaves from the September 26 collector.
 - Updated on 2026-09-25 with item-level September 24 digest entries and September 24 watcher provenance; the watcher's 11 qualifying updates were already captured in prior leaves and did not produce duplicate digest items.

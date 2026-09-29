@@ -6,6 +6,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [Zscaler MCP confirmation token resource binding](zscaler-mcp-confirmation-token-resource-binding.md)
 - [Obot MCP OAuth dynamic client registration](obot-mcp-oauth-dynamic-client-registration.md)
 - [Obot MCP Registry authentication bypass](obot-mcp-registry-authentication-bypass.md)
 - [Obot MCP quickstart unauthenticated admin exposure](obot-mcp-quickstart-unauthenticated-admin-exposure.md)
@@ -124,6 +125,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-09-29 with Zscaler MCP confirmation-token resource binding and OpenClaw CVE-2026-100587 reconciliation.
 - Updated on 2026-09-27 with Obot MCP OAuth, registry, quickstart, and `/mcp-connect` authorization leaves.
 - Updated on 2026-09-27 with GitLab Duo Workflow token governance, split MCP Server for WordPress authorization leaves, OpenClaw plugin-installation ownership, and ServiceNow CIS patch-threshold metadata.
 - Updated on 2026-09-25 with split GitLab MCP token/search isolation, TREK MCP scope, ServiceNow authorization, and OpenWA MCP role-boundary leaves.

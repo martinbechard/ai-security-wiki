@@ -1,0 +1,657 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Leaf Update Watch",
+    "id": "ai-security-wiki-leaf-update-watch",
+    "run_timestamp": "2026-09-29T00:04:36Z",
+    "last_run": "2026-09-28T00:02:17.064Z"
+  },
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "scope": {
+    "approved_roots": [
+      "docs/wiki/threats-and-attacks",
+      "docs/wiki/model-and-prompt-security",
+      "docs/wiki/agent-and-tool-security",
+      "docs/wiki/data-and-privacy",
+      "docs/wiki/identity-and-access",
+      "docs/wiki/infrastructure-and-supply-chain",
+      "docs/wiki/testing-and-assurance",
+      "docs/wiki/governance-and-compliance",
+      "docs/wiki/incident-response"
+    ],
+    "leaf_universe_count": 499,
+    "selected_leaf_count": 15,
+    "selection_policy": "unchecked leaves first, then oldest last_checked_at, stable path tie-break"
+  },
+  "date_window": {
+    "basis": "public sources published or visibly updated within the last 7 days of run time",
+    "start_inclusive": "2026-09-22T00:04:36Z",
+    "end_inclusive": "2026-09-29T00:04:36Z",
+    "exclusions_policy": "exclude ambiguous, future, missing, or boundary-only dates"
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/heym-llm-image-fetch-ssrf.md",
+    "docs/wiki/agent-and-tool-security/heym-workflow-node-ssrf-guards.md",
+    "docs/wiki/agent-and-tool-security/obot-remote-mcp-server-registration-ssrf.md",
+    "docs/wiki/agent-and-tool-security/penpot-mcp-websocket-bridge-authentication.md",
+    "docs/wiki/agent-and-tool-security/utcp-mcp-server-url-validation.md",
+    "docs/wiki/agent-and-tool-security/utcp-remote-http-manual-loopback-ssrf.md",
+    "docs/wiki/data-and-privacy/heym-workflow-capability-secret-plaintext-exposure.md",
+    "docs/wiki/identity-and-access/gitlab-duo-workflow-token-governance-bypass.md",
+    "docs/wiki/identity-and-access/mcp-server-for-wordpress-rest-nonce-bypass.md",
+    "docs/wiki/identity-and-access/mcp-server-for-wordpress-workflow-configuration-authorization.md",
+    "docs/wiki/identity-and-access/obot-mcp-connect-access-control-bypass.md",
+    "docs/wiki/identity-and-access/obot-mcp-oauth-dynamic-client-registration.md",
+    "docs/wiki/identity-and-access/obot-mcp-quickstart-unauthenticated-admin-exposure.md",
+    "docs/wiki/identity-and-access/obot-mcp-registry-authentication-bypass.md",
+    "docs/wiki/identity-and-access/openclaw-non-owner-plugin-installation.md"
+  ],
+  "sources_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100587",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100858",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100862",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100863",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100868",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-101057",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-101058",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-101062",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-101063",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-101064",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-101065",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-101084",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-92529",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-96524",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-96525",
+    "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/",
+    "https://github.com/heymrun/heym/security/advisories/GHSA-39j3-6x3x-8rcr",
+    "https://github.com/heymrun/heym/security/advisories/GHSA-6rph-qqcv-jqh4",
+    "https://github.com/heymrun/heym/security/advisories/GHSA-6x65-w7q7-wg93",
+    "https://github.com/obot-platform/obot/security/advisories/GHSA-jgh3-fggc-mcpm",
+    "https://github.com/obot-platform/obot/security/advisories/GHSA-jj4w-pfgv-4mrm",
+    "https://github.com/obot-platform/obot/security/advisories/GHSA-pr6h-vr44-xq8j",
+    "https://github.com/obot-platform/obot/security/advisories/GHSA-vw82-7fv8-r6gp",
+    "https://github.com/obot-platform/obot/security/advisories/GHSA-xwmw-prc4-v3cr",
+    "https://github.com/openclaw/openclaw/security/advisories/GHSA-pjjr-5qhr-5w6r",
+    "https://github.com/penpot/penpot",
+    "https://github.com/penpot/penpot/blob/1d2c37e52c733f74017d90b0fd1ae2d074a5c33d/mcp/packages/server/src/PluginBridge.ts#L52",
+    "https://github.com/penpot/penpot/commit/b5274a44766d095247037be18c1d1918ac67ddeb",
+    "https://github.com/penpot/penpot/security/advisories/GHSA-22qr-rp27-j9wm",
+    "https://github.com/penpot/penpot/security/advisories/GHSA-ch2q-6x56-qg5r",
+    "https://github.com/universal-tool-calling-protocol/python-utcp/security/advisories/GHSA-8vxx-v7r9-948g",
+    "https://github.com/universal-tool-calling-protocol/python-utcp/security/advisories/GHSA-qwr9-cj2c-v3fv",
+    "https://gitlab.com/gitlab-org/gitlab/-/work_items/605431",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-100587",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-100858",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-100862",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-100863",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-100868",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-101057",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-101058",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-101062",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-101063",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-101064",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-101065",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-101084",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-92529",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-96524",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-96525",
+    "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00%3A00%3A00.000&pubEndDate=2026-09-28T23%3A59%3A59.999&keywordSearch=OpenClaw",
+    "https://wpscan.com/vulnerability/d8e97a77-b70f-41f0-8d1e-0d50b6d878c6/",
+    "https://wpscan.com/vulnerability/f814fb88-4198-4ba0-972c-658a1d672289/",
+    "https://www.vulncheck.com/advisories/heym-before-0.0.109-server-side-request-forgery-via-workflow-nodes",
+    "https://www.vulncheck.com/advisories/heym-before-0.0.91-multiple-secrets-plaintext-storage",
+    "https://www.vulncheck.com/advisories/heym-before-0.0.91-ssrf-via-image-fetching-and-ipv6-validation",
+    "https://www.vulncheck.com/advisories/obot-before-0.21.1-authorization-bypass-via-mcp-connect",
+    "https://www.vulncheck.com/advisories/obot-before-0.23.0-authentication-bypass-via-oauth-dynamic-client-registration",
+    "https://www.vulncheck.com/advisories/obot-before-0.23.0-authentication-bypass-via-registry-api",
+    "https://www.vulncheck.com/advisories/obot-before-0.23.0-server-side-request-forgery-via-mcp",
+    "https://www.vulncheck.com/advisories/obot-quickstart-docker-deployment-unauthenticated-admin-access",
+    "https://www.vulncheck.com/advisories/openclaw-before-2026.7.1-authorization-bypass-via-codex-install",
+    "https://www.vulncheck.com/advisories/penpot-before-2.18.0-unauthenticated-websocket-access-via-mcp-bridge",
+    "https://www.vulncheck.com/advisories/python-utcp-before-1.1.12-ssrf-via-remote-http-manual",
+    "https://www.vulncheck.com/advisories/utcp-mcp-before-1.1.3-ssrf-via-unvalidated-mcp-server-url"
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/heym-llm-image-fetch-ssrf.md",
+      "title": "Heym LLM Image Fetch SSRF",
+      "advisory_identifier": "CVE-2026-100863",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100863",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100863",
+        "https://github.com/heymrun/heym/security/advisories/GHSA-6rph-qqcv-jqh4",
+        "https://www.vulncheck.com/advisories/heym-before-0.0.91-ssrf-via-image-fetching-and-ipv6-validation"
+      ],
+      "visible_dates": {
+        "published": "2026-09-27T01:28:52.561Z",
+        "updated": "2026-09-27T01:28:52.561Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "Heym 0.0.90 and earlier; LLM image-edit URL fetch and IPv6 transition-address egress validation."
+      ],
+      "summary": "Heym versions 0.0.90 and earlier contain two server-side request forgery (SSRF) egress gaps, both remediated in app/services/ssrf_guard.py in 0.0.91. First, the LLM image-edit input loader (_load_image_bytes) fetched caller-controlled HTTP/HTTPS URLs with a bare httpx.get, applying only a scheme check and bypassing the egress-pinning HTTP client; because the workflow DSL supports \"imageInput\": \"$userInput.body.imageUrl\", a webhook or API caller can choose the fetch target when a workflow author uses that expression, allowing requests to loopback, RFC1918, and cloud metadata endpoints. Second, _is_public_address unwrapped only IPv4-mapped IPv6 addresses, so IPv6 transition forms \u2014 the NAT64 well-known prefix 64:ff9b::/96, deprecated IPv4-compatible ::x.x.x.x addresses, and 6to4 (2002::/16, classified as globally routable by Python 3.11.0 through 3.11.9) \u2014 could carry loopback, RFC1918, link-local, or cloud-metadata IPv4 destinations past both the initial URL validation and the dial-time IP pin. Version 0.0.91 routes the image loader through guard_http_url and the guarded client, evaluates NAT64 and IPv4-compatible addresses by their embedded IPv4 address, and refuses 64:ff9b:1::/48, 6to4, and Teredo (2001::/32) outright.",
+      "named_entities": [
+        "CVE-2026-100863",
+        "Heym",
+        "GHSA-6rph-qqcv-jqh4",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/heym-workflow-node-ssrf-guards.md",
+      "title": "Heym Workflow Node SSRF Guards",
+      "advisory_identifier": "CVE-2026-100858",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100858",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100858",
+        "https://github.com/heymrun/heym/security/advisories/GHSA-39j3-6x3x-8rcr",
+        "https://www.vulncheck.com/advisories/heym-before-0.0.109-server-side-request-forgery-via-workflow-nodes"
+      ],
+      "visible_dates": {
+        "published": "2026-09-27T01:28:49.185Z",
+        "updated": "2026-09-27T01:28:49.185Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "heym before 0.0.109; Slack, Discord, and Crawler workflow-node URL egress guards."
+      ],
+      "summary": "heym before 0.0.109 contains a server-side request forgery vulnerability in the Slack, Discord, and Crawler workflow nodes. These nodes issue HTTP requests to URLs taken from user-created credentials (webhook_url / flaresolverr_url) using an unguarded HTTP client, bypassing the SSRF egress guard that already protects the HTTP, WebSocket, and MCP nodes; the credential API validates only that the URL is non-empty. Any registered user can create a credential pointing at an internal address and execute a workflow, causing the backend to reach loopback, private, link-local, or cloud-metadata endpoints and return the full response body in the node output (non-blind SSRF).",
+      "named_entities": [
+        "CVE-2026-100858",
+        "Heym",
+        "GHSA-39j3-6x3x-8rcr",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/obot-remote-mcp-server-registration-ssrf.md",
+      "title": "Obot Remote MCP Server Registration SSRF",
+      "advisory_identifier": "CVE-2026-101064",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-101064",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101064",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-jgh3-fggc-mcpm",
+        "https://www.vulncheck.com/advisories/obot-before-0.23.0-server-side-request-forgery-via-mcp"
+      ],
+      "visible_dates": {
+        "published": "2026-09-27T20:49:55.344Z",
+        "updated": "2026-09-28T13:01:29.785Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "Obot before v0.23.0; remote MCP server registration URL validation and error response disclosure."
+      ],
+      "summary": "Obot before v0.23.0 contains a server-side request forgery vulnerability in remote MCP server registration that allows privileged users to specify arbitrary URLs without destination validation. Attackers with Power User or higher roles can coerce Obot to make requests to internal services and cloud metadata endpoints, reading responses in error messages to disclose sensitive credentials.",
+      "named_entities": [
+        "CVE-2026-101064",
+        "Obot",
+        "MCP",
+        "GHSA-jgh3-fggc-mcpm",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/penpot-mcp-websocket-bridge-authentication.md",
+      "title": "Penpot MCP WebSocket Bridge Authentication",
+      "advisory_identifier": "CVE-2026-100868",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100868",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100868",
+        "https://github.com/penpot/penpot/security/advisories/GHSA-ch2q-6x56-qg5r",
+        "https://github.com/penpot/penpot/commit/b5274a44766d095247037be18c1d1918ac67ddeb",
+        "https://github.com/penpot/penpot/blob/1d2c37e52c733f74017d90b0fd1ae2d074a5c33d/mcp/packages/server/src/PluginBridge.ts#L52",
+        "https://github.com/penpot/penpot/security/advisories/GHSA-22qr-rp27-j9wm",
+        "https://github.com/penpot/penpot",
+        "https://www.vulncheck.com/advisories/penpot-before-2.18.0-unauthenticated-websocket-access-via-mcp-bridge"
+      ],
+      "visible_dates": {
+        "published": "2026-09-27T13:09:53.387Z",
+        "updated": "2026-09-28T15:40:09.957Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "Penpot before 2.18.0 in single-user mode; MCP plugin WebSocket bridge listener authentication."
+      ],
+      "summary": "Penpot before 2.18.0 binds the MCP server plugin WebSocket bridge to all network interfaces without authentication in single-user mode. Unauthenticated attackers on adjacent networks can connect to the WebSocket port to impersonate the Penpot browser plugin, intercept task payloads, and return forged results to the MCP client.",
+      "named_entities": [
+        "CVE-2026-100868",
+        "Penpot",
+        "MCP",
+        "GHSA-ch2q-6x56-qg5r",
+        "GHSA-22qr-rp27-j9wm",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/utcp-mcp-server-url-validation.md",
+      "title": "UTCP MCP Server URL Validation",
+      "advisory_identifier": "CVE-2026-101057",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-101057",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101057",
+        "https://github.com/universal-tool-calling-protocol/python-utcp/security/advisories/GHSA-qwr9-cj2c-v3fv",
+        "https://www.vulncheck.com/advisories/utcp-mcp-before-1.1.3-ssrf-via-unvalidated-mcp-server-url"
+      ],
+      "visible_dates": {
+        "published": "2026-09-27T17:02:38.721Z",
+        "updated": "2026-09-27T17:02:38.721Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "utcp-mcp through 1.1.2; MCP server URL validation in call-template mcpServers configuration."
+      ],
+      "summary": "utcp-mcp (the MCP plugin of python-utcp) through 1.1.2 connects to the HTTP and WebSocket MCP server URLs given in a call template's mcpServers configuration without the ensure_secure_url validation that the HTTP-family plugins apply, so the HTTPS/WSS-or-loopback rule is not enforced. A call template naming a plain-HTTP, non-loopback MCP server URL is dialed as configured, exposing the MCP handshake to network interception and permitting cleartext connections to internal hosts. The mcpServers configuration is operator-authored rather than remote data, and the connection is an MCP handshake rather than an arbitrary request returning a body, which limits practical exploitation; the OAuth2 token_url credential path described in the original report was not reachable in the affected versions, because the OAuth2 handler was never invoked and the call template's auth field was not read. Fixed in utcp-mcp 1.1.3, which validates server URLs before any connection is made.",
+      "named_entities": [
+        "CVE-2026-101057",
+        "UTCP",
+        "utcp-mcp",
+        "python-utcp",
+        "GHSA-qwr9-cj2c-v3fv",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/utcp-remote-http-manual-loopback-ssrf.md",
+      "title": "UTCP Remote HTTP Manual Loopback SSRF",
+      "advisory_identifier": "CVE-2026-101058",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-101058",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101058",
+        "https://github.com/universal-tool-calling-protocol/python-utcp/security/advisories/GHSA-8vxx-v7r9-948g",
+        "https://www.vulncheck.com/advisories/python-utcp-before-1.1.12-ssrf-via-remote-http-manual"
+      ],
+      "visible_dates": {
+        "published": "2026-09-27T17:02:39.400Z",
+        "updated": "2026-09-27T17:02:39.400Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "python-utcp package utcp-http before 1.1.12; remote HTTP manual loopback tool URL handling."
+      ],
+      "summary": "python-utcp (pip package utcp-http) before 1.1.12 does not verify whether tool URLs declared in a hand-written UTCP manual point at the agent's own loopback interface when that manual is discovered from a remote, non-loopback origin. Because ensure_secure_url intentionally permits loopback HTTP for local development and native manuals bypassed the loopback check performed by the OpenAPI converter, an attacker who can serve a UTCP manual that a victim registers can cause the client to issue requests to services bound only to 127.0.0.1 on the victim host and have the response bodies returned to the caller (server-side request forgery). The http, sse and streamable_http protocols are all affected. Reach is limited to loopback, and exploitation further requires a loopback service that answers unauthenticated requests with useful data. Fixed in utcp-http 1.1.12, which rejects manuals fetched from a non-loopback origin that declare loopback tool URLs, keyed off the final post-redirect discovery URL.",
+      "named_entities": [
+        "CVE-2026-101058",
+        "UTCP",
+        "python-utcp",
+        "utcp-http",
+        "GHSA-8vxx-v7r9-948g",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/heym-workflow-capability-secret-plaintext-exposure.md",
+      "title": "Heym Workflow Capability Secret Plaintext Exposure",
+      "advisory_identifier": "CVE-2026-100862",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100862",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100862",
+        "https://github.com/heymrun/heym/security/advisories/GHSA-6x65-w7q7-wg93",
+        "https://www.vulncheck.com/advisories/heym-before-0.0.91-multiple-secrets-plaintext-storage"
+      ],
+      "visible_dates": {
+        "published": "2026-09-27T01:28:51.915Z",
+        "updated": "2026-09-27T01:28:51.915Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "heym before 0.0.91; workflow capability-secret storage, response, and replay boundary."
+      ],
+      "summary": "heym, a workflow automation platform, stores and returns multiple capability secrets in plaintext in versions prior to 0.0.91. Affected secrets include webhook header-auth values (returned in cleartext by GET /api/workflows/{id} and persisted unsanitized into execution history), MCP API keys (stored as a plaintext column, returned in config/list responses, and accepted via the ?key= query string so they leak into logs, proxies and Referer headers), portal session tokens (stored and validated by plaintext equality with a 168-hour TTL), workflow execution JWTs (stored in full and re-listed by GET .../execution-tokens), Discord interaction tokens (the full interaction body is stored in execution history), and global variables. A user with read access to a workflow, share/team membership, or anyone able to read the database, a backup, or logs can recover these secrets and replay them to execute workflows or act as the secret owner.",
+      "named_entities": [
+        "CVE-2026-100862",
+        "Heym",
+        "GHSA-6x65-w7q7-wg93",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/gitlab-duo-workflow-token-governance-bypass.md",
+      "title": "GitLab Duo Workflow Token Governance Bypass",
+      "advisory_identifier": "CVE-2026-92529",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-92529",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-92529",
+        "https://gitlab.com/gitlab-org/gitlab/-/work_items/605431",
+        "https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-4-1-released/"
+      ],
+      "visible_dates": {
+        "published": "2026-09-23T23:05:00.130Z",
+        "updated": "2026-09-24T13:05:55.894Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "GitLab CE/EE before patched 19.2.7, 19.3.3, and 19.4.1 ranges; Duo Workflow Service token governance."
+      ],
+      "summary": "GitLab has remediated an issue in GitLab EE affecting all versions from 19.1 before 19.2.7, 19.3 before 19.3.3, and 19.4 before 19.4.1 that under certain conditions could have allowed an authenticated user with developer-role permissions to bypass admin-configured AI tool governance controls for workflows in namespaces they do not control due to improper authorization checks.",
+      "named_entities": [
+        "CVE-2026-92529",
+        "GitLab",
+        "GitLab Duo Workflow Service"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-server-for-wordpress-rest-nonce-bypass.md",
+      "title": "MCP Server For WordPress REST Nonce Bypass",
+      "advisory_identifier": "CVE-2026-96524",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-96524",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96524",
+        "https://wpscan.com/vulnerability/d8e97a77-b70f-41f0-8d1e-0d50b6d878c6/"
+      ],
+      "visible_dates": {
+        "published": "2026-09-26T06:00:20.605Z",
+        "updated": "2026-09-26T22:41:14.369Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "MCP Server for WordPress before 1.8.2; REST nonce verification on cookie-authenticated administrator actions."
+      ],
+      "summary": "The MCP Server for WordPress  WordPress plugin before 1.8.2 does not correctly verify the WordPress REST API nonce for cookie-authenticated requests when a condition an attacker can influence is present, allowing unauthenticated attackers to perform administrator-only actions, including creating a new administrator account, by tricking a logged-in administrator into visiting a crafted page.",
+      "named_entities": [
+        "CVE-2026-96524",
+        "MCP Server for WordPress",
+        "WPScan"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-server-for-wordpress-workflow-configuration-authorization.md",
+      "title": "MCP Server For WordPress Workflow Configuration Authorization",
+      "advisory_identifier": "CVE-2026-96525",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-96525",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-96525",
+        "https://wpscan.com/vulnerability/f814fb88-4198-4ba0-972c-658a1d672289/"
+      ],
+      "visible_dates": {
+        "published": "2026-09-26T06:00:20.775Z",
+        "updated": "2026-09-26T22:41:14.229Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "MCP Server for WordPress before 1.8.2; Contributor access to workflow configuration routes."
+      ],
+      "summary": "The MCP Server for WordPress  WordPress plugin before 1.8.2 does not perform an ownership or sufficient capability check on its workflow create, update and delete REST routes, allowing users with the Contributor role to modify, delete and create site-wide workflow configuration, including workflows created by administrators.",
+      "named_entities": [
+        "CVE-2026-96525",
+        "MCP Server for WordPress",
+        "WPScan"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/obot-mcp-connect-access-control-bypass.md",
+      "title": "Obot MCP Connect Access Control Bypass",
+      "advisory_identifier": "CVE-2026-101084",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-101084",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101084",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-vw82-7fv8-r6gp",
+        "https://www.vulncheck.com/advisories/obot-before-0.21.1-authorization-bypass-via-mcp-connect"
+      ],
+      "visible_dates": {
+        "published": "2026-09-27T20:49:56.702Z",
+        "updated": "2026-09-27T20:49:56.702Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "Obot before v0.21.1; /mcp-connect Access Control Rule enforcement and stored OAuth credential use."
+      ],
+      "summary": "obot versions before v0.21.1 fail to enforce Access Control Rules on the /mcp-connect endpoint, allowing any authenticated user to connect to restricted MCP servers if they possess the server ID. Attackers can bypass authorization checks to access and manipulate sensitive backend systems through MCP tool calls using stored OAuth credentials.",
+      "named_entities": [
+        "CVE-2026-101084",
+        "Obot",
+        "MCP",
+        "GHSA-vw82-7fv8-r6gp",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/obot-mcp-oauth-dynamic-client-registration.md",
+      "title": "Obot MCP OAuth Dynamic Client Registration",
+      "advisory_identifier": "CVE-2026-101062",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-101062",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101062",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-xwmw-prc4-v3cr",
+        "https://www.vulncheck.com/advisories/obot-before-0.23.0-authentication-bypass-via-oauth-dynamic-client-registration"
+      ],
+      "visible_dates": {
+        "published": "2026-09-27T20:49:54.008Z",
+        "updated": "2026-09-27T20:49:54.008Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "Obot before v0.23.0; MCP OAuth dynamic client registration, redirect URI, consent, and token audience validation."
+      ],
+      "summary": "Obot before v0.23.0 (affected versions <= v0.22.1) running with OBOT_SERVER_ENABLE_AUTHENTICATION=true exposes OAuth dynamic client registration without authentication and without any restriction on the redirect URIs a client may register. Because the authorization flow auto-completes for an already logged-in user with no consent screen, an attacker who registers a client pointing at their own domain and induces a logged-in victim to visit a single crafted authorization URL receives an authorization code at the attacker-controlled redirect URI and can exchange it for an access token and refresh token. The token minted by the MCP OAuth flow carries the victim's full group set in the JWT, and Obot validated only the issuer and not the audience, so the token is accepted as a bearer token against any Obot API endpoint the victim can access rather than being scoped to the requested MCP server, allowing the attacker to read or modify the victim's resources until the token is revoked. v0.23.0 adds a consent screen, restricts MCP OAuth tokens to the MCP involved in the request, and enforces audience validation.",
+      "named_entities": [
+        "CVE-2026-101062",
+        "Obot",
+        "MCP OAuth",
+        "GHSA-xwmw-prc4-v3cr",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/obot-mcp-quickstart-unauthenticated-admin-exposure.md",
+      "title": "Obot MCP Quickstart Unauthenticated Admin Exposure",
+      "advisory_identifier": "CVE-2026-101065",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-101065",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101065",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-jj4w-pfgv-4mrm",
+        "https://www.vulncheck.com/advisories/obot-quickstart-docker-deployment-unauthenticated-admin-access"
+      ],
+      "visible_dates": {
+        "published": "2026-09-27T20:49:56.009Z",
+        "updated": "2026-09-27T20:49:56.009Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "Obot quickstart Docker deployment through commit d7e6970; unauthenticated owner/admin exposure and mounted Docker socket authority."
+      ],
+      "summary": "Obot is an open-source AI agent/MCP platform. In all versions up to and including commit d7e6970, the Docker quickstart command documented in the README starts the container listening on 0.0.0.0:8080 with authentication disabled by default. When authentication is disabled, every request is mapped to a synthetic \"nobody\" user that holds the Owner and Admin roles, so any unauthenticated party who can reach the exposed port obtains full administrative access to the Obot API and UI, including the ability to register and launch attacker-controlled MCP servers. Because the quickstart also mounts /var/run/docker.sock into the container, the MCP runtime backend reachable this way has access to the host's Docker control surface. The fix is documentation-only: the quickstart now enables authentication, and operators who followed the previous instructions should set OBOT_SERVER_ENABLE_AUTHENTICATION=true before exposing the host to any untrusted network.",
+      "named_entities": [
+        "CVE-2026-101065",
+        "Obot",
+        "Docker",
+        "MCP",
+        "GHSA-jj4w-pfgv-4mrm",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/obot-mcp-registry-authentication-bypass.md",
+      "title": "Obot MCP Registry Authentication Bypass",
+      "advisory_identifier": "CVE-2026-101063",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-101063",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101063",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-pr6h-vr44-xq8j",
+        "https://www.vulncheck.com/advisories/obot-before-0.23.0-authentication-bypass-via-registry-api"
+      ],
+      "visible_dates": {
+        "published": "2026-09-27T20:49:54.677Z",
+        "updated": "2026-09-28T13:49:35.081Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "Obot before v0.23.0; MCP Registry /v0.1/* authentication and registry metadata exposure."
+      ],
+      "summary": "Obot versions before v0.23.0 fail to enforce authentication on MCP Registry endpoints under /v0.1/* when registry authentication is enabled. Unauthenticated attackers can read registry metadata including server names, descriptions, repository URLs, and connect URLs by sending GET requests to /v0.1/servers.",
+      "named_entities": [
+        "CVE-2026-101063",
+        "Obot",
+        "MCP Registry",
+        "GHSA-pr6h-vr44-xq8j",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "Already represented by the cited processed collector source; ingest should diff metadata before adding new wiki or digest prose."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/openclaw-non-owner-plugin-installation.md",
+      "title": "OpenClaw Non Owner Plugin Installation",
+      "advisory_identifier": "CVE-2026-100587",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100587",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100587",
+        "https://github.com/openclaw/openclaw/security/advisories/GHSA-pjjr-5qhr-5w6r",
+        "https://www.vulncheck.com/advisories/openclaw-before-2026.7.1-authorization-bypass-via-codex-install",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-24T00%3A00%3A00.000&pubEndDate=2026-09-28T23%3A59%3A59.999&keywordSearch=OpenClaw"
+      ],
+      "visible_dates": {
+        "published": "2026-09-26T02:19:10.955Z",
+        "updated": "2026-09-28T17:30:20.127Z"
+      },
+      "date_window_qualification": "published or visibly updated within the last 7 days of the run timestamp",
+      "evidence_classification": "disclosed_vulnerability",
+      "exploit_or_incident_status": "No confirmed active exploitation identified in checked public metadata; references may contain proof-of-concept or technical detail where tagged by the source.",
+      "affected_boundaries": [
+        "OpenClaw before 2026.7.1; Codex computer-use installation command owner authorization and plugin/MCP process execution."
+      ],
+      "summary": "Public NVD data maps the local OpenClaw child leaf to non-owner Codex computer-use installation: non-owner channel senders can install arbitrary plugins and execute MCP processes with OpenClaw user privileges.",
+      "named_entities": [
+        "CVE-2026-100587",
+        "OpenClaw",
+        "Codex computer use",
+        "MCP",
+        "GHSA-pjjr-5qhr-5w6r",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "local_security_wiki": "Keep the security-specific affected boundary, mitigation, evidence classification, and operational follow-up locally.",
+        "ai_wiki": "Route broad company, product, framework, protocol, and tool background upstream if needed.",
+        "ai_dev_wiki": "Route general development workflow or adoption practice upstream unless tied to this security control."
+      },
+      "follow_up_note": "This run resolves the child leaf CVE mapping to CVE-2026-100587; ingest should reconcile the local open question against GHSA-pjjr-5qhr-5w6r/VulnCheck before editing wiki prose."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "OpenClaw plugin install documentation/search-result pages without a same-leaf seven-day security disclosure date",
+      "source_urls": [
+        "https://docs.openclaw.ai/cli/plugins/install",
+        "https://github.com/openclaw/openclaw/blob/main/docs/tools/plugin.md",
+        "https://github.com/openclaw/openclaw/security/advisories/GHSA-7vrr-rp4x-4g76"
+      ],
+      "reason": "Documentation crawl dates and older June advisory publication were not treated as qualifying update evidence for this leaf; CVE-2026-100587/NVD supplied the qualifying same-leaf disclosure instead."
+    }
+  ],
+  "federation_notes": [
+    "Security-specific vulnerability/control records remain local. Broad Heym, Obot, Penpot, UTCP, GitLab, WordPress plugin, and OpenClaw entity/product background belongs upstream in ai-wiki or ai-dev-wiki if needed."
+  ],
+  "follow_up_notes": [
+    "Process this raw artifact through normal ingest only after checking existing processed collector coverage to avoid duplicate digest prose.",
+    "OpenClaw non-owner plugin installation leaf can resolve its CVE open question to CVE-2026-100587 if primary advisory reconciliation agrees."
+  ]
+}

@@ -8,6 +8,11 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [identity-and-access/zscaler-mcp-confirmation-token-resource-binding.md](identity-and-access/zscaler-mcp-confirmation-token-resource-binding.md)
+- [agent-and-tool-security/fast-mcp-telegram-file-url-ssrf.md](agent-and-tool-security/fast-mcp-telegram-file-url-ssrf.md)
+- [data-and-privacy/token-optimizer-mcp-dashboard-log-traversal.md](data-and-privacy/token-optimizer-mcp-dashboard-log-traversal.md)
+- [infrastructure-and-supply-chain/tencent-ai-infra-guard-file-access-path-traversal.md](infrastructure-and-supply-chain/tencent-ai-infra-guard-file-access-path-traversal.md)
+- [testing-and-assurance/agentverus-scanner-security-decision-input-trust.md](testing-and-assurance/agentverus-scanner-security-decision-input-trust.md)
 - [identity-and-access/obot-mcp-oauth-dynamic-client-registration.md](identity-and-access/obot-mcp-oauth-dynamic-client-registration.md)
 - [identity-and-access/obot-mcp-registry-authentication-bypass.md](identity-and-access/obot-mcp-registry-authentication-bypass.md)
 - [agent-and-tool-security/obot-remote-mcp-server-registration-ssrf.md](agent-and-tool-security/obot-remote-mcp-server-registration-ssrf.md)
@@ -529,6 +534,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-09-29 with September 28 source-ingest leaves for Zscaler MCP confirmation-token binding, fast-mcp-telegram file URL SSRF, Token Optimizer MCP dashboard log traversal, Tencent AI-Infra-Guard file access path traversal, and agentverus-scanner security-decision input trust.
 - Updated on 2026-09-27 with September 25 and 26 Rapid7, OpenClaw, MCP Server for WordPress, SiYuan, Zammad, LiteLLM, Flowise, and vLLM security leaves plus watcher enrichment.
 - Add local durable leaves here after federation routing and wiki verification.
 - Updated on 2026-09-03 with September 3 topic and watcher ingest for GPT-6 Astra deployment controls, Daybreak frontline-defender access, n8n credential exfiltration, Ollama model-pull SSRF, WordPress AI/MCP authorization, Agent-S GUI action DoS, openbrowser message-budget DoS, and watcher provenance.
