@@ -2,6 +2,11 @@
 
 ## Current Understanding
 
+- [Google MCP Toolbox allowedLocalRoots symlink bypass](google-mcp-toolbox-allowedlocalroots-symlink-bypass.md)
+- [mcp-chrome-bridge CORS origin bypass](mcp-chrome-bridge-cors-origin-bypass.md)
+- [mark3labs mcp-filesystem-server dangling symlink traversal](mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md)
+- [VoiceMode update_config command injection](voicemode-update-config-command-injection.md)
+- [MetaMCP stdio inspector proxy code execution](metamcp-stdio-inspector-proxy-code-execution.md)
 - [Obot remote MCP server registration SSRF](obot-remote-mcp-server-registration-ssrf.md)
 - [Heym workflow node SSRF guards](heym-workflow-node-ssrf-guards.md)
 - [Heym LLM image fetch SSRF](heym-llm-image-fetch-ssrf.md)
@@ -40,6 +45,11 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [Google MCP Toolbox allowedLocalRoots symlink bypass](google-mcp-toolbox-allowedlocalroots-symlink-bypass.md)
+- [mcp-chrome-bridge CORS origin bypass](mcp-chrome-bridge-cors-origin-bypass.md)
+- [mark3labs mcp-filesystem-server dangling symlink traversal](mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md)
+- [VoiceMode update_config command injection](voicemode-update-config-command-injection.md)
+- [MetaMCP stdio inspector proxy code execution](metamcp-stdio-inspector-proxy-code-execution.md)
 - [Obot remote MCP server registration SSRF](obot-remote-mcp-server-registration-ssrf.md)
 - [Heym workflow node SSRF guards](heym-workflow-node-ssrf-guards.md)
 - [Heym LLM image fetch SSRF](heym-llm-image-fetch-ssrf.md)
@@ -243,6 +253,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-09-30 with Google MCP Toolbox symlink containment, mcp-chrome-bridge origin validation, mark3labs filesystem symlink traversal, VoiceMode configuration command injection, and MetaMCP stdio proxy execution leaves.
 - Updated on 2026-09-29 with fast-mcp-telegram file URL SSRF and Token Optimizer MCP command-injection reconciliation.
 - Updated on 2026-09-27 with Obot remote MCP SSRF, split Heym workflow and LLM image-fetch SSRF guards, UTCP URL-validation, and Penpot MCP bridge authentication leaves.
 - Updated on 2026-09-27 with Rapid7 Bulk Export MCP GraphQL query injection, split OpenClaw authority/approval leaves, split Zammad AI Agent execution/XSS leaves, and SiYuan recursive file-tool guard evidence.

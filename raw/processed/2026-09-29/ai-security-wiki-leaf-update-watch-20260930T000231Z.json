@@ -1,0 +1,501 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Leaf Update Watch",
+    "id": "ai-security-wiki-leaf-update-watch",
+    "agent_identifier": "Northstar",
+    "run_timestamp_utc": "2026-09-30T00:02:31Z",
+    "last_run_timestamp_utc": "2026-09-29T00:01:56.967Z"
+  },
+  "cutoff_window": {
+    "policy": "Only public sources visibly published or updated within the last 7 days relative to run time; ambiguous, future, missing, unrelated, boundary-only, and header-only dates are excluded.",
+    "start_utc": "2026-09-23T00:02:31Z",
+    "end_utc": "2026-09-30T00:02:31Z"
+  },
+  "repository_boundaries": {
+    "target_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "approved_roots": [
+      "docs/wiki/threats-and-attacks",
+      "docs/wiki/model-and-prompt-security",
+      "docs/wiki/agent-and-tool-security",
+      "docs/wiki/data-and-privacy",
+      "docs/wiki/identity-and-access",
+      "docs/wiki/infrastructure-and-supply-chain",
+      "docs/wiki/testing-and-assurance",
+      "docs/wiki/governance-and-compliance",
+      "docs/wiki/incident-response"
+    ],
+    "modified_repository_paths": [
+      "raw/2026-09-29/ai-security-wiki-leaf-update-watch-20260930T000231Z.json"
+    ],
+    "not_modified": [
+      "docs/wiki",
+      "raw/processed"
+    ],
+    "federation_summary": "Broad AI entities, products, frameworks, MCP servers, and general AI-development practices route to ai-wiki or ai-dev-wiki; this artifact keeps only security-specific evidence, boundaries, mitigations, and routing notes."
+  },
+  "selection": {
+    "leaf_universe_count": 504,
+    "selected_leaf_count": 15,
+    "selection_rule": "Unchecked leaves first, then leaves with oldest last_checked_at, ties by stable relative wiki path.",
+    "selected_leaf_ids": [
+      "docs/wiki/agent-and-tool-security/fast-mcp-telegram-file-url-ssrf.md",
+      "docs/wiki/data-and-privacy/token-optimizer-mcp-dashboard-log-traversal.md",
+      "docs/wiki/identity-and-access/zscaler-mcp-confirmation-token-resource-binding.md",
+      "docs/wiki/infrastructure-and-supply-chain/tencent-ai-infra-guard-file-access-path-traversal.md",
+      "docs/wiki/model-and-prompt-security/vllm-multimodal-decoder-prompt-length-dos.md",
+      "docs/wiki/testing-and-assurance/agentverus-scanner-security-decision-input-trust.md",
+      "docs/wiki/infrastructure-and-supply-chain/infracost-terraform-token-forwarding-leak.md",
+      "docs/wiki/infrastructure-and-supply-chain/nltk-transition-parser-model-pickle-rce.md",
+      "docs/wiki/infrastructure-and-supply-chain/onnx-external-data-symlink-file-write.md",
+      "docs/wiki/agent-and-tool-security/cursor-auto-run-sandbox-escapes.md",
+      "docs/wiki/agent-and-tool-security/ghostjacking-poisoned-operational-log-agent-hijack.md",
+      "docs/wiki/agent-and-tool-security/ghostsplice-mcp-split-instruction-exfiltration.md",
+      "docs/wiki/agent-and-tool-security/mcp-context-injection-transparency.md",
+      "docs/wiki/data-and-privacy/ai-sidebar-extension-ai-chat-theft.md",
+      "docs/wiki/identity-and-access/agent-delegated-task-authorization-drift.md"
+    ]
+  },
+  "sources_checked_by_leaf": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/fast-mcp-telegram-file-url-ssrf.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55096",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-55096",
+        "https://github.com/leshchenko1979/fast-mcp-telegram/security/advisories/GHSA-xr72-j7vj-vp7g",
+        "https://github.com/leshchenko1979/fast-mcp-telegram/releases/tag/0.30.1"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/token-optimizer-mcp-dashboard-log-traversal.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55156",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-55156",
+        "https://github.com/ooples/token-optimizer-mcp/security/advisories/GHSA-76pc-mqxp-3rq5",
+        "https://github.com/ooples/token-optimizer-mcp/releases/tag/v5.1.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/zscaler-mcp-confirmation-token-resource-binding.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-59563",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-59563",
+        "https://github.com/zscaler/zscaler-mcp-server/pull/41"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/tencent-ai-infra-guard-file-access-path-traversal.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-101080",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-101080",
+        "https://vuldb.com/vuln/410952",
+        "https://github.com/Tencent/AI-Infra-Guard/issues/538",
+        "https://github.com/Tencent/AI-Infra-Guard/pull/539",
+        "https://github.com/Tencent/AI-Infra-Guard/commit/ac0384edc9dbea3b226edefcf50613bd8509134f",
+        "https://github.com/Tencent/AI-Infra-Guard/releases/tag/v4.6.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-multimodal-decoder-prompt-length-dos.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100651",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-100651",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100651"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/agentverus-scanner-security-decision-input-trust.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-101079",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-101079",
+        "https://vuldb.com/vuln/410950",
+        "https://github.com/agentverus/agentverus-scanner/issues/28",
+        "https://github.com/agentverus/agentverus-scanner/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/infracost-terraform-token-forwarding-leak.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-71494",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-71494",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71494"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/nltk-transition-parser-model-pickle-rce.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-71513",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-71513",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71513",
+        "https://www.cve.org/CVERecord?id=CVE-2026-71513"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/onnx-external-data-symlink-file-write.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-49114",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-49114",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-49114",
+        "https://www.cve.org/CVERecord?id=CVE-2026-49114",
+        "https://github.com/onnx/onnx/security/advisories/GHSA-q56x-g2fj-4rj6"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cursor-auto-run-sandbox-escapes.md",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73217",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73218",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-73217",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-73218",
+        "https://github.com/cursor/cursor/security/advisories/GHSA-p9g2-cr55-cw9c",
+        "https://vulners.com/cve/CVE-2026-73217",
+        "https://www.tenable.com/cve"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ghostjacking-poisoned-operational-log-agent-hijack.md",
+      "source_urls_checked": [
+        "https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/",
+        "https://tenetsecurity.ai/blog/ghostjacking-attacks-agentic-kill-chain/",
+        "https://tenetsecurity.ai"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ghostsplice-mcp-split-instruction-exfiltration.md",
+      "source_urls_checked": [
+        "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html",
+        "https://asset-group.github.io/disclosures/ghostsplice/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-context-injection-transparency.md",
+      "source_urls_checked": [
+        "https://www.digitalapplied.com/blog/mcp-server-context-injection-transparency-audit"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-sidebar-extension-ai-chat-theft.md",
+      "source_urls_checked": [
+        "https://www.netskope.com/blog/ai-sidebar-extension-monetizes-its-own-updates",
+        "https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/agent-delegated-task-authorization-drift.md",
+      "source_urls_checked": [
+        "https://www.kotaradio.com/2026/08/23/ai-agent-hacks-gym-system-to-move-up-waitlist/",
+        "https://thehackernews.com/2026/08/claude-opus-46-bypasses-gym-booking.html"
+      ]
+    }
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/fast-mcp-telegram-file-url-ssrf.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55096",
+      "additional_source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-55096"
+      ],
+      "visible_date": "2026-09-28T16:38:26.730Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "named_entities": [
+        "fast-mcp-telegram",
+        "CVE-2026-55096",
+        "GHSA-xr72-j7vj-vp7g",
+        "Telegram",
+        "MCP"
+      ],
+      "affected_boundaries": [
+        "HTTP(S) file URL downloads in Telegram MCP send tools",
+        "server-side fetch/DNS rebinding and exfiltrating SSRF boundary"
+      ],
+      "summary": "CVE Services published CVE-2026-55096 on September 28 for fast-mcp-telegram file URL SSRF; NVD received the record the same day.",
+      "upstream_routing": "Broad Telegram and MCP server catalog details belong in ai-wiki; local follow-up is limited to SSRF/exfiltration controls and version-number reconciliation.",
+      "follow_up_note": "Already represented by the September 28 processed topic collector; ingest only if CVE/NVD metadata adds material remediation detail."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/token-optimizer-mcp-dashboard-log-traversal.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-55156",
+      "additional_source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-55156"
+      ],
+      "visible_date": "2026-09-28T18:11:38.212Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "named_entities": [
+        "token-optimizer-mcp",
+        "CVE-2026-55156",
+        "GHSA-76pc-mqxp-3rq5"
+      ],
+      "affected_boundaries": [
+        "unauthenticated dashboard session-summary and session-events endpoints",
+        "agent telemetry and prompt/session log disclosure"
+      ],
+      "summary": "CVE Services published and updated CVE-2026-55156 on September 28; NVD received and modified the record the same day.",
+      "upstream_routing": "General context-optimization practice belongs in ai-dev-wiki; local scope is unauthenticated telemetry/log traversal disclosure.",
+      "follow_up_note": "Compare CVE/NVD metadata with the September 28 processed collector before changing wiki prose."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/zscaler-mcp-confirmation-token-resource-binding.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-59563",
+      "additional_source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-59563"
+      ],
+      "visible_date": "2026-09-28T13:31:27.587Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "named_entities": [
+        "zscaler-mcp-server",
+        "Zscaler",
+        "CVE-2026-59563"
+      ],
+      "affected_boundaries": [
+        "MCP confirmation tokens",
+        "resource/action target binding for delegated authorization"
+      ],
+      "summary": "CVE Services and NVD show September 28 publication/update evidence for confirmation-token replay across Zscaler MCP resources.",
+      "upstream_routing": "Zscaler product coverage belongs in ai-wiki; local scope is confirmation-token resource binding.",
+      "follow_up_note": "Follow up on PR 41 only for exact token-field changes, not broad product catalog details."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/tencent-ai-infra-guard-file-access-path-traversal.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-101080",
+      "additional_source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-101080",
+        "https://github.com/Tencent/AI-Infra-Guard/releases/tag/v4.6.0"
+      ],
+      "visible_date": "2026-09-28T17:36:43.700Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "named_entities": [
+        "Tencent AI-Infra-Guard",
+        "CVE-2026-101080",
+        "VulDB"
+      ],
+      "affected_boundaries": [
+        "File Access component path containment",
+        "security-scanner local filesystem access"
+      ],
+      "summary": "CVE Services and NVD show September 28 publication/update evidence for AI-Infra-Guard path traversal; the cited v4.6.0 release page itself is older, so the CVE metadata is the in-window source.",
+      "upstream_routing": "Tencent/tool catalog coverage belongs in ai-wiki; local scope is scanner file-boundary failure and version reconciliation.",
+      "follow_up_note": "Preserve the fixed-version conflict as an open question until upstream release metadata is reconciled."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-multimodal-decoder-prompt-length-dos.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100651",
+      "additional_source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-100651",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100651"
+      ],
+      "visible_date": "2026-09-28T18:25:40.222Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "named_entities": [
+        "vLLM",
+        "CVE-2026-100651",
+        "Nemotron Parse",
+        "Whisper",
+        "FireRedLID"
+      ],
+      "affected_boundaries": [
+        "vLLM disaggregated multimodal serving",
+        "decoder prompt-length validation",
+        "inference worker availability"
+      ],
+      "summary": "CVE Services published CVE-2026-100651 on September 26 and updated it September 28; NVD last modified the record September 28.",
+      "upstream_routing": "Broad vLLM runtime context belongs in ai-wiki; local scope is model-serving availability and prompt-length validation control.",
+      "follow_up_note": "Primary vLLM advisory or release-note details remain useful if later captured."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/agentverus-scanner-security-decision-input-trust.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-101079",
+      "additional_source_urls": [
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-101079"
+      ],
+      "visible_date": "2026-09-28T15:45:10.884Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "named_entities": [
+        "agentverus-scanner",
+        "CVE-2026-101079",
+        "VulDB"
+      ],
+      "affected_boundaries": [
+        "scanner security-decision input trust",
+        "isSecurityDefenseSkill classification in context.js"
+      ],
+      "summary": "CVE Services and NVD show September 28 publication/update evidence for agentverus-scanner untrusted-input reliance in security classification.",
+      "upstream_routing": "General scanner product/integration coverage belongs upstream; local scope is scanner-assurance input trust.",
+      "follow_up_note": "No fixed version was identified in the checked evidence; later ingest should look for a vendor fix before changing mitigation state."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/infracost-terraform-token-forwarding-leak.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-71494",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-71494",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71494"
+      ],
+      "reason": "CVE Services published/updated on 2026-08-21 and NVD lastModified was 2026-09-18, both before the seven-day window.",
+      "visible_dates": [
+        "2026-08-21T17:50:43.655Z",
+        "2026-08-21T19:23:57.520Z",
+        "2026-09-18T20:09:01.757Z"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/nltk-transition-parser-model-pickle-rce.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-71513",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-71513",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-71513",
+        "https://www.cve.org/CVERecord?id=CVE-2026-71513"
+      ],
+      "reason": "CVE Services/NVD visible updates are 2026-08-22 through 2026-09-16, outside the seven-day window.",
+      "visible_dates": [
+        "2026-08-22T13:34:07.811Z",
+        "2026-08-27T16:24:50.539Z",
+        "2026-09-16T13:19:34.203Z"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/onnx-external-data-symlink-file-write.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-49114",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-49114",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-49114",
+        "https://www.cve.org/CVERecord?id=CVE-2026-49114",
+        "https://github.com/onnx/onnx/security/advisories/GHSA-q56x-g2fj-4rj6"
+      ],
+      "reason": "CVE Services/NVD visible updates are 2026-08-21 through 2026-09-16; GitHub advisory page visible datetime is 2026-03-31 and header-only response dates are excluded.",
+      "visible_dates": [
+        "2026-08-21T16:10:56.241Z",
+        "2026-09-16T13:55:10.540Z",
+        "2026-03-31T16:00:00Z"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cursor-auto-run-sandbox-escapes.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73217",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73218",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-73217",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-73218",
+        "https://github.com/cursor/cursor/security/advisories/GHSA-p9g2-cr55-cw9c",
+        "https://vulners.com/cve/CVE-2026-73217",
+        "https://www.tenable.com/cve"
+      ],
+      "reason": "Cursor CVE Services records are August 2026 and NVD lastModified is 2026-09-09, outside the seven-day window; GitHub advisory visible datetime is 2026-07-14.",
+      "visible_dates": [
+        "2026-08-11T17:46:16.463Z",
+        "2026-08-13T13:59:38.957Z",
+        "2026-09-09T20:58:37.713Z",
+        "2026-07-14T19:23:43Z"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ghostjacking-poisoned-operational-log-agent-hijack.md",
+      "source_urls": [
+        "https://www.securityweek.com/ghostjacking-attack-uses-poisoned-logs-to-turn-ai-agents-bad/",
+        "https://tenetsecurity.ai/blog/ghostjacking-attacks-agentic-kill-chain/",
+        "https://tenetsecurity.ai"
+      ],
+      "reason": "SecurityWeek and Tenet visible published/modified dates are August 10 and September 3, outside the seven-day window; unrelated future/event dates on the page were excluded.",
+      "visible_dates": [
+        "2026-08-10T12:59:34+00:00",
+        "2026-09-03T13:35:46+03:00"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ghostsplice-mcp-split-instruction-exfiltration.md",
+      "source_urls": [
+        "https://thehackernews.com/2026/08/malicious-mcp-servers-can-split.html",
+        "https://asset-group.github.io/disclosures/ghostsplice/"
+      ],
+      "reason": "The Hacker News article visible publication date is August 11 and ASSET page did not expose an in-window visible update date; unrelated sidebar dates were excluded.",
+      "visible_dates": [
+        "2026-08-11",
+        "2026-08-10"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-context-injection-transparency.md",
+      "source_urls": [
+        "https://www.digitalapplied.com/blog/mcp-server-context-injection-transparency-audit"
+      ],
+      "reason": "Digital Applied audit visible published/modified date is 2026-08-22, outside the seven-day window.",
+      "visible_dates": [
+        "2026-08-22T00:00:00+01:00"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ai-sidebar-extension-ai-chat-theft.md",
+      "source_urls": [
+        "https://www.netskope.com/blog/ai-sidebar-extension-monetizes-its-own-updates",
+        "https://www.securityweek.com/extension-banned-for-stealing-ai-chats-returns-to-chrome-store-resumes-malicious-activities/"
+      ],
+      "reason": "Netskope visible modified date is 2026-08-25 and SecurityWeek visible date is 2026-08-11, outside the seven-day window; unrelated page recommendation dates were excluded.",
+      "visible_dates": [
+        "2026-08-25T16:22:13+00:00",
+        "2026-08-11T11:15:15+00:00"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/agent-delegated-task-authorization-drift.md",
+      "source_urls": [
+        "https://www.kotaradio.com/2026/08/23/ai-agent-hacks-gym-system-to-move-up-waitlist/",
+        "https://thehackernews.com/2026/08/claude-opus-46-bypasses-gym-booking.html"
+      ],
+      "reason": "KOTA cited URL returned 404 during this run, and The Hacker News article visible date is August 26; unrelated sidebar dates were excluded.",
+      "visible_dates": [
+        "404 during check",
+        "2026-08-26"
+      ]
+    }
+  ],
+  "evidence_classification_counts": {
+    "disclosed_vulnerability": 6,
+    "confirmed_exploitation": 0,
+    "demonstrated_research": 0,
+    "mitigation": 0,
+    "control_change": 0,
+    "unverified_claim": 0
+  },
+  "affected_boundaries_summary": [
+    "MCP server-side fetch and file URL egress",
+    "agent telemetry/session log disclosure",
+    "delegated-action confirmation-token resource binding",
+    "scanner filesystem path containment",
+    "model-serving prompt-length availability controls",
+    "scanner security-decision input trust"
+  ],
+  "named_entities": [
+    "fast-mcp-telegram",
+    "token-optimizer-mcp",
+    "Zscaler MCP Server",
+    "Tencent AI-Infra-Guard",
+    "vLLM",
+    "agentverus-scanner",
+    "Infracost",
+    "NLTK",
+    "ONNX",
+    "Cursor",
+    "Ghostjacking",
+    "GhostSplice",
+    "Digital Applied",
+    "AI Sidebar with DeepSeek AI",
+    "OpenClaw",
+    "Claude"
+  ],
+  "upstream_routing_notes": [
+    "Route broad product, MCP server catalog, model-runtime, and framework background to ai-wiki.",
+    "Route general coding-agent and context-optimization practice to ai-dev-wiki.",
+    "Keep local updates scoped to disclosed vulnerabilities, affected security boundaries, mitigations, and verification follow-up."
+  ],
+  "follow_up_notes": [
+    "Six qualifying records overlap recent processed topic collector evidence; compare metadata before editing docs/wiki to avoid duplicate digest or leaf prose.",
+    "Older August leaves were refreshed in the ledger with explicit stale/no-visible-update reasons.",
+    "KOTA cited URL returned 404 and should not be treated as an in-window update without a replacement primary source."
+  ],
+  "validation": {
+    "jq_empty": "passed for raw artifact and ledger",
+    "python_json_tool": "passed for raw artifact and ledger",
+    "git_diff_check": "passed for new raw artifact",
+    "wiki_status": "532 pages, 0 missing required files, 0 lint findings"
+  },
+  "blockers": []
+}

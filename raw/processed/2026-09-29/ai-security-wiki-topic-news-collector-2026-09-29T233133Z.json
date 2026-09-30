@@ -1,0 +1,544 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector",
+    "agent_identifier": "Northstar",
+    "run_timestamp_utc": "2026-09-29T23:31:33Z",
+    "last_run_timestamp_utc": "2026-09-28T23:30:26.871Z"
+  },
+  "cutoff_window": {
+    "policy": "Only public items visibly published or updated within the last 2 days relative to run time; boundary-only and ambiguous dates excluded.",
+    "start_utc": "2026-09-27T23:31:33Z",
+    "end_utc": "2026-09-29T23:31:33Z"
+  },
+  "repository_boundaries": {
+    "target_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "modified_repository_paths": [
+      "raw/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json"
+    ],
+    "not_modified": [
+      "docs/wiki",
+      "raw/processed"
+    ],
+    "federation_summary": "Broad AI companies, products, models, frameworks, MCP servers, and development practices route to ai-wiki or ai-dev-wiki; this artifact keeps security-specific affected boundaries, mitigations, release gates, and risk notes for ai-security-wiki."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_searches": [
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-27T00:00:00.000&pubEndDate=2026-09-29T23:59:59.999&keywordSearch=MCP",
+      "visible_date_basis": "CVE published and lastModified fields returned by NVD JSON",
+      "result_summary": "Returned MCP-related CVEs including fresh September 29 records and September 28 records already captured by the previous automation run."
+    },
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-09-27T00:00:00.000&pubEndDate=2026-09-29T23:59:59.999&keywordSearch=AI",
+      "visible_date_basis": "CVE published and lastModified fields returned by NVD JSON",
+      "result_summary": "Returned AI-keyword CVEs; AI-specific or AI-adjacent security boundaries were retained, generic non-AI application records were excluded."
+    },
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-27T00:00:00.000&lastModEndDate=2026-09-29T23:59:59.999&keywordSearch=MCP",
+      "visible_date_basis": "CVE lastModified fields returned by NVD JSON",
+      "result_summary": "Used for overlap and freshness checks; stale publication dates with metadata-only updates were excluded unless a concrete new security delta was visible."
+    },
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-27T00:00:00.000&lastModEndDate=2026-09-29T23:59:59.999&keywordSearch=LLM",
+      "visible_date_basis": "CVE lastModified fields returned by NVD JSON",
+      "result_summary": "Identified Heym LLM-image SSRF as in-window but excluded it as already synthesized/captured in prior security-wiki coverage."
+    },
+    {
+      "source": "Associated Press",
+      "url": "https://apnews.com/article/trump-ai-anthropic-musk-595796511f110fc006cca0d01329733e",
+      "visible_date_basis": "Article page and search result expose September 29, 2026 publication context.",
+      "result_summary": "Reported a voluntary frontier-AI accord requiring internal controls, external auditor review, and board committee review of auditor reports."
+    },
+    {
+      "source": "Associated Press",
+      "url": "https://apnews.com/article/sam-altman-openai-conference-dots-agent-77b6b8888145869206996d7509d24256",
+      "visible_date_basis": "Article page and search result expose September 29, 2026 publication context.",
+      "result_summary": "Reported OpenAI shelving a more advanced model because of researcher-raised safety concerns and increased safety, security, and monitoring focus for AI agents."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "nvd-cve-2026-102242-google-mcp-toolbox-symlink-root-bypass",
+      "title": "Google MCP Toolbox allowedLocalRoots symlink boundary bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102242",
+        "https://github.com/googleapis/mcp-toolbox/pull/3810"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-09-29T18:17:06.887Z",
+        "last_modified_utc": "2026-09-29T21:36:39.547Z"
+      },
+      "summary": "NVD describes improper symlink resolution in Google MCP Toolbox for Databases versions 1.2.0 through 1.9.0. A remote authenticated attacker with tool execution permissions can bypass allowedLocalRoots directory restrictions and access or overwrite local files outside permitted roots.",
+      "evidence_classification": "public vulnerability database with linked vendor pull request",
+      "affected_boundary_or_version": "Google MCP Toolbox for Databases 1.2.0 through 1.9.0; local filesystem root enforcement for MCP database tools",
+      "why_it_matters_for_ai_security": "MCP database tools often bridge AI agents to local data and files; path-boundary bypass turns delegated tool execution into broader filesystem read/write authority.",
+      "named_entities": [
+        "Google MCP Toolbox for Databases",
+        "Model Context Protocol",
+        "CVE-2026-102242"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "General Google and MCP Toolbox product context is upstream-owned.",
+        "ai_dev_wiki": "General database-agent workflow selection is development-practice-owned.",
+        "ai_security_wiki": "Owns the symlink root bypass, affected versions, delegated tool authority, and local-file security implication."
+      },
+      "confidence_notes": "High confidence for date, affected range, and security boundary from NVD; ingest should recheck the merged/fixed release once vendor release notes are visible.",
+      "follow_up_actions": [
+        "During ingest, verify whether a release after 1.9.0 contains PR 3810.",
+        "Consider a local leaf under agent-and-tool-security or data-and-privacy depending on whether the primary impact is tool authority or file exposure."
+      ]
+    },
+    {
+      "id": "nvd-cve-2026-102807-openclaw-mcp-app-view-authorization-bypass",
+      "title": "OpenClaw mcp.app.view read-to-write authorization bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102807",
+        "https://docs.openclaw.ai/releases/2026.9.4",
+        "https://github.com/openclaw/openclaw/commit/3bd8ec2b39b5f9e80aef0973f7d17eadc745b8f8",
+        "https://www.vulncheck.com/advisories/openclaw-before-2026.9.4-authorization-bypass-via-mcp-app-standalone-ticket"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-09-29T18:17:13.893Z",
+        "last_modified_utc": "2026-09-29T21:33:56.530Z"
+      },
+      "summary": "NVD reports that OpenClaw before 2026.9.4 lets read-scoped operators obtain and redeem a standalone ticket through mcp.app.view to invoke MCP App tools that require operator.write scope.",
+      "evidence_classification": "public vulnerability database with vendor release, commit, and advisory references",
+      "affected_boundary_or_version": "OpenClaw before 2026.9.4; MCP App standalone ticket authorization path",
+      "why_it_matters_for_ai_security": "The flaw crosses read/write delegated-authority boundaries for AI/MCP app tools, allowing state-changing agent actions from lower-privilege credentials.",
+      "named_entities": [
+        "OpenClaw",
+        "Model Context Protocol",
+        "CVE-2026-102807",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "General OpenClaw product context is upstream-owned.",
+        "ai_dev_wiki": "General coding-agent workflow implications are development-practice-owned.",
+        "ai_security_wiki": "Owns the read-to-write authorization bypass, release boundary, and delegated authority risk."
+      },
+      "confidence_notes": "High confidence from NVD plus vendor and commit references; prior OpenClaw security leaves exist, so ingest should decide whether this updates a cluster or needs a new leaf.",
+      "follow_up_actions": [
+        "Delta-review against existing OpenClaw authorization leaves.",
+        "Verify release 2026.9.4 remediation wording before durable synthesis."
+      ]
+    },
+    {
+      "id": "nvd-cve-2026-102878-mcp-chrome-bridge-origin-validation-bypass",
+      "title": "mcp-chrome-bridge CORS origin bypass exposes browser automation tools",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102878",
+        "https://github.com/hangwin/mcp-chrome/issues/384",
+        "https://www.vulncheck.com/advisories/mcp-chrome-bridge-through-1.0.31-cors-origin-bypass"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-09-29T20:17:18.620Z",
+        "last_modified_utc": "2026-09-29T21:17:18.297Z"
+      },
+      "summary": "NVD describes an origin validation error in mcp-chrome-bridge through 1.0.31. Malicious pages can make cross-origin requests to the local native-server HTTP API and invoke browser automation tools, including script execution, page-content reading, and screenshot capture.",
+      "evidence_classification": "public vulnerability database with project issue and advisory references",
+      "affected_boundary_or_version": "mcp-chrome-bridge through 1.0.31; local browser automation HTTP API",
+      "why_it_matters_for_ai_security": "Browser MCP bridges are high-risk delegated-action surfaces; CORS/origin bypass lets untrusted web content drive local browser tools and potentially read or manipulate session context.",
+      "named_entities": [
+        "mcp-chrome-bridge",
+        "mcp-chrome",
+        "Model Context Protocol",
+        "CVE-2026-102878",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "General mcp-chrome project catalog context is upstream-owned.",
+        "ai_dev_wiki": "General browser-agent runtime practice is development-practice-owned.",
+        "ai_security_wiki": "Owns the CORS origin bypass, local browser tool exposure, and delegated browser authority risk."
+      },
+      "confidence_notes": "High confidence for vulnerability presence and affected version from NVD; fixed-version status is not visible in the captured NVD references.",
+      "follow_up_actions": [
+        "Recheck project issue 384 for remediation status during ingest.",
+        "Route to an agent/browser tool security leaf if not already covered."
+      ]
+    },
+    {
+      "id": "nvd-cve-2026-79534-mark3labs-mcp-filesystem-server-symlink-traversal",
+      "title": "mark3labs mcp-filesystem-server dangling-symlink traversal",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79534",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79534"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-09-29T20:17:26.993Z",
+        "last_modified_utc": "2026-09-29T20:17:26.993Z"
+      },
+      "summary": "NVD reports that mark3labs mcp-filesystem-server v0.11.1 mishandles dangling symlinks in validatePath. File-writing tools can follow a symlink inside an allowed directory and create or modify files outside configured allowed directories.",
+      "evidence_classification": "public vulnerability database with security advisory reference",
+      "affected_boundary_or_version": "mark3labs mcp-filesystem-server v0.11.1; write_file, modify_file, copy_file, move_file, and create_directory path validation",
+      "why_it_matters_for_ai_security": "Filesystem MCP servers are direct agent-to-host mutation channels; symlink traversal undermines configured local-root containment for file-writing tools.",
+      "named_entities": [
+        "mark3labs mcp-filesystem-server",
+        "Model Context Protocol",
+        "CVE-2026-79534",
+        "Traceforce"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "General MCP filesystem server catalog context is upstream-owned.",
+        "ai_dev_wiki": "General local agent file-boundary practice is development-practice-owned.",
+        "ai_security_wiki": "Owns the symlink traversal and local-root containment failure."
+      },
+      "confidence_notes": "High confidence from NVD for date and affected boundary; ingest should verify whether a patched version exists.",
+      "follow_up_actions": [
+        "Check Traceforce and project releases for fixed version.",
+        "Compare with existing filesystem/path traversal MCP leaves to avoid duplicate synthesis."
+      ]
+    },
+    {
+      "id": "nvd-cve-2026-79535-voicemode-mcp-update-config-command-injection",
+      "title": "VoiceMode MCP update_config command injection",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79535",
+        "https://github.com/mbailey/voicemode/releases/tag/v8.10.2",
+        "https://github.com/mbailey/voicemode/commit/c1cef85333fca497c46a11950911d10123f61e48",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79535"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-09-29T20:17:27.123Z",
+        "last_modified_utc": "2026-09-29T20:17:27.123Z"
+      },
+      "summary": "NVD reports that VoiceMode through 8.10.1 writes caller-supplied MCP update_config values into ~/.voicemode/voicemode.env without shell-safe escaping, creating OS command-injection risk. References include a v8.10.2 release and fixing commit.",
+      "evidence_classification": "public vulnerability database with release and commit references",
+      "affected_boundary_or_version": "VoiceMode <= 8.10.1; update_config MCP tool and voicemode config set CLI",
+      "why_it_matters_for_ai_security": "Configuration tools for voice or agent runtimes can become command-execution paths when caller-controlled values cross into shell-loaded environment files.",
+      "named_entities": [
+        "VoiceMode",
+        "Model Context Protocol",
+        "CVE-2026-79535",
+        "Traceforce"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "General VoiceMode product or voice-agent context is upstream-owned.",
+        "ai_dev_wiki": "General local runtime configuration practice is development-practice-owned.",
+        "ai_security_wiki": "Owns the MCP configuration command-injection boundary and fixed-version note."
+      },
+      "confidence_notes": "High confidence from NVD and linked release/commit; verify v8.10.2 release notes during ingest.",
+      "follow_up_actions": [
+        "Create or update a local MCP command-injection leaf if not already represented.",
+        "Record v8.10.2 as the apparent patched release after direct release verification."
+      ]
+    },
+    {
+      "id": "nvd-cve-2026-79537-79538-metamcp-session-idor-and-stdio-proxy-code-execution",
+      "title": "MetaMCP session IDOR and stdio inspector proxy code execution",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79537",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79538",
+        "https://github.com/metatool-ai/metamcp",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79537",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79538"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-09-29T20:17:27.383Z and 2026-09-29T20:17:27.510Z",
+        "last_modified_utc": "2026-09-29T20:17:27.383Z and 2026-09-29T21:28:02.477Z"
+      },
+      "summary": "NVD reports two MetaMCP issues through 2.4.22: session dispatch keyed only by client-supplied mcp-session-id without owner or endpoint binding, allowing cross-tenant private tool execution and data exfiltration, and code execution in the internal MCP inspector proxy endpoint GET /mcp-proxy/server/stdio.",
+      "evidence_classification": "public vulnerability database with project and security advisory references",
+      "affected_boundary_or_version": "MetaMCP through 2.4.22; MCP transport session dispatch and internal inspector stdio proxy",
+      "why_it_matters_for_ai_security": "MetaMCP is an aggregator/control-plane style MCP surface; tenant binding failures and proxy code execution can compromise private tools, forwarded credentials, and local execution boundaries.",
+      "named_entities": [
+        "MetaMCP",
+        "metatool-ai",
+        "Model Context Protocol",
+        "CVE-2026-79537",
+        "CVE-2026-79538",
+        "Traceforce"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "General MetaMCP product catalog context is upstream-owned.",
+        "ai_dev_wiki": "General MCP aggregation/control-plane practice is development-practice-owned.",
+        "ai_security_wiki": "Owns tenant session isolation, credential forwarding, and proxy code-execution implications."
+      },
+      "confidence_notes": "High confidence for paired same-version boundary from NVD; fixed-version status was not visible in captured data.",
+      "follow_up_actions": [
+        "During ingest, decide whether to split IDOR and code execution into separate leaves or one tightly coupled MetaMCP control-plane cluster.",
+        "Recheck project advisory or releases for patched version."
+      ]
+    },
+    {
+      "id": "nvd-cve-2026-77177-open-genai-stack-prompt-injection-jinja-code-execution",
+      "title": "Open GenAI Stack prompt injection to Jinja server-side expression evaluation",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77177",
+        "https://gist.github.com/abhi04anon/8ce0b68a5a7dda8a0501cbaf933173eb"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-09-29T16:17:11.363Z",
+        "last_modified_utc": "2026-09-29T20:17:26.403Z"
+      },
+      "summary": "NVD reports that Open GenAI Stack, also named ogx-ai and described as used in the Meta AI backend for WhatsApp and other products, permits code execution because prompt injection using Jinja2 template syntax can reach unsanitized server-side expression evaluation.",
+      "evidence_classification": "public vulnerability database with public technical gist reference",
+      "affected_boundary_or_version": "Open GenAI Stack / ogx-ai 2026-06-11; prompt-to-template evaluation path",
+      "why_it_matters_for_ai_security": "This is a model/prompt security boundary crossing into server-side execution, showing prompt content becoming executable template syntax in an AI backend path.",
+      "named_entities": [
+        "Open GenAI Stack",
+        "ogx-ai",
+        "Meta AI",
+        "WhatsApp",
+        "Jinja2",
+        "CVE-2026-77177"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "General Meta AI, WhatsApp, and Open GenAI Stack entity context is upstream-owned.",
+        "ai_dev_wiki": "General prompt/template hygiene practice is development-practice-owned.",
+        "ai_security_wiki": "Owns the prompt-injection-to-code-execution vulnerability and release boundary."
+      },
+      "confidence_notes": "Medium-high confidence for NVD date and summary; only a gist was visible as a reference, so durable synthesis should verify maintainership and affected deployment claims carefully.",
+      "follow_up_actions": [
+        "Recheck whether vendor or project advisories exist before creating durable claims about Meta deployment exposure.",
+        "Classify as model-and-prompt-security if accepted for ingest."
+      ]
+    },
+    {
+      "id": "ap-2026-09-29-frontier-ai-voluntary-accord-controls-auditors-board-review",
+      "title": "Frontier AI voluntary accord adds internal controls, external auditors, and board review",
+      "source_urls": [
+        "https://apnews.com/article/trump-ai-anthropic-musk-595796511f110fc006cca0d01329733e"
+      ],
+      "visible_dates": {
+        "published_context": "2026-09-29",
+        "article_event_date": "Tuesday September 29, 2026"
+      },
+      "summary": "Associated Press reported that President Trump and leaders from major AI companies signed a voluntary accord focused on self-policing frontier AI development. The reported steps include robust internal controls, independent external auditor assessment, and a board committee review of internal and external auditor reports.",
+      "evidence_classification": "reputable public news report; primary signed accord text not directly fetched in this run",
+      "affected_boundary_or_version": "Frontier AI governance and assurance controls; voluntary accord covering named signatories reported by AP",
+      "why_it_matters_for_ai_security": "Internal controls, external audits, and board-level review are release-gate and assurance mechanisms for frontier AI risks, even though the accord is voluntary and not itself a binding regulatory rule.",
+      "named_entities": [
+        "White House",
+        "OpenAI",
+        "Anthropic",
+        "Google",
+        "Meta",
+        "Nvidia",
+        "xAI",
+        "Microsoft",
+        "Associated Press"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad company and federal AI policy context is upstream-owned.",
+        "ai_dev_wiki": "General governance process practice is development-practice-owned where it affects software delivery.",
+        "ai_security_wiki": "Owns the assurance-control and release-gate implication for AI security risk management."
+      },
+      "confidence_notes": "Medium confidence because AP is reputable and the article says the accord was posted on Truth Social, but this run did not locate a stable primary accord URL.",
+      "follow_up_actions": [
+        "Find and cite the primary accord text before durable wiki synthesis.",
+        "Keep any digest note precise: voluntary accord, not binding law."
+      ]
+    },
+    {
+      "id": "ap-2026-09-29-openai-model-release-halted-safety-security-monitoring",
+      "title": "OpenAI halted advanced model rollout over safety concerns and emphasized agent monitoring",
+      "source_urls": [
+        "https://apnews.com/article/sam-altman-openai-conference-dots-agent-77b6b8888145869206996d7509d24256"
+      ],
+      "visible_dates": {
+        "published_context": "2026-09-29",
+        "article_event_date": "Tuesday September 29, 2026"
+      },
+      "summary": "Associated Press reported that OpenAI held off releasing a more advanced model after researchers raised safety concerns, and that Sam Altman said OpenAI was investing more in safety, security, and monitoring of AI agents.",
+      "evidence_classification": "reputable public news report; primary OpenAI safety decision or model-system note not located in this run",
+      "affected_boundary_or_version": "OpenAI model release gate and agent safety/security monitoring posture; model name not treated as durable without primary confirmation",
+      "why_it_matters_for_ai_security": "A model release halt based on researcher safety concerns is concrete release-gate evidence, and agent monitoring investment is directly relevant to autonomous-action security controls.",
+      "named_entities": [
+        "OpenAI",
+        "Sam Altman",
+        "Associated Press",
+        "AI agents"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "OpenAI company and model-family context is upstream-owned.",
+        "ai_dev_wiki": "General release-process and monitoring practice can route to AI development governance when not security-specific.",
+        "ai_security_wiki": "Owns the safety/security release-gate and agent monitoring implication."
+      },
+      "confidence_notes": "Medium confidence because AP is reputable but no primary OpenAI model-card, incident note, or safety-system document was fetched.",
+      "follow_up_actions": [
+        "Search for primary OpenAI safety note or system-card update during ingest.",
+        "Do not create durable model-specific claims unless the primary source names the held model."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Heym SSRF and capability-secret CVEs",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100858",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100862",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100863"
+      ],
+      "visible_dates": "Published 2026-09-27; modified 2026-09-28",
+      "reason": "Relevant and in the broad 48-hour search results, but already represented in existing security-wiki topic coverage and prior automation context; excluded to avoid duplicate collector output."
+    },
+    {
+      "candidate": "Penpot MCP WebSocket bridge CVE-2026-100868",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100868"
+      ],
+      "visible_dates": "Published 2026-09-27T13:16:37.960Z",
+      "reason": "Outside the exact cutoff start of 2026-09-27T23:31:33Z and already captured in previous security-wiki coverage."
+    },
+    {
+      "candidate": "UTCP MCP server URL validation CVE-2026-101057",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101057"
+      ],
+      "visible_dates": "Published 2026-09-27T18:16:31.823Z",
+      "reason": "Outside the exact cutoff start and already captured in previous security-wiki coverage."
+    },
+    {
+      "candidate": "Obot MCP authorization and registry CVE cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101062",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101063",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101064",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101065",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101084"
+      ],
+      "visible_dates": "Published 2026-09-27T21:17:01Z to 2026-09-27T21:17:02Z; modified 2026-09-28",
+      "reason": "Published before the exact cutoff and already covered in recent security-wiki ingest context."
+    },
+    {
+      "candidate": "Zscaler MCP Server confirmation-token replay CVE-2026-59563",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-59563"
+      ],
+      "visible_dates": "Published 2026-09-28T13:17:22.160Z",
+      "reason": "Qualifies by visible date but the 2026-09-28 automation memory names it as already captured; excluded to avoid duplicate current-run output."
+    },
+    {
+      "candidate": "fast-mcp-telegram file URL SSRF CVE-2026-55096",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55096"
+      ],
+      "visible_dates": "Published 2026-09-28T17:17:50.007Z",
+      "reason": "Qualifies by visible date but the 2026-09-28 automation memory names it as already captured; excluded to avoid duplicate current-run output."
+    },
+    {
+      "candidate": "Token Optimizer MCP traversal and command-injection CVEs",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55156",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55157"
+      ],
+      "visible_dates": "Published 2026-09-28T18:17:23Z",
+      "reason": "Qualifies by visible date but the 2026-09-28 automation memory names Token Optimizer MCP as already captured; excluded to avoid duplicate current-run output."
+    },
+    {
+      "candidate": "Tencent AI-Infra-Guard file access path traversal CVE-2026-101080",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-101080"
+      ],
+      "visible_dates": "Published 2026-09-28T16:17:12.820Z; modified 2026-09-28T21:03:44.987Z",
+      "reason": "Qualifies by visible date but the previous automation memory names Tencent AI-Infra-Guard as already captured and notes affected-version reconciliation as the active follow-up."
+    },
+    {
+      "candidate": "MCP Atlassian CVE cluster last-modified updates",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77242",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77243",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77244",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77250"
+      ],
+      "visible_dates": "Published 2026-09-22; last modified 2026-09-28 to 2026-09-29",
+      "reason": "Older first publication with in-window metadata updates; already represented in September 22-23 security-wiki context and no distinct new security fact was visible in this run."
+    },
+    {
+      "candidate": "Apache Airflow provider CVEs not specifically AI-bound",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81862",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81914",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81930",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-86843"
+      ],
+      "visible_dates": "Published 2026-09-29T10:17:12Z",
+      "reason": "Concrete cloud/data workflow security issues, but the captured records are general Apache Airflow provider vulnerabilities; only one mentions a Cortex Agent base URL. Excluded pending a stronger AI-system boundary."
+    },
+    {
+      "candidate": "LimeSurvey Community Edition object authorization CVE-2026-97685",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-97685"
+      ],
+      "visible_dates": "Published 2026-09-29T03:17:23.233Z",
+      "reason": "The NVD keyword search matched a generic application authorization issue, not an AI-specific system, agent, model, MCP, or AI deployment boundary."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity": "Google MCP Toolbox for Databases",
+      "upstream_owner": "ai-wiki",
+      "local_security_implication": "Retain symlink path-boundary bypass, affected versions, and tool-execution authority."
+    },
+    {
+      "entity": "OpenClaw",
+      "upstream_owner": "ai-wiki",
+      "local_security_implication": "Retain MCP app authorization bypass and delegated read/write scope boundary."
+    },
+    {
+      "entity": "mcp-chrome / browser automation MCP bridges",
+      "upstream_owner": "ai-wiki",
+      "local_security_implication": "Retain local native-server origin validation, browser action authority, and session-data exposure risk."
+    },
+    {
+      "entity": "mark3labs mcp-filesystem-server",
+      "upstream_owner": "ai-wiki",
+      "local_security_implication": "Retain filesystem tool root containment and symlink traversal failure."
+    },
+    {
+      "entity": "VoiceMode",
+      "upstream_owner": "ai-wiki",
+      "local_security_implication": "Retain MCP configuration command-injection boundary and fixed-version follow-up."
+    },
+    {
+      "entity": "MetaMCP",
+      "upstream_owner": "ai-wiki",
+      "local_security_implication": "Retain tenant session isolation and internal inspector proxy code-execution risk."
+    },
+    {
+      "entity": "Open GenAI Stack / ogx-ai and Meta AI backend claims",
+      "upstream_owner": "ai-wiki",
+      "local_security_implication": "Retain prompt-injection-to-template-code-execution finding only after source-quality recheck."
+    },
+    {
+      "entity": "OpenAI and frontier AI company accord context",
+      "upstream_owner": "ai-wiki",
+      "local_security_implication": "Retain security release gate, external audit, board review, and agent monitoring implications."
+    },
+    {
+      "entity": "AI development release gates and monitoring practice",
+      "upstream_owner": "ai-dev-wiki",
+      "local_security_implication": "Retain only security-specific assurance, release-halt, and autonomous-agent monitoring implications."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": [
+    "Primary stable URL for the reported September 29 frontier-AI voluntary accord was not located; AP reporting was used with a confidence caveat.",
+    "Primary OpenAI safety note or model-system source for the reported release halt was not located; AP reporting was used with a confidence caveat.",
+    "Several September 29 NVD records cite security advisories without visible patched versions in captured data; ingest should recheck project releases."
+  ],
+  "collector_notes": [
+    "No private, proprietary, sensitive, PII, or company-internal local content was sent to external services.",
+    "NVD results were treated as public vulnerability evidence, not as proof of active exploitation or deployed exposure.",
+    "This raw collector did not edit docs/wiki and did not move any source under raw/processed."
+  ]
+}

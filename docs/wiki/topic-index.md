@@ -8,6 +8,15 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [agent-and-tool-security/google-mcp-toolbox-allowedlocalroots-symlink-bypass.md](agent-and-tool-security/google-mcp-toolbox-allowedlocalroots-symlink-bypass.md)
+- [identity-and-access/openclaw-mcp-app-view-read-to-write-bypass.md](identity-and-access/openclaw-mcp-app-view-read-to-write-bypass.md)
+- [agent-and-tool-security/mcp-chrome-bridge-cors-origin-bypass.md](agent-and-tool-security/mcp-chrome-bridge-cors-origin-bypass.md)
+- [agent-and-tool-security/mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md](agent-and-tool-security/mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md)
+- [agent-and-tool-security/voicemode-update-config-command-injection.md](agent-and-tool-security/voicemode-update-config-command-injection.md)
+- [identity-and-access/metamcp-session-idor.md](identity-and-access/metamcp-session-idor.md)
+- [agent-and-tool-security/metamcp-stdio-inspector-proxy-code-execution.md](agent-and-tool-security/metamcp-stdio-inspector-proxy-code-execution.md)
+- [model-and-prompt-security/open-genai-stack-jinja-prompt-injection-rce.md](model-and-prompt-security/open-genai-stack-jinja-prompt-injection-rce.md)
+- [governance-and-compliance/frontier-ai-voluntary-assurance-controls.md](governance-and-compliance/frontier-ai-voluntary-assurance-controls.md)
 - [identity-and-access/zscaler-mcp-confirmation-token-resource-binding.md](identity-and-access/zscaler-mcp-confirmation-token-resource-binding.md)
 - [agent-and-tool-security/fast-mcp-telegram-file-url-ssrf.md](agent-and-tool-security/fast-mcp-telegram-file-url-ssrf.md)
 - [data-and-privacy/token-optimizer-mcp-dashboard-log-traversal.md](data-and-privacy/token-optimizer-mcp-dashboard-log-traversal.md)
@@ -534,6 +543,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-09-30 with September 29 source-ingest leaves for Google MCP Toolbox symlink containment, OpenClaw MCP App scope escalation, mcp-chrome-bridge origin bypass, mark3labs filesystem symlink traversal, VoiceMode command injection, split MetaMCP session/proxy issues, Open GenAI Stack prompt-template execution, frontier AI assurance controls, and OpenAI release-gate monitoring folded into the existing frontier-model release-gate leaf.
 - Updated on 2026-09-29 with September 28 source-ingest leaves for Zscaler MCP confirmation-token binding, fast-mcp-telegram file URL SSRF, Token Optimizer MCP dashboard log traversal, Tencent AI-Infra-Guard file access path traversal, and agentverus-scanner security-decision input trust.
 - Updated on 2026-09-27 with September 25 and 26 Rapid7, OpenClaw, MCP Server for WordPress, SiYuan, Zammad, LiteLLM, Flowise, and vLLM security leaves plus watcher enrichment.
 - Add local durable leaves here after federation routing and wiki verification.
