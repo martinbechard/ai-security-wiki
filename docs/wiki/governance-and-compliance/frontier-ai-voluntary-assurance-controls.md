@@ -13,6 +13,8 @@ The [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-s
 
 The reported controls include robust internal controls, independent external auditor assessment, and board committee review of internal and external auditor reports. Locally, the durable security concept is not the company roster but the control shape: frontier AI releases increasingly need documented internal controls, independent assessment, and board-level review evidence before deployment or public release.
 
+The [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) adds same-story reporting from Axios, CBS News, and CoinDesk while preserving the unresolved need for primary accord text.
+
 ## Security Impact
 
 - Threat: frontier model risk can be normalized as self-attestation unless release gates include independent assessment and executive accountability.
@@ -25,7 +27,11 @@ The reported controls include robust internal controls, independent external aud
 ## Authoritative Sources
 
 - [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json)
+- [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [Associated Press report](https://apnews.com/article/trump-ai-anthropic-musk-595796511f110fc006cca0d01329733e)
+- [Axios report](https://www.axios.com/2026/09/29/trump-ai-voluntary-safety-white-house-zuckerberg)
+- [CBS News report](https://www.cbsnews.com/news/trump-ai-constitution-tech-execs-openai-anthropic-voluntary-controls/)
+- [CoinDesk report](https://www.coindesk.com/tech/2026/09/30/openai-google-and-meta-pledge-outside-ai-audits-under-voluntary-white-house-deal)
 
 ## Related Code
 
@@ -54,3 +60,4 @@ The reported controls include robust internal controls, independent external aud
 ## Maintenance Notes
 
 - Created on 2026-09-30 from the [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json) as a security-governance lens rather than a duplicate company or policy overview.
+- Updated on 2026-10-01 from the [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) with additional public reporting and no duplicate digest item.

@@ -13,6 +13,8 @@ The [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-s
 
 The source says an authenticated remote attacker with tool execution permissions could use improper symlink resolution to bypass `allowedLocalRoots` restrictions, then access or overwrite local files outside configured roots. [Google PR 3810](https://github.com/googleapis/mcp-toolbox/pull/3810) is the linked vendor patch candidate, but the first fixed release still needs release-note confirmation.
 
+The [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) corroborates the CVE Services publication and update timestamps for the same boundary and keeps the fixed-release question open.
+
 ## Security Impact
 
 - Threat: delegated MCP tool execution can cross configured local filesystem roots when symlinks are resolved after or outside the containment check.
@@ -25,6 +27,7 @@ The source says an authenticated remote attacker with tool execution permissions
 ## Authoritative Sources
 
 - [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json)
+- [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [CVE-2026-102242 NVD entry](https://nvd.nist.gov/vuln/detail/CVE-2026-102242)
 - [Google PR 3810](https://github.com/googleapis/mcp-toolbox/pull/3810)
 
@@ -55,3 +58,4 @@ The source says an authenticated remote attacker with tool execution permissions
 ## Maintenance Notes
 
 - Created on 2026-09-30 from the [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json) after routing general MCP Toolbox product context upstream.
+- Updated on 2026-10-01 from the [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) with CVE Services timestamp provenance and no duplicate digest item.

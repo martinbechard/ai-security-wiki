@@ -21,11 +21,21 @@ The durable rule is to authorize the resolved path, not the raw string. The comm
 
 The [July 23 leaf update watch source](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) reinforces this from the Network-AI restore issue: containment must be checked after joining user-controlled identifiers, not only before path assembly.
 
-The [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) adds two related Network-AI issues. [Network-AI AgentRuntime sandbox path traversal](network-ai-agentruntime-sandbox-path-traversal.md) shows raw string prefix checks allowing out-of-sandbox reads before 5.12.2, while [Network-AI backup manifest recursive delete](network-ai-backup-manifest-recursive-delete.md) shows serialized backup metadata becoming authority for destructive recursive deletion. The [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) separately records [Mondoo coverage](https://mondoo.com/vulnerability-intelligence/vulnerability/CVE-2026-58484) of CVE-2026-58484 as adjacent filesystem-containment evidence.
+The [July 25 topic news collector source](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) and [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) add three adjacent containment examples:
+
+- [Network-AI AgentRuntime sandbox path traversal](network-ai-agentruntime-sandbox-path-traversal.md) shows raw string prefix checks allowing out-of-sandbox reads before 5.12.2.
+- [Network-AI backup manifest recursive delete](network-ai-backup-manifest-recursive-delete.md) shows serialized backup metadata becoming authority for destructive recursive deletion.
+- [Mondoo coverage](https://mondoo.com/vulnerability-intelligence/vulnerability/CVE-2026-58484) records CVE-2026-58484 as adjacent filesystem-containment evidence.
 
 The [MCP Atlassian attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md) advisory adds the same rule for MCP attachment uploads: a client-supplied path must be validated before the server reads and uploads it to a SaaS destination.
 
-The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) adds three same-rule examples: [AI Agent Automation file-step path traversal](ai-agent-automation-file-step-path-traversal.md) for authenticated workflow file steps, [MCPVault recursive metadata path filtering](../agent-and-tool-security/mcpvault-recursive-metadata-path-filtering.md) for nested `.git`, `.obsidian`, and `node_modules` directories, and [atomic-agents-stack dashboard path traversal](atomic-agents-stack-dashboard-path-traversal.md) for dashboard reads outside an `agents_root`.
+The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) adds three same-rule examples:
+
+- [AI Agent Automation file-step path traversal](ai-agent-automation-file-step-path-traversal.md) for authenticated workflow file steps.
+- [MCPVault recursive metadata path filtering](../agent-and-tool-security/mcpvault-recursive-metadata-path-filtering.md) for nested `.git`, `.obsidian`, and `node_modules` directories.
+- [atomic-agents-stack dashboard path traversal](atomic-agents-stack-dashboard-path-traversal.md) for dashboard reads outside an `agents_root`.
+
+The [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) adds two same-rule MCP examples from [Google MCP Toolbox allowedLocalRoots symlink bypass](../agent-and-tool-security/google-mcp-toolbox-allowedlocalroots-symlink-bypass.md) and [mark3labs mcp-filesystem-server dangling symlink traversal](../agent-and-tool-security/mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md): containment must bind to final canonical paths, including symlink and dangling-symlink parent resolution, before file read or write authority is exercised.
 
 ## Control Implications
 
@@ -34,6 +44,7 @@ The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-s
 - Restrict writes to project, export, or environment directories unless a human grants a broader path.
 - Avoid writing hidden files or configuration paths from model-controlled tool parameters.
 - Test traversal, absolute-path, symlink, and cross-project cases for every file-capable agent tool.
+- Include dangling symlink, final-realpath, case-normalization, and parent-directory resolution cases when allowed-root checks guard file creation or modification.
 - Treat manifests, restore records, and backup metadata as untrusted input; validate derived paths before deletion as strictly as before reads or writes.
 - Treat attachment, export, and upload tools as file-read boundaries when a model, client, ticket, page, or alert can influence the source path.
 - Apply deny-list path rules recursively, not only at the root; nested repository and note metadata directories are sensitive even when the top-level directory is allowed.
@@ -49,9 +60,12 @@ The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-s
 - [July 25 leaf update watch source](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json)
 - [MCP Atlassian attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md)
 - [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json)
+- [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [AI Agent Automation file-step path traversal](ai-agent-automation-file-step-path-traversal.md)
 - [MCPVault recursive metadata path filtering](../agent-and-tool-security/mcpvault-recursive-metadata-path-filtering.md)
 - [atomic-agents-stack dashboard path traversal](atomic-agents-stack-dashboard-path-traversal.md)
+- [Google MCP Toolbox allowedLocalRoots symlink bypass](../agent-and-tool-security/google-mcp-toolbox-allowedlocalroots-symlink-bypass.md)
+- [mark3labs mcp-filesystem-server dangling symlink traversal](../agent-and-tool-security/mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md)
 
 ## Related Code
 
@@ -85,3 +99,4 @@ The [September 17 topic collector source](../../../raw/processed/2026-09-17/ai-s
 - Created as a reusable control leaf during July 22, 2026 raw-source ingest; enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json) with post-join containment evidence, the [July 25 topic news collector](../../../raw/processed/2026-07-25/ai-security-wiki-topic-news-collector-2026-07-25T193052-0400.json) with prefix-check and backup-manifest deletion evidence, and the [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json) with adjacent Mondoo coverage.
 - Updated on 2026-08-13 with the [MCP Atlassian attachment file read](../agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md) advisory as MCP upload-path containment evidence.
 - Updated on 2026-09-18 from the [September 17 topic collector](../../../raw/processed/2026-09-17/ai-security-wiki-topic-news-collector-2026-09-17T233119Z.json) with AI Agent Automation, MCPVault, and atomic-agents-stack containment examples.
+- Updated on 2026-10-01 from the [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) with same-rule symlink and dangling-symlink MCP containment examples.

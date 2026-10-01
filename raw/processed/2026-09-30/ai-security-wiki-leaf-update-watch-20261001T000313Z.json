@@ -1,0 +1,700 @@
+{
+  "affected_boundaries": [
+    "MCP Toolbox for Databases allowedLocalRoots; local filesystem read/write authority reachable via delegated database tools.",
+    "mark3labs mcp-filesystem-server validatePath and allowed-directory containment for file creation/modification.",
+    "mcp-chrome-bridge local native-server HTTP API; browser automation tools exposed through permissive origin handling.",
+    "MetaMCP through 2.4.22; /mcp-proxy/server/stdio; internal inspector proxy and stdio launch path.",
+    "VoiceMode through 8.10.1; update_config/config set; ~/.voicemode/voicemode.env; local OS command execution on later service start.",
+    "Frontier AI release governance, internal controls, external audits, board committee oversight; no direct vulnerability or exploit claim.",
+    "MetaMCP through 2.4.22; mcp-session-id owner and endpoint binding; cross-tenant private tool execution.",
+    "OpenClaw before 2026.9.4; mcp.app.view; standalone MCP App tickets; operator.write tool invocation.",
+    "Open GenAI Stack / ogx-ai prompt-processing path; Jinja2 template syntax; server-side expression evaluation and code execution.",
+    "Reusable agent tool filesystem path containment controls for symlink, dangling-symlink, final-realpath, and allowed-root enforcement."
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "evidence_classification_counts": {
+    "control_change": 2,
+    "disclosed_vulnerability": 8
+  },
+  "exclusions": [
+    {
+      "classification": "excluded_no_new_primary_source",
+      "leaf_id": "docs/wiki/incident-response/meta-irregular-third-party-evaluation-scope-failure.md",
+      "reason": "No qualifying new primary report in the seven-day window. AP September 30 timeline repeats the known Meta/Irregular misconfiguration and secondary analysis does not provide the promised primary technical report, target identity, exploit path, or remediation.",
+      "source_urls": [
+        "https://apnews.com/article/452281863a49b18220057e71d4715cf4",
+        "https://www.techradar.com/pro/have-we-crossed-the-ai-rubicon",
+        "https://www.omniscient.media/post/one-evaluator-four-labs-how-irregular-s-test-environments-let-ai-models-reach-real-companies",
+        "https://www.companyscope.io/register/air-2026-012"
+      ]
+    },
+    {
+      "classification": "excluded_stale_dates",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md",
+      "reason": "CVE Services datePublished/dateUpdated values are 2026-08-11/2026-08-14, outside the seven-day window; no in-window fixed-release update identified.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73034",
+        "https://github.com/eosphoros-ai/DB-GPT/issues/3104",
+        "https://github.com/eosphoros-ai/DB-GPT/commit/e0c741bd2b5e521b128cffb3f68982dde3f7b359",
+        "https://www.vulncheck.com/advisories/db-gpt-path-traversal-arbitrary-file-write-via-user-id-header"
+      ]
+    },
+    {
+      "classification": "excluded_stale_dates",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "reason": "CVE Services datePublished/dateUpdated values are 2026-07-20, outside the seven-day window; checked release/advisory references are not visibly updated in-window.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-58413",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf",
+        "https://github.com/Jovancoding/Network-AI/releases/tag/v5.12.2"
+      ]
+    },
+    {
+      "classification": "excluded_stale_dates",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/tensorzero-gateway-object-storage-file-read-ssrf.md",
+      "reason": "CVE Services datePublished/dateUpdated values are 2026-08-21/2026-08-25, outside the seven-day window; OpenCVE enrichment was not a distinct in-window local security delta.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54457",
+        "https://github.com/tensorzero/tensorzero/security/advisories/GHSA-824w-x939-6cmc",
+        "https://github.com/tensorzero/tensorzero/releases/tag/2026.6.0",
+        "https://app.opencve.io/cve/CVE-2026-54457"
+      ]
+    },
+    {
+      "classification": "excluded_unverified_or_stale",
+      "leaf_id": "docs/wiki/model-and-prompt-security/legal-filing-prompt-injection.md",
+      "reason": "Recent Reddit discussion is in-window but not authoritative for a new control or sanction fact; primary/press sources checked were August or September 1 and outside the seven-day window.",
+      "source_urls": [
+        "https://arstechnica.com/tech-policy/2026/08/suspecting-court-of-using-ai-man-injected-prompts-in-filings-to-try-to-win-case/",
+        "https://www.qlsproctor.com.au/2026/09/self-rep-sanctioned-for-hiding-ai-prompts-in-pleadings/?trk=article-ssr-frontend-pulse_little-text-block",
+        "https://www.reddit.com/r/law/comments/1wropp3/a_connecticut_judge_sanctioned_a_litigant_for_hiding_ai_instructions_in_white_text_in_his_motions_the_decision_is_worth_reading_for_what_it_says_the_new_ai_rules_dont_reach/"
+      ]
+    },
+    {
+      "classification": "excluded_adjacent_not_same_leaf",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "reason": "ChromeDevTools MCP symlink advisory and Mac MCP hardening are adjacent containment evidence, but not same-leaf durable updates for this selected local control in the strict window.",
+      "source_urls": [
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/security/advisories/GHSA-8qf9-62x2-82pp",
+        "https://www.reddit.com/r/mcp/comments/1wit08i/showcase_mac_mcp_214_local_macos_control_with_public_endpoint_modes_ssrfsymlink_hardening_transaction_undo_doctor_conformance_lab/"
+      ]
+    }
+  ],
+  "follow_up_notes": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-allowedlocalroots-symlink-bypass.md",
+      "note": "Ingest should reconcile which MCP Toolbox release includes PR 3810 before closing the existing open question."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md",
+      "note": "Follow-up should identify the first fixed release and whether parent-directory resolution changed."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-chrome-bridge-cors-origin-bypass.md",
+      "note": "Ingest should preserve the distinction between September 4 public issue/advisory timing and September 29 CVE publication."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/metamcp-stdio-inspector-proxy-code-execution.md",
+      "note": "Follow-up should verify the fixed MetaMCP release and endpoint-level authorization changes."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/voicemode-update-config-command-injection.md",
+      "note": "Follow-up should determine whether v8.10.2 remediates existing unsafe env values or only future writes."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/frontier-ai-voluntary-assurance-controls.md",
+      "note": "Follow-up should capture primary accord text if/when public and keep enforcement limitations explicit."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/metamcp-session-idor.md",
+      "note": "Follow-up should identify fixed release, migration steps, and session identifier rotation guidance."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/openclaw-mcp-app-view-read-to-write-bypass.md",
+      "note": "Follow-up should determine whether deployments must invalidate pre-fix standalone tickets separately."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/open-genai-stack-jinja-prompt-injection-rce.md",
+      "note": "Follow-up should identify a vendor advisory or fixed release boundary before strengthening mitigation language."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "note": "Ingest should update the control leaf only if it can add a durable rule beyond the two specific leaf pages, avoiding duplicate prose."
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/meta-irregular-third-party-evaluation-scope-failure.md",
+      "note": "No qualifying new primary report in the seven-day window. AP September 30 timeline repeats the known Meta/Irregular misconfiguration and secondary analysis does not provide the promised primary technical report, target identity, exploit path, or remediation."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md",
+      "note": "CVE Services datePublished/dateUpdated values are 2026-08-11/2026-08-14, outside the seven-day window; no in-window fixed-release update identified."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "note": "CVE Services datePublished/dateUpdated values are 2026-07-20, outside the seven-day window; checked release/advisory references are not visibly updated in-window."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/tensorzero-gateway-object-storage-file-read-ssrf.md",
+      "note": "CVE Services datePublished/dateUpdated values are 2026-08-21/2026-08-25, outside the seven-day window; OpenCVE enrichment was not a distinct in-window local security delta."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/legal-filing-prompt-injection.md",
+      "note": "Recent Reddit discussion is in-window but not authoritative for a new control or sanction fact; primary/press sources checked were August or September 1 and outside the seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "note": "ChromeDevTools MCP symlink advisory and Mac MCP hardening are adjacent containment evidence, but not same-leaf durable updates for this selected local control in the strict window."
+    }
+  ],
+  "leaf_universe_count": 513,
+  "local_run_date": "2026-09-30",
+  "named_entities": [
+    "2026.9.4",
+    "AP",
+    "Anthropic",
+    "CVE-2026-102242",
+    "CVE-2026-102807",
+    "CVE-2026-102878",
+    "CVE-2026-77177",
+    "CVE-2026-79534",
+    "CVE-2026-79535",
+    "CVE-2026-79537",
+    "CVE-2026-79538",
+    "GHSA-h97v-r3jw-cf6f",
+    "Google",
+    "Jinja2",
+    "MCP Apps",
+    "MCP Toolbox for Databases",
+    "Meta",
+    "MetaMCP",
+    "Nvidia",
+    "Open GenAI Stack",
+    "OpenAI",
+    "OpenClaw",
+    "PR 3810",
+    "Traceforce",
+    "VoiceMode",
+    "VulnCheck",
+    "White House",
+    "hangwin/mcp-chrome",
+    "mark3labs",
+    "mark3labs mcp-filesystem-server",
+    "mbailey/voicemode",
+    "mcp-chrome-bridge",
+    "mcp-filesystem-server",
+    "metatool-ai",
+    "ogx-ai",
+    "v8.10.2",
+    "xAI"
+  ],
+  "non_goals": [
+    "No docs/wiki edits in this raw-only run.",
+    "No raw/processed edits or source movement.",
+    "No private local page text was sent externally; searches used public topic names, CVE/advisory IDs, and cited public URLs."
+  ],
+  "qualifying_update_count": 10,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": "MCP Toolbox for Databases allowedLocalRoots; local filesystem read/write authority reachable via delegated database tools.",
+      "confirmed_exploitation": false,
+      "evidence_classification": "disclosed_vulnerability",
+      "factual_summary": "CVE Services published a Google-assigned record for improper symlink/link resolution in MCP Toolbox for Databases versions 1.2.0 through 1.9.0, with PR 3810 as the public fix reference.",
+      "follow_up_note": "Ingest should reconcile which MCP Toolbox release includes PR 3810 before closing the existing open question.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-allowedlocalroots-symlink-bypass.md",
+      "named_entities": [
+        "Google",
+        "MCP Toolbox for Databases",
+        "CVE-2026-102242",
+        "PR 3810"
+      ],
+      "source_title": "CVE-2026-102242: Google MCP Toolbox allowedLocalRoots symlink bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102242",
+        "https://github.com/googleapis/mcp-toolbox/pull/3810"
+      ],
+      "upstream_routing": [
+        "Route broad Google and MCP Toolbox product context to ai-wiki; keep local filesystem-containment security boundary here."
+      ],
+      "visible_publication_or_update_dates": {
+        "published_at": "2026-09-29T17:47:16.184Z",
+        "updated_at": "2026-09-29T18:35:11.181Z"
+      }
+    },
+    {
+      "affected_boundaries": "mark3labs mcp-filesystem-server validatePath and allowed-directory containment for file creation/modification.",
+      "confirmed_exploitation": false,
+      "evidence_classification": "disclosed_vulnerability",
+      "factual_summary": "CVE Services published and updated a MITRE record for mark3labs mcp-filesystem-server dangling-symlink directory traversal, with Traceforce as the public advisory reference.",
+      "follow_up_note": "Follow-up should identify the first fixed release and whether parent-directory resolution changed.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md",
+      "named_entities": [
+        "mark3labs",
+        "mcp-filesystem-server",
+        "CVE-2026-79534",
+        "Traceforce"
+      ],
+      "source_title": "CVE-2026-79534: mark3labs mcp-filesystem-server dangling symlink traversal",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79534",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79534"
+      ],
+      "upstream_routing": [
+        "Route broad MCP server catalog context upstream; keep local MCP file-tool containment analysis here."
+      ],
+      "visible_publication_or_update_dates": {
+        "published_at": "2026-09-29T00:00:00.000Z",
+        "updated_at": "2026-09-30T20:11:11.005Z"
+      }
+    },
+    {
+      "affected_boundaries": "mcp-chrome-bridge local native-server HTTP API; browser automation tools exposed through permissive origin handling.",
+      "confirmed_exploitation": false,
+      "evidence_classification": "disclosed_vulnerability",
+      "factual_summary": "VulnCheck published a CVE record for mcp-chrome-bridge through 1.0.31 allowing browser pages to cross the intended origin boundary into the local native-server API. The CNA datePublic is 2026-09-04, but the CVE publication/update is in-window.",
+      "follow_up_note": "Ingest should preserve the distinction between September 4 public issue/advisory timing and September 29 CVE publication.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-chrome-bridge-cors-origin-bypass.md",
+      "named_entities": [
+        "mcp-chrome-bridge",
+        "hangwin/mcp-chrome",
+        "VulnCheck",
+        "CVE-2026-102878"
+      ],
+      "source_title": "CVE-2026-102878: mcp-chrome-bridge CORS origin bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102878",
+        "https://github.com/hangwin/mcp-chrome/issues/384",
+        "https://www.vulncheck.com/advisories/mcp-chrome-bridge-through-1.0.31-cors-origin-bypass"
+      ],
+      "upstream_routing": [
+        "Route broad browser-agent runtime/product context upstream; keep CORS/local bridge security boundary here."
+      ],
+      "visible_publication_or_update_dates": {
+        "published_at": "2026-09-29T20:01:07.610Z",
+        "updated_at": "2026-09-29T20:19:14.663Z"
+      }
+    },
+    {
+      "affected_boundaries": "MetaMCP through 2.4.22; /mcp-proxy/server/stdio; internal inspector proxy and stdio launch path.",
+      "confirmed_exploitation": false,
+      "evidence_classification": "disclosed_vulnerability",
+      "factual_summary": "CVE Services published a MITRE record for MetaMCP code execution through the stdio inspector proxy boundary, referencing the MetaMCP repository and Traceforce advisory.",
+      "follow_up_note": "Follow-up should verify the fixed MetaMCP release and endpoint-level authorization changes.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/metamcp-stdio-inspector-proxy-code-execution.md",
+      "named_entities": [
+        "MetaMCP",
+        "metatool-ai",
+        "CVE-2026-79538",
+        "Traceforce"
+      ],
+      "source_title": "CVE-2026-79538: MetaMCP stdio inspector proxy code execution",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79538",
+        "https://github.com/metatool-ai/metamcp",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79538"
+      ],
+      "upstream_routing": [
+        "Route broad MetaMCP product context upstream; keep control-plane-to-stdio execution risk here."
+      ],
+      "visible_publication_or_update_dates": {
+        "published_at": "2026-09-29T00:00:00.000Z",
+        "updated_at": "2026-09-29T20:31:12.917Z"
+      }
+    },
+    {
+      "affected_boundaries": "VoiceMode through 8.10.1; update_config/config set; ~/.voicemode/voicemode.env; local OS command execution on later service start.",
+      "confirmed_exploitation": false,
+      "evidence_classification": "disclosed_vulnerability",
+      "factual_summary": "CVE Services published/updated a MITRE record for VoiceMode command injection through update_config/config-set values written into shell-interpreted environment files; public release and commit references identify v8.10.2 as the fix boundary.",
+      "follow_up_note": "Follow-up should determine whether v8.10.2 remediates existing unsafe env values or only future writes.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/voicemode-update-config-command-injection.md",
+      "named_entities": [
+        "VoiceMode",
+        "mbailey/voicemode",
+        "CVE-2026-79535",
+        "GHSA-h97v-r3jw-cf6f",
+        "v8.10.2"
+      ],
+      "source_title": "CVE-2026-79535: VoiceMode update_config command injection",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79535",
+        "https://github.com/mbailey/voicemode/releases/tag/v8.10.2",
+        "https://github.com/mbailey/voicemode/commit/c1cef85333fca497c46a11950911d10123f61e48",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79535",
+        "https://data.safetycli.com/packages/pypi/voice-mode/changelog?page=1"
+      ],
+      "upstream_routing": [
+        "Route broad voice-agent/product context upstream; keep delegated configuration command-injection boundary here."
+      ],
+      "visible_publication_or_update_dates": {
+        "published_at": "2026-09-29T00:00:00.000Z",
+        "updated_at": "2026-09-30T20:11:11.442Z"
+      }
+    },
+    {
+      "affected_boundaries": "Frontier AI release governance, internal controls, external audits, board committee oversight; no direct vulnerability or exploit claim.",
+      "confirmed_exploitation": false,
+      "evidence_classification": "control_change",
+      "factual_summary": "AP and other public reporting say frontier AI leaders signed a voluntary accord requiring robust internal controls, independent external auditor assessment, and board committee review of auditor reports.",
+      "follow_up_note": "Follow-up should capture primary accord text if/when public and keep enforcement limitations explicit.",
+      "leaf_id": "docs/wiki/governance-and-compliance/frontier-ai-voluntary-assurance-controls.md",
+      "named_entities": [
+        "Anthropic",
+        "Google",
+        "Meta",
+        "OpenAI",
+        "Nvidia",
+        "xAI",
+        "White House",
+        "AP"
+      ],
+      "source_title": "Frontier AI voluntary assurance accord adds auditor and board-review controls",
+      "source_urls": [
+        "https://apnews.com/article/595796511f110fc006cca0d01329733e",
+        "https://www.axios.com/2026/09/29/trump-ai-voluntary-safety-white-house-zuckerberg",
+        "https://www.cbsnews.com/news/trump-ai-constitution-tech-execs-openai-anthropic-voluntary-controls/",
+        "https://www.coindesk.com/tech/2026/09/30/openai-google-and-meta-pledge-outside-ai-audits-under-voluntary-white-house-deal"
+      ],
+      "upstream_routing": [
+        "Route broad company/federal-AI-policy context to ai-wiki; keep only security governance control implications here."
+      ],
+      "visible_publication_or_update_dates": {
+        "published_at": "2026-09-29",
+        "updated_at": "2026-09-30"
+      }
+    },
+    {
+      "affected_boundaries": "MetaMCP through 2.4.22; mcp-session-id owner and endpoint binding; cross-tenant private tool execution.",
+      "confirmed_exploitation": false,
+      "evidence_classification": "disclosed_vulnerability",
+      "factual_summary": "CVE Services published and updated a MITRE record for MetaMCP session IDOR, referencing the MetaMCP repository and Traceforce advisory.",
+      "follow_up_note": "Follow-up should identify fixed release, migration steps, and session identifier rotation guidance.",
+      "leaf_id": "docs/wiki/identity-and-access/metamcp-session-idor.md",
+      "named_entities": [
+        "MetaMCP",
+        "metatool-ai",
+        "CVE-2026-79537",
+        "Traceforce"
+      ],
+      "source_title": "CVE-2026-79537: MetaMCP session IDOR",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79537",
+        "https://github.com/metatool-ai/metamcp",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79537"
+      ],
+      "upstream_routing": [
+        "Route broad MetaMCP product context upstream; keep tenant session capability-binding boundary here."
+      ],
+      "visible_publication_or_update_dates": {
+        "published_at": "2026-09-29T00:00:00.000Z",
+        "updated_at": "2026-09-30T16:45:37.445Z"
+      }
+    },
+    {
+      "affected_boundaries": "OpenClaw before 2026.9.4; mcp.app.view; standalone MCP App tickets; operator.write tool invocation.",
+      "confirmed_exploitation": false,
+      "evidence_classification": "disclosed_vulnerability",
+      "factual_summary": "VulnCheck published a CVE record for OpenClaw before 2026.9.4 where mcp.app.view read-scoped operators could execute write tools through standalone MCP App tickets.",
+      "follow_up_note": "Follow-up should determine whether deployments must invalidate pre-fix standalone tickets separately.",
+      "leaf_id": "docs/wiki/identity-and-access/openclaw-mcp-app-view-read-to-write-bypass.md",
+      "named_entities": [
+        "OpenClaw",
+        "MCP Apps",
+        "CVE-2026-102807",
+        "VulnCheck",
+        "2026.9.4"
+      ],
+      "source_title": "CVE-2026-102807: OpenClaw read-to-write MCP App ticket bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102807",
+        "https://docs.openclaw.ai/releases/2026.9.4",
+        "https://github.com/openclaw/openclaw/commit/3bd8ec2b39b5f9e80aef0973f7d17eadc745b8f8",
+        "https://www.vulncheck.com/advisories/openclaw-before-2026.9.4-authorization-bypass-via-mcp-app-standalone-ticket",
+        "https://vulners.com/nvd/NVD%3ACVE-2026-102807"
+      ],
+      "upstream_routing": [
+        "Route broad OpenClaw product context upstream; keep capability-token authorization bypass here."
+      ],
+      "visible_publication_or_update_dates": {
+        "published_at": "2026-09-29T17:22:40.440Z",
+        "updated_at": "2026-09-29T17:58:40.914Z"
+      }
+    },
+    {
+      "affected_boundaries": "Open GenAI Stack / ogx-ai prompt-processing path; Jinja2 template syntax; server-side expression evaluation and code execution.",
+      "confirmed_exploitation": false,
+      "evidence_classification": "disclosed_vulnerability",
+      "factual_summary": "CVE Services published a MITRE record for Open GenAI Stack / ogx-ai prompt injection reaching Jinja server-side expression evaluation, with proof-oriented gist evidence.",
+      "follow_up_note": "Follow-up should identify a vendor advisory or fixed release boundary before strengthening mitigation language.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/open-genai-stack-jinja-prompt-injection-rce.md",
+      "named_entities": [
+        "Open GenAI Stack",
+        "ogx-ai",
+        "Jinja2",
+        "CVE-2026-77177"
+      ],
+      "source_title": "CVE-2026-77177: Open GenAI Stack Jinja prompt-injection RCE",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77177",
+        "https://gist.github.com/abhi04anon/8ce0b68a5a7dda8a0501cbaf933173eb"
+      ],
+      "upstream_routing": [
+        "Route broad Meta AI, WhatsApp, and Open GenAI Stack entity context upstream; keep prompt-to-template-execution boundary here."
+      ],
+      "visible_publication_or_update_dates": {
+        "published_at": "2026-09-29T00:00:00.000Z",
+        "updated_at": "2026-09-29T19:49:32.986Z"
+      }
+    },
+    {
+      "affected_boundaries": "Reusable agent tool filesystem path containment controls for symlink, dangling-symlink, final-realpath, and allowed-root enforcement.",
+      "confirmed_exploitation": false,
+      "evidence_classification": "control_change",
+      "factual_summary": "Two same-run CVE records add fresh public evidence that MCP file/database tools still fail when symlink resolution and allowed-root checks are not bound to final canonical paths.",
+      "follow_up_note": "Ingest should update the control leaf only if it can add a durable rule beyond the two specific leaf pages, avoiding duplicate prose.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "named_entities": [
+        "MCP Toolbox for Databases",
+        "mark3labs mcp-filesystem-server",
+        "CVE-2026-102242",
+        "CVE-2026-79534"
+      ],
+      "source_title": "Filesystem path containment receives fresh symlink-bypass evidence from selected MCP CVEs",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102242",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79534"
+      ],
+      "upstream_routing": [
+        "Route broad MCP product catalog context upstream; keep reusable security-control implications locally."
+      ],
+      "visible_publication_or_update_dates": {
+        "published_at": "2026-09-29",
+        "updated_at": "2026-09-30"
+      }
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-10-01T00:03:13Z",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/google-mcp-toolbox-allowedlocalroots-symlink-bypass.md",
+    "docs/wiki/agent-and-tool-security/mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md",
+    "docs/wiki/agent-and-tool-security/mcp-chrome-bridge-cors-origin-bypass.md",
+    "docs/wiki/agent-and-tool-security/metamcp-stdio-inspector-proxy-code-execution.md",
+    "docs/wiki/agent-and-tool-security/voicemode-update-config-command-injection.md",
+    "docs/wiki/governance-and-compliance/frontier-ai-voluntary-assurance-controls.md",
+    "docs/wiki/identity-and-access/metamcp-session-idor.md",
+    "docs/wiki/identity-and-access/openclaw-mcp-app-view-read-to-write-bypass.md",
+    "docs/wiki/model-and-prompt-security/open-genai-stack-jinja-prompt-injection-rce.md",
+    "docs/wiki/incident-response/meta-irregular-third-party-evaluation-scope-failure.md",
+    "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+    "docs/wiki/infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+    "docs/wiki/infrastructure-and-supply-chain/tensorzero-gateway-object-storage-file-read-ssrf.md",
+    "docs/wiki/model-and-prompt-security/legal-filing-prompt-injection.md"
+  ],
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, then stable relative path; excluded hubs, reserved pages, digests, source workflow pages, federation/schema/glossary/defect/decision/index pages, and dated source-synthesis pages unless durable security leaves",
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-allowedlocalroots-symlink-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102242",
+        "https://github.com/googleapis/mcp-toolbox/pull/3810",
+        "https://cve.report/CVE-2026-102242"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79534",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79534",
+        "https://vulners.com/nvd/NVD%3ACVE-2026-79534"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-chrome-bridge-cors-origin-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102878",
+        "https://github.com/hangwin/mcp-chrome/issues/384",
+        "https://www.vulncheck.com/advisories/mcp-chrome-bridge-through-1.0.31-cors-origin-bypass"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/metamcp-stdio-inspector-proxy-code-execution.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79538",
+        "https://github.com/metatool-ai/metamcp",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79538",
+        "https://cvebrief.com/cve/cve-2026-79538/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/voicemode-update-config-command-injection.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79535",
+        "https://github.com/mbailey/voicemode/releases/tag/v8.10.2",
+        "https://github.com/mbailey/voicemode/commit/c1cef85333fca497c46a11950911d10123f61e48",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79535",
+        "https://data.safetycli.com/packages/pypi/voice-mode/changelog?page=1"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/frontier-ai-voluntary-assurance-controls.md",
+      "source_urls": [
+        "https://apnews.com/article/595796511f110fc006cca0d01329733e",
+        "https://www.axios.com/2026/09/29/trump-ai-voluntary-safety-white-house-zuckerberg",
+        "https://www.cbsnews.com/news/trump-ai-constitution-tech-execs-openai-anthropic-voluntary-controls/",
+        "https://www.coindesk.com/tech/2026/09/30/openai-google-and-meta-pledge-outside-ai-audits-under-voluntary-white-house-deal"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/metamcp-session-idor.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79537",
+        "https://github.com/metatool-ai/metamcp",
+        "https://www.traceforce.ai/security-advisories/cve-2026-79537"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/openclaw-mcp-app-view-read-to-write-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102807",
+        "https://docs.openclaw.ai/releases/2026.9.4",
+        "https://github.com/openclaw/openclaw/commit/3bd8ec2b39b5f9e80aef0973f7d17eadc745b8f8",
+        "https://www.vulncheck.com/advisories/openclaw-before-2026.9.4-authorization-bypass-via-mcp-app-standalone-ticket",
+        "https://vulners.com/nvd/NVD%3ACVE-2026-102807"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/open-genai-stack-jinja-prompt-injection-rce.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77177",
+        "https://gist.github.com/abhi04anon/8ce0b68a5a7dda8a0501cbaf933173eb"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/incident-response/meta-irregular-third-party-evaluation-scope-failure.md",
+      "source_urls": [
+        "https://apnews.com/article/452281863a49b18220057e71d4715cf4",
+        "https://www.techradar.com/pro/have-we-crossed-the-ai-rubicon",
+        "https://www.omniscient.media/post/one-evaluator-four-labs-how-irregular-s-test-environments-let-ai-models-reach-real-companies",
+        "https://www.companyscope.io/register/air-2026-012"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102242",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79534",
+        "https://github.com/ChromeDevTools/chrome-devtools-mcp/security/advisories/GHSA-8qf9-62x2-82pp",
+        "https://www.reddit.com/r/mcp/comments/1wit08i/showcase_mac_mcp_214_local_macos_control_with_public_endpoint_modes_ssrfsymlink_hardening_transaction_undo_doctor_conformance_lab/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/db-gpt-unauthenticated-path-traversal-rce.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73034",
+        "https://github.com/eosphoros-ai/DB-GPT/issues/3104",
+        "https://github.com/eosphoros-ai/DB-GPT/commit/e0c741bd2b5e521b128cffb3f68982dde3f7b359",
+        "https://www.vulncheck.com/advisories/db-gpt-path-traversal-arbitrary-file-write-via-user-id-header"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/network-ai-environment-restore-path-traversal.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-58413",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-48x2-6pr9-2jjf",
+        "https://github.com/Jovancoding/Network-AI/releases/tag/v5.12.2"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/tensorzero-gateway-object-storage-file-read-ssrf.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54457",
+        "https://github.com/tensorzero/tensorzero/security/advisories/GHSA-824w-x939-6cmc",
+        "https://github.com/tensorzero/tensorzero/releases/tag/2026.6.0",
+        "https://app.opencve.io/cve/CVE-2026-54457"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/legal-filing-prompt-injection.md",
+      "source_urls": [
+        "https://arstechnica.com/tech-policy/2026/08/suspecting-court-of-using-ai-man-injected-prompts-in-filings-to-try-to-win-case/",
+        "https://www.qlsproctor.com.au/2026/09/self-rep-sanctioned-for-hiding-ai-prompts-in-pleadings/?trk=article-ssr-frontend-pulse_little-text-block",
+        "https://www.reddit.com/r/law/comments/1wropp3/a_connecticut_judge_sanctioned_a_litigant_for_hiding_ai_instructions_in_white_text_in_his_motions_the_decision_is_worth_reading_for_what_it_says_the_new_ai_rules_dont_reach/"
+      ]
+    }
+  ],
+  "upstream_routing": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/google-mcp-toolbox-allowedlocalroots-symlink-bypass.md",
+      "notes": [
+        "Route broad Google and MCP Toolbox product context to ai-wiki; keep local filesystem-containment security boundary here."
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md",
+      "notes": [
+        "Route broad MCP server catalog context upstream; keep local MCP file-tool containment analysis here."
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-chrome-bridge-cors-origin-bypass.md",
+      "notes": [
+        "Route broad browser-agent runtime/product context upstream; keep CORS/local bridge security boundary here."
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/metamcp-stdio-inspector-proxy-code-execution.md",
+      "notes": [
+        "Route broad MetaMCP product context upstream; keep control-plane-to-stdio execution risk here."
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/voicemode-update-config-command-injection.md",
+      "notes": [
+        "Route broad voice-agent/product context upstream; keep delegated configuration command-injection boundary here."
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/frontier-ai-voluntary-assurance-controls.md",
+      "notes": [
+        "Route broad company/federal-AI-policy context to ai-wiki; keep only security governance control implications here."
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/metamcp-session-idor.md",
+      "notes": [
+        "Route broad MetaMCP product context upstream; keep tenant session capability-binding boundary here."
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/openclaw-mcp-app-view-read-to-write-bypass.md",
+      "notes": [
+        "Route broad OpenClaw product context upstream; keep capability-token authorization bypass here."
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/open-genai-stack-jinja-prompt-injection-rce.md",
+      "notes": [
+        "Route broad Meta AI, WhatsApp, and Open GenAI Stack entity context upstream; keep prompt-to-template-execution boundary here."
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/agent-tool-filesystem-path-containment.md",
+      "notes": [
+        "Route broad MCP product catalog context upstream; keep reusable security-control implications locally."
+      ]
+    }
+  ]
+}

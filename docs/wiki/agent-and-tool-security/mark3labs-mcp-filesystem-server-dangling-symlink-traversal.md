@@ -13,6 +13,8 @@ The [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-s
 
 The source says `validatePath` mishandles dangling symlinks. File-writing tools can follow a symlink inside an allowed directory and create or modify files outside configured allowed directories, turning delegated file-write authority into broader host filesystem mutation.
 
+The [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) corroborates CVE Services publication/update evidence and preserves the open fixed-release question.
+
 ## Security Impact
 
 - Threat: MCP file-write tools can escape configured roots through dangling symlink behavior.
@@ -25,6 +27,7 @@ The source says `validatePath` mishandles dangling symlinks. File-writing tools 
 ## Authoritative Sources
 
 - [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json)
+- [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [CVE-2026-79534 NVD entry](https://nvd.nist.gov/vuln/detail/CVE-2026-79534)
 - [Traceforce advisory](https://www.traceforce.ai/security-advisories/cve-2026-79534)
 
@@ -55,3 +58,4 @@ The source says `validatePath` mishandles dangling symlinks. File-writing tools 
 ## Maintenance Notes
 
 - Created on 2026-09-30 from the [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json) after routing general MCP server catalog context upstream.
+- Updated on 2026-10-01 from the [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) with CVE Services provenance and no duplicate digest item.

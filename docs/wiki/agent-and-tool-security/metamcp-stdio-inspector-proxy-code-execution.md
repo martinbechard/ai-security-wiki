@@ -13,6 +13,8 @@ The [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-s
 
 The source says the internal MCP inspector proxy endpoint `GET /mcp-proxy/server/stdio` can reach code execution. The related [MetaMCP session IDOR](../identity-and-access/metamcp-session-idor.md) is tracked separately because it is a tenant-isolation failure, while this leaf is about a local proxy endpoint that can start or control stdio execution.
 
+The [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) corroborates CVE Services publication/update evidence for the same MetaMCP 2.4.22 stdio proxy boundary.
+
 ## Security Impact
 
 - Threat: an exposed inspector proxy endpoint can convert MCP control-plane access into local code execution.
@@ -25,6 +27,7 @@ The source says the internal MCP inspector proxy endpoint `GET /mcp-proxy/server
 ## Authoritative Sources
 
 - [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json)
+- [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [CVE-2026-79538 NVD entry](https://nvd.nist.gov/vuln/detail/CVE-2026-79538)
 - [MetaMCP repository](https://github.com/metatool-ai/metamcp)
 - [Traceforce CVE-2026-79538 advisory](https://www.traceforce.ai/security-advisories/cve-2026-79538)
@@ -56,3 +59,4 @@ The source says the internal MCP inspector proxy endpoint `GET /mcp-proxy/server
 ## Maintenance Notes
 
 - Created on 2026-09-30 from the [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json) after splitting the code-execution proxy issue from the MetaMCP session-isolation issue.
+- Updated on 2026-10-01 from the [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) with CVE Services provenance and no duplicate digest item.

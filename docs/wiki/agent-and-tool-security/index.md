@@ -2,6 +2,11 @@
 
 ## Current Understanding
 
+- [mcp-kubernetes-server command chain guard bypass](mcp-kubernetes-server-command-chain-guard-bypass.md)
+- [ADB MCP command injection](adb-mcp-command-injection.md)
+- [Meta Ads MCP image fetch SSRF](meta-ads-mcp-image-fetch-ssrf.md)
+- [mcp-searxng unbounded URL fetch](mcp-searxng-unbounded-url-fetch.md)
+- [MCPVault case canonical path filtering](mcpvault-case-canonical-path-filtering.md)
 - [Google MCP Toolbox allowedLocalRoots symlink bypass](google-mcp-toolbox-allowedlocalroots-symlink-bypass.md)
 - [mcp-chrome-bridge CORS origin bypass](mcp-chrome-bridge-cors-origin-bypass.md)
 - [mark3labs mcp-filesystem-server dangling symlink traversal](mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md)
@@ -45,6 +50,11 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [mcp-kubernetes-server command chain guard bypass](mcp-kubernetes-server-command-chain-guard-bypass.md)
+- [ADB MCP command injection](adb-mcp-command-injection.md)
+- [Meta Ads MCP image fetch SSRF](meta-ads-mcp-image-fetch-ssrf.md)
+- [mcp-searxng unbounded URL fetch](mcp-searxng-unbounded-url-fetch.md)
+- [MCPVault case canonical path filtering](mcpvault-case-canonical-path-filtering.md)
 - [Google MCP Toolbox allowedLocalRoots symlink bypass](google-mcp-toolbox-allowedlocalroots-symlink-bypass.md)
 - [mcp-chrome-bridge CORS origin bypass](mcp-chrome-bridge-cors-origin-bypass.md)
 - [mark3labs mcp-filesystem-server dangling symlink traversal](mark3labs-mcp-filesystem-server-dangling-symlink-traversal.md)

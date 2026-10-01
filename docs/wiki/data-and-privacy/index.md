@@ -6,6 +6,8 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [Dify plaintext API key exposure](dify-plaintext-api-key-exposure.md)
+- [Firefox AI chatbot tab title leak](firefox-ai-chatbot-tab-title-leak.md)
 - [Token Optimizer MCP dashboard log traversal](token-optimizer-mcp-dashboard-log-traversal.md)
 - [Heym workflow capability secret plaintext exposure](heym-workflow-capability-secret-plaintext-exposure.md)
 - [LiteLLM semantic cache tenant isolation bypass](litellm-semantic-cache-tenant-isolation-bypass.md)

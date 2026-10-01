@@ -13,6 +13,8 @@ The [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-s
 
 The source says caller-supplied MCP `update_config` values are written to `~/.voicemode/voicemode.env` without shell-safe escaping, creating OS command-injection risk. References include the [v8.10.2 release](https://github.com/mbailey/voicemode/releases/tag/v8.10.2), [fixing commit](https://github.com/mbailey/voicemode/commit/c1cef85333fca497c46a11950911d10123f61e48), and [Traceforce advisory](https://www.traceforce.ai/security-advisories/cve-2026-79535).
 
+The [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) corroborates the CVE Services update and keeps the residual question about existing unsafe environment values open.
+
 ## Security Impact
 
 - Threat: delegated configuration updates can become shell command execution when environment-file values are later sourced or interpreted.
@@ -25,6 +27,7 @@ The source says caller-supplied MCP `update_config` values are written to `~/.vo
 ## Authoritative Sources
 
 - [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json)
+- [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [CVE-2026-79535 NVD entry](https://nvd.nist.gov/vuln/detail/CVE-2026-79535)
 - [VoiceMode v8.10.2 release](https://github.com/mbailey/voicemode/releases/tag/v8.10.2)
 - [VoiceMode fixing commit](https://github.com/mbailey/voicemode/commit/c1cef85333fca497c46a11950911d10123f61e48)
@@ -57,3 +60,4 @@ The source says caller-supplied MCP `update_config` values are written to `~/.vo
 ## Maintenance Notes
 
 - Created on 2026-09-30 from the [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json) after routing general voice-agent context upstream.
+- Updated on 2026-10-01 from the [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) with CVE Services update provenance and no duplicate digest item.

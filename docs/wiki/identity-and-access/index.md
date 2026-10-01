@@ -6,6 +6,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [OpenShift AI dashboard Kubernetes API impersonation](openshift-ai-dashboard-kubernetes-api-impersonation.md)
+- [Obsidian Web MCP unauthenticated vault tokens](obsidian-web-mcp-unauthenticated-vault-tokens.md)
 - [OpenClaw MCP App View read to write bypass](openclaw-mcp-app-view-read-to-write-bypass.md)
 - [MetaMCP session IDOR](metamcp-session-idor.md)
 - [Zscaler MCP confirmation token resource binding](zscaler-mcp-confirmation-token-resource-binding.md)

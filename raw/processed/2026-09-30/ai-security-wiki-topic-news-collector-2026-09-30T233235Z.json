@@ -1,0 +1,668 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "agent_identifier": "Northstar",
+  "run_timestamp": "2026-09-30T23:32:35Z",
+  "cutoff_window": {
+    "start": "2026-09-28T23:32:35Z",
+    "end": "2026-09-30T23:32:35Z",
+    "basis": "Include public items with a visible publication or update timestamp inside the exact two-day UTC run window."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "federation_context": {
+    "local_owner": "Security-specific facts, affected boundaries, mitigations, controls, and incident implications for AI systems.",
+    "upstream_ai_wiki_owner": "Broad company, product, model, framework, MCP-server, and ecosystem entity background.",
+    "upstream_ai_dev_wiki_owner": "General AI-assisted development practice, workflow, adoption, and verification patterns.",
+    "routing_rule_applied": "Keep the concrete security delta here; route broad entity cataloging or general development-practice synthesis upstream."
+  },
+  "sources_consulted": [
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=AI&lastModStartDate=2026-09-28T23:32:35.000Z&lastModEndDate=2026-09-30T23:32:35.000Z",
+      "source_type": "public vulnerability database API",
+      "visible_date": "2026-09-30T23:32:57.620Z",
+      "notes": "Returned AI-keyword CVEs modified inside the collection window."
+    },
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=MCP&lastModStartDate=2026-09-28T23:32:35.000Z&lastModEndDate=2026-09-30T23:32:35.000Z",
+      "source_type": "public vulnerability database API",
+      "visible_date": "2026-09-30T23:32:57.475Z",
+      "notes": "Returned MCP-keyword CVEs modified inside the collection window."
+    },
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=LLM&lastModStartDate=2026-09-28T23:32:35.000Z&lastModEndDate=2026-09-30T23:32:35.000Z",
+      "source_type": "public vulnerability database API",
+      "visible_date": "2026-09-30T23:32:57.467Z",
+      "notes": "Returned LLM-keyword CVEs modified inside the collection window."
+    },
+    {
+      "url": "https://github.com/advisories",
+      "source_type": "public advisory database",
+      "visible_date": "accessed 2026-09-30T23:33:12Z",
+      "notes": "Used as a routing and advisory-reference check for GitHub-originated records referenced by NVD."
+    },
+    {
+      "url": "https://www.axios.com/2026/09/29/openai-sued-hugging-face-breach",
+      "source_type": "public news report",
+      "visible_date": "2026-09-29T19:00:05Z",
+      "notes": "Reviewed as incident/legal context; excluded from findings because no primary filing or official source was located during the run."
+    },
+    {
+      "url": "https://thehackernews.com/2026/09/openai-pauses-tool-use-after-agent.html",
+      "source_type": "public security news report",
+      "visible_date": "2026-09-29",
+      "notes": "Reviewed as OpenAI agent-incident context; excluded from findings pending a stable primary OpenAI source."
+    }
+  ],
+  "findings": [
+    {
+      "id": "nvd-cve-2025-58371-roo-code-workflow-rce",
+      "title": "Roo Code privileged GitHub Actions workflow RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-58371",
+        "https://github.com/RooCodeInc/Roo-Code/security/advisories/GHSA-xr6r-vj48-29f6",
+        "https://github.com/RooCodeInc/Roo-Code/commit/a0384f35d5ae3b7f66506cc62dda25d9bb673f49"
+      ],
+      "visible_dates": {
+        "published": "2025-09-05T23:15:30.467Z",
+        "updated": "2026-09-30T23:10:00.237Z"
+      },
+      "summary": "NVD updated CVE-2025-58371 for Roo Code, an AI-powered autonomous coding agent, where versions 3.26.6 and below used unsanitized pull-request metadata in a privileged GitHub Actions context, enabling remote command execution on the runner, repository modification, secret access, and malicious release or package creation. The record says version 3.26.7 fixes the issue.",
+      "evidence_classification": "vulnerability-advisory; updated-in-window; public database plus vendor advisory and patch references",
+      "affected_boundary_or_version": "Roo Code <= 3.26.6; fixed in 3.26.7",
+      "why_it_matters_for_ai_security": "Coding-agent projects often ship privileged automation around generated code and extension releases. This record is a concrete repository supply-chain compromise path for an AI coding-agent ecosystem component.",
+      "named_entities": [
+        "Roo Code",
+        "RooCodeInc",
+        "GitHub Actions",
+        "CVE-2025-58371",
+        "GHSA-xr6r-vj48-29f6"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "Broad Roo Code product/entity background belongs upstream."
+        },
+        {
+          "owner": "ai-dev-wiki",
+          "reason": "General coding-agent CI/release governance practice belongs upstream; this repository should keep the security-specific supply-chain finding."
+        }
+      ],
+      "confidence_notes": "High confidence for affected versions and fix because NVD, GitHub advisory, and patch references align. Treat the in-window qualification as an NVD update, not first disclosure.",
+      "follow_up_actions": [
+        "During ingest, check whether a local Roo Code security leaf already exists before creating a duplicate.",
+        "Reconcile whether the durable home is infrastructure-and-supply-chain or agent-and-tool-security based on existing page granularity."
+      ]
+    },
+    {
+      "id": "nvd-cve-2025-59376-mcp-kubernetes-disable-write-delete-bypass",
+      "title": "mcp-kubernetes-server chained-command write/delete guard bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-59376",
+        "https://github.com/feiskyer/mcp-kubernetes-server/blob/78957b6c1a3982080cf6fcaac6f6e9014116a71c/src/mcp_kubernetes_server/main.py#L106-L137",
+        "https://github.com/william31212/CVE-Requests-1896609"
+      ],
+      "visible_dates": {
+        "published": "2025-09-15T14:15:44.087Z",
+        "updated": "2026-09-30T23:10:00.237Z"
+      },
+      "summary": "NVD updated CVE-2025-59376 for feiskyer mcp-kubernetes-server through 0.1.11. The server's --disable-write and --disable-delete checks consider only the first command word, allowing chained commands such as a read-like first command followed by a delete operation.",
+      "evidence_classification": "vulnerability-advisory; updated-in-window; public database plus code reference",
+      "affected_boundary_or_version": "feiskyer mcp-kubernetes-server <= 0.1.11",
+      "why_it_matters_for_ai_security": "MCP servers that mediate Kubernetes access must enforce least privilege at final command execution, not only at initial tool selection or first-token parsing.",
+      "named_entities": [
+        "feiskyer mcp-kubernetes-server",
+        "MCP",
+        "Kubernetes",
+        "CVE-2025-59376"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "Broad MCP server cataloging belongs upstream."
+        }
+      ],
+      "confidence_notes": "High confidence for the control-bypass fact from NVD and referenced source code. Fixed version was not identified in the fetched record.",
+      "follow_up_actions": [
+        "During ingest, check for a patch or release note after 0.1.11.",
+        "Compare with existing final-query authorization and MCP command-policy pages."
+      ]
+    },
+    {
+      "id": "nvd-cve-2025-59834-adb-mcp-command-injection",
+      "title": "ADB MCP Server command injection in tool implementation",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-59834",
+        "https://github.com/srmorete/adb-mcp/security/advisories/GHSA-54j7-grvr-9xwg",
+        "https://github.com/srmorete/adb-mcp/commit/041729c0b25432df3199ff71b3163a307cf4c28c"
+      ],
+      "visible_dates": {
+        "published": "2025-09-25T14:15:46.357Z",
+        "updated": "2026-09-30T23:10:00.237Z"
+      },
+      "summary": "NVD updated CVE-2025-59834 for ADB MCP Server versions 0.1.0 and prior, where MCP tool definitions and implementation are vulnerable to command injection. The record points to commit 041729c as the patch.",
+      "evidence_classification": "vulnerability-advisory; updated-in-window; public database plus GitHub advisory and patch",
+      "affected_boundary_or_version": "srmorete adb-mcp <= 0.1.0; patched by commit 041729c",
+      "why_it_matters_for_ai_security": "An MCP server that bridges agent calls to Android Debug Bridge can turn tool arguments into device or host command execution if it does not treat model-selected parameters as hostile input.",
+      "named_entities": [
+        "ADB MCP Server",
+        "srmorete adb-mcp",
+        "Android Debug Bridge",
+        "CVE-2025-59834",
+        "GHSA-54j7-grvr-9xwg"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "General adb-mcp entity context belongs upstream; local durable coverage should focus on command-injection boundary."
+        }
+      ],
+      "confidence_notes": "High confidence for affected boundary and patch reference. Ingest should verify whether a versioned release contains the patch.",
+      "follow_up_actions": [
+        "Recheck GitHub release tags before durable synthesis.",
+        "Map to existing MCP command-injection pages if pattern-level consolidation is better than a new leaf."
+      ]
+    },
+    {
+      "id": "nvd-cve-2025-67732-dify-plaintext-api-key",
+      "title": "Dify plaintext API key exposure to non-admin frontend users",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-67732",
+        "https://github.com/langgenius/dify/security/advisories/GHSA-phpv-94hg-fv9g"
+      ],
+      "visible_dates": {
+        "published": "2026-01-05T22:15:51.837Z",
+        "updated": "2026-09-30T22:10:00.273Z"
+      },
+      "summary": "NVD updated CVE-2025-67732 for Dify before 1.11.0. The advisory says API keys are exposed in plaintext to the frontend, letting non-administrator users view and reuse keys for unauthorized access to third-party services and quota consumption. Version 1.11.0 fixes the issue.",
+      "evidence_classification": "vulnerability-advisory; updated-in-window; public database plus GitHub advisory reference",
+      "affected_boundary_or_version": "Dify < 1.11.0; fixed in 1.11.0",
+      "why_it_matters_for_ai_security": "LLM application platforms frequently hold provider API keys and delegated credentials; frontend exposure breaks least privilege and can shift AI provider cost and data access to unauthorized users.",
+      "named_entities": [
+        "Dify",
+        "langgenius",
+        "LLM app development platform",
+        "CVE-2025-67732",
+        "GHSA-phpv-94hg-fv9g"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "Dify product/framework background belongs upstream."
+        },
+        {
+          "owner": "ai-dev-wiki",
+          "reason": "General LLM platform key-management practice belongs upstream; this repository keeps the vulnerability and credential-security impact."
+        }
+      ],
+      "confidence_notes": "High confidence for the security fact and fixed version from NVD. Treat as an in-window update rather than first disclosure.",
+      "follow_up_actions": [
+        "During ingest, check for existing Dify or LLM credential-exposure leaves.",
+        "Preserve the third-party-service quota and delegated-credential implication."
+      ]
+    },
+    {
+      "id": "nvd-cve-2025-3035-firefox-ai-chatbot-tab-title-leak",
+      "title": "Firefox AI chatbot leaked prior tab title into chat prompt",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-3035",
+        "https://www.mozilla.org/security/advisories/mfsa2025-20/",
+        "https://bugzilla.mozilla.org/show_bug.cgi?id=1952268"
+      ],
+      "visible_dates": {
+        "published": "2025-04-01T13:15:41.893Z",
+        "updated": "2026-09-30T19:10:01.007Z"
+      },
+      "summary": "NVD updated CVE-2025-3035, where using the AI chatbot in one Firefox tab and later activating it in another could leak the previous tab's document title into the chat prompt. Mozilla fixed the issue in Firefox 137.",
+      "evidence_classification": "vulnerability-advisory; updated-in-window; public database plus vendor advisory reference",
+      "affected_boundary_or_version": "Firefox before 137",
+      "why_it_matters_for_ai_security": "Browser-integrated AI assistants create privacy boundaries between page state and model prompts; cross-tab title leakage is a concrete prompt-context data-minimization failure.",
+      "named_entities": [
+        "Mozilla Firefox",
+        "Firefox AI chatbot",
+        "CVE-2025-3035",
+        "MFSA 2025-20"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "Firefox and browser AI assistant product context belongs upstream."
+        }
+      ],
+      "confidence_notes": "High confidence for the fixed version and leakage boundary from NVD and Mozilla references. Publication predates the window; the qualifying date is NVD lastModified.",
+      "follow_up_actions": [
+        "During ingest, connect to browser-agent runtime and data-minimization topics if not already captured.",
+        "Verify whether local docs already synthesized this older Mozilla advisory."
+      ]
+    },
+    {
+      "id": "nvd-red-hat-openshift-ai-sept30-controls-cluster",
+      "title": "Red Hat OpenShift AI guardrails and dashboard vulnerabilities updated",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15154",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-16745"
+      ],
+      "visible_dates": {
+        "published": "2026-07-08T20:16:48.430Z and 2026-07-23T11:16:40.043Z",
+        "updated": "2026-09-30T17:16:43.810Z and 2026-09-30T17:16:44.840Z"
+      },
+      "summary": "NVD updated two Red Hat OpenShift AI records. CVE-2026-15154 describes a ReDoS in guardrails-detectors where crafted regular expressions against the public detection API can drive catastrophic backtracking and deny the guardrails-mediated LLM pipeline. CVE-2026-16745 describes odh-dashboard binding behavior that lets an in-cluster actor bypass authentication and impersonate users against the Kubernetes API.",
+      "evidence_classification": "vulnerability-advisory cluster; updated-in-window; public database",
+      "affected_boundary_or_version": "Red Hat OpenShift AI guardrails-detectors and odh-dashboard components; exact fixed builds require Red Hat advisory reconciliation",
+      "why_it_matters_for_ai_security": "The records affect two key AI platform controls: guardrail availability and dashboard identity enforcement. Both are release-gate concerns for hosted AI workloads.",
+      "named_entities": [
+        "Red Hat OpenShift AI",
+        "guardrails-detectors",
+        "odh-dashboard",
+        "Kubernetes API",
+        "CVE-2026-15154",
+        "CVE-2026-16745"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "OpenShift AI product/platform context belongs upstream."
+        }
+      ],
+      "confidence_notes": "Medium-high confidence for vulnerability descriptions from NVD. Fixed-version detail needs Red Hat primary advisory reconciliation during ingest.",
+      "follow_up_actions": [
+        "Fetch Red Hat errata or Bugzilla references during ingest to confirm fixed builds.",
+        "Route guardrails-detectors to testing-and-assurance or model-and-prompt security, and odh-dashboard to identity-and-access."
+      ]
+    },
+    {
+      "id": "nvd-modelcontextprotocol-servers-git-path-boundary-cluster",
+      "title": "Official MCP server-git repository boundary fixes updated",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-68143",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-68145",
+        "https://github.com/modelcontextprotocol/servers/security/advisories"
+      ],
+      "visible_dates": {
+        "published": "2025-12-17T23:16:04Z",
+        "updated": "2026-09-30T23:10:00.237Z"
+      },
+      "summary": "NVD updated official Model Context Protocol Servers records affecting mcp-server-git. CVE-2025-68143 says git_init accepted arbitrary filesystem paths and made those directories eligible for later git operations before the tool was removed. CVE-2025-68145 says --repository restrictions did not validate subsequent repo_path arguments against the configured repository, allowing operations on other accessible repositories. The records point to upgrades at or after 2025.9.25 and 2025.12.17 respectively.",
+      "evidence_classification": "vulnerability-advisory cluster; updated-in-window; public database plus upstream advisory index",
+      "affected_boundary_or_version": "mcp-server-git before 2025.9.25 for git_init removal and before 2025.12.17 for repository path validation",
+      "why_it_matters_for_ai_security": "Repository-scoped MCP tools must enforce filesystem and repository boundaries on every tool call. Otherwise an agent with apparent repo-limited authority can mutate or inspect neighboring repositories.",
+      "named_entities": [
+        "Model Context Protocol Servers",
+        "mcp-server-git",
+        "CVE-2025-68143",
+        "CVE-2025-68145"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "General official MCP server catalog entries belong upstream."
+        },
+        {
+          "owner": "ai-dev-wiki",
+          "reason": "General repository-boundary practice for coding agents belongs upstream; local synthesis should keep the concrete MCP vulnerability facts."
+        }
+      ],
+      "confidence_notes": "High confidence for the affected versions from NVD text. Ingest should verify linked GitHub advisories for exact GHSA identifiers.",
+      "follow_up_actions": [
+        "Delta-review against existing mcp-server-git and repository-boundary pages.",
+        "Check whether these belong as one cluster leaf or separate path-boundary leaves."
+      ]
+    },
+    {
+      "id": "nvd-meta-ads-mcp-auth-ssrf-cluster",
+      "title": "Meta Ads MCP auth fallback and image-fetch SSRF fixes updated",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54547",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54549"
+      ],
+      "visible_dates": {
+        "published": "2026-09-15T18:17:22.927Z and 2026-09-15T18:17:23.073Z",
+        "updated": "2026-09-30T17:51:56.193Z"
+      },
+      "summary": "NVD updated two Meta Ads MCP records. CVE-2026-54547 describes HTTP auth middleware that accepts any X-Pipeboard-Token value and falls back to the operator's META_ACCESS_TOKEN, causing tools to execute with operator Meta credentials. CVE-2026-54549 describes upload_ad_image fetching attacker-controlled URLs before credential validation, enabling SSRF to loopback, private networks, metadata endpoints, or redirect-chained internal targets. Both are fixed in 1.0.115.",
+      "evidence_classification": "vulnerability-advisory cluster; updated-in-window; public database",
+      "affected_boundary_or_version": "Meta Ads MCP < 1.0.115 when streamable HTTP/server-side token deployment is used",
+      "why_it_matters_for_ai_security": "This cluster combines delegated advertising-account authority with unauthenticated HTTP tool access and SSRF, a concrete example of why MCP credentials and network fetch tools need independent enforcement before tool execution.",
+      "named_entities": [
+        "Meta Ads MCP",
+        "META_ACCESS_TOKEN",
+        "Pipeboard",
+        "CVE-2026-54547",
+        "CVE-2026-54549"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "Meta Ads MCP entity context belongs upstream."
+        }
+      ],
+      "confidence_notes": "High confidence for vulnerability shape and fixed version from NVD. Primary repository/advisory references should be rechecked during ingest.",
+      "follow_up_actions": [
+        "Route credential fallback to identity-and-access and SSRF to agent-and-tool-security, or create one cluster leaf if existing patterns favor grouped product fixes.",
+        "Confirm whether stdio-only deployments are unaffected as NVD states."
+      ]
+    },
+    {
+      "id": "nvd-mcp-searxng-url-reader-cluster",
+      "title": "mcp-searxng URL reader SSRF and unbounded fetch controls updated",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54688",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54689",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-58483",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-58485"
+      ],
+      "visible_dates": {
+        "published": "2026-09-15T18:17:23Z and 2026-09-15T18:17:26Z",
+        "updated": "2026-09-30T17:51:56.193Z"
+      },
+      "summary": "NVD updated a cluster of mcp-searxng URL-reading vulnerabilities. Records cover default-disabled hardening that permits private/metadata endpoint fetches, redirect and address-classification bypasses, missing content-length enforcement that can force unbounded memory/CPU use, and DNS-resolution gaps where public-looking hostnames resolve to private or metadata addresses. Fixes are identified in versions 1.2.0 and 1.7.1 depending on the record.",
+      "evidence_classification": "vulnerability-advisory cluster; updated-in-window; public database",
+      "affected_boundary_or_version": "mcp-searxng before 1.2.0 for URL policy bypasses and before 1.7.1 for content-length/DNS-resolution controls",
+      "why_it_matters_for_ai_security": "Search and URL-reading MCP servers place model-selected URLs on a trusted server network path. These records show both confidentiality risks from internal fetches and availability risks from unbounded content ingestion.",
+      "named_entities": [
+        "mcp-searxng",
+        "SearXNG",
+        "CVE-2026-54688",
+        "CVE-2026-54689",
+        "CVE-2026-58483",
+        "CVE-2026-58485"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "mcp-searxng entity and product catalog context belongs upstream."
+        }
+      ],
+      "confidence_notes": "High confidence for cluster membership and fixed versions from NVD. Ingest should de-duplicate with any prior URL-reader SSRF leaves.",
+      "follow_up_actions": [
+        "Compare with existing MCP SSRF and browser/network egress controls pages.",
+        "Preserve the distinction between default hardening-off behavior, residual bypasses, DNS rebinding, and DoS."
+      ]
+    },
+    {
+      "id": "nvd-mcpvault-pathfilter-cluster",
+      "title": "MCPVault path filter bypasses for repository and Obsidian metadata",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-57441",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-57442"
+      ],
+      "visible_dates": {
+        "published": "2026-09-15T18:17:25Z",
+        "updated": "2026-09-30T17:51:56.193Z"
+      },
+      "summary": "NVD updated two MCPVault records. CVE-2026-57441 covers case-sensitive and non-canonical path filtering that lets case variants or Windows trailing dots/spaces reach restricted .git, .obsidian, or node_modules directories on case-insensitive filesystems. CVE-2026-57442 covers root-anchored deny-list patterns that miss nested restricted segments. Fixes are identified in 0.11.4 and 0.11.5.",
+      "evidence_classification": "vulnerability-advisory cluster; updated-in-window; public database",
+      "affected_boundary_or_version": "MCPVault < 0.11.4 and < 0.11.5 depending on bypass path",
+      "why_it_matters_for_ai_security": "Vault and repository MCP file tools need canonical path enforcement before read, write, move, search, and listing actions because an AI agent can be induced to select sensitive metadata paths.",
+      "named_entities": [
+        "MCPVault",
+        "Obsidian",
+        "CVE-2026-57441",
+        "CVE-2026-57442"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "MCPVault entity context belongs upstream."
+        },
+        {
+          "owner": "ai-dev-wiki",
+          "reason": "General repository metadata and documentation-vault workflow practice belongs upstream; this repository keeps concrete path-filter failure facts."
+        }
+      ],
+      "confidence_notes": "High confidence for vulnerable behaviors and fixed versions from NVD. Verify upstream release tags during ingest.",
+      "follow_up_actions": [
+        "Connect to existing MCP path traversal and file-boundary pages.",
+        "Check whether case-insensitive filesystem caveat warrants a local maintenance note."
+      ]
+    },
+    {
+      "id": "nvd-zereight-mcp-gitlab-control-plane-cluster",
+      "title": "@zereight/mcp-gitlab unauthenticated HTTP and DNS rebinding paths updated",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61560",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-61568"
+      ],
+      "visible_dates": {
+        "published": "2026-09-15T21:16:41Z and 2026-09-15T22:16:58Z",
+        "updated": "2026-09-30T17:51:56.193Z"
+      },
+      "summary": "NVD updated @zereight/mcp-gitlab records. CVE-2026-61560 describes default Docker/SSE exposure of all MCP tools without authentication, including upload_markdown reading arbitrary local files and uploading them to GitLab, enabling token theft and GitLab account takeover; version 2.1.27 patches it. CVE-2026-61568 describes missing Host/Origin allow-list enforcement on Streamable HTTP, enabling DNS rebinding to a victim local MCP listener; version 2.1.30 patches it.",
+      "evidence_classification": "vulnerability-advisory cluster; updated-in-window; public database",
+      "affected_boundary_or_version": "@zereight/mcp-gitlab < 2.1.27 for unauthenticated SSE/file read path; < 2.1.30 for DNS rebinding host/origin control",
+      "why_it_matters_for_ai_security": "Developer-platform MCP servers often hold source-control tokens. These records show how transport exposure and browser-origin controls can convert local MCP listeners into account-takeover paths.",
+      "named_entities": [
+        "@zereight/mcp-gitlab",
+        "GitLab",
+        "MCP",
+        "CVE-2026-61560",
+        "CVE-2026-61568"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "MCP GitLab server catalog context belongs upstream."
+        },
+        {
+          "owner": "ai-dev-wiki",
+          "reason": "General source-control agent workflow governance belongs upstream; local finding covers transport/authentication vulnerability details."
+        }
+      ],
+      "confidence_notes": "High confidence for attack paths and fixed versions from NVD. Ingest should verify GitHub advisory references.",
+      "follow_up_actions": [
+        "Check existing GitLab MCP pages for overlap before adding a new local leaf.",
+        "Preserve Docker/default-configuration and streamable HTTP transport distinctions."
+      ]
+    },
+    {
+      "id": "nvd-rmcp-oauth-resource-confusion",
+      "title": "RMCP OAuth metadata resource confusion can leak access tokens",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-63127"
+      ],
+      "visible_dates": {
+        "published": "2026-09-16T15:17:39.817Z",
+        "updated": "2026-09-30T17:51:56.193Z"
+      },
+      "summary": "NVD updated CVE-2026-63127 for RMCP, the official Rust SDK for MCP. Before 2.0.0, OAuth discovery omits or fails to confirm the RFC 9728 resource field, allowing a malicious MCP server to redirect authorization through legitimate metadata for a different MCP resource and capture the resulting token when the client sends it back.",
+      "evidence_classification": "vulnerability-advisory; updated-in-window; public database",
+      "affected_boundary_or_version": "rmcp crate < 2.0.0",
+      "why_it_matters_for_ai_security": "MCP OAuth clients must bind tokens to the exact protected resource. Otherwise malicious servers can harvest tokens that remain valid against legitimate MCP resources.",
+      "named_entities": [
+        "RMCP",
+        "Model Context Protocol",
+        "OAuth",
+        "RFC 9728",
+        "CVE-2026-63127"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "RMCP SDK entity context belongs upstream."
+        }
+      ],
+      "confidence_notes": "High confidence for fixed version and resource-confusion mechanism from NVD. Primary SDK advisory should be checked during ingest.",
+      "follow_up_actions": [
+        "Route to identity-and-access and link to MCP OAuth resource-binding pages.",
+        "Check whether Zscaler or MCP confirmation-token resource-binding leaves already cover the same durable concept."
+      ]
+    },
+    {
+      "id": "nvd-netlicensing-and-obsidian-mcp-auth-cluster",
+      "title": "NetLicensing and Obsidian MCP unauthenticated delegated-authority paths updated",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54446",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-54618"
+      ],
+      "visible_dates": {
+        "published": "2026-09-17T18:16:46.040Z and 2026-09-17T20:16:51.823Z",
+        "updated": "2026-09-30T17:51:56.193Z and 2026-09-30T17:32:07.107Z"
+      },
+      "summary": "NVD updated two remote MCP authorization records. CVE-2026-54446 says NetLicensing MCP Server prior to 0.1.6 accepts unauthenticated /mcp requests without API-key material and falls back to the operator's NETLICENSING_API_KEY, enabling product, license, licensee, transaction, validation, and delete operations. CVE-2026-54618 says Obsidian Web MCP prior to 0.2.0 issues OAuth authorization codes and tokens without login, consent, or client authentication, allowing remote vault read, write, search, list, move, and delete operations.",
+      "evidence_classification": "vulnerability-advisory cluster; updated-in-window; public database",
+      "affected_boundary_or_version": "NetLicensing MCP Server < 0.1.6; Obsidian Web MCP < 0.2.0",
+      "why_it_matters_for_ai_security": "Both records show remote MCP services falling back to operator-level credentials or static vault tokens when caller identity is absent, directly violating delegated authority and least privilege.",
+      "named_entities": [
+        "NetLicensing MCP Server",
+        "Obsidian Web MCP",
+        "NETLICENSING_API_KEY",
+        "VAULT_MCP_TOKEN",
+        "CVE-2026-54446",
+        "CVE-2026-54618"
+      ],
+      "upstream_routing": [
+        {
+          "owner": "ai-wiki",
+          "reason": "MCP server product/entity background belongs upstream."
+        }
+      ],
+      "confidence_notes": "High confidence for authentication failure and fixed versions from NVD. Ingest should split into separate leaves if local granularity requires product-specific pages.",
+      "follow_up_actions": [
+        "Compare with existing remote MCP authentication-bypass leaves.",
+        "Preserve the operator-key fallback and OAuth no-session distinctions."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Axios: OpenAI hit with landmark lawsuit following Hugging Face hack",
+      "url": "https://www.axios.com/2026/09/29/openai-sued-hugging-face-breach",
+      "visible_date": "2026-09-29T19:00:05Z",
+      "reason": "In-window and AI-security-relevant, but the run did not locate a primary court filing or official party source; excluded as secondary-only legal context."
+    },
+    {
+      "candidate": "The Hacker News: OpenAI pauses tool use after agent bypasses internet controls",
+      "url": "https://thehackernews.com/2026/09/openai-pauses-tool-use-after-agent.html",
+      "visible_date": "2026-09-29",
+      "reason": "In-window secondary report with concrete incident claims, but no stable primary OpenAI incident page was located during this run."
+    },
+    {
+      "candidate": "AP timeline of developments in AI safety since the Hugging Face attack",
+      "url": "https://apnews.com/article/452281863a49b18220057e71d4715cf4",
+      "visible_date": "2026-09-30T14:15:00Z",
+      "reason": "In-window public context, but searched snippet indicates timeline/background rather than a new concrete security delta for this repository."
+    },
+    {
+      "candidate": "AP: Nvidia security platform to stop AI agents from going rogue",
+      "url": "https://apnews.com/article/3c4d7c1cfde82851c0577d1fa29b8621",
+      "visible_date": "2026-09-28T10:52:04Z",
+      "reason": "Date is before the exact cutoff 2026-09-28T23:32:35Z and appears to be a product/platform announcement rather than a verified security advisory."
+    },
+    {
+      "candidate": "Tom's Hardware report on OpenAI/Anthropic incident investigations",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/openai-and-anthropic-are-reportedly-investigating-tens-of-thousands-of-security-incidents-openai-pauses-testing-after-ai-kill-switch-fails-to-stop-a-rogue-agent-report-says-problem-is-orders-of-magnitude-more-complex-than-what-is-publicly-known",
+      "visible_date": "2026-09-28T12:50:00Z",
+      "reason": "Before the exact cutoff and mainly derivative of the older Axios item."
+    },
+    {
+      "candidate": "NVD AI keyword records for AI-branded WordPress plugins without a distinct AI security boundary",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=AI&lastModStartDate=2026-09-28T23:32:35.000Z&lastModEndDate=2026-09-30T23:32:35.000Z",
+      "visible_date": "2026-09-30T23:32:57.620Z",
+      "reason": "Some records were ordinary WordPress authorization, CSV injection, or code-injection issues where AI was only branding and no AI-system-specific threat boundary was identified."
+    },
+    {
+      "candidate": "NVD keyword queries for LLM, prompt, agent, and model after initial successful searches",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+      "visible_date": "2026-09-30T23:33Z",
+      "reason": "Several later keyword calls returned non-JSON parse errors in the local shell loop; useful AI/MCP/LLM evidence had already been captured from successful AI, MCP, and direct-CVE queries."
+    },
+    {
+      "candidate": "Older GitHub Advisory Database MCP records surfaced by web search",
+      "url": "https://github.com/advisories?query=MCP",
+      "visible_date": "various older publication/update dates",
+      "reason": "Search results were crawled recently but visible advisory publication/update dates were outside the exact two-day window or were already captured by prior local wiki artifacts."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity": "Roo Code",
+      "upstream_owner": "ai-wiki and ai-dev-wiki",
+      "local_security_note": "Keep the privileged workflow RCE, secrets, release, and package compromise facts here."
+    },
+    {
+      "entity": "MCP server catalog entries",
+      "upstream_owner": "ai-wiki",
+      "local_security_note": "Keep concrete MCP command-injection, SSRF, token fallback, path-filter, and transport-auth findings here."
+    },
+    {
+      "entity": "Dify",
+      "upstream_owner": "ai-wiki",
+      "local_security_note": "Keep the plaintext API key exposure and delegated credential impact here."
+    },
+    {
+      "entity": "Firefox AI chatbot",
+      "upstream_owner": "ai-wiki",
+      "local_security_note": "Keep the prompt-context tab-title leakage and data-minimization impact here."
+    },
+    {
+      "entity": "Red Hat OpenShift AI",
+      "upstream_owner": "ai-wiki",
+      "local_security_note": "Keep guardrails-detectors ReDoS and odh-dashboard authentication bypass as AI platform control failures."
+    },
+    {
+      "entity": "RMCP and MCP OAuth",
+      "upstream_owner": "ai-wiki",
+      "local_security_note": "Keep RFC 9728 resource-binding and token capture implications under identity/access."
+    },
+    {
+      "entity": "GitLab and coding-agent source-control workflows",
+      "upstream_owner": "ai-dev-wiki",
+      "local_security_note": "Keep MCP GitLab unauthenticated transport, file-read, token theft, and DNS rebinding facts here."
+    },
+    {
+      "entity": "Obsidian and vault-backed agent workflows",
+      "upstream_owner": "ai-dev-wiki",
+      "local_security_note": "Keep unauthenticated vault mutation and MCPVault path-filter bypasses here."
+    },
+    {
+      "entity": "SearXNG web search infrastructure",
+      "upstream_owner": "ai-wiki",
+      "local_security_note": "Keep the MCP URL-reader SSRF, DNS, redirect, and unbounded-content ingestion controls here."
+    },
+    {
+      "entity": "Kubernetes MCP operations",
+      "upstream_owner": "ai-wiki and ai-dev-wiki",
+      "local_security_note": "Keep disable-write/delete bypass and command-chain enforcement as final authorization concerns."
+    },
+    {
+      "entity": "Android Debug Bridge MCP bridge",
+      "upstream_owner": "ai-wiki",
+      "local_security_note": "Keep tool argument command-injection and host/device execution impact here."
+    },
+    {
+      "entity": "Remote MCP delegated-authority services",
+      "upstream_owner": "ai-wiki",
+      "local_security_note": "Keep operator-key fallback and unauthenticated remote action findings here."
+    }
+  ],
+  "confidence_summary": {
+    "overall": "Medium-high",
+    "basis": "Most qualifying findings are NVD records visibly modified inside the run window with direct advisory, product, or patch references. Several are older disclosures that qualify only by the in-window NVD update timestamp.",
+    "caveats": [
+      "Direct GitHub advisory pages should be rechecked during ingest for final GHSA identifiers, fixed release tags, and remediation wording.",
+      "Red Hat OpenShift AI records need primary Red Hat advisory or errata reconciliation for fixed build details.",
+      "OpenAI incident/legal reports were excluded from findings because primary sources were not located during this run."
+    ]
+  },
+  "follow_up_actions": [
+    "Ingest should de-duplicate high-volume MCP clusters against existing September leaves before creating new pages.",
+    "Prefer grouped leaves only when records share the same product and security boundary; split otherwise.",
+    "Recheck vendor advisories for exact fixed versions, unaffected transports, and deployment-specific caveats.",
+    "Route broad product/framework context to ai-wiki and general coding-agent workflow practice to ai-dev-wiki."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed",
+    "notes": "Validated locally after artifact creation on 2026-09-30T23:43Z."
+  }
+}

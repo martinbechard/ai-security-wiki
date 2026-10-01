@@ -8,6 +8,17 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [infrastructure-and-supply-chain/roo-code-privileged-github-actions-workflow-rce.md](infrastructure-and-supply-chain/roo-code-privileged-github-actions-workflow-rce.md)
+- [agent-and-tool-security/mcp-kubernetes-server-command-chain-guard-bypass.md](agent-and-tool-security/mcp-kubernetes-server-command-chain-guard-bypass.md)
+- [agent-and-tool-security/adb-mcp-command-injection.md](agent-and-tool-security/adb-mcp-command-injection.md)
+- [data-and-privacy/dify-plaintext-api-key-exposure.md](data-and-privacy/dify-plaintext-api-key-exposure.md)
+- [data-and-privacy/firefox-ai-chatbot-tab-title-leak.md](data-and-privacy/firefox-ai-chatbot-tab-title-leak.md)
+- [identity-and-access/openshift-ai-dashboard-kubernetes-api-impersonation.md](identity-and-access/openshift-ai-dashboard-kubernetes-api-impersonation.md)
+- [infrastructure-and-supply-chain/mcp-server-git-repository-boundary-bypasses.md](infrastructure-and-supply-chain/mcp-server-git-repository-boundary-bypasses.md)
+- [agent-and-tool-security/meta-ads-mcp-image-fetch-ssrf.md](agent-and-tool-security/meta-ads-mcp-image-fetch-ssrf.md)
+- [agent-and-tool-security/mcp-searxng-unbounded-url-fetch.md](agent-and-tool-security/mcp-searxng-unbounded-url-fetch.md)
+- [agent-and-tool-security/mcpvault-case-canonical-path-filtering.md](agent-and-tool-security/mcpvault-case-canonical-path-filtering.md)
+- [identity-and-access/obsidian-web-mcp-unauthenticated-vault-tokens.md](identity-and-access/obsidian-web-mcp-unauthenticated-vault-tokens.md)
 - [agent-and-tool-security/google-mcp-toolbox-allowedlocalroots-symlink-bypass.md](agent-and-tool-security/google-mcp-toolbox-allowedlocalroots-symlink-bypass.md)
 - [identity-and-access/openclaw-mcp-app-view-read-to-write-bypass.md](identity-and-access/openclaw-mcp-app-view-read-to-write-bypass.md)
 - [agent-and-tool-security/mcp-chrome-bridge-cors-origin-bypass.md](agent-and-tool-security/mcp-chrome-bridge-cors-origin-bypass.md)
@@ -543,6 +554,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-01 with September 30 source-ingest leaves for Roo Code, mcp-kubernetes-server, ADB MCP, Dify, Firefox AI chatbot, OpenShift AI dashboard, mcp-server-git, Meta Ads MCP, mcp-searxng, MCPVault, and Obsidian Web MCP plus leaf-watch provenance folded into existing leaves.
 - Updated on 2026-09-30 with September 29 source-ingest leaves for Google MCP Toolbox symlink containment, OpenClaw MCP App scope escalation, mcp-chrome-bridge origin bypass, mark3labs filesystem symlink traversal, VoiceMode command injection, split MetaMCP session/proxy issues, Open GenAI Stack prompt-template execution, frontier AI assurance controls, and OpenAI release-gate monitoring folded into the existing frontier-model release-gate leaf.
 - Updated on 2026-09-29 with September 28 source-ingest leaves for Zscaler MCP confirmation-token binding, fast-mcp-telegram file URL SSRF, Token Optimizer MCP dashboard log traversal, Tencent AI-Infra-Guard file access path traversal, and agentverus-scanner security-decision input trust.
 - Updated on 2026-09-27 with September 25 and 26 Rapid7, OpenClaw, MCP Server for WordPress, SiYuan, Zammad, LiteLLM, Flowise, and vLLM security leaves plus watcher enrichment.

@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [Roo Code privileged GitHub Actions workflow RCE](roo-code-privileged-github-actions-workflow-rce.md)
+- [mcp-server-git repository boundary bypasses](mcp-server-git-repository-boundary-bypasses.md)
 - [ServiceNow AI Platform Yokohama Zurich SQL injection](servicenow-ai-platform-yokohama-zurich-sql-injection.md)
 - [mcp-remote server URL hash code execution](mcp-remote-server-url-hash-code-execution.md)
 - [MLflow DSPy pickle control bypass](mlflow-dspy-pickle-control-bypass.md)
@@ -18,6 +20,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
+- [Roo Code privileged GitHub Actions workflow RCE](roo-code-privileged-github-actions-workflow-rce.md)
+- [mcp-server-git repository boundary bypasses](mcp-server-git-repository-boundary-bypasses.md)
 - [Tencent AI-Infra-Guard file access path traversal](tencent-ai-infra-guard-file-access-path-traversal.md)
 - [ServiceNow AI Platform Yokohama Zurich SQL injection](servicenow-ai-platform-yokohama-zurich-sql-injection.md)
 - [mcp-remote server URL hash code execution](mcp-remote-server-url-hash-code-execution.md)

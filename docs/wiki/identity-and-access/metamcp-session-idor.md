@@ -13,6 +13,8 @@ The [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-s
 
 The source says session dispatch is keyed only by client-supplied `mcp-session-id`, without owner or endpoint binding. That can allow cross-tenant private tool execution and data exfiltration when an attacker can guess, obtain, or replay another tenant's session identifier.
 
+The [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) corroborates CVE Services publication/update evidence for the same owner and endpoint binding failure.
+
 ## Security Impact
 
 - Threat: tenant session identifiers can become bearer capabilities for another user's MCP tools and data.
@@ -25,6 +27,7 @@ The source says session dispatch is keyed only by client-supplied `mcp-session-i
 ## Authoritative Sources
 
 - [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json)
+- [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [CVE-2026-79537 NVD entry](https://nvd.nist.gov/vuln/detail/CVE-2026-79537)
 - [MetaMCP repository](https://github.com/metatool-ai/metamcp)
 - [Traceforce CVE-2026-79537 advisory](https://www.traceforce.ai/security-advisories/cve-2026-79537)
@@ -56,3 +59,4 @@ The source says session dispatch is keyed only by client-supplied `mcp-session-i
 ## Maintenance Notes
 
 - Created on 2026-09-30 from the [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json) after splitting the MetaMCP session-isolation issue from the stdio inspector proxy execution issue.
+- Updated on 2026-10-01 from the [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) with CVE Services provenance and no duplicate digest item.

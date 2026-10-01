@@ -13,6 +13,8 @@ The [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-s
 
 The CVE says streamable-http requests are rejected only when both `auth_token` and `pipeboard_token` are absent, while `X-Pipeboard-Token` is not recognized as a primary credential. A caller can pass the guard and make tools fall back to the server operator's `META_ACCESS_TOKEN`, causing Meta Ads reads or modifications under operator authority.
 
+The [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-security-wiki-topic-news-collector-2026-09-30T233235Z.json) is duplicate update evidence for CVE-2026-54547 and also records the related [Meta Ads MCP image fetch SSRF](../agent-and-tool-security/meta-ads-mcp-image-fetch-ssrf.md) boundary as CVE-2026-54549.
+
 ## Security Impact
 
 - Threat: weak MCP request authentication can cause ad-account tools to run with server-operator Meta credentials.
@@ -25,6 +27,7 @@ The CVE says streamable-http requests are rejected only when both `auth_token` a
 ## Authoritative Sources
 
 - [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json)
+- [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-security-wiki-topic-news-collector-2026-09-30T233235Z.json)
 - [CVE-2026-54547 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-54547)
 - [Meta Ads MCP patch commit](https://github.com/pipeboard-co/meta-ads-mcp/commit/95e852793b7ff8604a8132e85d5facd08c91a36e)
 - [Meta Ads MCP pull request 137](https://github.com/pipeboard-co/meta-ads-mcp/pull/137)
@@ -46,6 +49,7 @@ The CVE says streamable-http requests are rejected only when both `auth_token` a
 
 - [identity and access](index.md)
 - [NetLicensing MCP Server operator key fallback](netlicensing-mcp-server-operator-key-fallback.md)
+- [Meta Ads MCP image fetch SSRF](../agent-and-tool-security/meta-ads-mcp-image-fetch-ssrf.md)
 - [MCP tool-level IAM authorization](mcp-tool-level-iam-authorization.md)
 
 ## Open Questions
@@ -55,3 +59,4 @@ The CVE says streamable-http requests are rejected only when both `auth_token` a
 ## Maintenance Notes
 
 - Created on 2026-09-19 from the [September 18 topic collector source](../../../raw/processed/2026-09-18/ai-security-wiki-topic-news-collector-2026-09-18T233135Z.json).
+- Updated on 2026-10-01 from the [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-security-wiki-topic-news-collector-2026-09-30T233235Z.json) with duplicate NVD update provenance and a link to the split SSRF leaf.

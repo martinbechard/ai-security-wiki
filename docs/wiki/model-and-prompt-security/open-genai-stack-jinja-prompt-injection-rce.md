@@ -13,6 +13,8 @@ The [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-s
 
 The source says prompt injection using Jinja2 template syntax can reach unsanitized server-side expression evaluation, permitting code execution. The collector source notes that NVD describes the stack as used in the Meta AI backend for WhatsApp and other products, but local analysis should preserve that as source-attributed evidence rather than generalizing beyond the advisory.
 
+The [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) corroborates CVE Services publication/update evidence and keeps the vendor-advisory and fixed-release questions open.
+
 ## Security Impact
 
 - Threat: untrusted model-facing content can cross from prompt text into server-side Jinja expression evaluation and code execution.
@@ -25,6 +27,7 @@ The source says prompt injection using Jinja2 template syntax can reach unsaniti
 ## Authoritative Sources
 
 - [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json)
+- [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [CVE-2026-77177 NVD entry](https://nvd.nist.gov/vuln/detail/CVE-2026-77177)
 - [Linked gist evidence](https://gist.github.com/abhi04anon/8ce0b68a5a7dda8a0501cbaf933173eb)
 
@@ -55,3 +58,4 @@ The source says prompt injection using Jinja2 template syntax can reach unsaniti
 ## Maintenance Notes
 
 - Created on 2026-09-30 from the [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json) after routing broad product and company context upstream.
+- Updated on 2026-10-01 from the [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) with CVE Services provenance and no duplicate digest item.

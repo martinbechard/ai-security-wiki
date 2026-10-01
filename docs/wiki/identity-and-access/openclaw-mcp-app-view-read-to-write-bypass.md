@@ -13,6 +13,8 @@ The [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-s
 
 The source says read-scoped operators can use `mcp.app.view` to obtain and redeem a standalone ticket for MCP App tools that require `operator.write`. The [OpenClaw 2026.9.4 release notes](https://docs.openclaw.ai/releases/2026.9.4), [patch commit](https://github.com/openclaw/openclaw/commit/3bd8ec2b39b5f9e80aef0973f7d17eadc745b8f8), and [VulnCheck advisory](https://www.vulncheck.com/advisories/openclaw-before-2026.9.4-authorization-bypass-via-mcp-app-standalone-ticket) are the captured fix evidence.
 
+The [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) corroborates CVE Services publication/update evidence and preserves the open deployment question about invalidating pre-fix standalone tickets.
+
 ## Security Impact
 
 - Threat: a read-only operator can mint or redeem a capability that exercises write-scoped MCP App tools.
@@ -25,6 +27,7 @@ The source says read-scoped operators can use `mcp.app.view` to obtain and redee
 ## Authoritative Sources
 
 - [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json)
+- [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [CVE-2026-102807 NVD entry](https://nvd.nist.gov/vuln/detail/CVE-2026-102807)
 - [OpenClaw 2026.9.4 release notes](https://docs.openclaw.ai/releases/2026.9.4)
 - [OpenClaw patch commit](https://github.com/openclaw/openclaw/commit/3bd8ec2b39b5f9e80aef0973f7d17eadc745b8f8)
@@ -57,3 +60,4 @@ The source says read-scoped operators can use `mcp.app.view` to obtain and redee
 ## Maintenance Notes
 
 - Created on 2026-09-30 from the [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json) after routing general OpenClaw product context upstream.
+- Updated on 2026-10-01 from the [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) with CVE Services provenance and no duplicate digest item.

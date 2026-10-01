@@ -2,7 +2,7 @@
 
 ## Current Understanding
 
-The active September 2026 digest currently includes item-level September 22 through September 29 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
+The active September 2026 digest currently includes item-level September 22 through September 30 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
 
 Monthly digests summarize processed security updates and link to durable local leaves for detail. Collectors save raw evidence first; ingest updates a digest only after the local security analysis and federation routing are complete.
 
@@ -16,6 +16,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-security-wiki-topic-news-collector-2026-09-30T233235Z.json)
+- [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json)
 - [September 29 leaf update watch source](../../../raw/processed/2026-09-29/ai-security-wiki-leaf-update-watch-20260930T000231Z.json)
 - [September 28 topic collector source](../../../raw/processed/2026-09-28/ai-security-wiki-topic-news-collector-2026-09-28T233057Z.json)
@@ -106,6 +108,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-01 with item-level September 30 entries for Roo Code, mcp-kubernetes-server, ADB MCP, Dify, Firefox AI chatbot, OpenShift AI dashboard, mcp-server-git, Meta Ads MCP, mcp-searxng, MCPVault, and Obsidian Web MCP; watcher-only repeats stayed leaf-level and ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-09-30 with item-level September 29 security updates; the September 29 leaf watcher was duplicate/provenance-only and produced no duplicate digest entries.
 - Updated on 2026-09-29 with item-level September 28 security updates and leaf-level September 29 watcher reconciliation.
 - Updated on 2026-09-27 with September 27 Obot, Heym, UTCP, and Penpot item-level advisory entries; September 27 watcher evidence remained provenance-only.

@@ -13,6 +13,8 @@ The [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-s
 
 The source says an origin validation error lets malicious pages make cross-origin requests to the local native-server HTTP API and invoke browser automation tools. The exposed capabilities include script execution, page-content reading, and screenshot capture, which turns a browser visit into delegated browser control.
 
+The [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) preserves the distinction between the September 4 public issue/advisory timing and the September 29 CVE publication/update timing.
+
 ## Security Impact
 
 - Threat: web content can invoke local MCP browser automation APIs without the intended origin boundary.
@@ -25,6 +27,7 @@ The source says an origin validation error lets malicious pages make cross-origi
 ## Authoritative Sources
 
 - [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json)
+- [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [CVE-2026-102878 NVD entry](https://nvd.nist.gov/vuln/detail/CVE-2026-102878)
 - [mcp-chrome issue 384](https://github.com/hangwin/mcp-chrome/issues/384)
 - [VulnCheck advisory](https://www.vulncheck.com/advisories/mcp-chrome-bridge-through-1.0.31-cors-origin-bypass)
@@ -56,3 +59,4 @@ The source says an origin validation error lets malicious pages make cross-origi
 ## Maintenance Notes
 
 - Created on 2026-09-30 from the [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json) after routing general browser-agent runtime practice upstream.
+- Updated on 2026-10-01 from the [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json) with CVE-publication timing provenance and no duplicate digest item.
