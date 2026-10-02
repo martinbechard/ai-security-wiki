@@ -2,6 +2,10 @@
 
 ## Current Understanding
 
+- [Laravel AI SDK file URL SSRF](laravel-ai-sdk-file-url-ssrf.md)
+- [Budibase AI table generation SSRF](budibase-ai-table-generation-ssrf.md)
+- [Office PowerPoint MCP Server path traversal](office-powerpoint-mcp-server-path-traversal.md)
+- [AiSOC CrowdStrike RTR command injection](aisoc-crowdstrike-rtr-command-injection.md)
 - [mcp-kubernetes-server command chain guard bypass](mcp-kubernetes-server-command-chain-guard-bypass.md)
 - [ADB MCP command injection](adb-mcp-command-injection.md)
 - [Meta Ads MCP image fetch SSRF](meta-ads-mcp-image-fetch-ssrf.md)
@@ -50,6 +54,10 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [Laravel AI SDK file URL SSRF](laravel-ai-sdk-file-url-ssrf.md)
+- [Budibase AI table generation SSRF](budibase-ai-table-generation-ssrf.md)
+- [Office PowerPoint MCP Server path traversal](office-powerpoint-mcp-server-path-traversal.md)
+- [AiSOC CrowdStrike RTR command injection](aisoc-crowdstrike-rtr-command-injection.md)
 - [mcp-kubernetes-server command chain guard bypass](mcp-kubernetes-server-command-chain-guard-bypass.md)
 - [ADB MCP command injection](adb-mcp-command-injection.md)
 - [Meta Ads MCP image fetch SSRF](meta-ads-mcp-image-fetch-ssrf.md)
@@ -263,6 +271,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-02 with Laravel AI SDK file URL SSRF, Budibase AI table generation SSRF, Office PowerPoint MCP Server path traversal, and AiSOC CrowdStrike RTR command-injection leaves.
 - Updated on 2026-09-30 with Google MCP Toolbox symlink containment, mcp-chrome-bridge origin validation, mark3labs filesystem symlink traversal, VoiceMode configuration command injection, and MetaMCP stdio proxy execution leaves.
 - Updated on 2026-09-29 with fast-mcp-telegram file URL SSRF and Token Optimizer MCP command-injection reconciliation.
 - Updated on 2026-09-27 with Obot remote MCP SSRF, split Heym workflow and LLM image-fetch SSRF guards, UTCP URL-validation, and Penpot MCP bridge authentication leaves.

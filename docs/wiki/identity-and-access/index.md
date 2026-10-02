@@ -6,6 +6,15 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [AiSOC response action API authentication bypass](aisoc-response-action-api-authentication-bypass.md)
+- [AiSOC MSSP tenant portfolio authorization bypass](aisoc-mssp-tenant-portfolio-authorization-bypass.md)
+- [AiSOC realtime JWT secret default](aisoc-realtime-jwt-secret-default.md)
+- [AiSOC realtime internal endpoint auth bypass](aisoc-realtime-internal-endpoint-auth-bypass.md)
+- [Claude Code organization policy API key precedence](claude-code-organization-policy-api-key-precedence.md)
+- [Moodle AI editor image generation capability bypass](moodle-ai-editor-image-generation-capability-bypass.md)
+- [MCP Python SDK OAuth metadata trust flaw](mcp-python-sdk-oauth-metadata-trust-flaw.md)
+- [Obot composite MCP route authorization bypass](obot-composite-mcp-route-authorization-bypass.md)
+- [ByteCoreStack MCP Connector privilege escalation](bytecorestack-mcp-connector-privilege-escalation.md)
 - [OpenShift AI dashboard Kubernetes API impersonation](openshift-ai-dashboard-kubernetes-api-impersonation.md)
 - [Obsidian Web MCP unauthenticated vault tokens](obsidian-web-mcp-unauthenticated-vault-tokens.md)
 - [OpenClaw MCP App View read to write bypass](openclaw-mcp-app-view-read-to-write-bypass.md)
@@ -129,6 +138,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-10-02 with split AiSOC identity leaves for response-action API authentication, MSSP tenant portfolio authorization, realtime JWT secret defaults, and realtime internal endpoint auth plus Claude Code policy credential precedence, Moodle AI editor capability, MCP Python SDK OAuth metadata, Obot composite route, and ByteCoreStack MCP Connector privilege-escalation leaves; folded October 1 watcher metadata into existing OpenShift AI and Obsidian Web MCP leaves.
 - Updated on 2026-09-30 with OpenClaw MCP App standalone-ticket scope escalation and MetaMCP session IDOR leaves.
 - Updated on 2026-09-29 with Zscaler MCP confirmation-token resource binding and OpenClaw CVE-2026-100587 reconciliation.
 - Updated on 2026-09-27 with Obot MCP OAuth, registry, quickstart, and `/mcp-connect` authorization leaves.

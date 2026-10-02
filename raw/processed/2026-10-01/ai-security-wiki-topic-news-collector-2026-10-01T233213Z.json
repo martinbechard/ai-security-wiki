@@ -1,0 +1,689 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector",
+    "run_timestamp_utc": "2026-10-01T23:32:13Z",
+    "run_timestamp_local": "2026-10-01T19:32:13-0400",
+    "collector_identity": "Northstar"
+  },
+  "cutoff_window": {
+    "timezone": "UTC",
+    "start_inclusive": "2026-09-29T23:32:13Z",
+    "end_inclusive": "2026-10-01T23:32:13Z",
+    "policy": "Include only public items visibly published or updated within the last 2 days relative to run time. Exclude missing, ambiguous, future-dated, boundary-only, stale, duplicate, or non-security dates."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "federation_context": {
+    "local_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "federation_file_checked": "docs/wiki/federation.md",
+    "local_scope": "Security-specific AI threats, model and prompt security, agent/tool security, data/privacy, identity/access, supply-chain, assurance, governance, and incident response.",
+    "upstream_ai_wiki_topic_index_checked": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+    "upstream_ai_dev_wiki_topic_index_checked": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+    "routing_rule": "Broad companies, products, models, frameworks, MCP servers, and general development practices route upstream; this artifact keeps security-specific boundaries, affected versions, mitigations, confidence notes, and ingest follow-ups."
+  },
+  "source_queries": [
+    {
+      "source": "NVD API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-29T23:32:13.000&lastModEndDate=2026-10-01T23:32:13.000&keywordSearch=MCP",
+      "visible_date_basis": "NVD timestamp plus per-record published and lastModified fields",
+      "result_note": "Returned 62 MCP keyword records; most were older disclosures with in-window metadata refreshes and were excluded unless a concrete in-window publication or security-relevant update was identified."
+    },
+    {
+      "source": "NVD API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-29T23:32:13.000&lastModEndDate=2026-10-01T23:32:13.000&keywordSearch=AI",
+      "visible_date_basis": "NVD timestamp plus per-record published and lastModified fields",
+      "result_note": "Returned 96 AI keyword records; older database refreshes were excluded unless they contained a concrete in-window disclosure or material security change."
+    },
+    {
+      "source": "NVD API keyword spot checks",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0",
+      "visible_date_basis": "Per-query result metadata for prompt, agent, model, llm, machine learning, and MCP Python SDK searches",
+      "result_note": "Used to find AI-specific and agent-specific records not captured cleanly by MCP-only search."
+    },
+    {
+      "source": "CVE Services API",
+      "url": "https://cveawg.mitre.org/api/cve/<CVE-ID>",
+      "visible_date_basis": "cveMetadata.datePublished and cveMetadata.dateUpdated",
+      "result_note": "Used for direct CVE publication/update timestamps, affected boundaries, descriptions, and public references."
+    },
+    {
+      "source": "GitHub Security Advisory pages",
+      "url": "https://github.com/laravel/ai/security/advisories/GHSA-6qhr-3g93-pxhw",
+      "visible_date_basis": "GitHub advisory page published date",
+      "result_note": "Primary package advisory for Laravel AI SDK SSRF."
+    },
+    {
+      "source": "GitHub Security Advisory and secondary corroboration",
+      "url": "https://github.com/advisories/GHSA-qx49-fqc8-xw99",
+      "visible_date_basis": "Public advisory date as cited by Cloud Security Alliance and The Hacker News",
+      "result_note": "GitHub advisory page/API did not return a clean structured page in this environment, so the item uses CSA and The Hacker News for visible public dates and details while recording the GHSA as the primary advisory identifier."
+    }
+  ],
+  "findings": [
+    {
+      "id": "finding-2026-10-01-001",
+      "title": "AiSOC response actions and realtime service vulnerability cluster",
+      "evidence_classification": "disclosed_vulnerability_cluster",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103053",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103054",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103055",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103056",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103057",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-103053",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-103054",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-103055",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-103056",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-103057"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-09-30T00:19:09.978Z through 2026-09-30T00:19:12.549Z",
+          "type": "published"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-09-30T00:19:11.252Z through 2026-09-30T18:09:32.342Z",
+          "type": "updated"
+        }
+      ],
+      "summary": "Five AiSOC CVEs disclose missing authentication or authorization on response-action and realtime APIs, hard-coded JWT verification defaults, tenant portfolio authorization bypass, and CrowdStrike RTR command injection in versions before 12.0.0.",
+      "affected_boundary_or_version": "AiSOC versions 5.1.0, 7.2.0, 7.5.0, and 9.0.0 before 12.0.0 depending on endpoint; command-injection and control-plane endpoints are the security boundary.",
+      "why_it_matters_for_ai_security": "AiSOC is positioned as an AI SOC/response-action surface; unauthenticated event injection and response-action command execution can turn an AI-assisted security operations control plane into a tenant crossover, false-event, or command-execution path.",
+      "named_entities": [
+        "AiSOC",
+        "CrowdStrike Real Time Response",
+        "CVE-2026-103053",
+        "CVE-2026-103054",
+        "CVE-2026-103055",
+        "CVE-2026-103056",
+        "CVE-2026-103057"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep the endpoint, auth, tenant, JWT, and command-execution security implications locally. Route any broad AiSOC product overview upstream only if needed later."
+      },
+      "confidence": "High for public CVE timing and high-level impact; fixed-version and vendor remediation wording should be rechecked during ingest.",
+      "follow_up_actions": [
+        "During ingest, verify whether 12.0.0 is the unified fixed release for every AiSOC CVE in the cluster.",
+        "Check whether any vendor advisory or release note adds deployment-specific mitigations beyond the CVE text."
+      ]
+    },
+    {
+      "id": "finding-2026-10-01-002",
+      "title": "Claude Code organization policy check used stored API key before valid team sign-in",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103012",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-103012"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-09-30T11:30:38.308Z",
+          "type": "published"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-09-30T14:28:45.094Z",
+          "type": "updated"
+        }
+      ],
+      "summary": "Claude Code selected a locally stored API key ahead of the user's valid Claude Enterprise or Team sign-in while fetching organization policy, creating a credential-precedence boundary issue.",
+      "affected_boundary_or_version": "Claude Code policy-fetch authentication path; exact affected and fixed versions require vendor confirmation.",
+      "why_it_matters_for_ai_security": "Coding-agent policy enforcement depends on the correct organization identity and credential source. Key precedence mistakes can undermine enterprise policy, audit, or least-privilege controls.",
+      "named_entities": [
+        "Claude Code",
+        "Claude Enterprise",
+        "Claude Team",
+        "CVE-2026-103012"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "upstream_owner": "ai-wiki",
+        "notes": "Keep local credential-precedence and enterprise-policy control implications. Broad Claude Code product context belongs upstream."
+      },
+      "confidence": "Medium-high for CVE existence and boundary; affected version and remediation detail need primary vendor recheck.",
+      "follow_up_actions": [
+        "Find the vendor advisory or release note before durable synthesis.",
+        "Check whether existing Claude Code credential-governance leaves already cover this boundary."
+      ]
+    },
+    {
+      "id": "finding-2026-10-01-003",
+      "title": "JetBrains Rider AI Assistant third-party skill auto-update without confirmation",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100265",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100265"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-09-30T15:17:50.499Z",
+          "type": "published"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-09-30T15:48:39.368Z",
+          "type": "updated"
+        }
+      ],
+      "summary": "JetBrains Rider before 2026.2.1 could allow AI Assistant to auto-update third-party skills without user confirmation.",
+      "affected_boundary_or_version": "JetBrains Rider before 2026.2.1; AI Assistant third-party skill update boundary.",
+      "why_it_matters_for_ai_security": "Agent or assistant skills are executable or behavior-shaping supply-chain inputs. Silent updates weaken approval, provenance, and change-control gates for AI-assisted development environments.",
+      "named_entities": [
+        "JetBrains Rider",
+        "AI Assistant",
+        "third-party skills",
+        "CVE-2026-100265"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "upstream_owner": "ai-dev-wiki",
+        "notes": "Keep the skill-update security control locally. General AI-assisted development workflow implications route to ai-dev-wiki if they become durable practice guidance."
+      },
+      "confidence": "Medium; CVE text is concise and needs vendor advisory confirmation during ingest.",
+      "follow_up_actions": [
+        "Locate JetBrains advisory text for severity, exploitability, and fixed build evidence.",
+        "Compare with existing skill/plugin supply-chain pages before creating a new leaf."
+      ]
+    },
+    {
+      "id": "finding-2026-10-01-004",
+      "title": "Moodle AI editor image-generation capability check bypass",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102583",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102583"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-09-30T08:36:12.710Z",
+          "type": "published"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-09-30T14:33:34.633Z",
+          "type": "updated"
+        }
+      ],
+      "summary": "Moodle's AI editor placement image-generation web service used an incorrect capability check, allowing authenticated users to invoke image generation without holding the required capability.",
+      "affected_boundary_or_version": "Moodle AI editor placement image-generation web service; exact Moodle versions require advisory reconciliation.",
+      "why_it_matters_for_ai_security": "AI feature invocation must obey role and capability checks, especially where generation features can incur cost, process sensitive context, or produce moderated content.",
+      "named_entities": [
+        "Moodle",
+        "AI editor placement",
+        "image generation",
+        "CVE-2026-102583"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep local least-privilege and AI feature authorization implications. Broad Moodle product context is upstream or out of scope."
+      },
+      "confidence": "Medium-high for CVE timing and authorization boundary; version/fix details need vendor confirmation.",
+      "follow_up_actions": [
+        "Locate Moodle security announcement for affected versions and patch releases.",
+        "Check whether the local identity-and-access folder already has an AI-feature authorization leaf pattern to extend."
+      ]
+    },
+    {
+      "id": "finding-2026-10-01-005",
+      "title": "Laravel AI SDK SSRF via client-supplied file URLs",
+      "evidence_classification": "primary_package_advisory",
+      "source_urls": [
+        "https://github.com/laravel/ai/security/advisories/GHSA-6qhr-3g93-pxhw",
+        "https://laravel-news.com/laravel-ai-mcp-security-advisories"
+      ],
+      "visible_dates": [
+        {
+          "source": "GitHub Security Advisory",
+          "date": "2026-09-30",
+          "type": "published"
+        },
+        {
+          "source": "Laravel News",
+          "date": "2026-09-30",
+          "type": "published"
+        }
+      ],
+      "summary": "The Laravel AI SDK advisory GHSA-6qhr-3g93-pxhw reports SSRF in laravel/ai 1.0.0: the Vercel AI SDK and AG-UI adapters accepted URL file parts and fetched them server-side without destination validation. Version 1.0.1 adds URL, private-address, redirect-hop, and DNS-rebinding guards.",
+      "affected_boundary_or_version": "laravel/ai >= 1.0.0 and < 1.0.1; applications exposing Vercel or AG-UI adapters to untrusted clients.",
+      "why_it_matters_for_ai_security": "Chat file-part ingestion can turn model attachment handling into network access to metadata services, localhost, or private networks, and the fetched response can be surfaced to the model output.",
+      "named_entities": [
+        "Laravel AI SDK",
+        "laravel/ai",
+        "Vercel AI SDK adapter",
+        "AG-UI adapter",
+        "GHSA-6qhr-3g93-pxhw",
+        "CWE-918"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "upstream_owner": "ai-dev-wiki",
+        "notes": "Keep the SSRF and chat-file ingestion boundary locally. General Laravel AI SDK development usage belongs in ai-dev-wiki only if a broader practice page is needed."
+      },
+      "confidence": "High; primary GitHub advisory provided affected and patched versions, CVSS, CWE, and workaround.",
+      "follow_up_actions": [
+        "During ingest, compare with existing agent/tool SSRF leaves and avoid duplicating a generic SSRF pattern page.",
+        "Check whether Laravel MCP open-redirect advisory is stale for this run and only mention as exclusion unless a fresh update appears."
+      ]
+    },
+    {
+      "id": "finding-2026-10-01-006",
+      "title": "MCP Python SDK OAuth metadata trust flaw",
+      "evidence_classification": "advisory_with_secondary_corroboration",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-qx49-fqc8-xw99",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-python-sdk-oauth-flaw-20260930-csa-sty/",
+        "https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/09/CSA_research_note_mcp_python_sdk_oauth_flaw_20260930-csa-styled.pdf",
+        "https://thehackernews.com/2026/09/official-mcp-python-sdk-flaw-can-let.html"
+      ],
+      "visible_dates": [
+        {
+          "source": "Cloud Security Alliance",
+          "date": "2026-09-30",
+          "type": "published"
+        },
+        {
+          "source": "The Hacker News",
+          "date": "2026-09-29",
+          "type": "published"
+        },
+        {
+          "source": "CSA citation to GitHub Security Advisory",
+          "date": "2026-09-28",
+          "type": "reported advisory publication"
+        }
+      ],
+      "summary": "Public reports on GHSA-qx49-fqc8-xw99 describe a flaw in the official MCP Python SDK where malicious MCP servers could redirect OAuth token exchange and receive client secrets, authorization codes, and PKCE proof keys. CSA reports affected ranges 1.9.1 through 1.29.1 and 2.0.0 through 2.1.1, fixed in 1.30.0 and 2.2.0.",
+      "affected_boundary_or_version": "MCP Python SDK 1.9.1-1.29.1 and 2.0.0-2.1.1 for HTTP OAuth client flows; fixed in 1.30.0 and 2.2.0 per CSA report.",
+      "why_it_matters_for_ai_security": "MCP clients commonly connect agents to third-party tools and identity providers. Treating server-supplied OAuth metadata as trusted can leak non-human or delegated credentials to attacker-controlled token endpoints.",
+      "named_entities": [
+        "Model Context Protocol",
+        "MCP Python SDK",
+        "OAuth",
+        "PKCE",
+        "GHSA-qx49-fqc8-xw99",
+        "Cloud Security Alliance",
+        "Cycode"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "upstream_owner": "ai-wiki",
+        "notes": "Keep identity, credential, and MCP trust-boundary implications locally. Broad MCP protocol and SDK background belongs upstream."
+      },
+      "confidence": "Medium-high. Multiple public reports provide consistent affected/fixed ranges, but the primary GitHub advisory did not render cleanly through the available fetch path and should be rechecked during ingest.",
+      "follow_up_actions": [
+        "Re-fetch the GitHub Security Advisory directly during ingest if possible.",
+        "Check whether existing MCP authorization-model or identity-sprawl leaves should link to this as concrete evidence."
+      ]
+    },
+    {
+      "id": "finding-2026-10-01-007",
+      "title": "Obot composite MCP route authorization bypass",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103758",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-103758"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-10-01T10:42:26.638Z",
+          "type": "published"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-10-01T14:35:10.239Z",
+          "type": "updated"
+        }
+      ],
+      "summary": "Obot 0.21.1 through 0.24.1 contains an authorization bypass where the checkUI deny list omits the /mcp-connect-composite/ route, allowing basic-role users with server IDs to connect to MCP servers otherwise blocked by UI/API policy.",
+      "affected_boundary_or_version": "Obot 0.21.1 through 0.24.1; /mcp-connect-composite/ access-control boundary.",
+      "why_it_matters_for_ai_security": "MCP server access is delegated tool authority. A route-specific ACL omission can let lower-privilege users reach restricted tools through an alternate connection path.",
+      "named_entities": [
+        "Obot",
+        "MCP",
+        "mcp-connect-composite",
+        "CVE-2026-103758"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "upstream_owner": "ai-wiki",
+        "notes": "Keep route-level authorization bypass locally. Broad Obot product context, if needed, belongs upstream."
+      },
+      "confidence": "High for CVE timing and route-level boundary; fixed-version confirmation needs vendor/reference check.",
+      "follow_up_actions": [
+        "Deduplicate against existing Obot MCP connect and registry authorization pages during ingest.",
+        "Check whether this is a material delta from CVE-2026-101084 or belongs as an update to the same local leaf."
+      ]
+    },
+    {
+      "id": "finding-2026-10-01-008",
+      "title": "Budibase AI table generation SSRF",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103757",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-103757"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-10-01T10:42:25.919Z",
+          "type": "published"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-10-01T13:21:55.140Z",
+          "type": "updated"
+        }
+      ],
+      "summary": "Budibase through 3.41.0 contains SSRF in AI table generation because uploadUrl uses raw node-fetch rather than Budibase's guarded fetch path.",
+      "affected_boundary_or_version": "Budibase through 3.41.0; AI table generation uploadUrl network-fetch path.",
+      "why_it_matters_for_ai_security": "AI data-table generation workflows can cross from user input into server-side network retrieval. Missing SSRF guards can expose internal services or metadata endpoints through AI-assisted import flows.",
+      "named_entities": [
+        "Budibase",
+        "AI table generation",
+        "node-fetch",
+        "CVE-2026-103757"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep AI-generation SSRF boundary locally. Broad Budibase low-code platform context is upstream or out of scope."
+      },
+      "confidence": "High for CVE text; fixed version and patch mechanism need vendor reference before durable synthesis.",
+      "follow_up_actions": [
+        "Locate Budibase patch or advisory to confirm fixed version.",
+        "Compare with Laravel AI SDK SSRF finding for possible shared AI-file/network-ingestion pattern."
+      ]
+    },
+    {
+      "id": "finding-2026-10-01-009",
+      "title": "ByteCoreStack MCP Connector privilege-escalation cluster",
+      "evidence_classification": "disclosed_vulnerability_cluster",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-19807",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103068",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-19807",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-103068"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-10-01T07:40:24.252Z",
+          "type": "published"
+        },
+        {
+          "source": "CVE Services",
+          "date": "2026-10-01T14:34:07.010Z",
+          "type": "published"
+        }
+      ],
+      "summary": "Two ByteCoreStack MCP Connector for AI Tools records describe privilege escalation affecting versions up to 1.2.3 and up to 1.2.2, including an execute_tool/wp_update_user_meta path that can grant elevated privileges.",
+      "affected_boundary_or_version": "ByteCoreStack MCP Connector for AI Tools <= 1.2.3 for CVE-2026-19807 and <= 1.2.2 for CVE-2026-103068.",
+      "why_it_matters_for_ai_security": "MCP connectors embedded in WordPress can expose administrative mutation tools through AI-tool execution paths. Privilege escalation in those tools undermines least-privilege control for delegated site actions.",
+      "named_entities": [
+        "ByteCoreStack",
+        "MCP Connector for AI Tools",
+        "WordPress",
+        "CVE-2026-19807",
+        "CVE-2026-103068"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "notes": "Keep MCP connector privilege-escalation boundary locally. Exclude generic WordPress-plugin context unless the MCP tool path is central."
+      },
+      "confidence": "Medium-high; CVE text is concrete but affected-version overlap and whether both records are distinct need ingest reconciliation.",
+      "follow_up_actions": [
+        "Reconcile whether the two CVEs describe distinct vulnerable paths or overlapping records for the same plugin issue.",
+        "Look for Wordfence, Patchstack, or vendor advisory details before durable synthesis."
+      ]
+    },
+    {
+      "id": "finding-2026-10-01-010",
+      "title": "Office-PowerPoint-MCP-Server path traversal",
+      "evidence_classification": "disclosed_vulnerability",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-71427",
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-71427"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-10-01T22:53:04.500Z",
+          "type": "published"
+        }
+      ],
+      "summary": "Office-PowerPoint-MCP-Server through 2.0.7 allows MCP callers to read and write files outside the working directory by supplying absolute paths or ../ sequences.",
+      "affected_boundary_or_version": "Office-PowerPoint-MCP-Server through 2.0.7; MCP file read/write path boundary.",
+      "why_it_matters_for_ai_security": "Document automation MCP servers often run with access to user workspaces. Path traversal lets delegated tool calls escape the intended working directory and touch unrelated files.",
+      "named_entities": [
+        "Office-PowerPoint-MCP-Server",
+        "MCP",
+        "PowerPoint",
+        "CVE-2025-71427"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "upstream_owner": "ai-wiki",
+        "notes": "Keep local path traversal and delegated file-authority implications. Broad MCP server catalog context belongs upstream."
+      },
+      "confidence": "Medium-high for CVE timing and vulnerability class; fixed version and primary repository references need follow-up.",
+      "follow_up_actions": [
+        "Locate upstream repository/advisory to confirm remediation and whether a patched version exists.",
+        "Compare with existing MCP filesystem path-boundary leaves before adding a new page."
+      ]
+    },
+    {
+      "id": "finding-2026-10-01-011",
+      "title": "Joyland AI mobile app credential, TLS, WebView, and cleartext-traffic cluster",
+      "evidence_classification": "disclosed_vulnerability_cluster",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102666",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102667",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102668",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102669",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102670",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102671",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102666",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102667",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102668",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102669",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102670",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102671"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date": "2026-10-01T19:41:54.776Z through 2026-10-01T19:43:44.950Z",
+          "type": "published"
+        }
+      ],
+      "summary": "Six Joyland AI app CVEs disclose hard-coded GeTui push-service credentials, JavaScript injection into WebView content, accepted arbitrary TLS certificates, missing hostname verification, permitted cleartext HTTP traffic, and invalid SSL certificate acceptance in an advertisement WebView.",
+      "affected_boundary_or_version": "Joyland AI mobile app; exact app versions require source-advisory reconciliation.",
+      "why_it_matters_for_ai_security": "AI companion/chat applications process conversational content and notification channels. Mobile credential, TLS, and WebView flaws create privacy, spoofing, interception, and arbitrary-content injection risks around AI user sessions.",
+      "named_entities": [
+        "Joyland AI",
+        "GeTui",
+        "WebView",
+        "TLS",
+        "CVE-2026-102666",
+        "CVE-2026-102667",
+        "CVE-2026-102668",
+        "CVE-2026-102669",
+        "CVE-2026-102670",
+        "CVE-2026-102671"
+      ],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "upstream_owner": "ai-wiki",
+        "notes": "Keep user-data, credential, TLS, and mobile AI-app security implications locally. Broad app/provider context routes upstream if needed."
+      },
+      "confidence": "Medium. CVE records are direct and in-window, but vendor remediation and affected app versions need follow-up.",
+      "follow_up_actions": [
+        "Find primary research/vendor disclosure for exact affected versions and remediation status.",
+        "Decide during ingest whether to create one mobile AI app cluster leaf or split credential/TLS/WebView boundaries."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Laravel MCP GHSA-mx2h-h55v-pm44",
+      "source_url": "https://github.com/laravel/mcp/security/advisories/GHSA-mx2h-h55v-pm44",
+      "visible_date": "2026-09-24",
+      "reason": "Outside the strict 48-hour window despite September 30 secondary coverage of related Laravel AI/MCP security fixes."
+    },
+    {
+      "candidate": "Older MCP and AI CVEs returned by NVD keyword searches, including mcp-kubernetes-server, ADB MCP Server, ContextForge, MCP Atlassian, Contentful MCP, DBHub, OpenClaw, and Token Optimizer MCP records",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-29T23:32:13.000&lastModEndDate=2026-10-01T23:32:13.000&keywordSearch=MCP",
+      "visible_date": "Mostly 2026-09-30 lastModified values with older publication dates",
+      "reason": "Most were metadata refreshes or already synthesized/captured local topics rather than fresh in-window disclosures or concrete new security deltas."
+    },
+    {
+      "candidate": "AI Engine WordPress plugin stored XSS, CVE-2026-96561",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-96561",
+      "visible_date": "2026-10-01T03:28:22.465Z",
+      "reason": "In-window and AI/MCP-branded, but the available CVE text describes a WordPress stored-XSS chain without enough fetched detail to show an AI-specific security boundary beyond product branding. Recheck if vendor advisory shows MCP/chatbot-specific exploit path."
+    },
+    {
+      "candidate": "Calculated Fields Form AI Form Builder XSS records, CVE-2026-100179 and CVE-2026-100184",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100179",
+      "visible_date": "2026-10-01",
+      "reason": "In-window but appears to be a generic WordPress form-builder XSS path with AI in the product name; no concrete AI-system security delta was verified."
+    },
+    {
+      "candidate": "PeaZip, Teledyne FLIR, EasyIO, and other general security advisories returned by GitHub advisory API",
+      "source_url": "https://api.github.com/advisories?published=2026-09-29..2026-10-01&query=MCP",
+      "visible_date": "2026-10-01",
+      "reason": "The endpoint returned broad advisory data not limited to MCP/AI; these items were unrelated to locally owned AI security topics."
+    },
+    {
+      "candidate": "Prompt-injection research catalog entries and arXiv-style paper listings",
+      "source_url": "https://github.com/turenlabs/secpapers",
+      "visible_date": "2026-09-30 crawled/catalog date",
+      "reason": "Catalog update is not itself a primary publication date or a concrete advisory/mitigation/policy change. Candidate papers need direct primary publication dates before inclusion."
+    },
+    {
+      "candidate": "OpenAI/Anthropic tens-of-thousands incident coverage",
+      "source_url": "https://www.axios.com/2026/09/26/openai-anthropic-thousands-ai-security-incidents",
+      "visible_date": "2026-09-26",
+      "reason": "Outside the strict 48-hour window for this run and already considered by prior collector windows."
+    },
+    {
+      "candidate": "AP timeline of AI safety developments after Hugging Face attack",
+      "source_url": "https://apnews.com/article/452281863a49b18220057e71d4715cf4",
+      "visible_date": "2026-09-30",
+      "reason": "In-window news/timeline context but no new concrete security advisory, patch, mitigation, standard, or incident fact specific enough for a raw security finding."
+    },
+    {
+      "candidate": "Generic WordPress AI-branded plugin issues without confirmed AI/MCP execution boundary",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-09-29T23:32:13.000&lastModEndDate=2026-10-01T23:32:13.000&keywordSearch=AI",
+      "visible_date": "Various in-window NVD publication or update dates",
+      "reason": "Excluded unless the CVE text connected the issue to an AI feature, MCP connector, model interaction, delegated tool, credential flow, or AI data boundary."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity": "MCP Python SDK",
+      "classification": "upstream-owned entity with local security lens",
+      "upstream": "ai-wiki",
+      "local_action": "Track OAuth metadata trust and credential-redirection implications in identity-and-access or agent-and-tool-security."
+    },
+    {
+      "entity": "Laravel AI SDK",
+      "classification": "upstream/dev-practice-owned package with local security lens",
+      "upstream": "ai-dev-wiki",
+      "local_action": "Track server-side fetch and chat attachment SSRF controls locally."
+    },
+    {
+      "entity": "Claude Code",
+      "classification": "upstream-owned coding-agent product with local security lens",
+      "upstream": "ai-wiki and ai-dev-wiki depending on product/practice context",
+      "local_action": "Track credential-precedence and enterprise-policy enforcement as security control evidence."
+    },
+    {
+      "entity": "JetBrains Rider AI Assistant",
+      "classification": "upstream/dev-practice-owned tool with local security lens",
+      "upstream": "ai-dev-wiki",
+      "local_action": "Track silent third-party skill update as supply-chain and approval-boundary evidence."
+    },
+    {
+      "entity": "Obot",
+      "classification": "upstream-owned product with local authorization lens",
+      "upstream": "ai-wiki",
+      "local_action": "Delta-review against existing Obot authorization leaves before creating new local coverage."
+    },
+    {
+      "entity": "Budibase",
+      "classification": "general product with local AI feature security lens",
+      "upstream": "ai-wiki if broader product context becomes useful",
+      "local_action": "Track AI table generation SSRF as an AI-assisted data-ingestion boundary."
+    },
+    {
+      "entity": "Joyland AI",
+      "classification": "upstream-owned app/provider context with local mobile AI security lens",
+      "upstream": "ai-wiki",
+      "local_action": "Track mobile app privacy, credential, TLS, and WebView flaws if primary remediation evidence is found."
+    },
+    {
+      "entity": "Moodle AI editor placement",
+      "classification": "security-specific AI feature authorization",
+      "upstream": "none required unless broad Moodle AI feature context is added",
+      "local_action": "Track capability-check bypass for AI feature invocation."
+    },
+    {
+      "entity": "AiSOC",
+      "classification": "security-specific AI SOC product/control-plane lens",
+      "upstream": "ai-wiki if product overview is needed",
+      "local_action": "Track response-action and realtime service vulnerabilities locally because they affect AI security operations authority."
+    },
+    {
+      "entity": "Office-PowerPoint-MCP-Server",
+      "classification": "upstream-owned MCP server catalog item with local file-authority security lens",
+      "upstream": "ai-wiki",
+      "local_action": "Track path traversal and delegated file read/write boundary locally."
+    },
+    {
+      "entity": "ByteCoreStack MCP Connector for AI Tools",
+      "classification": "security-specific MCP connector issue",
+      "upstream": "none required unless broad plugin catalog context is added",
+      "local_action": "Track privilege escalation through MCP tool execution locally."
+    }
+  ],
+  "confidence_notes": [
+    "Direct CVE Services records were used for concrete dates and descriptions where available.",
+    "NVD keyword searches returned many older records with in-window lastModified timestamps; those were treated as exclusions unless they had a concrete in-window publication or material security delta.",
+    "GitHub Security Advisory pages rendered for Laravel AI SDK and Laravel MCP; GitHub API/direct advisory rendering for GHSA-qx49-fqc8-xw99 was incomplete in this environment, so secondary corroboration is explicitly recorded.",
+    "Several WordPress AI-branded plugin issues were excluded because the fetched evidence did not demonstrate an AI-specific security boundary beyond product naming."
+  ],
+  "follow_up_actions": [
+    "During ingest, recheck vendor advisories and release notes for AiSOC, Claude Code, JetBrains Rider, Moodle, Budibase, ByteCoreStack, Office-PowerPoint-MCP-Server, and Joyland AI before creating durable leaves.",
+    "Deduplicate Obot CVE-2026-103758 against existing Obot MCP authorization coverage and prior CVE-2026-101084 content.",
+    "For MCP Python SDK, fetch the primary GitHub Security Advisory if possible and reconcile exact affected/fixed versions before synthesis.",
+    "Avoid moving this artifact to raw/processed until docs/wiki synthesis passes the project-wiki verification workflow."
+  ],
+  "counts": {
+    "qualifying_findings": 11,
+    "exclusions": 9,
+    "routing_notes": 11
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": []
+}

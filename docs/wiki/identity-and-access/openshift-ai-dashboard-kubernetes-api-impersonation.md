@@ -13,6 +13,8 @@ The [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-s
 
 The source says dashboard binding behavior lets an in-cluster actor bypass authentication and impersonate users against the Kubernetes API. The collector pairs this with updated guardrails-detectors evidence, but that ReDoS issue is already owned by [OpenShift AI guardrails-detectors ReDoS](../infrastructure-and-supply-chain/openshift-ai-guardrails-detectors-redos.md); this leaf keeps the identity-specific dashboard issue separate.
 
+The [October 1 leaf update watch source](../../../raw/processed/2026-10-01/ai-security-wiki-leaf-update-watch-20261002T000344Z.json) adds CVE Services metadata with a visible 2026-09-30 update. It clarifies that backend port 8080 trusted `x-forwarded-access-token` without origin validation, allowing in-cluster actors to impersonate users against the Kubernetes API with potential code execution, privilege escalation, or information disclosure.
+
 ## Security Impact
 
 - Threat: in-cluster access can cross into unauthenticated or impersonated Kubernetes API actions through dashboard binding behavior.
@@ -25,7 +27,9 @@ The source says dashboard binding behavior lets an in-cluster actor bypass authe
 ## Authoritative Sources
 
 - [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-security-wiki-topic-news-collector-2026-09-30T233235Z.json)
+- [October 1 leaf update watch source](../../../raw/processed/2026-10-01/ai-security-wiki-leaf-update-watch-20261002T000344Z.json)
 - [NVD CVE-2026-16745](https://nvd.nist.gov/vuln/detail/CVE-2026-16745)
+- [CVE-2026-16745 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-16745)
 
 ## Related Code
 
@@ -52,4 +56,5 @@ The source says dashboard binding behavior lets an in-cluster actor bypass authe
 
 ## Maintenance Notes
 
+- Updated on 2026-10-02 with October 1 watcher metadata for the `x-forwarded-access-token` origin-validation boundary and September 30 CVE Services update timestamp.
 - Created on 2026-10-01 from the [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-security-wiki-topic-news-collector-2026-09-30T233235Z.json) after separating the identity issue from existing guardrails-detectors ReDoS coverage.

@@ -6,6 +6,12 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [Joyland AI GeTui hard-coded credentials](joyland-ai-getui-hard-coded-credentials.md)
+- [Joyland AI WebView JavaScript injection](joyland-ai-webview-javascript-injection.md)
+- [Joyland AI TLS certificate validation bypass](joyland-ai-tls-certificate-validation-bypass.md)
+- [Joyland AI hostname verification bypass](joyland-ai-hostname-verification-bypass.md)
+- [Joyland AI cleartext HTTP traffic](joyland-ai-cleartext-http-traffic.md)
+- [Joyland AI ad WebView invalid SSL certificates](joyland-ai-ad-webview-invalid-ssl-certificates.md)
 - [Dify plaintext API key exposure](dify-plaintext-api-key-exposure.md)
 - [Firefox AI chatbot tab title leak](firefox-ai-chatbot-tab-title-leak.md)
 - [Token Optimizer MCP dashboard log traversal](token-optimizer-mcp-dashboard-log-traversal.md)
@@ -103,6 +109,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-10-02 with split Joyland AI mobile leaves for GeTui credentials, WebView JavaScript injection, TLS certificate validation, hostname verification, cleartext HTTP traffic, and advertisement WebView invalid SSL certificates.
 - Updated on 2026-09-29 with Token Optimizer MCP unauthenticated dashboard log traversal.
 - Updated on 2026-09-27 with GitLab Duo trace-secret disclosure, LiteLLM semantic cache tenant isolation, split Flowise chat-history and queue-dashboard leaves, MCP Server for WordPress content-object authorization, OpenClaw trajectory export authorization, and Zammad AI analytics error disclosure.
 - Updated on 2026-09-25 with IBM ContextForge MCP Gateway log traversal, Discourse AI private-message reviewable exposure, and mcp-remote disclosure leaves.

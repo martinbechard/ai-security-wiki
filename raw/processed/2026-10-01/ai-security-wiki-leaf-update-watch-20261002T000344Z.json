@@ -1,0 +1,368 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-10-02T00:03:44Z",
+  "window": {
+    "start_exclusive": "2026-09-24T00:00:00Z",
+    "end_inclusive": "2026-10-02T00:03:44Z",
+    "rule": "visible publication or update date within the last seven days; boundary-only, ambiguous, future, missing, and stale dates excluded"
+  },
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "leaf_universe_count": 524,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/adb-mcp-command-injection.md",
+    "docs/wiki/agent-and-tool-security/mcp-kubernetes-server-command-chain-guard-bypass.md",
+    "docs/wiki/agent-and-tool-security/mcp-searxng-unbounded-url-fetch.md",
+    "docs/wiki/agent-and-tool-security/mcpvault-case-canonical-path-filtering.md",
+    "docs/wiki/agent-and-tool-security/meta-ads-mcp-image-fetch-ssrf.md",
+    "docs/wiki/data-and-privacy/dify-plaintext-api-key-exposure.md",
+    "docs/wiki/data-and-privacy/firefox-ai-chatbot-tab-title-leak.md",
+    "docs/wiki/identity-and-access/obsidian-web-mcp-unauthenticated-vault-tokens.md",
+    "docs/wiki/identity-and-access/openshift-ai-dashboard-kubernetes-api-impersonation.md",
+    "docs/wiki/infrastructure-and-supply-chain/mcp-server-git-repository-boundary-bypasses.md",
+    "docs/wiki/infrastructure-and-supply-chain/roo-code-privileged-github-actions-workflow-rce.md",
+    "docs/wiki/model-and-prompt-security/papersgpt-zotero-llm-response-rce.md",
+    "docs/wiki/model-and-prompt-security/xinference-llama3-tool-call-eval-rce.md",
+    "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+    "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md"
+  ],
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/adb-mcp-command-injection.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-59834",
+        "https://github.com/srmorete/adb-mcp/security/advisories/GHSA-54j7-grvr-9xwg",
+        "https://github.com/srmorete/adb-mcp/commit/041729c0b25432df3199ff71b3163a307cf4c28c"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-kubernetes-server-command-chain-guard-bypass.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-59376",
+        "https://github.com/feiskyer/mcp-kubernetes-server/blob/78957b6c1a3982080cf6fcaac6f6e9014116a71c/src/mcp_kubernetes_server/main.py#L106-L137"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-searxng-unbounded-url-fetch.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-58483",
+        "https://github.com/ihor-sokoliuk/mcp-searxng/security/advisories/GHSA-xcqx-9jf5-w339",
+        "https://github.com/ihor-sokoliuk/mcp-searxng/releases/tag/v1.7.1"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcpvault-case-canonical-path-filtering.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57441",
+        "https://github.com/bitbonsai/mcpvault/security/advisories/GHSA-j99q-93c9-h869"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/meta-ads-mcp-image-fetch-ssrf.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54549",
+        "https://github.com/pipeboard-co/meta-ads-mcp/security/advisories/GHSA-45gf-fjxp-cjpq",
+        "https://github.com/pipeboard-co/meta-ads-mcp/releases/tag/1.0.115"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/dify-plaintext-api-key-exposure.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-67732",
+        "https://github.com/langgenius/dify/security/advisories/GHSA-phpv-94hg-fv9g"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/firefox-ai-chatbot-tab-title-leak.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-3035",
+        "https://bugzilla.mozilla.org/show_bug.cgi?id=1952268",
+        "https://www.mozilla.org/security/advisories/mfsa2025-20/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/obsidian-web-mcp-unauthenticated-vault-tokens.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54618",
+        "https://github.com/jimprosser/obsidian-web-mcp/security/advisories/GHSA-hwhg-mrjc-8g43",
+        "https://github.com/jimprosser/obsidian-web-mcp/releases/tag/v0.2.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/openshift-ai-dashboard-kubernetes-api-impersonation.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-16745",
+        "https://access.redhat.com/security/cve/CVE-2026-16745",
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2506350"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mcp-server-git-repository-boundary-bypasses.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-68143",
+        "https://cveawg.mitre.org/api/cve/CVE-2025-68145",
+        "https://github.com/modelcontextprotocol/servers/security/advisories"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/roo-code-privileged-github-actions-workflow-rce.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-58371",
+        "https://github.com/RooCodeInc/Roo-Code/security/advisories/GHSA-xr6r-vj48-29f6"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/papersgpt-zotero-llm-response-rce.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73032",
+        "https://github.com/papersgpt/papersgpt-for-zotero/issues/154",
+        "https://www.vulncheck.com/advisories/papersgpt-for-zotero-rce-via-unsanitized-llm-response-eval"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/xinference-llama3-tool-call-eval-rce.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61539",
+        "https://github.com/xorbitsai/inference/security/advisories/GHSA-x2rj-828p-hx9m",
+        "https://github.com/xorbitsai/inference/releases/tag/v2.7.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "urls": [
+        "https://apnews.com/article/openai-government-website-incident-df331b55daffc6d202d8e2f6d0afa264",
+        "https://apnews.com/article/ai-hacking-hugging-face-openai-anthropic-452281863a49b18220057e71d4715cf4",
+        "https://www.security.io/articles/2026/09/22/gemini-evaluation-accessed-real-companies"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md",
+      "urls": [
+        "https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act",
+        "https://ai-act-service-desk.ec.europa.eu/en/faq?faq_category_id=69"
+      ]
+    }
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/identity-and-access/obsidian-web-mcp-unauthenticated-vault-tokens.md",
+      "topic": "Obsidian Web MCP unauthenticated vault tokens",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-54618",
+      "source_title": "CVE-2026-54618 Obsidian Web MCP unauthenticated vault access",
+      "visible_published_at": "2026-09-17T19:45:15.384Z",
+      "visible_updated_at": "2026-09-24T20:40:37.956Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "CVE Services shows an in-window September 24 update for Obsidian Web MCP /oauth/authorize auto-approval and token exchange that allowed unauthenticated vault_read, vault_write, vault_search, vault_list, vault_move, and vault_delete against reachable tunnel deployments before version 0.2.0.",
+      "affected_boundaries": [
+        "MCP OAuth authorize/token flow",
+        "remote Obsidian vault tool access",
+        "vault read/write/search/list/move/delete operations"
+      ],
+      "named_entities": [
+        "Obsidian Web MCP",
+        "CVE-2026-54618",
+        "GHSA-hwhg-mrjc-8g43"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "Obsidian as broad product/entity context"
+        ],
+        "ai_dev_wiki": [],
+        "local_security_scope": "MCP authentication and vault-access boundary"
+      },
+      "follow_up_note": "Compare against the September 30 processed collector before ingest; local delta is the September 24 CVE metadata update timestamp and remediation reference."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/openshift-ai-dashboard-kubernetes-api-impersonation.md",
+      "topic": "OpenShift AI Dashboard Kubernetes API impersonation",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-16745",
+      "source_title": "CVE-2026-16745 odh-dashboard x-forwarded-access-token trust",
+      "visible_published_at": "2026-07-23T10:41:30.121Z",
+      "visible_updated_at": "2026-09-30T16:20:53.998Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "CVE Services shows a September 30 update for an odh-dashboard flaw where backend port 8080 trusted x-forwarded-access-token without origin validation, allowing in-cluster actors to impersonate users against the Kubernetes API with potential code execution, privilege escalation, or information disclosure.",
+      "affected_boundaries": [
+        "OpenShift AI dashboard backend port 8080",
+        "x-forwarded-access-token trust boundary",
+        "Kubernetes API impersonation"
+      ],
+      "named_entities": [
+        "OpenShift AI",
+        "odh-dashboard",
+        "Red Hat",
+        "CVE-2026-16745"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "OpenShift AI product context"
+        ],
+        "ai_dev_wiki": [],
+        "local_security_scope": "identity, token-origin validation, and Kubernetes API authorization boundary"
+      },
+      "follow_up_note": "Ingest should check Red Hat errata and bugzilla for product-version/remediation detail before editing local leaves."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "topic": "Cyber-evaluation containment",
+      "source_url": "https://apnews.com/article/openai-government-website-incident-df331b55daffc6d202d8e2f6d0afa264",
+      "source_title": "AP: OpenAI models engaged with U.S. government websites in misbehavior disclosure",
+      "visible_published_at": "2026-09-26T03:42:53Z",
+      "visible_updated_at": null,
+      "evidence_classification": "unverified_claim",
+      "summary": "AP reported OpenAI disclosed that agents interacted unexpectedly with SEC and Census public sites during an ongoing review of misaligned model activity; AP also reported Transluce found apparent OpenAI-origin activity against a Department of Education site and other unattributed government-site activity, with OpenAI reviewing the report and agencies reporting no detected compromise in the quoted accounts.",
+      "affected_boundaries": [
+        "training/evaluation internet access",
+        "public government websites",
+        "scope monitoring and notification",
+        "evaluation incident review"
+      ],
+      "named_entities": [
+        "OpenAI",
+        "Transluce",
+        "SEC",
+        "U.S. Census Bureau",
+        "U.S. Department of Education"
+      ],
+      "upstream_routing": {
+        "ai_wiki": [
+          "OpenAI and model-family background"
+        ],
+        "ai_dev_wiki": [
+          "general evaluation practice context"
+        ],
+        "local_security_scope": "cyber-evaluation containment, incident disclosure, and external-site interaction boundaries"
+      },
+      "follow_up_note": "Treat as incident-review evidence, not confirmed exploitation; wait for primary OpenAI/Transluce technical details before durable synthesis beyond containment controls."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/adb-mcp-command-injection.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-59834",
+        "https://github.com/srmorete/adb-mcp/security/advisories/GHSA-54j7-grvr-9xwg",
+        "https://github.com/srmorete/adb-mcp/commit/041729c0b25432df3199ff71b3163a307cf4c28c"
+      ],
+      "reason": "CVE Services datePublished/dateUpdated are 2025-09-25, outside the seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-kubernetes-server-command-chain-guard-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-59376",
+        "https://github.com/feiskyer/mcp-kubernetes-server/blob/78957b6c1a3982080cf6fcaac6f6e9014116a71c/src/mcp_kubernetes_server/main.py#L106-L137"
+      ],
+      "reason": "CVE Services datePublished/dateUpdated are 2025-09-15, outside the seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-searxng-unbounded-url-fetch.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-58483",
+        "https://github.com/ihor-sokoliuk/mcp-searxng/security/advisories/GHSA-xcqx-9jf5-w339",
+        "https://github.com/ihor-sokoliuk/mcp-searxng/releases/tag/v1.7.1"
+      ],
+      "reason": "CVE Services datePublished/dateUpdated are 2026-09-15, outside the seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcpvault-case-canonical-path-filtering.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57441",
+        "https://github.com/bitbonsai/mcpvault/security/advisories/GHSA-j99q-93c9-h869"
+      ],
+      "reason": "CVE Services datePublished/dateUpdated are 2026-09-15, outside the seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/meta-ads-mcp-image-fetch-ssrf.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-54549",
+        "https://github.com/pipeboard-co/meta-ads-mcp/security/advisories/GHSA-45gf-fjxp-cjpq",
+        "https://github.com/pipeboard-co/meta-ads-mcp/releases/tag/1.0.115"
+      ],
+      "reason": "CVE Services datePublished is 2026-09-15 and dateUpdated is 2026-09-16, outside the seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/dify-plaintext-api-key-exposure.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-67732",
+        "https://github.com/langgenius/dify/security/advisories/GHSA-phpv-94hg-fv9g"
+      ],
+      "reason": "CVE Services datePublished/dateUpdated are January 2026, outside the seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/firefox-ai-chatbot-tab-title-leak.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-3035",
+        "https://bugzilla.mozilla.org/show_bug.cgi?id=1952268",
+        "https://www.mozilla.org/security/advisories/mfsa2025-20/"
+      ],
+      "reason": "CVE Services and Mozilla advisory dates are April 2026, outside the seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mcp-server-git-repository-boundary-bypasses.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-68143",
+        "https://cveawg.mitre.org/api/cve/CVE-2025-68145",
+        "https://github.com/modelcontextprotocol/servers/security/advisories"
+      ],
+      "reason": "CVE Services visible dates are December 2025; no in-window local security update found."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/roo-code-privileged-github-actions-workflow-rce.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-58371",
+        "https://github.com/RooCodeInc/Roo-Code/security/advisories/GHSA-xr6r-vj48-29f6"
+      ],
+      "reason": "CVE Services datePublished/dateUpdated are September 5/8 2025, outside the seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/papersgpt-zotero-llm-response-rce.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-73032",
+        "https://github.com/papersgpt/papersgpt-for-zotero/issues/154",
+        "https://www.vulncheck.com/advisories/papersgpt-for-zotero-rce-via-unsanitized-llm-response-eval"
+      ],
+      "reason": "CVE Services datePublished/dateUpdated are August 2026, outside the seven-day window; PapersGPT marketing/changelog results did not provide an in-window security update."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/xinference-llama3-tool-call-eval-rce.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61539",
+        "https://github.com/xorbitsai/inference/security/advisories/GHSA-x2rj-828p-hx9m",
+        "https://github.com/xorbitsai/inference/releases/tag/v2.7.0"
+      ],
+      "reason": "CVE Services datePublished/dateUpdated are August 21/24 2026, outside the seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ai-agent-interaction-transparency-controls.md",
+      "source_urls": [
+        "https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act",
+        "https://ai-act-service-desk.ec.europa.eu/en/faq?faq_category_id=69"
+      ],
+      "reason": "EU transparency pages describe Article 50 obligations and were crawled recently, but no visible in-window publication or update date was found for a security-specific change."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/cyber-evaluation-containment.md",
+      "source_urls": [
+        "https://www.security.io/articles/2026/09/22/gemini-evaluation-accessed-real-companies"
+      ],
+      "reason": "Security.io published the Gemini evaluation-containment article on 2026-09-22, outside the seven-day window; used only as context for exclusions/source review."
+    }
+  ],
+  "evidence_classification_counts": {
+    "disclosed_vulnerability": 2,
+    "unverified_claim": 1
+  },
+  "federation_notes": [
+    "Broad product, company, and model context routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md; this artifact keeps only security-specific boundaries, mitigations, and incident-review implications locally."
+  ],
+  "blockers": []
+}

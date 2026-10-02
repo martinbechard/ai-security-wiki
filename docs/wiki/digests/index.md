@@ -2,7 +2,7 @@
 
 ## Current Understanding
 
-The active September 2026 digest currently includes item-level September 22 through September 30 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
+The active October 2026 digest currently includes item-level October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
 
 Monthly digests summarize processed security updates and link to durable local leaves for detail. Collectors save raw evidence first; ingest updates a digest only after the local security analysis and federation routing are complete.
 
@@ -10,12 +10,15 @@ The active digest records each independently changing security item or closely c
 
 ## Digest Pages
 
+- [2026-10.md](2026-10.md) is the active October 2026 digest.
 - [2026-09.md](2026-09.md) is the active September 2026 digest.
 - [2026-08.md](2026-08.md) is the active August 2026 digest.
 - [2026-07.md](2026-07.md) is the previous July 2026 digest.
 
 ## Authoritative Sources
 
+- [October 1 topic collector source](../../../raw/processed/2026-10-01/ai-security-wiki-topic-news-collector-2026-10-01T233213Z.json)
+- [October 1 leaf update watch source](../../../raw/processed/2026-10-01/ai-security-wiki-leaf-update-watch-20261002T000344Z.json)
 - [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-security-wiki-topic-news-collector-2026-09-30T233235Z.json)
 - [September 30 leaf update watch source](../../../raw/processed/2026-09-30/ai-security-wiki-leaf-update-watch-20261001T000313Z.json)
 - [September 29 topic collector source](../../../raw/processed/2026-09-29/ai-security-wiki-topic-news-collector-2026-09-29T233133Z.json)
@@ -108,6 +111,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-02 with the October 2026 digest and item-level October 1 entries; digest granularity remains item-level, reverse chronological, and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-10-01 with item-level September 30 entries for Roo Code, mcp-kubernetes-server, ADB MCP, Dify, Firefox AI chatbot, OpenShift AI dashboard, mcp-server-git, Meta Ads MCP, mcp-searxng, MCPVault, and Obsidian Web MCP; watcher-only repeats stayed leaf-level and ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-09-30 with item-level September 29 security updates; the September 29 leaf watcher was duplicate/provenance-only and produced no duplicate digest entries.
 - Updated on 2026-09-29 with item-level September 28 security updates and leaf-level September 29 watcher reconciliation.

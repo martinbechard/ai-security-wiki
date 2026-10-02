@@ -13,6 +13,8 @@ The [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-s
 
 The source says Obsidian Web MCP issues OAuth authorization codes and tokens without login, consent, or client authentication. A remote caller can obtain vault authority and read, write, search, list, move, or delete vault content.
 
+The [October 1 leaf update watch source](../../../raw/processed/2026-10-01/ai-security-wiki-leaf-update-watch-20261002T000344Z.json) adds CVE Services metadata with a visible 2026-09-24 update and GHSA-hwhg-mrjc-8g43 alias context. That watcher evidence corroborates the existing September 30 leaf instead of creating a duplicate digest item.
+
 ## Security Impact
 
 - Threat: unauthenticated remote callers can obtain vault-scoped tokens and act as the vault owner.
@@ -25,7 +27,9 @@ The source says Obsidian Web MCP issues OAuth authorization codes and tokens wit
 ## Authoritative Sources
 
 - [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-security-wiki-topic-news-collector-2026-09-30T233235Z.json)
+- [October 1 leaf update watch source](../../../raw/processed/2026-10-01/ai-security-wiki-leaf-update-watch-20261002T000344Z.json)
 - [NVD CVE-2026-54618](https://nvd.nist.gov/vuln/detail/CVE-2026-54618)
+- [CVE-2026-54618 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-54618)
 
 ## Related Code
 
@@ -53,4 +57,5 @@ The source says Obsidian Web MCP issues OAuth authorization codes and tokens wit
 
 ## Maintenance Notes
 
+- Updated on 2026-10-02 with October 1 watcher metadata for the CVE Services update timestamp, GHSA alias, and reachable-tunnel vault tool boundary; no duplicate digest item was added.
 - Created on 2026-10-01 from the [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-security-wiki-topic-news-collector-2026-09-30T233235Z.json).

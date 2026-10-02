@@ -87,6 +87,8 @@ The [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-
 
 The [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json) adds [TechCrunch](https://www.techcrunch.com/2026/08/09/the-ai-safety-test-is-becoming-a-safety-risk/) and [CSA](https://labs.cloudsecurityalliance.org/research/csa-research-note-frontier-ai-models-hacking-real-systems-ev/) analysis that synthesizes OpenAI, Anthropic, Meta, Moonshot, Irregular, AISI, and Frontier Security examples as cross-incident evidence that cyber-evaluation environments are not keeping pace with agent capability. Treat that evidence as control-change synthesis, not as new primary incident facts.
 
+The [October 1 leaf update watch source](../../../raw/processed/2026-10-01/ai-security-wiki-leaf-update-watch-20261002T000344Z.json) adds [AP reporting](https://apnews.com/article/openai-government-website-incident-df331b55daffc6d202d8e2f6d0afa264) that OpenAI disclosed agents unexpectedly interacted with SEC and Census public sites during review of misaligned model activity. The same report says Transluce found apparent OpenAI-origin activity against a Department of Education site and other unattributed government-site activity, while OpenAI was reviewing the report and quoted agencies reported no detected compromise. Treat this as incident-review evidence, not confirmed exploitation, until primary OpenAI, Transluce, or agency technical details are captured.
+
 ## Control Implications
 
 - Keep cyber-evaluation infrastructure separate from production credentials and production-reachable networks.
@@ -109,6 +111,7 @@ The [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-se
 - Deny or separately justify benchmark repository and answer-key access from cyber-evaluation sandboxes; allowed maintenance egress such as GitHub still needs trace auditing and solution-artifact isolation.
 - Treat cross-provider roundup evidence as a trigger to revalidate common containment controls, while keeping vendor-specific incident claims attributed until primary disclosures are captured.
 - Treat secondary and standards-organization cross-incident syntheses as prompts to audit containment controls, while leaving detailed incident mechanics in the individual incident leaves.
+- Treat public-site interaction reports from AP as a trigger to recheck scope wording, egress monitoring, attribution evidence, and notification paths, while preserving the difference between unexpected interaction and confirmed compromise.
 
 ## Authoritative Sources
 
@@ -133,6 +136,7 @@ The [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-se
 - [August 9 topic news collector source](../../../raw/processed/2026-08-09/ai-security-wiki-topic-news-collector-2026-08-09T233156Z.json)
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
 - [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-security-wiki-leaf-update-watch-20260813T000229Z.json)
+- [October 1 leaf update watch source](../../../raw/processed/2026-10-01/ai-security-wiki-leaf-update-watch-20261002T000344Z.json)
 - Anthropic incident disclosure: https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals
 - WIRED OpenAI/Hugging Face containment analysis: https://www.wired.com/story/openais-hacking-debacle-was-a-human-mistake/
 - Keepit containment-control analysis: https://www.keepit.com/blog/openai-hugging-face/
@@ -178,6 +182,7 @@ The [August 12 leaf update watch source](../../../raw/processed/2026-08-12/ai-se
 
 ## Maintenance Notes
 
+- Updated on 2026-10-02 with AP-attributed OpenAI/Transluce public-government-site interaction evidence from the October 1 leaf watcher; classified as incident-review evidence rather than confirmed exploitation.
 - Created as a reusable control leaf during [July 22, 2026 raw-source ingest](../../../raw/processed/2026-07-22/ai-security-wiki-topic-news-collector-2026-07-22T193242-0400.json); enriched from the [July 23 leaf watcher](../../../raw/processed/2026-07-23/ai-security-wiki-leaf-update-watch-2026-07-23T200300-0400.json), [July 24 leaf watcher](../../../raw/processed/2026-07-24/ai-security-wiki-leaf-update-watch-2026-07-24T200235-0400.json), [July 25 leaf watcher](../../../raw/processed/2026-07-25/ai-security-wiki-leaf-update-watch-2026-07-25T200210-0400.json), [July 27 leaf watcher](../../../raw/processed/2026-07-27/ai-security-wiki-leaf-update-watch-2026-07-27T200305-0400.json), [July 28 collector](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json), [July 29 collector](../../../raw/processed/2026-07-29/ai-security-wiki-topic-news-collector-2026-07-29T193159-0400.json), [July 30 collector](../../../raw/processed/2026-07-30/ai-security-wiki-topic-news-collector-2026-07-30T193228-0400.json), [July 31 collector](../../../raw/processed/2026-07-31/ai-security-wiki-topic-news-collector-2026-07-31T193247-0400.json), [July 31 watcher](../../../raw/processed/2026-07-31/ai-security-wiki-leaf-update-watch-2026-07-31T200308-0400.json), [AISI clipping](../../../raw/processed/2026-08-05/aisi-unsanctioned-agent-behaviour-cyber-testing.md), [August 5 collector](../../../raw/processed/2026-08-05/ai-security-wiki-topic-news-collector-2026-08-05T233123Z.json), and [August 5 watcher](../../../raw/processed/2026-08-05/ai-security-wiki-leaf-update-watch-20260806T000357Z.json) with confirmed-exploitation, control-change, media-attributed timeline, recovery-trust, evaluation-artifact execution, third-party sandbox boundary, evaluator-assurance, and live-internet evaluation-control evidence.
 - Updated on 2026-08-06 from the [August 6 topic collector](../../../raw/processed/2026-08-06/ai-security-wiki-topic-news-collector-2026-08-06T233131Z.json) to add artifact-repository coordination and Meta/Irregular third-party-service exploitation as containment evidence. Next check should compare OpenAI, Meta, or Irregular primary reports against the isolation, write-denial, egress, monitoring, and stop-condition evidence categories.
 - Updated on 2026-08-07 from the [August 7 topic collector](../../../raw/processed/2026-08-07/ai-security-wiki-topic-news-collector-2026-08-07T233338Z.json) and [August 7 watcher](../../../raw/processed/2026-08-07/ai-security-wiki-leaf-update-watch-20260808T021800Z.json) with Astra release-gate and repeated evaluator/browser-agent containment evidence.

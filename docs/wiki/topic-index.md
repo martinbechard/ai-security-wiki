@@ -8,6 +8,27 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [identity-and-access/aisoc-response-action-api-authentication-bypass.md](identity-and-access/aisoc-response-action-api-authentication-bypass.md)
+- [identity-and-access/aisoc-mssp-tenant-portfolio-authorization-bypass.md](identity-and-access/aisoc-mssp-tenant-portfolio-authorization-bypass.md)
+- [identity-and-access/aisoc-realtime-jwt-secret-default.md](identity-and-access/aisoc-realtime-jwt-secret-default.md)
+- [agent-and-tool-security/aisoc-crowdstrike-rtr-command-injection.md](agent-and-tool-security/aisoc-crowdstrike-rtr-command-injection.md)
+- [identity-and-access/aisoc-realtime-internal-endpoint-auth-bypass.md](identity-and-access/aisoc-realtime-internal-endpoint-auth-bypass.md)
+- [identity-and-access/claude-code-organization-policy-api-key-precedence.md](identity-and-access/claude-code-organization-policy-api-key-precedence.md)
+- [infrastructure-and-supply-chain/jetbrains-rider-ai-assistant-skill-auto-update.md](infrastructure-and-supply-chain/jetbrains-rider-ai-assistant-skill-auto-update.md)
+- [identity-and-access/moodle-ai-editor-image-generation-capability-bypass.md](identity-and-access/moodle-ai-editor-image-generation-capability-bypass.md)
+- [agent-and-tool-security/laravel-ai-sdk-file-url-ssrf.md](agent-and-tool-security/laravel-ai-sdk-file-url-ssrf.md)
+- [identity-and-access/mcp-python-sdk-oauth-metadata-trust-flaw.md](identity-and-access/mcp-python-sdk-oauth-metadata-trust-flaw.md)
+- [identity-and-access/obot-composite-mcp-route-authorization-bypass.md](identity-and-access/obot-composite-mcp-route-authorization-bypass.md)
+- [agent-and-tool-security/budibase-ai-table-generation-ssrf.md](agent-and-tool-security/budibase-ai-table-generation-ssrf.md)
+- [identity-and-access/bytecorestack-mcp-connector-privilege-escalation.md](identity-and-access/bytecorestack-mcp-connector-privilege-escalation.md)
+- [agent-and-tool-security/office-powerpoint-mcp-server-path-traversal.md](agent-and-tool-security/office-powerpoint-mcp-server-path-traversal.md)
+- [data-and-privacy/joyland-ai-getui-hard-coded-credentials.md](data-and-privacy/joyland-ai-getui-hard-coded-credentials.md)
+- [data-and-privacy/joyland-ai-webview-javascript-injection.md](data-and-privacy/joyland-ai-webview-javascript-injection.md)
+- [data-and-privacy/joyland-ai-tls-certificate-validation-bypass.md](data-and-privacy/joyland-ai-tls-certificate-validation-bypass.md)
+- [data-and-privacy/joyland-ai-hostname-verification-bypass.md](data-and-privacy/joyland-ai-hostname-verification-bypass.md)
+- [data-and-privacy/joyland-ai-cleartext-http-traffic.md](data-and-privacy/joyland-ai-cleartext-http-traffic.md)
+- [data-and-privacy/joyland-ai-ad-webview-invalid-ssl-certificates.md](data-and-privacy/joyland-ai-ad-webview-invalid-ssl-certificates.md)
+- [digests/2026-10.md](digests/2026-10.md)
 - [infrastructure-and-supply-chain/roo-code-privileged-github-actions-workflow-rce.md](infrastructure-and-supply-chain/roo-code-privileged-github-actions-workflow-rce.md)
 - [agent-and-tool-security/mcp-kubernetes-server-command-chain-guard-bypass.md](agent-and-tool-security/mcp-kubernetes-server-command-chain-guard-bypass.md)
 - [agent-and-tool-security/adb-mcp-command-injection.md](agent-and-tool-security/adb-mcp-command-injection.md)
@@ -554,6 +575,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-02 with October 1 source-ingest leaves for split AiSOC CVEs, Claude Code, JetBrains Rider AI Assistant, Moodle AI editor, Laravel AI SDK, MCP Python SDK, Obot, Budibase, ByteCoreStack MCP Connector, Office-PowerPoint-MCP-Server, and split Joyland AI mobile CVEs plus the October digest and watcher provenance folded into existing leaves.
 - Updated on 2026-10-01 with September 30 source-ingest leaves for Roo Code, mcp-kubernetes-server, ADB MCP, Dify, Firefox AI chatbot, OpenShift AI dashboard, mcp-server-git, Meta Ads MCP, mcp-searxng, MCPVault, and Obsidian Web MCP plus leaf-watch provenance folded into existing leaves.
 - Updated on 2026-09-30 with September 29 source-ingest leaves for Google MCP Toolbox symlink containment, OpenClaw MCP App scope escalation, mcp-chrome-bridge origin bypass, mark3labs filesystem symlink traversal, VoiceMode command injection, split MetaMCP session/proxy issues, Open GenAI Stack prompt-template execution, frontier AI assurance controls, and OpenAI release-gate monitoring folded into the existing frontier-model release-gate leaf.
 - Updated on 2026-09-29 with September 28 source-ingest leaves for Zscaler MCP confirmation-token binding, fast-mcp-telegram file URL SSRF, Token Optimizer MCP dashboard log traversal, Tencent AI-Infra-Guard file access path traversal, and agentverus-scanner security-decision input trust.
