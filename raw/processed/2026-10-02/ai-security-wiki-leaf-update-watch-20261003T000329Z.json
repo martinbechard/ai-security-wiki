@@ -1,0 +1,733 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "evidence_classification_counts": {
+    "disclosed_vulnerability": 15
+  },
+  "exclusions": [],
+  "follow_up_notes": [
+    "All selected leaves were newly unchecked in the external ledger and had direct public advisory/CVE evidence inside the seven-day window.",
+    "The public records overlap the processed October 1 topic collector source; downstream ingest should avoid duplicate wiki/digest prose unless a record contains material remediation or metadata deltas.",
+    "No docs/wiki or raw/processed files were changed by this raw-only collector."
+  ],
+  "local_run_at": "2026-10-02T20:03:29-04:00",
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "AiSOC 7.2.0 before 12.0.0; actions service CrowdStrike RTR command construction for file_path, path, script_name, and script_args."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/aisoc-crowdstrike-rtr-command-injection.md",
+      "named_entities": [
+        "AiSOC",
+        "CrowdStrike Real Time Response",
+        "VulnCheck",
+        "beenuar"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "AiSOC 7.2.0 before 12.0.0; actions service CrowdStrike RTR command construction for file_path, path, script_name, and script_args.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-103056",
+          "named_entities": [
+            "AiSOC",
+            "CrowdStrike Real Time Response",
+            "beenuar",
+            "VulnCheck"
+          ],
+          "published": "2026-09-30T00:19:11.887Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "Authenticated AiSOC users can inject single quotes into CrowdStrike RTR action parameters and execute arbitrary endpoint commands with SYSTEM or root privileges.",
+          "title": "AiSOC 7.2.0 before 12.0.0 Command Injection via CrowdStrike RTR",
+          "updated": "2026-09-30T18:09:32.342Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-103056"
+        }
+      ],
+      "qualified_update_at": "2026-09-30T18:09:32.342Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103056"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "Budibase before 3.41.0; AI table-generation uploadUrl network fetch path."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/budibase-ai-table-generation-ssrf.md",
+      "named_entities": [
+        "AI table generation",
+        "Budibase",
+        "VulnCheck",
+        "node-fetch"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "Budibase before 3.41.0; AI table-generation uploadUrl network fetch path.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-103757",
+          "named_entities": [
+            "Budibase",
+            "AI table generation",
+            "node-fetch",
+            "VulnCheck"
+          ],
+          "published": "2026-10-01T10:42:25.919Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "Budibase AI table generation can fetch attacker-supplied internal URLs through raw node-fetch and return presigned object-storage URLs containing the response.",
+          "title": "Budibase before 3.41.0 SSRF via uploadUrl in AI Table Generation",
+          "updated": "2026-10-01T13:21:55.140Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-103757"
+        }
+      ],
+      "qualified_update_at": "2026-10-01T13:21:55.140Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103757"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "laravel/ai 1.0.0 Vercel AI SDK and AG-UI adapter URL-file ingestion; patched in 1.0.1 per the cited local leaf."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/laravel-ai-sdk-file-url-ssrf.md",
+      "named_entities": [
+        "AG-UI",
+        "GitHub Security Advisory",
+        "Laravel AI SDK",
+        "Vercel AI SDK",
+        "laravel/ai"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "laravel/ai 1.0.0 Vercel AI SDK and AG-UI adapter URL-file ingestion; patched in 1.0.1 per the cited local leaf.",
+          "classification": "disclosed_vulnerability",
+          "id": "GHSA-6qhr-3g93-pxhw",
+          "named_entities": [
+            "Laravel AI SDK",
+            "laravel/ai",
+            "Vercel AI SDK",
+            "AG-UI",
+            "GitHub Security Advisory"
+          ],
+          "published": "2026-09-30T16:34:18Z",
+          "status": "No confirmed exploitation in the public advisory page.",
+          "summary": "Laravel AI SDK adapters accepted client-supplied file URLs and fetched them server-side; the advisory page identifies the SSRF fix in the Laravel AI SDK line.",
+          "title": "Server-side request forgery via client-supplied file URLs",
+          "updated": "2026-09-30T16:34:18Z",
+          "url": "https://github.com/laravel/ai/security/advisories/GHSA-6qhr-3g93-pxhw"
+        }
+      ],
+      "qualified_update_at": "2026-09-30T16:34:18Z",
+      "source_urls_checked": [
+        "https://github.com/laravel/ai/security/advisories/GHSA-6qhr-3g93-pxhw",
+        "https://laravel-news.com/laravel-ai-mcp-security-advisories"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "Office-PowerPoint-MCP-Server through 2.0.7; save_presentation, open_presentation, and manage_image output_path file operations."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/office-powerpoint-mcp-server-path-traversal.md",
+      "named_entities": [
+        "GongRzhe",
+        "MCP",
+        "Office-PowerPoint-MCP-Server",
+        "VulnCheck"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "Office-PowerPoint-MCP-Server through 2.0.7; save_presentation, open_presentation, and manage_image output_path file operations.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2025-71427",
+          "named_entities": [
+            "Office-PowerPoint-MCP-Server",
+            "GongRzhe",
+            "MCP",
+            "VulnCheck"
+          ],
+          "published": "2026-10-01T22:53:04.500Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "MCP callers can supply absolute paths or ../ sequences to read or write files outside the working directory.",
+          "title": "Office-PowerPoint-MCP-Server through 2.0.7 Path Traversal via save_presentation and manage_image",
+          "updated": "2026-10-02T19:44:18.827Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2025-71427"
+        }
+      ],
+      "qualified_update_at": "2026-10-02T19:44:18.827Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-71427"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "Joyland AI invisible advertisement WebView certificate handling."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-ad-webview-invalid-ssl-certificates.md",
+      "named_entities": [
+        "CISA CSAF",
+        "CVE Program",
+        "Joyland AI",
+        "Joyland.ai"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "Joyland AI invisible advertisement WebView certificate handling.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-102671",
+          "named_entities": [
+            "Joyland AI",
+            "Joyland.ai",
+            "CISA CSAF",
+            "CVE Program"
+          ],
+          "published": "2026-10-01T19:43:44.950Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "Joyland AI accepts invalid SSL certificates in the invisible advertisement WebView by default.",
+          "title": "Joyland AI WebView accepts invalid SSL certificates",
+          "updated": "2026-10-01T19:43:44.950Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-102671"
+        }
+      ],
+      "qualified_update_at": "2026-10-01T19:43:44.950Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102671"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "Joyland AI Android network security configuration and app transport."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-cleartext-http-traffic.md",
+      "named_entities": [
+        "Android 9",
+        "CISA CSAF",
+        "Joyland AI",
+        "Joyland.ai"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "Joyland AI Android network security configuration and app transport.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-102670",
+          "named_entities": [
+            "Joyland AI",
+            "Joyland.ai",
+            "Android 9",
+            "CISA CSAF"
+          ],
+          "published": "2026-10-01T19:43:27.462Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "Joyland AI explicitly permits cleartext HTTP traffic on Android 9 and later, where cleartext is blocked by default.",
+          "title": "Joyland AI enables HTTP",
+          "updated": "2026-10-01T19:43:27.462Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-102670"
+        }
+      ],
+      "qualified_update_at": "2026-10-01T19:43:27.462Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102670"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "Joyland AI mobile app embedded GeTui REST API credentials and push-notification channel."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-getui-hard-coded-credentials.md",
+      "named_entities": [
+        "CISA CSAF",
+        "GeTui",
+        "Joyland AI"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "Joyland AI mobile app embedded GeTui REST API credentials and push-notification channel.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-102666",
+          "named_entities": [
+            "Joyland AI",
+            "GeTui",
+            "CISA CSAF"
+          ],
+          "published": "2026-10-01T19:41:54.776Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "Joyland AI includes hard-coded GeTui push-notification credentials that can let attackers send arbitrary notifications to users or groups.",
+          "title": "Joyland AI hard-coded credentials for push notifications",
+          "updated": "2026-10-01T19:41:54.776Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-102666"
+        }
+      ],
+      "qualified_update_at": "2026-10-01T19:41:54.776Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102666"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "Joyland AI mobile app hostname verification and chat-message transport."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-hostname-verification-bypass.md",
+      "named_entities": [
+        "CISA CSAF",
+        "Joyland AI",
+        "Joyland.ai"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "Joyland AI mobile app hostname verification and chat-message transport.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-102669",
+          "named_entities": [
+            "Joyland AI",
+            "Joyland.ai",
+            "CISA CSAF"
+          ],
+          "published": "2026-10-01T19:43:07.283Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "Joyland AI does not verify hostnames, allowing malicious hosts to connect or intercept chat messages.",
+          "title": "Joyland AI hostname checking disabled",
+          "updated": "2026-10-01T19:43:07.283Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-102669"
+        }
+      ],
+      "qualified_update_at": "2026-10-01T19:43:07.283Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102669"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "Joyland AI mobile app TLS connections and server certificate validation."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-tls-certificate-validation-bypass.md",
+      "named_entities": [
+        "CISA CSAF",
+        "Joyland AI",
+        "Joyland.ai",
+        "TLS"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "Joyland AI mobile app TLS connections and server certificate validation.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-102668",
+          "named_entities": [
+            "Joyland AI",
+            "Joyland.ai",
+            "TLS",
+            "CISA CSAF"
+          ],
+          "published": "2026-10-01T19:42:45.753Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "Joyland AI accepts any TLS certificate from any server without validation.",
+          "title": "Joyland AI accepts TLS certificates without validation",
+          "updated": "2026-10-01T19:42:45.753Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-102668"
+        }
+      ],
+      "qualified_update_at": "2026-10-01T19:42:45.753Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102668"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "Joyland AI mobile WebView content, Weex stream module, clipboard, app-internal storage, camera, microphone, GPS, and file-system permissions."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-webview-javascript-injection.md",
+      "named_entities": [
+        "CISA CSAF",
+        "Joyland AI",
+        "Weex"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "Joyland AI mobile WebView content, Weex stream module, clipboard, app-internal storage, camera, microphone, GPS, and file-system permissions.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-102667",
+          "named_entities": [
+            "Joyland AI",
+            "Weex",
+            "CISA CSAF"
+          ],
+          "published": "2026-10-01T19:42:24.250Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "Shared-network attackers can inject JavaScript into Joyland AI WebView content and potentially reach clipboard, storage, HTTP requests, or previously granted device permissions.",
+          "title": "Joyland AI WebView command injection",
+          "updated": "2026-10-02T16:49:33.992Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-102667"
+        }
+      ],
+      "qualified_update_at": "2026-10-02T16:49:33.992Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102667"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "AiSOC before 12.0.0; MSSP add_tenants_to_portfolio tenant membership authorization."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/identity-and-access/aisoc-mssp-tenant-portfolio-authorization-bypass.md",
+      "named_entities": [
+        "AiSOC",
+        "MSSP",
+        "VulnCheck",
+        "beenuar"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "AiSOC before 12.0.0; MSSP add_tenants_to_portfolio tenant membership authorization.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-103054",
+          "named_entities": [
+            "AiSOC",
+            "MSSP",
+            "beenuar",
+            "VulnCheck"
+          ],
+          "published": "2026-09-30T00:19:10.583Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "Authenticated AiSOC users can add arbitrary tenants to owned portfolios and read security alerts, incidents, and posture metrics without consent.",
+          "title": "AiSOC 10.0.0 before 12.0.0 Unauthorized Tenant Access via MSSP",
+          "updated": "2026-09-30T16:56:38.804Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-103054"
+        }
+      ],
+      "qualified_update_at": "2026-09-30T16:56:38.804Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103054"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "AiSOC 5.1.0 before 12.0.0; POST /internal/agent-event, POST /internal/push, WebSocket, Redis SSE, and registered-device notification channels."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/identity-and-access/aisoc-realtime-internal-endpoint-auth-bypass.md",
+      "named_entities": [
+        "AiSOC",
+        "Redis SSE",
+        "VulnCheck",
+        "WebSocket",
+        "beenuar"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "AiSOC 5.1.0 before 12.0.0; POST /internal/agent-event, POST /internal/push, WebSocket, Redis SSE, and registered-device notification channels.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-103057",
+          "named_entities": [
+            "AiSOC",
+            "WebSocket",
+            "Redis SSE",
+            "beenuar",
+            "VulnCheck"
+          ],
+          "published": "2026-09-30T00:19:12.549Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "AiSOC realtime internal endpoints accept spoofed tenant events and pushes, allowing malicious WebSocket, Redis SSE, or device notification broadcasts.",
+          "title": "AiSOC 5.1.0 before 12.0.0 Missing Authentication on Realtime Service Internal Endpoints",
+          "updated": "2026-09-30T13:56:57.220Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-103057"
+        }
+      ],
+      "qualified_update_at": "2026-09-30T13:56:57.220Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103057"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "AiSOC 7.5.0 before 12.0.0; realtime WebSocket/SSE subscription token verification and tenant-scoped live alert/case/agent-event streams."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/identity-and-access/aisoc-realtime-jwt-secret-default.md",
+      "named_entities": [
+        "AISOC_REALTIME_JWT_SECRET",
+        "AiSOC",
+        "SSE",
+        "VulnCheck",
+        "WebSocket"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "AiSOC 7.5.0 before 12.0.0; realtime WebSocket/SSE subscription token verification and tenant-scoped live alert/case/agent-event streams.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-103055",
+          "named_entities": [
+            "AiSOC",
+            "AISOC_REALTIME_JWT_SECRET",
+            "WebSocket",
+            "SSE",
+            "VulnCheck"
+          ],
+          "published": "2026-09-30T00:19:11.252Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "AiSOC realtime WebSocket and SSE services use a hard-coded JWT verification constant when AISOC_REALTIME_JWT_SECRET is unset, allowing forged tenant subscription tickets.",
+          "title": "AiSOC 7.5.0 before 12.0.0 Authentication Bypass via Hard-coded JWT Secret",
+          "updated": "2026-10-02T12:45:59.952Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-103055"
+        }
+      ],
+      "qualified_update_at": "2026-10-02T12:45:59.952Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103055"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "AiSOC 9.0.0 before 12.0.0; AISOC_DEV_MODE, AISOC_ACTIONS_SERVICE_TOKEN, response-action integrations, approvals, and containment actions."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/identity-and-access/aisoc-response-action-api-authentication-bypass.md",
+      "named_entities": [
+        "AISOC_ACTIONS_SERVICE_TOKEN",
+        "AISOC_DEV_MODE",
+        "AiSOC",
+        "Docker Compose",
+        "VulnCheck"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "AiSOC 9.0.0 before 12.0.0; AISOC_DEV_MODE, AISOC_ACTIONS_SERVICE_TOKEN, response-action integrations, approvals, and containment actions.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-103053",
+          "named_entities": [
+            "AiSOC",
+            "Docker Compose",
+            "AISOC_DEV_MODE",
+            "AISOC_ACTIONS_SERVICE_TOKEN",
+            "VulnCheck"
+          ],
+          "published": "2026-09-30T00:19:09.978Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "AiSOC response-action API endpoints can fail open in default Docker Compose deployments with dev mode enabled and an empty actions-service token.",
+          "title": "AiSOC 9.0.0 before 12.0.0 Missing Authentication on Actions Service Response-Action API",
+          "updated": "2026-09-30T13:57:54.515Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-103053"
+        }
+      ],
+      "qualified_update_at": "2026-09-30T13:57:54.515Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103053"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    },
+    {
+      "affected_boundaries": [
+        "ByteCoreStack MCP Connector for AI Tools for WordPress <= 1.2.2; MCP connector privilege boundary.",
+        "ByteCoreStack MCP Connector for AI Tools for WordPress <= 1.2.3; execute_tool / wp_update_user_meta tool path and WordPress user metadata capability checks."
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Already represented by the processed October 1 topic collector source; use this leaf-watch artifact as provenance and compare for material metadata/remediation deltas before any docs/wiki edit.",
+      "leaf_id": "docs/wiki/identity-and-access/bytecorestack-mcp-connector-privilege-escalation.md",
+      "named_entities": [
+        "ByteCoreStack",
+        "MCP Connector for AI Tools",
+        "Patchstack",
+        "WordPress",
+        "Wordfence",
+        "wp_update_user_meta"
+      ],
+      "public_records": [
+        {
+          "affected_boundary": "ByteCoreStack MCP Connector for AI Tools for WordPress <= 1.2.2; MCP connector privilege boundary.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-103068",
+          "named_entities": [
+            "ByteCoreStack",
+            "MCP Connector for AI Tools",
+            "WordPress",
+            "Patchstack"
+          ],
+          "published": "2026-10-01T14:34:07.010Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "Patchstack CVE record reports subscriber privilege escalation in ByteCoreStack MCP Connector for AI Tools versions up to 1.2.2.",
+          "title": "WordPress ByteCoreStack MCP Connector for AI Tools plugin <= 1.2.2 - Privilege Escalation vulnerability",
+          "updated": "2026-10-01T16:19:55.947Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-103068"
+        },
+        {
+          "affected_boundary": "ByteCoreStack MCP Connector for AI Tools for WordPress <= 1.2.3; execute_tool / wp_update_user_meta tool path and WordPress user metadata capability checks.",
+          "classification": "disclosed_vulnerability",
+          "id": "CVE-2026-19807",
+          "named_entities": [
+            "ByteCoreStack",
+            "MCP Connector for AI Tools",
+            "WordPress",
+            "Wordfence",
+            "wp_update_user_meta"
+          ],
+          "published": "2026-10-01T07:40:24.252Z",
+          "status": "No confirmed exploitation in the public CVE record.",
+          "summary": "Wordfence CVE record reports subscriber-plus privilege escalation through execute_tool and wp_update_user_meta gating that can allow role/capability metadata mutation.",
+          "title": "ByteCoreStack <= 1.2.3 - Authenticated Privilege Escalation via wp_update_user_meta MCP Tool",
+          "updated": "2026-10-01T07:40:24.252Z",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-19807"
+        }
+      ],
+      "qualified_update_at": "2026-10-01T16:19:55.947Z",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103068",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-19807"
+      ],
+      "upstream_routing": "Keep broad product, company, framework, WordPress, Laravel, Budibase, Joyland, AiSOC, and MCP ecosystem background upstream; local follow-up should retain only security boundary, affected version, mitigation, and control implications."
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-10-03T00:03:29Z",
+  "selection": {
+    "leaf_universe_count": 544,
+    "selected_leaf_count": 15,
+    "selected_leaf_ids": [
+      "docs/wiki/agent-and-tool-security/aisoc-crowdstrike-rtr-command-injection.md",
+      "docs/wiki/agent-and-tool-security/budibase-ai-table-generation-ssrf.md",
+      "docs/wiki/agent-and-tool-security/laravel-ai-sdk-file-url-ssrf.md",
+      "docs/wiki/agent-and-tool-security/office-powerpoint-mcp-server-path-traversal.md",
+      "docs/wiki/data-and-privacy/joyland-ai-ad-webview-invalid-ssl-certificates.md",
+      "docs/wiki/data-and-privacy/joyland-ai-cleartext-http-traffic.md",
+      "docs/wiki/data-and-privacy/joyland-ai-getui-hard-coded-credentials.md",
+      "docs/wiki/data-and-privacy/joyland-ai-hostname-verification-bypass.md",
+      "docs/wiki/data-and-privacy/joyland-ai-tls-certificate-validation-bypass.md",
+      "docs/wiki/data-and-privacy/joyland-ai-webview-javascript-injection.md",
+      "docs/wiki/identity-and-access/aisoc-mssp-tenant-portfolio-authorization-bypass.md",
+      "docs/wiki/identity-and-access/aisoc-realtime-internal-endpoint-auth-bypass.md",
+      "docs/wiki/identity-and-access/aisoc-realtime-jwt-secret-default.md",
+      "docs/wiki/identity-and-access/aisoc-response-action-api-authentication-bypass.md",
+      "docs/wiki/identity-and-access/bytecorestack-mcp-connector-privilege-escalation.md"
+    ],
+    "selection_rule": "unchecked leaves first, then oldest last_checked_at, then stable relative path"
+  },
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/aisoc-crowdstrike-rtr-command-injection.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103056"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/budibase-ai-table-generation-ssrf.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103757"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/laravel-ai-sdk-file-url-ssrf.md",
+      "urls": [
+        "https://github.com/laravel/ai/security/advisories/GHSA-6qhr-3g93-pxhw",
+        "https://laravel-news.com/laravel-ai-mcp-security-advisories"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/office-powerpoint-mcp-server-path-traversal.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2025-71427"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-ad-webview-invalid-ssl-certificates.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102671"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-cleartext-http-traffic.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102670"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-getui-hard-coded-credentials.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102666"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-hostname-verification-bypass.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102669"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-tls-certificate-validation-bypass.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102668"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/joyland-ai-webview-javascript-injection.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102667"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/aisoc-mssp-tenant-portfolio-authorization-bypass.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103054"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/aisoc-realtime-internal-endpoint-auth-bypass.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103057"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/aisoc-realtime-jwt-secret-default.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103055"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/aisoc-response-action-api-authentication-bypass.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103053"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/bytecorestack-mcp-connector-privilege-escalation.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103068",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-19807"
+      ]
+    }
+  ],
+  "window": {
+    "end": "2026-10-03T00:03:29Z",
+    "rule": "include only public sources published or visibly updated within the last 7 days",
+    "start": "2026-09-25T00:00:00Z"
+  }
+}

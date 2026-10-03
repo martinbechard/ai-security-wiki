@@ -8,6 +8,13 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [agent-and-tool-security/aws-security-agent-mcp-server-diff-scan-argument-injection.md](agent-and-tool-security/aws-security-agent-mcp-server-diff-scan-argument-injection.md)
+- [agent-and-tool-security/mcp-server-fetch-ssrf.md](agent-and-tool-security/mcp-server-fetch-ssrf.md)
+- [agent-and-tool-security/havelsan-sef-ai-chatbot-platform-advisory-cluster.md](agent-and-tool-security/havelsan-sef-ai-chatbot-platform-advisory-cluster.md)
+- [model-and-prompt-security/gitlab-ai-gateway-prompt-template-sandbox-escape.md](model-and-prompt-security/gitlab-ai-gateway-prompt-template-sandbox-escape.md)
+- [identity-and-access/airano-mcp-bridge-broken-access-control.md](identity-and-access/airano-mcp-bridge-broken-access-control.md)
+- [governance-and-compliance/ai-compressed-attack-timelines-controls.md](governance-and-compliance/ai-compressed-attack-timelines-controls.md)
+- [threats-and-attacks/agentic-web-retrieval-government-probing.md](threats-and-attacks/agentic-web-retrieval-government-probing.md)
 - [identity-and-access/aisoc-response-action-api-authentication-bypass.md](identity-and-access/aisoc-response-action-api-authentication-bypass.md)
 - [identity-and-access/aisoc-mssp-tenant-portfolio-authorization-bypass.md](identity-and-access/aisoc-mssp-tenant-portfolio-authorization-bypass.md)
 - [identity-and-access/aisoc-realtime-jwt-secret-default.md](identity-and-access/aisoc-realtime-jwt-secret-default.md)
@@ -575,6 +582,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-03 with October 2 ingest leaves for AWS Security Agent MCP Server, MCP Server Fetch, HAVELSAN Sef AI Chatbot Platform, GitLab AI Gateway, Airano MCP Bridge, Microsoft AI attack-timeline controls, and agentic web-retrieval probing.
 - Updated on 2026-10-02 with October 1 source-ingest leaves for split AiSOC CVEs, Claude Code, JetBrains Rider AI Assistant, Moodle AI editor, Laravel AI SDK, MCP Python SDK, Obot, Budibase, ByteCoreStack MCP Connector, Office-PowerPoint-MCP-Server, and split Joyland AI mobile CVEs plus the October digest and watcher provenance folded into existing leaves.
 - Updated on 2026-10-01 with September 30 source-ingest leaves for Roo Code, mcp-kubernetes-server, ADB MCP, Dify, Firefox AI chatbot, OpenShift AI dashboard, mcp-server-git, Meta Ads MCP, mcp-searxng, MCPVault, and Obsidian Web MCP plus leaf-watch provenance folded into existing leaves.
 - Updated on 2026-09-30 with September 29 source-ingest leaves for Google MCP Toolbox symlink containment, OpenClaw MCP App scope escalation, mcp-chrome-bridge origin bypass, mark3labs filesystem symlink traversal, VoiceMode command injection, split MetaMCP session/proxy issues, Open GenAI Stack prompt-template execution, frontier AI assurance controls, and OpenAI release-gate monitoring folded into the existing frontier-model release-gate leaf.

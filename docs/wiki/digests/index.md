@@ -2,7 +2,7 @@
 
 ## Current Understanding
 
-The active October 2026 digest currently includes item-level October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
+The active October 2026 digest currently includes item-level October 2 and October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
 
 Monthly digests summarize processed security updates and link to durable local leaves for detail. Collectors save raw evidence first; ingest updates a digest only after the local security analysis and federation routing are complete.
 
@@ -17,6 +17,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 2 topic collector source](../../../raw/processed/2026-10-02/ai-security-wiki-topic-news-collector-2026-10-02T233227Z.json)
+- [October 2 leaf update watch source](../../../raw/processed/2026-10-02/ai-security-wiki-leaf-update-watch-20261003T000329Z.json)
 - [October 1 topic collector source](../../../raw/processed/2026-10-01/ai-security-wiki-topic-news-collector-2026-10-01T233213Z.json)
 - [October 1 leaf update watch source](../../../raw/processed/2026-10-01/ai-security-wiki-leaf-update-watch-20261002T000344Z.json)
 - [September 30 topic collector source](../../../raw/processed/2026-09-30/ai-security-wiki-topic-news-collector-2026-09-30T233235Z.json)
@@ -111,6 +113,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-03 with item-level October 2 entries for AWS Security Agent MCP Server, modelcontextprotocol fetch servers, HAVELSAN Sef AI Chatbot Platform, GitLab AI Gateway, Airano MCP Bridge, Microsoft AI attack-timeline controls, and agentic government-site probing; watcher repeats stayed provenance-only.
 - Updated on 2026-10-02 with the October 2026 digest and item-level October 1 entries; digest granularity remains item-level, reverse chronological, and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-10-01 with item-level September 30 entries for Roo Code, mcp-kubernetes-server, ADB MCP, Dify, Firefox AI chatbot, OpenShift AI dashboard, mcp-server-git, Meta Ads MCP, mcp-searxng, MCPVault, and Obsidian Web MCP; watcher-only repeats stayed leaf-level and ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-09-30 with item-level September 29 security updates; the September 29 leaf watcher was duplicate/provenance-only and produced no duplicate digest entries.

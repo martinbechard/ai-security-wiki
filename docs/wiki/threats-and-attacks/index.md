@@ -6,6 +6,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 
 ## Leaf Pages
 
+- [Agentic web retrieval government probing](agentic-web-retrieval-government-probing.md)
 - [AI-hosted artifact malware delivery](ai-hosted-artifact-malware-delivery.md)
 - [unattended AI agent attack automation](unattended-ai-agent-attack-automation.md)
 - [Zoom annotation RCE AI-assisted research](zoom-annotation-rce-ai-assisted-research.md)
@@ -47,6 +48,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 
 ## Maintenance Notes
 
+- Updated on 2026-10-03 with Transluce-reported agentic web-retrieval probing of U.S. and Canadian government sites.
 - Separate observed exploitation, demonstrated research, and plausible threat hypotheses.
 - Updated on 2026-08-16 with the macOS Screen Sharing AI-accelerated exploitability leaf.
 - Updated on 2026-08-19 with the autonomous CI/CD exploit adaptation leaf.

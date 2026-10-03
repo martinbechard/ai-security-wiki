@@ -2,6 +2,9 @@
 
 ## Current Understanding
 
+- [AWS Security Agent MCP Server diff scan argument injection](aws-security-agent-mcp-server-diff-scan-argument-injection.md)
+- [MCP Server Fetch SSRF](mcp-server-fetch-ssrf.md)
+- [HAVELSAN Sef AI Chatbot Platform advisory cluster](havelsan-sef-ai-chatbot-platform-advisory-cluster.md)
 - [Laravel AI SDK file URL SSRF](laravel-ai-sdk-file-url-ssrf.md)
 - [Budibase AI table generation SSRF](budibase-ai-table-generation-ssrf.md)
 - [Office PowerPoint MCP Server path traversal](office-powerpoint-mcp-server-path-traversal.md)
@@ -54,6 +57,9 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [AWS Security Agent MCP Server diff scan argument injection](aws-security-agent-mcp-server-diff-scan-argument-injection.md)
+- [MCP Server Fetch SSRF](mcp-server-fetch-ssrf.md)
+- [HAVELSAN Sef AI Chatbot Platform advisory cluster](havelsan-sef-ai-chatbot-platform-advisory-cluster.md)
 - [Laravel AI SDK file URL SSRF](laravel-ai-sdk-file-url-ssrf.md)
 - [Budibase AI table generation SSRF](budibase-ai-table-generation-ssrf.md)
 - [Office PowerPoint MCP Server path traversal](office-powerpoint-mcp-server-path-traversal.md)
@@ -271,6 +277,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-03 with AWS Security Agent MCP Server diff-scan argument injection, MCP Server Fetch SSRF, and HAVELSAN Sef AI Chatbot Platform advisory-cluster leaves from the October 2 source ingest.
 - Updated on 2026-10-02 with Laravel AI SDK file URL SSRF, Budibase AI table generation SSRF, Office PowerPoint MCP Server path traversal, and AiSOC CrowdStrike RTR command-injection leaves.
 - Updated on 2026-09-30 with Google MCP Toolbox symlink containment, mcp-chrome-bridge origin validation, mark3labs filesystem symlink traversal, VoiceMode configuration command injection, and MetaMCP stdio proxy execution leaves.
 - Updated on 2026-09-29 with fast-mcp-telegram file URL SSRF and Token Optimizer MCP command-injection reconciliation.

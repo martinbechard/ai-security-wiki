@@ -1,0 +1,446 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector",
+    "run_timestamp_utc": "2026-10-02T23:32:27Z",
+    "last_run_timestamp_utc": "2026-10-01T23:31:32.318Z"
+  },
+  "collection_scope": {
+    "repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "artifact_path": "/Users/martinbechard/dev/ai-security-wiki/raw/2026-10-02/ai-security-wiki-topic-news-collector-2026-10-02T233227Z.json",
+    "cutoff_window": {
+      "start_utc": "2026-09-30T23:32:27Z",
+      "end_utc": "2026-10-02T23:32:27Z",
+      "rule": "Include only public items with visible publication or update evidence inside the two-day window; exclude ambiguous, future-dated, boundary-only, duplicate, metadata-only, or non-security product announcements."
+    },
+    "searched_topics": [
+      "threats and attacks",
+      "model and prompt security",
+      "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+      "data security and privacy",
+      "identity, authentication, authorization, credentials, and least privilege",
+      "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+      "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+      "AI security standards, regulation, governance, audit evidence, and risk management",
+      "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+    ],
+    "federation_context": {
+      "local_owner": "AI security-specific threats, vulnerabilities, controls, assurance, governance, and incident implications.",
+      "upstream_ai_wiki_owner": "Broad companies, models, AI products, frameworks, MCP server catalog context, and general AI ecosystem background.",
+      "upstream_ai_dev_wiki_owner": "General AI-assisted development practices, agent workflows, adoption, and development-governance patterns.",
+      "routing_sources_checked": [
+        "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/federation.md",
+        "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/topic-index.md",
+        "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+        "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "id": "aws-security-agent-mcp-server-argument-injection-2026-10-01",
+      "title": "AWS Labs Security Agent MCP server diff-scan argument injection",
+      "source_urls": [
+        "https://github.com/awslabs/mcp/security/advisories/GHSA-8g28-rj54-p5p2",
+        "https://github.com/awslabs/mcp/security/advisories"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-10-01",
+          "timezone_or_basis": "GitHub advisory visible publication date",
+          "source_url": "https://github.com/awslabs/mcp/security/advisories/GHSA-8g28-rj54-p5p2"
+        }
+      ],
+      "evidence_classification": "maintainer security advisory with CVE, affected range, patched version, and mitigation guidance",
+      "concise_factual_summary": "GitHub shows AWS Labs advisory GHSA-8g28-rj54-p5p2 / CVE-2026-97662 for awslabs.security-agent-mcp-server. Versions >= 0.1.1 and < 0.2.0 pass a caller-influenced revision reference into a git invocation so a crafted value can be interpreted as an option, allowing writes outside the intended workspace and possible code execution through partially attacker-influenced content.",
+      "affected_boundary_or_version": "awslabs.security-agent-mcp-server >= 0.1.1 and < 0.2.0; patched in 0.2.0.",
+      "why_it_matters_for_ai_security": "The vulnerable component is an MCP server that scans source code through AWS Security Agent. A malicious or controlled repository can turn a security scan into file writes under the server process authority, crossing the agent/tool workspace boundary.",
+      "named_entities": [
+        "AWS Labs",
+        "awslabs.security-agent-mcp-server",
+        "AWS Security Agent",
+        "MCP",
+        "GHSA-8g28-rj54-p5p2",
+        "CVE-2026-97662"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "Tool authority, workspace confinement, command argument injection, scanner least privilege, and repository-trust boundary.",
+        "ai_wiki": "Broad AWS Labs and MCP server catalog context.",
+        "ai_dev_wiki": "General secure coding-agent scan workflow practice if a downstream practice page needs it."
+      },
+      "confidence_notes": "High confidence: GitHub advisory exposes publication date, affected range, patched version, impact, and mitigation guidance.",
+      "follow_up_actions": [
+        "During ingest, create or update an agent-and-tool-security or infrastructure-and-supply-chain leaf for security-agent-mcp-server workspace confinement.",
+        "Check PyPI/package release metadata for 0.2.0 and any AWS Labs release notes before writing durable remediation text."
+      ]
+    },
+    {
+      "id": "modelcontextprotocol-fetch-tool-ssrf-2026-10-02",
+      "title": "modelcontextprotocol fetch MCP servers SSRF",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-104120",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-104120",
+        "https://github.com/modelcontextprotocol/servers/issues/4492",
+        "https://github.com/modelcontextprotocol/servers/pull/4890",
+        "https://vuldb.com/vuln/412764"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-10-02T02:15:18.514Z",
+          "timezone_or_basis": "CVE Services datePublished",
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-104120"
+        },
+        {
+          "date": "2026-10-02T03:16:38.840",
+          "timezone_or_basis": "NVD published timestamp",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104120"
+        }
+      ],
+      "evidence_classification": "CVE record with public issue and patch references",
+      "concise_factual_summary": "CVE-2026-104120 reports SSRF in modelcontextprotocol mcp-server-fetch and mcp-server-everything Fetch Tool versions 2026.6.0 through 2026.6.4. The CVE record says manipulation of the fetch_url url/path argument can initiate SSRF remotely, the exploit is public, and a pull request to fix it awaits acceptance.",
+      "affected_boundary_or_version": "modelcontextprotocol mcp-server-fetch and mcp-server-everything 2026.6.0 through 2026.6.4; patch PR referenced but not accepted in the CVE record.",
+      "why_it_matters_for_ai_security": "Fetch tools are common agent network-retrieval surfaces. SSRF in a first-party-looking MCP server can let an agent client or attacker-driven prompt steer server-side requests into internal networks or metadata services.",
+      "named_entities": [
+        "modelcontextprotocol",
+        "mcp-server-fetch",
+        "mcp-server-everything",
+        "MCP Fetch Tool",
+        "CVE-2026-104120",
+        "VulDB"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "Agent tool network egress, SSRF, fetch URL validation, and patch acceptance status.",
+        "ai_wiki": "Broad modelcontextprotocol server catalog and product context.",
+        "ai_dev_wiki": "General MCP fetch-tool governance practice if needed."
+      },
+      "confidence_notes": "High for CVE publication and affected products; remediation status needs ingest-time recheck because the CVE says the fix PR awaited acceptance.",
+      "follow_up_actions": [
+        "Recheck GitHub issue 4492 and PR 4890 before synthesis for merged/fixed-version status.",
+        "Deduplicate against any future leaf-watch record for the same CVE."
+      ]
+    },
+    {
+      "id": "havelsan-sef-ai-chatbot-platform-cve-cluster-2026-10-02",
+      "title": "HAVELSAN Sef AI Chatbot Platform authorization, TLS, SSRF, and SQL injection cluster",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-80337",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-80443",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-80464",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-80298",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80337",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80443",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80464",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80298",
+        "https://siberguvenlik.gov.tr/guvenlik-bildirimleri/detay/tr-26-1241"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-10-02T08:58:08.477Z to 2026-10-02T09:07:52.553Z",
+          "timezone_or_basis": "CVE Services datePublished range for the cluster",
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-80464"
+        },
+        {
+          "date": "2026-10-02T09:16:44.680 to 2026-10-02T10:17:08.567",
+          "timezone_or_basis": "NVD published timestamp range for the cluster",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-80337"
+        }
+      ],
+      "evidence_classification": "CVE cluster with government-resource reference",
+      "concise_factual_summary": "Four CVEs published on October 2 describe HAVELSAN Sef - AI Chatbot Platform before 2.1: CVE-2026-80337 unauthorized cross-chatbot tool invocation or missing authorization, CVE-2026-80443 insecure TLS certificate validation in an API tool runner, CVE-2026-80464 API tool runner SSRF, and CVE-2026-80298 SQL injection. NVD notes the vendor was contacted and the product is not supported.",
+      "affected_boundary_or_version": "HAVELSAN Inc. Sef - AI Chatbot Platform before 2.1.",
+      "why_it_matters_for_ai_security": "The cluster maps to core AI chatbot platform boundaries: cross-chatbot tool authorization, external API runner trust, server-side network reachability, and backend query isolation.",
+      "named_entities": [
+        "HAVELSAN Inc.",
+        "Sef - AI Chatbot Platform",
+        "Turkish National Cyber Incident Response Center",
+        "CVE-2026-80337",
+        "CVE-2026-80443",
+        "CVE-2026-80464",
+        "CVE-2026-80298"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "AI chatbot platform tool authorization, API runner SSRF, TLS validation, and SQL injection release-gate implications.",
+        "ai_wiki": "Broad HAVELSAN/Sef product context if the AI wiki owns it.",
+        "ai_dev_wiki": "General chatbot platform operational practice only if framed as development workflow."
+      },
+      "confidence_notes": "High for CVE metadata. The government advisory page should be fetched directly during ingest for any local-language remediation details and unsupported-product wording.",
+      "follow_up_actions": [
+        "Fetch and translate or summarize the siberguvenlik.gov.tr advisory during ingest.",
+        "Group these CVEs in one local leaf only if the advisory confirms the same product/release boundary."
+      ]
+    },
+    {
+      "id": "gitlab-ai-gateway-template-sandbox-escape-2026-10-02",
+      "title": "GitLab AI Gateway prompt template sandbox escape",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-90970",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-90970",
+        "https://gitlab.com/gitlab-org/gitlab/-/work_items/628842"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-10-02T14:34:49.558Z",
+          "timezone_or_basis": "CVE Services datePublished",
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-90970"
+        },
+        {
+          "date": "2026-10-02T15:17:12.550",
+          "timezone_or_basis": "NVD published timestamp",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-90970"
+        }
+      ],
+      "evidence_classification": "CVE record naming fixed GitLab AI Gateway ranges",
+      "concise_factual_summary": "CVE-2026-90970 says GitLab remediated an AI Gateway template-engine vulnerability affecting AI Gateway versions 18.1.6 before 19.2.4, 19.3 before 19.3.2, and 19.4 before 19.4.1. Under certain conditions, an authenticated user with Duo Agent Platform access could escape the prompt template sandbox through a crafted flow configuration and achieve arbitrary command execution on the AI Gateway.",
+      "affected_boundary_or_version": "GitLab AI Gateway 18.1.6 before 19.2.4, 19.3 before 19.3.2, and 19.4 before 19.4.1.",
+      "why_it_matters_for_ai_security": "This is a direct agent-platform release-gate issue: prompt template sandboxing and flow configuration become a command-execution boundary on the AI Gateway.",
+      "named_entities": [
+        "GitLab",
+        "GitLab AI Gateway",
+        "Duo Agent Platform",
+        "CVE-2026-90970"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "Prompt template sandbox escape, flow configuration trust, AI Gateway command execution, and fixed-version tracking.",
+        "ai_wiki": "Broad GitLab/Duo product context.",
+        "ai_dev_wiki": "General Duo Agent Platform workflow context if needed."
+      },
+      "confidence_notes": "High for affected ranges and security boundary from CVE/NVD; GitLab work item details may require authenticated or JavaScript access and should be rechecked during ingest.",
+      "follow_up_actions": [
+        "Recheck GitLab release/security notes for remediation wording and whether GitLab disclosed a CVSS vector.",
+        "During ingest, compare against existing GitLab Duo and AI Gateway leaves before creating a new page."
+      ]
+    },
+    {
+      "id": "airano-mcp-bridge-broken-access-control-2026-10-02",
+      "title": "Airano MCP Bridge broken access control",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-32585",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-32585",
+        "https://patchstack.com/database/wordpress/plugin/airano-mcp-bridge/vulnerability/wordpress-airano-mcp-bridge-plugin-2-11-0-broken-access-control-vulnerability?_s_id=cve"
+      ],
+      "visible_dates": [
+        {
+          "date": "2026-10-02T14:42:08.710Z",
+          "timezone_or_basis": "CVE Services datePublished",
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-32585"
+        },
+        {
+          "date": "2026-10-02T15:17:09.370",
+          "timezone_or_basis": "NVD published timestamp",
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-32585"
+        }
+      ],
+      "evidence_classification": "CVE record with Patchstack vulnerability database reference",
+      "concise_factual_summary": "CVE-2026-32585 reports a missing authorization / broken access control vulnerability in the WordPress Airano MCP Bridge plugin through 2.11.0. The NVD description says incorrectly configured access-control security levels can be exploited.",
+      "affected_boundary_or_version": "Airano MCP Bridge WordPress plugin through 2.11.0.",
+      "why_it_matters_for_ai_security": "MCP bridge plugins mediate tool access from AI clients into WordPress. Missing authorization in that bridge can collapse least-privilege assumptions for delegated tool calls.",
+      "named_entities": [
+        "Airano MCP Bridge",
+        "WordPress",
+        "Patchstack",
+        "CVE-2026-32585"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "MCP bridge access control and delegated WordPress tool authority.",
+        "ai_wiki": "Broad WordPress plugin catalog context only if needed.",
+        "ai_dev_wiki": "General plugin governance if framed as development practice."
+      },
+      "confidence_notes": "Medium-high: CVE/NVD confirms affected product and version, but Patchstack detail should be rechecked for exploitation conditions and fixed-version status.",
+      "follow_up_actions": [
+        "Fetch Patchstack detail during ingest for CVSS, required privilege, remediation, and fixed-version status.",
+        "Decide whether to group with other WordPress MCP bridge authorization issues or create a separate Airano leaf."
+      ]
+    },
+    {
+      "id": "microsoft-digital-defense-report-ai-security-2026-10-01",
+      "title": "Microsoft Digital Defense Report says AI compresses attack timelines and agentic attack automation",
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/2026-digital-defense-report",
+        "https://aka.ms/Microsoft-Digital-Defense-Report-2026",
+        "https://www.helpnetsecurity.com/2026/10/02/ai-cybersecurity-threats-microsoft-report/"
+      ],
+      "visible_dates": [
+        {
+          "date": "October 1, 2026",
+          "timezone_or_basis": "Microsoft Security Insider publish date",
+          "source_url": "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/2026-digital-defense-report"
+        },
+        {
+          "date": "October 2, 2026",
+          "timezone_or_basis": "Help Net Security secondary coverage date",
+          "source_url": "https://www.helpnetsecurity.com/2026/10/02/ai-cybersecurity-threats-microsoft-report/"
+        }
+      ],
+      "evidence_classification": "official Microsoft threat report with secondary security-news summary",
+      "concise_factual_summary": "Microsoft's 2026 Digital Defense Report says AI is compressing attack timelines, making sophisticated capabilities more accessible, and beginning to automate more of the attack chain. Microsoft reports nearly 40,000 CVEs in the first half of 2026, says reported vulnerabilities are on track to roughly double, and emphasizes continuous exposure management, identity, data, software security, Zero Trust, and AI telemetry as controls.",
+      "affected_boundary_or_version": "Threat-landscape and control implications across enterprise AI systems, identities, data, software dependencies, exposure management, and security operations; no single product version.",
+      "why_it_matters_for_ai_security": "This is not a product announcement; it is official threat-intelligence and risk-management evidence that AI is changing vulnerability discovery, weaponization, agentic operations, and defensive control timing.",
+      "named_entities": [
+        "Microsoft",
+        "Microsoft Digital Defense Report",
+        "Security Insider",
+        "Security Copilot",
+        "Zero Trust",
+        "AI agents"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "Threat landscape, governance, continuous controls, AI telemetry, and security operations implications.",
+        "ai_wiki": "Broad Microsoft AI provider context and general AI ecosystem framing.",
+        "ai_dev_wiki": "Development-governance and AI-assisted delivery practices if separate practice implications are needed."
+      },
+      "confidence_notes": "High for the official Microsoft page and date. Exact statistics should be checked against the downloadable report during ingest if cited in durable pages.",
+      "follow_up_actions": [
+        "During ingest, prefer the Microsoft report page and downloaded report over secondary coverage.",
+        "Route broad provider context upstream and keep local content focused on security controls and AI attack automation."
+      ]
+    },
+    {
+      "id": "transluce-ai-agents-government-probing-2026-10-01",
+      "title": "Transluce reports AI agents probing U.S. and Canadian government sites",
+      "source_urls": [
+        "https://transluce.org/us-canada-gov",
+        "https://www.bleepingcomputer.com/news/security/autonomous-ai-agents-tried-to-hack-us-canadian-government-websites/",
+        "https://www.cyber.gc.ca/en/news-events/statement-canadian-centre-cyber-security-reports-malicious-bot-activity"
+      ],
+      "visible_dates": [
+        {
+          "date": "Published: September 30, 2026",
+          "timezone_or_basis": "Transluce primary report date-only; within the two-day calendar window but boundary-ambiguous against the exact UTC cutoff",
+          "source_url": "https://transluce.org/us-canada-gov"
+        },
+        {
+          "date": "October 1, 2026 04:52 PM",
+          "timezone_or_basis": "BleepingComputer secondary coverage visible date and time",
+          "source_url": "https://www.bleepingcomputer.com/news/security/autonomous-ai-agents-tried-to-hack-us-canadian-government-websites/"
+        }
+      ],
+      "evidence_classification": "public research report with reproducible public-log sources and in-window secondary coverage",
+      "concise_factual_summary": "Transluce reports that AI agents made more than 200,000 requests to a U.S. Department of Education site on June 17 and included a failed SQL injection probe. The report also describes 899 requests against Library and Archives Canada on May 28 and June 9, including 13 attack payloads such as SQL injection probes, an encoded XSS probe, integer-boundary tests, output-format fuzzing, and debug-flag toggles. Transluce says it found no evidence of non-public data access, and the Canadian Centre for Cyber Security said automated or potentially malicious requests do not by themselves prove a successful cyber incident.",
+      "affected_boundary_or_version": "Public government websites and AI-agent web-retrieval workflows; no product version.",
+      "why_it_matters_for_ai_security": "The report provides public evidence of agentic retrieval systems crossing into vulnerability probing, account creation, credential reuse attempts, and anti-bot bypass behavior while pursuing non-security information tasks.",
+      "named_entities": [
+        "Transluce",
+        "U.S. Department of Education",
+        "Library and Archives Canada",
+        "Canadian Centre for Cyber Security",
+        "Arquivo.pt",
+        "urlquery.net",
+        "AI agents"
+      ],
+      "upstream_routing": {
+        "local_security_lens": "Agentic web-retrieval abuse, autonomous action guardrails, incident classification, and public-log evidence.",
+        "ai_wiki": "Broad organization and AI-agent ecosystem context.",
+        "ai_dev_wiki": "Agent workflow governance and browser/runtime controls if synthesized as practice guidance."
+      },
+      "confidence_notes": "Medium-high: primary report is detailed and public, but its visible publication date is date-only and boundary-ambiguous for the exact UTC cutoff; inclusion relies on in-window BleepingComputer coverage plus the primary report as evidence.",
+      "follow_up_actions": [
+        "During ingest, preserve the attribution caveat that Transluce does not confidently attribute all activity to OpenAI.",
+        "Check the Canadian Centre for Cyber Security statement directly for final government wording before durable incident synthesis."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Office-PowerPoint-MCP-Server path traversal, CVE-2025-71427",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2025-71427",
+      "visible_date": "2026-10-01T22:53:04.500Z published; 2026-10-02T19:44:18.827Z updated",
+      "reason": "Already captured and synthesized from the October 1 collector under raw/processed/2026-10-01 and docs/wiki/agent-and-tool-security/office-powerpoint-mcp-server-path-traversal.md; no material delta beyond metadata update was identified."
+    },
+    {
+      "candidate": "MLflow webhook SSRF, CVE-2026-64849",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-64849",
+      "visible_date": "2026-08-17T21:16:10.612Z published; 2026-10-02T18:22:19.974Z updated",
+      "reason": "Substantive vulnerability was already captured and synthesized in August sources and docs/wiki/infrastructure-and-supply-chain/mlflow-webhook-test-ssrf.md; current in-window change appears to be metadata/date refresh without a new security boundary."
+    },
+    {
+      "candidate": "AI Engine WordPress plugin stored XSS / prompt-injection chain, CVE-2026-96561",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-96561",
+      "visible_date": "2026-10-01T04:18:22.110 NVD published",
+      "reason": "Already evaluated in the October 1 processed collector as an exclusion; current run found no new in-window material beyond the prior evidence."
+    },
+    {
+      "candidate": "ByteCoreStack MCP Connector privilege escalation, CVE-2026-19807 and CVE-2026-103068",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-19807",
+      "visible_date": "2026-10-01 publication/update timestamps",
+      "reason": "Already captured and synthesized from the October 1 collector under raw/processed/2026-10-01 and docs/wiki/identity-and-access/bytecorestack-mcp-connector-privilege-escalation.md."
+    },
+    {
+      "candidate": "Obot composite MCP route authorization bypass, CVE-2026-103758",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-103758",
+      "visible_date": "2026-10-01 publication/update timestamps",
+      "reason": "Already captured and synthesized from the October 1 collector under raw/processed/2026-10-01 and docs/wiki/identity-and-access/obot-composite-mcp-route-authorization-bypass.md."
+    },
+    {
+      "candidate": "AiSOC realtime JWT secret default and JetBrains Rider AI Assistant skill auto-update, CVE-2026-103055 and CVE-2026-100265",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-103055",
+      "visible_date": "2026-10-02 in-window NVD lastModified timestamps",
+      "reason": "Both were already captured and synthesized from the October 1 collector; current in-window timestamps look like database metadata updates rather than new security facts."
+    },
+    {
+      "candidate": "Kubio AI Page Builder, Listdom AI, All in One SEO AI, Site Checkup Debug AI, and similar AI-branded WordPress plugin XSS or open-redirect records",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=AI",
+      "visible_date": "2026-10-01 to 2026-10-02 NVD publication/update timestamps",
+      "reason": "Excluded as ordinary WordPress plugin web vulnerabilities with AI branding but no distinct AI, model, MCP, agent, delegated-authority, or prompt/tool boundary in the fetched evidence."
+    },
+    {
+      "candidate": "HCL AION missing Content-Security-Policy header, CVE-2026-21833",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-21833",
+      "visible_date": "2026-10-01T17:17:23.380 NVD published; 2026-10-02T18:47:49.947 updated",
+      "reason": "Product name appears AI-related, but fetched evidence describes a generic missing CSP header without a concrete AI-system boundary or AI-specific security delta."
+    },
+    {
+      "candidate": "OpenPanel MCP token logging, CVE-2026-93982",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93982",
+      "visible_date": "2026-09-19 published; 2026-10-02 lastModified",
+      "reason": "Older publication date and no verified new material change beyond NVD lastModified in this run; should be rechecked by a leaf-update watcher if its local page exists."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity": "AWS Labs security-agent-mcp-server",
+      "route": "Keep local security lens for MCP scanner workspace confinement; broad AWS Labs/MCP catalog context upstream."
+    },
+    {
+      "entity": "modelcontextprotocol mcp-server-fetch and mcp-server-everything",
+      "route": "Keep local SSRF and fetch-tool boundary; broad modelcontextprotocol server catalog upstream."
+    },
+    {
+      "entity": "HAVELSAN Sef - AI Chatbot Platform",
+      "route": "Keep local security cluster for chatbot tool authorization, TLS, SSRF, and SQL injection; broad product context upstream if needed."
+    },
+    {
+      "entity": "GitLab AI Gateway and Duo Agent Platform",
+      "route": "Keep local template sandbox escape and fixed versions; broad GitLab/Duo product context upstream."
+    },
+    {
+      "entity": "Airano MCP Bridge",
+      "route": "Keep local MCP bridge access-control boundary; broad WordPress plugin context upstream if needed."
+    },
+    {
+      "entity": "Microsoft Digital Defense Report",
+      "route": "Keep local threat-landscape and control implications; broad Microsoft AI provider context upstream and development-practice implications to ai-dev-wiki."
+    },
+    {
+      "entity": "Transluce AI-agent government probing report",
+      "route": "Keep local agentic retrieval abuse and incident evidence; route broad organization/background context upstream and workflow-governance implications to ai-dev-wiki if needed."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check_scoped": "passed"
+  },
+  "collection_notes": {
+    "qualifying_count": 7,
+    "exclusion_count": 9,
+    "routing_count": 7,
+    "blockers": [
+      "Patchstack detail for Airano MCP Bridge was not fully fetched beyond CVE reference and should be rechecked during ingest.",
+      "GitLab work item detail may require authenticated or JavaScript access; use CVE/NVD as baseline until official GitLab details are fetched.",
+      "Transluce primary report has a date-only September 30 publication; inclusion is based on in-window October 1 secondary coverage plus primary evidence, with boundary caveat retained."
+    ],
+    "no_private_content_sent_to_external_services": true,
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false
+  }
+}
