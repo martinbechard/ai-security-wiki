@@ -1,0 +1,299 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-10-03T23:31:52Z",
+  "collector_identity": "Eli Northstar",
+  "artifact_path": "raw/2026-10-03/ai-security-wiki-topic-news-collector-2026-10-03T233152Z.json",
+  "cutoff_window": {
+    "start_exclusive_utc": "2026-10-01T23:31:52Z",
+    "end_inclusive_utc": "2026-10-03T23:31:52Z",
+    "date_policy": "Include only public sources published or visibly updated inside the exact two-day run window; exclude missing, ambiguous, future-dated, or boundary-only dates unless a separate in-window source provides the qualifying date."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "federation_context": {
+    "local_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "local_scope": "Security-specific AI, MCP, agent, data, identity, supply-chain, assurance, incident, and governance implications.",
+    "upstream_ai_wiki": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+    "upstream_ai_dev_wiki": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+    "routing_rule": "Broad companies, products, models, MCP server catalogs, and AI-assisted development practices remain upstream-owned; this artifact keeps only the security-specific vulnerability, affected boundary, mitigation, or routing note."
+  },
+  "findings": [
+    {
+      "id": "supportcandy-ai-customer-support-xss-sqli-cluster-2026-10-03",
+      "title": "SupportCandy AI Customer Support plugin XSS and SQL injection cluster",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94378",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94378",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/9703fa76-fd73-4cd8-aa41-8adcb55190be?source=cve",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-94539",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-94539",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/9c105a36-452e-4fa7-9c8b-f142e1eb27aa?source=cve",
+        "https://plugins.trac.wordpress.org/changeset/3718257/supportcandy/trunk/includes/custom-field-types/class-wpsc-df-customer.php",
+        "https://plugins.trac.wordpress.org/changeset/3718257/supportcandy/trunk/includes/models/class-wpsc-agent.php"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94378",
+          "date": "2026-10-03T02:25:35.234Z",
+          "date_type": "CVE datePublished"
+        },
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94378",
+          "date": "2026-10-03T15:42:47.299Z",
+          "date_type": "CVE dateUpdated"
+        },
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94539",
+          "date": "2026-10-03T02:25:35.556Z",
+          "date_type": "CVE datePublished"
+        },
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94539",
+          "date": "2026-10-03T15:42:47.170Z",
+          "date_type": "CVE dateUpdated"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94378",
+          "date": "2026-10-03T03:16:37.230Z",
+          "date_type": "NVD published"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-94539",
+          "date": "2026-10-03T03:16:37.383Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-94378 reports authenticated stored cross-site scripting in the SupportCandy - AI Customer Support Ticket System & Live Chatbot Agent WordPress plugin through 3.5.3 via the name parameter. CVE-2026-94539 reports authenticated time-based SQL injection in the same plugin through 3.5.3 via the sort_by parameter, requiring a WordPress subscriber-level role and a SupportCandy Agent account with Assign Agents permission.",
+      "evidence_classification": "Primary CVE records with CNA-provided Wordfence references and WordPress plugin source-change references.",
+      "affected_boundary_or_version": "SupportCandy - AI Customer Support Ticket System & Live Chatbot Agent <= 3.5.3; customer/agent ticket fields and ticket sorting query paths.",
+      "why_it_matters_for_ai_security": "This is an AI customer-support and live-chatbot plugin, so the affected boundary can sit inside customer-support workflows where agent-facing ticket data, user identities, and helpdesk actions are exposed to lower-privileged accounts. The SQL injection record also has a data-confidentiality impact in a support system likely to hold sensitive customer context.",
+      "named_entities": [
+        "SupportCandy",
+        "AI Customer Support Ticket System & Live Chatbot Agent",
+        "WordPress",
+        "Wordfence",
+        "CVE-2026-94378",
+        "CVE-2026-94539",
+        "psmplugins"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad product background for SupportCandy or WordPress plugin ecosystem belongs upstream only if an entity page is needed.",
+        "ai_dev_wiki": "No general AI-assisted development practice routing identified.",
+        "ai_security_wiki": "Owns the XSS and SQL injection security analysis for the AI support/chatbot plugin boundary."
+      },
+      "confidence_notes": "High confidence on dates and affected versions from CVE Services and NVD. Ingest should confirm the plugin release that contains the referenced changeset and whether both CVEs share one fixed version.",
+      "follow_up_actions": [
+        "Create or update a data-and-privacy or identity-and-access leaf for SupportCandy AI Customer Support plugin vulnerabilities.",
+        "During ingest, check whether SupportCandy 3.5.4 or another release is the first patched release.",
+        "Decide whether the XSS and SQL injection records should be one cluster leaf or split by independently maintained security boundary."
+      ]
+    },
+    {
+      "id": "wpzoom-connect-ai-chat-sensitive-information-disclosure-2026-10-03",
+      "title": "WPZOOM Connect AI Chat sensitive information exposure",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100149",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-100149",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/e0c9026c-d83e-41ac-be3a-93a33c32c47b?source=cve",
+        "https://plugins.trac.wordpress.org/browser/social-icons-widget-by-wpzoom/tags/4.7.3/includes/classes/class-wpzoom-ai-chat-customer.php#L82",
+        "https://plugins.trac.wordpress.org/browser/social-icons-widget-by-wpzoom/tags/4.7.3/includes/classes/class-wpzoom-ai-chat.php#L921",
+        "https://github.com/wpzoom/social-icons-widget-by-wpzoom/commit/351a873ac6c99fd8fb63115628a9d612427c3097"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100149",
+          "date": "2026-10-03T05:29:17.935Z",
+          "date_type": "CVE datePublished"
+        },
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100149",
+          "date": "2026-10-03T15:42:43.954Z",
+          "date_type": "CVE dateUpdated"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-100149",
+          "date": "2026-10-03T06:16:37.370Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-100149 reports that WPZOOM Connect: AI Chat, Click to Chat, Social Icons & Share Buttons through 4.7.3 exposes sensitive customer information through an HMAC signature domain-separation flaw in the AI chat customer endpoint. An unauthenticated attacker can extract a customer card for an arbitrary victim email address, including name, WordPress user ID, order history, order totals, purchased products, payment method labels, and EDD Software Licensing license keys with status and activation counts.",
+      "evidence_classification": "Primary CVE record with CNA-provided Wordfence, WordPress source, and GitHub commit references.",
+      "affected_boundary_or_version": "WPZOOM Connect: AI Chat, Click to Chat, Social Icons & Share Buttons <= 4.7.3; AI chat customer data endpoint and HMAC signature verification.",
+      "why_it_matters_for_ai_security": "The affected product is an AI chat integration that bridges site visitor identity, commerce records, and customer support context. The flaw turns chat/customer integration state into a data-exposure boundary and can disclose license keys and commerce history without authentication.",
+      "named_entities": [
+        "WPZOOM Connect",
+        "AI Chat",
+        "WordPress",
+        "WooCommerce",
+        "EDD Software Licensing",
+        "Wordfence",
+        "CVE-2026-100149"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad WPZOOM product background belongs upstream only if an entity page is needed.",
+        "ai_dev_wiki": "No general AI-assisted development practice routing identified.",
+        "ai_security_wiki": "Owns the AI chat customer data exposure and signature-domain boundary."
+      },
+      "confidence_notes": "High confidence on the in-window publication and data categories from CVE Services and NVD. Patch details should be reconciled against commit 351a873 during ingest.",
+      "follow_up_actions": [
+        "Create or update a data-and-privacy leaf for WPZOOM Connect AI Chat customer data exposure.",
+        "Check the first fixed plugin release and whether the patch rotates or invalidates exposed customer signatures.",
+        "Capture mitigation guidance for disabling share_customer_data or identify_logged_in if upstream recommends it."
+      ]
+    },
+    {
+      "id": "alt-text-ai-post-content-authorization-bypass-2026-10-03",
+      "title": "Alt Text AI post content authorization bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91108",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-91108",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/216e3087-52f1-4b2e-a31c-0c2ddf41aefb?source=cve",
+        "https://plugins.trac.wordpress.org/browser/alttext-ai/tags/1.10.38/includes/class-atai-post.php#L275",
+        "https://plugins.trac.wordpress.org/browser/alttext-ai/tags/1.10.38/includes/class-atai.php#L271",
+        "https://plugins.trac.wordpress.org/changeset?reponame=&old=3723468%40alttext-ai&new=3723468%40alttext-ai"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-91108",
+          "date": "2026-10-03T05:29:13.391Z",
+          "date_type": "CVE datePublished"
+        },
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-91108",
+          "date": "2026-10-03T15:42:45.733Z",
+          "date_type": "CVE dateUpdated"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-91108",
+          "date": "2026-10-03T06:16:45.783Z",
+          "date_type": "NVD published"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-91108 reports a missing authorization flaw in Alt Text AI through 1.10.41. Authenticated subscriber-level users can obtain a nonce from admin pages and invoke an AJAX action that overwrites the post_content of any post or page, including content they do not own, with LLM-generated text influenced by attacker-controlled keywords; the record also notes unauthorized consumption of the site owner's paid AltText.ai API credits.",
+      "evidence_classification": "Primary CVE record with CNA-provided Wordfence and WordPress plugin source references.",
+      "affected_boundary_or_version": "Alt Text AI <= 1.10.41; atai_enrich_post_content AJAX action, nonce exposure, post content modification, and paid AltText.ai API usage.",
+      "why_it_matters_for_ai_security": "This is an AI-generated-content control failure: a low-privilege user can trigger model-backed content generation against content they do not own, causing unauthorized content mutation and consumption of paid AI service credits.",
+      "named_entities": [
+        "Alt Text AI",
+        "AltText.ai",
+        "WordPress",
+        "Wordfence",
+        "CVE-2026-91108"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad AltText.ai product background belongs upstream only if an entity page is needed.",
+        "ai_dev_wiki": "No general AI-assisted development practice routing identified.",
+        "ai_security_wiki": "Owns the authorization, LLM-generated content mutation, and paid API credit abuse boundary."
+      },
+      "confidence_notes": "High confidence on in-window publication and affected version from CVE Services and NVD. Ingest should confirm the exact fixed release because CVE references older tag paths plus a later changeset.",
+      "follow_up_actions": [
+        "Create or update an identity-and-access or data-and-privacy leaf for Alt Text AI authorization bypass.",
+        "Check the fixed release and whether mitigation requires disabling the AJAX action or limiting nonce emission.",
+        "Record API-credit abuse as part of the affected boundary if corroborated by vendor or patch notes."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "OpenPanel MCP authentication token query logging, CVE-2026-93982",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-93982",
+      "visible_date": "2026-10-02T14:00:42.472Z",
+      "reason": "Excluded as duplicate local coverage. This checkout already has September 19 and September 20 raw/processed evidence plus docs/wiki/data-and-privacy/openpanel-mcp-token-query-logging.md; the October 2 update did not show a distinct new security boundary in this run."
+    },
+    {
+      "candidate": "AWS Labs Security Agent MCP server diff-scan argument injection, GHSA-8g28-rj54-p5p2 / CVE-2026-97662",
+      "source_url": "https://github.com/awslabs/mcp/security/advisories/GHSA-8g28-rj54-p5p2",
+      "visible_date": "2026-10-01T18:06:10Z",
+      "reason": "Excluded as duplicate local coverage and outside the exact cutoff. The advisory was captured by the October 2 collector and synthesized into docs/wiki/agent-and-tool-security/aws-security-agent-mcp-server-diff-scan-argument-injection.md."
+    },
+    {
+      "candidate": "modelcontextprotocol mcp-server-fetch and mcp-server-everything SSRF, CVE-2026-104120",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-104120",
+      "visible_date": "2026-10-02T03:16:38.840Z",
+      "reason": "Excluded as duplicate local coverage. The October 2 collector and current docs/wiki/agent-and-tool-security/mcp-server-fetch-ssrf.md already own this finding."
+    },
+    {
+      "candidate": "GitLab AI Gateway prompt template sandbox escape, CVE-2026-90970",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-90970",
+      "visible_date": "2026-10-02T15:17:12.550Z",
+      "reason": "Excluded as duplicate local coverage. The October 2 collector and docs/wiki/model-and-prompt-security/gitlab-ai-gateway-prompt-template-sandbox-escape.md already own this finding."
+    },
+    {
+      "candidate": "Airano MCP Bridge missing authorization, CVE-2026-32585",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-32585",
+      "visible_date": "2026-10-02T15:17:09.370Z",
+      "reason": "Excluded as duplicate local coverage. The October 2 collector and docs/wiki/identity-and-access/airano-mcp-bridge-broken-access-control.md already own this finding."
+    },
+    {
+      "candidate": "NASA-AMMOS AIT-Core unauthenticated ZeroMQ command and telemetry bus, CVE-2026-105105",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-105105",
+      "visible_date": "2026-10-03T11:55:44.853Z",
+      "reason": "Excluded because AIT-Core is not an AI system in this context; the record is spacecraft command-and-telemetry infrastructure, not AI security."
+    },
+    {
+      "candidate": "Kubio AI Page Builder stored XSS records, CVE-2026-100107, CVE-2026-88782, and CVE-2026-88783",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-88782",
+      "visible_date": "2026-10-03T06:00:26.653Z",
+      "reason": "Excluded because the records are ordinary WordPress stored-XSS/content-filtering issues in an AI-branded page-builder plugin; this run did not find a distinct AI, MCP, model, prompt, credential, or agent boundary beyond product branding."
+    },
+    {
+      "candidate": "Axios AI incident communication channel proposal",
+      "source_url": "https://www.axios.com/2026/10/03/china-ai-bessent-axios-show",
+      "visible_date": "2026-10-03T13:11:47Z",
+      "reason": "Excluded because the report describes a proposed U.S.-China AI incident communication channel rather than a binding standard, regulatory change, public incident finding, control requirement, or implemented assurance mechanism."
+    },
+    {
+      "candidate": "Axios rogue AI agents internet-defenses analysis",
+      "source_url": "https://www.axios.com/2026/10/03/rogue-ai-agents-internet-defenses",
+      "visible_date": "2026-10-03T13:14:17Z",
+      "reason": "Excluded as secondary analysis of already captured Transluce government-site probing; no distinct new technical fact or mitigation was identified in the accessible search result."
+    },
+    {
+      "candidate": "AI-branded SEO and contact-form WordPress plugin XSS/open-redirect/shortcode records",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-10-01T23:31:52.000Z&lastModEndDate=2026-10-03T23:31:52.000Z&keywordSearch=AI",
+      "visible_date": "2026-10-03",
+      "reason": "Excluded as a group because the records were ordinary WordPress web vulnerabilities with AI in the product name and no distinct AI system, model, prompt, MCP, delegated authority, data-governance, or agent-control security boundary identified during this run."
+    }
+  ],
+  "upstream_routing": [
+    {
+      "entity_or_topic": "SupportCandy",
+      "route": "ai-wiki for broad product background if needed; ai-security-wiki for the AI support/chatbot plugin XSS and SQL injection boundary.",
+      "reason": "The durable product/entity context is broad; the security-specific customer-support data and authorization risk belongs locally."
+    },
+    {
+      "entity_or_topic": "WPZOOM Connect / AI Chat",
+      "route": "ai-wiki for broad product background if needed; ai-security-wiki for customer data exposure in the AI chat integration.",
+      "reason": "The qualifying delta is the customer data disclosure and HMAC verification boundary, not a general product update."
+    },
+    {
+      "entity_or_topic": "Alt Text AI / AltText.ai",
+      "route": "ai-wiki for broad product background if needed; ai-security-wiki for the authorization bypass, LLM-generated content mutation, and paid API credit abuse boundary.",
+      "reason": "The qualifying delta is a security-control failure around model-backed content generation and delegated API consumption."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed for this artifact",
+    "validated_at_utc": "2026-10-03T23:31:52Z",
+    "notes": "Validated with jq empty, python3 -m json.tool, and scoped git diff --check."
+  },
+  "collection_notes": [
+    "Public sources only; no private, proprietary, sensitive, PII, or company-internal local content was sent externally.",
+    "docs/wiki and raw/processed were not modified.",
+    "The previous October 2 topic collector artifact was already in raw/processed, so duplicate suppression used processed raw and current docs/wiki leaves rather than raw/2026-10-02.",
+    "NVD keyword searches for MCP and AI were used for public vulnerability database discovery; direct CVE Services records were used for primary evidence on qualifying items."
+  ],
+  "blockers": []
+}

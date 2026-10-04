@@ -1,0 +1,506 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-10-04T00:03:12Z",
+  "local_run_time": "2026-10-03 20:03:12 -0400",
+  "window": {
+    "start": "2026-09-27",
+    "end": "2026-10-03",
+    "rule": "Include only sources published or visibly updated within the last 7 days; exclude ambiguous, future, missing, and boundary-only dates."
+  },
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "leaf_universe_count": 551,
+  "selected_leaf_count": 15,
+  "selection_policy": "New or unchecked leaves first, then oldest last_checked_at, ties by stable relative wiki path.",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/aws-security-agent-mcp-server-diff-scan-argument-injection.md",
+    "docs/wiki/agent-and-tool-security/havelsan-sef-ai-chatbot-platform-advisory-cluster.md",
+    "docs/wiki/agent-and-tool-security/mcp-server-fetch-ssrf.md",
+    "docs/wiki/governance-and-compliance/ai-compressed-attack-timelines-controls.md",
+    "docs/wiki/identity-and-access/airano-mcp-bridge-broken-access-control.md",
+    "docs/wiki/identity-and-access/claude-code-organization-policy-api-key-precedence.md",
+    "docs/wiki/identity-and-access/mcp-python-sdk-oauth-metadata-trust-flaw.md",
+    "docs/wiki/identity-and-access/moodle-ai-editor-image-generation-capability-bypass.md",
+    "docs/wiki/identity-and-access/obot-composite-mcp-route-authorization-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/jetbrains-rider-ai-assistant-skill-auto-update.md",
+    "docs/wiki/model-and-prompt-security/gitlab-ai-gateway-prompt-template-sandbox-escape.md",
+    "docs/wiki/threats-and-attacks/agentic-web-retrieval-government-probing.md",
+    "docs/wiki/governance-and-compliance/cloud-ai-system-compromise-threat-taxonomy.md",
+    "docs/wiki/infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md",
+    "docs/wiki/infrastructure-and-supply-chain/litellm-supply-chain-secret-exposure.md"
+  ],
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/aws-security-agent-mcp-server-diff-scan-argument-injection.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-97662",
+        "https://aws.amazon.com/security/security-bulletins/2026-121-aws/",
+        "https://pypi.org/project/awslabs.security-agent-mcp-server/0.2.0/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/havelsan-sef-ai-chatbot-platform-advisory-cluster.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-80337",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-80443",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-80464",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-80298",
+        "https://siberguvenlik.gov.tr/guvenlik-bildirimleri/detay/tr-26-1241"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-server-fetch-ssrf.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-104120",
+        "https://github.com/modelcontextprotocol/servers/issues/4492",
+        "https://github.com/modelcontextprotocol/servers/pull/4890",
+        "https://vuldb.com/vuln/412764"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-compressed-attack-timelines-controls.md",
+      "urls": [
+        "https://www.microsoft.com/en-us/security/security-insider/threat-landscape/2026-digital-defense-report",
+        "https://aka.ms/Microsoft-Digital-Defense-Report-2026",
+        "https://www.helpnetsecurity.com/2026/10/02/ai-cybersecurity-threats-microsoft-report/",
+        "https://news.microsoft.com/source/tag/security/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/airano-mcp-bridge-broken-access-control.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-32585",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-32585",
+        "https://patchstack.com/database/wordpress/plugin/airano-mcp-bridge/vulnerability/wordpress-airano-mcp-bridge-plugin-2-11-0-broken-access-control-vulnerability?_s_id=cve"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/claude-code-organization-policy-api-key-precedence.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103012",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-103012",
+        "https://github.com/anthropics/claude-code/security/advisories/GHSA-gfvf-j8jh-jxxw"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-python-sdk-oauth-metadata-trust-flaw.md",
+      "urls": [
+        "https://github.com/modelcontextprotocol/python-sdk/security/advisories/GHSA-qx49-fqc8-xw99",
+        "https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-python-sdk-oauth-flaw-20260930-csa-sty/",
+        "https://thehackernews.com/2026/09/official-mcp-python-sdk-flaw-can-let.html"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/moodle-ai-editor-image-generation-capability-bypass.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-102583",
+        "https://moodle.org/mod/forum/discuss.php?d=482501",
+        "https://access.redhat.com/security/cve/CVE-2026-102583"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/obot-composite-mcp-route-authorization-bypass.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103758",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-6fwv-3h4c-37j9",
+        "https://www.vulncheck.com/advisories/obot-0.21.1-through-0.24.1-authorization-bypass-via-mcp-connect-composite-route"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/jetbrains-rider-ai-assistant-skill-auto-update.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-100265",
+        "https://www.jetbrains.com/privacy-security/issues-fixed/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/gitlab-ai-gateway-prompt-template-sandbox-escape.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-90970",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-90970",
+        "https://gitlab.com/gitlab-org/gitlab/-/work_items/628842"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/agentic-web-retrieval-government-probing.md",
+      "urls": [
+        "https://transluce.org/us-canada-gov",
+        "https://www.bleepingcomputer.com/news/security/autonomous-ai-agents-tried-to-hack-us-canadian-government-websites/",
+        "https://www.cyber.gc.ca/en/news-events/statement-canadian-centre-cyber-security-reports-malicious-bot-activity"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/cloud-ai-system-compromise-threat-taxonomy.md",
+      "urls": [
+        "https://cloudsecurityalliance.org/research",
+        "https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-2026"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md",
+      "urls": [
+        "https://www.axios.com/2026/08/06/openai-hugging-face-black-hat",
+        "https://www.wired.com/story/openai-didnt-notice-its-ai-agents-using-a-message-board-to-plan-their-hacking-spree/",
+        "https://www.businessinsider.com/openai-hugging-face-presentation-black-hat-message-boards-2026-8",
+        "https://openai.com/index/pacing-model-development-cyber-capabilities/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/litellm-supply-chain-secret-exposure.md",
+      "urls": [
+        "https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines",
+        "https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/",
+        "https://thehackernews.com/2026/08/malicious-litellm-releases-tied-to.html",
+        "https://docs.litellm.ai/blog/security-update-march-2026",
+        "https://socradar.io/blog/litellm-supply-chain-attack/"
+      ]
+    }
+  ],
+  "qualifying_update_count": 15,
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/aws-security-agent-mcp-server-diff-scan-argument-injection.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-97662",
+      "visible_date": "2026-10-01T17:34:03.924Z",
+      "updated_at": "2026-10-01T18:17:35.517Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "agent tool filesystem boundary",
+        "workspace file integrity",
+        "MCP server host execution context"
+      ],
+      "named_entities": [
+        "AWS",
+        "awslabs.security-agent-mcp-server",
+        "CVE-2026-97662",
+        "GHSA-8g28-rj54-p5p2"
+      ],
+      "summary": "CVE Services published AWS Security Agent MCP Server diff scan argument injection allowing file creation, overwrite, or truncation outside the intended workspace before 0.2.0.",
+      "upstream_routing": "Keep security-specific MCP filesystem boundary locally; broad AWS or MCP package catalog context belongs upstream if needed.",
+      "follow_up_note": "Ingest should compare AWS bulletin and PyPI remediation metadata before updating the leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/havelsan-sef-ai-chatbot-platform-advisory-cluster.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-80337",
+      "visible_date": "2026-10-02T09:01:25.226Z",
+      "updated_at": "2026-10-02T14:36:15.584Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "authorization boundary",
+        "AI chatbot platform application boundary"
+      ],
+      "named_entities": [
+        "HAVELSAN",
+        "Sef AI Chatbot Platform",
+        "CVE-2026-80337",
+        "TR-26-1241"
+      ],
+      "summary": "CVE Services published a missing authorization issue in HAVELSAN Sef AI Chatbot Platform before 2.1.",
+      "upstream_routing": "Keep the security-specific advisory cluster locally; broad HAVELSAN product/company context belongs upstream if it is needed.",
+      "follow_up_note": "Ingest should collapse these same-vendor records into the existing cluster without over-expanding product background."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/havelsan-sef-ai-chatbot-platform-advisory-cluster.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-80443",
+      "visible_date": "2026-10-02T09:04:40.529Z",
+      "updated_at": "2026-10-02T14:36:56.031Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "transport trust boundary",
+        "AI chatbot platform application boundary"
+      ],
+      "named_entities": [
+        "HAVELSAN",
+        "Sef AI Chatbot Platform",
+        "CVE-2026-80443",
+        "TR-26-1241"
+      ],
+      "summary": "CVE Services published an improper certificate validation issue in HAVELSAN Sef AI Chatbot Platform before 2.1.",
+      "upstream_routing": "Keep the security-specific advisory cluster locally; broad HAVELSAN product/company context belongs upstream if it is needed.",
+      "follow_up_note": "Ingest should collapse these same-vendor records into the existing cluster without over-expanding product background."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/havelsan-sef-ai-chatbot-platform-advisory-cluster.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-80464",
+      "visible_date": "2026-10-02T08:58:08.477Z",
+      "updated_at": "2026-10-02T14:37:39.177Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "server-side request boundary",
+        "AI chatbot platform application boundary"
+      ],
+      "named_entities": [
+        "HAVELSAN",
+        "Sef AI Chatbot Platform",
+        "CVE-2026-80464",
+        "TR-26-1241"
+      ],
+      "summary": "CVE Services published an SSRF issue in HAVELSAN Sef AI Chatbot Platform before 2.1.",
+      "upstream_routing": "Keep the security-specific advisory cluster locally; broad HAVELSAN product/company context belongs upstream if it is needed.",
+      "follow_up_note": "Ingest should collapse these same-vendor records into the existing cluster without over-expanding product background."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/havelsan-sef-ai-chatbot-platform-advisory-cluster.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-80298",
+      "visible_date": "2026-10-02T09:07:52.553Z",
+      "updated_at": "2026-10-02T17:16:29.516Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "data query boundary",
+        "AI chatbot platform application boundary"
+      ],
+      "named_entities": [
+        "HAVELSAN",
+        "Sef AI Chatbot Platform",
+        "CVE-2026-80298",
+        "TR-26-1241"
+      ],
+      "summary": "CVE Services published an SQL injection issue in HAVELSAN Sef AI Chatbot Platform before 2.1.",
+      "upstream_routing": "Keep the security-specific advisory cluster locally; broad HAVELSAN product/company context belongs upstream if it is needed.",
+      "follow_up_note": "Ingest should collapse these same-vendor records into the existing cluster without over-expanding product background."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-server-fetch-ssrf.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-104120",
+      "visible_date": "2026-10-02T02:15:18.514Z",
+      "updated_at": "2026-10-02T02:15:18.514Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "MCP fetch tool URL boundary",
+        "server-side network egress"
+      ],
+      "named_entities": [
+        "modelcontextprotocol/servers",
+        "mcp-server-fetch",
+        "mcp-server-everything",
+        "CVE-2026-104120"
+      ],
+      "summary": "CVE Services published an SSRF issue in mcp-server-fetch and mcp-server-everything through 2026.6.4 involving fetch_url URL handling.",
+      "upstream_routing": "Keep local SSRF/tool-egress implications; broad MCP server catalog context belongs upstream.",
+      "follow_up_note": "Verify against the GitHub issue and PR before changing durable mitigation text."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/ai-compressed-attack-timelines-controls.md",
+      "source_url": "https://news.microsoft.com/source/tag/security/",
+      "visible_date": "2026-10-02",
+      "updated_at": "2026-10-02",
+      "evidence_classification": "control change",
+      "affected_boundaries": [
+        "attack lifecycle timing",
+        "defender response window",
+        "AI-enabled reconnaissance and social engineering"
+      ],
+      "named_entities": [
+        "Microsoft",
+        "Microsoft Digital Defense Report 2026",
+        "Help Net Security",
+        "SC Media"
+      ],
+      "summary": "Microsoft source index and current coverage describe the 2026 Digital Defense Report as AI reshaping the cybersecurity landscape, including compressed attack timelines and faster attacker workflows.",
+      "upstream_routing": "Keep the local control implication for attack-timeline compression; broad Microsoft/report catalog context belongs in ai-wiki.",
+      "follow_up_note": "Ingest should cite the Microsoft report directly where available and avoid treating secondary coverage as the sole authority."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/airano-mcp-bridge-broken-access-control.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-32585",
+      "visible_date": "2026-10-02T14:42:08.710Z",
+      "updated_at": "2026-10-03T15:12:23.899Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "WordPress plugin authorization boundary",
+        "MCP bridge access control"
+      ],
+      "named_entities": [
+        "Airano MCP Bridge",
+        "WordPress",
+        "Patchstack",
+        "CVE-2026-32585"
+      ],
+      "summary": "CVE Services published and updated a missing authorization issue in Airano MCP Bridge through 2.11.0.",
+      "upstream_routing": "Keep the local MCP bridge access-control risk; broad WordPress plugin catalog details belong upstream only if needed.",
+      "follow_up_note": "Ingest should compare Patchstack details and CVE update time for concrete affected-version wording."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/claude-code-organization-policy-api-key-precedence.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-103012",
+      "visible_date": "2026-09-30T11:30:38.308Z",
+      "updated_at": "2026-09-30T14:28:45.094Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "organization policy enforcement",
+        "local credential precedence",
+        "coding-agent managed settings"
+      ],
+      "named_entities": [
+        "Anthropic",
+        "Claude Code",
+        "Claude Enterprise",
+        "Claude for Work",
+        "CVE-2026-103012",
+        "GHSA-gfvf-j8jh-jxxw"
+      ],
+      "summary": "CVE Services published a Claude Code policy-bypass condition where a locally stored API key could take precedence over valid Enterprise or Team sign-in for server-managed settings retrieval.",
+      "upstream_routing": "Keep local identity/policy enforcement implications; general Claude Code product details belong in ai-dev-wiki.",
+      "follow_up_note": "Ingest should retain the local-access precondition and unaffected endpoint-managed settings caveat."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-python-sdk-oauth-metadata-trust-flaw.md",
+      "source_url": "https://github.com/modelcontextprotocol/python-sdk/security/advisories/GHSA-qx49-fqc8-xw99",
+      "visible_date": "2026-09-28",
+      "updated_at": "2026-09-28",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "OAuth authorization-server metadata trust",
+        "MCP client credential routing",
+        "machine-to-machine client secrets"
+      ],
+      "named_entities": [
+        "Model Context Protocol Python SDK",
+        "mcp Python package",
+        "GHSA-qx49-fqc8-xw99",
+        "Cloud Security Alliance",
+        "Cycode"
+      ],
+      "summary": "GitHub Advisory GHSA-qx49-fqc8-xw99 disclosed that MCP Python SDK OAuth clients could send credentials to an authorization server chosen by the connected MCP server; CSA published an explanatory note on 2026-09-30.",
+      "upstream_routing": "Keep the local identity/security boundary and mitigation; broad MCP SDK entity context belongs upstream.",
+      "follow_up_note": "Ingest should preserve the distinction between patched versions and the requirement to bind issuers for unattended providers."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/moodle-ai-editor-image-generation-capability-bypass.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-102583",
+      "visible_date": "2026-09-30T08:36:12.710Z",
+      "updated_at": "2026-09-30T14:33:34.633Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "AI editor capability check",
+        "authenticated feature authorization"
+      ],
+      "named_entities": [
+        "Moodle",
+        "AI editor placement",
+        "CVE-2026-102583",
+        "Red Hat"
+      ],
+      "summary": "CVE Services published a Moodle AI editor image-generation capability bypass allowing authenticated users without the required capability to invoke image generation.",
+      "upstream_routing": "Keep local AI-feature authorization implications; broad Moodle project context belongs upstream if needed.",
+      "follow_up_note": "Ingest should compare Moodle forum/MDL-88587 references for affected release and fix details."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/obot-composite-mcp-route-authorization-bypass.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-103758",
+      "visible_date": "2026-10-01T10:42:26.638Z",
+      "updated_at": "2026-10-01T14:35:10.239Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "MCP route authorization",
+        "authenticated role boundary",
+        "composite MCP proxy access"
+      ],
+      "named_entities": [
+        "Obot",
+        "CVE-2026-103758",
+        "GHSA-6fwv-3h4c-37j9",
+        "VulnCheck"
+      ],
+      "summary": "CVE Services published an Obot authorization bypass where checkUI deny-list coverage omitted the /mcp-connect-composite/ route.",
+      "upstream_routing": "Keep local MCP route authorization analysis; broad Obot product context belongs upstream.",
+      "follow_up_note": "Ingest should verify affected versions 0.21.1 through 0.24.1 and patched route behavior."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/jetbrains-rider-ai-assistant-skill-auto-update.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100265",
+      "visible_date": "2026-09-30T15:17:50.499Z",
+      "updated_at": "2026-09-30T15:48:39.368Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "IDE extension/skill supply chain",
+        "AI assistant update consent"
+      ],
+      "named_entities": [
+        "JetBrains Rider",
+        "JetBrains AI Assistant",
+        "CVE-2026-100265"
+      ],
+      "summary": "CVE Services published a JetBrains Rider issue where AI Assistant could auto-update third-party skills without user confirmation before 2026.2.1.",
+      "upstream_routing": "Keep local AI-assistant supply-chain/consent boundary; broad JetBrains product details belong upstream.",
+      "follow_up_note": "Ingest should validate the issue against JetBrains issues-fixed page and avoid assuming exploitation."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/gitlab-ai-gateway-prompt-template-sandbox-escape.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-90970",
+      "visible_date": "2026-10-02T14:34:49.558Z",
+      "updated_at": "2026-10-02T16:48:01.744Z",
+      "evidence_classification": "disclosed vulnerability",
+      "affected_boundaries": [
+        "prompt template sandbox",
+        "AI Gateway execution boundary",
+        "Duo Agent Platform authenticated access"
+      ],
+      "named_entities": [
+        "GitLab",
+        "GitLab AI Gateway",
+        "Duo Agent Platform",
+        "CVE-2026-90970"
+      ],
+      "summary": "CVE Services published a GitLab AI Gateway vulnerability where authenticated Duo Agent Platform users could escape the prompt template sandbox via crafted flow configuration and achieve command execution.",
+      "upstream_routing": "Keep local prompt-sandbox/security implications; broad GitLab release context belongs in ai-dev-wiki if needed.",
+      "follow_up_note": "Ingest should compare GitLab work item and release notes for patched versions 19.2.4, 19.3.2, and 19.4.1."
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/agentic-web-retrieval-government-probing.md",
+      "source_url": "https://www.bleepingcomputer.com/news/security/autonomous-ai-agents-tried-to-hack-us-canadian-government-websites/",
+      "visible_date": "2026-10-01",
+      "updated_at": "2026-10-01",
+      "evidence_classification": "demonstrated research",
+      "affected_boundaries": [
+        "agentic web retrieval",
+        "public-sector web application probing",
+        "egress and anti-abuse controls"
+      ],
+      "named_entities": [
+        "Transluce",
+        "BleepingComputer",
+        "Canadian Centre for Cyber Security",
+        "U.S. Department of Education",
+        "Library and Archives Canada"
+      ],
+      "summary": "BleepingComputer reported Transluce findings that autonomous AI agents attempted SQL injection and other probing against U.S. and Canadian government websites; public reporting says no non-public access was found.",
+      "upstream_routing": "Keep security-specific agentic probing and incident-control implications locally; broad AI agent attribution/background belongs upstream.",
+      "follow_up_note": "Ingest should cite Transluce and Canadian Cyber Centre statements directly and retain attribution caveats."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/cloud-ai-system-compromise-threat-taxonomy.md",
+      "candidate_source_url": "https://cloudsecurityalliance.org/artifacts/top-threats-to-cloud-computing-2026",
+      "reason": "No visible source update inside the 2026-09-27 through 2026-10-03 window was found during this run; CSA research landing page is too broad for a durable leaf update."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/evaluation-artifact-repository-agent-coordination.md",
+      "candidate_source_url": "https://openai.com/index/pacing-model-development-cyber-capabilities/",
+      "reason": "Cited evaluation-artifact/coordinated-agent sources are August 2026 or otherwise outside the strict seven-day window."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/litellm-supply-chain-secret-exposure.md",
+      "candidate_source_url": "https://socradar.io/blog/litellm-supply-chain-attack/",
+      "reason": "Search surfaced a Sep 25 2026 update, which is outside the strict seven-day window for the Oct 3 local run; other cited LiteLLM sources are March or August 2026."
+    }
+  ],
+  "federation_notes": [
+    "Security-specific vulnerability, control, and incident implications remain local. Broad AI entities, product catalogs, and general development practices should route to ai-wiki or ai-dev-wiki if expanded during ingest."
+  ],
+  "follow_up_notes": [
+    "Normal raw-source ingest should update durable leaves only after source comparison and verification.",
+    "Do not edit docs/wiki from this collector output until a separate ingest pass qualifies the deltas."
+  ]
+}
