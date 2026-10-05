@@ -2,7 +2,7 @@
 
 ## Current Understanding
 
-The active October 2026 digest currently includes item-level October 3, October 2, and October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
+The active October 2026 digest currently includes item-level October 4, October 3, October 2, and October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
 
 Monthly digests summarize processed security updates and link to durable local leaves for detail. Collectors save raw evidence first; ingest updates a digest only after the local security analysis and federation routing are complete.
 
@@ -19,6 +19,8 @@ The active digest records each independently changing security item or closely c
 
 - [October 3 topic collector source](../../../raw/processed/2026-10-03/ai-security-wiki-topic-news-collector-2026-10-03T233152Z.json)
 - [October 3 leaf update watch source](../../../raw/processed/2026-10-03/ai-security-wiki-leaf-update-watch-20261004T000312Z.json)
+- [October 4 topic collector source](../../../raw/processed/2026-10-04/ai-security-wiki-topic-news-collector-2026-10-04T233152Z.json)
+- [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json)
 - [October 2 topic collector source](../../../raw/processed/2026-10-02/ai-security-wiki-topic-news-collector-2026-10-02T233227Z.json)
 - [October 2 leaf update watch source](../../../raw/processed/2026-10-02/ai-security-wiki-leaf-update-watch-20261003T000329Z.json)
 - [October 1 topic collector source](../../../raw/processed/2026-10-01/ai-security-wiki-topic-news-collector-2026-10-01T233213Z.json)
@@ -115,6 +117,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-05 with item-level October 4 entries for InternLM MindSearch, Mindio Magic MCP, LaraDashboard, aiir Policy Gate, [Zammad AI-driven zero-day breach](../threats-and-attacks/zammad-ai-driven-zero-day-breach.md), and Custom GPT ClickFix reporting; duplicate October 3 watcher repeats stayed provenance-only and ordering remains reverse chronological.
 - Updated on 2026-10-04 with item-level October 3 entries for [SupportCandy AI Customer Support stored XSS](../data-and-privacy/supportcandy-ai-customer-support-stored-xss.md), [SupportCandy AI Customer Support SQL injection](../data-and-privacy/supportcandy-ai-customer-support-sql-injection.md), WPZOOM Connect AI Chat, and Alt Text AI; October 3 watcher repeats stayed provenance-only.
 - Updated on 2026-10-03 with item-level October 2 entries for AWS Security Agent MCP Server, modelcontextprotocol fetch servers, HAVELSAN Sef AI Chatbot Platform, GitLab AI Gateway, Airano MCP Bridge, Microsoft AI attack-timeline controls, and agentic government-site probing; watcher repeats stayed provenance-only.
 - Updated on 2026-10-02 with the October 2026 digest and item-level October 1 entries; digest granularity remains item-level, reverse chronological, and not grouped by raw artifact, collector run, sweep category, or ingest batch.

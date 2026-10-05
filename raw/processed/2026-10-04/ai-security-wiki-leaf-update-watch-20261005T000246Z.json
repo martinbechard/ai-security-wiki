@@ -1,0 +1,283 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "exclusions": [
+    {
+      "checked": [
+        "https://arxiv.org/abs/2608.22652",
+        "https://hol.org/guard/security/slopsquatting",
+        "https://cyborb.ai/blog/slopsquatting"
+      ],
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md",
+      "reason": "No qualifying public update with exact visible date in the 2026-09-28 through 2026-10-04 window found; search returned stale September sources, ambiguous \u201clast week\u201d pages, and Reddit/tool announcements treated as insufficient for durable local security update."
+    },
+    {
+      "checked": [
+        "https://stolen-thoughts.com/paper.pdf",
+        "https://thehackernews.com/2026/08/openai-anthropic-google-api-flaw-let.html",
+        "https://www.wired.com/story/a-new-trick-reveals-ai-models-inner-thoughts/"
+      ],
+      "leaf_id": "docs/wiki/model-and-prompt-security/encrypted-reasoning-trace-replay.md",
+      "reason": "No exact in-window update found. The cited paper and coverage are August 2026; Anthropic September report date was month-only in the opened page for this specific leaf, so it was excluded as ambiguous."
+    },
+    {
+      "checked": [
+        "https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/",
+        "https://techcommunity.microsoft.com/blog/coreinfrastructureandsecurityblog/unified-ai-defense-security-copilot-project-perception-and-mdash/4547124"
+      ],
+      "leaf_id": "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md",
+      "reason": "No qualifying in-window update found for the Microsoft/agentic vulnerability-management assurance sources; October search results were stale, derivative, or broad product/model listings without a new control change."
+    },
+    {
+      "checked": [
+        "https://www.federalregister.gov/documents/2026/08/12/2026-16371/request-for-information-rfi-on-modernizing-the-national-vulnerability-database-in-the-age-of",
+        "https://www.nist.gov/blogs/cybersecurity-insights/shaping-nvd-future-we-need-your-feedback-ai-enabled-vulnerability"
+      ],
+      "leaf_id": "docs/wiki/testing-and-assurance/ai-enabled-vulnerability-management-modernization.md",
+      "reason": "No qualifying in-window update found; NVD modernization sources remained August 2026 or older and no exact October 2026 source established a new local security-control change."
+    },
+    {
+      "checked": [
+        "https://arxiv.org/abs/2608.16187",
+        "https://www.techradar.com/pro/security/shock-horror-ai-generated-security-patches-fall-short-of-actually-solving-all-the-problems-they-were-meant-to-fix"
+      ],
+      "leaf_id": "docs/wiki/testing-and-assurance/ai-generated-code-security-assurance.md",
+      "reason": "No exact in-window update found; recent search result for AI-generated patches was dated only \u201clast month\u201d and not accepted without a visible date inside the 7-day window."
+    },
+    {
+      "checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-15903",
+        "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/"
+      ],
+      "leaf_id": "docs/wiki/testing-and-assurance/browser-runtime-patch-cadence-under-ai-bug-hunting.md",
+      "reason": "No qualifying in-window update found; direct CVE Services record for CVE-2026-15903 was published July 20 and updated July 24, outside the window."
+    },
+    {
+      "checked": [
+        "https://secureaialliance.org/",
+        "https://www.linuxfoundation.org/blog/open-secure-ai-alliance-joins-the-linux-foundation-to-build-a-shared-open-defense-stack-for-the-ai-era"
+      ],
+      "leaf_id": "docs/wiki/testing-and-assurance/open-defensive-ai-security-infrastructure.md",
+      "reason": "No qualifying in-window update found; Linux Foundation transition and Open Secure AI Alliance sources were September 14 or older, and current alliance homepage lacked a visible in-window update date."
+    },
+    {
+      "checked": [
+        "https://blog.frontier.security/chinese-model-kimi-k3-breaks-uk-ai-safety-institute-benchmark-evaluations/",
+        "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
+        "https://www.anthropic.com/threat-intelligence-report-september-2026?page=1"
+      ],
+      "leaf_id": "docs/wiki/testing-and-assurance/public-cyber-capability-assessments.md",
+      "reason": "No exact in-window update found for public cyber-capability assessment sources; Anthropic September report included relevant AI cyber capability content but lacked an exact visible publication date in the opened evidence."
+    },
+    {
+      "checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-65400",
+        "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
+        "https://www.eweek.com/news/moonshot-ai-kimi-k3-redis-rce-exploits-apac-china/"
+      ],
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+      "reason": "No qualifying in-window update found. The page-cited CVE identifier checked through CVE Services was unrelated to the Kimi/Redis story and stale, and the Kimi exploit-development sources were July 2026."
+    }
+  ],
+  "federation_review": "docs/wiki/federation.md reviewed. Broad product/company/model/framework context routes to ai-wiki; general AI-development practice routes to ai-dev-wiki; this artifact keeps only security-specific boundaries, mitigations, evidence, and routing notes.",
+  "follow_up_notes": [
+    "Reconcile this artifact with raw/2026-10-04/ai-security-wiki-topic-news-collector-2026-10-04T233152Z.json before ingesting overlapping CVEs.",
+    "Find primary Huntress evidence before promoting the Custom GPT ClickFix item beyond unverified-claim status.",
+    "Follow DIVD/Zammad primary advisories for CVE-2026-102489 and CVE-2026-102490 before durable wiki updates."
+  ],
+  "leaf_universe_count": 555,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "SupportCandy AI Customer Support Ticket System & Live Chatbot Agent <= 3.5.3",
+        "WordPress authenticated custom/agent permission boundary",
+        "Ticket list sort_by SQL query"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with existing October 4 topic collector before ingesting to avoid duplicate CVE prose.",
+      "leaf_id": "docs/wiki/data-and-privacy/supportcandy-ai-customer-support-sql-injection.md",
+      "named_entities": [
+        "SupportCandy",
+        "Wordfence",
+        "CVE-2026-94539",
+        "psmplugins"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94539",
+      "summary": "CVE Services published SupportCandy <= 3.5.3 time-based SQL injection via sort_by, requiring Subscriber-or-higher WordPress role plus SupportCandy Agent Assign Agents permission; Wordfence references identify fixed version 3.5.4.",
+      "upstream_routing": "Keep local SQL-injection security boundary and remediation note; broad WordPress plugin catalog context belongs upstream.",
+      "visible_date": "2026-10-03T02:25:35.556Z",
+      "visible_updated_at": "2026-10-03T15:42:47.170Z"
+    },
+    {
+      "affected_boundaries": [
+        "SupportCandy AI Customer Support Ticket System & Live Chatbot Agent <= 3.5.3",
+        "WordPress Subscriber+ authenticated input boundary",
+        "Customer custom-field name rendering"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Check overlap with current topic collector before durable wiki ingest.",
+      "leaf_id": "docs/wiki/data-and-privacy/supportcandy-ai-customer-support-stored-xss.md",
+      "named_entities": [
+        "SupportCandy",
+        "Wordfence",
+        "CVE-2026-94378",
+        "psmplugins"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94378",
+      "summary": "CVE Services published SupportCandy <= 3.5.3 stored XSS via the name parameter, exploitable by Subscriber-level authenticated users when the default disabled registration setting leaves the chain reachable; fixed version is 3.5.4.",
+      "upstream_routing": "Keep the local stored-XSS boundary and mitigation; route broad plugin/product background upstream.",
+      "visible_date": "2026-10-03T02:25:35.234Z",
+      "visible_updated_at": "2026-10-03T15:42:47.299Z"
+    },
+    {
+      "affected_boundaries": [
+        "WPZOOM Connect: AI Chat, Click to Chat, Social Icons & Share Buttons <= 4.7.3",
+        "Unauthenticated REST customer endpoint",
+        "HMAC signature domain-separation boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should reconcile direct CVE, Wordfence, GitHub commit, and WordPress Trac references.",
+      "leaf_id": "docs/wiki/data-and-privacy/wpzoom-connect-ai-chat-customer-data-exposure.md",
+      "named_entities": [
+        "WPZOOM Connect",
+        "Wordfence",
+        "CVE-2026-100149"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100149",
+      "summary": "CVE Services published WPZOOM Connect unauthenticated sensitive information disclosure via HMAC signature collision/missing domain separation in /yamidoo/v1/customer for versions <= 4.7.3.",
+      "upstream_routing": "Keep customer-data exposure and fixed-boundary details locally; route general WPZOOM plugin context upstream.",
+      "visible_date": "2026-10-03T05:29:17.935Z",
+      "visible_updated_at": "2026-10-03T15:42:43.954Z"
+    },
+    {
+      "affected_boundaries": [
+        "Alt Text AI <= 1.10.41",
+        "WordPress Subscriber+ authenticated AJAX boundary",
+        "post_content authorization and API-credit consumption boundary"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should verify patched version and whether the nonce exposure detail is carried by direct advisory sources.",
+      "leaf_id": "docs/wiki/identity-and-access/alt-text-ai-post-content-authorization-bypass.md",
+      "named_entities": [
+        "Alt Text AI",
+        "Wordfence",
+        "CVE-2026-91108"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-91108",
+      "summary": "CVE Services published Alt Text AI <= 1.10.41 missing authorization for atai_enrich_post_content, allowing Subscriber+ attackers to overwrite post_content with LLM-generated text influenced by attacker-controlled keywords and consume owner API credits.",
+      "upstream_routing": "Keep authorization, content-integrity, and API-credit abuse implications locally; general plugin context belongs upstream.",
+      "visible_date": "2026-10-03T05:29:13.391Z",
+      "visible_updated_at": "2026-10-03T15:42:45.733Z"
+    },
+    {
+      "affected_boundaries": [
+        "Zammad self-hosted/helpdesk deployments before version 7",
+        "Session hijacking, remote code execution, and root escalation chain",
+        "Incident response timing for autonomous attacker execution"
+      ],
+      "evidence_classification": "confirmed_exploitation",
+      "follow_up_note": "Follow DIVD primary updates and CVE records before ingest; this record is security-specific and likely deserves a local leaf or update.",
+      "leaf_id": "docs/wiki/threats-and-attacks/unattended-ai-agent-attack-automation.md",
+      "named_entities": [
+        "DIVD",
+        "Zammad",
+        "Merlon Security",
+        "BleepingComputer",
+        "CVE-2026-102489",
+        "CVE-2026-102490"
+      ],
+      "source_url": "https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/",
+      "summary": "BleepingComputer reported DIVD statements that two Zammad zero-days, CVE-2026-102489 and CVE-2026-102490, enabled an AI-driven breach where the agent made privilege-escalation and exfiltration decisions in seconds; DIVD recommended upgrading Zammad to version 7 or taking vulnerable instances offline.",
+      "upstream_routing": "Keep autonomous-attack and incident-response implications locally; route broad Zammad product background upstream.",
+      "visible_date": "2026-09-30T15:49:00-04:00",
+      "visible_updated_at": null
+    },
+    {
+      "affected_boundaries": [
+        "Custom GPT / AI-hosted artifact trust boundary",
+        "ClickFix social-engineering flow",
+        "RAT delivery front end"
+      ],
+      "evidence_classification": "unverified_claim",
+      "follow_up_note": "Treat as provisional until primary Huntress or platform-takedown evidence is found.",
+      "leaf_id": "docs/wiki/threats-and-attacks/ai-hosted-artifact-malware-delivery.md",
+      "named_entities": [
+        "Cloud Security Alliance",
+        "Huntress",
+        "ChatGPT Custom GPTs",
+        "ClickFix"
+      ],
+      "source_url": "https://labs.cloudsecurityalliance.org/research/alt-ciso-briefing-2026-10-01/",
+      "summary": "Cloud Security Alliance daily briefing reported that Huntress tracked attackers weaponizing ChatGPT Custom GPTs as a ClickFix RAT delivery front end, with the first-party AI platform feature acting as lure credibility; primary Huntress evidence was not located in this run.",
+      "upstream_routing": "Keep malware-delivery and AI-hosted artifact trust boundary locally; route general ChatGPT product context upstream.",
+      "visible_date": "2026-10-01",
+      "visible_updated_at": null
+    }
+  ],
+  "raw_only_boundaries": "No docs/wiki edits and no raw/processed writes were made by this collector artifact.",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-10-05T00:02:46Z",
+  "selected_leaf_ids": [
+    "docs/wiki/data-and-privacy/supportcandy-ai-customer-support-sql-injection.md",
+    "docs/wiki/data-and-privacy/supportcandy-ai-customer-support-stored-xss.md",
+    "docs/wiki/data-and-privacy/wpzoom-connect-ai-chat-customer-data-exposure.md",
+    "docs/wiki/identity-and-access/alt-text-ai-post-content-authorization-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/slopsquatting-package-hallucination-risk.md",
+    "docs/wiki/model-and-prompt-security/encrypted-reasoning-trace-replay.md",
+    "docs/wiki/testing-and-assurance/agentic-vulnerability-management-assurance.md",
+    "docs/wiki/testing-and-assurance/ai-enabled-vulnerability-management-modernization.md",
+    "docs/wiki/testing-and-assurance/ai-generated-code-security-assurance.md",
+    "docs/wiki/testing-and-assurance/browser-runtime-patch-cadence-under-ai-bug-hunting.md",
+    "docs/wiki/testing-and-assurance/open-defensive-ai-security-infrastructure.md",
+    "docs/wiki/testing-and-assurance/public-cyber-capability-assessments.md",
+    "docs/wiki/threats-and-attacks/ai-assisted-exploit-development-acceleration.md",
+    "docs/wiki/threats-and-attacks/ai-hosted-artifact-malware-delivery.md",
+    "docs/wiki/threats-and-attacks/unattended-ai-agent-attack-automation.md"
+  ],
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, then stable relative path",
+  "sources_checked": [
+    "https://arxiv.org/abs/2608.16187",
+    "https://arxiv.org/abs/2608.22652",
+    "https://blog.frontier.security/chinese-model-kimi-k3-breaks-uk-ai-safety-institute-benchmark-evaluations/",
+    "https://blogs.microsoft.com/blog/2026/07/27/rethinking-security-for-the-age-of-ai/",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-100149",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-15903",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-65400",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-91108",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-94378",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-94539",
+    "https://cyborb.ai/blog/slopsquatting",
+    "https://hol.org/guard/security/slopsquatting",
+    "https://labs.cloudsecurityalliance.org/research/alt-ciso-briefing-2026-10-01/",
+    "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/",
+    "https://secureaialliance.org/",
+    "https://stolen-thoughts.com/paper.pdf",
+    "https://techcommunity.microsoft.com/blog/coreinfrastructureandsecurityblog/unified-ai-defense-security-copilot-project-perception-and-mdash/4547124",
+    "https://thehackernews.com/2026/07/kimi-k3-agents-found-redis-zero-days.html",
+    "https://thehackernews.com/2026/08/openai-anthropic-google-api-flaw-let.html",
+    "https://www.anthropic.com/threat-intelligence-report-september-2026?page=1",
+    "https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/",
+    "https://www.eweek.com/news/moonshot-ai-kimi-k3-redis-rce-exploits-apac-china/",
+    "https://www.federalregister.gov/documents/2026/08/12/2026-16371/request-for-information-rfi-on-modernizing-the-national-vulnerability-database-in-the-age-of",
+    "https://www.linuxfoundation.org/blog/open-secure-ai-alliance-joins-the-linux-foundation-to-build-a-shared-open-defense-stack-for-the-ai-era",
+    "https://www.nist.gov/blogs/cybersecurity-insights/shaping-nvd-future-we-need-your-feedback-ai-enabled-vulnerability",
+    "https://www.nist.gov/news-events/news/2026/07/uk-aisi-caisi-preliminary-assessment-kimi-k3s-cyber-capabilities",
+    "https://www.techradar.com/pro/security/shock-horror-ai-generated-security-patches-fall-short-of-actually-solving-all-the-problems-they-were-meant-to-fix",
+    "https://www.wired.com/story/a-new-trick-reveals-ai-models-inner-thoughts/"
+  ],
+  "window": {
+    "end": "2026-10-04",
+    "rule": "visible publication or update date within last 7 days; ambiguous, future, missing, and boundary-only dates excluded",
+    "start": "2026-09-28"
+  }
+}

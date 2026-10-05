@@ -13,6 +13,8 @@ The [October 3 topic collector source](../../../raw/processed/2026-10-03/ai-secu
 
 The CVE record says subscriber-level users can obtain a nonce from ordinary admin pages and invoke an AJAX action that overwrites the `post_content` of any post or page, including content they do not own. The generated text can be influenced by attacker-controlled keywords, enabling unauthorized content mutation, black-hat SEO manipulation, and consumption of the site owner's paid AltText.ai API credits.
 
+The [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json) adds direct CVE Services publication/update evidence for the same `atai_enrich_post_content` authorization and API-credit boundary. It corroborates the existing leaf; it does not create a separate digest item.
+
 ## Security Impact
 
 - Threat: low-privilege users can trigger model-backed content generation against pages outside their ownership boundary.
@@ -25,6 +27,7 @@ The CVE record says subscriber-level users can obtain a nonce from ordinary admi
 ## Authoritative Sources
 
 - [October 3 topic collector source](../../../raw/processed/2026-10-03/ai-security-wiki-topic-news-collector-2026-10-03T233152Z.json)
+- [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json)
 - [CVE-2026-91108 record](https://cveawg.mitre.org/api/cve/CVE-2026-91108)
 - [NVD CVE-2026-91108](https://nvd.nist.gov/vuln/detail/CVE-2026-91108)
 - [Wordfence CVE-2026-91108 advisory](https://www.wordfence.com/threat-intel/vulnerabilities/id/216e3087-52f1-4b2e-a31c-0c2ddf41aefb?source=cve)
@@ -59,3 +62,4 @@ The CVE record says subscriber-level users can obtain a nonce from ordinary admi
 ## Maintenance Notes
 
 - Created on 2026-10-04 from the [October 3 topic collector source](../../../raw/processed/2026-10-03/ai-security-wiki-topic-news-collector-2026-10-03T233152Z.json) as an AI-generated-content authorization leaf.
+- Updated on 2026-10-05 from the [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json) with CVE Services publication/update evidence for the same post-content authorization and API-credit boundary; no duplicate digest item was needed.

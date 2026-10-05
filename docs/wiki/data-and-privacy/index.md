@@ -9,6 +9,8 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [SupportCandy AI Customer Support stored XSS](supportcandy-ai-customer-support-stored-xss.md)
 - [SupportCandy AI Customer Support SQL injection](supportcandy-ai-customer-support-sql-injection.md)
 - [WPZOOM Connect AI Chat customer data exposure](wpzoom-connect-ai-chat-customer-data-exposure.md)
+- [Mindio Magic MCP sensitive data exposure](mindio-magic-mcp-sensitive-data-exposure.md)
+- [LaraDashboard AI provider key settings API exposure](laradashboard-ai-provider-key-settings-api-exposure.md)
 - [Joyland AI GeTui hard-coded credentials](joyland-ai-getui-hard-coded-credentials.md)
 - [Joyland AI WebView JavaScript injection](joyland-ai-webview-javascript-injection.md)
 - [Joyland AI TLS certificate validation bypass](joyland-ai-tls-certificate-validation-bypass.md)
@@ -112,6 +114,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-10-05 with Mindio Magic MCP sensitive-data exposure, LaraDashboard AI provider-key exposure, and October 4 watcher provenance for SupportCandy and WPZOOM.
 - Updated on 2026-10-04 with split SupportCandy AI Customer Support stored-XSS and SQL-injection leaves plus the WPZOOM Connect AI Chat customer-data exposure leaf.
 - Updated on 2026-10-02 with split Joyland AI mobile leaves for GeTui credentials, WebView JavaScript injection, TLS certificate validation, hostname verification, cleartext HTTP traffic, and advertisement WebView invalid SSL certificates.
 - Updated on 2026-09-29 with Token Optimizer MCP unauthenticated dashboard log traversal.

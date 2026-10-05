@@ -13,6 +13,8 @@ The [October 3 topic collector source](../../../raw/processed/2026-10-03/ai-secu
 
 The CVE record says exploitation requires the attacker to register a WooCommerce customer or subscriber-level account with a crafted email address so the inline JavaScript identify payload prints an `x-yamidoo-signature` that can pass `verify_request()` for an arbitrary victim. After the attacker obtains that signature, the customer endpoint discloses the victim customer card without requiring authentication to that victim account. The exposed data can include name, WordPress user ID, order history, order totals, purchased products, payment method labels, and EDD Software Licensing license keys with status and activation counts.
 
+The [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json) adds direct CVE Services publication/update evidence for the same customer endpoint, HMAC signature collision, and missing domain-separation boundary. It is corroborating provenance for the existing leaf, not a separate digest item.
+
 ## Security Impact
 
 - Threat: a registered WooCommerce customer or subscriber can turn their own identify payload into a signature that exposes another customer's support and licensing data through the chat customer endpoint.
@@ -25,6 +27,7 @@ The CVE record says exploitation requires the attacker to register a WooCommerce
 ## Authoritative Sources
 
 - [October 3 topic collector source](../../../raw/processed/2026-10-03/ai-security-wiki-topic-news-collector-2026-10-03T233152Z.json)
+- [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json)
 - [CVE-2026-100149 record](https://cveawg.mitre.org/api/cve/CVE-2026-100149)
 - [NVD CVE-2026-100149](https://nvd.nist.gov/vuln/detail/CVE-2026-100149)
 - [Wordfence CVE-2026-100149 advisory](https://www.wordfence.com/threat-intel/vulnerabilities/id/e0c9026c-d83e-41ac-be3a-93a33c32c47b?source=cve)
@@ -59,3 +62,4 @@ The CVE record says exploitation requires the attacker to register a WooCommerce
 ## Maintenance Notes
 
 - Created on 2026-10-04 from the [October 3 topic collector source](../../../raw/processed/2026-10-03/ai-security-wiki-topic-news-collector-2026-10-03T233152Z.json) as an AI chat customer-data exposure leaf.
+- Updated on 2026-10-05 from the [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json) with CVE Services publication/update evidence for the same signature-domain customer-data exposure; no duplicate digest item was needed.

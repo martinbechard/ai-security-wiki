@@ -1,0 +1,360 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "agent_identity": "Rowan Northstar",
+  "run_timestamp": "2026-10-04T23:31:52Z",
+  "cutoff_window": {
+    "start": "2026-10-02T23:31:52Z",
+    "end": "2026-10-04T23:31:52Z",
+    "basis": "Items require a visible publication or update timestamp within the exact 48-hour window. Date-only, older, future, ambiguous, or already-captured items are excluded."
+  },
+  "repository_boundary": {
+    "target_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "modified_repository_paths": [
+      "raw/2026-10-04/ai-security-wiki-topic-news-collector-2026-10-04T233152Z.json"
+    ],
+    "not_modified": [
+      "docs/wiki",
+      "raw/processed"
+    ],
+    "federation_summary": "ai-security-wiki owns security-specific threats, affected boundaries, mitigations, assurance, incidents, and risk implications. Broad AI entities belong upstream in ai-wiki; general AI-assisted development practices belong upstream in ai-dev-wiki."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_queries": [
+    {
+      "source": "NVD API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-02T00:00:00.000&pubEndDate=2026-10-04T23:59:59.999&keywordSearch=AI",
+      "purpose": "Find in-window CVEs mentioning AI and AI-branded products."
+    },
+    {
+      "source": "NVD API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-02T00:00:00.000&pubEndDate=2026-10-04T23:59:59.999&keywordSearch=MCP",
+      "purpose": "Find in-window CVEs mentioning Model Context Protocol or MCP products."
+    },
+    {
+      "source": "NVD API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-02T00:00:00.000&pubEndDate=2026-10-04T23:59:59.999&keywordSearch=agent",
+      "purpose": "Find in-window CVEs mentioning agent frameworks, agent control planes, or delegated action."
+    },
+    {
+      "source": "NVD API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-02T00:00:00.000&pubEndDate=2026-10-04T23:59:59.999&keywordSearch=prompt",
+      "purpose": "Find in-window prompt-template, prompt-injection, or prompt-data exposure records."
+    },
+    {
+      "source": "NVD API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-02T00:00:00.000&pubEndDate=2026-10-04T23:59:59.999&keywordSearch=LLM",
+      "purpose": "Find in-window LLM-specific vulnerability records."
+    },
+    {
+      "source": "Public web search",
+      "url": "https://www.google.com/search?q=October+4+2026+AI+security+vulnerability+agent+CVE",
+      "purpose": "Check for public AI security incidents, advisories, or governance updates beyond CVE databases."
+    },
+    {
+      "source": "Public web search",
+      "url": "https://www.google.com/search?q=October+4+2026+MCP+vulnerability+CVE",
+      "purpose": "Check for new public MCP security items beyond NVD keyword results."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "mindsearch-planner-agent-code-injection-cve-2026-105135",
+      "title": "InternLM MindSearch Planner Agent code injection",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105135",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105135",
+        "https://vuldb.com/vuln/413352",
+        "https://vuldb.com/cve/CVE-2026-105135"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-105135",
+          "date": "2026-10-04T06:15:12.388Z",
+          "date_type": "datePublished"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105135",
+          "date": "2026-10-04T07:16:33.693Z",
+          "date_type": "published"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-105135 reports code injection in InternLM MindSearch 0.1.0. The affected component is the Planner Agent, specifically ExecutionAction.run in mindsearch/agent/graph.py, where manipulation of the inputs argument can lead to remotely initiated code injection. The CVE record says exploit details are publicly disclosed and the vendor did not respond.",
+      "evidence_classification": "primary vulnerability record with NVD corroboration and third-party advisory references",
+      "affected_boundary_or_version": "InternLM MindSearch 0.1.0; Planner Agent; ExecutionAction.run; mindsearch/agent/graph.py; inputs argument.",
+      "why_it_matters_for_ai_security": "MindSearch is an AI search/agent system, and the vulnerability turns planner-agent input handling into a code execution boundary. It belongs locally as an agent runtime and tool-execution security issue rather than as general framework catalog coverage.",
+      "named_entities": [
+        "InternLM",
+        "MindSearch",
+        "Planner Agent",
+        "ExecutionAction.run",
+        "VulDB",
+        "NVD",
+        "CVE-2026-105135"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad InternLM or MindSearch product context belongs upstream if a durable entity page is needed.",
+        "ai_dev_wiki": "General agent-framework selection or search-agent development practice belongs upstream only if later synthesis needs it.",
+        "ai_security_wiki": "Owns the Planner Agent code-injection boundary, affected version, exploit-public status, and mitigation follow-up."
+      },
+      "confidence_notes": "High confidence on in-window timing and relevance from CVE/NVD records. Patch or fixed-version evidence was not found in the fetched CVE data.",
+      "follow_up_actions": [
+        "Create or update an agent-and-tool-security or infrastructure-and-supply-chain leaf for MindSearch Planner Agent code injection.",
+        "During ingest, check for an upstream InternLM/MindSearch advisory, patched release, or repository commit before writing durable remediation language.",
+        "Avoid reproducing exploit steps; keep synthesis focused on control boundary, affected version, and remediation status."
+      ]
+    },
+    {
+      "id": "mindio-magic-mcp-sensitive-data-exposure-cve-2026-104402",
+      "title": "Mindio Magic MCP sensitive data exposure",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-104402",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-104402",
+        "https://patchstack.com/database/wordpress/plugin/mindio-magic-mcp/vulnerability/wordpress-mindio-magic-mcp-plugin-0-5-6-sensitive-data-exposure-vulnerability?_s_id=cve"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-104402",
+          "date": "2026-10-04T15:08:43.541Z",
+          "date_type": "datePublished"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-104402",
+          "date": "2026-10-04T16:16:28.587Z",
+          "date_type": "published"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-104402 reports insertion of sensitive information into sent data in the WordPress Mindio Magic MCP plugin. The affected package is mindio-magic-mcp through 0.5.6, with the CVE record marking 0.7.1 as unaffected.",
+      "evidence_classification": "primary CVE record with NVD and Patchstack advisory reference",
+      "affected_boundary_or_version": "Mindio Magic MCP / mindio-magic-mcp through 0.5.6; fixed or unaffected status indicated at 0.7.1.",
+      "why_it_matters_for_ai_security": "The record concerns an MCP WordPress plugin and a sensitive-data transmission boundary. MCP bridges can expose prompts, tool output, credentials, or connected application data, so sensitive-data handling belongs in the local AI security lens.",
+      "named_entities": [
+        "farvisun",
+        "Mindio Magic MCP",
+        "mindio-magic-mcp",
+        "Patchstack",
+        "NVD",
+        "CVE-2026-104402"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad WordPress plugin or product background belongs upstream only if entity context is needed.",
+        "ai_dev_wiki": "No general AI-assisted development practice routing identified.",
+        "ai_security_wiki": "Owns MCP sensitive-data exposure, affected version, and fixed-version reconciliation."
+      },
+      "confidence_notes": "High confidence on in-window timing and MCP relevance. Patchstack detail page was not fully fetched in this run beyond the CVE reference, so detailed data-flow wording should be rechecked during ingest.",
+      "follow_up_actions": [
+        "Create or update a data-and-privacy leaf for Mindio Magic MCP sensitive-data exposure.",
+        "Recheck Patchstack and WordPress plugin release notes for concrete exposed data classes and the first fixed release.",
+        "Deduplicate with any future leaf-update-watch record for the same CVE."
+      ]
+    },
+    {
+      "id": "laradashboard-ai-provider-key-settings-api-exposure-cve-2026-105129",
+      "title": "LaraDashboard settings API exposes AI provider keys",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105129",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105129",
+        "https://github.com/laradashboard/laradashboard/security/advisories/GHSA-xgmw-7ppx-v7hq",
+        "https://github.com/laradashboard/laradashboard/releases/tag/v1.4.8",
+        "https://www.vulncheck.com/advisories/laradashboard-before-1.4.8-incorrect-authorization-exposes-secrets-via-settings-api"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-105129",
+          "date": "2026-10-03T23:40:01.650Z",
+          "date_type": "datePublished"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105129",
+          "date": "2026-10-04T00:16:36.730Z",
+          "date_type": "published"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-105129 reports incorrect authorization in LaraDashboard before 1.4.8. Authenticated users with only settings.view permission can read plaintext stored secrets through GET /api/settings or /api/settings/{option_name}, including AI provider API keys, mail credentials, passwords, and tokens. The CVE references a GitHub advisory, patch PR, commit, and v1.4.8 release.",
+      "evidence_classification": "primary CVE record with vendor advisory, patch, release, and NVD corroboration",
+      "affected_boundary_or_version": "LaraDashboard before 1.4.8; settings API; settings.view permission; AI provider API keys and other stored secrets.",
+      "why_it_matters_for_ai_security": "The exposed data class includes AI provider API keys, making this a credential and least-privilege issue for AI-enabled dashboards and model-provider integrations.",
+      "named_entities": [
+        "LaraDashboard",
+        "GitHub Security Advisory",
+        "VulnCheck",
+        "AI provider API keys",
+        "CVE-2026-105129"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad LaraDashboard product context belongs upstream only if an entity page is needed.",
+        "ai_dev_wiki": "General dashboard development or settings-API practice belongs upstream only if later synthesis needs it.",
+        "ai_security_wiki": "Owns AI-provider key exposure, settings authorization, and least-privilege implications."
+      },
+      "confidence_notes": "High confidence: the CVE has exact in-window timestamps and points to vendor advisory, patch, commit, and release evidence.",
+      "follow_up_actions": [
+        "Create or update an identity-and-access or data-and-privacy leaf for LaraDashboard AI-provider key exposure.",
+        "During ingest, verify whether v1.4.8 fully redacts settings values or changes authorization policy behavior.",
+        "Connect this finding to local credential least-privilege and AI provider key rotation guidance."
+      ]
+    },
+    {
+      "id": "aiir-policy-gate-signature-verification-cve-2026-105161",
+      "title": "aiir Policy Gate signature verification flaw",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105161",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105161",
+        "https://vuldb.com/vuln/413387",
+        "https://github.com/advisories/GHSA-73p9-6hrp-8qhr"
+      ],
+      "visible_dates": [
+        {
+          "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-105161",
+          "date": "2026-10-04T16:30:10.216Z",
+          "date_type": "datePublished"
+        },
+        {
+          "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-105161",
+          "date": "2026-10-04T18:16:33.560Z",
+          "date_type": "published"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-105161 reports improper verification of a cryptographic signature in invariant-systems-ai aiir through 1.7.0, affecting the Policy Gate Handler. The CVE record says the attack can be executed remotely, recommends upgrading, and notes the GitHub repository is no longer available and the affected product is unsupported.",
+      "evidence_classification": "primary CVE record with NVD and GitHub Advisory Database reference",
+      "affected_boundary_or_version": "invariant-systems-ai aiir 1.0 through 1.7.0; Policy Gate Handler; signature verification and data-authenticity boundary.",
+      "why_it_matters_for_ai_security": "A policy-gate signature verification failure is directly relevant to AI governance and runtime control integrity, because policy gates are supposed to enforce trusted decisions before model or agent actions proceed.",
+      "named_entities": [
+        "invariant-systems-ai",
+        "aiir",
+        "Policy Gate Handler",
+        "GitHub Advisory Database",
+        "VulDB",
+        "CVE-2026-105161"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad product/entity background for aiir belongs upstream only if the project is still relevant despite repository removal.",
+        "ai_dev_wiki": "General policy-gate development practice belongs upstream only if a durable development-pattern page is needed.",
+        "ai_security_wiki": "Owns signature-verification, unsupported-product, and policy-gate integrity implications."
+      },
+      "confidence_notes": "Medium-high confidence on timing and security relevance. The GitHub repository and project advisory are reported as broken links, so durable ingest should preserve the unsupported/broken-link caveat.",
+      "follow_up_actions": [
+        "Create or update a governance-and-compliance or infrastructure-and-supply-chain leaf for aiir policy-gate signature verification.",
+        "Recheck GitHub Advisory Database rendering and repository availability during ingest.",
+        "Record unsupported-product status and avoid asserting a usable fix unless a current release is verified."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "SuperAGI cross-organization agent controller and execution authorization CVEs",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-51899",
+      "visible_date": "2026-10-02T16:16:49.867Z NVD published / 2026-10-02T00:00:00.000Z CVE datePublished",
+      "reason": "Excluded from qualifying findings because visible publication and update timestamps fall before the exact 2026-10-02T23:31:52Z cutoff, despite strong AI-agent relevance. Related IDs observed: CVE-2026-51899, CVE-2026-51901, CVE-2026-51904, and CVE-2026-51914."
+    },
+    {
+      "candidate": "AgentScope execute_shell_command code injection, CVE-2026-51922",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-51922",
+      "visible_date": "2026-10-02T16:16:51.123Z NVD published / 2026-10-02T00:00:00.000Z CVE datePublished",
+      "reason": "Excluded as outside the exact 48-hour cutoff even though it is relevant to agent tool command execution."
+    },
+    {
+      "candidate": "Loom for AWS agent control-plane authentication and SSRF cluster",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-103956",
+      "visible_date": "2026-10-02T19:06:06.883Z to 2026-10-02T19:18:06.426Z CVE published/updated range",
+      "reason": "Excluded as before the exact cutoff. Related IDs observed: CVE-2026-103956, CVE-2026-103957, and CVE-2026-103958."
+    },
+    {
+      "candidate": "Mooncake transfer engine arbitrary memory read/write, CVE-2026-103764",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-103764",
+      "visible_date": "2026-10-01T23:19:57.849Z published / 2026-10-02T18:22:06.535Z updated",
+      "reason": "Excluded because publication and update timestamps are before the exact cutoff. Also note potential overlap with existing Mooncake model-runtime coverage; ingest should compare against the September vLLM Mooncake leaf before creating new durable coverage."
+    },
+    {
+      "candidate": "SupportCandy AI Customer Support plugin XSS and SQL injection, CVE-2026-94378 and CVE-2026-94539",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-94378",
+      "visible_date": "2026-10-03T03:16:37Z NVD published",
+      "reason": "Excluded from this run because the October 3 collector and ingest already captured and synthesized these records into docs/wiki leaves."
+    },
+    {
+      "candidate": "WPZOOM Connect AI Chat sensitive information exposure, CVE-2026-100149",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-100149",
+      "visible_date": "2026-10-03T06:16:37Z NVD published",
+      "reason": "Excluded from this run because the October 3 collector and ingest already captured and synthesized this record into docs/wiki."
+    },
+    {
+      "candidate": "Alt Text AI post content authorization bypass, CVE-2026-91108",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-91108",
+      "visible_date": "2026-10-03T06:16:45Z NVD published",
+      "reason": "Excluded from this run because the October 3 collector and ingest already captured and synthesized this record into docs/wiki."
+    },
+    {
+      "candidate": "NASA-AMMOS AIT-Core unauthenticated ZeroMQ command and telemetry bus, CVE-2026-105105",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-105105",
+      "visible_date": "2026-10-03T12:16:57Z NVD published",
+      "reason": "Excluded because AIT-Core appears in the AI keyword search by name collision, but the record describes spacecraft command-and-telemetry infrastructure rather than an AI system or AI security boundary."
+    },
+    {
+      "candidate": "TechRadar report on email-borne prompt injection against Manus",
+      "source_url": "https://www.techradar.com/pro/security/this-popular-ai-agent-could-be-hacked-by-a-single-email-with-potentially-disastrous-consequences",
+      "visible_date": "2026-10-02T17:05:00Z",
+      "reason": "Excluded because the visible publication timestamp is before the exact cutoff; Salt Labs primary source was not located in-window during this run."
+    },
+    {
+      "candidate": "Axios report on rogue AI agents probing internet defenses",
+      "source_url": "https://www.axios.com/2026/10/03/rogue-ai-agents-internet-defenses",
+      "visible_date": "2026-10-03T13:14:17Z",
+      "reason": "Excluded from qualifying findings because it is a secondary news synthesis of already-known incident classes and did not add a concrete new security advisory, patch, control, or primary incident disclosure for this repository."
+    },
+    {
+      "candidate": "Axios report on proposed U.S.-China AI incident notification channel",
+      "source_url": "https://www.axios.com/2026/10/03/china-ai-bessent-axios-show",
+      "visible_date": "2026-10-03T13:11:47Z",
+      "reason": "Excluded because no primary official proposal text or binding policy change was located, and the report is a diplomatic/governance proposal rather than an enacted control or standard."
+    },
+    {
+      "candidate": "AI Incident Database incident list item for Arbitrum AI-assisted attacks",
+      "source_url": "https://ai-incident.org/",
+      "visible_date": "2026-10-04 search-visible date",
+      "reason": "Excluded because the search result did not provide a direct incident detail URL with stable visible date and primary evidence during this run."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "InternLM / MindSearch",
+      "routing": "Broad product and framework context belongs in ai-wiki; this repository should keep only the Planner Agent code-injection boundary, affected version, and mitigation status."
+    },
+    {
+      "entity_or_topic": "Mindio Magic MCP",
+      "routing": "Broad WordPress plugin/product context belongs upstream only if needed; this repository owns the MCP sensitive-data exposure and fixed-version reconciliation."
+    },
+    {
+      "entity_or_topic": "LaraDashboard",
+      "routing": "Broad dashboard product context belongs upstream only if an entity page is needed; this repository owns stored AI provider API key exposure and authorization controls."
+    },
+    {
+      "entity_or_topic": "aiir policy gates",
+      "routing": "General policy-gate implementation practice may belong in ai-dev-wiki if reusable; this repository owns signature-verification failure and governance-control integrity."
+    }
+  ],
+  "confidence_summary": {
+    "qualifying_count": 4,
+    "exclusion_count": 12,
+    "routing_count": 4,
+    "overall_confidence": "Medium-high. CVE/NVD records provide exact in-window timestamps for all qualifying items. Patch/fixed-version details should be rechecked for MindSearch, Mindio Magic MCP, and aiir during ingest."
+  },
+  "blockers": [
+    "Patchstack details for Mindio Magic MCP were not fully fetched beyond CVE metadata in this run.",
+    "aiir upstream repository/advisory links are reported as broken in the CVE record; durable ingest should preserve that caveat.",
+    "No primary official text was located for the Axios-reported U.S.-China AI incident notification proposal."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed for artifact"
+  }
+}

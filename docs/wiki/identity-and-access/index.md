@@ -7,6 +7,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 ## Leaf Pages
 
 - [Alt Text AI post content authorization bypass](alt-text-ai-post-content-authorization-bypass.md)
+- [LaraDashboard AI provider key settings API exposure](../data-and-privacy/laradashboard-ai-provider-key-settings-api-exposure.md)
 - [Airano MCP Bridge broken access control](airano-mcp-bridge-broken-access-control.md)
 - [AiSOC response action API authentication bypass](aisoc-response-action-api-authentication-bypass.md)
 - [AiSOC MSSP tenant portfolio authorization bypass](aisoc-mssp-tenant-portfolio-authorization-bypass.md)
@@ -140,6 +141,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-10-05 with LaraDashboard AI provider-key settings exposure and Alt Text AI watcher provenance.
 - Updated on 2026-10-04 with the Alt Text AI post-content authorization bypass leaf.
 - Updated on 2026-10-03 with Airano MCP Bridge broken access control as a WordPress MCP bridge authorization boundary.
 - Updated on 2026-10-02 with split AiSOC identity leaves for response-action API authentication, MSSP tenant portfolio authorization, realtime JWT secret defaults, and realtime internal endpoint auth plus Claude Code policy credential precedence, Moodle AI editor capability, MCP Python SDK OAuth metadata, Obot composite route, and ByteCoreStack MCP Connector privilege-escalation leaves; folded October 1 watcher metadata into existing OpenShift AI and Obsidian Web MCP leaves.

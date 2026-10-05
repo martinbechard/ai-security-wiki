@@ -13,18 +13,21 @@ The [October 3 topic collector source](../../../raw/processed/2026-10-03/ai-secu
 
 The CVE record says SupportCandy through 3.5.3 is vulnerable to authenticated stored cross-site scripting through the `name` parameter because of insufficient input sanitization and output escaping. The issue requires subscriber-level access or above and the default-disabled "Register user if not exists" setting state described in the CVE record.
 
+The [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json) adds direct CVE Services publication/update evidence and records Wordfence fixed-version evidence for 3.5.4. That corroborates the existing leaf; it does not create a separate digest item.
+
 ## Security Impact
 
 - Threat: lower-privilege users can inject scripts into support pages that execute when another user views the affected page.
 - Affected boundary: SupportCandy AI Customer Support Ticket System & Live Chatbot Agent through 3.5.3; customer and agent display-name fields; support UI rendering; WordPress subscriber-level access.
 - Exploit or incident status: public CVE, NVD, Wordfence, and WordPress plugin changeset references; no confirmed exploitation incident is recorded locally.
-- Mitigation state: update beyond the affected range when a fixed plugin release is confirmed, sanitize user-controlled ticket/customer names, escape support UI output, and review support users for suspicious stored content.
-- Confidence: high for affected range and stored-XSS class from CVE Services and Wordfence; medium for first fixed release because the captured evidence references a changeset but not a release tag.
+- Mitigation state: update to SupportCandy 3.5.4 or later, sanitize user-controlled ticket/customer names, escape support UI output, and review support users for suspicious stored content.
+- Confidence: high for affected range, stored-XSS class, and fixed-version evidence from CVE Services and Wordfence.
 - Residual risk: AI support plugins surface user-provided customer context to support agents, so stored XSS can compromise agent sessions or contaminate agent-facing workflows even when the entry point looks like ordinary profile metadata.
 
 ## Authoritative Sources
 
 - [October 3 topic collector source](../../../raw/processed/2026-10-03/ai-security-wiki-topic-news-collector-2026-10-03T233152Z.json)
+- [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json)
 - [CVE-2026-94378 record](https://cveawg.mitre.org/api/cve/CVE-2026-94378)
 - [NVD CVE-2026-94378](https://nvd.nist.gov/vuln/detail/CVE-2026-94378)
 - [Wordfence CVE-2026-94378 advisory](https://www.wordfence.com/threat-intel/vulnerabilities/id/9703fa76-fd73-4cd8-aa41-8adcb55190be?source=cve)
@@ -51,8 +54,9 @@ The CVE record says SupportCandy through 3.5.3 is vulnerable to authenticated st
 
 ## Open Questions
 
-- Which SupportCandy release first includes the CVE-2026-94378 fix, and does it change all support UI render paths for customer and agent names?
+- Does the CVE-2026-94378 fix change all support UI render paths for customer and agent names?
 
 ## Maintenance Notes
 
 - Created on 2026-10-04 from the [October 3 topic collector source](../../../raw/processed/2026-10-03/ai-security-wiki-topic-news-collector-2026-10-03T233152Z.json) after verifier correction split the stored-XSS boundary from the SupportCandy SQL-injection boundary.
+- Updated on 2026-10-05 from the [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json) with CVE Services publication/update evidence and Wordfence fixed-version provenance; no duplicate digest item was needed.

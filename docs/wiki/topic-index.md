@@ -12,6 +12,11 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [data-and-privacy/supportcandy-ai-customer-support-sql-injection.md](data-and-privacy/supportcandy-ai-customer-support-sql-injection.md)
 - [data-and-privacy/wpzoom-connect-ai-chat-customer-data-exposure.md](data-and-privacy/wpzoom-connect-ai-chat-customer-data-exposure.md)
 - [identity-and-access/alt-text-ai-post-content-authorization-bypass.md](identity-and-access/alt-text-ai-post-content-authorization-bypass.md)
+- [agent-and-tool-security/internlm-mindsearch-planner-agent-code-injection.md](agent-and-tool-security/internlm-mindsearch-planner-agent-code-injection.md)
+- [data-and-privacy/mindio-magic-mcp-sensitive-data-exposure.md](data-and-privacy/mindio-magic-mcp-sensitive-data-exposure.md)
+- [data-and-privacy/laradashboard-ai-provider-key-settings-api-exposure.md](data-and-privacy/laradashboard-ai-provider-key-settings-api-exposure.md)
+- [governance-and-compliance/aiir-policy-gate-signature-verification.md](governance-and-compliance/aiir-policy-gate-signature-verification.md)
+- [threats-and-attacks/zammad-ai-driven-zero-day-breach.md](threats-and-attacks/zammad-ai-driven-zero-day-breach.md)
 - [agent-and-tool-security/aws-security-agent-mcp-server-diff-scan-argument-injection.md](agent-and-tool-security/aws-security-agent-mcp-server-diff-scan-argument-injection.md)
 - [agent-and-tool-security/mcp-server-fetch-ssrf.md](agent-and-tool-security/mcp-server-fetch-ssrf.md)
 - [agent-and-tool-security/havelsan-sef-ai-chatbot-platform-advisory-cluster.md](agent-and-tool-security/havelsan-sef-ai-chatbot-platform-advisory-cluster.md)
@@ -586,6 +591,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-05 with October 4 ingest leaves for InternLM MindSearch, Mindio Magic MCP, LaraDashboard, aiir Policy Gate, Zammad AI-driven zero-day breach, and Custom GPT ClickFix watcher evidence; October 3 watcher repeats stayed provenance-only.
 - Updated on 2026-10-04 with October 3 ingest leaves for SupportCandy AI Customer Support stored XSS and SQL injection, WPZOOM Connect AI Chat, and Alt Text AI WordPress plugin advisories.
 - Updated on 2026-10-03 with October 2 ingest leaves for AWS Security Agent MCP Server, MCP Server Fetch, HAVELSAN Sef AI Chatbot Platform, GitLab AI Gateway, Airano MCP Bridge, Microsoft AI attack-timeline controls, and agentic web-retrieval probing.
 - Updated on 2026-10-02 with October 1 source-ingest leaves for split AiSOC CVEs, Claude Code, JetBrains Rider AI Assistant, Moodle AI editor, Laravel AI SDK, MCP Python SDK, Obot, Budibase, ByteCoreStack MCP Connector, Office-PowerPoint-MCP-Server, and split Joyland AI mobile CVEs plus the October digest and watcher provenance folded into existing leaves.
