@@ -25,6 +25,7 @@ The CVE record describes insertion of sensitive information into sent data for `
 ## Authoritative Sources
 
 - [October 4 topic collector source](../../../raw/processed/2026-10-04/ai-security-wiki-topic-news-collector-2026-10-04T233152Z.json)
+- [October 5 leaf update watch source](../../../raw/processed/2026-10-05/ai-security-wiki-leaf-update-watch-20261006T000405Z.json)
 - [CVE-2026-104402 record](https://cveawg.mitre.org/api/cve/CVE-2026-104402)
 - [NVD CVE-2026-104402](https://nvd.nist.gov/vuln/detail/CVE-2026-104402)
 - [Patchstack advisory reference](https://patchstack.com/database/wordpress/plugin/mindio-magic-mcp/vulnerability/wordpress-mindio-magic-mcp-plugin-0-5-6-sensitive-data-exposure-vulnerability?_s_id=cve)
@@ -55,3 +56,4 @@ The CVE record describes insertion of sensitive information into sent data for `
 ## Maintenance Notes
 
 - Created on 2026-10-05 from the [October 4 topic collector source](../../../raw/processed/2026-10-04/ai-security-wiki-topic-news-collector-2026-10-04T233152Z.json) as an MCP sensitive-data exposure leaf.
+- Updated on 2026-10-06 with October 5 watcher provenance; no digest entry was added because the watcher repeated the same sensitive-data boundary without a material mitigation change.

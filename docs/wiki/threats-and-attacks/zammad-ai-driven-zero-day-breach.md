@@ -13,19 +13,23 @@ The [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-se
 
 The captured report says the chain affected self-hosted Zammad/helpdesk deployments before version 7 and involved session hijacking, remote code execution, root escalation, privilege-escalation decisions, and exfiltration decisions in seconds. Because the raw source is secondary coverage, keep the technical mechanism and exact CVE boundaries open until DIVD primary advisories or Zammad records are captured.
 
+The [October 5 leaf update watch source](../../../raw/processed/2026-10-05/ai-security-wiki-leaf-update-watch-20261006T000405Z.json) adds Zammad's October 5 advisory for CVE-2026-102489 and CVE-2026-102490. That source narrows the remote-code-execution exploitability assessment to Zammad 6.5 and earlier, identifies 7.2.0 hardening, and describes CVE-2026-102490 as a local privilege-escalation issue under high-priority analysis.
+
 ## Security Impact
 
 - Threat: an autonomous or AI-driven attacker can compress helpdesk zero-day exploitation, privilege escalation, and exfiltration decisions into an incident window too short for ordinary manual triage.
-- Affected boundary: Zammad self-hosted/helpdesk deployments before version 7; CVE-2026-102489; CVE-2026-102490; session hijacking; remote code execution; root escalation; incident-response timing.
-- Exploit or incident status: BleepingComputer reports confirmed exploitation based on DIVD statements; this wiki still needs DIVD or Zammad primary evidence for technical detail.
-- Mitigation state: upgrade Zammad to version 7 or take vulnerable instances offline, preserve logs, look for session-hijacking and escalation artifacts, and treat AI-driven attack timing as an incident-response planning constraint.
-- Confidence: medium for the AI-driven breach framing and mitigation because the captured evidence is secondary; high enough to track locally because named CVEs, affected product boundary, and mitigation guidance are specific.
+- Affected boundary: Zammad 6.3.0 to 6.5.4 session hijack and RCE path; Zammad 7.0.0 to 7.1.3 code present but not exploitable under runtime conditions per the captured Zammad/DIVD evidence; Zammad v1.5.0 to v7.1.0-alpha local privilege-escalation path; DIVD-2026-00015 incident response.
+- Exploit or incident status: BleepingComputer reports confirmed exploitation based on DIVD statements; the October 5 Zammad advisory and CVE updates provide primary-vendor boundary evidence for exploitability and mitigation scope.
+- Mitigation state: update to Zammad 7.2.0 or apply the vendor-supported hardening path, preserve logs, look for session-hijacking and escalation artifacts, and treat AI-driven attack timing as an incident-response planning constraint.
+- Confidence: high for the Zammad version-boundary and mitigation update; medium for the AI-driven breach framing until DIVD primary case text is fully reconciled.
 - Residual risk: if primary advisories later narrow or expand the CVE mechanisms, this page should update the affected boundary and any digest wording without assuming the secondary report captured the complete chain.
 
 ## Authoritative Sources
 
 - [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json)
+- [October 5 leaf update watch source](../../../raw/processed/2026-10-05/ai-security-wiki-leaf-update-watch-20261006T000405Z.json)
 - [BleepingComputer Zammad AI-driven breach coverage](https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/)
+- [Zammad October 5 advisory](https://zammad.com/en/advisories/cve-2026-102489-cve-2026-102490)
 
 ## Related Code
 
@@ -51,7 +55,9 @@ The captured report says the chain affected self-hosted Zammad/helpdesk deployme
 
 - Which DIVD primary advisories or Zammad records confirm CVE-2026-102489 and CVE-2026-102490 technical boundaries?
 - Which forensic artifacts identify the reported session hijacking, remote code execution, root escalation, and exfiltration decisions?
+- Does the final DIVD case text align fully with Zammad's 7.0.0 to 7.1.3 exploitability assessment?
 
 ## Maintenance Notes
 
 - Created on 2026-10-05 from the [October 4 leaf update watch source](../../../raw/processed/2026-10-04/ai-security-wiki-leaf-update-watch-20261005T000246Z.json) after verifier correction split the Zammad breach chain from the broader unattended-agent attack automation pattern.
+- Updated on 2026-10-06 from the [October 5 leaf update watch source](../../../raw/processed/2026-10-05/ai-security-wiki-leaf-update-watch-20261006T000405Z.json) with Zammad primary advisory version boundaries and 7.2.0 mitigation evidence.

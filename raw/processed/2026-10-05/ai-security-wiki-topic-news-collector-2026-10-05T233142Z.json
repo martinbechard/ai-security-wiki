@@ -1,0 +1,558 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector",
+    "run_timestamp_utc": "2026-10-05T23:31:42Z",
+    "cutoff_window": {
+      "start_utc": "2026-10-03T23:31:42Z",
+      "end_utc": "2026-10-05T23:31:42Z",
+      "rule": "Include only public items with visible publication or update timestamps inside the last 2 days relative to run time; exclude boundary-only, missing, ambiguous, future-dated, duplicate, or non-security items."
+    },
+    "repository_root": "/Users/martinbechard/dev/ai-security-wiki",
+    "raw_only": true,
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_federation": "docs/wiki/federation.md says ai-wiki owns broad AI ecosystem entities and ai-dev-wiki owns general AI-assisted development practices; this repo owns the security lens, affected boundaries, mitigations, controls, and incident implications.",
+    "local_topic_index_checked": "docs/wiki/topic-index.md",
+    "upstream_topic_indexes_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ]
+  },
+  "search_evidence": [
+    {
+      "kind": "web_search",
+      "query": "AI security vulnerability \"Oct 5, 2026\"",
+      "notes": "Found October 5 public reports on MCP trust gaps, Meta Muse VM escape, and AI-agent government-site probing; retained sources only when the visible date was in-window and the item had a concrete security delta."
+    },
+    {
+      "kind": "web_search",
+      "query": "MCP vulnerability \"Oct 5, 2026\" security advisory",
+      "notes": "Found CVE-2026-89039 and GitHub/NVD advisory candidates."
+    },
+    {
+      "kind": "public_database_query",
+      "query": "NVD API pubStartDate=2026-10-03T23:31:42Z pubEndDate=2026-10-05T23:31:42Z keywordSearch=MCP",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-03T23:31:42.000Z&pubEndDate=2026-10-05T23:31:42.000Z&keywordSearch=MCP",
+      "notes": "Returned seven MCP-related CVE records, including Mindio Magic MCP, Grafana mcp-k6, Langflow MCP records, and Dify MCP server status authorization."
+    },
+    {
+      "kind": "public_database_query",
+      "query": "NVD API pubStartDate=2026-10-03T23:31:42Z pubEndDate=2026-10-05T23:31:42Z keywordSearch=AI",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-03T23:31:42.000Z&pubEndDate=2026-10-05T23:31:42.000Z&keywordSearch=AI",
+      "notes": "Returned AI-string matches, including true AI security records and false positives such as Android aidl records."
+    },
+    {
+      "kind": "public_database_query",
+      "query": "GitHub Advisory API published=2026-10-04..2026-10-05 query=MCP and query=AI",
+      "source_url": "https://api.github.com/advisories?published=2026-10-04..2026-10-05&query=MCP&per_page=50",
+      "notes": "Returned reviewed and unreviewed GitHub advisories; retained AI/MCP security advisories with concrete product or runtime boundaries."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "finding-001",
+      "title": "Grafana mcp-k6 prompt path handling allows arbitrary file read",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-89039",
+        "https://github.com/advisories/GHSA-ffg3-vfrj-4mjj",
+        "https://grafana.com/security/security-advisories/cve-2026-89039",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-89039"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date_type": "datePublished",
+          "value": "2026-10-05T14:52:41.097Z"
+        },
+        {
+          "source": "GitHub Advisory Database",
+          "date_type": "published_at",
+          "value": "2026-10-05T15:32:23Z"
+        },
+        {
+          "source": "NVD",
+          "date_type": "published",
+          "value": "2026-10-05T15:17:23.130Z"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-89039 / GHSA-ffg3-vfrj-4mjj says the mcp-k6 convert_playwright_script prompt accepts bare paths that bypass the working-directory restriction and can return files readable by the server user, including SSH keys or cloud credentials. A symlink inside the working directory can also bypass the '@'-prefixed path restriction.",
+      "evidence_classification": "primary CVE record plus GitHub advisory",
+      "affected_boundary_or_version": "Grafana mcp-k6 from 0.3.0 before 0.7.0; patched in 0.7.0.",
+      "why_it_matters_for_ai_security": "An MCP prompt exposed to an assistant becomes a file-read capability; path confinement bugs can leak local credentials from agent workstations or CI/runtime hosts.",
+      "named_entities": [
+        "Grafana",
+        "mcp-k6",
+        "Model Context Protocol",
+        "GitHub Advisory Database",
+        "NVD",
+        "CVE-2026-89039",
+        "GHSA-ffg3-vfrj-4mjj"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad Grafana and MCP ecosystem background belongs upstream if needed.",
+        "ai_dev_wiki": "General test-generation workflow guidance belongs upstream if needed.",
+        "ai_security_wiki": "Keep the MCP prompt file-read boundary, affected versions, credential-exposure risk, and patch note locally."
+      },
+      "confidence_notes": "High confidence; CVE Services, NVD, and GitHub agree on timestamp and affected boundary.",
+      "follow_up_actions": [
+        "During ingest, create or update a local mcp-k6 MCP prompt path-confinement leaf.",
+        "Check the Grafana advisory for final remediation wording and any additional mitigations."
+      ]
+    },
+    {
+      "id": "finding-002",
+      "title": "Langflow publishes MCP, Smart Transform, and flow-authorization advisory cluster",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-9fpm-3445-2vx4",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105697",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105698",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105699",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105740",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105741"
+      ],
+      "visible_dates": [
+        {
+          "source": "GitHub Advisory Database",
+          "date_type": "published_at",
+          "value": "2026-10-05T22:30:41Z"
+        },
+        {
+          "source": "NVD",
+          "date_type": "published",
+          "value": "2026-10-05T21:16:35.087Z to 2026-10-05T21:16:35.740Z"
+        }
+      ],
+      "concise_factual_summary": "GitHub published GHSA-9fpm-3445-2vx4 for Langflow Smart Transform, where LLM-generated Python lambda code could be evaluated with full builtins and produce code execution. NVD also published Langflow records for MCP stdio command execution, project-scoped MCP resource read authorization failure, deprecated flow-build ownership failure, and an MCP configuration installation local-only bypass through spoofed X-Forwarded-For.",
+      "evidence_classification": "reviewed GitHub advisory plus public vulnerability database records",
+      "affected_boundary_or_version": "Langflow ranges vary by issue: Smart Transform 1.3.0 through before 1.10.3; MCP stdio/config records include ranges before 1.9.0, before 1.9.1, before 1.10.3, and before 1.10.1 depending on CVE.",
+      "why_it_matters_for_ai_security": "The advisories cover agent workflow builders where prompts, MCP server configuration, flow ownership, and tool execution converge; failures can turn prompt content, project-scoped endpoints, or MCP configuration into host execution or cross-tenant data disclosure.",
+      "named_entities": [
+        "Langflow",
+        "MCP",
+        "Smart Transform",
+        "GHSA-9fpm-3445-2vx4",
+        "CVE-2026-7700",
+        "CVE-2026-105697",
+        "CVE-2026-105698",
+        "CVE-2026-105699",
+        "CVE-2026-105740",
+        "CVE-2026-105741"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad Langflow product/framework coverage belongs upstream.",
+        "ai_dev_wiki": "General low-code AI workflow practice belongs upstream.",
+        "ai_security_wiki": "Keep prompt-to-code execution, MCP stdio command authority, project isolation, flow ownership, and local-only bypass boundaries locally."
+      },
+      "confidence_notes": "High confidence on published advisory timestamps. Ingest should reconcile overlap with earlier September Langflow pages before creating new leaves, because this repo already has older Langflow security coverage.",
+      "follow_up_actions": [
+        "Deduplicate against existing Langflow leaves and processed September raw before durable synthesis.",
+        "Split into separate leaves if each CVE has an independently changing patch boundary or operational control."
+      ]
+    },
+    {
+      "id": "finding-003",
+      "title": "Docling publishes GenAI document-processing vulnerability cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105742",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105743",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105744",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105745",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105746",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105747",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105748",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105749",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105750",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105751"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "date_type": "published",
+          "value": "2026-10-05T22:16:56.867Z to 2026-10-05T22:16:58.253Z"
+        },
+        {
+          "source": "GitHub Advisory Database",
+          "date_type": "published_at",
+          "value": "2026-10-05T22:33:52Z for GHSA-4xhp-xg4w-8ppm / CVE-2026-105751"
+        }
+      ],
+      "concise_factual_summary": "NVD published multiple Docling records involving remote image fetching credential forwarding, DNS rebinding/internal fetch, unsafe TeX/TikZ compilation, plugin entry-point import before allow_external_plugins filtering, remote OCR policy bypass, archive member-count memory exhaustion, local image/file reads through serialized document references, oversized table spans, and file URL/local-path reads in rendering backends.",
+      "evidence_classification": "public vulnerability database cluster",
+      "affected_boundary_or_version": "Docling versions vary by issue; fixed versions cited by NVD include 2.118.1, 2.120.3, 2.131.0, and 2.132.0 depending on backend or feature.",
+      "why_it_matters_for_ai_security": "Docling is used in document ingestion for generative AI systems; parser, renderer, remote-fetch, plugin, and OCR-policy flaws affect RAG data pipelines, agent document tools, credential handling, local file exposure, and dependency/plugin trust.",
+      "named_entities": [
+        "Docling",
+        "CVE-2026-105742",
+        "CVE-2026-105743",
+        "CVE-2026-105744",
+        "CVE-2026-105745",
+        "CVE-2026-105746",
+        "CVE-2026-105747",
+        "CVE-2026-105748",
+        "CVE-2026-105749",
+        "CVE-2026-105750",
+        "CVE-2026-105751",
+        "GHSA-4xhp-xg4w-8ppm"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad Docling/product context and document-AI ecosystem background belongs upstream if needed.",
+        "ai_dev_wiki": "General document-ingestion practice belongs upstream.",
+        "ai_security_wiki": "Keep parser, remote-fetch, local-file, credential-forwarding, plugin-import, and remote-service policy boundaries locally."
+      },
+      "confidence_notes": "High confidence on NVD timestamps; medium confidence on final remediation wording until vendor advisories are checked during ingest.",
+      "follow_up_actions": [
+        "During ingest, decide whether to create one Docling document-ingestion security cluster page or split high-risk boundaries into separate leaves.",
+        "Fetch vendor/GitHub advisories for exact patched version language before durable synthesis."
+      ]
+    },
+    {
+      "id": "finding-004",
+      "title": "OpenClaw channel read actions can skip target allowlists",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-g7fw-3gjp-g5hf",
+        "https://github.com/openclaw/openclaw/security/advisories/GHSA-g7fw-3gjp-g5hf",
+        "https://github.com/openclaw/openclaw/releases/tag/v2026.8.1"
+      ],
+      "visible_dates": [
+        {
+          "source": "GitHub Advisory Database",
+          "date_type": "published_at",
+          "value": "2026-10-05T23:27:44Z"
+        }
+      ],
+      "concise_factual_summary": "GitHub reviewed GHSA-g7fw-3gjp-g5hf says OpenClaw channel read actions in Microsoft Teams, Feishu, Matrix, and Google Chat plugins could use caller-supplied explicit targets to read channels or rooms outside the configured read policy. The advisory says the first stable patched version is 2026.8.1.",
+      "evidence_classification": "reviewed GitHub advisory",
+      "affected_boundary_or_version": "@openclaw/msteams, @openclaw/feishu, @openclaw/matrix, and @openclaw/googlechat before 2026.8.1.",
+      "why_it_matters_for_ai_security": "A steered agent or lower-trust sender with channel read action access could bypass operator-scoped allowlists and retrieve message content or metadata beyond the intended communication boundary.",
+      "named_entities": [
+        "OpenClaw",
+        "Microsoft Teams",
+        "Feishu",
+        "Matrix",
+        "Google Chat",
+        "GHSA-g7fw-3gjp-g5hf"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad OpenClaw product context belongs upstream.",
+        "ai_dev_wiki": "General collaborative-agent workflow context belongs upstream.",
+        "ai_security_wiki": "Keep channel allowlist bypass, delegated read action, and bot-account permission implications locally."
+      },
+      "confidence_notes": "High confidence; reviewed GitHub advisory includes affected packages, version boundary, and mitigation.",
+      "follow_up_actions": [
+        "Compare with existing OpenClaw leaves to avoid duplicate product background.",
+        "Synthesize as a communication-plugin authorization leaf or update an existing OpenClaw delegated-read boundary page."
+      ]
+    },
+    {
+      "id": "finding-005",
+      "title": "LangGraph SDK custom auth actions can broaden resource authorization",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-fvww-7h3r-vfhp",
+        "https://github.com/langchain-ai/langgraph/security/advisories/GHSA-fvww-7h3r-vfhp",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-104873"
+      ],
+      "visible_dates": [
+        {
+          "source": "GitHub Advisory Database",
+          "date_type": "published_at",
+          "value": "2026-10-05T22:49:35Z"
+        },
+        {
+          "source": "NVD",
+          "date_type": "published",
+          "value": "2026-10-02T20:17:01Z"
+        }
+      ],
+      "concise_factual_summary": "GHSA-fvww-7h3r-vfhp says langgraph-sdk resource-scoped authorization decorators can ignore the actions= selector and register a handler for every action on resources such as threads, assistants, or crons. Fallback authorization checks may not run, letting an authenticated user perform actions an application intended to deny if the selected handler does not enforce action or ownership checks itself.",
+      "evidence_classification": "reviewed GitHub advisory with older NVD record",
+      "affected_boundary_or_version": "langgraph-sdk 0.1.45 through 0.4.3; patched in 0.4.4; only Python deployments using actions= on affected resource-scoped decorators.",
+      "why_it_matters_for_ai_security": "LangGraph applications often expose agent threads, assistants, and scheduled runs; action-scoping mistakes can undermine least privilege and cross-user authorization for deployed agents.",
+      "named_entities": [
+        "LangGraph",
+        "langgraph-sdk",
+        "LangChain",
+        "GHSA-fvww-7h3r-vfhp",
+        "CVE-2026-104873"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad LangGraph/LangChain ecosystem context belongs upstream.",
+        "ai_dev_wiki": "General LangGraph implementation practice belongs upstream.",
+        "ai_security_wiki": "Keep custom-auth action-scoping, least-privilege, and cross-user resource authorization implications locally."
+      },
+      "confidence_notes": "High confidence for GitHub advisory date and package boundary. NVD publication predates the exact window, but GitHub reviewed publication is in-window; record the date basis explicitly during ingest.",
+      "follow_up_actions": [
+        "During ingest, classify as an identity-and-access or agent-and-tool-security leaf.",
+        "Check whether existing ai-dev-wiki LangGraph pages need an upstream routing note rather than duplicated background."
+      ]
+    },
+    {
+      "id": "finding-006",
+      "title": "Dify MCP server status update misses application and tenant ownership check",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105761"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD",
+          "date_type": "published",
+          "value": "2026-10-05T23:17:03.050Z"
+        }
+      ],
+      "concise_factual_summary": "NVD published CVE-2026-105761 for Dify, where PUT /console/api/apps/<app_id>/server in the MCP server controller retrieved an AppMCPServer by a client-supplied server ID without verifying that the server belonged to the requested application and tenant. An authenticated workspace member could change another application's MCP server status and parameters.",
+      "evidence_classification": "public vulnerability database record",
+      "affected_boundary_or_version": "Dify before 1.16.0; fixed in 1.16.0.",
+      "why_it_matters_for_ai_security": "MCP server settings can determine which tools and data paths an LLM app can use; cross-application status or parameter changes can redirect data, disable services, or change tool authority across tenant boundaries.",
+      "named_entities": [
+        "Dify",
+        "MCP",
+        "CVE-2026-105761"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad Dify product context belongs upstream.",
+        "ai_dev_wiki": "General app-building practice belongs upstream.",
+        "ai_security_wiki": "Keep MCP server ownership, tenant isolation, and parameter-integrity boundary locally."
+      },
+      "confidence_notes": "High confidence on NVD timestamp and fix version; vendor advisory should be checked during ingest.",
+      "follow_up_actions": [
+        "Fetch direct vendor or repository advisory before durable synthesis.",
+        "Check existing Dify secret-exposure page for whether this belongs as a new leaf or related update."
+      ]
+    },
+    {
+      "id": "finding-007",
+      "title": "AI Chatbot for WordPress Hyve Lite has IDOR authorization bypass",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-97305",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-97305",
+        "https://patchstack.com/database/wordpress/plugin/hyve-lite/vulnerability/wordpress-ai-chatbot-for-wordpress-hyve-lite-plugin-2-0-2-insecure-direct-object-references-idor-vulnerability?_s_id=cve"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "date_type": "datePublished",
+          "value": "2026-10-05T18:08:36.362Z"
+        },
+        {
+          "source": "NVD",
+          "date_type": "published",
+          "value": "2026-10-05T19:17:27.527Z"
+        },
+        {
+          "source": "CVE Services",
+          "date_type": "datePublic",
+          "value": "2026-10-03T17:41:05.000Z"
+        }
+      ],
+      "concise_factual_summary": "CVE-2026-97305 says Themeisle AI Chatbot for WordPress - Hyve Lite has an authorization bypass through a user-controlled key, classified by the CNA as CWE-639 / IDOR. The affected versions are through 2.0.2, with 2.0.3 marked unaffected.",
+      "evidence_classification": "primary CVE record plus vulnerability database reference",
+      "affected_boundary_or_version": "AI Chatbot for WordPress - Hyve Lite through 2.0.2; fixed in at least 2.0.3.",
+      "why_it_matters_for_ai_security": "The vulnerable component is an AI chatbot plugin exposed through a web application boundary; authorization bypasses can expose or modify chatbot-linked content or state depending on plugin behavior.",
+      "named_entities": [
+        "Themeisle",
+        "AI Chatbot for WordPress - Hyve Lite",
+        "Patchstack",
+        "CVE-2026-97305"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad WordPress/plugin ecosystem context belongs upstream only if needed.",
+        "ai_dev_wiki": "No general AI-development practice routing expected.",
+        "ai_security_wiki": "Keep the AI chatbot authorization boundary locally, but recheck whether the vulnerable path is AI-specific before synthesis."
+      },
+      "confidence_notes": "Medium-high confidence. The product is AI-specific, but the CVE description does not expose enough detail to prove the bypass is unique to model/tool behavior; ingest should verify Patchstack detail before durable wording.",
+      "follow_up_actions": [
+        "Fetch Patchstack detail during ingest to confirm whether the vulnerable object is chatbot conversation, configuration, prompt, or generic WordPress state.",
+        "Exclude from durable synthesis if no distinct AI-chatbot boundary is identified."
+      ]
+    },
+    {
+      "id": "finding-008",
+      "title": "Public reports describe cross-agent MCP prompt propagation and Meta Muse VM escape risk",
+      "source_urls": [
+        "https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/",
+        "https://www.404media.co/meta-rushed-to-fix-muse-vm-escape-vulnerability-immediately-before-launch/"
+      ],
+      "visible_dates": [
+        {
+          "source": "Ars Technica",
+          "date_type": "published",
+          "value": "2026-10-05T18:26:00-04:00"
+        },
+        {
+          "source": "404 Media",
+          "date_type": "published",
+          "value": "2026-10-05T10:13:00 local source time"
+        }
+      ],
+      "concise_factual_summary": "Ars Technica reported that vulnerabilities acknowledged by Google and four other organizations exposed an MCP trust gap where malicious prompts could propagate from one internal agent to another trusted agent. 404 Media reported that Meta engineers fixed severe Muse vulnerabilities before launch, including a KVM escape risk that could have let a Muse instance break out of its intended VM and reach Meta-sensitive systems or other users' VMs.",
+      "evidence_classification": "reputable public security journalism; primary advisories not yet located",
+      "affected_boundary_or_version": "Ars: MCP-connected agent chains across named organizations; exact CVE/product versions not fully enumerated in fetched summary. 404 Media: Meta Muse pre-launch VM isolation/KVM boundary; fixed before launch per public report.",
+      "why_it_matters_for_ai_security": "Both reports concern delegated agent authority crossing trust boundaries: prompt instructions traversing agent-to-agent trust relationships, and hosted agent sandboxes crossing VM isolation into provider infrastructure.",
+      "named_entities": [
+        "MCP",
+        "Google",
+        "Rapid7",
+        "Meta",
+        "Muse",
+        "KVM",
+        "Ars Technica",
+        "404 Media"
+      ],
+      "upstream_routing": {
+        "ai_wiki": "Broad Google, Meta, Muse, and MCP ecosystem context belongs upstream.",
+        "ai_dev_wiki": "General agent workflow design context belongs upstream.",
+        "ai_security_wiki": "Keep only the cross-agent prompt propagation, sandbox escape, provider-infrastructure boundary, and release-gate implications locally."
+      },
+      "confidence_notes": "Medium confidence because public reports are in-window and concrete, but primary vendor/security advisories were not located during this run. Treat as source leads until primary confirmation or detailed technical writeups are found.",
+      "follow_up_actions": [
+        "Look for primary Google/Rapid7/vendor advisories behind the Ars cross-agent MCP report.",
+        "Look for Meta public security statement or launch postmortem for Muse before durable synthesis.",
+        "If no primary sources appear, preserve these as incident-report leads with caveats."
+      ]
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "Grafana and mcp-k6",
+      "owner": "ai-wiki for broad entity background; ai-security-wiki for MCP prompt file-read risk."
+    },
+    {
+      "entity_or_topic": "Langflow",
+      "owner": "ai-wiki for broad product/framework background; ai-security-wiki for prompt-to-code execution, MCP stdio, project isolation, and local-only bypass."
+    },
+    {
+      "entity_or_topic": "Docling",
+      "owner": "ai-wiki for broad document-AI product context; ai-security-wiki for parser, fetch, plugin, and local file exposure controls."
+    },
+    {
+      "entity_or_topic": "OpenClaw",
+      "owner": "ai-wiki for broad product context; ai-security-wiki for communication-plugin allowlist bypass and delegated-read authorization."
+    },
+    {
+      "entity_or_topic": "LangGraph",
+      "owner": "ai-dev-wiki for general implementation practice; ai-security-wiki for custom-auth action scope and least-privilege failure."
+    },
+    {
+      "entity_or_topic": "Dify",
+      "owner": "ai-wiki for broad product context; ai-security-wiki for MCP server tenant/application ownership control."
+    },
+    {
+      "entity_or_topic": "Themeisle Hyve Lite",
+      "owner": "ai-security-wiki only if Patchstack detail confirms a distinct AI chatbot boundary; otherwise exclude during ingest."
+    },
+    {
+      "entity_or_topic": "Meta Muse and Google/MCP cross-agent reporting",
+      "owner": "ai-wiki for broad company/product context; ai-security-wiki for sandbox escape and cross-agent trust boundaries."
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Mindio Magic MCP sensitive data exposure",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-104402"
+      ],
+      "visible_date": "2026-10-04T16:16:28.587Z",
+      "reason": "Excluded as duplicate local coverage; docs/wiki already contains data-and-privacy/mindio-magic-mcp-sensitive-data-exposure.md and the prior automation memory says the October 4 collector captured this item."
+    },
+    {
+      "title": "LaraDashboard AI provider key settings API exposure",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105129"
+      ],
+      "visible_date": "2026-10-04T00:16:36.730Z",
+      "reason": "Excluded as duplicate local coverage; docs/wiki already contains data-and-privacy/laradashboard-ai-provider-key-settings-api-exposure.md."
+    },
+    {
+      "title": "aiir policy gate signature verification flaw",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105161"
+      ],
+      "visible_date": "2026-10-04T18:16:33.560Z",
+      "reason": "Excluded as duplicate local coverage; docs/wiki already contains governance-and-compliance/aiir-policy-gate-signature-verification.md and the prior run recorded this family."
+    },
+    {
+      "title": "TechRadar Manus email prompt-injection bypass report",
+      "source_urls": [
+        "https://www.techradar.com/pro/security/this-popular-ai-agent-could-be-hacked-by-a-single-email-with-potentially-disastrous-consequences"
+      ],
+      "visible_date": "2026-10-02T17:05:00Z",
+      "reason": "Excluded as outside the exact 48-hour cutoff of 2026-10-03T23:31:42Z."
+    },
+    {
+      "title": "Indian Express report on OpenAI agents targeting government websites",
+      "source_urls": [
+        "https://indianexpress.com/article/technology/artificial-intelligence/how-openai-agents-covered-tracks-10907732/"
+      ],
+      "visible_date": "2026-10-05T17:29:00+05:30",
+      "reason": "Excluded from qualifying findings because it is secondary coverage of a report stated as published October 1, 2026, outside this run window; retain as a possible follow-up only if a new in-window primary update appears."
+    },
+    {
+      "title": "GitHub ai-agent-security topic page updates",
+      "source_urls": [
+        "https://github.com/topics/ai-agent-security"
+      ],
+      "visible_date": "2026-10-05",
+      "reason": "Excluded because topic-page updated metadata is not itself a concrete security advisory, vulnerability, patch, incident, standard, or assurance result."
+    },
+    {
+      "title": "Polylog agent skill supply-chain trend page",
+      "source_urls": [
+        "https://polylog.news/ai/trends/agent-skill-supply-chain-security"
+      ],
+      "visible_date": "2026-10-05",
+      "reason": "Excluded because the daily trend score update does not identify a new concrete security change in this window; underlying cited research appears older."
+    },
+    {
+      "title": "Android aidl CVEs from AI keyword search",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20535",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20536",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-20537"
+      ],
+      "visible_date": "2026-10-05T02:16:52Z",
+      "reason": "Excluded as AI keyword false positives; 'aidl' string match is not an AI-system security item."
+    },
+    {
+      "title": "Meetup and Upwork AI-agent testing/training pages",
+      "source_urls": [
+        "https://www.meetup.com/activate-relaunch-reinvent-tech-careers/events/316600519/",
+        "https://www.upwork.com/services/product/development-it-your-ai-chatbot-tested-for-hallucinations-prompt-injection-and-accuracy-2104553469104424998"
+      ],
+      "visible_date": "2026-10-05",
+      "reason": "Excluded because service listings and training events are not concrete public security deltas."
+    },
+    {
+      "title": "Non-AI dependency advisories returned by broad GitHub AI/MCP API search",
+      "source_urls": [
+        "https://api.github.com/advisories?published=2026-10-04..2026-10-05&query=AI&per_page=50"
+      ],
+      "visible_date": "2026-10-05",
+      "reason": "Excluded false positives such as proxy-addr, nx, vm2, GraphQL Tools, PostCSS, Angular SSR, and generic dependencies where no AI/MCP/agent-specific boundary was identified in the advisory title or fetched detail."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "scoped_git_diff_check": "passed"
+  },
+  "confidence_summary": "High confidence for direct CVE Services, NVD, and reviewed GitHub advisory records. Medium confidence for public-report leads from Ars Technica and 404 Media because primary vendor advisories were not located during this run. Duplicate suppression used automation memory plus local docs/wiki and raw/processed searches.",
+  "blockers": [
+    "No collection-stopping blockers.",
+    "Primary vendor advisories were not located for the Ars cross-agent MCP report or the Meta Muse VM escape report.",
+    "Patchstack detail for Hyve Lite should be refetched during ingest to confirm the AI-chatbot-specific boundary.",
+    "Several Langflow items may overlap older local Langflow leaves and need ingest-time deduplication."
+  ]
+}

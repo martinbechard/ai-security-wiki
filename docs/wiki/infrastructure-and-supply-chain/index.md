@@ -2,6 +2,10 @@
 
 ## Current Understanding
 
+- [Meta Muse VM escape release gate](meta-muse-vm-escape-release-gate.md)
+- [Docling Tectonic TeX file primitives](docling-tectonic-tex-file-primitives.md)
+- [Docling plugin entrypoint import policy bypass](docling-plugin-entrypoint-import-policy-bypass.md)
+- [Docling archive and table resource exhaustion](docling-archive-and-table-resource-exhaustion.md)
 - [JetBrains Rider AI Assistant skill auto update](jetbrains-rider-ai-assistant-skill-auto-update.md)
 - [Roo Code privileged GitHub Actions workflow RCE](roo-code-privileged-github-actions-workflow-rce.md)
 - [mcp-server-git repository boundary bypasses](mcp-server-git-repository-boundary-bypasses.md)
@@ -21,6 +25,10 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
+- [Meta Muse VM escape release gate](meta-muse-vm-escape-release-gate.md)
+- [Docling Tectonic TeX file primitives](docling-tectonic-tex-file-primitives.md)
+- [Docling plugin entrypoint import policy bypass](docling-plugin-entrypoint-import-policy-bypass.md)
+- [Docling archive and table resource exhaustion](docling-archive-and-table-resource-exhaustion.md)
 - [JetBrains Rider AI Assistant skill auto update](jetbrains-rider-ai-assistant-skill-auto-update.md)
 - [Roo Code privileged GitHub Actions workflow RCE](roo-code-privileged-github-actions-workflow-rce.md)
 - [mcp-server-git repository boundary bypasses](mcp-server-git-repository-boundary-bypasses.md)
@@ -149,6 +157,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-10-06 with Meta Muse VM escape release-gate reporting plus split Docling Tectonic, plugin import, and resource-exhaustion leaves.
 - Updated on 2026-10-02 with the JetBrains Rider AI Assistant third-party skill auto-update confirmation leaf.
 - Updated on 2026-09-29 with Tencent AI-Infra-Guard file-access path traversal and its fixed-version open question.
 - Updated on 2026-09-25 with split September ServiceNow AI Platform SQL/authorization leaves, MLflow DSPy pickle-control bypass, and mcp-remote server URL hash execution leaves.

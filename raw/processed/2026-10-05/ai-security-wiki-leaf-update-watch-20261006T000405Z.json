@@ -1,0 +1,352 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-10-06T00:04:05Z",
+  "window": {
+    "start_exclusive": "2026-09-28T00:04:05Z",
+    "end_inclusive": "2026-10-06T00:04:05Z",
+    "policy": "visible publication or update dates within last 7 days; ambiguous, future, missing, and boundary-only dates excluded"
+  },
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "leaf_universe": {
+    "count": 560,
+    "selection_rule": "unchecked leaves first, then oldest last_checked_at, then stable relative path"
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/internlm-mindsearch-planner-agent-code-injection.md",
+    "docs/wiki/data-and-privacy/laradashboard-ai-provider-key-settings-api-exposure.md",
+    "docs/wiki/data-and-privacy/mindio-magic-mcp-sensitive-data-exposure.md",
+    "docs/wiki/governance-and-compliance/aiir-policy-gate-signature-verification.md",
+    "docs/wiki/threats-and-attacks/zammad-ai-driven-zero-day-breach.md",
+    "docs/wiki/agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md",
+    "docs/wiki/agent-and-tool-security/browse-mcp-file-path-boundary.md",
+    "docs/wiki/agent-and-tool-security/chainlit-mcp-setup-command-and-ssrf.md",
+    "docs/wiki/agent-and-tool-security/continue-cli-unattended-command-denylist-bypass.md",
+    "docs/wiki/agent-and-tool-security/genieacs-mcp-loopback-dns-rebinding.md",
+    "docs/wiki/agent-and-tool-security/mcp-ffmpeg-helper-command-injection.md",
+    "docs/wiki/agent-and-tool-security/mcp-shell-command-policy-bypasses.md",
+    "docs/wiki/agent-and-tool-security/nextcloud-mcp-webhook-vector-index-auth.md",
+    "docs/wiki/agent-and-tool-security/praisonai-agent-control-plane-advisory-deferrals.md",
+    "docs/wiki/agent-and-tool-security/praisonai-mcp-origin-and-csrf-instruction-persistence.md"
+  ],
+  "sources_checked": {
+    "docs/wiki/agent-and-tool-security/internlm-mindsearch-planner-agent-code-injection.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-105135",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-105135",
+      "https://vuldb.com/vuln/413352"
+    ],
+    "docs/wiki/data-and-privacy/laradashboard-ai-provider-key-settings-api-exposure.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-105129",
+      "https://github.com/laradashboard/laradashboard/security/advisories/GHSA-xgmw-7ppx-v7hq",
+      "https://github.com/laradashboard/laradashboard/releases/tag/v1.4.8",
+      "https://www.vulncheck.com/advisories/laradashboard-before-1.4.8-incorrect-authorization-exposes-secrets-via-settings-api"
+    ],
+    "docs/wiki/data-and-privacy/mindio-magic-mcp-sensitive-data-exposure.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-104402",
+      "https://patchstack.com/database/wordpress/plugin/mindio-magic-mcp/vulnerability/wordpress-mindio-magic-mcp-plugin-0-5-6-sensitive-data-exposure-vulnerability?_s_id=cve"
+    ],
+    "docs/wiki/governance-and-compliance/aiir-policy-gate-signature-verification.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-105161",
+      "https://vuldb.com/vuln/413387",
+      "https://github.com/advisories/GHSA-73p9-6hrp-8qhr"
+    ],
+    "docs/wiki/threats-and-attacks/zammad-ai-driven-zero-day-breach.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-102489",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-102490",
+      "https://csirt.divd.nl/cases/DIVD-2026-00015/",
+      "https://csirt.divd.nl/cves/CVE-2026-102489/",
+      "https://csirt.divd.nl/cves/CVE-2026-102490/",
+      "https://zammad.com/en/advisories/cve-2026-102489-cve-2026-102490",
+      "https://www.bleepingcomputer.com/news/security/divd-says-zammad-zero-days-enabled-ai-driven-network-breach/"
+    ],
+    "docs/wiki/agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md": [
+      "https://www.ncsc.gov.uk/blogs/managing-the-cyber-risk-of-agentic-ai",
+      "https://arxiv.org/abs/2609.29808",
+      "https://arxiv.org/abs/2609.22882"
+    ],
+    "docs/wiki/agent-and-tool-security/browse-mcp-file-path-boundary.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55557",
+      "https://github.com/That1Drifter/browse-mcp/security/advisories/GHSA-m9mq-7m7q-xc6p",
+      "https://github.com/That1Drifter/browse-mcp/releases/tag/v0.8.2"
+    ],
+    "docs/wiki/agent-and-tool-security/chainlit-mcp-setup-command-and-ssrf.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-45018",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-45019",
+      "https://github.com/Chainlit/chainlit/blob/2.12.0/docs/security-advisory-2026-mcp.md",
+      "https://github.com/Chainlit/chainlit/releases/tag/2.12.0"
+    ],
+    "docs/wiki/agent-and-tool-security/continue-cli-unattended-command-denylist-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-76072",
+      "https://github.com/continuedev/continue/issues/13001",
+      "https://www.vulncheck.com/advisories/continue-cli-through-incomplete-destructive-command-denylist-in-headless-and-auto-mode"
+    ],
+    "docs/wiki/agent-and-tool-security/genieacs-mcp-loopback-dns-rebinding.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55637",
+      "https://github.com/GeiserX/genieacs-mcp/security/advisories/GHSA-cmwv-wf9p-p8wx",
+      "https://github.com/GeiserX/genieacs-mcp/releases/tag/v0.3.2"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-ffmpeg-helper-command-injection.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-78430",
+      "https://vuldb.com/vuln/394711",
+      "https://github.com/sworddut/mcp-ffmpeg-helper/issues/6"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-shell-command-policy-bypasses.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55580",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55581",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55582",
+      "https://github.com/sonirico/mcp-shell/releases/tag/v0.6.0"
+    ],
+    "docs/wiki/agent-and-tool-security/nextcloud-mcp-webhook-vector-index-auth.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55640",
+      "https://github.com/cbcoutinho/nextcloud-mcp-server/security/advisories/GHSA-8vh3-g2qg-2h2c",
+      "https://github.com/cbcoutinho/nextcloud-mcp-server/tree/v0.117.2"
+    ],
+    "docs/wiki/agent-and-tool-security/praisonai-agent-control-plane-advisory-deferrals.md": [
+      "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvph-5j39-v8qc",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55532",
+      "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58"
+    ],
+    "docs/wiki/agent-and-tool-security/praisonai-mcp-origin-and-csrf-instruction-persistence.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55529",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55532",
+      "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58"
+    ]
+  },
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/internlm-mindsearch-planner-agent-code-injection.md",
+      "title": "InternLM MindSearch Planner Agent Code Injection",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-105135",
+      "source_visible_date": "2026-10-04T06:15:12.388Z",
+      "evidence_classification": [
+        "disclosed vulnerability",
+        "demonstrated research"
+      ],
+      "summary": "CVE Services published CVE-2026-105135 for InternLM MindSearch 0.1.0 Planner Agent code injection in ExecutionAction.run via the inputs argument; the CNA text says exploit material is public and vendor response was not captured.",
+      "affected_boundaries": [
+        "InternLM MindSearch 0.1.0",
+        "Planner Agent",
+        "mindsearch/agent/graph.py ExecutionAction.run",
+        "inputs argument"
+      ],
+      "named_entities": [
+        "InternLM",
+        "MindSearch",
+        "VulDB",
+        "CVE-2026-105135"
+      ],
+      "upstream_routing": "Broad InternLM and MindSearch product context belongs in ai-wiki; keep the planner-agent execution-boundary and mitigation gap locally.",
+      "follow_up_note": "Check for vendor patch or repository response before ingesting beyond the existing October 4 leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/laradashboard-ai-provider-key-settings-api-exposure.md",
+      "title": "LaraDashboard AI Provider Key Settings API Exposure",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-105129",
+      "source_visible_date": "2026-10-03T23:40:01.650Z",
+      "evidence_classification": [
+        "disclosed vulnerability",
+        "mitigation"
+      ],
+      "summary": "CVE Services published CVE-2026-105129 for LaraDashboard before 1.4.8, where users with settings.view could read plaintext stored secrets including AI provider API keys through settings API reads.",
+      "affected_boundaries": [
+        "LaraDashboard before 1.4.8",
+        "GET /api/settings",
+        "GET /api/settings/{option_name}",
+        "settings.view permission",
+        "AI provider API keys and stored secrets"
+      ],
+      "named_entities": [
+        "LaraDashboard",
+        "VulnCheck",
+        "GHSA-xgmw-7ppx-v7hq",
+        "CVE-2026-105129"
+      ],
+      "upstream_routing": "General LaraDashboard product/docs context routes upstream; retain secret redaction, settings authorization, and key-rotation implications locally.",
+      "follow_up_note": "Compare GitHub advisory and release notes for whether 1.4.8 redacts values, tightens route authorization, or both."
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/mindio-magic-mcp-sensitive-data-exposure.md",
+      "title": "Mindio Magic MCP Sensitive Data Exposure",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-104402",
+      "source_visible_date": "2026-10-05T13:15:54.663Z",
+      "evidence_classification": [
+        "disclosed vulnerability",
+        "mitigation"
+      ],
+      "summary": "CVE Services shows CVE-2026-104402 was published October 4 and updated October 5 for Mindio Magic MCP sensitive information inserted into sent data through 0.5.6, with 0.7.1 treated as unaffected in captured evidence.",
+      "affected_boundaries": [
+        "Mindio Magic MCP WordPress plugin through 0.5.6",
+        "sent-data handling",
+        "MCP-to-WordPress integration"
+      ],
+      "named_entities": [
+        "Mindio Magic MCP",
+        "Patchstack",
+        "WordPress",
+        "CVE-2026-104402"
+      ],
+      "upstream_routing": "Broad WordPress plugin catalog context routes upstream; keep the MCP data-movement and sensitive-output boundary locally.",
+      "follow_up_note": "Fetch Patchstack detail during ingest to identify the exact sensitive data classes and first fixed release."
+    },
+    {
+      "leaf_id": "docs/wiki/governance-and-compliance/aiir-policy-gate-signature-verification.md",
+      "title": "aiir Policy Gate Signature Verification",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-105161",
+      "source_visible_date": "2026-10-04T16:30:10.216Z",
+      "evidence_classification": [
+        "disclosed vulnerability",
+        "control change"
+      ],
+      "summary": "CVE Services published CVE-2026-105161 for invariant-systems-ai aiir through 1.7.0, describing improper cryptographic signature verification in a Policy Gate Handler and noting unavailable/unsupported repository evidence.",
+      "affected_boundaries": [
+        "invariant-systems-ai aiir 1.0 through 1.7.0",
+        "Policy Gate Handler",
+        "cryptographic signature verification",
+        "policy-gate integrity"
+      ],
+      "named_entities": [
+        "invariant-systems-ai",
+        "aiir",
+        "VulDB",
+        "GHSA-73p9-6hrp-8qhr",
+        "CVE-2026-105161"
+      ],
+      "upstream_routing": "General aiir entity context routes upstream if needed; local coverage should focus on policy-gate integrity and unsupported-product risk.",
+      "follow_up_note": "Check whether any maintained successor or advisory mirror gives canonicalization or signature-input details."
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/zammad-ai-driven-zero-day-breach.md",
+      "title": "Zammad AI-Driven Zero-Day Breach",
+      "source_url": "https://zammad.com/en/advisories/cve-2026-102489-cve-2026-102490",
+      "source_visible_date": "2026-10-05",
+      "evidence_classification": [
+        "confirmed exploitation",
+        "disclosed vulnerability",
+        "mitigation",
+        "control change"
+      ],
+      "summary": "Zammad published its October 5 advisory for CVE-2026-102489 and CVE-2026-102490, narrowing the RCE exploitability assessment to Zammad 6.5 and earlier, identifying 7.2.0 hardening, and describing CVE-2026-102490 as a local privilege escalation under high-priority analysis. CVE Services also shows both CVE records updated October 5 with DIVD primary references.",
+      "affected_boundaries": [
+        "Zammad 6.3.0 to 6.5.4 session hijack/RCE path",
+        "Zammad 7.0.0 to 7.1.3 code present but not exploitable under runtime conditions per DIVD/Zammad evidence",
+        "Zammad v1.5.0 to v7.1.0-alpha local privilege escalation path",
+        "DIVD-2026-00015 incident response"
+      ],
+      "named_entities": [
+        "Zammad",
+        "DIVD CSIRT",
+        "CVE-2026-102489",
+        "CVE-2026-102490",
+        "Zammad 7.2.0"
+      ],
+      "upstream_routing": "Broad Zammad product context belongs in ai-wiki; keep exploitation status, version boundaries, incident-response timing, and vendor/DIVD disagreement locally.",
+      "follow_up_note": "During ingest, reconcile DIVD case text, CVE Services dateUpdated fields, and Zammad advisory nuances before changing the existing breach page."
+    }
+  ],
+  "qualifying_count": 5,
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agentic-ai-emergency-shutdown-controls.md",
+      "reason": "NCSC source is dated 2026-08-20; arXiv stop-control search hits dated 2026-09-24 and 2026-09-19 are outside the seven-day window.",
+      "candidate_urls": [
+        "https://www.ncsc.gov.uk/blogs/managing-the-cyber-risk-of-agentic-ai",
+        "https://arxiv.org/abs/2609.29808",
+        "https://arxiv.org/abs/2609.22882"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/browse-mcp-file-path-boundary.md",
+      "reason": "CVE Services dateUpdated is 2026-08-25 and GitHub advisory/release evidence is older than the window.",
+      "candidate_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55557"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/chainlit-mcp-setup-command-and-ssrf.md",
+      "reason": "CVE Services records were updated 2026-08-25 and 2026-08-27; search results showed no direct in-window Chainlit advisory update.",
+      "candidate_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-45018",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-45019"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/continue-cli-unattended-command-denylist-bypass.md",
+      "reason": "CVE Services dateUpdated is 2026-08-24; Continue issue and VulnCheck evidence are older than the window.",
+      "candidate_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76072"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/genieacs-mcp-loopback-dns-rebinding.md",
+      "reason": "CVE Services dateUpdated is 2026-08-25; search hits were older secondary mirrors or crawl-only recency.",
+      "candidate_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55637"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-ffmpeg-helper-command-injection.md",
+      "reason": "CVE Services dateUpdated is 2026-08-24 and no in-window maintainer fix or advisory update was found.",
+      "candidate_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78430"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-shell-command-policy-bypasses.md",
+      "reason": "CVE Services records are dated 2026-08-25 through 2026-08-28; GitHub advisory search results showed crawl recency only.",
+      "candidate_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55580",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55581",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55582"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/nextcloud-mcp-webhook-vector-index-auth.md",
+      "reason": "CVE Services dateUpdated is 2026-08-25; secondary pages were older than the seven-day window.",
+      "candidate_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55640"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-agent-control-plane-advisory-deferrals.md",
+      "reason": "GHSA-pvph-5j39-v8qc maps to CVE-2026-55532 in CVE Services, but the visible CVE/advisory dates are 2026-08-25 and therefore stale for this run.",
+      "candidate_urls": [
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvph-5j39-v8qc",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55532"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-mcp-origin-and-csrf-instruction-persistence.md",
+      "reason": "CVE-2026-55529 and CVE-2026-55532 visible update dates are August 2026; search hits were stale secondary summaries.",
+      "candidate_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55529",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55532"
+      ]
+    }
+  ],
+  "upstream_routing_notes": [
+    "Broad AI products, frameworks, and product catalog context remains upstream-owned by ai-wiki or ai-dev-wiki under docs/wiki/federation.md.",
+    "This artifact keeps only local security-specific version boundaries, exploit/incident status, mitigations, and control implications."
+  ],
+  "follow_up_notes": [
+    "Do not ingest this raw artifact by editing docs/wiki until a separate source-to-wiki ingest run reconciles overlap with existing October 4 raw/processed sources.",
+    "Zammad ingest should preserve disagreement/nuance between DIVD primary case text, CVE Services updates, and Zammad vendor assessment.",
+    "Mindio ingest should fetch primary Patchstack detail to fill exact exposed data classes."
+  ],
+  "local_content_safety": "Only relative leaf ids, public topic names, public advisory identifiers, and public source URLs were used for external checks; no full local pages or private content were sent as search queries.",
+  "created_files": [
+    "raw/2026-10-05/ai-security-wiki-leaf-update-watch-20261006T000405Z.json"
+  ],
+  "modified_files": [
+    "/Users/martinbechard/.codex/automations/ai-security-wiki-leaf-update-watch/state.json"
+  ]
+}

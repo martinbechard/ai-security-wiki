@@ -2,7 +2,7 @@
 
 ## Current Understanding
 
-The active October 2026 digest currently includes item-level October 4, October 3, October 2, and October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
+The active October 2026 digest currently includes item-level October 5, October 4, October 3, October 2, and October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
 
 Monthly digests summarize processed security updates and link to durable local leaves for detail. Collectors save raw evidence first; ingest updates a digest only after the local security analysis and federation routing are complete.
 
@@ -17,6 +17,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 5 topic collector source](../../../raw/processed/2026-10-05/ai-security-wiki-topic-news-collector-2026-10-05T233142Z.json)
+- [October 5 leaf update watch source](../../../raw/processed/2026-10-05/ai-security-wiki-leaf-update-watch-20261006T000405Z.json)
 - [October 3 topic collector source](../../../raw/processed/2026-10-03/ai-security-wiki-topic-news-collector-2026-10-03T233152Z.json)
 - [October 3 leaf update watch source](../../../raw/processed/2026-10-03/ai-security-wiki-leaf-update-watch-20261004T000312Z.json)
 - [October 4 topic collector source](../../../raw/processed/2026-10-04/ai-security-wiki-topic-news-collector-2026-10-04T233152Z.json)
@@ -117,6 +119,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-06 with item-level October 5 entries for Grafana mcp-k6, split Langflow execution/locality/authorization boundaries, split Docling ingestion boundaries, OpenClaw channel reads, LangGraph SDK authorization, Dify MCP server ownership, Hyve Lite IDOR, [cross-agent MCP prompt propagation](../threats-and-attacks/cross-agent-mcp-prompt-propagation.md), Meta Muse VM escape release gates, and Zammad primary-advisory enrichment; duplicate October 5 watcher repeats stayed provenance-only and ordering remains reverse chronological.
 - Updated on 2026-10-05 with item-level October 4 entries for InternLM MindSearch, Mindio Magic MCP, LaraDashboard, aiir Policy Gate, [Zammad AI-driven zero-day breach](../threats-and-attacks/zammad-ai-driven-zero-day-breach.md), and Custom GPT ClickFix reporting; duplicate October 3 watcher repeats stayed provenance-only and ordering remains reverse chronological.
 - Updated on 2026-10-04 with item-level October 3 entries for [SupportCandy AI Customer Support stored XSS](../data-and-privacy/supportcandy-ai-customer-support-stored-xss.md), [SupportCandy AI Customer Support SQL injection](../data-and-privacy/supportcandy-ai-customer-support-sql-injection.md), WPZOOM Connect AI Chat, and Alt Text AI; October 3 watcher repeats stayed provenance-only.
 - Updated on 2026-10-03 with item-level October 2 entries for AWS Security Agent MCP Server, modelcontextprotocol fetch servers, HAVELSAN Sef AI Chatbot Platform, GitLab AI Gateway, Airano MCP Bridge, Microsoft AI attack-timeline controls, and agentic government-site probing; watcher repeats stayed provenance-only.

@@ -6,6 +6,9 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [Docling remote image credential forwarding](docling-remote-image-credential-forwarding.md)
+- [Docling remote OCR policy bypass](docling-remote-ocr-policy-bypass.md)
+- [Docling local file read conversion backends](docling-local-file-read-conversion-backends.md)
 - [SupportCandy AI Customer Support stored XSS](supportcandy-ai-customer-support-stored-xss.md)
 - [SupportCandy AI Customer Support SQL injection](supportcandy-ai-customer-support-sql-injection.md)
 - [WPZOOM Connect AI Chat customer data exposure](wpzoom-connect-ai-chat-customer-data-exposure.md)
@@ -114,6 +117,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-10-06 with Docling remote image credential forwarding, remote OCR policy bypass, and local file-read conversion leaves plus October 5 watcher provenance for Mindio Magic MCP and LaraDashboard.
 - Updated on 2026-10-05 with Mindio Magic MCP sensitive-data exposure, LaraDashboard AI provider-key exposure, and October 4 watcher provenance for SupportCandy and WPZOOM.
 - Updated on 2026-10-04 with split SupportCandy AI Customer Support stored-XSS and SQL-injection leaves plus the WPZOOM Connect AI Chat customer-data exposure leaf.
 - Updated on 2026-10-02 with split Joyland AI mobile leaves for GeTui credentials, WebView JavaScript injection, TLS certificate validation, hostname verification, cleartext HTTP traffic, and advertisement WebView invalid SSL certificates.

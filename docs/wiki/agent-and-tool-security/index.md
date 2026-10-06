@@ -2,6 +2,9 @@
 
 ## Current Understanding
 
+- [Grafana mcp-k6 prompt file read](grafana-mcp-k6-prompt-file-read.md)
+- [Langflow Smart Transform code execution](langflow-smart-transform-code-execution.md)
+- [Docling remote fetch DNS rebinding](docling-remote-fetch-dns-rebinding.md)
 - [AWS Security Agent MCP Server diff scan argument injection](aws-security-agent-mcp-server-diff-scan-argument-injection.md)
 - [InternLM MindSearch Planner Agent code injection](internlm-mindsearch-planner-agent-code-injection.md)
 - [MCP Server Fetch SSRF](mcp-server-fetch-ssrf.md)
@@ -58,6 +61,9 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [Grafana mcp-k6 prompt file read](grafana-mcp-k6-prompt-file-read.md)
+- [Langflow Smart Transform code execution](langflow-smart-transform-code-execution.md)
+- [Docling remote fetch DNS rebinding](docling-remote-fetch-dns-rebinding.md)
 - [AWS Security Agent MCP Server diff scan argument injection](aws-security-agent-mcp-server-diff-scan-argument-injection.md)
 - [InternLM MindSearch Planner Agent code injection](internlm-mindsearch-planner-agent-code-injection.md)
 - [MCP Server Fetch SSRF](mcp-server-fetch-ssrf.md)
@@ -279,6 +285,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-06 with Grafana mcp-k6 prompt file-read, Langflow Smart Transform code-execution, Docling remote-fetch DNS rebinding, and October 5 Langflow MCP evidence folded into existing Langflow MCP leaves.
 - Updated on 2026-10-05 with the InternLM MindSearch Planner Agent code-injection leaf from the October 4 source ingest.
 - Updated on 2026-10-03 with AWS Security Agent MCP Server diff-scan argument injection, MCP Server Fetch SSRF, and HAVELSAN Sef AI Chatbot Platform advisory-cluster leaves from the October 2 source ingest.
 - Updated on 2026-10-02 with Laravel AI SDK file URL SSRF, Budibase AI table generation SSRF, Office PowerPoint MCP Server path traversal, and AiSOC CrowdStrike RTR command-injection leaves.

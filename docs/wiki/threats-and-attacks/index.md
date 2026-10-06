@@ -6,6 +6,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 
 ## Leaf Pages
 
+- [Cross-agent MCP prompt propagation](cross-agent-mcp-prompt-propagation.md)
 - [Agentic web retrieval government probing](agentic-web-retrieval-government-probing.md)
 - [Zammad AI-driven zero-day breach](zammad-ai-driven-zero-day-breach.md)
 - [AI-hosted artifact malware delivery](ai-hosted-artifact-malware-delivery.md)
@@ -49,6 +50,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 
 ## Maintenance Notes
 
+- Updated on 2026-10-06 with the cross-agent MCP prompt-propagation leaf and Zammad primary-advisory enrichment.
 - Updated on 2026-10-05 with the Zammad AI-driven zero-day breach leaf and Custom GPT ClickFix watcher evidence folded into AI-hosted artifact malware delivery.
 - Updated on 2026-10-03 with Transluce-reported agentic web-retrieval probing of U.S. and Canadian government sites.
 - Separate observed exploitation, demonstrated research, and plausible threat hypotheses.

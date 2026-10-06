@@ -8,6 +8,23 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [agent-and-tool-security/grafana-mcp-k6-prompt-file-read.md](agent-and-tool-security/grafana-mcp-k6-prompt-file-read.md)
+- [agent-and-tool-security/langflow-smart-transform-code-execution.md](agent-and-tool-security/langflow-smart-transform-code-execution.md)
+- [agent-and-tool-security/docling-remote-fetch-dns-rebinding.md](agent-and-tool-security/docling-remote-fetch-dns-rebinding.md)
+- [infrastructure-and-supply-chain/docling-tectonic-tex-file-primitives.md](infrastructure-and-supply-chain/docling-tectonic-tex-file-primitives.md)
+- [infrastructure-and-supply-chain/docling-plugin-entrypoint-import-policy-bypass.md](infrastructure-and-supply-chain/docling-plugin-entrypoint-import-policy-bypass.md)
+- [data-and-privacy/docling-remote-image-credential-forwarding.md](data-and-privacy/docling-remote-image-credential-forwarding.md)
+- [data-and-privacy/docling-remote-ocr-policy-bypass.md](data-and-privacy/docling-remote-ocr-policy-bypass.md)
+- [infrastructure-and-supply-chain/docling-archive-and-table-resource-exhaustion.md](infrastructure-and-supply-chain/docling-archive-and-table-resource-exhaustion.md)
+- [data-and-privacy/docling-local-file-read-conversion-backends.md](data-and-privacy/docling-local-file-read-conversion-backends.md)
+- [identity-and-access/langflow-flow-build-ownership-bypass.md](identity-and-access/langflow-flow-build-ownership-bypass.md)
+- [identity-and-access/langflow-mcp-resource-read-authorization-bypass.md](identity-and-access/langflow-mcp-resource-read-authorization-bypass.md)
+- [identity-and-access/openclaw-channel-read-allowlist-bypass.md](identity-and-access/openclaw-channel-read-allowlist-bypass.md)
+- [identity-and-access/langgraph-sdk-custom-auth-action-scope-bypass.md](identity-and-access/langgraph-sdk-custom-auth-action-scope-bypass.md)
+- [identity-and-access/dify-mcp-server-status-tenant-ownership.md](identity-and-access/dify-mcp-server-status-tenant-ownership.md)
+- [identity-and-access/hyve-lite-ai-chatbot-idor.md](identity-and-access/hyve-lite-ai-chatbot-idor.md)
+- [threats-and-attacks/cross-agent-mcp-prompt-propagation.md](threats-and-attacks/cross-agent-mcp-prompt-propagation.md)
+- [infrastructure-and-supply-chain/meta-muse-vm-escape-release-gate.md](infrastructure-and-supply-chain/meta-muse-vm-escape-release-gate.md)
 - [data-and-privacy/supportcandy-ai-customer-support-stored-xss.md](data-and-privacy/supportcandy-ai-customer-support-stored-xss.md)
 - [data-and-privacy/supportcandy-ai-customer-support-sql-injection.md](data-and-privacy/supportcandy-ai-customer-support-sql-injection.md)
 - [data-and-privacy/wpzoom-connect-ai-chat-customer-data-exposure.md](data-and-privacy/wpzoom-connect-ai-chat-customer-data-exposure.md)
@@ -591,6 +608,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-06 with October 5 ingest leaves for Grafana mcp-k6, split Langflow Smart Transform, stdio/locality enrichment, flow ownership, and MCP resource-read boundaries, split Docling ingestion boundaries, OpenClaw channel reads, LangGraph SDK custom auth, Dify MCP server ownership, Hyve Lite IDOR, cross-agent MCP prompt propagation, Meta Muse VM escape release gates, and Zammad primary-advisory enrichment.
 - Updated on 2026-10-05 with October 4 ingest leaves for InternLM MindSearch, Mindio Magic MCP, LaraDashboard, aiir Policy Gate, Zammad AI-driven zero-day breach, and Custom GPT ClickFix watcher evidence; October 3 watcher repeats stayed provenance-only.
 - Updated on 2026-10-04 with October 3 ingest leaves for SupportCandy AI Customer Support stored XSS and SQL injection, WPZOOM Connect AI Chat, and Alt Text AI WordPress plugin advisories.
 - Updated on 2026-10-03 with October 2 ingest leaves for AWS Security Agent MCP Server, MCP Server Fetch, HAVELSAN Sef AI Chatbot Platform, GitLab AI Gateway, Airano MCP Bridge, Microsoft AI attack-timeline controls, and agentic web-retrieval probing.

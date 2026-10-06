@@ -6,6 +6,12 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [Langflow flow build ownership bypass](langflow-flow-build-ownership-bypass.md)
+- [Langflow MCP resource read authorization bypass](langflow-mcp-resource-read-authorization-bypass.md)
+- [OpenClaw channel read allowlist bypass](openclaw-channel-read-allowlist-bypass.md)
+- [LangGraph SDK custom auth action scope bypass](langgraph-sdk-custom-auth-action-scope-bypass.md)
+- [Dify MCP server status tenant ownership](dify-mcp-server-status-tenant-ownership.md)
+- [Hyve Lite AI Chatbot IDOR](hyve-lite-ai-chatbot-idor.md)
 - [Alt Text AI post content authorization bypass](alt-text-ai-post-content-authorization-bypass.md)
 - [LaraDashboard AI provider key settings API exposure](../data-and-privacy/laradashboard-ai-provider-key-settings-api-exposure.md)
 - [Airano MCP Bridge broken access control](airano-mcp-bridge-broken-access-control.md)
@@ -141,6 +147,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-10-06 with split Langflow flow-build ownership and MCP resource-read authorization leaves, OpenClaw communication-plugin read allowlist, LangGraph SDK custom-auth action scope, Dify MCP server ownership, and Hyve Lite AI chatbot IDOR leaves.
 - Updated on 2026-10-05 with LaraDashboard AI provider-key settings exposure and Alt Text AI watcher provenance.
 - Updated on 2026-10-04 with the Alt Text AI post-content authorization bypass leaf.
 - Updated on 2026-10-03 with Airano MCP Bridge broken access control as a WordPress MCP bridge authorization boundary.

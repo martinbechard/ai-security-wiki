@@ -25,6 +25,7 @@ The CVE record says the Policy Gate Handler improperly verifies a cryptographic 
 ## Authoritative Sources
 
 - [October 4 topic collector source](../../../raw/processed/2026-10-04/ai-security-wiki-topic-news-collector-2026-10-04T233152Z.json)
+- [October 5 leaf update watch source](../../../raw/processed/2026-10-05/ai-security-wiki-leaf-update-watch-20261006T000405Z.json)
 - [CVE-2026-105161 record](https://cveawg.mitre.org/api/cve/CVE-2026-105161)
 - [NVD CVE-2026-105161](https://nvd.nist.gov/vuln/detail/CVE-2026-105161)
 - [VulDB advisory](https://vuldb.com/vuln/413387)
@@ -56,3 +57,4 @@ The CVE record says the Policy Gate Handler improperly verifies a cryptographic 
 ## Maintenance Notes
 
 - Created on 2026-10-05 from the [October 4 topic collector source](../../../raw/processed/2026-10-04/ai-security-wiki-topic-news-collector-2026-10-04T233152Z.json) as a policy-gate integrity and unsupported-product leaf.
+- Updated on 2026-10-06 with October 5 watcher provenance; no digest entry was added because the watcher repeated the same policy-gate signature-verification boundary without a material mitigation change.
