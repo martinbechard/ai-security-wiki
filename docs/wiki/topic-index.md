@@ -8,6 +8,14 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [identity-and-access/mcp-typescript-sdk-oauth-credential-confusion.md](identity-and-access/mcp-typescript-sdk-oauth-credential-confusion.md)
+- [infrastructure-and-supply-chain/bedrock-agentcore-starter-toolkit-import-vulnerabilities.md](infrastructure-and-supply-chain/bedrock-agentcore-starter-toolkit-import-vulnerabilities.md)
+- [agent-and-tool-security/microsoft-ufo-mobile-mcp-adb-command-injection.md](agent-and-tool-security/microsoft-ufo-mobile-mcp-adb-command-injection.md)
+- [agent-and-tool-security/microsoft-ufo-windows-command-executor-injection.md](agent-and-tool-security/microsoft-ufo-windows-command-executor-injection.md)
+- [agent-and-tool-security/simplechat-mcp-stdio-personal-plugin-rce.md](agent-and-tool-security/simplechat-mcp-stdio-personal-plugin-rce.md)
+- [identity-and-access/payload-plugin-mcp-api-key-account-takeover.md](identity-and-access/payload-plugin-mcp-api-key-account-takeover.md)
+- [infrastructure-and-supply-chain/progress-genai-agent-generator-command-injection.md](infrastructure-and-supply-chain/progress-genai-agent-generator-command-injection.md)
+- [agent-and-tool-security/cross-vendor-mcp-ssrf-protocol-pivoting.md](agent-and-tool-security/cross-vendor-mcp-ssrf-protocol-pivoting.md)
 - [agent-and-tool-security/grafana-mcp-k6-prompt-file-read.md](agent-and-tool-security/grafana-mcp-k6-prompt-file-read.md)
 - [agent-and-tool-security/langflow-smart-transform-code-execution.md](agent-and-tool-security/langflow-smart-transform-code-execution.md)
 - [agent-and-tool-security/docling-remote-fetch-dns-rebinding.md](agent-and-tool-security/docling-remote-fetch-dns-rebinding.md)
@@ -608,6 +616,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-07 with October 6 source-ingest leaves for MCP TypeScript SDK OAuth credential confusion, Bedrock AgentCore Starter Toolkit import vulnerabilities, split Microsoft UFO mobile ADB and Windows command-executor injection, SimpleChat MCP stdio personal-plugin RCE, Payload plugin-mcp API-key account takeover, Progress GenAI Agent Generator command injection, and cross-vendor MCP SSRF protocol pivoting.
 - Updated on 2026-10-06 with October 5 ingest leaves for Grafana mcp-k6, split Langflow Smart Transform, stdio/locality enrichment, flow ownership, and MCP resource-read boundaries, split Docling ingestion boundaries, OpenClaw channel reads, LangGraph SDK custom auth, Dify MCP server ownership, Hyve Lite IDOR, cross-agent MCP prompt propagation, Meta Muse VM escape release gates, and Zammad primary-advisory enrichment.
 - Updated on 2026-10-05 with October 4 ingest leaves for InternLM MindSearch, Mindio Magic MCP, LaraDashboard, aiir Policy Gate, Zammad AI-driven zero-day breach, and Custom GPT ClickFix watcher evidence; October 3 watcher repeats stayed provenance-only.
 - Updated on 2026-10-04 with October 3 ingest leaves for SupportCandy AI Customer Support stored XSS and SQL injection, WPZOOM Connect AI Chat, and Alt Text AI WordPress plugin advisories.

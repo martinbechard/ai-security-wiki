@@ -2,6 +2,10 @@
 
 ## Current Understanding
 
+- [Microsoft UFO mobile MCP ADB command injection](microsoft-ufo-mobile-mcp-adb-command-injection.md)
+- [Microsoft UFO Windows command executor injection](microsoft-ufo-windows-command-executor-injection.md)
+- [SimpleChat MCP stdio personal plugin RCE](simplechat-mcp-stdio-personal-plugin-rce.md)
+- [Cross-vendor MCP SSRF protocol pivoting](cross-vendor-mcp-ssrf-protocol-pivoting.md)
 - [Grafana mcp-k6 prompt file read](grafana-mcp-k6-prompt-file-read.md)
 - [Langflow Smart Transform code execution](langflow-smart-transform-code-execution.md)
 - [Docling remote fetch DNS rebinding](docling-remote-fetch-dns-rebinding.md)
@@ -61,6 +65,10 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [Microsoft UFO mobile MCP ADB command injection](microsoft-ufo-mobile-mcp-adb-command-injection.md)
+- [Microsoft UFO Windows command executor injection](microsoft-ufo-windows-command-executor-injection.md)
+- [SimpleChat MCP stdio personal plugin RCE](simplechat-mcp-stdio-personal-plugin-rce.md)
+- [Cross-vendor MCP SSRF protocol pivoting](cross-vendor-mcp-ssrf-protocol-pivoting.md)
 - [Grafana mcp-k6 prompt file read](grafana-mcp-k6-prompt-file-read.md)
 - [Langflow Smart Transform code execution](langflow-smart-transform-code-execution.md)
 - [Docling remote fetch DNS rebinding](docling-remote-fetch-dns-rebinding.md)
@@ -285,6 +293,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-07 with split Microsoft UFO mobile ADB and Windows command-executor leaves, SimpleChat MCP stdio personal-plugin RCE, and cross-vendor MCP SSRF protocol-pivoting leaves.
 - Updated on 2026-10-06 with Grafana mcp-k6 prompt file-read, Langflow Smart Transform code-execution, Docling remote-fetch DNS rebinding, and October 5 Langflow MCP evidence folded into existing Langflow MCP leaves.
 - Updated on 2026-10-05 with the InternLM MindSearch Planner Agent code-injection leaf from the October 4 source ingest.
 - Updated on 2026-10-03 with AWS Security Agent MCP Server diff-scan argument injection, MCP Server Fetch SSRF, and HAVELSAN Sef AI Chatbot Platform advisory-cluster leaves from the October 2 source ingest.

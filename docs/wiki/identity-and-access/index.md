@@ -6,6 +6,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [MCP TypeScript SDK OAuth credential confusion](mcp-typescript-sdk-oauth-credential-confusion.md)
+- [Payload plugin-mcp API key account takeover](payload-plugin-mcp-api-key-account-takeover.md)
 - [Langflow flow build ownership bypass](langflow-flow-build-ownership-bypass.md)
 - [Langflow MCP resource read authorization bypass](langflow-mcp-resource-read-authorization-bypass.md)
 - [OpenClaw channel read allowlist bypass](openclaw-channel-read-allowlist-bypass.md)
@@ -147,6 +149,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-10-07 with MCP TypeScript SDK OAuth credential-confusion and Payload plugin-mcp API-key account-boundary leaves.
 - Updated on 2026-10-06 with split Langflow flow-build ownership and MCP resource-read authorization leaves, OpenClaw communication-plugin read allowlist, LangGraph SDK custom-auth action scope, Dify MCP server ownership, and Hyve Lite AI chatbot IDOR leaves.
 - Updated on 2026-10-05 with LaraDashboard AI provider-key settings exposure and Alt Text AI watcher provenance.
 - Updated on 2026-10-04 with the Alt Text AI post-content authorization bypass leaf.

@@ -1,0 +1,1190 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "automation_name": "AI Security Wiki Leaf Update Watch",
+  "exclusions": [
+    {
+      "candidate": "GitHub source advisory page for GHSA-fvww-7h3r-vfhp",
+      "reason": "Source advisory page only exposed the older August 28 publication date; qualifying freshness came from CVE Services and GitHub Advisory Database October 5 updates."
+    },
+    {
+      "candidate": "GitHub source advisory page for GHSA-g7fw-3gjp-g5hf",
+      "reason": "Source advisory page only exposed the older September 11 publication date; qualifying freshness came from GitHub Advisory Database October 5 update."
+    },
+    {
+      "candidate": "Older Langflow exploitation and KEV search results for unrelated CVE identifiers",
+      "reason": "Search results were outside the selected leaf identifiers or outside the seven-day visible-date window."
+    }
+  ],
+  "federation_note": "Per docs/wiki/federation.md, broad product, framework, and MCP ecosystem coverage routes upstream to ai-wiki or ai-dev-wiki; this artifact retains only security-specific evidence, affected boundaries, mitigations, and routing notes.",
+  "local_write_scope": "raw artifact only; docs/wiki and raw/processed were not edited by this watcher.",
+  "qualifying_identifier_count": 22,
+  "qualifying_leaf_count": 15,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "remote image/page fetching",
+        "SSRF guard",
+        "internal network reachability"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "docling",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.91.0, < 2.132.0"
+                }
+              ]
+            },
+            {
+              "product": "docling-slim",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.91.0, < 2.132.0"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T21:23:45.527Z",
+          "date_updated": "2026-10-05T21:23:45.527Z",
+          "identifier": "CVE-2026-105743",
+          "references": [
+            "https://github.com/docling-project/docling/security/advisories/GHSA-pc36-qwjq-x68c",
+            "https://github.com/docling-project/docling/pull/4420",
+            "https://github.com/docling-project/docling/commit/5e469137f275ffc443306a30d12a3a45bceb80fb",
+            "https://github.com/docling-project/docling/releases/tag/v2.132.0"
+          ],
+          "state": "PUBLISHED",
+          "title": "Docling: SSRF guard bypass in remote resource fetching (DNS rebinding / multi-record resolution; no IP validation in HTML render mode)",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105743"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-105743"
+      ],
+      "leaf_id": "docs/wiki/agent-and-tool-security/docling-remote-fetch-dns-rebinding.md",
+      "named_entities": [
+        "Docling",
+        "Docling Slim",
+        "docling-project"
+      ],
+      "qualifying_update_at": "2026-10-05",
+      "summary": "Docling remote resource fetching can bypass SSRF guards through DNS rebinding, multi-record resolution, and HTML rendering IP-validation gaps.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "Docling broad product coverage"
+        ],
+        "local_security_scope": "Keep the SSRF and remote-fetch boundary locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "MCP prompt conversion",
+        "local filesystem read",
+        "tool execution boundary"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "mcp-k6",
+              "vendor": "Grafana",
+              "versions": [
+                {
+                  "lessThan": "0.7.0",
+                  "status": "affected",
+                  "version": "0.3.0",
+                  "versionType": "semver"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T14:52:41.097Z",
+          "date_updated": "2026-10-05T19:36:42.166Z",
+          "identifier": "CVE-2026-89039",
+          "references": [
+            "https://grafana.com/security/security-advisories/cve-2026-89039"
+          ],
+          "state": "PUBLISHED",
+          "title": "Arbitrary file read via the convert_playwright_script prompt in mcp-k6",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-89039"
+        },
+        {
+          "date_published": "2026-10-05T15:32:23Z",
+          "date_updated": "2026-10-05T15:32:29Z",
+          "identifier": "GHSA-ffg3-vfrj-4mjj",
+          "title": "The convert_playwright_script prompt in the k6 MCP server can read files",
+          "url": "https://github.com/advisories/GHSA-ffg3-vfrj-4mjj"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-89039",
+        "GHSA-ffg3-vfrj-4mjj"
+      ],
+      "leaf_id": "docs/wiki/agent-and-tool-security/grafana-mcp-k6-prompt-file-read.md",
+      "named_entities": [
+        "Grafana",
+        "mcp-k6",
+        "k6",
+        "Playwright"
+      ],
+      "qualifying_update_at": "2026-10-05",
+      "summary": "Grafana mcp-k6 0.3.0 can read arbitrary files through the convert_playwright_script prompt path.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general MCP testing workflow context if needed"
+        ],
+        "ai_wiki": [
+          "Grafana and k6 broad entities"
+        ],
+        "local_security_scope": "Keep arbitrary file-read risk in agent/tool security."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "LLM-generated transform code",
+        "Python eval/code execution",
+        "flow authoring boundary"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "langflow",
+              "vendor": "langflow-ai",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": "1.10.0"
+                },
+                {
+                  "status": "affected",
+                  "version": "1.10.1"
+                },
+                {
+                  "status": "affected",
+                  "version": "1.10.2"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-05-03T14:15:15.887Z",
+          "date_updated": "2026-10-06T05:35:31.424Z",
+          "identifier": "CVE-2026-7700",
+          "references": [
+            "https://vuldb.com/vuln/360869",
+            "https://vuldb.com/vuln/360869/cti",
+            "https://vuldb.com/cve/CVE-2026-7700",
+            "https://vuldb.com/submit/804305",
+            "https://www.yuque.com/mengnanbulalei/ognlsk/hte2a98ro5gf8tp9?singleDoc#%20%E3%80%8AFirst%20release%20of%20Langflow%201.8.3%20Smart%20Transform%20eval()/Lambda%20injection%20RCE%20vulnerability%20analysis+POC%E3%80%8B",
+            "https://github.com/langflow-ai/langflow/security/advisories/GHSA-9fpm-3445-2vx4",
+            "https://github.com/langflow-ai/langflow/"
+          ],
+          "state": "PUBLISHED",
+          "title": "langflow-ai langflow LambdaFilterComponent lambda_filter.py eval code injection",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-7700"
+        },
+        {
+          "date_published": "2026-08-04T14:35:48Z",
+          "date_updated": "2026-10-05T22:30:42Z",
+          "identifier": "GHSA-9fpm-3445-2vx4",
+          "title": "Langflow: Prompt injection in Langflow Smart Transform can lead to code execution",
+          "url": "https://github.com/advisories/GHSA-9fpm-3445-2vx4"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-7700",
+        "GHSA-9fpm-3445-2vx4"
+      ],
+      "leaf_id": "docs/wiki/agent-and-tool-security/langflow-smart-transform-code-execution.md",
+      "named_entities": [
+        "Langflow",
+        "langflow-ai"
+      ],
+      "qualifying_update_at": "2026-10-06",
+      "summary": "Langflow Smart Transform lambda evaluation remains represented by CVE Services and GitHub advisory updates in the seven-day window.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general flow-building practice context"
+        ],
+        "ai_wiki": [
+          "Langflow broad product coverage"
+        ],
+        "local_security_scope": "Keep prompt-to-code execution risk locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "document conversion backends",
+        "local file confidentiality",
+        "HTML/OpenDocument/DoclingDocument input handling"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "docling",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.16.0, < 2.131.0"
+                }
+              ]
+            },
+            {
+              "product": "docling-slim",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.16.0, < 2.131.0"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T21:34:25.628Z",
+          "date_updated": "2026-10-06T14:17:25.343Z",
+          "identifier": "CVE-2026-105748",
+          "references": [
+            "https://github.com/docling-project/docling/security/advisories/GHSA-p944-4xh2-x776",
+            "https://github.com/docling-project/docling/pull/4417",
+            "https://github.com/docling-project/docling/commit/d4bb776884aba9aa3132f54773f420853cf7afe4",
+            "https://github.com/docling-project/docling/releases/tag/v2.131.0"
+          ],
+          "state": "PUBLISHED",
+          "title": "Docling: Crafted DoclingDocument JSON embeds local image files into converted output",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105748"
+        },
+        {
+          "affected": [
+            {
+              "product": "docling",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.82.0, < 2.118.1"
+                }
+              ]
+            },
+            {
+              "product": "docling-slim",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.92.0, < 2.118.1"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T21:38:28.098Z",
+          "date_updated": "2026-10-06T18:17:27.884Z",
+          "identifier": "CVE-2026-105750",
+          "references": [
+            "https://github.com/docling-project/docling/security/advisories/GHSA-q43m-vhcp-mhvm",
+            "https://github.com/docling-project/docling/pull/3948",
+            "https://github.com/docling-project/docling/commit/1612b8875b0937447ce3122536fb5360a7102a0a",
+            "https://github.com/docling-project/docling/releases/tag/v2.118.1"
+          ],
+          "state": "PUBLISHED",
+          "title": "Docling: `enable_local_fetch` is not enforced in HTML browser-rendering mode",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105750"
+        },
+        {
+          "affected": [
+            {
+              "product": "docling",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.107.0, < 2.120.3"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T21:40:45.997Z",
+          "date_updated": "2026-10-06T16:36:34.080Z",
+          "identifier": "CVE-2026-105751",
+          "references": [
+            "https://github.com/docling-project/docling/security/advisories/GHSA-4xhp-xg4w-8ppm",
+            "https://github.com/docling-project/docling/pull/4015",
+            "https://github.com/docling-project/docling/commit/6ee9965adfc364b3696a67c825ec2f0d9cee4311",
+            "https://github.com/docling-project/docling/releases/tag/v2.120.3"
+          ],
+          "state": "PUBLISHED",
+          "title": "Docling: Arbitrary local file read via draw:image xlink:href in the OpenDocument backend",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105751"
+        },
+        {
+          "date_published": "2026-08-24T13:31:59Z",
+          "date_updated": "2026-10-05T22:33:53Z",
+          "identifier": "GHSA-4xhp-xg4w-8ppm",
+          "title": "Docling: Arbitrary local file read via draw:image xlink:href in the OpenDocument backend",
+          "url": "https://github.com/advisories/GHSA-4xhp-xg4w-8ppm"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-105748",
+        "CVE-2026-105750",
+        "CVE-2026-105751",
+        "GHSA-4xhp-xg4w-8ppm"
+      ],
+      "leaf_id": "docs/wiki/data-and-privacy/docling-local-file-read-conversion-backends.md",
+      "named_entities": [
+        "Docling",
+        "Docling Slim",
+        "docling-project"
+      ],
+      "qualifying_update_at": "2026-10-06",
+      "summary": "Multiple Docling conversion backends can embed or read local files despite local-fetch controls or archive/document indirection.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "Docling broad product coverage"
+        ],
+        "local_security_scope": "Keep backend-specific local-file disclosure boundaries locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "remote image loading",
+        "credential/header forwarding",
+        "document-supplied URL trust boundary"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "docling",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.95.0, < 2.132.0"
+                }
+              ]
+            },
+            {
+              "product": "docling-slim",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.95.0, < 2.132.0"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T21:21:43.538Z",
+          "date_updated": "2026-10-06T13:55:17.719Z",
+          "identifier": "CVE-2026-105742",
+          "references": [
+            "https://github.com/docling-project/docling/security/advisories/GHSA-p3fw-7699-7926",
+            "https://github.com/docling-project/docling/pull/4420",
+            "https://github.com/docling-project/docling/commit/5e469137f275ffc443306a30d12a3a45bceb80fb",
+            "https://github.com/docling-project/docling/releases/tag/v2.132.0"
+          ],
+          "state": "PUBLISHED",
+          "title": "Docling: Configured HTTP headers sent to every remote image host named by a document",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105742"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-105742"
+      ],
+      "leaf_id": "docs/wiki/data-and-privacy/docling-remote-image-credential-forwarding.md",
+      "named_entities": [
+        "Docling",
+        "Docling Slim",
+        "docling-project"
+      ],
+      "qualifying_update_at": "2026-10-06",
+      "summary": "Docling can forward configured HTTP headers to every remote image host named by a document.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "Docling broad product coverage"
+        ],
+        "local_security_scope": "Keep credential-forwarding and remote image privacy boundary locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "OCR pipeline",
+        "remote service policy",
+        "page-image data disclosure"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "docling",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.83.0, < 2.131.0"
+                }
+              ]
+            },
+            {
+              "product": "docling-slim",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.83.0, < 2.131.0"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T21:31:12.354Z",
+          "date_updated": "2026-10-06T16:40:40.755Z",
+          "identifier": "CVE-2026-105746",
+          "references": [
+            "https://github.com/docling-project/docling/security/advisories/GHSA-h42j-9hcc-3cwc",
+            "https://github.com/docling-project/docling/pull/4418",
+            "https://github.com/docling-project/docling/commit/7d6d0c4810dff4885017c53890be6dc5a22ca68b",
+            "https://github.com/docling-project/docling/releases/tag/v2.131.0"
+          ],
+          "state": "PUBLISHED",
+          "title": "Docling: KServe v2 OCR engine does not enforce enable_remote_services",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105746"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-105746"
+      ],
+      "leaf_id": "docs/wiki/data-and-privacy/docling-remote-ocr-policy-bypass.md",
+      "named_entities": [
+        "Docling",
+        "Docling Slim",
+        "KServe"
+      ],
+      "qualifying_update_at": "2026-10-06",
+      "summary": "Docling KServe v2 OCR processing can send page images to a remote endpoint without enforcing the remote-services policy flag.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "Docling and KServe broad entity coverage"
+        ],
+        "local_security_scope": "Keep OCR policy bypass and data boundary locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "tenant ownership",
+        "MCP server status update",
+        "application authorization boundary"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "dify",
+              "vendor": "langgenius",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": "< 1.16.0"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T23:03:44.949Z",
+          "date_updated": "2026-10-06T14:47:53.059Z",
+          "identifier": "CVE-2026-105761",
+          "references": [
+            "https://github.com/langgenius/dify/security/advisories/GHSA-ccrj-frp2-c945",
+            "https://github.com/langgenius/dify/pull/38177",
+            "https://github.com/langgenius/dify/commit/62cb5b586504b730731e28e743c038b72950058e",
+            "https://github.com/langgenius/dify/releases/tag/1.16.0"
+          ],
+          "state": "PUBLISHED",
+          "title": "Dify: IDOR in AppMCPServer PUT Endpoint Allows Modification of Other Apps' MCP Servers",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105761"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-105761"
+      ],
+      "leaf_id": "docs/wiki/identity-and-access/dify-mcp-server-status-tenant-ownership.md",
+      "named_entities": [
+        "Dify",
+        "langgenius"
+      ],
+      "qualifying_update_at": "2026-10-06",
+      "summary": "Dify AppMCPServer PUT authorization can allow one app tenant to modify another app's MCP server status or parameters.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general MCP app integration context if needed"
+        ],
+        "ai_wiki": [
+          "Dify broad product coverage"
+        ],
+        "local_security_scope": "Keep tenant-ownership authorization failure locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "WordPress plugin object ownership",
+        "chatbot data access",
+        "authenticated authorization boundary"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "AI Chatbot for WordPress \u2013 Hyve Lite",
+              "vendor": "Themeisle",
+              "versions": [
+                {
+                  "changes": [
+                    {
+                      "at": "2.0.3",
+                      "status": "unaffected"
+                    }
+                  ],
+                  "lessThanOrEqual": "2.0.2",
+                  "status": "affected",
+                  "version": "0",
+                  "versionType": "custom"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T18:08:36.362Z",
+          "date_updated": "2026-10-05T18:45:13.106Z",
+          "identifier": "CVE-2026-97305",
+          "references": [
+            "https://patchstack.com/database/wordpress/plugin/hyve-lite/vulnerability/wordpress-ai-chatbot-for-wordpress-hyve-lite-plugin-2-0-2-insecure-direct-object-references-idor-vulnerability?_s_id=cve"
+          ],
+          "state": "PUBLISHED",
+          "title": "WordPress AI Chatbot for WordPress \u2013 Hyve Lite plugin <= 2.0.2 - Insecure Direct Object References (IDOR) vulnerability",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-97305"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-97305"
+      ],
+      "leaf_id": "docs/wiki/identity-and-access/hyve-lite-ai-chatbot-idor.md",
+      "named_entities": [
+        "Hyve Lite",
+        "Themeisle",
+        "WordPress"
+      ],
+      "qualifying_update_at": "2026-10-05",
+      "summary": "AI Chatbot for WordPress - Hyve Lite has an IDOR authorization bypass through version 2.0.2.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "WordPress/plugin broad entity coverage if present"
+        ],
+        "local_security_scope": "Keep AI chatbot IDOR impact locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "flow ownership",
+        "deprecated build endpoints",
+        "authenticated cross-user execution"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "langflow",
+              "vendor": "langflow-ai",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 1.0.0, < 1.10.1"
+                }
+              ]
+            },
+            {
+              "product": "langflow-base",
+              "vendor": "langflow-ai",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": "< 0.10.1"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T20:20:27.287Z",
+          "date_updated": "2026-10-06T13:58:36.614Z",
+          "identifier": "CVE-2026-105698",
+          "references": [
+            "https://github.com/langflow-ai/langflow/security/advisories/GHSA-gh98-4phw-6fmw",
+            "https://github.com/langflow-ai/langflow/pull/13153",
+            "https://github.com/langflow-ai/langflow/commit/fb3d6ec90b1e4d52eaa40915a64b1f86b6542f55",
+            "https://github.com/langflow-ai/langflow/releases/tag/v1.10.1"
+          ],
+          "state": "PUBLISHED",
+          "title": "Langflow: Cross-user flow access and vertex execution via deprecated /api/v1/build/{flow_id}/vertices endpoints",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105698"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-105698"
+      ],
+      "leaf_id": "docs/wiki/identity-and-access/langflow-flow-build-ownership-bypass.md",
+      "named_entities": [
+        "Langflow",
+        "langflow-ai"
+      ],
+      "qualifying_update_at": "2026-10-06",
+      "summary": "Deprecated Langflow build endpoints can allow cross-user flow access and vertex execution without correct ownership checks.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general flow builder practice context if needed"
+        ],
+        "ai_wiki": [
+          "Langflow broad product coverage"
+        ],
+        "local_security_scope": "Keep ownership-bypass and execution boundary locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "MCP resources/read",
+        "project authorization",
+        "file disclosure"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "langflow",
+              "vendor": "langflow-ai",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 1.6.8, <= 1.9.0"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T20:37:59.630Z",
+          "date_updated": "2026-10-05T20:37:59.630Z",
+          "identifier": "CVE-2026-105699",
+          "references": [
+            "https://github.com/langflow-ai/langflow/security/advisories/GHSA-4hmc-cfm3-w43c",
+            "https://github.com/langflow-ai/langflow/pull/12818",
+            "https://github.com/langflow-ai/langflow/commit/b8fe970493fd5fb2e1fc71dfccc79f90b76058fa",
+            "https://github.com/langflow-ai/langflow/commit/f0fd436fe9829192ee550e6cb46961a01dd37032",
+            "https://github.com/langflow-ai/langflow/releases/tag/v1.9.1"
+          ],
+          "state": "PUBLISHED",
+          "title": "Langflow: Authenticated Cross-Project File Disclosure via Unscoped MCP Resource Handlers",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105699"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-105699"
+      ],
+      "leaf_id": "docs/wiki/identity-and-access/langflow-mcp-resource-read-authorization-bypass.md",
+      "named_entities": [
+        "Langflow",
+        "langflow-ai",
+        "MCP"
+      ],
+      "qualifying_update_at": "2026-10-05",
+      "summary": "Langflow MCP resource handlers can disclose cross-project files because resource reads are not correctly scoped.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general MCP integration practice if needed"
+        ],
+        "ai_wiki": [
+          "Langflow and MCP broad entity coverage"
+        ],
+        "local_security_scope": "Keep cross-project file disclosure locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "custom authorization decorators",
+        "resource action scope",
+        "cross-user store/resource access"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "langgraph",
+              "vendor": "langchain-ai",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 0.1.45, < 0.4.4"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-02T20:06:07.090Z",
+          "date_updated": "2026-10-05T15:32:10.019Z",
+          "identifier": "CVE-2026-104873",
+          "references": [
+            "https://github.com/langchain-ai/langgraph/security/advisories/GHSA-fvww-7h3r-vfhp",
+            "https://github.com/langchain-ai/langgraph/commit/5a77be5e8bec1600ad0a865638d88c1368497559",
+            "https://github.com/langchain-ai/langgraph/releases/tag/sdk==0.4.4"
+          ],
+          "state": "PUBLISHED",
+          "title": "LangGraph SDK custom auth silently ignores actions= on resource decorators",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-104873"
+        },
+        {
+          "date_published": "2026-08-28T14:30:41Z",
+          "date_updated": "2026-10-05T22:49:37Z",
+          "identifier": "GHSA-fvww-7h3r-vfhp",
+          "title": "LangGraph SDK custom auth silently ignores actions= on resource decorators",
+          "url": "https://github.com/advisories/GHSA-fvww-7h3r-vfhp"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-104873",
+        "GHSA-fvww-7h3r-vfhp"
+      ],
+      "leaf_id": "docs/wiki/identity-and-access/langgraph-sdk-custom-auth-action-scope-bypass.md",
+      "named_entities": [
+        "LangGraph SDK",
+        "langchain-ai",
+        "LangGraph"
+      ],
+      "qualifying_update_at": "2026-10-05",
+      "summary": "LangGraph SDK custom authorization decorators can ignore actions= scoping on resource handlers.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general custom-auth implementation patterns if needed"
+        ],
+        "ai_wiki": [
+          "LangGraph broad framework coverage"
+        ],
+        "local_security_scope": "Keep action-scope authorization bypass locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "channel read action",
+        "target allowlist",
+        "tool/plugin authorization boundary"
+      ],
+      "evidence": [
+        {
+          "date_published": "2026-09-11T00:58:12Z",
+          "date_updated": "2026-10-05T23:27:46Z",
+          "identifier": "GHSA-g7fw-3gjp-g5hf",
+          "title": "OpenClaw: Channel read actions could skip target allowlists",
+          "url": "https://github.com/advisories/GHSA-g7fw-3gjp-g5hf"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "GHSA-g7fw-3gjp-g5hf"
+      ],
+      "leaf_id": "docs/wiki/identity-and-access/openclaw-channel-read-allowlist-bypass.md",
+      "named_entities": [
+        "OpenClaw"
+      ],
+      "qualifying_update_at": "2026-10-05",
+      "summary": "OpenClaw channel read actions could skip target allowlists; GitHub Advisory Database was visibly updated on October 5.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general channel/tool workflow context if needed"
+        ],
+        "ai_wiki": [
+          "OpenClaw broad product coverage"
+        ],
+        "local_security_scope": "Keep channel-read allowlist bypass locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "format detection",
+        "archive parsing",
+        "table conversion",
+        "availability/resource exhaustion"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "docling",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.45.0, < 2.131.0"
+                }
+              ]
+            },
+            {
+              "product": "docling-slim",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.45.0, < 2.131.0"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T21:32:34.438Z",
+          "date_updated": "2026-10-06T14:48:33.056Z",
+          "identifier": "CVE-2026-105747",
+          "references": [
+            "https://github.com/docling-project/docling/security/advisories/GHSA-3cr3-8m4c-fpxw",
+            "https://github.com/docling-project/docling/pull/4412",
+            "https://github.com/docling-project/docling/commit/ebae65cd71c37c88b36185b406a449b92d8f7ffa",
+            "https://github.com/docling-project/docling/releases/tag/v2.131.0"
+          ],
+          "state": "PUBLISHED",
+          "title": "Docling: METS-GBS archive member limit enforced after full member enumeration (memory exhaustion during format detection)",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105747"
+        },
+        {
+          "affected": [
+            {
+              "product": "docling",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.0.0, < 2.131.0"
+                }
+              ]
+            },
+            {
+              "product": "docling-slim",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.92.0, < 2.131.0"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T21:36:53.431Z",
+          "date_updated": "2026-10-05T21:36:53.431Z",
+          "identifier": "CVE-2026-105749",
+          "references": [
+            "https://github.com/docling-project/docling/security/advisories/GHSA-cgc7-9qp3-86m3",
+            "https://github.com/docling-project/docling/pull/4414",
+            "https://github.com/docling-project/docling/commit/c5b4429cc6500a344c13edeb22e67610c2159b09",
+            "https://github.com/docling-project/docling/releases/tag/v2.131.0"
+          ],
+          "state": "PUBLISHED",
+          "title": "Docling: Unbounded table rowspan/colspan in HTML, JATS, ODS and BoxNote backends causes CPU/memory exhaustion",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105749"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-105747",
+        "CVE-2026-105749"
+      ],
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/docling-archive-and-table-resource-exhaustion.md",
+      "named_entities": [
+        "Docling",
+        "Docling Slim",
+        "METS-GBS"
+      ],
+      "qualifying_update_at": "2026-10-06",
+      "summary": "Docling archive member enumeration and unbounded table spans can cause CPU or memory exhaustion during conversion.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "Docling broad product coverage"
+        ],
+        "local_security_scope": "Keep conversion resource-exhaustion controls locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "plugin discovery",
+        "supply-chain package trust",
+        "import-time execution policy"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "docling",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.27.0, < 2.131.0"
+                }
+              ]
+            },
+            {
+              "product": "docling-slim",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.27.0, < 2.131.0"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T21:29:23.561Z",
+          "date_updated": "2026-10-06T14:48:57.716Z",
+          "identifier": "CVE-2026-105745",
+          "references": [
+            "https://github.com/docling-project/docling/security/advisories/GHSA-9jxx-vjrv-h2rq",
+            "https://github.com/docling-project/docling/pull/4413",
+            "https://github.com/docling-project/docling/commit/0f443b3786e98688a2da3b7c8f56fe5e46af876c",
+            "https://github.com/docling-project/docling/releases/tag/v2.131.0"
+          ],
+          "state": "PUBLISHED",
+          "title": "Docling: Plugin entry points are imported before the allow_external_plugins check",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105745"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-105745"
+      ],
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/docling-plugin-entrypoint-import-policy-bypass.md",
+      "named_entities": [
+        "Docling",
+        "Docling Slim",
+        "Python entry points"
+      ],
+      "qualifying_update_at": "2026-10-06",
+      "summary": "Docling imports plugin entry points before applying the external-plugin policy, allowing import-time code execution by installed plugins.",
+      "upstream_routing": {
+        "ai_dev_wiki": [
+          "general plugin architecture practice if needed"
+        ],
+        "ai_wiki": [
+          "Docling broad product coverage"
+        ],
+        "local_security_scope": "Keep plugin import policy bypass locally."
+      }
+    },
+    {
+      "affected_boundaries": [
+        "LaTeX/TikZ rendering",
+        "file read/write primitives",
+        "optional shell escape",
+        "document conversion sandbox boundary"
+      ],
+      "evidence": [
+        {
+          "affected": [
+            {
+              "product": "docling",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.94.0, < 2.132.0"
+                }
+              ]
+            },
+            {
+              "product": "docling-slim",
+              "vendor": "docling-project",
+              "versions": [
+                {
+                  "status": "affected",
+                  "version": ">= 2.94.0, < 2.132.0"
+                }
+              ]
+            }
+          ],
+          "date_published": "2026-10-05T21:26:56.685Z",
+          "date_updated": "2026-10-06T18:16:10.544Z",
+          "identifier": "CVE-2026-105744",
+          "references": [
+            "https://github.com/docling-project/docling/security/advisories/GHSA-x3q2-h9hx-4r4j",
+            "https://github.com/docling-project/docling/pull/4419",
+            "https://github.com/docling-project/docling/commit/38b6fa0a465d46fdacbbec333f50fa19c4f6b342",
+            "https://github.com/docling-project/docling/releases/tag/v2.132.0"
+          ],
+          "state": "PUBLISHED",
+          "title": "Docling: Arbitrary file read/write (and command execution when shell-escape is enabled) when rendering untrusted TikZ with the opt-in Tectonic engine",
+          "url": "https://cveawg.mitre.org/api/cve/CVE-2026-105744"
+        }
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Normal ingest should compare this raw leaf-watch evidence against same-day topic collection and avoid duplicate prose unless remediation, affected-version, or boundary metadata differs.",
+      "identifiers": [
+        "CVE-2026-105744"
+      ],
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/docling-tectonic-tex-file-primitives.md",
+      "named_entities": [
+        "Docling",
+        "Docling Slim",
+        "Tectonic",
+        "TikZ"
+      ],
+      "qualifying_update_at": "2026-10-06",
+      "summary": "Docling opt-in Tectonic TikZ rendering can expose TeX file read/write primitives and command execution when shell escape is enabled.",
+      "upstream_routing": {
+        "ai_dev_wiki": [],
+        "ai_wiki": [
+          "Docling, Tectonic, and TikZ broad entity coverage"
+        ],
+        "local_security_scope": "Keep untrusted TeX rendering boundary locally."
+      }
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_timestamp_utc": "2026-10-07T00:05:47Z",
+  "selection": {
+    "leaf_universe_count": 577,
+    "selected_leaf_count": 15,
+    "selected_leaf_ids": [
+      "docs/wiki/agent-and-tool-security/docling-remote-fetch-dns-rebinding.md",
+      "docs/wiki/agent-and-tool-security/grafana-mcp-k6-prompt-file-read.md",
+      "docs/wiki/agent-and-tool-security/langflow-smart-transform-code-execution.md",
+      "docs/wiki/data-and-privacy/docling-local-file-read-conversion-backends.md",
+      "docs/wiki/data-and-privacy/docling-remote-image-credential-forwarding.md",
+      "docs/wiki/data-and-privacy/docling-remote-ocr-policy-bypass.md",
+      "docs/wiki/identity-and-access/dify-mcp-server-status-tenant-ownership.md",
+      "docs/wiki/identity-and-access/hyve-lite-ai-chatbot-idor.md",
+      "docs/wiki/identity-and-access/langflow-flow-build-ownership-bypass.md",
+      "docs/wiki/identity-and-access/langflow-mcp-resource-read-authorization-bypass.md",
+      "docs/wiki/identity-and-access/langgraph-sdk-custom-auth-action-scope-bypass.md",
+      "docs/wiki/identity-and-access/openclaw-channel-read-allowlist-bypass.md",
+      "docs/wiki/infrastructure-and-supply-chain/docling-archive-and-table-resource-exhaustion.md",
+      "docs/wiki/infrastructure-and-supply-chain/docling-plugin-entrypoint-import-policy-bypass.md",
+      "docs/wiki/infrastructure-and-supply-chain/docling-tectonic-tex-file-primitives.md"
+    ],
+    "selection_rule": "unchecked leaves first, then oldest last_checked_at, then stable relative path"
+  },
+  "source_urls_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-104873",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105698",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105699",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105742",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105743",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105744",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105745",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105746",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105747",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105748",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105749",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105750",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105751",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-105761",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-7700",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-89039",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-97305",
+    "https://github.com/advisories/GHSA-4xhp-xg4w-8ppm",
+    "https://github.com/advisories/GHSA-9fpm-3445-2vx4",
+    "https://github.com/advisories/GHSA-ffg3-vfrj-4mjj",
+    "https://github.com/advisories/GHSA-fvww-7h3r-vfhp",
+    "https://github.com/advisories/GHSA-g7fw-3gjp-g5hf",
+    "https://github.com/docling-project/docling/commit/0f443b3786e98688a2da3b7c8f56fe5e46af876c",
+    "https://github.com/docling-project/docling/commit/1612b8875b0937447ce3122536fb5360a7102a0a",
+    "https://github.com/docling-project/docling/commit/38b6fa0a465d46fdacbbec333f50fa19c4f6b342",
+    "https://github.com/docling-project/docling/commit/5e469137f275ffc443306a30d12a3a45bceb80fb",
+    "https://github.com/docling-project/docling/commit/6ee9965adfc364b3696a67c825ec2f0d9cee4311",
+    "https://github.com/docling-project/docling/commit/7d6d0c4810dff4885017c53890be6dc5a22ca68b",
+    "https://github.com/docling-project/docling/commit/c5b4429cc6500a344c13edeb22e67610c2159b09",
+    "https://github.com/docling-project/docling/commit/d4bb776884aba9aa3132f54773f420853cf7afe4",
+    "https://github.com/docling-project/docling/commit/ebae65cd71c37c88b36185b406a449b92d8f7ffa",
+    "https://github.com/docling-project/docling/pull/3948",
+    "https://github.com/docling-project/docling/pull/4015",
+    "https://github.com/docling-project/docling/pull/4412",
+    "https://github.com/docling-project/docling/pull/4413",
+    "https://github.com/docling-project/docling/pull/4414",
+    "https://github.com/docling-project/docling/pull/4417",
+    "https://github.com/docling-project/docling/pull/4418",
+    "https://github.com/docling-project/docling/pull/4419",
+    "https://github.com/docling-project/docling/pull/4420",
+    "https://github.com/docling-project/docling/releases/tag/v2.118.1",
+    "https://github.com/docling-project/docling/releases/tag/v2.120.3",
+    "https://github.com/docling-project/docling/releases/tag/v2.131.0",
+    "https://github.com/docling-project/docling/releases/tag/v2.132.0",
+    "https://github.com/docling-project/docling/security/advisories/GHSA-3cr3-8m4c-fpxw",
+    "https://github.com/docling-project/docling/security/advisories/GHSA-4xhp-xg4w-8ppm",
+    "https://github.com/docling-project/docling/security/advisories/GHSA-9jxx-vjrv-h2rq",
+    "https://github.com/docling-project/docling/security/advisories/GHSA-cgc7-9qp3-86m3",
+    "https://github.com/docling-project/docling/security/advisories/GHSA-h42j-9hcc-3cwc",
+    "https://github.com/docling-project/docling/security/advisories/GHSA-p3fw-7699-7926",
+    "https://github.com/docling-project/docling/security/advisories/GHSA-p944-4xh2-x776",
+    "https://github.com/docling-project/docling/security/advisories/GHSA-pc36-qwjq-x68c",
+    "https://github.com/docling-project/docling/security/advisories/GHSA-q43m-vhcp-mhvm",
+    "https://github.com/docling-project/docling/security/advisories/GHSA-x3q2-h9hx-4r4j",
+    "https://github.com/langchain-ai/langgraph/commit/5a77be5e8bec1600ad0a865638d88c1368497559",
+    "https://github.com/langchain-ai/langgraph/releases/tag/sdk==0.4.4",
+    "https://github.com/langchain-ai/langgraph/security/advisories/GHSA-fvww-7h3r-vfhp",
+    "https://github.com/langflow-ai/langflow/commit/b8fe970493fd5fb2e1fc71dfccc79f90b76058fa",
+    "https://github.com/langflow-ai/langflow/commit/f0fd436fe9829192ee550e6cb46961a01dd37032",
+    "https://github.com/langflow-ai/langflow/commit/fb3d6ec90b1e4d52eaa40915a64b1f86b6542f55",
+    "https://github.com/langflow-ai/langflow/pull/12818",
+    "https://github.com/langflow-ai/langflow/pull/13153",
+    "https://github.com/langflow-ai/langflow/releases/tag/v1.10.1",
+    "https://github.com/langflow-ai/langflow/security/advisories/GHSA-4hmc-cfm3-w43c",
+    "https://github.com/langflow-ai/langflow/security/advisories/GHSA-gh98-4phw-6fmw",
+    "https://github.com/langgenius/dify/commit/62cb5b586504b730731e28e743c038b72950058e",
+    "https://github.com/langgenius/dify/pull/38177",
+    "https://github.com/langgenius/dify/releases/tag/1.16.0",
+    "https://github.com/langgenius/dify/security/advisories/GHSA-ccrj-frp2-c945",
+    "https://grafana.com/security/security-advisories/cve-2026-89039",
+    "https://patchstack.com/database/wordpress/plugin/hyve-lite/vulnerability/wordpress-ai-chatbot-for-wordpress-hyve-lite-plugin-2-0-2-insecure-direct-object-references-idor-vulnerability?_s_id=cve",
+    "https://vuldb.com/cve/CVE-2026-7700",
+    "https://vuldb.com/submit/804305",
+    "https://vuldb.com/vuln/360869",
+    "https://vuldb.com/vuln/360869/cti"
+  ],
+  "window": {
+    "end_inclusive": "2026-10-06",
+    "rule": "Only public sources published or visibly updated within the last seven days qualified.",
+    "start_inclusive": "2026-09-30"
+  }
+}

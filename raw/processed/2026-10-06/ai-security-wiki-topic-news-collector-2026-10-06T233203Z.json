@@ -1,0 +1,539 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-10-06T23:32:03Z",
+  "cutoff_window": {
+    "start_utc": "2026-10-04T23:32:03Z",
+    "end_utc": "2026-10-06T23:32:03Z",
+    "basis": "Items must have a visible publication or update timestamp inside this exact 48-hour window; date-only boundary items are excluded."
+  },
+  "repository_scope": {
+    "repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "modified_repository_paths": [
+      "raw/2026-10-06/ai-security-wiki-topic-news-collector-2026-10-06T233203Z.json"
+    ],
+    "not_modified": [
+      "docs/wiki",
+      "raw/processed"
+    ]
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_security_lens": "docs/wiki/federation.md says this downstream wiki owns security-specific threats, controls, vulnerabilities, assurance, governance, and incident response.",
+    "upstream_ai_wiki": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md owns broad companies, products, models, agentic frameworks, MCP servers, developer tools, and general AI techniques.",
+    "upstream_ai_dev_wiki": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md owns AI-assisted development practices, coding-agent workflows, verification, adoption, and development governance.",
+    "local_duplicate_check": "docs/wiki/topic-index.md already contains October 5 ingest leaves for Grafana mcp-k6, Langflow, Docling, Dify, cross-agent MCP prompt propagation, and related boundaries."
+  },
+  "qualifying_findings": [
+    {
+      "id": "mcp-typescript-sdk-oauth-credential-confusion-cve-2026-104850",
+      "title": "MCP TypeScript SDK OAuth metadata can redirect client credentials to an attacker-controlled authorization server",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-104850",
+        "https://github.com/modelcontextprotocol/typescript-sdk/security/advisories/GHSA-6qxp-vccf-f47h",
+        "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.2.0",
+        "https://github.com/modelcontextprotocol/typescript-sdk/pull/2887"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD CVE API",
+          "published": "2026-10-06T17:17:15.827Z",
+          "last_modified": "2026-10-06T20:03:40.690Z"
+        },
+        {
+          "source": "GitHub Advisory Database",
+          "published": "2026-10-06T15:35:44Z",
+          "updated": "2026-10-06T15:35:44Z"
+        }
+      ],
+      "summary": "The official MCP TypeScript SDK allowed an MCP server to choose which authorization server received a client's OAuth credentials. A malicious or compromised MCP server could name its own protected-resource metadata and receive refresh tokens, client secrets, or signed assertions from clients that held credentials for a legitimate authorization server.",
+      "evidence_classification": "primary security advisory plus NVD CVE record",
+      "affected_boundary_or_version": "@modelcontextprotocol/sdk >=1.12.0 and <1.31.0, and @modelcontextprotocol/client >=2.0.0 and <2.2.0, when used as an HTTP MCP client with OAuth or bundled non-interactive auth providers and connected to an untrusted MCP server.",
+      "why_it_matters_for_ai_security": "MCP OAuth clients are delegated tool clients for agents; credentials must be bound to the intended issuer and server rather than trusted from model-selected or server-supplied metadata.",
+      "named_entities": [
+        "Model Context Protocol",
+        "MCP TypeScript SDK",
+        "@modelcontextprotocol/sdk",
+        "@modelcontextprotocol/client",
+        "OAuth",
+        "GitHub Advisory Database",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Create or update a local identity-and-access leaf for MCP OAuth issuer and credential binding.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-wiki",
+            "reason": "Broad Model Context Protocol and SDK entity context belongs upstream."
+          },
+          {
+            "wiki": "ai-dev-wiki",
+            "reason": "General MCP client implementation practice and developer workflow guidance belong upstream unless framed as a security control."
+          }
+        ]
+      },
+      "confidence_notes": "High confidence; GitHub and NVD agree on affected ranges, fix releases, and credential-disclosure impact.",
+      "follow_up_actions": [
+        "During ingest, reconcile this with the existing local MCP SDK OAuth issuer-binding page and decide whether TypeScript SDK needs a separate leaf or an update to that leaf.",
+        "Check whether local guidance should require expected issuer binding for all MCP OAuth client integrations."
+      ]
+    },
+    {
+      "id": "amazon-bedrock-agentcore-starter-toolkit-import-vulnerabilities-cve-2026-105812-cve-2026-106032",
+      "title": "Amazon Bedrock AgentCore Starter Toolkit agent import can generate executable payloads and fetch attacker-controlled OpenAPI references",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105812",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-106032",
+        "https://aws.amazon.com/security/security-bulletins/2026-127-aws/",
+        "https://pypi.org/project/bedrock-agentcore-starter-toolkit/0.3.14/"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD CVE API",
+          "cve": "CVE-2026-105812",
+          "published": "2026-10-06T21:17:04.600Z",
+          "last_modified": "2026-10-06T21:17:04.600Z"
+        },
+        {
+          "source": "NVD CVE API",
+          "cve": "CVE-2026-106032",
+          "published": "2026-10-06T21:17:04.757Z",
+          "last_modified": "2026-10-06T21:17:04.757Z"
+        }
+      ],
+      "summary": "Two AWS-origin CVEs describe Bedrock AgentCore Starter Toolkit before 0.3.14. One allows crafted agent import configuration values to be incorporated into generated Python source without safe literal encoding, causing arbitrary code execution when the generated agent is imported, run, or deployed. The other allows crafted OpenAPI external references in an action group to trigger outbound requests and local-file reads during agent import. AWS recommends upgrading to 0.3.14, re-importing affected generated agents, replacing generated artifacts, and migrating to the supported @aws/agentcore npm CLI for the deprecated toolkit.",
+      "evidence_classification": "official AWS-referenced NVD CVE records with AWS bulletin and PyPI release references",
+      "affected_boundary_or_version": "bedrock-agentcore-starter-toolkit 0.1.4 through 0.3.13; import path for Bedrock Agent configuration and OpenAPI action-group schemas.",
+      "why_it_matters_for_ai_security": "Agent import and code-generation tools are supply-chain boundaries: untrusted agent artifacts can become generated source, local file reads, outbound network requests, or deployed runtime code.",
+      "named_entities": [
+        "Amazon Bedrock AgentCore",
+        "bedrock-agentcore-starter-toolkit",
+        "@aws/agentcore",
+        "AWS",
+        "OpenAPI",
+        "PyPI",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Local security pages should preserve the agent-import supply-chain boundary, generated-source replacement requirement, and OpenAPI external-reference SSRF/file-read control.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-wiki",
+            "reason": "Broad Amazon Bedrock and AgentCore product context belongs upstream."
+          },
+          {
+            "wiki": "ai-dev-wiki",
+            "reason": "General agent import workflow, deprecation migration, and developer tooling practice belong upstream outside the security implication."
+          }
+        ]
+      },
+      "confidence_notes": "High for CVE timing and affected versions from NVD; ingest should fetch the AWS bulletin for exact vendor mitigation wording and migration status.",
+      "follow_up_actions": [
+        "Create or update a local infrastructure-and-supply-chain leaf for Bedrock AgentCore Starter Toolkit import-time code generation and OpenAPI reference processing.",
+        "During ingest, verify whether @aws/agentcore replacement guidance should be only a source note or a durable mitigation."
+      ]
+    },
+    {
+      "id": "microsoft-ufo-mcp-command-injection-cluster-cve-2026-105788-cve-2026-105791-cve-2026-105793",
+      "title": "Microsoft UFO MCP tools can pass authenticated caller input into Android or Windows shell execution paths",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105788",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105791",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105793"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD CVE API",
+          "cve": "CVE-2026-105788",
+          "published": "2026-10-06T14:17:40.077Z",
+          "last_modified": "2026-10-06T16:17:05.597Z"
+        },
+        {
+          "source": "NVD CVE API",
+          "cve": "CVE-2026-105791",
+          "published": "2026-10-06T15:17:15.840Z",
+          "last_modified": "2026-10-06T15:25:00.650Z"
+        },
+        {
+          "source": "NVD CVE API",
+          "cve": "CVE-2026-105793",
+          "published": "2026-10-06T15:17:16.123Z",
+          "last_modified": "2026-10-06T16:17:05.703Z"
+        }
+      ],
+      "summary": "Microsoft UFO, an open-source intelligent automation framework, has three in-window command-injection records. Two mobile MCP server tools pass authenticated caller-controlled input into adb shell command positions, letting shell metacharacters execute additional Android-shell commands on authorized connected devices. A third CommandLineExecutor issue lets an attacker-influenced agent call use explorer.exe delegation on Windows to launch arbitrary executables or scripts as the desktop user. The records identify fixes in UFO 3.0.9 and 3.0.10.",
+      "evidence_classification": "NVD CVE records",
+      "affected_boundary_or_version": "UFO before 3.0.10 for mobile type_text and launch_app; UFO before 3.0.9 for mobile press_key and CommandLineExecutor run_shell explorer.exe handling.",
+      "why_it_matters_for_ai_security": "Device-control and desktop-control agent tools must validate the final command payload, not only the first token or nominal MCP caller identity; otherwise delegated automation becomes local command execution.",
+      "named_entities": [
+        "Microsoft UFO",
+        "MCP",
+        "ADB",
+        "Android shell",
+        "CommandLineExecutor",
+        "Windows Explorer",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Local agent-and-tool-security coverage should own the final tool-payload validation and command execution boundary.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-wiki",
+            "reason": "Broad Microsoft UFO framework entity coverage belongs upstream."
+          },
+          {
+            "wiki": "ai-dev-wiki",
+            "reason": "General desktop/mobile automation workflows belong upstream unless framed as command-execution security controls."
+          }
+        ]
+      },
+      "confidence_notes": "Medium-high; NVD provides concrete affected tool paths and fixed versions, but ingest should locate vendor repository advisories or releases for patch details.",
+      "follow_up_actions": [
+        "Look for upstream Microsoft UFO release notes or GitHub advisories during ingest.",
+        "Split mobile ADB and Windows desktop command boundaries if durable leaves would otherwise bundle independently changing surfaces."
+      ]
+    },
+    {
+      "id": "simplechat-mcp-stdio-personal-plugin-rce-cve-2026-105797",
+      "title": "SimpleChat personal plugins can bypass MCP stdio rejection and start attacker-selected processes",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105797"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD CVE API",
+          "published": "2026-10-06T15:17:16.733Z",
+          "last_modified": "2026-10-06T18:16:47.320Z"
+        }
+      ],
+      "summary": "SimpleChat versions 0.261.003 and 0.261.027 have an authorization-ordering flaw in POST /api/user/plugins. An authenticated low-privileged user can omit the top-level MCP type so the non-admin MCP stdio rejection check is skipped before metadata restores the type; later MCPStdioPlugin.connect can start an attacker-selected operating-system process under the application service identity when the personal action tool is invoked. Version 0.261.031 fixes the issue.",
+      "evidence_classification": "NVD CVE record",
+      "affected_boundary_or_version": "SimpleChat 0.261.003 and 0.261.027; personal plugins enabled; governance permitting MCP actions; POST /api/user/plugins; MCP stdio connector creation.",
+      "why_it_matters_for_ai_security": "Plugin governance must authorize the restored, final tool type and execution target, not only a pre-normalization request field, before an agent can invoke a personal action.",
+      "named_entities": [
+        "SimpleChat",
+        "MCPStdioPlugin",
+        "McpPluginFactory",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Local coverage should own plugin authorization ordering, final action normalization, and MCP stdio process-spawn boundaries.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-wiki",
+            "reason": "Broad SimpleChat product context belongs upstream if it becomes durable."
+          }
+        ]
+      },
+      "confidence_notes": "Medium; NVD has concrete endpoint, versions, and fixed version, but no vendor advisory was located in this run.",
+      "follow_up_actions": [
+        "During ingest, find the upstream SimpleChat advisory or release if public.",
+        "Check whether this should be grouped with broader MCP stdio personal-action governance leaves."
+      ]
+    },
+    {
+      "id": "payload-plugin-mcp-api-key-account-takeover-cve-2026-105806",
+      "title": "Payload plugin-mcp lets authenticated users manage MCP API keys outside the intended account",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105806",
+        "https://github.com/payloadcms/payload/security/advisories/GHSA-2q76-m6w6-qgc6",
+        "https://github.com/payloadcms/payload/releases/tag/v3.88.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD CVE API",
+          "published": "2026-10-06T16:17:06.257Z",
+          "last_modified": "2026-10-06T20:03:40.690Z"
+        },
+        {
+          "source": "GitHub Advisory Database",
+          "published": "2026-10-06T16:09:31Z",
+          "updated": "2026-10-06T16:09:33Z"
+        }
+      ],
+      "summary": "In @payloadcms/plugin-mcp versions 3.61.0 through before 3.88.0, an authenticated user can manage MCP API keys outside the intended account, enabling privilege escalation through account takeover. Payload 3.88.0 fixes the issue.",
+      "evidence_classification": "primary GitHub security advisory plus NVD CVE record",
+      "affected_boundary_or_version": "@payloadcms/plugin-mcp >=3.61.0 and <3.88.0; MCP API key management; authenticated account boundary.",
+      "why_it_matters_for_ai_security": "MCP API keys grant delegated tool authority; account-scoped key management must be tenant-bound to prevent one user from taking over another account's agent tool access.",
+      "named_entities": [
+        "Payload",
+        "@payloadcms/plugin-mcp",
+        "MCP API keys",
+        "GitHub Advisory Database",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Local identity-and-access coverage should own MCP API-key account scoping and delegated-tool key lifecycle.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-wiki",
+            "reason": "Broad Payload CMS product context belongs upstream."
+          }
+        ]
+      },
+      "confidence_notes": "High; GitHub advisory, NVD, and release reference align.",
+      "follow_up_actions": [
+        "Create or update a local identity-and-access leaf for MCP API-key account scoping.",
+        "During ingest, verify whether API keys require rotation after upgrading to 3.88.0."
+      ]
+    },
+    {
+      "id": "progress-autonomous-rest-connector-genai-agent-generator-command-injection-cve-2026-91140",
+      "title": "Progress Autonomous REST Connector GenAI Agents generator can execute commands from crafted OpenAPI input",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-91140",
+        "https://github.com/advisories/GHSA-w86g-q6vw-5mw6",
+        "https://community.progress.com/s/article/Progress-DataDirect-Critical-Security-Alert-Bulletin-September-2026-CVE-2026-91140"
+      ],
+      "visible_dates": [
+        {
+          "source": "NVD CVE API",
+          "published": "2026-10-06T14:17:48.407Z",
+          "last_modified": "2026-10-06T15:09:20.387Z"
+        },
+        {
+          "source": "GitHub Advisory Database",
+          "published": "2026-10-06T15:32:01Z",
+          "updated": "2026-10-06T15:32:06Z"
+        }
+      ],
+      "summary": "Progress Software Autonomous REST Connector GenAI Agents ARCGenAI-Generator version 2.0 has an OS command-injection vulnerability in shell-based temporary-file cleanup instructions. An attacker who supplies a crafted Swagger/OpenAPI document can execute arbitrary commands on a developer's machine when the generator is invoked.",
+      "evidence_classification": "GitHub Advisory Database record plus NVD CVE record",
+      "affected_boundary_or_version": "Progress Autonomous REST Connector GenAI Agents ARCGenAI-Generator 2.0; Swagger/OpenAPI document ingestion; developer machine generator execution.",
+      "why_it_matters_for_ai_security": "Agent and connector generators consume external API specifications; treating those specs as code-adjacent input can turn API onboarding into developer-workstation command execution.",
+      "named_entities": [
+        "Progress Software",
+        "Autonomous REST Connector GenAI Agents",
+        "ARCGenAI-Generator",
+        "Swagger",
+        "OpenAPI",
+        "GitHub Advisory Database",
+        "NVD"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Local supply-chain coverage should own generated-agent connector input validation and developer-workstation command execution.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-dev-wiki",
+            "reason": "General OpenAPI connector generation workflows belong upstream unless focused on the security failure."
+          }
+        ]
+      },
+      "confidence_notes": "Medium-high; advisory details are concrete, but the Progress bulletin should be refetched during ingest for the official remediation text.",
+      "follow_up_actions": [
+        "During ingest, verify fixed version or mitigation from the Progress bulletin.",
+        "Assess whether this belongs with other generated connector or API-spec supply-chain leaves."
+      ]
+    },
+    {
+      "id": "cross-vendor-mcp-ssrf-protocol-pivoting-october-update",
+      "title": "October reporting says five unrelated organizations fixed the same MCP SSRF pattern",
+      "source_urls": [
+        "https://thenextweb.com/news/mcp-flaw-ssrf-google-jpmorgan-dinum-protocol-pivoting",
+        "https://new-horizon.tech/blog/2026-10-06-same-mcp-server-flaw-confirmed-at-google-jpmorgan-weaviate-t",
+        "https://techscurrent.com/2026/10/mcp-protocol-pivoting-ai-agent-security-trust-gap/"
+      ],
+      "visible_dates": [
+        {
+          "source": "The Next Web",
+          "published": "2026-10-06T00:00:00Z"
+        },
+        {
+          "source": "New Horizon",
+          "published": "2026-10-06"
+        },
+        {
+          "source": "TechsCurrent",
+          "published": "2026-10-06"
+        }
+      ],
+      "summary": "In-window public reporting describes an October research update by Syed Anas Mohiuddin saying Google, JPMorgan Chase, Weaviate, France's DINUM, and Tangerang City each confirmed and fixed the same class of MCP server-side request forgery pattern. The reported pattern is that MCP servers build outbound requests from URLs, paths, or endpoints selected through agent/tool input without validating the final resolved destination, redirects, or metadata-service reachability. The same reports caution that unresolved U.S. federal MCP findings remain triage-only and should not be treated as confirmed vulnerabilities.",
+      "evidence_classification": "in-window secondary reporting of a researcher update; primary researcher page was not directly fetched in this run",
+      "affected_boundary_or_version": "MCP servers and agent handoff chains that transform model-supplied or delegated URL-like values into server-side network requests; specific reported organizations include Google, JPMorgan Chase, Weaviate, DINUM, and Tangerang City.",
+      "why_it_matters_for_ai_security": "This is a recurring AI-agent tool boundary failure: model-originated or cross-agent delegated strings are not trustworthy merely because they arrive through an internal MCP path.",
+      "named_entities": [
+        "Syed Anas Mohiuddin",
+        "Model Context Protocol",
+        "Google",
+        "JPMorgan Chase",
+        "Weaviate",
+        "DINUM",
+        "Tangerang City",
+        "Rapid7",
+        "Ars Technica",
+        "The Next Web"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Keep the protocol-pivoting and SSRF mitigation pattern locally as agent-and-tool-security guidance, with caveats about secondary sourcing.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-wiki",
+            "reason": "Broad MCP, organization, and product context belongs upstream."
+          }
+        ]
+      },
+      "confidence_notes": "Medium; multiple in-window reports agree, but the primary researcher update was not directly fetched and some underlying fixes predate the 48-hour window. Treat as an October update to a recurring pattern, not as fresh proof of each individual older fix.",
+      "follow_up_actions": [
+        "Find and capture the primary 'Protocol Pivoting, four months later' source during ingest before durable synthesis.",
+        "Keep unconfirmed U.S. federal MCP findings out of durable claims unless primary acknowledgement or advisory evidence appears."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Grafana mcp-k6 prompt file-read CVE-2026-89039",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-89039",
+        "https://grafana.com/security/security-advisories/cve-2026-89039"
+      ],
+      "visible_dates": [
+        "NVD published 2026-10-05T15:17:23.130Z; last modified 2026-10-06T16:08:43.180Z"
+      ],
+      "reason": "Excluded from new qualifying findings because the October 5 collector source has already been processed into docs/wiki/agent-and-tool-security/grafana-mcp-k6-prompt-file-read.md."
+    },
+    {
+      "title": "Langflow October 5 MCP and flow-ownership CVE cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105697",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105698",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105699",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105740",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105741"
+      ],
+      "visible_dates": [
+        "NVD published 2026-10-05T21:16:35Z through 2026-10-05T21:16:35.740Z"
+      ],
+      "reason": "Excluded from new qualifying findings because docs/wiki already has October 5 ingest leaves for Langflow stdio/locality enrichment, flow ownership, and MCP resource-read boundaries."
+    },
+    {
+      "title": "Docling October 5 document-ingestion CVE cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105742",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105743",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105744",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105745",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105746",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105747",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105748",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105749",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105750",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105751"
+      ],
+      "visible_dates": [
+        "NVD published 2026-10-05T22:16:56.867Z through 2026-10-05T22:16:58.253Z"
+      ],
+      "reason": "Excluded from new qualifying findings because the October 5 collector source has already been processed into split Docling DNS rebinding, credential forwarding, remote OCR, local file-read, plugin import, TeX, and resource-exhaustion pages."
+    },
+    {
+      "title": "Dify MCP server status tenant ownership CVE-2026-105761",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105761"
+      ],
+      "visible_dates": [
+        "NVD published 2026-10-05T23:17:03.050Z; last modified 2026-10-06T16:08:43.180Z"
+      ],
+      "reason": "Excluded from new qualifying findings because docs/wiki/identity-and-access/dify-mcp-server-status-tenant-ownership.md already exists from October 5 ingest."
+    },
+    {
+      "title": "IATO MCP CVE-2026-32582 and WDS MCP Content Manager CVE-2026-39599",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-32582",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-39599",
+        "https://github.com/advisories/GHSA-xrw4-cfx9-h65c",
+        "https://github.com/advisories/GHSA-5gj8-cw8v-rrcx"
+      ],
+      "visible_dates": [
+        "NVD published 2026-10-06T06:17:00Z; GitHub advisories published 2026-10-06T06:30:31Z"
+      ],
+      "reason": "Excluded because fetched metadata only says WordPress plugin broken access control and did not establish a distinct AI-agent, Model Context Protocol, model, prompt, or AI-data boundary. Recheck Patchstack detail during ingest if these plugin names are confirmed to mean Model Context Protocol."
+    },
+    {
+      "title": "Axios healthcare unauthorized AI agents coverage",
+      "source_urls": [
+        "https://www.axios.com/2026/10/05/ai-agents-hospital-risks",
+        "https://www.imprivata.com/uk/node/108302"
+      ],
+      "visible_dates": [
+        "Axios published 2026-10-05; Imprivata primary release dated 2026-09-15"
+      ],
+      "reason": "Excluded because the concrete survey facts and primary release are outside the 48-hour window; the in-window Axios article is secondary coverage of older research."
+    },
+    {
+      "title": "OpenAI Australian government agent incident follow-on coverage",
+      "source_urls": [
+        "https://www.techradar.com/ai-platforms-assistants/openai-sends-staggeringly-casual-email-to-australian-government-wishing-it-the-best-after-ai-agents-hack-its-health-insurance-website",
+        "https://www.minister.defence.gov.au/transcripts/2026-09-24/press-conference-sydney"
+      ],
+      "visible_dates": [
+        "TechRadar published 2026-10-05; Australian government transcript dated 2026-09-24"
+      ],
+      "reason": "Excluded because the confirmed primary incident disclosure predates the 48-hour window and no new primary technical fact was located in-window."
+    },
+    {
+      "title": "ISO/IEC 27090 AI cybersecurity standard page",
+      "source_urls": [
+        "https://www.iso.org/standard/27090"
+      ],
+      "visible_dates": [
+        "Search result surfaced a publication/update about five days before run time"
+      ],
+      "reason": "Excluded as outside the exact 48-hour window."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_or_topic": "Model Context Protocol",
+      "routing": "Broad protocol and SDK background belong in ai-wiki; this repo should keep security leaves for OAuth issuer binding, SSRF/protocol pivoting, API-key scoping, MCP stdio execution, and final tool-payload validation."
+    },
+    {
+      "entity_or_topic": "Amazon Bedrock AgentCore",
+      "routing": "Broad AWS product context belongs in ai-wiki; local coverage should preserve import-time code-generation and OpenAPI reference processing as supply-chain security boundaries."
+    },
+    {
+      "entity_or_topic": "Microsoft UFO",
+      "routing": "Broad automation framework context belongs in ai-wiki; local coverage should preserve MCP tool command validation for Android/Windows execution surfaces."
+    },
+    {
+      "entity_or_topic": "Progress Autonomous REST Connector GenAI Agents",
+      "routing": "General API connector-generation workflow belongs in ai-dev-wiki; local coverage should preserve the crafted OpenAPI-to-command-execution boundary."
+    },
+    {
+      "entity_or_topic": "SimpleChat and Payload plugin-mcp",
+      "routing": "Broad product pages would be upstream-owned; local pages should only cover the MCP plugin authorization and delegated API-key control failures."
+    },
+    {
+      "entity_or_topic": "Docling, Langflow, Dify, and Grafana mcp-k6 October 5 CVEs",
+      "routing": "Already represented in local docs/wiki pages from processed October 5 evidence; avoid duplicate new raw findings unless a new vendor update changes the security fact."
+    },
+    {
+      "entity_or_topic": "Healthcare shadow AI survey and OpenAI Australian incident coverage",
+      "routing": "Relevant to local governance/incident themes but excluded from this artifact's findings because primary dates are outside the window."
+    }
+  ],
+  "confidence_and_blockers": {
+    "overall_confidence": "Medium-high for CVE-backed findings; medium for cross-vendor MCP protocol-pivoting update because primary researcher source was not directly fetched.",
+    "blockers": [
+      "Primary 'Protocol Pivoting, four months later' researcher source was not directly fetched; use secondary reporting caveats until ingest locates it.",
+      "Vendor advisories or release notes were not located for Microsoft UFO and SimpleChat during this run; NVD records are concrete enough for raw capture but need ingest-time reconciliation."
+    ],
+    "non_blocking_caveats": [
+      "Several high-signal October 5 CVE clusters were excluded as duplicate local coverage rather than absence of relevance.",
+      "Some findings may need splitting into finer durable leaves during ingest because command execution, OAuth credential binding, API-key account takeover, and OpenAPI import processing change independently."
+    ]
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check_scoped": "passed"
+  }
+}
