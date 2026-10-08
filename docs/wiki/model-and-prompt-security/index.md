@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [vLLM Harmony tool cache salt oracle](vllm-harmony-tool-cache-salt-oracle.md)
+- [vLLM multimodal cache desync DoS](vllm-multimodal-cache-desync-dos.md)
 - [GitLab AI Gateway prompt template sandbox escape](gitlab-ai-gateway-prompt-template-sandbox-escape.md)
 - [Open GenAI Stack Jinja prompt injection RCE](open-genai-stack-jinja-prompt-injection-rce.md)
 - [vLLM multimodal decoder prompt length DoS](vllm-multimodal-decoder-prompt-length-dos.md)
@@ -15,6 +17,8 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Leaf Pages
 
+- [vLLM Harmony tool cache salt oracle](vllm-harmony-tool-cache-salt-oracle.md)
+- [vLLM multimodal cache desync DoS](vllm-multimodal-cache-desync-dos.md)
 - [GitLab AI Gateway prompt template sandbox escape](gitlab-ai-gateway-prompt-template-sandbox-escape.md)
 - [Open GenAI Stack Jinja prompt injection RCE](open-genai-stack-jinja-prompt-injection-rce.md)
 - [vLLM multimodal decoder prompt length DoS](vllm-multimodal-decoder-prompt-length-dos.md)
@@ -77,6 +81,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Maintenance Notes
 
+- Updated on 2026-10-08 with vLLM Harmony tool cache salt oracle and vLLM multimodal cache desync DoS as separate privacy and availability boundaries; after source processing, recheck source links point to `raw/processed`.
 - Updated on 2026-10-03 with GitLab AI Gateway prompt-template sandbox escape coverage from the October 2 source ingest.
 - Updated on 2026-09-30 with Open GenAI Stack prompt-injection-to-Jinja server-side expression evaluation coverage.
 - Updated on 2026-09-27 with vLLM multimodal decoder prompt-length DoS as a disaggregated-serving availability boundary.

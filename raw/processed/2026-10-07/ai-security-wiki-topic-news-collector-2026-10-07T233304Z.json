@@ -1,0 +1,442 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-10-07T23:33:04Z",
+  "repository_scope": {
+    "modified_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "raw_only": true,
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false
+  },
+  "cutoff_window": {
+    "start_utc": "2026-10-05T23:33:04Z",
+    "end_utc": "2026-10-07T23:33:04Z",
+    "basis": "Items must have a visible publication or update timestamp inside this exact 48-hour window; date-only boundary items are excluded unless a visible in-window update timestamp is present."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_security_lens": "docs/wiki/federation.md says this downstream wiki owns AI-specific threats, controls, vulnerabilities, assurance, governance, and incident response.",
+    "upstream_ai_wiki": "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md owns broad companies, products, models, agentic frameworks, MCP servers, developer tools, and general AI techniques.",
+    "upstream_ai_dev_wiki": "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md owns AI-assisted development practices, coding-agent workflows, verification, adoption, and development governance.",
+    "local_duplicate_check": "docs/wiki/topic-index.md, raw/processed/2026-10-05, raw/processed/2026-10-06, and the automation memory were checked for duplicate October findings before recording new items."
+  },
+  "qualifying_findings": [
+    {
+      "id": "praisonai-agentmail-webhook-signature-bypass-cve-2026-61436-cve-2026-61428",
+      "title": "PraisonAI AgentMail webhook mode accepts forged unsigned events that invoke agents",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-7c92-x8vg-4258",
+        "https://github.com/advisories/GHSA-qj9c-59p6-8cgx",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61436",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61428",
+        "https://www.vulncheck.com/advisories/praisonai-before-missing-webhook-signature-verification",
+        "https://www.vulncheck.com/advisories/praisonai-agentmail-before-message-injection-via-webhook"
+      ],
+      "visible_dates": [
+        {
+          "source": "GitHub Advisory Database GHSA-7c92-x8vg-4258",
+          "published": "2026-10-07",
+          "reviewed": "2026-10-07",
+          "last_updated": "2026-10-07"
+        },
+        {
+          "source": "GitHub Advisory Database GHSA-qj9c-59p6-8cgx",
+          "published": "2026-10-07",
+          "reviewed": "2026-10-07"
+        },
+        {
+          "source": "CVE Services CVE-2026-61436",
+          "published": "2026-07-15T11:25:40.377Z",
+          "updated": "2026-07-15T12:39:30.217Z"
+        },
+        {
+          "source": "CVE Services CVE-2026-61428",
+          "published": "2026-07-11T13:01:01.759Z",
+          "updated": "2026-07-13T16:10:29.816Z"
+        }
+      ],
+      "summary": "GitHub Advisory Database published two reviewed PraisonAI AgentMail webhook advisories on October 7. The AgentMail webhook path accepts caller-controlled message.received JSON without verifying Svix signatures, can ignore invalid Svix headers, and dispatches forged content into the configured agent session with attacker-controlled sender, subject, body, thread, and reply metadata.",
+      "evidence_classification": "reviewed GitHub security advisories plus CVE Services records and third-party advisory links",
+      "affected_boundary_or_version": "PraisonAI / pypi:praisonai before 4.6.78 in AgentMail webhook mode; public HTTP webhook authenticity boundary for agent invocation and email reply behavior.",
+      "why_it_matters_for_ai_security": "Webhook authenticity is a delegated-authority boundary for agent workflows. A forged event can drive an agent as an arbitrary sender, create prompt-injection input, burn model or API budget, and potentially exfiltrate or mutate data through tools available to the configured agent.",
+      "named_entities": [
+        "PraisonAI",
+        "AgentMail",
+        "Svix",
+        "GitHub Advisory Database",
+        "CVE-2026-61436",
+        "CVE-2026-61428",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Create a local agent-and-tool-security or identity-and-access leaf for AgentMail webhook signature verification and agent invocation authenticity.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-wiki",
+            "reason": "Broad PraisonAI and AgentMail product/entity context belongs upstream."
+          },
+          {
+            "wiki": "ai-dev-wiki",
+            "reason": "General webhook integration and agent workflow practice belongs upstream unless framed as a security control."
+          }
+        ]
+      },
+      "confidence_notes": "High confidence for the October 7 GitHub Advisory Database publication and affected version boundary; the underlying CVE records are older but the reviewed GitHub publication is in-window.",
+      "follow_up_actions": [
+        "During ingest, decide whether to group both CVEs in one PraisonAI AgentMail webhook-authenticity leaf.",
+        "Recheck PraisonAI 4.6.78 release notes or patch commits for exact remediation behavior before writing durable guidance."
+      ]
+    },
+    {
+      "id": "vllm-harmony-tool-continuation-cache-salt-tenant-oracle-cve-2026-105752",
+      "title": "vLLM Harmony tool continuations can drop cache_salt and expose a prefix-cache membership oracle",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-935w-9g4m-p28p",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105752",
+        "https://github.com/vllm-project/vllm/pull/50195",
+        "https://github.com/vllm-project/vllm/pull/51818",
+        "https://github.com/vllm-project/vllm/releases/tag/v0.30.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-10-05T22:32:59.299Z",
+          "updated": "2026-10-06T14:48:10.692Z"
+        },
+        {
+          "source": "GitHub Advisory Database search result",
+          "published_to_database": "2026-10-06"
+        }
+      ],
+      "summary": "CVE-2026-105752 says vLLM before 0.30.0 rebuilds Harmony tool-continuation inputs for POST /v1/responses without preserving cache_salt. With prefix caching enabled by default, an authenticated tenant who can reconstruct low-entropy post-tool history can use cached_tokens_per_turn to infer whether a victim prefix was previously processed.",
+      "evidence_classification": "CVE Services record plus GitHub security advisory reference",
+      "affected_boundary_or_version": "vllm package before 0.30.0; multi-tenant prefix cache isolation for Harmony tool continuations in Responses API deployments.",
+      "why_it_matters_for_ai_security": "Prefix cache salting is meant to isolate tenant prompts and tool continuations. Dropping the salt creates a cross-tenant side channel around post-tool state, which is both model-runtime privacy risk and agent-tool trace leakage.",
+      "named_entities": [
+        "vLLM",
+        "Harmony",
+        "Responses API",
+        "prefix caching",
+        "cache_salt",
+        "CVE-2026-105752"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Create or update a model-and-prompt-security/data-and-privacy leaf for salted prefix-cache isolation in vLLM tool continuations.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-wiki",
+            "reason": "Broad vLLM runtime and model-serving entity context belongs upstream."
+          }
+        ]
+      },
+      "confidence_notes": "High confidence from the CVE Services description and referenced GitHub advisory; GitHub advisory page itself may need refetch during ingest for final CVSS and patched-version wording.",
+      "follow_up_actions": [
+        "During ingest, check whether existing vLLM prefix-cache or prompt-security leaves should absorb this rather than creating a new leaf.",
+        "Confirm whether default prefix caching remains enabled in local guidance for the affected versions."
+      ]
+    },
+    {
+      "id": "vllm-mirrored-multimodal-cache-desync-dos-cve-2026-105753",
+      "title": "vLLM mirrored multimodal cache desync can turn a rejected request into shared-service DoS",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-ph3r-5jfg-f84f",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105753",
+        "https://github.com/vllm-project/vllm/pull/46747",
+        "https://github.com/vllm-project/vllm/pull/51897",
+        "https://github.com/vllm-project/vllm/releases/tag/v0.28.0"
+      ],
+      "visible_dates": [
+        {
+          "source": "CVE Services",
+          "published": "2026-10-05T22:37:19.633Z",
+          "updated": "2026-10-06T13:23:03.982Z"
+        },
+        {
+          "source": "GitHub Advisory Database search result",
+          "published_to_database": "2026-10-06"
+        }
+      ],
+      "summary": "CVE-2026-105753 says vLLM before 0.28.0 can commit a media hash in the frontend sender cache during multimodal rendering before engine admission, while a rejected request prevents the receiver cache from getting the payload. A later request reusing the same media hash then triggers an assertion in the receiver cache and causes shared-service availability failure.",
+      "evidence_classification": "CVE Services record plus GitHub security advisory reference",
+      "affected_boundary_or_version": "vllm package before 0.28.0; mirrored multimodal LRU cache between frontend sender and engine receiver.",
+      "why_it_matters_for_ai_security": "Multimodal inference services often run as shared infrastructure. A malformed or rejected multimodal request that poisons cache state can degrade availability for unrelated tenants or users.",
+      "named_entities": [
+        "vLLM",
+        "MultiModalProcessorSenderCache",
+        "MultiModalReceiverCache",
+        "multimodal LRU cache",
+        "CVE-2026-105753"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Create or update a model-and-prompt-security or infrastructure-and-supply-chain leaf for vLLM multimodal cache availability boundaries.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-wiki",
+            "reason": "Broad vLLM model-serving runtime context belongs upstream."
+          }
+        ]
+      },
+      "confidence_notes": "High confidence from the CVE Services description and referenced fix/release; advisory details should be rechecked during ingest for scoring and exploit preconditions.",
+      "follow_up_actions": [
+        "During ingest, decide whether to pair this with other vLLM multimodal availability findings in one durable leaf.",
+        "Check vLLM 0.28.0 release notes and patches for cache invalidation wording."
+      ]
+    },
+    {
+      "id": "knowns-lsp-binary-config-command-execution-cve-2026-86540",
+      "title": "knowns project config can execute attacker-selected LSP binaries when a repository is opened",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-mc52-mwq4-vfx3",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86540",
+        "https://github.com/knowns-dev/knowns/releases/tag/v0.30.0",
+        "https://www.vulncheck.com/advisories/knowns-before-0.30.0-arbitrary-code-execution-via-lsp-binary"
+      ],
+      "visible_dates": [
+        {
+          "source": "GitHub Advisory Database",
+          "published_to_database": "2026-10-06",
+          "reviewed": "2026-10-06",
+          "last_updated": "2026-10-06"
+        },
+        {
+          "source": "CVE Services",
+          "published": "2026-09-07T23:03:18.654Z",
+          "updated": "2026-09-24T14:21:24.010Z"
+        }
+      ],
+      "summary": "GitHub Advisory Database published a reviewed advisory on October 6 for CVE-2026-86540. knowns versions before 0.30.0 do not validate settings.lsp.languages binary paths in .knowns/config.json, so opening a repository with a crafted config can execute arbitrary binaries under the user's account.",
+      "evidence_classification": "reviewed GitHub security advisory plus CVE Services record and release reference",
+      "affected_boundary_or_version": "knowns npm package before 0.30.0; repository-local configuration trust boundary for LSP binary detection and execution.",
+      "why_it_matters_for_ai_security": "Repository-aware AI and knowledge tools often consume local project configuration. A repo-supplied binary path that runs on open is a supply-chain and workspace-trust failure for coding-agent and documentation-agent environments.",
+      "named_entities": [
+        "knowns",
+        ".knowns/config.json",
+        "Language Server Protocol",
+        "GitHub Advisory Database",
+        "CVE-2026-86540",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Create or update a local infrastructure-and-supply-chain or agent-and-tool-security leaf for repository-local configuration execution in AI knowledge tools.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-wiki",
+            "reason": "Broad knowns tool/product context belongs upstream."
+          },
+          {
+            "wiki": "ai-dev-wiki",
+            "reason": "General repository-local instruction/configuration trust practice belongs upstream unless framed as a concrete security vulnerability."
+          }
+        ]
+      },
+      "confidence_notes": "Medium-high confidence for in-window GitHub Advisory publication; the underlying CVE record predates the window, so durable synthesis should phrase this as newly reviewed/published in GitHub Advisory Database rather than newly disclosed.",
+      "follow_up_actions": [
+        "During ingest, compare with existing knowns security leaves to avoid duplicating related project-file trust boundaries.",
+        "Recheck the v0.30.0 release and patch commit for exact validation behavior."
+      ]
+    },
+    {
+      "id": "openai-gpt-6-october-deployment-safety-prompt-injection-and-cyber-assurance",
+      "title": "OpenAI GPT-6 October deployment safety update reports prompt-injection, auto-review, and cyber capability results",
+      "source_urls": [
+        "https://deploymentsafety.openai.com/gpt-6-october/prompt-injection"
+      ],
+      "visible_dates": [
+        {
+          "source": "OpenAI Deployment Safety Hub",
+          "published": "2026-10-07"
+        }
+      ],
+      "summary": "OpenAI published the GPT-6 Sol and GPT-6 Luna October deployment safety update on October 7. The report says the October ChatGPT models show stronger resistance to jailbreaks versus GPT-5.6 ChatGPT models, reports 99.99% and 99.79% instruction-hierarchy robustness on prompt-injection evaluations, says GPT-6 October models did not exploit the deliberately poor Auto-Review setup in the tested rollouts, and classifies the October models as High but below Critical for cybersecurity capability.",
+      "evidence_classification": "official deployment safety and assurance report",
+      "affected_boundary_or_version": "GPT-6 Sol and GPT-6 Luna October releases in ChatGPT; Codex and ChatGPT Work are explicitly described as still using previously released versions.",
+      "why_it_matters_for_ai_security": "This is not a vulnerability disclosure, but it is a concrete public assurance update for prompt-injection robustness, guardrail-circumvention behavior, and cyber capability thresholds in deployed AI systems.",
+      "named_entities": [
+        "OpenAI",
+        "GPT-6 Sol",
+        "GPT-6 Luna",
+        "ChatGPT",
+        "Codex",
+        "ChatGPT Work",
+        "GPT-Red",
+        "Auto-Review",
+        "Preparedness Framework"
+      ],
+      "upstream_routing": {
+        "security_specific_local_implication": "Record local security-assurance implications under testing-and-assurance or governance-and-compliance, especially prompt-injection robustness and deployment-gate evidence.",
+        "upstream_owned_context": [
+          {
+            "wiki": "ai-wiki",
+            "reason": "Broad OpenAI and GPT-6 model-release context belongs upstream."
+          },
+          {
+            "wiki": "ai-dev-wiki",
+            "reason": "General Codex and Work model availability plus developer workflow implications belong upstream."
+          }
+        ]
+      },
+      "confidence_notes": "High confidence for the official publication date and reported assurance facts. Treat the cybersecurity classification as OpenAI's own deployment-safety assessment, not independent third-party validation.",
+      "follow_up_actions": [
+        "During ingest, route model-release background upstream and keep only local assurance, prompt-injection, and deployment-gate implications.",
+        "Check whether the local governance-and-compliance or testing-and-assurance hub already has a place for model deployment safety reports."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "MCP TypeScript SDK OAuth credential confusion, CVE-2026-104850",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-6qxp-vccf-f47h",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-104850"
+      ],
+      "visible_dates": [
+        "CVE Services published 2026-10-06T16:08:21.514Z; GitHub Advisory Database published/reviewed 2026-10-06"
+      ],
+      "reason": "Excluded from new qualifying findings because raw/processed/2026-10-06/ai-security-wiki-topic-news-collector-2026-10-06T233203Z.json already captured and routed this item."
+    },
+    {
+      "title": "Payload plugin-mcp API-key account takeover, CVE-2026-105806",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-2q76-m6w6-qgc6",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105806"
+      ],
+      "visible_dates": [
+        "CVE Services published 2026-10-06T15:35:17.028Z and updated 2026-10-06T17:39:44.197Z; GitHub Advisory Database published/reviewed 2026-10-06"
+      ],
+      "reason": "Excluded from new qualifying findings because the October 6 processed collector artifact already captured and routed this MCP API-key access-control issue."
+    },
+    {
+      "title": "Docling local file read and table resource-exhaustion CVEs, including CVE-2026-105749 and CVE-2026-105750",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105749",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105750",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105749",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105750"
+      ],
+      "visible_dates": [
+        "CVE Services published 2026-10-05T21:36:53.431Z and 2026-10-05T21:38:28.098Z; CVE-2026-105750 updated 2026-10-06T18:17:27.884Z"
+      ],
+      "reason": "Excluded from new qualifying findings because docs/wiki already has Docling local file-read and resource-exhaustion leaves sourced from the October 5 collector, and the October 6 processed leaf-update watch also captured these identifiers."
+    },
+    {
+      "title": "Amazon Bedrock AgentCore Starter Toolkit import vulnerabilities, CVE-2026-105812 and CVE-2026-106032",
+      "source_urls": [
+        "https://aws.amazon.com/security/security-bulletins/2026-127-aws/",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105812",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-106032"
+      ],
+      "visible_dates": [
+        "Captured in October 6 processed collector artifact with in-window NVD/AWS evidence"
+      ],
+      "reason": "Excluded as a duplicate of the October 6 processed collector artifact."
+    },
+    {
+      "title": "Microsoft UFO MCP command-injection cluster and SimpleChat MCP stdio plugin RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105788",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105791",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105793",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105797"
+      ],
+      "visible_dates": [
+        "Captured in October 6 processed collector artifact"
+      ],
+      "reason": "Excluded as duplicate prior-run coverage; ingest already created local UFO and SimpleChat leaves."
+    },
+    {
+      "title": "Progress Autonomous REST Connector GenAI Agents generator command injection, CVE-2026-91140",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-w86g-q6vw-5mw6",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-91140"
+      ],
+      "visible_dates": [
+        "Captured in October 6 processed collector artifact"
+      ],
+      "reason": "Excluded as duplicate prior-run coverage."
+    },
+    {
+      "title": "GitHub Advisory Database Oct 7 wger, Coraza, and Actual Sync Server records",
+      "source_urls": [
+        "https://github.com/advisories"
+      ],
+      "visible_dates": [
+        "GitHub Advisory Database list showed multiple Oct 6-Oct 7 publications"
+      ],
+      "reason": "Excluded because the records are ordinary web application, WAF, or GitHub-token security issues without a concrete AI, model, MCP, agent, or AI-security boundary in the fetched evidence."
+    },
+    {
+      "title": "Mozilla Firefox 157.0.1 security update",
+      "source_urls": [
+        "https://www.mozilla.org/en-US/security/advisories/"
+      ],
+      "visible_dates": [
+        "Mozilla advisory index showed October 6, 2026"
+      ],
+      "reason": "Excluded because the visible advisory is a browser security update without a concrete AI-agent, AI browser-control, MCP, or model-security delta in the fetched evidence."
+    }
+  ],
+  "routing_notes": [
+    {
+      "item_id": "praisonai-agentmail-webhook-signature-bypass-cve-2026-61436-cve-2026-61428",
+      "local_destination_hint": "docs/wiki/agent-and-tool-security or docs/wiki/identity-and-access",
+      "upstream_owned": [
+        "PraisonAI product background in ai-wiki",
+        "General webhook workflow practice in ai-dev-wiki"
+      ]
+    },
+    {
+      "item_id": "vllm-harmony-tool-continuation-cache-salt-tenant-oracle-cve-2026-105752",
+      "local_destination_hint": "docs/wiki/model-and-prompt-security or docs/wiki/data-and-privacy",
+      "upstream_owned": [
+        "vLLM runtime background in ai-wiki"
+      ]
+    },
+    {
+      "item_id": "vllm-mirrored-multimodal-cache-desync-dos-cve-2026-105753",
+      "local_destination_hint": "docs/wiki/model-and-prompt-security or docs/wiki/infrastructure-and-supply-chain",
+      "upstream_owned": [
+        "vLLM runtime background in ai-wiki"
+      ]
+    },
+    {
+      "item_id": "knowns-lsp-binary-config-command-execution-cve-2026-86540",
+      "local_destination_hint": "docs/wiki/infrastructure-and-supply-chain or docs/wiki/agent-and-tool-security",
+      "upstream_owned": [
+        "knowns product background in ai-wiki",
+        "General repository-local configuration trust practice in ai-dev-wiki"
+      ]
+    },
+    {
+      "item_id": "openai-gpt-6-october-deployment-safety-prompt-injection-and-cyber-assurance",
+      "local_destination_hint": "docs/wiki/testing-and-assurance or docs/wiki/governance-and-compliance",
+      "upstream_owned": [
+        "OpenAI and GPT-6 model release context in ai-wiki",
+        "Codex and ChatGPT Work developer-workflow availability in ai-dev-wiki"
+      ]
+    }
+  ],
+  "confidence_and_blockers": {
+    "overall_confidence": "Medium-high. Public advisory and CVE evidence is strong for the vulnerability records; GitHub Advisory Database pages for the newest vLLM records should be refetched during ingest for final CVSS and wording.",
+    "blockers": [],
+    "caveats": [
+      "Several concrete in-window candidates were excluded because they were already captured in processed October 5 or October 6 raw artifacts.",
+      "CVE-2026-86540 has an older CVE publication date and qualifies here only through in-window GitHub Advisory Database publication/review.",
+      "The OpenAI item is an official assurance and deployment-safety update, not a vulnerability disclosure; treat its claims as vendor-provided assessment evidence."
+    ]
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check_scoped": "passed"
+  }
+}

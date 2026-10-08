@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [knowns LSP binary config execution](knowns-lsp-binary-config-execution.md)
 - [Bedrock AgentCore Starter Toolkit import vulnerabilities](bedrock-agentcore-starter-toolkit-import-vulnerabilities.md)
 - [Progress GenAI Agent Generator command injection](progress-genai-agent-generator-command-injection.md)
 - [Meta Muse VM escape release gate](meta-muse-vm-escape-release-gate.md)
@@ -27,6 +28,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
+- [knowns LSP binary config execution](knowns-lsp-binary-config-execution.md)
 - [Bedrock AgentCore Starter Toolkit import vulnerabilities](bedrock-agentcore-starter-toolkit-import-vulnerabilities.md)
 - [Progress GenAI Agent Generator command injection](progress-genai-agent-generator-command-injection.md)
 - [Meta Muse VM escape release gate](meta-muse-vm-escape-release-gate.md)
@@ -161,6 +163,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-10-08 with knowns LSP binary config execution as a repository-local configuration execution boundary; after source processing, recheck source links point to `raw/processed`.
 - Updated on 2026-10-07 with Bedrock AgentCore Starter Toolkit import vulnerabilities and Progress GenAI Agent Generator command injection leaves.
 - Updated on 2026-10-06 with Meta Muse VM escape release-gate reporting plus split Docling Tectonic, plugin import, and resource-exhaustion leaves.
 - Updated on 2026-10-02 with the JetBrains Rider AI Assistant third-party skill auto-update confirmation leaf.

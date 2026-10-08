@@ -6,6 +6,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 
 ## Leaf Pages
 
+- [OpenAI GPT-6 October deployment safety](openai-gpt-6-october-deployment-safety.md)
 - [agentverus-scanner security decision input trust](agentverus-scanner-security-decision-input-trust.md)
 - [Cyber-evaluation containment](cyber-evaluation-containment.md)
 - [Public cyber-capability assessments](public-cyber-capability-assessments.md)
@@ -58,6 +59,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 
 ## Maintenance Notes
 
+- Updated on 2026-10-08 with OpenAI GPT-6 October deployment safety as vendor-provided assurance evidence, not broad model coverage; after source processing, recheck source links point to `raw/processed`.
 - Updated on 2026-09-30 with AP-attributed OpenAI release-pacing and agent-monitoring evidence folded into frontier model critical cyber release gates.
 - Updated on 2026-09-29 with agentverus-scanner security-decision input-trust coverage.
 - Updated on 2026-09-03 with GPT-6 Astra deployment-safety evidence and agentverus scanner update evidence without duplicating the scanner-family digest item.

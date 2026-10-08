@@ -2,7 +2,7 @@
 
 ## Current Understanding
 
-The active October 2026 digest currently includes item-level October 6, October 5, October 4, October 3, October 2, and October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
+The active October 2026 digest currently includes item-level October 7, October 6, October 5, October 4, October 3, October 2, and October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
 
 Monthly digests summarize processed security updates and link to durable local leaves for detail. Collectors save raw evidence first; ingest updates a digest only after the local security analysis and federation routing are complete.
 
@@ -17,6 +17,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json)
+- [October 8 leaf update watch source](../../../raw/processed/2026-10-08/ai-security-wiki-leaf-update-watch-20261008T001800Z.json)
 - [October 6 topic collector source](../../../raw/processed/2026-10-06/ai-security-wiki-topic-news-collector-2026-10-06T233203Z.json)
 - [October 6 leaf update watch source](../../../raw/processed/2026-10-06/ai-security-wiki-leaf-update-watch-20261007T000547Z.json)
 - [October 5 topic collector source](../../../raw/processed/2026-10-05/ai-security-wiki-topic-news-collector-2026-10-05T233142Z.json)
@@ -121,6 +123,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-08 with item-level October 7 additions for PraisonAI AgentMail, vLLM cache-salt privacy, vLLM multimodal cache availability, knowns LSP binary execution, and OpenAI GPT-6 deployment safety; the October 8 watcher corrected Microsoft UFO CVE mappings, and post-move verification must recheck `raw/processed` source links.
 - Updated on 2026-10-07 with item-level October 6 entries for MCP TypeScript SDK OAuth, Bedrock AgentCore Starter Toolkit import, split Microsoft UFO mobile ADB and Windows command execution, SimpleChat MCP stdio plugin RCE, Payload plugin-mcp API-key account scoping, [Progress GenAI Agent Generator command injection](../infrastructure-and-supply-chain/progress-genai-agent-generator-command-injection.md), and [cross-vendor MCP SSRF protocol pivoting](../agent-and-tool-security/cross-vendor-mcp-ssrf-protocol-pivoting.md); October 6 watcher repeats for October 5 leaves stayed provenance-only and ordering remains reverse chronological.
 - Updated on 2026-10-06 with item-level October 5 entries for Grafana mcp-k6, split Langflow execution/locality/authorization boundaries, split Docling ingestion boundaries, OpenClaw channel reads, LangGraph SDK authorization, Dify MCP server ownership, Hyve Lite IDOR, [cross-agent MCP prompt propagation](../threats-and-attacks/cross-agent-mcp-prompt-propagation.md), Meta Muse VM escape release gates, and Zammad primary-advisory enrichment; duplicate October 5 watcher repeats stayed provenance-only and ordering remains reverse chronological.
 - Updated on 2026-10-05 with item-level October 4 entries for InternLM MindSearch, Mindio Magic MCP, LaraDashboard, aiir Policy Gate, [Zammad AI-driven zero-day breach](../threats-and-attacks/zammad-ai-driven-zero-day-breach.md), and Custom GPT ClickFix reporting; duplicate October 3 watcher repeats stayed provenance-only and ordering remains reverse chronological.

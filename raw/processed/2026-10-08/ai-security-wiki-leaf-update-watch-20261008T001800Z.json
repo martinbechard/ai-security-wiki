@@ -1,0 +1,693 @@
+{
+  "affected_boundaries": [
+    "ADB shell command argument boundary",
+    "Bedrock Agent import",
+    "KVM/VM isolation",
+    "MCP API key lifecycle",
+    "MCP TypeScript SDK OAuth client support",
+    "MCP delegated workflow context",
+    "MCP servers that fetch model- or tool-supplied URLs",
+    "MCP stdio process spawn",
+    "Microsoft UFO CommandLineExecutor",
+    "Microsoft UFO mobile MCP server",
+    "OpenAPI external references",
+    "POST /api/user/plugins authorization order",
+    "Payload CMS MCP plugin",
+    "Progress ARCGenAI-Generator",
+    "SimpleChat personal plugins",
+    "Swagger/OpenAPI ingestion",
+    "Windows Explorer ShellExecute delegation",
+    "account and tenant authorization",
+    "agent-to-agent delegated trust",
+    "agent-to-agent trust",
+    "application service identity",
+    "authorization-server credential binding",
+    "authorized connected Android devices",
+    "desktop user process launch",
+    "developer workstation command execution",
+    "generated Python agent source",
+    "hosted agent sandbox",
+    "instruction provenance",
+    "pre-launch release gates",
+    "protected-resource metadata trust",
+    "receiving-agent tool authorization",
+    "redirect/DNS/final-destination validation",
+    "same-account remote actor / authenticated import actor",
+    "temporary-file cleanup command construction",
+    "tenant/provider infrastructure boundary"
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "evidence_classification_summary": {
+    "confirmed_exploitation": 0,
+    "demonstrated_research": 3,
+    "disclosed_vulnerability": 8,
+    "mitigation_or_control_change": 8,
+    "notes": "Some records carry more than one classification; counts are evidence-type counts, not unique update counts.",
+    "unverified_claim": 2
+  },
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-55531 PraisonAI",
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-mcp-session-exhaustion.md",
+      "reason": "CVE API published/updated 2026-08-25; Snyk visible publication 2026-09-27 is outside the 2026-10-01 to 2026-10-08 strict window.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55531",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55531",
+        "https://security.snyk.io/vuln/SNYK-PYTHON-PRAISONAI-20158911"
+      ]
+    },
+    {
+      "candidate": "CVE-2026-79786 Coroot",
+      "leaf_id": "docs/wiki/identity-and-access/coroot-mcp-oauth-dcr-redirect-hijack.md",
+      "reason": "CVE API published 2026-08-25 and updated 2026-08-28; no visible in-window fixed-release update found.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79786",
+        "https://www.vulncheck.com/advisories/coroot-1.20.2-through-1.24.5-unvalidated-redirect-uri-in-mcp-oauth-client-registration",
+        "https://github.com/coroot/coroot/issues/929"
+      ]
+    },
+    {
+      "candidate": "CVE-2026-78581 Kibana",
+      "leaf_id": "docs/wiki/identity-and-access/kibana-ai-assistant-conversation-ownership-bypass.md",
+      "reason": "CVE API published/updated 2026-08-25; no visible in-window reconciliation update found.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78581",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78581",
+        "https://discuss.elastic.co/t/kibana-8-16-3-8-17-2-security-update-esa-2026-51/387446"
+      ]
+    },
+    {
+      "candidate": "CVE-2026-55609 consciousness-explorer/sublinear-time-solver",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/consciousness-explorer-mcp-state-file-write.md",
+      "reason": "CVE API published 2026-08-25 and updated 2026-08-26; release evidence already captured, no visible in-window update found.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55609",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55609",
+        "https://github.com/ruvnet/sublinear-time-solver/releases/tag/v1.6.0"
+      ]
+    },
+    {
+      "candidate": "CVE-2026-53965 MCP PHP SDK",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mcp-php-sdk-sse-memory-exhaustion.md",
+      "reason": "CVE API published 2026-08-25 and updated 2026-08-26; GitLab advisory updated 2026-09-01, outside the strict window.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53965",
+        "https://github.com/modelcontextprotocol/php-sdk/security/advisories/GHSA-7m52-jw36-44r3",
+        "https://advisories.gitlab.com/composer/mcp/sdk/CVE-2026-53965/"
+      ]
+    }
+  ],
+  "follow_up_notes": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-vendor-mcp-ssrf-protocol-pivoting.md",
+      "note": "Already represented by the October 6 processed topic source and local leaf; future ingest should seek and reconcile the primary researcher update before adding more prose."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/microsoft-ufo-mobile-mcp-adb-command-injection.md",
+      "note": "Local mobile page currently names CVE-2026-105791, but public CVE API records map the mobile press_key sibling to CVE-2026-105793 and Windows CommandLineExecutor to CVE-2026-105791; later ingest should correct or clarify page references."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/microsoft-ufo-windows-command-executor-injection.md",
+      "note": "Local page currently cites CVE-2026-105793 for Windows CommandLineExecutor; public CVE API says CVE-2026-105791 owns that Windows issue and CVE-2026-105793 owns mobile press_key."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/simplechat-mcp-stdio-personal-plugin-rce.md",
+      "note": "Already represented in the October 6 processed topic source; later ingest can add commit/advisory detail if it materially changes mitigation guidance."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-typescript-sdk-oauth-credential-confusion.md",
+      "note": "Already represented in the October 6 processed topic source; preserve as high-confidence source detail for later ingest if tests or local client inventory are added."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/payload-plugin-mcp-api-key-account-takeover.md",
+      "note": "Already represented in the October 6 processed topic source; later ingest should decide whether key rotation guidance belongs in the durable leaf."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/bedrock-agentcore-starter-toolkit-import-vulnerabilities.md",
+      "note": "Already represented in the October 6 processed topic source; later ingest can strengthen AWS-primary migration wording and generated-agent replacement guidance."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/meta-muse-vm-escape-release-gate.md",
+      "note": "Already represented in the October 5 processed topic source; keep caveat until primary Meta statement, launch postmortem, or bounty record is found."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/progress-genai-agent-generator-command-injection.md",
+      "note": "Already represented in the October 6 processed topic source; later ingest should reconcile whether official fixed guidance is ARCGenAI-Generator 2.1 definitions or a broader Progress bulletin action."
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/cross-agent-mcp-prompt-propagation.md",
+      "note": "Already represented in the October 5 processed topic source; later ingest should find primary Google/Rapid7/vendor advisories before converting caveated journalism into stronger confirmed-vulnerability claims."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-mcp-session-exhaustion.md",
+      "note": "No in-window qualifying update found; retain prior wiki state."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/coroot-mcp-oauth-dcr-redirect-hijack.md",
+      "note": "No in-window qualifying update found; retain prior wiki state."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/kibana-ai-assistant-conversation-ownership-bypass.md",
+      "note": "No in-window qualifying update found; retain prior wiki state."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/consciousness-explorer-mcp-state-file-write.md",
+      "note": "No in-window qualifying update found; retain prior wiki state."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mcp-php-sdk-sse-memory-exhaustion.md",
+      "note": "No in-window qualifying update found; retain prior wiki state."
+    }
+  ],
+  "leaf_universe_count": 585,
+  "named_entities": [
+    "0.3.14",
+    "404 Media",
+    "@aws/agentcore",
+    "@modelcontextprotocol/client 2.2.0",
+    "@modelcontextprotocol/sdk 1.31.0",
+    "@payloadcms/plugin-mcp",
+    "ARCGenAI-Generator",
+    "AWS",
+    "AWS bulletin 2026-127",
+    "Amazon Bedrock AgentCore",
+    "Ars Technica",
+    "CVE-2026-104850",
+    "CVE-2026-105788",
+    "CVE-2026-105791",
+    "CVE-2026-105793",
+    "CVE-2026-105797",
+    "CVE-2026-105806",
+    "CVE-2026-105812",
+    "CVE-2026-106032",
+    "CVE-2026-14540",
+    "CVE-2026-91140",
+    "CVE-2026-97228",
+    "Canadian Centre for Cyber Security AV26-1005",
+    "DataDirect Autonomous REST Connector GenAI Agents",
+    "France DINUM",
+    "GHSA-2q76-m6w6-qgc6",
+    "GHSA-6ppj-5886-4f26",
+    "GHSA-6qxp-vccf-f47h",
+    "GHSA-h4mw-qw8m-5x4j",
+    "GHSA-w86g-q6vw-5mw6",
+    "Google",
+    "Google MCP Toolbox",
+    "JPMorgan Chase",
+    "KVM",
+    "Meta",
+    "Microsoft UFO",
+    "Model Context Protocol TypeScript SDK",
+    "Muse",
+    "Payload 3.88.0",
+    "Payload CMS",
+    "Progress Software",
+    "Rapid7",
+    "ShellExecute",
+    "SimpleChat",
+    "SimpleChat 0.261.031",
+    "Syed Anas Mohiuddin",
+    "Tangerang City",
+    "UFO 3.0.10",
+    "UFO 3.0.9",
+    "Weaviate",
+    "bedrock-agentcore-starter-toolkit",
+    "explorer.exe"
+  ],
+  "no_docs_wiki_edits": true,
+  "no_raw_processed_edits": true,
+  "qualifying_update_count": 10,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "MCP servers that fetch model- or tool-supplied URLs",
+        "redirect/DNS/final-destination validation",
+        "agent-to-agent delegated trust"
+      ],
+      "classification": "disclosed vulnerability / demonstrated research",
+      "follow_up_note": "Already represented by the October 6 processed topic source and local leaf; future ingest should seek and reconcile the primary researcher update before adding more prose.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-vendor-mcp-ssrf-protocol-pivoting.md",
+      "named_entities": [
+        "Syed Anas Mohiuddin",
+        "Google MCP Toolbox",
+        "JPMorgan Chase",
+        "Weaviate",
+        "France DINUM",
+        "Tangerang City",
+        "Rapid7",
+        "CVE-2026-14540",
+        "CVE-2026-97228"
+      ],
+      "published_or_updated_at": "2026-10-05/2026-10-06 visible publication window",
+      "source_urls": [
+        "https://www.unite.ai/researcher-discloses-same-mcp-flaw-at-google-jpmorgan-two-governments/",
+        "https://new-horizon.tech/blog/2026-10-06-same-mcp-server-flaw-confirmed-at-google-jpmorgan-weaviate-t",
+        "https://webairadar.com/en/news/the-same-ssrf-bug-turned-up-in-mcp-servers-at-google-jpmorgan-and-two-governments",
+        "https://techscurrent.com/2026/10/mcp-protocol-pivoting-ai-agent-security-trust-gap/"
+      ],
+      "summary": "October public reporting says Syed Anas Mohiuddin documented recurring MCP SSRF/protocol-pivoting fixes at Google, JPMorgan Chase, Weaviate, France DINUM, and Tangerang City, while U.S. federal findings remain unresolved and should not be treated as confirmed vulnerabilities.",
+      "upstream_routing": "Broad MCP ecosystem and organization/product background belongs upstream in ai-wiki; local artifact keeps SSRF, final-destination validation, and trust-propagation security boundaries."
+    },
+    {
+      "affected_boundaries": [
+        "Microsoft UFO mobile MCP server",
+        "ADB shell command argument boundary",
+        "authorized connected Android devices"
+      ],
+      "classification": "disclosed vulnerability / mitigation",
+      "follow_up_note": "Local mobile page currently names CVE-2026-105791, but public CVE API records map the mobile press_key sibling to CVE-2026-105793 and Windows CommandLineExecutor to CVE-2026-105791; later ingest should correct or clarify page references.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/microsoft-ufo-mobile-mcp-adb-command-injection.md",
+      "named_entities": [
+        "Microsoft UFO",
+        "CVE-2026-105788",
+        "CVE-2026-105793",
+        "GHSA-6ppj-5886-4f26",
+        "UFO 3.0.9",
+        "UFO 3.0.10"
+      ],
+      "published_or_updated_at": "2026-10-06T14:05:24Z and 2026-10-06T15:08:18Z CVE record dates; related CVE-2026-105793 published 2026-10-06T14:12:17Z and updated 2026-10-06T15:01:03Z",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105788",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105788",
+        "https://www.tenable.com/cve/CVE-2026-105788",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105793"
+      ],
+      "summary": "CVE-2026-105788 covers Microsoft UFO mobile MCP type_text and launch_app Android shell command injection fixed in 3.0.10. CVE-2026-105793 separately covers press_key Android shell command injection fixed in 3.0.9.",
+      "upstream_routing": "Broad Microsoft UFO framework context belongs upstream; local artifact keeps the mobile MCP/ADB command boundary and CVE split."
+    },
+    {
+      "affected_boundaries": [
+        "Microsoft UFO CommandLineExecutor",
+        "Windows Explorer ShellExecute delegation",
+        "desktop user process launch"
+      ],
+      "classification": "disclosed vulnerability / mitigation",
+      "follow_up_note": "Local page currently cites CVE-2026-105793 for Windows CommandLineExecutor; public CVE API says CVE-2026-105791 owns that Windows issue and CVE-2026-105793 owns mobile press_key.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/microsoft-ufo-windows-command-executor-injection.md",
+      "named_entities": [
+        "Microsoft UFO",
+        "CVE-2026-105791",
+        "UFO 3.0.9",
+        "explorer.exe",
+        "ShellExecute"
+      ],
+      "published_or_updated_at": "2026-10-06T14:09:23Z CVE published/updated",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105791",
+        "https://severitydaily.com/microsoft-ufo-cve-2026-105791-explorer-exe-allowlist-first-token-adb-shell-3-0-9-3-0-10/"
+      ],
+      "summary": "CVE-2026-105791 public CVE data maps Microsoft UFO CommandLineExecutor run_shell explorer.exe argument injection to the Windows desktop process-launch boundary, fixed in 3.0.9.",
+      "upstream_routing": "Broad UFO product context belongs upstream; local artifact keeps the Windows command executor boundary."
+    },
+    {
+      "affected_boundaries": [
+        "SimpleChat personal plugins",
+        "POST /api/user/plugins authorization order",
+        "MCP stdio process spawn",
+        "application service identity"
+      ],
+      "classification": "disclosed vulnerability / mitigation",
+      "follow_up_note": "Already represented in the October 6 processed topic source; later ingest can add commit/advisory detail if it materially changes mitigation guidance.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/simplechat-mcp-stdio-personal-plugin-rce.md",
+      "named_entities": [
+        "SimpleChat",
+        "CVE-2026-105797",
+        "GHSA-h4mw-qw8m-5x4j",
+        "SimpleChat 0.261.031"
+      ],
+      "published_or_updated_at": "2026-10-06T14:23:42Z and 2026-10-06T17:36:24Z CVE record dates",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105797",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105797",
+        "https://cve.report/CVE-2026-105797",
+        "https://www.tenable.com/cve/CVE-2026-105797"
+      ],
+      "summary": "CVE-2026-105797 records a SimpleChat authorization-ordering flaw where a low-privileged authenticated user can create a personal action that later restores MCP stdio metadata and starts an attacker-selected OS process; fixed in 0.261.031.",
+      "upstream_routing": "Broad SimpleChat product context belongs upstream if durable; local artifact keeps personal-plugin authorization and MCP stdio process-spawn boundaries."
+    },
+    {
+      "affected_boundaries": [
+        "MCP TypeScript SDK OAuth client support",
+        "protected-resource metadata trust",
+        "authorization-server credential binding"
+      ],
+      "classification": "disclosed vulnerability / mitigation",
+      "follow_up_note": "Already represented in the October 6 processed topic source; preserve as high-confidence source detail for later ingest if tests or local client inventory are added.",
+      "leaf_id": "docs/wiki/identity-and-access/mcp-typescript-sdk-oauth-credential-confusion.md",
+      "named_entities": [
+        "Model Context Protocol TypeScript SDK",
+        "CVE-2026-104850",
+        "GHSA-6qxp-vccf-f47h",
+        "@modelcontextprotocol/sdk 1.31.0",
+        "@modelcontextprotocol/client 2.2.0"
+      ],
+      "published_or_updated_at": "2026-10-06T16:08:21Z and 2026-10-06T16:28:53Z CVE record dates",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-104850",
+        "https://github.com/modelcontextprotocol/typescript-sdk/security/advisories/GHSA-6qxp-vccf-f47h",
+        "https://advisories.gitlab.io/npm/%40modelcontextprotocol/client/CVE-2026-104850/",
+        "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.2.0"
+      ],
+      "summary": "CVE-2026-104850 / GHSA-6qxp-vccf-f47h records MCP TypeScript SDK OAuth clients sending credentials to an authorization server chosen by the MCP server; fixed in sdk 1.31.0 and client 2.2.0.",
+      "upstream_routing": "Broad SDK catalog context belongs upstream; local artifact keeps OAuth issuer/resource binding and credential-disclosure controls."
+    },
+    {
+      "affected_boundaries": [
+        "Payload CMS MCP plugin",
+        "MCP API key lifecycle",
+        "account and tenant authorization"
+      ],
+      "classification": "disclosed vulnerability / mitigation",
+      "follow_up_note": "Already represented in the October 6 processed topic source; later ingest should decide whether key rotation guidance belongs in the durable leaf.",
+      "leaf_id": "docs/wiki/identity-and-access/payload-plugin-mcp-api-key-account-takeover.md",
+      "named_entities": [
+        "Payload CMS",
+        "@payloadcms/plugin-mcp",
+        "CVE-2026-105806",
+        "GHSA-2q76-m6w6-qgc6",
+        "Payload 3.88.0"
+      ],
+      "published_or_updated_at": "2026-10-06T15:35:17Z and 2026-10-06T17:39:44Z CVE record dates",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105806",
+        "https://github.com/payloadcms/payload/security/advisories/GHSA-2q76-m6w6-qgc6",
+        "https://advisories.gitlab.io/npm/%40payloadcms/plugin-mcp/CVE-2026-105806/",
+        "https://www.tenable.com/cve/CVE-2026-105806"
+      ],
+      "summary": "CVE-2026-105806 / GHSA-2q76-m6w6-qgc6 records @payloadcms/plugin-mcp account-boundary failure that lets an authenticated user manage MCP API keys outside the intended account; fixed in 3.88.0.",
+      "upstream_routing": "Broad Payload CMS context belongs upstream; local artifact keeps delegated MCP key lifecycle and account-boundary security."
+    },
+    {
+      "affected_boundaries": [
+        "Bedrock Agent import",
+        "generated Python agent source",
+        "OpenAPI external references",
+        "same-account remote actor / authenticated import actor"
+      ],
+      "classification": "disclosed vulnerability / mitigation",
+      "follow_up_note": "Already represented in the October 6 processed topic source; later ingest can strengthen AWS-primary migration wording and generated-agent replacement guidance.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/bedrock-agentcore-starter-toolkit-import-vulnerabilities.md",
+      "named_entities": [
+        "AWS",
+        "Amazon Bedrock AgentCore",
+        "bedrock-agentcore-starter-toolkit",
+        "CVE-2026-105812",
+        "CVE-2026-106032",
+        "AWS bulletin 2026-127",
+        "0.3.14",
+        "@aws/agentcore"
+      ],
+      "published_or_updated_at": "2026-10-06T20:34:08Z to 2026-10-07T15:18:42Z CVE update window; AWS bulletin published 2026-10-06 13:30 PDT",
+      "source_urls": [
+        "https://aws.amazon.com/security/security-bulletins/2026-127-aws/",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105812",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-106032",
+        "https://pypi.org/project/bedrock-agentcore-starter-toolkit/0.3.14/"
+      ],
+      "summary": "AWS bulletin 2026-127 and CVE records document Bedrock AgentCore Starter Toolkit import-time code injection and OpenAPI external-reference SSRF/local-file-read flaws before 0.3.14, with re-import and generated-artifact replacement required.",
+      "upstream_routing": "Broad Bedrock AgentCore product context belongs upstream; local artifact keeps generated-agent import and supply-chain security boundaries."
+    },
+    {
+      "affected_boundaries": [
+        "hosted agent sandbox",
+        "KVM/VM isolation",
+        "pre-launch release gates",
+        "tenant/provider infrastructure boundary"
+      ],
+      "classification": "demonstrated research / unverified primary-vendor status",
+      "follow_up_note": "Already represented in the October 5 processed topic source; keep caveat until primary Meta statement, launch postmortem, or bounty record is found.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/meta-muse-vm-escape-release-gate.md",
+      "named_entities": [
+        "Meta",
+        "Muse",
+        "404 Media",
+        "KVM"
+      ],
+      "published_or_updated_at": "2026-10-05 topic collector source / 404 Media public reporting window",
+      "source_urls": [
+        "https://www.404media.co/meta-rushed-to-fix-muse-vm-escape-vulnerability-immediately-before-launch/"
+      ],
+      "summary": "Public reporting says Meta fixed severe Muse vulnerabilities before launch, including KVM/VM escape risk that could have reached Meta-sensitive systems or other users VM environments; no primary Meta advisory was captured.",
+      "upstream_routing": "Broad Meta/Muse product context belongs upstream; local artifact keeps hosted-agent VM isolation and release-gate security analysis."
+    },
+    {
+      "affected_boundaries": [
+        "Progress ARCGenAI-Generator",
+        "Swagger/OpenAPI ingestion",
+        "temporary-file cleanup command construction",
+        "developer workstation command execution"
+      ],
+      "classification": "disclosed vulnerability / mitigation",
+      "follow_up_note": "Already represented in the October 6 processed topic source; later ingest should reconcile whether official fixed guidance is ARCGenAI-Generator 2.1 definitions or a broader Progress bulletin action.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/progress-genai-agent-generator-command-injection.md",
+      "named_entities": [
+        "Progress Software",
+        "DataDirect Autonomous REST Connector GenAI Agents",
+        "ARCGenAI-Generator",
+        "CVE-2026-91140",
+        "GHSA-w86g-q6vw-5mw6",
+        "Canadian Centre for Cyber Security AV26-1005"
+      ],
+      "published_or_updated_at": "2026-10-06T13:46:11Z and 2026-10-07T03:55:20Z CVE record dates",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91140",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-91140",
+        "https://github.com/advisories/GHSA-w86g-q6vw-5mw6",
+        "https://community.progress.com/s/article/Progress-DataDirect-Critical-Security-Alert-Bulletin-September-2026-CVE-2026-91140",
+        "https://www.cyber.gc.ca/en/alerts-advisories/progress-security-advisory-av26-1005"
+      ],
+      "summary": "CVE-2026-91140 records OS command injection in Progress Autonomous REST Connector GenAI Agents ARCGenAI-Generator 2.0 via crafted Swagger/OpenAPI input, with public advisories pointing to 2.1 or later definitions/remediation.",
+      "upstream_routing": "General connector-generation practice belongs in ai-dev-wiki; local artifact keeps the security failure in API-spec-to-command execution."
+    },
+    {
+      "affected_boundaries": [
+        "agent-to-agent trust",
+        "MCP delegated workflow context",
+        "instruction provenance",
+        "receiving-agent tool authorization"
+      ],
+      "classification": "demonstrated research / unverified primary-advisory status",
+      "follow_up_note": "Already represented in the October 5 processed topic source; later ingest should find primary Google/Rapid7/vendor advisories before converting caveated journalism into stronger confirmed-vulnerability claims.",
+      "leaf_id": "docs/wiki/threats-and-attacks/cross-agent-mcp-prompt-propagation.md",
+      "named_entities": [
+        "Google",
+        "Rapid7",
+        "JPMorgan Chase",
+        "Weaviate",
+        "France DINUM",
+        "Syed Anas Mohiuddin",
+        "Ars Technica",
+        "CVE-2026-14540",
+        "CVE-2026-97228"
+      ],
+      "published_or_updated_at": "2026-10-05/2026-10-06 visible reporting window",
+      "source_urls": [
+        "https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/",
+        "https://techbeat.co/story/mcp-trust-flaws-let-ai-agents-turn-prompts-into-internal-attacks",
+        "https://www.unite.ai/researcher-discloses-same-mcp-flaw-at-google-jpmorgan-two-governments/"
+      ],
+      "summary": "Public reporting describes malicious prompt or tool-output propagation through trusted MCP-connected internal agents across Google and other organizations, but primary vendor advisories for the cross-agent prompt-propagation framing remain uncaptured.",
+      "upstream_routing": "Broad organization and MCP ecosystem context belongs upstream; local artifact keeps prompt-propagation threat pattern and control implications."
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_at": "2026-10-08T00:18:00Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/cross-vendor-mcp-ssrf-protocol-pivoting.md",
+    "docs/wiki/agent-and-tool-security/microsoft-ufo-mobile-mcp-adb-command-injection.md",
+    "docs/wiki/agent-and-tool-security/microsoft-ufo-windows-command-executor-injection.md",
+    "docs/wiki/agent-and-tool-security/simplechat-mcp-stdio-personal-plugin-rce.md",
+    "docs/wiki/identity-and-access/mcp-typescript-sdk-oauth-credential-confusion.md",
+    "docs/wiki/identity-and-access/payload-plugin-mcp-api-key-account-takeover.md",
+    "docs/wiki/infrastructure-and-supply-chain/bedrock-agentcore-starter-toolkit-import-vulnerabilities.md",
+    "docs/wiki/infrastructure-and-supply-chain/meta-muse-vm-escape-release-gate.md",
+    "docs/wiki/infrastructure-and-supply-chain/progress-genai-agent-generator-command-injection.md",
+    "docs/wiki/threats-and-attacks/cross-agent-mcp-prompt-propagation.md",
+    "docs/wiki/agent-and-tool-security/praisonai-mcp-session-exhaustion.md",
+    "docs/wiki/identity-and-access/coroot-mcp-oauth-dcr-redirect-hijack.md",
+    "docs/wiki/identity-and-access/kibana-ai-assistant-conversation-ownership-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/consciousness-explorer-mcp-state-file-write.md",
+    "docs/wiki/infrastructure-and-supply-chain/mcp-php-sdk-sse-memory-exhaustion.md"
+  ],
+  "selection_policy": "unchecked leaves first, then oldest last_checked_at, ties by stable relative path",
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-vendor-mcp-ssrf-protocol-pivoting.md",
+      "urls": [
+        "https://www.unite.ai/researcher-discloses-same-mcp-flaw-at-google-jpmorgan-two-governments/",
+        "https://new-horizon.tech/blog/2026-10-06-same-mcp-server-flaw-confirmed-at-google-jpmorgan-weaviate-t",
+        "https://webairadar.com/en/news/the-same-ssrf-bug-turned-up-in-mcp-servers-at-google-jpmorgan-and-two-governments",
+        "https://techscurrent.com/2026/10/mcp-protocol-pivoting-ai-agent-security-trust-gap/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/microsoft-ufo-mobile-mcp-adb-command-injection.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105788",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105788",
+        "https://www.tenable.com/cve/CVE-2026-105788",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105793"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/microsoft-ufo-windows-command-executor-injection.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105791",
+        "https://severitydaily.com/microsoft-ufo-cve-2026-105791-explorer-exe-allowlist-first-token-adb-shell-3-0-9-3-0-10/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/simplechat-mcp-stdio-personal-plugin-rce.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105797",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105797",
+        "https://cve.report/CVE-2026-105797",
+        "https://www.tenable.com/cve/CVE-2026-105797"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-typescript-sdk-oauth-credential-confusion.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-104850",
+        "https://github.com/modelcontextprotocol/typescript-sdk/security/advisories/GHSA-6qxp-vccf-f47h",
+        "https://advisories.gitlab.io/npm/%40modelcontextprotocol/client/CVE-2026-104850/",
+        "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.2.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/payload-plugin-mcp-api-key-account-takeover.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105806",
+        "https://github.com/payloadcms/payload/security/advisories/GHSA-2q76-m6w6-qgc6",
+        "https://advisories.gitlab.io/npm/%40payloadcms/plugin-mcp/CVE-2026-105806/",
+        "https://www.tenable.com/cve/CVE-2026-105806"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/bedrock-agentcore-starter-toolkit-import-vulnerabilities.md",
+      "urls": [
+        "https://aws.amazon.com/security/security-bulletins/2026-127-aws/",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105812",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-106032",
+        "https://pypi.org/project/bedrock-agentcore-starter-toolkit/0.3.14/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/meta-muse-vm-escape-release-gate.md",
+      "urls": [
+        "https://www.404media.co/meta-rushed-to-fix-muse-vm-escape-vulnerability-immediately-before-launch/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/progress-genai-agent-generator-command-injection.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-91140",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-91140",
+        "https://github.com/advisories/GHSA-w86g-q6vw-5mw6",
+        "https://community.progress.com/s/article/Progress-DataDirect-Critical-Security-Alert-Bulletin-September-2026-CVE-2026-91140",
+        "https://www.cyber.gc.ca/en/alerts-advisories/progress-security-advisory-av26-1005"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/cross-agent-mcp-prompt-propagation.md",
+      "urls": [
+        "https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/",
+        "https://techbeat.co/story/mcp-trust-flaws-let-ai-agents-turn-prompts-into-internal-attacks",
+        "https://www.unite.ai/researcher-discloses-same-mcp-flaw-at-google-jpmorgan-two-governments/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-mcp-session-exhaustion.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55531",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55531",
+        "https://security.snyk.io/vuln/SNYK-PYTHON-PRAISONAI-20158911"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/coroot-mcp-oauth-dcr-redirect-hijack.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79786",
+        "https://www.vulncheck.com/advisories/coroot-1.20.2-through-1.24.5-unvalidated-redirect-uri-in-mcp-oauth-client-registration",
+        "https://github.com/coroot/coroot/issues/929"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/kibana-ai-assistant-conversation-ownership-bypass.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78581",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78581",
+        "https://discuss.elastic.co/t/kibana-8-16-3-8-17-2-security-update-esa-2026-51/387446"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/consciousness-explorer-mcp-state-file-write.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55609",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-55609",
+        "https://github.com/ruvnet/sublinear-time-solver/releases/tag/v1.6.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mcp-php-sdk-sse-memory-exhaustion.md",
+      "urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53965",
+        "https://github.com/modelcontextprotocol/php-sdk/security/advisories/GHSA-7m52-jw36-44r3",
+        "https://advisories.gitlab.com/composer/mcp/sdk/CVE-2026-53965/"
+      ]
+    }
+  ],
+  "upstream_routing": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/cross-vendor-mcp-ssrf-protocol-pivoting.md",
+      "routing": "Broad MCP ecosystem and organization/product background belongs upstream in ai-wiki; local artifact keeps SSRF, final-destination validation, and trust-propagation security boundaries."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/microsoft-ufo-mobile-mcp-adb-command-injection.md",
+      "routing": "Broad Microsoft UFO framework context belongs upstream; local artifact keeps the mobile MCP/ADB command boundary and CVE split."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/microsoft-ufo-windows-command-executor-injection.md",
+      "routing": "Broad UFO product context belongs upstream; local artifact keeps the Windows command executor boundary."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/simplechat-mcp-stdio-personal-plugin-rce.md",
+      "routing": "Broad SimpleChat product context belongs upstream if durable; local artifact keeps personal-plugin authorization and MCP stdio process-spawn boundaries."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-typescript-sdk-oauth-credential-confusion.md",
+      "routing": "Broad SDK catalog context belongs upstream; local artifact keeps OAuth issuer/resource binding and credential-disclosure controls."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/payload-plugin-mcp-api-key-account-takeover.md",
+      "routing": "Broad Payload CMS context belongs upstream; local artifact keeps delegated MCP key lifecycle and account-boundary security."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/bedrock-agentcore-starter-toolkit-import-vulnerabilities.md",
+      "routing": "Broad Bedrock AgentCore product context belongs upstream; local artifact keeps generated-agent import and supply-chain security boundaries."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/meta-muse-vm-escape-release-gate.md",
+      "routing": "Broad Meta/Muse product context belongs upstream; local artifact keeps hosted-agent VM isolation and release-gate security analysis."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/progress-genai-agent-generator-command-injection.md",
+      "routing": "General connector-generation practice belongs in ai-dev-wiki; local artifact keeps the security failure in API-spec-to-command execution."
+    },
+    {
+      "leaf_id": "docs/wiki/threats-and-attacks/cross-agent-mcp-prompt-propagation.md",
+      "routing": "Broad organization and MCP ecosystem context belongs upstream; local artifact keeps prompt-propagation threat pattern and control implications."
+    }
+  ]
+}

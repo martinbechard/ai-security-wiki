@@ -8,6 +8,11 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [identity-and-access/praisonai-agentmail-webhook-signature-bypass.md](identity-and-access/praisonai-agentmail-webhook-signature-bypass.md)
+- [model-and-prompt-security/vllm-harmony-tool-cache-salt-oracle.md](model-and-prompt-security/vllm-harmony-tool-cache-salt-oracle.md)
+- [model-and-prompt-security/vllm-multimodal-cache-desync-dos.md](model-and-prompt-security/vllm-multimodal-cache-desync-dos.md)
+- [infrastructure-and-supply-chain/knowns-lsp-binary-config-execution.md](infrastructure-and-supply-chain/knowns-lsp-binary-config-execution.md)
+- [testing-and-assurance/openai-gpt-6-october-deployment-safety.md](testing-and-assurance/openai-gpt-6-october-deployment-safety.md)
 - [identity-and-access/mcp-typescript-sdk-oauth-credential-confusion.md](identity-and-access/mcp-typescript-sdk-oauth-credential-confusion.md)
 - [infrastructure-and-supply-chain/bedrock-agentcore-starter-toolkit-import-vulnerabilities.md](infrastructure-and-supply-chain/bedrock-agentcore-starter-toolkit-import-vulnerabilities.md)
 - [agent-and-tool-security/microsoft-ufo-mobile-mcp-adb-command-injection.md](agent-and-tool-security/microsoft-ufo-mobile-mcp-adb-command-injection.md)
@@ -616,6 +621,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-08 with October 7 security ingest leaves for PraisonAI AgentMail webhook signature bypass, vLLM Harmony tool cache salt oracle, vLLM multimodal cache desync DoS, knowns LSP binary config execution, and OpenAI GPT-6 October deployment safety.
 - Updated on 2026-10-07 with October 6 source-ingest leaves for MCP TypeScript SDK OAuth credential confusion, Bedrock AgentCore Starter Toolkit import vulnerabilities, split Microsoft UFO mobile ADB and Windows command-executor injection, SimpleChat MCP stdio personal-plugin RCE, Payload plugin-mcp API-key account takeover, Progress GenAI Agent Generator command injection, and cross-vendor MCP SSRF protocol pivoting.
 - Updated on 2026-10-06 with October 5 ingest leaves for Grafana mcp-k6, split Langflow Smart Transform, stdio/locality enrichment, flow ownership, and MCP resource-read boundaries, split Docling ingestion boundaries, OpenClaw channel reads, LangGraph SDK custom auth, Dify MCP server ownership, Hyve Lite IDOR, cross-agent MCP prompt propagation, Meta Muse VM escape release gates, and Zammad primary-advisory enrichment.
 - Updated on 2026-10-05 with October 4 ingest leaves for InternLM MindSearch, Mindio Magic MCP, LaraDashboard, aiir Policy Gate, Zammad AI-driven zero-day breach, and Custom GPT ClickFix watcher evidence; October 3 watcher repeats stayed provenance-only.
