@@ -6,6 +6,9 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [Pydantic AI OpenTelemetry content redaction bypass](pydantic-ai-opentelemetry-content-redaction-bypass.md)
+- [Obot MCP catalog credential exposure](obot-mcp-catalog-credential-exposure.md)
+- [LangChain.js MongoDB chat history query injection](langchainjs-mongodb-chat-history-query-injection.md)
 - [Docling remote image credential forwarding](docling-remote-image-credential-forwarding.md)
 - [Docling remote OCR policy bypass](docling-remote-ocr-policy-bypass.md)
 - [Docling local file read conversion backends](docling-local-file-read-conversion-backends.md)
@@ -117,6 +120,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-10-09 with Pydantic AI telemetry redaction, Obot MCP catalog credential exposure, and LangChain.js MongoDB chat-history query-injection leaves from the October 8 source ingest.
 - Updated on 2026-10-06 with Docling remote image credential forwarding, remote OCR policy bypass, and local file-read conversion leaves plus October 5 watcher provenance for Mindio Magic MCP and LaraDashboard.
 - Updated on 2026-10-05 with Mindio Magic MCP sensitive-data exposure, LaraDashboard AI provider-key exposure, and October 4 watcher provenance for SupportCandy and WPZOOM.
 - Updated on 2026-10-04 with split SupportCandy AI Customer Support stored-XSS and SQL-injection leaves plus the WPZOOM Connect AI Chat customer-data exposure leaf.

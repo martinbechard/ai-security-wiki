@@ -9,7 +9,7 @@ tags: ["testing-and-assurance", "governance-and-compliance", "model-and-prompt-s
 
 ## Current Understanding
 
-The [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) records OpenAI's October 7 [GPT-6 October deployment safety update](https://deploymentsafety.openai.com/gpt-6-october/prompt-injection) for GPT-6 Sol and GPT-6 Luna in ChatGPT. Broad OpenAI, GPT-6 model-family, Codex, and ChatGPT Work availability context belongs upstream; this page owns the local assurance lens for prompt-injection robustness, guardrail-circumvention testing, auto-review behavior, and cyber capability classification.
+The [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) records OpenAI's October 7 [GPT-6 October deployment safety update](https://deploymentsafety.openai.com/gpt-6-october/prompt-injection) for GPT-6 Sol and GPT-6 Luna in ChatGPT. The [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json) keeps this as vendor assurance evidence rather than exploit or independent validation evidence. Broad OpenAI, GPT-6 model-family, Codex, and ChatGPT Work availability context belongs upstream; this page owns the local assurance lens for prompt-injection robustness, guardrail-circumvention testing, auto-review behavior, and cyber capability classification.
 
 The report is not a vulnerability disclosure. It is vendor-provided deployment evidence. The collector records that OpenAI reports stronger jailbreak resistance than GPT-5.6 ChatGPT models, 99.99% and 99.79% instruction-hierarchy robustness on prompt-injection evaluations, no exploitation of the deliberately poor Auto-Review setup in tested rollouts, and High but below Critical cybersecurity capability classification for the October models.
 
@@ -25,6 +25,7 @@ The report is not a vulnerability disclosure. It is vendor-provided deployment e
 ## Authoritative Sources
 
 - [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json)
+- [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json)
 - [OpenAI GPT-6 October deployment safety update](https://deploymentsafety.openai.com/gpt-6-october/prompt-injection)
 
 ## Related Code
@@ -53,3 +54,4 @@ The report is not a vulnerability disclosure. It is vendor-provided deployment e
 ## Maintenance Notes
 
 - Created on 2026-10-08 from the [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) as a vendor-assurance deployment-safety leaf rather than broad GPT-6 model coverage.
+- Updated on 2026-10-09 from the [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json) to preserve assurance-only classification and avoid a duplicate digest entry.

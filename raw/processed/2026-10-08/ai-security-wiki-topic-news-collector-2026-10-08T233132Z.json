@@ -1,0 +1,477 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-10-08T23:31:32Z",
+  "run_timestamp_local": "2026-10-08T19:31:32-0400",
+  "cutoff_window": {
+    "start_utc": "2026-10-06T23:31:32Z",
+    "end_utc": "2026-10-08T23:31:32Z",
+    "rule": "Include only public items with visible publication or update evidence inside the exact 48-hour window, or a clearly in-window advisory-database publication/update carrying a concrete AI security fact."
+  },
+  "repository_scope": {
+    "target_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "modified_paths": [
+      "raw/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json",
+      "/Users/martinbechard/.codex/automations/ai-security-wiki-topic-news-collector/memory.md"
+    ],
+    "not_modified": [
+      "docs/wiki",
+      "raw/processed"
+    ]
+  },
+  "searched_topics": [
+    "threats and attacks against AI systems",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy for AI systems",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "AI model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "federation_source": "docs/wiki/federation.md",
+    "upstream_indexes_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "rule_applied": "Broad companies, products, frameworks, model families, and general AI-assisted development practices route upstream; this artifact keeps only security-specific boundaries, affected versions, mitigations, and operational implications."
+  },
+  "source_searches": [
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0/?pubStartDate=2026-10-06T23:31:32.000&pubEndDate=2026-10-08T23:31:32.000&keywordSearch=AI",
+      "visible_date_basis": "CVE published and lastModified timestamps in API response"
+    },
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0/?pubStartDate=2026-10-06T23:31:32.000&pubEndDate=2026-10-08T23:31:32.000&keywordSearch=MCP",
+      "visible_date_basis": "CVE published and lastModified timestamps in API response"
+    },
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0/?pubStartDate=2026-10-06T23:31:32.000&pubEndDate=2026-10-08T23:31:32.000&keywordSearch=prompt",
+      "visible_date_basis": "CVE published and lastModified timestamps in API response"
+    },
+    {
+      "source": "CVE Services API",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-107289",
+      "visible_date_basis": "CVE metadata datePublished/dateUpdated and CNA record references"
+    },
+    {
+      "source": "Public web search",
+      "url": "https://github.com/advisories/GHSA-m6rx-h84q-8r95",
+      "visible_date_basis": "GitHub Advisory Database visible publication, review, update, affected-version, and patch fields"
+    }
+  ],
+  "findings": [
+    {
+      "id": "pydantic-ai-2026-10-08-web-fetch-telemetry-and-local-agent-boundary-cluster",
+      "title": "Pydantic AI published a cluster of web-fetch, telemetry-redaction, local-agent, and concurrency vulnerabilities",
+      "source_urls": [
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-vmxc-h2x2-jmf3",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107286",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107287",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107288",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107289",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107290",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107291",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107292",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107293",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107294",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107295"
+      ],
+      "visible_dates": [
+        "GitHub advisory GHSA-vmxc-h2x2-jmf3 visible publication: 2026-09-17",
+        "CVE Services datePublished range for grouped CVEs: 2026-10-08T15:12:26.597Z through 2026-10-08T17:02:36.718Z",
+        "NVD publication timestamps for grouped CVEs: 2026-10-08T15:17:40.753 through 2026-10-08T17:17:15.237"
+      ],
+      "evidence_classification": "disclosed_vulnerability_cluster",
+      "affected_boundary_or_version": "pydantic-ai and pydantic-ai-slim ranges vary by CVE: 0.3.4 through pre-1.107.x for telemetry redaction paths, 1.34.0 through pre-2.30.0 for local web UI DNS-rebinding/request paths, 1.77.0 through pre-1.107.x/2.x for local WebFetch/web_fetch_tool resource-control and blocked-domain issues, and 2.10.0 through pre-2.53.0 for concurrency limiter streaming slots.",
+      "summary": "The October 8 Pydantic AI disclosures describe multiple concrete security boundaries: attacker-influenced local web fetches can bypass blocked domains or consume CPU/memory, opt-in local access can bypass IPv6 cloud-metadata blocking, OpenTelemetry redaction settings can still leak agent content through exception/retry fields, local developer chat endpoints can be reached through browser-origin paths, and streaming cleanup can retain concurrency slots.",
+      "why_it_matters_for_ai_security": "Pydantic AI is an agent/application framework; these records affect model-directed URL fetching, cloud credential exposure, local developer agent authority, telemetry confidentiality, and availability gates around shared model execution.",
+      "named_entities": [
+        "Pydantic AI",
+        "pydantic-ai",
+        "pydantic-ai-slim",
+        "web_fetch_tool",
+        "WebFetch",
+        "FileUrl",
+        "Agent.to_web",
+        "clai web",
+        "OpenTelemetry"
+      ],
+      "upstream_routing": {
+        "route": "shared",
+        "upstream_owned": "ai-wiki owns broad Pydantic AI framework/product context.",
+        "local_security_lens": "Keep local coverage focused on URL-fetch SSRF/resource controls, telemetry redaction bypasses, local-agent web authority, and affected/fixed version gates."
+      },
+      "confidence_notes": "High confidence for CVE timing and affected ranges from CVE Services/NVD; the GitHub advisory opened directly for CVE-2026-107289 and corroborates the cloud-metadata blocklist issue. Ingest should inspect each GHSA before splitting durable leaves.",
+      "follow_up_actions": [
+        "During ingest, split independent security boundaries instead of one omnibus Pydantic AI page.",
+        "Check whether existing ai-wiki Pydantic AI framework coverage should receive only a routing note.",
+        "Reconcile fixed-version boundaries from each individual GHSA before durable synthesis."
+      ]
+    },
+    {
+      "id": "obot-2026-10-07-mcp-catalog-and-vmcp-access-control",
+      "title": "Obot disclosed MCP catalog credential exposure and vMCP prompt/resource authorization bypasses",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105138",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105139",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-q5wf-87f5-cxgq",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-xhpw-65qw-wj6m",
+        "https://github.com/obot-platform/obot/releases/tag/v0.26.2"
+      ],
+      "visible_dates": [
+        "CVE-2026-105138 datePublished: 2026-10-07T12:18:32.462Z",
+        "CVE-2026-105139 datePublished: 2026-10-07T12:18:33.174Z"
+      ],
+      "evidence_classification": "disclosed_vulnerability_cluster",
+      "affected_boundary_or_version": "Obot 0.12.0 before 0.26.2 for MCP catalog credential exposure; Obot 0.26.0 before 0.26.2 for vMCP profile prompt/resource authorization bypass.",
+      "summary": "One Obot record allows authenticated users to read plaintext static secrets from MCP catalog entries granted by access-control rules; the other lets authenticated users matching a vMCP profile reach prompts and resources of ungranted components because profiles were enforced only for tools.",
+      "why_it_matters_for_ai_security": "MCP catalog entries, prompts, resources, and vMCP profiles are delegated-agent authority boundaries; credential disclosure and prompt/resource overreach can let ordinary users move from permitted tools into backend secrets or ungranted context.",
+      "named_entities": [
+        "Obot",
+        "MCP catalog entries",
+        "vMCP profiles",
+        "CVE-2026-105138",
+        "CVE-2026-105139"
+      ],
+      "upstream_routing": {
+        "route": "security-local-with-upstream-entity-note",
+        "upstream_owned": "ai-wiki owns broad Obot/product catalog context if needed.",
+        "local_security_lens": "Keep the MCP credential and vMCP authorization boundaries in this wiki."
+      },
+      "confidence_notes": "High confidence from CVE Services records with GitHub advisory and release references. Local search found no prior raw/docs/wiki mention of these CVEs.",
+      "follow_up_actions": [
+        "During ingest, decide whether credential exposure and prompt/resource bypass need separate leaves under identity-and-access and data-and-privacy.",
+        "Verify whether v0.26.2 fully fixes both boundaries before writing steady-state guidance."
+      ]
+    },
+    {
+      "id": "splunk-mcp-server-2026-10-07-custom-api-tool-ssrf-token-exposure",
+      "title": "Splunk MCP Server advisory describes custom API tool SSRF and token exposure",
+      "source_urls": [
+        "https://advisory.splunk.com/advisories",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76286",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-76286"
+      ],
+      "visible_dates": [
+        "Splunk SVD-2026-1004 date: 2026-10-07",
+        "Splunk SVD-2026-1004 last modified: 2026-10-07",
+        "CVE-2026-76286 datePublished: 2026-10-07T20:46:40.297Z",
+        "NVD published: 2026-10-07T21:17:20.387"
+      ],
+      "evidence_classification": "vendor_security_advisory",
+      "affected_boundary_or_version": "Splunk MCP Server 1.2 below fixed version 1.2.1; custom API tool REST API; mcp_tool_admin and mcp_tool_execute role capabilities.",
+      "summary": "Splunk says a user with mcp_tool_admin could configure a custom API tool to send requests to an attacker-controlled URL, and a user with mcp_tool_execute who runs that tool could expose their Splunk platform authentication token to the configured URL.",
+      "why_it_matters_for_ai_security": "This is an MCP tool-governance and delegated-authority failure: a configured tool can cause a later executor's platform token to cross a trust boundary controlled by another user.",
+      "named_entities": [
+        "Splunk MCP Server",
+        "SVD-2026-1004",
+        "CVE-2026-76286",
+        "mcp_tool_admin",
+        "mcp_tool_execute"
+      ],
+      "upstream_routing": {
+        "route": "security-local-with-upstream-entity-note",
+        "upstream_owned": "ai-wiki owns broad Splunk/product context if needed.",
+        "local_security_lens": "Keep the MCP custom tool, SSRF, token-forwarding, and role-capability boundaries local."
+      },
+      "confidence_notes": "High confidence from Splunk's official advisory archive plus CVE Services/NVD timing. Direct SVD page returned an internal error, but the advisory archive exposes the full SVD-2026-1004 row.",
+      "follow_up_actions": [
+        "During ingest, preserve the two-party role condition: configuring a tool and executing a tool are separate capabilities.",
+        "Check Splunk documentation references for mitigation details if the durable page needs operational guidance."
+      ]
+    },
+    {
+      "id": "beammcp-2026-10-08-schema-and-argument-validation-boundaries",
+      "title": "BeamMCP disclosed schema-enforcement and boolean/null normalization flaws",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-104634",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-88257",
+        "https://github.com/ScriptKittyOS/beam_mcp/security/advisories/GHSA-wv7p-j6qh-3hj4",
+        "https://github.com/ScriptKittyOS/beam_mcp/security/advisories/GHSA-mrg2-4747-fmpw",
+        "https://cna.erlef.org/cves/CVE-2026-104634.html",
+        "https://cna.erlef.org/cves/CVE-2026-88257.html"
+      ],
+      "visible_dates": [
+        "CVE-2026-104634 datePublished: 2026-10-08T13:41:05.745Z",
+        "CVE-2026-88257 datePublished: 2026-10-08T13:40:55.828Z",
+        "NVD published both records on 2026-10-08"
+      ],
+      "evidence_classification": "disclosed_vulnerability_cluster",
+      "affected_boundary_or_version": "ScriptKittyOS beam_mcp from 0.1.0 before 0.10.1; the records also cite commit 083838eb8e17fe5f6fcaf761bdbe203110288b0b as affected.",
+      "summary": "BeamMCP accepted MCP client arguments that violated advertised nested schema constraints, and normalized JSON true, false, and null into string values before host dispatch. A host that relied on advertised schema or boolean false semantics could receive values that crossed its policy or execution assumptions.",
+      "why_it_matters_for_ai_security": "MCP tools/list schemas are part of the contract between agent clients and tool hosts. If the server advertises constraints it does not enforce, policy layers and host dispatch code may authorize or execute tool calls under false assumptions.",
+      "named_entities": [
+        "BeamMCP",
+        "ScriptKittyOS",
+        "CVE-2026-104634",
+        "CVE-2026-88257",
+        "tools/call",
+        "prompts/get"
+      ],
+      "upstream_routing": {
+        "route": "security-local-with-upstream-entity-note",
+        "upstream_owned": "ai-wiki owns broad MCP framework/server catalog context if needed.",
+        "local_security_lens": "Keep schema-enforcement, argument-normalization, and policy-bypass implications local."
+      },
+      "confidence_notes": "High confidence from CVE Services records and Erlang Ecosystem Foundation CNA/GitHub advisory references. Local search found no prior raw/docs/wiki mention of these CVEs.",
+      "follow_up_actions": [
+        "During ingest, evaluate whether both CVEs belong in one BeamMCP schema-contract leaf or separate tool-argument validation leaves.",
+        "Preserve the caveat that impact depends on host dispatch behavior."
+      ]
+    },
+    {
+      "id": "banks-2026-10-08-prompt-registry-symlink-and-chat-message-boundaries",
+      "title": "Banks prompt template package disclosed prompt-registry symlink and privileged-message injection flaws",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107716",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107717",
+        "https://github.com/masci/banks/security/advisories/GHSA-556j-vv39-8rqv",
+        "https://github.com/masci/banks/security/advisories/GHSA-hmq2-7hp6-7crh",
+        "https://github.com/masci/banks/releases/tag/v2.5.1",
+        "https://github.com/masci/banks/releases/tag/v2.5.0"
+      ],
+      "visible_dates": [
+        "CVE-2026-107716 datePublished: 2026-10-08T21:33:13.391Z",
+        "CVE-2026-107717 datePublished: 2026-10-08T21:38:07.447Z",
+        "NVD published both records on 2026-10-08T22:17:27Z"
+      ],
+      "evidence_classification": "disclosed_vulnerability_cluster",
+      "affected_boundary_or_version": "masci/banks before 2.5.1 for DirectoryPromptRegistry symlink traversal/file disclosure-overwrite; before 2.5.0 for ChatMessage parsing of rendered untrusted prompt output.",
+      "summary": "Banks DirectoryPromptRegistry could follow symlinks for index.json or .jinja files outside the registry root, enabling file disclosure or overwrite when attackers influence a prompt directory. Separately, rendered untrusted data passed to Prompt.chat_messages() could be parsed as ChatMessage JSON with arbitrary roles, crossing a prompt boundary into system, assistant, or tool messages.",
+      "why_it_matters_for_ai_security": "Prompt templates and prompt registries are AI supply-chain artifacts. File-boundary bypasses and user-controlled privileged chat messages can alter instructions, disclose local prompt assets, or confuse downstream tool/message handling.",
+      "named_entities": [
+        "Banks",
+        "DirectoryPromptRegistry",
+        "Prompt.chat_messages",
+        "ChatMessage",
+        "CVE-2026-107716",
+        "CVE-2026-107717"
+      ],
+      "upstream_routing": {
+        "route": "security-local-with-upstream-entity-note",
+        "upstream_owned": "ai-wiki owns broad prompt-template package context if needed.",
+        "local_security_lens": "Keep prompt-boundary, prompt-registry, symlink traversal, and privileged message injection implications local."
+      },
+      "confidence_notes": "High confidence from CVE Services and GitHub advisory/release references. Local search found no prior raw/docs/wiki mention of these CVEs.",
+      "follow_up_actions": [
+        "During ingest, consider model-and-prompt-security for privileged-message injection and infrastructure-and-supply-chain for registry symlink traversal.",
+        "Verify release notes for exact fixed package tags before writing durable remediation wording."
+      ]
+    },
+    {
+      "id": "langchain-2026-10-08-mongodb-chat-history-query-injection",
+      "title": "LangChain.js MongoDBChatMessageHistory advisory entered GitHub Advisory Database with cross-session access impact",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-m6rx-h84q-8r95",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-106119",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-106119",
+        "https://github.com/langchain-ai/langchainjs/releases/tag/@langchain/mongodb@1.3.1"
+      ],
+      "visible_dates": [
+        "GitHub advisory published to langchain-ai/langchainjs: 2026-10-05",
+        "NVD published: 2026-10-06T18:01:24.262Z",
+        "GitHub Advisory Database publication/review/update: 2026-10-08"
+      ],
+      "evidence_classification": "advisory_database_update",
+      "affected_boundary_or_version": "@langchain/mongodb <= 1.3.0 fixed in 1.3.1; LangChain.js affected range also recorded by NVD as langchain-ai/langchainjs before 1.5.14.",
+      "summary": "MongoDBChatMessageHistory did not enforce session identifiers as strings at runtime, so untrusted structured identifiers could be interpreted as MongoDB query conditions. Affected multi-user shared-collection deployments may allow attackers to read, modify, or delete other users' stored conversations.",
+      "why_it_matters_for_ai_security": "Stored chat history is an AI memory/data boundary. Query injection against session identifiers can turn an LLM application's conversation store into cross-tenant read/write access.",
+      "named_entities": [
+        "LangChain.js",
+        "@langchain/mongodb",
+        "MongoDBChatMessageHistory",
+        "CVE-2026-106119",
+        "GHSA-m6rx-h84q-8r95"
+      ],
+      "upstream_routing": {
+        "route": "security-local-with-upstream-entity-note",
+        "upstream_owned": "ai-wiki owns broad LangChain/LangChain.js framework context.",
+        "local_security_lens": "Keep the chat-history data isolation and MongoDB query injection boundary local."
+      },
+      "confidence_notes": "High confidence for GitHub Advisory Database's October 8 in-window publication/review/update; NVD publication is just before the exact cutoff, so qualification relies on the in-window GitHub Advisory Database event.",
+      "follow_up_actions": [
+        "During ingest, avoid duplicating general LangChain framework context already owned upstream.",
+        "Preserve the affected-deployment condition: untrusted session identifier input plus shared MongoDB collection."
+      ]
+    },
+    {
+      "id": "latepoint-2026-10-08-ai-abilities-api-cross-agent-authorization",
+      "title": "LatePoint AI Abilities API advisory reports cross-agent data disclosure and modification",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105196",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105196",
+        "https://wpscan.com/vulnerability/b7b6c989-b484-4ad6-844c-1dec1c74c34d/"
+      ],
+      "visible_dates": [
+        "CVE-2026-105196 datePublished: 2026-10-08T06:00:07.084Z",
+        "NVD published: 2026-10-08T06:16:40.250"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "affected_boundary_or_version": "Appointment Booking Plugin / LatePoint before 5.6.9 when the AI Abilities API feature is enabled; authenticated LatePoint Agent role and above.",
+      "summary": "The advisory says several AI Abilities API actions did not enforce per-record authorization, allowing a LatePoint Agent-role user to read or modify other agents' profiles and read other agents' bookings and customer details.",
+      "why_it_matters_for_ai_security": "This is an AI-feature API authorization boundary: agent-facing automation actions can expose or modify booking/customer data outside the user's intended record scope.",
+      "named_entities": [
+        "LatePoint",
+        "Appointment Booking Plugin",
+        "AI Abilities API",
+        "CVE-2026-105196",
+        "WPScan"
+      ],
+      "upstream_routing": {
+        "route": "security-local-with-upstream-entity-note",
+        "upstream_owned": "ai-wiki owns broad WordPress/plugin ecosystem context if needed.",
+        "local_security_lens": "Keep the AI Abilities API authorization failure and customer-data exposure boundary local."
+      },
+      "confidence_notes": "Medium-high confidence from CVE Services/NVD with WPScan reference. Ingest should fetch WPScan details if reachable for exact endpoint/action names.",
+      "follow_up_actions": [
+        "During ingest, confirm whether the AI Abilities API is a durable local leaf or should fold into a WordPress AI plugin authorization cluster.",
+        "Preserve the feature-enabled condition and role requirement."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Langflow CVE-2026-105697 MCP stdio command injection",
+      "source_urls": [
+        "https://github.com/langflow-ai/langflow/security/advisories/GHSA-w794-rj3p-xv45",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105697"
+      ],
+      "visible_dates": [
+        "GitHub advisory published 2026-09-28",
+        "CVE Services datePublished 2026-10-05T20:16:58.291Z",
+        "NVD publication before the current cutoff"
+      ],
+      "reason": "Already captured and synthesized locally in raw/processed/2026-10-05 and docs/wiki/agent-and-tool-security/ibm-langflow-mcp-stdio-command-execution.md; no new in-window material delta identified."
+    },
+    {
+      "title": "Uncanny Automator AI + Automation WordPress plugin CVE-2026-82627",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82627",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-82627"
+      ],
+      "visible_dates": [
+        "CVE Services datePublished 2026-10-08T01:26:38.471Z",
+        "NVD published 2026-10-08T02:16:54.263"
+      ],
+      "reason": "AI-branded product name, but the concrete vulnerability is PHP object injection/arbitrary file deletion via third-party integration trigger metadata; no distinct AI or agent security boundary identified from available public text."
+    },
+    {
+      "title": "Zephyr Bluetooth Mesh On-Demand Private Proxy buffer overflow CVE-2026-15894",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-15894"
+      ],
+      "visible_dates": [
+        "NVD published 2026-10-07T09:17:05.157"
+      ],
+      "reason": "Matched keyword search noise; Bluetooth Mesh is unrelated to AI model, agent, tool, data, or governance security in the available record."
+    },
+    {
+      "title": "Airwallex Online Payments Gateway WordPress webhook CVE-2026-103517",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-103517"
+      ],
+      "visible_dates": [
+        "NVD published 2026-10-08T11:16:42.613"
+      ],
+      "reason": "Concrete security issue but payment-webhook authentication is outside local AI-security scope; no AI-specific boundary identified."
+    },
+    {
+      "title": "TechRadar article on inherited AI-agent risk",
+      "source_urls": [
+        "https://www.techradar.com/pro/ai-agents-dont-create-new-risk-they-inherit-it"
+      ],
+      "visible_dates": [
+        "Search result visible date 2026-10-07T09:59:22Z"
+      ],
+      "reason": "Commentary/analysis without a concrete new vulnerability, patch, incident, control, or regulatory change."
+    },
+    {
+      "title": "Ars Technica October 5 MCP prompt propagation story",
+      "source_urls": [
+        "https://arstechnica.com/security/2026/10/vulnerability-in-agents-from-google-and-others-exposes-structural-flaw-in-mcp/"
+      ],
+      "visible_dates": [
+        "Published 2026-10-05T22:26:00Z"
+      ],
+      "reason": "Outside the exact 48-hour cutoff for this run and already represented by earlier local cross-agent MCP coverage."
+    },
+    {
+      "title": "HOL Guard fast-mcp-telegram CVE-2026-55096 page",
+      "source_urls": [
+        "https://hol.org/guard/security/cves/CVE-2026-55096-ssrf-via-dns-resolution-gap-in"
+      ],
+      "visible_dates": [
+        "Published 2026-09-28",
+        "Updated 2026-10-01",
+        "Source checked 2026-10-08"
+      ],
+      "reason": "Source-check date is in-window but the concrete vulnerability publication/update dates are outside the cutoff and the CVE was already captured in prior September local evidence."
+    },
+    {
+      "title": "Reddit PSA on mcp-remote CVEs",
+      "source_urls": [
+        "https://www.reddit.com/r/cybersecurity/comments/1wyqza6/psa_if_you_run_mcpremote_01160138_your_dependency/"
+      ],
+      "visible_dates": [
+        "Published 2026-10-06",
+        "Updated comment 2026-10-08"
+      ],
+      "reason": "Useful operational commentary, but the underlying mcp-remote CVEs were published before the current window and are already covered by local September processed evidence; no primary new advisory found."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity": "Pydantic AI",
+      "upstream_owner": "ai-wiki",
+      "security_repository_note": "Local ingest should only capture the new security boundaries: web-fetch allow/block controls, cloud metadata SSRF, telemetry redaction, local developer chat authority, and concurrency denial of service."
+    },
+    {
+      "entity": "Obot",
+      "upstream_owner": "ai-wiki",
+      "security_repository_note": "Local ingest should retain MCP catalog credential exposure and vMCP prompt/resource authorization bypass details."
+    },
+    {
+      "entity": "Splunk MCP Server",
+      "upstream_owner": "ai-wiki",
+      "security_repository_note": "Local ingest should retain the MCP custom API tool SSRF/token-forwarding boundary and role-capability conditions."
+    },
+    {
+      "entity": "BeamMCP",
+      "upstream_owner": "ai-wiki",
+      "security_repository_note": "Local ingest should retain schema-contract and argument-normalization bypass implications."
+    },
+    {
+      "entity": "Banks",
+      "upstream_owner": "ai-wiki",
+      "security_repository_note": "Local ingest should retain prompt-registry symlink traversal and privileged chat-message injection boundaries."
+    },
+    {
+      "entity": "LangChain.js / @langchain/mongodb",
+      "upstream_owner": "ai-wiki",
+      "security_repository_note": "Local ingest should retain MongoDBChatMessageHistory cross-session isolation risk without duplicating framework context."
+    },
+    {
+      "entity": "LatePoint / Appointment Booking Plugin",
+      "upstream_owner": "ai-wiki",
+      "security_repository_note": "Local ingest should retain only the AI Abilities API authorization failure and customer-data boundary."
+    }
+  ],
+  "counts": {
+    "qualifying_findings": 7,
+    "exclusions": 8,
+    "routing_notes": 7
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check_scoped": "passed"
+  },
+  "blockers": [],
+  "confidence_summary": "High confidence for date-window qualification from NVD/CVE Services timestamps and opened primary advisories where available. Some product-specific durable pages should refetch individual GitHub advisories during ingest to preserve exact fixed-version and mitigation wording."
+}

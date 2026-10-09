@@ -1,0 +1,504 @@
+{
+  "run": {
+    "automation_id": "ai-security-wiki-leaf-update-watch",
+    "repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "run_at": "2026-10-09T00:03:40Z",
+    "visible_date_window": {
+      "start": "2026-10-02",
+      "end": "2026-10-08",
+      "timezone": "America/Toronto",
+      "rule": "include only public sources visibly published or updated in the last 7 days; exclude ambiguous, future, missing, header-only, or boundary-only dates"
+    },
+    "approved_roots": [
+      "docs/wiki/threats-and-attacks",
+      "docs/wiki/model-and-prompt-security",
+      "docs/wiki/agent-and-tool-security",
+      "docs/wiki/data-and-privacy",
+      "docs/wiki/identity-and-access",
+      "docs/wiki/infrastructure-and-supply-chain",
+      "docs/wiki/testing-and-assurance",
+      "docs/wiki/governance-and-compliance",
+      "docs/wiki/incident-response"
+    ],
+    "leaf_universe_count": 590,
+    "selection_rule": "new or unchecked leaves first, then oldest last_checked_at, tie-broken by stable relative path",
+    "privacy_boundary": "Only public topic names, aliases, advisory identifiers, and public URLs cited by selected local leaves were used for external checks; local page bodies were not sent to search services."
+  },
+  "selected_leaves": [
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentmail-webhook-signature-bypass.md",
+      "title": "PraisonAI AgentMail Webhook Signature Bypass",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61428",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61436",
+        "https://github.com/advisories/GHSA-7c92-x8vg-4258",
+        "https://github.com/advisories/GHSA-qj9c-59p6-8cgx",
+        "https://www.vulncheck.com/advisories/praisonai-agentmail-before-message-injection-via-webhook",
+        "https://www.vulncheck.com/advisories/praisonai-before-missing-webhook-signature-verification"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/knowns-lsp-binary-config-execution.md",
+      "title": "knowns LSP Binary Config Execution",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86540",
+        "https://github.com/advisories/GHSA-mc52-mwq4-vfx3",
+        "https://github.com/knowns-dev/knowns/releases/tag/v0.30.0",
+        "https://www.vulncheck.com/advisories/knowns-before-0.30.0-arbitrary-code-execution-via-lsp-binary"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-harmony-tool-cache-salt-oracle.md",
+      "title": "vLLM Harmony Tool Cache Salt Oracle",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105752",
+        "https://github.com/advisories/GHSA-935w-9g4m-p28p",
+        "https://github.com/vllm-project/vllm/pull/50195",
+        "https://github.com/vllm-project/vllm/pull/51818",
+        "https://github.com/vllm-project/vllm/releases/tag/v0.30.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-multimodal-cache-desync-dos.md",
+      "title": "vLLM Multimodal Cache Desync DoS",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105753",
+        "https://github.com/advisories/GHSA-ph3r-5jfg-f84f",
+        "https://github.com/vllm-project/vllm/pull/46747",
+        "https://github.com/vllm-project/vllm/pull/51897",
+        "https://github.com/vllm-project/vllm/releases/tag/v0.28.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/openai-gpt-6-october-deployment-safety.md",
+      "title": "OpenAI GPT-6 October Deployment Safety",
+      "source_urls_checked": [
+        "https://deploymentsafety.openai.com/gpt-6-october/prompt-injection"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/dradis-ai-provider-ssrf.md",
+      "title": "Dradis AI Provider SSRF",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79788",
+        "https://github.com/dradis/dradis-ce/issues/1641",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79788",
+        "https://www.vulncheck.com/advisories/dradis-community-edition-5.1.0-through-5.2.0-server-side-request-forgery-via-unrestricted-ai-provider-address"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md",
+      "title": "MCP Atlassian Attachment File Read",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77258",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77260",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77270",
+        "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0",
+        "https://github.com/sooperset/mcp-atlassian/security/advisories/GHSA-g5r6-gv6m-f5jv",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73498",
+        "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/73xxx/CVE-2026-73498.json"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-fetch-ipv6-ssrf.md",
+      "title": "mcp-fetch IPv6 SSRF",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-80347",
+        "https://github.com/kazuph/mcp-fetch/issues/16",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80347",
+        "https://www.cve.org/CVERecord?id=CVE-2026-80347",
+        "https://www.vulncheck.com/advisories/mcp-fetch-through-1.6.3-server-side-request-forgery-via-unstripped-ipv6-literal-brackets"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-ast-grep-rewrite-approval-bypass.md",
+      "title": "PraisonAI ast_grep_rewrite Approval Bypass",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55530",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-cfxv-8fw8-rwpv"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-web-crawl-ssrf.md",
+      "title": "PraisonAI web_crawl SSRF",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55523",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55524",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55525",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-5r34-2g38-6569",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-8hjw-25cg-g52h",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-vg6p-v9vm-6fgj"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md",
+      "title": "Strands Agents Tools Python REPL Consent Bypass",
+      "source_urls_checked": [
+        "https://aws.amazon.com/security/security-bulletins/rss/2026-089-aws/",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78379",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78379",
+        "https://pypi.org/project/strands-agents-tools/0.8.5/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md",
+      "title": "ATO-Approved Sensitive Data Use",
+      "source_urls_checked": [
+        "https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/one-api-channel-pinning-provider-key-bypass.md",
+      "title": "one-api Channel Pinning Provider Key Bypass",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-81027",
+        "https://github.com/songquanpeng/one-api/blob/main/middleware/auth.go",
+        "https://github.com/songquanpeng/one-api/issues/2410",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81027",
+        "https://www.vulncheck.com/advisories/one-api-through-0.6.10-missing-authorization-on-url-parameter-channel-pinning"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md",
+      "title": "PraisonAI AgentServer API Key Auth Enforcement",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55528",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55541",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-7g3p-92qq-8wvh",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvxx-r596-f5qj"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/unifi-protect-ai-key-privilege-escalation.md",
+      "title": "UniFi Protect AI Key Privilege Escalation",
+      "source_urls_checked": [
+        "https://community.ui.com/releases/Security-Advisory-Bulletin-067/fc4a3488-7c43-4628-8bab-f715e96dbfc9",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77557",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77557"
+      ]
+    }
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentmail-webhook-signature-bypass.md",
+      "source_url": "https://github.com/advisories/GHSA-7c92-x8vg-4258",
+      "visible_published_or_updated_at": "2026-10-07",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "GitHub Advisory Database shows the PraisonAI AgentMail forged unsigned message.received webhook advisory as updated on October 7, with patched version 4.6.78 and public proof-of-vulnerability detail.",
+      "affected_boundaries": [
+        "PraisonAI AgentMail webhook mode",
+        "Svix signature verification",
+        "unauthenticated agent invocation",
+        "agent reply metadata"
+      ],
+      "named_entities": [
+        "PraisonAI",
+        "AgentMail",
+        "Svix",
+        "GHSA-7c92-x8vg-4258",
+        "CVE-2026-61436"
+      ],
+      "upstream_routing": "Broad PraisonAI and AgentMail product context belongs in ai-wiki; keep webhook authenticity, agent invocation, and mitigation evidence locally.",
+      "follow_up_note": "Already represented by the October 7 topic collector and local durable leaf; ingest should reconcile exact 4.6.78 patch mechanics before changing docs/wiki."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentmail-webhook-signature-bypass.md",
+      "source_url": "https://github.com/advisories/GHSA-qj9c-59p6-8cgx",
+      "visible_published_or_updated_at": "2026-10-07",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "GitHub Advisory Database shows the paired PraisonAI AgentMail message injection and sender spoofing advisory as published to the database and reviewed on October 7, with affected versions through 4.6.77 and patch 4.6.78.",
+      "affected_boundaries": [
+        "PraisonAI AgentMail webhook mode",
+        "sender authenticity",
+        "sender allow/block list bypass",
+        "agent message pipeline"
+      ],
+      "named_entities": [
+        "PraisonAI",
+        "AgentMail",
+        "GHSA-qj9c-59p6-8cgx",
+        "CVE-2026-61428"
+      ],
+      "upstream_routing": "Broad PraisonAI framework coverage routes upstream; local wiki should retain only the forged webhook and sender-authenticity security boundary.",
+      "follow_up_note": "Compare this paired advisory with GHSA-7c92 before synthesis so the local leaf stays one closely coupled AgentMail webhook-authenticity topic."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/knowns-lsp-binary-config-execution.md",
+      "source_url": "https://github.com/advisories/GHSA-mc52-mwq4-vfx3",
+      "visible_published_or_updated_at": "2026-10-06",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "GitHub Advisory Database published, reviewed, and last updated the knowns LSP binary config execution advisory on October 6; the page lists affected versions through 0.29.1 and patched version 0.30.0.",
+      "affected_boundaries": [
+        "repository-local .knowns/config.json",
+        "LSP binary path selection",
+        "developer workstation process execution",
+        "AI documentation tooling supply chain"
+      ],
+      "named_entities": [
+        "knowns",
+        "GHSA-mc52-mwq4-vfx3",
+        "CVE-2026-86540"
+      ],
+      "upstream_routing": "Broad knowns tool context belongs in ai-wiki; local wiki keeps repository-local configuration execution and workstation containment implications.",
+      "follow_up_note": "Already represented by the October 7 topic collector; later ingest should inspect the 0.30.0 patch or commit d398982 before strengthening mitigation prose."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-harmony-tool-cache-salt-oracle.md",
+      "source_url": "https://github.com/advisories/GHSA-935w-9g4m-p28p",
+      "visible_published_or_updated_at": "2026-10-06",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "GitHub Advisory Database shows the vLLM Harmony tool-continuation cache_salt advisory as published to the database, reviewed, and last updated on October 6; CVE Services also published CVE-2026-105752 on October 5 and updated it October 6.",
+      "affected_boundaries": [
+        "vLLM Responses API",
+        "Harmony tool continuations",
+        "prefix caching",
+        "cache_salt tenant isolation",
+        "cached_tokens_per_turn telemetry"
+      ],
+      "named_entities": [
+        "vLLM",
+        "Harmony",
+        "Responses API",
+        "Patch the Planet",
+        "Trail of Bits",
+        "OpenAI",
+        "GHSA-935w-9g4m-p28p",
+        "CVE-2026-105752"
+      ],
+      "upstream_routing": "Broad vLLM runtime and model-serving context belongs upstream; local wiki owns the prompt-runtime privacy and tenant-isolation boundary.",
+      "follow_up_note": "Already represented by the October 7 topic collector; reconcile PR 51818 and release 0.30.0 before adding patch-specific local wording."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-multimodal-cache-desync-dos.md",
+      "source_url": "https://github.com/advisories/GHSA-ph3r-5jfg-f84f",
+      "visible_published_or_updated_at": "2026-10-06",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "GitHub Advisory Database shows the vLLM multimodal cache desynchronization advisory as published to the database, reviewed, and last updated on October 6; CVE Services published CVE-2026-105753 on October 5 and updated it October 6.",
+      "affected_boundaries": [
+        "vLLM multimodal processor cache",
+        "frontend sender cache",
+        "engine receiver cache",
+        "max_model_len rejection path",
+        "shared inference-service availability"
+      ],
+      "named_entities": [
+        "vLLM",
+        "Patch the Planet",
+        "Trail of Bits",
+        "OpenAI",
+        "GHSA-ph3r-5jfg-f84f",
+        "CVE-2026-105753"
+      ],
+      "upstream_routing": "Broad vLLM product/runtime coverage belongs upstream; local wiki retains the multimodal cache consistency and availability boundary.",
+      "follow_up_note": "Already represented by the October 7 topic collector; inspect PR 51897 and release 0.28.0 before changing durable mitigation wording."
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/openai-gpt-6-october-deployment-safety.md",
+      "source_url": "https://deploymentsafety.openai.com/gpt-6-october/prompt-injection",
+      "visible_published_or_updated_at": "2026-10-07",
+      "evidence_classification": "control_change",
+      "summary": "OpenAI published the GPT-6 Sol and GPT-6 Luna October deployment-safety update on October 7, reporting High but below Critical cyber capability treatment, prompt-injection robustness metrics, and no observed exploitation of the deliberately poor Auto-Review setup in tested rollouts.",
+      "affected_boundaries": [
+        "deployment safety release gates",
+        "prompt-injection robustness",
+        "auto-review behavior",
+        "frontier cyber capability classification"
+      ],
+      "named_entities": [
+        "OpenAI",
+        "GPT-6 Sol",
+        "GPT-6 Luna",
+        "GPT-Red",
+        "Auto-Review"
+      ],
+      "upstream_routing": "Broad OpenAI, GPT-6 model-family, ChatGPT, and Codex availability belongs in ai-wiki; local wiki keeps only the assurance and security-control interpretation.",
+      "follow_up_note": "Already represented by the October 7 topic collector; do not treat vendor assurance metrics as independent exploit or third-party validation evidence."
+    }
+  ],
+  "qualifying_count": 6,
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentmail-webhook-signature-bypass.md",
+      "title": "PraisonAI AgentMail Webhook Signature Bypass",
+      "reason": "Some cited URLs on this qualifying leaf were older than the seven-day window or had no reliable visible date; only the listed in-window GHSA/CVE/OpenAI sources were counted.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61428",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-61436",
+        "https://github.com/advisories/GHSA-7c92-x8vg-4258",
+        "https://github.com/advisories/GHSA-qj9c-59p6-8cgx",
+        "https://www.vulncheck.com/advisories/praisonai-agentmail-before-message-injection-via-webhook",
+        "https://www.vulncheck.com/advisories/praisonai-before-missing-webhook-signature-verification"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/knowns-lsp-binary-config-execution.md",
+      "title": "knowns LSP Binary Config Execution",
+      "reason": "Some cited URLs on this qualifying leaf were older than the seven-day window or had no reliable visible date; only the listed in-window GHSA/CVE/OpenAI sources were counted.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-86540",
+        "https://github.com/advisories/GHSA-mc52-mwq4-vfx3",
+        "https://github.com/knowns-dev/knowns/releases/tag/v0.30.0",
+        "https://www.vulncheck.com/advisories/knowns-before-0.30.0-arbitrary-code-execution-via-lsp-binary"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-harmony-tool-cache-salt-oracle.md",
+      "title": "vLLM Harmony Tool Cache Salt Oracle",
+      "reason": "Some cited URLs on this qualifying leaf were older than the seven-day window or had no reliable visible date; only the listed in-window GHSA/CVE/OpenAI sources were counted.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105752",
+        "https://github.com/advisories/GHSA-935w-9g4m-p28p",
+        "https://github.com/vllm-project/vllm/pull/50195",
+        "https://github.com/vllm-project/vllm/pull/51818",
+        "https://github.com/vllm-project/vllm/releases/tag/v0.30.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/vllm-multimodal-cache-desync-dos.md",
+      "title": "vLLM Multimodal Cache Desync DoS",
+      "reason": "Some cited URLs on this qualifying leaf were older than the seven-day window or had no reliable visible date; only the listed in-window GHSA/CVE/OpenAI sources were counted.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105753",
+        "https://github.com/advisories/GHSA-ph3r-5jfg-f84f",
+        "https://github.com/vllm-project/vllm/pull/46747",
+        "https://github.com/vllm-project/vllm/pull/51897",
+        "https://github.com/vllm-project/vllm/releases/tag/v0.28.0"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/openai-gpt-6-october-deployment-safety.md",
+      "title": "OpenAI GPT-6 October Deployment Safety",
+      "reason": "Some cited URLs on this qualifying leaf were older than the seven-day window or had no reliable visible date; only the listed in-window GHSA/CVE/OpenAI sources were counted.",
+      "source_urls_checked": [
+        "https://deploymentsafety.openai.com/gpt-6-october/prompt-injection"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/dradis-ai-provider-ssrf.md",
+      "title": "Dradis AI Provider SSRF",
+      "reason": "No cited public source produced a visible publication or update date within 2026-10-02 through 2026-10-08; old CVE/GHSA dates, missing visible dates, and boundary-only dates were excluded.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-79788",
+        "https://github.com/dradis/dradis-ce/issues/1641",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-79788",
+        "https://www.vulncheck.com/advisories/dradis-community-edition-5.1.0-through-5.2.0-server-side-request-forgery-via-unrestricted-ai-provider-address"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-atlassian-confluence-attachment-file-read.md",
+      "title": "MCP Atlassian Attachment File Read",
+      "reason": "No cited public source produced a visible publication or update date within 2026-10-02 through 2026-10-08; old CVE/GHSA dates, missing visible dates, and boundary-only dates were excluded.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77258",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77260",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77270",
+        "https://github.com/sooperset/mcp-atlassian/releases/tag/v0.22.0",
+        "https://github.com/sooperset/mcp-atlassian/security/advisories/GHSA-g5r6-gv6m-f5jv",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-73498",
+        "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/73xxx/CVE-2026-73498.json"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-fetch-ipv6-ssrf.md",
+      "title": "mcp-fetch IPv6 SSRF",
+      "reason": "No cited public source produced a visible publication or update date within 2026-10-02 through 2026-10-08; old CVE/GHSA dates, missing visible dates, and boundary-only dates were excluded.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-80347",
+        "https://github.com/kazuph/mcp-fetch/issues/16",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-80347",
+        "https://www.cve.org/CVERecord?id=CVE-2026-80347",
+        "https://www.vulncheck.com/advisories/mcp-fetch-through-1.6.3-server-side-request-forgery-via-unstripped-ipv6-literal-brackets"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-ast-grep-rewrite-approval-bypass.md",
+      "title": "PraisonAI ast_grep_rewrite Approval Bypass",
+      "reason": "No cited public source produced a visible publication or update date within 2026-10-02 through 2026-10-08; old CVE/GHSA dates, missing visible dates, and boundary-only dates were excluded.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55530",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-cfxv-8fw8-rwpv"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/praisonai-web-crawl-ssrf.md",
+      "title": "PraisonAI web_crawl SSRF",
+      "reason": "No cited public source produced a visible publication or update date within 2026-10-02 through 2026-10-08; old CVE/GHSA dates, missing visible dates, and boundary-only dates were excluded.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55523",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55524",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55525",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-5r34-2g38-6569",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-8hjw-25cg-g52h",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-vg6p-v9vm-6fgj"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/strands-agents-tools-python-repl-consent-bypass.md",
+      "title": "Strands Agents Tools Python REPL Consent Bypass",
+      "reason": "No cited public source produced a visible publication or update date within 2026-10-02 through 2026-10-08; old CVE/GHSA dates, missing visible dates, and boundary-only dates were excluded.",
+      "source_urls_checked": [
+        "https://aws.amazon.com/security/security-bulletins/rss/2026-089-aws/",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78379",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78379",
+        "https://pypi.org/project/strands-agents-tools/0.8.5/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/ato-approved-sensitive-data-use.md",
+      "title": "ATO-Approved Sensitive Data Use",
+      "reason": "No cited public source produced a visible publication or update date within 2026-10-02 through 2026-10-08; old CVE/GHSA dates, missing visible dates, and boundary-only dates were excluded.",
+      "source_urls_checked": [
+        "https://department.va.gov/ai/guidance-for-generative-ai-use-at-va/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/one-api-channel-pinning-provider-key-bypass.md",
+      "title": "one-api Channel Pinning Provider Key Bypass",
+      "reason": "No cited public source produced a visible publication or update date within 2026-10-02 through 2026-10-08; old CVE/GHSA dates, missing visible dates, and boundary-only dates were excluded.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-81027",
+        "https://github.com/songquanpeng/one-api/blob/main/middleware/auth.go",
+        "https://github.com/songquanpeng/one-api/issues/2410",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81027",
+        "https://www.vulncheck.com/advisories/one-api-through-0.6.10-missing-authorization-on-url-parameter-channel-pinning"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/praisonai-agentserver-api-key-auth-enforcement.md",
+      "title": "PraisonAI AgentServer API Key Auth Enforcement",
+      "reason": "No cited public source produced a visible publication or update date within 2026-10-02 through 2026-10-08; old CVE/GHSA dates, missing visible dates, and boundary-only dates were excluded.",
+      "source_urls_checked": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55528",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-55541",
+        "https://github.com/MervinPraison/PraisonAI/releases/tag/v4.6.58",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-7g3p-92qq-8wvh",
+        "https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-pvxx-r596-f5qj"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/unifi-protect-ai-key-privilege-escalation.md",
+      "title": "UniFi Protect AI Key Privilege Escalation",
+      "reason": "No cited public source produced a visible publication or update date within 2026-10-02 through 2026-10-08; old CVE/GHSA dates, missing visible dates, and boundary-only dates were excluded.",
+      "source_urls_checked": [
+        "https://community.ui.com/releases/Security-Advisory-Bulletin-067/fc4a3488-7c43-4628-8bab-f715e96dbfc9",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77557",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77557"
+      ]
+    }
+  ],
+  "sources_checked_count": 65,
+  "federation_notes": [
+    "Respect docs/wiki/federation.md: broad AI entities, products, models, frameworks, and general development practices route to upstream ai-wiki or ai-dev-wiki.",
+    "All qualifying local records retain a security-specific boundary, mitigation/control interpretation, or incident/assurance lens."
+  ],
+  "follow_up_notes": [
+    "The first five selected leaves overlap the October 7 topic collector/source-synthesis path; ingest should compare for material metadata or patch deltas before editing docs/wiki.",
+    "The prior state ledger referenced raw/2026-10-08/ai-security-wiki-leaf-update-watch-20261008T001800Z.json, but that file was not present in this checkout during this run; this run did not recreate or remove it.",
+    "No docs/wiki or raw/processed files were edited by this raw-only collector run."
+  ]
+}

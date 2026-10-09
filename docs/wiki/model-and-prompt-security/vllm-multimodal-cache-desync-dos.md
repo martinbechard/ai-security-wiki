@@ -9,7 +9,7 @@ tags: ["model-and-prompt-security", "infrastructure-and-supply-chain"]
 
 ## Current Understanding
 
-The [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) records [CVE-2026-105753](https://cveawg.mitre.org/api/cve/CVE-2026-105753) for vLLM before 0.28.0. Broad vLLM runtime context belongs upstream; this page owns the local multimodal cache consistency and shared-service availability boundary.
+The [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) records [CVE-2026-105753](https://cveawg.mitre.org/api/cve/CVE-2026-105753) for vLLM before 0.28.0. The [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json) corroborates the October 6 GitHub Advisory Database publication/review/update and points to PR 51897 and release 0.28.0 for patch reconciliation. Broad vLLM runtime context belongs upstream; this page owns the local multimodal cache consistency and shared-service availability boundary.
 
 The CVE evidence says a multimodal request can commit a media hash into the frontend sender cache during rendering before engine admission. If the request is rejected, the receiver cache does not receive the payload. A later request reusing the same media hash can then hit the sender cache, miss the receiver payload, trigger a receiver-cache assertion, and degrade shared inference-service availability.
 
@@ -25,6 +25,7 @@ The CVE evidence says a multimodal request can commit a media hash into the fron
 ## Authoritative Sources
 
 - [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json)
+- [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json)
 - [CVE-2026-105753 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-105753)
 - [GitHub advisory GHSA-ph3r-5jfg-f84f](https://github.com/advisories/GHSA-ph3r-5jfg-f84f)
 - [vLLM pull request 46747](https://github.com/vllm-project/vllm/pull/46747)
@@ -57,3 +58,4 @@ The CVE evidence says a multimodal request can commit a media hash into the fron
 ## Maintenance Notes
 
 - Created on 2026-10-08 from the [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) as a distinct multimodal cache-availability boundary.
+- Updated on 2026-10-09 from the [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json) with duplicate GHSA/CVE provenance and no separate digest item.

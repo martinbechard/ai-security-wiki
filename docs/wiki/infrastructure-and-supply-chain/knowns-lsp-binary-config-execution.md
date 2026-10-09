@@ -9,7 +9,7 @@ tags: ["infrastructure-and-supply-chain", "agent-and-tool-security"]
 
 ## Current Understanding
 
-The [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) records October 6 GitHub Advisory Database publication of [GHSA-mc52-mwq4-vfx3](https://github.com/advisories/GHSA-mc52-mwq4-vfx3) for [CVE-2026-86540](https://cveawg.mitre.org/api/cve/CVE-2026-86540). Broad knowns tool and product context belongs upstream, and general repository-local configuration trust practice belongs in ai-dev-wiki unless it is framed as a concrete security vulnerability. This page owns the local workspace supply-chain boundary.
+The [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) records October 6 GitHub Advisory Database publication of [GHSA-mc52-mwq4-vfx3](https://github.com/advisories/GHSA-mc52-mwq4-vfx3) for [CVE-2026-86540](https://cveawg.mitre.org/api/cve/CVE-2026-86540). The [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json) corroborates the October 6 GitHub Advisory Database publication/review/update, affected-through-0.29.1, and 0.30.0 patch boundary. Broad knowns tool and product context belongs upstream, and general repository-local configuration trust practice belongs in ai-dev-wiki unless it is framed as a concrete security vulnerability. This page owns the local workspace supply-chain boundary.
 
 knowns before 0.30.0 does not validate `settings.lsp.languages` binary paths in `.knowns/config.json`. Opening a repository with a crafted config can execute attacker-selected binaries under the user's account, turning repository-local configuration into an execution surface for AI knowledge and documentation tooling.
 
@@ -25,6 +25,7 @@ knowns before 0.30.0 does not validate `settings.lsp.languages` binary paths in 
 ## Authoritative Sources
 
 - [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json)
+- [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json)
 - [GHSA-mc52-mwq4-vfx3](https://github.com/advisories/GHSA-mc52-mwq4-vfx3)
 - [CVE-2026-86540 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-86540)
 - [knowns v0.30.0 release](https://github.com/knowns-dev/knowns/releases/tag/v0.30.0)
@@ -57,3 +58,4 @@ knowns before 0.30.0 does not validate `settings.lsp.languages` binary paths in 
 ## Maintenance Notes
 
 - Created on 2026-10-08 from the [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) as a repository-local configuration execution boundary.
+- Updated on 2026-10-09 from the [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json) with duplicate GitHub Advisory Database provenance and no separate digest item.

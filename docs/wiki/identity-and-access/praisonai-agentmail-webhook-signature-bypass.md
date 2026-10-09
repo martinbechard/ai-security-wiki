@@ -9,7 +9,7 @@ tags: ["identity-and-access", "agent-and-tool-security"]
 
 ## Current Understanding
 
-The [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) records October 7 GitHub Advisory Database publication of [GHSA-7c92-x8vg-4258](https://github.com/advisories/GHSA-7c92-x8vg-4258) for CVE-2026-61436 and [GHSA-qj9c-59p6-8cgx](https://github.com/advisories/GHSA-qj9c-59p6-8cgx) for CVE-2026-61428. Broad PraisonAI and AgentMail product context belongs upstream; this page owns the local webhook authenticity and delegated-agent invocation boundary.
+The [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) records October 7 GitHub Advisory Database publication of [GHSA-7c92-x8vg-4258](https://github.com/advisories/GHSA-7c92-x8vg-4258) for CVE-2026-61436 and [GHSA-qj9c-59p6-8cgx](https://github.com/advisories/GHSA-qj9c-59p6-8cgx) for CVE-2026-61428. The [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json) corroborates the same GitHub Advisory Database publication/review/update and 4.6.78 patch boundary. Broad PraisonAI and AgentMail product context belongs upstream; this page owns the local webhook authenticity and delegated-agent invocation boundary.
 
 In AgentMail webhook mode before PraisonAI 4.6.78, the webhook path accepts caller-controlled `message.received` JSON without enforcing Svix signature verification. The collector records two closely coupled failure modes: forged webhook payloads can be accepted as agent input, and invalid Svix headers can be ignored rather than rejected. The resulting event can dispatch attacker-controlled sender, subject, body, thread, and reply metadata into the configured agent session.
 
@@ -25,6 +25,7 @@ In AgentMail webhook mode before PraisonAI 4.6.78, the webhook path accepts call
 ## Authoritative Sources
 
 - [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json)
+- [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json)
 - [GHSA-7c92-x8vg-4258](https://github.com/advisories/GHSA-7c92-x8vg-4258)
 - [GHSA-qj9c-59p6-8cgx](https://github.com/advisories/GHSA-qj9c-59p6-8cgx)
 - [CVE-2026-61436 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-61436)
@@ -58,3 +59,4 @@ In AgentMail webhook mode before PraisonAI 4.6.78, the webhook path accepts call
 ## Maintenance Notes
 
 - Created on 2026-10-08 from the [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json) as one closely coupled AgentMail webhook-authenticity leaf for CVE-2026-61436 and CVE-2026-61428.
+- Updated on 2026-10-09 from the [October 9 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261009T000340Z.json) with duplicate GitHub Advisory Database provenance and no separate digest item.

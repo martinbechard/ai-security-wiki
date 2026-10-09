@@ -6,6 +6,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [Obot vMCP prompt resource authorization bypass](obot-vmcp-prompt-resource-authorization-bypass.md)
+- [LatePoint AI Abilities cross-agent authorization](latepoint-ai-abilities-cross-agent-authorization.md)
 - [PraisonAI AgentMail webhook signature bypass](praisonai-agentmail-webhook-signature-bypass.md)
 - [MCP TypeScript SDK OAuth credential confusion](mcp-typescript-sdk-oauth-credential-confusion.md)
 - [Payload plugin-mcp API key account takeover](payload-plugin-mcp-api-key-account-takeover.md)
@@ -150,6 +152,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-10-09 with Obot vMCP prompt/resource authorization and LatePoint AI Abilities API cross-agent authorization leaves plus watcher provenance for PraisonAI AgentMail.
 - Updated on 2026-10-08 with PraisonAI AgentMail webhook signature bypass; after source processing, recheck this hub and the leaf links point to `raw/processed`.
 - Updated on 2026-10-07 with MCP TypeScript SDK OAuth credential-confusion and Payload plugin-mcp API-key account-boundary leaves.
 - Updated on 2026-10-06 with split Langflow flow-build ownership and MCP resource-read authorization leaves, OpenClaw communication-plugin read allowlist, LangGraph SDK custom-auth action scope, Dify MCP server ownership, and Hyve Lite AI chatbot IDOR leaves.

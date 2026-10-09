@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [Banks Directory Prompt Registry Symlink Traversal](banks-directory-prompt-registry-symlink-traversal.md)
 - [knowns LSP binary config execution](knowns-lsp-binary-config-execution.md)
 - [Bedrock AgentCore Starter Toolkit import vulnerabilities](bedrock-agentcore-starter-toolkit-import-vulnerabilities.md)
 - [Progress GenAI Agent Generator command injection](progress-genai-agent-generator-command-injection.md)
@@ -28,6 +29,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
+- [Banks Directory Prompt Registry Symlink Traversal](banks-directory-prompt-registry-symlink-traversal.md)
 - [knowns LSP binary config execution](knowns-lsp-binary-config-execution.md)
 - [Bedrock AgentCore Starter Toolkit import vulnerabilities](bedrock-agentcore-starter-toolkit-import-vulnerabilities.md)
 - [Progress GenAI Agent Generator command injection](progress-genai-agent-generator-command-injection.md)
@@ -163,6 +165,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-10-09 with Banks DirectoryPromptRegistry symlink traversal and watcher provenance for knowns LSP binary config execution.
 - Updated on 2026-10-08 with knowns LSP binary config execution as a repository-local configuration execution boundary; after source processing, recheck source links point to `raw/processed`.
 - Updated on 2026-10-07 with Bedrock AgentCore Starter Toolkit import vulnerabilities and Progress GenAI Agent Generator command injection leaves.
 - Updated on 2026-10-06 with Meta Muse VM escape release-gate reporting plus split Docling Tectonic, plugin import, and resource-exhaustion leaves.

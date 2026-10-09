@@ -2,6 +2,12 @@
 
 ## Current Understanding
 
+- [Pydantic AI web fetch destination bypass](pydantic-ai-web-fetch-destination-bypass.md)
+- [Pydantic AI web fetch resource exhaustion](pydantic-ai-web-fetch-resource-exhaustion.md)
+- [Pydantic AI local web chat origin bypass](pydantic-ai-local-web-chat-origin-bypass.md)
+- [Pydantic AI streaming concurrency slot leak](pydantic-ai-streaming-concurrency-slot-leak.md)
+- [Splunk MCP custom API tool token forwarding](splunk-mcp-custom-api-tool-token-forwarding.md)
+- [BeamMCP tool argument schema contract bypass](beammcp-tool-argument-schema-contract-bypass.md)
 - [Microsoft UFO mobile MCP ADB command injection](microsoft-ufo-mobile-mcp-adb-command-injection.md)
 - [Microsoft UFO Windows command executor injection](microsoft-ufo-windows-command-executor-injection.md)
 - [SimpleChat MCP stdio personal plugin RCE](simplechat-mcp-stdio-personal-plugin-rce.md)
@@ -65,6 +71,12 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [Pydantic AI web fetch destination bypass](pydantic-ai-web-fetch-destination-bypass.md)
+- [Pydantic AI web fetch resource exhaustion](pydantic-ai-web-fetch-resource-exhaustion.md)
+- [Pydantic AI local web chat origin bypass](pydantic-ai-local-web-chat-origin-bypass.md)
+- [Pydantic AI streaming concurrency slot leak](pydantic-ai-streaming-concurrency-slot-leak.md)
+- [Splunk MCP custom API tool token forwarding](splunk-mcp-custom-api-tool-token-forwarding.md)
+- [BeamMCP tool argument schema contract bypass](beammcp-tool-argument-schema-contract-bypass.md)
 - [Microsoft UFO mobile MCP ADB command injection](microsoft-ufo-mobile-mcp-adb-command-injection.md)
 - [Microsoft UFO Windows command executor injection](microsoft-ufo-windows-command-executor-injection.md)
 - [SimpleChat MCP stdio personal plugin RCE](simplechat-mcp-stdio-personal-plugin-rce.md)
@@ -293,6 +305,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-09 with Pydantic AI web-fetch, local-web-chat, concurrency, Splunk MCP custom API, and BeamMCP schema-contract leaves from the October 8 source ingest.
 - Updated on 2026-10-07 with split Microsoft UFO mobile ADB and Windows command-executor leaves, SimpleChat MCP stdio personal-plugin RCE, and cross-vendor MCP SSRF protocol-pivoting leaves.
 - Updated on 2026-10-06 with Grafana mcp-k6 prompt file-read, Langflow Smart Transform code-execution, Docling remote-fetch DNS rebinding, and October 5 Langflow MCP evidence folded into existing Langflow MCP leaves.
 - Updated on 2026-10-05 with the InternLM MindSearch Planner Agent code-injection leaf from the October 4 source ingest.
