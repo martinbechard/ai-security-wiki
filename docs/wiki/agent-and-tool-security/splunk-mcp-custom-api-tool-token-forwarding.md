@@ -25,6 +25,7 @@ Splunk says a user with `mcp_tool_admin` can configure a custom API tool that se
 ## Authoritative Sources
 
 - [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json)
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261010T000349Z.json)
 - [CVE-2026-76286 record](https://cveawg.mitre.org/api/cve/CVE-2026-76286)
 - [Splunk SVD-2026-1004 advisory](https://advisory.splunk.com/advisories/SVD-2026-1004)
 
@@ -53,4 +54,5 @@ Splunk says a user with `mcp_tool_admin` can configure a custom API tool that se
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for CVE-2026-76286 and SVD-2026-1004; no duplicate digest item was added because the October 8 topic collector already owns the custom API tool token-forwarding boundary.
 - Created on 2026-10-09 from the [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json), preserving the two-role admin-versus-executor condition.

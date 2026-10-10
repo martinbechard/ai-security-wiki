@@ -1,0 +1,397 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-10-09T23:33:08Z",
+  "run_timestamp_local": "2026-10-09T19:33:08-0400",
+  "cutoff_window": {
+    "start_utc": "2026-10-07T23:33:08Z",
+    "end_utc": "2026-10-09T23:33:08Z",
+    "rule": "Include only public items with visible publication or update evidence inside the exact 48-hour window, or a clearly in-window advisory-database publication/update carrying a concrete AI security fact. Exclude missing, ambiguous, future-dated, boundary-only, duplicate, and ordinary product-announcement candidates."
+  },
+  "repository_scope": {
+    "target_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "modified_paths": [
+      "raw/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json",
+      "/Users/martinbechard/.codex/automations/ai-security-wiki-topic-news-collector/memory.md"
+    ],
+    "not_modified": [
+      "docs/wiki",
+      "raw/processed"
+    ],
+    "pre_existing_untracked_paths_left_untouched": [
+      ".Codex/agent-claim/",
+      ".agent-ops/"
+    ]
+  },
+  "searched_topics": [
+    "threats and attacks against AI systems",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy for AI systems",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "AI model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "federation_source": "docs/wiki/federation.md",
+    "upstream_indexes_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "rule_applied": "Broad companies, products, frameworks, model families, and general AI-assisted development practices route upstream; this artifact keeps only security-specific boundaries, affected versions, mitigations, and operational implications."
+  },
+  "source_searches": [
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-07T23:30:52.000&pubEndDate=2026-10-09T23:30:52.000&keywordSearch=AI",
+      "visible_date_basis": "CVE published and lastModified timestamps in API response"
+    },
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-07T23:30:52.000&pubEndDate=2026-10-09T23:30:52.000&keywordSearch=MCP",
+      "visible_date_basis": "CVE published and lastModified timestamps in API response"
+    },
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-07T23:30:52.000&pubEndDate=2026-10-09T23:30:52.000&keywordSearch=LLM",
+      "visible_date_basis": "CVE published and lastModified timestamps in API response"
+    },
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-07T23:30:52.000&pubEndDate=2026-10-09T23:30:52.000&keywordSearch=prompt",
+      "visible_date_basis": "CVE published and lastModified timestamps in API response"
+    },
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-07T23:30:52.000&pubEndDate=2026-10-09T23:30:52.000&keywordSearch=agent",
+      "visible_date_basis": "CVE published and lastModified timestamps in API response"
+    },
+    {
+      "source": "NVD CVE API",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-07T23:30:52.000&pubEndDate=2026-10-09T23:30:52.000&keywordSearch=model",
+      "visible_date_basis": "CVE published and lastModified timestamps in API response"
+    },
+    {
+      "source": "CVE Services API",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-107824",
+      "visible_date_basis": "CVE metadata datePublished/dateUpdated and CNA references"
+    },
+    {
+      "source": "CVE Services API",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-108159",
+      "visible_date_basis": "CVE metadata datePublished/dateUpdated and CNA references"
+    },
+    {
+      "source": "CVE Services API",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-103663",
+      "visible_date_basis": "CVE metadata datePublished/dateUpdated and CNA references"
+    },
+    {
+      "source": "CVE Services API",
+      "url": "https://cveawg.mitre.org/api/cve/CVE-2026-107802",
+      "visible_date_basis": "CVE metadata datePublished/dateUpdated and CNA references"
+    },
+    {
+      "source": "GitHub Advisory Database API",
+      "url": "https://api.github.com/advisories?query=MCP&per_page=20&sort=published&direction=desc",
+      "visible_date_basis": "GitHub Advisory Database published_at/updated_at fields; used primarily for exclusion screening because keyword results were noisy"
+    }
+  ],
+  "findings": [
+    {
+      "id": "x64dbg-mcp-server-2026-10-09-unauthenticated-debugger-tools",
+      "title": "x64dbg-MCP Server exposes debugger operations to unauthenticated network clients",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107824",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107824",
+        "https://github.com/duty1g/x64dbg-mcp-server/security/advisories/GHSA-4478-h5jv-647m",
+        "https://github.com/duty1g/x64dbg-mcp-server/security/advisories/GHSA-jgj3-97w2-9v9r",
+        "https://github.com/duty1g/x64dbg-mcp-server/commit/1aad0f88b9c27233d11dbccf08ca415eb5f49203",
+        "https://github.com/duty1g/x64dbg-mcp-server/commit/e1daba0038959f88d25ff3376b2a7f922ffeb448",
+        "https://github.com/duty1g/x64dbg-mcp-server/releases/tag/v1.1"
+      ],
+      "visible_dates": [
+        "CVE Services datePublished: 2026-10-09T17:45:17.458Z",
+        "CVE Services dateUpdated: 2026-10-09T17:45:17.458Z",
+        "NVD publication timestamp observed in keyword search: 2026-10-09T18:17:04.350"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "affected_boundary_or_version": "duty1g x64dbg-mcp-server before 1.1; default HTTP/SSE listener on 0.0.0.0, ports 9094 for x64 and 9095 for x32.",
+      "summary": "The CVE record says x64dbg-MCP Server exposed all MCP debugger tools over HTTP/SSE without authentication by default. Any unauthenticated network client that could reach the default port could run arbitrary x64dbg commands, attach to processes, read and write debuggee memory, and write files to arbitrary paths. Version 1.1 is listed as fixed.",
+      "why_it_matters_for_ai_security": "MCP servers can bridge agent tool calls into high-authority local tools. A debugger MCP server without authentication turns tool discovery into process control, memory access, and arbitrary file writes, so agent/tool deployments need network binding, authentication, and least-privilege gates.",
+      "named_entities": [
+        "x64dbg-MCP Server",
+        "x64dbg",
+        "Model Context Protocol",
+        "MCP",
+        "duty1g"
+      ],
+      "upstream_routing": {
+        "route": "shared",
+        "upstream_owned": "ai-wiki owns broad MCP server catalog context and x64dbg-MCP Server as an ecosystem entity if durable coverage is needed.",
+        "local_security_lens": "Keep local coverage focused on unauthenticated MCP debugger authority, network exposure defaults, memory/process/file impact, and the 1.1 mitigation boundary."
+      },
+      "confidence_notes": "High confidence from CVE Services and NVD timing. GitHub advisory pages were listed as CNA references but should be refetched during ingest for exact GHSA severity and remediation wording.",
+      "follow_up_actions": [
+        "Create a local agent/tool-security leaf if this finding is ingested.",
+        "During ingest, verify whether both GHSA references describe independent issues or a split advisory for the same authentication boundary.",
+        "Route any general x64dbg-MCP Server product description upstream."
+      ]
+    },
+    {
+      "id": "astronrpa-2026-10-09-llm-output-xss-ipc-command-execution",
+      "title": "AstronRPA smart-component chat can turn prompt-injected LLM output into desktop command execution",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108159",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108159",
+        "https://github.com/iflytek/astron-rpa/issues/892",
+        "https://github.com/iflytek/astron-rpa/blob/8b015bc1b15d23fbdc55c78ff1de9af4bb65fba6/frontend/packages/web-app/src/components/SmartComponent/hooks/useChatContext.tsx#L203",
+        "https://www.vulncheck.com/advisories/astronrpa-through-1.1.6-rce-via-smart-component-chat-xss-and-ipc-bridge"
+      ],
+      "visible_dates": [
+        "CVE Services datePublished: 2026-10-09T16:04:42.687Z",
+        "CVE Services dateUpdated: 2026-10-09T16:04:42.687Z",
+        "NVD publication timestamp observed in keyword search: 2026-10-09T17:16:47.027"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "affected_boundary_or_version": "iflytek AstronRPA through 1.1.6; desktop smart-component chat rendering, v-html output, unrestricted open-path IPC handler, and command execution as the desktop user.",
+      "summary": "The CVE record describes a desktop-client XSS in AstronRPA's smart-component chat. Attackers can place prompt-injection content in a web page so the model emits HTML event handlers; the rendered output can invoke an unrestricted IPC handler with shell metacharacters and execute commands as the desktop user.",
+      "why_it_matters_for_ai_security": "This is a concrete prompt-injection-to-local-action chain across web content, LLM output rendering, and a desktop IPC bridge. It illustrates why agentic desktop tools need output sanitization, explicit command mediation, and strict separation between model text and privileged local actions.",
+      "named_entities": [
+        "AstronRPA",
+        "iflytek",
+        "LLM output",
+        "v-html",
+        "IPC bridge",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "route": "shared",
+        "upstream_owned": "ai-wiki owns broad AstronRPA product/entity context if durable coverage is created.",
+        "local_security_lens": "Keep local coverage focused on prompt-injection, unsafe HTML rendering, IPC command mediation, and desktop agent authority."
+      },
+      "confidence_notes": "High confidence for the CVE fact and timing from CVE Services/NVD. The GitHub issue and code reference are public CNA references; ingest should verify current maintainer remediation status.",
+      "follow_up_actions": [
+        "During ingest, inspect the linked GitHub issue for patch or maintainer response.",
+        "Consider a model-and-prompt-security leaf because the exploit path depends on prompt-injected model output crossing into privileged UI/IPC.",
+        "Route general RPA/product context upstream."
+      ]
+    },
+    {
+      "id": "ollama-2026-10-08-model-pull-path-traversal-rce",
+      "title": "Ollama model pull path traversal can write malicious binaries outside the model store",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-103663",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-103663",
+        "https://cert.pl/en/posts/2026/10/CVE-2026-103663/",
+        "https://ollama.com/"
+      ],
+      "visible_dates": [
+        "CVE Services datePublished: 2026-10-08T13:19:04.819Z",
+        "CVE Services dateUpdated: 2026-10-08T14:04:14.270Z",
+        "NVD publication timestamp observed in keyword search: 2026-10-08T14:16:46.187"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "affected_boundary_or_version": "Ollama 0.34.2 and versions before 0.35.0 are listed as affected; unauthenticated /api/pull path traversal through insufficient digest validation.",
+      "summary": "The CVE record says Ollama's /api/pull endpoint insufficiently validated layer digests. An unauthenticated remote attacker could supply traversal sequences as a layer digest, write a malicious binary outside the model store, and, when the server process could write to /usr/lib/ollama as in many default Docker images, achieve code execution as root on the next server restart.",
+      "why_it_matters_for_ai_security": "Model acquisition endpoints are part of the AI runtime supply chain. A model-pull path traversal changes a registry/download boundary into host file write and possible root execution, so deployments need digest canonicalization, file-store confinement, and container write-permission review.",
+      "named_entities": [
+        "Ollama",
+        "CERT Polska",
+        "model pull",
+        "/api/pull",
+        "digestToPath",
+        "Docker images"
+      ],
+      "upstream_routing": {
+        "route": "shared",
+        "upstream_owned": "ai-wiki owns broad Ollama runtime and model-serving entity coverage.",
+        "local_security_lens": "Keep local coverage focused on model-pull path traversal, registry trust, file-store confinement, container write permissions, and fixed-version gates."
+      },
+      "confidence_notes": "High confidence from CVE Services and NVD. The CERT Polska primary post is listed as the technical reference; ingest should fetch it for exact exploit preconditions and whether 0.35.0 is the first fixed release.",
+      "follow_up_actions": [
+        "Create or update a local infrastructure/supply-chain leaf distinct from the existing Ollama tensor-blob redirect SSRF page.",
+        "During ingest, reconcile affected and fixed versions against the CERT Polska post and Ollama release evidence.",
+        "Route general Ollama runtime context upstream."
+      ]
+    },
+    {
+      "id": "sumatrapdf-2026-10-08-ai-selection-translate-cli-argument-injection",
+      "title": "SumatraPDF AI selection-translate command builder can inject agentic CLI arguments",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107802",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107802",
+        "https://github.com/sumatrapdfreader/sumatrapdf/security/advisories/GHSA-xvxg-cwmx-hr7j",
+        "https://github.com/sumatrapdfreader/sumatrapdf/commit/6b88a751ab34a28bafca3bdd635aaa2f4c1e06b6"
+      ],
+      "visible_dates": [
+        "CVE Services datePublished: 2026-10-08T22:36:36.409Z",
+        "CVE Services dateUpdated: 2026-10-09T19:09:00.523Z",
+        "NVD publication timestamp observed in keyword search: 2026-10-08T23:17:00.320"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "affected_boundary_or_version": "SumatraPDF 3.6.1 and earlier; Windows AI selection-translate paths BuildGrokTranslateCmdLineTemp(), BuildClaudeTranslateCmdLineTemp(), and BuildCodexTranslateCmdLineTemp(); no fixed version was listed in the CVE text.",
+      "summary": "The CVE record says selected or pasted translation text is embedded in quoted Windows command lines with incomplete escaping. When a corresponding agentic CLI backend is installed and used, attacker-controlled document text can inject model, working-directory, approval, or sandbox-bypass flags.",
+      "why_it_matters_for_ai_security": "Document-to-agent translation bridges untrusted document text into AI CLI invocation. Argument injection can alter model/tool execution policy and local sandbox boundaries, so desktop AI integrations need structured process invocation and strict argument separation.",
+      "named_entities": [
+        "SumatraPDF",
+        "Grok",
+        "Claude",
+        "Codex",
+        "AI selection translate",
+        "Windows command line"
+      ],
+      "upstream_routing": {
+        "route": "shared",
+        "upstream_owned": "ai-wiki owns broad product or agentic CLI entity context for Grok, Claude, Codex, and SumatraPDF if needed.",
+        "local_security_lens": "Keep local coverage focused on untrusted document text crossing into agentic CLI arguments, approval/sandbox flag injection, and desktop workflow controls."
+      },
+      "confidence_notes": "High confidence for CVE timing and affected functions from CVE Services/NVD. Ingest should inspect the GitHub advisory and commit to confirm whether the patch fully replaces quoted string assembly with structured argument handling.",
+      "follow_up_actions": [
+        "During ingest, verify the GitHub advisory for affected versions and remediation state.",
+        "Classify under agent/tool security or model/prompt security depending on the final leaf boundary.",
+        "Route broad desktop reader and provider CLI context upstream."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Pydantic AI October 8 vulnerability cluster",
+      "source_urls": [
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-vmxc-h2x2-jmf3",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107286"
+      ],
+      "visible_dates": [
+        "CVE Services and NVD records published 2026-10-08"
+      ],
+      "reason": "Already captured in raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json and already represented in docs/wiki topic-index leaves; excluded from this raw artifact to avoid duplicate collector output."
+    },
+    {
+      "title": "Obot MCP catalog and vMCP authorization advisories",
+      "source_urls": [
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-q5wf-87f5-cxgq",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-xhpw-65qw-wj6m"
+      ],
+      "visible_dates": [
+        "Prior collector artifact recorded October 2026 advisory evidence"
+      ],
+      "reason": "Already captured in the October 8 collector and synthesized into local Obot leaves; excluded as duplicate overlap."
+    },
+    {
+      "title": "BeamMCP schema and type-normalization advisories",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-104634",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-88257"
+      ],
+      "visible_dates": [
+        "NVD publication timestamps observed on 2026-10-08"
+      ],
+      "reason": "Already captured in the October 8 collector and represented in docs/wiki/agent-and-tool-security/beammcp-tool-argument-schema-contract-bypass.md."
+    },
+    {
+      "title": "Banks prompt template registry advisories",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107716",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107717"
+      ],
+      "visible_dates": [
+        "NVD publication timestamps observed on 2026-10-08"
+      ],
+      "reason": "Already captured in the October 8 collector and represented in local Banks prompt/security leaves; excluded as duplicate overlap."
+    },
+    {
+      "title": "LatePoint AI Abilities API cross-agent authorization",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105196",
+        "https://wpscan.com/vulnerability/b7b6c989-b484-4ad6-844c-1dec1c74c34d/"
+      ],
+      "visible_dates": [
+        "CVE Services datePublished: 2026-10-08T06:00:07.084Z"
+      ],
+      "reason": "Already captured in the October 8 collector and synthesized into docs/wiki/identity-and-access/latepoint-ai-abilities-cross-agent-authorization.md."
+    },
+    {
+      "title": "Uncanny Automator AI + Automation WordPress plugin CVE-2026-82627",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-82627",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/ce918263-dc4a-4db1-a506-a9e6c8125741?source=cve"
+      ],
+      "visible_dates": [
+        "CVE Services datePublished: 2026-10-08T01:26:38.471Z"
+      ],
+      "reason": "Excluded because the vulnerability is in an AI-branded WordPress automation plugin but the collected CVE text describes generic PHP object injection/deserialization and arbitrary file deletion; no distinct AI, model, agent, MCP, or prompt-security boundary was identified."
+    },
+    {
+      "title": "Docker Desktop for Windows installer package signature verification CVE-2026-106581",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-106581",
+        "https://docs.docker.com/desktop/release-notes/#4920"
+      ],
+      "visible_dates": [
+        "CVE Services datePublished: 2026-10-09T13:40:18.724Z"
+      ],
+      "reason": "Excluded because it is a real supply-chain/security issue but the visible evidence is general Docker Desktop installer verification, not a concrete AI security or AI deployment boundary for this collector."
+    },
+    {
+      "title": "GitHub Advisory Database keyword results for MCP, AI, LLM, agent, Ollama, SumatraPDF, AstronRPA, and x64dbg-MCP",
+      "source_urls": [
+        "https://api.github.com/advisories?query=MCP&per_page=20&sort=published&direction=desc",
+        "https://api.github.com/advisories?query=AI&per_page=20&sort=published&direction=desc"
+      ],
+      "visible_dates": [
+        "GitHub Advisory Database results observed with 2026-10-09T20:57Z to 2026-10-09T21:31Z timestamps"
+      ],
+      "reason": "Excluded from findings because the API keyword results were dominated by unrelated terms such as industrial Ethernet/IP, generic localhost trust, and rejected CVEs; no concrete AI security delta was identified in those top results."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity": "x64dbg-MCP Server",
+      "route": "shared",
+      "upstream_owner": "ai-wiki",
+      "local_security_scope": "Unauthenticated MCP debugger authority, exposed HTTP/SSE listener defaults, process/memory/file impact, and fixed-version evidence."
+    },
+    {
+      "entity": "AstronRPA",
+      "route": "shared",
+      "upstream_owner": "ai-wiki",
+      "local_security_scope": "Prompt-injection to unsafe HTML rendering, desktop IPC bridge command execution, and local-user authority."
+    },
+    {
+      "entity": "Ollama",
+      "route": "shared",
+      "upstream_owner": "ai-wiki",
+      "local_security_scope": "Model-pull path traversal, registry/digest validation, container write permissions, and RCE/fixed-version gates."
+    },
+    {
+      "entity": "SumatraPDF AI selection translate",
+      "route": "shared",
+      "upstream_owner": "ai-wiki",
+      "local_security_scope": "Untrusted document text crossing into Grok/Claude/Codex CLI argument construction, approval/sandbox flag injection, and desktop AI workflow controls."
+    }
+  ],
+  "confidence_summary": {
+    "qualifying_count": 4,
+    "exclusion_count": 8,
+    "routing_count": 4,
+    "overall": "Moderate to high confidence. The qualifying set is primarily CVE Services/NVD-backed with public advisory references. GitHub Advisory Database broad keyword API results were noisy, and NVD began returning HTTP 429 for repeated late-window keyword checks, so direct CVE Services records were used for primary detail on selected findings."
+  },
+  "follow_up_actions": [
+    "Ingest should split the four findings into durable leaves only where they are not already represented locally.",
+    "Refetch GitHub advisories for x64dbg-MCP Server and SumatraPDF to reconcile severity, fixed-version, and patch details.",
+    "Fetch the CERT Polska Ollama post during ingest for exact exploit preconditions and fixed-release confirmation.",
+    "Verify AstronRPA maintainer issue status before writing durable remediation text.",
+    "Keep broad product/entity descriptions in ai-wiki and local pages focused on the security boundaries captured here."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed for the artifact path"
+  },
+  "blockers": [
+    "NVD returned HTTP 429 for repeated late-window keyword searches after initial useful results were captured.",
+    "GitHub Advisory Database unauthenticated keyword API results were noisy and did not reliably filter by the requested AI/MCP terms."
+  ]
+}

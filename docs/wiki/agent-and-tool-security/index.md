@@ -4,6 +4,10 @@
 
 - [Pydantic AI web fetch destination bypass](pydantic-ai-web-fetch-destination-bypass.md)
 - [Pydantic AI web fetch resource exhaustion](pydantic-ai-web-fetch-resource-exhaustion.md)
+- [x64dbg-MCP Server unauthenticated debugger tools](x64dbg-mcp-server-unauthenticated-debugger-tools.md)
+- [x64dbg-MCP Server Content-Length DoS](x64dbg-mcp-server-content-length-dos.md)
+- [AstronRPA Smart Component Chat IPC command execution](astronrpa-smart-component-chat-ipc-command-execution.md)
+- [SumatraPDF AI selection translate CLI argument injection](sumatrapdf-ai-selection-translate-cli-argument-injection.md)
 - [Pydantic AI local web chat origin bypass](pydantic-ai-local-web-chat-origin-bypass.md)
 - [Pydantic AI streaming concurrency slot leak](pydantic-ai-streaming-concurrency-slot-leak.md)
 - [Splunk MCP custom API tool token forwarding](splunk-mcp-custom-api-tool-token-forwarding.md)
@@ -73,6 +77,10 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 - [Pydantic AI web fetch destination bypass](pydantic-ai-web-fetch-destination-bypass.md)
 - [Pydantic AI web fetch resource exhaustion](pydantic-ai-web-fetch-resource-exhaustion.md)
+- [x64dbg-MCP Server unauthenticated debugger tools](x64dbg-mcp-server-unauthenticated-debugger-tools.md)
+- [x64dbg-MCP Server Content-Length DoS](x64dbg-mcp-server-content-length-dos.md)
+- [AstronRPA Smart Component Chat IPC command execution](astronrpa-smart-component-chat-ipc-command-execution.md)
+- [SumatraPDF AI selection translate CLI argument injection](sumatrapdf-ai-selection-translate-cli-argument-injection.md)
 - [Pydantic AI local web chat origin bypass](pydantic-ai-local-web-chat-origin-bypass.md)
 - [Pydantic AI streaming concurrency slot leak](pydantic-ai-streaming-concurrency-slot-leak.md)
 - [Splunk MCP custom API tool token forwarding](splunk-mcp-custom-api-tool-token-forwarding.md)
@@ -305,6 +313,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with x64dbg-MCP Server unauthenticated debugger tools, x64dbg-MCP Server Content-Length DoS, AstronRPA smart-component chat IPC command execution, and SumatraPDF AI selection-translate CLI argument injection leaves.
 - Updated on 2026-10-09 with Pydantic AI web-fetch, local-web-chat, concurrency, Splunk MCP custom API, and BeamMCP schema-contract leaves from the October 8 source ingest.
 - Updated on 2026-10-07 with split Microsoft UFO mobile ADB and Windows command-executor leaves, SimpleChat MCP stdio personal-plugin RCE, and cross-vendor MCP SSRF protocol-pivoting leaves.
 - Updated on 2026-10-06 with Grafana mcp-k6 prompt file-read, Langflow Smart Transform code-execution, Docling remote-fetch DNS rebinding, and October 5 Langflow MCP evidence folded into existing Langflow MCP leaves.

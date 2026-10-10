@@ -25,6 +25,7 @@ The CVE title says Obot 0.26.0 before 0.26.2 allows authorization bypass via vMC
 ## Authoritative Sources
 
 - [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json)
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261010T000349Z.json)
 - [CVE-2026-105139 record](https://cveawg.mitre.org/api/cve/CVE-2026-105139)
 - [GHSA-xhpw-65qw-wj6m](https://github.com/obot-platform/obot/security/advisories/GHSA-xhpw-65qw-wj6m)
 - [Obot 0.26.2 release](https://github.com/obot-platform/obot/releases/tag/v0.26.2)
@@ -54,4 +55,5 @@ The CVE title says Obot 0.26.0 before 0.26.2 allows authorization bypass via vMC
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for CVE-2026-105139; no duplicate digest item was added because the October 8 topic collector already owns the vMCP prompt/resource authorization boundary.
 - Created on 2026-10-09 from the [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json) as a vMCP prompt/resource authorization leaf.

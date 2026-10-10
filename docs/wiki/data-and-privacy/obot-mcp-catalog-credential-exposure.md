@@ -25,6 +25,7 @@ The CVE title says Obot 0.12.0 before 0.26.2 exposes credentials via the MCP Cat
 ## Authoritative Sources
 
 - [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json)
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261010T000349Z.json)
 - [CVE-2026-105138 record](https://cveawg.mitre.org/api/cve/CVE-2026-105138)
 - [GHSA-q5wf-87f5-cxgq](https://github.com/obot-platform/obot/security/advisories/GHSA-q5wf-87f5-cxgq)
 - [Obot 0.26.2 release](https://github.com/obot-platform/obot/releases/tag/v0.26.2)
@@ -54,4 +55,5 @@ The CVE title says Obot 0.12.0 before 0.26.2 exposes credentials via the MCP Cat
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for CVE-2026-105138; no duplicate digest item was added because the October 8 topic collector already owns the MCP catalog credential exposure boundary.
 - Created on 2026-10-09 from the [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json) as a secret-disclosure leaf distinct from Obot route authorization issues.

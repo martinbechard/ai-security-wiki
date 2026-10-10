@@ -25,6 +25,7 @@ The [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-secu
 ## Authoritative Sources
 
 - [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json)
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261010T000349Z.json)
 - [CVE-2026-107292 record](https://cveawg.mitre.org/api/cve/CVE-2026-107292)
 - [GHSA-q2xc-rrxj-58x9](https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-q2xc-rrxj-58x9)
 - [CVE-2026-107295 record](https://cveawg.mitre.org/api/cve/CVE-2026-107295)
@@ -55,4 +56,5 @@ The [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-secu
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for CVE-2026-107292 and CVE-2026-107295; no duplicate digest item was added because the October 8 topic collector already owns the durable local-web-chat boundary.
 - Created on 2026-10-09 from the [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json) as a local browser-to-agent authority leaf.

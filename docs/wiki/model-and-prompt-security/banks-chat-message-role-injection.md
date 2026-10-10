@@ -25,6 +25,7 @@ Banks before 2.5.0 can parse rendered untrusted prompt output as `ChatMessage` J
 ## Authoritative Sources
 
 - [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json)
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261010T000349Z.json)
 - [CVE-2026-107717 record](https://cveawg.mitre.org/api/cve/CVE-2026-107717)
 - [GHSA-hmq2-7hp6-7crh](https://github.com/masci/banks/security/advisories/GHSA-hmq2-7hp6-7crh)
 - [Banks 2.5.0 release](https://github.com/masci/banks/releases/tag/v2.5.0)
@@ -54,4 +55,5 @@ Banks before 2.5.0 can parse rendered untrusted prompt output as `ChatMessage` J
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for CVE-2026-107717; no duplicate digest item was added because the October 8 topic collector already owns the chat-message role boundary.
 - Created on 2026-10-09 from the [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json) as a prompt-role boundary leaf.

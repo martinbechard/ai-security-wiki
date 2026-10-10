@@ -25,6 +25,7 @@ Banks before 2.5.1 can follow symlinks in `DirectoryPromptRegistry` for `index.j
 ## Authoritative Sources
 
 - [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json)
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261010T000349Z.json)
 - [CVE-2026-107716 record](https://cveawg.mitre.org/api/cve/CVE-2026-107716)
 - [GHSA-556j-vv39-8rqv](https://github.com/masci/banks/security/advisories/GHSA-556j-vv39-8rqv)
 - [Banks 2.5.1 release](https://github.com/masci/banks/releases/tag/v2.5.1)
@@ -54,4 +55,5 @@ Banks before 2.5.1 can follow symlinks in `DirectoryPromptRegistry` for `index.j
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for CVE-2026-107716 and the October 9 CVE metadata update; no duplicate digest item was added because the durable prompt-registry symlink boundary was already itemized.
 - Created on 2026-10-09 from the [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json) as a prompt-registry supply-chain leaf.

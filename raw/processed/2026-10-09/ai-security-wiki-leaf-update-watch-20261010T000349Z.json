@@ -1,0 +1,584 @@
+{
+  "affected_boundaries_summary": [
+    "Banks Chat Message Role Injection",
+    "Banks Directory Prompt Registry Symlink Traversal",
+    "LangChain.js MongoDB Chat History Query Injection",
+    "LatePoint AI Abilities Cross-Agent Authorization",
+    "Obot MCP Catalog Credential Exposure",
+    "Obot vMCP Prompt Resource Authorization Bypass",
+    "Pydantic AI Local Web Chat Origin Bypass",
+    "Pydantic AI OpenTelemetry Content Redaction Bypass",
+    "Pydantic AI Streaming Concurrency Slot Leak",
+    "Pydantic AI Web Fetch Destination Bypass",
+    "Pydantic AI Web Fetch Resource Exhaustion",
+    "Splunk MCP Custom API Tool Token Forwarding"
+  ],
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "evidence_classification_summary": {
+    "confirmed_exploitation": 0,
+    "control_change": 0,
+    "demonstrated_research": 0,
+    "disclosed_vulnerability": 17,
+    "mitigation": 0,
+    "unverified_claim": 0
+  },
+  "exclusions": [
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md",
+      "leaf_title": "Mage AI Browser Items File Read",
+      "reason": "CVE Services record and cited Mage AI evidence remain August 2026; Mage updates page/release listing did not show a visible in-window security fix for CVE-2026-81030.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-81030",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81030",
+        "https://github.com/mage-ai/mage-ai/issues/6134",
+        "https://www.vulncheck.com/advisories/mage-ai-through-0.9.79-arbitrary-file-read-via-unvalidated-path-in-browser-items-endpoint",
+        "https://www.mage.ai/updates",
+        "https://github.com/mage-ai/mage-ai/releases"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+      "leaf_title": "WordPress AI Engine Plugin File Read And Query Execution",
+      "reason": "CVE Services records for CVE-2026-75797 and CVE-2026-75798 remain August 2026; no visible in-window AI Engine remediation delta was found in cited sources.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-75797",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-75798",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75797",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75798",
+        "https://wpscan.com/vulnerability/1048b130-9263-4780-b886-656a891de85a/",
+        "https://wpscan.com/vulnerability/a77168df-61b8-40df-95f5-e19cf6540ce5/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md",
+      "leaf_title": "WordPress AI Plugin Advisory Deferrals",
+      "reason": "MagicAI, SiteLeads, and Kubio AI Website Builder cited records remain August 2026 or sparse-source deferrals; no visible in-window AI-specific boundary detail was found.",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-32560",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78268",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-83492",
+        "https://www.tenable.com/security/research/tra-2026-58",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-32560",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78268"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/obot-vmcp-prompt-resource-authorization-bypass.md",
+      "leaf_title": "Obot vMCP Prompt Resource Authorization Bypass",
+      "reason": "Obot vMCP product/blog documentation is in-window but broad product context; route upstream unless used only to clarify the local security-specific vMCP authorization boundary.",
+      "source_urls": [
+        "https://obot.ai/blog/announcing-obot-v-0-26-0-virtual-mcp-servers-in-obot-one-endpoint-for-every-mcp-connection/",
+        "https://docs.obot.ai/functionality/virtual-mcps/"
+      ]
+    }
+  ],
+  "follow_up_notes": [
+    "Most qualifying records overlap raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json; ingest should compare for material CVE metadata or remediation deltas before editing docs/wiki.",
+    "CVE-2026-107290, CVE-2026-107294, and CVE-2026-107716 had October 9 CVE metadata updates after the October 8 topic collector timestamp and deserve specific delta comparison.",
+    "Older Mage AI and WordPress AI plugin leaves were checked and excluded because visible dates remain outside the seven-day window or lack AI-specific boundary detail."
+  ],
+  "named_entities_summary": [
+    "@langchain/mongodb",
+    "Banks",
+    "LangChain.js",
+    "LatePoint",
+    "MCP",
+    "Mage AI",
+    "Obot",
+    "OpenTelemetry",
+    "Pydantic AI",
+    "Splunk MCP Server",
+    "WordPress AI Engine Plugin",
+    "pydantic-ai-slim"
+  ],
+  "qualifying_leaf_count": 12,
+  "qualifying_update_record_count": 17,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "Pydantic AI Local Web Chat Origin Bypass"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-local-web-chat-origin-bypass.md",
+      "leaf_title": "Pydantic AI Local Web Chat Origin Bypass",
+      "named_entities": [
+        "CVE-2026-107292",
+        "Pydantic AI"
+      ],
+      "source_id": "CVE-2026-107292",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107292",
+      "summary": "Pydantic AI local web chat Host header validation flaw; fixed 1.107.5/2.30.0; already represented by October 8 processed topic collector.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-08T16:26:48.144Z"
+    },
+    {
+      "affected_boundaries": [
+        "Pydantic AI Local Web Chat Origin Bypass"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-local-web-chat-origin-bypass.md",
+      "leaf_title": "Pydantic AI Local Web Chat Origin Bypass",
+      "named_entities": [
+        "CVE-2026-107295",
+        "pydantic-ai-slim"
+      ],
+      "source_id": "CVE-2026-107295",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107295",
+      "summary": "pydantic-ai-slim /api/chat browser-simple cross-origin tool-execution flaw; fixed 1.107.4/2.28.0; already represented by October 8 processed topic collector.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-08T17:53:29.464Z"
+    },
+    {
+      "affected_boundaries": [
+        "Pydantic AI Streaming Concurrency Slot Leak"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-streaming-concurrency-slot-leak.md",
+      "leaf_title": "Pydantic AI Streaming Concurrency Slot Leak",
+      "named_entities": [
+        "CVE-2026-107286",
+        "Pydantic AI"
+      ],
+      "source_id": "CVE-2026-107286",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107286",
+      "summary": "Pydantic AI streaming early-end concurrency slot retention; fixed 2.53.0; GitHub advisory list shows GHSA-6fqq-452j-qhrp published October 2 and CVE metadata updated October 8.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-08T17:27:24.185Z"
+    },
+    {
+      "affected_boundaries": [
+        "Pydantic AI Web Fetch Destination Bypass"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-web-fetch-destination-bypass.md",
+      "leaf_title": "Pydantic AI Web Fetch Destination Bypass",
+      "named_entities": [
+        "CVE-2026-107288",
+        "Pydantic AI"
+      ],
+      "source_id": "CVE-2026-107288",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107288",
+      "summary": "Pydantic AI web_fetch_tool blocked-domain bypass via hostname normalization; fixed 1.107.6/2.44.0; already represented by October 8 processed topic collector.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-08T17:28:53.801Z"
+    },
+    {
+      "affected_boundaries": [
+        "Pydantic AI Web Fetch Destination Bypass"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-web-fetch-destination-bypass.md",
+      "leaf_title": "Pydantic AI Web Fetch Destination Bypass",
+      "named_entities": [
+        "CVE-2026-107289",
+        "Pydantic AI"
+      ],
+      "source_id": "CVE-2026-107289",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107289",
+      "summary": "Pydantic AI IPv6 zone identifier cloud-metadata SSRF blocklist bypass; fixed 1.107.6/2.44.0; already represented by October 8 processed topic collector.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-08T16:07:40.109Z"
+    },
+    {
+      "affected_boundaries": [
+        "Pydantic AI Web Fetch Resource Exhaustion"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-web-fetch-resource-exhaustion.md",
+      "leaf_title": "Pydantic AI Web Fetch Resource Exhaustion",
+      "named_entities": [
+        "CVE-2026-107287",
+        "Pydantic AI"
+      ],
+      "source_id": "CVE-2026-107287",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107287",
+      "summary": "Pydantic AI nested HTML conversion resource exhaustion; fixed 1.107.7/2.52.0; already represented by October 8 processed topic collector.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-08T15:15:35.042Z"
+    },
+    {
+      "affected_boundaries": [
+        "Pydantic AI Web Fetch Resource Exhaustion"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-web-fetch-resource-exhaustion.md",
+      "leaf_title": "Pydantic AI Web Fetch Resource Exhaustion",
+      "named_entities": [
+        "CVE-2026-107290",
+        "Pydantic AI"
+      ],
+      "source_id": "CVE-2026-107290",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107290",
+      "summary": "Pydantic AI quadratic title extraction event-loop blocking; CVE metadata updated October 9 with patch references; compare against October 8 processed topic collector during ingest.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-09T15:15:26.958Z"
+    },
+    {
+      "affected_boundaries": [
+        "Pydantic AI Web Fetch Resource Exhaustion"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-web-fetch-resource-exhaustion.md",
+      "leaf_title": "Pydantic AI Web Fetch Resource Exhaustion",
+      "named_entities": [
+        "CVE-2026-107294",
+        "Pydantic AI"
+      ],
+      "source_id": "CVE-2026-107294",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107294",
+      "summary": "Pydantic AI unbounded remote-content download memory use; CVE metadata updated October 9 with patch references; compare against October 8 processed topic collector during ingest.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-09T15:15:18.765Z"
+    },
+    {
+      "affected_boundaries": [
+        "Splunk MCP Custom API Tool Token Forwarding"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/splunk-mcp-custom-api-tool-token-forwarding.md",
+      "leaf_title": "Splunk MCP Custom API Tool Token Forwarding",
+      "named_entities": [
+        "CVE-2026-76286",
+        "Splunk MCP Server"
+      ],
+      "source_id": "CVE-2026-76286",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-76286",
+      "summary": "Splunk MCP Server custom API tool SSRF/token forwarding; Splunk advisory archive lists SVD-2026-1004 dated October 7, fixed in 1.2.1, with workaround to disable/remove the app.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-08T18:00:27.987Z"
+    },
+    {
+      "affected_boundaries": [
+        "LangChain.js MongoDB Chat History Query Injection"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/data-and-privacy/langchainjs-mongodb-chat-history-query-injection.md",
+      "leaf_title": "LangChain.js MongoDB Chat History Query Injection",
+      "named_entities": [
+        "@langchain/mongodb",
+        "CVE-2026-106119",
+        "LangChain.js"
+      ],
+      "source_id": "CVE-2026-106119",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-106119",
+      "summary": "LangChain.js MongoDBChatMessageHistory query injection cross-session access; fixed langchainjs 1.5.14 and @langchain/mongodb 1.3.1.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-06T19:45:43.997Z"
+    },
+    {
+      "affected_boundaries": [
+        "Obot MCP Catalog Credential Exposure"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/data-and-privacy/obot-mcp-catalog-credential-exposure.md",
+      "leaf_title": "Obot MCP Catalog Credential Exposure",
+      "named_entities": [
+        "CVE-2026-105138",
+        "Obot"
+      ],
+      "source_id": "CVE-2026-105138",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-105138",
+      "summary": "Obot MCP catalog entry API exposes plaintext static secrets to granted users; fixed 0.26.2; NVD page is published October 7 and not prioritized for enrichment.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-07T17:04:58.949Z"
+    },
+    {
+      "affected_boundaries": [
+        "Pydantic AI OpenTelemetry Content Redaction Bypass"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/data-and-privacy/pydantic-ai-opentelemetry-content-redaction-bypass.md",
+      "leaf_title": "Pydantic AI OpenTelemetry Content Redaction Bypass",
+      "named_entities": [
+        "CVE-2026-107291",
+        "Pydantic AI"
+      ],
+      "source_id": "CVE-2026-107291",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107291",
+      "summary": "Pydantic AI OpenTelemetry exception/event content redaction bypass for include_content=False; already represented by October 8 processed topic collector.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-08T17:25:18.280Z"
+    },
+    {
+      "affected_boundaries": [
+        "Pydantic AI OpenTelemetry Content Redaction Bypass"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/data-and-privacy/pydantic-ai-opentelemetry-content-redaction-bypass.md",
+      "leaf_title": "Pydantic AI OpenTelemetry Content Redaction Bypass",
+      "named_entities": [
+        "CVE-2026-107293",
+        "Pydantic AI"
+      ],
+      "source_id": "CVE-2026-107293",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107293",
+      "summary": "Pydantic AI retry prompt content redaction bypass for include_content=False; already represented by October 8 processed topic collector.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-08T17:14:30.659Z"
+    },
+    {
+      "affected_boundaries": [
+        "LatePoint AI Abilities Cross-Agent Authorization"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/identity-and-access/latepoint-ai-abilities-cross-agent-authorization.md",
+      "leaf_title": "LatePoint AI Abilities Cross-Agent Authorization",
+      "named_entities": [
+        "CVE-2026-105196",
+        "LatePoint"
+      ],
+      "source_id": "CVE-2026-105196",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-105196",
+      "summary": "LatePoint AI Abilities API cross-agent data disclosure/modification; fixed before 5.6.9.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-08T10:59:18.907Z"
+    },
+    {
+      "affected_boundaries": [
+        "Obot vMCP Prompt Resource Authorization Bypass"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/identity-and-access/obot-vmcp-prompt-resource-authorization-bypass.md",
+      "leaf_title": "Obot vMCP Prompt Resource Authorization Bypass",
+      "named_entities": [
+        "CVE-2026-105139",
+        "Obot"
+      ],
+      "source_id": "CVE-2026-105139",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-105139",
+      "summary": "Obot vMCP profile prompts/resources authorization bypass; fixed 0.26.2; Obot public vMCP docs/blog are general product context routed upstream unless used for security-specific authorization detail.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-07T14:42:23.224Z"
+    },
+    {
+      "affected_boundaries": [
+        "Banks Directory Prompt Registry Symlink Traversal"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/banks-directory-prompt-registry-symlink-traversal.md",
+      "leaf_title": "Banks Directory Prompt Registry Symlink Traversal",
+      "named_entities": [
+        "Banks",
+        "CVE-2026-107716"
+      ],
+      "source_id": "CVE-2026-107716",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107716",
+      "summary": "Banks DirectoryPromptRegistry symlink traversal and arbitrary file disclosure/overwrite; fixed 2.5.1; CVE metadata updated October 9.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-09T15:13:19.781Z"
+    },
+    {
+      "affected_boundaries": [
+        "Banks Chat Message Role Injection"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Compare with raw/processed/2026-10-08 topic collector before ingest; avoid duplicate digest prose unless this record adds material metadata, patch, mitigation, or affected-boundary detail.",
+      "leaf_id": "docs/wiki/model-and-prompt-security/banks-chat-message-role-injection.md",
+      "leaf_title": "Banks Chat Message Role Injection",
+      "named_entities": [
+        "Banks",
+        "CVE-2026-107717"
+      ],
+      "source_id": "CVE-2026-107717",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107717",
+      "summary": "Banks Prompt.chat_messages role injection; fixed 2.5.0; already represented by October 8 processed topic collector.",
+      "upstream_routing": "Keep the security boundary locally; broad product/framework/package background routes to ai-wiki or ai-dev-wiki per docs/wiki/federation.md.",
+      "visible_published_or_updated_at": "2026-10-08T21:38:07.447Z"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-10-10T00:03:49Z",
+  "schema": "ai-security-wiki-leaf-update-watch.v1",
+  "selected_leaf_count": 15,
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/pydantic-ai-local-web-chat-origin-bypass.md",
+    "docs/wiki/agent-and-tool-security/pydantic-ai-streaming-concurrency-slot-leak.md",
+    "docs/wiki/agent-and-tool-security/pydantic-ai-web-fetch-destination-bypass.md",
+    "docs/wiki/agent-and-tool-security/pydantic-ai-web-fetch-resource-exhaustion.md",
+    "docs/wiki/agent-and-tool-security/splunk-mcp-custom-api-tool-token-forwarding.md",
+    "docs/wiki/data-and-privacy/langchainjs-mongodb-chat-history-query-injection.md",
+    "docs/wiki/data-and-privacy/obot-mcp-catalog-credential-exposure.md",
+    "docs/wiki/data-and-privacy/pydantic-ai-opentelemetry-content-redaction-bypass.md",
+    "docs/wiki/identity-and-access/latepoint-ai-abilities-cross-agent-authorization.md",
+    "docs/wiki/identity-and-access/obot-vmcp-prompt-resource-authorization-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/banks-directory-prompt-registry-symlink-traversal.md",
+    "docs/wiki/model-and-prompt-security/banks-chat-message-role-injection.md",
+    "docs/wiki/infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md",
+    "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+    "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md"
+  ],
+  "selection_policy": "Unchecked leaves first, then oldest last_checked_at, then stable relative wiki path; index/reserved/digest/source-workflow/federation/schema pages excluded unless clearly durable security leaves.",
+  "sources_checked": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-local-web-chat-origin-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107292",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107295",
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-h4xc-3qfq-jf93",
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-q2xc-rrxj-58x9"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-streaming-concurrency-slot-leak.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107286",
+        "https://github.com/pydantic/pydantic-ai/releases/tag/v2.53.0",
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-6fqq-452j-qhrp"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-web-fetch-destination-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107288",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107289",
+        "https://github.com/pydantic/pydantic-ai/releases/tag/v1.107.6",
+        "https://github.com/pydantic/pydantic-ai/releases/tag/v2.44.0",
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-22h6-qm39-v87j",
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-vmxc-h2x2-jmf3"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-web-fetch-resource-exhaustion.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107287",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107290",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107294",
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-fpf4-vwcp-v4hp",
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-v2xh-2vp8-57h8",
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-v36g-jcw9-x7cw"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/splunk-mcp-custom-api-tool-token-forwarding.md",
+      "source_urls": [
+        "https://advisory.splunk.com/advisories",
+        "https://advisory.splunk.com/advisories/SVD-2026-1004",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-76286"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/langchainjs-mongodb-chat-history-query-injection.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-106119",
+        "https://github.com/advisories/GHSA-m6rx-h84q-8r95",
+        "https://github.com/langchain-ai/langchainjs/releases/tag/@langchain/mongodb@1.3.1"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/obot-mcp-catalog-credential-exposure.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105138",
+        "https://github.com/obot-platform/obot/releases/tag/v0.26.2",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-q5wf-87f5-cxgq",
+        "https://nvd.nist.gov/vuln/detail/cve-2026-105138"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/pydantic-ai-opentelemetry-content-redaction-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107291",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107293",
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-3gh4-cghq-f8v4",
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-4x9p-g9wm-8q7f"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/latepoint-ai-abilities-cross-agent-authorization.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105196",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105196",
+        "https://wpscan.com/vulnerability/b7b6c989-b484-4ad6-844c-1dec1c74c34d/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/obot-vmcp-prompt-resource-authorization-bypass.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-105139",
+        "https://docs.obot.ai/functionality/virtual-mcps/",
+        "https://github.com/obot-platform/obot/releases/tag/v0.26.2",
+        "https://github.com/obot-platform/obot/security/advisories/GHSA-xhpw-65qw-wj6m",
+        "https://obot.ai/blog/announcing-obot-v-0-26-0-virtual-mcp-servers-in-obot-one-endpoint-for-every-mcp-connection/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/banks-directory-prompt-registry-symlink-traversal.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107716",
+        "https://github.com/masci/banks/releases/tag/v2.5.1",
+        "https://github.com/masci/banks/security/advisories/GHSA-556j-vv39-8rqv"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/banks-chat-message-role-injection.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107717",
+        "https://github.com/masci/banks/releases/tag/v2.5.0",
+        "https://github.com/masci/banks/security/advisories/GHSA-hmq2-7hp6-7crh"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mage-ai-browser-items-file-read.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-81030",
+        "https://github.com/mage-ai/mage-ai/issues/6134",
+        "https://github.com/mage-ai/mage-ai/releases",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-81030",
+        "https://www.mage.ai/updates",
+        "https://www.vulncheck.com/advisories/mage-ai-through-0.9.79-arbitrary-file-read-via-unvalidated-path-in-browser-items-endpoint"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-engine-plugin-file-read-and-query-execution.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-75797",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-75798",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75797",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-75798",
+        "https://wpscan.com/vulnerability/1048b130-9263-4780-b886-656a891de85a/",
+        "https://wpscan.com/vulnerability/a77168df-61b8-40df-95f5-e19cf6540ce5/"
+      ]
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/wordpress-ai-plugin-advisory-deferrals.md",
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-32560",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-78268",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-32560",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-78268",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-83492",
+        "https://www.tenable.com/security/research/tra-2026-58"
+      ]
+    }
+  ],
+  "upstream_routing": [
+    "Per docs/wiki/federation.md, broad framework/product/package context routes to ai-wiki and broad development practice routes to ai-dev-wiki.",
+    "Local retention is limited to security-specific boundaries: affected versions, authorization, data exposure, tool/network/file access, telemetry redaction, prompt role boundaries, mitigations, and residual risk.",
+    "Obot October 6 vMCP product documentation is an upstream product update unless an ingest uses it only to clarify local vMCP authorization/security implications."
+  ]
+}

@@ -25,6 +25,7 @@ The source says LatePoint before 5.6.9, when AI Abilities API is enabled, does n
 ## Authoritative Sources
 
 - [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json)
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261010T000349Z.json)
 - [CVE-2026-105196 record](https://cveawg.mitre.org/api/cve/CVE-2026-105196)
 - [NVD CVE-2026-105196](https://nvd.nist.gov/vuln/detail/CVE-2026-105196)
 - [WPScan CVE-2026-105196 advisory](https://wpscan.com/vulnerability/b7b6c989-b484-4ad6-844c-1dec1c74c34d/)
@@ -54,4 +55,5 @@ The source says LatePoint before 5.6.9, when AI Abilities API is enabled, does n
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for CVE-2026-105196; no duplicate digest item was added because the October 8 topic collector already owns the AI Abilities cross-agent authorization boundary.
 - Created on 2026-10-09 from the [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json) as an AI-feature API authorization leaf.

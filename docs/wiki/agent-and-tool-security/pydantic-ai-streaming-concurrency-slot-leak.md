@@ -25,6 +25,7 @@ The CVE title says concurrency-limited models can keep their slot when a streame
 ## Authoritative Sources
 
 - [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json)
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261010T000349Z.json)
 - [CVE-2026-107286 record](https://cveawg.mitre.org/api/cve/CVE-2026-107286)
 - [GHSA-6fqq-452j-qhrp](https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-6fqq-452j-qhrp)
 - [Pydantic AI 2.53.0 release](https://github.com/pydantic/pydantic-ai/releases/tag/v2.53.0)
@@ -53,4 +54,5 @@ The CVE title says concurrency-limited models can keep their slot when a streame
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for CVE-2026-107286; no duplicate digest item was added because the October 8 topic collector already owns the streaming concurrency boundary.
 - Created on 2026-10-09 from the [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json) as a distinct shared-capacity availability leaf.

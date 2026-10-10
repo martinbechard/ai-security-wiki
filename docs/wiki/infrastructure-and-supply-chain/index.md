@@ -3,6 +3,7 @@
 ## Current Understanding
 
 - [Banks Directory Prompt Registry Symlink Traversal](banks-directory-prompt-registry-symlink-traversal.md)
+- [Ollama model pull path traversal RCE](ollama-model-pull-path-traversal-rce.md)
 - [knowns LSP binary config execution](knowns-lsp-binary-config-execution.md)
 - [Bedrock AgentCore Starter Toolkit import vulnerabilities](bedrock-agentcore-starter-toolkit-import-vulnerabilities.md)
 - [Progress GenAI Agent Generator command injection](progress-genai-agent-generator-command-injection.md)
@@ -30,6 +31,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 ## Leaf Pages
 
 - [Banks Directory Prompt Registry Symlink Traversal](banks-directory-prompt-registry-symlink-traversal.md)
+- [Ollama model pull path traversal RCE](ollama-model-pull-path-traversal-rce.md)
 - [knowns LSP binary config execution](knowns-lsp-binary-config-execution.md)
 - [Bedrock AgentCore Starter Toolkit import vulnerabilities](bedrock-agentcore-starter-toolkit-import-vulnerabilities.md)
 - [Progress GenAI Agent Generator command injection](progress-genai-agent-generator-command-injection.md)
@@ -165,6 +167,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with Ollama model-pull path traversal RCE as a model-acquisition path-containment boundary, plus October 10 watcher provenance for Banks DirectoryPromptRegistry metadata.
 - Updated on 2026-10-09 with Banks DirectoryPromptRegistry symlink traversal and watcher provenance for knowns LSP binary config execution.
 - Updated on 2026-10-08 with knowns LSP binary config execution as a repository-local configuration execution boundary; after source processing, recheck source links point to `raw/processed`.
 - Updated on 2026-10-07 with Bedrock AgentCore Starter Toolkit import vulnerabilities and Progress GenAI Agent Generator command injection leaves.

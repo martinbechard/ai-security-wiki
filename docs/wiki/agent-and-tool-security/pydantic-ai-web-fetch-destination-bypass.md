@@ -25,6 +25,7 @@ The [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-secu
 ## Authoritative Sources
 
 - [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json)
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261010T000349Z.json)
 - [CVE-2026-107288 record](https://cveawg.mitre.org/api/cve/CVE-2026-107288)
 - [GHSA-22h6-qm39-v87j](https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-22h6-qm39-v87j)
 - [CVE-2026-107289 record](https://cveawg.mitre.org/api/cve/CVE-2026-107289)
@@ -57,4 +58,5 @@ The [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-secu
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for CVE-2026-107288 and CVE-2026-107289; no duplicate digest item was added because the October 8 topic collector already owns the destination-control boundary.
 - Created on 2026-10-09 from the [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json) after splitting the Pydantic AI advisory cluster by independently changing security boundary.

@@ -10,6 +10,11 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 - [agent-and-tool-security/pydantic-ai-web-fetch-destination-bypass.md](agent-and-tool-security/pydantic-ai-web-fetch-destination-bypass.md)
 - [agent-and-tool-security/pydantic-ai-web-fetch-resource-exhaustion.md](agent-and-tool-security/pydantic-ai-web-fetch-resource-exhaustion.md)
+- [agent-and-tool-security/x64dbg-mcp-server-unauthenticated-debugger-tools.md](agent-and-tool-security/x64dbg-mcp-server-unauthenticated-debugger-tools.md)
+- [agent-and-tool-security/x64dbg-mcp-server-content-length-dos.md](agent-and-tool-security/x64dbg-mcp-server-content-length-dos.md)
+- [agent-and-tool-security/astronrpa-smart-component-chat-ipc-command-execution.md](agent-and-tool-security/astronrpa-smart-component-chat-ipc-command-execution.md)
+- [infrastructure-and-supply-chain/ollama-model-pull-path-traversal-rce.md](infrastructure-and-supply-chain/ollama-model-pull-path-traversal-rce.md)
+- [agent-and-tool-security/sumatrapdf-ai-selection-translate-cli-argument-injection.md](agent-and-tool-security/sumatrapdf-ai-selection-translate-cli-argument-injection.md)
 - [data-and-privacy/pydantic-ai-opentelemetry-content-redaction-bypass.md](data-and-privacy/pydantic-ai-opentelemetry-content-redaction-bypass.md)
 - [agent-and-tool-security/pydantic-ai-local-web-chat-origin-bypass.md](agent-and-tool-security/pydantic-ai-local-web-chat-origin-bypass.md)
 - [agent-and-tool-security/pydantic-ai-streaming-concurrency-slot-leak.md](agent-and-tool-security/pydantic-ai-streaming-concurrency-slot-leak.md)
@@ -634,6 +639,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with October 9 security ingest leaves for x64dbg-MCP Server debugger authority, x64dbg-MCP Server Content-Length DoS, AstronRPA, Ollama, and SumatraPDF, plus October 10 watcher provenance folded into existing October 8 leaves.
 - Updated on 2026-10-09 with October 8 security ingest leaves for Pydantic AI, Obot, Splunk MCP Server, BeamMCP, Banks, LangChain.js MongoDB chat history, and LatePoint AI Abilities plus October 9 watcher provenance.
 - Updated on 2026-10-08 with October 7 security ingest leaves for PraisonAI AgentMail webhook signature bypass, vLLM Harmony tool cache salt oracle, vLLM multimodal cache desync DoS, knowns LSP binary config execution, and OpenAI GPT-6 October deployment safety.
 - Updated on 2026-10-07 with October 6 source-ingest leaves for MCP TypeScript SDK OAuth credential confusion, Bedrock AgentCore Starter Toolkit import vulnerabilities, split Microsoft UFO mobile ADB and Windows command-executor injection, SimpleChat MCP stdio personal-plugin RCE, Payload plugin-mcp API-key account takeover, Progress GenAI Agent Generator command injection, and cross-vendor MCP SSRF protocol pivoting.

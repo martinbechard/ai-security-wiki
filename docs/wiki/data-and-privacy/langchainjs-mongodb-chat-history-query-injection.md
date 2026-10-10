@@ -25,6 +25,7 @@ The [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-secu
 ## Authoritative Sources
 
 - [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json)
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261010T000349Z.json)
 - [GHSA-m6rx-h84q-8r95](https://github.com/advisories/GHSA-m6rx-h84q-8r95)
 - [CVE-2026-106119 record](https://cveawg.mitre.org/api/cve/CVE-2026-106119)
 - [@langchain/mongodb 1.3.1 release](https://github.com/langchain-ai/langchainjs/releases/tag/@langchain/mongodb@1.3.1)
@@ -54,4 +55,5 @@ The [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-secu
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for CVE-2026-106119; no duplicate digest item was added because the October 8 topic collector already owns the chat-history query boundary.
 - Created on 2026-10-09 from the [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json), preserving the shared-collection deployment condition.
