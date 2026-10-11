@@ -2,7 +2,7 @@
 
 ## Current Understanding
 
-The active October 2026 digest currently includes item-level October 9, October 8, October 7, October 6, October 5, October 4, October 3, October 2, and October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
+The active October 2026 digest currently includes item-level October 10, October 9, October 8, October 7, October 6, October 5, October 4, October 3, October 2, and October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
 
 Monthly digests summarize processed security updates and link to durable local leaves for detail. Collectors save raw evidence first; ingest updates a digest only after the local security analysis and federation routing are complete.
 
@@ -17,6 +17,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json)
+- [October 10 topic collector source](../../../raw/processed/2026-10-10/ai-security-wiki-topic-news-collector-2026-10-10T232615Z.json)
 - [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json)
 - [October 10 leaf update watch source](../../../raw/processed/2026-10-09/ai-security-wiki-leaf-update-watch-20261010T000349Z.json)
 - [October 7 topic collector source](../../../raw/processed/2026-10-07/ai-security-wiki-topic-news-collector-2026-10-07T233304Z.json)
@@ -127,6 +129,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-11 after the October digest added item-level October 10 entries for connector SSRF, MCP file disclosure, prompt-steered SSRF, deployment-tool path traversal, OAuth scope bypass, file-read credential exposure, read-only query side effects, sandbox secret inheritance, hook injection, workspace containment, telemetry disclosure, provider-key exposure, tenant root code execution, and split JeecgBoot AI prompt CRUD, OCR, prompt experiment, MCP configuration, video-record, and prompt-export boundaries; watcher repeats remained leaf-level without duplicate digest items.
 - Updated on 2026-10-10 after the October digest added item-level October 9 entries for x64dbg-MCP Server debugger authority, [x64dbg-MCP Server Content-Length DoS](../agent-and-tool-security/x64dbg-mcp-server-content-length-dos.md), AstronRPA prompt-injection-to-IPC execution, Ollama model-pull path traversal, and SumatraPDF AI selection-translate CLI argument injection; October 10 watcher repeats were folded into existing leaves without duplicate digest entries.
 - Updated on 2026-10-09 after the October digest added item-level October 8 entries for Pydantic AI, Obot, Splunk MCP Server, BeamMCP, Banks, LangChain.js MongoDB chat history, and LatePoint AI Abilities; October 9 watcher repeats were folded into existing leaves without duplicate digest entries, and source links now point to `raw/processed`.
 - Updated on 2026-10-08 with item-level October 7 additions for PraisonAI AgentMail, vLLM cache-salt privacy, vLLM multimodal cache availability, knowns LSP binary execution, and OpenAI GPT-6 deployment safety; the October 8 watcher corrected Microsoft UFO CVE mappings, and post-move verification must recheck `raw/processed` source links.

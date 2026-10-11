@@ -6,6 +6,14 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [JeecgBoot Airag Prompt Export Disclosure](jeecgboot-airag-prompt-export-disclosure.md)
+- [GenOffice MCP File Store Local Disclosure](genoffice-mcp-file-store-local-disclosure.md)
+- [InnoShop AI Core MCP File Upload File Read](innoshop-ai-core-mcp-file-upload-file-read.md)
+- [mini-swe-agent Bubblewrap Environment Secret Exposure](mini-swe-agent-bubblewrap-environment-secret-exposure.md)
+- [OpenLIT Telemetry Project Header Prompt Read](openlit-telemetry-project-header-prompt-read.md)
+- [TencentCloud Octop Provider API Key Exposure](tencentcloud-octop-provider-api-key-exposure.md)
+- [JeecgBoot AI Video Generation Record Privacy](jeecgboot-ai-video-generation-record-privacy.md)
+- [JeecgBoot MCP Server Configuration Token Disclosure](jeecgboot-mcp-server-configuration-token-disclosure.md)
 - [Pydantic AI OpenTelemetry content redaction bypass](pydantic-ai-opentelemetry-content-redaction-bypass.md)
 - [Obot MCP catalog credential exposure](obot-mcp-catalog-credential-exposure.md)
 - [LangChain.js MongoDB chat history query injection](langchainjs-mongodb-chat-history-query-injection.md)
@@ -120,6 +128,8 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-10-11 after verifier correction split JeecgBoot video-record, MCP configuration token, and Airag prompt export disclosure leaves.
+- Updated on 2026-10-11 with October 10 source-ingest leaves for GenOffice MCP File Store Local Disclosure, InnoShop AI Core MCP File Upload File Read, mini-swe-agent Bubblewrap Environment Secret Exposure, OpenLIT Telemetry Project Header Prompt Read, TencentCloud Octop Provider API Key Exposure, JeecgBoot AI Video Generation Record Privacy, JeecgBoot MCP Server Configuration Token Disclosure.
 - Updated on 2026-10-09 with Pydantic AI telemetry redaction, Obot MCP catalog credential exposure, and LangChain.js MongoDB chat-history query-injection leaves from the October 8 source ingest.
 - Updated on 2026-10-06 with Docling remote image credential forwarding, remote OCR policy bypass, and local file-read conversion leaves plus October 5 watcher provenance for Mindio Magic MCP and LaraDashboard.
 - Updated on 2026-10-05 with Mindio Magic MCP sensitive-data exposure, LaraDashboard AI provider-key exposure, and October 4 watcher provenance for SupportCandy and WPZOOM.

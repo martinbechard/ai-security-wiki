@@ -9,9 +9,21 @@ tags: ["agent-and-tool-security", "model-and-prompt-security"]
 
 ## Current Understanding
 
+The [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json) confirms CVE-2026-107802 was updated in-window and keeps the AI CLI argument-injection boundary unchanged for:
+
+- Grok CLI,
+- Claude CLI, and
+- Codex CLI.
+
 The [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json) records [CVE-2026-107802](https://cveawg.mitre.org/api/cve/CVE-2026-107802) for SumatraPDF 3.6.1 and earlier. Broad SumatraPDF and provider CLI context belongs upstream; this page owns the local desktop AI integration boundary where selected or pasted document text becomes command-line arguments for agentic CLI backends.
 
-The [CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-107802) and [GitHub advisory](https://github.com/sumatrapdfreader/sumatrapdf/security/advisories/GHSA-xvxg-cwmx-hr7j) say the Windows AI selection-translate path embeds untrusted text in quoted command lines using incomplete escaping. The affected `BuildGrokTranslateCmdLineTemp()`, `BuildClaudeTranslateCmdLineTemp()`, and `BuildCodexTranslateCmdLineTemp()` functions can allow attacker-controlled document text to inject model, working-directory, approval, or sandbox-bypass flags when the corresponding CLI backend is installed and used.
+The [CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-107802) and [GitHub advisory](https://github.com/sumatrapdfreader/sumatrapdf/security/advisories/GHSA-xvxg-cwmx-hr7j) say the Windows AI selection-translate path embeds untrusted text in quoted command lines using incomplete escaping. Affected functions include:
+
+- `BuildGrokTranslateCmdLineTemp()`,
+- `BuildClaudeTranslateCmdLineTemp()`, and
+- `BuildCodexTranslateCmdLineTemp()`.
+
+Attacker-controlled document text can inject model, working-directory, approval, or sandbox-bypass flags when the corresponding CLI backend is installed and used.
 
 ## Security Impact
 
@@ -24,6 +36,7 @@ The [CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-107802) and [GitHub a
 
 ## Authoritative Sources
 
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json)
 - [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json)
 - [CVE-2026-107802 record](https://cveawg.mitre.org/api/cve/CVE-2026-107802)
 - [GHSA-xvxg-cwmx-hr7j](https://github.com/sumatrapdfreader/sumatrapdf/security/advisories/GHSA-xvxg-cwmx-hr7j)
@@ -53,4 +66,5 @@ The [CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-107802) and [GitHub a
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for the in-window CVE-2026-107802 update; no duplicate digest entry was added.
 - Created on 2026-10-10 from the [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json) as a document-text-to-agentic-CLI boundary.

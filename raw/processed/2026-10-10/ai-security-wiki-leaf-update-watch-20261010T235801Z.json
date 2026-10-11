@@ -1,0 +1,371 @@
+{
+  "approved_roots": [
+    "docs/wiki/threats-and-attacks",
+    "docs/wiki/model-and-prompt-security",
+    "docs/wiki/agent-and-tool-security",
+    "docs/wiki/data-and-privacy",
+    "docs/wiki/identity-and-access",
+    "docs/wiki/infrastructure-and-supply-chain",
+    "docs/wiki/testing-and-assurance",
+    "docs/wiki/governance-and-compliance",
+    "docs/wiki/incident-response"
+  ],
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "evidence_classification_legend": [
+    "confirmed_exploitation",
+    "demonstrated_research",
+    "disclosed_vulnerability",
+    "mitigation",
+    "control_change",
+    "unverified_claim"
+  ],
+  "excluded_candidates": [
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/langfun-python-protocol-model-output-rce.md",
+      "reason": "CVE Services visible dateUpdated is 2026-08-27T16:55:00.832Z, outside the seven-day window.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-75062"
+    },
+    {
+      "leaf_id": "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md",
+      "reason": "Vulners shows an October 8 current/score refresh, but primary CVE and GitHub advisory dates remain August and no distinct local security delta was identified.",
+      "source_url": "https://vulners.com/mend/MEND%3ACVE-2026-55546"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md",
+      "reason": "Agno shell-tool documentation was crawled recently but no visible publication or update date in the seven-day window was identified.",
+      "source_url": "https://docs.agno.com/tools/toolkits/local/shell"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/amazon-kiro-powers-prompt-injection-exfiltration.md",
+      "reason": "AWS Kiro bulletin is visible from September 11, 2026, outside the seven-day window.",
+      "source_url": "https://aws.amazon.com/security/security-bulletins/2026-111-aws/"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/apify-mcp-get-html-skeleton-ssrf.md",
+      "reason": "CVE Services visible dateUpdated is 2026-08-29T11:48:08.801Z, outside the seven-day window.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-81093"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-file-context-server-path-traversal.md",
+      "reason": "CVE Services visible dateUpdated is 2026-08-27T14:42:26.358Z, outside the seven-day window.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-81486"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-go-dns-rebinding-host-validation.md",
+      "reason": "Red Hat page had no qualifying in-window visible update date; linked Bugzilla history shown in search was modified September 3, outside the window.",
+      "source_url": "https://access.redhat.com/security/cve/cve-2026-81092"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-router-unauthenticated-aggregator-exposure.md",
+      "reason": "CVE Services visible dateUpdated is 2026-08-29T11:48:09.437Z, outside the seven-day window.",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-81094"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcp-use-inspector-proxy-ssrf.md",
+      "reason": "Secondary CVETodo page reflects an October catalogue view but the visible vulnerability timeline remains August/September and no distinct local security delta was identified.",
+      "source_url": "https://cvetodo.com/cve/CVE-2026-81091"
+    }
+  ],
+  "federation_boundary": "Per docs/wiki/federation.md, broad AI entities and product catalogs route to ai-wiki, general AI-development practices route to ai-dev-wiki, and this artifact keeps only security-specific boundaries and routing notes locally.",
+  "follow_up_notes": [
+    "Do not edit docs/wiki from this raw collector artifact; normal ingest owns synthesis, digest checks, verifier gates, and raw/processed movement.",
+    "Compare the October 9 topic collector artifact before ingesting the newly unchecked leaves to avoid duplicate prose for already captured public evidence.",
+    "For x64dbg-MCP Server, reconcile CVE-2026-107824 affected versions against GHSA-4478-h5jv-647m and the v1.0/v1.1 release evidence before changing durable guidance."
+  ],
+  "leaf_universe_count": 608,
+  "qualifying_leaf_count": 6,
+  "qualifying_update_count": 7,
+  "qualifying_updates": [
+    {
+      "affected_boundaries": [
+        "desktop AI chat rendering",
+        "untrusted web content to model output",
+        "renderer-to-main-process IPC",
+        "local OS command execution"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest should compare this with the October 9 topic collector source before changing the leaf to avoid duplicate prose.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/astronrpa-smart-component-chat-ipc-command-execution.md",
+      "named_entities": [
+        "AstronRPA",
+        "CVE-2026-108159",
+        "VulnCheck",
+        "iflytek/astron-rpa"
+      ],
+      "source_title": "CVE-2026-108159",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-108159",
+      "summary": "AstronRPA through 1.1.6 renders prompt-influenced smart-component chat output with v-html, enabling HTML event handlers to invoke an unrestricted desktop IPC open-path handler with shell metacharacters and execute commands as the desktop user.",
+      "upstream_routing": {
+        "ai_dev_wiki": "No general development-practice update identified.",
+        "ai_wiki": "Broad AstronRPA product and desktop RPA entity context belongs upstream.",
+        "local": "Keep the prompt-injection-to-IPC command execution boundary locally."
+      },
+      "visible_published_or_updated_at": "2026-10-09T16:04:42.687Z"
+    },
+    {
+      "affected_boundaries": [
+        "MCP tool schema contract",
+        "tools/list to tools/call trust",
+        "host dispatch input validation"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Treat as one of two related BeamMCP schema-contract records for the selected leaf.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/beammcp-tool-argument-schema-contract-bypass.md",
+      "named_entities": [
+        "BeamMCP",
+        "ScriptKittyOS",
+        "CVE-2026-88257",
+        "GHSA-mrg2-4747-fmpw"
+      ],
+      "source_title": "CVE-2026-88257",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-88257",
+      "summary": "BeamMCP advertised nested JSON-schema constraints but enforced only a top-level subset, so MCP clients could pass nested values or keywords the tool schema said were forbidden.",
+      "upstream_routing": {
+        "ai_dev_wiki": "No general development-practice update identified.",
+        "ai_wiki": "Broad BeamMCP framework catalog context belongs upstream.",
+        "local": "Keep schema-enforcement bypass implications locally."
+      },
+      "visible_published_or_updated_at": "2026-10-08T13:40:55.828Z"
+    },
+    {
+      "affected_boundaries": [
+        "MCP JSON argument normalization",
+        "tool dispatch input typing",
+        "host authorization assumptions"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "Ingest with CVE-2026-88257 as a paired BeamMCP contract-bypass update.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/beammcp-tool-argument-schema-contract-bypass.md",
+      "named_entities": [
+        "BeamMCP",
+        "ScriptKittyOS",
+        "CVE-2026-104634",
+        "GHSA-wv7p-j6qh-3hj4"
+      ],
+      "source_title": "CVE-2026-104634",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-104634",
+      "summary": "BeamMCP converted JSON true, false, and null tool arguments to strings before dispatch, breaking the advertised argument contract and potentially changing host-side authorization or validation behavior.",
+      "upstream_routing": {
+        "ai_dev_wiki": "No general development-practice update identified.",
+        "ai_wiki": "Broad BeamMCP framework catalog context belongs upstream.",
+        "local": "Keep argument-normalization security implications locally."
+      },
+      "visible_published_or_updated_at": "2026-10-08T13:41:05.745Z"
+    },
+    {
+      "affected_boundaries": [
+        "document text to AI CLI arguments",
+        "desktop helper process launch",
+        "Windows command-line escaping"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "CVE updated on 2026-10-09; ingest should preserve both publication and update timestamps.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/sumatrapdf-ai-selection-translate-cli-argument-injection.md",
+      "named_entities": [
+        "SumatraPDF",
+        "CVE-2026-107802",
+        "GHSA-xvxg-cwmx-hr7j",
+        "Grok CLI",
+        "Claude CLI",
+        "Codex CLI"
+      ],
+      "source_title": "CVE-2026-107802",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107802",
+      "summary": "SumatraPDF 3.6.1 and earlier embedded selected or pasted translation text into quoted Windows command lines for Grok, Claude, and Codex CLI helpers using incomplete escaping, allowing command-line argument injection.",
+      "upstream_routing": {
+        "ai_dev_wiki": "General CLI integration practice is upstream unless framed as a security control.",
+        "ai_wiki": "Broad SumatraPDF and provider CLI entity context belongs upstream.",
+        "local": "Keep untrusted document text to agent CLI argument injection locally."
+      },
+      "visible_published_or_updated_at": "2026-10-08T22:36:36.409Z"
+    },
+    {
+      "affected_boundaries": [
+        "pre-auth MCP HTTP receive path",
+        "debugger process availability",
+        "Content-Length parser"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "This supplies a CVE identifier for the existing content-length DoS leaf; ingest should add the CVE while preserving GHSA provenance.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/x64dbg-mcp-server-content-length-dos.md",
+      "named_entities": [
+        "x64dbg-MCP Server",
+        "CVE-2026-107820",
+        "GHSA-jgj3-97w2-9v9r",
+        "duty1g/x64dbg-mcp-server"
+      ],
+      "source_title": "CVE-2026-107820",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107820",
+      "summary": "x64dbg-MCP Server before 1.2 parsed attacker-supplied Content-Length before authentication with unchecked integer arithmetic, allowing an unauthenticated network client to crash the debugger process and active session.",
+      "upstream_routing": {
+        "ai_dev_wiki": "No general development-practice update identified.",
+        "ai_wiki": "Broad x64dbg-MCP Server catalog context belongs upstream.",
+        "local": "Keep pre-auth debugger MCP availability impact locally."
+      },
+      "visible_published_or_updated_at": "2026-10-09T17:42:45.100Z"
+    },
+    {
+      "affected_boundaries": [
+        "unauthenticated MCP debugger control",
+        "network-exposed local debugger",
+        "tool authority over memory and commands"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "The selected leaf already records a CVE/GHSA affected-version mismatch; this run confirms the CVE publication is in-window.",
+      "leaf_id": "docs/wiki/agent-and-tool-security/x64dbg-mcp-server-unauthenticated-debugger-tools.md",
+      "named_entities": [
+        "x64dbg-MCP Server",
+        "CVE-2026-107824",
+        "GHSA-4478-h5jv-647m",
+        "GHSA-jgj3-97w2-9v9r"
+      ],
+      "source_title": "CVE-2026-107824",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-107824",
+      "summary": "x64dbg-MCP Server exposed all MCP debugger tools over HTTP/SSE without authentication in affected versions, with the CVE record listing versions before 1.1 and GHSA history still creating a version-boundary reconciliation issue.",
+      "upstream_routing": {
+        "ai_dev_wiki": "No general development-practice update identified.",
+        "ai_wiki": "Broad x64dbg-MCP Server catalog context belongs upstream.",
+        "local": "Keep unauthenticated debugger-tool authority and version-boundary reconciliation locally."
+      },
+      "visible_published_or_updated_at": "2026-10-09T17:45:17.458Z"
+    },
+    {
+      "affected_boundaries": [
+        "model registry pull pipeline",
+        "layer digest path construction",
+        "container filesystem write boundary",
+        "restart-time code execution"
+      ],
+      "evidence_classification": "disclosed_vulnerability",
+      "follow_up_note": "CVE Services published the same record on 2026-10-08T13:19:04.819Z; use CERT Polska as the primary narrative advisory.",
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/ollama-model-pull-path-traversal-rce.md",
+      "named_entities": [
+        "Ollama",
+        "CERT Polska",
+        "CVE-2026-103663"
+      ],
+      "source_title": "CERT Polska Ollama CVE-2026-103663 advisory",
+      "source_url": "https://cert.pl/en/posts/2026/10/CVE-2026-103663/",
+      "summary": "CERT Polska published an Ollama /api/pull path-traversal advisory: malicious layer digests can write outside the model store, and writable /usr/lib/ollama Docker deployments can execute the planted binary as root on restart; fixed in 0.35.0.",
+      "upstream_routing": {
+        "ai_dev_wiki": "No general development-practice update identified.",
+        "ai_wiki": "Broad Ollama runtime entity context belongs upstream.",
+        "local": "Keep model-acquisition supply-chain and restart-time RCE implications locally."
+      },
+      "visible_published_or_updated_at": "2026-10-08"
+    }
+  ],
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-10-10T23:58:01Z",
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/astronrpa-smart-component-chat-ipc-command-execution.md",
+    "docs/wiki/agent-and-tool-security/beammcp-tool-argument-schema-contract-bypass.md",
+    "docs/wiki/agent-and-tool-security/sumatrapdf-ai-selection-translate-cli-argument-injection.md",
+    "docs/wiki/agent-and-tool-security/x64dbg-mcp-server-content-length-dos.md",
+    "docs/wiki/agent-and-tool-security/x64dbg-mcp-server-unauthenticated-debugger-tools.md",
+    "docs/wiki/infrastructure-and-supply-chain/ollama-model-pull-path-traversal-rce.md",
+    "docs/wiki/model-and-prompt-security/langfun-python-protocol-model-output-rce.md",
+    "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md",
+    "docs/wiki/agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md",
+    "docs/wiki/agent-and-tool-security/amazon-kiro-powers-prompt-injection-exfiltration.md",
+    "docs/wiki/agent-and-tool-security/apify-mcp-get-html-skeleton-ssrf.md",
+    "docs/wiki/agent-and-tool-security/mcp-file-context-server-path-traversal.md",
+    "docs/wiki/agent-and-tool-security/mcp-go-dns-rebinding-host-validation.md",
+    "docs/wiki/agent-and-tool-security/mcp-router-unauthenticated-aggregator-exposure.md",
+    "docs/wiki/agent-and-tool-security/mcp-use-inspector-proxy-ssrf.md"
+  ],
+  "selection_policy": "New or unchecked leaves first, then oldest last_checked_at, ties by stable relative path; reserved hubs, indexes, digests, workflow/schema/glossary/decision/log pages, and dated source-synthesis pages excluded unless durable security leaves.",
+  "sources_checked_by_leaf": {
+    "docs/wiki/agent-and-tool-security/agno-python-shell-tools-prompt-injection-rce.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-37003",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-37003",
+      "https://yerangamage.com/cves/detail/?slug=agno-rce-tools",
+      "https://docs.agno.com/tools/toolkits/local/shell"
+    ],
+    "docs/wiki/agent-and-tool-security/amazon-kiro-powers-prompt-injection-exfiltration.md": [
+      "https://mindgard.ai/blog/amazon-kiro-data-exfiltration",
+      "https://thehackernews.com/2026/08/amazon-kiro-prompt-injection-can.html",
+      "https://aws.amazon.com/security/security-bulletins/2026-111-aws/"
+    ],
+    "docs/wiki/agent-and-tool-security/apify-mcp-get-html-skeleton-ssrf.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-81093",
+      "https://github.com/apify/apify-mcp-server/security/advisories/GHSA-m28f-9v8h-gg2f",
+      "https://github.com/apify/apify-mcp-server/pull/572",
+      "https://app.opencve.io/cve/CVE-2026-81093"
+    ],
+    "docs/wiki/agent-and-tool-security/astronrpa-smart-component-chat-ipc-command-execution.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-108159",
+      "https://www.vulncheck.com/advisories/astronrpa-through-1.1.6-rce-via-smart-component-chat-xss-and-ipc-bridge",
+      "https://github.com/iflytek/astron-rpa/issues/892",
+      "https://app.opencve.io/cve/CVE-2026-108159"
+    ],
+    "docs/wiki/agent-and-tool-security/beammcp-tool-argument-schema-contract-bypass.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-88257",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-104634",
+      "https://github.com/ScriptKittyOS/beam_mcp/security/advisories/GHSA-mrg2-4747-fmpw",
+      "https://github.com/ScriptKittyOS/beam_mcp/security/advisories/GHSA-wv7p-j6qh-3hj4",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-88257"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-file-context-server-path-traversal.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-81486",
+      "https://github.com/bsmi021/mcp-file-context-server/issues/15",
+      "https://vuldb.com/vuln/395980",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-81486"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-go-dns-rebinding-host-validation.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-81092",
+      "https://github.com/mark3labs/mcp-go/releases/tag/v0.56.0",
+      "https://github.com/mark3labs/mcp-go/pull/921",
+      "https://access.redhat.com/security/cve/cve-2026-81092"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-router-unauthenticated-aggregator-exposure.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-81094",
+      "https://github.com/mcp-router/mcp-router/security/advisories/GHSA-rx55-5c7h-r56r",
+      "https://github.com/mcp-router/mcp-router/commit/4c4642cfd274097ec8b33ecd3047390829c79d35",
+      "https://www.ionix.io/threat-center/cve-2026-81094/"
+    ],
+    "docs/wiki/agent-and-tool-security/mcp-use-inspector-proxy-ssrf.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-81091",
+      "https://github.com/mcp-use/mcp-use/security/advisories/GHSA-f2jg-rm2x-hc5p",
+      "https://www.vulncheck.com/advisories/mcp-use-inspector-proxy-server-side-request-forgery-via-caller-supplied-target-url",
+      "https://cvetodo.com/cve/CVE-2026-81091"
+    ],
+    "docs/wiki/agent-and-tool-security/sumatrapdf-ai-selection-translate-cli-argument-injection.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-107802",
+      "https://github.com/sumatrapdfreader/sumatrapdf/security/advisories/GHSA-xvxg-cwmx-hr7j",
+      "https://github.com/sumatrapdfreader/sumatrapdf/commit/6b88a751ab34a28bafca3bdd635aaa2f4c1e06b6",
+      "https://cve.blacktree.nl/cve/CVE-2026-107802"
+    ],
+    "docs/wiki/agent-and-tool-security/x64dbg-mcp-server-content-length-dos.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-107820",
+      "https://github.com/duty1g/x64dbg-mcp-server/security/advisories/GHSA-jgj3-97w2-9v9r",
+      "https://github.com/duty1g/x64dbg-mcp-server/releases/tag/v1.2",
+      "https://www.tenable.com/cve/CVE-2026-107820"
+    ],
+    "docs/wiki/agent-and-tool-security/x64dbg-mcp-server-unauthenticated-debugger-tools.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-107824",
+      "https://github.com/duty1g/x64dbg-mcp-server/security/advisories/GHSA-4478-h5jv-647m",
+      "https://github.com/duty1g/x64dbg-mcp-server/security/advisories/GHSA-jgj3-97w2-9v9r",
+      "https://github.com/duty1g/x64dbg-mcp-server/releases/tag/v1.1",
+      "https://severitydaily.com/x64dbg-mcp-server-cve-2026-107824-ghsa-says-1-0-nvd-says-1-1-cve-2026-107820-needs-1-2/"
+    ],
+    "docs/wiki/infrastructure-and-supply-chain/ollama-model-pull-path-traversal-rce.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-103663",
+      "https://cert.pl/en/posts/2026/10/CVE-2026-103663/",
+      "https://cert.pl/posts/2026/10/CVE-2026-103663/",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-103663"
+    ],
+    "docs/wiki/model-and-prompt-security/langfun-python-protocol-model-output-rce.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-75062",
+      "https://github.com/google/langfun/issues/725",
+      "https://nvd.nist.gov/vuln/detail/CVE-2026-75062"
+    ],
+    "docs/wiki/testing-and-assurance/qwed-sympy-verification-parser-rce.md": [
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55546",
+      "https://cveawg.mitre.org/api/cve/CVE-2026-55585",
+      "https://github.com/QWED-AI/qwed-mcp/releases/tag/v0.2.1",
+      "https://github.com/QWED-AI/qwed-verification/security/advisories/GHSA-q27q-98j4-9pfv",
+      "https://vulners.com/mend/MEND%3ACVE-2026-55546"
+    ]
+  }
+}

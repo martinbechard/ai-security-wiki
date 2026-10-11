@@ -9,9 +9,17 @@ tags: ["infrastructure-and-supply-chain"]
 
 ## Current Understanding
 
+The [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json) adds CERT Polska advisory provenance for CVE-2026-103663 and confirms Ollama 0.35.0 as the fixed version for the model-pull traversal boundary.
+
 The [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json) records [CVE-2026-103663](https://cveawg.mitre.org/api/cve/CVE-2026-103663) for Ollama 0.34.2 and later releases before 0.35.0. Broad Ollama runtime coverage belongs upstream; this page owns the local model-acquisition supply-chain boundary where registry-provided layer digests can become filesystem writes outside the model store.
 
-[CERT Polska](https://cert.pl/en/posts/2026/10/CVE-2026-103663/) and the [CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-103663) describe insufficient validation in `digestToPath` for the `/api/pull` endpoint. An unauthenticated remote attacker can provide path traversal sequences as layer digests, causing a malicious binary to be written outside the model store. When the server process can write to `/usr/lib/ollama`, including in common Docker-image conditions described by CERT Polska, the malicious file can be loaded and executed as root on the next server restart. Ollama 0.35.0 is recorded as fixed.
+[CERT Polska](https://cert.pl/en/posts/2026/10/CVE-2026-103663/) and the [CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-103663) describe insufficient validation in `digestToPath` for the `/api/pull` endpoint. The exploit chain described by CERT Polska is:
+
+1. An unauthenticated remote attacker provides path traversal sequences as layer digests.
+2. Ollama writes a malicious binary outside the model store.
+3. A writable `/usr/lib/ollama` deployment can load and execute that file as root on the next server restart.
+
+Ollama 0.35.0 is recorded as fixed.
 
 ## Security Impact
 
@@ -24,6 +32,7 @@ The [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-secu
 
 ## Authoritative Sources
 
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json)
 - [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json)
 - [CVE-2026-103663 record](https://cveawg.mitre.org/api/cve/CVE-2026-103663)
 - [CERT Polska Ollama advisory](https://cert.pl/en/posts/2026/10/CVE-2026-103663/)
@@ -53,4 +62,5 @@ The [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-secu
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for the CERT Polska Ollama advisory; no duplicate digest entry was added.
 - Created on 2026-10-10 from the [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json) as a model-pull path-containment leaf distinct from the earlier tensor-blob redirect SSRF page.

@@ -9,6 +9,12 @@ tags: ["agent-and-tool-security", "model-and-prompt-security"]
 
 ## Current Understanding
 
+The [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json) confirms CVE-2026-108159 as a disclosed vulnerability in the same exploit chain:
+
+1. Prompt-influenced smart-component chat output is rendered with `v-html`.
+2. HTML event handlers can invoke an unrestricted desktop IPC open-path handler.
+3. Shell metacharacters can execute commands as the desktop user.
+
 The [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json) records [CVE-2026-108159](https://cveawg.mitre.org/api/cve/CVE-2026-108159) for AstronRPA through 1.1.6. Broad AstronRPA and desktop RPA product context belongs upstream; this page owns the local security chain from untrusted web content to model output rendering and desktop IPC command execution.
 
 The [CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-108159) and [VulnCheck advisory](https://www.vulncheck.com/advisories/astronrpa-through-1.1.6-rce-via-smart-component-chat-xss-and-ipc-bridge) describe a smart-component chat XSS where prompt-injection content in a web page can cause the model to emit HTML event handlers. The desktop client renders that output with `v-html`, and the injected handler can invoke an unrestricted open-path IPC handler with shell metacharacters, executing commands as the desktop user.
@@ -24,6 +30,7 @@ The [CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-108159) and [VulnChec
 
 ## Authoritative Sources
 
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json)
 - [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json)
 - [CVE-2026-108159 record](https://cveawg.mitre.org/api/cve/CVE-2026-108159)
 - [VulnCheck AstronRPA advisory](https://www.vulncheck.com/advisories/astronrpa-through-1.1.6-rce-via-smart-component-chat-xss-and-ipc-bridge)
@@ -53,4 +60,5 @@ The [CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-108159) and [VulnChec
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for CVE-2026-108159; no duplicate digest entry was added.
 - Created on 2026-10-10 from the [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json) as a prompt-injection-to-desktop-IPC boundary.

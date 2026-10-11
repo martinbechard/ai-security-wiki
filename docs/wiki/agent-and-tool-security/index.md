@@ -2,6 +2,14 @@
 
 ## Current Understanding
 
+- [Kortix Suna Connector Private-IP SSRF](kortix-suna-connector-private-ip-ssrf.md)
+- [zotero-mcp URL Metadata SSRF](zotero-mcp-url-metadata-ssrf.md)
+- [Argo CD MCP Delete Tool Path Traversal](argocd-mcp-delete-tool-path-traversal.md)
+- [Tabularis MCP Read-Only Query Side Effects](tabularis-mcp-read-only-query-side-effects.md)
+- [9router Hermes Agent Auto-Accept Hook Injection](9router-hermes-agent-auto-accept-hook-injection.md)
+- [Phi Workdir Workspace Write Bypass](phi-workdir-workspace-write-bypass.md)
+- [Phi Symlink Workspace Write Bypass](phi-symlink-workspace-write-bypass.md)
+- [open-multi-agent Dangling Symlink Sandbox Escape](open-multi-agent-dangling-symlink-sandbox-escape.md)
 - [Pydantic AI web fetch destination bypass](pydantic-ai-web-fetch-destination-bypass.md)
 - [Pydantic AI web fetch resource exhaustion](pydantic-ai-web-fetch-resource-exhaustion.md)
 - [x64dbg-MCP Server unauthenticated debugger tools](x64dbg-mcp-server-unauthenticated-debugger-tools.md)
@@ -313,6 +321,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-11 with October 10 source-ingest leaves for Kortix Suna Connector Private-IP SSRF, zotero-mcp URL Metadata SSRF, Argo CD MCP Delete Tool Path Traversal, Tabularis MCP Read-Only Query Side Effects, 9router Hermes Agent Auto-Accept Hook Injection, Phi Workdir Workspace Write Bypass, Phi Symlink Workspace Write Bypass, open-multi-agent Dangling Symlink Sandbox Escape.
 - Updated on 2026-10-10 with x64dbg-MCP Server unauthenticated debugger tools, x64dbg-MCP Server Content-Length DoS, AstronRPA smart-component chat IPC command execution, and SumatraPDF AI selection-translate CLI argument injection leaves.
 - Updated on 2026-10-09 with Pydantic AI web-fetch, local-web-chat, concurrency, Splunk MCP custom API, and BeamMCP schema-contract leaves from the October 8 source ingest.
 - Updated on 2026-10-07 with split Microsoft UFO mobile ADB and Windows command-executor leaves, SimpleChat MCP stdio personal-plugin RCE, and cross-vendor MCP SSRF protocol-pivoting leaves.

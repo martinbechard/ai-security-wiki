@@ -6,6 +6,10 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [JeecgBoot AI Prompt Experiment Authorization Bypass](jeecgboot-ai-prompt-experiment-authorization-bypass.md)
+- [1MCP Agent OAuth Tag Scope Bypass](1mcp-agent-oauth-tag-scope-bypass.md)
+- [JeecgBoot AI Prompt Template Authorization Bypass](jeecgboot-ai-prompt-template-authorization-bypass.md)
+- [JeecgBoot AI OCR Prompt Shared-State Authorization](jeecgboot-ai-ocr-prompt-shared-state-authorization.md)
 - [Obot vMCP prompt resource authorization bypass](obot-vmcp-prompt-resource-authorization-bypass.md)
 - [LatePoint AI Abilities cross-agent authorization](latepoint-ai-abilities-cross-agent-authorization.md)
 - [PraisonAI AgentMail webhook signature bypass](praisonai-agentmail-webhook-signature-bypass.md)
@@ -152,6 +156,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-10-11 after verifier correction split JeecgBoot prompt-template CRUD, OCR prompt shared-state, and prompt-experiment authorization leaves.
+- Updated on 2026-10-11 with October 10 source-ingest leaves for 1MCP Agent OAuth Tag Scope Bypass, JeecgBoot AI Prompt Template Authorization Bypass, JeecgBoot AI OCR Prompt Shared-State Authorization.
 - Updated on 2026-10-09 with Obot vMCP prompt/resource authorization and LatePoint AI Abilities API cross-agent authorization leaves plus watcher provenance for PraisonAI AgentMail.
 - Updated on 2026-10-08 with PraisonAI AgentMail webhook signature bypass; after source processing, recheck this hub and the leaf links point to `raw/processed`.
 - Updated on 2026-10-07 with MCP TypeScript SDK OAuth credential-confusion and Payload plugin-mcp API-key account-boundary leaves.

@@ -9,9 +9,18 @@ tags: ["agent-and-tool-security"]
 
 ## Current Understanding
 
+The [October 10 topic collector source](../../../raw/processed/2026-10-10/ai-security-wiki-topic-news-collector-2026-10-10T232615Z.json) and [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json) confirm the same CVE-2026-107824 network-exposed debugger-tool boundary in the current source window without resolving the CVE/GHSA fixed-version conflict.
+
 The [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json) records [CVE-2026-107824](https://cveawg.mitre.org/api/cve/CVE-2026-107824) for x64dbg-MCP Server before 1.1. Broad x64dbg-MCP Server product and MCP catalog context belongs upstream; this page owns the local unauthenticated debugger-tool authority boundary.
 
-The [CVE-2026-107824 record](https://cveawg.mitre.org/api/cve/CVE-2026-107824) describes the default HTTP/SSE listener exposing MCP debugger tools to unauthenticated network clients for versions before 1.1 and lists 1.1 as fixed. [GHSA-4478-h5jv-647m](https://github.com/duty1g/x64dbg-mcp-server/security/advisories/GHSA-4478-h5jv-647m) describes the same debugger-authority boundary but reports versions before 1.0 as affected and 1.0 as patched. When ports 9094 or 9095 are reachable, a remote client can invoke x64dbg commands, attach to processes, inspect or modify debuggee memory, and write files through the debugger integration. The separate [x64dbg-MCP Server Content-Length DoS](x64dbg-mcp-server-content-length-dos.md) page owns the adjacent pre-authentication transport availability advisory.
+The [CVE-2026-107824 record](https://cveawg.mitre.org/api/cve/CVE-2026-107824) describes the default HTTP/SSE listener exposing MCP debugger tools to unauthenticated network clients for versions before 1.1 and lists 1.1 as fixed. [GHSA-4478-h5jv-647m](https://github.com/duty1g/x64dbg-mcp-server/security/advisories/GHSA-4478-h5jv-647m) describes the same debugger-authority boundary but reports versions before 1.0 as affected and 1.0 as patched. When ports 9094 or 9095 are reachable, a remote client can:
+
+- invoke x64dbg commands,
+- attach to processes,
+- inspect or modify debuggee memory, and
+- write files through the debugger integration.
+
+The separate [x64dbg-MCP Server Content-Length DoS](x64dbg-mcp-server-content-length-dos.md) page owns the adjacent pre-authentication transport availability advisory.
 
 ## Security Impact
 
@@ -24,6 +33,8 @@ The [CVE-2026-107824 record](https://cveawg.mitre.org/api/cve/CVE-2026-107824) d
 
 ## Authoritative Sources
 
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json)
+- [October 10 topic collector source](../../../raw/processed/2026-10-10/ai-security-wiki-topic-news-collector-2026-10-10T232615Z.json)
 - [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json)
 - [CVE-2026-107824 record](https://cveawg.mitre.org/api/cve/CVE-2026-107824)
 - [GHSA-4478-h5jv-647m](https://github.com/duty1g/x64dbg-mcp-server/security/advisories/GHSA-4478-h5jv-647m)
@@ -55,6 +66,7 @@ The [CVE-2026-107824 record](https://cveawg.mitre.org/api/cve/CVE-2026-107824) d
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with October 10 collector and October 10 watcher provenance for CVE-2026-107824; the fixed-version conflict remains open.
 - Created on 2026-10-10 from the [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json) as an MCP debugger-authority leaf distinct from generic MCP server catalog coverage.
 - Updated on 2026-10-10 after pre-move verifier correction split the separate Content-Length denial-of-service advisory into [x64dbg-MCP Server Content-Length DoS](x64dbg-mcp-server-content-length-dos.md).
 - Updated on 2026-10-10 after corrected pre-move verification to preserve the CVE/GHSA affected-version discrepancy as an open question.

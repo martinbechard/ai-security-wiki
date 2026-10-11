@@ -9,6 +9,8 @@ tags: ["agent-and-tool-security"]
 
 ## Current Understanding
 
+The [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json) adds [CVE-2026-107820](https://cveawg.mitre.org/api/cve/CVE-2026-107820) to the existing GHSA-jgj3-97w2-9v9r Content-Length denial-of-service leaf while preserving the same before-1.2 affected boundary.
+
 The [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json) includes the x64dbg-MCP Server GitHub advisory family. The [GHSA-jgj3-97w2-9v9r advisory](https://github.com/duty1g/x64dbg-mcp-server/security/advisories/GHSA-jgj3-97w2-9v9r) separately describes an unauthenticated pre-authentication integer-overflow denial of service in the MCP HTTP receive path through `Content-Length` handling.
 
 Broad x64dbg-MCP Server product context belongs upstream; this page owns the local MCP transport availability boundary. This issue is adjacent to, but independently maintainable from, the [x64dbg-MCP Server unauthenticated debugger tools](x64dbg-mcp-server-unauthenticated-debugger-tools.md) authority boundary.
@@ -24,6 +26,8 @@ Broad x64dbg-MCP Server product context belongs upstream; this page owns the loc
 
 ## Authoritative Sources
 
+- [CVE-2026-107820 record](https://cveawg.mitre.org/api/cve/CVE-2026-107820)
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json)
 - [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json)
 - [GHSA-jgj3-97w2-9v9r](https://github.com/duty1g/x64dbg-mcp-server/security/advisories/GHSA-jgj3-97w2-9v9r)
 - [x64dbg-MCP Server v1.2 release](https://github.com/duty1g/x64dbg-mcp-server/releases/tag/v1.2)
@@ -51,5 +55,6 @@ Broad x64dbg-MCP Server product context belongs upstream; this page owns the loc
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher evidence adding CVE-2026-107820 to the existing GHSA-jgj3-97w2-9v9r Content-Length DoS boundary.
 - Created on 2026-10-10 after pre-move verifier correction split the x64dbg-MCP Server transport DoS advisory from the debugger-authority leaf.
 - Updated on 2026-10-10 after corrected pre-move verification recorded GHSA-jgj3-97w2-9v9r affected versions through 1.1 and the 1.2 patched release.

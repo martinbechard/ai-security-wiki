@@ -1,0 +1,593 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector"
+  },
+  "run": {
+    "run_timestamp_utc": "2026-10-10T23:26:15Z",
+    "run_timestamp_local": "2026-10-10T19:26:15-0400",
+    "cutoff_window": {
+      "start_utc": "2026-10-08T23:26:15Z",
+      "end_utc": "2026-10-10T23:26:15Z",
+      "rule": "Include only public items visibly published or updated inside this exact 48-hour window. Date-only or boundary-ambiguous items are excluded unless a precise public update timestamp qualifies them."
+    },
+    "repository_scope": "/Users/martinbechard/dev/ai-security-wiki",
+    "write_scope": "raw artifact only; docs/wiki and raw/processed were not edited",
+    "public_sources_only": true
+  },
+  "searched_topics": [
+    "AI threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP servers, MCP clients, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "federation_source": "docs/wiki/federation.md",
+    "upstream_indexes_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "rule_applied": "Broad AI entities, companies, products, frameworks, models, MCP servers, and developer practices route upstream; this artifact keeps the security-specific implication, affected boundary, mitigation, and ingest routing note."
+  },
+  "source_searches": [
+    {
+      "source": "NVD CVE API 2.0",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-10-08T23:26:15.000Z&lastModEndDate=2026-10-10T23:26:15.000Z&keywordSearch=MCP",
+      "result": "13 MCP-keyword CVE records returned; fresh AI/MCP-relevant records were captured and stale or duplicate records were excluded."
+    },
+    {
+      "source": "NVD CVE API 2.0",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-10-08T23:26:15.000Z&lastModEndDate=2026-10-10T23:26:15.000Z&keywordSearch=prompt",
+      "result": "Prompt-keyword CVE records returned several agent, prompt, and AI platform boundaries; duplicates already captured locally were excluded."
+    },
+    {
+      "source": "NVD CVE API 2.0",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-10-08T23:26:15.000Z&lastModEndDate=2026-10-10T23:26:15.000Z&keywordSearch=agent",
+      "result": "Agent-keyword records returned AI-agent and non-AI-agent results; only AI security records were captured."
+    },
+    {
+      "source": "NVD CVE API 2.0",
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-10-08T23:26:15.000Z&lastModEndDate=2026-10-10T23:26:15.000Z&keywordSearch=LLM",
+      "result": "LLM-keyword records returned provider-key, telemetry, and prompt-template records used for data-security and identity findings."
+    },
+    {
+      "source": "GitHub Advisory Database API",
+      "url": "https://api.github.com/advisories?per_page=100&sort=published&direction=desc",
+      "result": "Recent advisories were mostly broad web-app or non-AI advisories; Langflow was duplicate local evidence and non-AI results were excluded."
+    },
+    {
+      "source": "Public web search",
+      "url": "https://www.google.com/search?q=AI+security+vulnerability+MCP+agent+prompt+injection+October+10+2026",
+      "result": "Secondary news found older or broad items; no additional high-confidence primary in-window item was captured from news search."
+    }
+  ],
+  "findings": [
+    {
+      "id": "cve-2026-107824-x64dbg-mcp-unauthenticated-debugger-tools",
+      "title": "x64dbg-MCP exposes unauthenticated debugger control over HTTP",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107824",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107824"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-09T18:17:04.350Z",
+        "last_modified_utc": "2026-10-09T18:17:04.350Z"
+      },
+      "summary": "NVD records x64dbg-MCP Server before 1.1 exposing all debugger MCP tools over unauthenticated HTTP and SSE while listening on 0.0.0.0 by default. Network clients can execute debugger commands, attach to processes, read or write debuggee memory, and write arbitrary files through default ports 9094 or 9095.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "x64dbg-MCP Server before 1.1; HTTP/SSE debugger MCP tool exposure; default bind address 0.0.0.0; ports 9094 and 9095",
+      "why_it_matters_for_ai_security": "A debugging MCP server turns an AI tool surface into process-control authority; unauthenticated exposure makes delegated tool execution equivalent to remote debugger access.",
+      "named_entities": [
+        "x64dbg-MCP Server",
+        "x64dbg",
+        "MCP",
+        "CVE-2026-107824"
+      ],
+      "upstream_routing": "Broad x64dbg and MCP server catalog context belongs in ai-wiki; local wiki should keep unauthenticated debugger authority and default network exposure as the security boundary.",
+      "confidence": "high from same-window NVD publication; ingest should reconcile any upstream project advisory or 1.1 release notes."
+    },
+    {
+      "id": "cve-2026-108115-kortix-suna-mcp-url-ssrf",
+      "title": "Kortix Suna connector URLs bypass private-IP guards",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108115",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108115"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T15:16:57.270Z",
+        "last_modified_utc": "2026-10-10T15:16:57.270Z"
+      },
+      "summary": "NVD records Kortix Suna 0.10.7 before 0.13.52 allowing project managers with project.connector.write to supply IPv6 6to4 or Teredo addresses that embed private IPv4 destinations. Connector base_url, OpenAPI, Postman, or MCP URLs can reach internal services and cloud metadata endpoints and read responses.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "Kortix Suna 0.10.7 before 0.13.52; connector base_url/OpenAPI/Postman/MCP URL fetches; isPrivateIp guard",
+      "why_it_matters_for_ai_security": "Agent connector configuration can bridge untrusted project authority into internal network and metadata access, so SSRF validation must account for IPv6 transition formats and redirects.",
+      "named_entities": [
+        "Kortix Suna",
+        "MCP",
+        "OpenAPI",
+        "Postman",
+        "CVE-2026-108115"
+      ],
+      "upstream_routing": "Broad Suna product context belongs upstream; local wiki owns connector SSRF, private-network reachability, and cloud metadata exposure.",
+      "confidence": "high from same-window NVD publication; fixed version should be checked against Suna release notes during ingest."
+    },
+    {
+      "id": "cve-2026-108582-genoffice-mcp-file-store-permissions",
+      "title": "GenOffice MCP file store exposes generated documents locally",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108582",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108582"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T16:16:31.520Z",
+        "last_modified_utc": "2026-10-10T16:16:31.520Z"
+      },
+      "summary": "NVD records GenOffice through 0.11.505 using incorrect permissions for its HTTP MCP server file store. Local unprivileged users can list a world-readable genoffice-mcp-http directory under the system temporary directory and read uploaded or generated documents, bypassing the HTTP bearer token.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "GenOffice through 0.11.505; HTTP MCP file store; temporary-directory permissions; uploaded and converted documents",
+      "why_it_matters_for_ai_security": "Generated-document workflows often handle private source material; a bearer-protected MCP API is insufficient if local filesystem artifacts are world-readable.",
+      "named_entities": [
+        "GenOffice",
+        "MCP",
+        "CVE-2026-108582"
+      ],
+      "upstream_routing": "Broad GenOffice product context belongs upstream; local wiki should keep document artifact permissions and bearer-token bypass implications.",
+      "confidence": "high from same-window NVD publication; patch status was not present in the captured NVD summary."
+    },
+    {
+      "id": "cve-2026-108583-zotero-mcp-prompt-steered-ssrf",
+      "title": "zotero-mcp URL metadata fetch permits prompt-steered SSRF",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108583",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108583"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T16:16:31.667Z",
+        "last_modified_utc": "2026-10-10T16:16:31.667Z"
+      },
+      "summary": "NVD records zotero-mcp 0.10.0 through 0.14.1 with SSRF in _fetch_embedded_metadata. Attackers can steer the agent via prompt injection into calling zotero_add_by_url, causing direct or redirected requests to loopback, private, or link-local hosts and leaking citation metadata and error details.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "zotero-mcp 0.10.0 through 0.14.1; zotero_add_by_url; embedded metadata fetch; private and link-local destinations",
+      "why_it_matters_for_ai_security": "This is a clear prompt-to-tool SSRF path: model-steered citation enrichment becomes internal network probing unless URL fetchers enforce destination controls.",
+      "named_entities": [
+        "zotero-mcp",
+        "Zotero",
+        "MCP",
+        "CVE-2026-108583"
+      ],
+      "upstream_routing": "Broad Zotero and MCP server context belongs upstream; local wiki owns prompt-injection-to-SSRF and metadata-leak analysis.",
+      "confidence": "high from same-window NVD publication; ingest should look for upstream package advisory or fixed release."
+    },
+    {
+      "id": "cve-2026-108585-argocd-mcp-delete-application-path-traversal",
+      "title": "Argo CD MCP delete tool can traverse API endpoints",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108585",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108585"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T17:17:00.437Z",
+        "last_modified_utc": "2026-10-10T17:17:00.550Z"
+      },
+      "summary": "NVD records argocd-mcp through 0.9.0 with path traversal in the delete_application tool. MCP clients or prompt-injected models can supply dot-segment applicationName values such as ../repositories/ and send authenticated DELETE requests to unintended Argo CD API endpoints within the token's RBAC permissions.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "argocd-mcp through 0.9.0; delete_application tool; applicationName path construction; authenticated Argo CD API DELETE requests",
+      "why_it_matters_for_ai_security": "Deployment automation agents need tool-argument confinement; prompt-injected path traversal can turn intended application deletion into repository, cluster, or project deletion.",
+      "named_entities": [
+        "argocd-mcp",
+        "Argo CD",
+        "MCP",
+        "CVE-2026-108585"
+      ],
+      "upstream_routing": "Broad Argo CD and MCP server catalog context belongs upstream; local wiki should keep deployment-tool argument traversal and RBAC blast-radius implications.",
+      "confidence": "high from same-window NVD publication; ingest should verify whether Argo CD upstream or the MCP package has a patched release."
+    },
+    {
+      "id": "cve-2026-108586-1mcp-agent-oauth-tag-scope-bypass",
+      "title": "1MCP Agent OAuth tag scopes can be bypassed",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108586",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108586"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T17:17:00.593Z",
+        "last_modified_utc": "2026-10-10T17:17:00.593Z"
+      },
+      "summary": "NVD records 1MCP Agent (@1mcp/agent) 0.20.0 through 0.39.0 with incorrect authorization in OAuth tag-scope enforcement. Authenticated clients holding a single-tag token can use negated advanced tag-filter expressions such as not <granted-tag> to list and invoke tools on backend MCP servers outside their granted scopes.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "@1mcp/agent 0.20.0 through 0.39.0; OAuth tag-scope enforcement; backend MCP server tool listing and invocation",
+      "why_it_matters_for_ai_security": "Tool gateways need negative-filter and query-language authorization tests; otherwise scoped agent credentials can escape least-privilege tool grants.",
+      "named_entities": [
+        "1MCP Agent",
+        "@1mcp/agent",
+        "OAuth",
+        "MCP",
+        "CVE-2026-108586"
+      ],
+      "upstream_routing": "Broad 1MCP product context belongs upstream; local wiki owns OAuth scope enforcement and tool-gateway least-privilege implications.",
+      "confidence": "high from same-window NVD publication; patched version should be reconciled during ingest."
+    },
+    {
+      "id": "cve-2026-108591-innoshop-ai-core-mcp-file-upload-lfi",
+      "title": "InnoShop AI Core MCP file upload reads server files",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108591",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108591"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T19:16:57.320Z",
+        "last_modified_utc": "2026-10-10T19:16:57.320Z"
+      },
+      "summary": "NVD records InnoShop 0.9.2 with local file disclosure through the AI Core MCP file_upload tool's source argument. Authenticated administrators with files_create permission can pass file:// or php:// stream wrappers into file_get_contents(), store contents on the public media disk, and expose .env, APP_KEY, and database credentials.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "InnoShop 0.9.2; AI Core MCP file_upload tool; source argument; PHP stream wrappers; public media disk",
+      "why_it_matters_for_ai_security": "MCP file tools need strict source-scheme and destination controls because credential files exposed through tool workflows can compromise the whole application.",
+      "named_entities": [
+        "InnoShop",
+        "AI Core",
+        "MCP",
+        "CVE-2026-108591"
+      ],
+      "upstream_routing": "Broad InnoShop product context belongs upstream; local wiki owns MCP file-tool credential exposure and server-side file-read risk.",
+      "confidence": "high from same-window NVD publication; exploitability depends on administrator files_create permission."
+    },
+    {
+      "id": "cve-2026-108604-tabularis-mcp-readonly-bypass",
+      "title": "Tabularis MCP read-only query gate permits side effects",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108604",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108604"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T20:16:32.947Z",
+        "last_modified_utc": "2026-10-10T20:16:32.947Z"
+      },
+      "summary": "NVD records Tabularis through 0.27.0 with incorrect authorization in the MCP run_query safety gate. Prompt-injected agents or untrusted MCP clients can submit side-effecting SELECT statements, including setval, nextval, or PostgreSQL query_to_xml with embedded DELETE, to modify data without approval prompts.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "Tabularis through 0.27.0; MCP run_query; read-only mode; PostgreSQL side-effecting SELECT statements",
+      "why_it_matters_for_ai_security": "Read-only database tools cannot rely on SQL verb checks alone; prompt-injected agents can exploit database functions with side effects unless execution is sandboxed by actual database privileges.",
+      "named_entities": [
+        "Tabularis",
+        "MCP",
+        "PostgreSQL",
+        "CVE-2026-108604"
+      ],
+      "upstream_routing": "Broad Tabularis context belongs upstream; local wiki should keep read-only tool enforcement and database side-effect bypass analysis.",
+      "confidence": "high from same-window NVD publication; ingest should verify whether mitigations require DB privilege changes beyond application patching."
+    },
+    {
+      "id": "cve-2026-108592-mini-swe-agent-env-secret-exposure",
+      "title": "mini-swe-agent sandbox inherits host environment secrets",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108592",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108592"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T19:16:57.463Z",
+        "last_modified_utc": "2026-10-10T19:16:57.463Z"
+      },
+      "summary": "NVD records mini-swe-agent 1.10.0 through 2.4.6 exposing host environment variables in BubblewrapEnvironment because bwrap omits --clearenv. Prompt-injected task content can cause the agent to read API keys from inherited environment variables and exfiltrate them over the shared network.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "mini-swe-agent 1.10.0 through 2.4.6; BubblewrapEnvironment; bwrap environment clearing; shared network",
+      "why_it_matters_for_ai_security": "Coding-agent sandboxes must clear inherited credentials by default; otherwise untrusted repository or task text can become a direct API-key exfiltration path.",
+      "named_entities": [
+        "mini-swe-agent",
+        "Bubblewrap",
+        "bwrap",
+        "CVE-2026-108592"
+      ],
+      "upstream_routing": "General coding-agent practice belongs in ai-dev-wiki; local wiki owns credential isolation and prompt-injection exfiltration boundaries.",
+      "confidence": "high from same-window NVD publication; fixed version should be checked during ingest."
+    },
+    {
+      "id": "cve-2026-108593-9router-hermes-agent-config-injection",
+      "title": "9router can inject Hermes Agent auto-accept hooks",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108593",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108593"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T19:16:57.607Z",
+        "last_modified_utc": "2026-10-10T19:16:57.720Z"
+      },
+      "summary": "NVD records 9router 0.4.1 through 0.5.99 with configuration injection in POST /api/cli-tools/hermes-settings. Authenticated dashboard users can inject arbitrary keys into Hermes Agent config.yaml, including hooks_auto_accept and a hooks.post_llm_call shell command that executes after an LLM call without approval.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "9router 0.4.1 through 0.5.99; Hermes Agent config.yaml; cli-tools/hermes-settings endpoint; post-LLM shell hooks",
+      "why_it_matters_for_ai_security": "Agent configuration endpoints are security-control surfaces; injection into approval and hook settings can silently remove human gates and add post-model command execution.",
+      "named_entities": [
+        "9router",
+        "Hermes Agent",
+        "CVE-2026-108593"
+      ],
+      "upstream_routing": "Broad 9router and Hermes Agent product context belongs upstream; local wiki owns approval-bypass and post-LLM hook execution risk.",
+      "confidence": "high from same-window NVD publication; ingest should inspect any project advisory for remediation."
+    },
+    {
+      "id": "cve-2026-108595-108599-108600-agent-workspace-escape-cluster",
+      "title": "Agent workspace-write controls are bypassed by workdir and symlink flaws",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108595",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108595",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108599",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108599",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108600",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108600"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T19:16:57.927Z to 2026-10-10T19:16:58.640Z",
+        "last_modified_utc": "2026-10-10T19:16:57.927Z to 2026-10-10T19:16:58.640Z"
+      },
+      "summary": "NVD records three related workspace-containment failures: Phi 0.3.0 through 0.28.4 lets spawned sub-agents escape workspace_only_writes and readonly mode using unchecked workdir; Phi also lets malicious repositories bypass lexical-only path checks with symlinks; open-multi-agent (@open-multi-agent/core) 1.5.0 through 1.21.2 lets dangling symlinks escape file_write sandbox roots.",
+      "evidence_classification": "vulnerability-database-primary-cluster",
+      "affected_boundary_or_version": "Phi 0.3.0 through 0.28.4; open-multi-agent 1.5.0 through 1.21.2; agent_spawn workdir; file_write; symlink and dangling-symlink handling",
+      "why_it_matters_for_ai_security": "Agent write sandboxes must resolve real paths and enforce child-agent roots; prompt-injected instructions or malicious repositories can otherwise turn workspace-only tools into arbitrary user-writable file writes.",
+      "named_entities": [
+        "Phi",
+        "open-multi-agent",
+        "@open-multi-agent/core",
+        "CVE-2026-108595",
+        "CVE-2026-108599",
+        "CVE-2026-108600"
+      ],
+      "upstream_routing": "General agent-framework catalog and coding practice belongs upstream or ai-dev-wiki; local wiki owns workspace containment, symlink, and delegated sub-agent write-control boundaries.",
+      "confidence": "high from same-window NVD publication; group should be split during ingest if fixes or products diverge materially."
+    },
+    {
+      "id": "cve-2026-108596-openlit-project-telemetry-authorization",
+      "title": "OpenLIT telemetry project header permits cross-project prompt reads",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108596",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108596"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T19:16:58.070Z",
+        "last_modified_utc": "2026-10-10T19:16:58.070Z"
+      },
+      "summary": "NVD records OpenLIT 2.1.0 with an authorization bypass where authenticated users can forge x-openlit-project-id to read other projects' telemetry. Attackers who know a victim project id and database config id can query trace APIs and obtain traces including LLM prompts and completions.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "OpenLIT 2.1.0; x-openlit-project-id; trace read API; LLM prompts and completions",
+      "why_it_matters_for_ai_security": "LLM observability stores prompts, completions, and operational context; project-bound authorization must be enforced server-side, not trusted from request headers.",
+      "named_entities": [
+        "OpenLIT",
+        "LLM observability",
+        "CVE-2026-108596"
+      ],
+      "upstream_routing": "Broad OpenLIT observability context belongs upstream or ai-dev-wiki; local wiki owns telemetry confidentiality and tenant authorization.",
+      "confidence": "high from same-window NVD publication; ingest should check for fixed version and whether cloud deployments are affected."
+    },
+    {
+      "id": "cve-2026-108581-tencentcloud-octop-provider-key-disclosure",
+      "title": "TencentCloud Octop exposes stored provider API keys",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108581",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108581"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T16:16:31.380Z",
+        "last_modified_utc": "2026-10-10T16:16:31.380Z"
+      },
+      "summary": "NVD records TencentCloud Octop through 1.0.2b6 with missing authorization that allows authenticated low-privileged users to read stored LLM and voice provider API keys through GET /api/providers and GET /api/voice/providers. The endpoints validate only the JWT.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "TencentCloud Octop through 1.0.2b6; provider and voice-provider endpoints; stored LLM and voice API keys",
+      "why_it_matters_for_ai_security": "Provider keys are high-value delegated credentials; low-privilege read access can enable spend abuse, data exposure, and unauthorized model or voice-provider use.",
+      "named_entities": [
+        "TencentCloud Octop",
+        "LLM provider API keys",
+        "CVE-2026-108581"
+      ],
+      "upstream_routing": "Broad TencentCloud Octop product context belongs upstream; local wiki owns stored provider-key authorization and credential exposure.",
+      "confidence": "high from same-window NVD publication; fixed version was not present in the captured NVD summary."
+    },
+    {
+      "id": "cve-2026-108263-astron-agent-localexecutor-root-code-execution",
+      "title": "Astron Agent default LocalExecutor runs tenant code as root",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108263",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108263"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-09T21:17:04.527Z",
+        "last_modified_utc": "2026-10-09T21:17:04.527Z"
+      },
+      "summary": "NVD records Astron Agent before 1.1.2 selecting LocalExecutor by default for workflow code-node paths when CODE_EXEC_TYPE is not explicitly changed. Authenticated low-privilege tenants can execute code as root in the core-workflow container, use shared service and database credentials, bypass tenant checks, read or modify other tenants' data, and disrupt shared services.",
+      "evidence_classification": "vulnerability-database-primary",
+      "affected_boundary_or_version": "Astron Agent before 1.1.2; /console-api/workflow/code/run; /workflow/v1/run; LocalExecutor; core-workflow container",
+      "why_it_matters_for_ai_security": "Agentic workflow platforms need secure default code execution; root container execution plus shared credentials collapses tenant isolation and turns workflow code nodes into infrastructure compromise.",
+      "named_entities": [
+        "Astron Agent",
+        "LocalExecutor",
+        "CVE-2026-108263"
+      ],
+      "upstream_routing": "Broad Astron Agent product context belongs upstream; local wiki owns tenant isolation, code-execution defaults, and shared credential blast radius.",
+      "confidence": "high from same-window NVD publication; ingest should reconcile upstream release and deployment guidance."
+    },
+    {
+      "id": "cve-2026-108605-108673-jeecgboot-ai-prompt-and-mcp-authorization-cluster",
+      "title": "JeecgBoot AI prompt, OCR, video, and MCP records lack authorization checks",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108605",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108606",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108664",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108665",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108666",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108667",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108668",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108670",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108671",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108672",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108673"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T22:16:34.213Z to 2026-10-10T22:16:44.207Z",
+        "last_modified_utc": "2026-10-10T22:16:34.213Z to 2026-10-10T22:16:44.207Z"
+      },
+      "summary": "NVD records a same-window JeecgBoot through 3.9.5 cluster: low-privileged users can update or delete shared OCR prompt records, read, edit, delete, restore, purge, experiment with, or export AI prompt templates, read other users' AI video generation records, and read MCP server configurations including endpoint URLs, headers, and outbound authentication tokens because key permission checks are missing or commented out.",
+      "evidence_classification": "vulnerability-database-primary-cluster",
+      "affected_boundary_or_version": "JeecgBoot through 3.9.5; AiragPromptsController; AiOcrController; VideoGenerationController; MCP server configuration queryById; prompt templates; OCR templates; video generation history; outbound MCP tokens",
+      "why_it_matters_for_ai_security": "AI application control planes need per-object authorization for prompts, datasets, evaluation runs, generated media, and MCP credentials; otherwise low-privilege users can steal prompts, alter global behavior, purge audit-relevant assets, or retrieve outbound tool tokens.",
+      "named_entities": [
+        "JeecgBoot",
+        "AiragPromptsController",
+        "AiOcrController",
+        "VideoGenerationController",
+        "MCP",
+        "CVE-2026-108605",
+        "CVE-2026-108606",
+        "CVE-2026-108664",
+        "CVE-2026-108665",
+        "CVE-2026-108666",
+        "CVE-2026-108667",
+        "CVE-2026-108668",
+        "CVE-2026-108670",
+        "CVE-2026-108671",
+        "CVE-2026-108672",
+        "CVE-2026-108673"
+      ],
+      "upstream_routing": "Broad JeecgBoot product context belongs upstream; local wiki should split durable leaves by prompt-template ownership, OCR shared-state authorization, video-generation privacy, and MCP credential disclosure if ingested.",
+      "confidence": "high from same-window NVD publication; grouping is for collector compactness and should be split during synthesis."
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "Langflow CVE-2026-105697 MCP stdio command injection",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-105697",
+        "https://github.com/advisories/GHSA-w794-rj3p-xv45"
+      ],
+      "visible_dates": {
+        "nvd_last_modified_utc": "2026-10-09T20:17:09.307Z",
+        "github_updated_utc": "2026-10-09T19:57:02Z"
+      },
+      "reason": "Concrete and in-window, but already captured in local October 5/6/8 processed raw evidence and synthesized in docs/wiki/agent-and-tool-security/ibm-langflow-mcp-stdio-command-execution.md; excluded to avoid duplicate collector output."
+    },
+    {
+      "title": "Pydantic AI web_fetch resource exhaustion CVE-2026-107290 and CVE-2026-107294",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107290",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107294"
+      ],
+      "visible_dates": {
+        "nvd_last_modified_utc": "2026-10-09T16:17:21.800Z to 2026-10-09T16:17:21.983Z"
+      },
+      "reason": "Concrete in-window metadata updates, but the local leaf-update watch and docs/wiki/agent-and-tool-security/pydantic-ai-web-fetch-resource-exhaustion.md already captured and synthesized the boundary."
+    },
+    {
+      "title": "AstronRPA smart-component chat IPC command execution CVE-2026-108159",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108159",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108159"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-09T17:16:47.027Z",
+        "last_modified_utc": "2026-10-09T17:41:47.060Z"
+      },
+      "reason": "Concrete and in-window, but already captured by the October 9 topic collector and synthesized in docs/wiki/agent-and-tool-security/astronrpa-smart-component-chat-ipc-command-execution.md."
+    },
+    {
+      "title": "SumatraPDF AI selection translate CLI argument injection CVE-2026-107802",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107802",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107802"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-08T23:17:00.320Z",
+        "last_modified_utc": "2026-10-09T20:17:09.627Z"
+      },
+      "reason": "The publication time is nine minutes before this run's exact cutoff, and the item was already captured by the October 9 topic collector and synthesized locally; excluded as duplicate and boundary-adjacent."
+    },
+    {
+      "title": "Banks LLM prompt registry symlink handling CVE-2026-107716",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107716",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-107716"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-08T22:17:27.323Z",
+        "last_modified_utc": "2026-10-09T16:17:23.310Z"
+      },
+      "reason": "Last-modified timestamp is in-window, but the publication timestamp is outside the exact cutoff and the local October 9 leaf-update watch already flagged it for delta comparison; excluded pending ingest-time duplicate reconciliation."
+    },
+    {
+      "title": "Vikunja October 9 GitHub Advisory Database burst",
+      "source_urls": [
+        "https://api.github.com/advisories?per_page=100&sort=published&direction=desc"
+      ],
+      "visible_dates": {
+        "github_published_utc": "2026-10-09T20:40:28Z to 2026-10-09T20:57:52Z"
+      },
+      "reason": "Recent and concrete, but broad project-management/web-application security rather than AI, LLM, MCP, agent, or AI-security-specific boundary; excluded as out of local topic scope."
+    },
+    {
+      "title": "Nginx UI, Contao, pyLoad, Coraza, TinaCMS, Shiny, Strawberry, and Fastify recent advisories",
+      "source_urls": [
+        "https://api.github.com/advisories?per_page=100&sort=published&direction=desc",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0?lastModStartDate=2026-10-08T23:26:15.000Z&lastModEndDate=2026-10-10T23:26:15.000Z&keywordSearch=agent"
+      ],
+      "visible_dates": {
+        "visible_window": "2026-10-09 to 2026-10-10"
+      },
+      "reason": "Concrete security records, but not AI-specific; some matched only because of generic words such as agent, service-agent, or unrelated package naming."
+    },
+    {
+      "title": "AP timeline of AI safety since the Hugging Face attack",
+      "source_urls": [
+        "https://apnews.com/article/f590b51073d8977a984c7c42b8f2a7a2"
+      ],
+      "visible_dates": {
+        "published_utc": "2026-10-10T16:41:38Z"
+      },
+      "reason": "In-window public news context, but the fetched search result was a retrospective timeline without a new concrete security delta suitable for raw vulnerability or mitigation capture."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "MCP server and tool catalogs",
+      "owner": "ai-wiki",
+      "local_security_lens": "Keep only unauthenticated exposure, OAuth scope bypass, path traversal, SSRF, read-only enforcement, file-store permissions, and credential disclosure boundaries."
+    },
+    {
+      "entity_or_topic": "Agent frameworks and coding-agent workflows",
+      "owner": "ai-dev-wiki for general practice; ai-wiki for broad product/entity pages",
+      "local_security_lens": "Keep credential isolation, workspace containment, sub-agent write escape, and prompt-injection-to-tool-execution boundaries."
+    },
+    {
+      "entity_or_topic": "LLM observability and provider-key management",
+      "owner": "ai-wiki or ai-dev-wiki for broad product/practice context",
+      "local_security_lens": "Keep tenant authorization, prompt/completion confidentiality, and stored provider credential exposure."
+    },
+    {
+      "entity_or_topic": "JeecgBoot AI control-plane records",
+      "owner": "ai-wiki for broad JeecgBoot/product context",
+      "local_security_lens": "Split local security leaves by prompt template, OCR prompt, MCP credential, video-generation privacy, and experiment authorization boundaries if ingested."
+    }
+  ],
+  "confidence_notes": [
+    "Most qualifying findings are from NVD CVE records with exact in-window publication and modification timestamps.",
+    "Several records likely need ingest-time primary-project advisory or fixed-version checks because the captured NVD summaries do not always include remediation status.",
+    "Grouped clusters are collection conveniences, not final wiki granularity; synthesis should split independently changing security boundaries.",
+    "No private, proprietary, sensitive, PII, or company-internal local content was sent to external services."
+  ],
+  "follow_up_actions": [
+    "During ingest, reconcile each captured CVE against CVE Services, NVD, GitHub advisories, and upstream project release notes before writing durable leaves.",
+    "Split the JeecgBoot cluster into separate authorization leaves if the fixes, endpoints, or operational controls differ.",
+    "Check fixed versions for x64dbg-MCP, GenOffice, zotero-mcp, argocd-mcp, 1MCP Agent, Tabularis, mini-swe-agent, 9router, Phi, open-multi-agent, OpenLIT, TencentCloud Octop, and Astron Agent.",
+    "Deduplicate any item already captured by the leaf-update watcher before docs/wiki synthesis."
+  ],
+  "counts": {
+    "qualifying_findings": 14,
+    "excluded_items": 8,
+    "upstream_routing_notes": 4,
+    "source_searches": 6
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check_scoped": "passed"
+  }
+}

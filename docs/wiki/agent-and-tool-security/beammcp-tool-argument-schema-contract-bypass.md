@@ -9,6 +9,8 @@ tags: ["agent-and-tool-security", "identity-and-access"]
 
 ## Current Understanding
 
+The [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json) repeats both BeamMCP records as disclosed vulnerabilities and keeps them in the same schema-contract leaf because the nested-schema and boolean/null issues both break the tools/list to tools/call contract.
+
 The [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json) records BeamMCP argument-validation flaws in ScriptKittyOS `beam_mcp`. Broad MCP server catalog context belongs upstream; this page owns the local MCP schema-contract and host-dispatch trust boundary.
 
 [CVE-2026-88257](https://cveawg.mitre.org/api/cve/CVE-2026-88257) says nested tool argument constraints were advertised but not enforced. [CVE-2026-104634](https://cveawg.mitre.org/api/cve/CVE-2026-104634) says JSON boolean and null tool arguments reached dispatch as strings. The collector records BeamMCP from 0.1.0 before 0.10.1 as affected.
@@ -24,6 +26,7 @@ The [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-secu
 
 ## Authoritative Sources
 
+- [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json)
 - [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json)
 - [CVE-2026-88257 record](https://cveawg.mitre.org/api/cve/CVE-2026-88257)
 - [GHSA-mrg2-4747-fmpw](https://github.com/ScriptKittyOS/beam_mcp/security/advisories/GHSA-mrg2-4747-fmpw)
@@ -55,4 +58,5 @@ The [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-secu
 
 ## Maintenance Notes
 
+- Updated on 2026-10-10 with watcher provenance for both BeamMCP contract-bypass CVEs without adding a duplicate digest entry.
 - Created on 2026-10-09 from the [October 8 topic collector source](../../../raw/processed/2026-10-08/ai-security-wiki-topic-news-collector-2026-10-08T233132Z.json) as one closely coupled schema-contract leaf.

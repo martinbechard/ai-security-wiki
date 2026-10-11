@@ -8,6 +8,27 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [data-and-privacy/jeecgboot-airag-prompt-export-disclosure.md](data-and-privacy/jeecgboot-airag-prompt-export-disclosure.md)
+- [identity-and-access/jeecgboot-ai-prompt-experiment-authorization-bypass.md](identity-and-access/jeecgboot-ai-prompt-experiment-authorization-bypass.md)
+- [agent-and-tool-security/kortix-suna-connector-private-ip-ssrf.md](agent-and-tool-security/kortix-suna-connector-private-ip-ssrf.md)
+- [data-and-privacy/genoffice-mcp-file-store-local-disclosure.md](data-and-privacy/genoffice-mcp-file-store-local-disclosure.md)
+- [agent-and-tool-security/zotero-mcp-url-metadata-ssrf.md](agent-and-tool-security/zotero-mcp-url-metadata-ssrf.md)
+- [agent-and-tool-security/argocd-mcp-delete-tool-path-traversal.md](agent-and-tool-security/argocd-mcp-delete-tool-path-traversal.md)
+- [identity-and-access/1mcp-agent-oauth-tag-scope-bypass.md](identity-and-access/1mcp-agent-oauth-tag-scope-bypass.md)
+- [data-and-privacy/innoshop-ai-core-mcp-file-upload-file-read.md](data-and-privacy/innoshop-ai-core-mcp-file-upload-file-read.md)
+- [agent-and-tool-security/tabularis-mcp-read-only-query-side-effects.md](agent-and-tool-security/tabularis-mcp-read-only-query-side-effects.md)
+- [data-and-privacy/mini-swe-agent-bubblewrap-environment-secret-exposure.md](data-and-privacy/mini-swe-agent-bubblewrap-environment-secret-exposure.md)
+- [agent-and-tool-security/9router-hermes-agent-auto-accept-hook-injection.md](agent-and-tool-security/9router-hermes-agent-auto-accept-hook-injection.md)
+- [agent-and-tool-security/phi-workdir-workspace-write-bypass.md](agent-and-tool-security/phi-workdir-workspace-write-bypass.md)
+- [agent-and-tool-security/phi-symlink-workspace-write-bypass.md](agent-and-tool-security/phi-symlink-workspace-write-bypass.md)
+- [agent-and-tool-security/open-multi-agent-dangling-symlink-sandbox-escape.md](agent-and-tool-security/open-multi-agent-dangling-symlink-sandbox-escape.md)
+- [data-and-privacy/openlit-telemetry-project-header-prompt-read.md](data-and-privacy/openlit-telemetry-project-header-prompt-read.md)
+- [data-and-privacy/tencentcloud-octop-provider-api-key-exposure.md](data-and-privacy/tencentcloud-octop-provider-api-key-exposure.md)
+- [infrastructure-and-supply-chain/astron-agent-localexecutor-tenant-root-code-execution.md](infrastructure-and-supply-chain/astron-agent-localexecutor-tenant-root-code-execution.md)
+- [identity-and-access/jeecgboot-ai-prompt-template-authorization-bypass.md](identity-and-access/jeecgboot-ai-prompt-template-authorization-bypass.md)
+- [identity-and-access/jeecgboot-ai-ocr-prompt-shared-state-authorization.md](identity-and-access/jeecgboot-ai-ocr-prompt-shared-state-authorization.md)
+- [data-and-privacy/jeecgboot-ai-video-generation-record-privacy.md](data-and-privacy/jeecgboot-ai-video-generation-record-privacy.md)
+- [data-and-privacy/jeecgboot-mcp-server-configuration-token-disclosure.md](data-and-privacy/jeecgboot-mcp-server-configuration-token-disclosure.md)
 - [agent-and-tool-security/pydantic-ai-web-fetch-destination-bypass.md](agent-and-tool-security/pydantic-ai-web-fetch-destination-bypass.md)
 - [agent-and-tool-security/pydantic-ai-web-fetch-resource-exhaustion.md](agent-and-tool-security/pydantic-ai-web-fetch-resource-exhaustion.md)
 - [agent-and-tool-security/x64dbg-mcp-server-unauthenticated-debugger-tools.md](agent-and-tool-security/x64dbg-mcp-server-unauthenticated-debugger-tools.md)
@@ -639,6 +660,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-11 with October 10 security ingest leaves for Suna, GenOffice, zotero-mcp, argocd-mcp, 1MCP Agent, InnoShop, Tabularis, mini-swe-agent, 9router, Phi, open-multi-agent, OpenLIT, TencentCloud Octop, Astron Agent, and split JeecgBoot AI authorization/privacy/token-disclosure boundaries.
 - Updated on 2026-10-10 with October 9 security ingest leaves for x64dbg-MCP Server debugger authority, x64dbg-MCP Server Content-Length DoS, AstronRPA, Ollama, and SumatraPDF, plus October 10 watcher provenance folded into existing October 8 leaves.
 - Updated on 2026-10-09 with October 8 security ingest leaves for Pydantic AI, Obot, Splunk MCP Server, BeamMCP, Banks, LangChain.js MongoDB chat history, and LatePoint AI Abilities plus October 9 watcher provenance.
 - Updated on 2026-10-08 with October 7 security ingest leaves for PraisonAI AgentMail webhook signature bypass, vLLM Harmony tool cache salt oracle, vLLM multimodal cache desync DoS, knowns LSP binary config execution, and OpenAI GPT-6 October deployment safety.
