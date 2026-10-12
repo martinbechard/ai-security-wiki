@@ -2,6 +2,12 @@
 
 ## Current Understanding
 
+- [MCP Kotlin WebSocket Frame Memory DoS](mcp-kotlin-websocket-frame-memory-dos.md)
+- [mcp-go StreamableHTTP Body DoS](mcp-go-streamable-http-body-dos.md)
+- [Open Computer Use Password-Manager Denylist Bypass](open-computer-use-password-manager-denylist-bypass.md)
+- [Nexting pinclaw Prompt Injection Auth Bypass](nexting-pinclaw-prompt-injection-auth-bypass.md)
+- [Company Research Agent ReportLab SSRF](company-research-agent-reportlab-ssrf.md)
+
 - [Kortix Suna Connector Private-IP SSRF](kortix-suna-connector-private-ip-ssrf.md)
 - [zotero-mcp URL Metadata SSRF](zotero-mcp-url-metadata-ssrf.md)
 - [Argo CD MCP Delete Tool Path Traversal](argocd-mcp-delete-tool-path-traversal.md)
@@ -82,6 +88,12 @@
 This topic owns security boundaries for autonomous action, tool calls, MCP, delegated authority, sandboxing, human approval, and cross-agent trust. General agent workflows stay in ai-dev-wiki; broad products and tools stay in ai-wiki.
 
 ## Leaf Pages
+
+- [MCP Kotlin WebSocket Frame Memory DoS](mcp-kotlin-websocket-frame-memory-dos.md)
+- [mcp-go StreamableHTTP Body DoS](mcp-go-streamable-http-body-dos.md)
+- [Open Computer Use Password-Manager Denylist Bypass](open-computer-use-password-manager-denylist-bypass.md)
+- [Nexting pinclaw Prompt Injection Auth Bypass](nexting-pinclaw-prompt-injection-auth-bypass.md)
+- [Company Research Agent ReportLab SSRF](company-research-agent-reportlab-ssrf.md)
 
 - [Pydantic AI web fetch destination bypass](pydantic-ai-web-fetch-destination-bypass.md)
 - [Pydantic AI web fetch resource exhaustion](pydantic-ai-web-fetch-resource-exhaustion.md)
@@ -320,6 +332,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-12 with October 11 source-ingest leaves for MCP Kotlin WebSocket DoS, mcp-go StreamableHTTP body DoS, Open Computer Use password-manager isolation, Nexting pinclaw prompt ingress, and Company Research Agent ReportLab SSRF.
 
 - Updated on 2026-10-11 with October 10 source-ingest leaves for Kortix Suna Connector Private-IP SSRF, zotero-mcp URL Metadata SSRF, Argo CD MCP Delete Tool Path Traversal, Tabularis MCP Read-Only Query Side Effects, 9router Hermes Agent Auto-Accept Hook Injection, Phi Workdir Workspace Write Bypass, Phi Symlink Workspace Write Bypass, open-multi-agent Dangling Symlink Sandbox Escape.
 - Updated on 2026-10-10 with x64dbg-MCP Server unauthenticated debugger tools, x64dbg-MCP Server Content-Length DoS, AstronRPA smart-component chat IPC command execution, and SumatraPDF AI selection-translate CLI argument injection leaves.

@@ -6,6 +6,8 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 
 ## Leaf Pages
 
+- [Anthropic unintended model actions](anthropic-unintended-model-actions.md)
+
 - [OpenAI Hugging Face cyber-evaluation incident](openai-hugging-face-cyber-evaluation-incident.md)
 - [Anthropic internet-connected cyber-evaluation incident](anthropic-internet-connected-cyber-evaluation-incident.md)
 - [AISI live-internet cyber-evaluation incident](aisi-live-internet-cyber-evaluation-incident.md)
@@ -46,6 +48,8 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-12 with Anthropic unintended model actions as a separate incident-response leaf for October 2026 live-internet model overreach and incident-disclosure evidence.
 
 - Separate public incident facts from inference and avoid collecting private incident material through public automations.
 - Updated on 2026-09-06 with Anthropic remediation-follow-up evidence and OpenAI wiki-incident disclosure-framework reporting.

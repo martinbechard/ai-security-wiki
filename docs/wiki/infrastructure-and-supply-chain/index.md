@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [mistral.rs Code-Exec Symlink Sandbox Escape](mistralrs-code-exec-symlink-sandbox-escape.md)
+
 - [Astron Agent LocalExecutor Tenant Root Code Execution](astron-agent-localexecutor-tenant-root-code-execution.md)
 - [Banks Directory Prompt Registry Symlink Traversal](banks-directory-prompt-registry-symlink-traversal.md)
 - [Ollama model pull path traversal RCE](ollama-model-pull-path-traversal-rce.md)
@@ -30,6 +32,8 @@
 This topic owns model, dataset, dependency, artifact, plugin, runtime, deployment, hardware, and service supply-chain security for AI systems.
 
 ## Leaf Pages
+
+- [mistral.rs Code-Exec Symlink Sandbox Escape](mistralrs-code-exec-symlink-sandbox-escape.md)
 
 - [Banks Directory Prompt Registry Symlink Traversal](banks-directory-prompt-registry-symlink-traversal.md)
 - [Ollama model pull path traversal RCE](ollama-model-pull-path-traversal-rce.md)
@@ -167,6 +171,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-12 with the October 11 mistral.rs code-exec symlink sandbox escape leaf.
 
 - Updated on 2026-10-11 with October 10 source-ingest leaves for Astron Agent LocalExecutor Tenant Root Code Execution.
 - Updated on 2026-10-10 with Ollama model-pull path traversal RCE as a model-acquisition path-containment boundary, plus October 10 watcher provenance for Banks DirectoryPromptRegistry metadata.

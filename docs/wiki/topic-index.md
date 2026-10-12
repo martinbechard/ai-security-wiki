@@ -8,6 +8,24 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [incident-response/anthropic-unintended-model-actions.md](incident-response/anthropic-unintended-model-actions.md)
+- [agent-and-tool-security/mcp-kotlin-websocket-frame-memory-dos.md](agent-and-tool-security/mcp-kotlin-websocket-frame-memory-dos.md)
+- [data-and-privacy/mcp-remote-device-code-token-channel-exposure.md](data-and-privacy/mcp-remote-device-code-token-channel-exposure.md)
+- [agent-and-tool-security/mcp-go-streamable-http-body-dos.md](agent-and-tool-security/mcp-go-streamable-http-body-dos.md)
+- [agent-and-tool-security/open-computer-use-password-manager-denylist-bypass.md](agent-and-tool-security/open-computer-use-password-manager-denylist-bypass.md)
+- [identity-and-access/abilityai-trinity-telegram-binding-authorization-bypass.md](identity-and-access/abilityai-trinity-telegram-binding-authorization-bypass.md)
+- [agent-and-tool-security/nexting-pinclaw-prompt-injection-auth-bypass.md](agent-and-tool-security/nexting-pinclaw-prompt-injection-auth-bypass.md)
+- [infrastructure-and-supply-chain/mistralrs-code-exec-symlink-sandbox-escape.md](infrastructure-and-supply-chain/mistralrs-code-exec-symlink-sandbox-escape.md)
+- [agent-and-tool-security/company-research-agent-reportlab-ssrf.md](agent-and-tool-security/company-research-agent-reportlab-ssrf.md)
+- [identity-and-access/wanwu-agent-app-cross-tenant-authorization.md](identity-and-access/wanwu-agent-app-cross-tenant-authorization.md)
+- [identity-and-access/wanwu-appkey-and-mcp-server-authorization.md](identity-and-access/wanwu-appkey-and-mcp-server-authorization.md)
+- [data-and-privacy/phpmyfaq-mcp-faq-search-acl-bypass.md](data-and-privacy/phpmyfaq-mcp-faq-search-acl-bypass.md)
+- [data-and-privacy/odoo-mcp-field-acl-bypass.md](data-and-privacy/odoo-mcp-field-acl-bypass.md)
+- [identity-and-access/amoylab-unla-oauth2-mcp-authentication-bypass.md](identity-and-access/amoylab-unla-oauth2-mcp-authentication-bypass.md)
+- [identity-and-access/astron-agent-workflow-resume-cross-tenant-idor.md](identity-and-access/astron-agent-workflow-resume-cross-tenant-idor.md)
+- [data-and-privacy/jeecgboot-ai-app-configuration-disclosure.md](data-and-privacy/jeecgboot-ai-app-configuration-disclosure.md)
+- [identity-and-access/jeecgboot-third-party-app-config-authorization-bypass.md](identity-and-access/jeecgboot-third-party-app-config-authorization-bypass.md)
+
 - [data-and-privacy/jeecgboot-airag-prompt-export-disclosure.md](data-and-privacy/jeecgboot-airag-prompt-export-disclosure.md)
 - [identity-and-access/jeecgboot-ai-prompt-experiment-authorization-bypass.md](identity-and-access/jeecgboot-ai-prompt-experiment-authorization-bypass.md)
 - [agent-and-tool-security/kortix-suna-connector-private-ip-ssrf.md](agent-and-tool-security/kortix-suna-connector-private-ip-ssrf.md)
@@ -659,6 +677,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [AI development wiki topic index](../../upstream-ai-dev-wiki/topic-index.md) owns general AI-assisted development practices.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-12 with October 11 source-ingest leaves for Anthropic unintended model actions, split MCP transport/token/ACL/OAuth issues, Open Computer Use, Abilityai Trinity, Nexting pinclaw, mistral.rs, Company Research Agent, Wanwu, Astron Agent, and JeecgBoot post-run authorization deltas.
 
 - Updated on 2026-10-11 with October 10 security ingest leaves for Suna, GenOffice, zotero-mcp, argocd-mcp, 1MCP Agent, InnoShop, Tabularis, mini-swe-agent, 9router, Phi, open-multi-agent, OpenLIT, TencentCloud Octop, Astron Agent, and split JeecgBoot AI authorization/privacy/token-disclosure boundaries.
 - Updated on 2026-10-10 with October 9 security ingest leaves for x64dbg-MCP Server debugger authority, x64dbg-MCP Server Content-Length DoS, AstronRPA, Ollama, and SumatraPDF, plus October 10 watcher provenance folded into existing October 8 leaves.

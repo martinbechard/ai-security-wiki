@@ -6,6 +6,13 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [Abilityai Trinity Telegram Binding Authorization Bypass](abilityai-trinity-telegram-binding-authorization-bypass.md)
+- [Wanwu Agent App Cross-Tenant Authorization](wanwu-agent-app-cross-tenant-authorization.md)
+- [Wanwu AppKey and MCP Server Authorization](wanwu-appkey-and-mcp-server-authorization.md)
+- [AmoyLab Unla OAuth2 MCP Authentication Bypass](amoylab-unla-oauth2-mcp-authentication-bypass.md)
+- [Astron Agent Workflow Resume Cross-Tenant IDOR](astron-agent-workflow-resume-cross-tenant-idor.md)
+- [JeecgBoot Third-Party App Config Authorization Bypass](jeecgboot-third-party-app-config-authorization-bypass.md)
+
 - [JeecgBoot AI Prompt Experiment Authorization Bypass](jeecgboot-ai-prompt-experiment-authorization-bypass.md)
 - [1MCP Agent OAuth Tag Scope Bypass](1mcp-agent-oauth-tag-scope-bypass.md)
 - [JeecgBoot AI Prompt Template Authorization Bypass](jeecgboot-ai-prompt-template-authorization-bypass.md)
@@ -155,6 +162,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-12 with October 11 source-ingest leaves for Abilityai Trinity Telegram binding, Wanwu cross-tenant app and AppKey/MCP authorization, AmoyLab Unla OAuth2 MCP authentication, Astron Agent workflow resume, and JeecgBoot third-party app configuration authorization.
 
 - Updated on 2026-10-11 after verifier correction split JeecgBoot prompt-template CRUD, OCR prompt shared-state, and prompt-experiment authorization leaves.
 - Updated on 2026-10-11 with October 10 source-ingest leaves for 1MCP Agent OAuth Tag Scope Bypass, JeecgBoot AI Prompt Template Authorization Bypass, JeecgBoot AI OCR Prompt Shared-State Authorization.

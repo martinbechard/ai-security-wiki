@@ -6,6 +6,11 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [mcp-remote Device-Code Token Channel Exposure](mcp-remote-device-code-token-channel-exposure.md)
+- [phpMyFAQ MCP FAQ Search ACL Bypass](phpmyfaq-mcp-faq-search-acl-bypass.md)
+- [Odoo MCP Field ACL Bypass](odoo-mcp-field-acl-bypass.md)
+- [JeecgBoot AI App Configuration Disclosure](jeecgboot-ai-app-configuration-disclosure.md)
+
 - [JeecgBoot Airag Prompt Export Disclosure](jeecgboot-airag-prompt-export-disclosure.md)
 - [GenOffice MCP File Store Local Disclosure](genoffice-mcp-file-store-local-disclosure.md)
 - [InnoShop AI Core MCP File Upload File Read](innoshop-ai-core-mcp-file-upload-file-read.md)
@@ -127,6 +132,8 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-12 with October 11 source-ingest leaves for mcp-remote device-code token channel exposure, phpMyFAQ and Odoo MCP ACL bypasses, and JeecgBoot AI app configuration disclosure.
 
 - Updated on 2026-10-11 after verifier correction split JeecgBoot video-record, MCP configuration token, and Airag prompt export disclosure leaves.
 - Updated on 2026-10-11 with October 10 source-ingest leaves for GenOffice MCP File Store Local Disclosure, InnoShop AI Core MCP File Upload File Read, mini-swe-agent Bubblewrap Environment Secret Exposure, OpenLIT Telemetry Project Header Prompt Read, TencentCloud Octop Provider API Key Exposure, JeecgBoot AI Video Generation Record Privacy, JeecgBoot MCP Server Configuration Token Disclosure.
