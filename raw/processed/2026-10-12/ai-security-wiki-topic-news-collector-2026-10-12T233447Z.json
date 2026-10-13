@@ -1,0 +1,570 @@
+{
+  "automation": {
+    "name": "AI Security Wiki Topic News Collector",
+    "id": "ai-security-wiki-topic-news-collector"
+  },
+  "run": {
+    "timestamp_utc": "2026-10-12T23:34:47Z",
+    "timestamp_local": "2026-10-12T19:34:47-04:00",
+    "repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "mode": "raw-only public-source collection",
+    "last_run_utc": "2026-10-11T23:30:50.874Z",
+    "notes": [
+      "docs/wiki and raw/processed were not edited.",
+      "Pre-existing untracked .Codex/agent-claim/ and .agent-ops/ directories were observed and left untouched.",
+      "Exact CVE/title dedupe was checked across raw and docs/wiki before writing this artifact."
+    ]
+  },
+  "cutoff_window": {
+    "start_utc": "2026-10-10T23:34:47Z",
+    "end_utc": "2026-10-12T23:34:47Z",
+    "policy": "Include only public items visibly published or updated inside the exact two-day run window; exclude date-only lower-boundary, stale, future-dated, ambiguous, duplicate, or non-security-product announcements."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_searches": [
+    {
+      "method": "Web search",
+      "query": "site:nvd.nist.gov/vuln/detail AI MCP CVE October 11 2026; site:github.com/advisories AI MCP GHSA Oct 11 2026; AI security vulnerability MCP October 11 2026; AI agent security vulnerability October 12 2026",
+      "result": "Located AI Sec Watch and GitHub Advisory Database entry points for October 12 AI/MCP/security records."
+    },
+    {
+      "method": "Web search",
+      "query": "site:github.com/advisories/GHSA AI MCP Published Oct 12, 2026; site:nvd.nist.gov/vuln/detail MCP 10/12/2026 CVE AI; site:tenable.com/security/research/tra MCP October 12, 2026; site:huntr.com/bounties MCP Oct 12, 2026",
+      "result": "Identified fresh GitHub/NVD candidates including Agno, VideoWhisper, and non-AI exclusions."
+    },
+    {
+      "method": "NVD CVE API",
+      "query": "Direct CVE ID fetches for CVE-2026-109331, CVE-2026-109311, CVE-2026-109296, CVE-2026-109292, CVE-2026-108818, CVE-2026-108816, CVE-2026-108953, CVE-2026-108836, CVE-2026-107430, and CVE-2026-107429",
+      "result": "Fetched authoritative JSON descriptions, dates, affected ranges, scores, weaknesses, and references for candidate CVEs."
+    },
+    {
+      "method": "Repository search",
+      "query": "rg exact CVE IDs and Repeat-After-Me across raw and docs/wiki",
+      "result": "No exact prior local captures found for the qualifying IDs or Repeat-After-Me phrase."
+    }
+  ],
+  "routing_context": {
+    "local_repository_owns": [
+      "security-specific vulnerabilities, threats, affected boundaries, mitigations, assurance implications, and incident lessons"
+    ],
+    "upstream_ai_wiki_owns": [
+      "broad AI companies, products, frameworks, MCP servers, model families, and general ecosystem context"
+    ],
+    "upstream_ai_dev_wiki_owns": [
+      "general AI-assisted development workflows, coding-agent practice, software delivery governance, and non-security adoption patterns"
+    ],
+    "sources_checked": [
+      "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/federation.md",
+      "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ]
+  },
+  "findings": [
+    {
+      "id": "network-ai-claudehookbridge-deny-pattern-bypass",
+      "title": "Network-AI ClaudeHookBridge deny-pattern bypass permits prompt-hidden payloads",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109331",
+        "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-9p2w-prp8-5722",
+        "https://www.vulncheck.com/advisories/network-ai-5.14.0-before-5.15.2-deny-pattern-bypass-via-claudehookbridge-extractfulltarget",
+        "https://aisecwatch.com/issues/6747a458-9b4d-4da6-ad84-20909e39d94d"
+      ],
+      "visible_dates": {
+        "nvd_published_utc": "2026-10-12T17:17:28.843Z",
+        "nvd_last_modified_utc": "2026-10-12T17:17:28.970Z",
+        "ai_sec_watch_published": "October 12, 2026",
+        "ai_sec_watch_record_updated": "October 12, 2026"
+      },
+      "concise_factual_summary": "CVE-2026-109331 says Network-AI versions 5.14.0 before 5.15.2 check ClaudeHookBridge deny patterns only against the first present candidate field. A prompt-injected agent can place dangerous payloads in another field, such as Write content or an MCP script parameter, beside a benign file path or command to evade deny rules and write web shells or execute scripts.",
+      "evidence_classification": [
+        "NVD CVE record",
+        "VulnCheck advisory reference",
+        "AI Sec Watch discovery and AI classification"
+      ],
+      "affected_boundary_or_version": "Network-AI npm package 5.14.0 before 5.15.2; ClaudeHookBridge PreToolUse denyPatterns enforcement.",
+      "why_it_matters_for_ai_security": "A model-influenced payload can cross from prompt/tool-argument space into command or file-write authority when the policy hook validates only one candidate field.",
+      "named_entities": [
+        "Network-AI",
+        "Jovancoding",
+        "ClaudeHookBridge",
+        "MCP"
+      ],
+      "upstream_routing": [
+        {
+          "entity_or_topic": "Network-AI product context",
+          "owner": "ai-wiki",
+          "local_scope": "Keep the new deny-pattern bypass, affected range, and security-control lesson locally."
+        },
+        {
+          "entity_or_topic": "Prompt/tool approval workflow practice",
+          "owner": "ai-dev-wiki",
+          "local_scope": "Keep only the security implication that approval hooks must validate every model-controllable argument field."
+        }
+      ],
+      "confidence_notes": "High confidence for CVE timing and affected range from NVD API; mitigation wording should be checked against the GitHub advisory during ingest.",
+      "follow_up_actions": [
+        "During ingest, compare with existing Network-AI approval and filesystem-boundary leaves and create a focused hook-policy boundary if needed.",
+        "Recheck GHSA-9p2w-prp8-5722 for patched-version and remediation wording."
+      ]
+    },
+    {
+      "id": "vllm-audio-upload-heap-overflow-dos",
+      "title": "vLLM audio transcription upload exposes FFmpeg IAMF heap overflow",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109311",
+        "https://github.com/vllm-project/vllm/security/advisories/GHSA-m52c-39rh-f3gp",
+        "https://www.vulncheck.com/advisories/vllm-before-0.29.0-heap-overflow-dos-via-iamf-audio-transcription-upload",
+        "https://aisecwatch.com/issues/47981527-3815-4cad-a0a8-f6f8932fead0"
+      ],
+      "visible_dates": {
+        "nvd_published_utc": "2026-10-12T17:17:25.730Z",
+        "nvd_last_modified_utc": "2026-10-12T17:17:25.730Z",
+        "ai_sec_watch_published": "October 12, 2026",
+        "ai_sec_watch_record_updated": "October 12, 2026"
+      },
+      "concise_factual_summary": "CVE-2026-109311 says vLLM before 0.29.0 passes uploaded audio to the PyAV/FFmpeg av.open() fallback with only a file-size check. Authenticated remote users can repeatedly upload malformed IAMF containers to /v1/audio/transcriptions, corrupting the heap and crashing the API process.",
+      "evidence_classification": [
+        "NVD CVE record",
+        "VulnCheck advisory reference",
+        "GitHub advisory reference"
+      ],
+      "affected_boundary_or_version": "vLLM before 0.29.0; /v1/audio/transcriptions audio upload path and PyAV/FFmpeg fallback parser boundary.",
+      "why_it_matters_for_ai_security": "Multimodal inference APIs must treat uploaded media as hostile parser input; availability of the model-serving API can be lost through a malformed audio request.",
+      "named_entities": [
+        "vLLM",
+        "PyAV",
+        "FFmpeg",
+        "IAMF"
+      ],
+      "upstream_routing": [
+        {
+          "entity_or_topic": "vLLM runtime and model-serving context",
+          "owner": "ai-wiki",
+          "local_scope": "Keep parser-exposure and model-serving availability security facts locally."
+        }
+      ],
+      "confidence_notes": "High confidence for affected version and endpoint from NVD API; ingest should verify GitHub advisory remediation and release tag details.",
+      "follow_up_actions": [
+        "Check vLLM advisory or release notes for whether 0.29.0 is the published fix.",
+        "Consider whether this belongs under model-serving runtime input-validation and multimodal parser exposure."
+      ]
+    },
+    {
+      "id": "open-webui-oauth-cookie-and-disabled-backend-access",
+      "title": "Open WebUI leaks OAuth-mode cookies and exposes disabled model backends",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109292",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109296",
+        "https://github.com/open-webui/open-webui/security/advisories/GHSA-gqfh-jxvw-74rp",
+        "https://github.com/open-webui/open-webui/security/advisories/GHSA-hm62-64q2-6gxw",
+        "https://aisecwatch.com/issues/abcbf077-ae54-44bb-8372-d077a686a808",
+        "https://aisecwatch.com/issues/2ad0365d-516f-4d5d-9bef-964903b333ab"
+      ],
+      "visible_dates": {
+        "cve_2026_109292_nvd_published_utc": "2026-10-12T17:17:22.500Z",
+        "cve_2026_109292_nvd_last_modified_utc": "2026-10-12T17:17:22.500Z",
+        "cve_2026_109296_nvd_published_utc": "2026-10-12T17:17:23.097Z",
+        "cve_2026_109296_nvd_last_modified_utc": "2026-10-12T17:17:23.097Z",
+        "ai_sec_watch_published": "October 12, 2026"
+      },
+      "concise_factual_summary": "CVE-2026-109292 says Open WebUI 0.6.27 before 0.11.4 can forward the full browser cookie jar to destination servers on OAuth-mode OpenAI-compatible, OpenAPI tool, or terminal connections, enabling session hijack if the destination captures cookies. CVE-2026-109296 says Open WebUI before 0.11.4 lets authenticated users reach disabled model provider backends by supplying explicit backend indexes on Ollama and OpenAI-compatible listing routes, triggering requests with configured API keys and allowing version or connection enumeration.",
+      "evidence_classification": [
+        "NVD CVE records",
+        "GitHub advisory references",
+        "public patch commit references in NVD"
+      ],
+      "affected_boundary_or_version": "Open WebUI 0.6.27 before 0.11.4 for OAuth-mode cookie disclosure; Open WebUI before 0.11.4 for disabled backend access.",
+      "why_it_matters_for_ai_security": "AI web UIs often bridge user sessions, model-provider credentials, OpenAPI tools, and terminal connections; cookie forwarding and backend-index authorization flaws can turn model/tool connectivity into account or credential exposure.",
+      "named_entities": [
+        "Open WebUI",
+        "Ollama",
+        "OpenAI-compatible connections",
+        "OpenAPI tool servers"
+      ],
+      "upstream_routing": [
+        {
+          "entity_or_topic": "Open WebUI product context",
+          "owner": "ai-wiki",
+          "local_scope": "Keep identity, session-cookie, API-key, and disabled-backend security facts locally."
+        }
+      ],
+      "confidence_notes": "High confidence for CVE timing, affected range, and core descriptions from NVD API; grouping is local collector judgment because both flaws affect Open WebUI connection authorization and credential/session boundaries.",
+      "follow_up_actions": [
+        "During ingest, split into identity/access and data/privacy leaves if the existing Open WebUI leaves do not cover cookie forwarding and disabled backend reachability.",
+        "Recheck GitHub advisories and listed commits for final remediation wording."
+      ]
+    },
+    {
+      "id": "agno-agentos-authentication-and-python-tools-code-injection",
+      "title": "Agno AgentOS authentication and PythonTools flaws expose remote agent authority",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108818",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108816",
+        "https://github.com/Agno-agi/Agno/issues/10051",
+        "https://github.com/Agno-agi/Agno/issues/10047",
+        "https://github.com/ybyu-ieu/agno-security-advisories/blob/main/advisories/agno-agentos-no-authentication-by-default.md",
+        "https://github.com/ybyu-ieu/agno-security-advisories/blob/main/advisories/agno-pythontools-run-python-code-arbitrary-code-execution.md"
+      ],
+      "visible_dates": {
+        "cve_2026_108818_nvd_published_utc": "2026-10-12T09:16:43.473Z",
+        "cve_2026_108818_nvd_last_modified_utc": "2026-10-12T09:16:43.630Z",
+        "cve_2026_108816_nvd_published_utc": "2026-10-12T09:16:43.037Z",
+        "cve_2026_108816_nvd_last_modified_utc": "2026-10-12T09:16:43.193Z"
+      },
+      "concise_factual_summary": "CVE-2026-108818 says Agno versions up to 2.7.3 and 3.0.6 have a missing-authentication issue in auth.py get_authentication_dependency involving the security_key argument; the exploit is public and the project reportedly had not responded. CVE-2026-108816 says Agno up to 3.0.6 has code injection in PythonTools run_python_code through the code argument, with public exploit material and no project response recorded in the CVE text.",
+      "evidence_classification": [
+        "NVD CVE records",
+        "VulDB CNA records through NVD",
+        "public GitHub issue and advisory references"
+      ],
+      "affected_boundary_or_version": "Agno 2.7.0 through 2.7.3 and 3.0.0 through 3.0.6 for missing authentication; Agno 3.0.0 through 3.0.6 PythonTools for code injection.",
+      "why_it_matters_for_ai_security": "An agent framework that exposes AgentOS or Python tool execution remotely needs explicit authentication and deterministic tool-code boundaries; otherwise model- or user-driven actions can become unauthenticated control or code execution.",
+      "named_entities": [
+        "Agno",
+        "AgentOS",
+        "PythonTools",
+        "VulDB"
+      ],
+      "upstream_routing": [
+        {
+          "entity_or_topic": "Agno framework background",
+          "owner": "ai-wiki",
+          "local_scope": "Keep authentication and Python tool execution security boundaries locally."
+        },
+        {
+          "entity_or_topic": "Agent framework usage practice",
+          "owner": "ai-dev-wiki",
+          "local_scope": "Route general framework adoption/workflow practice upstream; local item is the security-control failure."
+        }
+      ],
+      "confidence_notes": "Moderate-to-high confidence for CVE timing and descriptions from NVD; CVE text says the project had not responded, so remediation state needs ingest-time recheck.",
+      "follow_up_actions": [
+        "Check whether Agno has since responded or shipped a fixed version.",
+        "Decide during ingest whether to split authentication and Python tool execution into separate focused leaves."
+      ]
+    },
+    {
+      "id": "mac-shell-mcp-command-whitelist-bypass",
+      "title": "mac-shell-mcp command whitelist can be bypassed through shell metacharacters",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108953",
+        "https://github.com/cfdude/mac-shell-mcp",
+        "https://github.com/cfdude/mac-shell-mcp/commit/932ce733cde07bb30b1f186303e6692dbb5d087a",
+        "https://github.com/cfdude/mac-shell-mcp/issues/45",
+        "https://www.vulncheck.com/advisories/mac-shell-mcp-before-2.0.0-os-command-injection-via-execute-command-arguments"
+      ],
+      "visible_dates": {
+        "nvd_published_utc": "2026-10-12T13:17:28.307Z",
+        "nvd_last_modified_utc": "2026-10-12T13:17:28.307Z"
+      },
+      "concise_factual_summary": "CVE-2026-108953 says mac-shell-mcp before 2.0.0 allows MCP clients to bypass the command whitelist by injecting shell metacharacters into execute_command arguments. A malicious prompt or attacker-controlled MCP client can call an allowed command such as pwd with arguments like ';' to run forbidden commands as the server user without approval.",
+      "evidence_classification": [
+        "NVD CVE record",
+        "VulnCheck advisory reference",
+        "GitHub commit and issue references"
+      ],
+      "affected_boundary_or_version": "mac-shell-mcp before 2.0.0; execute_command argument handling and command whitelist enforcement.",
+      "why_it_matters_for_ai_security": "Local shell MCP servers expose high-authority tools to model-influenced clients; whitelist checks must parse and execute arguments without shell injection or approval bypass.",
+      "named_entities": [
+        "mac-shell-mcp",
+        "MCP",
+        "VulnCheck"
+      ],
+      "upstream_routing": [
+        {
+          "entity_or_topic": "mac-shell-mcp server identity",
+          "owner": "ai-wiki",
+          "local_scope": "Keep the command-whitelist bypass and local shell authority boundary locally."
+        }
+      ],
+      "confidence_notes": "High confidence for affected range and patch reference from NVD API; ingest should verify the 2.0.0 release state if available.",
+      "follow_up_actions": [
+        "During ingest, connect this to local MCP command execution, approval, and shell-argument parsing controls."
+      ]
+    },
+    {
+      "id": "ollama-pull-api-model-name-ssrf",
+      "title": "Ollama Pull API SSRF has public exploit and 0.34.2 fix",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108836",
+        "https://github.com/ollama/ollama/commit/dfabde4539e42ba1e1eab50a3a50b88aea7958a0",
+        "https://github.com/ollama/ollama/pull/18512",
+        "https://github.com/ollama/ollama/releases/tag/v0.34.2",
+        "https://vuldb.com/cve/CVE-2026-108836"
+      ],
+      "visible_dates": {
+        "nvd_published_utc": "2026-10-12T13:17:27.457Z",
+        "nvd_last_modified_utc": "2026-10-12T13:17:27.457Z"
+      },
+      "concise_factual_summary": "CVE-2026-108836 says Ollama up to 0.34.1 has SSRF in the Pull API IsValid function in types/model/name.go. The CVE states remote exploitation is possible, exploit details have been publicly disclosed, and upgrading to 0.34.2 with patch dfabde4539e42ba1e1eab50a3a50b88aea7958a0 fixes the issue.",
+      "evidence_classification": [
+        "NVD CVE record",
+        "VulDB CNA record through NVD",
+        "public patch and release references"
+      ],
+      "affected_boundary_or_version": "Ollama 0.34.0 and 0.34.1; Pull API model-name validation and server-side fetch boundary.",
+      "why_it_matters_for_ai_security": "Model pulling is an AI runtime supply-chain and network-fetch path; SSRF can turn model acquisition into unintended internal network access or metadata probing.",
+      "named_entities": [
+        "Ollama",
+        "Pull API",
+        "VulDB"
+      ],
+      "upstream_routing": [
+        {
+          "entity_or_topic": "Ollama product/runtime context",
+          "owner": "ai-wiki",
+          "local_scope": "Keep Pull API SSRF, affected versions, and model-supply-chain fetch control locally."
+        }
+      ],
+      "confidence_notes": "High confidence for CVE timing, public-exploit status, and fixed version from NVD API; the referenced proof-of-concept repository should be treated as untrusted evidence and not executed.",
+      "follow_up_actions": [
+        "During ingest, reconcile with existing Ollama path traversal and model-pull security leaves.",
+        "Verify the 0.34.2 release notes before durable mitigation text is written."
+      ]
+    },
+    {
+      "id": "videowhisper-site-manager-chatgpt-claude-codex-authorization",
+      "title": "VideoWhisper Site Manager for ChatGPT, Claude, Codex misses authorization",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107430",
+        "https://patchstack.com/database/wordpress/plugin/videowhisper-site-manager/vulnerability/wordpress-videowhisper-site-manager-for-chatgpt-claude-codex-plugin-1-2-10-broken-access-control-vulnerability?_s_id=cve",
+        "https://aisecwatch.com/issues/82bc677b-5af9-426a-ac7b-52d2fcacf48b"
+      ],
+      "visible_dates": {
+        "nvd_published_utc": "2026-10-12T08:17:18.577Z",
+        "nvd_last_modified_utc": "2026-10-12T12:17:13.200Z",
+        "ai_sec_watch_published": "October 12, 2026",
+        "ai_sec_watch_record_updated": "October 12, 2026"
+      },
+      "concise_factual_summary": "CVE-2026-107430 records missing authorization in the WordPress VideoWhisper Site Manager for ChatGPT, Claude, Codex plugin through 1.2.10. The NVD record maps the package as videowhisper-site-manager and records 1.2.11 as unaffected.",
+      "evidence_classification": [
+        "NVD CVE record",
+        "Patchstack reference",
+        "AI Sec Watch discovery and AI classification"
+      ],
+      "affected_boundary_or_version": "VideoWhisper Site Manager for ChatGPT, Claude, Codex WordPress plugin through 1.2.10; fixed/unaffected at 1.2.11 per NVD affected-data change entry.",
+      "why_it_matters_for_ai_security": "AI assistant/admin integrations embedded in WordPress need explicit authorization on management actions; otherwise low-privileged users may reach AI-site management capabilities beyond their role.",
+      "named_entities": [
+        "VideoWhisper.com",
+        "VideoWhisper Site Manager for ChatGPT, Claude, Codex",
+        "WordPress",
+        "Patchstack"
+      ],
+      "upstream_routing": [
+        {
+          "entity_or_topic": "WordPress plugin and AI assistant integration catalog context",
+          "owner": "ai-wiki",
+          "local_scope": "Keep missing-authorization and affected/fixed plugin version facts locally."
+        }
+      ],
+      "confidence_notes": "High confidence for CVE timing and affected/fixed versions from NVD API; Patchstack detail should be refetched during ingest because unauthenticated detail may be sparse.",
+      "follow_up_actions": [
+        "Confirm Patchstack remediation wording and whether exploitability needs a logged-in low-privilege role.",
+        "Route any broad WordPress/plugin catalog facts upstream."
+      ]
+    },
+    {
+      "id": "repeat-after-me-agent-framework-tool-call-bypass",
+      "title": "Repeat-After-Me prompt technique bypasses tool-call authority in six agent frameworks",
+      "source_urls": [
+        "https://www.csoonline.com/article/4233811/researchers-bypass-6-ai-agent-frameworks-with-a-simple-repeat-after-me-prompt.html",
+        "https://aisecwatch.com/issues/ac392883-ae85-4ab5-b90b-787bfe016a8f"
+      ],
+      "visible_dates": {
+        "cso_online_published": "Oct 12, 2026",
+        "ai_sec_watch_digest_date": "Monday, October 12, 2026"
+      },
+      "concise_factual_summary": "CSO Online reports that researchers from Pennsylvania State University, Universite Montpellier, and Dartmouth College used a Repeat-After-Me prompt technique to make six agent frameworks execute attacker-controlled tool calls: LangGraph, Microsoft Agent Framework, AutoGen, Google ADK 2.0, AWS Strands Agents, and CrewAI. The same report says their ToFu testing found 253 manually verified bugs across 118 of 273 open-source MCP servers they could run, including path traversal, SSRF, data exfiltration, and OS command injection classes.",
+      "evidence_classification": [
+        "reputable security news report",
+        "public research coverage",
+        "secondary report pending primary paper capture"
+      ],
+      "affected_boundary_or_version": "Reported framework demonstration includes LangGraph 1.2.0 with Llama 3.1 8B via Ollama; other framework details were reproduced by researchers but not detailed in the article.",
+      "why_it_matters_for_ai_security": "The finding separates model refusal from orchestrator authority: syntactically valid tool calls emitted by a model can execute before policy refusal text appears unless the framework independently authorizes each action.",
+      "named_entities": [
+        "LangGraph",
+        "Microsoft Agent Framework",
+        "AutoGen",
+        "Google Agent Development Kit 2.0",
+        "AWS Strands Agents",
+        "CrewAI",
+        "Model Context Protocol",
+        "ToFu"
+      ],
+      "upstream_routing": [
+        {
+          "entity_or_topic": "Framework catalogs and broad agent framework context",
+          "owner": "ai-wiki",
+          "local_scope": "Keep the security-specific tool-call authorization and MCP bug-class implications locally."
+        },
+        {
+          "entity_or_topic": "General agent framework development practice",
+          "owner": "ai-dev-wiki",
+          "local_scope": "Route broad orchestration/workflow practice upstream; local item is the security evaluation and authority-boundary lesson."
+        }
+      ],
+      "confidence_notes": "Moderate confidence because the article is dated and concrete, but the primary paper was not located in this run; details beyond the LangGraph transcript should be treated as secondary until primary evidence is captured.",
+      "follow_up_actions": [
+        "Locate the primary paper or project page before durable synthesis.",
+        "Separate framework-level authorization bypass from MCP server tool-validation bug taxonomy during ingest."
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "VideoWhisper Paid Videochat Turnkey Site CVE-2026-107429",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107429",
+        "https://patchstack.com/database/wordpress/plugin/ppv-live-webcams/vulnerability/wordpress-paid-videochat-turnkey-site-plugin-7-5-12-other-vulnerability-type-vulnerability?_s_id=cve"
+      ],
+      "visible_dates": {
+        "nvd_published_utc": "2026-10-12T08:17:18.447Z",
+        "nvd_last_modified_utc": "2026-10-12T12:17:13.087Z"
+      },
+      "reason": "In-window security record, but the affected product is a videochat WordPress plugin without a visible AI, LLM, agent, MCP, or AI-assistant boundary in the CVE text; excluded from AI-security collection."
+    },
+    {
+      "candidate": "Endor Labs Agent Security League / AI Security Code Review October 12 feed items",
+      "source_urls": [
+        "https://www.endorlabs.com/learn/is-ai-coding-safe-introducing-the-agent-security-league",
+        "https://www.endorlabs.com/learn/meet-the-appsec-platform-built-for-the-ai-era"
+      ],
+      "visible_dates": {
+        "agent_security_league_published": "April 15, 2026",
+        "ai_security_code_review_updated": "March 30, 2026"
+      },
+      "reason": "Search/digest surfaced them on October 12, but the directly fetched official pages show older publication/update dates outside the two-day window."
+    },
+    {
+      "candidate": "AP timeline of AI safety developments since Hugging Face attack",
+      "source_urls": [
+        "https://apnews.com/article/f590b51073d8977a984c7c42b8f2a7a2"
+      ],
+      "visible_dates": {
+        "published": "Sat Oct 10 16:41:38 2026 UTC"
+      },
+      "reason": "Published before the exact cutoff of 2026-10-10T23:34:47Z and appears to summarize previously captured incidents rather than a new in-window security delta."
+    },
+    {
+      "candidate": "Tom's Guide AI agents going rogue article",
+      "source_urls": [
+        "https://www.tomsguide.com/ai/ai-agents-are-going-rogue-heres-what-you-need-to-know-if-you-use-chatgpt-gemini-or-claude"
+      ],
+      "visible_dates": {
+        "published": "yesterday"
+      },
+      "reason": "In-window secondary coverage, but the visible facts summarize older OpenAI, Google, Meta, and Anthropic incidents already covered by prior runs; no new concrete advisory, mitigation, patch, or primary incident report was located."
+    },
+    {
+      "candidate": "DJI drone CVE-2026-78306 update",
+      "source_urls": [
+        "https://github.com/advisories/ghsa-vq46-xr65-w8q7"
+      ],
+      "visible_dates": {
+        "published": "Aug 24, 2026",
+        "last_updated": "Oct 12, 2026"
+      },
+      "reason": "Concrete in-window update, but not AI-specific and no local AI security boundary was visible."
+    },
+    {
+      "candidate": "DOMPurify GitHub advisories published Oct 12",
+      "source_urls": [
+        "https://github.com/cure53/DOMPurify/security/advisories"
+      ],
+      "visible_dates": {
+        "published": "Oct 12, 2026"
+      },
+      "reason": "Concrete web sanitization advisories, but no AI, LLM, agent, MCP, model, or AI deployment boundary was visible in the fetched advisory list."
+    },
+    {
+      "candidate": "Tenable One AI Exposure product coverage update",
+      "source_urls": [
+        "https://connect.tenable.com/tag/tenable%20research"
+      ],
+      "visible_dates": {
+        "crawled": "4 days ago",
+        "targeted_release_date": "Monday, October 12, 2026"
+      },
+      "reason": "The fetched text is a product/update newsletter and scanner-plugin release note; it lacks a concrete AI security vulnerability, incident, mitigation, standard, or regulatory change for this collection."
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity_or_topic": "Network-AI",
+      "owner": "ai-wiki",
+      "reason": "Broad framework/product catalog facts belong upstream; local wiki owns the deny-pattern security-control bypass."
+    },
+    {
+      "entity_or_topic": "vLLM",
+      "owner": "ai-wiki",
+      "reason": "Broad model-serving runtime context belongs upstream; local wiki owns the audio parser DoS boundary."
+    },
+    {
+      "entity_or_topic": "Open WebUI",
+      "owner": "ai-wiki",
+      "reason": "Broad product context belongs upstream; local wiki owns OAuth cookie forwarding, backend authorization, API-key, and session-boundary risks."
+    },
+    {
+      "entity_or_topic": "Agno",
+      "owner": "ai-wiki",
+      "reason": "Broad agent framework context belongs upstream; local wiki owns AgentOS authentication and PythonTools code-execution risks."
+    },
+    {
+      "entity_or_topic": "Ollama",
+      "owner": "ai-wiki",
+      "reason": "Broad runtime/model-provider context belongs upstream; local wiki owns Pull API SSRF and model-fetch supply-chain security."
+    },
+    {
+      "entity_or_topic": "LangGraph, Microsoft Agent Framework, AutoGen, Google ADK, AWS Strands Agents, and CrewAI",
+      "owner": "ai-wiki",
+      "reason": "Framework catalogs belong upstream; local wiki owns the Repeat-After-Me tool-call authorization bypass and MCP bug-class security implication."
+    },
+    {
+      "entity_or_topic": "General coding-agent and agent-framework development practice",
+      "owner": "ai-dev-wiki",
+      "reason": "General workflow, benchmark, and adoption implications route upstream; local wiki keeps only concrete security controls, affected boundaries, and assurance lessons."
+    }
+  ],
+  "follow_up_actions": [
+    "Ingest should split grouped findings into focused leaves by security boundary rather than by collector run.",
+    "Recheck GitHub advisories, release tags, and patch commits for fixed-version and remediation wording before durable synthesis.",
+    "Locate the primary Repeat-After-Me/ToFu research paper before writing durable framework-general claims.",
+    "Compare new Open WebUI and Network-AI findings against existing leaves to avoid duplicating older sibling boundaries."
+  ],
+  "counts": {
+    "qualifying_findings": 7,
+    "exclusions": 7,
+    "upstream_routing_notes": 7
+  },
+  "confidence_notes": [
+    "Highest-confidence items use direct NVD CVE API records with in-window published and lastModified timestamps.",
+    "AI Sec Watch was used for discovery and AI-specific classification, but the artifact treats linked NVD/GitHub/Patchstack/VulnCheck/CSO sources as authoritative for the underlying claims.",
+    "Repeat-After-Me is a concrete, dated security report but remains secondary until the primary paper is captured.",
+    "No private, proprietary, sensitive, PII, or company-internal local content was sent to external services."
+  ],
+  "validation": {
+    "status": "passed",
+    "commands": [
+      {
+        "command": "jq empty raw/2026-10-12/ai-security-wiki-topic-news-collector-2026-10-12T233447Z.json",
+        "result": "passed"
+      },
+      {
+        "command": "python3 -m json.tool raw/2026-10-12/ai-security-wiki-topic-news-collector-2026-10-12T233447Z.json",
+        "result": "passed"
+      }
+    ]
+  }
+}

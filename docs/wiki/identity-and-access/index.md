@@ -6,6 +6,9 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [Open WebUI disabled backend access](open-webui-disabled-backend-access.md)
+- [Agno AgentOS missing authentication](agno-agentos-missing-authentication.md)
+- [VideoWhisper Site Manager authorization bypass](videowhisper-site-manager-authorization-bypass.md)
 - [Abilityai Trinity Telegram Binding Authorization Bypass](abilityai-trinity-telegram-binding-authorization-bypass.md)
 - [Wanwu Agent App Cross-Tenant Authorization](wanwu-agent-app-cross-tenant-authorization.md)
 - [Wanwu AppKey and MCP Server Authorization](wanwu-appkey-and-mcp-server-authorization.md)
@@ -162,6 +165,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-13 with October 12 source-ingest leaves for Open WebUI disabled backend access, Agno AgentOS missing authentication, and VideoWhisper Site Manager authorization.
 
 - Updated on 2026-10-12 with October 11 source-ingest leaves for Abilityai Trinity Telegram binding, Wanwu cross-tenant app and AppKey/MCP authorization, AmoyLab Unla OAuth2 MCP authentication, Astron Agent workflow resume, and JeecgBoot third-party app configuration authorization.
 

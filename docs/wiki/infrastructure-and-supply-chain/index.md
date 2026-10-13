@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [Ollama Pull API Model-Name SSRF](ollama-pull-api-model-name-ssrf.md)
 - [mistral.rs Code-Exec Symlink Sandbox Escape](mistralrs-code-exec-symlink-sandbox-escape.md)
 
 - [Astron Agent LocalExecutor Tenant Root Code Execution](astron-agent-localexecutor-tenant-root-code-execution.md)
@@ -33,6 +34,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
+- [Ollama Pull API Model-Name SSRF](ollama-pull-api-model-name-ssrf.md)
 - [mistral.rs Code-Exec Symlink Sandbox Escape](mistralrs-code-exec-symlink-sandbox-escape.md)
 
 - [Banks Directory Prompt Registry Symlink Traversal](banks-directory-prompt-registry-symlink-traversal.md)
@@ -171,6 +173,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-13 with the October 12 Ollama Pull API model-name SSRF leaf.
 
 - Updated on 2026-10-12 with the October 11 mistral.rs code-exec symlink sandbox escape leaf.
 

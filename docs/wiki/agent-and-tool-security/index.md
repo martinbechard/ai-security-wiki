@@ -2,6 +2,10 @@
 
 ## Current Understanding
 
+- [Network-AI ClaudeHookBridge Deny-Pattern Bypass](network-ai-claudehookbridge-deny-pattern-bypass.md)
+- [Agno PythonTools Code Injection](agno-pythontools-code-injection.md)
+- [mac-shell-mcp Command Whitelist Bypass](mac-shell-mcp-command-whitelist-bypass.md)
+- [Repeat-After-Me Tool-Call Authorization Bypass](repeat-after-me-tool-call-authorization-bypass.md)
 - [MCP Kotlin WebSocket Frame Memory DoS](mcp-kotlin-websocket-frame-memory-dos.md)
 - [mcp-go StreamableHTTP Body DoS](mcp-go-streamable-http-body-dos.md)
 - [Open Computer Use Password-Manager Denylist Bypass](open-computer-use-password-manager-denylist-bypass.md)
@@ -89,6 +93,10 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [Network-AI ClaudeHookBridge Deny-Pattern Bypass](network-ai-claudehookbridge-deny-pattern-bypass.md)
+- [Agno PythonTools Code Injection](agno-pythontools-code-injection.md)
+- [mac-shell-mcp Command Whitelist Bypass](mac-shell-mcp-command-whitelist-bypass.md)
+- [Repeat-After-Me Tool-Call Authorization Bypass](repeat-after-me-tool-call-authorization-bypass.md)
 - [MCP Kotlin WebSocket Frame Memory DoS](mcp-kotlin-websocket-frame-memory-dos.md)
 - [mcp-go StreamableHTTP Body DoS](mcp-go-streamable-http-body-dos.md)
 - [Open Computer Use Password-Manager Denylist Bypass](open-computer-use-password-manager-denylist-bypass.md)
@@ -332,6 +340,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-13 with October 12 source-ingest leaves for Network-AI ClaudeHookBridge deny-pattern bypass, Agno PythonTools execution, mac-shell-mcp command-whitelist bypass, and Repeat-After-Me tool-call authorization bypass.
 
 - Updated on 2026-10-12 with October 11 source-ingest leaves for MCP Kotlin WebSocket DoS, mcp-go StreamableHTTP body DoS, Open Computer Use password-manager isolation, Nexting pinclaw prompt ingress, and Company Research Agent ReportLab SSRF.
 

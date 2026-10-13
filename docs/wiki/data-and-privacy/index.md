@@ -6,6 +6,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [Open WebUI OAuth Cookie Forwarding](open-webui-oauth-cookie-forwarding.md)
 - [mcp-remote Device-Code Token Channel Exposure](mcp-remote-device-code-token-channel-exposure.md)
 - [phpMyFAQ MCP FAQ Search ACL Bypass](phpmyfaq-mcp-faq-search-acl-bypass.md)
 - [Odoo MCP Field ACL Bypass](odoo-mcp-field-acl-bypass.md)
@@ -132,6 +133,8 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-13 with the October 12 Open WebUI OAuth cookie-forwarding session disclosure leaf.
 
 - Updated on 2026-10-12 with October 11 source-ingest leaves for mcp-remote device-code token channel exposure, phpMyFAQ and Odoo MCP ACL bypasses, and JeecgBoot AI app configuration disclosure.
 

@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [October 2026](2026-10.md) includes item-level October 12 source-ingest entries for Network-AI, vLLM, split Open WebUI session and provider-authorization boundaries, split Agno authentication and PythonTools execution, mac-shell-mcp, Ollama Pull API SSRF, VideoWhisper, Repeat-After-Me, and ToFu MCP server findings.
+
 - [October 2026](2026-10.md) includes item-level October 11 source-ingest entries for [Anthropic unintended model actions](../incident-response/anthropic-unintended-model-actions.md), MCP transport/token/ACL/OAuth issues, Open Computer Use, Abilityai Trinity, Nexting pinclaw, mistral.rs, Company Research Agent, Wanwu, Astron Agent, and JeecgBoot post-run authorization deltas.
 
 The active October 2026 digest currently includes item-level October 10, October 9, October 8, October 7, October 6, October 5, October 4, October 3, October 2, and October 1 security updates, with watcher-only repeats kept leaf-level unless they materially change a durable item.
@@ -19,6 +21,7 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 12 topic collector source](../../../raw/processed/2026-10-12/ai-security-wiki-topic-news-collector-2026-10-12T233447Z.json)
 - [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json)
 - [October 10 topic collector source](../../../raw/processed/2026-10-10/ai-security-wiki-topic-news-collector-2026-10-10T232615Z.json)
 - [October 9 topic collector source](../../../raw/processed/2026-10-09/ai-security-wiki-topic-news-collector-2026-10-09T233308Z.json)
@@ -130,6 +133,8 @@ The active digest records each independently changing security item or closely c
 - No open digest questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-13 after the October digest added item-level October 12 entries for Network-AI, vLLM, split Open WebUI and Agno boundaries, mac-shell-mcp, Ollama, VideoWhisper, Repeat-After-Me, and ToFu; ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 
 - Updated on 2026-10-12 after the October digest added item-level October 11 entries for Anthropic unintended model actions, split MCP transport/token/ACL/OAuth issues, Open Computer Use, Abilityai Trinity, Nexting pinclaw, mistral.rs, Company Research Agent, Wanwu, Astron Agent, and JeecgBoot post-run deltas; ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 

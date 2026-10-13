@@ -6,6 +6,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 
 ## Leaf Pages
 
+- [ToFu MCP Server Security Findings](tofu-mcp-server-security-findings.md)
 - [OpenAI GPT-6 October deployment safety](openai-gpt-6-october-deployment-safety.md)
 - [agentverus-scanner security decision input trust](agentverus-scanner-security-decision-input-trust.md)
 - [Cyber-evaluation containment](cyber-evaluation-containment.md)
@@ -58,6 +59,8 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-13 with the October 12 ToFu MCP server security findings assurance leaf from secondary reporting.
 
 - Updated on 2026-10-08 with OpenAI GPT-6 October deployment safety as vendor-provided assurance evidence, not broad model coverage; after source processing, recheck source links point to `raw/processed`.
 - Updated on 2026-09-30 with AP-attributed OpenAI release-pacing and agent-monitoring evidence folded into frontier model critical cyber release gates.

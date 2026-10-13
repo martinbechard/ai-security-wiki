@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [vLLM Audio Transcription Upload Heap Overflow DoS](vllm-audio-transcription-upload-heap-overflow-dos.md)
 - [Banks chat message role injection](banks-chat-message-role-injection.md)
 - [vLLM Harmony tool cache salt oracle](vllm-harmony-tool-cache-salt-oracle.md)
 - [vLLM multimodal cache desync DoS](vllm-multimodal-cache-desync-dos.md)
@@ -18,6 +19,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Leaf Pages
 
+- [vLLM Audio Transcription Upload Heap Overflow DoS](vllm-audio-transcription-upload-heap-overflow-dos.md)
 - [Banks chat message role injection](banks-chat-message-role-injection.md)
 - [vLLM Harmony tool cache salt oracle](vllm-harmony-tool-cache-salt-oracle.md)
 - [vLLM multimodal cache desync DoS](vllm-multimodal-cache-desync-dos.md)
@@ -82,6 +84,8 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-13 with the October 12 vLLM audio transcription upload heap-overflow DoS leaf.
 
 - Updated on 2026-10-09 with Banks chat-message role injection and watcher provenance for vLLM Harmony and multimodal cache advisories.
 - Updated on 2026-10-08 with vLLM Harmony tool cache salt oracle and vLLM multimodal cache desync DoS as separate privacy and availability boundaries; after source processing, recheck source links point to `raw/processed`.

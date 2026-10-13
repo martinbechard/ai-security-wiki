@@ -8,6 +8,17 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [agent-and-tool-security/network-ai-claudehookbridge-deny-pattern-bypass.md](agent-and-tool-security/network-ai-claudehookbridge-deny-pattern-bypass.md)
+- [model-and-prompt-security/vllm-audio-transcription-upload-heap-overflow-dos.md](model-and-prompt-security/vllm-audio-transcription-upload-heap-overflow-dos.md)
+- [data-and-privacy/open-webui-oauth-cookie-forwarding.md](data-and-privacy/open-webui-oauth-cookie-forwarding.md)
+- [identity-and-access/open-webui-disabled-backend-access.md](identity-and-access/open-webui-disabled-backend-access.md)
+- [identity-and-access/agno-agentos-missing-authentication.md](identity-and-access/agno-agentos-missing-authentication.md)
+- [agent-and-tool-security/agno-pythontools-code-injection.md](agent-and-tool-security/agno-pythontools-code-injection.md)
+- [agent-and-tool-security/mac-shell-mcp-command-whitelist-bypass.md](agent-and-tool-security/mac-shell-mcp-command-whitelist-bypass.md)
+- [infrastructure-and-supply-chain/ollama-pull-api-model-name-ssrf.md](infrastructure-and-supply-chain/ollama-pull-api-model-name-ssrf.md)
+- [identity-and-access/videowhisper-site-manager-authorization-bypass.md](identity-and-access/videowhisper-site-manager-authorization-bypass.md)
+- [agent-and-tool-security/repeat-after-me-tool-call-authorization-bypass.md](agent-and-tool-security/repeat-after-me-tool-call-authorization-bypass.md)
+- [testing-and-assurance/tofu-mcp-server-security-findings.md](testing-and-assurance/tofu-mcp-server-security-findings.md)
 - [incident-response/anthropic-unintended-model-actions.md](incident-response/anthropic-unintended-model-actions.md)
 - [agent-and-tool-security/mcp-kotlin-websocket-frame-memory-dos.md](agent-and-tool-security/mcp-kotlin-websocket-frame-memory-dos.md)
 - [data-and-privacy/mcp-remote-device-code-token-channel-exposure.md](data-and-privacy/mcp-remote-device-code-token-channel-exposure.md)
