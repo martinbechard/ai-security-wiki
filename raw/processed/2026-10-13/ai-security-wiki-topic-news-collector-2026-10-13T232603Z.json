@@ -1,0 +1,745 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-10-13T23:26:03Z",
+  "run_timestamp_local": "2026-10-13T19:26:03-0400",
+  "cutoff_window": {
+    "start_utc": "2026-10-11T23:26:03Z",
+    "end_utc": "2026-10-13T23:26:03Z",
+    "policy": "Include only public sources published or visibly updated inside the exact 48-hour window. Date-only lower-boundary items are excluded unless a visible timestamp proves they fall inside the window."
+  },
+  "repository_scope": {
+    "modified_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "wiki_pages_edited": [],
+    "raw_processed_edited": false
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security",
+    "MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "local_owner": "ai-security-wiki owns security-specific AI threat, control, incident, assurance, identity, privacy, and supply-chain implications.",
+    "upstream_ai_wiki": "Broad AI companies, model families, products, frameworks, MCP servers, and techniques belong in /Users/martinbechard/dev/ai-wiki.",
+    "upstream_ai_dev_wiki": "General AI-assisted development practices, coding-agent workflows, adoption practice, and development-governance patterns belong in /Users/martinbechard/dev/ai-dev-wiki.",
+    "checked_sources": [
+      "/Users/martinbechard/dev/ai-security-wiki/docs/wiki/federation.md",
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ]
+  },
+  "search_evidence": [
+    {
+      "source": "NVD CVE API",
+      "queries": [
+        "lastModStartDate=2026-10-11T23:26:03.000&lastModEndDate=2026-10-13T23:26:03.000&keywordSearch=AI",
+        "lastModStartDate=2026-10-11T23:26:03.000&lastModEndDate=2026-10-13T23:26:03.000&keywordSearch=MCP",
+        "lastModStartDate=2026-10-11T23:26:03.000&lastModEndDate=2026-10-13T23:26:03.000&keywordSearch=LLM",
+        "lastModStartDate=2026-10-11T23:26:03.000&lastModEndDate=2026-10-13T23:26:03.000&keywordSearch=prompt"
+      ],
+      "notes": "Primary machine-readable vulnerability search. Later broad keyword attempts for agent, model, machine learning, and artificial intelligence returned non-JSON service responses and were not used as authoritative evidence."
+    },
+    {
+      "source": "Public web search",
+      "queries": [
+        "AI security vulnerability October 13 2026 MCP CVE",
+        "site:nvd.nist.gov/vuln/detail AI MCP October 2026 vulnerability",
+        "site:github.com/advisories AI MCP prompt injection October 2026",
+        "AI security advisory October 12 2026 prompt injection agent",
+        "site:nist.gov AI security October 13 2026 NIST AI risk management cybersecurity",
+        "site:cisa.gov artificial intelligence security October 12 2026 advisory",
+        "site:owasp.org AI security October 2026 MCP",
+        "site:cloudsecurityalliance.org AI security October 13 2026"
+      ],
+      "notes": "Used only public sources. Search results with only recent crawl dates were excluded unless source-visible publication or update dates qualified."
+    },
+    {
+      "source": "Local duplicate check",
+      "queries": [
+        "rg over raw and docs/wiki for selected CVE identifiers and named products"
+      ],
+      "notes": "Previously processed October 8, October 10, October 11, and October 12 items were routed to exclusions when they were already synthesized or captured locally."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-109332",
+      "title": "Network-AI MCP SSE localhost-origin reflection",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109332",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-109332"
+      ],
+      "visible_dates": {
+        "published": "2026-10-12T17:17:29.020Z",
+        "last_modified": "2026-10-12T17:17:29.140Z"
+      },
+      "concise_factual_summary": "Network-AI before 5.15.2 reflects localhost Origins into Access-Control-Allow-Origin in its MCP SSE transport even when the server binds a non-loopback interface. A malicious page using a localhost Origin can read unauthenticated endpoints such as /health cross-origin.",
+      "evidence_classification": "NVD/CVE record; in-window publication; concrete MCP transport access-control weakness",
+      "affected_boundary_or_version": "Network-AI npm package before 5.15.2; McpSseServer._handleRequest origin validation boundary",
+      "why_it_matters_for_ai_security": "Localhost trust assumptions around MCP transports can expose agent service state to browser-origin attacks when development or agent servers are reachable beyond loopback.",
+      "named_entities": [
+        "Network-AI",
+        "MCP",
+        "Server-Sent Events",
+        "CVE-2026-109332"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad Network-AI product context belongs upstream if a durable product leaf is needed."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns the MCP origin-validation and browser attack-surface implication."
+        }
+      ],
+      "confidence_notes": "High confidence for timing and summary from NVD/CVE metadata; ingest should check the upstream package release or advisory for the exact patch commit."
+    },
+    {
+      "id": "CVE-2026-77363",
+      "title": "obsidian-tc local MCP DNS-rebinding exposure",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77363",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-77363"
+      ],
+      "visible_dates": {
+        "published": "2026-10-12T18:17:23.513Z",
+        "last_modified": "2026-10-13T17:17:45.943Z"
+      },
+      "concise_factual_summary": "obsidian-tc before 1.3.1 lacks Host, Origin, and DNS-rebinding validation in Streamable HTTP transport. With documented loopback auth.mode=none configuration, a malicious web page can send requests to the local MCP endpoint and gain unrestricted vault access as the http-local caller.",
+      "evidence_classification": "NVD/CVE record; in-window publication and update; concrete local MCP access-control issue",
+      "affected_boundary_or_version": "obsidian-tc before 1.3.1; local Streamable HTTP transport and Obsidian vault access boundary",
+      "why_it_matters_for_ai_security": "Agent-ready local knowledge servers need browser-origin and DNS-rebinding defenses because vault contents can become sensitive agent context and tool-accessible data.",
+      "named_entities": [
+        "obsidian-tc",
+        "Obsidian",
+        "MCP",
+        "CVE-2026-77363"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad Obsidian and obsidian-tc entity context is upstream-owned."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Local repository owns the DNS-rebinding and unauthenticated local-MCP exposure boundary."
+        }
+      ],
+      "confidence_notes": "High confidence from NVD/CVE timing and affected range; ingest should inspect the 1.3.1 fix for exact transport-control wording."
+    },
+    {
+      "id": "edgeever-mcp-stored-xss-cluster-2026-10-12",
+      "title": "EdgeEver MCP-token stored XSS cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109557",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109558",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-109557",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-109558"
+      ],
+      "visible_dates": {
+        "published": [
+          "2026-10-12T21:17:11.790Z",
+          "2026-10-12T21:17:11.940Z"
+        ],
+        "last_modified": [
+          "2026-10-12T21:17:11.790Z",
+          "2026-10-13T18:17:20.643Z"
+        ]
+      },
+      "concise_factual_summary": "EdgeEver through 1.112.0 allows stored XSS through notebook names or memo titles set via MCP tools. EdgeEver 1.6.0 through 1.112.0 also renders template Markdown as raw HTML in TemplatesPane, allowing an API or MCP token holder to run script when another user previews the template and access the privileged desktop bridge.",
+      "evidence_classification": "NVD/CVE records; in-window publication; concrete MCP-to-desktop bridge trust issue",
+      "affected_boundary_or_version": "EdgeEver through 1.112.0 for CVE-2026-109557; EdgeEver 1.6.0 through 1.112.0 for CVE-2026-109558",
+      "why_it_matters_for_ai_security": "MCP-writeable content becomes active UI code in a desktop application, converting agent or token access into session-token and privileged bridge exposure.",
+      "named_entities": [
+        "EdgeEver",
+        "MCP",
+        "CVE-2026-109557",
+        "CVE-2026-109558"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "General EdgeEver product context belongs upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns the MCP content-to-privileged-desktop boundary."
+        }
+      ],
+      "confidence_notes": "High confidence for CVE facts; fixed version was not visible in the fetched NVD snippets and should be reconciled during ingest."
+    },
+    {
+      "id": "nginx-ui-mcp-config-control-bypass-cluster-2026-10-12",
+      "title": "Nginx UI MCP configuration-control bypasses",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84317",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84318",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84319",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-84360",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84317",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84318",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84319",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-84360"
+      ],
+      "visible_dates": {
+        "published": [
+          "2026-10-12T21:17:22.213Z",
+          "2026-10-12T21:17:22.360Z",
+          "2026-10-12T21:17:22.517Z",
+          "2026-10-12T21:17:22.960Z"
+        ],
+        "last_modified": [
+          "2026-10-13T18:17:26.047Z",
+          "2026-10-13T15:17:50.383Z",
+          "2026-10-13T21:19:11.433Z",
+          "2026-10-13T14:31:20.750Z"
+        ]
+      },
+      "concise_factual_summary": "Nginx UI before 2.4.1 exposes MCP configuration paths that bypass controls enforced on comparable HTTP API paths. The cluster covers missing ValidateConfigFile checks for nginx_config_add, MCP ability to write restricted directives such as load_module and js_import, and bypass of the intended secure-session step-up control.",
+      "evidence_classification": "NVD/CVE records; in-window publication and updates; concrete MCP control-plane bypass cluster",
+      "affected_boundary_or_version": "Nginx UI before 2.4.1; /mcp and /mcp_message configuration mutation paths",
+      "why_it_matters_for_ai_security": "MCP interfaces can become alternate administrative control planes; security gates must be enforced uniformly across REST and agent tool paths.",
+      "named_entities": [
+        "Nginx UI",
+        "MCP",
+        "NJS",
+        "CVE-2026-84317",
+        "CVE-2026-84318",
+        "CVE-2026-84319",
+        "CVE-2026-84360"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad Nginx UI product context belongs upstream if needed."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "The local security lens is MCP parity for administrative validation and step-up authorization."
+        }
+      ],
+      "confidence_notes": "High confidence for affected range and fixed version from NVD/CVE records; durable synthesis should deduplicate the overlapping records into one control-plane bypass boundary."
+    },
+    {
+      "id": "CVE-2026-109402",
+      "title": "Conductor OSS MCPService SSRF",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109402",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-109402"
+      ],
+      "visible_dates": {
+        "published": "2026-10-13T12:17:13.807Z",
+        "last_modified": "2026-10-13T13:29:12.567Z"
+      },
+      "concise_factual_summary": "conductor-oss conductor 3.22.0 has an SSRF flaw in MCPService.listTools, where manipulating the mcpServer argument can make the MCP Service initiate attacker-chosen server-side requests. The public record says an exploit is available.",
+      "evidence_classification": "NVD/CVE record; in-window publication; public exploit noted",
+      "affected_boundary_or_version": "conductor-oss conductor 3.22.0; ai/src/main/java/org/conductoross/conductor/ai/mcp/MCPService.java listTools path",
+      "why_it_matters_for_ai_security": "MCP discovery and list-tools operations are often treated as metadata reads, but unvalidated server selection can cross network trust boundaries.",
+      "named_entities": [
+        "conductor-oss conductor",
+        "MCP",
+        "CVE-2026-109402"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "General Conductor OSS platform context belongs upstream if durable product coverage is needed."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns the MCP server-selection SSRF implication."
+        }
+      ],
+      "confidence_notes": "Medium-high confidence from NVD/CVE; vendor response and patch status were not confirmed in this run."
+    },
+    {
+      "id": "mcp-context-forge-auth-and-prompt-ui-cluster-2026-10-13",
+      "title": "MCP Context Forge admin and prompt UI flaws",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53709",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-53711",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53709",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-53711"
+      ],
+      "visible_dates": {
+        "published": [
+          "2026-10-13T15:17:44.873Z",
+          "2026-10-13T15:17:45.030Z"
+        ],
+        "last_modified": [
+          "2026-10-13T15:17:44.873Z",
+          "2026-10-13T16:17:21.167Z"
+        ]
+      },
+      "concise_factual_summary": "MCP Context Forge before 1.0.2 ships a known JWT_SECRET_KEY and can accept forged HS256 administrator tokens under platform-admin bootstrap conditions. Separately, MCP Admin UI 0.2.0 through 0.3.1 stores Global Prompts without sufficient output encoding, allowing authenticated stored XSS when another user views a saved prompt.",
+      "evidence_classification": "NVD/CVE records; in-window publication; concrete credential and prompt-management control failures",
+      "affected_boundary_or_version": "MCP Context Forge before 1.0.2 for CVE-2026-53709; MCP Context Forge Admin UI 0.2.0 through 0.3.1 for CVE-2026-53711",
+      "why_it_matters_for_ai_security": "An MCP gateway/admin platform is an authorization choke point for agent tools; default secrets and prompt-template XSS threaten both gateway administration and shared prompt governance.",
+      "named_entities": [
+        "MCP Context Forge",
+        "MCP Admin UI",
+        "Global Prompts",
+        "JWT",
+        "CVE-2026-53709",
+        "CVE-2026-53711"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad MCP Context Forge product context belongs upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns the gateway credential, admin bootstrap, and prompt-management security implications."
+        }
+      ],
+      "confidence_notes": "High confidence from same-day NVD/CVE records; ingest should inspect project release notes for operational rotation guidance."
+    },
+    {
+      "id": "CVE-2026-109375",
+      "title": "Vercel deepsec sandbox tarball link escape",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109375",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-109375"
+      ],
+      "visible_dates": {
+        "published": "2026-10-12T21:17:10.293Z",
+        "last_modified": "2026-10-13T16:17:17.180Z"
+      },
+      "concise_factual_summary": "Vercel deepsec 0.1.0 before 1.1.17 contains a link-following flaw in extractTarballLocally. Sandboxed code, including code controlled by a prompt-injected coding agent, can plant symbolic or hard links in result tarballs to write files outside the sandbox on the orchestrator host.",
+      "evidence_classification": "NVD/CVE record; in-window publication and update; concrete coding-agent sandbox escape",
+      "affected_boundary_or_version": "Vercel deepsec from 0.1.0 before 1.1.17; result tarball extraction boundary",
+      "why_it_matters_for_ai_security": "AI security scanners and coding-agent sandboxes must treat generated artifacts as hostile; tarball extraction is part of the agent supply chain and host isolation boundary.",
+      "named_entities": [
+        "Vercel deepsec",
+        "coding agent",
+        "sandbox",
+        "CVE-2026-109375"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General coding-agent scanner workflow context is upstream-owned by ai-dev-wiki."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns the sandbox escape and artifact extraction control boundary."
+        }
+      ],
+      "confidence_notes": "High confidence from NVD/CVE; ingest should verify whether the Vercel project has a public advisory or release note for 1.1.17."
+    },
+    {
+      "id": "CVE-2026-109561",
+      "title": "goose approval-mode bypass after Smart Approval",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109561",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-109561"
+      ],
+      "visible_dates": {
+        "published": "2026-10-12T21:17:12.403Z",
+        "last_modified": "2026-10-12T21:17:12.403Z"
+      },
+      "concise_factual_summary": "goose 1.28.0 before 1.44.0 can run tools without user approval in Manual Approval mode because read-only annotations persisted from Smart Approval mode are not cleared. Prompt-injected calls to tools annotated readOnlyHint:true can execute without prompting after the mode change.",
+      "evidence_classification": "NVD/CVE record; in-window publication; concrete delegated-authority failure",
+      "affected_boundary_or_version": "goose 1.28.0 before 1.44.0; PermissionInspector::inspect approval boundary",
+      "why_it_matters_for_ai_security": "Approval-state transitions are security-critical for autonomous agents; stale tool annotations can silently downgrade a user's selected manual approval policy.",
+      "named_entities": [
+        "goose",
+        "Smart Approval",
+        "Manual Approval",
+        "CVE-2026-109561"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General coding-agent approval workflow practice belongs upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns the approval-bypass and delegated-authority security analysis."
+        }
+      ],
+      "confidence_notes": "High confidence from NVD/CVE. Ingest should verify whether all affected tool categories were read-only or merely labeled read-only."
+    },
+    {
+      "id": "CVE-2026-57143",
+      "title": "PraisonAI SearxNG search SSRF via LLM-controlled URL",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-57143",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57143"
+      ],
+      "visible_dates": {
+        "published": "2026-10-12T19:16:39.110Z",
+        "last_modified": "2026-10-13T16:17:22.207Z"
+      },
+      "concise_factual_summary": "PraisonAI agents before 1.6.62 pass the LLM-controlled searxng_url parameter from searxng_search/search_web directly to requests.get without scheme, host, port, or resolved-address validation. Prompt-injected content can steer the default search tool to internal JSON services, probe internal ports, and attempt cloud-metadata access, with returned JSON entering agent context.",
+      "evidence_classification": "NVD/CVE record; in-window publication and update; concrete prompt-injection-to-SSRF issue",
+      "affected_boundary_or_version": "praisonaiagents before 1.6.62; SearxNG provider search tool URL boundary",
+      "why_it_matters_for_ai_security": "Search tools invoked by model output need destination controls because prompt injection can turn benign retrieval into internal reconnaissance and credential exposure.",
+      "named_entities": [
+        "PraisonAI",
+        "SearxNG",
+        "LLM-controlled URL",
+        "CVE-2026-57143"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad PraisonAI product and framework context belongs upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns prompt-injection, SSRF, and tool destination-control analysis."
+        }
+      ],
+      "confidence_notes": "High confidence from NVD/CVE. This is distinct from older PraisonAI MCP issues already seen in prior collector runs."
+    },
+    {
+      "id": "CVE-2026-109237",
+      "title": "Crawl4AI untrusted-config LLM credential exposure",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109237",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-109237"
+      ],
+      "visible_dates": {
+        "published": "2026-10-12T17:17:14.233Z",
+        "last_modified": "2026-10-12T17:17:14.233Z"
+      },
+      "concise_factual_summary": "Crawl4AI 0.9.0 before 0.9.4 lets non-admin API clients bypass the untrusted-config gate by wrapping forbidden config objects in dict-type wrappers. Attackers can submit a laundered LLMConfig with api_token set to an environment reference through /config/dump to read SECRET_KEY and provider keys, enabling admin JWT forgery.",
+      "evidence_classification": "NVD/CVE record; in-window publication; concrete LLM configuration and credential disclosure issue",
+      "affected_boundary_or_version": "Crawl4AI from 0.9.0 before 0.9.4; /config/dump and LLMConfig validation boundary",
+      "why_it_matters_for_ai_security": "Crawling and agent infrastructure often handles model provider credentials; config object validation must prevent untrusted clients from resolving secrets through LLM configuration paths.",
+      "named_entities": [
+        "Crawl4AI",
+        "LLMConfig",
+        "CVE-2026-109237"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad Crawl4AI tool context belongs upstream if needed."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns the credential exposure and config-gate bypass implication."
+        }
+      ],
+      "confidence_notes": "High confidence from NVD/CVE; ingest should verify fixed release notes and whether exploit preconditions require authenticated non-admin API access."
+    },
+    {
+      "id": "CVE-2026-108957",
+      "title": "TinyLLaVA Factory model-config code injection",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108957",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-108957"
+      ],
+      "visible_dates": {
+        "published": "2026-10-13T03:16:40.193Z",
+        "last_modified": "2026-10-13T13:29:12.567Z"
+      },
+      "concise_factual_summary": "TinyLLaVA_Factory up to commit 1abc6ac5e76a68d0fd087a071b56da968e69ca9b has code injection in TinyLlavaConfig._load_text_config through manipulation of llm_model_name_or_path. The public record says remote exploitation is possible and that exploit code has been released; the rolling-release project had not responded when recorded.",
+      "evidence_classification": "NVD/CVE record; in-window publication; public exploit noted; model artifact/configuration supply-chain issue",
+      "affected_boundary_or_version": "TinyLLaVA_Factory up to 1abc6ac5e76a68d0fd087a071b56da968e69ca9b; tinyllava/model/configuration_tinyllava.py",
+      "why_it_matters_for_ai_security": "Model-loading configuration is a supply-chain boundary; model or path parameters that execute code can compromise training, evaluation, and deployment hosts.",
+      "named_entities": [
+        "TinyLLaVA",
+        "TinyLLaVA_Factory",
+        "TinyLlavaConfig",
+        "CVE-2026-108957"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad TinyLLaVA model/project context belongs upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns model-configuration code injection and artifact supply-chain risk."
+        }
+      ],
+      "confidence_notes": "Medium-high confidence from NVD/CVE; no vendor patch was visible in the fetched record, so ingest should recheck project response."
+    },
+    {
+      "id": "CVE-2026-109429",
+      "title": "Mistral Vibe command permission gate bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109429",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-109429"
+      ],
+      "visible_dates": {
+        "published": "2026-10-13T19:18:33.250Z",
+        "last_modified": "2026-10-13T19:30:29.797Z"
+      },
+      "concise_factual_summary": "Mistral Vibe before 2.25.4 lets attackers bypass command permission gates by hiding command substitution inside a single-quoted variable value that static tree-sitter-bash parsing does not detect, then re-expanding it with bash prompt-transform behavior while only the trailing allowlisted command is classified.",
+      "evidence_classification": "NVD/CVE record; in-window publication; concrete coding-agent command-gate bypass",
+      "affected_boundary_or_version": "Mistral Vibe before 2.25.4; shell command permission classification boundary",
+      "why_it_matters_for_ai_security": "Agent terminal approval systems must classify what the shell will actually execute, not just the parsed allowlisted suffix seen by a static parser.",
+      "named_entities": [
+        "Mistral Vibe",
+        "tree-sitter-bash",
+        "bash promptvars",
+        "CVE-2026-109429"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General coding-agent command approval workflow belongs upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns command-gate bypass mechanics and shell execution risk."
+        }
+      ],
+      "confidence_notes": "High confidence from NVD/CVE timing; ingest should compare the fix against other shell-parser bypass leaves."
+    },
+    {
+      "id": "roo-code-command-approval-bypass-cluster-2026-10-13",
+      "title": "Roo Code command approval bypass cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110202",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110203",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110204",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110205",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110206",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-110202",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-110203",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-110204",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-110205",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-110206"
+      ],
+      "visible_dates": {
+        "published": [
+          "2026-10-13T19:18:43.543Z",
+          "2026-10-13T19:18:43.707Z",
+          "2026-10-13T19:18:43.857Z",
+          "2026-10-13T19:18:44.003Z",
+          "2026-10-13T19:18:44.157Z"
+        ],
+        "last_modified": [
+          "2026-10-13T19:30:29.797Z",
+          "2026-10-13T19:30:29.797Z",
+          "2026-10-13T20:17:27.347Z",
+          "2026-10-13T19:30:29.797Z",
+          "2026-10-13T19:30:29.797Z"
+        ]
+      },
+      "concise_factual_summary": "Roo Code through 3.54.0 has multiple command approval bypasses in getCommandDecision and parseCommandLine. The records describe redirect-prefix, quote-masking, parameter-expansion, glob-adjacent substitution, and command-position substitution paths that can make indirect prompt injection auto-approve denied shell commands when allowlist matching sees an allowed prefix such as echo.",
+      "evidence_classification": "NVD/CVE records; in-window publication; concrete agent command-approval bypass cluster",
+      "affected_boundary_or_version": "Roo Code through 3.54.0; command approval, parsing, and auto-approval boundary",
+      "why_it_matters_for_ai_security": "Command approval is a core containment control for coding agents. Parser mismatches give prompt-injected content a path from text into host shell execution.",
+      "named_entities": [
+        "Roo Code",
+        "getCommandDecision",
+        "parseCommandLine",
+        "indirect prompt injection",
+        "CVE-2026-110202",
+        "CVE-2026-110203",
+        "CVE-2026-110204",
+        "CVE-2026-110205",
+        "CVE-2026-110206"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General command-approval workflow and coding-agent practice belongs upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns the command parser mismatch and auto-approval security impact."
+        }
+      ],
+      "confidence_notes": "High confidence from same-day NVD/CVE records; durable synthesis should group these as one parser/approval boundary rather than five unrelated leaves unless fix details diverge."
+    },
+    {
+      "id": "csa-industrial-ai-distillation-cloud-security-2026-10-13",
+      "title": "CSA frames industrial AI distillation as cloud security failure",
+      "source_urls": [
+        "https://cloudsecurityalliance.org/blog/2026/10/13/industrial-scale-ai-distillation-is-a-cloud-security-failure",
+        "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a",
+        "https://media.defense.gov/2026/Sep/08/2003811758/-1/-1/0/CSI_AI-DISTILLATION-CHINA-AI-COMPANIES.PDF"
+      ],
+      "visible_dates": {
+        "published": "2026-10-13",
+        "referenced_primary_advisory_date": "2026-09-08"
+      },
+      "concise_factual_summary": "Cloud Security Alliance published a same-day analysis arguing that industrial-scale AI distillation is a cloud-security failure, citing CISA/NSA/FBI advisory AA26-251A. The article says extraction campaigns used legitimate-looking API calls, subscriptions, cloud services, third-party aggregators, proxy networks, and account pools rather than stealing weights, and it recommends cross-provider correlation across identity, billing, network, prompt, routing, and model telemetry.",
+      "evidence_classification": "Reputable security organization analysis; in-window publication; primary government advisory is older and used as background, not the in-window date anchor",
+      "affected_boundary_or_version": "Frontier-model access, API gateway, subscription, aggregator, model-routing, and abuse-detection boundaries",
+      "why_it_matters_for_ai_security": "It reframes model extraction as an ecosystem control-plane problem: provenance, high-volume automation registration, telemetry correlation, and cross-organization intelligence sharing are security controls for AI capability supply chains.",
+      "named_entities": [
+        "Cloud Security Alliance",
+        "CISA",
+        "NSA",
+        "FBI",
+        "AA26-251A",
+        "DeepSeek",
+        "Moonshot AI",
+        "MiniMax",
+        "Z.AI",
+        "Alibaba",
+        "StepFun"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad company/model ecosystem facts and distillation technique background belong upstream."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "This repository owns AI access-control, abuse-monitoring, provenance, and supply-chain security implications."
+        }
+      ],
+      "confidence_notes": "Medium-high confidence for CSA publication date and stated controls; named campaign claims should remain attributed to the September 8 government advisory during ingest."
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "CVE-2026-108953 mac-shell-mcp command whitelist bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108953"
+      ],
+      "visible_dates": {
+        "published": "2026-10-12T13:17:28.307Z",
+        "last_modified": "2026-10-13T17:17:22.523Z"
+      },
+      "reason": "Already captured and synthesized locally in raw/processed/2026-10-12 and docs/wiki/agent-and-tool-security/mac-shell-mcp-command-whitelist-bypass.md."
+    },
+    {
+      "title": "CVE-2026-109331 Network-AI ClaudeHookBridge deny-pattern bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-109331"
+      ],
+      "visible_dates": {
+        "published": "2026-10-12T17:17:28.843Z",
+        "last_modified": "2026-10-12T17:17:28.970Z"
+      },
+      "reason": "Already captured and synthesized locally in raw/processed/2026-10-12 and docs/wiki/agent-and-tool-security/network-ai-claudehookbridge-deny-pattern-bypass.md."
+    },
+    {
+      "title": "CVE-2026-108716, CVE-2026-108721, CVE-2026-108756, CVE-2026-108851, CVE-2026-108856, and CVE-2026-108861",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108716",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108721",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108756",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108851",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108856",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108861"
+      ],
+      "visible_dates": {
+        "published": "2026-10-11"
+      },
+      "reason": "Already captured in raw/processed/2026-10-11 and durable local leaves; excluded to avoid duplicate collector output."
+    },
+    {
+      "title": "Pydantic AI CVE-2026-107286 through CVE-2026-107294 cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107286",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107287",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107288",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107289",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107290",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107291",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-107293"
+      ],
+      "visible_dates": {
+        "published": "2026-10-08",
+        "last_modified": "2026-10-13"
+      },
+      "reason": "Concrete but already captured in October 8 and October 9 processed raw and synthesized durable Pydantic AI security leaves; current in-window updates are metadata updates, not new local findings."
+    },
+    {
+      "title": "JeecgBoot AI prompt and OCR authorization cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108605",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108664",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108665",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108666",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108667",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108668"
+      ],
+      "visible_dates": {
+        "published": "2026-10-10",
+        "last_modified": "2026-10-13"
+      },
+      "reason": "Already captured in raw/processed/2026-10-10 and synthesized in identity-and-access leaves; date-only publication is outside the exact current cutoff and latest changes appear to be metadata updates."
+    },
+    {
+      "title": "CVE-2025-68433 Zed project MCP configuration RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-68433",
+        "https://github.com/zed-industries/zed/security/advisories/GHSA-cv6g-cmxc-vw8j"
+      ],
+      "visible_dates": {
+        "published": "2025-12-17T23:16:05.453Z",
+        "last_modified": "2026-10-13T11:10:00.203Z"
+      },
+      "reason": "Security-relevant but first publication is stale; current NVD modification alone did not expose a new concrete security delta in this run."
+    },
+    {
+      "title": "CVE-2025-71336 Flowise Custom MCP RCE",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2025-71336"
+      ],
+      "visible_dates": {
+        "published": "2026-06-25T22:16:59.390Z",
+        "last_modified": "2026-10-12T21:10:00.227Z"
+      },
+      "reason": "Security-relevant but first publication is stale and no source-visible in-window patch or advisory delta was confirmed."
+    },
+    {
+      "title": "CVE-2026-92701 and CVE-2026-92702 Cocos AI attestation context failures",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-92701",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-92702"
+      ],
+      "visible_dates": {
+        "published": "2026-09-18T18:18:16Z",
+        "last_modified": "2026-10-13T21:19:57Z"
+      },
+      "reason": "AI security-relevant but stale first publication; current NVD modification did not provide enough visible new detail to treat as a fresh finding."
+    },
+    {
+      "title": "NIST AI security and AI RMF pages",
+      "source_urls": [
+        "https://www.nist.gov/artificial-intelligence/ai-research-security-and-resilience",
+        "https://www.nist.gov/itl/ai-risk-management-framework",
+        "https://www.nist.gov/news-events/news/2026/08/seeking-public-comment-using-artificial-intelligence-cybersecurity"
+      ],
+      "visible_dates": {
+        "published_or_updated": "Outside current two-day window or crawl-only"
+      },
+      "reason": "Useful governance context, but no source-visible publication or update date inside the exact current window with a concrete new AI security control change."
+    },
+    {
+      "title": "Reddit and secondary social posts about AI agent security",
+      "source_urls": [
+        "https://www.reddit.com/r/Action1/comments/1x58b32/october_2026_patch_tuesday_review/",
+        "https://www.reddit.com/r/AskNetsec/comments/1wzzy7d/cisos_how_are_you_securing_ai_agents/"
+      ],
+      "visible_dates": {
+        "published": "2026-10-13 or stale"
+      },
+      "reason": "Either not AI-specific enough, not primary evidence, or lacked a concrete source-backed security delta suitable for raw capture."
+    }
+  ],
+  "follow_up_actions": [
+    "During ingest, group overlapping Nginx UI and Roo Code records by control boundary rather than creating one durable leaf per CVE unless patches diverge.",
+    "Recheck vendor release notes or GitHub advisories for MCP Context Forge, Roo Code, Mistral Vibe, Vercel deepsec, and TinyLLaVA before durable synthesis.",
+    "Route broad product and framework background to ai-wiki or ai-dev-wiki while keeping only the security boundary, affected versions, mitigations, and assurance implications locally.",
+    "Treat CSA distillation analysis as reputable secondary analysis; retain attribution to the September 8 CISA/NSA/FBI advisory for named campaign claims."
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed"
+  },
+  "blockers": []
+}

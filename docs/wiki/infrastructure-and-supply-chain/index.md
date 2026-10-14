@@ -3,6 +3,8 @@
 ## Current Understanding
 
 - [Ollama Pull API Model-Name SSRF](ollama-pull-api-model-name-ssrf.md)
+- [Vercel deepsec Sandbox Tarball Link Escape](vercel-deepsec-sandbox-tarball-link-escape.md)
+- [TinyLLaVA Factory Model-Config Code Injection](tinyllava-factory-model-config-code-injection.md)
 - [mistral.rs Code-Exec Symlink Sandbox Escape](mistralrs-code-exec-symlink-sandbox-escape.md)
 
 - [Astron Agent LocalExecutor Tenant Root Code Execution](astron-agent-localexecutor-tenant-root-code-execution.md)
@@ -35,6 +37,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 ## Leaf Pages
 
 - [Ollama Pull API Model-Name SSRF](ollama-pull-api-model-name-ssrf.md)
+- [Vercel deepsec Sandbox Tarball Link Escape](vercel-deepsec-sandbox-tarball-link-escape.md)
+- [TinyLLaVA Factory Model-Config Code Injection](tinyllava-factory-model-config-code-injection.md)
 - [mistral.rs Code-Exec Symlink Sandbox Escape](mistralrs-code-exec-symlink-sandbox-escape.md)
 
 - [Banks Directory Prompt Registry Symlink Traversal](banks-directory-prompt-registry-symlink-traversal.md)
@@ -174,6 +178,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-10-14 with October 13 source-ingest leaves for Vercel deepsec tarball link escape and TinyLLaVA Factory model-config code injection.
 - Updated on 2026-10-13 with the October 12 Ollama Pull API model-name SSRF leaf.
 
 - Updated on 2026-10-12 with the October 11 mistral.rs code-exec symlink sandbox escape leaf.

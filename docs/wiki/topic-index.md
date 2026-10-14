@@ -8,6 +8,21 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [agent-and-tool-security/network-ai-mcp-sse-localhost-origin-reflection.md](agent-and-tool-security/network-ai-mcp-sse-localhost-origin-reflection.md)
+- [agent-and-tool-security/obsidian-tc-local-mcp-dns-rebinding-exposure.md](agent-and-tool-security/obsidian-tc-local-mcp-dns-rebinding-exposure.md)
+- [agent-and-tool-security/edgeever-mcp-token-stored-xss.md](agent-and-tool-security/edgeever-mcp-token-stored-xss.md)
+- [agent-and-tool-security/nginx-ui-mcp-configuration-control-bypasses.md](agent-and-tool-security/nginx-ui-mcp-configuration-control-bypasses.md)
+- [agent-and-tool-security/conductor-oss-mcpservice-ssrf.md](agent-and-tool-security/conductor-oss-mcpservice-ssrf.md)
+- [identity-and-access/mcp-context-forge-default-jwt-secret.md](identity-and-access/mcp-context-forge-default-jwt-secret.md)
+- [model-and-prompt-security/mcp-context-forge-global-prompts-stored-xss.md](model-and-prompt-security/mcp-context-forge-global-prompts-stored-xss.md)
+- [infrastructure-and-supply-chain/vercel-deepsec-sandbox-tarball-link-escape.md](infrastructure-and-supply-chain/vercel-deepsec-sandbox-tarball-link-escape.md)
+- [agent-and-tool-security/goose-approval-mode-bypass-after-smart-approval.md](agent-and-tool-security/goose-approval-mode-bypass-after-smart-approval.md)
+- [agent-and-tool-security/praisonai-searxng-search-ssrf.md](agent-and-tool-security/praisonai-searxng-search-ssrf.md)
+- [data-and-privacy/crawl4ai-untrusted-config-credential-exposure.md](data-and-privacy/crawl4ai-untrusted-config-credential-exposure.md)
+- [infrastructure-and-supply-chain/tinyllava-factory-model-config-code-injection.md](infrastructure-and-supply-chain/tinyllava-factory-model-config-code-injection.md)
+- [agent-and-tool-security/mistral-vibe-command-permission-gate-bypass.md](agent-and-tool-security/mistral-vibe-command-permission-gate-bypass.md)
+- [agent-and-tool-security/roo-code-command-approval-bypass-cluster.md](agent-and-tool-security/roo-code-command-approval-bypass-cluster.md)
+- [governance-and-compliance/industrial-ai-distillation-cloud-security-controls.md](governance-and-compliance/industrial-ai-distillation-cloud-security-controls.md)
 - [agent-and-tool-security/network-ai-claudehookbridge-deny-pattern-bypass.md](agent-and-tool-security/network-ai-claudehookbridge-deny-pattern-bypass.md)
 - [model-and-prompt-security/vllm-audio-transcription-upload-heap-overflow-dos.md](model-and-prompt-security/vllm-audio-transcription-upload-heap-overflow-dos.md)
 - [data-and-privacy/open-webui-oauth-cookie-forwarding.md](data-and-privacy/open-webui-oauth-cookie-forwarding.md)
@@ -689,6 +704,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-14 with October 13 security ingest leaves for Network-AI SSE origin reflection, obsidian-tc DNS rebinding, EdgeEver stored XSS, Nginx UI MCP control bypasses, Conductor OSS SSRF, split MCP Context Forge boundaries, Vercel deepsec tarball escape, goose approval bypass, PraisonAI SearxNG SSRF, Crawl4AI credential exposure, TinyLLaVA config injection, Mistral Vibe, Roo Code, and CSA distillation controls.
 - Updated on 2026-10-12 with October 11 source-ingest leaves for Anthropic unintended model actions, split MCP transport/token/ACL/OAuth issues, Open Computer Use, Abilityai Trinity, Nexting pinclaw, mistral.rs, Company Research Agent, Wanwu, Astron Agent, and JeecgBoot post-run authorization deltas.
 
 - Updated on 2026-10-11 with October 10 security ingest leaves for Suna, GenOffice, zotero-mcp, argocd-mcp, 1MCP Agent, InnoShop, Tabularis, mini-swe-agent, 9router, Phi, open-multi-agent, OpenLIT, TencentCloud Octop, Astron Agent, and split JeecgBoot AI authorization/privacy/token-disclosure boundaries.

@@ -3,6 +3,7 @@
 ## Current Understanding
 
 - [vLLM Audio Transcription Upload Heap Overflow DoS](vllm-audio-transcription-upload-heap-overflow-dos.md)
+- [MCP Context Forge Global Prompts Stored XSS](mcp-context-forge-global-prompts-stored-xss.md)
 - [Banks chat message role injection](banks-chat-message-role-injection.md)
 - [vLLM Harmony tool cache salt oracle](vllm-harmony-tool-cache-salt-oracle.md)
 - [vLLM multimodal cache desync DoS](vllm-multimodal-cache-desync-dos.md)
@@ -20,6 +21,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 ## Leaf Pages
 
 - [vLLM Audio Transcription Upload Heap Overflow DoS](vllm-audio-transcription-upload-heap-overflow-dos.md)
+- [MCP Context Forge Global Prompts Stored XSS](mcp-context-forge-global-prompts-stored-xss.md)
 - [Banks chat message role injection](banks-chat-message-role-injection.md)
 - [vLLM Harmony tool cache salt oracle](vllm-harmony-tool-cache-salt-oracle.md)
 - [vLLM multimodal cache desync DoS](vllm-multimodal-cache-desync-dos.md)
@@ -85,6 +87,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Maintenance Notes
 
+- Updated on 2026-10-14 with the MCP Context Forge Global Prompts stored-XSS leaf from the October 13 topic collector.
 - Updated on 2026-10-13 with the October 12 vLLM audio transcription upload heap-overflow DoS leaf.
 
 - Updated on 2026-10-09 with Banks chat-message role injection and watcher provenance for vLLM Harmony and multimodal cache advisories.

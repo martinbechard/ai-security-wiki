@@ -7,6 +7,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 ## Leaf Pages
 
 - [Open WebUI disabled backend access](open-webui-disabled-backend-access.md)
+- [MCP Context Forge Default JWT Secret](mcp-context-forge-default-jwt-secret.md)
 - [Agno AgentOS missing authentication](agno-agentos-missing-authentication.md)
 - [VideoWhisper Site Manager authorization bypass](videowhisper-site-manager-authorization-bypass.md)
 - [Abilityai Trinity Telegram Binding Authorization Bypass](abilityai-trinity-telegram-binding-authorization-bypass.md)
@@ -166,6 +167,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-10-14 with the MCP Context Forge default JWT secret leaf from the October 13 topic collector.
 - Updated on 2026-10-13 with October 12 source-ingest leaves for Open WebUI disabled backend access, Agno AgentOS missing authentication, and VideoWhisper Site Manager authorization.
 
 - Updated on 2026-10-12 with October 11 source-ingest leaves for Abilityai Trinity Telegram binding, Wanwu cross-tenant app and AppKey/MCP authorization, AmoyLab Unla OAuth2 MCP authentication, Astron Agent workflow resume, and JeecgBoot third-party app configuration authorization.

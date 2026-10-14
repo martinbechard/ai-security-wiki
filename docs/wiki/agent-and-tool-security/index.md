@@ -3,6 +3,15 @@
 ## Current Understanding
 
 - [Network-AI ClaudeHookBridge Deny-Pattern Bypass](network-ai-claudehookbridge-deny-pattern-bypass.md)
+- [Network-AI MCP SSE Localhost-Origin Reflection](network-ai-mcp-sse-localhost-origin-reflection.md)
+- [obsidian-tc Local MCP DNS-Rebinding Exposure](obsidian-tc-local-mcp-dns-rebinding-exposure.md)
+- [EdgeEver MCP-Token Stored XSS](edgeever-mcp-token-stored-xss.md)
+- [Nginx UI MCP Configuration-Control Bypasses](nginx-ui-mcp-configuration-control-bypasses.md)
+- [Conductor OSS MCPService SSRF](conductor-oss-mcpservice-ssrf.md)
+- [goose Approval-Mode Bypass After Smart Approval](goose-approval-mode-bypass-after-smart-approval.md)
+- [PraisonAI SearxNG Search SSRF](praisonai-searxng-search-ssrf.md)
+- [Mistral Vibe Command Permission-Gate Bypass](mistral-vibe-command-permission-gate-bypass.md)
+- [Roo Code Command Approval Bypass Cluster](roo-code-command-approval-bypass-cluster.md)
 - [Agno PythonTools Code Injection](agno-pythontools-code-injection.md)
 - [mac-shell-mcp Command Whitelist Bypass](mac-shell-mcp-command-whitelist-bypass.md)
 - [Repeat-After-Me Tool-Call Authorization Bypass](repeat-after-me-tool-call-authorization-bypass.md)
@@ -341,6 +350,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-14 with October 13 source-ingest leaves for Network-AI MCP SSE origin reflection, obsidian-tc DNS rebinding, EdgeEver stored XSS, Nginx UI MCP control-plane bypasses, Conductor OSS MCPService SSRF, goose approval-state bypass, PraisonAI SearxNG SSRF, Mistral Vibe command permission bypass, and Roo Code command approval bypasses.
 - Updated on 2026-10-13 with October 12 source-ingest leaves for Network-AI ClaudeHookBridge deny-pattern bypass, Agno PythonTools execution, mac-shell-mcp command-whitelist bypass, and Repeat-After-Me tool-call authorization bypass.
 
 - Updated on 2026-10-12 with October 11 source-ingest leaves for MCP Kotlin WebSocket DoS, mcp-go StreamableHTTP body DoS, Open Computer Use password-manager isolation, Nexting pinclaw prompt ingress, and Company Research Agent ReportLab SSRF.

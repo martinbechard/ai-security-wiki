@@ -7,6 +7,7 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 ## Leaf Pages
 
 - [AI compressed attack timelines controls](ai-compressed-attack-timelines-controls.md)
+- [Industrial AI distillation cloud security controls](industrial-ai-distillation-cloud-security-controls.md)
 - [aiir Policy Gate signature verification](aiir-policy-gate-signature-verification.md)
 - [Frontier AI voluntary assurance controls](frontier-ai-voluntary-assurance-controls.md)
 - [AI data center security standards](ai-data-center-security-standards.md)
@@ -50,6 +51,7 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 
 ## Maintenance Notes
 
+- Updated on 2026-10-14 with the industrial AI distillation cloud security controls leaf from the October 13 CSA analysis.
 - Updated on 2026-10-05 with the aiir Policy Gate signature-verification leaf and unsupported-product caveat.
 - Updated on 2026-10-03 with Microsoft Digital Defense Report evidence for AI-compressed attack timelines and continuous-control needs.
 - Updated on 2026-09-30 with frontier AI voluntary assurance controls around internal controls, external auditors, and board review.
