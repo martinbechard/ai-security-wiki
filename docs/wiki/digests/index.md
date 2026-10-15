@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [October 2026](2026-10.md) includes item-level October 14 security entries for model artifact and native model-parser weaknesses, obsidian-tc ACL boundaries, Kubeflow controller-token SSRF, Ludwig archive extraction, and official MCP SDK transport availability controls.
+
 - [October 2026](2026-10.md) includes item-level October 12 source-ingest entries for Network-AI, vLLM, split Open WebUI session and provider-authorization boundaries, split Agno authentication and PythonTools execution, mac-shell-mcp, Ollama Pull API SSRF, VideoWhisper, Repeat-After-Me, and ToFu MCP server findings.
 
 - [October 2026](2026-10.md) includes item-level October 11 source-ingest entries for [Anthropic unintended model actions](../incident-response/anthropic-unintended-model-actions.md), MCP transport/token/ACL/OAuth issues, Open Computer Use, Abilityai Trinity, Nexting pinclaw, mistral.rs, Company Research Agent, Wanwu, Astron Agent, and JeecgBoot post-run authorization deltas.
@@ -21,6 +23,7 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 14 topic collector source](../../../raw/processed/2026-10-14/ai-security-wiki-topic-news-collector-2026-10-14T233300Z.json)
 - [October 13 topic collector source](../../../raw/processed/2026-10-13/ai-security-wiki-topic-news-collector-2026-10-13T232603Z.json)
 - [October 12 topic collector source](../../../raw/processed/2026-10-12/ai-security-wiki-topic-news-collector-2026-10-12T233447Z.json)
 - [October 10 leaf update watch source](../../../raw/processed/2026-10-10/ai-security-wiki-leaf-update-watch-20261010T235801Z.json)

@@ -6,6 +6,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [obsidian-tc Bridge-Field ACL Disclosure](obsidian-tc-bridge-field-acl-disclosure.md)
 - [Open WebUI OAuth Cookie Forwarding](open-webui-oauth-cookie-forwarding.md)
 - [Crawl4AI Untrusted-Config Credential Exposure](crawl4ai-untrusted-config-credential-exposure.md)
 - [mcp-remote Device-Code Token Channel Exposure](mcp-remote-device-code-token-channel-exposure.md)
@@ -135,6 +136,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-10-14 with the October 14 obsidian-tc bridge-tool field-level ACL disclosure leaf.
 - Updated on 2026-10-14 with the Crawl4AI untrusted-config credential exposure leaf from the October 13 topic collector.
 - Updated on 2026-10-13 with the October 12 Open WebUI OAuth cookie-forwarding session disclosure leaf.
 

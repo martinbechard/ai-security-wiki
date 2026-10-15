@@ -2,6 +2,10 @@
 
 ## Current Understanding
 
+- [obsidian-tc Resolved-Path ACL Bypass](obsidian-tc-resolved-path-acl-bypass.md)
+- [MCP Java SDK Unbounded HTTP Request-Body DoS](mcp-java-sdk-unbounded-http-request-body-dos.md)
+- [MCP Python SDK HTTP Request-Body DoS](mcp-python-sdk-http-request-body-dos.md)
+- [MCP Python SDK Stateful Session-Retention DoS](mcp-python-sdk-stateful-session-retention-dos.md)
 - [Network-AI ClaudeHookBridge Deny-Pattern Bypass](network-ai-claudehookbridge-deny-pattern-bypass.md)
 - [Network-AI MCP SSE Localhost-Origin Reflection](network-ai-mcp-sse-localhost-origin-reflection.md)
 - [obsidian-tc Local MCP DNS-Rebinding Exposure](obsidian-tc-local-mcp-dns-rebinding-exposure.md)
@@ -350,6 +354,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-14 with October 14 source-ingest leaves for obsidian-tc resolved-path authorization and official MCP Java/Python HTTP and session availability boundaries.
 - Updated on 2026-10-14 with October 13 source-ingest leaves for Network-AI MCP SSE origin reflection, obsidian-tc DNS rebinding, EdgeEver stored XSS, Nginx UI MCP control-plane bypasses, Conductor OSS MCPService SSRF, goose approval-state bypass, PraisonAI SearxNG SSRF, Mistral Vibe command permission bypass, and Roo Code command approval bypasses.
 - Updated on 2026-10-13 with October 12 source-ingest leaves for Network-AI ClaudeHookBridge deny-pattern bypass, Agno PythonTools execution, mac-shell-mcp command-whitelist bypass, and Repeat-After-Me tool-call authorization bypass.
 

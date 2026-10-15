@@ -1,0 +1,172 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-10-14T23:33:00Z",
+  "run_timestamp_local": "2026-10-14T19:33:00-0400",
+  "cutoff_window": {
+    "start_utc": "2026-10-12T23:33:00Z",
+    "end_utc": "2026-10-14T23:33:00Z",
+    "policy": "Only public sources visibly published or updated inside this exact 48-hour window qualify. Date-only lower-boundary items were excluded when no time proved they were in-window."
+  },
+  "repository_scope": {
+    "modified_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "wiki_pages_edited": [],
+    "raw_processed_edited": false
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "federation_checked": [
+      "docs/wiki/federation.md",
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "local_owner": "ai-security-wiki owns security-specific AI threat, control, privacy, identity, supply-chain, and assurance implications.",
+    "upstream_ai_wiki": "Broad product, framework, model, SDK, and MCP catalog context belongs in ai-wiki.",
+    "upstream_ai_dev_wiki": "General coding-agent workflow and development-practice context belongs in ai-dev-wiki."
+  },
+  "search_evidence": [
+    {
+      "source": "NVD CVE API",
+      "queries": [
+        "keywordSearch=MCP; lastModStartDate=2026-10-12T23:25:00.000; lastModEndDate=2026-10-14T23:32:00.000",
+        "keywordSearch=agent; lastModStartDate=2026-10-12T23:25:00.000; lastModEndDate=2026-10-14T23:32:00.000",
+        "keywordSearch=LLM; lastModStartDate=2026-10-12T23:25:00.000; lastModEndDate=2026-10-14T23:32:00.000",
+        "keywordSearch=AI; lastModStartDate=2026-10-12T23:25:00.000; lastModEndDate=2026-10-14T23:32:00.000",
+        "keywordSearch=model and machine learning; pubStartDate=2026-10-12T23:25:00.000; pubEndDate=2026-10-14T23:32:00.000"
+      ],
+      "notes": "Primary public machine-readable vulnerability source. Local raw/processed and docs/wiki searches suppressed previously captured records."
+    },
+    {
+      "source": "Public web search",
+      "queries": [
+        "AI security vulnerability October 14 2026 MCP agent",
+        "site:nvd.nist.gov/vuln/detail 2026 MCP October 2026",
+        "site:github.com/advisories 2026 MCP October 2026",
+        "site:cisa.gov AI October 2026 cybersecurity"
+      ],
+      "notes": "Only source-visible dates were considered; search-result crawl recency alone was not treated as a qualifying date."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "model-artifact-loading-code-execution-cluster-2026-10-13",
+      "title": "Model artifact and configuration loading code-execution cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108943",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108944",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108945",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108958",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108962"
+      ],
+      "visible_dates": {
+        "published": ["2026-10-13T01:16:42Z", "2026-10-13T02:16:57Z", "2026-10-13T04:17:11Z"],
+        "last_modified": "2026-10-14T14:17:36Z"
+      },
+      "concise_factual_summary": "NVD records code-injection or unsafe-deserialization paths in ModelTC LightX2V tokenizer auto_map loading, RAE config-driven model instantiation, yolov13 AutoBackend model metadata, TensorLayer HDF5 graph loading, and ComfyUI Segment Anything GroundingDINO config loading. Several records state that public exploit information exists and lack a vendor-confirmed patched version.",
+      "evidence_classification": "NVD/CVE records; in-window publication or update; model artifact and configuration supply-chain compromise surface",
+      "affected_boundary_or_version": "LightX2V through 0.5.0; RAE through commit a4d18c4; yolov13 through commit 7328994; TensorLayer through 2.2.4; comfyui_segment_anything through commit ab63955.",
+      "why_it_matters_for_ai_security": "Model packages, tokenizer metadata, and configuration files must be treated as executable supply-chain inputs; provenance, isolation, and artifact validation gates are required before loading them.",
+      "named_entities": ["ModelTC LightX2V", "RAE", "yolov13", "TensorLayer", "ComfyUI Segment Anything", "CVE-2026-108943", "CVE-2026-108944", "CVE-2026-108945", "CVE-2026-108958", "CVE-2026-108962"],
+      "upstream_routing": [{"target": "ai-wiki", "reason": "Broad framework and model-loader catalog context is upstream-owned."}, {"target": "ai-security-wiki", "reason": "Unsafe artifact/configuration loading and supply-chain controls are local security concerns."}],
+      "confidence_notes": "High confidence in NVD timing and affected-boundary summaries; ingest should reconcile each rolling-release fix with repository commits or vendor releases."
+    },
+    {
+      "id": "model-loader-memory-safety-cluster-2026-10-14",
+      "title": "Model-loader malformed-artifact memory-safety cluster",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108954",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-108955",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110694",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110698"
+      ],
+      "visible_dates": {"published": ["2026-10-13T02:16:57Z", "2026-10-14T21:17:36Z", "2026-10-14T22:17:23Z"], "last_modified": "2026-10-14T22:17:23Z"},
+      "concise_factual_summary": "Recent NVD records describe remotely triggerable malformed-model or model-metadata handling flaws: sherpa-onnx vocabulary metadata buffer overflow, PowerInfer GGUF offset out-of-bounds read, OAID Tengine tmfile offset out-of-bounds read, and Praat's embedded whisper.cpp model dimension out-of-bounds write. Praat identifies patch a910d21 and version 7.0.03 as an initial remediation.",
+      "evidence_classification": "NVD/CVE records; in-window publication or update; model-runtime artifact parsing weaknesses",
+      "affected_boundary_or_version": "sherpa-onnx through 1.13.8; PowerInfer through commit 8bd56d6; Tengine through 1.12.0; Praat through 7.0.02 / embedded whisper.cpp model loader.",
+      "why_it_matters_for_ai_security": "Untrusted weights and model packs cross a high-risk native parsing boundary. Model distribution controls should include integrity verification, sandboxed conversion/loading, and prompt incident patch triage.",
+      "named_entities": ["sherpa-onnx", "PowerInfer", "GGUF", "OAID Tengine", "Praat", "whisper.cpp", "CVE-2026-108954", "CVE-2026-108955", "CVE-2026-110694", "CVE-2026-110698"],
+      "upstream_routing": [{"target": "ai-wiki", "reason": "Broad model runtime and artifact-format context belongs upstream."}, {"target": "ai-security-wiki", "reason": "Artifact parsing attack surface, mitigation, and release-gate implications are local."}],
+      "confidence_notes": "High confidence in published NVD descriptions; fixed-version and reachability claims need primary repository validation during ingest."
+    },
+    {
+      "id": "obsidian-tc-acl-field-filtering-cluster-2026-10-13",
+      "title": "obsidian-tc resolved-path ACL and bridge-field disclosure fixes",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-77361", "https://nvd.nist.gov/vuln/detail/CVE-2026-77362"],
+      "visible_dates": {"published": "2026-10-13T14:17:42Z", "last_modified": "2026-10-13T15:17:49Z"},
+      "concise_factual_summary": "obsidian-tc before 1.3.1 applied read ACL checks to lexical vault-relative paths while containment used resolved paths, enabling an in-vault symlink to expose denied files. Separate bridge tools leaked ACL-protected derived fields or template paths and function bodies. Version 1.3.1 applies ACL filtering to resolved paths and relevant returned fields.",
+      "evidence_classification": "NVD/CVE records; in-window publication; agent-ready local knowledge-server authorization fix",
+      "affected_boundary_or_version": "obsidian-tc before 1.3.1; vault read ACL, bridge-tool return-field, and template enumeration boundaries",
+      "why_it_matters_for_ai_security": "Tool authorization must apply after canonicalization and to every response field; agent-accessible local knowledge can otherwise leak beyond the caller's intended context scope.",
+      "named_entities": ["obsidian-tc", "Obsidian", "MCP", "CVE-2026-77361", "CVE-2026-77362"],
+      "upstream_routing": [{"target": "ai-wiki", "reason": "Broad Obsidian and MCP-server context is upstream-owned."}, {"target": "ai-security-wiki", "reason": "ACL canonicalization and tool-output disclosure are local security boundaries."}],
+      "confidence_notes": "High confidence from NVD publication and explicit fixed version; check the 1.3.1 release notes during ingest."
+    },
+    {
+      "id": "CVE-2026-110220",
+      "title": "Kubeflow Model Registry annotation SSRF and controller-token exposure",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-110220"],
+      "visible_dates": {"published": "2026-10-13T19:18:46Z", "last_modified": "2026-10-13T19:30:29Z"},
+      "concise_factual_summary": "Kubeflow Model Registry through 0.3.17 allows namespace users to point the modelregistry.kubeflow.org/url annotation at an attacker server. The NVD record says this can capture the controller ServiceAccount bearer token and enable modification of other tenants' InferenceServices cluster-wide.",
+      "evidence_classification": "NVD/CVE record; in-window publication; cloud model-registry SSRF and workload-identity exposure",
+      "affected_boundary_or_version": "Kubeflow Model Registry through 0.3.17; InferenceService annotation URL and controller ServiceAccount token boundary",
+      "why_it_matters_for_ai_security": "Model registry metadata must not be able to exfiltrate workload credentials; this is a direct AI deployment-plane least-privilege and egress-control failure.",
+      "named_entities": ["Kubeflow", "Model Registry", "InferenceService", "Kubernetes ServiceAccount", "CVE-2026-110220"],
+      "upstream_routing": [{"target": "ai-wiki", "reason": "Broad Kubeflow product background is upstream-owned."}, {"target": "ai-security-wiki", "reason": "Cloud deployment credential and SSRF boundary belongs locally."}],
+      "confidence_notes": "High confidence in NVD timing and impact statement; ingest should locate the upstream Kubeflow patch/advisory for remediation specifics."
+    },
+    {
+      "id": "CVE-2026-104103",
+      "title": "Ludwig dataset archive symlink extraction escape",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-104103"],
+      "visible_dates": {"published": "2026-10-14T18:17:21Z", "last_modified": "2026-10-14T18:17:21Z"},
+      "concise_factual_summary": "Ludwig before 0.17.8 validates tar member names but not symlink or hard-link entries before extraction, so a crafted dataset archive can write through a link outside the extraction directory. NVD also notes an os.path.commonprefix containment weakness and states 0.17.8 fixes the issue; Python 3.14's default tar data filter is not affected.",
+      "evidence_classification": "NVD/CVE record; in-window publication; dataset supply-chain path traversal",
+      "affected_boundary_or_version": "Ludwig before 0.17.8; configured archive URL / dataset extraction boundary on Python 3.12 and 3.13",
+      "why_it_matters_for_ai_security": "Training and evaluation dataset intake can become arbitrary host writes when archive provenance or extraction isolation is weak.",
+      "named_entities": ["Ludwig", "Python tarfile", "dataset archive", "CVE-2026-104103"],
+      "upstream_routing": [{"target": "ai-wiki", "reason": "Broad Ludwig framework context is upstream-owned."}, {"target": "ai-security-wiki", "reason": "Dataset intake and extraction controls are local supply-chain concerns."}],
+      "confidence_notes": "High confidence; version and Python-runtime conditions are directly stated in NVD."
+    },
+    {
+      "id": "official-mcp-sdk-http-memory-exhaustion-cluster-2026-10-14",
+      "title": "Official MCP Java and Python HTTP request-size exhaustion fixes",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-108395", "https://nvd.nist.gov/vuln/detail/CVE-2026-109527", "https://nvd.nist.gov/vuln/detail/CVE-2026-59951"],
+      "visible_dates": {"published": ["2026-10-14T17:18:29Z", "2026-10-14T18:17:27Z", "2026-10-14T18:17:33Z"], "last_modified": "2026-10-14T20:17:30Z"},
+      "concise_factual_summary": "NVD documents three availability controls for official MCP SDK Streamable HTTP deployments: Java SDK transports through mcp-core 2.0.0 read unbounded request bodies (fixed 0.18.4, 1.1.4, 2.0.1); Python SDK HTTP/session/OAuth routes buffer full bodies (fixed 1.29.1 and 2.1.0); and stateful Python SDK sessions can accumulate without expiry or aggregate limits (fixed 1.30.0 and 2.2.0).",
+      "evidence_classification": "NVD/CVE records; in-window publication; official MCP SDK transport availability and resource-control fixes",
+      "affected_boundary_or_version": "MCP Java SDK 0.8.0 through 2.0.0 depending on artifact line; MCP Python SDK pre-1.29.1 / 2.0.0a1 through 2.0.1; stateful Python sessions through 1.30.0 / 2.2.0.",
+      "why_it_matters_for_ai_security": "Public or broadly reachable MCP HTTP transports need explicit request-size, concurrency, session TTL, and upstream-proxy limits even where authentication exists.",
+      "named_entities": ["Model Context Protocol", "MCP Java SDK", "MCP Python SDK", "FastMCP", "CVE-2026-108395", "CVE-2026-109527", "CVE-2026-59951"],
+      "upstream_routing": [{"target": "ai-wiki", "reason": "MCP SDK catalog and protocol background are upstream-owned."}, {"target": "ai-security-wiki", "reason": "Transport exposure, resource limits, and patch gates are local security controls."}],
+      "confidence_notes": "High confidence in NVD patch lines; ingest should verify each affected range against primary release advisories."
+    }
+  ],
+  "exclusions": [
+    {"candidate": "Previously captured MCP, agent, and model CVEs modified in the window", "reason": "CVE-2026-107824, 108582, 108585, 108592, 108599, 108605, 108714, 108855, and the Omnigent series were already captured in raw/processed or durable local pages; NVD metadata refresh alone did not establish a distinct new security fact."},
+    {"candidate": "ToFu MCP fuzzing paper and derivative October 14 commentary", "reason": "The primary paper is visibly dated October 9, outside the exact 48-hour window; the later commentary did not supply an independently verifiable in-window security change."},
+    {"candidate": "Radware MCP Server Protection announcement", "reason": "Vendor product announcement describes intended controls but does not disclose a concrete vulnerability, incident, patch, or independently verified assurance result."},
+    {"candidate": "NetSPI Platform MCP announcement", "reason": "Ordinary product announcement without a concrete security delta."},
+    {"candidate": "Proofpoint just-in-time authorization article", "reason": "Opinion and control guidance without a newly disclosed concrete incident, vulnerability, patch, or assurance result."},
+    {"candidate": "CVE-2026-108375 through CVE-2026-108385 dataclasses-avroschema cluster", "reason": "General code-generation package weaknesses did not establish an AI-specific system boundary despite Pydantic support."},
+    {"candidate": "CVE-2026-110734 through CVE-2026-110736 Godot resource-loader records", "reason": "Game-engine artifacts have no demonstrated AI-system relevance in the public record."},
+    {"candidate": "Date-only or crawler-recency-only web results", "reason": "The exact time qualification policy rejects sources without a visible in-window publication or update timestamp."}
+  ],
+  "follow_up_actions": [
+    "During ingest, reconcile each NVD-only finding with vendor advisories, release tags, and fixed versions before durable guidance.",
+    "Treat the model artifact cluster as separate leaves by package and boundary rather than one permanent omnibus page.",
+    "Apply MCP HTTP request-size, session-count, and idle-expiry controls at both SDK and reverse-proxy layers while evaluating upgrade paths.",
+    "Route broad SDK, framework, and product background to ai-wiki; retain only local security implications in this repository."
+  ],
+  "blockers": [],
+  "validation": {"jq_empty": "passed", "python_json_tool": "passed", "git_diff_check": "passed"}
+}

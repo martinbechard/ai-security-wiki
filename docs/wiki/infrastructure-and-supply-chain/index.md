@@ -2,6 +2,17 @@
 
 ## Current Understanding
 
+- [LightX2V Tokenizer auto_map Code Execution](lightx2v-tokenizer-auto-map-code-execution.md)
+- [RAE Config Model Instantiation Code Execution](rae-config-model-instantiation-code-execution.md)
+- [yolov13 AutoBackend Model-Metadata Code Execution](yolov13-autobackend-model-metadata-code-execution.md)
+- [TensorLayer HDF5 Graph-Loading Unsafe Deserialization](tensorlayer-hdf5-graph-loading-code-execution.md)
+- [ComfyUI Segment Anything GroundingDINO Config Code Execution](comfyui-segment-anything-groundingdino-config-code-execution.md)
+- [sherpa-onnx Vocabulary-Metadata Buffer Overflow](sherpa-onnx-vocabulary-metadata-buffer-overflow.md)
+- [PowerInfer GGUF Offset Out-of-Bounds Read](powerinfer-gguf-offset-out-of-bounds-read.md)
+- [OAID Tengine tmfile Offset Out-of-Bounds Read](oaid-tengine-tmfile-offset-out-of-bounds-read.md)
+- [Praat whisper.cpp Model-Dimension Out-of-Bounds Write](praat-whispercpp-model-dimension-out-of-bounds-write.md)
+- [Kubeflow Model Registry Annotation SSRF and Token Exposure](kubeflow-model-registry-annotation-ssrf-token-exposure.md)
+- [Ludwig Dataset Archive Symlink Extraction Escape](ludwig-dataset-archive-symlink-extraction-escape.md)
 - [Ollama Pull API Model-Name SSRF](ollama-pull-api-model-name-ssrf.md)
 - [Vercel deepsec Sandbox Tarball Link Escape](vercel-deepsec-sandbox-tarball-link-escape.md)
 - [TinyLLaVA Factory Model-Config Code Injection](tinyllava-factory-model-config-code-injection.md)
@@ -36,6 +47,17 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
+- [LightX2V Tokenizer auto_map Code Execution](lightx2v-tokenizer-auto-map-code-execution.md)
+- [RAE Config Model Instantiation Code Execution](rae-config-model-instantiation-code-execution.md)
+- [yolov13 AutoBackend Model-Metadata Code Execution](yolov13-autobackend-model-metadata-code-execution.md)
+- [TensorLayer HDF5 Graph-Loading Unsafe Deserialization](tensorlayer-hdf5-graph-loading-code-execution.md)
+- [ComfyUI Segment Anything GroundingDINO Config Code Execution](comfyui-segment-anything-groundingdino-config-code-execution.md)
+- [sherpa-onnx Vocabulary-Metadata Buffer Overflow](sherpa-onnx-vocabulary-metadata-buffer-overflow.md)
+- [PowerInfer GGUF Offset Out-of-Bounds Read](powerinfer-gguf-offset-out-of-bounds-read.md)
+- [OAID Tengine tmfile Offset Out-of-Bounds Read](oaid-tengine-tmfile-offset-out-of-bounds-read.md)
+- [Praat whisper.cpp Model-Dimension Out-of-Bounds Write](praat-whispercpp-model-dimension-out-of-bounds-write.md)
+- [Kubeflow Model Registry Annotation SSRF and Token Exposure](kubeflow-model-registry-annotation-ssrf-token-exposure.md)
+- [Ludwig Dataset Archive Symlink Extraction Escape](ludwig-dataset-archive-symlink-extraction-escape.md)
 - [Ollama Pull API Model-Name SSRF](ollama-pull-api-model-name-ssrf.md)
 - [Vercel deepsec Sandbox Tarball Link Escape](vercel-deepsec-sandbox-tarball-link-escape.md)
 - [TinyLLaVA Factory Model-Config Code Injection](tinyllava-factory-model-config-code-injection.md)
@@ -178,6 +200,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-10-14 with October 14 source-ingest leaves for model artifact loading execution, malformed model-parser memory safety, Kubeflow Model Registry annotation SSRF, and Ludwig dataset archive containment.
 - Updated on 2026-10-14 with October 13 source-ingest leaves for Vercel deepsec tarball link escape and TinyLLaVA Factory model-config code injection.
 - Updated on 2026-10-13 with the October 12 Ollama Pull API model-name SSRF leaf.
 

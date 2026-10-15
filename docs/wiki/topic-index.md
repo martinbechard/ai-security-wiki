@@ -8,6 +8,22 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [infrastructure-and-supply-chain/lightx2v-tokenizer-auto-map-code-execution.md](infrastructure-and-supply-chain/lightx2v-tokenizer-auto-map-code-execution.md)
+- [infrastructure-and-supply-chain/rae-config-model-instantiation-code-execution.md](infrastructure-and-supply-chain/rae-config-model-instantiation-code-execution.md)
+- [infrastructure-and-supply-chain/yolov13-autobackend-model-metadata-code-execution.md](infrastructure-and-supply-chain/yolov13-autobackend-model-metadata-code-execution.md)
+- [infrastructure-and-supply-chain/tensorlayer-hdf5-graph-loading-code-execution.md](infrastructure-and-supply-chain/tensorlayer-hdf5-graph-loading-code-execution.md)
+- [infrastructure-and-supply-chain/comfyui-segment-anything-groundingdino-config-code-execution.md](infrastructure-and-supply-chain/comfyui-segment-anything-groundingdino-config-code-execution.md)
+- [infrastructure-and-supply-chain/sherpa-onnx-vocabulary-metadata-buffer-overflow.md](infrastructure-and-supply-chain/sherpa-onnx-vocabulary-metadata-buffer-overflow.md)
+- [infrastructure-and-supply-chain/powerinfer-gguf-offset-out-of-bounds-read.md](infrastructure-and-supply-chain/powerinfer-gguf-offset-out-of-bounds-read.md)
+- [infrastructure-and-supply-chain/oaid-tengine-tmfile-offset-out-of-bounds-read.md](infrastructure-and-supply-chain/oaid-tengine-tmfile-offset-out-of-bounds-read.md)
+- [infrastructure-and-supply-chain/praat-whispercpp-model-dimension-out-of-bounds-write.md](infrastructure-and-supply-chain/praat-whispercpp-model-dimension-out-of-bounds-write.md)
+- [agent-and-tool-security/obsidian-tc-resolved-path-acl-bypass.md](agent-and-tool-security/obsidian-tc-resolved-path-acl-bypass.md)
+- [data-and-privacy/obsidian-tc-bridge-field-acl-disclosure.md](data-and-privacy/obsidian-tc-bridge-field-acl-disclosure.md)
+- [infrastructure-and-supply-chain/kubeflow-model-registry-annotation-ssrf-token-exposure.md](infrastructure-and-supply-chain/kubeflow-model-registry-annotation-ssrf-token-exposure.md)
+- [infrastructure-and-supply-chain/ludwig-dataset-archive-symlink-extraction-escape.md](infrastructure-and-supply-chain/ludwig-dataset-archive-symlink-extraction-escape.md)
+- [agent-and-tool-security/mcp-java-sdk-unbounded-http-request-body-dos.md](agent-and-tool-security/mcp-java-sdk-unbounded-http-request-body-dos.md)
+- [agent-and-tool-security/mcp-python-sdk-http-request-body-dos.md](agent-and-tool-security/mcp-python-sdk-http-request-body-dos.md)
+- [agent-and-tool-security/mcp-python-sdk-stateful-session-retention-dos.md](agent-and-tool-security/mcp-python-sdk-stateful-session-retention-dos.md)
 - [agent-and-tool-security/network-ai-mcp-sse-localhost-origin-reflection.md](agent-and-tool-security/network-ai-mcp-sse-localhost-origin-reflection.md)
 - [agent-and-tool-security/obsidian-tc-local-mcp-dns-rebinding-exposure.md](agent-and-tool-security/obsidian-tc-local-mcp-dns-rebinding-exposure.md)
 - [agent-and-tool-security/edgeever-mcp-token-stored-xss.md](agent-and-tool-security/edgeever-mcp-token-stored-xss.md)
