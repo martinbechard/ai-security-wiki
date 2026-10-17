@@ -6,6 +6,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [NetLicensing MCP Path Traversal Token Disclosure](netlicensing-mcp-path-traversal-token-disclosure.md)
+- [Azure SRE Agent Missing Authorization](azure-sre-agent-missing-authorization.md)
 - [Open WebUI disabled backend access](open-webui-disabled-backend-access.md)
 - [MCP Context Forge Default JWT Secret](mcp-context-forge-default-jwt-secret.md)
 - [Agno AgentOS missing authentication](agno-agentos-missing-authentication.md)
@@ -68,6 +70,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [9Router login lockout bypass](9router-login-lockout-bypass.md)
 - [MCP Toolbox SDK Python Google ID token audience confusion](mcp-toolbox-sdk-python-google-id-token-audience-confusion.md)
 - [WSP MCP AI Agents Connector broken access control](wsp-mcp-ai-agents-connector-broken-access-control.md)
+- [WSP MCP Unpublished Content Disclosure](wsp-mcp-unpublished-content-disclosure.md)
 - [WordPress AI Engine unauthenticated IDOR](wordpress-ai-engine-unauthenticated-idor.md)
 - [9Router public LLM API auth bypass](9router-public-llm-api-auth-bypass.md)
 - [MCP Atlassian toolset authorization bypass](mcp-atlassian-toolset-authorization-bypass.md)
@@ -167,6 +170,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-10-16 with the WSP MCP unpublished-content authorization boundary from the October 16 source ingest.
+- Updated on 2026-10-15 with NetLicensing MCP path/token disclosure and Azure SRE Agent authorization leaves from the October 15 source ingest.
 - Updated on 2026-10-14 with the MCP Context Forge default JWT secret leaf from the October 13 topic collector.
 - Updated on 2026-10-13 with October 12 source-ingest leaves for Open WebUI disabled backend access, Agno AgentOS missing authentication, and VideoWhisper Site Manager authorization.
 

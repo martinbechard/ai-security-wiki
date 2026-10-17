@@ -257,7 +257,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [identity-and-access/mcp-toolbox-sdk-python-google-id-token-audience-confusion.md](identity-and-access/mcp-toolbox-sdk-python-google-id-token-audience-confusion.md)
 - [model-and-prompt-security/ibm-ftm-ai-agent-rag-poisoning.md](model-and-prompt-security/ibm-ftm-ai-agent-rag-poisoning.md)
 - [data-and-privacy/kotaemon-multi-user-chat-authorization-bypass.md](data-and-privacy/kotaemon-multi-user-chat-authorization-bypass.md)
-- [identity-and-access/wsp-mcp-ai-agents-connector-broken-access-control.md](identity-and-access/wsp-mcp-ai-agents-connector-broken-access-control.md)
+- [identity-and-access/wsp-mcp-unpublished-content-disclosure.md](identity-and-access/wsp-mcp-unpublished-content-disclosure.md)
 - [identity-and-access/wordpress-ai-engine-unauthenticated-idor.md](identity-and-access/wordpress-ai-engine-unauthenticated-idor.md)
 - [data-and-privacy/openclaw-ios-deep-link-key-log-disclosure.md](data-and-privacy/openclaw-ios-deep-link-key-log-disclosure.md)
 - [identity-and-access/9router-public-llm-api-auth-bypass.md](identity-and-access/9router-public-llm-api-auth-bypass.md)
@@ -447,6 +447,14 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [data-and-privacy/sqlbot-previewdata-sql-file-disclosure.md](data-and-privacy/sqlbot-previewdata-sql-file-disclosure.md)
 - [data-and-privacy/ai-agent-automation-memory-ownership-bypass.md](data-and-privacy/ai-agent-automation-memory-ownership-bypass.md)
 - [identity-and-access/netlicensing-mcp-server-operator-key-fallback.md](identity-and-access/netlicensing-mcp-server-operator-key-fallback.md)
+- [identity-and-access/netlicensing-mcp-path-traversal-token-disclosure.md](identity-and-access/netlicensing-mcp-path-traversal-token-disclosure.md)
+- [identity-and-access/wsp-mcp-ai-agents-connector-broken-access-control.md](identity-and-access/wsp-mcp-ai-agents-connector-broken-access-control.md)
+- [identity-and-access/azure-sre-agent-missing-authorization.md](identity-and-access/azure-sre-agent-missing-authorization.md)
+- [agent-and-tool-security/intentkit-narrowed-tool-authorization-bypass.md](agent-and-tool-security/intentkit-narrowed-tool-authorization-bypass.md)
+- [agent-and-tool-security/claude-agent-sdk-resume-argument-injection.md](agent-and-tool-security/claude-agent-sdk-resume-argument-injection.md)
+- [model-and-prompt-security/moviepilot-prompt-injection-command-execution.md](model-and-prompt-security/moviepilot-prompt-injection-command-execution.md)
+- [infrastructure-and-supply-chain/pipecat-development-runner-session-exposure.md](infrastructure-and-supply-chain/pipecat-development-runner-session-exposure.md)
+- [infrastructure-and-supply-chain/junie-cli-untrusted-project-mcp-configuration-execution.md](infrastructure-and-supply-chain/junie-cli-untrusted-project-mcp-configuration-execution.md)
 - [identity-and-access/meta-ads-mcp-operator-token-fallback.md](identity-and-access/meta-ads-mcp-operator-token-fallback.md)
 - [identity-and-access/arcadedb-ai-chat-query-database-authorization.md](identity-and-access/arcadedb-ai-chat-query-database-authorization.md)
 - [identity-and-access/online-scheduling-ai-booking-conversation-authorization.md](identity-and-access/online-scheduling-ai-booking-conversation-authorization.md)
@@ -720,6 +728,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-16 with WSP MCP unpublished-content access, Junie CLI project-configuration execution, and Claude Agent SDK resume argument injection security leaves.
+- Updated on 2026-10-15 with durable leaves for NetLicensing MCP path/token disclosure, Azure SRE Agent authorization, IntentKit request-scoped tool dispatch, MoviePilot prompt-driven command execution, and Pipecat development-runner exposure.
 - Updated on 2026-10-14 with October 13 security ingest leaves for Network-AI SSE origin reflection, obsidian-tc DNS rebinding, EdgeEver stored XSS, Nginx UI MCP control bypasses, Conductor OSS SSRF, split MCP Context Forge boundaries, Vercel deepsec tarball escape, goose approval bypass, PraisonAI SearxNG SSRF, Crawl4AI credential exposure, TinyLLaVA config injection, Mistral Vibe, Roo Code, and CSA distillation controls.
 - Updated on 2026-10-12 with October 11 source-ingest leaves for Anthropic unintended model actions, split MCP transport/token/ACL/OAuth issues, Open Computer Use, Abilityai Trinity, Nexting pinclaw, mistral.rs, Company Research Agent, Wanwu, Astron Agent, and JeecgBoot post-run authorization deltas.
 

@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [MoviePilot Prompt-Injection Command Execution](moviepilot-prompt-injection-command-execution.md)
 - [vLLM Audio Transcription Upload Heap Overflow DoS](vllm-audio-transcription-upload-heap-overflow-dos.md)
 - [MCP Context Forge Global Prompts Stored XSS](mcp-context-forge-global-prompts-stored-xss.md)
 - [Banks chat message role injection](banks-chat-message-role-injection.md)
@@ -20,6 +21,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Leaf Pages
 
+- [MoviePilot Prompt-Injection Command Execution](moviepilot-prompt-injection-command-execution.md)
 - [vLLM Audio Transcription Upload Heap Overflow DoS](vllm-audio-transcription-upload-heap-overflow-dos.md)
 - [MCP Context Forge Global Prompts Stored XSS](mcp-context-forge-global-prompts-stored-xss.md)
 - [Banks chat message role injection](banks-chat-message-role-injection.md)
@@ -87,6 +89,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Maintenance Notes
 
+- Updated on 2026-10-15 with the MoviePilot untrusted-metadata-to-command-execution leaf from the October 15 source ingest.
 - Updated on 2026-10-14 with the MCP Context Forge Global Prompts stored-XSS leaf from the October 13 topic collector.
 - Updated on 2026-10-13 with the October 12 vLLM audio transcription upload heap-overflow DoS leaf.
 

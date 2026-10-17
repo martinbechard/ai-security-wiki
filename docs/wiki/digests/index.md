@@ -2,6 +2,10 @@
 
 ## Current Understanding
 
+- [October 2026](2026-10.md) includes item-level October 16 security entries for [WSP MCP unpublished-content access](../identity-and-access/wsp-mcp-unpublished-content-disclosure.md), [Junie CLI project-configuration execution](../infrastructure-and-supply-chain/junie-cli-untrusted-project-mcp-configuration-execution.md), and [Claude Agent SDK resume argument injection](../agent-and-tool-security/claude-agent-sdk-resume-argument-injection.md).
+
+- [October 2026](2026-10.md) includes item-level October 15 security entries for NetLicensing MCP token disclosure, Azure SRE Agent authorization, IntentKit tool dispatch, MoviePilot prompt injection, and Pipecat development-runner exposure.
+
 - [October 2026](2026-10.md) includes item-level October 14 security entries for model artifact and native model-parser weaknesses, obsidian-tc ACL boundaries, Kubeflow controller-token SSRF, Ludwig archive extraction, and official MCP SDK transport availability controls.
 
 - [October 2026](2026-10.md) includes item-level October 12 source-ingest entries for Network-AI, vLLM, split Open WebUI session and provider-authorization boundaries, split Agno authentication and PythonTools execution, mac-shell-mcp, Ollama Pull API SSRF, VideoWhisper, Repeat-After-Me, and ToFu MCP server findings.
@@ -138,6 +142,8 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-16 for October coverage of WSP MCP access control, Junie CLI configuration execution, and Claude Agent SDK argument injection.
+- Updated on 2026-10-15 for October coverage of NetLicensing token disclosure, Azure SRE Agent authorization, IntentKit tool authorization, MoviePilot prompt injection, and Pipecat development-runner exposure.
 - Updated on 2026-10-14 after the October digest added item-level October 13 entries for Network-AI, obsidian-tc, EdgeEver, Nginx UI, Conductor OSS, split MCP Context Forge boundaries, Vercel deepsec, goose, PraisonAI, Crawl4AI, TinyLLaVA, Mistral Vibe, Roo Code, and CSA distillation controls; ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-10-13 after the October digest added item-level October 12 entries for Network-AI, vLLM, split Open WebUI and Agno boundaries, mac-shell-mcp, Ollama, VideoWhisper, Repeat-After-Me, and ToFu; ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.
 

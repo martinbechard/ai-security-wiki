@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [Claude Agent SDK Resume Argument Injection](claude-agent-sdk-resume-argument-injection.md)
+- [IntentKit Narrowed-Tool Authorization Bypass](intentkit-narrowed-tool-authorization-bypass.md)
 - [obsidian-tc Resolved-Path ACL Bypass](obsidian-tc-resolved-path-acl-bypass.md)
 - [MCP Java SDK Unbounded HTTP Request-Body DoS](mcp-java-sdk-unbounded-http-request-body-dos.md)
 - [MCP Python SDK HTTP Request-Body DoS](mcp-python-sdk-http-request-body-dos.md)
@@ -106,6 +108,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [Claude Agent SDK Resume Argument Injection](claude-agent-sdk-resume-argument-injection.md)
 - [Network-AI ClaudeHookBridge Deny-Pattern Bypass](network-ai-claudehookbridge-deny-pattern-bypass.md)
 - [Agno PythonTools Code Injection](agno-pythontools-code-injection.md)
 - [mac-shell-mcp Command Whitelist Bypass](mac-shell-mcp-command-whitelist-bypass.md)
@@ -354,6 +357,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-16 with Claude Agent SDK resume argument injection from the October 16 source ingest.
+- Updated on 2026-10-15 with the IntentKit request-scoped tool authorization leaf from the October 15 source ingest.
 - Updated on 2026-10-14 with October 14 source-ingest leaves for obsidian-tc resolved-path authorization and official MCP Java/Python HTTP and session availability boundaries.
 - Updated on 2026-10-14 with October 13 source-ingest leaves for Network-AI MCP SSE origin reflection, obsidian-tc DNS rebinding, EdgeEver stored XSS, Nginx UI MCP control-plane bypasses, Conductor OSS MCPService SSRF, goose approval-state bypass, PraisonAI SearxNG SSRF, Mistral Vibe command permission bypass, and Roo Code command approval bypasses.
 - Updated on 2026-10-13 with October 12 source-ingest leaves for Network-AI ClaudeHookBridge deny-pattern bypass, Agno PythonTools execution, mac-shell-mcp command-whitelist bypass, and Repeat-After-Me tool-call authorization bypass.

@@ -1,0 +1,215 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-10-16T23:28:23Z",
+  "run_timestamp_local": "2026-10-16T19:28:23-0400",
+  "cutoff_window": {
+    "start_utc": "2026-10-14T23:28:23Z",
+    "end_utc": "2026-10-16T23:28:23Z",
+    "policy": "Only public items visibly published or substantively updated within this exact 48-hour window qualify. Missing, ambiguous, future-dated, boundary-only, duplicated, and metadata-only records are excluded."
+  },
+  "repository_scope": {
+    "modified_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "wiki_pages_edited": [],
+    "raw_processed_edited": false
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "federation_checked": [
+      "docs/wiki/federation.md",
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "local_owner": "ai-security-wiki owns the AI-specific security implications: MCP authorization, untrusted-project execution, and command-line/MCP configuration injection.",
+    "upstream_ai_wiki": "Broad product, SDK, framework, and plugin catalog context belongs in ai-wiki.",
+    "upstream_ai_dev_wiki": "General agent and coding workflow practice belongs in ai-dev-wiki; only distinct security boundaries are retained locally."
+  },
+  "search_evidence": [
+    {
+      "source": "CVE Services CVE Record API",
+      "queries": [
+        "CVE-2026-109382",
+        "CVE-2026-111091",
+        "CVE-2026-96620"
+      ],
+      "notes": "Primary public records were checked for publication/update timestamps, affected versions, and security descriptions. Public advisory and official release links referenced by the records were used for corroboration."
+    },
+    {
+      "source": "Public web search",
+      "queries": [
+        "AI security advisory October 15 2026 vulnerability agent MCP prompt injection",
+        "AI security advisory October 16 2026 vulnerability agent MCP prompt injection",
+        "site:cve.org/CVERecord 2026-10-16 AI agent MCP prompt injection"
+      ],
+      "notes": "Search results were discovery-only; qualifying facts below are grounded in primary CVE records and vendor/GitHub advisories."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-109382",
+      "title": "WSP MCP WordPress connector exposes unpublished post excerpts through broken access control",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-109382",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-109382",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/809eb78f-fd8e-4434-a36b-bb8e313cf264?source=cve",
+        "https://plugins.trac.wordpress.org/changeset?reponame=&old=3743711%40wsp-mcp-ai-agents-connector&new=3743711%40wsp-mcp-ai-agents-connector"
+      ],
+      "visible_dates": {
+        "published": "2026-10-16T06:41:05.349Z",
+        "updated": "2026-10-16T15:09:38.121Z"
+      },
+      "concise_factual_summary": "WSP MCP AI Agents Connector for WordPress through 2.9.5 registers wsp_get_posts with no capability requirement, accepts any logged-in user at its MCP endpoint, and honours status=all without author or ownership filtering. A Subscriber-or-higher user can read metadata and 40-word excerpts for draft, pending, and scheduled posts.",
+      "evidence_classification": "Primary CVE Services record with linked Wordfence advisory and public WordPress source/change evidence; in-window publication; broken MCP-tool authorization and confidential-content disclosure.",
+      "affected_boundary_or_version": "bilalnaseer WSP MCP – Free MCP Plugin for WordPress: Connect Claude, ChatGPT & AI Agents, versions through 2.9.5; wsp_get_posts capability, endpoint authentication, and post-status/ownership authorization boundary.",
+      "why_it_matters_for_ai_security": "An authenticated agent or plugin user must be authorized at each MCP tool and data-query boundary. Session authentication alone cannot justify broad retrieval of unpublished content, especially when agent tools accept caller-controlled query scopes.",
+      "named_entities": [
+        "WSP MCP AI Agents Connector",
+        "WordPress",
+        "wsp_get_posts",
+        "Wordfence",
+        "CVE-2026-109382"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad WordPress plugin and MCP connector product context is upstream-owned."
+        },
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General plugin-integration practice is upstream-owned."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Per-tool authorization, data minimization, and confidential-content disclosure implications are locally owned."
+        }
+      ],
+      "confidence_notes": "High: the primary record specifies affected versions, the precise authorization path, affected roles, and disclosed fields. The record does not state a fixed version; verify the linked change before durable remediation guidance."
+    },
+    {
+      "id": "CVE-2026-111091",
+      "title": "JetBrains Junie CLI executes MCP configuration from an untrusted project",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-111091",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-111091",
+        "https://www.jetbrains.com/privacy-security/issues-fixed/"
+      ],
+      "visible_dates": {
+        "published": "2026-10-15T15:29:52.373Z",
+        "updated": "2026-10-15T16:05:25.428Z"
+      },
+      "concise_factual_summary": "JetBrains Junie CLI before 26.8.3 could execute code through an untrusted project's MCP server configuration. The public CVE record identifies 26.8.3 as the first unaffected version.",
+      "evidence_classification": "Primary JetBrains-assigned CVE Services record; in-window publication; untrusted repository configuration leading to local code execution.",
+      "affected_boundary_or_version": "JetBrains Junie CLI earlier than 26.8.3; project-supplied MCP server configuration trust boundary.",
+      "why_it_matters_for_ai_security": "Repository-provided agent configuration is executable supply-chain input. Opening or reviewing untrusted code must not activate its MCP servers without a distinct trust decision and a release gate that enforces it.",
+      "named_entities": [
+        "JetBrains",
+        "Junie CLI",
+        "Model Context Protocol",
+        "CVE-2026-111091"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad Junie and MCP product context is upstream-owned."
+        },
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General repository-review and coding-agent workflows are upstream-owned."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "Untrusted-project configuration execution and MCP supply-chain control implications are locally owned."
+        }
+      ],
+      "confidence_notes": "High for the published affected-version boundary and code-execution claim. The concise CNA record has no detailed exploit narrative; ingest should capture JetBrains' fixed-issue note before extending operational guidance."
+    },
+    {
+      "id": "CVE-2026-96620",
+      "title": "Claude Agent SDK resume argument injection bypasses SDK permission controls",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-96620",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-96620",
+        "https://github.com/advisories/GHSA-h4mw-j7qp-8mwm",
+        "https://github.com/anthropics/claude-agent-sdk-python/security/advisories/GHSA-h4mw-j7qp-8mwm",
+        "https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.121"
+      ],
+      "visible_dates": {
+        "published": "2026-10-16T19:44:01.260Z",
+        "updated": "2026-10-16T19:44:01.260Z",
+        "vendor_advisory_published": "2026-09-12",
+        "github_advisory_database_published": "2026-10-16"
+      },
+      "concise_factual_summary": "Claude Agent SDK for Python before 0.2.121 passes resume as a separate Claude CLI token without validation. If an application supplies an attacker-controlled, dash-prefixed session ID, it can inject --mcp-config, define a stdio MCP server, and execute its command at CLI startup outside the SDK's permission controls. Version 0.2.121 fixes the issue.",
+      "evidence_classification": "Primary GitHub CNA CVE Services record, GitHub Security Advisory, vendor advisory, and release; in-window CVE/GitHub Advisory Database publication; argument injection leading to MCP-mediated arbitrary command execution.",
+      "affected_boundary_or_version": "anthropics claude-agent-sdk-python / claude-agent-sdk package before 0.2.121; application-controlled resume session identifier to Claude CLI argv and MCP configuration boundary.",
+      "why_it_matters_for_ai_security": "A model or user-facing session value must not become a configuration or command-line authority channel. SDK permission controls cannot compensate for unsafe argument construction that lets an attacker install an MCP server before those controls execute.",
+      "named_entities": [
+        "Anthropic",
+        "Claude Agent SDK for Python",
+        "Claude CLI",
+        "Model Context Protocol",
+        "GHSA-h4mw-j7qp-8mwm",
+        "CVE-2026-96620"
+      ],
+      "upstream_routing": [
+        {
+          "target": "ai-wiki",
+          "reason": "Broad Claude Agent SDK and Claude CLI product context is upstream-owned."
+        },
+        {
+          "target": "ai-dev-wiki",
+          "reason": "General coding-agent SDK integration and workflow usage are upstream-owned."
+        },
+        {
+          "target": "ai-security-wiki",
+          "reason": "CLI argument construction, injected MCP configuration, and permission-boundary bypass implications are locally owned."
+        }
+      ],
+      "confidence_notes": "High: the CNA record gives the precondition, injected flag, impact, affected package range, and fixed version. The original vendor advisory predates the cutoff, but the primary CVE record and GitHub Advisory Database were visibly published in the cutoff window, which is a concrete public disclosure change."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-57496, CVE-2026-69435, CVE-2026-76066, CVE-2026-77931, and CVE-2026-102682",
+      "reason": "These qualifying security changes were already captured by the October 15 collector; they were not duplicated."
+    },
+    {
+      "candidate": "CVE-2026-86063 Claude Code plugin-installation flow",
+      "reason": "Published October 13, 2026, outside the exact 48-hour cutoff; the available public listing did not provide a qualifying later substantive update."
+    },
+    {
+      "candidate": "CVE-2026-102232 Visual Studio Code Copilot lifecycle-hook bypass and CVE-2026-103572 Visual Studio/SSMS Copilot configuration issue",
+      "reason": "Their October 13 public advisory dates are outside the exact cutoff window."
+    },
+    {
+      "candidate": "AI-security commentary, retrospective articles, and ordinary product announcements",
+      "reason": "Excluded unless the source supplied a concrete in-window threat, vulnerability, mitigation, control result, standard/regulatory change, or incident."
+    },
+    {
+      "candidate": "Sources without a visible, unambiguous date or whose date was only a search-engine crawl timestamp",
+      "reason": "Excluded under the date-evidence policy."
+    }
+  ],
+  "follow_up_actions": [
+    "During ingest, verify whether WSP MCP has a released remediation and attach the precise source change or vendor advisory.",
+    "Capture JetBrains' detailed fixed-issue entry before deriving operational controls for untrusted project configuration.",
+    "Create distinct security leaves by boundary rather than product catalog: MCP tool authorization, untrusted-repository MCP loading, and CLI-to-MCP configuration injection.",
+    "Route broad SDK, CLI, plugin, and development-workflow background to ai-wiki or ai-dev-wiki; retain the security-specific implications here."
+  ],
+  "blockers": [],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "git_diff_check": "passed (no whitespace errors for the created artifact)"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp_utc": "2026-10-15T23:26:44Z",
+  "run_timestamp_local": "2026-10-15T19:26:44-0400",
+  "cutoff_window": {
+    "start_utc": "2026-10-13T23:26:44Z",
+    "end_utc": "2026-10-15T23:26:44Z",
+    "policy": "Only public sources visibly published or updated within this exact 48-hour window qualify. Missing, ambiguous, future-dated, boundary-only, and previously captured metadata-only records were excluded."
+  },
+  "repository_scope": {
+    "modified_repository": "/Users/martinbechard/dev/ai-security-wiki",
+    "wiki_pages_edited": [],
+    "raw_processed_edited": false
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "routing_context": {
+    "federation_checked": [
+      "docs/wiki/federation.md",
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "local_owner": "ai-security-wiki owns security-specific AI threat, control, privacy, identity, supply-chain, and assurance implications.",
+    "upstream_ai_wiki": "Broad product, framework, model, SDK, and MCP catalog context belongs in ai-wiki.",
+    "upstream_ai_dev_wiki": "General coding-agent workflow and development-practice context belongs in ai-dev-wiki."
+  },
+  "search_evidence": [
+    {
+      "source": "NVD CVE API",
+      "queries": [
+        "keywordSearch=MCP; lastModStartDate=2026-10-13T23:26:44.000+00:00; lastModEndDate=2026-10-15T23:26:44.000+00:00",
+        "keywordSearch=agent; same last-modified window",
+        "keywordSearch=LLM; same last-modified window",
+        "keywordSearch=prompt; same last-modified window",
+        "keywordSearch=model; same last-modified window"
+      ],
+      "notes": "Public machine-readable vulnerability search. Local raw, raw/processed, and docs/wiki searches were used only for deduplication."
+    },
+    {
+      "source": "CVE Services CVE Record API",
+      "queries": [
+        "CVE-2026-57496",
+        "CVE-2026-69435",
+        "CVE-2026-76066",
+        "CVE-2026-77931",
+        "CVE-2026-102682"
+      ],
+      "notes": "Primary CVE publication and update timestamps were checked where available."
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-57496",
+      "title": "NetLicensing MCP path traversal exposes licensing tokens",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-57496",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-57496",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-57496"
+      ],
+      "visible_dates": {"published": "2026-10-15T18:40:16.558Z", "updated": "2026-10-15T18:40:16.558Z"},
+      "concise_factual_summary": "NetLicensing MCP Server before 0.1.8 interpolates an authenticated caller's product_number into a REST path without segment validation. Traversal can reach /token and route the response through a non-redacting serializer, exposing APIKEY number and SHOP fields; a recovered administrative token can grant broad account read, write, and delete access.",
+      "evidence_classification": "Primary CVE Services record and NVD mirror; in-window publication; MCP token disclosure and delegated-authority escalation",
+      "affected_boundary_or_version": "Labs64 NetLicensing-MCP versions earlier than 0.1.8; product lookup REST-path and token-redaction boundary.",
+      "why_it_matters_for_ai_security": "MCP tool parameters must remain path-confined and output redaction must apply after every route resolution; otherwise a low-privilege agent identity can recover credentials with stronger delegated authority.",
+      "named_entities": ["Labs64", "NetLicensing MCP Server", "Model Context Protocol", "CVE-2026-57496"],
+      "upstream_routing": [
+        {"target": "ai-wiki", "reason": "Broad NetLicensing and MCP product context is upstream-owned."},
+        {"target": "ai-security-wiki", "reason": "MCP tool path validation, credential redaction, and privilege-escalation implications are locally owned."}
+      ],
+      "confidence_notes": "High: the primary CVE record gives affected version, route behavior, impact, and fixed version. Ingest should corroborate the 0.1.8 release notes."
+    },
+    {
+      "id": "CVE-2026-69435",
+      "title": "Azure SRE Agent missing authorization update",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-69435",
+        "https://cveawg.mitre.org/api/cve/CVE-2026-69435",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-69435"
+      ],
+      "visible_dates": {"published": "2026-10-08T22:15:29.748Z", "updated": "2026-10-15T22:32:05.648Z"},
+      "concise_factual_summary": "CVE Services visibly updated CVE-2026-69435 in the window. The public record states that missing authorization in Azure SRE Agent allows an authorized network attacker to elevate privileges.",
+      "evidence_classification": "Primary CVE Services record and NVD mirror; in-window update; cloud-agent authorization weakness",
+      "affected_boundary_or_version": "Microsoft Azure SRE Agent; affected version is not specified in the public CVE record.",
+      "why_it_matters_for_ai_security": "Operations agents commonly hold cross-service capabilities; authorization must be enforced on every sensitive action, not inferred from initial access or agent identity alone.",
+      "named_entities": ["Microsoft", "Azure SRE Agent", "CVE-2026-69435"],
+      "upstream_routing": [
+        {"target": "ai-wiki", "reason": "Broad Azure product and agent-service context is upstream-owned."},
+        {"target": "ai-security-wiki", "reason": "Cloud-agent least-privilege and authorization implications are locally owned."}
+      ],
+      "confidence_notes": "Medium: the primary record supplies a visible in-window update and concrete impact but no affected-version or remediation detail. Ingest should find the associated MSRC advisory before durable guidance."
+    },
+    {
+      "id": "CVE-2026-76066",
+      "title": "IntentKit narrowed-tool authorization bypass",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-76066",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-76066"
+      ],
+      "visible_dates": {"published": "2026-10-15T02:20:15.603Z", "last_modified": "2026-10-15T14:17:27.283Z"},
+      "concise_factual_summary": "IntentKit through 2.6.3 validates execution against its full tool registry rather than the per-request narrowed tool advertisement. An unauthenticated or public caller can name a de-advertised owner-only action such as wallet transfer, posting, memory write, or call-agent through direct or indirect prompt injection, history replay, or checkpoint data, bypassing human approval gates.",
+      "evidence_classification": "NVD/CVE record; in-window publication; agent tool authorization and approval-gate bypass",
+      "affected_boundary_or_version": "IntentKit through 2.6.3; ToolBindingMiddleware narrowed-tool advertisement versus executor registry validation.",
+      "why_it_matters_for_ai_security": "Model-visible capability shaping is not an authorization control. Tool dispatch must enforce the exact per-request allowlist and approval state at execution time.",
+      "named_entities": ["IntentKit", "ToolBindingMiddleware", "prompt injection", "CVE-2026-76066"],
+      "upstream_routing": [
+        {"target": "ai-wiki", "reason": "Broad IntentKit product context is upstream-owned."},
+        {"target": "ai-security-wiki", "reason": "Execution-edge authorization and human-approval enforcement are locally owned."}
+      ],
+      "confidence_notes": "High for the public description and affected boundary; ingest should verify the fixed release and whether all external channels share the same executor."
+    },
+    {
+      "id": "CVE-2026-77931",
+      "title": "MoviePilot prompt-injection command execution",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-77931",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77931"
+      ],
+      "visible_dates": {"published": "2026-10-15T02:20:16.277Z", "last_modified": "2026-10-15T02:20:16.277Z"},
+      "concise_factual_summary": "MoviePilot through 3.1.5 passes untrusted web, search, and torrent metadata content to an unrestricted ExecuteCommandTool through asyncio.create_subprocess_shell. Crafted instructions can induce a model to set confirm_dangerous=true, bypassing the command denylist in an administrator session and executing operating-system commands on the host.",
+      "evidence_classification": "NVD/CVE record; in-window publication; indirect prompt injection to autonomous command execution",
+      "affected_boundary_or_version": "MoviePilot through 3.1.5; untrusted-content ingestion, command safety validation, and administrator execution context.",
+      "why_it_matters_for_ai_security": "Untrusted tool output must never become executable authority. Command confirmation and policy decisions must be independent of model-controlled parameters and enforce a constrained execution surface.",
+      "named_entities": ["MoviePilot", "ExecuteCommandTool", "prompt injection", "asyncio.create_subprocess_shell", "CVE-2026-77931"],
+      "upstream_routing": [
+        {"target": "ai-wiki", "reason": "Broad MoviePilot product context is upstream-owned."},
+        {"target": "ai-security-wiki", "reason": "Indirect prompt injection and command-execution containment are locally owned."}
+      ],
+      "confidence_notes": "High for the CVE-described exploit path; ingest should reconcile the remediation state with the project release or advisory."
+    },
+    {
+      "id": "CVE-2026-102682",
+      "title": "Pipecat development-runner unauthenticated session exposure",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2026-102682",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102682"
+      ],
+      "visible_dates": {"published": "2026-10-14T19:17:05.550Z", "last_modified": "2026-10-14T19:17:05.550Z"},
+      "concise_factual_summary": "Pipecat's built-in development runner from 0.0.98 to 1.6.0 exposes unauthenticated endpoints that create bot sessions and Daily rooms. The default localhost binding limits exposure, but an operator who publishes the port, uses --host 0.0.0.0, or tunnels it can allow unauthenticated callers to consume resources and third-party quotas and potentially obtain a room URL and join token. Version 1.6.0 adds boundary warnings and production deployment guidance.",
+      "evidence_classification": "NVD/CVE record; in-window publication; agent runtime exposure and deployment-boundary mitigation",
+      "affected_boundary_or_version": "pipecat-ai 0.0.98 through 1.6.0; development runner endpoints /start, /daily, and /daily-dialin-webhook when exposed beyond localhost.",
+      "why_it_matters_for_ai_security": "Development-only agent endpoints need network containment, authenticated production dispatch, and deployment release gates; a safe default binding does not protect a later exposure change.",
+      "named_entities": ["Pipecat", "Daily", "development runner", "CVE-2026-102682"],
+      "upstream_routing": [
+        {"target": "ai-wiki", "reason": "Broad Pipecat framework and product context is upstream-owned."},
+        {"target": "ai-security-wiki", "reason": "Agent-runtime exposure and production deployment control implications are locally owned."}
+      ],
+      "confidence_notes": "High for the published exposure conditions and version 1.6.0 guidance; the public record characterizes endpoint behavior as development-only by design, so ingest should preserve that distinction."
+    }
+  ],
+  "exclusions": [
+    {"candidate": "CVE-2026-59318 Spring AI tool-dispatch authorization", "reason": "Already captured and synthesized locally; the October 15 NVD last-modified timestamp alone did not establish a distinct security change."},
+    {"candidate": "CVE-2026-59951 MCP Python SDK session retention", "reason": "Already captured and synthesized from the October 14 collector; repeated metadata was not duplicated."},
+    {"candidate": "CVE-2026-62674 through CVE-2026-62677 Omnigent cluster", "reason": "Already captured in processed August sources and durable local leaves; October NVD metadata refresh was not a new fact."},
+    {"candidate": "CVE-2026-70352 Azure AI Language", "reason": "Already captured and synthesized locally; the in-window NVD modification was not shown to add a distinct public security change."},
+    {"candidate": "CVE-2026-73557 vLLM sparse prompt-embedding race", "reason": "The primary CVE Services record was last updated August 13, outside the cutoff; NVD's later metadata timestamp was not sufficient evidence of a new security delta."},
+    {"candidate": "CVE-2026-104103 Ludwig dataset archive extraction", "reason": "Already captured by the October 14 collector and synthesized into a local leaf."},
+    {"candidate": "Non-AI keyword matches and ordinary announcements", "reason": "General software, incidental AI-assisted discovery, or product announcements without a demonstrated AI-system security boundary or concrete security change were excluded."}
+  ],
+  "follow_up_actions": [
+    "During ingest, fetch vendor advisories and releases for fixed-version and remediation confirmation, especially Azure SRE Agent and MoviePilot.",
+    "Create separate local security leaves by boundary rather than a product catalog: MCP path/output redaction, execution-edge tool allowlists, untrusted-content command isolation, and exposed development-runtime controls.",
+    "Route broad product and framework background to ai-wiki; retain only security implications in this repository."
+  ],
+  "blockers": [],
+  "validation": {"jq_empty": "passed", "python_json_tool": "passed", "git_diff_check": "passed (git diff --no-index --check returned its expected status 1 for an untracked-file comparison and emitted no diagnostics)"}
+}

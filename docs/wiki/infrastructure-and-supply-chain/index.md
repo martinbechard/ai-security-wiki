@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [Junie CLI Untrusted-Project MCP Configuration Execution](junie-cli-untrusted-project-mcp-configuration-execution.md)
+- [Pipecat Development-Runner Session Exposure](pipecat-development-runner-session-exposure.md)
 - [LightX2V Tokenizer auto_map Code Execution](lightx2v-tokenizer-auto-map-code-execution.md)
 - [RAE Config Model Instantiation Code Execution](rae-config-model-instantiation-code-execution.md)
 - [yolov13 AutoBackend Model-Metadata Code Execution](yolov13-autobackend-model-metadata-code-execution.md)
@@ -47,6 +49,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
+- [Junie CLI Untrusted-Project MCP Configuration Execution](junie-cli-untrusted-project-mcp-configuration-execution.md)
+- [Pipecat Development-Runner Session Exposure](pipecat-development-runner-session-exposure.md)
 - [LightX2V Tokenizer auto_map Code Execution](lightx2v-tokenizer-auto-map-code-execution.md)
 - [RAE Config Model Instantiation Code Execution](rae-config-model-instantiation-code-execution.md)
 - [yolov13 AutoBackend Model-Metadata Code Execution](yolov13-autobackend-model-metadata-code-execution.md)
@@ -200,6 +204,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-10-16 with Junie CLI untrusted-project MCP configuration execution from the October 16 source ingest.
+- Updated on 2026-10-15 with Pipecat development-runner exposure controls from the October 15 source ingest.
 - Updated on 2026-10-14 with October 14 source-ingest leaves for model artifact loading execution, malformed model-parser memory safety, Kubeflow Model Registry annotation SSRF, and Ludwig dataset archive containment.
 - Updated on 2026-10-14 with October 13 source-ingest leaves for Vercel deepsec tarball link escape and TinyLLaVA Factory model-config code injection.
 - Updated on 2026-10-13 with the October 12 Ollama Pull API model-name SSRF leaf.
