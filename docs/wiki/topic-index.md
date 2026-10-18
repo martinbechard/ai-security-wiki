@@ -8,6 +8,20 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [agent-and-tool-security/archon-default-control-api-command-execution.md](agent-and-tool-security/archon-default-control-api-command-execution.md)
+- [data-and-privacy/nezha-mcp-file-transfer-host-header-token-disclosure.md](data-and-privacy/nezha-mcp-file-transfer-host-header-token-disclosure.md)
+- [infrastructure-and-supply-chain/zcode-workspace-mcp-configuration-execution.md](infrastructure-and-supply-chain/zcode-workspace-mcp-configuration-execution.md)
+- [agent-and-tool-security/energizelab-ai-skill-file-write.md](agent-and-tool-security/energizelab-ai-skill-file-write.md)
+- [identity-and-access/energizelab-default-root-ssh-credentials.md](identity-and-access/energizelab-default-root-ssh-credentials.md)
+- [infrastructure-and-supply-chain/energizelab-unsigned-http-firmware-update.md](infrastructure-and-supply-chain/energizelab-unsigned-http-firmware-update.md)
+- [identity-and-access/energizelab-unauthenticated-model-administration.md](identity-and-access/energizelab-unauthenticated-model-administration.md)
+- [data-and-privacy/energizelab-ai-provider-key-disclosure.md](data-and-privacy/energizelab-ai-provider-key-disclosure.md)
+- [data-and-privacy/sparkyfitness-ai-service-ssrf-prompt-disclosure.md](data-and-privacy/sparkyfitness-ai-service-ssrf-prompt-disclosure.md)
+- [agent-and-tool-security/destructive-command-guard-fail-open-hook-bypass.md](agent-and-tool-security/destructive-command-guard-fail-open-hook-bypass.md)
+- [identity-and-access/xiaozhi-device-websocket-token-compromise.md](identity-and-access/xiaozhi-device-websocket-token-compromise.md)
+- [identity-and-access/efak-model-configuration-api-key-disclosure.md](identity-and-access/efak-model-configuration-api-key-disclosure.md)
+- [identity-and-access/langchat-missing-authentication-control-plane.md](identity-and-access/langchat-missing-authentication-control-plane.md)
+- [data-and-privacy/99ai-chat-log-export-disclosure.md](data-and-privacy/99ai-chat-log-export-disclosure.md)
 - [infrastructure-and-supply-chain/lightx2v-tokenizer-auto-map-code-execution.md](infrastructure-and-supply-chain/lightx2v-tokenizer-auto-map-code-execution.md)
 - [infrastructure-and-supply-chain/rae-config-model-instantiation-code-execution.md](infrastructure-and-supply-chain/rae-config-model-instantiation-code-execution.md)
 - [infrastructure-and-supply-chain/yolov13-autobackend-model-metadata-code-execution.md](infrastructure-and-supply-chain/yolov13-autobackend-model-metadata-code-execution.md)

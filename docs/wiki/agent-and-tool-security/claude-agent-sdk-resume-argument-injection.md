@@ -32,6 +32,7 @@ The [October 16 topic collector source](../../../raw/processed/2026-10-16/ai-sec
 - [CVE-2026-96620 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-96620)
 - [GHSA-h4mw-j7qp-8mwm](https://github.com/advisories/GHSA-h4mw-j7qp-8mwm)
 - [Claude Agent SDK Python 0.2.121 release](https://github.com/anthropics/claude-agent-sdk-python/releases/tag/v0.2.121)
+- [October 17 leaf update watch source](../../../raw/processed/2026-10-17/ai-security-wiki-leaf-update-watch-20261018T000146Z.json)
 
 ## Related Code
 
@@ -58,3 +59,4 @@ The [October 16 topic collector source](../../../raw/processed/2026-10-16/ai-sec
 ## Maintenance Notes
 
 - Created on 2026-10-16 from CVE-2026-96620 and the linked GitHub advisory; retain the startup-order caveat that makes SDK permission controls ineffective.
+- Confirmed on 2026-10-17 by the [leaf watcher](../../../raw/processed/2026-10-17/ai-security-wiki-leaf-update-watch-20261018T000146Z.json); no material boundary or remediation change justified another digest item.

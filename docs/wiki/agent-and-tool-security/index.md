@@ -2,6 +2,9 @@
 
 ## Current Understanding
 
+- [Archon Default Control API Command Execution](archon-default-control-api-command-execution.md)
+- [EnergizeLab AI Skill-File Write](energizelab-ai-skill-file-write.md)
+- [destructive_command_guard Fail-Open Hook Bypass](destructive-command-guard-fail-open-hook-bypass.md)
 - [Claude Agent SDK Resume Argument Injection](claude-agent-sdk-resume-argument-injection.md)
 - [IntentKit Narrowed-Tool Authorization Bypass](intentkit-narrowed-tool-authorization-bypass.md)
 - [obsidian-tc Resolved-Path ACL Bypass](obsidian-tc-resolved-path-acl-bypass.md)

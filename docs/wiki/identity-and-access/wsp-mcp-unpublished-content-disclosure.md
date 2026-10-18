@@ -31,6 +31,7 @@ The [October 16 topic collector source](../../../raw/processed/2026-10-16/ai-sec
 - [October 16 topic collector source](../../../raw/processed/2026-10-16/ai-security-wiki-topic-news-collector-2026-10-16T232823Z.json)
 - [CVE-2026-109382 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-109382)
 - [Wordfence advisory](https://www.wordfence.com/threat-intel/vulnerabilities/id/809eb78f-fd8e-4434-a36b-bb8e313cf264?source=cve)
+- [October 17 leaf update watch source](../../../raw/processed/2026-10-17/ai-security-wiki-leaf-update-watch-20261018T000146Z.json)
 
 ## Related Code
 
@@ -57,3 +58,4 @@ The [October 16 topic collector source](../../../raw/processed/2026-10-16/ai-sec
 ## Maintenance Notes
 
 - Created on 2026-10-16 from CVE-2026-109382; keep it separate from CVE-2026-93529 because the affected route and disclosure scope differ.
+- Confirmed on 2026-10-17 by the [leaf watcher](../../../raw/processed/2026-10-17/ai-security-wiki-leaf-update-watch-20261018T000146Z.json); it adds no material boundary or remediation change, so no second digest item is needed.

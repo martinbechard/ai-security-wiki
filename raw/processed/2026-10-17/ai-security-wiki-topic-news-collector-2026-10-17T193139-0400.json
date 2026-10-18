@@ -1,0 +1,213 @@
+{
+  "artifact_type": "public-ai-security-topic-news-collection",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-10-17T19:31:39-04:00",
+  "cutoff_window": {
+    "start_exclusive": "2026-10-15T19:31:39-04:00",
+    "end_inclusive": "2026-10-17T19:31:39-04:00",
+    "date_policy": "Only source records with an explicit timestamp strictly after the cutoff and no later than the run time qualify. Date-only, ambiguous, future-dated, and boundary-only records are excluded."
+  },
+  "searched_topics": [
+    "threats and attacks", "model and prompt security", "agent and tool security", "MCP, plugins, browsers, delegated authority, and autonomous action", "data security and privacy", "identity, authorization, credentials, and least privilege", "AI supply chains", "security evaluation and release gates", "AI governance and incident disclosures"
+  ],
+  "sources_consulted": [
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-15T00%3A00%3A00.000&pubEndDate=2026-10-17T23%3A59%3A59.999&keywordSearch=MCP",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-17T19:31:39-04:00"
+    },
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-15T00%3A00%3A00.000&pubEndDate=2026-10-17T23%3A59%3A59.999&keywordSearch=AI",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-17T19:31:39-04:00"
+    },
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-15T00%3A00%3A00.000&pubEndDate=2026-10-17T23%3A59%3A59.999&keywordSearch=agent",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-17T19:31:39-04:00"
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-111322",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-111322"],
+      "visible_dates": {"published": "2026-10-15T22:19:30.633", "last_modified": "2026-10-16T20:17:20.237"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "Archon 0.2.13 through 0.11.1 exposes its default-bound control API without authentication; a network attacker can send messages to the bypass-permissions AI coding agent and execute commands as its host user.",
+      "affected_boundary_or_version": "Archon 0.2.13 through 0.11.1; /api/* bound to 0.0.0.0 by default",
+      "ai_security_relevance": "This is an agent runtime control-plane exposure that crosses network access directly into unconstrained agent command execution.",
+      "named_entities": ["Archon", "AI coding agent"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the vulnerability, network exposure, and authority-boundary implication locally; do not duplicate broad Archon product background owned upstream."},
+      "confidence": "high",
+      "follow_up": "During ingest, verify the vendor advisory and fixed release before writing a durable agent-runtime control."
+    },
+    {
+      "id": "CVE-2026-111385",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-111385"],
+      "visible_dates": {"published": "2026-10-16T03:18:05.893", "last_modified": "2026-10-16T03:18:06.013"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "Nezha before 2.3.15 builds MCP transfer URLs from an unvalidated Host header, allowing request redirection or capture and replay of one-time file-download tokens.",
+      "affected_boundary_or_version": "Nezha 2.1.0 through before 2.3.15; MCP file-transfer URLs",
+      "ai_security_relevance": "The issue exposes the agent/MCP file-transfer boundary to token exfiltration and attacker-directed uploads.",
+      "named_entities": ["Nezha", "MCP", "Host header injection"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Record the security implication locally; route general Nezha product background upstream if later needed."},
+      "confidence": "high",
+      "follow_up": "Confirm the project release notes and whether 2.3.15 is the first fixed version."
+    },
+    {
+      "id": "CVE-2026-109382",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-109382", "https://www.rapid7.com/db/vulnerabilities/cve-2026-109382/"],
+      "visible_dates": {"published": "2026-10-16T07:17:09.573", "last_modified": "2026-10-16T15:17:07.133"},
+      "evidence_classification": "NVD public CVE record corroborated by public vulnerability database",
+      "summary": "WSP MCP AI Agents Connector through 2.9.5 leaves its wsp_get_posts tool without a capability requirement, letting authenticated Subscriber-level users read unpublished post metadata and excerpts.",
+      "affected_boundary_or_version": "WSP MCP AI Agents Connector <= 2.9.5; fixed version reported as 2.9.6",
+      "ai_security_relevance": "This is a concrete least-privilege and data-disclosure failure in an MCP tool exposed to AI agents.",
+      "named_entities": ["WSP MCP AI Agents Connector", "WordPress", "MCP", "CWE-863"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the MCP authorization lesson locally; WordPress/MCP product catalog context remains upstream-owned."},
+      "confidence": "high",
+      "follow_up": "Recheck the Wordfence advisory and plugin changelog before durable synthesis."
+    },
+    {
+      "id": "CVE-2026-88755",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-88755"],
+      "visible_dates": {"published": "2026-10-16T15:17:33.537", "last_modified": "2026-10-16T20:18:12.557"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "Z.ai ZCode v3.11.2.6792 automatically connects to MCP servers declared in a repository workspace configuration, so opening a crafted repository can lead to arbitrary code execution.",
+      "affected_boundary_or_version": "Z.ai ZCode v3.11.2.6792; workspace-declared MCP servers",
+      "ai_security_relevance": "The finding demonstrates untrusted repository configuration becoming autonomous tool connection and code-execution authority.",
+      "named_entities": ["Z.ai", "ZCode", "MCP", "workspace configuration"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the security-control implication; upstream owns general ZCode product coverage."},
+      "confidence": "high",
+      "follow_up": "Find a vendor patch or advisory and verify affected and fixed versions."
+    },
+    {
+      "id": "CVE-2026-96620",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-96620"],
+      "visible_dates": {"published": "2026-10-16T20:18:28.293", "last_modified": "2026-10-16T20:18:28.293"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "Claude Agent SDK before 0.2.121 passes an unvalidated resume session ID to Claude CLI, allowing a dash-leading value to inject --mcp-config and execute a stdio MCP server outside SDK permission controls.",
+      "affected_boundary_or_version": "Claude Agent SDK < 0.2.121; untrusted resume session IDs",
+      "ai_security_relevance": "It is a direct command-line argument injection that bypasses an agent SDK's intended permission boundary through MCP startup configuration.",
+      "named_entities": ["Claude Agent SDK", "Claude Code", "MCP", "stdio"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the CVE and permission-bypass lesson locally; broad Claude product/SDK background belongs in ai-wiki."},
+      "confidence": "high",
+      "follow_up": "Verify the upstream GitHub advisory, release tag, and any SDK input-validation guidance."
+    },
+    {
+      "id": "EnergizeLab-AI-device-stack-2026-10-15",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-105032", "https://nvd.nist.gov/vuln/detail/CVE-2026-105033", "https://nvd.nist.gov/vuln/detail/CVE-2026-105036", "https://nvd.nist.gov/vuln/detail/CVE-2026-105038", "https://nvd.nist.gov/vuln/detail/CVE-2026-105039"],
+      "visible_dates": {"published_range": "2026-10-15T21:17:03.753 through 2026-10-15T21:17:04.587", "last_modified_range": "2026-10-16T20:17:17.703 through 2026-10-16T20:17:18.590"},
+      "evidence_classification": "Grouped NVD public CVE records",
+      "summary": "Five EnergizeLab records disclose unauthenticated AI skill-file writes, default root SSH credentials, unsigned HTTP firmware updates, unauthenticated model administration, and low-privilege access to AI provider keys and configuration.",
+      "affected_boundary_or_version": "Eilik/EilikO AI services, AI Station firmware, and station-middleware Docker images 1.6.5 through 1.8.2",
+      "ai_security_relevance": "The group spans AI robot runtime integrity, model configuration, firmware supply chain, device identity, and provider credential protection.",
+      "named_entities": ["EnergizeLab", "Eilik", "EilikO", "AI Station", "CVE-2026-105032", "CVE-2026-105033", "CVE-2026-105036", "CVE-2026-105038", "CVE-2026-105039"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the device and model-runtime security implications locally; route general product information to ai-wiki if needed."},
+      "confidence": "high",
+      "follow_up": "Split into device identity, update-integrity, and model-administration controls during ingest if durable pages are warranted."
+    },
+    {
+      "id": "CVE-2026-102923",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-102923"],
+      "visible_dates": {"published": "2026-10-16T16:16:52.707", "last_modified": "2026-10-16T20:04:29.760"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "SparkyFitness before 1.6.0 accepts arbitrary custom AI-service URLs, enabling authenticated users to induce server-side POST requests, probe internal services, transmit a bearer value, and disclose the AI system prompt.",
+      "affected_boundary_or_version": "SparkyFitness < 1.6.0; custom AI service settings in chat and label-scan flows",
+      "ai_security_relevance": "This ties SSRF and bearer-token exposure directly to model-provider configuration and system-prompt confidentiality.",
+      "named_entities": ["SparkyFitness", "SSRF", "AI system prompt"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the security finding locally; product overview is upstream-owned."},
+      "confidence": "high",
+      "follow_up": "Confirm 1.6.0 release notes and assess whether outbound destination allowlists are documented."
+    },
+    {
+      "id": "CVE-2026-77474",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-77474"],
+      "visible_dates": {"published": "2026-10-16T17:17:50.390", "last_modified": "2026-10-16T20:04:29.760"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "destructive_command_guard before 0.6.6 can spend exponential time rescanning nested or unclosed shell substitutions; the resulting hung PreToolUse hook fails open and lets a destructive AI-agent command proceed.",
+      "affected_boundary_or_version": "destructive_command_guard < 0.6.6; nested or unclosed command substitutions",
+      "ai_security_relevance": "A security hook that fails open under attacker-controlled input defeats the final release gate intended to stop harmful autonomous shell actions.",
+      "named_entities": ["destructive_command_guard", "PreToolUse", "AI coding agents"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the fail-open control lesson locally; general agent tooling background is upstream-owned."},
+      "confidence": "high",
+      "follow_up": "Verify the 0.6.6 release and incorporate fail-closed timeout requirements during ingest."
+    },
+    {
+      "id": "CVE-2026-111623",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-111623"],
+      "visible_dates": {"published": "2026-10-16T18:17:42.133", "last_modified": "2026-10-16T19:03:18.127"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "Xiaozhi-esp32-server-java through 6.1.0 lets unauthenticated attackers obtain device WebSocket tokens and then read private role prompts, alter conversation history, consume LLM/STT/TTS credentials, and overwrite device metadata.",
+      "affected_boundary_or_version": "Xiaozhi-esp32-server-java <= 6.1.0; /api/device/ota and device WebSocket",
+      "ai_security_relevance": "The flaw combines weak device identity with prompt, conversation, credential, and runtime-integrity compromise.",
+      "named_entities": ["Xiaozhi-esp32-server-java", "WebSocket", "LLM credentials"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the AI-device identity and data-security implication locally; upstream owns broad project background."},
+      "confidence": "high",
+      "follow_up": "Locate an upstream fix and confirm the device-token trust model before synthesis."
+    },
+    {
+      "id": "CVE-2026-111682",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-111682"],
+      "visible_dates": {"published": "2026-10-16T18:17:51.213", "last_modified": "2026-10-16T20:17:22.140"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "EFAK 5.0.0 through 5.1.0 does not authorize its model-configuration API adequately, letting any ROLE_USER account retrieve unmasked LLM provider API keys.",
+      "affected_boundary_or_version": "EFAK 5.0.0 through 5.1.0; /api/model-config REST endpoints",
+      "ai_security_relevance": "The finding is a concrete least-privilege failure exposing model-provider credentials and associated account spend or data access.",
+      "named_entities": ["EFAK", "LLM provider API keys", "ROLE_USER"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Local security ownership; do not duplicate general EFAK product material."},
+      "confidence": "high",
+      "follow_up": "Check project remediation and verify whether API responses are now secret-redacted by default."
+    },
+    {
+      "id": "CVE-2026-111704",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-111704"],
+      "visible_dates": {"published": "2026-10-16T18:17:54.370", "last_modified": "2026-10-16T19:03:18.127"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "LangChat through commit 2a6285a lacks an authentication interceptor, exposing plaintext passwords and LLM provider API keys and allowing remote creation of super-admin accounts plus data modification or deletion.",
+      "affected_boundary_or_version": "LangChat through commit 2a6285a; REST controllers",
+      "ai_security_relevance": "This is a complete identity and secret-management boundary failure in an LLM application control plane.",
+      "named_entities": ["LangChat", "Sa-Token", "LLM provider API keys"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the authentication and credential implications locally; product context remains upstream-owned."},
+      "confidence": "high",
+      "follow_up": "Find an upstream release or commit that repairs interceptor registration before durable guidance."
+    },
+    {
+      "id": "CVE-2026-111706",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-111706"],
+      "visible_dates": {"published": "2026-10-16T18:17:54.663", "last_modified": "2026-10-16T22:17:22.943"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "99AI through 4.3.0 exposes its chat-log export endpoint without authentication, allowing remote download of usernames, emails, prompts, and AI answers.",
+      "affected_boundary_or_version": "99AI <= 4.3.0; POST /api/chatLog/exportExcel",
+      "ai_security_relevance": "It is a direct privacy and conversation-data breach in an AI application, including prompts and generated outputs.",
+      "named_entities": ["99AI", "chat logs", "prompts", "AI answers"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the data-protection implication locally; general product context is upstream-owned."},
+      "confidence": "high",
+      "follow_up": "Verify the upstream project fix and decide whether this merits a local chat-data access-control leaf."
+    }
+  ],
+  "routing_notes": [
+    {"entity_scope": "Broad product and vendor descriptions", "owner": "ai-wiki", "local_retention": "Only the security implication, affected trust boundary, patch, and control lesson are retained here."},
+    {"entity_scope": "General coding-agent workflow practice", "owner": "ai-dev-wiki", "local_retention": "Only security controls for workspace configuration, approval hooks, and agent authority are retained here."},
+    {"entity_scope": "MCP and agent security", "owner": "ai-security-wiki", "local_retention": "Authorization, tool-connection, token, command-execution, and data-exposure findings are locally owned."}
+  ],
+  "exclusions": [
+    {"candidate": "CVE-2026-111091, JetBrains Junie CLI", "reason": "Published 2026-10-15T16:17:48.637, before the exact 48-hour cutoff."},
+    {"candidate": "CVE-2026-110888, Meow Apps AI Engine", "reason": "Published 2026-10-15T18:17:26.180, before the exact 48-hour cutoff."},
+    {"candidate": "Anthropic, Investigating unintended model actions in our evaluations and internal use", "url": "https://www.anthropic.com/news/investigating-unintended-model-actions", "reason": "Visible publication date is 2026-10-09, outside the cutoff window; its October 12 correction is also outside the exact cutoff."},
+    {"candidate": "Anthropic, Strengthening our defenses against distillation attacks", "url": "https://www.anthropic.com/research/distillation-defenses", "reason": "Visible publication date is 2026-10-12, outside the cutoff window."},
+    {"candidate": "Google Cloud MCP AI security and safety documentation", "url": "https://docs.cloud.google.com/mcp/ai-security-safety", "reason": "The fetched public page described relevant controls but did not expose an unambiguous in-window publication or update timestamp."},
+    {"candidate": "AI-branded WordPress XSS records such as xSpeed Cache and Tourfic", "reason": "The sampled records describe ordinary web-plugin XSS without a concrete AI, model, agent, MCP, prompt, or AI-data security boundary beyond product branding."},
+    {"candidate": "CVE-2026-111451, Wheels CLI", "reason": "The record only notes that inputs may originate from an AI agent using MCP tools; the disclosed defect is a general deployment CLI issue, so the AI-security link is too peripheral for this collector."}
+  ],
+  "confidence_notes": [
+    "All qualifying dates and factual summaries came from NVD's public CVE API with explicit timestamps.",
+    "NVD is strong public evidence for published vulnerability metadata, but fixed-version and vendor-remediation wording should be checked against upstream advisories during ingest.",
+    "No docs/wiki content or raw/processed artifacts were changed in this collection run."
+  ],
+  "follow_up_actions": [
+    "Deduplicate against any later collector artifact before ingestion.",
+    "Use upstream vendor advisories and release notes to confirm fixes before publishing durable guidance.",
+    "Prioritize ingestion candidates that generalize to agent authority, MCP authorization, credential isolation, device identity, and fail-closed release gates."
+  ]
+}

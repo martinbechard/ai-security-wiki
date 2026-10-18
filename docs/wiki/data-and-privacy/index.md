@@ -6,6 +6,10 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [Nezha MCP File-Transfer Host Header Token Disclosure](nezha-mcp-file-transfer-host-header-token-disclosure.md)
+- [EnergizeLab AI Provider Key Disclosure](energizelab-ai-provider-key-disclosure.md)
+- [SparkyFitness AI Service SSRF and Prompt Disclosure](sparkyfitness-ai-service-ssrf-prompt-disclosure.md)
+- [99AI Chat-Log Export Disclosure](99ai-chat-log-export-disclosure.md)
 - [obsidian-tc Bridge-Field ACL Disclosure](obsidian-tc-bridge-field-acl-disclosure.md)
 - [Open WebUI OAuth Cookie Forwarding](open-webui-oauth-cookie-forwarding.md)
 - [Crawl4AI Untrusted-Config Credential Exposure](crawl4ai-untrusted-config-credential-exposure.md)

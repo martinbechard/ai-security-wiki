@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [October 2026](2026-10.md) includes item-level October 17 entries for Archon, Nezha, ZCode, split EnergizeLab device-control advisories, SparkyFitness, destructive-command guarding, Xiaozhi, EFAK, LangChat, and 99AI. The watcher-only confirmations for Claude Agent SDK, WSP MCP, and Junie CLI remain leaf-level provenance.
 - [October 2026](2026-10.md) includes item-level October 16 security entries for [WSP MCP unpublished-content access](../identity-and-access/wsp-mcp-unpublished-content-disclosure.md), [Junie CLI project-configuration execution](../infrastructure-and-supply-chain/junie-cli-untrusted-project-mcp-configuration-execution.md), and [Claude Agent SDK resume argument injection](../agent-and-tool-security/claude-agent-sdk-resume-argument-injection.md).
 
 - [October 2026](2026-10.md) includes item-level October 15 security entries for NetLicensing MCP token disclosure, Azure SRE Agent authorization, IntentKit tool dispatch, MoviePilot prompt injection, and Pipecat development-runner exposure.
@@ -27,6 +28,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 17 topic collector source](../../../raw/processed/2026-10-17/ai-security-wiki-topic-news-collector-2026-10-17T193139-0400.json)
+- [October 17 leaf update watch source](../../../raw/processed/2026-10-17/ai-security-wiki-leaf-update-watch-20261018T000146Z.json)
 - [October 14 topic collector source](../../../raw/processed/2026-10-14/ai-security-wiki-topic-news-collector-2026-10-14T233300Z.json)
 - [October 13 topic collector source](../../../raw/processed/2026-10-13/ai-security-wiki-topic-news-collector-2026-10-13T232603Z.json)
 - [October 12 topic collector source](../../../raw/processed/2026-10-12/ai-security-wiki-topic-news-collector-2026-10-12T233447Z.json)

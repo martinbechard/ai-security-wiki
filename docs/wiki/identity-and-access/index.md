@@ -6,6 +6,11 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [EnergizeLab Default Root SSH Credentials](energizelab-default-root-ssh-credentials.md)
+- [EnergizeLab Unauthenticated Model Administration](energizelab-unauthenticated-model-administration.md)
+- [Xiaozhi Device WebSocket Token Compromise](xiaozhi-device-websocket-token-compromise.md)
+- [EFAK Model-Configuration API Key Disclosure](efak-model-configuration-api-key-disclosure.md)
+- [LangChat Missing Authentication Control Plane](langchat-missing-authentication-control-plane.md)
 - [NetLicensing MCP Path Traversal Token Disclosure](netlicensing-mcp-path-traversal-token-disclosure.md)
 - [Azure SRE Agent Missing Authorization](azure-sre-agent-missing-authorization.md)
 - [Open WebUI disabled backend access](open-webui-disabled-backend-access.md)

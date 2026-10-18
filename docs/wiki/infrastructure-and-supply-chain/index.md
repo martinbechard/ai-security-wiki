@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [ZCode Workspace MCP Configuration Execution](zcode-workspace-mcp-configuration-execution.md)
+- [EnergizeLab Unsigned HTTP Firmware Update](energizelab-unsigned-http-firmware-update.md)
 - [Junie CLI Untrusted-Project MCP Configuration Execution](junie-cli-untrusted-project-mcp-configuration-execution.md)
 - [Pipecat Development-Runner Session Exposure](pipecat-development-runner-session-exposure.md)
 - [LightX2V Tokenizer auto_map Code Execution](lightx2v-tokenizer-auto-map-code-execution.md)

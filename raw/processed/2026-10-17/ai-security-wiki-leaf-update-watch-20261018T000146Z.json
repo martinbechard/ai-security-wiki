@@ -1,0 +1,113 @@
+{
+  "artifact_type": "ai-security-wiki-leaf-update-watch",
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "collected_at": "2026-10-18T00:01:46Z",
+  "window": {
+    "start_inclusive": "2026-10-10T00:00:00Z",
+    "end_exclusive": "2026-10-18T00:00:00Z",
+    "date_policy": "Included only sources with a visible publication or update date strictly inside the seven-day window; stale, missing, future, ambiguous, and boundary-only dates were excluded."
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/claude-agent-sdk-resume-argument-injection.md",
+    "docs/wiki/identity-and-access/wsp-mcp-unpublished-content-disclosure.md",
+    "docs/wiki/infrastructure-and-supply-chain/junie-cli-untrusted-project-mcp-configuration-execution.md",
+    "docs/wiki/identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md",
+    "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md",
+    "docs/wiki/agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md",
+    "docs/wiki/data-and-privacy/model-processing-data-residency-controls.md",
+    "docs/wiki/data-and-privacy/stable-diffusion-webui-cmd-flags-credential-disclosure.md",
+    "docs/wiki/governance-and-compliance/collective-cyber-defense-controls.md",
+    "docs/wiki/identity-and-access/fastgpt-wechat-outlink-auth-bypass.md",
+    "docs/wiki/identity-and-access/gitingest-host-prefix-token-disclosure.md",
+    "docs/wiki/identity-and-access/voltagent-memory-ownership-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/bifrost-ai-gateway-multimodal-ssrf.md",
+    "docs/wiki/infrastructure-and-supply-chain/bisheng-workflow-callback-ssrf.md"
+  ],
+  "sources_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-96620",
+    "https://github.com/advisories/GHSA-h4mw-j7qp-8mwm",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-109382",
+    "https://www.wordfence.com/threat-intel/vulnerabilities/id/809eb78f-fd8e-4434-a36b-bb8e313cf264?source=cve",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-111091",
+    "https://www.jetbrains.com/privacy-security/issues-fixed/",
+    "https://docs.cloud.google.com/model-armor/release-notes",
+    "https://openai.com/collective-cyberdefense/"
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/claude-agent-sdk-resume-argument-injection.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-96620",
+      "visible_published_at": "2026-10-16T19:44:01.260Z",
+      "visible_updated_at": "2026-10-16T19:44:01.260Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "CVE-2026-96620 discloses that Claude Agent SDK for Python before 0.2.121 passes an unvalidated dash-leading resume value as a separate CLI argument, allowing --mcp-config injection and stdio MCP command execution before SDK permission controls. The CVE lists version 0.2.121 as fixed.",
+      "affected_boundaries": ["untrusted resume/session identifier", "CLI argument parsing", "MCP server configuration", "SDK permission controls"],
+      "named_entities": ["Claude Agent SDK for Python", "Claude CLI", "MCP", "CVE-2026-96620", "GHSA-h4mw-j7qp-8mwm"],
+      "confirmed_exploitation": "not reported by the source",
+      "upstream_routing": "Keep broad Anthropic and Claude SDK catalog context in ai-wiki; this local record is limited to the security authority-escalation boundary.",
+      "follow_up_note": "Normal ingest should reconcile fixed-version and advisory metadata with the processed October 16 topic collector before adding durable prose."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/wsp-mcp-unpublished-content-disclosure.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-109382",
+      "visible_published_at": "2026-10-16T06:41:05.349Z",
+      "visible_updated_at": "2026-10-16T15:09:38.121Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "CVE-2026-109382 discloses that WSP MCP AI Agents Connector for WordPress through 2.9.5 allows a Subscriber-or-higher caller to use wsp_get_posts with status=all and disclose unpublished post metadata and excerpts because its MCP capability requirement is empty.",
+      "affected_boundaries": ["authenticated MCP caller", "WordPress capability check", "unpublished-content query", "tenant content confidentiality"],
+      "named_entities": ["WSP MCP AI Agents Connector", "WordPress", "wsp_get_posts", "CVE-2026-109382"],
+      "confirmed_exploitation": "not reported by the source",
+      "upstream_routing": "Keep broad WordPress and WSP catalog context in ai-wiki; retain the MCP authorization and confidential-content boundary locally.",
+      "follow_up_note": "Normal ingest should compare this record with the processed October 16 topic collector and use the Wordfence advisory for remediation status."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/junie-cli-untrusted-project-mcp-configuration-execution.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-111091",
+      "visible_published_at": "2026-10-15T15:29:52.373Z",
+      "visible_updated_at": "2026-10-15T16:05:25.428Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "CVE-2026-111091 discloses code execution through an untrusted project's MCP server configuration in JetBrains Junie CLI before 26.8.3. The source rates the issue High and identifies user interaction as required.",
+      "affected_boundaries": ["untrusted repository", "project MCP configuration", "Junie CLI process execution", "developer workstation"],
+      "named_entities": ["JetBrains Junie CLI", "MCP", "CVE-2026-111091"],
+      "confirmed_exploitation": "not reported by the source",
+      "upstream_routing": "Keep broad Junie workflow and product information in ai-wiki and ai-dev-wiki; retain the untrusted-project execution boundary locally.",
+      "follow_up_note": "Normal ingest should verify the vendor's exact fixed-version mapping against JetBrains' security-issues page before durable wording."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_ids": [
+        "docs/wiki/identity-and-access/telnyx-mcp-stored-credential-auth-bypass.md",
+        "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-access-control-escalation.md",
+        "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-code-injection.md",
+        "docs/wiki/agent-and-tool-security/siyuan-mcp-asset-upload-file-read.md",
+        "docs/wiki/data-and-privacy/stable-diffusion-webui-cmd-flags-credential-disclosure.md",
+        "docs/wiki/identity-and-access/fastgpt-wechat-outlink-auth-bypass.md",
+        "docs/wiki/identity-and-access/gitingest-host-prefix-token-disclosure.md",
+        "docs/wiki/identity-and-access/voltagent-memory-ownership-bypass.md",
+        "docs/wiki/infrastructure-and-supply-chain/bifrost-ai-gateway-multimodal-ssrf.md",
+        "docs/wiki/infrastructure-and-supply-chain/bisheng-workflow-callback-ssrf.md"
+      ],
+      "reason": "Checked CVE records have visible publication/update dates in August or September, outside the strict seven-day window."
+    },
+    {
+      "leaf_ids": ["docs/wiki/data-and-privacy/model-processing-data-residency-controls.md"],
+      "reason": "The cited Model Armor release notes were last updated October 12 but its latest residency-specific change is September 4; no same-leaf residency control change falls within the window."
+    },
+    {
+      "leaf_ids": ["docs/wiki/governance-and-compliance/collective-cyber-defense-controls.md"],
+      "reason": "The cited collective-defense and Daybreak announcements are August and September publications; no in-window commitment, control, or audit artifact was found."
+    }
+  ],
+  "federation": {
+    "local_scope": "Security-specific finding, affected boundary, mitigation, evidence classification, and operational implication.",
+    "upstream_scope": "Broad AI entities, product catalogs, and general AI-development practice remain in ai-wiki or ai-dev-wiki."
+  },
+  "follow_up_notes": [
+    "This is raw-only evidence; docs/wiki and raw/processed were not modified.",
+    "The three qualifying CVEs are already represented by the processed October 16 topic collector; compare source metadata before any ingest to avoid duplicate durable prose.",
+    "No source reports confirmed exploitation for the three qualifying disclosures."
+  ]
+}

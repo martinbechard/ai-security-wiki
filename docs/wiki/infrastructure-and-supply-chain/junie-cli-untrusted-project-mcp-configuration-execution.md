@@ -31,6 +31,7 @@ The [October 16 topic collector source](../../../raw/processed/2026-10-16/ai-sec
 - [October 16 topic collector source](../../../raw/processed/2026-10-16/ai-security-wiki-topic-news-collector-2026-10-16T232823Z.json)
 - [CVE-2026-111091 CVE JSON](https://cveawg.mitre.org/api/cve/CVE-2026-111091)
 - [JetBrains security issues fixed](https://www.jetbrains.com/privacy-security/issues-fixed/)
+- [October 17 leaf update watch source](../../../raw/processed/2026-10-17/ai-security-wiki-leaf-update-watch-20261018T000146Z.json)
 
 ## Related Code
 
@@ -57,3 +58,4 @@ The [October 16 topic collector source](../../../raw/processed/2026-10-16/ai-sec
 ## Maintenance Notes
 
 - Created on 2026-10-16 from CVE-2026-111091; preserve the distinction between configuration parsing and command activation.
+- Confirmed on 2026-10-17 by the [leaf watcher](../../../raw/processed/2026-10-17/ai-security-wiki-leaf-update-watch-20261018T000146Z.json); it retains 26.8.3 as the reported fixed version and user interaction as a precondition.
