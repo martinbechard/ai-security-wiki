@@ -1,0 +1,99 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-10-19T23:57:50Z",
+  "window": {
+    "start_inclusive": "2026-10-12T23:57:50Z",
+    "end_exclusive": "2026-10-19T23:57:50Z",
+    "date_policy": "Only an explicit, visible source publication or update date strictly inside the window qualifies. HTTP Date and Last-Modified headers alone are excluded."
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/infrastructure-and-supply-chain/portkey-ai-gateway-proxy-ssrf.md",
+    "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md",
+    "docs/wiki/infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md",
+    "docs/wiki/infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md",
+    "docs/wiki/infrastructure-and-supply-chain/spring-ai-resource-cache-fragment-file-write.md",
+    "docs/wiki/agent-and-tool-security/argocd-mcp-unauthenticated-http-tool-control.md",
+    "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md",
+    "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md",
+    "docs/wiki/identity-and-access/astron-agent-workflow-ownership-bypass.md",
+    "docs/wiki/identity-and-access/hel-online-classroom-ai-plugin-authorization-cluster.md",
+    "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md",
+    "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md",
+    "docs/wiki/incident-response/safe-ai-incident-sharing-guidance.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md",
+    "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md"
+  ],
+  "sources_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-82270",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-74820",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-47852",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-47851",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-59294",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-82456",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-82475",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-77007",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-77008",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-77010",
+    "https://developers.google.com/workspace/guides/configure-mcp-servers",
+    "https://docs.cloud.google.com/mcp/ai-security-safety",
+    "https://developers.google.com/workspace/guides/configure-mcp-security",
+    "https://www.csa.gov.sg/alerts-and-advisories/advisories/ad-2026-008/",
+    "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/",
+    "https://www.axios.com/2026/08/11/open-source-security-ai-agent-reporting",
+    "https://www.securityweek.com/cybersecurity-alliance-drafts-safe-guidelines-for-sharing-ai-incident-data/",
+    "https://www.secure.com/news/researchers-escape-ai-agent-sandbox-and-reach-the-host-mac",
+    "https://github.com/modelcontextprotocol/go-sdk/releases/tag/v1.7.0",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-63128",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-64684"
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-client-oauth-redirect-uri-handling.md",
+      "source_url": "https://developers.google.com/workspace/guides/configure-mcp-servers",
+      "visible_date": "2026-10-19 UTC",
+      "evidence_classification": "control change",
+      "summary": "Official Google Workspace MCP server configuration documentation visibly updated in-window and continues to require registered OAuth client redirect URIs for Antigravity and Claude remote MCP clients.",
+      "affected_boundary": "Remote MCP client OAuth redirect-URI registration and scoped Google Workspace authorization.",
+      "named_entities": ["Google Workspace MCP servers", "OAuth 2.0", "Antigravity", "Claude"],
+      "confirmed_exploitation": "No; this is control documentation, not an exploitation report.",
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep redirect-URI and authorization-boundary guidance locally; route broad Workspace and product context upstream."},
+      "follow_up_note": "During normal ingest, compare the updated document with the August 30 evidence and add only a material configuration or control delta."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-tool-level-iam-authorization.md",
+      "source_url": "https://docs.cloud.google.com/mcp/ai-security-safety",
+      "visible_date": "2026-10-16 UTC",
+      "evidence_classification": "control change",
+      "summary": "Official Google Cloud MCP AI security and safety guidance visibly updated in-window and documents least-privilege agent identities, prompt-injection defenses, audit logging, and deny policies for production read-write MCP tools.",
+      "affected_boundary": "Agent-visible MCP tool discovery and invocation under IAM, deny-policy, and audit controls.",
+      "named_entities": ["Google Cloud MCP servers", "IAM", "MCP Tool User", "Model Armor", "deny policies"],
+      "confirmed_exploitation": "No; this is control documentation, not an exploitation report.",
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the security-control implication locally; broad Google Cloud and MCP product context remains upstream-owned."},
+      "follow_up_note": "During normal ingest, compare against the August 30 watcher evidence; do not restate unchanged product documentation."
+    }
+  ],
+  "exclusions": [
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/portkey-ai-gateway-proxy-ssrf.md", "reason": "CVE record was last visibly updated 2026-09-24, outside the window."},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/servicenow-ai-platform-sql-injection.md", "reason": "CVE record was last visibly updated 2026-08-29, outside the window."},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/spring-ai-onnx-cache-model-substitution.md", "reason": "CVE record was last visibly updated 2026-08-27, outside the window."},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/spring-ai-pdf-document-reader-recursion-dos.md", "reason": "CVE record was last visibly updated 2026-08-27, outside the window."},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/spring-ai-resource-cache-fragment-file-write.md", "reason": "CVE record was last visibly updated 2026-08-28, outside the window."},
+    {"leaf_id": "docs/wiki/agent-and-tool-security/argocd-mcp-unauthenticated-http-tool-control.md", "reason": "CVE record was last visibly updated 2026-09-24, outside the window."},
+    {"leaf_id": "docs/wiki/governance-and-compliance/frontier-model-cybersecurity-review-transparency.md", "reason": "Checked sources have August publication dates; response headers were not treated as source update dates."},
+    {"leaf_id": "docs/wiki/governance-and-compliance/generative-ai-safe-use-advisory-controls.md", "reason": "The cited CSA source returned 403 and no visible in-window date was available."},
+    {"leaf_id": "docs/wiki/identity-and-access/astron-agent-workflow-ownership-bypass.md", "reason": "CVE record was last visibly updated 2026-09-01, outside the window."},
+    {"leaf_id": "docs/wiki/identity-and-access/hel-online-classroom-ai-plugin-authorization-cluster.md", "reason": "Three CVE records were last visibly updated 2026-08-30, outside the window."},
+    {"leaf_id": "docs/wiki/incident-response/safe-ai-incident-sharing-guidance.md", "reason": "Cited incident-sharing sources are August publications or lacked a visible in-window update date."},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/ai-agent-sandbox-escape-host-file-access.md", "reason": "The cited Secure.com article visibly identifies July 24, 2026 as its publication and modification date."},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/mcp-sdk-transport-header-handling.md", "reason": "The cited Go SDK release is July 28 and associated CVE records were updated in September, outside the window."}
+  ],
+  "affected_boundaries": ["remote OAuth redirect URI registration", "MCP tool IAM authorization", "production read-write tool denial", "agent audit evidence"],
+  "named_entities": ["Google Workspace MCP servers", "Google Cloud MCP servers", "OAuth 2.0", "IAM", "Model Armor"],
+  "upstream_routing": "Broad product and platform background remains upstream-owned by ai-wiki; this artifact retains only local security-control implications.",
+  "follow_up_notes": [
+    "Do not edit docs/wiki or raw/processed in this raw-only collector run.",
+    "Normal ingest should compare both official documentation updates with the August 30 watcher before adding durable prose."
+  ],
+  "blockers": []
+}

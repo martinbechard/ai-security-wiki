@@ -11,6 +11,8 @@ tags: ["agent-and-tool-security"]
 
 The [October 17 topic collector source](../../../raw/processed/2026-10-17/ai-security-wiki-topic-news-collector-2026-10-17T193139-0400.json) records [CVE-2026-77474](https://nvd.nist.gov/vuln/detail/CVE-2026-77474): `destructive_command_guard` before 0.6.6 repeatedly rescans nested or unclosed shell substitutions. An attacker-controlled command can hang the `PreToolUse` hook and cause its destructive-command release gate to fail open. General tool context belongs upstream; this page owns guard availability as an authorization property.
 
+The [October 19 leaf update watch](../../../raw/processed/2026-10-19/ai-security-wiki-leaf-update-watch-20261019T180144Z.json) adds CISA ADP SSVC enrichment, not a changed remedy: exploitation is assessed as none, automatable as no, and technical impact as partial. Treat that as a time-bounded prioritization signal; it does not weaken the fail-closed timeout requirement.
+
 ## Security Impact
 
 - Affected boundary: `PreToolUse` destructive-command validation before 0.6.6.
@@ -22,6 +24,7 @@ The [October 17 topic collector source](../../../raw/processed/2026-10-17/ai-sec
 
 - [October 17 topic collector source](../../../raw/processed/2026-10-17/ai-security-wiki-topic-news-collector-2026-10-17T193139-0400.json)
 - [CVE-2026-77474](https://nvd.nist.gov/vuln/detail/CVE-2026-77474)
+- [October 19 leaf update watch](../../../raw/processed/2026-10-19/ai-security-wiki-leaf-update-watch-20261019T180144Z.json)
 
 ## Related Code
 
@@ -46,3 +49,4 @@ The [October 17 topic collector source](../../../raw/processed/2026-10-17/ai-sec
 ## Maintenance Notes
 
 - Created on 2026-10-17 from CVE-2026-77474.
+- Updated on 2026-10-19 with CISA SSVC enrichment; recheck the assessment if exploitation status changes.

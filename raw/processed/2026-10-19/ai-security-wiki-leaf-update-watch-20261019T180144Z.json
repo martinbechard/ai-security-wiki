@@ -1,0 +1,58 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_started_at": "2026-10-19T18:01:44Z",
+  "window": {"start_inclusive": "2026-10-12T18:01:44Z", "end_exclusive": "2026-10-19T18:01:44Z"},
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/archon-default-control-api-command-execution.md",
+    "docs/wiki/agent-and-tool-security/destructive-command-guard-fail-open-hook-bypass.md",
+    "docs/wiki/agent-and-tool-security/energizelab-ai-skill-file-write.md",
+    "docs/wiki/data-and-privacy/99ai-chat-log-export-disclosure.md",
+    "docs/wiki/data-and-privacy/energizelab-ai-provider-key-disclosure.md",
+    "docs/wiki/data-and-privacy/nezha-mcp-file-transfer-host-header-token-disclosure.md",
+    "docs/wiki/data-and-privacy/sparkyfitness-ai-service-ssrf-prompt-disclosure.md",
+    "docs/wiki/identity-and-access/efak-model-configuration-api-key-disclosure.md",
+    "docs/wiki/identity-and-access/energizelab-default-root-ssh-credentials.md",
+    "docs/wiki/identity-and-access/energizelab-unauthenticated-model-administration.md",
+    "docs/wiki/identity-and-access/langchat-missing-authentication-control-plane.md",
+    "docs/wiki/identity-and-access/xiaozhi-device-websocket-token-compromise.md",
+    "docs/wiki/infrastructure-and-supply-chain/energizelab-unsigned-http-firmware-update.md",
+    "docs/wiki/infrastructure-and-supply-chain/zcode-workspace-mcp-configuration-execution.md",
+    "docs/wiki/infrastructure-and-supply-chain/gpt-crawler-output-filename-file-write.md"
+  ],
+  "sources_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-111322", "https://cveawg.mitre.org/api/cve/CVE-2026-77474", "https://cveawg.mitre.org/api/cve/CVE-2026-105032", "https://cveawg.mitre.org/api/cve/CVE-2026-111706", "https://cveawg.mitre.org/api/cve/CVE-2026-105039", "https://cveawg.mitre.org/api/cve/CVE-2026-111385", "https://cveawg.mitre.org/api/cve/CVE-2026-102923", "https://cveawg.mitre.org/api/cve/CVE-2026-111682", "https://cveawg.mitre.org/api/cve/CVE-2026-105033", "https://cveawg.mitre.org/api/cve/CVE-2026-105038", "https://cveawg.mitre.org/api/cve/CVE-2026-111704", "https://cveawg.mitre.org/api/cve/CVE-2026-111623", "https://cveawg.mitre.org/api/cve/CVE-2026-105036", "https://cveawg.mitre.org/api/cve/CVE-2026-88755", "https://cveawg.mitre.org/api/cve/CVE-2026-82286"
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/destructive-command-guard-fail-open-hook-bypass.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77474",
+      "visible_date": "2026-10-19T12:38:04.696Z",
+      "evidence_classification": "disclosed vulnerability; CISA ADP enrichment",
+      "summary": "CISA added SSVC enrichment to CVE-2026-77474 after the October 17 collector: Exploitation=none, Automatable=no, and Technical Impact=partial. The existing disclosure and 0.6.6 fix remain unchanged.",
+      "affected_boundary": "AI-agent destructive-command guard availability and fail-open release behavior under attacker-controlled nested shell substitutions.",
+      "named_entities": ["destructive_command_guard", "CISA ADP", "SSVC", "PreToolUse", "AI coding agents"],
+      "confirmed_exploitation": "No; CISA SSVC states Exploitation=none.",
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the security control update locally; broad agent-tool background remains upstream-owned."},
+      "follow_up_note": "During normal ingest, record CISA's non-exploitation assessment only as time-bounded enrichment; retain the existing fixed-version and fail-closed timeout guidance."
+    }
+  ],
+  "exclusions": [
+    {"leaf_id": "docs/wiki/agent-and-tool-security/archon-default-control-api-command-execution.md", "reason": "October 15-16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/agent-and-tool-security/energizelab-ai-skill-file-write.md", "reason": "October 15-16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/data-and-privacy/99ai-chat-log-export-disclosure.md", "reason": "October 16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/data-and-privacy/energizelab-ai-provider-key-disclosure.md", "reason": "October 15-16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/data-and-privacy/nezha-mcp-file-transfer-host-header-token-disclosure.md", "reason": "October 16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/data-and-privacy/sparkyfitness-ai-service-ssrf-prompt-disclosure.md", "reason": "October 16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/identity-and-access/efak-model-configuration-api-key-disclosure.md", "reason": "October 16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/identity-and-access/energizelab-default-root-ssh-credentials.md", "reason": "October 15-16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/identity-and-access/energizelab-unauthenticated-model-administration.md", "reason": "October 15-16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/identity-and-access/langchat-missing-authentication-control-plane.md", "reason": "October 16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/identity-and-access/xiaozhi-device-websocket-token-compromise.md", "reason": "October 16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/energizelab-unsigned-http-firmware-update.md", "reason": "October 15-16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/zcode-workspace-mcp-configuration-execution.md", "reason": "October 16 CVE disclosure was already represented by the processed October 17 collector; no later material delta."},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/gpt-crawler-output-filename-file-write.md", "reason": "CVE publication and last update are outside the seven-day window."}
+  ],
+  "blockers": [],
+  "follow_up_notes": ["Do not edit docs/wiki or raw/processed in this collector run.", "Normal ingest should compare this CISA enrichment with the October 17 processed collector and avoid duplicating the original disclosure."]
+}

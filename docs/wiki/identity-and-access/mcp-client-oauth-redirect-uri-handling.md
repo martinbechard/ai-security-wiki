@@ -14,6 +14,8 @@ This page owns the identity-and-access lens only. Broad Cursor and Google Cloud 
 
 The [August 30 leaf update watch source](../../../raw/processed/2026-08-30/ai-security-wiki-leaf-update-watch-20260831T000130Z.json) adds official [Google Workspace MCP server configuration](https://developers.google.com/workspace/guides/configure-mcp-servers) evidence for remote MCP OAuth clients. It keeps product-specific Workspace, Antigravity, and Claude setup details upstream while preserving the local rule that redirect URIs and product scopes are part of the authorization boundary for remote MCP servers.
 
+The [October 19 leaf update watch](../../../raw/processed/2026-10-19/ai-security-wiki-leaf-update-watch-20261019T235750Z.json) confirms the documented registered-redirect-URI requirement remains in place for Antigravity and Claude remote MCP clients. It identifies no material control delta, exploit, or incident.
+
 ## Security Impact
 
 - Threat or control area: MCP client OAuth setup incompatibility can push users toward unmanaged credentials or incorrectly registered redirect URIs.
@@ -27,6 +29,7 @@ The [August 30 leaf update watch source](../../../raw/processed/2026-08-30/ai-se
 
 - [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json)
 - [August 30 leaf update watch source](../../../raw/processed/2026-08-30/ai-security-wiki-leaf-update-watch-20260831T000130Z.json)
+- [October 19 leaf update watch](../../../raw/processed/2026-10-19/ai-security-wiki-leaf-update-watch-20261019T235750Z.json)
 - Google Cloud MCP release notes: https://docs.cloud.google.com/mcp/docs/release-notes
 - Google Workspace MCP server configuration: https://developers.google.com/workspace/guides/configure-mcp-servers
 
@@ -57,3 +60,4 @@ The [August 30 leaf update watch source](../../../raw/processed/2026-08-30/ai-se
 
 - Added from the [July 28 topic news collector source](../../../raw/processed/2026-07-28/ai-security-wiki-topic-news-collector-2026-07-28T193213-0400.json) to preserve the date caveat instead of manufacturing a stronger current-change claim.
 - Updated on 2026-08-30 from the [August 30 leaf watcher](../../../raw/processed/2026-08-30/ai-security-wiki-leaf-update-watch-20260831T000130Z.json) with Workspace MCP OAuth redirect URI and product-scope setup evidence.
+- Updated on 2026-10-19 with confirmation that the documented redirect-URI control remains unchanged.
