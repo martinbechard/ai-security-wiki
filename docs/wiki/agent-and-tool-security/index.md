@@ -111,6 +111,10 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [Cognition Unauthenticated Local-Shell Agent RCE](cognition-unauthenticated-local-shell-agent-rce.md)
+- [SGLang Prefill-Decode SSRF and Scheduler DoS](sglang-prefill-decode-ssrf-and-scheduler-dos.md)
+- [crewai-tools Selenium Scraping Private-Address SSRF](crewai-tools-selenium-scraping-private-address-ssrf.md)
+
 - [Claude Agent SDK Resume Argument Injection](claude-agent-sdk-resume-argument-injection.md)
 - [Network-AI ClaudeHookBridge Deny-Pattern Bypass](network-ai-claudehookbridge-deny-pattern-bypass.md)
 - [Agno PythonTools Code Injection](agno-pythontools-code-injection.md)

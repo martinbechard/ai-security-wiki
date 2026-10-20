@@ -51,6 +51,15 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
+- [YOLOE AutoBackend Model-Loading Code Execution](yoloe-autobackend-model-loading-code-execution.md)
+- [Stable Diffusion WebUI Model-Instantiation Code Injection](stable-diffusion-webui-model-instantiation-code-injection.md)
+- [Xinference Custom-Model Path Traversal](xinference-custom-model-path-traversal.md)
+- [YOLOv9 ONNX Metadata Code Injection](yolov9-onnx-metadata-code-injection.md)
+- [HanLP Model-Configuration Deserialization](hanlp-model-configuration-deserialization.md)
+- [ESPnet Inference-Model Deserialization](espnet-inference-model-deserialization.md)
+- [Doctor-Dignity MLC Chat model_lib Code Injection](doctor-dignity-mlc-chat-model-lib-code-injection.md)
+- [Speaches Pyannote Model-Loading Code Execution](speaches-pyannote-model-loading-code-execution.md)
+
 - [Junie CLI Untrusted-Project MCP Configuration Execution](junie-cli-untrusted-project-mcp-configuration-execution.md)
 - [Pipecat Development-Runner Session Exposure](pipecat-development-runner-session-exposure.md)
 - [LightX2V Tokenizer auto_map Code Execution](lightx2v-tokenizer-auto-map-code-execution.md)

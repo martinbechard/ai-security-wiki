@@ -1,0 +1,164 @@
+{
+  "artifact_type": "public-ai-security-topic-news-collection",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-10-19T19:31:49-04:00",
+  "cutoff_window": {
+    "start_exclusive": "2026-10-17T19:31:49-04:00",
+    "end_inclusive": "2026-10-19T19:31:49-04:00",
+    "date_policy": "Only records with an explicit publication timestamp strictly after the cutoff and no later than the run time qualify. Date-only, ambiguous, future-dated, and boundary-only records are excluded. A later database modification timestamp is not used to qualify an item."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "wiki_and_routing_context": {
+    "local_wiki_checked": ["docs/wiki/federation.md", "docs/wiki/topic-index.md"],
+    "upstream_wikis_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "routing_rule": "Keep the security finding, affected boundary, mitigation, and operating implication in this downstream wiki. Broad products and general AI-assisted-development practices remain upstream-owned."
+  },
+  "sources_consulted": [
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-17T23%3A30%3A50.000&pubEndDate=2026-10-19T23%3A30%3A50.000&keywordSearch=agent",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-19T19:30:50-04:00"
+    },
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-17T23%3A30%3A50.000&pubEndDate=2026-10-19T23%3A30%3A50.000&keywordSearch=MCP",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-19T19:30:50-04:00"
+    },
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-17T23%3A30%3A50.000&pubEndDate=2026-10-19T23%3A30%3A50.000&keywordSearch=LLM",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-19T19:30:50-04:00"
+    },
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-109437",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-19T19:31:20-04:00"
+    },
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-111935",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-19T19:31:20-04:00"
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-109437",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-109437", "https://github.com/CognicellAI/Cognition/releases/tag/v0.13.0", "https://www.vulncheck.com/advisories/cognition-unauthenticated-rce-via-local-shell-backend"],
+      "visible_dates": {"published": "2026-10-19T19:17:19.807"},
+      "evidence_classification": "NVD public CVE record with linked project release and public advisory",
+      "summary": "Cognition before 0.13.0 exposes an unauthenticated REST/SSE session API while defaulting its agent sandbox backend to local execution. An attacker can create a session and direct the Deep Agents ReAct loop to run shell commands as the server process.",
+      "affected_boundary_or_version": "Cognition before 0.13.0; REST/SSE session API and local-shell agent sandbox backend.",
+      "ai_security_relevance": "The finding crosses an unauthenticated network boundary into autonomous agent tool execution and local command authority.",
+      "named_entities": ["Cognition", "Deep Agents", "ReAct", "agent sandbox", "local shell"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the authentication-to-tool-execution boundary and upgrade action locally; route general product coverage upstream."},
+      "confidence": "high",
+      "follow_up": "Verify the v0.13.0 release notes and any migration controls before durable synthesis."
+    },
+    {
+      "id": "CVE-2026-111935",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-111935", "https://github.com/codexu/note-gen/commit/64e671eb58f56ad6ebec0d99d32f6037f9319979", "https://github.com/codexu/note-gen/commit/6840c13c4fcb71a79b7df838d19a026830d64b96"],
+      "visible_dates": {"published": "2026-10-19T14:17:01.043"},
+      "evidence_classification": "NVD public CVE record with linked project remediation commits",
+      "summary": "NoteGen through 0.38.3 accepts unvalidated synced sourceUrl paths in chat image analysis. A collaborator able to write to the sync target can provide an absolute or file URL, causing the application to read a local image and send it to the AI provider.",
+      "affected_boundary_or_version": "NoteGen through 0.38.3; synced chat-image sourceUrl path passed to image_inspect.",
+      "ai_security_relevance": "Untrusted collaborative content can exfiltrate local data across the application-to-model-provider privacy boundary.",
+      "named_entities": ["NoteGen", "chat image analysis", "sourceUrl", "AI provider", "local file disclosure"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the local-data-to-provider disclosure control locally; route general NoteGen product context upstream."},
+      "confidence": "high",
+      "follow_up": "Confirm the first fixed release and whether existing sync targets need remediation."
+    },
+    {
+      "id": "CVE-2026-112145",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-112145", "https://github.com/speaches-ai/speaches/commit/870e1e16a73452496e99d49f759eabd692a8e0e0"],
+      "visible_dates": {"published": "2026-10-19T14:17:02.140"},
+      "evidence_classification": "NVD public CVE record with linked project commit",
+      "summary": "Speaches through 0.9.0-rc.3 allows attacker-controlled model input to select classes or code in its Pyannote diarization model-loading path; NVD reports public exploit availability and no project response.",
+      "affected_boundary_or_version": "Speaches through 0.9.0-rc.3; PyannoteDiarizationModelManager model-loading path.",
+      "ai_security_relevance": "Untrusted model selection crosses into executable runtime behavior, creating a model-artifact and inference supply-chain risk.",
+      "named_entities": ["Speaches", "Pyannote", "diarization", "model loading"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the model-loader execution boundary locally; route general product background upstream."},
+      "confidence": "medium",
+      "follow_up": "Recheck project response, exploit conditions, and a fixed version before durable guidance."
+    },
+    {
+      "id": "CVE-2026-112265",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-112265"],
+      "visible_dates": {"published": "2026-10-19T14:17:03.277"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "LangBot through 4.11.0 does not verify Lark/Feishu webhook signatures, allowing an unauthenticated actor knowing a bot UUID to forge message or card-action events that drive the LLM pipeline, tools, and approvals as another user.",
+      "affected_boundary_or_version": "LangBot through 4.11.0; Lark/Feishu event ingress into LLM, tool, and approval flows.",
+      "ai_security_relevance": "Forged identity events can acquire delegated authority over agent tools and approval workflows.",
+      "named_entities": ["LangBot", "Lark", "Feishu", "webhook signature", "LLM pipeline", "approvals"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the event-authentication and delegated-authority implication locally; route ordinary chat-bot background upstream."},
+      "confidence": "high",
+      "follow_up": "Locate the maintainer advisory or patch and determine whether event replay protections are also required."
+    },
+    {
+      "id": "CVE-2026-112267",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-112267"],
+      "visible_dates": {"published": "2026-10-19T14:17:04.160"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "SGLang through 0.5.22 accepts client-controlled bootstrap_host and bootstrap_port values in prefill/decode disaggregation mode. An unauthenticated caller can make the decode worker request internal hosts and ports and block the shared scheduler loop.",
+      "affected_boundary_or_version": "SGLang through 0.5.22; Decode worker /generate endpoint in prefill/decode disaggregation mode.",
+      "ai_security_relevance": "An inference-serving endpoint can become an internal-network and availability pivot through server-side request forgery.",
+      "named_entities": ["SGLang", "inference serving", "decode worker", "SSRF", "scheduler"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the inference-network boundary and mitigation locally; route broad SGLang coverage upstream."},
+      "confidence": "high",
+      "follow_up": "Identify the fixed release and document network-egress containment as an interim control."
+    },
+    {
+      "id": "CVE-2026-112308",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-112308"],
+      "visible_dates": {"published": "2026-10-19T16:17:06.887"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "crewai-tools through 1.15.28 does not apply its private-address validation in SeleniumScrapingTool. Prompt-influenced tool input can direct headless Chrome to loopback, RFC1918, or cloud-metadata addresses and disclose internal data or credentials.",
+      "affected_boundary_or_version": "crewai-tools through 1.15.28; SeleniumScrapingTool URL handling; fixed version not confirmed by this run.",
+      "ai_security_relevance": "Prompt injection can be converted into browser-tool SSRF against privileged internal and cloud credential surfaces.",
+      "named_entities": ["crewai-tools", "SeleniumScrapingTool", "prompt injection", "headless Chrome", "cloud metadata"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the prompt-to-browser-tool SSRF security boundary locally; general CrewAI framework coverage is upstream-owned."},
+      "confidence": "high",
+      "follow_up": "Confirm patched release, URL-filter behavior, and any browser network-isolation guidance before durable synthesis."
+    }
+  ],
+  "upstream_routing_notes": [
+    {"entity_scope": "Cognition, NoteGen, Speaches, LangBot, SGLang, and CrewAI product or framework background", "owner": "ai-wiki", "local_retention": "Only the vulnerability, affected boundary, mitigation, and operational security implication."},
+    {"entity_scope": "ordinary agent and development workflow practices", "owner": "ai-dev-wiki", "local_retention": "Only the identity, tool-execution, privacy, SSRF, or supply-chain control that is a distinct security finding."}
+  ],
+  "exclusions": [
+    {"candidate": "CVE-2026-111061 and unrelated SSH-agent records", "reason": "Published in window but concerns generic SSH-agent resource exhaustion, not an AI system or AI security boundary."},
+    {"candidate": "CVE-2026-111063 through CVE-2026-111750 AIOHTTP records", "reason": "Published in window but are general HTTP-library flaws without an AI-specific security delta."},
+    {"candidate": "CVE-2026-112046 OW2 ASM denial of service", "reason": "The description mentions agents as generic bytecode consumers; it does not establish an AI security boundary."},
+    {"candidate": "CVE-2026-112147 Octoally information disclosure", "reason": "The NVD result identifies an AI-branded project but provides insufficient detail to establish a model, agent, tool, data, identity, or supply-chain security boundary."},
+    {"candidate": "CVE-2026-111946 and CVE-2026-112297", "reason": "Their NVD publication timestamps are later than this run time and therefore future-dated for this artifact."},
+    {"candidate": "Earlier October 17-19 AI-security CVEs recorded in raw/2026-10-19/ai-security-wiki-topic-news-collector-2026-10-19T140139-0400.json", "reason": "A separate pre-existing unprocessed artifact already records those findings. It was preserved untouched to avoid duplicate raw capture; this artifact records the later-publication delta located during this run."}
+  ],
+  "confidence_notes": [
+    "NVD provides concrete public disclosure and publication timestamps. Several records were NVD-first, so project advisories and fixed-version claims require ingest-time confirmation.",
+    "NVD returned HTTP 429 for several direct-record enrichment requests after two successful fetches. The qualifying summaries were retained only where the successful keyword-search response supplied a concrete AI-security description and explicit publication timestamp.",
+    "The pre-existing same-day raw artifact is untracked work not created or modified by this run; it is cited only as a de-duplication boundary."
+  ],
+  "follow_up_actions": [
+    "During ingest, retrieve maintainer advisories, commits, and release notes before promoting NVD-first records to durable pages.",
+    "Confirm fixed versions and compensating controls, especially for Speaches, LangBot, SGLang, and crewai-tools.",
+    "Keep broad entity background upstream and retain only the security-specific lens locally.",
+    "Do not move this artifact to raw/processed until normal source-to-wiki ingestion and independent verification succeed."
+  ],
+  "collection_blockers": [
+    "NVD rate-limited several direct-record enrichment requests after successful search and two individual-record responses.",
+    "No additional primary vendor advisories were fetched before the collection window closed; remediation specifics remain follow-up work."
+  ]
+}

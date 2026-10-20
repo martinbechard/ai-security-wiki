@@ -6,6 +6,11 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [Coder Agent-Debug Manifest Credential Disclosure](coder-agent-debug-manifest-credential-disclosure.md)
+- [LobsterAI Provider-Key Export Cryptography](lobsterai-provider-key-export-cryptography.md)
+- [Apache Answer MCP Content-State Authorization](apache-answer-mcp-content-state-authorization.md)
+- [NoteGen Synced Image Local-File Disclosure](notegen-synced-image-local-file-disclosure.md)
+
 - [Nezha MCP File-Transfer Host Header Token Disclosure](nezha-mcp-file-transfer-host-header-token-disclosure.md)
 - [EnergizeLab AI Provider Key Disclosure](energizelab-ai-provider-key-disclosure.md)
 - [SparkyFitness AI Service SSRF and Prompt Disclosure](sparkyfitness-ai-service-ssrf-prompt-disclosure.md)

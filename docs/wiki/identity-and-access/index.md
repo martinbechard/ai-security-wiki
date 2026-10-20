@@ -6,6 +6,12 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [OneUptime Cluster-Scoped AI Action Authorization](oneuptime-cluster-scoped-ai-action-authorization.md)
+- [Google OSS Agent Mesh Biscuit Capability Bypass](google-oss-agent-mesh-biscuit-capability-bypass.md)
+- [Google OSS Agent Mesh MCP/OIDC Enrollment Bypass](google-oss-agent-mesh-mcp-oidc-enrollment-bypass.md)
+- [AI Engine WordPress Media Object Authorization](ai-engine-wordpress-media-object-authorization.md)
+- [LangBot Lark Webhook Signature Bypass](langbot-lark-webhook-signature-bypass.md)
+
 - [EnergizeLab Default Root SSH Credentials](energizelab-default-root-ssh-credentials.md)
 - [EnergizeLab Unauthenticated Model Administration](energizelab-unauthenticated-model-administration.md)
 - [Xiaozhi Device WebSocket Token Compromise](xiaozhi-device-websocket-token-compromise.md)

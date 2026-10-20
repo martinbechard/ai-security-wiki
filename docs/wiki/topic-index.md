@@ -8,6 +8,27 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [Coder Agent-Debug Manifest Credential Disclosure](data-and-privacy/coder-agent-debug-manifest-credential-disclosure.md)
+- [OneUptime Cluster-Scoped AI Action Authorization](identity-and-access/oneuptime-cluster-scoped-ai-action-authorization.md)
+- [LobsterAI Provider-Key Export Cryptography](data-and-privacy/lobsterai-provider-key-export-cryptography.md)
+- [YOLOE AutoBackend Model-Loading Code Execution](infrastructure-and-supply-chain/yoloe-autobackend-model-loading-code-execution.md)
+- [Stable Diffusion WebUI Model-Instantiation Code Injection](infrastructure-and-supply-chain/stable-diffusion-webui-model-instantiation-code-injection.md)
+- [Xinference Custom-Model Path Traversal](infrastructure-and-supply-chain/xinference-custom-model-path-traversal.md)
+- [YOLOv9 ONNX Metadata Code Injection](infrastructure-and-supply-chain/yolov9-onnx-metadata-code-injection.md)
+- [Google OSS Agent Mesh Biscuit Capability Bypass](identity-and-access/google-oss-agent-mesh-biscuit-capability-bypass.md)
+- [Google OSS Agent Mesh MCP/OIDC Enrollment Bypass](identity-and-access/google-oss-agent-mesh-mcp-oidc-enrollment-bypass.md)
+- [Apache Answer MCP Content-State Authorization](data-and-privacy/apache-answer-mcp-content-state-authorization.md)
+- [HanLP Model-Configuration Deserialization](infrastructure-and-supply-chain/hanlp-model-configuration-deserialization.md)
+- [ESPnet Inference-Model Deserialization](infrastructure-and-supply-chain/espnet-inference-model-deserialization.md)
+- [Doctor-Dignity MLC Chat model_lib Code Injection](infrastructure-and-supply-chain/doctor-dignity-mlc-chat-model-lib-code-injection.md)
+- [AI Engine WordPress Media Object Authorization](identity-and-access/ai-engine-wordpress-media-object-authorization.md)
+- [Cognition Unauthenticated Local-Shell Agent RCE](agent-and-tool-security/cognition-unauthenticated-local-shell-agent-rce.md)
+- [NoteGen Synced Image Local-File Disclosure](data-and-privacy/notegen-synced-image-local-file-disclosure.md)
+- [Speaches Pyannote Model-Loading Code Execution](infrastructure-and-supply-chain/speaches-pyannote-model-loading-code-execution.md)
+- [LangBot Lark Webhook Signature Bypass](identity-and-access/langbot-lark-webhook-signature-bypass.md)
+- [SGLang Prefill-Decode SSRF and Scheduler DoS](agent-and-tool-security/sglang-prefill-decode-ssrf-and-scheduler-dos.md)
+- [crewai-tools Selenium Scraping Private-Address SSRF](agent-and-tool-security/crewai-tools-selenium-scraping-private-address-ssrf.md)
+
 - [agent-and-tool-security/archon-default-control-api-command-execution.md](agent-and-tool-security/archon-default-control-api-command-execution.md)
 - [data-and-privacy/nezha-mcp-file-transfer-host-header-token-disclosure.md](data-and-privacy/nezha-mcp-file-transfer-host-header-token-disclosure.md)
 - [infrastructure-and-supply-chain/zcode-workspace-mcp-configuration-execution.md](infrastructure-and-supply-chain/zcode-workspace-mcp-configuration-execution.md)

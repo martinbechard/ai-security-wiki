@@ -1,0 +1,228 @@
+{
+  "artifact_type": "public-ai-security-topic-news-collection",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-10-19T14:01:39-04:00",
+  "cutoff_window": {
+    "start_exclusive": "2026-10-17T14:01:39-04:00",
+    "end_inclusive": "2026-10-19T14:01:39-04:00",
+    "date_policy": "Only source records with an explicit publication timestamp strictly after the cutoff and no later than the run time qualify. Date-only, ambiguous, future-dated, and boundary-only records are excluded. A later database modification timestamp is not used to qualify an item."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "wiki_and_routing_context": {
+    "local_wiki_checked": "docs/wiki/topic-index.md and docs/wiki/federation.md",
+    "upstream_wikis_checked": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "routing_rule": "This downstream wiki retains the security finding, affected boundary, mitigation, and operating implication. Broad product, framework, and AI-development-practice background remains upstream-owned."
+  },
+  "sources_consulted": [
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-17T00%3A00%3A00.000&pubEndDate=2026-10-19T14%3A00%3A32.000&keywordSearch=MCP",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-19T14:00:32-04:00"
+    },
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-17T00%3A00%3A00.000&pubEndDate=2026-10-19T14%3A00%3A32.000&keywordSearch=agent",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-19T14:00:32-04:00"
+    },
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-17T00%3A00%3A00.000&pubEndDate=2026-10-19T14%3A00%3A32.000&keywordSearch=AI",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-19T14:00:32-04:00"
+    },
+    {
+      "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-17T00%3A00%3A00.000&pubEndDate=2026-10-19T14%3A00%3A32.000&keywordSearch=model",
+      "classification": "NVD public vulnerability database API",
+      "accessed_at": "2026-10-19T14:00:32-04:00"
+    }
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-111926",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-111926", "https://github.com/coder/coder/security/advisories/GHSA-73wg-wxvv-9r4j"],
+      "visible_dates": {"published": "2026-10-17T19:16:35.390", "last_modified_observed": "2026-10-18T12:17:10.980"},
+      "evidence_classification": "NVD public CVE record with linked GitHub Security Advisory",
+      "summary": "Coder 2.10.0 through before 2.34.8 exposes an unauthenticated local agent-debug endpoint whose manifest can disclose template-provided environment values, including cloud and registry credentials, to a lower-privileged process in the same workspace.",
+      "affected_boundary_or_version": "Coder 2.10.0 to before 2.34.8; loopback agent debug server on port 2113.",
+      "ai_security_relevance": "A coding-agent workspace crosses a local-process trust boundary into credential disclosure.",
+      "named_entities": ["Coder", "coding agent", "agent debug server", "credentials"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the agent-workspace credential boundary locally; route general Coder product background upstream."},
+      "confidence": "high",
+      "follow_up": "Confirm the advisory remediation and upgrade guidance during ingest."
+    },
+    {
+      "id": "CVE-2026-112047",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-112047", "https://github.com/OneUptime/oneuptime/security/advisories/GHSA-8fph-9j9f-xxgc", "https://github.com/OneUptime/oneuptime/releases/tag/14.0.69"],
+      "visible_dates": {"published": "2026-10-18T13:16:36.607", "last_modified_observed": "2026-10-18T13:16:36.720"},
+      "evidence_classification": "NVD public CVE record with linked project advisory, fix commit, and release",
+      "summary": "OneUptime 14.0.2 through before 14.0.69 incorrectly applies project-wide permissions to cluster-scoped AI actions, allowing an authenticated member to invoke AI access tests, agent resets, kubectl-plan approval, incident AI conversations, or commands against clusters outside its scope.",
+      "affected_boundary_or_version": "OneUptime 14.0.2 to before 14.0.69; Kubernetes AI and agent actions.",
+      "ai_security_relevance": "This is a least-privilege failure where an AI-enabled operational control plane can cross tenant or cluster authorization boundaries.",
+      "named_entities": ["OneUptime", "Kubernetes", "AI access test", "agent reset", "RBAC"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the authorization and autonomous-operations implication locally; general OneUptime coverage is upstream-owned."},
+      "confidence": "high",
+      "follow_up": "Verify the release's exact fixed-build scope before durable synthesis."
+    },
+    {
+      "id": "CVE-2026-112014",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-112014", "https://github.com/netease-youdao/LobsterAI/commit/1eb28c40d7e42d6cbade07874e6f6c068b6a9a64", "https://github.com/netease-youdao/LobsterAI/releases/tag/2026.10.16"],
+      "visible_dates": {"published": "2026-10-18T12:17:14.167", "last_modified_observed": "2026-10-18T12:17:14.167"},
+      "evidence_classification": "NVD public CVE record with linked remediation commit and release",
+      "summary": "LobsterAI before 2026.10.16 uses a hard-coded password and salt to encrypt exported provider API keys; anyone obtaining the export can derive the AES-GCM key and recover third-party provider credentials.",
+      "affected_boundary_or_version": "LobsterAI before 2026.10.16; exported provider-key backup files.",
+      "ai_security_relevance": "The weakness exposes credentials that authorize model-provider use and therefore compromises the AI application credential boundary.",
+      "named_entities": ["LobsterAI", "provider API keys", "AES-GCM", "credential export"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the credential-export control failure locally; route general LobsterAI product context upstream."},
+      "confidence": "high",
+      "follow_up": "Capture the project's replacement key-management behavior during ingest."
+    },
+    {
+      "id": "CVE-2026-111865",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-111865", "https://github.com/THU-MIG/yoloe/issues/148"],
+      "visible_dates": {"published": "2026-10-17T21:16:25.793", "last_modified_observed": "2026-10-19T15:16:55.447", "modification_note": "The observed modification timestamp is after this run and is not used for qualification."},
+      "evidence_classification": "NVD public CVE record with linked project issue",
+      "summary": "YOLOE's AutoBackend model-loading path dynamically evaluates model-controlled values such as imgsz, names, and kpt_shape, permitting local code execution from a malicious model artifact; no maintained fixed release is identified.",
+      "affected_boundary_or_version": "THU-MIG yoloe through commit 40cd606cabdbe2b566d6f14a6b162c89206e9a1b; AutoBackend model loading.",
+      "ai_security_relevance": "It is a model-artifact supply-chain risk: loading an untrusted model can become code execution.",
+      "named_entities": ["YOLOE", "AutoBackend", "model loading", "dynamic evaluation"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the unsafe model-loading security boundary locally; broad YOLOE background remains upstream-owned."},
+      "confidence": "medium", "follow_up": "Validate the exploit and upstream response before treating it as a general model-loading control."
+    },
+    {
+      "id": "CVE-2026-111986",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-111986", "https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/17499"],
+      "visible_dates": {"published": "2026-10-18T13:16:35.920", "last_modified_observed": "2026-10-19T15:16:45.150", "modification_note": "The observed modification timestamp is after this run and is not used for qualification."},
+      "evidence_classification": "NVD public CVE record with linked project issue and public proof-of-concept reference",
+      "summary": "AUTOMATIC1111 stable-diffusion-webui through 1.10.1 permits code injection through the Target value processed by its model-instantiation path; the record states a public exploit and no project response.",
+      "affected_boundary_or_version": "stable-diffusion-webui through 1.10.1; model instantiation configuration.",
+      "ai_security_relevance": "Untrusted model configuration crosses directly into executable runtime behavior, a deployment and artifact supply-chain boundary.",
+      "named_entities": ["AUTOMATIC1111", "stable-diffusion-webui", "model instantiation"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the model-artifact execution finding locally; product catalog coverage belongs upstream."},
+      "confidence": "medium", "follow_up": "Recheck the project issue and fixed-version status during ingest."
+    },
+    {
+      "id": "CVE-2026-112051",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-112051", "https://github.com/xorbitsai/inference/commit/beddc97ac211f8414597fe8479493be0603f7c84"],
+      "visible_dates": {"published": "2026-10-18T13:16:37.190", "last_modified_observed": "2026-10-19T17:17:09.823", "modification_note": "The observed modification timestamp is after this run and is not used for qualification."},
+      "evidence_classification": "NVD public CVE record with linked remediation commit",
+      "summary": "Xinference through 4.0.1 accepts Windows backslash traversal in custom model names, allowing an unauthenticated caller to register a persisted model that writes or deletes JSON configuration or data files reachable by the service process.",
+      "affected_boundary_or_version": "Xinference through 4.0.1 on Windows; custom-model registration endpoint.",
+      "ai_security_relevance": "An unauthenticated model-management API can alter runtime configuration and data, compromising the AI serving control plane.",
+      "named_entities": ["Xinference", "custom model registration", "Windows path traversal"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the model-serving control-plane exposure locally; general Xinference material remains upstream-owned."},
+      "confidence": "high", "follow_up": "Identify the first released fixed version before durable guidance."
+    },
+    {
+      "id": "CVE-2026-111991",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-111991"],
+      "visible_dates": {"published": "2026-10-18T15:16:52.853"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "YOLOv9's DetectMultiBackend ONNX metadata handling can evaluate attacker-controlled names or stride values, enabling remotely exploitable code injection; the record reports public exploit availability and no vendor response.",
+      "affected_boundary_or_version": "WongKinYiu yolov9 0.1; ONNX metadata handler.",
+      "ai_security_relevance": "This is an untrusted-model-metadata execution risk, so model artifacts require supply-chain validation before inference loading.",
+      "named_entities": ["YOLOv9", "ONNX", "DetectMultiBackend", "model metadata"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the model-metadata execution implication locally; general YOLOv9 details belong upstream."},
+      "confidence": "medium", "follow_up": "Find the project issue or patch and reconcile overlap with other YOLO model-loader findings."
+    },
+    {
+      "id": "CVE-2026-102503 and CVE-2026-103091",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-102503", "https://nvd.nist.gov/vuln/detail/CVE-2026-103091"],
+      "visible_dates": {"published": "2026-10-19T03:16:58.193 and 2026-10-19T03:16:58.377"},
+      "evidence_classification": "NVD public CVE records",
+      "summary": "Google OSS Agent Mesh (SAM) alpha releases have two related authorization defects: an unauthenticated libp2p peer can bypass Biscuit capability enforcement to invoke registered backend services, and a remote actor can self-enroll through the MCP proxy/OIDC registration path then invoke tools across connected MCP backend nodes.",
+      "affected_boundary_or_version": "CVE-2026-102503: 0.1.0-alpha.1 through alpha.2; CVE-2026-103091: 0.1.0-alpha.1 through alpha.8.",
+      "ai_security_relevance": "The cluster breaks authentication and delegated-authority enforcement across a mesh that reaches command, stdio-backed MCP, A2A, inference, and tool backends.",
+      "named_entities": ["Google OSS Agent Mesh", "SAM", "MCP", "A2A", "Biscuit capability policy", "OIDC"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the mesh enrollment, tool invocation, and capability-policy implications locally; route broad Agent Mesh product coverage upstream."},
+      "confidence": "high", "follow_up": "Obtain the linked project advisories and exact remediation releases before synthesis."
+    },
+    {
+      "id": "CVE-2026-71563",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-71563"],
+      "visible_dates": {"published": "2026-10-19T10:16:48.637", "last_modified_observed": "2026-10-19T11:17:18.647"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "Apache Answer through 2.0.2 lets holders of a global API key retrieve hidden, deleted, or pending-review answers through its MCP answer-retrieval tool; Apache recommends upgrading to 2.0.3.",
+      "affected_boundary_or_version": "Apache Answer through 2.0.2; MCP answer-retrieval tool; fixed in 2.0.3.",
+      "ai_security_relevance": "A global credential bypasses content-state authorization at an MCP data-retrieval boundary.",
+      "named_entities": ["Apache Answer", "MCP", "global API key", "authorization"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain the MCP data-authorization control locally; route general Apache Answer background upstream."},
+      "confidence": "high", "follow_up": "Verify the Apache advisory and release notes during ingest."
+    },
+    {
+      "id": "CVE-2026-112081 and CVE-2026-112086",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-112081", "https://nvd.nist.gov/vuln/detail/CVE-2026-112086", "https://github.com/espnet/espnet/commit/f217b24f06de55e332cab10231469d5890dbbe00"],
+      "visible_dates": {"published": "2026-10-19T06:17:22.430 and 2026-10-19T06:17:23.667"},
+      "evidence_classification": "NVD public CVE records; ESPnet record links a patch commit",
+      "summary": "HanLP's classpath-driven model configuration loader and ESPnet's _target_-driven inference model handler each deserialize attacker-controlled configuration during model loading. The ESPnet record identifies patch commit f217b24f06de55e332cab10231469d5890dbbe00.",
+      "affected_boundary_or_version": "HanLP through 2.1.0-beta.64; ESPnet through 202610.post2.",
+      "ai_security_relevance": "Both are model/configuration supply-chain findings: a model-load input can become code execution in an inference environment.",
+      "named_entities": ["HanLP", "ESPnet", "deserialization", "model configuration", "inference model"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the shared model-loader control implication locally while preserving separate products for eventual leaf routing."},
+      "confidence": "medium", "follow_up": "Verify HanLP remediation and split the two products during ingest if both remain independently actionable."
+    },
+    {
+      "id": "CVE-2026-112140",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-112140"],
+      "visible_dates": {"published": "2026-10-19T12:17:01.740"},
+      "evidence_classification": "NVD public CVE record",
+      "summary": "llSourcell Doctor-Dignity's MLC Chat module allows code injection through the model_lib argument passed to python/mlc_chat/chat_module.py; the record reports public exploit availability but no versioned fix.",
+      "affected_boundary_or_version": "Doctor-Dignity rolling-release revisions identified in the CVE; MLC Chat model_lib loader.",
+      "ai_security_relevance": "A model-library selection field acts as an execution boundary, making untrusted model/runtime artifacts an AI supply-chain risk.",
+      "named_entities": ["MLC Chat", "Doctor-Dignity", "model_lib", "code injection"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Retain only the model-loader execution lesson locally; general project information is upstream-owned."},
+      "confidence": "medium", "follow_up": "Locate reproducible project evidence and fixed-state information before durable synthesis."
+    },
+    {
+      "id": "CVE-2026-110976 and CVE-2026-111041",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-110976", "https://nvd.nist.gov/vuln/detail/CVE-2026-111041"],
+      "visible_dates": {"published": "2026-10-18T07:16:52.713 and 2026-10-18T07:16:52.920"},
+      "evidence_classification": "NVD public CVE records",
+      "summary": "AI Engine for WordPress before 3.7.9 fails object-ownership authorization for AI media actions, letting Editor-level users delete arbitrary protected posts or modify/change the type of arbitrary posts that they are otherwise not allowed to edit.",
+      "affected_boundary_or_version": "AI Engine WordPress plugin before 3.7.9; AI media-management actions.",
+      "ai_security_relevance": "AI-mediated content-management tools must enforce the same per-object authorization as their non-AI paths.",
+      "named_entities": ["AI Engine", "WordPress", "media actions", "object authorization"],
+      "upstream_routing": {"owner": "ai-security-wiki", "note": "Keep the AI-action authorization implication locally; general WordPress plugin background belongs upstream."},
+      "confidence": "high", "follow_up": "Check plugin release notes and avoid duplicating ordinary WordPress coverage during ingest."
+    }
+  ],
+  "upstream_routing_notes": [
+    {"entity_scope": "Coder, OneUptime, LobsterAI, Google OSS Agent Mesh, Apache Answer, and model-framework product background", "owner": "ai-wiki", "local_retention": "security-specific affected boundaries, patches, authority failures, and operational implications only"},
+    {"entity_scope": "general coding-agent workflow and ordinary development practice", "owner": "ai-dev-wiki", "local_retention": "only credential, authorization, tool-invocation, and release-control implications that constitute an AI security finding"}
+  ],
+  "exclusions": [
+    {"candidate": "CVE-2026-109985, xSpeed Cache: AI-Powered Performance Hub stored XSS", "reason": "Published in window, but the described stored-XSS flaw is an ordinary WordPress content field issue with no demonstrated AI, MCP, model, agent, or tool-authority boundary."},
+    {"candidate": "CVE-2026-112046, OW2 ASM infinite-loop denial of service", "reason": "The record mentions agents only as one possible use of a generic bytecode library; it is not AI-specific."},
+    {"candidate": "Linux airoha NPU and kernel records returned by AI keyword search", "reason": "Keyword matches are hardware or generic software contexts without a concrete AI-system security delta."},
+    {"candidate": "CVE-2026-111866 and unrelated web-application results returned for model or AI", "reason": "The search terms occur in application labels or text, not in an AI security boundary."},
+    {"candidate": "CERT-In AI-agent campaign reports surfaced in secondary coverage", "reason": "No directly retrievable primary CERT-In advisory with a reliable in-window publication/update timestamp was confirmed in this run."},
+    {"candidate": "NVD records modified after 2026-10-19T14:01:39-04:00", "reason": "Later modification timestamps cannot be treated as evidence available at this run; only their already in-window explicit publication timestamps were used where stated."}
+  ],
+  "confidence_notes": [
+    "NVD records are concrete public vulnerability evidence, but several model-loader records are NVD-first disclosures with no confirmed vendor fixed release; they remain medium confidence pending primary-project reconciliation.",
+    "The later-than-run NVD modification timestamps recorded for some findings were observed in a later database response and are explicitly non-qualifying metadata.",
+    "The two Google OSS Agent Mesh CVEs were grouped because both concern mesh enrollment/capability enforcement and were published seconds apart; ingest should decide whether their remediation paths require separate leaves."
+  ],
+  "follow_up_actions": [
+    "During ingest, re-fetch vendor advisories, commits, and release notes for fixed-version wording before promoting NVD-first items to durable pages.",
+    "Split grouped CVE records where their affected surface or remediation differs materially.",
+    "Keep only the security lens in this repository and route general product/entity coverage to the federated upstream owner.",
+    "Do not move this artifact to raw/processed until normal source-to-wiki ingestion and independent verification succeed."
+  ],
+  "collection_blockers": [
+    "NVD rate-limited individual-record enrichment after several successful requests; captured search responses and earlier record responses provide the stated public evidence.",
+    "Several vendor/project advisories were not independently fetched in this run and require ingest-time reconciliation."
+  ]
+}
