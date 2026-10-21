@@ -8,6 +8,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [MCP TypeScript Server Cross-Client Message Delivery](data-and-privacy/mcp-typescript-server-cross-client-message-delivery.md)
+- [MCP TypeScript SDK Validation Memory-Exhaustion DoS](agent-and-tool-security/mcp-typescript-sdk-validation-memory-exhaustion-dos.md)
+- [MCP TypeScript SDK Bearer-Token Audience Validation](identity-and-access/mcp-typescript-sdk-bearer-token-audience-validation.md)
 - [Coder Agent-Debug Manifest Credential Disclosure](data-and-privacy/coder-agent-debug-manifest-credential-disclosure.md)
 - [OneUptime Cluster-Scoped AI Action Authorization](identity-and-access/oneuptime-cluster-scoped-ai-action-authorization.md)
 - [LobsterAI Provider-Key Export Cryptography](data-and-privacy/lobsterai-provider-key-export-cryptography.md)
@@ -763,6 +766,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-20 with separate MCP TypeScript SDK tenant-isolation, structural-input availability, and bearer-token audience leaves; October 20 watcher confirmations remain leaf-level provenance.
 - Updated on 2026-10-16 with WSP MCP unpublished-content access, Junie CLI project-configuration execution, and Claude Agent SDK resume argument injection security leaves.
 - Updated on 2026-10-15 with durable leaves for NetLicensing MCP path/token disclosure, Azure SRE Agent authorization, IntentKit request-scoped tool dispatch, MoviePilot prompt-driven command execution, and Pipecat development-runner exposure.
 - Updated on 2026-10-14 with October 13 security ingest leaves for Network-AI SSE origin reflection, obsidian-tc DNS rebinding, EdgeEver stored XSS, Nginx UI MCP control bypasses, Conductor OSS SSRF, split MCP Context Forge boundaries, Vercel deepsec tarball escape, goose approval bypass, PraisonAI SearxNG SSRF, Crawl4AI credential exposure, TinyLLaVA config injection, Mistral Vibe, Roo Code, and CSA distillation controls.

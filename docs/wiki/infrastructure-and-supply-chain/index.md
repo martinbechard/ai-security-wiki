@@ -215,6 +215,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-10-20 after watcher review clarified that Doctor-Dignity public-exploit reporting remains unverified.
 - Updated on 2026-10-16 with Junie CLI untrusted-project MCP configuration execution from the October 16 source ingest.
 - Updated on 2026-10-15 with Pipecat development-runner exposure controls from the October 15 source ingest.
 - Updated on 2026-10-14 with October 14 source-ingest leaves for model artifact loading execution, malformed model-parser memory safety, Kubeflow Model Registry annotation SSRF, and Ludwig dataset archive containment.

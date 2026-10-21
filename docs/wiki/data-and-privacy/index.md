@@ -6,6 +6,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [MCP TypeScript Server Cross-Client Message Delivery](mcp-typescript-server-cross-client-message-delivery.md)
 - [Coder Agent-Debug Manifest Credential Disclosure](coder-agent-debug-manifest-credential-disclosure.md)
 - [LobsterAI Provider-Key Export Cryptography](lobsterai-provider-key-export-cryptography.md)
 - [Apache Answer MCP Content-State Authorization](apache-answer-mcp-content-state-authorization.md)
@@ -145,6 +146,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-10-20 with the MCP TypeScript server cross-client message-delivery leaf and October 20 watcher provenance for Apache Answer and NoteGen.
 - Updated on 2026-10-14 with the October 14 obsidian-tc bridge-tool field-level ACL disclosure leaf.
 - Updated on 2026-10-14 with the Crawl4AI untrusted-config credential exposure leaf from the October 13 topic collector.
 - Updated on 2026-10-13 with the October 12 Open WebUI OAuth cookie-forwarding session disclosure leaf.

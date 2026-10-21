@@ -6,6 +6,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [MCP TypeScript SDK Bearer-Token Audience Validation](mcp-typescript-sdk-bearer-token-audience-validation.md)
 - [OneUptime Cluster-Scoped AI Action Authorization](oneuptime-cluster-scoped-ai-action-authorization.md)
 - [Google OSS Agent Mesh Biscuit Capability Bypass](google-oss-agent-mesh-biscuit-capability-bypass.md)
 - [Google OSS Agent Mesh MCP/OIDC Enrollment Bypass](google-oss-agent-mesh-mcp-oidc-enrollment-bypass.md)
@@ -181,6 +182,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-10-20 with MCP TypeScript bearer-token audience validation and October 20 watcher provenance for AI Engine and LangBot.
 - Updated on 2026-10-16 with the WSP MCP unpublished-content authorization boundary from the October 16 source ingest.
 - Updated on 2026-10-15 with NetLicensing MCP path/token disclosure and Azure SRE Agent authorization leaves from the October 15 source ingest.
 - Updated on 2026-10-14 with the MCP Context Forge default JWT secret leaf from the October 13 topic collector.

@@ -46,6 +46,7 @@ The advisory says an untrusted MCP server could provide protected-resource metad
 
 - [identity and access](index.md)
 - [MCP SDK OAuth issuer binding](mcp-sdk-oauth-issuer-binding.md)
+- [MCP TypeScript SDK bearer-token audience validation](mcp-typescript-sdk-bearer-token-audience-validation.md)
 - [MCP Python SDK OAuth metadata trust flaw](mcp-python-sdk-oauth-metadata-trust-flaw.md)
 - [MCP client OAuth redirect URI handling](mcp-client-oauth-redirect-uri-handling.md)
 - Upstream AI wiki owns broad [MCP authorization model](../../../upstream-ai-wiki/techniques/mcp-authorization-model.md) context.

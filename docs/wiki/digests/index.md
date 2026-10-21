@@ -2,7 +2,7 @@
 
 ## Current Understanding
 
-- [October 2026](2026-10.md) records item-level October 19 security updates.
+- [October 2026](2026-10.md) records item-level October 20 MCP TypeScript SDK security updates and October 19 security updates; watcher-only confirmations remain leaf-level provenance.
 
 - [October 2026](2026-10.md) includes item-level October 17 entries for Archon, Nezha, ZCode, split EnergizeLab device-control advisories, SparkyFitness, destructive-command guarding, Xiaozhi, EFAK, LangChat, and 99AI. The watcher-only confirmations for Claude Agent SDK, WSP MCP, and Junie CLI remain leaf-level provenance.
 - [October 2026](2026-10.md) includes item-level October 16 security entries for [WSP MCP unpublished-content access](../identity-and-access/wsp-mcp-unpublished-content-disclosure.md), [Junie CLI project-configuration execution](../infrastructure-and-supply-chain/junie-cli-untrusted-project-mcp-configuration-execution.md), and [Claude Agent SDK resume argument injection](../agent-and-tool-security/claude-agent-sdk-resume-argument-injection.md).
@@ -30,6 +30,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 20 topic collector source](../../../raw/processed/2026-10-20/ai-security-wiki-topic-news-collector-2026-10-20T232727Z.json)
+- [October 20 leaf update watch source](../../../raw/processed/2026-10-20/ai-security-wiki-leaf-update-watch-20261021T000613Z.json)
 - [October 19 topic collector source, 14:01 EDT](../../../raw/processed/2026-10-19/ai-security-wiki-topic-news-collector-2026-10-19T140139-0400.json)
 - [October 19 topic collector source, 19:31 EDT](../../../raw/processed/2026-10-19/ai-security-wiki-topic-news-collector-2026-10-19T193149-0400.json)
 - [October 17 topic collector source](../../../raw/processed/2026-10-17/ai-security-wiki-topic-news-collector-2026-10-17T193139-0400.json)
@@ -149,6 +151,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-20 after the item-level MCP TypeScript SDK digest entries and watcher-provenance review.
 - Updated on 2026-10-16 for October coverage of WSP MCP access control, Junie CLI configuration execution, and Claude Agent SDK argument injection.
 - Updated on 2026-10-15 for October coverage of NetLicensing token disclosure, Azure SRE Agent authorization, IntentKit tool authorization, MoviePilot prompt injection, and Pipecat development-runner exposure.
 - Updated on 2026-10-14 after the October digest added item-level October 13 entries for Network-AI, obsidian-tc, EdgeEver, Nginx UI, Conductor OSS, split MCP Context Forge boundaries, Vercel deepsec, goose, PraisonAI, Crawl4AI, TinyLLaVA, Mistral Vibe, Roo Code, and CSA distillation controls; ordering remains reverse chronological and not grouped by raw artifact, collector run, sweep category, or ingest batch.

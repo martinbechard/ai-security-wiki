@@ -23,6 +23,7 @@ The [October 19 collector](../../../raw/processed/2026-10-19/ai-security-wiki-to
 ## Authoritative Sources
 
 - [October 19 collector source](../../../raw/processed/2026-10-19/ai-security-wiki-topic-news-collector-2026-10-19T140139-0400.json)
+- [October 20 leaf watch](../../../raw/processed/2026-10-20/ai-security-wiki-leaf-update-watch-20261021T000613Z.json)
 - [CVE-2026-110976](https://nvd.nist.gov/vuln/detail/CVE-2026-110976)
 - [CVE-2026-111041](https://nvd.nist.gov/vuln/detail/CVE-2026-111041)
 
@@ -50,3 +51,4 @@ The [October 19 collector](../../../raw/processed/2026-10-19/ai-security-wiki-to
 ## Maintenance Notes
 
 - Created on 2026-10-20 from the October 19 collector as one closely coupled object-authorization family.
+- Rechecked on 2026-10-20; the two-CVE ownership boundary remains unchanged.

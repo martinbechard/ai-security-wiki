@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [MCP TypeScript SDK Validation Memory-Exhaustion DoS](mcp-typescript-sdk-validation-memory-exhaustion-dos.md)
 - [Archon Default Control API Command Execution](archon-default-control-api-command-execution.md)
 - [EnergizeLab AI Skill-File Write](energizelab-ai-skill-file-write.md)
 - [destructive_command_guard Fail-Open Hook Bypass](destructive-command-guard-fail-open-hook-bypass.md)
@@ -111,6 +112,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [MCP TypeScript SDK Validation Memory-Exhaustion DoS](mcp-typescript-sdk-validation-memory-exhaustion-dos.md)
 - [Cognition Unauthenticated Local-Shell Agent RCE](cognition-unauthenticated-local-shell-agent-rce.md)
 - [SGLang Prefill-Decode SSRF and Scheduler DoS](sglang-prefill-decode-ssrf-and-scheduler-dos.md)
 - [crewai-tools Selenium Scraping Private-Address SSRF](crewai-tools-selenium-scraping-private-address-ssrf.md)
@@ -364,6 +366,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-20 with the MCP TypeScript SDK structural-validation memory-exhaustion leaf and October 20 watcher provenance for Cognition, crewai-tools, and SGLang.
 - Updated on 2026-10-16 with Claude Agent SDK resume argument injection from the October 16 source ingest.
 - Updated on 2026-10-15 with the IntentKit request-scoped tool authorization leaf from the October 15 source ingest.
 - Updated on 2026-10-14 with October 14 source-ingest leaves for obsidian-tc resolved-path authorization and official MCP Java/Python HTTP and session availability boundaries.

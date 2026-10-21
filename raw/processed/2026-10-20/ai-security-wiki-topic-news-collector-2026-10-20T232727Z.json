@@ -1,0 +1,186 @@
+{
+  "artifact_type": "ai_security_topic_news_collection",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-10-20T23:27:27Z",
+  "cutoff_window": {
+    "start_inclusive": "2026-10-18T23:27:27Z",
+    "end_exclusive": "2026-10-20T23:27:27Z",
+    "date_rule": "A source needed an unambiguous public publication or visible update timestamp inside this rolling 48-hour UTC window."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "findings": [
+    {
+      "id": "CVE-2026-111770 / GHSA-jm63-cq47-j5jp",
+      "title": "MCP TypeScript server SDK cross-client message delivery",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-jm63-cq47-j5jp"
+      ],
+      "visible_dates": {
+        "published_to_github_advisory_database": "2026-10-20",
+        "reviewed": "2026-10-20",
+        "last_updated": "2026-10-20",
+        "original_advisory_publication": "2026-10-15"
+      },
+      "evidence_classification": "Primary GitHub-reviewed security advisory",
+      "security_fact": "Affected HTTP MCP servers could route one client's responses or notifications to another when a stateless transport or a McpServer/Server instance was shared; JSON-RPC request IDs collide in normal SDK client use.",
+      "affected_boundary_or_version": "@modelcontextprotocol/server versions >=2.0.0 and <2.3.0; multi-client HTTP endpoints that instantiate the transport or server once at startup.",
+      "mitigation_or_patch": "Upgrade to 2.3.0 or later and use a fresh server and transport per request, or maintain a server and transport per session.",
+      "why_it_matters_for_ai_security": "MCP servers bridge AI agents to tools and data. Cross-client routing can expose tool responses or notifications across tenant and authority boundaries.",
+      "named_entities": [
+        "Model Context Protocol",
+        "@modelcontextprotocol/server",
+        "modelcontextprotocol/typescript-sdk"
+      ],
+      "upstream_routing": {
+        "ownership": "upstream-owned entity with local security implication",
+        "upstream": "ai-wiki owns broad MCP SDK and product coverage; ai-dev-wiki owns general development workflows.",
+        "local_security_scope": "Preserve the HTTP transport isolation, cross-client data exposure, and remediation boundary in ai-security-wiki."
+      },
+      "confidence": "high",
+      "follow_up_actions": [
+        "During ingest, reconcile deployed MCP HTTP servers against the affected shared-instance pattern, not package version alone.",
+        "Verify whether local leaves already cover this SDK release before creating a new leaf."
+      ]
+    },
+    {
+      "id": "CVE-2026-111768 / GHSA-46jr-4wx8-v453",
+      "title": "MCP TypeScript SDK validation memory-exhaustion denial of service",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-46jr-4wx8-v453"
+      ],
+      "visible_dates": {
+        "published_to_github_advisory_database": "2026-10-20",
+        "reviewed": "2026-10-20",
+        "last_updated": "2026-10-20",
+        "original_advisory_publication": "2026-10-15"
+      },
+      "evidence_classification": "Primary GitHub-reviewed security advisory",
+      "security_fact": "A single HTTP request within the default 4 MiB size limit could cause unbounded validation of array elements and object keys, exhausting server memory and aborting the JavaScript process.",
+      "affected_boundary_or_version": "@modelcontextprotocol/sdk >=1.3.0 and <1.32.0; @modelcontextprotocol/server >=2.0.0 and <2.3.0; HTTP-reachable servers, especially tools that accept arrays or records.",
+      "mitigation_or_patch": "Upgrade to SDK 1.32.0 or server 2.3.0 or later, set maxToolInputElements, and set a transport or parser request-body limit appropriate to the tool.",
+      "why_it_matters_for_ai_security": "Untrusted clients can use a tool-input validation path to deny service to an agent tool boundary without credentials unless authentication occurs before the SDK.",
+      "named_entities": [
+        "Model Context Protocol",
+        "@modelcontextprotocol/sdk",
+        "@modelcontextprotocol/server"
+      ],
+      "upstream_routing": {
+        "ownership": "upstream-owned entity with local security implication",
+        "upstream": "ai-wiki owns broad MCP SDK coverage; ai-dev-wiki owns general implementation practice.",
+        "local_security_scope": "Preserve the unauthenticated HTTP availability boundary and required explicit input-limit control here."
+      },
+      "confidence": "high",
+      "follow_up_actions": [
+        "During ingest, treat the package upgrade and explicit limits as separate remediation requirements.",
+        "Check existing MCP HTTP exposure and gateway leaves for an appropriate downstream security lens."
+      ]
+    },
+    {
+      "id": "CVE-2026-111771 / GHSA-rvq5-wwqv-78pq",
+      "title": "MCP TypeScript SDK bearer-token audience validation gap",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-rvq5-wwqv-78pq"
+      ],
+      "visible_dates": {
+        "published_to_github_advisory_database": "2026-10-20",
+        "reviewed": "2026-10-20",
+        "last_updated": "2026-10-20",
+        "original_advisory_publication": "2026-10-05"
+      },
+      "evidence_classification": "Primary GitHub-reviewed security advisory",
+      "security_fact": "The server-side bearer-authentication helpers accepted a token minted for another service when the same authorization server served multiple services and the application did not independently validate the token audience.",
+      "affected_boundary_or_version": "@modelcontextprotocol/sdk >=1.6.0 and <1.32.0; @modelcontextprotocol/server >=2.0.0 and <2.3.0; @modelcontextprotocol/express >=2.0.0 and <2.0.2; @modelcontextprotocol/server-legacy >=2.0.0 and <2.3.1.",
+      "mitigation_or_patch": "Upgrade to the patched versions and configure expectedResource plus AuthInfo.resource, or reject tokens whose aud claim does not include the MCP server.",
+      "why_it_matters_for_ai_security": "MCP bearer authentication often authorizes delegated agent actions. Accepting another service's token violates least privilege and can grant an agent or caller unintended tool authority.",
+      "named_entities": [
+        "Model Context Protocol",
+        "@modelcontextprotocol/sdk",
+        "@modelcontextprotocol/express",
+        "@modelcontextprotocol/server"
+      ],
+      "upstream_routing": {
+        "ownership": "upstream-owned entity with local security implication",
+        "upstream": "ai-wiki owns broad MCP SDK coverage; ai-dev-wiki owns general development workflows.",
+        "local_security_scope": "Preserve resource-audience validation and delegated-tool authorization guidance here."
+      },
+      "confidence": "high",
+      "follow_up_actions": [
+        "During ingest, distinguish an installed patched package from an expectedResource configuration that is still disabled by default.",
+        "Link to existing identity, authorization, and MCP-server security leaves if they already own the control."
+      ]
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity": "Model Context Protocol TypeScript SDK and server packages",
+      "routing": "upstream-owned broadly in ai-wiki; local raw record retains only concrete security boundaries and mitigations."
+    },
+    {
+      "entity": "MCP HTTP server implementation practice",
+      "routing": "general implementation practice is ai-dev-wiki-owned; local raw record retains only cross-client isolation, request-limit, and token-audience control implications."
+    },
+    {
+      "entity": "Google OSS Agent Mesh CVE-2026-103091",
+      "routing": "local security analysis already exists in docs/wiki and the October 19 processed collector; excluded as a duplicate rather than recorded again."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-103091 / GHSA-qx8v-pq9p-7g7v Google OSS Agent Mesh MCP/OIDC enrollment bypass",
+      "source_url": "https://github.com/advisories/GHSA-qx8v-pq9p-7g7v",
+      "visible_date": "2026-10-19",
+      "reason": "Concrete in-window security finding, but it is already captured in raw/processed/2026-10-19/ai-security-wiki-topic-news-collector-2026-10-19T140139-0400.json and synthesized into docs/wiki/identity-and-access/google-oss-agent-mesh-mcp-oidc-enrollment-bypass.md."
+    },
+    {
+      "candidate": "NIST, NSA, and CISA key practices for SI incident readiness and response",
+      "source_url": "https://www.nist.gov/news-events/news/2026/10/key-practices-incident-readiness-and-response-super-intelligence-training",
+      "visible_date": "2026-10-16",
+      "reason": "Primary and relevant, but outside the rolling two-day cutoff window."
+    },
+    {
+      "candidate": "modelcontextprotocol/servers v2.0.0 release",
+      "source_url": "https://github.com/modelcontextprotocol/servers/issues/5159",
+      "visible_date": "2026-10-19",
+      "reason": "The release record reports an audit and general package publication, but no concrete security remediation or changed security control that qualifies as a security delta."
+    },
+    {
+      "candidate": "VibeVulns October 19 malicious npm package report",
+      "source_url": "https://vibevulns.com/",
+      "visible_date": "2026-10-19",
+      "reason": "Secondary discovery source only; no primary GitHub security advisory or package-removal evidence was verified during this run."
+    },
+    {
+      "candidate": "General GitHub advisory-database results unrelated to AI, agents, MCP, model, or deployment security",
+      "source_url": "https://github.com/advisories?query=sort:updated-desc",
+      "visible_date": "2026-10-20",
+      "reason": "Security-relevant in general but not within the locally owned AI-security topic scope."
+    },
+    {
+      "candidate": "Articles reporting broad AI governance or incident claims without a primary official source located during this run",
+      "source_url": "https://www.originbrief.app/en/reports/ai-regulation-policy/2026-10-19/weekly",
+      "visible_date": "2026-10-19",
+      "reason": "Excluded because the report is secondary and the described legal or incident claims were not independently verified from an official source."
+    }
+  ],
+  "confidence_notes": [
+    "All three retained findings are GitHub-reviewed advisories with explicit affected versions and remediation instructions.",
+    "The eligibility date for the three findings is their visible October 20 GitHub Advisory Database publication, review, and update date; two were originally published earlier but changed visibly within the window.",
+    "No claim of local deployment exposure, exploitation, or remediation is made by this raw artifact."
+  ],
+  "follow_up_actions": [
+    "Use normal raw-source ingest only after reconciling the overlapping MCP SDK findings with existing local leaves and upstream ownership.",
+    "At ingest time, confirm package advisories and remediation defaults against their then-current primary advisory pages.",
+    "Do not move this artifact to raw/processed or edit docs/wiki as part of collection."
+  ]
+}

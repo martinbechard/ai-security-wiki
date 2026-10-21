@@ -23,6 +23,7 @@ tags: ["data-and-privacy", "identity-and-access"]
 ## Authoritative Sources
 
 - [October 19 collector source](../../../raw/processed/2026-10-19/ai-security-wiki-topic-news-collector-2026-10-19T140139-0400.json)
+- [October 20 leaf watch](../../../raw/processed/2026-10-20/ai-security-wiki-leaf-update-watch-20261021T000613Z.json)
 - [CVE-2026-71563](https://nvd.nist.gov/vuln/detail/CVE-2026-71563)
 
 ## Related Code
@@ -49,3 +50,4 @@ tags: ["data-and-privacy", "identity-and-access"]
 ## Maintenance Notes
 
 - Created on 2026-10-20 from the October 19 collector.
+- Rechecked on 2026-10-20; the global-key content-state boundary remains unchanged.
