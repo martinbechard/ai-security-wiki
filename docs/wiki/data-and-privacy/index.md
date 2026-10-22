@@ -6,6 +6,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [OpenShift AI Evaluation-Job Model URL Secret Exposure](openshift-ai-evaluation-job-model-url-secret-exposure.md)
 - [MCP TypeScript Server Cross-Client Message Delivery](mcp-typescript-server-cross-client-message-delivery.md)
 - [Coder Agent-Debug Manifest Credential Disclosure](coder-agent-debug-manifest-credential-disclosure.md)
 - [LobsterAI Provider-Key Export Cryptography](lobsterai-provider-key-export-cryptography.md)

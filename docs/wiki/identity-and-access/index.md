@@ -6,6 +6,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [MCP TypeScript SDK Task Session Isolation](mcp-typescript-sdk-task-session-isolation.md)
+- [D365 F&O MCP Server Default API-Key Exposure](d365-fo-mcp-server-default-api-key-exposure.md)
 - [MCP TypeScript SDK Bearer-Token Audience Validation](mcp-typescript-sdk-bearer-token-audience-validation.md)
 - [OneUptime Cluster-Scoped AI Action Authorization](oneuptime-cluster-scoped-ai-action-authorization.md)
 - [Google OSS Agent Mesh Biscuit Capability Bypass](google-oss-agent-mesh-biscuit-capability-bypass.md)

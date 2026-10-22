@@ -2,6 +2,11 @@
 
 ## Current Understanding
 
+- [Aix-DB ChatBI Common-Agent Command Execution](aix-db-chatbi-common-agent-command-execution.md)
+- [IBM ContextForge OAuth Registration SSRF](ibm-contextforge-oauth-registration-ssrf.md)
+- [djust MCP Template-Path Readability Oracle](djust-mcp-template-path-readability-oracle.md)
+- [Trigger.dev CLI MCP Authentication](trigger-dev-cli-mcp-authentication.md)
+- [Pydantic AI Harness Nested-Tool Limit Bypass](pydantic-ai-harness-nested-tool-limit-bypass.md)
 - [MCP TypeScript SDK Validation Memory-Exhaustion DoS](mcp-typescript-sdk-validation-memory-exhaustion-dos.md)
 - [Archon Default Control API Command Execution](archon-default-control-api-command-execution.md)
 - [EnergizeLab AI Skill-File Write](energizelab-ai-skill-file-write.md)

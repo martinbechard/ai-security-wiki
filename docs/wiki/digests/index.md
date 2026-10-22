@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [October 2026](2026-10.md) records eight item-level October 20-21 advisory updates for MCP task isolation, agent execution, OAuth SSRF, local path boundaries, listener authentication, evaluation-job secrets, nested tool limits, and default API keys.
 - [October 2026](2026-10.md) records item-level October 20 MCP TypeScript SDK security updates and October 19 security updates; watcher-only confirmations remain leaf-level provenance.
 
 - [October 2026](2026-10.md) includes item-level October 17 entries for Archon, Nezha, ZCode, split EnergizeLab device-control advisories, SparkyFitness, destructive-command guarding, Xiaozhi, EFAK, LangChat, and 99AI. The watcher-only confirmations for Claude Agent SDK, WSP MCP, and Junie CLI remain leaf-level provenance.
@@ -30,6 +31,7 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 21 topic collector source](../../../raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json)
 - [October 20 topic collector source](../../../raw/processed/2026-10-20/ai-security-wiki-topic-news-collector-2026-10-20T232727Z.json)
 - [October 20 leaf update watch source](../../../raw/processed/2026-10-20/ai-security-wiki-leaf-update-watch-20261021T000613Z.json)
 - [October 19 topic collector source, 14:01 EDT](../../../raw/processed/2026-10-19/ai-security-wiki-topic-news-collector-2026-10-19T140139-0400.json)
@@ -151,6 +153,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-21 after the October 21 collector was synthesized into eight item-level security leaves and the active digest.
 - Updated on 2026-10-20 after the item-level MCP TypeScript SDK digest entries and watcher-provenance review.
 - Updated on 2026-10-16 for October coverage of WSP MCP access control, Junie CLI configuration execution, and Claude Agent SDK argument injection.
 - Updated on 2026-10-15 for October coverage of NetLicensing token disclosure, Azure SRE Agent authorization, IntentKit tool authorization, MoviePilot prompt injection, and Pipecat development-runner exposure.

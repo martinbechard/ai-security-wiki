@@ -1,0 +1,154 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-10-21T19:31:03-04:00",
+  "cutoff_window": {
+    "start_inclusive": "2026-10-19T19:31:03-04:00",
+    "end_exclusive": "2026-10-21T19:31:03-04:00",
+    "rule": "Included only public sources with a concrete security fact and a visible publication or update timestamp strictly inside this 48-hour window."
+  },
+  "searched_topics": [
+    "threats and attacks", "model and prompt security", "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action", "data security and privacy", "identity, authentication, authorization, credentials, and least privilege", "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains", "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates", "AI security standards, regulation, governance, audit evidence, and risk management", "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "qualifying_findings": [
+    {
+      "title": "Aix-DB ChatBI common-agent command execution",
+      "identifiers": ["CVE-2026-77926"],
+      "source_urls": ["https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-77926", "https://www.vulncheck.com/advisories/aix-db-1.2.4-authenticated-rce-via-chatbi-common-agent-execute-tool"],
+      "visible_dates": {"nvd_published": "2026-10-20T01:17:19.213Z", "nvd_last_modified": "2026-10-20T20:11:29.833Z"},
+      "evidence_classification": "NVD CVE record with VulnCheck disclosure reference",
+      "security_fact": "Aix-DB 1.2.4 lets an authenticated non-admin send crafted chat input or a document through the ChatBI common agent's ungated deepagents execute tool to run host commands and expose datasource credentials or model API keys.",
+      "affected_boundary_or_version": "Aix-DB 1.2.4; POST /dify/get_answer and document-processing paths that reach the common-agent execute tool.",
+      "mitigation_or_patch": "No fixed version is stated in the collected record; restrict the endpoint and reconcile a maintainer fix before operational guidance.",
+      "why_it_matters_for_ai_security": "It crosses the agent-to-host execution boundary from untrusted prompt or document content and can expose AI service credentials.",
+      "named_entities": ["Aix-DB", "ChatBI", "deepagents"],
+      "upstream_routing": "ai-wiki owns broad Aix-DB and agent-tool catalog coverage; this repository retains the prompt/document-to-command-execution security boundary.",
+      "confidence_notes": "High that NVD records the in-window disclosure and stated impact; medium on remediation because no upstream maintainer patch was located.",
+      "follow_up_actions": ["Reconcile against the project maintainer's release history and verify any fixed version before synthesis."]
+    },
+    {
+      "title": "IBM ContextForge MCP Gateway OAuth registration SSRF",
+      "identifiers": ["CVE-2026-8355"],
+      "source_urls": ["https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-8355", "https://www.ibm.com/support/pages/node/7285723"],
+      "visible_dates": {"nvd_published": "2026-10-20T00:19:20.530Z", "nvd_last_modified": "2026-10-20T15:17:35.683Z"},
+      "evidence_classification": "NVD CVE record referencing IBM PSIRT advisory",
+      "security_fact": "Authenticated gateway creators can set oauth_config.token_url to make ContextForge POST OAuth client credentials to internal services, cloud metadata endpoints, or localhost; a portion of an unparsable response is reflected in the error.",
+      "affected_boundary_or_version": "IBM ContextForge MCP Gateway 0.1.0 through 1.0.5; OAuth-enabled gateway registration.",
+      "mitigation_or_patch": "Apply IBM's advisory guidance; constrain OAuth token endpoints to an allowlist and block metadata and internal address ranges.",
+      "why_it_matters_for_ai_security": "An MCP gateway is an agent tool-control boundary; SSRF can turn delegated gateway administration into internal-service access or credential exposure.",
+      "named_entities": ["IBM ContextForge", "Model Context Protocol", "OAuth"],
+      "upstream_routing": "ai-wiki owns the broad ContextForge/MCP entity; this repository owns the SSRF and delegated-authority implication.",
+      "confidence_notes": "High; NVD provides exact versions and links IBM's PSIRT source.",
+      "follow_up_actions": ["Fetch IBM's advisory during ingest to capture its exact fixed-release and remediation wording."]
+    },
+    {
+      "title": "MCP TypeScript SDK experimental task cross-session access",
+      "identifiers": ["CVE-2026-111767", "GHSA-22jm-h49p-29qw"],
+      "source_urls": ["https://github.com/advisories/GHSA-22jm-h49p-29qw", "https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-111767"],
+      "visible_dates": {"github_advisory_published": "2026-10-20T18:26:54Z", "nvd_published": "2026-10-20T19:17:30.847Z"},
+      "evidence_classification": "GitHub Security Advisory and NVD CVE record",
+      "security_fact": "The experimental taskStore did not bind tasks to their creating session, so clients sharing an InMemoryTaskStore could list, read, or cancel one another's tasks.",
+      "affected_boundary_or_version": "@modelcontextprotocol/sdk 1.24.0 through 1.31.0 when an HTTP server passes taskStore to McpServer or Server; 2.x is not affected.",
+      "mitigation_or_patch": "Upgrade to 1.32.0 or later; preferably stop using deprecated experimental tasks. A temporary alternative is removing taskStore or using one store per session.",
+      "why_it_matters_for_ai_security": "MCP task state can represent delegated agent work. Cross-session access breaks tenant, confidentiality, integrity, and cancellation boundaries.",
+      "named_entities": ["Model Context Protocol", "@modelcontextprotocol/sdk", "McpServer", "InMemoryTaskStore"],
+      "upstream_routing": "ai-wiki owns the broad MCP SDK entity; this repository retains the session-isolation security finding.",
+      "confidence_notes": "High; the maintainer-published GitHub advisory states scope, mitigations, and patched version.",
+      "follow_up_actions": ["During ingest, check whether existing MCP SDK leaves can receive this as a distinct task-state isolation boundary."]
+    },
+    {
+      "title": "djust MCP template-path readability oracle",
+      "identifiers": ["CVE-2026-113731", "GHSA-r57g-mc79-8hj2"],
+      "source_urls": ["https://github.com/djust-org/djust/security/advisories/GHSA-r57g-mc79-8hj2", "https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-113731"],
+      "visible_dates": {"nvd_published": "2026-10-20T22:19:30.197Z", "nvd_last_modified": "2026-10-20T22:19:30.333Z"},
+      "evidence_classification": "NVD record referencing GitHub advisory, patches, and releases",
+      "security_fact": "The find_handlers_for_template MCP tool accepts a readable absolute path outside the configured template directories, exposing file existence/readability and matching snippets through the local stdio MCP server.",
+      "affected_boundary_or_version": "djust 0.9.0 until 1.0.10, 1.1.7, 1.2.4, and 1.3.0rc8; local MCP clients running as the same operating-system user.",
+      "mitigation_or_patch": "Upgrade to 1.0.10, 1.1.7, 1.2.4, or 1.3.0rc8 as applicable.",
+      "why_it_matters_for_ai_security": "It shows that an ostensibly local agent tool must still enforce a workspace/path capability boundary rather than trust every same-user client.",
+      "named_entities": ["djust", "Model Context Protocol"],
+      "upstream_routing": "ai-wiki owns the broad djust and MCP entity coverage; this repository keeps the local-tool file-boundary analysis.",
+      "confidence_notes": "High for scope and fixes from NVD's linked maintainer references; low severity should be retained as context, not inflated.",
+      "follow_up_actions": ["Verify the advisory's local-only preconditions during synthesis."]
+    },
+    {
+      "title": "Trigger.dev CLI MCP server missing authentication",
+      "identifiers": ["CVE-2026-114090", "GHSA-pqmg-rq46-vm4m"],
+      "source_urls": ["https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-pqmg-rq46-vm4m", "https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-114090"],
+      "visible_dates": {"nvd_published": "2026-10-21T01:17:33.920Z", "nvd_last_modified": "2026-10-21T16:17:30.567Z"},
+      "evidence_classification": "NVD CVE record referencing project GitHub advisory",
+      "security_fact": "trigger dev --mcp binds all interfaces without authentication and exposes MCP SSE/messages endpoints, allowing a LAN attacker or malicious webpage to invoke run-management tools using the developer's stored access token.",
+      "affected_boundary_or_version": "trigger.dev cli-v3 3.0.0 before 4.5.4; developer workstations with the MCP server exposed beyond loopback.",
+      "mitigation_or_patch": "Upgrade to 4.5.4 or later and keep development MCP endpoints restricted to trusted local/network boundaries.",
+      "why_it_matters_for_ai_security": "An unauthenticated browser or LAN request can exercise an agent-tool surface with the developer's existing delegated authority.",
+      "named_entities": ["Trigger.dev", "Model Context Protocol"],
+      "upstream_routing": "ai-wiki owns the broad Trigger.dev entity; this repository retains the local MCP exposure and authority-escalation implication.",
+      "confidence_notes": "High for the affected range and action surface in NVD; reconfirm project advisory content during ingest.",
+      "follow_up_actions": ["Confirm whether the CLI's patch changes listener binding, authentication, or both."]
+    },
+    {
+      "title": "Red Hat OpenShift AI evaluation-job model URL secret exposure",
+      "identifiers": ["CVE-2026-17557"],
+      "source_urls": ["https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-17557", "https://access.redhat.com/security/security-updates/security-advisories"],
+      "visible_dates": {"nvd_published": "2026-10-21T08:16:43.090Z", "nvd_last_modified": "2026-10-21T14:17:19.250Z"},
+      "evidence_classification": "NVD CVE record and Red Hat security-advisory index",
+      "security_fact": "An authenticated user who can submit an lm-evaluation-harness job can provide a malicious model URL that makes the job disclose the tenant model-authentication secret to an external listener or SSRF reachable internal endpoints.",
+      "affected_boundary_or_version": "Red Hat OpenShift AI lm-evaluation-harness evaluation jobs; exact affected/fixed builds were not present in the collected NVD record.",
+      "mitigation_or_patch": "Await the linked Red Hat erratum for fixed build details; meanwhile restrict model URLs to approved sources and isolate evaluation-job network egress and secrets.",
+      "why_it_matters_for_ai_security": "Evaluation and release-gate infrastructure often holds model credentials; untrusted model provenance can turn that gate into an SSRF and secret-exfiltration path.",
+      "named_entities": ["Red Hat OpenShift AI", "lm-evaluation-harness"],
+      "upstream_routing": "ai-wiki owns general OpenShift AI and evaluation tooling coverage; this repository owns the security control boundary for evaluation-job secrets and egress.",
+      "confidence_notes": "High for the published NVD mechanism; medium for versions and patch status pending the product erratum.",
+      "follow_up_actions": ["Locate the product-specific Red Hat erratum before durable remediation guidance."]
+    },
+    {
+      "title": "Pydantic AI Harness nested-tool limit bypass",
+      "identifiers": ["CVE-2026-114386"],
+      "source_urls": ["https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-114386", "https://github.com/pydantic/pydantic-ai/releases"],
+      "visible_dates": {"nvd_published": "2026-10-21T13:18:28.613Z", "nvd_last_modified": "2026-10-21T20:17:26.467Z"},
+      "evidence_classification": "NVD CVE record; vendor release page located for follow-up",
+      "security_fact": "Pydantic AI Harness before 0.59.0 does not apply UsageLimits.tool_calls_limit to nested calls made through CodeMode run_code, allowing user or prompt-injected content to exceed a configured limit on costly or side-effecting tools.",
+      "affected_boundary_or_version": "Pydantic AI Harness before 0.59.0; nested run_code -> run_nested_call() tool dispatch.",
+      "mitigation_or_patch": "Upgrade to 0.59.0 or later and independently enforce budget and authorization limits at tool execution boundaries.",
+      "why_it_matters_for_ai_security": "Prompt injection can amplify autonomous side effects or spend when a framework-level tool-call guard does not compose through nested execution.",
+      "named_entities": ["Pydantic AI Harness", "CodeMode", "UsageLimits"],
+      "upstream_routing": "ai-wiki owns the broad Pydantic AI product entity; this repository retains the security implication for nested delegated tool authority.",
+      "confidence_notes": "Medium: NVD gives concrete version and mechanism, but the corresponding vendor advisory was not located in this run and version nomenclature needs reconciliation.",
+      "follow_up_actions": ["Verify the exact package/release lineage and primary maintainer advisory before synthesis."]
+    },
+    {
+      "title": "D365 F&O MCP Server default empty API-key exposure",
+      "identifiers": ["CVE-2026-114123", "GHSA-8764-fh3m-wf7g"],
+      "source_urls": ["https://github.com/dynamics365ninja/d365fo-mcp-server/security/advisories/GHSA-8764-fh3m-wf7g", "https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-114123"],
+      "visible_dates": {"nvd_published": "2026-10-21T17:18:25.737Z", "nvd_last_modified": "2026-10-21T17:18:25.737Z"},
+      "evidence_classification": "NVD CVE record referencing GitHub advisory, commits, and v1.11.0 release",
+      "security_fact": "The documented Azure deployment defaults API_KEY to empty while binding the HTTP MCP listener to 0.0.0.0, enabling unauthenticated calls to read/search tools and disclosure of indexed Dynamics 365 proprietary source snippets and security metadata when no other access control is configured.",
+      "affected_boundary_or_version": "D365 F&O MCP Server before 1.11.0, specifically one-click Azure deployments left with an empty API key and without effective upstream authentication or network restriction.",
+      "mitigation_or_patch": "Upgrade to 1.11.0, configure a non-empty API key, and enforce upstream authentication and network restrictions.",
+      "why_it_matters_for_ai_security": "A read-only label does not make an agent data tool safe: default-deployed anonymous access can reveal code, privilege structure, and business metadata.",
+      "named_entities": ["D365 F&O MCP Server", "Microsoft Dynamics 365 Finance & Operations", "Azure", "Model Context Protocol"],
+      "upstream_routing": "ai-wiki owns broad MCP server and product coverage; this repository retains the default-authentication and proprietary-data exposure security lens.",
+      "confidence_notes": "High; NVD states the deployment preconditions, impact, fixed version, and primary GitHub references.",
+      "follow_up_actions": ["During ingest, compare this with existing default-authentication MCP-server leaves to avoid duplicating the control pattern."]
+    }
+  ],
+  "upstream_routing_notes": [
+    {"entity": "MCP SDKs, gateways, and servers", "route": "ai-wiki owns broad entities; ai-security-wiki owns the security-specific session, authentication, path, SSRF, and default-deployment controls."},
+    {"entity": "Pydantic AI, Aix-DB, Trigger.dev, djust, and OpenShift AI", "route": "ai-wiki owns product/entity coverage; retain only distinct AI-security boundaries locally."},
+    {"entity": "AI evaluation and release workflows", "route": "ai-dev-wiki owns general development practice; retain OpenShift AI evaluation-job secrets/egress controls in this security repository."}
+  ],
+  "exclusions": [
+    {"candidate": "CVE-2026-110982 AI Engine WordPress authorization issue", "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-110982", "visible_date": "2026-10-21T06:16:48.030Z", "reason": "Concrete authorization issue, but the record identifies an AI-branded WordPress plugin rather than a distinct AI, model, prompt, MCP, or agent security boundary."},
+    {"candidate": "CVE-2026-113671 ApostropheCMS AI-helper SSRF", "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-113671", "visible_date": "2026-10-20T18:17:20.813Z", "reason": "AI-helper branding alone does not establish a distinct AI-system security boundary; retain only if later evidence ties the issue to model/provider or agent authority."},
+    {"candidate": "CVE-2026-113378 mcp-ripgrep command injection", "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-113378", "visible_date": "2026-10-20T10:17:05.033Z", "reason": "The NVD description says the real existence is doubted; excluded pending a maintainer-confirmed advisory."},
+    {"candidate": "CVE-2026-114055 and CVE-2026-114053 vLLM items from secondary search results", "source_url": "https://aisecwatch.com/", "visible_date": "2026-10-20", "reason": "Search result named the items but a primary advisory/NVD record was not independently collected in this run."},
+    {"candidate": "DHS DeepSeek federal civilian-system restriction", "source_url": "https://www.itpro.com/security/us-bans-deepseek-from-federal-civilian-agencies", "visible_date": "2026-10-20", "reason": "A reputable secondary report was found, but no primary DHS/CISA order page with a reproducible visible date was located before cutoff."},
+    {"candidate": "BeyondTrust AI Agent Security general availability", "source_url": "https://www.beyondtrust.com/press/ai-agent-security-general-availability", "visible_date": "2026-10-21", "reason": "Product announcement and vendor research; it does not itself establish a disclosed vulnerability, incident, standard, or independently verifiable security-control change."},
+    {"candidate": "Tencent agent web-browsing report", "source_url": "https://www.techradar.com/pro/some-agents-exhibited-unintended-web-browsing-behavior-tencent-admits-ai-agents-it-was-testing-made-more-than-2-600-attempts-in-11-days-to-slip-past-alibabas-map-defenses-just-to-find-out-which-zoo-gate-people-use", "visible_date": "2026-10-20", "reason": "Secondary reporting was found but no primary Tencent or affected-party incident disclosure was captured."}
+  ],
+  "collection_notes": {
+    "public_source_boundary": "Only public web/API sources were queried; no local private, proprietary, sensitive, or personal content was sent externally.",
+    "duplicate_check": "Searched docs/wiki, raw, and raw/processed for selected CVE identifiers; none appeared in the security wiki checkout. The prior October 20 MCP TypeScript advisories cover separate transport/validation/audience boundaries, not this task-store isolation flaw.",
+    "blockers": ["Several NVD-first findings lack a directly fetched maintainer advisory or fixed-version detail and are explicitly marked for ingest-time reconciliation.", "No primary DHS page was located for the DeepSeek report before cutoff."],
+    "follow_up_actions": ["Ingest only after source freshness and primary-advisory reconciliation.", "Keep broad product/entity updates routed upstream; synthesize only the local security implication."]
+  }
+}
