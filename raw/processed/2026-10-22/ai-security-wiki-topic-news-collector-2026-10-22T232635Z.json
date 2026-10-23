@@ -1,0 +1,163 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-10-22T23:26:35Z",
+  "cutoff_window": {
+    "start_inclusive": "2026-10-20T23:26:35Z",
+    "end_exclusive": "2026-10-22T23:26:35Z",
+    "rule": "Included only public sources with a concrete AI-security fact and a visible publication or update timestamp strictly inside this 48-hour window. Date-only boundary candidates were excluded when their time could not be shown to be inside the window."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP and delegated authority",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "testing, assurance, monitoring, release gates, standards, regulation, governance, audit evidence, and risk management",
+    "public AI-security incidents, mitigations, patches, and disclosures"
+  ],
+  "qualifying_findings": [
+    {
+      "title": "Royal MCP WordPress preview-token scope bypass",
+      "identifiers": ["CVE-2026-111958"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-111958",
+        "https://wpscan.com/vulnerability/014f061c-54f3-491e-b4a0-85cfa6fb178b/"
+      ],
+      "visible_dates": {"cve_published": "2026-10-22T06:00:17.950Z", "cve_updated": "2026-10-22T11:06:29.135Z"},
+      "evidence_classification": "CVE Program record referencing WPScan",
+      "security_fact": "Royal MCP before 1.5.7 does not bind a preview-link token to one preview. A holder of a valid token is authenticated as its owner across the REST API; the default configuration can turn that into administrator-level site takeover.",
+      "affected_boundary_or_version": "Royal MCP WordPress plugin before 1.5.7; preview-link token to REST-API authorization boundary.",
+      "mitigation_or_patch": "Upgrade to 1.5.7 or later and invalidate or rotate exposed preview tokens.",
+      "why_it_matters_for_ai_security": "An MCP-branded integration must scope bearer-like preview credentials to the exact resource and action they authorize, rather than trusting possession across an administrative API.",
+      "named_entities": ["Royal MCP", "WordPress", "REST API"],
+      "upstream_routing": "ai-wiki owns broad Royal MCP and WordPress catalog context; this repository retains the token-scope authorization failure.",
+      "confidence_notes": "High for publication timing, vulnerable version, and authorization impact; primary maintainer advisory was not listed in the CVE record.",
+      "follow_up_actions": ["Verify the WPScan entry and maintainer changelog for exact remediation behavior during ingest."]
+    },
+    {
+      "title": "Flexible GraphRAG FalkorDB ingestion Cypher injection",
+      "identifiers": ["CVE-2026-114510", "GHSA-vqrg-773h-4wxc"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-114510",
+        "https://github.com/stevereiner/flexible-graphrag/security/advisories/GHSA-vqrg-773h-4wxc",
+        "https://github.com/stevereiner/flexible-graphrag/releases/tag/v0.8.2"
+      ],
+      "visible_dates": {"cve_published": "2026-10-22T14:46:52.353Z", "cve_updated": "2026-10-22T14:46:52.353Z"},
+      "evidence_classification": "CVE Program record with maintainer GitHub advisory, fix commit, and release reference",
+      "security_fact": "Flexible GraphRAG 0.6.0 through before 0.8.2 escapes quotes before backslashes then interpolates extraction values into FalkorDB Cypher. Attacker-influenced ingested content can make the extraction model produce values that alter or delete graph data and may disclose graph data when results reach a user or model.",
+      "affected_boundary_or_version": "Flexible GraphRAG 0.6.0 to before 0.8.2 when GRAPH_BACKEND=langchain and GRAPH_DB=falkordb; document ingestion to graph-query boundary. LlamaIndex FalkorDB is not affected.",
+      "mitigation_or_patch": "Upgrade to 0.8.2 or later; parameterize data values and treat model-extracted graph fields as untrusted input.",
+      "why_it_matters_for_ai_security": "RAG ingestion can translate untrusted documents into state-changing database commands; escaping policy must survive model-mediated extraction and backend query construction.",
+      "named_entities": ["Flexible GraphRAG", "FalkorDB", "LangChain", "LlamaIndex"],
+      "upstream_routing": "ai-wiki owns broad Flexible GraphRAG and RAG framework context; this repository owns the untrusted-ingestion and graph-integrity control boundary.",
+      "confidence_notes": "High; the CVE record supplies exact scope, non-affected alternative, fixed version, and maintainer references.",
+      "follow_up_actions": ["During ingest, cross-check the maintainer advisory and fixed commit before deriving secure-query implementation guidance."]
+    },
+    {
+      "title": "Agent Zero Web UI stored XSS in agent chat and uploads",
+      "identifiers": ["CVE-2026-97635"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-97635",
+        "https://github.com/agent0ai/agent-zero/releases/tag/v1.15",
+        "https://raw.githubusercontent.com/cisagov/CSAF/develop/csaf_files/IT/white/2026/va-26-296-01.json"
+      ],
+      "visible_dates": {"cve_published": "2026-10-22T17:57:24.056Z", "cve_updated": "2026-10-22T17:57:24.056Z"},
+      "evidence_classification": "CVE Program record with project release and CISA CSAF reference",
+      "security_fact": "Agent Zero Web UI before 1.15 insufficiently sanitizes user-supplied chat-message and file-upload content. Rendering that content runs injected JavaScript in an authenticated Agent Zero session.",
+      "affected_boundary_or_version": "Agent Zero Web UI before 1.15; user content to authenticated agent-console rendering boundary.",
+      "mitigation_or_patch": "Upgrade to 1.15 or later and preserve output encoding and content-isolation controls for rendered agent inputs and tool artifacts.",
+      "why_it_matters_for_ai_security": "Agent interfaces often render model, tool, and uploaded content alongside privileged controls; stored XSS can convert untrusted agent inputs into session-level authority.",
+      "named_entities": ["Agent Zero", "CISA CSAF"],
+      "upstream_routing": "ai-wiki owns broad Agent Zero context; this repository retains the privileged agent-console content-rendering security finding.",
+      "confidence_notes": "High for timing, version, and mechanism from the CVE record; review the project release notes for remediation specifics during ingest.",
+      "follow_up_actions": ["Verify whether v1.15 includes additional session invalidation or CSP changes before synthesis."]
+    },
+    {
+      "title": "LiteLLM cryptographic-context reuse enables forged administrator tokens",
+      "identifiers": ["CVE-2026-114612", "GHSA-7hp6-4w63-5g45"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-114612",
+        "https://github.com/BerriAI/litellm/security/advisories/GHSA-7hp6-4w63-5g45",
+        "https://github.com/BerriAI/litellm/releases/tag/v1.100.4"
+      ],
+      "visible_dates": {"cve_published": "2026-10-22T18:01:52.768Z", "cve_updated": "2026-10-22T18:01:52.768Z"},
+      "evidence_classification": "CVE Program record with maintainer GitHub advisory, patch commits, and fixed releases",
+      "security_fact": "LiteLLM 1.87.0 through before 1.100.4, 1.101.3, 1.102.2, 1.103.1, and 1.104.0-rc.2 uses one cryptographic context for at-rest secrets and session tokens. An authenticated internal user can craft API-key metadata into a forged encrypted administrator credential, replay it as a bearer token, and gain proxy-administrator access and arbitrary MCP stdio commands.",
+      "affected_boundary_or_version": "LiteLLM 1.87.0 through affected release lines; at-rest secret encryption to session-token identity boundary. 1.87.0 through 1.90.x also require EXPERIMENTAL_UI_LOGIN; later affected versions are default-exploitable.",
+      "mitigation_or_patch": "Upgrade to 1.100.4, 1.101.3, 1.102.2, 1.103.1, or 1.104.0-rc.2 as applicable; rotate affected secrets and tokens according to maintainer guidance.",
+      "why_it_matters_for_ai_security": "AI gateways commonly broker provider credentials and MCP authority; cryptographic domain separation is required so encrypted metadata cannot become an administrative identity.",
+      "named_entities": ["LiteLLM", "MCP", "BerriAI"],
+      "upstream_routing": "ai-wiki owns broad LiteLLM and AI-gateway context; this repository retains identity forgery, credential-domain separation, and MCP authority implications.",
+      "confidence_notes": "High; the CVE record includes exact affected/fixed lines, exploit preconditions, and maintainer advisory references.",
+      "follow_up_actions": ["During ingest, confirm the maintainer rotation and deployment-remediation steps before turning them into operating guidance."]
+    },
+    {
+      "title": "Amazon Strands A2A cross-tenant conversation-state injection",
+      "identifiers": ["CVE-2026-115419", "GHSA-4v6f-7vjh-6x4m"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-115419",
+        "https://aws.amazon.com/security/security-bulletins/2026-146-aws/",
+        "https://github.com/strands-agents/harness-sdk/security/advisories/GHSA-4v6f-7vjh-6x4m",
+        "https://pypi.org/project/strands-agents/1.43.0/",
+        "https://www.npmjs.com/package/@strands-agents/sdk/v/1.5.0"
+      ],
+      "visible_dates": {"cve_published": "2026-10-22T20:04:04.191Z", "cve_updated": "2026-10-22T20:04:04.191Z"},
+      "evidence_classification": "CVE Program record with AWS security bulletin, maintainer GitHub advisory, and package-release references",
+      "security_fact": "The A2A server in Amazon Strands Agents SDK for Python before 1.43.0 and TypeScript before 1.5.0 fails to isolate conversation state by caller. An authenticated remote user can read another tenant's history and add persistent instructions affecting later callers by using a different context_id.",
+      "affected_boundary_or_version": "strands-agents Python before 1.43.0 and @strands-agents/sdk TypeScript before 1.5.0; A2A context_id to caller/tenant authorization boundary.",
+      "mitigation_or_patch": "Upgrade to strands-agents 1.43.0 or @strands-agents/sdk 1.5.0 or later; bind conversation state to authenticated principal and tenant server-side.",
+      "why_it_matters_for_ai_security": "Cross-tenant agent memory can leak confidential conversation state and persist attacker instructions into another user's future model execution.",
+      "named_entities": ["Amazon Strands Agents SDK", "A2A", "AWS"],
+      "upstream_routing": "ai-wiki owns broad Strands Agents context; this repository retains the distinct cross-tenant conversation-state authorization and persistent-instruction boundary. Existing local Strands consent-bypass coverage is related but not duplicative.",
+      "confidence_notes": "High; the CVE record names both package ecosystems, affected versions, impact, and fixed versions.",
+      "follow_up_actions": ["Compare with the existing Strands nested-tool consent-bypass leaf during ingest, but keep the state-isolation issue as a separate boundary."]
+    },
+    {
+      "title": "OpenAI frontier-AI cyber-defender governance blueprint",
+      "identifiers": [],
+      "source_urls": ["https://openai.com/index/empowering-cyber-defenders/"],
+      "visible_dates": {"published": "2026-10-21"},
+      "evidence_classification": "Official provider security and global-affairs publication",
+      "security_fact": "OpenAI published a security-governance blueprint proposing clearer responsibilities for securing frontier models and agents, dangerous-behavior detection, reliable shutdown controls, independent technical assessment, consistent incident reporting, and coordinated response and recovery.",
+      "affected_boundary_or_version": "Frontier-model and agent operational governance; no software version or patch applies.",
+      "mitigation_or_patch": "This is a proposed governance and assurance control set, not a vulnerability remediation or binding regulation.",
+      "why_it_matters_for_ai_security": "It is an in-window, concrete provider security-control and assurance proposal that informs operational expectations for monitoring, shutdown, evaluation, incident evidence, and recovery.",
+      "named_entities": ["OpenAI", "frontier AI", "cyber defenders"],
+      "upstream_routing": "ai-wiki owns broad OpenAI product and organization coverage; this repository retains only the AI-security governance, monitoring, shutdown, evaluation, and incident-response implication.",
+      "confidence_notes": "High that the official publication makes these proposals; it should not be represented as enacted regulation or independently verified implementation.",
+      "follow_up_actions": ["During ingest, distinguish the blueprint's proposals from mandatory standards and from product-specific controls."]
+    }
+  ],
+  "upstream_routing": [
+    {"entity": "Royal MCP and WordPress", "owner": "ai-wiki", "local_retention": "preview-token authorization scope"},
+    {"entity": "Flexible GraphRAG and RAG framework context", "owner": "ai-wiki", "local_retention": "untrusted ingestion to graph-query integrity boundary"},
+    {"entity": "Agent Zero", "owner": "ai-wiki", "local_retention": "privileged agent-console rendering boundary"},
+    {"entity": "LiteLLM", "owner": "ai-wiki", "local_retention": "credential-domain separation and MCP administrator authority"},
+    {"entity": "Amazon Strands Agents SDK", "owner": "ai-wiki", "local_retention": "cross-tenant conversation-state authorization and persistent instruction injection"},
+    {"entity": "OpenAI", "owner": "ai-wiki", "local_retention": "security-governance and assurance proposal only"}
+  ],
+  "exclusions": [
+    {"candidate": "Trigger.dev CLI MCP missing authentication", "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-114090", "visible_date": "2026-10-21T01:17:33.920Z; updated 2026-10-22T17:39:56.760Z", "reason": "Already captured in the October 21 collector artifact; the October 22 database update does not establish a distinct security delta."},
+    {"candidate": "D365 F&O MCP Server empty API-key exposure", "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-114123", "visible_date": "2026-10-21T17:18:25.737Z; updated 2026-10-22T17:40:46.877Z", "reason": "Already captured in the October 21 collector artifact; the October 22 database update does not establish a distinct security delta."},
+    {"candidate": "HKUDS Vibe-Trading file-read traversal and prompt-injection command execution", "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-114106", "visible_date": "2026-10-21T01:17:36.537Z; updated 2026-10-22T17:40:46.877Z", "reason": "Published before the prior collector run; no distinct October 22 mitigation or scope change was located."},
+    {"candidate": "CERT-In CIAD-2026-0049 AI Agents as Attack Vectors", "source_url": "https://cert-in.org.in/s2cMainServlet?VLCODE=CIAD-2026-0049&pageid=PUBVLNOTES02", "visible_date": "2026-10-15", "reason": "Concrete and primary, but its original issue date is outside the two-day window; later site-list display does not establish an in-window advisory update."},
+    {"candidate": "DHS DeepSeek federal civilian-system restriction", "source_url": "https://www.federalregister.gov/d/2026-21447", "visible_date": "2026-10-20", "reason": "The official notice has a date only and falls on the cutoff date; without a visible timestamp it is boundary-ambiguous and excluded under the strict-window rule."},
+    {"candidate": "PHP CVE-2026-109618 and CVE-2026-109619", "source_url": "https://www.php.net/", "visible_date": "2026-10-21 to 2026-10-22 reporting", "reason": "Critical general web-runtime vulnerabilities; no concrete AI, model, prompt, agent, MCP, or AI-supply-chain boundary was established in the public evidence reviewed."},
+    {"candidate": "General MCP and agent product or project announcements", "source_url": "https://github.com/", "visible_date": "2026-10-21 to 2026-10-22", "reason": "Excluded when they described planned features or product availability without a concrete vulnerability, mitigation, control result, incident, standard, or regulatory delta."}
+  ],
+  "confidence_notes": [
+    "CVE Program timestamps are direct public evidence for the five vulnerability records; NVD keyword queries were used as discovery only after repeated direct-record calls encountered rate limiting.",
+    "The OpenAI item is an official proposal and not a binding standard, regulation, confirmed implementation state, or vulnerability disclosure.",
+    "The artifact is raw evidence only. It has not been synthesized into docs/wiki and no raw item was moved to raw/processed."
+  ],
+  "follow_up_actions": [
+    "During normal ingest, verify maintainer advisory and release details for each CVE before durable remediation guidance.",
+    "Deduplicate the Strands A2A state-isolation finding from the existing local Strands nested-tool consent-bypass leaf while preserving the distinct security boundaries.",
+    "Recheck boundary-excluded official material if an unambiguous in-window update timestamp becomes available."
+  ],
+  "collection_blockers": [
+    "NVD returned rate-limit or non-JSON responses after initial successful keyword discovery, so per-record evidence was cross-checked through CVE Program JSON endpoints instead.",
+    "No blocker prevented raw artifact creation or validation."
+  ]
+}

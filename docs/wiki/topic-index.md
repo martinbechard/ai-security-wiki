@@ -8,6 +8,12 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [Royal MCP WordPress Preview-Token Scope Bypass](identity-and-access/royal-mcp-wordpress-preview-token-scope-bypass.md)
+- [Flexible GraphRAG FalkorDB Ingestion Cypher Injection](agent-and-tool-security/flexible-graphrag-falkordb-ingestion-cypher-injection.md)
+- [Agent Zero Web UI Stored XSS](agent-and-tool-security/agent-zero-web-ui-stored-xss.md)
+- [LiteLLM Cryptographic-Context Administrator-Token Forgery](identity-and-access/litellm-cryptographic-context-administrator-token-forgery.md)
+- [Strands A2A Conversation-State Isolation](identity-and-access/strands-a2a-conversation-state-isolation.md)
+- [OpenAI Frontier-AI Cyber-Defender Governance Blueprint](governance-and-compliance/openai-frontier-ai-cyber-defender-governance-blueprint.md)
 - [MCP TypeScript Server Cross-Client Message Delivery](data-and-privacy/mcp-typescript-server-cross-client-message-delivery.md)
 - [MCP TypeScript SDK Validation Memory-Exhaustion DoS](agent-and-tool-security/mcp-typescript-sdk-validation-memory-exhaustion-dos.md)
 - [MCP TypeScript SDK Bearer-Token Audience Validation](identity-and-access/mcp-typescript-sdk-bearer-token-audience-validation.md)

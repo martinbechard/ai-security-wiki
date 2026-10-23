@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [Flexible GraphRAG FalkorDB Ingestion Cypher Injection](flexible-graphrag-falkordb-ingestion-cypher-injection.md)
+- [Agent Zero Web UI Stored XSS](agent-zero-web-ui-stored-xss.md)
 - [Aix-DB ChatBI Common-Agent Command Execution](aix-db-chatbi-common-agent-command-execution.md)
 - [IBM ContextForge OAuth Registration SSRF](ibm-contextforge-oauth-registration-ssrf.md)
 - [djust MCP Template-Path Readability Oracle](djust-mcp-template-path-readability-oracle.md)
@@ -371,6 +373,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-22 with Flexible GraphRAG ingestion query integrity and Agent Zero privileged-console rendering leaves.
 - Updated on 2026-10-20 with the MCP TypeScript SDK structural-validation memory-exhaustion leaf and October 20 watcher provenance for Cognition, crewai-tools, and SGLang.
 - Updated on 2026-10-16 with Claude Agent SDK resume argument injection from the October 16 source ingest.
 - Updated on 2026-10-15 with the IntentKit request-scoped tool authorization leaf from the October 15 source ingest.

@@ -23,6 +23,7 @@ The [October 21 topic collector source](../../../raw/processed/2026-10-21/ai-sec
 ## Authoritative Sources
 
 - [October 21 topic collector source](../../../raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json)
+- [October 23 leaf update watch source](../../../raw/processed/2026-10-23/ai-security-wiki-leaf-update-watch-20261023T000535Z.json)
 - [NVD CVE-2026-8355](https://nvd.nist.gov/vuln/detail/CVE-2026-8355)
 - [IBM support advisory 7285723](https://www.ibm.com/support/pages/node/7285723)
 
@@ -50,4 +51,5 @@ The [October 21 topic collector source](../../../raw/processed/2026-10-21/ai-sec
 
 ## Maintenance Notes
 
+- Updated on 2026-10-23 with watcher provenance; no distinct security delta was reported.
 - Created on 2026-10-21 from the October 21 topic collector; preserve its distinction from invocation-time DNS-rebinding advisories.

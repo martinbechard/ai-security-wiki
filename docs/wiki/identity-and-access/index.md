@@ -6,6 +6,9 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [Royal MCP WordPress Preview-Token Scope Bypass](royal-mcp-wordpress-preview-token-scope-bypass.md)
+- [LiteLLM Cryptographic-Context Administrator-Token Forgery](litellm-cryptographic-context-administrator-token-forgery.md)
+- [Strands A2A Conversation-State Isolation](strands-a2a-conversation-state-isolation.md)
 - [MCP TypeScript SDK Task Session Isolation](mcp-typescript-sdk-task-session-isolation.md)
 - [D365 F&O MCP Server Default API-Key Exposure](d365-fo-mcp-server-default-api-key-exposure.md)
 - [MCP TypeScript SDK Bearer-Token Audience Validation](mcp-typescript-sdk-bearer-token-audience-validation.md)
@@ -184,6 +187,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-10-22 with Royal MCP preview-token scoping, LiteLLM cryptographic identity forgery, and Strands A2A conversation ownership leaves.
 - Updated on 2026-10-20 with MCP TypeScript bearer-token audience validation and October 20 watcher provenance for AI Engine and LangBot.
 - Updated on 2026-10-16 with the WSP MCP unpublished-content authorization boundary from the October 16 source ingest.
 - Updated on 2026-10-15 with NetLicensing MCP path/token disclosure and Azure SRE Agent authorization leaves from the October 15 source ingest.

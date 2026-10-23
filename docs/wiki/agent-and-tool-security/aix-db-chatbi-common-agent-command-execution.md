@@ -23,6 +23,7 @@ The [October 21 topic collector source](../../../raw/processed/2026-10-21/ai-sec
 ## Authoritative Sources
 
 - [October 21 topic collector source](../../../raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json)
+- [October 23 leaf update watch source](../../../raw/processed/2026-10-23/ai-security-wiki-leaf-update-watch-20261023T000535Z.json)
 - [NVD CVE-2026-77926](https://nvd.nist.gov/vuln/detail/CVE-2026-77926)
 - [VulnCheck advisory](https://www.vulncheck.com/advisories/aix-db-1.2.4-authenticated-rce-via-chatbi-common-agent-execute-tool)
 
@@ -49,4 +50,5 @@ The [October 21 topic collector source](../../../raw/processed/2026-10-21/ai-sec
 
 ## Maintenance Notes
 
+- Updated on 2026-10-23 with watcher provenance; its exploit-tag reference was not independently confirmed as exploitation.
 - Created on 2026-10-21 from the October 21 topic collector; reconcile maintainer release evidence before asserting a fixed version.

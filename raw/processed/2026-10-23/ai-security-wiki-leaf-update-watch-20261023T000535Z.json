@@ -1,0 +1,169 @@
+{
+  "artifact_type": "ai_security_wiki_leaf_update_watch",
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "collected_at": "2026-10-23T00:05:35Z",
+  "window": {
+    "start_exclusive": "2026-10-16T00:05:35Z",
+    "end_inclusive": "2026-10-23T00:05:35Z",
+    "rule": "visible public publication or update time strictly within the preceding seven days"
+  },
+  "selection": {
+    "leaf_universe_count": 733,
+    "selected_leaf_count": 15,
+    "method": "previously unchecked leaves first, then oldest last_checked_at, stable relative-path tie-break"
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/aix-db-chatbi-common-agent-command-execution.md",
+    "docs/wiki/agent-and-tool-security/djust-mcp-template-path-readability-oracle.md",
+    "docs/wiki/agent-and-tool-security/ibm-contextforge-oauth-registration-ssrf.md",
+    "docs/wiki/agent-and-tool-security/pydantic-ai-harness-nested-tool-limit-bypass.md",
+    "docs/wiki/agent-and-tool-security/trigger-dev-cli-mcp-authentication.md",
+    "docs/wiki/data-and-privacy/openshift-ai-evaluation-job-model-url-secret-exposure.md",
+    "docs/wiki/identity-and-access/d365-fo-mcp-server-default-api-key-exposure.md",
+    "docs/wiki/identity-and-access/mcp-typescript-sdk-task-session-isolation.md",
+    "docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md",
+    "docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md",
+    "docs/wiki/agent-and-tool-security/langflow-kev-rce.md",
+    "docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md",
+    "docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md",
+    "docs/wiki/agent-and-tool-security/pg-aiguide-mcp-dns-rebinding-host-allow-list.md",
+    "docs/wiki/agent-and-tool-security/skyvern-textpromptblock-jinja-sandbox-escape.md"
+  ],
+  "sources_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-77926",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-113731",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-8355",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-114386",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-114090",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-17557",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-114123",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-111767",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-15829",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-0770",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-65015",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-81095",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-82447"
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/aix-db-chatbi-common-agent-command-execution.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-77926",
+      "source_visible_at": "2026-10-20T00:46:09.952Z",
+      "identifier": "CVE-2026-77926",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "An authenticated user can turn crafted chat input or document text into host-command execution through the ChatBI common agent execution tool, exposing datasource credentials and model API keys.",
+      "affected_boundaries": ["agent input", "agent-to-host command execution", "datasource and model credentials"],
+      "named_entities": ["Aix-DB", "ChatBI common agent"],
+      "confirmed_exploitation": false,
+      "unverified_claims": ["A referenced advisory is tagged exploit, but this run did not independently establish confirmed exploitation."],
+      "already_captured_by": "raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json",
+      "upstream_routing": "keep local security finding; broad product catalog remains upstream"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/djust-mcp-template-path-readability-oracle.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-113731",
+      "source_visible_at": "2026-10-20T21:31:28.008Z",
+      "identifier": "CVE-2026-113731",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "The local stdio MCP template tool accepts absolute paths outside configured template roots, allowing a same-user client to infer readable file content through matching attribute fragments; fixed releases are 1.0.10, 1.1.7, 1.2.4, and 1.3.0rc8.",
+      "affected_boundaries": ["local MCP client", "template path authorization", "same-user readable files"],
+      "named_entities": ["djust", "MCP"],
+      "confirmed_exploitation": false,
+      "already_captured_by": "raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json",
+      "upstream_routing": "keep local security finding; broad djust and MCP catalog remains upstream"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/ibm-contextforge-oauth-registration-ssrf.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-8355",
+      "source_visible_at": "2026-10-19T23:42:01.778Z",
+      "identifier": "CVE-2026-8355",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "A gateway creator can place an arbitrary internal or cloud-metadata URL in OAuth token_url, inducing a credential-bearing POST and limited response reflection in ContextForge MCP Gateway through 1.0.5.",
+      "affected_boundaries": ["OAuth registration", "network egress", "cloud metadata", "OAuth client credentials"],
+      "named_entities": ["IBM ContextForge MCP Gateway", "AWS IMDSv1", "GCP", "Azure"],
+      "confirmed_exploitation": false,
+      "already_captured_by": "raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json",
+      "upstream_routing": "keep local security finding; product catalog remains upstream"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/pydantic-ai-harness-nested-tool-limit-bypass.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-114386",
+      "source_visible_at": "2026-10-21T12:39:43.886Z",
+      "identifier": "CVE-2026-114386",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "Prompt-influenced nested CodeMode tool calls can bypass configured tool-call limits and exceed operator controls over costly or side-effecting tools before harness 0.59.0.",
+      "affected_boundaries": ["prompt-influenced tool dispatch", "nested tool authority", "operator usage limits"],
+      "named_entities": ["Pydantic AI Harness", "CodeMode"],
+      "confirmed_exploitation": false,
+      "already_captured_by": "raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json",
+      "upstream_routing": "keep local security finding; broad Pydantic AI coverage remains upstream"
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/trigger-dev-cli-mcp-authentication.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-114090",
+      "source_visible_at": "2026-10-21T00:36:55.567Z",
+      "identifier": "CVE-2026-114090",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "The CLI MCP server binds all interfaces without authentication before 4.5.4, allowing LAN or browser-originated tool calls to use the developer's stored access token.",
+      "affected_boundaries": ["developer workstation listener", "MCP authentication", "stored access token"],
+      "named_entities": ["Trigger.dev CLI", "MCP"],
+      "confirmed_exploitation": false,
+      "already_captured_by": "raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json",
+      "upstream_routing": "keep local security finding; product catalog remains upstream"
+    },
+    {
+      "leaf_id": "docs/wiki/data-and-privacy/openshift-ai-evaluation-job-model-url-secret-exposure.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-17557",
+      "source_visible_at": "2026-10-21T07:59:10.543Z",
+      "identifier": "CVE-2026-17557",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "An authenticated evaluation-job submitter can direct a model URL so the job forwards a tenant model-authentication secret to an attacker listener and reaches internal endpoints.",
+      "affected_boundaries": ["evaluation JobSpec model URL", "tenant model secret", "evaluation-pod network egress"],
+      "named_entities": ["Red Hat OpenShift AI", "lm-evaluation-harness"],
+      "confirmed_exploitation": false,
+      "already_captured_by": "raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json",
+      "upstream_routing": "keep local security finding; general OpenShift AI and evaluation tooling remain upstream"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/d365-fo-mcp-server-default-api-key-exposure.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-114123",
+      "source_visible_at": "2026-10-21T16:57:47.278Z",
+      "identifier": "CVE-2026-114123",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "A documented Azure deployment can leave the MCP API key empty while exposing the listener publicly, allowing anonymous read/search access to indexed proprietary source and metadata before 1.11.0.",
+      "affected_boundaries": ["default deployment authentication", "public MCP listener", "proprietary source and metadata"],
+      "named_entities": ["D365 F&O MCP Server", "Azure"],
+      "confirmed_exploitation": false,
+      "already_captured_by": "raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json",
+      "upstream_routing": "keep local security finding; broad Dynamics 365 and MCP catalog remain upstream"
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/mcp-typescript-sdk-task-session-isolation.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-111767",
+      "source_visible_at": "2026-10-20T18:28:45.650Z",
+      "identifier": "CVE-2026-111767",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "Clients sharing an experimental InMemoryTaskStore can list, read, or cancel one another's tasks because task ownership was not tied to the creating session before 1.32.0.",
+      "affected_boundaries": ["experimental task store", "client session isolation", "task read and cancellation authority"],
+      "named_entities": ["MCP TypeScript SDK", "InMemoryTaskStore"],
+      "confirmed_exploitation": false,
+      "already_captured_by": "raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json",
+      "upstream_routing": "keep local security finding; broad MCP SDK coverage remains upstream"
+    }
+  ],
+  "exclusions": [
+    {"leaf_id":"docs/wiki/agent-and-tool-security/google-api-hub-mcp-security-controls.md","source_url":"https://docs.cloud.google.com/mcp/release-notes","reason":"No source with a visible in-window, same-leaf security-control delta was established from the cited public URLs."},
+    {"leaf_id":"docs/wiki/agent-and-tool-security/google-mcp-toolbox-bigquery-forecast-boundary-bypass.md","source_url":"https://cveawg.mitre.org/api/cve/CVE-2026-15829","reason":"Last public CVE update was 2026-07-22, outside the strict window."},
+    {"leaf_id":"docs/wiki/agent-and-tool-security/langflow-kev-rce.md","source_url":"https://cveawg.mitre.org/api/cve/CVE-2026-0770","reason":"Last public CVE update was 2026-07-22, outside the strict window; the already documented KEV status was not reclassified."},
+    {"leaf_id":"docs/wiki/agent-and-tool-security/local-agent-execution-and-processing-boundaries.md","source_url":"https://junie.jetbrains.com/docs/junie-headless.html","reason":"No source with a visible in-window, same-leaf control change was established from the cited public URLs."},
+    {"leaf_id":"docs/wiki/agent-and-tool-security/n8n-ai-agent-project-viewer-privilege-escalation.md","source_url":"https://cveawg.mitre.org/api/cve/CVE-2026-65015","reason":"Last public CVE update was 2026-07-22, outside the strict window."},
+    {"leaf_id":"docs/wiki/agent-and-tool-security/pg-aiguide-mcp-dns-rebinding-host-allow-list.md","source_url":"https://cveawg.mitre.org/api/cve/CVE-2026-81095","reason":"Last public CVE update was 2026-08-29, outside the strict window."},
+    {"leaf_id":"docs/wiki/agent-and-tool-security/skyvern-textpromptblock-jinja-sandbox-escape.md","source_url":"https://cveawg.mitre.org/api/cve/CVE-2026-82447","reason":"Last public CVE update was 2026-09-24, outside the strict window."}
+  ],
+  "follow_up_notes": [
+    "All qualifying disclosures overlap the processed October 21 topic collector. Compare advisory metadata, remediation, and affected-boundary deltas before any durable rewrite; do not duplicate existing local prose.",
+    "No confirmed exploitation or demonstrated research was established. Aix-DB includes an exploit-tagged referenced advisory, recorded only as an unverified claim.",
+    "No docs/wiki or raw/processed content was changed."
+  ]
+}

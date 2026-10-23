@@ -31,6 +31,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 22 topic collector source](../../../raw/processed/2026-10-22/ai-security-wiki-topic-news-collector-2026-10-22T232635Z.json)
+- [October 23 leaf update watch source](../../../raw/processed/2026-10-23/ai-security-wiki-leaf-update-watch-20261023T000535Z.json)
 - [October 21 topic collector source](../../../raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json)
 - [October 20 topic collector source](../../../raw/processed/2026-10-20/ai-security-wiki-topic-news-collector-2026-10-20T232727Z.json)
 - [October 20 leaf update watch source](../../../raw/processed/2026-10-20/ai-security-wiki-leaf-update-watch-20261021T000613Z.json)
@@ -153,6 +155,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-22 after item-level Royal MCP, Flexible GraphRAG, Agent Zero, LiteLLM, Strands, and OpenAI governance entries; the October 23 watcher is provenance-only for existing leaves. Ordering remains reverse chronological and entries are not grouped by raw artifact, collector run, sweep category, or ingest batch.
 - Updated on 2026-10-21 after the October 21 collector was synthesized into eight item-level security leaves and the active digest.
 - Updated on 2026-10-20 after the item-level MCP TypeScript SDK digest entries and watcher-provenance review.
 - Updated on 2026-10-16 for October coverage of WSP MCP access control, Junie CLI configuration execution, and Claude Agent SDK argument injection.
