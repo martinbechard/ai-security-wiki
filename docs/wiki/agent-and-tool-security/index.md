@@ -2,6 +2,10 @@
 
 ## Current Understanding
 
+- [AWS Multi Model Server Model URL SSRF](aws-multi-model-server-model-url-ssrf.md)
+- [MLflow GenAI Scorer SSRF](mlflow-genai-scorer-ssrf.md)
+- [FastMCP Final Component Authorization](fastmcp-final-component-authorization.md)
+
 - [Flexible GraphRAG FalkorDB Ingestion Cypher Injection](flexible-graphrag-falkordb-ingestion-cypher-injection.md)
 - [Agent Zero Web UI Stored XSS](agent-zero-web-ui-stored-xss.md)
 - [Aix-DB ChatBI Common-Agent Command Execution](aix-db-chatbi-common-agent-command-execution.md)

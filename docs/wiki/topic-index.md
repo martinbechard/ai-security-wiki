@@ -8,6 +8,18 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [aider Conf Repository Command Execution](infrastructure-and-supply-chain/aider-conf-repository-command-execution.md)
+- [agentic-awesome-skills Malware](infrastructure-and-supply-chain/agentic-awesome-skills-malware.md)
+- [opencode-skills-collection Malware](infrastructure-and-supply-chain/opencode-skills-collection-malware.md)
+- [AWS Multi Model Server Archive Traversal](infrastructure-and-supply-chain/aws-multi-model-server-archive-traversal.md)
+- [AWS Multi Model Server Model URL SSRF](agent-and-tool-security/aws-multi-model-server-model-url-ssrf.md)
+- [MLflow GenAI Scorer SSRF](agent-and-tool-security/mlflow-genai-scorer-ssrf.md)
+- [LangGraph Namespace Tenant Isolation](identity-and-access/langgraph-namespace-tenant-isolation.md)
+- [FastMCP Final Component Authorization](agent-and-tool-security/fastmcp-final-component-authorization.md)
+- [FastMCP OAuth Issuer Binding](identity-and-access/fastmcp-oauth-issuer-binding.md)
+- [vLLM Multimodal Processor Kwargs DoS](model-and-prompt-security/vllm-mm-processor-kwargs-dos.md)
+- [vLLM Forged UUID Cache Collision DoS](model-and-prompt-security/vllm-forged-uuid-cache-collision-dos.md)
+
 - [Royal MCP WordPress Preview-Token Scope Bypass](identity-and-access/royal-mcp-wordpress-preview-token-scope-bypass.md)
 - [Flexible GraphRAG FalkorDB Ingestion Cypher Injection](agent-and-tool-security/flexible-graphrag-falkordb-ingestion-cypher-injection.md)
 - [Agent Zero Web UI Stored XSS](agent-and-tool-security/agent-zero-web-ui-stored-xss.md)

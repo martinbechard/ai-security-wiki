@@ -13,6 +13,8 @@ The [September 4 topic collector source](../../../raw/processed/2026-09-04/ai-se
 
 [CVE-2026-85674](https://cveawg.mitre.org/api/cve/CVE-2026-85674) and [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-85674) describe automatic loading of `.aider.conf.yml` from a repository root. A crafted repository can set `test-cmd` or `lint-cmd` values that aider runs through a shell without user confirmation, LLM interaction, or an API key.
 
+The [October 23 topic collector source](../../../raw/processed/2026-10-23/ai-security-wiki-topic-news-collector-2026-10-23T233200Z.json) adds [CVE-2026-115726](https://cveawg.mitre.org/api/cve/CVE-2026-115726): aider-chat through 0.86.2 can also reach `shell=True` from repository-local `notifications-command` or `editor` settings after a reply or editor use. No fixed release is named; treat all repository configuration as untrusted until maintainer remediation is confirmed.
+
 ## Security Impact
 
 - Threat: opening or running an agent in an untrusted repository can execute repository-supplied shell commands.
@@ -27,6 +29,8 @@ The [September 4 topic collector source](../../../raw/processed/2026-09-04/ai-se
 - [September 4 topic collector source](../../../raw/processed/2026-09-04/ai-security-wiki-topic-news-collector-2026-09-04T233156Z.json)
 - [CVE-2026-85674](https://cveawg.mitre.org/api/cve/CVE-2026-85674)
 - [NVD CVE-2026-85674](https://nvd.nist.gov/vuln/detail/CVE-2026-85674)
+- [October 23 topic collector source](../../../raw/processed/2026-10-23/ai-security-wiki-topic-news-collector-2026-10-23T233200Z.json)
+- [CVE-2026-115726](https://cveawg.mitre.org/api/cve/CVE-2026-115726)
 
 ## Related Code
 
@@ -53,3 +57,4 @@ The [September 4 topic collector source](../../../raw/processed/2026-09-04/ai-se
 ## Maintenance Notes
 
 - Created on 2026-09-04 from the [September 4 topic collector source](../../../raw/processed/2026-09-04/ai-security-wiki-topic-news-collector-2026-09-04T233156Z.json).
+- Updated on 2026-10-23 with CVE-2026-115726 repository configuration command paths; fixed-release status remains open.

@@ -1,0 +1,157 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-10-23T23:32:00Z",
+  "cutoff_window": {
+    "start_inclusive": "2026-10-21T23:32:00Z",
+    "end_exclusive": "2026-10-23T23:32:00Z",
+    "rule": "Included only public sources with a concrete AI-security fact and a visible publication or update timestamp strictly inside this 48-hour window. Date-only boundary candidates were excluded when their time could not be shown to be inside the window."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, release gates, standards, regulation, governance, audit evidence, and risk management",
+    "public AI-security incidents, mitigations, patches, and disclosures"
+  ],
+  "qualifying_findings": [
+    {
+      "title": "Aider repository configuration can execute shell commands",
+      "identifiers": ["CVE-2026-115726"],
+      "source_urls": ["https://cveawg.mitre.org/api/cve/CVE-2026-115726", "https://www.vulncheck.com/advisories/aider-through-0.86.2-command-execution-via-repository-aider-conf-yml-settings", "https://github.com/Aider-AI/aider/issues/5885"],
+      "visible_dates": {"cve_published": "2026-10-23T11:36:49.084Z", "date_public": "2026-10-20T07:31:14Z"},
+      "evidence_classification": "CVE Program record assigned by VulnCheck with repository source references",
+      "security_fact": "Aider through 0.86.2 auto-loads a repository .aider.conf.yml without a trust prompt. A committed notifications-command or editor value reaches subprocess execution with shell=True after a model reply or editor use.",
+      "affected_boundary_or_version": "aider-chat through 0.86.2; untrusted repository configuration to local coding-agent shell-execution boundary.",
+      "mitigation_or_patch": "No fixed release was named in the public CVE record. Do not open untrusted repositories with affected versions; review or remove .aider.conf.yml before use and run the agent with least privilege.",
+      "why_it_matters_for_ai_security": "A repository is an untrusted input to a coding agent; configuration must not silently acquire authority to execute local commands.",
+      "named_entities": ["Aider", "Aider-AI", "VulnCheck"],
+      "upstream_routing": "ai-wiki owns broad Aider catalog context; this repository retains the repository-configuration trust and command-execution boundary.",
+      "confidence_notes": "High for the affected version, mechanism, and publication time. The CVE record says no fixed release; confirm maintainer remediation during ingest.",
+      "follow_up_actions": ["Check the maintainer issue and later release notes for a fixed version or trust-prompt behavior before operational guidance."]
+    },
+    {
+      "title": "Malicious npm agent-skill collections disclosed",
+      "identifiers": ["GHSA-rgwm-3jj9-h563", "GHSA-9855-prwc-mfp2", "MAL-2026-18192", "MAL-2026-18193"],
+      "source_urls": ["https://github.com/advisories/GHSA-rgwm-3jj9-h563", "https://github.com/advisories/GHSA-9855-prwc-mfp2", "https://api.github.com/advisories/GHSA-rgwm-3jj9-h563", "https://api.github.com/advisories/GHSA-9855-prwc-mfp2"],
+      "visible_dates": {"agentic_awesome_skills_published": "2026-10-22T18:34:45Z", "opencode_skills_collection_published": "2026-10-22T18:35:11Z", "latest_updates": "2026-10-22T20:04:18Z and 2026-10-22T19:57:00Z"},
+      "evidence_classification": "GitHub-reviewed critical malware advisories",
+      "security_fact": "GitHub marked published versions of npm packages agentic-awesome-skills and opencode-skills-collection as malware. The advisories state that a computer where either package was installed or run should be treated as fully compromised and that secrets and keys should be rotated from a different computer.",
+      "affected_boundary_or_version": "20 listed versions of each npm skill-collection package, including agentic-awesome-skills 18.9.0 through 19.13.0 listed versions and opencode-skills-collection 4.0.56 through 4.1.20 listed versions; installable agent-skill package supply chain.",
+      "mitigation_or_patch": "Remove affected packages, investigate the host as compromised, and rotate stored secrets and keys from a separate trusted computer. No patched version is identified by either advisory.",
+      "why_it_matters_for_ai_security": "Agent skills can carry execution, credential, and tool authority; package provenance and staged review are supply-chain controls rather than optional convenience checks.",
+      "named_entities": ["agentic-awesome-skills", "opencode-skills-collection", "npm", "GitHub Advisory Database"],
+      "upstream_routing": "ai-wiki owns broad agent-skill and package catalog context; this repository retains the malware disclosure and agent-execution supply-chain implication.",
+      "confidence_notes": "High for publication timing, malware classification, and response recommendation from GitHub-reviewed advisory records. The advisories do not describe payload behavior.",
+      "follow_up_actions": ["During ingest, retain the two advisories as distinct package incidents and avoid inferring payload capabilities not published by GitHub."]
+    },
+    {
+      "title": "AWS Multi Model Server model artifact traversal and SSRF",
+      "identifiers": ["CVE-2026-115812", "GHSA-3v4f-xjg3-3j32", "CVE-2026-115813", "GHSA-g55x-6xv3-fpjr"],
+      "source_urls": ["https://github.com/advisories/GHSA-3v4f-xjg3-3j32", "https://github.com/advisories/GHSA-g55x-6xv3-fpjr", "https://aws.amazon.com/security/security-bulletins/2026-148-aws"],
+      "visible_dates": {"github_advisories_published": "2026-10-23T18:31:39Z", "github_advisory_updates": "2026-10-23T18:31:45Z and 2026-10-23T18:31:39Z"},
+      "evidence_classification": "GitHub Advisory Database records referencing an AWS security bulletin and NVD CVE records",
+      "security_fact": "AWS Multi Model Server 1.1.11 and earlier permits arbitrary code execution through relative path traversal while extracting a crafted model archive, and SSRF through a crafted model download URL.",
+      "affected_boundary_or_version": "AWS Multi Model Server 1.1.11 and earlier; model artifact extraction and model-download URL to runtime/filesystem and internal-network boundaries.",
+      "mitigation_or_patch": "The product is end of life and has no fixed version. Discontinue use and migrate to a supported model-serving solution.",
+      "why_it_matters_for_ai_security": "Model archives and model URLs are high-risk supply-chain inputs; an end-of-life serving runtime leaves both code-execution and internal-network exposure without a patch path.",
+      "named_entities": ["AWS Multi Model Server", "AWS", "NVD"],
+      "upstream_routing": "ai-wiki owns broad AWS and model-serving catalog context; this repository retains the model-artifact extraction, model-download SSRF, and unsupported-runtime security implications.",
+      "confidence_notes": "High for the two mechanisms, affected version, no-fix state, and visible advisory publication time. Recheck the AWS bulletin during ingest for any deployment-specific guidance.",
+      "follow_up_actions": ["Treat the two CVEs as separate technical boundaries during synthesis while preserving their shared end-of-life migration response."]
+    },
+    {
+      "title": "MLflow GenAI scorer endpoint SSRF",
+      "identifiers": ["GHSA-2wqp-q3c6-ccj5"],
+      "source_urls": ["https://github.com/mlflow/mlflow/security/advisories/GHSA-2wqp-q3c6-ccj5", "https://github.com/mlflow/mlflow/releases/tag/v3.17.0", "https://api.github.com/advisories/GHSA-2wqp-q3c6-ccj5"],
+      "visible_dates": {"github_advisory_published": "2026-10-23T22:07:26Z", "github_advisory_updated": "2026-10-23T22:07:27Z"},
+      "evidence_classification": "Maintainer GitHub security advisory with fix commit and release reference",
+      "security_fact": "On an unauthenticated MLflow server with optional trulens and trulens-providers-litellm installed, attacker-supplied third-party scorer JSON can instantiate an allowed-module class with unconstrained kwargs and cause the server to make an HTTP request to an attacker-chosen host.",
+      "affected_boundary_or_version": "mlflow >=3.12.0rc0 and <3.17.0 under the optional GenAI evaluation dependency configuration; unauthenticated scorer invoke/register/evaluate input to outbound LLM-client request boundary.",
+      "mitigation_or_patch": "Upgrade to MLflow 3.17.0. Require authentication on tracking servers and restrict outbound network access as defense in depth.",
+      "why_it_matters_for_ai_security": "Evaluation endpoints can turn attacker-controlled scorer configuration into privileged server-side model-provider or internal-network requests.",
+      "named_entities": ["MLflow", "TruLens", "LiteLLM", "Databricks"],
+      "upstream_routing": "ai-wiki owns broad MLflow and evaluation-tool context; this repository retains the unauthenticated GenAI-evaluation SSRF and egress-control boundary.",
+      "confidence_notes": "High for timing, conditions, fixed version, and mechanism from the maintainer advisory.",
+      "follow_up_actions": ["Verify the release artifact and scope of affected optional dependencies during ingest."]
+    },
+    {
+      "title": "LangGraph persisted namespace collision crosses tenant boundaries",
+      "identifiers": ["GHSA-6hmw-9432-67qq"],
+      "source_urls": ["https://github.com/langchain-ai/langgraph/security/advisories/GHSA-6hmw-9432-67qq", "https://github.com/langchain-ai/langgraph/releases/tag/checkpointpostgres%3D%3D3.1.3", "https://github.com/langchain-ai/langgraph/releases/tag/checkpointsqlite%3D%3D3.1.2"],
+      "visible_dates": {"github_advisory_published": "2026-10-23T22:06:44Z", "github_advisory_updated": "2026-10-23T22:06:45Z"},
+      "evidence_classification": "Maintainer GitHub security advisory with fix commit and release references",
+      "security_fact": "LangGraph Postgres and SQLite stores serialize namespace labels with a dot delimiter, making tuples such as (tenant, bob) collide with (tenant.bob). Several read, search, delete, listing, and batch paths did not reject dot-containing untrusted labels, enabling cross-namespace reads, overwrites, or deletes.",
+      "affected_boundary_or_version": "langgraph-checkpoint-postgres before 3.1.3 and langgraph-checkpoint-sqlite before 3.1.2 when tenants rely on namespaces and untrusted input reaches those methods; InMemoryStore is not affected.",
+      "mitigation_or_patch": "Upgrade the Postgres store to 3.1.3 or SQLite store to 3.1.2 together with langgraph-checkpoint 4.3.0; reject empty, non-string, and dot-containing labels across all direct and batch operations.",
+      "why_it_matters_for_ai_security": "Agent memory and state stores frequently use namespaces as authorization boundaries; lossy serialization can convert user input into cross-tenant data access or instruction-state tampering.",
+      "named_entities": ["LangGraph", "LangSmith", "Postgres", "SQLite"],
+      "upstream_routing": "ai-wiki owns broad LangGraph and LangSmith context; this repository retains tenant-state isolation and namespace-validation implications.",
+      "confidence_notes": "High for scope, non-affected store, affected versions, and remediation from the maintainer advisory.",
+      "follow_up_actions": ["During ingest, relate this to local agent-memory isolation guidance without duplicating upstream LangGraph product analysis."]
+    },
+    {
+      "title": "FastMCP authorization and OAuth issuer-binding defects",
+      "identifiers": ["GHSA-7xgj-8392-5q4r", "GHSA-vqqp-x5qm-5qp4"],
+      "source_urls": ["https://github.com/PrefectHQ/fastmcp/security/advisories/GHSA-7xgj-8392-5q4r", "https://github.com/PrefectHQ/fastmcp/security/advisories/GHSA-vqqp-x5qm-5qp4", "https://github.com/PrefectHQ/fastmcp/releases/tag/v3.4.10", "https://github.com/PrefectHQ/fastmcp/releases/tag/v4.1.2"],
+      "visible_dates": {"authorization_advisory_published": "2026-10-23T21:32:06Z", "issuer_binding_advisory_published": "2026-10-23T21:31:30Z"},
+      "evidence_classification": "Maintainer-accepted GitHub security advisories with fixed releases",
+      "security_fact": "FastMCP direct lookups authorized an original component but could return a transformed component without rechecking its policy, allowing a low-privilege caller to invoke protected tools or retrieve protected resources, templates, or prompts. Separately, FastMCP M2M OAuth wrappers lacked authorization-server issuer binding, allowing an untrusted or compromised MCP server to redirect client credentials or signed assertions to an attacker-advertised authorization server.",
+      "affected_boundary_or_version": "Authorization flaw: fastmcp and fastmcp-slim 3.0.0–3.4.9 and 4.0.0–4.1.1 with component authorization/transforms. Issuer-binding flaw: fastmcp and fastmcp-slim 4.0.0a1–4.1.1; MCP client credential to discovered authorization-server boundary.",
+      "mitigation_or_patch": "Upgrade 3.x to 3.4.10 and 4.x to 4.1.2. For issuer binding, explicitly configure issuer after upgrading and rotate reusable client credentials that may have been exposed; upgrade alone leaves the compatibility omission available with a warning.",
+      "why_it_matters_for_ai_security": "MCP policy must apply to the final invoked capability, and OAuth credentials must be bound to the authorization server that owns them rather than trusting server-discovered metadata.",
+      "named_entities": ["FastMCP", "MCP", "OAuth", "Prefect"],
+      "upstream_routing": "ai-wiki owns broad FastMCP and MCP catalog context; this repository retains final-capability authorization and issuer-bound credential controls.",
+      "confidence_notes": "High for each mechanism, affected release line, and remediation. The advisories are distinct and share the 4.1.2 release; do not merge their control boundaries during synthesis.",
+      "follow_up_actions": ["Verify configuration migration for issuer and whether affected deployments cache reusable credentials before publishing operating guidance."]
+    },
+    {
+      "title": "vLLM multimodal request controls permit remote service crashes",
+      "identifiers": ["CVE-2026-114055", "GHSA-gx7p-2j49-hfq4", "CVE-2026-114050", "GHSA-p92p-rxj5-7p2x"],
+      "source_urls": ["https://github.com/vllm-project/vllm/security/advisories/GHSA-gx7p-2j49-hfq4", "https://github.com/vllm-project/vllm/security/advisories/GHSA-p92p-rxj5-7p2x", "https://github.com/vllm-project/vllm/releases/tag/v0.31.0"],
+      "visible_dates": {"processor_kwargs_advisory_published": "2026-10-23T20:58:36Z", "uuid_cache_advisory_published": "2026-10-23T20:43:44Z"},
+      "evidence_classification": "Maintainer GitHub security advisories with fix commits and release reference",
+      "security_fact": "vLLM forwarded client-provided mm_processor_kwargs into multimodal image/video processor constructors, allowing resource-sensitive values to force out-of-memory termination. A separate defect trusted client-provided multimodal UUIDs as cache identities while unsynchronized frontend/engine caches could substitute incompatible stale tensors, allowing an unauthenticated client to kill the engine.",
+      "affected_boundary_or_version": "Unvalidated processor kwargs: vllm >=0.7.3 and <0.31.0. Forged UUID cache collision: vllm <0.31.0. Both affect remote multimodal request input to shared model-serving runtime availability; API authentication is optional.",
+      "mitigation_or_patch": "Upgrade to vLLM 0.31.0. Reject non-empty per-request mm_processor_kwargs by default, bind cache identity to content, validate receiver-cache hits against request layout, and apply authentication, request limits, and resource isolation.",
+      "why_it_matters_for_ai_security": "Model-serving APIs must treat multimodal request metadata as hostile: unbounded preprocessing and cache identity drift can take down a shared inference service.",
+      "named_entities": ["vLLM", "Hugging Face", "Isaac", "InternVL", "H2OVL"],
+      "upstream_routing": "ai-wiki owns broad vLLM and model-serving catalog context; this repository retains multimodal input validation, cache integrity, and availability controls.",
+      "confidence_notes": "High for publication timing, fixed version, and both independently described crash paths. Preserve separate CVE boundaries during ingest despite their common 0.31.0 remediation.",
+      "follow_up_actions": ["During ingest, verify the 0.31.0 release packaging and write separate controls for processor-argument admission and cache-key integrity."]
+    }
+  ],
+  "upstream_routing": [
+    {"entity": "Aider", "owner": "ai-wiki", "local_retention": "untrusted repository configuration to shell authority"},
+    {"entity": "agent-skill package catalogs", "owner": "ai-wiki", "local_retention": "malware supply-chain incident and host response"},
+    {"entity": "AWS Multi Model Server", "owner": "ai-wiki", "local_retention": "model artifact and model URL security boundaries"},
+    {"entity": "MLflow", "owner": "ai-wiki", "local_retention": "unauthenticated GenAI evaluator SSRF boundary"},
+    {"entity": "LangGraph", "owner": "ai-wiki", "local_retention": "tenant state namespace isolation"},
+    {"entity": "FastMCP", "owner": "ai-wiki", "local_retention": "final component authorization and issuer-bound OAuth credentials"},
+    {"entity": "vLLM", "owner": "ai-wiki", "local_retention": "multimodal request validation, cache integrity, and service availability"}
+  ],
+  "exclusions": [
+    {"candidate": "Amazon Strands A2A state isolation GHSA-4v6f-7vjh-6x4m", "source_url": "https://github.com/advisories/GHSA-4v6f-7vjh-6x4m", "visible_date": "2026-10-23T20:48:29Z", "reason": "The advisory is a new visible source, but the same CVE-2026-115419 affected versions, mechanism, and fixed releases were already captured in the October 22 collector artifact; no distinct security delta was established."},
+    {"candidate": "Royal MCP, Flexible GraphRAG, Agent Zero, and LiteLLM October 22 records", "source_url": "https://cveawg.mitre.org/api/cve/", "visible_date": "2026-10-22", "reason": "Already captured in the October 22 artifact; later indexing or advisory visibility alone is not a distinct security change."},
+    {"candidate": "Node.js permission-model and TLS advisories", "source_url": "https://github.com/advisories", "visible_date": "2026-10-23T18:31:38Z to 2026-10-23T18:31:39Z", "reason": "Concrete security advisories, but public evidence reviewed did not establish an AI-, model-, agent-, MCP-, or AI-supply-chain-specific boundary."},
+    {"candidate": "filelock and virtualenv advisories", "source_url": "https://github.com/advisories", "visible_date": "2026-10-23T22:04:45Z to 2026-10-23T22:28:41Z", "reason": "General dependency security findings; their matching text did not show a concrete AI-specific deployment or supply-chain implication."},
+    {"candidate": "AIR Security expired-domain web-search report", "source_url": "https://theinjection.dev/", "visible_date": "2026-10-23", "reason": "Potentially relevant agent-web retrieval risk, but only an aggregator result was located during this run; no directly reproducible primary research artifact with a visible precise publication time was captured."},
+    {"candidate": "ordinary MCP, agent, and model product announcements", "source_url": "https://github.com/", "visible_date": "2026-10-21 to 2026-10-23", "reason": "Excluded when they did not state a vulnerability, patch, mitigation, assurance result, incident, standard, regulatory change, or other concrete security delta."}
+  ],
+  "confidence_notes": [
+    "All retained vulnerability and malware records have direct CVE Program, GitHub Advisory Database, maintainer advisory, vendor bulletin, or maintainer release evidence with timestamps inside the stated window.",
+    "The malware advisory descriptions establish host-compromise response guidance but do not disclose payload details; the artifact does not infer them.",
+    "This artifact is raw evidence only. It has not been synthesized into docs/wiki and no source was moved to raw/processed."
+  ],
+  "follow_up_actions": [
+    "During ingest, refetch maintainer advisories and releases to confirm fixed-version and configuration details before durable remediation guidance.",
+    "Keep the paired AWS, FastMCP, and vLLM findings technically distinct when synthesizing, even where their releases or product scopes overlap.",
+    "Investigate prior installation of the two malicious skill packages only through an authorized, separate incident-response workflow; do not inspect or execute packages as part of wiki ingest."
+  ],
+  "collection_blockers": [
+    "No blocker prevented raw artifact creation or validation.",
+    "GitHub advisory discovery contained non-AI general dependency findings; those were excluded unless direct AI-security relevance was established."
+  ]
+}

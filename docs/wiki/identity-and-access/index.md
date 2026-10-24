@@ -6,6 +6,9 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [LangGraph Namespace Tenant Isolation](langgraph-namespace-tenant-isolation.md)
+- [FastMCP OAuth Issuer Binding](fastmcp-oauth-issuer-binding.md)
+
 - [Royal MCP WordPress Preview-Token Scope Bypass](royal-mcp-wordpress-preview-token-scope-bypass.md)
 - [LiteLLM Cryptographic-Context Administrator-Token Forgery](litellm-cryptographic-context-administrator-token-forgery.md)
 - [Strands A2A Conversation-State Isolation](strands-a2a-conversation-state-isolation.md)

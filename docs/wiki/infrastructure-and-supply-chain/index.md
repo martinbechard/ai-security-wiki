@@ -2,6 +2,10 @@
 
 ## Current Understanding
 
+- [agentic-awesome-skills Malware](agentic-awesome-skills-malware.md)
+- [opencode-skills-collection Malware](opencode-skills-collection-malware.md)
+- [AWS Multi Model Server Archive Traversal](aws-multi-model-server-archive-traversal.md)
+
 - [ZCode Workspace MCP Configuration Execution](zcode-workspace-mcp-configuration-execution.md)
 - [EnergizeLab Unsigned HTTP Firmware Update](energizelab-unsigned-http-firmware-update.md)
 - [Junie CLI Untrusted-Project MCP Configuration Execution](junie-cli-untrusted-project-mcp-configuration-execution.md)

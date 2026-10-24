@@ -2,6 +2,9 @@
 
 ## Current Understanding
 
+- [vLLM Multimodal Processor Kwargs DoS](vllm-mm-processor-kwargs-dos.md)
+- [vLLM Forged UUID Cache Collision DoS](vllm-forged-uuid-cache-collision-dos.md)
+
 - [MoviePilot Prompt-Injection Command Execution](moviepilot-prompt-injection-command-execution.md)
 - [vLLM Audio Transcription Upload Heap Overflow DoS](vllm-audio-transcription-upload-heap-overflow-dos.md)
 - [MCP Context Forge Global Prompts Stored XSS](mcp-context-forge-global-prompts-stored-xss.md)
