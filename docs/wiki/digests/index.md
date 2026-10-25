@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [October 2026](2026-10.md) records item-level October 24 controls for AI egress, WebSocket TLS, public debuggers, approval and channel authentication, OpenAPI fetches, MCP listeners, model shards, deployment tokens, and embodied-agent command channels; watcher-only repeats remain leaf provenance.
 - [October 2026](2026-10.md) records eight item-level October 20-21 advisory updates for MCP task isolation, agent execution, OAuth SSRF, local path boundaries, listener authentication, evaluation-job secrets, nested tool limits, and default API keys.
 - [October 2026](2026-10.md) records item-level October 20 MCP TypeScript SDK security updates and October 19 security updates; watcher-only confirmations remain leaf-level provenance.
 
@@ -31,6 +32,7 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 24 topic collector source](../../../raw/processed/2026-10-24/ai-security-wiki-topic-news-collector-2026-10-24T232700Z.json)
 - [October 22 topic collector source](../../../raw/processed/2026-10-22/ai-security-wiki-topic-news-collector-2026-10-22T232635Z.json)
 - [October 23 leaf update watch source](../../../raw/processed/2026-10-23/ai-security-wiki-leaf-update-watch-20261023T000535Z.json)
 - [October 21 topic collector source](../../../raw/processed/2026-10-21/ai-security-wiki-topic-news-collector-2026-10-21T193103-0400.json)

@@ -2,6 +2,17 @@
 
 ## Current Understanding
 
+- [AgenticSeek Public Debugger RCE](agenticseek-public-debugger-rce.md)
+- [PraisonAI Discord Approval Request Binding](praisonai-discord-approval-request-binding.md)
+- [PraisonAI Streaming Approval Policy Parity](praisonai-streaming-approval-policy-parity.md)
+- [PraisonAI HTTP Approval UI Stored XSS](praisonai-http-approval-ui-stored-xss.md)
+- [mcp-from-openapi Redirect Credential and SSRF Controls](mcp-from-openapi-redirect-credential-ssrf-controls.md)
+- [SageMath MCP Command Execution](sagemath-mcp-command-execution.md)
+- [mcp-git-tools Command Execution](mcp-git-tools-command-execution.md)
+- [mcp-docker-tools Command Execution](mcp-docker-tools-command-execution.md)
+- [Uni-CLI Loopback MCP Origin Bypass](uni-cli-loopback-mcp-origin-bypass.md)
+- [AWS MCP Python Validator Code Execution](aws-mcp-python-validator-code-execution.md)
+- [Unitree Go2 Chat Command and TLS Controls](unitree-go2-chat-command-and-tls-controls.md)
 - [AWS Multi Model Server Model URL SSRF](aws-multi-model-server-model-url-ssrf.md)
 - [MLflow GenAI Scorer SSRF](mlflow-genai-scorer-ssrf.md)
 - [FastMCP Final Component Authorization](fastmcp-final-component-authorization.md)

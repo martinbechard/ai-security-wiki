@@ -9,7 +9,7 @@ tags: ["agent-and-tool-security", "testing-and-assurance"]
 
 ## Current Understanding
 
-The [October 23 collector](../../../raw/processed/2026-10-23/ai-security-wiki-topic-news-collector-2026-10-23T233200Z.json) records [GHSA-2wqp-q3c6-ccj5](https://github.com/mlflow/mlflow/security/advisories/GHSA-2wqp-q3c6-ccj5): unauthenticated MLflow servers with optional `trulens` and `trulens-providers-litellm` can instantiate permitted scorer classes from attacker JSON and make outbound HTTP requests. Broad MLflow context belongs upstream; this page owns evaluator egress.
+The [October 23 collector](../../../raw/processed/2026-10-23/ai-security-wiki-topic-news-collector-2026-10-23T233200Z.json) records [GHSA-2wqp-q3c6-ccj5](https://github.com/mlflow/mlflow/security/advisories/GHSA-2wqp-q3c6-ccj5): unauthenticated MLflow servers with optional `trulens` and `trulens-providers-litellm` can instantiate permitted scorer classes from attacker JSON and make outbound HTTP requests. The [October 24 collector](../../../raw/processed/2026-10-24/ai-security-wiki-topic-news-collector-2026-10-24T232700Z.json) identifies the same issue as [CVE-2026-115886](https://nvd.nist.gov/vuln/detail/CVE-2026-115886). Broad MLflow context belongs upstream; this page owns evaluator egress.
 
 ## Security Impact
 
@@ -23,6 +23,9 @@ The [October 23 collector](../../../raw/processed/2026-10-23/ai-security-wiki-to
 ## Authoritative Sources
 
 - [October 23 collector](../../../raw/processed/2026-10-23/ai-security-wiki-topic-news-collector-2026-10-23T233200Z.json)
+- [October 24 collector](../../../raw/processed/2026-10-24/ai-security-wiki-topic-news-collector-2026-10-24T232700Z.json)
+- [October 24 leaf watch](../../../raw/processed/2026-10-24/ai-security-wiki-leaf-update-watch-20261025T000016Z.json)
+- [CVE-2026-115886](https://nvd.nist.gov/vuln/detail/CVE-2026-115886)
 - [GHSA-2wqp-q3c6-ccj5](https://github.com/mlflow/mlflow/security/advisories/GHSA-2wqp-q3c6-ccj5)
 - [MLflow 3.17.0](https://github.com/mlflow/mlflow/releases/tag/v3.17.0)
 
@@ -49,4 +52,6 @@ The [October 23 collector](../../../raw/processed/2026-10-23/ai-security-wiki-to
 
 ## Maintenance Notes
 
+- Updated on 2026-10-24 from the [October 24 leaf watch](../../../raw/processed/2026-10-24/ai-security-wiki-leaf-update-watch-20261025T000016Z.json), which corroborated the existing boundary without changing current understanding or adding a duplicate digest item.
+- Updated on 2026-10-24 with October 24 collector provenance and the CVE-2026-115886 alias; the collector corroborates the existing scorer deserialization and egress boundary without adding a duplicate digest item.
 - Created on 2026-10-23 as an independently changing evaluation-endpoint SSRF boundary.

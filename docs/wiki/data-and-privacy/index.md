@@ -6,6 +6,9 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Leaf Pages
 
+- [req_llm OpenAI WebSocket TLS Token Exposure](req-llm-openai-websocket-tls-token-exposure.md)
+- [PraisonAI Context and Artifact File Boundary](praisonai-context-and-artifact-file-boundary.md)
+- [LangGraph CLI Deployment Token Logging](langgraph-cli-deployment-token-logging.md)
 - [OpenShift AI Evaluation-Job Model URL Secret Exposure](openshift-ai-evaluation-job-model-url-secret-exposure.md)
 - [MCP TypeScript Server Cross-Client Message Delivery](mcp-typescript-server-cross-client-message-delivery.md)
 - [Coder Agent-Debug Manifest Credential Disclosure](coder-agent-debug-manifest-credential-disclosure.md)

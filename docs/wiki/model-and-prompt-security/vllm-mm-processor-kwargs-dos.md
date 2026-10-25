@@ -23,6 +23,7 @@ The [October 23 collector](../../../raw/processed/2026-10-23/ai-security-wiki-to
 ## Authoritative Sources
 
 - [October 23 collector](../../../raw/processed/2026-10-23/ai-security-wiki-topic-news-collector-2026-10-23T233200Z.json)
+- [October 24 leaf watch](../../../raw/processed/2026-10-24/ai-security-wiki-leaf-update-watch-20261025T000016Z.json)
 - [GHSA-gx7p-2j49-hfq4](https://github.com/vllm-project/vllm/security/advisories/GHSA-gx7p-2j49-hfq4)
 - [vLLM 0.31.0](https://github.com/vllm-project/vllm/releases/tag/v0.31.0)
 
@@ -49,4 +50,5 @@ The [October 23 collector](../../../raw/processed/2026-10-23/ai-security-wiki-to
 
 ## Maintenance Notes
 
+- Updated on 2026-10-24 from the [October 24 leaf watch](../../../raw/processed/2026-10-24/ai-security-wiki-leaf-update-watch-20261025T000016Z.json), which corroborated the existing boundary without changing current understanding or adding a duplicate digest item.
 - Created on 2026-10-23 as a processor-admission availability boundary.

@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [mllm Model Shard Path Traversal](mllm-model-shard-path-traversal.md)
 - [agentic-awesome-skills Malware](agentic-awesome-skills-malware.md)
 - [opencode-skills-collection Malware](opencode-skills-collection-malware.md)
 - [AWS Multi Model Server Archive Traversal](aws-multi-model-server-archive-traversal.md)

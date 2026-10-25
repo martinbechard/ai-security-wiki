@@ -23,6 +23,7 @@ The [October 23 collector](../../../raw/processed/2026-10-23/ai-security-wiki-to
 ## Authoritative Sources
 
 - [October 23 collector](../../../raw/processed/2026-10-23/ai-security-wiki-topic-news-collector-2026-10-23T233200Z.json)
+- [October 24 leaf watch](../../../raw/processed/2026-10-24/ai-security-wiki-leaf-update-watch-20261025T000016Z.json)
 - [GHSA-7xgj-8392-5q4r](https://github.com/PrefectHQ/fastmcp/security/advisories/GHSA-7xgj-8392-5q4r)
 - [FastMCP 3.4.10](https://github.com/PrefectHQ/fastmcp/releases/tag/v3.4.10)
 
@@ -49,4 +50,5 @@ The [October 23 collector](../../../raw/processed/2026-10-23/ai-security-wiki-to
 
 ## Maintenance Notes
 
+- Updated on 2026-10-24 from the [October 24 leaf watch](../../../raw/processed/2026-10-24/ai-security-wiki-leaf-update-watch-20261025T000016Z.json), which corroborated the existing boundary without changing current understanding or adding a duplicate digest item.
 - Created on 2026-10-23; separate from issuer binding because the control boundary differs.
