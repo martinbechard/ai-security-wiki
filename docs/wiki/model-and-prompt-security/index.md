@@ -2,6 +2,14 @@
 
 ## Current Understanding
 
+- [vLLM gRPC Input Validation DoS](vllm-grpc-input-validation-dos.md)
+- [vLLM Multimodal Media Resource Control](vllm-multimodal-media-resource-control.md)
+- [vLLM Connector-Cache Logprob Tenant DoS](vllm-connector-cache-logprob-tenant-dos.md)
+- [vLLM Stop-Token ID Engine DoS](vllm-stop-token-id-engine-dos.md)
+- [vLLM Nemotron Image Decompression DoS](vllm-nemotron-image-decompression-dos.md)
+- [vLLM Multimodal Metadata Engine DoS](vllm-multimodal-metadata-engine-dos.md)
+- [vLLM Video Frame-Limit DoS](vllm-video-frame-limit-dos.md)
+
 - [vLLM Multimodal Processor Kwargs DoS](vllm-mm-processor-kwargs-dos.md)
 - [vLLM Forged UUID Cache Collision DoS](vllm-forged-uuid-cache-collision-dos.md)
 
@@ -23,6 +31,14 @@
 This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, adversarial inputs, unsafe outputs, and model-boundary mitigations. General model and technique background remains in ai-wiki.
 
 ## Leaf Pages
+
+- [vLLM gRPC Input Validation DoS](vllm-grpc-input-validation-dos.md)
+- [vLLM Multimodal Media Resource Control](vllm-multimodal-media-resource-control.md)
+- [vLLM Connector-Cache Logprob Tenant DoS](vllm-connector-cache-logprob-tenant-dos.md)
+- [vLLM Stop-Token ID Engine DoS](vllm-stop-token-id-engine-dos.md)
+- [vLLM Nemotron Image Decompression DoS](vllm-nemotron-image-decompression-dos.md)
+- [vLLM Multimodal Metadata Engine DoS](vllm-multimodal-metadata-engine-dos.md)
+- [vLLM Video Frame-Limit DoS](vllm-video-frame-limit-dos.md)
 
 - [MoviePilot Prompt-Injection Command Execution](moviepilot-prompt-injection-command-execution.md)
 - [vLLM Audio Transcription Upload Heap Overflow DoS](vllm-audio-transcription-upload-heap-overflow-dos.md)

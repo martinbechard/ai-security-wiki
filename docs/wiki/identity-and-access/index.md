@@ -6,6 +6,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [Xiaozhi Address-Book Object Authorization](xiaozhi-address-book-object-authorization.md)
+
 - [GitLab Duo AI Egress Lock Enforcement](gitlab-duo-ai-egress-lock-enforcement.md)
 - [PraisonAI Channel and Listener Authentication](praisonai-channel-and-listener-authentication.md)
 - [NetBox MCP HTTP Authentication](netbox-mcp-http-authentication.md)

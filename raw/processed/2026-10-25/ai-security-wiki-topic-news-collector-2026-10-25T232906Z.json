@@ -1,0 +1,116 @@
+{
+  "artifact_type": "ai_security_topic_news_collection",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-10-25T23:29:06Z",
+  "cutoff_window": {
+    "start_inclusive": "2026-10-23T23:29:06Z",
+    "end_inclusive": "2026-10-25T23:29:06Z",
+    "rule": "A visible, unambiguous publication or update timestamp must fall within the preceding 48 hours. Missing, ambiguous, future-dated, and boundary-only dates are excluded."
+  },
+  "searched_topics": [
+    "threats and attacks", "model and prompt security", "agent and tool security including MCP", "data security and privacy", "identity and least privilege", "AI supply chains", "security testing and assurance", "AI governance and public incidents"
+  ],
+  "local_context_checked": {
+    "security_wiki": ["docs/wiki/federation.md", "docs/wiki/topic-index.md", "docs/wiki/source-workflows/public-topic-news-collector.md"],
+    "upstream_indexes": ["/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md", "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"],
+    "duplicate_check": "Compared identifiers and product/security boundaries with the 2026-10-23 and 2026-10-24 processed collector artifacts. None of the retained CVEs occur there."
+  },
+  "source_method": {
+    "primary_source": "NVD CVE API v2.0 public vulnerability database queried for publications from 2026-10-24 through 2026-10-25, followed by per-record inspection and linked public project advisory/repository references.",
+    "query_url": "https://services.nvd.nist.gov/rest/json/cves/2.0?pubStartDate=2026-10-24T00%3A00%3A00.000&pubEndDate=2026-10-25T23%3A59%3A59.999&resultsPerPage=2000",
+    "limitations": "NVD supplies disclosure timestamps, affected versions, and concise impact evidence. Maintainer advisories and fixed-release notes remain the preferred ingest-time authority where a direct project source exists."
+  },
+  "qualifying_findings": [
+    {
+      "id": "internagent-untrusted-lora-base-model-loading",
+      "identifiers": ["CVE-2026-115802"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-115802", "https://github.com/InternScience/InternAgent/issues/30"],
+      "visible_dates": {"published": "2026-10-24T07:16:46.273", "last_modified": "2026-10-24T07:16:46.273"},
+      "evidence_classification": "NVD public vulnerability database record with linked repository issue and public PoC reference",
+      "summary": "InternAgent 1.5.0 AutoChem LoRA training accepts a manipulated base_model_name_or_path, causing inclusion of functionality from an untrusted control sphere; the disclosure reports public exploit availability.",
+      "affected_boundary_or_version": "InternScience InternAgent 1.5.0; tasks/AutoChem/code/experiment.py train function and LoRA base-model loading.",
+      "why_it_matters_for_ai_security": "Model identifiers and artifacts are a supply-chain execution boundary, not trusted configuration values.",
+      "named_entities": ["InternScience", "InternAgent", "LoRA", "AutoChem"],
+      "upstream_routing": "InternAgent product background belongs in ai-wiki; retain the model-artifact trust-boundary and loading-control implication in this security wiki.",
+      "confidence": "medium",
+      "follow_up": "During ingest, verify the issue/PoC scope, whether a maintained fixed release exists, and whether loaders permit remote or local artifact references."
+    },
+    {
+      "id": "xiaozhi-esp32-address-book-idor",
+      "identifiers": ["CVE-2026-116017"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-116017", "https://github.com/xinnan-tech/xiaozhi-esp32-server/commit/d4ff9c5c17cbd82ec98a2a6bb4f82a07c1be0f03", "https://github.com/xinnan-tech/xiaozhi-esp32-server/releases/tag/v0.9.8"],
+      "visible_dates": {"published": "2026-10-24T12:16:58.130", "last_modified": "2026-10-24T12:16:58.130"},
+      "evidence_classification": "NVD public vulnerability database record with linked fixing commit and release",
+      "summary": "xiaozhi-esp32-server before 0.9.8 exposed other users' device address books through an IDOR in DeviceController.getAddressBook: an authenticated ordinary or self-registered user could request another device MAC and receive contact MACs, aliases, calling permissions, and owner IDs.",
+      "affected_boundary_or_version": "xiaozhi-esp32-server before 0.9.8; manager-api DeviceController.getAddressBook.",
+      "why_it_matters_for_ai_security": "AI voice/device backends need object-level authorization for contact and device metadata, even for authenticated callers.",
+      "named_entities": ["xiaozhi-esp32-server", "Xiaozhi", "DeviceController", "address book"],
+      "upstream_routing": "Xiaozhi product context belongs in ai-wiki; retain the cross-user device-contact privacy and authorization failure locally.",
+      "confidence": "high",
+      "follow_up": "Upgrade to 0.9.8 or later, review access logs for cross-device lookup patterns, and verify object ownership checks on adjacent device endpoints."
+    },
+    {
+      "id": "designer-mcp-reference-path-traversal",
+      "identifiers": ["CVE-2026-116045"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-116045", "https://github.com/1999AZZAR/designer-mcp/commit/c8c2951dcbed9b1710a745993f028317f10a3f10", "https://github.com/1999AZZAR/designer-mcp/issues/14"],
+      "visible_dates": {"published": "2026-10-25T07:16:46.983", "last_modified": "2026-10-25T07:16:46.983"},
+      "evidence_classification": "NVD public vulnerability database record with linked repository patch and issue",
+      "summary": "designer-mcp through 2.1.0 permits path traversal through the MCP get_reference interface's Name input; NVD states public exploit availability and references patch c8c2951dcbed9b1710a745993f028317f10a3f10.",
+      "affected_boundary_or_version": "1999AZZAR designer-mcp through 2.1.0; get_reference in skills/motion-designer/references/motion-dev-guidelines.md; no fixed release version stated.",
+      "why_it_matters_for_ai_security": "MCP tool inputs must be constrained to authorized resource roots rather than being interpreted as host paths.",
+      "named_entities": ["designer-mcp", "MCP", "get_reference"],
+      "upstream_routing": "MCP server catalog and product context belong in ai-wiki; retain the tool-to-host filesystem authority boundary locally.",
+      "confidence": "medium",
+      "follow_up": "Apply or inspect the named patch, establish the maintained fixed release, and test canonical-path containment with traversal variants."
+    },
+    {
+      "id": "siyuan-mcp-and-windows-secret-path-bypasses",
+      "identifiers": ["CVE-2026-116168", "CVE-2026-116171"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-116168", "https://nvd.nist.gov/vuln/detail/CVE-2026-116171", "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-q768-4j87-gf3w", "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-6gmc-424x-xgpm"],
+      "visible_dates": {"published": "2026-10-25T14:16:55.923 to 2026-10-25T14:16:56.413", "last_modified": "2026-10-25T15:17:02.593 to 2026-10-25T15:17:02.940"},
+      "evidence_classification": "NVD public vulnerability database records with linked GitHub Security Advisories",
+      "summary": "SiYuan before 3.8.7 allowed its MCP asset tool to bypass a sensitive-path blacklist that omitted .env files, while affected Windows versions also accepted an extended-length path prefix that bypassed IsSensitivePath. Authenticated callers could copy secrets such as API tokens and TLS private keys into assets exposed over HTTP.",
+      "affected_boundary_or_version": "CVE-2026-116168 affects SiYuan before 3.8.7; CVE-2026-116171 affects Windows SiYuan 3.5.4 before 3.8.7.",
+      "why_it_matters_for_ai_security": "Blacklists and raw path cleaning do not safely bound agent/MCP file authority, especially across OS path syntaxes and secret-bearing files.",
+      "named_entities": ["SiYuan", "MCP asset tool", "IsSensitivePath", "Windows extended-length paths"],
+      "upstream_routing": "SiYuan and MCP catalog context belong in ai-wiki; retain MCP file authorization, secret containment, and platform-normalization controls locally.",
+      "confidence": "high",
+      "follow_up": "Upgrade to 3.8.7 or later, rotate exposed API tokens and TLS keys where compromise is plausible, and validate allowlist/root-containment behavior on Windows and MCP asset paths."
+    },
+    {
+      "id": "vllm-grpc-multimodal-and-worker-boundary-cluster",
+      "identifiers": ["CVE-2026-116172", "CVE-2026-116173", "CVE-2026-116174", "CVE-2026-116175", "CVE-2026-116176", "CVE-2026-116177", "CVE-2026-116178", "CVE-2026-116179", "CVE-2026-116180", "CVE-2026-116181"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-116172", "https://nvd.nist.gov/vuln/detail/CVE-2026-116176", "https://nvd.nist.gov/vuln/detail/CVE-2026-116181", "https://github.com/vllm-project/vllm/security/advisories/GHSA-rwfw-xvg3-3937", "https://github.com/vllm-project/vllm/security/advisories/GHSA-vfp2-c8pq-v6h6", "https://github.com/vllm-project/vllm/security/advisories/GHSA-w9r6-29q4-pvpr"],
+      "visible_dates": {"published": "2026-10-25T14:16:56.570 to 2026-10-25T14:16:57.907", "last_modified": "2026-10-25T14:16:56.570 to 2026-10-25T14:16:58.167"},
+      "evidence_classification": "NVD public vulnerability database records with linked vLLM GitHub Security Advisories; related inference-service input and worker-boundary cluster",
+      "summary": "New vLLM disclosures cover Rust gRPC token-limit and out-of-vocabulary inputs that crash EngineCore, multimodal audio/image/video decompression or metadata inputs that exhaust memory or terminate workers, an X-Request-Id route that can trigger outbound worker connections and leak NCCL/KV-cache material, and a connector-cache logprob path that lets one client drop co-tenant requests.",
+      "affected_boundary_or_version": "vLLM ranges span 0.8.5 through 0.31.0 depending on issue; remediation releases named by the records include 0.24.0, 0.25.0, 0.29.0, 0.30.0, and 0.31.0.",
+      "why_it_matters_for_ai_security": "A public or multi-tenant inference endpoint must treat protocol fields, media, routing metadata, and cached execution state as hostile input and protect worker availability, network egress, and cross-tenant data.",
+      "named_entities": ["vLLM", "EngineCore", "Rust gRPC", "P2pNcclConnector", "NCCL", "KV cache", "multimodal inference"],
+      "upstream_routing": "vLLM product context belongs in ai-wiki and general serving practice in ai-dev-wiki; retain inference endpoint isolation, egress, and availability-control analysis locally.",
+      "confidence": "high",
+      "follow_up": "Split into independently maintained gRPC validation, media resource-control, SSRF/worker-egress, and connector-cache isolation findings during ingest; reconcile every deployed vLLM release line with the corresponding vendor advisory."
+    }
+  ],
+  "exclusions": [
+    {"candidate": "CVE-2026-115806 and other non-AI WordPress/plugin records returned by broad keyword search", "reason": "No direct AI-system, model, agent, MCP, or AI security boundary."},
+    {"candidate": "Postiz CVE-2026-115932 and CVE-2026-115933", "reason": "Concrete security flaws, but no demonstrated AI-specific boundary in the source record; do not admit generic application vulnerabilities merely because a search term matched."},
+    {"candidate": "Third-party incident-dashboard summaries for Goose terminal history capture and unverified vendor incident claims", "reason": "Useful discovery context but not retained without a directly verified primary advisory and a clearly in-window source timestamp."},
+    {"candidate": "CVE-2026-115726 (Aider) and the October 23/24 MCP, LangGraph, MLflow, and Unitree groups", "reason": "Already captured in the immediately preceding processed collector artifacts or outside this run's delta; do not duplicate."},
+    {"candidate": "Ordinary product announcements and non-security AI feature news", "reason": "No concrete vulnerability, mitigation, assurance, regulatory, or incident change."},
+    {"candidate": "Missing, ambiguous, future-dated, and exact-boundary-only source pages", "reason": "The collector requires a visible, unambiguous in-window publication or update timestamp."}
+  ],
+  "routing_count": 5,
+  "confidence_notes": [
+    "All retained findings have visible NVD publication timestamps inside the exact run window and are concrete security disclosures.",
+    "InternAgent and designer-mcp lack a named maintained fixed release in the record; treat their remediation state as unconfirmed until their linked repositories are reconciled.",
+    "The vLLM result is grouped only for raw collection; ingestion must preserve each independently changing CVE/security boundary as separate evidence where it affects durable guidance."
+  ],
+  "collection_blockers": [],
+  "follow_up_actions": [
+    "Use linked maintainer advisories, commits, and release notes to validate remediation and affected-version statements before durable synthesis.",
+    "Prioritize any exposed MCP listeners and tools, model/artifact loaders, voice/device metadata services, and multi-tenant vLLM serving endpoints.",
+    "Do not edit docs/wiki or move this raw artifact to raw/processed until a separate verified ingest workflow completes."
+  ]
+}

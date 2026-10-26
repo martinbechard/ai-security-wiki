@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [October 2026](2026-10.md) records item-level October 25 InternAgent, Xiaozhi, designer-mcp, SiYuan, and split vLLM security changes; entries follow durable security boundaries rather than the collector batch.
+
 - [October 2026](2026-10.md) records item-level October 24 controls for AI egress, WebSocket TLS, public debuggers, approval and channel authentication, OpenAPI fetches, MCP listeners, model shards, deployment tokens, and embodied-agent command channels; watcher-only repeats remain leaf provenance.
 - [October 2026](2026-10.md) records eight item-level October 20-21 advisory updates for MCP task isolation, agent execution, OAuth SSRF, local path boundaries, listener authentication, evaluation-job secrets, nested tool limits, and default API keys.
 - [October 2026](2026-10.md) records item-level October 20 MCP TypeScript SDK security updates and October 19 security updates; watcher-only confirmations remain leaf-level provenance.

@@ -8,6 +8,18 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [InternAgent Untrusted LoRA Base-Model Loading](infrastructure-and-supply-chain/internagent-untrusted-lora-base-model-loading.md)
+- [Xiaozhi Address-Book Object Authorization](identity-and-access/xiaozhi-address-book-object-authorization.md)
+- [designer-mcp Reference Path Traversal](agent-and-tool-security/designer-mcp-reference-path-traversal.md)
+- [vLLM gRPC Input Validation DoS](model-and-prompt-security/vllm-grpc-input-validation-dos.md)
+- [vLLM Multimodal Media Resource Control](model-and-prompt-security/vllm-multimodal-media-resource-control.md)
+- [vLLM Worker Egress and KV-Cache Exposure](agent-and-tool-security/vllm-worker-egress-kv-cache-exposure.md)
+- [vLLM Connector-Cache Logprob Tenant DoS](model-and-prompt-security/vllm-connector-cache-logprob-tenant-dos.md)
+- [vLLM Stop-Token ID Engine DoS](model-and-prompt-security/vllm-stop-token-id-engine-dos.md)
+- [vLLM Nemotron Image Decompression DoS](model-and-prompt-security/vllm-nemotron-image-decompression-dos.md)
+- [vLLM Multimodal Metadata Engine DoS](model-and-prompt-security/vllm-multimodal-metadata-engine-dos.md)
+- [vLLM Video Frame-Limit DoS](model-and-prompt-security/vllm-video-frame-limit-dos.md)
+
 - [GitLab Duo AI Egress Lock Enforcement](identity-and-access/gitlab-duo-ai-egress-lock-enforcement.md)
 - [req_llm OpenAI WebSocket TLS Token Exposure](data-and-privacy/req-llm-openai-websocket-tls-token-exposure.md)
 - [AgenticSeek Public Debugger RCE](agent-and-tool-security/agenticseek-public-debugger-rce.md)

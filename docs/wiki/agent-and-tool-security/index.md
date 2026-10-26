@@ -2,6 +2,9 @@
 
 ## Current Understanding
 
+- [designer-mcp Reference Path Traversal](designer-mcp-reference-path-traversal.md)
+- [vLLM Worker Egress and KV-Cache Exposure](vllm-worker-egress-kv-cache-exposure.md)
+
 - [AgenticSeek Public Debugger RCE](agenticseek-public-debugger-rce.md)
 - [PraisonAI Discord Approval Request Binding](praisonai-discord-approval-request-binding.md)
 - [PraisonAI Streaming Approval Policy Parity](praisonai-streaming-approval-policy-parity.md)

@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [InternAgent Untrusted LoRA Base-Model Loading](internagent-untrusted-lora-base-model-loading.md)
+
 - [mllm Model Shard Path Traversal](mllm-model-shard-path-traversal.md)
 - [agentic-awesome-skills Malware](agentic-awesome-skills-malware.md)
 - [opencode-skills-collection Malware](opencode-skills-collection-malware.md)
