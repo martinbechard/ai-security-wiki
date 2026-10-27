@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [October 2026](2026-10.md) records 14 item-level October 26 changes: Continue, two Google MCP boundaries, OpenHands, Mem0, ONNX, Frappe Builder, and seven independently scoped vLLM controls.
+
 - [October 2026](2026-10.md) records item-level October 25 InternAgent, Xiaozhi, designer-mcp, SiYuan, and split vLLM security changes; entries follow durable security boundaries rather than the collector batch.
 
 - [October 2026](2026-10.md) records item-level October 24 controls for AI egress, WebSocket TLS, public debuggers, approval and channel authentication, OpenAPI fetches, MCP listeners, model shards, deployment tokens, and embodied-agent command channels; watcher-only repeats remain leaf provenance.
@@ -33,6 +35,8 @@ The active digest records each independently changing security item or closely c
 - [2026-07.md](2026-07.md) is the previous July 2026 digest.
 
 ## Authoritative Sources
+
+- [October 26 topic collector source](../../../raw/processed/2026-10-26/ai-security-wiki-topic-news-collector-2026-10-26T233009Z.json)
 
 - [October 24 topic collector source](../../../raw/processed/2026-10-24/ai-security-wiki-topic-news-collector-2026-10-24T232700Z.json)
 - [October 22 topic collector source](../../../raw/processed/2026-10-22/ai-security-wiki-topic-news-collector-2026-10-22T232635Z.json)

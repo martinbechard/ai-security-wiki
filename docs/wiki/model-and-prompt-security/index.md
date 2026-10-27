@@ -2,6 +2,11 @@
 
 ## Current Understanding
 
+- [vLLM Chat-Template Resource Exhaustion](vllm-chat-template-resource-exhaustion.md)
+- [vLLM Phi-4 Multimodal Audio Attention GPU DoS](vllm-phi4mm-audio-attention-gpu-dos.md)
+- [vLLM OCR Zero-Pixel Engine DoS](vllm-ocr-zero-pixel-engine-dos.md)
+- [vLLM Pretokenized Prompt-ID Engine DoS](vllm-pretokenized-prompt-id-engine-dos.md)
+
 - [vLLM gRPC Input Validation DoS](vllm-grpc-input-validation-dos.md)
 - [vLLM Multimodal Media Resource Control](vllm-multimodal-media-resource-control.md)
 - [vLLM Connector-Cache Logprob Tenant DoS](vllm-connector-cache-logprob-tenant-dos.md)
@@ -107,6 +112,8 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-26 with split vLLM template, Phi-4 audio, OCR image, and prompt-ID availability controls.
 
 - Updated on 2026-10-15 with the MoviePilot untrusted-metadata-to-command-execution leaf from the October 15 source ingest.
 - Updated on 2026-10-14 with the MCP Context Forge Global Prompts stored-XSS leaf from the October 13 topic collector.

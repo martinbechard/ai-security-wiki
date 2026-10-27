@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [Frappe Builder LLM Credit Authorization Bypass](frappe-builder-llm-credit-authorization-bypass.md)
+
 This topic owns human and non-human identity, authentication, authorization, credential handling, delegation, least privilege, and lifecycle controls for AI systems.
 
 ## Leaf Pages
@@ -194,6 +196,8 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-26 with the Frappe Builder stored-provider-credit authorization leaf.
 
 - Updated on 2026-10-22 with Royal MCP preview-token scoping, LiteLLM cryptographic identity forgery, and Strands A2A conversation ownership leaves.
 - Updated on 2026-10-20 with MCP TypeScript bearer-token audience validation and October 20 watcher provenance for AI Engine and LangBot.

@@ -2,6 +2,11 @@
 
 ## Current Understanding
 
+- [Continue MCP Transport Command Injection](continue-mcp-transport-command-injection.md)
+- [Google Cloud MCP Toolbox Cloud-Storage File Boundary](google-cloud-mcp-toolbox-cloud-storage-file-boundary.md)
+- [OpenHands Agent Sandbox Unauthenticated RCE](openhands-agent-sandbox-unauthenticated-rce.md)
+- [vLLM Wildcard CORS Browser Access](vllm-wildcard-cors-browser-access.md)
+
 - [designer-mcp Reference Path Traversal](designer-mcp-reference-path-traversal.md)
 - [vLLM Worker Egress and KV-Cache Exposure](vllm-worker-egress-kv-cache-exposure.md)
 
@@ -390,6 +395,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-26 with Continue MCP transport command injection, Google Cloud MCP Toolbox cloud-storage file boundary, OpenHands sandbox server RCE, and vLLM browser access leaves.
 
 - Updated on 2026-10-22 with Flexible GraphRAG ingestion query integrity and Agent Zero privileged-console rendering leaves.
 - Updated on 2026-10-20 with the MCP TypeScript SDK structural-validation memory-exhaustion leaf and October 20 watcher provenance for Cognition, crewai-tools, and SGLang.

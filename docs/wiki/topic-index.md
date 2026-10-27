@@ -8,6 +8,21 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [Continue MCP Transport Command Injection](agent-and-tool-security/continue-mcp-transport-command-injection.md)
+- [Google Cloud MCP Toolbox Cloud-Storage File Boundary](agent-and-tool-security/google-cloud-mcp-toolbox-cloud-storage-file-boundary.md)
+- [Google Cloud Run MCP Bucket Squatting](infrastructure-and-supply-chain/google-cloud-run-mcp-bucket-squatting.md)
+- [OpenHands Agent Sandbox Unauthenticated RCE](agent-and-tool-security/openhands-agent-sandbox-unauthenticated-rce.md)
+- [Mem0 Session-Scope Cross-Tenant Disclosure](data-and-privacy/mem0-session-scope-cross-tenant-disclosure.md)
+- [ONNX Untrusted-Model Shape-Inference DoS](infrastructure-and-supply-chain/onnx-untrusted-model-shape-inference-dos.md)
+- [Frappe Builder LLM Credit Authorization Bypass](identity-and-access/frappe-builder-llm-credit-authorization-bypass.md)
+- [vLLM Chat-Template Resource Exhaustion](model-and-prompt-security/vllm-chat-template-resource-exhaustion.md)
+- [vLLM Shared-Memory Pickle RCE](infrastructure-and-supply-chain/vllm-shared-memory-pickle-rce.md)
+- [vLLM Phi-4 Multimodal Audio Attention GPU DoS](model-and-prompt-security/vllm-phi4mm-audio-attention-gpu-dos.md)
+- [vLLM OCR Zero-Pixel Engine DoS](model-and-prompt-security/vllm-ocr-zero-pixel-engine-dos.md)
+- [vLLM Image Decoder Dependency Execution](infrastructure-and-supply-chain/vllm-image-decoder-dependency-execution.md)
+- [vLLM Pretokenized Prompt-ID Engine DoS](model-and-prompt-security/vllm-pretokenized-prompt-id-engine-dos.md)
+- [vLLM Wildcard CORS Browser Access](agent-and-tool-security/vllm-wildcard-cors-browser-access.md)
+
 - [InternAgent Untrusted LoRA Base-Model Loading](infrastructure-and-supply-chain/internagent-untrusted-lora-base-model-loading.md)
 - [Xiaozhi Address-Book Object Authorization](identity-and-access/xiaozhi-address-book-object-authorization.md)
 - [designer-mcp Reference Path Traversal](agent-and-tool-security/designer-mcp-reference-path-traversal.md)

@@ -2,6 +2,11 @@
 
 ## Current Understanding
 
+- [Google Cloud Run MCP Bucket Squatting](google-cloud-run-mcp-bucket-squatting.md)
+- [ONNX Untrusted-Model Shape-Inference DoS](onnx-untrusted-model-shape-inference-dos.md)
+- [vLLM Shared-Memory Pickle RCE](vllm-shared-memory-pickle-rce.md)
+- [vLLM Image Decoder Dependency Execution](vllm-image-decoder-dependency-execution.md)
+
 - [InternAgent Untrusted LoRA Base-Model Loading](internagent-untrusted-lora-base-model-loading.md)
 
 - [mllm Model Shard Path Traversal](mllm-model-shard-path-traversal.md)
@@ -221,6 +226,8 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-26 with Cloud Run MCP bucket provenance, ONNX shape-inference, vLLM shared-memory serialization, and image-decoder dependency boundaries.
 
 - Updated on 2026-10-20 after watcher review clarified that Doctor-Dignity public-exploit reporting remains unverified.
 - Updated on 2026-10-16 with Junie CLI untrusted-project MCP configuration execution from the October 16 source ingest.

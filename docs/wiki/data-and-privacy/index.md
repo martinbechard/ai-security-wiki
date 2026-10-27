@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [Mem0 Session-Scope Cross-Tenant Disclosure](mem0-session-scope-cross-tenant-disclosure.md)
+
 This topic owns AI-specific sensitive-data exposure, training and retrieval data risk, data provenance, privacy, retention, residency, and disclosure controls.
 
 ## Leaf Pages
@@ -149,6 +151,8 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - No open topic questions are recorded.
 
 ## Maintenance Notes
+
+- Updated on 2026-10-26 with the Mem0 delimiter-collision tenant-memory disclosure leaf.
 
 - Updated on 2026-10-20 with the MCP TypeScript server cross-client message-delivery leaf and October 20 watcher provenance for Apache Answer and NoteGen.
 - Updated on 2026-10-14 with the October 14 obsidian-tc bridge-tool field-level ACL disclosure leaf.

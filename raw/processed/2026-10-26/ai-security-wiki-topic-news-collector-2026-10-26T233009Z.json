@@ -1,0 +1,140 @@
+{
+  "artifact_type": "public-ai-security-topic-news-collection",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-10-26T23:30:09Z",
+  "cutoff_window": {
+    "start_inclusive": "2026-10-24T23:30:09Z",
+    "end_inclusive": "2026-10-26T23:30:09Z",
+    "rule": "A visible, unambiguous publication or update timestamp must be strictly inside the preceding 48-hour window. Missing, ambiguous, future-dated, and exact-boundary-only dates are excluded."
+  },
+  "searched_topics": [
+    "threats and attacks", "model and prompt security", "agent and tool security including MCP", "data security and privacy", "identity and authorization", "AI supply chains", "security evaluation and assurance", "AI governance and incident response"
+  ],
+  "source_method": "Public-source discovery through NVD, GitHub Advisory Database, and targeted web searches; retained facts were checked against the public advisory/database pages. No private or local sensitive content was sent externally.",
+  "local_context_checked": {
+    "federation": "docs/wiki/federation.md",
+    "upstream_indexes": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "deduplication": "Compared against the October 25 processed collector artifact. Its vLLM CVE-2026-116172 through CVE-2026-116181 cluster was excluded as already captured."
+  },
+  "qualifying_findings": [
+    {
+      "id": "continue-mcp-transport-command-injection",
+      "identifiers": ["CVE-2026-116109", "GHSA-3cxv-6mgc-j7c4"],
+      "source_urls": ["https://github.com/advisories/GHSA-3cxv-6mgc-j7c4", "https://nvd.nist.gov/vuln/detail/CVE-2026-116109"],
+      "visible_dates": {"published": "2026-10-26T03:30:23Z", "updated": "2026-10-26T03:30:30Z"},
+      "evidence_classification": "GitHub Advisory Database public advisory, corroborated by NVD",
+      "summary": "Continue 2.0.0 MCP server transport configuration is publicly disclosed with remote OS command injection in MCPManagerSingleton.setConnections; the advisory reports public exploit availability.",
+      "affected_boundary_or_version": "continuedev Continue 2.0.0; MCPManagerSingleton.setConnections / ConfigHandler.ts.",
+      "why_it_matters_for_ai_security": "MCP connection configuration is an agent-to-tool execution boundary; untrusted configuration must not reach shell execution.",
+      "named_entities": ["Continue", "MCP", "MCPManagerSingleton"],
+      "upstream_routing": "Continue product background belongs in ai-wiki; retain this MCP command-execution control implication locally.",
+      "confidence": "medium", "follow_up": "Verify maintainer remediation and an affected/fixed release before synthesis; GitHub labels the advisory unreviewed."
+    },
+    {
+      "id": "google-cloud-mcp-toolbox-file-and-authorization-boundary",
+      "identifiers": ["CVE-2026-93328", "GHSA-2gc9-c85v-5vwr"],
+      "source_urls": ["https://github.com/advisories/GHSA-2gc9-c85v-5vwr", "https://github.com/googleapis/mcp-toolbox/pull/3454", "https://nvd.nist.gov/vuln/detail/CVE-2026-93328"],
+      "visible_dates": {"published": "2026-10-26T15:34:48Z", "updated": "2026-10-26T15:34:54Z"},
+      "evidence_classification": "GitHub Advisory Database public advisory with linked upstream pull request",
+      "summary": "Google Cloud MCP Toolbox for Databases 1.2.0 through 1.4.0 is disclosed with path traversal and missing authorization in its cloud-storage source, permitting unauthenticated file exfiltration to external Cloud Storage or arbitrary local-file overwrite through crafted tool parameters.",
+      "affected_boundary_or_version": "googleapis/mcp-toolbox cloud-storage source, versions 1.2.0-1.4.0.",
+      "why_it_matters_for_ai_security": "It crosses a tool-invocation boundary from agent-provided parameters into local files and cloud storage.",
+      "named_entities": ["Google Cloud MCP Toolbox", "MCP", "Google Cloud Storage"],
+      "upstream_routing": "Tool catalog context belongs in ai-wiki; keep the local authorization and file-egress security boundary.",
+      "confidence": "high", "follow_up": "Check upstream release/remediation scope and restrict tool parameters and storage credentials during ingest."
+    },
+    {
+      "id": "cloud-run-mcp-bucket-squatting",
+      "identifiers": ["CVE-2026-85297", "GHSA-cg86-fr78-hv98"],
+      "source_urls": ["https://github.com/advisories/GHSA-cg86-fr78-hv98", "https://github.com/GoogleCloudPlatform/cloud-run-mcp/releases/tag/v1.11.0", "https://nvd.nist.gov/vuln/detail/CVE-2026-85297"],
+      "visible_dates": {"published": "2026-10-26T18:32:59Z", "updated": "2026-10-26T18:33:03Z"},
+      "evidence_classification": "GitHub Advisory Database public advisory with linked vendor release",
+      "summary": "Google Cloud Run MCP before 1.11.0 is publicly disclosed with bucket squatting that can let an attacker intercept proprietary source, execute code, and exfiltrate data; the advisory directs users to upgrade to 1.11.0 or later.",
+      "affected_boundary_or_version": "Google Cloud Run MCP before 1.11.0.",
+      "why_it_matters_for_ai_security": "Agent plugin supply-chain names and cloud-storage resources become authority-bearing execution and data boundaries.",
+      "named_entities": ["Google Cloud Run MCP", "Google Cloud Platform", "bucket squatting"],
+      "upstream_routing": "Cloud Run MCP background is upstream-owned; retain package/resource provenance and least-privilege implications locally.",
+      "confidence": "high", "follow_up": "Confirm release notes and advise pinned resource ownership plus upgrade to 1.11.0+."
+    },
+    {
+      "id": "openhands-agent-sandbox-unauthenticated-rce",
+      "identifiers": ["CVE-2026-112346", "GHSA-rp7h-crm7-h5qj"],
+      "source_urls": ["https://github.com/advisories/GHSA-rp7h-crm7-h5qj", "https://github.com/OpenHands/software-agent-sdk/releases/tag/v1.52.0", "https://nvd.nist.gov/vuln/detail/CVE-2026-112346"],
+      "visible_dates": {"published": "2026-10-26T18:32:57Z", "updated": "2026-10-26T18:33:03Z"},
+      "evidence_classification": "GitHub Advisory Database public advisory with linked upstream commit and release",
+      "summary": "OpenHands Software Agent SDK before 1.52.0 is disclosed with unauthenticated RCE when DockerWorkspace or Apptainer launchers bind the sandbox agent server to 0.0.0.0 with empty session keys, exposing shell execution, mounted workspaces, and plaintext secrets to reachable attackers.",
+      "affected_boundary_or_version": "OpenHands Software Agent SDK DockerWorkspace and Apptainer workspace launchers before 1.52.0.",
+      "why_it_matters_for_ai_security": "An agent sandbox is not a safe boundary when its control server is publicly reachable without authentication.",
+      "named_entities": ["OpenHands", "Software Agent SDK", "DockerWorkspace", "Apptainer"],
+      "upstream_routing": "OpenHands product background belongs in ai-wiki; retain agent-sandbox binding, credential, and authorization controls locally.",
+      "confidence": "high", "follow_up": "During ingest verify the release upgrade, bind address, session-key configuration, workspace mounts, and secret-store exposure."
+    },
+    {
+      "id": "mem0-session-scope-cross-tenant-disclosure",
+      "identifiers": ["CVE-2026-116575"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-116575"],
+      "visible_dates": {"published": "2026-10-26T21:18:13.360"},
+      "evidence_classification": "NVD public vulnerability database record",
+      "summary": "Mem0 before Python SDK 2.0.18 and TypeScript SDK 3.1.6 is disclosed with delimiter injection in session-scope construction, allowing distinct tenant identifiers to collide and exposing, evicting, or interleaving another tenant's recent agent-memory messages.",
+      "affected_boundary_or_version": "Mem0 Python SDK before 2.0.18 and TypeScript SDK before 3.1.6; user_id, agent_id, run_id session scope.",
+      "why_it_matters_for_ai_security": "Agent-memory tenant identifiers are data-isolation and authorization controls, not opaque strings.",
+      "named_entities": ["Mem0", "agent memory", "session_scope"],
+      "upstream_routing": "Mem0 product context belongs in ai-wiki; retain memory tenancy and privacy implication locally.",
+      "confidence": "medium", "follow_up": "Locate maintainer advisory/release evidence and confirm whether hosted service deployments share the affected SDK path."
+    },
+    {
+      "id": "vllm-0320-agent-serving-security-cluster",
+      "identifiers": ["CVE-2026-115911", "CVE-2026-115912", "CVE-2026-115913", "CVE-2026-115914", "CVE-2026-115915", "CVE-2026-115916", "CVE-2026-115917", "CVE-2026-115918"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-115911", "https://nvd.nist.gov/vuln/detail/CVE-2026-115912", "https://nvd.nist.gov/vuln/detail/CVE-2026-115917"],
+      "visible_dates": {"published_range": "2026-10-26T17:17:18.753 to 2026-10-26T18:17:39.440", "last_modified": "2026-10-26T20:17:51.903"},
+      "evidence_classification": "NVD public vulnerability database records; grouped only for raw collection and must be split by independent boundary during synthesis",
+      "summary": "A newly published vLLM 0.32.0 fixed cluster covers request or model-supplied chat-template resource exhaustion, forged shared-memory metadata reaching pickle deserialization and RCE, multimodal exhaustion/crash paths, dependency-mediated image decoding, and wildcard-CORS browser access to unauthenticated servers.",
+      "affected_boundary_or_version": "vLLM versions before 0.32.0, with individual lower bounds and deployment conditions in each CVE.",
+      "why_it_matters_for_ai_security": "The disclosures span model/template supply-chain trust, shared-memory serialization, multimodal workload controls, browser-to-local inference access, and co-tenant availability.",
+      "named_entities": ["vLLM", "Jinja", "pickle", "Pillow", "Ghostscript", "Starlette CORS"],
+      "upstream_routing": "vLLM product background belongs in ai-wiki; preserve each local security boundary separately when ingested.",
+      "confidence": "medium", "follow_up": "Reconcile each CVE with vLLM maintainers and release notes; do not retain this collection grouping as a single durable security leaf."
+    },
+    {
+      "id": "onnx-untrusted-model-shape-inference-dos",
+      "identifiers": ["CVE-2026-115919", "CVE-2026-115920", "CVE-2026-115921"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-115919", "https://nvd.nist.gov/vuln/detail/CVE-2026-115920", "https://nvd.nist.gov/vuln/detail/CVE-2026-115921"],
+      "visible_dates": {"published_range": "2026-10-26T18:17:39.607 to 2026-10-26T18:17:39.990"},
+      "evidence_classification": "NVD public vulnerability database records; grouped because the same untrusted-model shape-inference boundary is affected",
+      "summary": "ONNX before 1.22.0 has three publicly published shape-inference flaws in malformed RNN/LSTM/GRU, ConvTranspose, and Scan models that can pass checker validation but crash or disrupt shape inference; the records state 1.22.0 fixes them.",
+      "affected_boundary_or_version": "ONNX shape_inference.infer_shapes on untrusted models before 1.22.0.",
+      "why_it_matters_for_ai_security": "Model files are hostile inputs even when they pass basic checker validation; CI, validation, and ingestion services need isolation and resource controls.",
+      "named_entities": ["ONNX", "shape inference", "RNN", "ConvTranspose", "Scan"],
+      "upstream_routing": "ONNX ecosystem background belongs in ai-wiki; retain untrusted-model validation and runtime-isolation implications locally.",
+      "confidence": "medium", "follow_up": "Confirm upstream release notes and split only if remediation or affected deployment boundaries differ materially."
+    },
+    {
+      "id": "frappe-builder-llm-credit-authorization-bypass",
+      "identifiers": ["CVE-2026-115718"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-115718"],
+      "visible_dates": {"published": "2026-10-26T12:17:05.387"},
+      "evidence_classification": "NVD public vulnerability database record",
+      "summary": "Frappe Builder 1.33.0 before 1.36.0 is disclosed with missing authorization on improve_prompt, letting authenticated non-Guest users invoke LLM completions with the site owner's stored OpenRouter key and consume paid credits.",
+      "affected_boundary_or_version": "Frappe Builder 1.33.0 before 1.36.0; improve_prompt and resolve_api_key.",
+      "why_it_matters_for_ai_security": "LLM invocation authorization must protect both user access and delegated provider credentials/cost authority.",
+      "named_entities": ["Frappe Builder", "OpenRouter", "improve_prompt"],
+      "upstream_routing": "Frappe and OpenRouter product context is upstream-owned; retain authorization and credential-delegation implication locally.",
+      "confidence": "medium", "follow_up": "Verify vendor remediation and whether the stored API key can reach models or data beyond credit consumption."
+    }
+  ],
+  "exclusions": [
+    {"candidate": "vLLM CVE-2026-116172 through CVE-2026-116181", "reason": "Already captured in the October 25 processed collector artifact; no duplicate raw finding."},
+    {"candidate": "CVE-2026-116045 and CVE-2026-116168", "reason": "Already captured in the October 25 processed artifact despite their still-visible October 25 database timestamps."},
+    {"candidate": "Generic CVEs returned by broad agent, model, and LLM searches", "reason": "No direct AI model, agent, MCP, tool, data, authorization, model-artifact, or AI-runtime security boundary."},
+    {"candidate": "Ordinary AI product announcements", "reason": "No concrete security delta such as vulnerability, patch, mitigation, assurance result, regulatory change, or incident."},
+    {"candidate": "Missing, ambiguous, future-dated, or exact-boundary-only sources", "reason": "They do not satisfy the strict visible-date rule."}
+  ],
+  "routing_count": 8,
+  "confidence_notes": "GitHub Advisory Database records were preferred where available; several new records are marked unreviewed by GitHub or are NVD-first, so maintainer/release reconciliation remains required before durable synthesis. NVD timestamps are public and unambiguous but do not establish exploit activity beyond each record's explicit statement.",
+  "follow_up_actions": ["During ingest, fetch maintainer advisories/releases for all medium-confidence records.", "Split the vLLM cluster by template, serialization/RCE, media, and browser-access boundaries before creating durable leaves.", "Keep broad product/entity context upstream and retain only security-specific boundaries in this repository."],
+  "collection_blockers": []
+}
