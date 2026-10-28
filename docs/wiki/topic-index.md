@@ -8,6 +8,13 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [CreditNirvana Agentic AI Call Centre Client-Key Disclosure](data-and-privacy/creditnirvana-agentic-ai-call-centre-client-key-disclosure.md)
+- [Keepnet Agentic Ally Authentication Bypass](identity-and-access/keepnet-agentic-ally-authentication-bypass.md)
+- [ai-sdlc MCP Repository Command Injection](agent-and-tool-security/ai-sdlc-mcp-repository-command-injection.md)
+- [MLflow Prompt Model-Version Local File Read](infrastructure-and-supply-chain/mlflow-prompt-model-version-local-file-read.md)
+- [MLflow CrewAI Autolog Provider-Key Trace Disclosure](data-and-privacy/mlflow-crewai-autolog-provider-key-trace-disclosure.md)
+- [MLflow GenAI Third-Party Scorer Deserialization RCE](infrastructure-and-supply-chain/mlflow-genai-third-party-scorer-deserialization-rce.md)
+
 - [Continue MCP Transport Command Injection](agent-and-tool-security/continue-mcp-transport-command-injection.md)
 - [Google Cloud MCP Toolbox Cloud-Storage File Boundary](agent-and-tool-security/google-cloud-mcp-toolbox-cloud-storage-file-boundary.md)
 - [Google Cloud Run MCP Bucket Squatting](infrastructure-and-supply-chain/google-cloud-run-mcp-bucket-squatting.md)
@@ -829,6 +836,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-10-27 with AI Engine, CreditNirvana, Keepnet, ai-sdlc, and split MLflow security-boundary leaves.
 - Updated on 2026-10-20 with separate MCP TypeScript SDK tenant-isolation, structural-input availability, and bearer-token audience leaves; October 20 watcher confirmations remain leaf-level provenance.
 - Updated on 2026-10-16 with WSP MCP unpublished-content access, Junie CLI project-configuration execution, and Claude Agent SDK resume argument injection security leaves.
 - Updated on 2026-10-15 with durable leaves for NetLicensing MCP path/token disclosure, Azure SRE Agent authorization, IntentKit request-scoped tool dispatch, MoviePilot prompt-driven command execution, and Pipecat development-runner exposure.

@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [October 2026](2026-10.md) records seven item-level October 27 security changes: AI Engine authorization, CreditNirvana client-key disclosure, Keepnet authentication, ai-sdlc MCP shell injection, and three independent MLflow boundaries.
+
 - [October 2026](2026-10.md) records 14 item-level October 26 changes: Continue, two Google MCP boundaries, OpenHands, Mem0, ONNX, Frappe Builder, and seven independently scoped vLLM controls.
 
 - [October 2026](2026-10.md) records item-level October 25 InternAgent, Xiaozhi, designer-mcp, SiYuan, and split vLLM security changes; entries follow durable security boundaries rather than the collector batch.
@@ -36,6 +38,7 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 27 topic collector source](../../../raw/processed/2026-10-27/ai-security-wiki-topic-news-collector-2026-10-27T232925Z.json)
 - [October 26 topic collector source](../../../raw/processed/2026-10-26/ai-security-wiki-topic-news-collector-2026-10-26T233009Z.json)
 
 - [October 24 topic collector source](../../../raw/processed/2026-10-24/ai-security-wiki-topic-news-collector-2026-10-24T232700Z.json)
@@ -163,6 +166,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-10-27 with seven item-level entries ordered before October 26 and scoped to durable security boundaries.
 - Updated on 2026-10-23 with item-level October entries for distinct repository trust, package malware, model-serving, evaluation egress, tenant isolation, capability authorization, OAuth issuer binding, and multimodal availability boundaries; ordering remains reverse chronological and is not grouped by source artifact or ingest batch.
 
 - Updated on 2026-10-22 after item-level Royal MCP, Flexible GraphRAG, Agent Zero, LiteLLM, Strands, and OpenAI governance entries; the October 23 watcher is provenance-only for existing leaves. Ordering remains reverse chronological and entries are not grouped by raw artifact, collector run, sweep category, or ingest batch.

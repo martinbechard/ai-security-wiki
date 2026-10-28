@@ -1,0 +1,195 @@
+{
+  "artifact_type": "raw_public_ai_security_news_collection",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-10-27T23:29:25Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-10-25T23:29:25Z",
+    "end_inclusive": "2026-10-27T23:29:25Z",
+    "rule": "Only records with a visible, precise publication or update timestamp strictly inside this two-day collection window were retained."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_method": "Public-web discovery followed by NVD CVE API keyword/date query and CVE Services API record retrieval; product advisories, commits, and releases are linked where the public CVE record references them.",
+  "local_context_checked": {
+    "federation": "docs/wiki/federation.md",
+    "local_topic_index": "docs/wiki/topic-index.md",
+    "upstream_topic_indexes": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "duplicate_check": "Searched local raw, raw/processed, and docs/wiki for identifiers; CVE-2026-116575 was already captured in the 2026-10-26 processed collector artifact and is excluded."
+  },
+  "qualifying_findings": [
+    {
+      "id": "ai-engine-wordpress-media-object-authorization",
+      "identifiers": ["CVE-2026-112828"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-112828",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-112828",
+        "https://patchstack.com/database/wordpress/plugin/ai-engine/vulnerability/wordpress-ai-engine-plugin-3-8-6-broken-access-control-vulnerability?_s_id=cve"
+      ],
+      "visible_dates": {"published": "2026-10-26T08:45:37.443Z", "updated": "2026-10-26T10:13:38.809Z"},
+      "evidence_classification": "CVE Services public record referencing Patchstack's public plugin advisory; corroborated by NVD.",
+      "summary": "AI Engine for WordPress through 3.8.6 has a missing-authorization flaw described as incorrectly configured access-control security levels.",
+      "affected_boundary_or_version": "Meow Apps AI Engine WordPress plugin through 3.8.6; media/object access-control boundary.",
+      "why_it_matters_for_ai_security": "AI application integrations that expose media or model-adjacent content need object-level authorization rather than relying on route reachability.",
+      "named_entities": ["Meow Apps", "AI Engine", "WordPress", "Patchstack"],
+      "upstream_routing": "AI Engine product background is upstream-owned by ai-wiki; retain only the local access-control implication.",
+      "confidence": "medium",
+      "follow_up": "Confirm Patchstack's affected-object details and a maintainer-fixed release before synthesis."
+    },
+    {
+      "id": "creditnirvana-agentic-ai-call-centre-hardcoded-api-key",
+      "identifiers": ["CVE-2026-110474"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-110474",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110474",
+        "https://www.cert-in.org.in/s2cMainServlet?pageid=PUBVLNOTES01&VLCODE=CIVN-2026-0523"
+      ],
+      "visible_dates": {"published": "2026-10-26T12:08:43.439Z", "updated": "2026-10-26T12:24:07.042Z"},
+      "evidence_classification": "CVE Services public record referencing the CERT-In public vulnerability note; corroborated by NVD.",
+      "summary": "CreditNirvana Agentic AI Call Centre exposes a static API key in a client-side JavaScript bundle; an unauthenticated remote actor can extract it and use the application API to retrieve call transcripts and recordings.",
+      "affected_boundary_or_version": "CreditNirvana Agentic AI Call Centre; client bundle to API credential boundary; no fixed version stated in the CVE record.",
+      "why_it_matters_for_ai_security": "Voice-agent deployments must not distribute reusable provider or application credentials to browsers, especially where APIs expose conversation data.",
+      "named_entities": ["CreditNirvana", "Agentic AI Call Centre", "CERT-In"],
+      "upstream_routing": "Product background is upstream-owned by ai-wiki; retain the credential-exposure and call-data privacy implication locally.",
+      "confidence": "high",
+      "follow_up": "Recheck CERT-In for remediation, rotation guidance, affected versions, and any incident disclosure."
+    },
+    {
+      "id": "keepnet-agentic-ally-authentication-bypass",
+      "identifiers": ["CVE-2026-92546"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-92546",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-92546",
+        "https://siberguvenlik.gov.tr/guvenlik-bildirimleri/detay/tr-26-1408"
+      ],
+      "visible_dates": {"published": "2026-10-27T12:58:42.332Z", "updated": "2026-10-27T12:58:42.332Z"},
+      "evidence_classification": "CVE Services public record referencing a Turkish national cybersecurity public advisory; corroborated by NVD.",
+      "summary": "Keepnet Labs Agentic AI / Agentic Ally has an authentication-bypass vulnerability before commit 0ef61f2e.",
+      "affected_boundary_or_version": "Keepnet Agentic AI / Agentic Ally before 0ef61f2e; authentication boundary.",
+      "why_it_matters_for_ai_security": "Identity enforcement is a prerequisite for constraining delegated agent actions and access to connected tools or data.",
+      "named_entities": ["Keepnet Labs", "Agentic AI", "Agentic Ally"],
+      "upstream_routing": "Product background is upstream-owned by ai-wiki; retain the local authentication-control implication.",
+      "confidence": "medium",
+      "follow_up": "Inspect the advisory and repository history for attack preconditions, release mapping, and a supported fixed build."
+    },
+    {
+      "id": "ai-sdlc-plugin-mcp-repository-command-injection",
+      "identifiers": ["CVE-2026-117558"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-117558",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-117558",
+        "https://github.com/ai-sdlc-framework/ai-sdlc/commit/717d7ecf068b714f65955e50fcf5cb4f9a0b5070",
+        "https://www.vulncheck.com/advisories/ai-sdlc-mcp-server-through-0.31.2-command-injection-via-check-issue-and-check-pr-status"
+      ],
+      "visible_dates": {"published": "2026-10-27T13:07:53.099Z", "updated": "2026-10-27T13:07:53.099Z"},
+      "evidence_classification": "CVE Services public record with linked repository source and fix commit; corroborated by NVD.",
+      "summary": "The ai-sdlc plugin MCP server through 0.31.2 interpolates a repo argument into gh commands via execSync(), enabling OS command injection through shell metacharacters; the CVE explicitly identifies prompt-injected agents as a route to execution.",
+      "affected_boundary_or_version": "ai-sdlc plugin MCP server through 0.31.2; check-issue/check-pr-status repository argument to local shell boundary.",
+      "why_it_matters_for_ai_security": "Agent-controlled tool arguments must be structured and passed without a shell; prompt injection can otherwise cross directly into the MCP server user's authority.",
+      "named_entities": ["ai-sdlc-framework", "ai-sdlc", "MCP", "GitHub CLI"],
+      "upstream_routing": "General ai-sdlc tooling belongs in ai-wiki and development workflow practice in ai-dev-wiki; retain this MCP execution-boundary security finding locally.",
+      "confidence": "high",
+      "follow_up": "Verify the first released fixed plugin version and whether deployments need credential rotation after exposure."
+    },
+    {
+      "id": "mlflow-prompt-model-version-local-file-read",
+      "identifiers": ["CVE-2026-116690", "GHSA-m65p-9j7q-6w33"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-116690",
+        "https://github.com/mlflow/mlflow/security/advisories/GHSA-m65p-9j7q-6w33",
+        "https://github.com/mlflow/mlflow/releases/tag/v3.17.0"
+      ],
+      "visible_dates": {"published": "2026-10-27T19:42:35.798Z", "updated": "2026-10-27T19:42:35.798Z"},
+      "evidence_classification": "MLflow's public GitHub Security Advisory, linked fix/release, and CVE Services record.",
+      "summary": "MLflow 3.10.0 through 3.17.0 permits schemeless relative prompt sources in model-version creation, allowing a remote caller to set a server-local artifact path and read files through the model-version artifact API; fixed in 3.17.0.",
+      "affected_boundary_or_version": "MLflow 3.10.0 to 3.17.0; prompt model-version source validation and server-local artifact read boundary; fixed in 3.17.0.",
+      "why_it_matters_for_ai_security": "Prompt and model registries are artifact boundaries: path validation must prevent callers from turning model metadata into host-file reads.",
+      "named_entities": ["MLflow", "MLflow Prompt", "GitHub Security Advisory"],
+      "upstream_routing": "MLflow product background belongs in ai-wiki; retain the prompt-artifact path-validation control locally.",
+      "confidence": "high",
+      "follow_up": "Upgrade to 3.17.0 and audit model-version sources plus exposed MLflow server authentication."
+    },
+    {
+      "id": "mlflow-crewai-autolog-provider-key-trace-disclosure",
+      "identifiers": ["CVE-2026-116691", "GHSA-j7qq-vr8c-xvw3"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-116691",
+        "https://github.com/mlflow/mlflow/security/advisories/GHSA-j7qq-vr8c-xvw3",
+        "https://github.com/mlflow/mlflow/releases/tag/v3.17.0"
+      ],
+      "visible_dates": {"published": "2026-10-27T19:56:22.083Z", "updated": "2026-10-27T19:56:22.083Z"},
+      "evidence_classification": "MLflow's public GitHub Security Advisory, linked fix/release, and CVE Services record.",
+      "summary": "MLflow CrewAI autologging 2.19.0 through 3.17.0 can stringify credential-bearing nested agent values and send plaintext provider API keys to the MLflow trace backend or OTLP destination; fixed in 3.17.0.",
+      "affected_boundary_or_version": "MLflow 2.19.0 to 3.17.0; CrewAI autologging to trace/OTLP observability boundary; fixed in 3.17.0.",
+      "why_it_matters_for_ai_security": "Observability pipelines must treat agent objects as sensitive input and redact provider credentials before spans are persisted or exported.",
+      "named_entities": ["MLflow", "CrewAI", "OTLP"],
+      "upstream_routing": "MLflow and CrewAI product background belong in ai-wiki; retain the trace-secret handling implication locally.",
+      "confidence": "high",
+      "follow_up": "Upgrade to 3.17.0, rotate potentially exported keys, and restrict trace-reader access."
+    },
+    {
+      "id": "mlflow-genai-third-party-scorer-deserialization-rce",
+      "identifiers": ["CVE-2026-116692", "GHSA-26p8-2jq9-3vq9"],
+      "source_urls": [
+        "https://cveawg.mitre.org/api/cve/CVE-2026-116692",
+        "https://github.com/mlflow/mlflow/security/advisories/GHSA-26p8-2jq9-3vq9",
+        "https://github.com/mlflow/mlflow/releases/tag/v3.17.0"
+      ],
+      "visible_dates": {"published": "2026-10-27T20:03:49.661Z", "updated": "2026-10-27T20:03:49.661Z"},
+      "evidence_classification": "MLflow's public GitHub Security Advisory, linked fix/release, and CVE Services record.",
+      "summary": "MLflow 3.12.0rc0 through 3.17.0 accepts request-selected descendants beneath third-party scorer allowed modules, allowing artifact-uploaded Python code to be imported and instantiated through scorer invocation when the package is writable; fixed in 3.17.0.",
+      "affected_boundary_or_version": "MLflow 3.12.0rc0 to 3.17.0; GenAI scorer module allowlist, artifact upload, and Python import boundary; fixed in 3.17.0.",
+      "why_it_matters_for_ai_security": "Evaluation and scorer plug-ins are executable supply-chain components; namespace-prefix allowlists are insufficient where artifacts can write under approved packages.",
+      "named_entities": ["MLflow", "MLflow GenAI", "third-party scorer"],
+      "upstream_routing": "MLflow product background belongs in ai-wiki; retain the evaluator plug-in supply-chain and runtime-execution implication locally.",
+      "confidence": "high",
+      "follow_up": "Upgrade to 3.17.0, review scorer packages and writable artifact paths, and restrict experiment/run creation rights."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-116575 (Mem0 session-scope key collision)",
+      "reason": "Already captured in raw/processed/2026-10-26/ai-security-wiki-topic-news-collector-2026-10-26T233009Z.json; do not duplicate overlapping evidence."
+    },
+    {
+      "candidate": "CVE-2026-116253, CVE-2026-77061, CVE-2026-81039, CVE-2026-116514, CVE-2026-116820, CVE-2026-116836 through CVE-2026-116839, and CVE-2026-78845",
+      "reason": "Returned by broad keyword/date search but the public descriptions do not establish an AI-system, model, agent, prompt, tool, data, or AI supply-chain boundary."
+    },
+    {
+      "candidate": "General product announcements and broad AI policy/news search results without an independently stated security control, incident, advisory, patch, or other concrete security delta",
+      "reason": "Excluded by collector scope."
+    },
+    {
+      "candidate": "Date-only or ambiguous-dated search results",
+      "reason": "Excluded because the collection rule requires a visible, precise in-window timestamp."
+    },
+    {
+      "candidate": "Claims from third-party AI-security aggregators without a primary advisory, CVE record, official standard/regulator source, or reproducible technical evidence",
+      "reason": "Used only for discovery when applicable; not retained as qualifying evidence."
+    }
+  ],
+  "routing_count": 7,
+  "confidence_notes": [
+    "All retained items have precise public CVE publication timestamps within the window.",
+    "The MLflow findings have maintainer-authored GitHub advisories, fix commits, and a named fixed release, yielding high confidence.",
+    "The AI Engine and Keepnet records need detailed maintainer or advisory reconciliation before durable synthesis because the CVE summaries provide limited remediation detail."
+  ],
+  "follow_up_actions": [
+    "During ingestion, keep each MLflow vulnerability as a separate security boundary even though all are fixed in 3.17.0.",
+    "Recheck product advisories for fixed releases, affected versions, and deployment guidance for AI Engine, CreditNirvana, and Keepnet.",
+    "Do not synthesize broad product background locally; route it to ai-wiki or ai-dev-wiki under federation rules."
+  ],
+  "collection_blockers": []
+}

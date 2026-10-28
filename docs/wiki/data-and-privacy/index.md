@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [CreditNirvana Agentic AI Call Centre Client-Key Disclosure](creditnirvana-agentic-ai-call-centre-client-key-disclosure.md)
+- [MLflow CrewAI Autolog Provider-Key Trace Disclosure](mlflow-crewai-autolog-provider-key-trace-disclosure.md)
 - [Mem0 Session-Scope Cross-Tenant Disclosure](mem0-session-scope-cross-tenant-disclosure.md)
 
 This topic owns AI-specific sensitive-data exposure, training and retrieval data risk, data provenance, privacy, retention, residency, and disclosure controls.
@@ -152,6 +154,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 
 ## Maintenance Notes
 
+- Updated on 2026-10-27 with CreditNirvana browser credential exposure and MLflow trace-secret disclosure leaves.
 - Updated on 2026-10-26 with the Mem0 delimiter-collision tenant-memory disclosure leaf.
 
 - Updated on 2026-10-20 with the MCP TypeScript server cross-client message-delivery leaf and October 20 watcher provenance for Apache Answer and NoteGen.

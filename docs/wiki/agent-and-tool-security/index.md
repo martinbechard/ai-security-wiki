@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [ai-sdlc MCP Repository Command Injection](ai-sdlc-mcp-repository-command-injection.md)
 - [Continue MCP Transport Command Injection](continue-mcp-transport-command-injection.md)
 - [Google Cloud MCP Toolbox Cloud-Storage File Boundary](google-cloud-mcp-toolbox-cloud-storage-file-boundary.md)
 - [OpenHands Agent Sandbox Unauthenticated RCE](openhands-agent-sandbox-unauthenticated-rce.md)
@@ -396,6 +397,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-27 with the ai-sdlc MCP repository-to-shell command-injection leaf.
 - Updated on 2026-10-26 with Continue MCP transport command injection, Google Cloud MCP Toolbox cloud-storage file boundary, OpenHands sandbox server RCE, and vLLM browser access leaves.
 
 - Updated on 2026-10-22 with Flexible GraphRAG ingestion query integrity and Agent Zero privileged-console rendering leaves.

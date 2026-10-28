@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [MLflow Prompt Model-Version Local File Read](mlflow-prompt-model-version-local-file-read.md)
+- [MLflow GenAI Third-Party Scorer Deserialization RCE](mlflow-genai-third-party-scorer-deserialization-rce.md)
 - [Google Cloud Run MCP Bucket Squatting](google-cloud-run-mcp-bucket-squatting.md)
 - [ONNX Untrusted-Model Shape-Inference DoS](onnx-untrusted-model-shape-inference-dos.md)
 - [vLLM Shared-Memory Pickle RCE](vllm-shared-memory-pickle-rce.md)
@@ -227,6 +229,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-10-27 with separate MLflow prompt-source local-file-read and GenAI scorer code-execution leaves.
 - Updated on 2026-10-26 with Cloud Run MCP bucket provenance, ONNX shape-inference, vLLM shared-memory serialization, and image-decoder dependency boundaries.
 
 - Updated on 2026-10-20 after watcher review clarified that Doctor-Dignity public-exploit reporting remains unverified.
