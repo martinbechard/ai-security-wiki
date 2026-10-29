@@ -1,0 +1,104 @@
+{
+  "artifact_type": "ai-security-wiki-leaf-update-watch",
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "run_timestamp": "2026-10-29T00:01:48Z",
+  "cutoff_window": {
+    "start_inclusive": "2026-10-22T00:01:48Z",
+    "end_exclusive": "2026-10-29T00:01:48Z",
+    "date_rule": "Only direct, visible source publication or update timestamps within the strict seven-day UTC window qualify."
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/ai-sdlc-mcp-repository-command-injection.md",
+    "docs/wiki/data-and-privacy/creditnirvana-agentic-ai-call-centre-client-key-disclosure.md",
+    "docs/wiki/data-and-privacy/mlflow-crewai-autolog-provider-key-trace-disclosure.md",
+    "docs/wiki/identity-and-access/keepnet-agentic-ally-authentication-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-genai-third-party-scorer-deserialization-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-prompt-model-version-local-file-read.md",
+    "docs/wiki/identity-and-access/diboot-ai-session-authorization-bypass.md",
+    "docs/wiki/infrastructure-and-supply-chain/openshift-ai-guardrails-detectors-redos.md",
+    "docs/wiki/infrastructure-and-supply-chain/theia-ai-agent-mode-workspace-path-traversal.md",
+    "docs/wiki/model-and-prompt-security/ash-ai-eex-prompt-template-rce.md",
+    "docs/wiki/model-and-prompt-security/microsoft-edge-ios-llm-prompt-spoofing.md",
+    "docs/wiki/agent-and-tool-security/codex-powershell-stop-parsing-approval-bypass.md",
+    "docs/wiki/agent-and-tool-security/hermes-agent-acp-mcp-dos.md",
+    "docs/wiki/agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md",
+    "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md"
+  ],
+  "source_urls_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-117558",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-110474",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-116691",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-92546",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-116692",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-116690",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-82816",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-15154",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-82217",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-77956",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-70331",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-19591",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-84288",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-84289",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-72644",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-72682",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-17534"
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-prompt-model-version-local-file-read.md",
+      "identifiers": ["CVE-2026-116690", "GHSA-m65p-9j7q-6w33"],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-116690",
+      "visible_update_at": "2026-10-28T16:13:38.096Z",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "CVE Services visibly updated the public MLflow record after the October 27 collector captured the original disclosure. The record continues to describe arbitrary server-local file reads through a schemeless prompt model-version source, fixed in MLflow 3.17.0.",
+      "affected_boundary": "Prompt model-version source validation to server-local artifact read boundary on MLflow servers.",
+      "named_entities": ["MLflow", "CVE-2026-116690", "GHSA-m65p-9j7q-6w33"],
+      "upstream_routing": "MLflow product background remains upstream in ai-wiki; this security-specific artifact boundary remains local.",
+      "exploitation_status": "No confirmed exploitation or demonstrated research was established by the checked CVE record.",
+      "follow_up_note": "Compare the CVE metadata delta with raw/processed/2026-10-27/ai-security-wiki-topic-news-collector-2026-10-27T232925Z.json before any durable rewrite."
+    },
+    {
+      "leaf_id": "docs/wiki/model-and-prompt-security/microsoft-edge-ios-llm-prompt-spoofing.md",
+      "identifiers": ["CVE-2026-70331"],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-70331",
+      "visible_update_at": "2026-10-28T20:04:59.792Z",
+      "evidence_classification": "disclosed vulnerability metadata update",
+      "summary": "CVE Services visibly updated the public Microsoft Edge for iOS record. It identifies CWE-1427 improper neutralization of input used for LLM prompting, an affected version boundary below 150.0.4078.50, and a vendor-advisory patch reference.",
+      "affected_boundary": "Browser-integrated LLM prompt input neutralization and spoofing boundary in Microsoft Edge for iOS.",
+      "named_entities": ["Microsoft Edge for iOS", "CVE-2026-70331", "CWE-1427"],
+      "upstream_routing": "Microsoft Edge product background remains upstream in ai-wiki; this LLM-prompt security boundary remains local.",
+      "exploitation_status": "No confirmed exploitation or demonstrated research was established by the checked CVE record.",
+      "follow_up_note": "Compare this new public metadata with the existing local leaf and MSRC advisory before any durable rewrite."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_ids": [
+        "docs/wiki/agent-and-tool-security/ai-sdlc-mcp-repository-command-injection.md",
+        "docs/wiki/data-and-privacy/creditnirvana-agentic-ai-call-centre-client-key-disclosure.md",
+        "docs/wiki/data-and-privacy/mlflow-crewai-autolog-provider-key-trace-disclosure.md",
+        "docs/wiki/identity-and-access/keepnet-agentic-ally-authentication-bypass.md",
+        "docs/wiki/infrastructure-and-supply-chain/mlflow-genai-third-party-scorer-deserialization-rce.md"
+      ],
+      "reason": "In-window October 26-27 CVE disclosures were already captured by raw/processed/2026-10-27/ai-security-wiki-topic-news-collector-2026-10-27T232925Z.json; they are not duplicate qualifying updates."
+    },
+    {
+      "leaf_ids": [
+        "docs/wiki/identity-and-access/diboot-ai-session-authorization-bypass.md",
+        "docs/wiki/infrastructure-and-supply-chain/openshift-ai-guardrails-detectors-redos.md",
+        "docs/wiki/infrastructure-and-supply-chain/theia-ai-agent-mode-workspace-path-traversal.md",
+        "docs/wiki/model-and-prompt-security/ash-ai-eex-prompt-template-rce.md",
+        "docs/wiki/agent-and-tool-security/codex-powershell-stop-parsing-approval-bypass.md",
+        "docs/wiki/agent-and-tool-security/hermes-agent-acp-mcp-dos.md",
+        "docs/wiki/agent-and-tool-security/kibana-ai-assistant-and-agent-builder-dos.md",
+        "docs/wiki/agent-and-tool-security/kimi-code-fetchurl-ssrf.md"
+      ],
+      "reason": "Checked CVE Services records had visible publication/update timestamps before the strict seven-day window; no new qualifying update was established."
+    }
+  ],
+  "collection_blockers": [],
+  "follow_up_actions": [
+    "Normal ingest should inspect only the two recorded metadata deltas and avoid duplicating existing durable prose.",
+    "No docs/wiki or raw/processed files were edited by this watch."
+  ]
+}
