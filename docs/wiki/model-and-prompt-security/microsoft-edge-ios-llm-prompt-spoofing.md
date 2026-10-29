@@ -34,6 +34,7 @@ The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-
 
 - [August 31 topic collector source](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json)
 - [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json)
+- [October 28 leaf update watch source](../../../raw/processed/2026-10-28/ai-security-wiki-leaf-update-watch-20261029T000148Z.json)
 - [NVD CVE-2026-70331](https://nvd.nist.gov/vuln/detail/CVE-2026-70331)
 - [Microsoft MSRC CVE-2026-70331](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-70331)
 
@@ -63,3 +64,4 @@ The [September 1 leaf update watch source](../../../raw/processed/2026-09-01/ai-
 
 - Created on 2026-08-31 from the [August 31 topic collector](../../../raw/processed/2026-08-31/ai-security-wiki-topic-news-collector-2026-08-31T233224Z.json) as a browser-integrated LLM prompt-spoofing leaf.
 - Updated on 2026-09-01 from the [September 1 leaf watcher](../../../raw/processed/2026-09-01/ai-security-wiki-leaf-update-watch-20260902T000316Z.json) with CVEAWG and MSRC provenance.
+- Updated on 2026-10-28 from the [leaf watch](../../../raw/processed/2026-10-28/ai-security-wiki-leaf-update-watch-20261029T000148Z.json) with CVE Services metadata identifying CWE-1427, the below-150.0.4078.50 boundary, and the vendor-advisory patch reference; no duplicate digest item is warranted.

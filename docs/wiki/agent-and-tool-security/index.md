@@ -143,6 +143,15 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [DroidMind MCP Shell Allowlist Command Injection](droidmind-mcp-shell-allowlist-command-injection.md)
+- [ATXP Gemini CLI MCP Command Injection](atxp-gemini-cli-mcp-command-injection.md)
+- [sf-mcp Salesforce CLI Command Injection](sf-mcp-salesforce-cli-command-injection.md)
+- [esp-mcp Tool-Parameter Command Injection](esp-mcp-tool-parameter-command-injection.md)
+- [mcp-ffmpeg Command Injection](mcp-ffmpeg-command-injection.md)
+- [Kali-GPT MCP Scanner Command Injection](kali-gpt-mcp-scanner-command-injection.md)
+- [nmap-mcp Intrusive Script Allowlist Bypass](nmap-mcp-intrusive-script-allowlist-bypass.md)
+- [hagent MCP Embedded-Tool Command Injection](hagent-mcp-embedded-tool-command-injection.md)
+
 - [MCP TypeScript SDK Validation Memory-Exhaustion DoS](mcp-typescript-sdk-validation-memory-exhaustion-dos.md)
 - [Cognition Unauthenticated Local-Shell Agent RCE](cognition-unauthenticated-local-shell-agent-rce.md)
 - [SGLang Prefill-Decode SSRF and Scheduler DoS](sglang-prefill-decode-ssrf-and-scheduler-dos.md)

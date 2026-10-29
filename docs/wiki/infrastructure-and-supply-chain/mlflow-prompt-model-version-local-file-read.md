@@ -23,6 +23,7 @@ The [October 27 collector source](../../../raw/processed/2026-10-27/ai-security-
 ## Authoritative Sources
 
 - [October 27 collector source](../../../raw/processed/2026-10-27/ai-security-wiki-topic-news-collector-2026-10-27T232925Z.json)
+- [October 28 leaf update watch source](../../../raw/processed/2026-10-28/ai-security-wiki-leaf-update-watch-20261029T000148Z.json)
 - [CVE-2026-116690](https://cveawg.mitre.org/api/cve/CVE-2026-116690)
 - [GHSA-m65p-9j7q-6w33](https://github.com/mlflow/mlflow/security/advisories/GHSA-m65p-9j7q-6w33)
 - [MLflow 3.17.0 release](https://github.com/mlflow/mlflow/releases/tag/v3.17.0)
@@ -51,3 +52,4 @@ The [October 27 collector source](../../../raw/processed/2026-10-27/ai-security-
 ## Maintenance Notes
 
 - Created on 2026-10-27 from the collector; this is separate from earlier cross-run artifact authorization because it reaches server-local paths.
+- Updated on 2026-10-28 from the [leaf watch](../../../raw/processed/2026-10-28/ai-security-wiki-leaf-update-watch-20261029T000148Z.json): CVE Services metadata continued to identify the same schemeless prompt-source local-file-read boundary and the 3.17.0 fix; no new digest item is warranted.

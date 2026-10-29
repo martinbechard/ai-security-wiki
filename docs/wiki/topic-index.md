@@ -8,6 +8,20 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [llama.cpp Crafted GGUF Memory Corruption](infrastructure-and-supply-chain/llama-cpp-crafted-gguf-memory-corruption.md)
+- [NVIDIA NeMo Agent Toolkit Missing Authentication](identity-and-access/nvidia-nemo-agent-toolkit-missing-authentication.md)
+- [NVIDIA NeMo Agent Toolkit SQL Injection](infrastructure-and-supply-chain/nvidia-nemo-agent-toolkit-sql-injection.md)
+- [MCP Python SDK Cross-Origin Redirect Credential Forwarding](identity-and-access/mcp-python-sdk-cross-origin-redirect-credential-forwarding.md)
+- [Unsloth Model-Loader Configuration Code Injection](infrastructure-and-supply-chain/unsloth-model-loader-configuration-code-injection.md)
+- [DroidMind MCP Shell Allowlist Command Injection](agent-and-tool-security/droidmind-mcp-shell-allowlist-command-injection.md)
+- [ATXP Gemini CLI MCP Command Injection](agent-and-tool-security/atxp-gemini-cli-mcp-command-injection.md)
+- [sf-mcp Salesforce CLI Command Injection](agent-and-tool-security/sf-mcp-salesforce-cli-command-injection.md)
+- [esp-mcp Tool-Parameter Command Injection](agent-and-tool-security/esp-mcp-tool-parameter-command-injection.md)
+- [mcp-ffmpeg Command Injection](agent-and-tool-security/mcp-ffmpeg-command-injection.md)
+- [Kali-GPT MCP Scanner Command Injection](agent-and-tool-security/kali-gpt-mcp-scanner-command-injection.md)
+- [nmap-mcp Intrusive Script Allowlist Bypass](agent-and-tool-security/nmap-mcp-intrusive-script-allowlist-bypass.md)
+- [hagent MCP Embedded-Tool Command Injection](agent-and-tool-security/hagent-mcp-embedded-tool-command-injection.md)
+
 - [CreditNirvana Agentic AI Call Centre Client-Key Disclosure](data-and-privacy/creditnirvana-agentic-ai-call-centre-client-key-disclosure.md)
 - [Keepnet Agentic Ally Authentication Bypass](identity-and-access/keepnet-agentic-ally-authentication-bypass.md)
 - [ai-sdlc MCP Repository Command Injection](agent-and-tool-security/ai-sdlc-mcp-repository-command-injection.md)

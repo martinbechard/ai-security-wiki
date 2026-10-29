@@ -9,6 +9,9 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [NVIDIA NeMo Agent Toolkit Missing Authentication](nvidia-nemo-agent-toolkit-missing-authentication.md)
+- [MCP Python SDK Cross-Origin Redirect Credential Forwarding](mcp-python-sdk-cross-origin-redirect-credential-forwarding.md)
+
 - [Xiaozhi Address-Book Object Authorization](xiaozhi-address-book-object-authorization.md)
 
 - [GitLab Duo AI Egress Lock Enforcement](gitlab-duo-ai-egress-lock-enforcement.md)

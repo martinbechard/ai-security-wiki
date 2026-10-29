@@ -65,6 +65,10 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
+- [llama.cpp Crafted GGUF Memory Corruption](llama-cpp-crafted-gguf-memory-corruption.md)
+- [Unsloth Model-Loader Configuration Code Injection](unsloth-model-loader-configuration-code-injection.md)
+- [NVIDIA NeMo Agent Toolkit SQL Injection](nvidia-nemo-agent-toolkit-sql-injection.md)
+
 - [YOLOE AutoBackend Model-Loading Code Execution](yoloe-autobackend-model-loading-code-execution.md)
 - [Stable Diffusion WebUI Model-Instantiation Code Injection](stable-diffusion-webui-model-instantiation-code-injection.md)
 - [Xinference Custom-Model Path Traversal](xinference-custom-model-path-traversal.md)
