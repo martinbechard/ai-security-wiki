@@ -8,6 +8,12 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [SuperAGI Agent-Inventory Tenant Isolation](identity-and-access/superagi-agent-inventory-tenant-isolation.md)
+- [SuperAGI Agent-Execution Metadata Tenant Isolation](identity-and-access/superagi-agent-execution-metadata-tenant-isolation.md)
+- [SuperAGI Agent-Execution Configuration Tenant Isolation](identity-and-access/superagi-agent-execution-configuration-tenant-isolation.md)
+- [XAgent ToolServer Upload Path Traversal](agent-and-tool-security/xagent-tool-server-upload-path-traversal.md)
+- [Agent Zero FileBrowser Save-Text Path Traversal](agent-and-tool-security/agent-zero-file-browser-save-text-path-traversal.md)
+
 - [llama.cpp Crafted GGUF Memory Corruption](infrastructure-and-supply-chain/llama-cpp-crafted-gguf-memory-corruption.md)
 - [NVIDIA NeMo Agent Toolkit Missing Authentication](identity-and-access/nvidia-nemo-agent-toolkit-missing-authentication.md)
 - [NVIDIA NeMo Agent Toolkit SQL Injection](infrastructure-and-supply-chain/nvidia-nemo-agent-toolkit-sql-injection.md)

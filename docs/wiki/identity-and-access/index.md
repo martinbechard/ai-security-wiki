@@ -9,6 +9,10 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [SuperAGI Agent-Inventory Tenant Isolation](superagi-agent-inventory-tenant-isolation.md)
+- [SuperAGI Agent-Execution Metadata Tenant Isolation](superagi-agent-execution-metadata-tenant-isolation.md)
+- [SuperAGI Agent-Execution Configuration Tenant Isolation](superagi-agent-execution-configuration-tenant-isolation.md)
+
 - [NVIDIA NeMo Agent Toolkit Missing Authentication](nvidia-nemo-agent-toolkit-missing-authentication.md)
 - [MCP Python SDK Cross-Origin Redirect Credential Forwarding](mcp-python-sdk-cross-origin-redirect-credential-forwarding.md)
 
@@ -201,6 +205,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-10-29 with split SuperAGI agent inventory, execution metadata, and execution configuration tenant-isolation leaves.
 - Updated on 2026-10-27 with AI Engine media or object authorization and Keepnet authentication-bypass evidence.
 - Updated on 2026-10-26 with the Frappe Builder stored-provider-credit authorization leaf.
 

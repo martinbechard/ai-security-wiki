@@ -1,0 +1,121 @@
+{
+  "artifact_type": "public-ai-security-topic-news-collection",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-10-29T23:28:41Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-10-27T23:28:41Z",
+    "end_inclusive": "2026-10-29T23:28:41Z",
+    "rule": "Only public records with a visible, precise publication or update timestamp strictly inside this two-day window are retained."
+  },
+  "source_method": "Public-web discovery followed by direct public NVD CVE API verification; no local or private content was sent externally.",
+  "local_context_checked": [
+    "docs/wiki/federation.md",
+    "docs/wiki/topic-index.md",
+    "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+    "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md",
+    "raw/processed/2026-10-28/ai-security-wiki-topic-news-collector-2026-10-28T233111Z.json"
+  ],
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP plugins browsers delegated authority and autonomous action",
+    "data security and privacy",
+    "identity authentication authorization credentials and least privilege",
+    "model dataset dependency artifact runtime cloud hardware and deployment supply chains",
+    "threat modeling red teaming security evaluation assurance monitoring and release gates",
+    "AI security standards regulation governance audit evidence risk management and public incidents"
+  ],
+  "qualifying_findings": [
+    {
+      "id": "superagi-cross-organization-agent-inventory-disclosure",
+      "identifiers": ["CVE-2026-51902"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-51902", "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-51902"],
+      "visible_dates": {"published": "2026-10-29T18:17:32.417Z"},
+      "evidence_classification": "NVD CVE API public record",
+      "summary": "SuperAGI through v0.0.14 lets an authenticated user from one organization retrieve another organization's agent inventory by supplying its project_id; the controller does not verify project ownership.",
+      "affected_boundary_or_version": "SuperAGI through v0.0.14; /api/agents/get/project/{project_id} cross-tenant controller boundary.",
+      "why_it_matters_for_ai_security": "An agent inventory exposes delegated capabilities and organization-specific automation context, so tenant-scoped authorization must bind each agent query to the caller's organization.",
+      "named_entities": ["TransformerOptimus", "SuperAGI"],
+      "upstream_routing": "SuperAGI product background is upstream-owned by ai-wiki; retain the local multi-tenant agent authorization implication.",
+      "confidence": "high",
+      "follow_up": "Confirm a maintainer patch or fixed release and inventory exposed multi-tenant SuperAGI deployments before synthesis."
+    },
+    {
+      "id": "superagi-cross-organization-execution-metadata-disclosure",
+      "identifiers": ["CVE-2026-51903"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-51903", "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-51903"],
+      "visible_dates": {"published": "2026-10-29T18:17:32.547Z"},
+      "evidence_classification": "NVD CVE API public record",
+      "summary": "SuperAGI v0.0.14 permits an authenticated attacker from one organization to obtain another organization's latest agent execution and metadata through a victim project_id.",
+      "affected_boundary_or_version": "SuperAGI v0.0.14; /agentexecutions/get/latest/agent/project/{project_id} execution-query boundary.",
+      "why_it_matters_for_ai_security": "Execution metadata can reveal agent behavior and operational context; authorization must be checked before retrieving project-scoped agent state.",
+      "named_entities": ["TransformerOptimus", "SuperAGI"],
+      "upstream_routing": "SuperAGI product background is upstream-owned by ai-wiki; retain the local agent-execution isolation implication.",
+      "confidence": "high",
+      "follow_up": "Reconcile this separately from CVE-2026-51902 because the protected resource is execution state rather than agent inventory."
+    },
+    {
+      "id": "superagi-cross-organization-agent-execution-configuration-disclosure",
+      "identifiers": ["CVE-2026-51905"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-51905", "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-51905"],
+      "visible_dates": {"published": "2026-10-29T18:17:32.660Z"},
+      "evidence_classification": "NVD CVE API public record",
+      "summary": "SuperAGI v0.0.14 lacks an organization ownership check when returning agent execution configuration, allowing an authenticated cross-tenant caller to read a victim agent_id and agent_execution_id pair.",
+      "affected_boundary_or_version": "SuperAGI v0.0.14; /agent_executions_configs/details/agent_id/{agent_id}/agent_execution_id/{agent_execution_id} configuration boundary.",
+      "why_it_matters_for_ai_security": "Agent execution configuration may encode tool, model, credential-reference, and workflow choices, making it sensitive cross-tenant control-plane data.",
+      "named_entities": ["TransformerOptimus", "SuperAGI"],
+      "upstream_routing": "SuperAGI product background is upstream-owned by ai-wiki; retain the local agent configuration confidentiality and authorization implication.",
+      "confidence": "high",
+      "follow_up": "Confirm fixed versions and assess whether configuration responses contain credential material or sensitive tool endpoints."
+    },
+    {
+      "id": "xagent-tool-server-file-upload-path-traversal",
+      "identifiers": ["CVE-2026-51912"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-51912", "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-51912", "https://github.com/OpenBMB/XAgent/issues/420"],
+      "visible_dates": {"published": "2026-10-29T18:17:32.783Z"},
+      "evidence_classification": "NVD CVE API public record with public upstream issue reference",
+      "summary": "OpenBMB XAgent v1.0.0 contains a directory-traversal flaw in ToolServerNode's upload_file handler, allowing a file-upload name to escape the intended working directory.",
+      "affected_boundary_or_version": "OpenBMB XAgent v1.0.0; ToolServer/ToolServerNode/main.py upload_file at the agent tool-server filesystem boundary.",
+      "why_it_matters_for_ai_security": "Agent-accessible tool servers convert untrusted contextual input into host file operations; path containment must be enforced after normalization.",
+      "named_entities": ["OpenBMB", "XAgent", "ToolServerNode"],
+      "upstream_routing": "XAgent product background is upstream-owned by ai-wiki; retain the local agent-tool filesystem-containment implication.",
+      "confidence": "high",
+      "follow_up": "Verify a maintainer remediation and keep upload-capable tool servers sandboxed until a fixed version is established."
+    },
+    {
+      "id": "agent-zero-file-browser-save-text-path-traversal",
+      "identifiers": ["CVE-2026-51851"],
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-51851", "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-51851"],
+      "visible_dates": {"published": "2026-10-29T18:17:32.153Z"},
+      "evidence_classification": "NVD CVE API public record",
+      "summary": "modelscope agent-zero versions 1.7 through 1.10 accept a user-controlled path in FileBrowser.save_text_file without normalization or validation, enabling directory traversal.",
+      "affected_boundary_or_version": "modelscope agent-zero 1.7, 1.8, 1.9, and 1.10; python/helpers/file_browser.py FileBrowser.save_text_file.",
+      "why_it_matters_for_ai_security": "Agent file-browser functions are delegated write authority; user- or prompt-derived paths need canonical containment checks before host file creation.",
+      "named_entities": ["ModelScope", "agent-zero", "FileBrowser"],
+      "upstream_routing": "agent-zero product background is upstream-owned by ai-wiki; retain the local delegated filesystem-write control implication.",
+      "confidence": "high",
+      "follow_up": "Locate a maintainer advisory or release fix and review deployments for writable paths beyond the intended workspace."
+    }
+  ],
+  "routing_count": 5,
+  "exclusions": [
+    {"candidate": "October 28 vLLM, n8n MCP OAuth, AI Engine, and other advisory results", "reason": "They were already captured or assessed in the October 27 and October 28 collector artifacts; no duplicate raw record was created."},
+    {"candidate": "CVE-2026-60111", "reason": "The NVD record says the CVE was rejected or withdrawn by its CNA, so it is not a qualifying security finding."},
+    {"candidate": "CVE-2026-11587", "reason": "Despite ambiguous search-result association with agent-zero, direct NVD verification identifies a Centreon ACL-management SQL injection, not an AI-system finding."},
+    {"candidate": "General AI, MCP, and agent product announcements and issue pages", "reason": "Excluded when they lacked a concrete security delta, an in-window precise visible date, or reproducible primary technical evidence."},
+    {"candidate": "CVE-2026-51901 SuperAGI scheduling authorization issue", "reason": "Published 2026-10-02T16:16:49.980Z, outside this exact two-day window."}
+  ],
+  "confidence_notes": [
+    "All retained findings have precise October 29 NVD publication timestamps inside the cutoff window and are directly reproducible through the public NVD CVE API.",
+    "The three SuperAGI CVEs share a product but protect independently changing tenant-scoped resources: agent inventory, execution metadata, and execution configuration; preserve that separation during ingestion.",
+    "NVD-first evidence does not establish a fixed release for the retained entries; maintainer advisories and remediation status require ingest-time confirmation.",
+    "No docs/wiki or raw/processed content was changed by this collection run."
+  ],
+  "follow_up_actions": [
+    "At ingest, create or update distinct security boundaries for the three SuperAGI authorization defects rather than treating them as a single undifferentiated issue.",
+    "Locate maintainer advisories, commits, and fixed versions for SuperAGI, XAgent, and agent-zero before publishing durable remediation guidance.",
+    "Continue to route product catalogs and general implementation material upstream while preserving only the security-specific implications locally."
+  ],
+  "collection_blockers": []
+}

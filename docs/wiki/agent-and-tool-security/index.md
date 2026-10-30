@@ -143,6 +143,9 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [XAgent ToolServer Upload Path Traversal](xagent-tool-server-upload-path-traversal.md)
+- [Agent Zero FileBrowser Save-Text Path Traversal](agent-zero-file-browser-save-text-path-traversal.md)
+
 - [DroidMind MCP Shell Allowlist Command Injection](droidmind-mcp-shell-allowlist-command-injection.md)
 - [ATXP Gemini CLI MCP Command Injection](atxp-gemini-cli-mcp-command-injection.md)
 - [sf-mcp Salesforce CLI Command Injection](sf-mcp-salesforce-cli-command-injection.md)
@@ -406,6 +409,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-10-29 with XAgent ToolServer upload and Agent Zero FileBrowser delegated-write containment leaves.
 - Updated on 2026-10-27 with the ai-sdlc MCP repository-to-shell command-injection leaf.
 - Updated on 2026-10-26 with Continue MCP transport command injection, Google Cloud MCP Toolbox cloud-storage file boundary, OpenHands sandbox server RCE, and vLLM browser access leaves.
 
