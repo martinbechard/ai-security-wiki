@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [praktor Telegram Upload Persistent Agent Instruction Injection](praktor-telegram-upload-persistent-agent-instruction-injection.md)
+
 - [vLLM Chat-Template Resource Exhaustion](vllm-chat-template-resource-exhaustion.md)
 - [vLLM Phi-4 Multimodal Audio Attention GPU DoS](vllm-phi4mm-audio-attention-gpu-dos.md)
 - [vLLM OCR Zero-Pixel Engine DoS](vllm-ocr-zero-pixel-engine-dos.md)

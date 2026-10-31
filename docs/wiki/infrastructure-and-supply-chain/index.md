@@ -2,6 +2,12 @@
 
 ## Current Understanding
 
+- [Crawl4AI Untrusted Model-Name Pickle Loading](crawl4ai-untrusted-model-name-pickle-loading.md)
+- [Kubeflow Pipelines Volume Artifact Path Traversal](kubeflow-pipelines-volume-artifact-path-traversal.md)
+- [Kubeflow Pipelines Archive Decompression Resource Exhaustion](kubeflow-pipelines-archive-decompression-resource-exhaustion.md)
+- [LM Studio Model Downloader Path Traversal Plugin Persistence](lm-studio-model-downloader-path-traversal-plugin-persistence.md)
+- [Immich Machine-Learning Predict Cache-Path Delete](immich-machine-learning-predict-cache-path-delete.md)
+
 - [MLflow Prompt Model-Version Local File Read](mlflow-prompt-model-version-local-file-read.md)
 - [MLflow GenAI Third-Party Scorer Deserialization RCE](mlflow-genai-third-party-scorer-deserialization-rce.md)
 - [Google Cloud Run MCP Bucket Squatting](google-cloud-run-mcp-bucket-squatting.md)

@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [Kubeflow Pipelines Run-Log Authorization Bypass](kubeflow-pipelines-run-log-authorization-bypass.md)
+
 - [CreditNirvana Agentic AI Call Centre Client-Key Disclosure](creditnirvana-agentic-ai-call-centre-client-key-disclosure.md)
 - [MLflow CrewAI Autolog Provider-Key Trace Disclosure](mlflow-crewai-autolog-provider-key-trace-disclosure.md)
 - [Mem0 Session-Scope Cross-Tenant Disclosure](mem0-session-scope-cross-tenant-disclosure.md)

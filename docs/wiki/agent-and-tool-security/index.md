@@ -2,6 +2,16 @@
 
 ## Current Understanding
 
+- [Open CLI MCP OAuth Endpoint Command Injection](open-cli-mcp-oauth-endpoint-command-injection.md)
+- [Agno PandasTools Model-Controlled Reflection](agno-pandas-tools-model-controlled-reflection.md)
+- [n8n LangChain Code Node Task-Runner Isolation RCE](n8n-langchain-code-node-task-runner-isolation-rce.md)
+- [Zuke MCP Registry Launch-Host Authorization Bypass](zuke-mcp-registry-launch-host-authorization-bypass.md)
+- [DBHub Read-Only SQL Validator Bypass](dbhub-read-only-sql-validator-bypass.md)
+- [Flowise LangChain Allowlist vm2 Sandbox Escape](flowise-langchain-allowlist-vm2-sandbox-escape.md)
+- [Stirling-PDF AI HTML Agent SSRF and Local-File Read](stirling-pdf-ai-html-agent-ssrf-local-file-read.md)
+- [MoLing Loopback MCP Browser-Origin Session Hijack](moling-loopback-mcp-browser-origin-session-hijack.md)
+- [TAKO AI Agent Okta Script-Filter Bypass RCE](tako-ai-agent-okta-script-filter-bypass-rce.md)
+
 - [ai-sdlc MCP Repository Command Injection](ai-sdlc-mcp-repository-command-injection.md)
 - [Continue MCP Transport Command Injection](continue-mcp-transport-command-injection.md)
 - [Google Cloud MCP Toolbox Cloud-Storage File Boundary](google-cloud-mcp-toolbox-cloud-storage-file-boundary.md)

@@ -2,6 +2,13 @@
 
 ## Current Understanding
 
+- [Kubeflow Pipelines Artifact Namespace Authorization Bypass](kubeflow-pipelines-artifact-namespace-authorization-bypass.md)
+- [AI Engine MCP OAuth Client Registration Missing Authorization](ai-engine-mcp-oauth-client-registration-missing-authorization.md)
+- [Paperclip Agent API-Key Workspace Cleanup Command RCE](paperclip-agent-api-key-workspace-cleanup-command-rce.md)
+- [PDF Reader MCP HTTP API-Key Not Enforced](pdf-reader-mcp-http-api-key-not-enforced.md)
+- [RAGFlow Private Agent Authorization-Order Bypass](ragflow-private-agent-authorization-order-bypass.md)
+- [TAKO AI Agent Okta First-Admin Bootstrap Takeover](tako-ai-agent-okta-first-admin-bootstrap-takeover.md)
+
 - [Keepnet Agentic Ally Authentication Bypass](keepnet-agentic-ally-authentication-bypass.md)
 - [Frappe Builder LLM Credit Authorization Bypass](frappe-builder-llm-credit-authorization-bypass.md)
 

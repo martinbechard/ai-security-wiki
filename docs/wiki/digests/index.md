@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [October 2026](2026-10.md) records 22 independently maintained October 30 security boundaries across MCP and agent authority, model and ML runtime trust, tenant isolation, identity bootstrap, and rendering or browser exposure; each entry follows its control boundary rather than collector batch.
+
 - [October 2026](2026-10.md) records five item-level October 29 SuperAGI tenant-isolation, XAgent upload-containment, and Agent Zero delegated-write security boundaries; entries follow durable security boundaries rather than the collector batch.
 
 - Updated on 2026-10-28 with 13 item-level security entries for model-loading, agent-runtime authentication and SQL injection, MCP redirect credentials, and independently changing tool boundaries; ordering is reverse chronological and entries are not grouped by collector run. Source: [October 28 collector](../../../raw/processed/2026-10-28/ai-security-wiki-topic-news-collector-2026-10-28T233111Z.json).
@@ -42,6 +44,7 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 30 collector source](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json)
 - [October 29 collector source](../../../raw/processed/2026-10-29/ai-security-wiki-topic-news-collector-2026-10-29T232841Z.json)
 - [October 28 collector source](../../../raw/processed/2026-10-28/ai-security-wiki-topic-news-collector-2026-10-28T233111Z.json)
 - [October 27 topic collector source](../../../raw/processed/2026-10-27/ai-security-wiki-topic-news-collector-2026-10-27T232925Z.json)
