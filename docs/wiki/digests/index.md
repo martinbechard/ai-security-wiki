@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [October 2026](2026-10.md) records the October 31 DeepInfer unauthenticated profiling filesystem-write boundary; repeat AI Engine and Kubeflow records enrich existing leaves without duplicate digest entries.
+
 - [October 2026](2026-10.md) records 22 independently maintained October 30 security boundaries across MCP and agent authority, model and ML runtime trust, tenant isolation, identity bootstrap, and rendering or browser exposure; each entry follows its control boundary rather than collector batch.
 
 - [October 2026](2026-10.md) records five item-level October 29 SuperAGI tenant-isolation, XAgent upload-containment, and Agent Zero delegated-write security boundaries; entries follow durable security boundaries rather than the collector batch.
@@ -44,6 +46,7 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [October 31 collector source](../../../raw/processed/2026-10-31/ai-security-wiki-topic-news-collector-2026-10-31T232757Z.json)
 - [October 30 collector source](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json)
 - [October 29 collector source](../../../raw/processed/2026-10-29/ai-security-wiki-topic-news-collector-2026-10-29T232841Z.json)
 - [October 28 collector source](../../../raw/processed/2026-10-28/ai-security-wiki-topic-news-collector-2026-10-28T233111Z.json)

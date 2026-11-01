@@ -8,6 +8,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [DeepInfer Unauthenticated Profile Path Traversal](infrastructure-and-supply-chain/deepinfer-unauthenticated-profile-path-traversal.md)
 - [SuperAGI Agent-Inventory Tenant Isolation](identity-and-access/superagi-agent-inventory-tenant-isolation.md)
 - [SuperAGI Agent-Execution Metadata Tenant Isolation](identity-and-access/superagi-agent-execution-metadata-tenant-isolation.md)
 - [SuperAGI Agent-Execution Configuration Tenant Isolation](identity-and-access/superagi-agent-execution-configuration-tenant-isolation.md)

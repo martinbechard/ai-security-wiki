@@ -1,0 +1,208 @@
+{
+  "artifact_type": "public-ai-security-topic-news-collection",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-10-31T23:27:57Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-10-29T23:27:57Z",
+    "end_inclusive": "2026-10-31T23:27:57Z",
+    "rule": "Retain only sources with a visible publication or update timestamp strictly after the 48-hour cutoff and no later than collection time. Date-only records at the cutoff date are boundary-only and excluded."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent, tool, MCP, plugin, browser, delegated-authority, and autonomous-action security",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_policy": "Public sources only. Primary vendor, GitHub Advisory Database, and CVE-program-linked public evidence were preferred. No private, proprietary, sensitive, PII, or local repository content was sent to an external service.",
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-110732",
+      "title": "AI Engine WordPress MCP OAuth client registration lacks authorization",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-22w7-p44p-2gq7",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110732",
+        "https://plugins.trac.wordpress.org/changeset?reponame=&new=3760852%40ai-engine%2Ftags%2F3.8.7&old=3757660%40ai-engine%2Ftags%2F3.8.6"
+      ],
+      "visible_dates": {
+        "published_at": "2026-10-30T09:31:24Z",
+        "updated_at": "2026-10-30T09:31:30Z"
+      },
+      "evidence_classification": "GitHub Advisory Database high-severity unreviewed CVE record with public WordPress plugin source and release references",
+      "security_topics": ["agent and tool security", "MCP", "identity and authorization", "browser-mediated consent"],
+      "factual_summary": "AI Engine versions through 3.8.6 register the MCP OAuth 2.1 dynamic-client-registration endpoint with an always-allow permission callback. The record says an unauthenticated attacker can register a client using an attacker-controlled redirect URI and, after administrator consent, obtain an administrator-bound MCP token; the advisory also identifies absent anti-framing controls as enabling clickjacking of that consent step.",
+      "affected_boundary_or_version": "AI Engine WordPress plugin through 3.8.6; MCP OAuth dynamic client registration and administrator consent boundary. The referenced 3.8.7 tag is a likely fix boundary that must be confirmed from maintainer release material during ingest.",
+      "why_it_matters_for_ai_security": "It joins an MCP client-registration flaw to delegated administrator authority: consent and token binding can turn a public registration endpoint into administrator-level MCP tool access.",
+      "named_entities": ["AI Engine", "WordPress", "Model Context Protocol", "OAuth 2.1", "CVE-2026-110732", "GHSA-22w7-p44p-2gq7"],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki owns broad AI Engine, WordPress, MCP, and OAuth entity coverage.",
+        "security_wiki_retention": "Retain the authorization, redirect-URI, consent-clickjacking, token-binding, and MCP tool-authority implication here."
+      },
+      "confidence": "high for disclosure timing and vulnerability description; medium for fixed-version wording pending an explicit maintainer security release note.",
+      "follow_up_actions": ["Verify the maintained fixed release and whether 3.8.7 fully remediates all cited boundaries before durable synthesis.", "Avoid treating administrator approval as proof that a registered OAuth client is trustworthy."]
+    },
+    {
+      "id": "CVE-2026-118759",
+      "title": "Kubeflow Pipelines run-log endpoint permits cross-run log access",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-wg5q-x4j9-qm54",
+        "https://github.com/kubeflow/pipelines/security/advisories/GHSA-wg5q-x4j9-qm54",
+        "https://github.com/kubeflow/pipelines/releases/tag/2.18.0"
+      ],
+      "visible_dates": {
+        "published_at": "2026-10-30T23:13:29Z",
+        "updated_at": "2026-10-30T23:13:31Z"
+      },
+      "evidence_classification": "GitHub-reviewed high-severity maintainer advisory with linked fix pull request, commit, and release",
+      "security_topics": ["data security and privacy", "identity and authorization", "AI runtime and cloud deployment security"],
+      "factual_summary": "Kubeflow Pipelines' run-log handler retrieved live or archived logs without authorizing the caller against the selected run. The advisory says a caller able to reach the backend and possessing a victim run ID plus a suitable pod or node identifier could read logs, including an unrelated pod's main-container logs under stated conditions; those logs can contain sensitive workload data or credentials.",
+      "affected_boundary_or_version": "Kubeflow Pipelines API server versions through 2.17.3; package range below 0.0.0-20260904182349-be4723e33727. The advisory directs upgrade to 2.18.0 and says the fix authorizes the readLog verb and checks the pipeline/runid label for live logs.",
+      "why_it_matters_for_ai_security": "Shared ML-pipeline infrastructure must bind log access to the pipeline run, not merely to backend reachability. Logs are a frequent AI data and credential leakage boundary.",
+      "named_entities": ["Kubeflow Pipelines", "Kubernetes", "CVE-2026-118759", "GHSA-wg5q-x4j9-qm54", "readLog"],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki owns broad Kubeflow and pipeline-platform entity coverage.",
+        "security_wiki_retention": "Retain the run-scoped authorization, pod/run identity check, log-data exposure, and remediation evidence here."
+      },
+      "confidence": "high; the advisory is GitHub reviewed, gives exact timestamps, affected boundaries, mitigation, and release linkage.",
+      "follow_up_actions": ["During ingest, keep this distinct from the same-release archive-upload denial-of-service finding.", "Confirm any deployment-specific custom Kubernetes role grants after upgrading."]
+    },
+    {
+      "id": "CVE-2026-118761",
+      "title": "Kubeflow Pipelines archive upload can cause decompression-amplification denial of service",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-8fmv-6rg5-5924",
+        "https://github.com/kubeflow/pipelines/releases/tag/2.18.0",
+        "https://github.com/kubeflow/pipelines/pull/14171"
+      ],
+      "visible_dates": {
+        "published_at": "2026-10-30T23:13:38Z",
+        "updated_at": "2026-10-30T23:13:41Z"
+      },
+      "evidence_classification": "GitHub-reviewed high-severity maintainer advisory with linked remediation pull requests and product release",
+      "security_topics": ["AI runtime and cloud deployment security", "availability assurance", "pipeline artifact supply chain"],
+      "factual_summary": "Kubeflow Pipelines decompressed uploaded ZIP or gzip-compressed tar pipeline archives without adequate expansion bounds before namespace authorization. The advisory says a small archive can consume disproportionate API-server memory and interrupt service; it describes 2.18.0 changes that bound compressed input, extracted pipeline data, and tar traversal budgets.",
+      "affected_boundary_or_version": "Kubeflow Pipelines API server versions through 2.17.3; pipeline and pipeline-version upload processing. The advisory directs upgrade to 2.18.0 and advises restricting upload/import reachability plus applying request and resource limits until upgraded.",
+      "why_it_matters_for_ai_security": "ML pipeline archives are AI deployment artifacts. This demonstrates that authorization sequencing and resource budgets are release-gate controls, not merely performance settings.",
+      "named_entities": ["Kubeflow Pipelines", "ZIP", "gzip", "CVE-2026-118761", "GHSA-8fmv-6rg5-5924"],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki owns broad Kubeflow and ML-pipeline coverage.",
+        "security_wiki_retention": "Retain the decompression-amplification boundary, authorization ordering, artifact-upload controls, and fixed release here."
+      },
+      "confidence": "high for the advisory and mitigation; deployment-specific resource exhaustion depends on configured limits and concurrent activity, as the advisory notes.",
+      "follow_up_actions": ["Keep this as a separate availability and artifact-boundary record from CVE-2026-118759.", "Check deployment-level request, disk, CPU, and concurrency limits rather than relying only on compressed-upload size."]
+    },
+    {
+      "id": "CVE-2026-120204",
+      "title": "DeepInfer unauthenticated profiling endpoint permits path traversal and trace-file writes",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-qv68-3gfq-wxpc",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-120204",
+        "https://github.com/deepseek-ai/DeepInfer/pull/242",
+        "https://github.com/deepseek-ai/DeepInfer/blob/553741557a57df44a46fb3ab72b6aafeaf945337/deepinfer/engine/profile_server.py#L210"
+      ],
+      "visible_dates": {
+        "published_at": "2026-10-31T18:30:23Z",
+        "updated_at": "2026-10-31T18:30:29Z"
+      },
+      "evidence_classification": "Public CVE record assigned by VulnCheck and mirrored in the GitHub Advisory Database; linked product source and patch pull request",
+      "security_topics": ["AI runtime security", "deployment security", "filesystem boundary", "availability"],
+      "factual_summary": "DeepInfer through 0.1.0 exposes an unauthenticated /profile endpoint whose output_dir parameter permits path traversal. The public record says an attacker can create arbitrary directories and write Chrome trace files, with disk or inode exhaustion and filesystem-oracle behavior possible through error messages.",
+      "affected_boundary_or_version": "deepseek-ai/DeepInfer through 0.1.0; unauthenticated /profile output_dir handling. The public record links pull request 242 but does not name a released fixed version.",
+      "why_it_matters_for_ai_security": "Inference and profiling surfaces are part of the AI runtime attack surface. An unauthenticated diagnostic endpoint can bridge remote access to host filesystem effects and denial of service.",
+      "named_entities": ["DeepInfer", "DeepSeek-AI", "CVE-2026-120204", "GHSA-qv68-3gfq-wxpc", "Chrome trace"],
+      "upstream_routing": {
+        "entity_owner": "ai-wiki owns broad DeepInfer and DeepSeek-AI entity coverage.",
+        "security_wiki_retention": "Retain the unauthenticated profiling-service, filesystem traversal, trace-output, and remediation-gap analysis here."
+      },
+      "confidence": "medium-high: precise same-day CVE and advisory timestamps plus linked source evidence are available, but no maintained fixed release is identified in the public record.",
+      "follow_up_actions": ["Reconcile pull request 242 with a maintainer-tagged release before declaring an upgrade target.", "Restrict or disable unauthenticated profiling endpoints pending a verified fix."]
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity": "AI Engine, WordPress, MCP, OAuth 2.1",
+      "owner": "ai-wiki for broad entity coverage",
+      "local_scope": "MCP dynamic-registration authorization, redirect URI, consent-clickjacking, and administrator token boundary"
+    },
+    {
+      "entity": "Kubeflow Pipelines and Kubernetes",
+      "owner": "ai-wiki for broad entity coverage",
+      "local_scope": "run-log authorization, artifact-upload decompression controls, deployment resource and access boundaries"
+    },
+    {
+      "entity": "DeepInfer and DeepSeek-AI",
+      "owner": "ai-wiki for broad entity coverage",
+      "local_scope": "unauthenticated profiling service, path traversal, filesystem write, and availability risk"
+    },
+    {
+      "entity": "general AI-assisted development remediation practices",
+      "owner": "ai-dev-wiki",
+      "local_scope": "No general development-practice article was retained; only security-specific control implications remain in this repository."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CrowdStrike prompt-injection taxonomy article",
+      "source_url": "https://www.crowdstrike.com/en-us/blog/new-prompt-injection-techniques-cover-agent-planning-attacks/",
+      "visible_date": "2026-10-29",
+      "reason": "Date-only source on the cutoff calendar date; its publication time is not visible, so it is boundary-only under the exact 48-hour rule."
+    },
+    {
+      "candidate": "@sylphx/pdf-reader-mcp unauthenticated HTTP transport advisory",
+      "source_url": "https://github.com/advisories?query=cwe%3A306",
+      "visible_date": "2026-10-29",
+      "reason": "MCP-relevant but the visible date is date-only on the cutoff calendar date, so it is boundary-only."
+    },
+    {
+      "candidate": "CVE-2026-119567 / claimed Agentfront mcp-from-openapi SSRF search result",
+      "source_url": "https://github.com/advisories/GHSA-9f6m-7pvr-9832",
+      "visible_date": "2026-10-30T12:31:22Z",
+      "reason": "Primary GitHub API verification shows this CVE is a vsftpd command-alias issue, not an Agentfront or AI/MCP finding; excluded as a search-result false association."
+    },
+    {
+      "candidate": "Chrome CVE-2026-76029 browser patch",
+      "source_url": "https://github.com/advisories/GHSA-72w3-57x2-f2v2",
+      "visible_date": "2026-10-30T03:32:02Z",
+      "reason": "Concrete browser vulnerability but its advisory does not identify an AI, agent, MCP, delegated-authority, or AI-runtime security boundary; excluded to avoid treating general browser patching as AI-security news."
+    },
+    {
+      "candidate": "OpenAI Hugging Face incident retrospective",
+      "source_url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+      "visible_date": "published approximately two months before collection",
+      "reason": "Relevant incident analysis but outside the 48-hour window."
+    },
+    {
+      "candidate": "General AI-agent malware reports published October 26",
+      "source_url": "https://www.techradar.com/pro/security/ai-agents-tricked-by-a-rogue-downloads-file-into-running-dangerous-malware",
+      "visible_date": "2026-10-26T16:15:00Z",
+      "reason": "Outside the 48-hour window."
+    },
+    {
+      "candidate": "General October AI-agent and MCP roundups",
+      "source_url": "https://ai-solutions.wiki/news/ai-agent-security-roundup-october-2026/",
+      "visible_date": "2026-10-24 or earlier summary coverage",
+      "reason": "Roundup material was not a newly published concrete security change inside the window; individual primary advisories were preferred."
+    }
+  ],
+  "collection_notes": {
+    "qualifying_count": 4,
+    "exclusion_count": 7,
+    "routing_count": 4,
+    "deduplication_note": "The two Kubeflow findings share a product and release target but are retained as separate records because authorization/data exposure and decompression availability are independent security boundaries.",
+    "blockers": [],
+    "caveats": [
+      "Two retained CVE records are not accompanied by a separate vendor security bulletin; their primary public evidence is the GitHub Advisory Database plus linked source, patch, and release material.",
+      "DeepInfer has a linked patch pull request but no named maintainer-released fixed version in the captured public record.",
+      "No docs/wiki or raw/processed content was changed by this collector."
+    ]
+  },
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed"
+  }
+}

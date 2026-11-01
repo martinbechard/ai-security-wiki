@@ -3,6 +3,7 @@
 ## Current Understanding
 
 - [Crawl4AI Untrusted Model-Name Pickle Loading](crawl4ai-untrusted-model-name-pickle-loading.md)
+- [DeepInfer Unauthenticated Profile Path Traversal](deepinfer-unauthenticated-profile-path-traversal.md)
 - [Kubeflow Pipelines Volume Artifact Path Traversal](kubeflow-pipelines-volume-artifact-path-traversal.md)
 - [Kubeflow Pipelines Archive Decompression Resource Exhaustion](kubeflow-pipelines-archive-decompression-resource-exhaustion.md)
 - [LM Studio Model Downloader Path Traversal Plugin Persistence](lm-studio-model-downloader-path-traversal-plugin-persistence.md)
@@ -72,6 +73,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 ## Leaf Pages
 
 - [llama.cpp Crafted GGUF Memory Corruption](llama-cpp-crafted-gguf-memory-corruption.md)
+- [DeepInfer Unauthenticated Profile Path Traversal](deepinfer-unauthenticated-profile-path-traversal.md)
 - [Unsloth Model-Loader Configuration Code Injection](unsloth-model-loader-configuration-code-injection.md)
 - [NVIDIA NeMo Agent Toolkit SQL Injection](nvidia-nemo-agent-toolkit-sql-injection.md)
 
@@ -240,6 +242,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 ## Maintenance Notes
 
 - Updated on 2026-10-27 with separate MLflow prompt-source local-file-read and GenAI scorer code-execution leaves.
+- Updated on 2026-10-31 with DeepInfer unauthenticated profiling path-traversal containment.
 - Updated on 2026-10-26 with Cloud Run MCP bucket provenance, ONNX shape-inference, vLLM shared-memory serialization, and image-decoder dependency boundaries.
 
 - Updated on 2026-10-20 after watcher review clarified that Doctor-Dignity public-exploit reporting remains unverified.
