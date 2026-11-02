@@ -127,6 +127,7 @@ This topic owns AI-specific sensitive-data exposure, training and retrieval data
 - [SQLBot Assistant SVG stored XSS](sqlbot-assistant-svg-stored-xss.md)
 - [SQLBot previewData SQL file disclosure](sqlbot-previewdata-sql-file-disclosure.md)
 - [AI Agent Automation memory ownership bypass](ai-agent-automation-memory-ownership-bypass.md)
+- [ag-ui HttpAgent Remote Information Disclosure](ag-ui-httpagent-remote-information-disclosure.md)
 
 ## Authoritative Sources
 

@@ -212,6 +212,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 - [CordysCRM ORDER BY SQL injection](cordyscrm-orderby-sql-injection.md)
 - [CordysCRM sort.name database function injection](cordyscrm-sort-name-database-function-injection.md)
 - [CordysCRM workflow webhook SSRF](cordyscrm-workflow-webhook-ssrf.md)
+- [Prefab UI Generative Sandbox Deno-Permission Escape](prefab-ui-generative-sandbox-deno-permission-escape.md)
 
 ## Authoritative Sources
 

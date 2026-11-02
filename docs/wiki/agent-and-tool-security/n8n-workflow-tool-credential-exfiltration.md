@@ -13,6 +13,8 @@ The [September 3 topic collector source](../../../raw/processed/2026-09-03/ai-se
 
 [NVD](https://nvd.nist.gov/vuln/detail/CVE-2026-85166), the [direct CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-85166), the [GitHub advisory GHSA-4r56-g65c-fm83](https://github.com/n8n-io/n8n/security/advisories/GHSA-4r56-g65c-fm83), and the [VulnCheck advisory](https://www.vulncheck.com/advisories/n8n-before-2.36.2-credential-exfiltration-via-workflow-tool-node) describe a shared-workflow editor or API user persisting a Workflow Tool node that references a credential they do not own. Later execution by an identity that does own the credential can resolve the secret and send it to an attacker-controlled endpoint.
 
+The [November 2 leaf update watch source](../../../raw/processed/2026-11-02/ai-security-wiki-leaf-update-watch-20261102T010431Z.json) records a visible October 29 CVE Services metadata update. It restates the credential-reference validation boundary but does not establish confirmed exploitation or change the fixed-version guidance.
+
 ## Security Impact
 
 - Threat: workflow authors can create delayed credential exfiltration through inline sub-workflow references.
@@ -35,6 +37,7 @@ The [September 3 topic collector source](../../../raw/processed/2026-09-03/ai-se
 - [CVE-2026-85166 direct CVE record](https://cveawg.mitre.org/api/cve/CVE-2026-85166)
 - [GitHub advisory GHSA-4r56-g65c-fm83](https://github.com/n8n-io/n8n/security/advisories/GHSA-4r56-g65c-fm83)
 - [VulnCheck n8n Workflow Tool advisory](https://www.vulncheck.com/advisories/n8n-before-2.36.2-credential-exfiltration-via-workflow-tool-node)
+- [November 2 leaf update watch source](../../../raw/processed/2026-11-02/ai-security-wiki-leaf-update-watch-20261102T010431Z.json)
 
 ## Related Code
 
@@ -62,3 +65,4 @@ The [September 3 topic collector source](../../../raw/processed/2026-09-03/ai-se
 ## Maintenance Notes
 
 - Created on 2026-09-03 from the [September 3 topic collector](../../../raw/processed/2026-09-03/ai-security-wiki-topic-news-collector-2026-09-03T233104Z.json) as a credential-ownership leaf after routing broad n8n product context upstream.
+- Updated on 2026-11-02 from the November 2 leaf watcher; the CVE Services metadata update adds provenance only.

@@ -183,6 +183,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 - [Meta Ads MCP operator token fallback](meta-ads-mcp-operator-token-fallback.md)
 - [Online Scheduling AI booking conversation authorization](online-scheduling-ai-booking-conversation-authorization.md)
 - [Better Messages AI chatbot authorization cluster](better-messages-ai-chatbot-authorization-cluster.md)
+- [astron-agent Knowledge-Space Authorization Bypass](astron-agent-knowledge-space-authorization-bypass.md)
 
 ## Authoritative Sources
 

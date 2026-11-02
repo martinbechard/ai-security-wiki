@@ -8,6 +8,10 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [astron-agent Knowledge-Space Authorization Bypass](identity-and-access/astron-agent-knowledge-space-authorization-bypass.md)
+- [github-kanban-mcp-server Issue-List Command Injection](agent-and-tool-security/github-kanban-mcp-server-issue-list-command-injection.md)
+- [ag-ui HttpAgent Remote Information Disclosure](data-and-privacy/ag-ui-httpagent-remote-information-disclosure.md)
+- [Prefab UI Generative Sandbox Deno-Permission Escape](infrastructure-and-supply-chain/prefab-ui-generative-sandbox-deno-permission-escape.md)
 - [DeepInfer Unauthenticated Profile Path Traversal](infrastructure-and-supply-chain/deepinfer-unauthenticated-profile-path-traversal.md)
 - [SuperAGI Agent-Inventory Tenant Isolation](identity-and-access/superagi-agent-inventory-tenant-isolation.md)
 - [SuperAGI Agent-Execution Metadata Tenant Isolation](identity-and-access/superagi-agent-execution-metadata-tenant-isolation.md)

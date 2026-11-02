@@ -1,0 +1,132 @@
+{
+  "artifact_type": "leaf_update_watch",
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_timestamp": "2026-11-02T01:04:31Z",
+  "cutoff_window": {
+    "start_inclusive": "2026-10-25T00:00:00Z",
+    "end_inclusive": "2026-11-02T01:04:31Z",
+    "date_policy": "Only public sources with a visible publication or update date in the seven-day window qualify. HTTP headers alone do not qualify."
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/agent-s-gui-action-denial-of-service.md",
+    "docs/wiki/agent-and-tool-security/n8n-workflow-tool-credential-exfiltration.md",
+    "docs/wiki/agent-and-tool-security/openbrowser-browser-agent-message-denial-of-service.md",
+    "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md",
+    "docs/wiki/identity-and-access/agentimus-ai-seo-mcp-wordpress-broken-access-control.md",
+    "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+    "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md",
+    "docs/wiki/identity-and-access/mountdev-ai-mcp-connector-wordpress-authorization-bypass.md",
+    "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+    "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-supply-chain-provenance-credentialing.md",
+    "docs/wiki/infrastructure-and-supply-chain/ollama-tensor-blob-redirect-ssrf.md",
+    "docs/wiki/threats-and-attacks/agentic-ai-threat-cluster.md",
+    "docs/wiki/agent-and-tool-security/awslabs-postgres-mcp-server-readonly-bypass.md"
+  ],
+  "sources_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-84887",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-85166",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-84833",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-84779",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-85306",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-85180",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-85787",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-63127",
+    "https://junie.jetbrains.com/docs/junie-cli-configuration.html",
+    "https://junie.jetbrains.com/docs/junie-cli.html",
+    "https://junie.jetbrains.com/docs/junie-headless.html",
+    "https://junie.jetbrains.com/docs/action-allowlist.html",
+    "https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance",
+    "https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean"
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_ids": [
+        "docs/wiki/agent-and-tool-security/n8n-workflow-tool-credential-exfiltration.md"
+      ],
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-85166",
+      "visible_update_at": "2026-10-29T21:16:58.264Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "summary": "CVE Services visibly updated the VulnCheck CNA record for the n8n Workflow Tool credential-reference validation vulnerability. The record continues to describe credential exfiltration when a later execution identity resolves a credential referenced by an unprivileged workflow editor.",
+      "affected_boundaries": [
+        "shared workflow editor or API authorization",
+        "credential-reference ownership validation",
+        "delegated workflow execution"
+      ],
+      "named_entities": [
+        "n8n",
+        "CVE-2026-85166",
+        "VulnCheck"
+      ],
+      "upstream_routing": "Keep locally: the update concerns a security-specific credential and workflow authorization boundary; broad n8n product context remains upstream.",
+      "follow_up_note": "Compare the current CVE record with the September 3 capture before any durable-leaf edit; the visible in-window metadata update does not establish confirmed exploitation."
+    },
+    {
+      "leaf_ids": [
+        "docs/wiki/identity-and-access/development-agent-credential-isolation.md",
+        "docs/wiki/infrastructure-and-supply-chain/agent-build-and-dependency-execution-boundaries.md",
+        "docs/wiki/infrastructure-and-supply-chain/ai-development-workstation-containment.md"
+      ],
+      "source_url": "https://junie.jetbrains.com/docs/junie-cli-configuration.html",
+      "visible_update_at": "2026-10-30",
+      "evidence_classification": "control_change",
+      "summary": "JetBrains visibly updated Junie CLI configuration and related trust-control documentation. The public pages retain the security-relevant distinction between interactive trust decisions, isolated untrusted-project storage, explicitly supplied configuration paths, and non-interactive modes that load project-provided inputs without a prompt.",
+      "affected_boundaries": [
+        "development-agent credential discovery",
+        "project configuration and hook loading",
+        "MCP, skill, command, and agent discovery",
+        "CI and headless project trust"
+      ],
+      "named_entities": [
+        "JetBrains Junie CLI",
+        "Junie project trust",
+        "MCP"
+      ],
+      "supporting_source_urls": [
+        "https://junie.jetbrains.com/docs/junie-cli.html",
+        "https://junie.jetbrains.com/docs/junie-headless.html",
+        "https://junie.jetbrains.com/docs/action-allowlist.html"
+      ],
+      "upstream_routing": "Keep locally: this is a security-control change about trust and execution boundaries; broad Junie product coverage remains upstream.",
+      "follow_up_note": "Compare the October 30 documentation state with the September captures before synthesis. Treat the visible document date as a control-change signal, not proof of a newly disclosed vulnerability or changed runtime behavior beyond the documented statements."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_ids": [
+        "docs/wiki/agent-and-tool-security/agent-s-gui-action-denial-of-service.md",
+        "docs/wiki/agent-and-tool-security/openbrowser-browser-agent-message-denial-of-service.md",
+        "docs/wiki/identity-and-access/agentimus-ai-seo-mcp-wordpress-broken-access-control.md",
+        "docs/wiki/identity-and-access/mountdev-ai-mcp-connector-wordpress-authorization-bypass.md",
+        "docs/wiki/infrastructure-and-supply-chain/ollama-tensor-blob-redirect-ssrf.md",
+        "docs/wiki/agent-and-tool-security/awslabs-postgres-mcp-server-readonly-bypass.md",
+        "docs/wiki/identity-and-access/mcp-sdk-oauth-issuer-binding.md"
+      ],
+      "reason": "Direct CVE or release records had visible publication or update dates from July through September 2026, outside the strict seven-day window."
+    },
+    {
+      "leaf_ids": [
+        "docs/wiki/data-and-privacy/codex-training-data-controls-and-enforcement.md"
+      ],
+      "reason": "The cited OpenAI Help Center page was access-blocked for this public check and did not expose a visible in-window update date; no qualifying claim was inferred from headers or adjacent release notes."
+    },
+    {
+      "leaf_ids": [
+        "docs/wiki/incident-response/agent-cyberattack-disclosure-and-traceability.md",
+        "docs/wiki/threats-and-attacks/agentic-ai-threat-cluster.md",
+        "docs/wiki/infrastructure-and-supply-chain/ai-supply-chain-provenance-credentialing.md"
+      ],
+      "reason": "Cited public source dates were stale, absent, or did not establish a security-specific same-leaf update in the window."
+    }
+  ],
+  "federation": {
+    "applied": true,
+    "note": "Only security-specific vulnerability and control-boundary evidence is retained locally. Broad product, company, and development-practice context remains routed to ai-wiki or ai-dev-wiki."
+  },
+  "validation": {
+    "json": "jq empty and python3 -m json.tool passed",
+    "ledger": "jq empty and python3 -m json.tool passed"
+  }
+}

@@ -390,6 +390,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [MCPVault recursive metadata path filtering](mcpvault-recursive-metadata-path-filtering.md)
 - [Sentry Seer telemetry agent execution](sentry-seer-telemetry-agent-execution.md)
 - [Plugin4Shell coding-agent plugin version bypass](plugin4shell-coding-agent-plugin-version-bypass.md)
+- [github-kanban-mcp-server Issue-List Command Injection](github-kanban-mcp-server-issue-list-command-injection.md)
 
 ## Authoritative Sources
 

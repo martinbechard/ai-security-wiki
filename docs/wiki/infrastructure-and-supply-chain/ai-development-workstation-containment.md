@@ -42,6 +42,8 @@ The [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-se
 
 The [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json) adds current [Junie Headless mode](https://junie.jetbrains.com/docs/junie-headless.html) evidence that interactive Junie CLI launches enforce project trust before loading project-scoped inputs, while non-interactive one-shot prompts, piped-input tasks, ACP, and Gateway cannot ask for a trust decision and are trusted by design. Those modes can load project Junie configuration, MCP servers, hooks, agents, skills, and guidelines without prompting, so they belong only in repositories already treated as trusted.
 
+The [November 2 leaf update watch source](../../../raw/processed/2026-11-02/ai-security-wiki-leaf-update-watch-20261102T010431Z.json) records a visible October 30 documentation update that preserves this boundary: isolated storage and prompts apply to interactive trust decisions, while non-interactive execution needs an already trusted repository and reviewed project-provided inputs.
+
 ## Control Implications
 
 - For Codex, require the managed elevated Windows sandbox and verify its dedicated lower-privilege sandbox accounts.
@@ -67,6 +69,7 @@ The [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-
 - [August 10 leaf update watch source](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json)
 - [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json)
 - [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json)
+- [November 2 leaf update watch source](../../../raw/processed/2026-11-02/ai-security-wiki-leaf-update-watch-20261102T010431Z.json)
 
 ## Related Code
 
@@ -97,3 +100,4 @@ The [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-
 - Updated on 2026-08-09 from the [August 10 watcher](../../../raw/processed/2026-08-09/ai-security-wiki-leaf-update-watch-20260810T000240Z.json) with visible 2026-08-05 Junie restricted-mode evidence and the same non-interactive rollout-state boundary.
 - Updated on 2026-08-16 from the [August 16 leaf watcher](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) with trust-marker revocation and config-location override boundaries.
 - Updated on 2026-09-04 from the [September 4 leaf watcher](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json) with Junie non-interactive trusted-by-design evidence for one-shot, piped-input, ACP, and Gateway runs.
+- Updated on 2026-11-02 from the November 2 leaf watcher with visible Junie trust-mode documentation; it does not establish new runtime behavior beyond the documented controls.

@@ -1,0 +1,198 @@
+{
+  "artifact_type": "ai_security_topic_news_collection",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-11-02T00:35:00Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-10-31T00:35:00Z",
+    "end_inclusive": "2026-11-02T00:35:00Z",
+    "rule": "Retain only a source whose visible publication or update timestamp is strictly after the 48-hour cutoff and no later than collection time. Date-only dates at the cutoff boundary are excluded."
+  },
+  "source_policy": {
+    "public_only": true,
+    "preferred_evidence": [
+      "NVD CVE API and public CVE records",
+      "maintainer security advisories, patches, and release records when linked by the vulnerability record"
+    ],
+    "private_or_sensitive_content_sent_to_external_services": false
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "collection_notes": [
+    "Queried the public NVD CVE API for records last modified from 2026-10-31T00:35:00Z through 2026-11-02T00:35:00Z, then filtered for AI, ML, LLM, agent, and MCP relevance.",
+    "Checked local processed raw history and existing local leaves before retaining a finding. This collector is raw-only: no docs/wiki page or raw/processed artifact was changed.",
+    "NVD is the visible-date authority for the two October 31 updates. The linked maintainer references are recorded for ingest-time reconciliation."
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-116340",
+      "title": "iFlytek astron-agent knowledge-space authorization bypass",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-116340",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-116340",
+        "https://github.com/Rinne666/poc/tree/main/astron-agent-poc"
+      ],
+      "visible_dates": {
+        "published": "2026-10-26T15:16:40.013Z",
+        "last_modified": "2026-10-31T02:17:31.210Z",
+        "qualifying_date": "2026-10-31T02:17:31.210Z",
+        "qualification_basis": "NVD visible last-modified timestamp within the exact collection window"
+      },
+      "evidence_classification": "public NVD vulnerability record; referenced public proof-of-concept",
+      "factual_summary": "NVD states that astron-agent through 1.1.2 lets an authenticated remote caller manipulate the knowledge-list space-id argument and bypass authorization. The record says public exploit material exists; its CISA SSVC entry records proof-of-concept exploitation status.",
+      "affected_boundary_or_version": "astron-agent Console Knowledge-List Endpoint, FileInfoV2Service.listKnowledgeByPage; versions through 1.1.2; remote authenticated caller",
+      "why_it_matters_for_ai_security": "Knowledge-space isolation is a tenant and data-boundary control for agent knowledge stores. A caller who can select another space can expose data outside the authority granted to an AI workflow or its user.",
+      "named_entities": ["iFlytek", "astron-agent", "CVE-2026-116340", "CISA SSVC"],
+      "upstream_routing": "The astron-agent product/entity background belongs in ai-wiki. Retain only the authorization and knowledge-boundary implication in this security wiki.",
+      "confidence": "medium: NVD has precise affected component, version, and update timestamp, but the vendor response and fixed release are not established in the cited record.",
+      "follow_up_actions": [
+        "At ingest, verify whether an upstream astron-agent entity page already exists and link it rather than duplicating product background.",
+        "Locate a maintainer advisory or release before stating remediation; do not infer a fixed version from the proof-of-concept."
+      ]
+    },
+    {
+      "id": "CVE-2026-116369",
+      "title": "github-kanban-mcp-server issue-list command injection",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-116369",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-116369",
+        "https://github.com/Sunwood-ai-labs/github-kanban-mcp-server/commit/253d93bbdf7ee9fe42bd8fdf15feea93ae59cbae",
+        "https://github.com/Sunwood-ai-labs/github-kanban-mcp-server/releases/tag/v0.4.1"
+      ],
+      "visible_dates": {
+        "published": "2026-10-26T16:17:18.360Z",
+        "last_modified": "2026-10-31T02:17:31.363Z",
+        "qualifying_date": "2026-10-31T02:17:31.363Z",
+        "qualification_basis": "NVD visible last-modified timestamp within the exact collection window"
+      },
+      "evidence_classification": "public NVD vulnerability record with linked maintainer patch and release",
+      "factual_summary": "NVD describes OS command injection in github-kanban-mcp-server's handleListIssues path when state or labels arguments are manipulated. It identifies version 0.4.1 and patch 253d93bbdf7ee9fe42bd8fdf15feea93ae59cbae as remediation references.",
+      "affected_boundary_or_version": "Sunwood-ai-labs github-kanban-mcp-server through 0.4.0; handleListIssues; remote attack path with user interaction required according to the NVD CVSS record; fixed in 0.4.1 per linked release",
+      "why_it_matters_for_ai_security": "An MCP server converts agent-provided issue filters into an operating-system command boundary. Input that reaches a shell can turn a seemingly read-oriented tool call into host compromise.",
+      "named_entities": ["Sunwood-ai-labs", "github-kanban-mcp-server", "MCP", "CVE-2026-116369"],
+      "upstream_routing": "The MCP server catalog and general product context are upstream ai-wiki material. This repository owns the agent-to-host command-execution boundary and remediation evidence.",
+      "confidence": "high: NVD record names the affected function and version boundary and links both a patch commit and 0.4.1 release.",
+      "follow_up_actions": [
+        "At ingest, confirm the patch changes the argument-to-command construction before writing control guidance.",
+        "Keep this distinct from other MCP command-injection records because its boundary is issue-list filtering."
+      ]
+    },
+    {
+      "id": "CVE-2026-120233",
+      "title": "ag-ui HttpAgent remote information disclosure",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-120233",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-120233",
+        "https://github.com/ag-ui-protocol/ag-ui/issues/2520",
+        "https://github.com/ag-ui-protocol/ag-ui/pull/2575"
+      ],
+      "visible_dates": {
+        "published": "2026-11-01T16:18:14.290Z",
+        "last_modified": "2026-11-01T16:18:14.290Z",
+        "qualifying_date": "2026-11-01T16:18:14.290Z",
+        "qualification_basis": "NVD visible publication timestamp within the exact collection window"
+      },
+      "evidence_classification": "public NVD vulnerability record with linked public issue and patch proposal",
+      "factual_summary": "NVD reports remote information disclosure in ag-ui through 0.0.58 in the TypeScript client HttpAgent component. The record says public exploit material exists and links an issue and pending pull request.",
+      "affected_boundary_or_version": "ag-ui TypeScript client sdks/typescript/packages/client/src/agent/http.ts; versions through 0.0.58; remote unauthenticated vector in the cited CVSS record",
+      "why_it_matters_for_ai_security": "Agent-client transports often carry model context, tool results, and user data. A disclosure defect at the HttpAgent boundary can expose that context outside the intended caller or service boundary.",
+      "named_entities": ["ag-ui-protocol", "ag-ui", "HttpAgent", "CVE-2026-120233"],
+      "upstream_routing": "General AG-UI protocol and package background belongs in ai-wiki. Preserve the security-specific transport-disclosure implication and unresolved patch status locally.",
+      "confidence": "medium: NVD provides a precise file and version range, but its record does not describe the disclosure mechanism and the linked fix is still a pull request.",
+      "follow_up_actions": [
+        "Review the linked issue and pull request during ingest to identify the disclosed data and the accepted fixed release.",
+        "Do not assert that a patch is released until the project publishes a release record."
+      ]
+    },
+    {
+      "id": "CVE-2026-120338",
+      "title": "Prefab UI generative sandbox Deno-permission escape",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-120338",
+        "https://services.nvd.nist.gov/rest/json/cves/2.0/?cveId=CVE-2026-120338",
+        "https://github.com/PrefectHQ/prefab/security/advisories/GHSA-595q-jv4r-q7j9",
+        "https://github.com/PrefectHQ/prefab/commit/030f074f85e0b1be0dd44b0283185aecb26337a2",
+        "https://github.com/PrefectHQ/prefab/releases/tag/v0.21.0"
+      ],
+      "visible_dates": {
+        "published": "2026-11-01T16:18:14.970Z",
+        "last_modified": "2026-11-01T16:18:14.970Z",
+        "qualifying_date": "2026-11-01T16:18:14.970Z",
+        "qualification_basis": "NVD visible publication timestamp within the exact collection window"
+      },
+      "evidence_classification": "public NVD vulnerability record with linked GitHub security advisory, patch, and release records",
+      "factual_summary": "NVD states that Prefab UI's Generative UI sandbox allowed caller-supplied Python to reach unrestricted Deno read, write, and network APIs through Pyodide's JavaScript bridge. In FastMCP deployments using the GenerativeUI provider, a reachable generate_prefab_ui tool could forward code into that boundary. Affected versions are 0.14.0 through 0.20.2; 0.21.0 revokes permissions before code acceptance and starts Deno with --no-prompt.",
+      "affected_boundary_or_version": "prefab-ui Generative UI sandbox; 0.14.0 through 0.20.2; FastMCP GenerativeUI provider integration; fixed in 0.21.0",
+      "why_it_matters_for_ai_security": "Code drafted by an LLM or supplied through an agent-facing UI tool must remain confined. A sandbox with inherited host file and network permissions converts an autonomous code-generation feature into a server-level execution boundary.",
+      "named_entities": ["PrefectHQ", "Prefab UI", "Pyodide", "Deno", "FastMCP", "GenerativeUI", "CVE-2026-120338", "GHSA-595q-jv4r-q7j9"],
+      "upstream_routing": "Prefab UI, FastMCP, Pyodide, and Deno product background belong in ai-wiki. This security wiki owns the sandbox-permission escape, exposed agent-tool condition, and 0.21.0 mitigation boundary.",
+      "confidence": "high: NVD gives the full affected and fixed ranges, specific mitigation mechanics, integration condition, and linked advisory/patch/release evidence.",
+      "follow_up_actions": [
+        "At ingest, verify the GitHub advisory and 0.21.0 release still expose the stated fixed-version boundary.",
+        "Create a local security leaf focused on permission revocation and tool reachability, not a duplicate Prefab UI product page."
+      ]
+    }
+  ],
+  "upstream_routing_notes": [
+    {"entity": "astron-agent", "owner": "ai-wiki", "local_retention": "knowledge-store authorization boundary"},
+    {"entity": "github-kanban-mcp-server", "owner": "ai-wiki", "local_retention": "MCP issue-filter to host-command boundary"},
+    {"entity": "ag-ui", "owner": "ai-wiki", "local_retention": "agent transport information-disclosure boundary"},
+    {"entity": "Prefab UI / FastMCP / Pyodide / Deno", "owner": "ai-wiki", "local_retention": "agent-facing generated-code sandbox permission escape and mitigation"}
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-115917 vLLM wildcard CORS browser access",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115917",
+      "visible_date": "2026-10-31T02:17:29.527Z",
+      "reason": "Already captured in raw/processed/2026-10-26/ai-security-wiki-topic-news-collector-2026-10-26T233009Z.json; the in-window NVD timestamp is not evidence of a newly identified security change for this collector."
+    },
+    {
+      "candidate": "CVE-2026-115921 ONNX untrusted-model shape-inference denial of service",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-115921",
+      "visible_date": "2026-10-31T02:17:29.657Z",
+      "reason": "Already captured in raw/processed/2026-10-26/ai-security-wiki-topic-news-collector-2026-10-26T233009Z.json; suppress duplicate coverage."
+    },
+    {
+      "candidate": "CVE-2026-116816 llama.cpp crafted-GGUF memory corruption",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-116816",
+      "visible_date": "2026-10-31T03:17:17.683Z",
+      "reason": "Already captured in raw/processed/2026-10-28/ai-security-wiki-topic-news-collector-2026-10-28T233111Z.json; suppress duplicate coverage."
+    },
+    {
+      "candidate": "CVE-2026-11850 MIT krb5 LDAP KDB integer underflow",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-11850",
+      "visible_date": "2026-10-31T16:17:01.297Z",
+      "reason": "Keyword match arose from the word 'agent' in the description, but the record is not AI-system security."
+    },
+    {
+      "candidate": "CISA AI guidance search",
+      "source_url": "https://www.cisa.gov/news-events/alerts",
+      "visible_date": null,
+      "reason": "No newly published or visibly updated, in-window AI-specific advisory with a concrete security delta was located in the public alert search."
+    },
+    {
+      "candidate": "GitHub global advisory API update search",
+      "source_url": "https://api.github.com/advisories?updated=2026-10-31T00:35:00Z&per_page=100",
+      "visible_date": null,
+      "reason": "The public endpoint returned no records for the query. Individual linked GitHub advisory and patch URLs remain follow-up sources for the retained findings."
+    }
+  ],
+  "validation": {
+    "jq_empty": "passed",
+    "python_json_tool": "passed",
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false
+  },
+  "blockers": [
+    "No collection-stopping blocker. NVD-first records without a confirmed maintainer release remain explicitly marked for ingest-time reconciliation."
+  ]
+}

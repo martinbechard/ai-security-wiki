@@ -17,6 +17,8 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 
 The [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) adds current [Junie CLI](https://junie.jetbrains.com/docs/junie-cli.html) evidence that Action Allowlist and Brave mode levels change when sensitive shell commands can run without prompting. The local security implication is not a general Junie feature profile; it is that build, dependency, and shell boundaries must account for both explicit allowlisted actions and broad trust-mode settings before an agent executes project-supplied scripts.
 
+The [November 2 leaf update watch source](../../../raw/processed/2026-11-02/ai-security-wiki-leaf-update-watch-20261102T010431Z.json) records a visible October 30 Junie documentation update. CI, piped-input, ACP, and Gateway runs that load project-provided configuration remain executable-input boundaries rather than routine build execution.
+
 ## Control Implications
 
 - Route wrapper, dependency, and plugin downloads through an organization-managed artifact proxy.
@@ -35,6 +37,7 @@ The [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-se
 - [JetBrains AI Development Security Guide - Junie profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
 - [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json)
 - [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json)
+- [November 2 leaf update watch source](../../../raw/processed/2026-11-02/ai-security-wiki-leaf-update-watch-20261102T010431Z.json)
 
 ## Related Code
 
@@ -63,3 +66,4 @@ The [August 16 leaf update watch source](../../../raw/processed/2026-08-16/ai-se
 
 - Created on 2026-07-30 from the build, cache, and artifact-proxy sections of the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md) and [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides; enriched from the [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) with Junie build/test/preview and build-script execution evidence.
 - Updated on 2026-08-16 from the [August 16 leaf watcher](../../../raw/processed/2026-08-16/ai-security-wiki-leaf-update-watch-2026-08-16T200300-0400.json) with Junie Action Allowlist and Brave mode command-prompting boundaries.
+- Updated on 2026-11-02 from the November 2 leaf watcher with Junie trust-mode provenance for project configuration and hook loading.

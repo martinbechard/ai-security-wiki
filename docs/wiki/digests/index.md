@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [November 2026](2026-11.md) records four item-level November security boundaries: astron-agent knowledge-space authorization, github-kanban MCP issue-filter command injection, ag-ui transport disclosure, and Prefab UI generated-code sandbox escape. Watcher changes remain leaf provenance.
+
 - [October 2026](2026-10.md) records the October 31 DeepInfer unauthenticated profiling filesystem-write boundary; repeat AI Engine and Kubeflow records enrich existing leaves without duplicate digest entries.
 
 - [October 2026](2026-10.md) records 22 independently maintained October 30 security boundaries across MCP and agent authority, model and ML runtime trust, tenant isolation, identity bootstrap, and rendering or browser exposure; each entry follows its control boundary rather than collector batch.
@@ -39,6 +41,7 @@ The active digest records each independently changing security item or closely c
 
 ## Digest Pages
 
+- [2026-11.md](2026-11.md) is the active November 2026 digest.
 - [2026-10.md](2026-10.md) is the active October 2026 digest.
 - [2026-09.md](2026-09.md) is the active September 2026 digest.
 - [2026-08.md](2026-08.md) is the active August 2026 digest.

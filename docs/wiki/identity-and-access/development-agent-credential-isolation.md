@@ -24,6 +24,8 @@ The [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-secu
 
 The [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json) adds current [Junie config.json documentation](https://junie.jetbrains.com/docs/junie-cli-configuration.html): untrusted projects use temporary Junie storage outside the repository and do not implicitly load project configuration, MCP servers, hooks, extensions, models, plans, demos, custom agents or commands, skills, guidelines, memory, or onboarding sources. Trust markers are protected through native secure storage or an owner-only authentication-key fallback. Default project config hooks are ignored in untrusted projects, while explicitly supplied config locations remain enabled and should be reviewed as deliberate credential and tool-discovery inputs.
 
+The [November 2 leaf update watch source](../../../raw/processed/2026-11-02/ai-security-wiki-leaf-update-watch-20261102T010431Z.json) records a visible October 30 Junie documentation update. It retains the same distinction: interactive trust and isolated untrusted-project storage do not make explicitly supplied configuration paths safe; those paths remain reviewed credential and tool-discovery inputs.
+
 ## Control Implications
 
 - Separate model access, artifact download, application database, and remote repository identities. Keep Codex on its documented DML-only identity; treat any DDL or migration authority as a separate developer decision outside that baseline.
@@ -43,6 +45,7 @@ The [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-
 - [JetBrains AI Development Security Guide - AI Assistant profile](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md)
 - [July 30 leaf update watch source](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json)
 - [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json)
+- [November 2 leaf update watch source](../../../raw/processed/2026-11-02/ai-security-wiki-leaf-update-watch-20261102T010431Z.json)
 
 ## Related Code
 
@@ -72,3 +75,4 @@ The [September 4 leaf update watch source](../../../raw/processed/2026-09-04/ai-
 
 - Created on 2026-07-30 from the credential, MySQL, artifact, Git, and headless-token controls in the [Codex](../../../guides/agent-security/Codex-Development-Security-Guide.md), [Junie CLI](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md), and [IntelliJ AI Assistant](../../../guides/agent-security/JetBrains-AI-Development-Security-Guide.md) security guides; enriched from the [July 30 leaf watcher](../../../raw/processed/2026-07-30/ai-security-wiki-leaf-update-watch-2026-07-30T200159-0400.json) with Junie token, BYOK, and discovery-path evidence.
 - Updated on 2026-09-04 from the [September 4 leaf watcher](../../../raw/processed/2026-09-04/ai-security-wiki-leaf-update-watch-20260905T000748Z.json) with Junie config trust-marker and untrusted-project loading boundaries.
+- Updated on 2026-11-02 from the November 2 leaf watcher with visible Junie trust-control documentation; no new vulnerability claim is inferred.
