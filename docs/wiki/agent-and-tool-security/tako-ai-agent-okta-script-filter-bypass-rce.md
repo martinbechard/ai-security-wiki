@@ -22,6 +22,7 @@ The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-to
 ## Authoritative Sources
 
 - [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json)
+- [November 3 leaf update watch](../../../raw/processed/2026-11-03/ai-security-wiki-leaf-update-watch-20261103T010333Z.json)
 - [NVD CVE-2026-63378](https://nvd.nist.gov/vuln/detail/CVE-2026-63378)
 
 ## Related Code
@@ -47,3 +48,4 @@ The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-to
 ## Maintenance Notes
 
 - Created on 2026-10-30 as a control-boundary distinct from first-admin bootstrap.
+- Updated on 2026-11-03 with CVE Services fixed-version and advisory context for 3.0.1-beta.

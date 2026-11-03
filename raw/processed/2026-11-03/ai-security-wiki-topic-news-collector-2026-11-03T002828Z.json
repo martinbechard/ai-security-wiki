@@ -1,0 +1,199 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-11-03T00:28:28Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-11-01T00:28:28Z",
+    "end_inclusive": "2026-11-03T00:28:28Z",
+    "duration_hours": 48,
+    "date_policy": "Candidates without a concrete visible timestamp inside the window were excluded unless an NVD publication or update timestamp independently established the in-window database disclosure."
+  },
+  "searched_topics": [
+    "threats and attacks", "model and prompt security", "agent and tool security", "MCP and delegated authority", "data security and privacy", "identity and authorization", "AI supply chains", "security assurance and release gates", "AI governance and incidents"
+  ],
+  "source_methods": [
+    "NVD CVE API full publication-window scan, filtered for AI, agent, MCP, model, prompt, LLM, and inference terms",
+    "Direct GitHub Security Advisory and maintainer or vendor-reference checks where NVD supplied an official reference",
+    "Public-web search for in-window primary AI-security advisories and regulatory or incident changes"
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-120311",
+      "title": "Network-AI FileJobStore path traversal",
+      "visible_dates": { "nvd_published": "2026-11-02T03:17:28.663Z", "nvd_last_modified": "2026-11-02T03:17:28.803Z", "maintainer_advisory_date": "2026-10-17 (outside window; used only as technical corroboration)" },
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-120311", "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-v64j-mc7x-c7x7"],
+      "evidence_classification": "NVD primary vulnerability database; GitHub Security Advisory corroboration",
+      "affected_boundary_or_version": "network-ai 5.13.4 through 5.15.4; FileJobStore and JobQueue job-id input",
+      "summary": "A caller-controlled job id can traverse outside FileJobStore's JSON directory to read or delete JSON files, including credentials, grant tokens, or authorization configuration.",
+      "ai_security_relevance": "Agent job persistence becomes a data and policy-integrity boundary when task inputs can influence local storage paths.",
+      "named_entities": ["Network-AI", "AgentVCR", "FileJobStore", "AuthGuardian"],
+      "upstream_routing": "Network-AI product background belongs upstream in ai-wiki; retain this path-traversal and authorization-control implication locally.",
+      "confidence": "medium-high; NVD timestamps are in-window, while the linked GitHub advisory itself predates the window.",
+      "follow_up": "During ingest, verify the maintainer fixed release 5.15.5 and whether the three related Network-AI path issues share a remediation commit."
+    },
+    {
+      "id": "CVE-2026-120312",
+      "title": "Network-AI AgentVCR cassette path traversal",
+      "visible_dates": { "nvd_published": "2026-11-02T03:17:28.863Z", "nvd_last_modified": "2026-11-02T18:18:49.437Z", "maintainer_advisory_date": "2026-10-17 (outside window; used only as technical corroboration)" },
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-120312", "https://github.com/Jovancoding/Network-AI/security/advisories/GHSA-mfxv-jg44-xj48"],
+      "evidence_classification": "NVD primary vulnerability database; GitHub Security Advisory corroboration",
+      "affected_boundary_or_version": "network-ai 5.13.4 through 5.15.4; AgentVCR cassette-name input",
+      "summary": "Traversal sequences in AgentVCR cassette names can read or overwrite JSON files outside the intended directory, including policy files used by AuthGuardian.",
+      "ai_security_relevance": "A recording or replay component can let attacker-influenced agent inputs cross the local policy-file boundary.",
+      "named_entities": ["Network-AI", "AgentVCR", "AuthGuardian"],
+      "upstream_routing": "Network-AI catalog facts are upstream-owned; this agent data and policy-boundary flaw is local security coverage.",
+      "confidence": "medium-high; in-window NVD publication with direct maintainer advisory reference.",
+      "follow_up": "Group only with other Network-AI defects if ingest finds a shared root cause; preserve CVE-level version boundaries."
+    },
+    {
+      "id": "CVE-2026-120313",
+      "title": "Network-AI InputSanitizer sandbox escape",
+      "visible_dates": { "nvd_published": "2026-11-02T03:17:29.053Z", "nvd_last_modified": "2026-11-02T15:17:22.007Z" },
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-120313"],
+      "evidence_classification": "NVD primary vulnerability database",
+      "affected_boundary_or_version": "network-ai before 5.15.5; InputSanitizer.sanitizePath path check",
+      "summary": "An unanchored startsWith check permits sibling-directory paths with a matching prefix to escape the base directory for file reads, listings, or writes.",
+      "ai_security_relevance": "Path controls around agent-provided resources must enforce resolved-path containment rather than string-prefix checks.",
+      "named_entities": ["Network-AI", "InputSanitizer"],
+      "upstream_routing": "Keep the security control failure locally; route generic Network-AI product description to ai-wiki.",
+      "confidence": "medium; NVD record is timestamped in-window but primary maintainer advisory should be located before durable synthesis.",
+      "follow_up": "Locate and preserve the linked maintainer fix or advisory during ingest."
+    },
+    {
+      "id": "CVE-2026-120314",
+      "title": "Network-AI A2A task API missing authentication",
+      "visible_dates": { "nvd_published": "2026-11-02T03:17:29.260Z", "nvd_last_modified": "2026-11-02T03:17:29.397Z" },
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-120314"],
+      "evidence_classification": "NVD primary vulnerability database",
+      "affected_boundary_or_version": "network-ai 5.14.0 through 5.15.4; A2AServer when no secret is configured",
+      "summary": "Without a configured secret, unauthenticated JSON-RPC callers can send, read, or cancel A2A tasks through the task operations API.",
+      "ai_security_relevance": "Delegated-agent task execution requires fail-closed authentication and authorization on every task lifecycle operation.",
+      "named_entities": ["Network-AI", "A2AServer", "A2A"],
+      "upstream_routing": "The A2A product and protocol context are upstream-owned; the unauthenticated delegated-authority boundary is local security scope.",
+      "confidence": "medium; record is newly published by NVD and needs maintainer-reference confirmation during ingest.",
+      "follow_up": "Verify if the no-secret behavior is intentional configuration or a patched fail-open default."
+    },
+    {
+      "id": "CVE-2026-120323",
+      "title": "MCPHub passthrough-header information disclosure",
+      "visible_dates": { "nvd_published": "2026-11-02T02:18:47.757Z", "nvd_last_modified": "2026-11-02T15:17:22.483Z", "maintainer_release_date": "2026-10-21 (outside window; fix reference)" },
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-120323", "https://github.com/samanhappy/mcphub/commit/040f7b9ae004070bdfe5084cde6bc2c609f78e76", "https://github.com/samanhappy/mcphub/releases/tag/v1.1.8"],
+      "evidence_classification": "NVD primary vulnerability database; maintainer patch and release references",
+      "affected_boundary_or_version": "samanhappy MCPHub through 1.0.45 and 1.1.7; passthroughHeaders processing",
+      "summary": "Remote manipulation of passthrough headers can disclose information; NVD identifies patch commit 040f7b9 and recommends version 1.1.8.",
+      "ai_security_relevance": "MCP gateway header forwarding is a credential and cross-service trust boundary.",
+      "named_entities": ["MCPHub", "Model Context Protocol"],
+      "upstream_routing": "MCPHub product catalog belongs in ai-wiki; retain header-forwarding credential exposure in this security wiki.",
+      "confidence": "medium; in-window NVD record and maintainer patch are present, but advisory wording should be reconciled against the patch during ingest.",
+      "follow_up": "Confirm whether authorization or cookie headers are exposed and capture exact fixed-version semantics."
+    },
+    {
+      "id": "CVE-2026-120334",
+      "title": "deepset-ai FARM tokenizer-loader path traversal",
+      "visible_dates": { "nvd_published": "2026-11-02T03:17:30.630Z", "nvd_last_modified": "2026-11-02T18:18:50.063Z" },
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-120334"],
+      "evidence_classification": "NVD primary vulnerability database",
+      "affected_boundary_or_version": "deepset-ai farm through 0.8.0; EmbeddingTokenizer.from_pretrained vocab_filename",
+      "summary": "A manipulated tokenizer vocabulary filename can traverse paths in FARM's model-tokenizer loading path. NVD notes the affected project is no longer supported.",
+      "ai_security_relevance": "Model and tokenizer artifact loading is an AI supply-chain and runtime file-boundary control.",
+      "named_entities": ["deepset-ai", "FARM", "EmbeddingTokenizer"],
+      "upstream_routing": "FARM model-library background belongs upstream; the unsupported artifact-loader vulnerability belongs locally.",
+      "confidence": "medium; NVD is in-window, but a maintainer patch is not identified.",
+      "follow_up": "Establish whether an actively maintained replacement exists before advising remediation beyond isolation or replacement."
+    },
+    {
+      "id": "CVE-2026-120335",
+      "title": "deepset-ai FARM model-package loader path traversal",
+      "visible_dates": { "nvd_published": "2026-11-02T03:17:30.873Z", "nvd_last_modified": "2026-11-02T16:19:19.997Z" },
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-120335"],
+      "evidence_classification": "NVD primary vulnerability database",
+      "affected_boundary_or_version": "deepset-ai farm through 0.8.0; WordEmbedding_LM.load embeddings_filename",
+      "summary": "A locally approached manipulated embeddings filename can traverse paths through the model-package loader; the affected maintainer-supported status is end-of-life.",
+      "ai_security_relevance": "Model artifact ingestion should constrain file paths and treat locally supplied model components as untrusted supply-chain inputs.",
+      "named_entities": ["deepset-ai", "FARM", "WordEmbedding_LM"],
+      "upstream_routing": "FARM ecosystem coverage remains upstream; local security coverage owns the artifact-loader risk.",
+      "confidence": "medium; NVD record is current but remediation evidence is absent.",
+      "follow_up": "Avoid combining this with CVE-2026-120334 unless their source and fix status prove identical."
+    },
+    {
+      "id": "CVE-2026-120450",
+      "title": "LaraDashboard MCP send-email authorization bypass",
+      "visible_dates": { "nvd_published": "2026-11-02T15:17:28.140Z", "nvd_last_modified": "2026-11-02T15:17:28.300Z", "github_advisory_date": "2026-11-01 (date-only; direct time not shown)" },
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-120450", "https://github.com/laradashboard/laradashboard/security/advisories/GHSA-gjfv-h634-pxpv", "https://github.com/laradashboard/laradashboard/releases/tag/v1.4.9"],
+      "evidence_classification": "NVD primary vulnerability database; GitHub Security Advisory; maintainer release reference",
+      "affected_boundary_or_version": "LaraDashboard 1.4.0 before 1.4.9 according to NVD; MCP SendEmailTool permission-to-action boundary",
+      "summary": "A user holding only the read-only email_template.view permission can mint an MCP token and send arbitrary HTML email to arbitrary recipients through the site's mailer.",
+      "ai_security_relevance": "Delegated tool permissions must bind a token's individual capabilities to each high-impact action, not just a broad MCP-access grant.",
+      "named_entities": ["LaraDashboard", "MCP", "SendEmailTool", "McpTokenService"],
+      "upstream_routing": "LaraDashboard product facts route upstream; this least-privilege failure and phishing-relay implication are local.",
+      "confidence": "medium; NVD gives precise in-window disclosure timing, but GitHub lists v1.4.2 and no patched version, conflicting with NVD's 1.4.9 remediation.",
+      "follow_up": "Reconcile affected and fixed versions against the release commit before durable synthesis."
+    },
+    {
+      "id": "CVE-2026-120492",
+      "title": "Chainlit MCP URL-allowlist SSRF bypass",
+      "visible_dates": { "nvd_published": "2026-11-02T15:17:31.210Z", "nvd_last_modified": "2026-11-02T15:17:31.360Z", "github_advisory_date": "2026-08-25 (outside window; corroborating source)" },
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-120492", "https://github.com/Chainlit/chainlit/security/advisories/GHSA-hvfh-5mj3-5f3j"],
+      "evidence_classification": "NVD primary vulnerability database; GitHub Security Advisory corroboration",
+      "affected_boundary_or_version": "NVD identifies Chainlit 2.12.0; MCP allowed_urls path scope check",
+      "summary": "A semicolon path segment can bypass path-scoped MCP allowed_urls validation, causing the MCP endpoint to request paths outside the operator-approved grant on origins that strip path parameters.",
+      "ai_security_relevance": "Allowlisted MCP transports require URL canonicalization and SSRF-resistant destination checks.",
+      "named_entities": ["Chainlit", "MCP", "streamable HTTP", "SSRF"],
+      "upstream_routing": "Chainlit background belongs in ai-wiki; this transport-authorization and SSRF condition is local security scope.",
+      "confidence": "medium; the NVD record is new in-window, but its version framing differs from the older linked advisory and needs reconciliation.",
+      "follow_up": "Confirm whether this is a distinct semicolon bypass, a corrected version of the older advisory, or a duplicate NVD mapping."
+    },
+    {
+      "id": "CVE-2026-120497",
+      "title": "AWS AI-DLC traceability-report stored XSS",
+      "visible_dates": { "nvd_published": "2026-11-02T19:18:04.277Z", "nvd_last_modified": "2026-11-02T20:17:40.867Z" },
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-120497", "https://aws.amazon.com/security/security-bulletins/2026-163-aws/", "https://github.com/awslabs/aidlc-workflows/security/advisories/GHSA-gjmq-52p3-7fh2", "https://github.com/awslabs/aidlc-workflows/commit/96cf0eaa31a3ad8636e486c7fd2b91c55166393f"],
+      "evidence_classification": "NVD primary vulnerability database; AWS security bulletin and maintainer advisory references",
+      "affected_boundary_or_version": "AWS AI-DLC Workflows aidlc-traceability CLI before 2026-07-03; generated HTML report artifact titles and descriptions",
+      "summary": "An actor who can edit AI-DLC artifact files can place script in report fields that executes when another user opens the generated HTML traceability report. The CLI was later removed from its repository.",
+      "ai_security_relevance": "Assurance and audit artifacts generated from AI delivery inputs are an untrusted-content rendering boundary.",
+      "named_entities": ["AWS", "AI-DLC Workflows", "aidlc-traceability"],
+      "upstream_routing": "AWS AI-DLC product context belongs upstream or ai-dev-wiki; this audit-evidence rendering vulnerability belongs locally.",
+      "confidence": "high; NVD has precise in-window timestamps and links to AWS and maintainer evidence.",
+      "follow_up": "Verify the AWS bulletin's exact end-user removal or replacement guidance during ingest."
+    },
+    {
+      "id": "CVE-2026-116635",
+      "title": "AWS Serverless MCP Server deployment-status path traversal",
+      "visible_dates": { "nvd_published": "2026-11-02T22:17:19.130Z", "nvd_last_modified": "2026-11-02T22:17:19.130Z", "github_advisory_date": "2026-11-02 (date-only; NVD provides the precise timestamp)" },
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-116635", "https://aws.amazon.com/security/security-bulletins/2026-164-aws/", "https://github.com/awslabs/mcp/security/advisories/GHSA-r6mm-377j-qg8m", "https://pypi.org/project/awslabs.aws-serverless-mcp-server/0.2.1/"],
+      "evidence_classification": "NVD primary vulnerability database; AWS security bulletin; GitHub Security Advisory",
+      "affected_boundary_or_version": "awslabs.aws-serverless-mcp-server before 0.2.1; deployment-status project-name input",
+      "summary": "An actor able to influence an MCP agent can use traversal or absolute paths in the project name to read JSON outside the intended status directory and, when write access is enabled, create or overwrite files. Version 0.2.1 is the stated fix.",
+      "ai_security_relevance": "MCP tools that bridge an AI agent to deployment state need resolved-path containment and separate write authority.",
+      "named_entities": ["AWS", "AWS Serverless MCP Server", "MCP"],
+      "upstream_routing": "AWS and serverless-MCP catalog details belong upstream; this agent-influenced deployment-file boundary is local security coverage.",
+      "confidence": "high; precise NVD timing and AWS/GitHub primary references agree on the fixed version.",
+      "follow_up": "During ingest, capture whether tool authorization mitigates the flaw independently of upgrading."
+    }
+  ],
+  "routing_notes": [
+    "All retained findings are security-specific and remain locally owned. Broad product, library, cloud-provider, MCP, A2A, and AI-DLC background routes to ai-wiki; general software-development workflow context routes to ai-dev-wiki.",
+    "No upstream-owned general product announcement was retained as a local finding; each entry records only its distinct security implication.",
+    "Network-AI records should remain CVE-distinct unless ingest verifies one shared source, root cause, and patch narrative."
+  ],
+  "exclusions": [
+    { "candidate": "CVE-2026-120233 (ag-ui HttpAgent information disclosure)", "reason": "Already captured in raw/processed/2026-11-02/ai-security-wiki-topic-news-collector-2026-11-02T003500Z.json and corresponding wiki pages." },
+    { "candidate": "CVE-2026-120338 (Prefab UI Generative UI sandbox escape)", "reason": "Already captured in the same November 2 processed collector artifact and local leaf." },
+    { "candidate": "CVE-2026-82840 (Apache Wicket session fixation)", "reason": "The publication-window scan matched the generic word agent in its description, but the item has no AI-system relevance." },
+    { "candidate": "CVE-2026-94290 (SUSE Rancher Fleet credential reference issue)", "reason": "Uses the generic term agent for a cluster component; it is not an AI or AI-agent security item." },
+    { "candidate": "MCP TypeScript SDK advisories disclosed October 20", "reason": "Concrete but outside the 48-hour window; no independently verified in-window primary update found." },
+    { "candidate": "Third-party AI-security roundups and state-of-MCP reports dated November 1-2", "reason": "Excluded as secondary synthesis without a new concrete primary advisory, patch, incident, or regulatory delta in the window." },
+    { "candidate": "General product releases and dependency updates", "reason": "No concrete security change demonstrated." },
+    { "candidate": "Date-only source pages at the November 1 cutoff boundary", "reason": "Not used as timing evidence; retained items rely on precise NVD timestamps where otherwise qualified." }
+  ],
+  "confidence_notes": [
+    "NVD's publication and last-modified timestamps are public, precise, and inside the defined window. Some linked GitHub advisories predate the NVD record; those entries represent a newly published or updated NVD disclosure, not a claim that the maintainer first disclosed the issue inside the window.",
+    "The LaraDashboard and Chainlit entries contain source-version or patch-status discrepancies that must be reconciled before durable wiki synthesis.",
+    "No private, proprietary, PII, or local repository content was sent to external services."
+  ],
+  "follow_up_actions": [
+    "Ingest only after verifying each NVD record's maintainer references and fixed versions.",
+    "Preserve the two pre-existing November 2 captures as duplicate exclusions.",
+    "Do not move this artifact to raw/processed or edit docs/wiki until the normal verifier-gated ingest workflow completes."
+  ]
+}

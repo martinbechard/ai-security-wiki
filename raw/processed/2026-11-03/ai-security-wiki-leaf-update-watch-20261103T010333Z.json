@@ -1,0 +1,104 @@
+{
+  "artifact_type": "ai-security-wiki-leaf-update-watch",
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "repository": "/Users/martinbechard/dev/ai-security-wiki",
+  "run_timestamp": "2026-11-03T01:03:33Z",
+  "cutoff_window": {
+    "rule": "Only visibly published or substantively updated public sources in the preceding seven days qualify.",
+    "start": "2026-10-27T01:03:33Z",
+    "end": "2026-11-03T01:03:33Z"
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/agno-pandas-tools-model-controlled-reflection.md",
+    "docs/wiki/agent-and-tool-security/dbhub-read-only-sql-validator-bypass.md",
+    "docs/wiki/agent-and-tool-security/flowise-langchain-allowlist-vm2-sandbox-escape.md",
+    "docs/wiki/agent-and-tool-security/github-kanban-mcp-server-issue-list-command-injection.md",
+    "docs/wiki/agent-and-tool-security/moling-loopback-mcp-browser-origin-session-hijack.md",
+    "docs/wiki/agent-and-tool-security/n8n-langchain-code-node-task-runner-isolation-rce.md",
+    "docs/wiki/agent-and-tool-security/open-cli-mcp-oauth-endpoint-command-injection.md",
+    "docs/wiki/agent-and-tool-security/stirling-pdf-ai-html-agent-ssrf-local-file-read.md",
+    "docs/wiki/agent-and-tool-security/tako-ai-agent-okta-script-filter-bypass-rce.md",
+    "docs/wiki/agent-and-tool-security/zuke-mcp-registry-launch-host-authorization-bypass.md",
+    "docs/wiki/data-and-privacy/ag-ui-httpagent-remote-information-disclosure.md",
+    "docs/wiki/data-and-privacy/kubeflow-pipelines-run-log-authorization-bypass.md",
+    "docs/wiki/identity-and-access/ai-engine-mcp-oauth-client-registration-missing-authorization.md",
+    "docs/wiki/identity-and-access/astron-agent-knowledge-space-authorization-bypass.md",
+    "docs/wiki/identity-and-access/kubeflow-pipelines-artifact-namespace-authorization-bypass.md"
+  ],
+  "selection": {
+    "leaf_universe_count": 851,
+    "selected_count": 15,
+    "rule": "Unchecked leaves first, then oldest last_checked_at, with stable relative-path tie-breaking.",
+    "result": "All 15 selected leaves were previously unchecked."
+  },
+  "sources_checked": [
+    {"identifier": "CVE-2026-119050", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-119050", "visible_date": "2026-10-29T13:08:51.517Z"},
+    {"identifier": "CVE-2026-61789", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-61789", "visible_date": "2026-10-30T16:08:24.224Z"},
+    {"identifier": "CVE-2026-119978", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-119978", "visible_date": "2026-11-02T20:53:41.605Z"},
+    {"identifier": "CVE-2026-116369", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-116369", "visible_date": "2026-10-31T01:30:30.310Z"},
+    {"identifier": "CVE-2026-62863", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-62863", "visible_date": "2026-10-30T20:33:14.561Z"},
+    {"identifier": "CVE-2026-119408", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-119408", "visible_date": "2026-10-30T11:30:45.729Z"},
+    {"identifier": "CVE-2026-119025", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-119025", "visible_date": "2026-10-29T11:24:18.723Z"},
+    {"identifier": "CVE-2026-119343", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-119343", "visible_date": "2026-11-02T15:03:47.434Z"},
+    {"identifier": "CVE-2026-63378", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-63378", "visible_date": "2026-11-02T17:57:56.881Z"},
+    {"identifier": "CVE-2026-119287", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-119287", "visible_date": "2026-10-30T15:39:52.468Z"},
+    {"identifier": "CVE-2026-120233", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-120233", "visible_date": "2026-11-01T15:15:19.413Z"},
+    {"identifier": "CVE-2026-118759", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-118759", "visible_date": "2026-10-30T17:13:29.148Z"},
+    {"identifier": "CVE-2026-110732", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-110732", "visible_date": "2026-10-30T18:09:00.341Z"},
+    {"identifier": "CVE-2026-116340", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-116340", "visible_date": "2026-10-31T01:24:33.712Z"},
+    {"identifier": "CVE-2026-118760", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-118760", "visible_date": "2026-10-29T16:35:05.192Z"}
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/flowise-langchain-allowlist-vm2-sandbox-escape.md",
+      "identifier": "CVE-2026-119978",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-119978",
+      "visible_updated_at": "2026-11-02T20:53:41.605Z",
+      "evidence_classification": "disclosed vulnerability; CVE Services metadata and reference update",
+      "summary": "The public record now includes technical and remediation references for authenticated vm2 escape through allowlisted LangChain and mammoth modules in Flowise through 3.1.4.",
+      "affected_boundaries": ["custom-function sandbox", "builtin-dependency allowlist", "operating-system command execution"],
+      "named_entities": ["Flowise", "LangChain", "mammoth", "vm2"],
+      "confirmed_exploitation": false,
+      "upstream_routing": "Flowise and LangChain product background remain upstream-owned; this artifact retains only the local security-control delta.",
+      "follow_up_note": "Compare added references and remediation details against the processed October 30 source before durable synthesis."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/stirling-pdf-ai-html-agent-ssrf-local-file-read.md",
+      "identifier": "CVE-2026-119343",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-119343",
+      "visible_updated_at": "2026-11-02T15:03:47.434Z",
+      "evidence_classification": "disclosed vulnerability; CVE Services metadata update",
+      "summary": "The public record adds fixed-version and advisory context for the AI HTML-agent path that can make internal requests or embed readable local files before Stirling-PDF 3.0.0.",
+      "affected_boundaries": ["AI HTML-agent rendering", "SSRF egress", "local-file read"],
+      "named_entities": ["Stirling-PDF", "WeasyPrint"],
+      "confirmed_exploitation": false,
+      "upstream_routing": "Stirling-PDF catalog context remains upstream-owned; retain the local SSRF and file-read control implication.",
+      "follow_up_note": "Compare advisory and fixed-release information against the processed October 30 source before durable synthesis."
+    },
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/tako-ai-agent-okta-script-filter-bypass-rce.md",
+      "identifier": "CVE-2026-63378",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-63378",
+      "visible_updated_at": "2026-11-02T17:57:56.881Z",
+      "evidence_classification": "disclosed vulnerability; CVE Services metadata update",
+      "summary": "The public record adds fixed-version and advisory context for authenticated code execution after bypassing AI-based Python filtering in TAKO AI Agent for Okta before 3.0.1-beta.",
+      "affected_boundaries": ["AI code filtering", "Python execution", "privileged container process"],
+      "named_entities": ["TAKO AI Agent for Okta", "Okta", "Python"],
+      "confirmed_exploitation": false,
+      "upstream_routing": "TAKO product background remains upstream-owned; retain the local execution-boundary and secret-exposure implication.",
+      "follow_up_note": "Compare advisory and fixed-release information against the processed October 30 source before durable synthesis."
+    }
+  ],
+  "exclusions": {
+    "already_captured": {
+      "count": 12,
+      "classification": "disclosed vulnerability or metadata update",
+      "reason": "The same public evidence is already represented by processed October 30, October 31, or November 2 topic-collector artifacts; duplicate leaf-watch synthesis is not warranted."
+    },
+    "ambiguous_or_boundary_only_dates": {"count": 0, "reason": "No selected primary CVE Services record was excluded for an ambiguous, future, or boundary-only visible date."}
+  },
+  "validation": {"jq_empty": "passed", "python_json_tool": "passed", "wiki_status": "881 pages; 0 missing required files; 0 lint findings", "wiki_lint": "passed", "git_diff_check": "passed"},
+  "blockers": [],
+  "docs_wiki_modified": false,
+  "raw_processed_modified": false
+}

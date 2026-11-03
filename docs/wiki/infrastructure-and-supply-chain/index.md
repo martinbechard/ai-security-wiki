@@ -72,6 +72,12 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Leaf Pages
 
+- [Network-AI FileJobStore path traversal](network-ai-filejobstore-path-traversal.md)
+- [Network-AI AgentVCR cassette path traversal](network-ai-agentvcr-cassette-path-traversal.md)
+- [Network-AI InputSanitizer sandbox escape](network-ai-inputsanitizer-sandbox-escape.md)
+- [FARM tokenizer loader path traversal](farm-tokenizer-loader-path-traversal.md)
+- [FARM model package loader path traversal](farm-model-package-loader-path-traversal.md)
+
 - [llama.cpp Crafted GGUF Memory Corruption](llama-cpp-crafted-gguf-memory-corruption.md)
 - [DeepInfer Unauthenticated Profile Path Traversal](deepinfer-unauthenticated-profile-path-traversal.md)
 - [Unsloth Model-Loader Configuration Code Injection](unsloth-model-loader-configuration-code-injection.md)

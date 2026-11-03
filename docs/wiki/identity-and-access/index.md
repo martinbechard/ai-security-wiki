@@ -16,6 +16,9 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [Network-AI A2A task API missing authentication](network-ai-a2a-task-api-missing-authentication.md)
+- [LaraDashboard MCP send-email authorization bypass](laradashboard-mcp-send-email-authorization-bypass.md)
+
 - [SuperAGI Agent-Inventory Tenant Isolation](superagi-agent-inventory-tenant-isolation.md)
 - [SuperAGI Agent-Execution Metadata Tenant Isolation](superagi-agent-execution-metadata-tenant-isolation.md)
 - [SuperAGI Agent-Execution Configuration Tenant Isolation](superagi-agent-execution-configuration-tenant-isolation.md)

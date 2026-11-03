@@ -6,6 +6,8 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 
 ## Leaf Pages
 
+- [AWS AI-DLC traceability report stored XSS](aws-ai-dlc-traceability-report-stored-xss.md)
+
 - [ToFu MCP Server Security Findings](tofu-mcp-server-security-findings.md)
 - [OpenAI GPT-6 October deployment safety](openai-gpt-6-october-deployment-safety.md)
 - [agentverus-scanner security decision input trust](agentverus-scanner-security-decision-input-trust.md)

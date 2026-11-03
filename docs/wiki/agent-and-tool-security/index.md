@@ -153,6 +153,10 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [MCPHub passthrough-header information disclosure](mcphub-passthrough-header-information-disclosure.md)
+- [Chainlit MCP URL-allowlist SSRF bypass](chainlit-mcp-url-allowlist-ssrf-bypass.md)
+- [AWS Serverless MCP deployment-status path traversal](aws-serverless-mcp-deployment-status-path-traversal.md)
+
 - [XAgent ToolServer Upload Path Traversal](xagent-tool-server-upload-path-traversal.md)
 - [Agent Zero FileBrowser Save-Text Path Traversal](agent-zero-file-browser-save-text-path-traversal.md)
 
