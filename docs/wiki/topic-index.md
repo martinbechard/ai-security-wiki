@@ -8,6 +8,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [Haiou Codex Prompt-Adware Persistent Instruction Manipulation](model-and-prompt-security/haiou-codex-prompt-adware.md)
+- [CrewAI ScrapeWebsiteTool URL-Parser SSRF](agent-and-tool-security/crewai-scrapewebsitetool-url-parser-ssrf.md)
+- [CrowdStrike Falcon Guardian Runtime Agent Controls](agent-and-tool-security/crowdstrike-falcon-guardian-runtime-agent-controls.md)
 - [astron-agent Knowledge-Space Authorization Bypass](identity-and-access/astron-agent-knowledge-space-authorization-bypass.md)
 - [github-kanban-mcp-server Issue-List Command Injection](agent-and-tool-security/github-kanban-mcp-server-issue-list-command-injection.md)
 - [ag-ui HttpAgent Remote Information Disclosure](data-and-privacy/ag-ui-httpagent-remote-information-disclosure.md)

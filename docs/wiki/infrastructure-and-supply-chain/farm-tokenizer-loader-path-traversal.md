@@ -11,7 +11,7 @@ tags: [infrastructure-and-supply-chain]
 
 [CVE-2026-120334](https://nvd.nist.gov/vuln/detail/CVE-2026-120334) affects deepset-ai FARM through 0.8.0. A manipulated `EmbeddingTokenizer.from_pretrained` vocabulary filename can traverse paths during model-tokenizer loading. Treat model-package filenames as untrusted supply-chain input and constrain them to resolved artifact roots.
 
-The affected project is reported unsupported; no maintainer patch is identified. No exploitation is reported, and confidence is medium.
+The affected project is reported unsupported; no maintainer patch is identified. The [November 4 leaf update watch](../../../raw/processed/2026-11-04/ai-security-wiki-leaf-update-watch-20261104T010357Z.json) records CISA ADP metadata updated November 2 with `Exploitation=poc`, `Automatable=yes`, and `Technical Impact=partial`. This is proof-of-concept evidence; `Automatable=yes` is not an exploitation claim. Confidence is medium.
 
 - Mitigation state: isolate or replace the unsupported loader and enforce resolved artifact-root containment.
 - Residual risk: no supported upstream patch is identified for deployments that continue loading attacker-supplied tokenizer metadata.
@@ -20,6 +20,7 @@ The affected project is reported unsupported; no maintainer patch is identified.
 
 - [November 3 collector source](../../../raw/processed/2026-11-03/ai-security-wiki-topic-news-collector-2026-11-03T002828Z.json)
 - [NVD CVE-2026-120334](https://nvd.nist.gov/vuln/detail/CVE-2026-120334)
+- [November 4 leaf update watch](../../../raw/processed/2026-11-04/ai-security-wiki-leaf-update-watch-20261104T010357Z.json)
 
 ## Related Code
 
@@ -44,3 +45,4 @@ The affected project is reported unsupported; no maintainer patch is identified.
 ## Maintenance Notes
 
 - Created on 2026-11-03; FARM ecosystem background remains upstream-owned.
+- Updated on 2026-11-04 with CISA ADP proof-of-concept and automatable metadata; no maintainer remediation was inferred.

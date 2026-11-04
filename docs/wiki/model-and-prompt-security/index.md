@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [Haiou Codex Prompt-Adware Persistent Instruction Manipulation](haiou-codex-prompt-adware.md)
 - [praktor Telegram Upload Persistent Agent Instruction Injection](praktor-telegram-upload-persistent-agent-instruction-injection.md)
 
 - [vLLM Chat-Template Resource Exhaustion](vllm-chat-template-resource-exhaustion.md)
@@ -39,6 +40,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Leaf Pages
 
+- [Haiou Codex Prompt-Adware Persistent Instruction Manipulation](haiou-codex-prompt-adware.md)
 - [vLLM gRPC Input Validation DoS](vllm-grpc-input-validation-dos.md)
 - [vLLM Multimodal Media Resource Control](vllm-multimodal-media-resource-control.md)
 - [vLLM Connector-Cache Logprob Tenant DoS](vllm-connector-cache-logprob-tenant-dos.md)
@@ -115,6 +117,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Maintenance Notes
 
+- Updated on 2026-11-04 with the Haiou persistent third-party instruction-manipulation security boundary.
 - Updated on 2026-10-26 with split vLLM template, Phi-4 audio, OCR image, and prompt-ID availability controls.
 
 - Updated on 2026-10-15 with the MoviePilot untrusted-metadata-to-command-execution leaf from the October 15 source ingest.

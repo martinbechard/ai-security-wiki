@@ -1,0 +1,143 @@
+{
+  "automation_name": "AI Security Wiki Leaf Update Watch",
+  "run_timestamp": "2026-11-04T01:03:57Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-10-28T01:03:57Z",
+    "end_inclusive": "2026-11-04T01:03:57Z",
+    "date_rule": "Retained evidence has an explicit public timestamp inside the seven-day window. No ambiguous, date-only boundary, missing-date, or future-dated evidence was retained."
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/aws-serverless-mcp-deployment-status-path-traversal.md",
+    "docs/wiki/agent-and-tool-security/chainlit-mcp-url-allowlist-ssrf-bypass.md",
+    "docs/wiki/agent-and-tool-security/mcphub-passthrough-header-information-disclosure.md",
+    "docs/wiki/identity-and-access/laradashboard-mcp-send-email-authorization-bypass.md",
+    "docs/wiki/identity-and-access/network-ai-a2a-task-api-missing-authentication.md",
+    "docs/wiki/identity-and-access/paperclip-agent-api-key-workspace-cleanup-command-rce.md",
+    "docs/wiki/identity-and-access/pdf-reader-mcp-http-api-key-not-enforced.md",
+    "docs/wiki/identity-and-access/ragflow-private-agent-authorization-order-bypass.md",
+    "docs/wiki/identity-and-access/tako-ai-agent-okta-first-admin-bootstrap-takeover.md",
+    "docs/wiki/infrastructure-and-supply-chain/crawl4ai-untrusted-model-name-pickle-loading.md",
+    "docs/wiki/infrastructure-and-supply-chain/deepinfer-unauthenticated-profile-path-traversal.md",
+    "docs/wiki/infrastructure-and-supply-chain/farm-model-package-loader-path-traversal.md",
+    "docs/wiki/infrastructure-and-supply-chain/farm-tokenizer-loader-path-traversal.md",
+    "docs/wiki/infrastructure-and-supply-chain/immich-machine-learning-predict-cache-path-delete.md",
+    "docs/wiki/infrastructure-and-supply-chain/kubeflow-pipelines-archive-decompression-resource-exhaustion.md"
+  ],
+  "source_urls_checked": [
+    "https://cveawg.mitre.org/api/cve/CVE-2026-116635",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-120492",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-120323",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-120450",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-120314",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-119713",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-62264",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-119337",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-63377",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-119120",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-120204",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-120335",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-120334",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-119328",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-118761"
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/mcphub-passthrough-header-information-disclosure.md",
+      "advisory_id": "CVE-2026-120323",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-120323",
+      "visible_updated_at": "2026-11-02T14:23:13.148Z",
+      "evidence_classification": "disclosed vulnerability; demonstrated research",
+      "summary": "CISA ADP added SSVC metadata with Exploitation=poc, Automatable=no, Technical Impact=partial and an exploit-tagged public reference. This is evidence of a proof of concept, not confirmed in-the-wild exploitation.",
+      "affected_boundary": "MCPHub passthrough-header forwarding and cross-service credential exposure",
+      "named_entities": ["MCPHub", "CISA ADP", "CVE-2026-120323"],
+      "upstream_routing": "Keep the credential-forwarding security boundary locally; MCPHub catalog background remains in ai-wiki.",
+      "follow_up_note": "At ingest, assess the public proof-of-concept reference without upgrading it to confirmed exploitation."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/paperclip-agent-api-key-workspace-cleanup-command-rce.md",
+      "advisory_id": "CVE-2026-119713",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-119713",
+      "visible_updated_at": "2026-10-30T18:36:27.401Z",
+      "evidence_classification": "disclosed vulnerability",
+      "summary": "CISA ADP added SSVC metadata with Exploitation=none, Automatable=no, Technical Impact=total. The record does not establish demonstrated or confirmed exploitation.",
+      "affected_boundary": "Paperclip agent API-key authority over shell-executed workspace cleanup and teardown commands",
+      "named_entities": ["Paperclip", "CISA ADP", "CVE-2026-119713"],
+      "upstream_routing": "Keep the API-key and command-execution authorization boundary locally; broad product coverage remains upstream.",
+      "follow_up_note": "Preserve the no-known-exploitation status as dated CISA metadata rather than a remediation or exploitation claim."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/crawl4ai-untrusted-model-name-pickle-loading.md",
+      "advisory_id": "CVE-2026-119120",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-119120",
+      "visible_updated_at": "2026-11-03T15:39:40.300Z",
+      "evidence_classification": "disclosed vulnerability; demonstrated research",
+      "summary": "CISA ADP added SSVC metadata with Exploitation=poc, Automatable=no, Technical Impact=total and an exploit-tagged GitHub advisory reference. This is proof-of-concept evidence, not confirmed in-the-wild exploitation.",
+      "affected_boundary": "Crawl4AI model-name selection and untrusted pickle-weight loading",
+      "named_entities": ["Crawl4AI", "CISA ADP", "CVE-2026-119120"],
+      "upstream_routing": "Keep untrusted-model loading and supply-chain controls locally; product background remains in ai-wiki.",
+      "follow_up_note": "Reconcile the proof-of-concept evidence with the fixed-version advisory before drafting mitigation guidance."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/deepinfer-unauthenticated-profile-path-traversal.md",
+      "advisory_id": "CVE-2026-120204",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-120204",
+      "visible_updated_at": "2026-11-02T17:45:36.440Z",
+      "evidence_classification": "disclosed vulnerability",
+      "summary": "CISA ADP added SSVC metadata with Exploitation=none, Automatable=no, Technical Impact=partial. It is a public risk-metadata update, not evidence of demonstrated or confirmed exploitation.",
+      "affected_boundary": "DeepInfer unauthenticated profile endpoint and filesystem output path",
+      "named_entities": ["DeepInfer", "CISA ADP", "CVE-2026-120204"],
+      "upstream_routing": "Keep endpoint authentication and filesystem-write risks locally; DeepInfer catalog context remains upstream.",
+      "follow_up_note": "Do not infer a fixed release from this enrichment; preserve the existing remediation uncertainty."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/farm-model-package-loader-path-traversal.md",
+      "advisory_id": "CVE-2026-120335",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-120335",
+      "visible_updated_at": "2026-11-02T14:18:36.449Z",
+      "evidence_classification": "disclosed vulnerability; demonstrated research",
+      "summary": "CISA ADP added SSVC metadata with Exploitation=poc, Automatable=no, Technical Impact=partial. This is proof-of-concept evidence, not confirmed in-the-wild exploitation.",
+      "affected_boundary": "FARM model-package loader path resolution",
+      "named_entities": ["FARM", "deepset-ai", "CISA ADP", "CVE-2026-120335"],
+      "upstream_routing": "Keep artifact-loader security analysis locally; framework background remains in ai-wiki.",
+      "follow_up_note": "Retain the unsupported-project and absent-maintainer-remediation uncertainty at ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/farm-tokenizer-loader-path-traversal.md",
+      "advisory_id": "CVE-2026-120334",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-120334",
+      "visible_updated_at": "2026-11-02T17:38:13.316Z",
+      "evidence_classification": "disclosed vulnerability; demonstrated research",
+      "summary": "CISA ADP added SSVC metadata with Exploitation=poc, Automatable=yes, Technical Impact=partial. This is proof-of-concept evidence, not confirmed in-the-wild exploitation.",
+      "affected_boundary": "FARM tokenizer-loader artifact path resolution",
+      "named_entities": ["FARM", "deepset-ai", "CISA ADP", "CVE-2026-120334"],
+      "upstream_routing": "Keep artifact-loader security analysis locally; framework background remains in ai-wiki.",
+      "follow_up_note": "Avoid treating SSVC automatable=yes as an exploitation claim; maintain the distinction at ingest."
+    },
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/kubeflow-pipelines-archive-decompression-resource-exhaustion.md",
+      "advisory_id": "CVE-2026-118761",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-118761",
+      "visible_updated_at": "2026-10-29T20:18:59.625Z",
+      "evidence_classification": "disclosed vulnerability",
+      "summary": "CISA ADP added SSVC metadata with Exploitation=none, Automatable=yes, Technical Impact=partial. It is not confirmed or demonstrated exploitation evidence.",
+      "affected_boundary": "Kubeflow Pipelines archive decompression before namespace authorization",
+      "named_entities": ["Kubeflow Pipelines", "CISA ADP", "CVE-2026-118761"],
+      "upstream_routing": "Keep resource-exhaustion and authorization-order analysis locally; Kubeflow product background remains upstream.",
+      "follow_up_note": "Preserve the maintainer 2.18.0 mitigation as separate source-backed remediation evidence."
+    }
+  ],
+  "exclusions": [
+    {"leaf_id": "docs/wiki/agent-and-tool-security/aws-serverless-mcp-deployment-status-path-traversal.md", "reason": "The November 2 disclosure is already represented by the November 3 processed collector; no later material delta was found."},
+    {"leaf_id": "docs/wiki/agent-and-tool-security/chainlit-mcp-url-allowlist-ssrf-bypass.md", "reason": "The November 2 disclosure is already represented by the November 3 processed collector; no later material delta was found."},
+    {"leaf_id": "docs/wiki/identity-and-access/laradashboard-mcp-send-email-authorization-bypass.md", "reason": "The November 2 disclosure is already represented by the November 3 processed collector; no later material delta was found."},
+    {"leaf_id": "docs/wiki/identity-and-access/network-ai-a2a-task-api-missing-authentication.md", "reason": "The November 2 disclosure is already represented by the November 3 processed collector; no later material delta was found."},
+    {"leaf_id": "docs/wiki/identity-and-access/pdf-reader-mcp-http-api-key-not-enforced.md", "reason": "The October 30 disclosure is already represented by the October 30 processed collector; no later material delta was found."},
+    {"leaf_id": "docs/wiki/identity-and-access/ragflow-private-agent-authorization-order-bypass.md", "reason": "The October 30 disclosure is already represented by the October 30 processed collector; no later material delta was found."},
+    {"leaf_id": "docs/wiki/identity-and-access/tako-ai-agent-okta-first-admin-bootstrap-takeover.md", "reason": "The October 30 disclosure is already represented by the October 30 processed collector; no later material delta was found."},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/immich-machine-learning-predict-cache-path-delete.md", "reason": "The October 30 disclosure is already represented by the October 30 processed collector; no later material delta was found."}
+  ],
+  "follow_up_notes": [
+    "A normal raw-source ingest must assess only the security-specific SSVC and proof-of-concept deltas; it must not duplicate broad product analysis from upstream wikis.",
+    "No update in this artifact is classified as confirmed exploitation, mitigation, control change, or unverified claim."
+  ]
+}

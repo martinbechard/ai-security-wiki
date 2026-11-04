@@ -9,7 +9,7 @@ tags: ["identity-and-access", "agent-and-tool-security"]
 
 ## Current Understanding
 
-The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json) records [CVE-2026-119713](https://nvd.nist.gov/vuln/detail/CVE-2026-119713): Paperclip 2026.403.0 before 2026.416.0 lets agent API-key holders set shell-executed `cleanupCommand` and `teardownCommand` workspace fields.
+The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json) records [CVE-2026-119713](https://nvd.nist.gov/vuln/detail/CVE-2026-119713): Paperclip 2026.403.0 before 2026.416.0 lets agent API-key holders set shell-executed `cleanupCommand` and `teardownCommand` workspace fields. The [November 4 leaf update watch](../../../raw/processed/2026-11-04/ai-security-wiki-leaf-update-watch-20261104T010357Z.json) records CISA ADP metadata updated October 30 with `Exploitation=none`, `Automatable=no`, and `Technical Impact=total`; this is dated no-known-exploitation metadata, not a remediation or exploitation claim.
 
 ## Security Impact
 
@@ -23,6 +23,7 @@ The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-to
 
 - [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json)
 - [NVD CVE-2026-119713](https://nvd.nist.gov/vuln/detail/CVE-2026-119713)
+- [November 4 leaf update watch](../../../raw/processed/2026-11-04/ai-security-wiki-leaf-update-watch-20261104T010357Z.json)
 
 ## Related Code
 
@@ -47,3 +48,4 @@ The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-to
 ## Maintenance Notes
 
 - Created on 2026-10-30 from NVD-backed collector evidence.
+- Updated on 2026-11-04 with CISA ADP SSVC metadata; no demonstrated exploitation is established.

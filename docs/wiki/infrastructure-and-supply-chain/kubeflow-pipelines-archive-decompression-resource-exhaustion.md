@@ -9,7 +9,7 @@ tags: ["infrastructure-and-supply-chain", "threats-and-attacks"]
 
 ## Current Understanding
 
-The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json) and [October 31 collector](../../../raw/processed/2026-10-31/ai-security-wiki-topic-news-collector-2026-10-31T232757Z.json) record [CVE-2026-118761](https://nvd.nist.gov/vuln/detail/CVE-2026-118761): Kubeflow Pipelines before 2.18.0 decompresses uploaded pipeline archives before namespace authorization without adequately bounding expanded data.
+The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json) and [October 31 collector](../../../raw/processed/2026-10-31/ai-security-wiki-topic-news-collector-2026-10-31T232757Z.json) record [CVE-2026-118761](https://nvd.nist.gov/vuln/detail/CVE-2026-118761): Kubeflow Pipelines before 2.18.0 decompresses uploaded pipeline archives before namespace authorization without adequately bounding expanded data. The [November 4 leaf update watch](../../../raw/processed/2026-11-04/ai-security-wiki-leaf-update-watch-20261104T010357Z.json) records CISA ADP metadata updated October 29 with `Exploitation=none`, `Automatable=yes`, and `Technical Impact=partial`; it does not establish demonstrated or confirmed exploitation.
 
 ## Security Impact
 
@@ -25,6 +25,7 @@ The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-to
 - [October 31 collector](../../../raw/processed/2026-10-31/ai-security-wiki-topic-news-collector-2026-10-31T232757Z.json)
 - [NVD CVE-2026-118761](https://nvd.nist.gov/vuln/detail/CVE-2026-118761)
 - [GitHub advisory GHSA-8fmv-6rg5-5924](https://github.com/advisories/GHSA-8fmv-6rg5-5924)
+- [November 4 leaf update watch](../../../raw/processed/2026-11-04/ai-security-wiki-leaf-update-watch-20261104T010357Z.json)
 
 ## Related Code
 
@@ -50,3 +51,4 @@ The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-to
 
 - Created on 2026-10-30 as a distinct pre-authorization availability boundary.
 - Updated on 2026-10-31 with maintainer advisory remediation details; no additional digest entry is needed because the durable boundary is unchanged.
+- Updated on 2026-11-04 with CISA ADP SSVC metadata; the maintainer's 2.18.0 mitigation remains separate source-backed remediation evidence.

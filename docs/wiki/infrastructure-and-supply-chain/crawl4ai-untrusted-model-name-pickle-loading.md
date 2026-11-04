@@ -9,7 +9,7 @@ tags: ["infrastructure-and-supply-chain", "model-and-prompt-security"]
 
 ## Current Understanding
 
-The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json) records [CVE-2026-119120](https://nvd.nist.gov/vuln/detail/CVE-2026-119120): Crawl4AI 0.9.0 before 0.9.5 accepts an unfiltered `CosineStrategy` `model_name` in Docker API bodies, letting authenticated clients choose a malicious Hugging Face pickle-weight repository. This can execute code on PyTorch below 2.6 or exhaust resources.
+The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json) records [CVE-2026-119120](https://nvd.nist.gov/vuln/detail/CVE-2026-119120): Crawl4AI 0.9.0 before 0.9.5 accepts an unfiltered `CosineStrategy` `model_name` in Docker API bodies, letting authenticated clients choose a malicious Hugging Face pickle-weight repository. This can execute code on PyTorch below 2.6 or exhaust resources. The [November 4 leaf update watch](../../../raw/processed/2026-11-04/ai-security-wiki-leaf-update-watch-20261104T010357Z.json) records CISA ADP metadata updated November 3 with `Exploitation=poc`, `Automatable=no`, and `Technical Impact=total`, plus an exploit-tagged GitHub advisory reference. This is proof-of-concept evidence, not confirmed in-the-wild exploitation.
 
 ## Security Impact
 
@@ -23,6 +23,7 @@ The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-to
 
 - [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json)
 - [NVD CVE-2026-119120](https://nvd.nist.gov/vuln/detail/CVE-2026-119120)
+- [November 4 leaf update watch](../../../raw/processed/2026-11-04/ai-security-wiki-leaf-update-watch-20261104T010357Z.json)
 
 ## Related Code
 
@@ -48,3 +49,4 @@ The [October 30 collector](../../../raw/processed/2026-10-30/ai-security-wiki-to
 ## Maintenance Notes
 
 - Created on 2026-10-30 from NVD-backed collector evidence.
+- Updated on 2026-11-04 with CISA ADP proof-of-concept metadata; retain the stated 0.9.5 remediation as separate evidence.

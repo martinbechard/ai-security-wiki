@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [CrewAI ScrapeWebsiteTool URL-Parser SSRF](crewai-scrapewebsitetool-url-parser-ssrf.md)
+- [CrowdStrike Falcon Guardian Runtime Agent Controls](crowdstrike-falcon-guardian-runtime-agent-controls.md)
 - [Open CLI MCP OAuth Endpoint Command Injection](open-cli-mcp-oauth-endpoint-command-injection.md)
 - [Agno PandasTools Model-Controlled Reflection](agno-pandas-tools-model-controlled-reflection.md)
 - [n8n LangChain Code Node Task-Runner Isolation RCE](n8n-langchain-code-node-task-runner-isolation-rce.md)
@@ -153,6 +155,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [CrewAI ScrapeWebsiteTool URL-Parser SSRF](crewai-scrapewebsitetool-url-parser-ssrf.md)
+- [CrowdStrike Falcon Guardian Runtime Agent Controls](crowdstrike-falcon-guardian-runtime-agent-controls.md)
 - [MCPHub passthrough-header information disclosure](mcphub-passthrough-header-information-disclosure.md)
 - [Chainlit MCP URL-allowlist SSRF bypass](chainlit-mcp-url-allowlist-ssrf-bypass.md)
 - [AWS Serverless MCP deployment-status path traversal](aws-serverless-mcp-deployment-status-path-traversal.md)
@@ -424,6 +428,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-11-04 with the CrewAI connected-peer SSRF and Falcon Guardian vendor-control leaves.
 - Updated on 2026-10-29 with XAgent ToolServer upload and Agent Zero FileBrowser delegated-write containment leaves.
 - Updated on 2026-10-27 with the ai-sdlc MCP repository-to-shell command-injection leaf.
 - Updated on 2026-10-26 with Continue MCP transport command injection, Google Cloud MCP Toolbox cloud-storage file boundary, OpenHands sandbox server RCE, and vLLM browser access leaves.

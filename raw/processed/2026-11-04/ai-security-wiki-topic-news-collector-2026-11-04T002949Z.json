@@ -1,0 +1,141 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-11-04T00:29:49Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-11-02T00:27:49Z",
+    "end_inclusive": "2026-11-04T00:29:49Z",
+    "date_rule": "Retained items have an explicit public publication date inside the window; date-only boundary claims and ambiguous dates were excluded."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent, tool, MCP, browser, delegated-authority, and autonomous-action security",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_methods": [
+    "Public web search restricted to public security research, official product-security material, public vulnerability indexes, and public source repositories.",
+    "Checked this repository's federation policy and local/ai-wiki/ai-dev-wiki topic indexes before routing; checked the November 2 and November 3 processed collector artifacts for duplicate suppression.",
+    "NVD API enrichment was attempted for the live window but did not return usable data in this environment; retained vulnerability evidence therefore cites the public NVD record URL plus a public CVE-indexing source and the upstream fix pull request."
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CPR-2026-11-03-HAIOU-PROMPT-ADWARE",
+      "title": "Check Point Research documents persistent prompt-adware in a Codex jailbreak bundle",
+      "visible_dates": {
+        "published": "2026-11-03"
+      },
+      "source_urls": [
+        "https://blog.checkpoint.com/security/prompt-adware-how-hidden-ai-instructions-could-create-a-new-enterprise-security-risk/"
+      ],
+      "evidence_classification": "Reputable security-research report with directly reproduced bundle behavior; not a disclosed customer compromise.",
+      "factual_summary": "Check Point Research reports that the Haiou OpenAI Codex jailbreak bundle persistently modifies trusted global agent instructions so ordinary greetings inject an advertisement for a third-party AI gateway. The report says the gateway was not found malicious and does not claim Haiou exfiltrated corporate information; the concrete finding is persistent manipulation of trusted natural-language instructions and configuration.",
+      "affected_boundary_or_version": "OpenAI Codex installations that accept the Haiou bundle or analogous third-party Skills, global prompts, or agent-configuration changes; no affected Codex version or vendor patch is stated.",
+      "why_it_matters_for_ai_security": "It is concrete evidence that prompt, Skill, and configuration supply chains can persistently steer later agent behavior outside a single conversation. The security control boundary is review, provenance, monitoring, and least privilege for agent instructions and third-party components.",
+      "named_entities": ["Check Point Research", "Haiou", "OpenAI Codex", "Claude Code", "LLM gateway", "Skills"],
+      "upstream_routing": {
+        "ai_wiki": "OpenAI Codex, Claude Code, and general third-party gateway/product background are upstream-owned ecosystem entities.",
+        "ai_dev_wiki": "General coding-agent configuration and developer workflow practice are upstream-owned by ai-dev-wiki.",
+        "ai_security_wiki": "Retain the security-specific prompt/configuration provenance, persistent-instruction manipulation, supply-chain, and least-privilege implications locally."
+      },
+      "confidence_notes": "High confidence in the date and reported observed instruction modification from the named security-research source. The broader impact on data exfiltration is a risk implication, not an observed Haiou outcome."
+    },
+    {
+      "id": "CVE-2026-120630",
+      "title": "CrewAI ScrapeWebsiteTool SSRF through URL-parser mismatch",
+      "visible_dates": {
+        "published": "2026-11-02",
+        "public_fix_pull_request_merged": "2026-08-17 (technical corroboration only; outside collection window)"
+      },
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-120630",
+        "https://aisecwatch.com/issues/027b1325-ffc8-4b52-afbc-cbee2b40e446",
+        "https://github.com/crewAIInc/crewAI/pull/6981"
+      ],
+      "evidence_classification": "Public CVE record, public CVE-indexing source, and public upstream merged remediation pull request.",
+      "factual_summary": "CVE-2026-120630 was publicly indexed as a November 2 CrewAI SSRF disclosure. The public record describes a mismatch between CrewAI URL validation and the HTTP client that can let attacker-controlled URLs reach internal services through ScrapeWebsiteTool. CrewAI's merged public remediation pins the socket to the validated peer IP, rechecks the peer after connection, validates redirect handling, and rejects proxy escape paths.",
+      "affected_boundary_or_version": "CrewAI versions before 1.15.17, ScrapeWebsiteTool/safe request path; the public CVE-indexing source describes 0 through before 1.15.17. The NVD record should be rechecked during ingest for final CNA metadata.",
+      "why_it_matters_for_ai_security": "Agent tools that retrieve user- or model-directed URLs can cross from model-facing content into internal network and cloud-metadata boundaries. The public fix gives a concrete control pattern: validate the IP actually connected to, not only a parsed URL string.",
+      "named_entities": ["CrewAI", "ScrapeWebsiteTool", "CVE-2026-120630", "SSRF", "urllib.parse", "urllib3", "requests"],
+      "upstream_routing": {
+        "ai_wiki": "CrewAI framework catalog/background is upstream-owned.",
+        "ai_dev_wiki": "General agent-tool implementation practice is upstream-owned unless it is this distinct security control.",
+        "ai_security_wiki": "Retain the URL-parser differential, SSRF, redirect/DNS/peer-IP validation, and private-address control boundary locally."
+      },
+      "confidence_notes": "Medium-high confidence: the date and CVE relevance are corroborated by a public CVE-indexing source; the primary NVD page was inaccessible to the web reader during this run. The public CrewAI pull request supports the remediation mechanics but predates the CVE publication."
+    },
+    {
+      "id": "CROWDSTRIKE-FALCON-GUARDIAN-2026-11-03",
+      "title": "CrowdStrike announces Falcon Guardian runtime agent controls",
+      "visible_dates": {
+        "published": "2026-11-03"
+      },
+      "source_urls": [
+        "https://ir.crowdstrike.com/node/17961/pdf"
+      ],
+      "evidence_classification": "Official vendor security product announcement; capability claims are vendor statements, not an independent assurance result.",
+      "factual_summary": "CrowdStrike announced that Falcon Guardian's AI Kill Switch can terminate unauthorized agents at the gateway and block them from running again; its announcement also states that the AI Gateway is generally available, agent hooks inspect prompts and block malicious activity, and AI supply-chain protection discovers malicious Skills and MCP servers. The same source marks endpoint network inspection generally available for Windows and says Mac support remains early access.",
+      "affected_boundary_or_version": "Falcon Guardian managed AI-agent runtime controls; gateway, endpoint, agent hooks, Skills/MCP discovery, Windows endpoint network inspection, and planned/early-access features as separately stated by the vendor.",
+      "why_it_matters_for_ai_security": "This is a concrete public mitigation/control change spanning agent actions, model/tool traffic, runtime termination, prompt inspection, and malicious-Skill/MCP intake. It is useful as a vendor control claim, with deployment effectiveness still needing independent assurance evidence.",
+      "named_entities": ["CrowdStrike", "Falcon Guardian", "AI Kill Switch", "AI Gateway", "SafeMind", "Claude Code", "OpenAI Codex", "GitHub Copilot", "MCP"],
+      "upstream_routing": {
+        "ai_wiki": "CrowdStrike company and broad product-catalog background are upstream-owned.",
+        "ai_dev_wiki": "General coding-agent adoption context is upstream-owned.",
+        "ai_security_wiki": "Retain the stated runtime termination, prompt/action monitoring, agent identity, and Skill/MCP supply-chain control claims as a security-specific implication, clearly attributed to the vendor."
+      },
+      "confidence_notes": "High confidence in the dated official announcement and its stated availability labels. Treat effectiveness, coverage, and future roadmap claims as vendor assertions until independently evaluated."
+    }
+  ],
+  "routing_notes": [
+    "All three findings have broad entity/product background owned upstream by ai-wiki; this artifact keeps only the security boundary and control implication for ai-security-wiki.",
+    "The Haiou finding has a general coding-agent configuration/workflow aspect owned by ai-dev-wiki; the local security lens is persistent instruction provenance and access-impact risk.",
+    "The CrewAI finding has general agent-tool implementation context owned by ai-dev-wiki; the local security lens is SSRF and validated-peer/redirect control behavior.",
+    "The CrowdStrike finding is a vendor capability announcement, not a reason to duplicate the vendor catalog upstream; only its concrete security-control delta is locally relevant."
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-120233 ag-ui HttpAgent information disclosure",
+      "reason": "Already captured in the November 2 processed collector artifact; no new public delta was established in this run.",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120233"
+    },
+    {
+      "candidate": "Network-AI CVE-2026-120311 through CVE-2026-120314",
+      "reason": "Already captured in the November 3 processed collector artifact; duplicate collection avoided.",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120311"
+    },
+    {
+      "candidate": "Prefab UI CVE-2026-120338 generative sandbox escape",
+      "reason": "Already captured in the November 2 processed collector artifact.",
+      "source_url": "https://nvd.nist.gov/vuln/detail/CVE-2026-120338"
+    },
+    {
+      "candidate": "China AI Safety Governance Framework 3.0",
+      "reason": "Official source visibly dates the framework September 14, 2026, outside the strict two-day window.",
+      "source_url": "https://www.cac.gov.cn/2026-09/14/c_1791137092283345.htm"
+    },
+    {
+      "candidate": "Open GitHub issues mentioning MCP timeouts or repeated tool calls",
+      "reason": "Public issue reports alone did not provide a verified security advisory, patch, or concrete security change during the window.",
+      "source_url": "https://github.com/crewAIInc/crewAI/issues"
+    },
+    {
+      "candidate": "NVD live-window bulk API results",
+      "reason": "The public endpoint did not return usable data in this environment after a bounded attempt, so it was not treated as evidence of no additional changes.",
+      "source_url": "https://services.nvd.nist.gov/rest/json/cves/2.0"
+    }
+  ],
+  "confidence_notes": [
+    "No private, proprietary, sensitive, PII, or local company content was sent to external services; research used public sources only.",
+    "The absence of usable NVD bulk API output is an evidence-access gap, not a no-change conclusion.",
+    "Qualifying records are raw evidence for later verifier-gated ingest; no durable wiki claim or remediation recommendation was made by this collector."
+  ],
+  "follow_up_actions": [
+    "During ingest, recheck CVE-2026-120630 against the primary NVD/CNA record for final affected range, CVSS, CWE, and references; preserve the distinction between the November CVE disclosure and the August public CrewAI fix.",
+    "During ingest, treat Check Point's Haiou report as a security-research observation, not evidence that the named gateway was malicious or that corporate data was exfiltrated.",
+    "During ingest, retain the CrowdStrike availability labels and effectiveness claims as vendor-attributed control statements; seek independent deployment or assurance evidence before claiming operational coverage."
+  ]
+}

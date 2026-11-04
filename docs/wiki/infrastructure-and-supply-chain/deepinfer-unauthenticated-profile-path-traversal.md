@@ -9,7 +9,7 @@ tags: ["infrastructure-and-supply-chain", "identity-and-access"]
 
 ## Current Understanding
 
-The [October 31 collector](../../../raw/processed/2026-10-31/ai-security-wiki-topic-news-collector-2026-10-31T232757Z.json) records [CVE-2026-120204](https://nvd.nist.gov/vuln/detail/CVE-2026-120204): DeepInfer through 0.1.0 exposes an unauthenticated `/profile` endpoint whose `output_dir` can traverse outside an intended trace-output location. Broad [DeepSeek-AI](../../../upstream-ai-wiki/companies/deepseek-ai.md) context belongs upstream; this page owns the profiling-service authentication and filesystem-write boundary.
+The [October 31 collector](../../../raw/processed/2026-10-31/ai-security-wiki-topic-news-collector-2026-10-31T232757Z.json) records [CVE-2026-120204](https://nvd.nist.gov/vuln/detail/CVE-2026-120204): DeepInfer through 0.1.0 exposes an unauthenticated `/profile` endpoint whose `output_dir` can traverse outside an intended trace-output location. Broad [DeepSeek-AI](../../../upstream-ai-wiki/companies/deepseek-ai.md) context belongs upstream; this page owns the profiling-service authentication and filesystem-write boundary. The [November 4 leaf update watch](../../../raw/processed/2026-11-04/ai-security-wiki-leaf-update-watch-20261104T010357Z.json) records CISA ADP metadata updated November 2 with `Exploitation=none`, `Automatable=no`, and `Technical Impact=partial`; it is a risk-metadata update, not evidence of demonstrated exploitation or a fixed release.
 
 ## Security Impact
 
@@ -25,6 +25,7 @@ The [October 31 collector](../../../raw/processed/2026-10-31/ai-security-wiki-to
 - [GitHub advisory GHSA-qv68-3gfq-wxpc](https://github.com/advisories/GHSA-qv68-3gfq-wxpc)
 - [NVD CVE-2026-120204](https://nvd.nist.gov/vuln/detail/CVE-2026-120204)
 - [DeepInfer pull request 242](https://github.com/deepseek-ai/DeepInfer/pull/242)
+- [November 4 leaf update watch](../../../raw/processed/2026-11-04/ai-security-wiki-leaf-update-watch-20261104T010357Z.json)
 
 ## Related Code
 
@@ -50,3 +51,4 @@ The [October 31 collector](../../../raw/processed/2026-10-31/ai-security-wiki-to
 ## Maintenance Notes
 
 - Created on 2026-10-31 as an independently maintainable diagnostic-endpoint filesystem boundary.
+- Updated on 2026-11-04 with CISA ADP SSVC metadata; maintainer-release uncertainty remains unchanged.
