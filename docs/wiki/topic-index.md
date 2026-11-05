@@ -8,6 +8,12 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [Jan Agent-Tools Dangling-Symlink Workspace Escape](agent-and-tool-security/jan-agent-tools-dangling-symlink-workspace-escape.md)
+- [Mistral Vibe gpg.program Pre-Trust Execution](agent-and-tool-security/mistral-vibe-gpg-program-pretrust-execution.md)
+- [Mistral Vibe Git Filter-Driver Pre-Trust Execution](agent-and-tool-security/mistral-vibe-git-filter-driver-pretrust-execution.md)
+- [Mistral Vibe Windows git.exe Pre-Trust Execution](agent-and-tool-security/mistral-vibe-windows-git-exe-pretrust-execution.md)
+- [DeepSeek Harness Local Control-Plane Authentication](agent-and-tool-security/deepseek-harness-local-control-plane-authentication.md)
+- [RAGFlow Seafile Connector SSRF](agent-and-tool-security/ragflow-seafile-connector-ssrf.md)
 - [Haiou Codex Prompt-Adware Persistent Instruction Manipulation](model-and-prompt-security/haiou-codex-prompt-adware.md)
 - [CrewAI ScrapeWebsiteTool URL-Parser SSRF](agent-and-tool-security/crewai-scrapewebsitetool-url-parser-ssrf.md)
 - [CrowdStrike Falcon Guardian Runtime Agent Controls](agent-and-tool-security/crowdstrike-falcon-guardian-runtime-agent-controls.md)

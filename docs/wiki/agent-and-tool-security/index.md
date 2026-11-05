@@ -2,6 +2,12 @@
 
 ## Current Understanding
 
+- [Jan Agent-Tools Dangling-Symlink Workspace Escape](jan-agent-tools-dangling-symlink-workspace-escape.md)
+- [Mistral Vibe gpg.program Pre-Trust Execution](mistral-vibe-gpg-program-pretrust-execution.md)
+- [Mistral Vibe Git Filter-Driver Pre-Trust Execution](mistral-vibe-git-filter-driver-pretrust-execution.md)
+- [Mistral Vibe Windows git.exe Pre-Trust Execution](mistral-vibe-windows-git-exe-pretrust-execution.md)
+- [DeepSeek Harness Local Control-Plane Authentication](deepseek-harness-local-control-plane-authentication.md)
+- [RAGFlow Seafile Connector SSRF](ragflow-seafile-connector-ssrf.md)
 - [CrewAI ScrapeWebsiteTool URL-Parser SSRF](crewai-scrapewebsitetool-url-parser-ssrf.md)
 - [CrowdStrike Falcon Guardian Runtime Agent Controls](crowdstrike-falcon-guardian-runtime-agent-controls.md)
 - [Open CLI MCP OAuth Endpoint Command Injection](open-cli-mcp-oauth-endpoint-command-injection.md)
@@ -155,6 +161,12 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [Jan Agent-Tools Dangling-Symlink Workspace Escape](jan-agent-tools-dangling-symlink-workspace-escape.md)
+- [Mistral Vibe gpg.program Pre-Trust Execution](mistral-vibe-gpg-program-pretrust-execution.md)
+- [Mistral Vibe Git Filter-Driver Pre-Trust Execution](mistral-vibe-git-filter-driver-pretrust-execution.md)
+- [Mistral Vibe Windows git.exe Pre-Trust Execution](mistral-vibe-windows-git-exe-pretrust-execution.md)
+- [DeepSeek Harness Local Control-Plane Authentication](deepseek-harness-local-control-plane-authentication.md)
+- [RAGFlow Seafile Connector SSRF](ragflow-seafile-connector-ssrf.md)
 - [CrewAI ScrapeWebsiteTool URL-Parser SSRF](crewai-scrapewebsitetool-url-parser-ssrf.md)
 - [CrowdStrike Falcon Guardian Runtime Agent Controls](crowdstrike-falcon-guardian-runtime-agent-controls.md)
 - [MCPHub passthrough-header information disclosure](mcphub-passthrough-header-information-disclosure.md)

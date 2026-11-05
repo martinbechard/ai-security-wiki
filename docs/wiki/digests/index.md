@@ -2,7 +2,7 @@
 
 ## Current Understanding
 
-- [November 2026](2026-11.md) records 18 item-level November security boundaries, including persistent agent-instruction manipulation, CrewAI SSRF controls, Falcon Guardian vendor runtime controls, Network-AI path and A2A controls, MCP gateway policy, unsupported FARM loaders, and AWS assurance paths. Watcher changes remain leaf provenance.
+- [November 2026](2026-11.md) records 24 item-level November security boundaries, including Jan workspace containment, distinct Mistral Vibe pre-trust execution paths, DeepSeek Harness local control authentication, RAGFlow connector SSRF, persistent agent-instruction manipulation, and CrewAI SSRF controls. Watcher changes remain leaf provenance.
 
 - [October 2026](2026-10.md) records the October 31 DeepInfer unauthenticated profiling filesystem-write boundary; repeat AI Engine and Kubeflow records enrich existing leaves without duplicate digest entries.
 
