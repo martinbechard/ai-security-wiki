@@ -1,0 +1,86 @@
+{
+  "artifact_type": "ai-security-wiki-leaf-update-watch",
+  "generated_at": "2026-11-06T01:02:35Z",
+  "window": {
+    "start_exclusive": "2026-10-30T01:02:35Z",
+    "end_inclusive": "2026-11-06T01:02:35Z",
+    "date_policy": "Visible publication or substantive update dates only; ambiguous, future, missing, and boundary-only dates are excluded."
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/deepseek-harness-local-control-plane-authentication.md",
+    "docs/wiki/agent-and-tool-security/jan-agent-tools-dangling-symlink-workspace-escape.md",
+    "docs/wiki/agent-and-tool-security/mistral-vibe-git-filter-driver-pretrust-execution.md",
+    "docs/wiki/agent-and-tool-security/mistral-vibe-gpg-program-pretrust-execution.md",
+    "docs/wiki/agent-and-tool-security/mistral-vibe-windows-git-exe-pretrust-execution.md",
+    "docs/wiki/agent-and-tool-security/ragflow-seafile-connector-ssrf.md",
+    "docs/wiki/agent-and-tool-security/ibm-mq-agent-llm-worker-exhaustion.md",
+    "docs/wiki/agent-and-tool-security/ogx-mcp-server-url-ssrf.md",
+    "docs/wiki/agent-and-tool-security/playwrightcapture-favicon-redirect-ssrf.md",
+    "docs/wiki/agent-and-tool-security/postgres-mcp-pro-rangefunction-bypass.md",
+    "docs/wiki/data-and-privacy/cheshire-cat-ai-memory-points-disclosure.md",
+    "docs/wiki/data-and-privacy/ibm-contextforge-jq-filter-credential-disclosure.md",
+    "docs/wiki/data-and-privacy/ibm-contextforge-translate-session-confusion.md",
+    "docs/wiki/identity-and-access/azure-ai-language-missing-authentication.md",
+    "docs/wiki/infrastructure-and-supply-chain/ai-website-builder-unprotected-rest-rce.md"
+  ],
+  "sources_checked": [
+    "https://github.com/advisories/GHSA-h3m7-c9pq-7995",
+    "https://github.com/advisories/GHSA-pjpc-p955-xv4f",
+    "https://github.com/advisories/GHSA-3fw5-5q64-5hwx",
+    "https://github.com/advisories/GHSA-qx7j-gch3-gv7c",
+    "https://github.com/advisories/GHSA-4c2h-cpg4-cvr2",
+    "https://github.com/advisories/GHSA-6c99-p4pm-w7p6",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-19645",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-85666",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-85242",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-85620",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-85093",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-18486",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-18489",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-70352",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-82923"
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/identity-and-access/azure-ai-language-missing-authentication.md",
+      "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-70352",
+      "visible_update_at": "2026-10-31T16:18:07.330Z",
+      "evidence_classification": "disclosed vulnerability",
+      "exploitation_status": "CISA ADP SSVC metadata says Exploitation: none; this is not confirmed exploitation or demonstrated research.",
+      "affected_boundary": "Azure AI Language Authoring; missing authentication for a critical function can permit unauthenticated network privilege elevation.",
+      "named_entities": ["Microsoft", "Azure AI Language Authoring", "CVE-2026-70352", "CISA ADP", "MSRC"],
+      "factual_summary": "The current CVE record was updated within the strict window and identifies Azure AI Language Authoring as the affected product. It retains the vendor advisory and patch reference, a CVSS 10.0 vector, and the CISA ADP assessment of no known exploitation.",
+      "upstream_routing": "Broad Azure AI product context belongs in ai-wiki. Retain only the missing-authentication and cloud-AI authorization boundary in ai-security-wiki.",
+      "follow_up_note": "During ingest, compare the October 31 CVE revision with the September capture and check the Microsoft advisory for affected-service remediation detail before changing the durable leaf."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_ids": [
+        "docs/wiki/agent-and-tool-security/deepseek-harness-local-control-plane-authentication.md",
+        "docs/wiki/agent-and-tool-security/jan-agent-tools-dangling-symlink-workspace-escape.md",
+        "docs/wiki/agent-and-tool-security/mistral-vibe-git-filter-driver-pretrust-execution.md",
+        "docs/wiki/agent-and-tool-security/mistral-vibe-gpg-program-pretrust-execution.md",
+        "docs/wiki/agent-and-tool-security/mistral-vibe-windows-git-exe-pretrust-execution.md",
+        "docs/wiki/agent-and-tool-security/ragflow-seafile-connector-ssrf.md"
+      ],
+      "reason": "The GitHub Advisory Database records were visibly published November 4 but are already captured by raw/processed/2026-11-05/ai-security-wiki-topic-news-collector-2026-11-05T003237Z.json; no later same-leaf material delta was found."
+    },
+    {
+      "leaf_ids": [
+        "docs/wiki/agent-and-tool-security/ibm-mq-agent-llm-worker-exhaustion.md",
+        "docs/wiki/agent-and-tool-security/ogx-mcp-server-url-ssrf.md",
+        "docs/wiki/agent-and-tool-security/playwrightcapture-favicon-redirect-ssrf.md",
+        "docs/wiki/agent-and-tool-security/postgres-mcp-pro-rangefunction-bypass.md",
+        "docs/wiki/data-and-privacy/cheshire-cat-ai-memory-points-disclosure.md",
+        "docs/wiki/data-and-privacy/ibm-contextforge-jq-filter-credential-disclosure.md",
+        "docs/wiki/data-and-privacy/ibm-contextforge-translate-session-confusion.md",
+        "docs/wiki/infrastructure-and-supply-chain/ai-website-builder-unprotected-rest-rce.md"
+      ],
+      "reason": "The current CVE Services publication and update dates are before the strict seven-day window; their older disclosures remain represented by prior processed source material."
+    }
+  ],
+  "result": "one_new_qualifying_update_saved_raw_only",
+  "docs_wiki_changed": false,
+  "raw_processed_changed": false
+}

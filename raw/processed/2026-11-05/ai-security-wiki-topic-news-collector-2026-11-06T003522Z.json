@@ -1,0 +1,131 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-11-06T00:35:22Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-11-04T00:35:22Z",
+    "end_inclusive": "2026-11-06T00:35:22Z",
+    "rule": "An explicitly visible publication or update date inside the 48-hour window is required; date-only values are retained only when the whole visible calendar date lies inside the window."
+  },
+  "repository_scope": "/Users/martinbechard/dev/ai-security-wiki",
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "wiki_and_federation_checked": {
+    "local": ["docs/wiki/federation.md", "docs/wiki/topic-index.md"],
+    "upstream": [
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "routing_rule": "Retain only security-specific boundaries, mitigations, evidence, and impacts locally; broad product entities belong in ai-wiki and general AI-assisted development practices belong in ai-dev-wiki."
+  },
+  "source_collection_method": {
+    "public_sources_only": true,
+    "discovery": "Public CVE and advisory-database searches, with linked public project advisory, patch, and release references where available.",
+    "duplicate_check": "Searched raw, raw/processed, docs/wiki, and both upstream topic indexes for retained CVE identifiers and named entities."
+  },
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-123271",
+      "title": "ChatCLI MCP OAuth resource-indicator origin validation error",
+      "source_urls": [
+        "https://app.opencve.io/cve/CVE-2026-123271",
+        "https://github.com/diillson/chatcli/security/advisories/GHSA-95vg-3r9c-2v5q",
+        "https://github.com/diillson/chatcli/commit/951fe24b8e090eae86bf8edb13a788916b1e6c91",
+        "https://github.com/diillson/chatcli/releases/tag/v1.215.2"
+      ],
+      "visible_date": "2026-11-05T18:45:35Z",
+      "evidence_classification": "Published CVE record from VulnCheck, with a listed maintainer-hosted GitHub advisory, patch, and fixed release.",
+      "affected_boundary_or_version": "ChatCLI v1.159.0 through before v1.215.2; MCP OAuth login and server-supplied Protected Resource Metadata resource indicator.",
+      "factual_summary": "The published record says ChatCLI used server-supplied Protected Resource Metadata as an OAuth resource indicator without verifying that it matched the configured MCP server URL. A malicious MCP server could obtain a bearer token for another resource on the same authorization server and replay it there. The record lists v1.215.2 as the fixed release.",
+      "why_it_matters_for_ai_security": "MCP OAuth metadata is a delegated-authority boundary. Client acceptance of unbound resource metadata can redirect bearer-token authority across resources.",
+      "named_entities": ["ChatCLI", "MCP", "OAuth", "Protected Resource Metadata", "bearer token"],
+      "upstream_routing": "ChatCLI product background belongs in ai-wiki and general MCP client workflows belong in ai-dev-wiki; retain this OAuth resource-origin validation boundary locally.",
+      "confidence": "high",
+      "follow_up_actions": ["During ingest, confirm the maintainer advisory and v1.215.2 release remediation wording before asserting deployment guidance."]
+    },
+    {
+      "id": "CVE-2026-123272",
+      "title": "mcp-go OAuth well-known metadata origin validation error",
+      "source_urls": [
+        "https://cve.now/latest",
+        "https://www.rapid7.com/db/?page=1&productName=Firewall+Analyzer",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-123272"
+      ],
+      "visible_date": "2026-11-05",
+      "evidence_classification": "Public vulnerability-database publication; NVD record URL retained for later primary-record reconciliation.",
+      "affected_boundary_or_version": "mark3labs/mcp-go before v1.2.1; OAuthHandler.fetchServerMetadata handling of well-known Protected Resource Metadata.",
+      "factual_summary": "Public vulnerability-database entries identify an origin-validation error in mcp-go OAuth metadata processing before v1.2.1. The issue concerns unvalidated well-known Protected Resource Metadata, making it an OAuth authority-binding control gap; v1.2.1 is identified as the fixed version.",
+      "why_it_matters_for_ai_security": "MCP servers and clients use OAuth to authorize tool and resource access. Metadata-origin validation prevents a hostile server from steering delegated credentials toward an unintended protected resource.",
+      "named_entities": ["mark3labs/mcp-go", "MCP", "OAuthHandler", "Protected Resource Metadata"],
+      "upstream_routing": "mcp-go SDK catalog and generic MCP implementation material belong in ai-wiki, and normal tool-governance practice belongs in ai-dev-wiki; retain this OAuth authority-binding flaw locally.",
+      "confidence": "medium",
+      "follow_up_actions": ["Obtain the maintainer advisory, patch commit, or v1.2.1 release notes before durable synthesis; retain the NVD URL as the canonical CVE-record check."]
+    },
+    {
+      "id": "CVE-2026-123135",
+      "title": "Dify Sandbox Run Handler hard-coded credentials",
+      "source_urls": [
+        "https://app.opencve.io/cve/CVE-2026-123135",
+        "https://www.rapid7.com/db/vulnerabilities/cve-2026-123135/",
+        "https://vuldb.com/vuln/431443",
+        "https://github.com/langgenius/dify/"
+      ],
+      "visible_date": "2026-11-05T18:45:12Z",
+      "evidence_classification": "Published CVE record from VulDB, corroborated by public vulnerability databases; no maintainer patch or fixed release was identified during collection.",
+      "affected_boundary_or_version": "langgenius Dify through 1.18.0 and 2.0.0-beta.2; Sandbox Run Handler api/configs/feature/__init__.py.",
+      "factual_summary": "The published record reports hard-coded credentials in the Dify Sandbox Run Handler, says the attack can be launched remotely, and notes public exploit availability. The collected sources do not establish a fixed release.",
+      "why_it_matters_for_ai_security": "AI application sandboxes isolate model- and agent-triggered execution. Embedded credentials can collapse that control boundary and expose sandbox-backed services or data.",
+      "named_entities": ["langgenius", "Dify", "Sandbox Run Handler", "hard-coded credentials", "CWE-798"],
+      "upstream_routing": "Dify product context belongs in ai-wiki and general application-building practice belongs in ai-dev-wiki; retain the sandbox credential boundary and missing-patch evidence locally.",
+      "confidence": "medium",
+      "follow_up_actions": ["Seek a maintainer advisory, issue, commit, or fixed release before deriving remediation; do not treat public-exploit language as evidence of active exploitation."]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-122133, CVE-2026-122134, and CVE-2026-122135 (Mistral Vibe)",
+      "reason": "Qualifying November 4 disclosures, but already captured in raw/processed/2026-11-05/ai-security-wiki-topic-news-collector-2026-11-05T003237Z.json and represented by local security leaves; excluded to avoid duplicate collection."
+    },
+    {
+      "candidate": "CVE-2026-122235 (Jan), CVE-2026-82033 (DeepSeek Harness), and CVE-2026-121927 (RAGFlow)",
+      "reason": "Already captured in the same prior collector artifact, so not duplicated in this run."
+    },
+    {
+      "candidate": "CVE-2026-123206 (EdgeChat missing authentication)",
+      "reason": "In-window but the available database summary did not establish an AI-specific model, agent, retrieval, tool, or delegated-authority boundary."
+    },
+    {
+      "candidate": "Anthropic Security newsroom and 2026 Usage Policy update",
+      "reason": "Official sources checked, but their visible October publication dates fall outside the 48-hour cutoff."
+    },
+    {
+      "candidate": "General GitHub Advisory Database listing pages and third-party incident dashboards",
+      "reason": "Used for discovery only; no additional independently reproducible, in-window AI-security fact was retained from them."
+    }
+  ],
+  "routing_count": 3,
+  "confidence_notes": [
+    "CVE publication timing is evidence of public disclosure, not evidence of active exploitation.",
+    "The mcp-go record has a visible in-window calendar date but no verified precise timestamp in the collected sources; November 5 lies entirely inside the run window.",
+    "The Dify record is medium confidence because the collected sources are CVE/vulnerability-database evidence rather than a maintainer-authored security advisory or fix."
+  ],
+  "follow_up_actions": [
+    "Run the normal independent source-verification gate before ingest and preserve each finding as a separate security boundary.",
+    "Verify maintainer advisory and fixed-release evidence for mcp-go and Dify before adding durable remediation claims.",
+    "Do not move this artifact to raw/processed or edit docs/wiki as part of collection."
+  ],
+  "blockers": [
+    "No maintainer-authored advisory or fixed-release reference was identified for the Dify CVE during this run.",
+    "No maintainer advisory, patch, or release reference was identified for the mcp-go CVE during this run."
+  ],
+  "artifact_state": "raw-only; docs/wiki and raw/processed were not edited"
+}

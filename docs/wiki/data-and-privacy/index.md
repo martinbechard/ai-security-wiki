@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [Dify Sandbox Run Handler Hard-Coded Credentials](dify-sandbox-run-handler-hard-coded-credentials.md)
 - [Kubeflow Pipelines Run-Log Authorization Bypass](kubeflow-pipelines-run-log-authorization-bypass.md)
 
 - [CreditNirvana Agentic AI Call Centre Client-Key Disclosure](creditnirvana-agentic-ai-call-centre-client-key-disclosure.md)

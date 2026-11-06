@@ -8,6 +8,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [ChatCLI MCP OAuth Resource-Origin Binding](identity-and-access/chatcli-mcp-oauth-resource-origin-binding.md)
+- [mcp-go OAuth Resource-Metadata Origin Validation](identity-and-access/mcp-go-oauth-resource-metadata-origin-validation.md)
+- [Dify Sandbox Run Handler Hard-Coded Credentials](data-and-privacy/dify-sandbox-run-handler-hard-coded-credentials.md)
 - [Jan Agent-Tools Dangling-Symlink Workspace Escape](agent-and-tool-security/jan-agent-tools-dangling-symlink-workspace-escape.md)
 - [Mistral Vibe gpg.program Pre-Trust Execution](agent-and-tool-security/mistral-vibe-gpg-program-pretrust-execution.md)
 - [Mistral Vibe Git Filter-Driver Pre-Trust Execution](agent-and-tool-security/mistral-vibe-git-filter-driver-pretrust-execution.md)

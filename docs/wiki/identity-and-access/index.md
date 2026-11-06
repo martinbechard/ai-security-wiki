@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [ChatCLI MCP OAuth Resource-Origin Binding](chatcli-mcp-oauth-resource-origin-binding.md)
+- [mcp-go OAuth Resource-Metadata Origin Validation](mcp-go-oauth-resource-metadata-origin-validation.md)
 - [Kubeflow Pipelines Artifact Namespace Authorization Bypass](kubeflow-pipelines-artifact-namespace-authorization-bypass.md)
 - [AI Engine MCP OAuth Client Registration Missing Authorization](ai-engine-mcp-oauth-client-registration-missing-authorization.md)
 - [Paperclip Agent API-Key Workspace Cleanup Command RCE](paperclip-agent-api-key-workspace-cleanup-command-rce.md)

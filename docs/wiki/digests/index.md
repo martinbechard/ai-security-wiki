@@ -2,7 +2,7 @@
 
 ## Current Understanding
 
-- [November 2026](2026-11.md) records 24 item-level November security boundaries, including Jan workspace containment, distinct Mistral Vibe pre-trust execution paths, DeepSeek Harness local control authentication, RAGFlow connector SSRF, persistent agent-instruction manipulation, and CrewAI SSRF controls. Watcher changes remain leaf provenance.
+- [November 2026](2026-11.md) records 27 item-level November security boundaries, including ChatCLI and mcp-go OAuth resource-origin controls, Dify sandbox credential exposure, Jan workspace containment, and distinct Mistral Vibe pre-trust execution paths. The Azure AI Language watcher revision remains leaf provenance.
 
 - [October 2026](2026-10.md) records the October 31 DeepInfer unauthenticated profiling filesystem-write boundary; repeat AI Engine and Kubeflow records enrich existing leaves without duplicate digest entries.
 
