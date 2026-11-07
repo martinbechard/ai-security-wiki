@@ -8,6 +8,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [AgentScope MCP Workspace Command Injection](agent-and-tool-security/agentscope-mcp-workspace-command-injection.md)
+- [Dagu MCP DAG-Specification Path Containment](agent-and-tool-security/dagu-mcp-dag-specification-path-containment.md)
 - [ChatCLI MCP OAuth Resource-Origin Binding](identity-and-access/chatcli-mcp-oauth-resource-origin-binding.md)
 - [mcp-go OAuth Resource-Metadata Origin Validation](identity-and-access/mcp-go-oauth-resource-metadata-origin-validation.md)
 - [Dify Sandbox Run Handler Hard-Coded Credentials](data-and-privacy/dify-sandbox-run-handler-hard-coded-credentials.md)
@@ -873,6 +875,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-11-06 with AgentScope MCP workspace command-execution and Dagu MCP DAG-specification containment leaves.
 - Updated on 2026-10-27 with AI Engine, CreditNirvana, Keepnet, ai-sdlc, and split MLflow security-boundary leaves.
 - Updated on 2026-10-20 with separate MCP TypeScript SDK tenant-isolation, structural-input availability, and bearer-token audience leaves; October 20 watcher confirmations remain leaf-level provenance.
 - Updated on 2026-10-16 with WSP MCP unpublished-content access, Junie CLI project-configuration execution, and Claude Agent SDK resume argument injection security leaves.

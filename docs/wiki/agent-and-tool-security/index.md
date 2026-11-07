@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [AgentScope MCP Workspace Command Injection](agentscope-mcp-workspace-command-injection.md)
+- [Dagu MCP DAG-Specification Path Containment](dagu-mcp-dag-specification-path-containment.md)
 - [Jan Agent-Tools Dangling-Symlink Workspace Escape](jan-agent-tools-dangling-symlink-workspace-escape.md)
 - [Mistral Vibe gpg.program Pre-Trust Execution](mistral-vibe-gpg-program-pretrust-execution.md)
 - [Mistral Vibe Git Filter-Driver Pre-Trust Execution](mistral-vibe-git-filter-driver-pretrust-execution.md)
@@ -161,6 +163,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [AgentScope MCP Workspace Command Injection](agentscope-mcp-workspace-command-injection.md)
+- [Dagu MCP DAG-Specification Path Containment](dagu-mcp-dag-specification-path-containment.md)
 - [Jan Agent-Tools Dangling-Symlink Workspace Escape](jan-agent-tools-dangling-symlink-workspace-escape.md)
 - [Mistral Vibe gpg.program Pre-Trust Execution](mistral-vibe-gpg-program-pretrust-execution.md)
 - [Mistral Vibe Git Filter-Driver Pre-Trust Execution](mistral-vibe-git-filter-driver-pretrust-execution.md)
@@ -440,6 +444,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-11-06 with the AgentScope MCP workspace command-execution and Dagu MCP DAG-specification containment leaves.
 - Updated on 2026-11-04 with the CrewAI connected-peer SSRF and Falcon Guardian vendor-control leaves.
 - Updated on 2026-10-29 with XAgent ToolServer upload and Agent Zero FileBrowser delegated-write containment leaves.
 - Updated on 2026-10-27 with the ai-sdlc MCP repository-to-shell command-injection leaf.

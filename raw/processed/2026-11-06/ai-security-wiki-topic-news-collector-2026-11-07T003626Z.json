@@ -1,0 +1,115 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-11-07T00:36:26Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-11-05T00:36:26Z",
+    "end_inclusive": "2026-11-07T00:36:26Z",
+    "rule": "An explicit visible publication or update timestamp within this 48-hour window is required; date-only, ambiguous, future-dated, and boundary-only dates are excluded."
+  },
+  "repository_scope": "/Users/martinbechard/dev/ai-security-wiki",
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "wiki_and_federation_checked": {
+    "local": ["docs/wiki/federation.md", "docs/wiki/topic-index.md"],
+    "upstream": ["/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md", "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"],
+    "routing_rule": "Retain only the security-specific boundary, impact, mitigation, and evidence here. Broad product entities belong in ai-wiki and general agent-development practice belongs in ai-dev-wiki."
+  },
+  "source_collection_method": {
+    "public_sources_only": true,
+    "discovery": "Public GitHub Advisory Database and CVE-record search, followed by public project advisory, pull-request, commit, and release references where available.",
+    "duplicate_check": "Searched raw and raw/processed for retained CVE identifiers before writing this artifact; none were already captured.",
+    "source_limit": "No private, proprietary, sensitive, PII, or local company content was sent to an external service."
+  },
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-123022 / CVE-2026-123023 / CVE-2026-123024",
+      "advisory_id": "GHSA-m997-8g56-6phf (CVE-2026-123022); related AgentScope advisories for CVE-2026-123023 and CVE-2026-123024",
+      "title": "AgentScope MCP workspace command injection, agent-service missing authentication, and bash-tool authorization error",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-m997-8g56-6phf",
+        "https://github.com/agentscope-ai/agentscope/issues/3312",
+        "https://github.com/agentscope-ai/agentscope/pull/3448",
+        "https://github.com/ybyu-ieu/agent-security-advisories/blob/main/agentscope/agentscope-mcp-stdio-workspace-unauthenticated-process-execution.md",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-123022"
+      ],
+      "visible_date": "2026-11-05",
+      "evidence_classification": "GitHub Advisory Database publication; public researcher disclosure and public upstream issue/pull-request references",
+      "affected_boundary_or_version": "AgentScope agent service through 2.0.11 for the MCP workspace command injection and missing authentication; bash-tool authorization issue through 2.0.8, with 2.0.9 reported as its fixed release.",
+      "factual_summary": "The published CVE-2026-123022 advisory states that an externally supplied MCP Workspace API command reaches subprocess.Popen without adequate neutralization, allowing remote OS command injection. The same November 5 disclosure group reports a missing-authentication condition on the agent service and an authorization error in the bash tool. The command-injection advisory says its remediation pull request awaited acceptance at publication; the public disclosure distinguishes the bash-tool fix from the two still-unreleased fixes.",
+      "why_it_matters_for_ai_security": "An agent-service MCP configuration endpoint is a delegated-execution boundary. Missing authentication or unsafe command construction lets an untrusted network caller choose a process executed with the service account's agent and tool authority.",
+      "named_entities": ["AgentScope", "MCP Workspace API", "subprocess.Popen", "bash tool", "CVE-2026-123022", "CVE-2026-123023", "CVE-2026-123024"],
+      "upstream_routing": "AgentScope product background belongs in ai-wiki; general coding-agent service practice belongs in ai-dev-wiki. Retain the concrete MCP execution, authentication, authorization, affected-version, and mitigation evidence locally.",
+      "confidence": "high for CVE-2026-123022 publication and command-injection facts; medium for grouped related-CVE remediation detail pending direct maintainer-authored advisory pages for all three.",
+      "follow_up_actions": ["Verify each related GHSA and its exact fixed-version field before durable synthesis.", "Until a maintainer release fixes the MCP workspace surface, restrict it to trusted network paths or disable it when unused.", "Do not convert the advisory's public-exploit wording into evidence of active exploitation."]
+    },
+    {
+      "id": "CVE-2026-102943",
+      "advisory_id": "GHSA-5m6c-38r8-5w76",
+      "title": "Dagu MCP DAG-specification read bypasses path containment and workspace isolation",
+      "source_urls": [
+        "https://github.com/dagucloud/dagu/security/advisories/GHSA-5m6c-38r8-5w76",
+        "https://github.com/dagucloud/dagu/pull/2424",
+        "https://github.com/dagucloud/dagu/commit/c15c5406bb7b9551f94ab276705f9fd1cebbf2d2",
+        "https://github.com/dagucloud/dagu/releases/tag/v2.11.0",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102943",
+        "https://www.cve.org/CVERecord?id=CVE-2026-102943"
+      ],
+      "visible_date": "2026-11-05",
+      "evidence_classification": "Public CVE-record publication dated November 5; linked project security advisory, patch discussion, commit, and release evidence",
+      "affected_boundary_or_version": "Dagu before 2.11.0; MCP dagu_read operation with target dag_spec, requiring a viewer-role API key and a readable YAML target.",
+      "factual_summary": "The CVE record says Dagu's MCP dagu_read DAG-specification path calls the API in process and bypasses an HTTP-only traversal guard. A viewer-role API key can supply an absolute or traversing path to read accessible .yaml or .yml files outside configured DAG directories. The record identifies v2.11.0 as the fix and does not establish write or command-execution capability.",
+      "why_it_matters_for_ai_security": "MCP read tools are data-authorization boundaries. A transport-specific path check can leave a tool path able to disclose workflow definitions, configuration, or secrets outside the agent's intended workspace.",
+      "named_entities": ["Dagu", "MCP", "dagu_read", "dag_spec", "CVE-2026-102943", "GHSA-5m6c-38r8-5w76"],
+      "upstream_routing": "Dagu product background belongs in ai-wiki; general workflow-engine development practice belongs in ai-dev-wiki. Retain this MCP path-containment, authorization, affected-version, and patch evidence locally.",
+      "confidence": "high for the CVE-record date, affected version, read-only boundary, and v2.11.0 remediation; no active exploitation claim is supported by the retained sources.",
+      "follow_up_actions": ["Confirm that deployments expose dagu_read only to intended viewer principals and upgrade to v2.11.0 or later.", "Review readable YAML files for credentials and rotate any potentially exposed material.", "During ingest, confirm the release and patch apply the guard at the shared storage boundary rather than only one transport."]
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-111770 / GHSA-jm63-cq47-j5jp, MCP TypeScript SDK shared-server cross-client delivery",
+      "reason": "The maintainer advisory was visibly published October 15 and GitHub Advisory Database entry October 20; later third-party or database indexing on November 5 does not make the primary disclosure in-window."
+    },
+    {
+      "candidate": "CVE-2026-88983 / GHSA-f7vj-6669-qvv4, Kubeflow Pipelines pipelineURL SSRF",
+      "reason": "The public project advisory was visibly published outside this window. A later index listing was discovery-only and did not establish a new primary-source security change."
+    },
+    {
+      "candidate": "ChatCLI, mcp-go, and Dify Sandbox disclosures captured in the immediately preceding collector artifact",
+      "reason": "Already captured in raw/processed/2026-11-05/ai-security-wiki-topic-news-collector-2026-11-06T003522Z.json; excluded to avoid duplicate raw evidence."
+    },
+    {
+      "candidate": "Generic product releases and AI product announcements returned by searches",
+      "reason": "No concrete vulnerability, mitigation, control, assurance result, regulatory change, or incident-specific security delta was established."
+    },
+    {
+      "candidate": "Third-party incident dashboards, aggregators, and pages with only relative or ambiguous dates",
+      "reason": "Used only for discovery; not retained without an independently reproducible public primary, advisory-database, maintainer, standards, or regulator source carrying an in-window visible date."
+    }
+  ],
+  "routing_count": 2,
+  "confidence_notes": [
+    "Visible November 5 dates establish public CVE/advisory-record timing, not exploitation in the wild.",
+    "The AgentScope related-CVE grouping is retained as one closely coupled agent-service disclosure group; preserve its three CVE identifiers during any later ingestion.",
+    "Dagu's underlying project advisory predates the window; the retained in-window change is the public CVE record publication on November 5."
+  ],
+  "follow_up_actions": [
+    "Run an independent source-verification pass before moving this artifact or synthesizing any leaf.",
+    "Find direct maintainer-authored pages for CVE-2026-123023 and CVE-2026-123024 before asserting exact remediation in durable documentation.",
+    "Keep broad entity and practice context routed upstream; do not duplicate it in this security wiki."
+  ],
+  "blockers": [
+    "Direct maintainer-authored advisory pages for AgentScope CVE-2026-123023 and CVE-2026-123024 were not resolved during this collector run; their grouped remediation details require verification before durable synthesis."
+  ],
+  "artifact_state": "raw-only; docs/wiki and raw/processed were not edited"
+}
