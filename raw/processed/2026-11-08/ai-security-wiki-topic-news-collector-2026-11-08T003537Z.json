@@ -1,0 +1,155 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-11-08T00:35:37Z",
+  "cutoff_window": {
+    "start_inclusive": "2026-11-06T00:35:37Z",
+    "end_exclusive": "2026-11-08T00:35:37Z",
+    "date_policy": "Only a source with a visible, unambiguous timestamp inside the strict 48-hour window qualifies. NVD timestamps establish public-record disclosure timing, not exploit timing, exposure, or remediation timing."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP and delegated authority",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "AI supply chains",
+    "security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_methods": [
+    "NVD CVE API keyword searches for MCP, AI, LLM, agent, and prompt injection with pubStartDate/pubEndDate set to the cutoff window",
+    "Direct GitHub Security Advisory pages and first-party GitHub specification page for affected-boundary and patch verification",
+    "Federation routing review against local and upstream topic indexes"
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-123492",
+      "title": "SiYuan MCP resources/read nil-pointer denial of service",
+      "topic": "agent and tool security",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-123492",
+        "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-2x3p-x74g-442x"
+      ],
+      "visible_dates": {
+        "nvd_public_record_disclosure": "2026-11-06T15:17:18.830Z",
+        "github_advisory_published": "2026-10-22"
+      },
+      "evidence_classification": "NVD public-record disclosure, corroborated by a GitHub Security Advisory; the advisory is older than the collection window, so only the NVD disclosure timestamp qualifies this item for this run.",
+      "factual_summary": "NVD published CVE-2026-123492 for SiYuan before 3.8.9: an authenticated MCP client can read a nonexistent resource and trigger a nil-pointer panic in privateCacheMiddleware, terminating the kernel process. The advisory identifies versions 3.8.7 and 3.8.8 as affected and v3.8.9 as patched.",
+      "affected_boundary_or_version": "Authenticated MCP session and resources/read error path; affected <= v3.8.8; patched v3.8.9.",
+      "why_it_matters_for_ai_security": "An authenticated MCP client can turn an ordinary invalid resource request into a service interruption for an AI-connected knowledge system. It is an availability boundary, not evidence of unauthenticated compromise.",
+      "named_entities": ["SiYuan", "Model Context Protocol", "CVE-2026-123492", "GHSA-2x3p-x74g-442x"],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "note": "SiYuan product background remains upstream-owned by ai-wiki; this repository owns the MCP availability/security implication."
+      },
+      "confidence": "High for the affected and patched version boundaries; medium for operational impact outside the advisory's tested environments."
+    },
+    {
+      "id": "CVE-2026-102610",
+      "title": "fast-agent serve default unauthenticated MCP exposure and shell-tool RCE",
+      "topic": "identity, authentication, authorization, credentials, and least privilege",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-102610",
+        "https://github.com/evalstate/fast-agent/security/advisories/GHSA-9vhv-g5hf-m7m7",
+        "https://github.com/evalstate/fast-agent/releases/tag/v0.7.21"
+      ],
+      "visible_dates": {
+        "nvd_public_record_disclosure": "2026-11-06T21:17:05.677Z",
+        "github_advisory_published": "2026-07-22"
+      },
+      "evidence_classification": "NVD public-record disclosure, corroborated by an upstream GitHub Security Advisory and the referenced fixed release; the advisory publication is outside the collection window.",
+      "factual_summary": "NVD published CVE-2026-102610 for fast-agent before 0.7.21. Its serve command defaults to an HTTP MCP endpoint on 0.0.0.0:8000 without authentication; reachable clients can invoke the agent. When started with --shell, this can cause operating-system command execution as the server user. The issue is fixed in 0.7.21.",
+      "affected_boundary_or_version": "fast-agent-mcp <= 0.7.20; default HTTP listener, unauthenticated /mcp endpoint, and optional local shell tool; fixed 0.7.21.",
+      "why_it_matters_for_ai_security": "This combines network exposure, absent caller authentication, delegated agent authority, and an optional shell tool. Operators should upgrade and explicitly restrict listener scope and tool authority.",
+      "named_entities": ["fast-agent", "fast-agent-mcp", "Model Context Protocol", "CVE-2026-102610", "GHSA-9vhv-g5hf-m7m7"],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "note": "fast-agent framework catalog information belongs in ai-wiki; this local finding is the authentication and delegated-shell-authority lens."
+      },
+      "confidence": "High for the configuration, affected versions, and fixed release stated in the advisory."
+    },
+    {
+      "id": "CVE-2026-123653",
+      "title": "DeepSeek-Reasonix repository instruction files treated as trusted system guidance",
+      "topic": "model and prompt security",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-123653",
+        "https://github.com/esengine/DeepSeek-Reasonix/security/advisories/GHSA-7v48-x992-r5w7",
+        "https://github.com/esengine/DeepSeek-Reasonix/commit/4ca33493a673c2788aa8598fbca2b2f47a69e1b8",
+        "https://github.com/esengine/DeepSeek-Reasonix/releases/tag/v2.53.0"
+      ],
+      "visible_dates": {
+        "nvd_public_record_disclosure": "2026-11-06T14:17:10.923Z",
+        "github_advisory_published": "2026-10-27"
+      },
+      "evidence_classification": "NVD public-record disclosure, corroborated by the GitHub Security Advisory, linked upstream patch commit, and fixed release; the advisory itself predates the window.",
+      "factual_summary": "NVD published CVE-2026-123653 for DeepSeek-Reasonix before 2.53.0. The affected implementation automatically loaded repository-controlled AGENTS.md, CLAUDE.md, and REASONIX.md content as trusted durable guidance in the system prompt, allowing a hostile repository to steer shell-tool use. The record references a fix in 2.53.0.",
+      "affected_boundary_or_version": "Repository/ancestor instruction-file discovery and prompt composition; affected < 2.53.0; patched 2.53.0.",
+      "why_it_matters_for_ai_security": "It demonstrates a direct trust-boundary failure: untrusted workspace content was elevated into the system prompt and could influence permission-gated tool execution. Source provenance and workspace-trust gates are required controls.",
+      "named_entities": ["DeepSeek-Reasonix", "AGENTS.md", "CLAUDE.md", "REASONIX.md", "CVE-2026-123653", "GHSA-7v48-x992-r5w7"],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "note": "General coding-agent instruction-file practice belongs in ai-dev-wiki; the prompt-trust and tool-steering vulnerability is locally owned."
+      },
+      "confidence": "High for the vulnerable prompt-loading path and fixed version; the advisory's controlled demonstration should not be generalized to every model or deployment."
+    },
+    {
+      "id": "safe-outputs-mcp-gateway-specification-2026-11-07",
+      "title": "GitHub Agentic Workflows Safe Outputs MCP Gateway working draft",
+      "topic": "agent and tool security",
+      "source_urls": ["https://github.github.com/gh-aw/specs/safe-outputs-specification/"],
+      "visible_dates": {"working_draft_publication": "2026-11-07"},
+      "evidence_classification": "First-party GitHub Agentic Workflows working-draft specification; it is implementation guidance, not an adopted external standard or proof of a deployed control.",
+      "factual_summary": "GitHub Agentic Workflows published version 1.29.20 of a Safe Outputs MCP Gateway working draft. It defines a gateway between read-only agent execution and permission-controlled GitHub action contexts, with structured intended operations, configurable constraints, input validation, sanitization, and preview requirements.",
+      "affected_boundary_or_version": "Agent-to-GitHub execution boundary; specification version 1.29.20, working-draft status.",
+      "why_it_matters_for_ai_security": "It provides a concrete design reference for least privilege and approval separation when MCP-connected agents propose consequential repository operations.",
+      "named_entities": ["GitHub Agentic Workflows", "Safe Outputs", "Model Context Protocol", "GitHub"],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "note": "ai-dev-wiki owns generic GitHub agent-workflow adoption; this repository retains the security-control implications and working-draft caveat."
+      },
+      "confidence": "Medium: direct page and date are visible, but working-draft status means implementers should inspect the live specification before relying on any control requirement."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "CVE-2026-106020, Johnson Controls EasyIO Neo IO Manager and Tools Installer",
+      "reason": "The NVD text matches an LLM-prompting CWE term, but the affected product is not evidenced as an AI system, model, agent, or AI deployment boundary."
+    },
+    {
+      "candidate": "mcp-remote v0.16.5 refresh-token retry behavior",
+      "reason": "A release timestamp was visible, but the release note does not establish a vulnerability, patch, security advisory, or concrete security-control delta."
+    },
+    {
+      "candidate": "three-live v1.3.1 built-in MCP server",
+      "reason": "A dated feature announcement for an MCP server is ordinary product functionality without a concrete security delta."
+    },
+    {
+      "candidate": "NVD agent and prompt-injection keyword searches with no returned results",
+      "reason": "No additional candidate with an in-window NVD public-record timestamp was returned by those scoped searches."
+    },
+    {
+      "candidate": "Direct GitHub advisory publication dates for the three CVEs",
+      "reason": "Each advisory was published before the strict window; it was used only as corroborating primary technical evidence, not as the qualifying date."
+    }
+  ],
+  "routing_summary": {
+    "routing_count": 4,
+    "ai_wiki": "Product, framework, and MCP catalog facts remain upstream-owned.",
+    "ai_dev_wiki": "General coding-agent workflows and instruction-file practice remain upstream-owned.",
+    "ai_security_wiki": "Security-specific vulnerability, prompt-trust, authentication, authorization, and least-privilege implications are locally owned."
+  },
+  "follow_up_actions": [
+    "During ingest, verify each CVE against the linked primary advisory and release before promoting any remediation claim.",
+    "For fast-agent, treat explicit network exposure, authenticated transport, and shell-tool scope as separate operational controls.",
+    "For DeepSeek-Reasonix, compare the 2.53.0 patch with the advisory before writing durable prompt-provenance guidance.",
+    "Recheck the Safe Outputs specification status and revision at ingest because it is a working draft."
+  ],
+  "blockers": [
+    "No blocker to raw collection. The three CVE records became visible through NVD inside the window while their primary GitHub advisories predate it; they require this disclosure-timing caveat during synthesis.",
+    "No primary EU regulatory update with a visibly qualifying timestamp was identified in the sources checked during this run. This is an evidence limitation, not a no-change conclusion."
+  ]
+}

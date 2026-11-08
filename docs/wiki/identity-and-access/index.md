@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [fast-agent Serve Unauthenticated MCP Exposure](fast-agent-serve-unauthenticated-mcp-exposure.md)
 - [ChatCLI MCP OAuth Resource-Origin Binding](chatcli-mcp-oauth-resource-origin-binding.md)
 - [mcp-go OAuth Resource-Metadata Origin Validation](mcp-go-oauth-resource-metadata-origin-validation.md)
 - [Kubeflow Pipelines Artifact Namespace Authorization Bypass](kubeflow-pipelines-artifact-namespace-authorization-bypass.md)
@@ -18,6 +19,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [fast-agent Serve Unauthenticated MCP Exposure](fast-agent-serve-unauthenticated-mcp-exposure.md)
 - [Network-AI A2A task API missing authentication](network-ai-a2a-task-api-missing-authentication.md)
 - [LaraDashboard MCP send-email authorization bypass](laradashboard-mcp-send-email-authorization-bypass.md)
 
@@ -218,6 +220,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-11-08 with the fast-agent listener-authentication and delegated-shell-authority leaf.
 - Updated on 2026-10-29 with split SuperAGI agent inventory, execution metadata, and execution configuration tenant-isolation leaves.
 - Updated on 2026-10-27 with AI Engine media or object authorization and Keepnet authentication-bypass evidence.
 - Updated on 2026-10-26 with the Frappe Builder stored-provider-credit authorization leaf.

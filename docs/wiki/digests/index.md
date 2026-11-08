@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [November 2026](2026-11.md) records four additional item-level updates: three CVE boundaries for SiYuan, fast-agent, and DeepSeek-Reasonix, plus the working-draft Safe Outputs MCP Gateway control design.
 - [November 2026](2026-11.md) records 27 item-level November security boundaries, including ChatCLI and mcp-go OAuth resource-origin controls, Dify sandbox credential exposure, Jan workspace containment, and distinct Mistral Vibe pre-trust execution paths. The Azure AI Language watcher revision remains leaf provenance.
 
 - [October 2026](2026-10.md) records the October 31 DeepInfer unauthenticated profiling filesystem-write boundary; repeat AI Engine and Kubeflow records enrich existing leaves without duplicate digest entries.

@@ -8,6 +8,10 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [SiYuan MCP Resource-Read Denial of Service](agent-and-tool-security/siyuan-mcp-resource-read-denial-of-service.md)
+- [fast-agent Serve Unauthenticated MCP Exposure](identity-and-access/fast-agent-serve-unauthenticated-mcp-exposure.md)
+- [DeepSeek-Reasonix Repository Instruction Trust](model-and-prompt-security/deepseek-reasonix-repository-instruction-trust.md)
+- [GitHub Agentic Workflows Safe Outputs MCP Gateway](agent-and-tool-security/github-agentic-workflows-safe-outputs-mcp-gateway.md)
 - [AgentScope MCP Workspace Command Injection](agent-and-tool-security/agentscope-mcp-workspace-command-injection.md)
 - [Dagu MCP DAG-Specification Path Containment](agent-and-tool-security/dagu-mcp-dag-specification-path-containment.md)
 - [ChatCLI MCP OAuth Resource-Origin Binding](identity-and-access/chatcli-mcp-oauth-resource-origin-binding.md)

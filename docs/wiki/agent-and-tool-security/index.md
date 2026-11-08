@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [SiYuan MCP Resource-Read Denial of Service](siyuan-mcp-resource-read-denial-of-service.md)
+- [GitHub Agentic Workflows Safe Outputs MCP Gateway](github-agentic-workflows-safe-outputs-mcp-gateway.md)
 - [AgentScope MCP Workspace Command Injection](agentscope-mcp-workspace-command-injection.md)
 - [Dagu MCP DAG-Specification Path Containment](dagu-mcp-dag-specification-path-containment.md)
 - [Jan Agent-Tools Dangling-Symlink Workspace Escape](jan-agent-tools-dangling-symlink-workspace-escape.md)
@@ -163,6 +165,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [SiYuan MCP Resource-Read Denial of Service](siyuan-mcp-resource-read-denial-of-service.md)
+- [GitHub Agentic Workflows Safe Outputs MCP Gateway](github-agentic-workflows-safe-outputs-mcp-gateway.md)
 - [AgentScope MCP Workspace Command Injection](agentscope-mcp-workspace-command-injection.md)
 - [Dagu MCP DAG-Specification Path Containment](dagu-mcp-dag-specification-path-containment.md)
 - [Jan Agent-Tools Dangling-Symlink Workspace Escape](jan-agent-tools-dangling-symlink-workspace-escape.md)
@@ -444,6 +448,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-11-08 with separate SiYuan MCP availability and Safe Outputs privilege-separation leaves; generic product and workflow coverage remains federated upstream.
 - Updated on 2026-11-06 with the AgentScope MCP workspace command-execution and Dagu MCP DAG-specification containment leaves.
 - Updated on 2026-11-04 with the CrewAI connected-peer SSRF and Falcon Guardian vendor-control leaves.
 - Updated on 2026-10-29 with XAgent ToolServer upload and Agent Zero FileBrowser delegated-write containment leaves.
