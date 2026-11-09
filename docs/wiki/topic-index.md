@@ -8,6 +8,12 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [Vikunja Bot-Token Owner Revocation](identity-and-access/vikunja-bot-token-owner-revocation.md)
+- [Vikunja Remote Metadata Prompt Injection](model-and-prompt-security/vikunja-remote-metadata-prompt-injection.md)
+- [IBM ContextForge Tool-Name Collision Denial of Service](agent-and-tool-security/ibm-contextforge-tool-name-collision-dos.md)
+- [OpenBMB Internet of Agents Message-Handler Access Control](identity-and-access/openbmb-ioa-message-handler-access-control.md)
+- [OpenBMB Internet of Agents Agent-Registration Authentication](identity-and-access/openbmb-ioa-agent-registration-authentication.md)
+- [OpenBMB Internet of Agents Collaboration max_turns Denial of Service](agent-and-tool-security/openbmb-ioa-collaboration-max-turns-dos.md)
 - [SiYuan MCP Resource-Read Denial of Service](agent-and-tool-security/siyuan-mcp-resource-read-denial-of-service.md)
 - [fast-agent Serve Unauthenticated MCP Exposure](identity-and-access/fast-agent-serve-unauthenticated-mcp-exposure.md)
 - [DeepSeek-Reasonix Repository Instruction Trust](model-and-prompt-security/deepseek-reasonix-repository-instruction-trust.md)

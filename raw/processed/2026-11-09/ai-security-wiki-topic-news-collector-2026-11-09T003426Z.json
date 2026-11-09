@@ -1,0 +1,164 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-11-09T00:34:26Z",
+  "cutoff_window": {
+    "start_inclusive": "2026-11-07T00:34:26Z",
+    "end_exclusive": "2026-11-09T00:34:26Z",
+    "date_policy": "Only a public source with a visible, unambiguous timestamp inside this strict 48-hour window qualifies. NVD publication times establish public-record disclosure timing, not exploit, exposure, or remediation timing."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_methods": [
+    "NVD CVE API searches for MCP, LLM, and agent with pubStartDate/pubEndDate constrained to the cutoff window",
+    "Direct primary/advisory references named by the NVD records, including GitHub Security Advisories, upstream issue reports, and IBM Support",
+    "Federation routing review against this repository's federation document and the ai-wiki and ai-dev-wiki topic indexes"
+  ],
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-123493",
+      "title": "Vikunja bot-user API tokens retain access after the corresponding human user is disabled or locked",
+      "topic": "identity, authentication, authorization, credentials, and least privilege",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-123493",
+        "https://github.com/go-vikunja/vikunja/security/advisories/GHSA-5fc2-w2j4-6r8w"
+      ],
+      "visible_dates": {
+        "nvd_public_record_disclosure": "2026-11-08T02:16:36.183Z"
+      },
+      "evidence_classification": "NVD public-record disclosure with a linked upstream GitHub Security Advisory. The NVD timestamp is the qualifying in-window date; fixed-release details require direct advisory confirmation at synthesis.",
+      "factual_summary": "NVD published a Vikunja 2.4.0 through before 2.7.1 authentication-bypass record: token validation checks a bot user's status rather than the disabled or locked human user's status, so holders of pre-minted bot tokens can continue reading and modifying shared projects through HTTP API, CalDAV, MCP, and feeds.",
+      "affected_boundary_or_version": "Bot-owned API-token validation across Vikunja API, CalDAV, MCP, and feed boundaries; affected 2.4.0 to before 2.7.1.",
+      "why_it_matters_for_ai_security": "An MCP-connected agent or integration using a bot token can retain delegated authority after the human principal is disabled, violating revocation and least-privilege expectations.",
+      "named_entities": ["Vikunja", "Model Context Protocol", "CVE-2026-123493", "GHSA-5fc2-w2j4-6r8w"],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "note": "Vikunja product context remains ai-wiki-owned; this repository owns the token-revocation and MCP delegated-authority implication."
+      },
+      "confidence": "High for the public-record description and affected range; medium for the exact upgrade/remediation guidance until the primary advisory is reconciled."
+    },
+    {
+      "id": "CVE-2026-123498",
+      "title": "Vikunja project metadata prompt injection into a coding agent's authoritative instruction block",
+      "topic": "model and prompt security",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-123498",
+        "https://github.com/go-vikunja/vikunja/security/advisories/GHSA-cvh3-hf56-g9xm"
+      ],
+      "visible_dates": {
+        "nvd_public_record_disclosure": "2026-11-08T02:16:37.340Z"
+      },
+      "evidence_classification": "NVD public-record disclosure with a linked upstream GitHub Security Advisory. The NVD timestamp is the qualifying in-window date.",
+      "factual_summary": "NVD published a Vikunja before 2.7.1 prompt-injection record: a project member with write access can place instructions in project titles or task content that a prime hook renders verbatim in a coding agent's authoritative instruction block on SessionStart and PreCompact, potentially steering checkout modifications or command execution.",
+      "affected_boundary_or_version": "Project-title and task-description ingestion into a coding-agent instruction block; affected before 2.7.1.",
+      "why_it_matters_for_ai_security": "Untrusted collaboration metadata crosses into high-trust prompt context and can influence autonomous developer-tool actions; provenance labelling and instruction/data separation are relevant controls.",
+      "named_entities": ["Vikunja", "coding agent", "SessionStart", "PreCompact", "CVE-2026-123498", "GHSA-cvh3-hf56-g9xm"],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "note": "General coding-agent workflow discussion belongs in ai-dev-wiki; the prompt trust-boundary vulnerability and security controls are locally owned."
+      },
+      "confidence": "High for the NVD-described trust boundary and affected range; medium for deployment-specific impact because the record describes a particular hook integration."
+    },
+    {
+      "id": "CVE-2026-18484",
+      "title": "IBM ContextForge MCP Gateway tool-name collision denial of service",
+      "topic": "agent and tool security",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18484",
+        "https://www.ibm.com/support/pages/node/7294233"
+      ],
+      "visible_dates": {
+        "nvd_public_record_disclosure": "2026-11-08T18:17:04.010Z"
+      },
+      "evidence_classification": "NVD public-record disclosure with a linked vendor IBM Support advisory. The NVD timestamp is the qualifying in-window date.",
+      "factual_summary": "NVD published an IBM ContextForge MCP Gateway 1.0.0 through 1.0.11 vulnerability: improper slug normalization can cause tool-name collisions, allowing a remote authenticated attacker to cause denial of service.",
+      "affected_boundary_or_version": "ContextForge MCP Gateway tool-name normalization; versions 1.0.0 through 1.0.11; authenticated remote attack precondition.",
+      "why_it_matters_for_ai_security": "Gateway tool naming is part of an agent's capability-routing boundary. Collisions can turn a permitted authenticated request into availability loss for MCP-connected agent operations.",
+      "named_entities": ["IBM", "ContextForge", "MCP Gateway", "CVE-2026-18484"],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "note": "IBM and ContextForge catalog background remains ai-wiki-owned; the MCP gateway availability boundary is locally owned."
+      },
+      "confidence": "High for product, versions, authentication precondition, and stated denial-of-service impact; remediation details require the vendor advisory at synthesis."
+    },
+    {
+      "id": "CVE-2026-123881-CVE-2026-123963-CVE-2026-123964",
+      "title": "OpenBMB Internet of Agents message, registry, and collaboration-layer access and resource-control flaws",
+      "topic": "agent and tool security",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-123881",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-123963",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-123964",
+        "https://github.com/OpenBMB/IoA/issues/20",
+        "https://github.com/OpenBMB/IoA/issues/21",
+        "https://github.com/OpenBMB/IoA/issues/22"
+      ],
+      "visible_dates": {
+        "CVE-2026-123881_nvd_public_record_disclosure": "2026-11-07T08:16:26.000Z",
+        "CVE-2026-123963_nvd_public_record_disclosure": "2026-11-07T13:16:38.013Z",
+        "CVE-2026-123964_nvd_public_record_disclosure": "2026-11-07T13:16:38.233Z"
+      },
+      "evidence_classification": "Three NVD public-record disclosures with linked public upstream issue reports. NVD dates qualify the group; records state that the project had not responded, so no fixed release is claimed.",
+      "factual_summary": "NVD published three Internet of Agents records affecting revisions through commit 9d78e88e47160eb42ee1ee8538c05e1c2c47877a: CVE-2026-123881 permits remote improper access control through the message handler's comm_id; CVE-2026-123963 describes missing authentication in agent registration through desc/name; and CVE-2026-123964 permits a remote infinite-loop denial of service through collaboration-layer max_turns.",
+      "affected_boundary_or_version": "OpenBMB Internet of Agents im_server/app.py message and registry functions plus im_client collaboration-layer launch_goal; affected through commit 9d78e88e47160eb42ee1ee8538c05e1c2c47877a; no unaffected release identified by the records.",
+      "why_it_matters_for_ai_security": "These findings cover core multi-agent trust boundaries: message-record access, agent enrollment authentication, and bounded autonomous collaboration. Deployments should not infer a fix from the disclosure alone.",
+      "named_entities": ["OpenBMB", "Internet of Agents", "CVE-2026-123881", "CVE-2026-123963", "CVE-2026-123964"],
+      "upstream_routing": {
+        "owner": "ai-security-wiki",
+        "note": "Internet of Agents framework background remains ai-wiki-owned; authentication, authorization, and autonomous-loop security implications are locally owned."
+      },
+      "confidence": "Medium-high for the disclosed components and effects; medium for remediation state because the records provide commit-based scope and cite unresolved upstream reports."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "JS Help Desk AI-Powered Support & Ticketing System stored DOM XSS (CVE-2026-118046)",
+      "reason": "The product name contains AI, but the disclosure establishes a generic ticket-interface XSS and does not evidence an AI-system, model, or agent security boundary."
+    },
+    {
+      "candidate": "OpenAM session-token and default-credential records (CVE-2026-123551 and CVE-2026-123553)",
+      "reason": "These are material identity findings, but the word agent refers to legacy identity-agent profiles; the records do not establish an AI-system relevance."
+    },
+    {
+      "candidate": "IBM Turbonomic kubeturbo agent SSRF and TLS-validation records (CVE-2026-14377, CVE-2026-14434, CVE-2026-14435)",
+      "reason": "The affected component is called an agent but the records do not show an AI-agent, model, or AI deployment boundary."
+    },
+    {
+      "candidate": "Malicious @ifasn MCP npm packages",
+      "reason": "The GitHub Advisory search result shows publication on 2026-11-04, outside the strict window."
+    },
+    {
+      "candidate": "General product or MCP-server announcements encountered in search",
+      "reason": "No concrete vulnerability, patch, security control, assurance result, incident, or regulation change was visible."
+    },
+    {
+      "candidate": "EU and other AI regulation source checks",
+      "reason": "No public, visibly dated in-window security-specific regulatory change was identified in the checked sources; this is an evidence limitation, not a no-change conclusion."
+    }
+  ],
+  "routing_summary": {
+    "routing_count": 4,
+    "ai_wiki": "Product and framework background for Vikunja, ContextForge, and Internet of Agents remains upstream-owned.",
+    "ai_dev_wiki": "General coding-agent workflow and instruction-file practice remains upstream-owned.",
+    "ai_security_wiki": "Prompt trust, MCP delegated authority, gateway availability, authentication, authorization, and autonomous-loop security implications are locally owned."
+  },
+  "follow_up_actions": [
+    "At ingest, inspect the two Vikunja GitHub Security Advisories and confirm whether 2.7.1 is the fixed version for each record.",
+    "At ingest, reconcile IBM's ContextForge vendor advisory for remediation and operational mitigation details.",
+    "Treat all three Internet of Agents disclosures as unresolved until an upstream fix or unaffected revision is independently verified.",
+    "Keep general product descriptions and non-security workflow guidance routed upstream during synthesis."
+  ],
+  "blockers": [
+    "No blocker to raw collection. Several qualifying records use NVD's in-window public-record time while their linked primary sources may predate the window or require direct reconciliation for remediation details.",
+    "No in-window public regulatory or standards change was established in the sources checked; this is an evidence limitation, not a no-change conclusion."
+  ]
+}

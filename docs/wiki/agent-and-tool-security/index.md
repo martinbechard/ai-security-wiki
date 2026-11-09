@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [IBM ContextForge Tool-Name Collision Denial of Service](ibm-contextforge-tool-name-collision-dos.md)
+- [OpenBMB Internet of Agents Collaboration max_turns Denial of Service](openbmb-ioa-collaboration-max-turns-dos.md)
 - [SiYuan MCP Resource-Read Denial of Service](siyuan-mcp-resource-read-denial-of-service.md)
 - [GitHub Agentic Workflows Safe Outputs MCP Gateway](github-agentic-workflows-safe-outputs-mcp-gateway.md)
 - [AgentScope MCP Workspace Command Injection](agentscope-mcp-workspace-command-injection.md)
@@ -165,6 +167,8 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [IBM ContextForge Tool-Name Collision Denial of Service](ibm-contextforge-tool-name-collision-dos.md)
+- [OpenBMB Internet of Agents Collaboration max_turns Denial of Service](openbmb-ioa-collaboration-max-turns-dos.md)
 - [SiYuan MCP Resource-Read Denial of Service](siyuan-mcp-resource-read-denial-of-service.md)
 - [GitHub Agentic Workflows Safe Outputs MCP Gateway](github-agentic-workflows-safe-outputs-mcp-gateway.md)
 - [AgentScope MCP Workspace Command Injection](agentscope-mcp-workspace-command-injection.md)

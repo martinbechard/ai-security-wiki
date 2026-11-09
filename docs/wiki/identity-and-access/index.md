@@ -2,6 +2,9 @@
 
 ## Current Understanding
 
+- [Vikunja Bot-Token Owner Revocation](vikunja-bot-token-owner-revocation.md)
+- [OpenBMB Internet of Agents Message-Handler Access Control](openbmb-ioa-message-handler-access-control.md)
+- [OpenBMB Internet of Agents Agent-Registration Authentication](openbmb-ioa-agent-registration-authentication.md)
 - [fast-agent Serve Unauthenticated MCP Exposure](fast-agent-serve-unauthenticated-mcp-exposure.md)
 - [ChatCLI MCP OAuth Resource-Origin Binding](chatcli-mcp-oauth-resource-origin-binding.md)
 - [mcp-go OAuth Resource-Metadata Origin Validation](mcp-go-oauth-resource-metadata-origin-validation.md)
@@ -19,6 +22,9 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [Vikunja Bot-Token Owner Revocation](vikunja-bot-token-owner-revocation.md)
+- [OpenBMB Internet of Agents Message-Handler Access Control](openbmb-ioa-message-handler-access-control.md)
+- [OpenBMB Internet of Agents Agent-Registration Authentication](openbmb-ioa-agent-registration-authentication.md)
 - [fast-agent Serve Unauthenticated MCP Exposure](fast-agent-serve-unauthenticated-mcp-exposure.md)
 - [Network-AI A2A task API missing authentication](network-ai-a2a-task-api-missing-authentication.md)
 - [LaraDashboard MCP send-email authorization bypass](laradashboard-mcp-send-email-authorization-bypass.md)

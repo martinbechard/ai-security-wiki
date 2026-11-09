@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [Vikunja Remote Metadata Prompt Injection](vikunja-remote-metadata-prompt-injection.md)
 - [DeepSeek-Reasonix Repository Instruction Trust](deepseek-reasonix-repository-instruction-trust.md)
 - [Haiou Codex Prompt-Adware Persistent Instruction Manipulation](haiou-codex-prompt-adware.md)
 - [praktor Telegram Upload Persistent Agent Instruction Injection](praktor-telegram-upload-persistent-agent-instruction-injection.md)
@@ -41,6 +42,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 ## Leaf Pages
 
+- [Vikunja Remote Metadata Prompt Injection](vikunja-remote-metadata-prompt-injection.md)
 - [DeepSeek-Reasonix Repository Instruction Trust](deepseek-reasonix-repository-instruction-trust.md)
 - [Haiou Codex Prompt-Adware Persistent Instruction Manipulation](haiou-codex-prompt-adware.md)
 - [vLLM gRPC Input Validation DoS](vllm-grpc-input-validation-dos.md)
