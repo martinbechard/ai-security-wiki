@@ -123,6 +123,7 @@ This topic owns model behavior risks, prompt injection, jailbreaks, poisoning, a
 
 - Updated on 2026-11-08 with the DeepSeek-Reasonix repository-instruction trust boundary.
 - Updated on 2026-11-04 with the Haiou persistent third-party instruction-manipulation security boundary.
+- Updated on 2026-11-09 with later Check Point campaign-context evidence while preserving the no-intent and no-exfiltration caveats.
 - Updated on 2026-10-26 with split vLLM template, Phi-4 audio, OCR image, and prompt-ID availability controls.
 
 - Updated on 2026-10-15 with the MoviePilot untrusted-metadata-to-command-execution leaf from the October 15 source ingest.

@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-11-09T19:27:06-05:00",
+  "run_timestamp_utc": "2026-11-10T00:27:06Z",
+  "collection_window": {
+    "duration": "last 2 days",
+    "cutoff_start": "2026-11-07T19:27:06-05:00",
+    "cutoff_start_utc": "2026-11-08T00:27:06Z",
+    "cutoff_end": "2026-11-09T19:27:06-05:00",
+    "date_rule": "Included sources must show a concrete publication or visible update timestamp within this closed window. Sources with only ambiguous, future-dated, or boundary-only dates are excluded."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_policy": {
+    "public_sources_only": true,
+    "source_priority_used": [
+      "primary vendor publication",
+      "public security-research publication"
+    ],
+    "local_or_private_content_sent_externally": false
+  },
+  "qualifying_findings": [
+    {
+      "id": "anthropic-fable-mythos-5-2-security-controls",
+      "title": "Anthropic publishes cybersecurity safeguards, anti-distillation controls, and safety-evaluation results for Fable 5.2 and Mythos 5.2",
+      "topic_areas": [
+        "model and prompt security",
+        "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+        "data security and privacy"
+      ],
+      "source_urls": [
+        "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+      ],
+      "visible_date": "2026-11-09",
+      "evidence_classification": "primary vendor security and model-release publication",
+      "factual_summary": "Anthropic states that Fable 5.2 blocks high-risk cyber requests through classifiers and routes blocked cyber requests to a fallback model; Mythos 5.2 access is limited to vetted dual-use organizations. The publication reports a roughly 60% reduction in cyber-classifier blocks versus Fable 5.1 in early testing, documents a 1,800-plus-scenario sandbox-escape evaluation (3.1% credential-or-file use outside the sandbox), expands preserved thinking to all accounts to resist distillation, and describes Enterprise Frontier Safeguards monitoring that can operate with customer-hosted prompt/response data for zero-data-retention customers.",
+      "affected_boundary_or_version": "Claude Fable 5.2, Claude Mythos 5.2, Claude Code, claude.ai, Cowork, API preserved thinking, and Enterprise Frontier Safeguards private beta",
+      "why_it_matters_for_ai_security": "This is a concrete change to release controls, misuse monitoring, vetted access, and anti-distillation protections for models that can perform cybersecurity tasks. The disclosed escape-test result is assurance evidence, not proof that sandbox escape is eliminated.",
+      "named_entities": [
+        "Anthropic",
+        "Claude Fable 5.2",
+        "Claude Mythos 5.2",
+        "Enterprise Frontier Safeguards",
+        "preserved thinking"
+      ],
+      "upstream_routing": {
+        "classification": "upstream-owned entity with downstream-owned security lens",
+        "upstream_owner": "ai-wiki",
+        "routing_note": "Route broad model, product, and availability coverage to ai-wiki. Retain only the security-control, evaluation, monitoring, retention, and access-governance implications in ai-security-wiki."
+      },
+      "confidence": "high for the vendor-stated controls and measurements; medium for general effectiveness because the measurements are vendor-reported and partly early testing",
+      "follow_up_actions": [
+        "During synthesis, inspect the linked system card and product documentation for exact classifier, fallback, retention, and eligibility boundaries.",
+        "Do not generalize the sandbox evaluation result into a universal sandbox-escape rate."
+      ]
+    },
+    {
+      "id": "checkpoint-artex-agentic-offensive-campaigns",
+      "title": "Check Point reports ARTEX agentic exploitation activity and publicly exposed instances",
+      "topic_areas": [
+        "threats and attacks",
+        "agent and tool security",
+        "identity, authentication, authorization, credentials, and least privilege"
+      ],
+      "source_urls": [
+        "https://research.checkpoint.com/2026/9th-november-threat-intelligence-report/"
+      ],
+      "visible_date": "2026-11-09",
+      "evidence_classification": "public security-research threat-intelligence report",
+      "factual_summary": "Check Point reports that cybercriminals used ARTEX, an AI-powered framework that autonomously discovers and exploits vulnerable systems. Its researchers identified 1,608 live publicly accessible instances; the report says observed campaigns obtained more than 300 iOS signing certificates and harvested about 190,000 gaming credentials, including around 6,000 active accounts.",
+      "affected_boundary_or_version": "Publicly exposed ARTEX instances; reported campaigns involving discovered credentials and signing certificates; no product-version boundary supplied",
+      "why_it_matters_for_ai_security": "The report describes agentic automation compressing reconnaissance, exploitation, and credential abuse. It supports security controls for exposed agent infrastructure, secret revocation, scoped credentials, and monitoring of autonomous tool execution.",
+      "named_entities": [
+        "Check Point Research",
+        "ARTEX"
+      ],
+      "upstream_routing": {
+        "classification": "upstream-owned entity with downstream-owned security incident lens",
+        "upstream_owner": "ai-wiki",
+        "routing_note": "Route general ARTEX ecosystem coverage to ai-wiki. Keep the reported offensive use, exposure, credential impact, and security-control implications in ai-security-wiki."
+      },
+      "confidence": "medium: the finding is directly attributed to Check Point Research, but this collector did not independently inspect the underlying campaign artifacts or establish a complete incident timeline",
+      "follow_up_actions": [
+        "Locate and review Check Point's linked ARTEX research before durable synthesis.",
+        "Treat the reported certificate and credential counts as attributed findings, not independently replicated totals."
+      ]
+    },
+    {
+      "id": "checkpoint-haiou-codex-prompt-adware",
+      "title": "Check Point identifies Haiou jailbreak bundle that weakens controls and persistently modifies agent instructions",
+      "topic_areas": [
+        "model and prompt security",
+        "agent and tool security",
+        "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains"
+      ],
+      "source_urls": [
+        "https://research.checkpoint.com/2026/9th-november-threat-intelligence-report/",
+        "https://research.checkpoint.com/2026/free-the-model-sell-the-gateway-prompt-adware-hidden-in-jailbreak-bundles/"
+      ],
+      "visible_date": "2026-11-09",
+      "evidence_classification": "public security-research threat-intelligence report, corroborated by the cited Check Point research write-up",
+      "factual_summary": "Check Point's November 9 report identifies Haiou as a jailbreak bundle targeting OpenAI Codex that weakens safeguards, installs security-related capabilities, and modifies agent instructions to promote an external AI gateway. The report says the package appeared on infrastructure associated with cybercrime tools, while explicitly not establishing that its developers intended criminal use.",
+      "affected_boundary_or_version": "Haiou jailbreak bundle, Codex configuration and instruction surfaces, and the promoted external gateway; no fixed version or vendor remediation is supplied",
+      "why_it_matters_for_ai_security": "The finding illustrates a supply-chain and persistent-instruction threat: a distributed prompt package can modify trusted instruction/configuration surfaces and influence later agent responses or routing.",
+      "named_entities": [
+        "Check Point Research",
+        "Haiou",
+        "OpenAI Codex"
+      ],
+      "upstream_routing": {
+        "classification": "upstream-owned entity with downstream-owned security lens",
+        "upstream_owner": "ai-wiki",
+        "routing_note": "Route general Codex and jailbreak-package coverage to ai-wiki. Retain the prompt-adware, configuration-integrity, and gateway-provenance security analysis locally."
+      },
+      "confidence": "medium: the November 9 report is explicit but its underlying technical evidence was first published earlier; the report does not establish developer intent or provide a vendor remediation",
+      "follow_up_actions": [
+        "At synthesis, inspect the linked Check Point write-up for hashes, distribution path, and configuration-file details.",
+        "Keep attribution limited to the research report; do not infer criminal intent."
+      ]
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity": "Claude Fable 5.2 and Claude Mythos 5.2",
+      "owner": "ai-wiki",
+      "local_scope": "security safeguards, evaluations, monitoring, access controls, and retention implications"
+    },
+    {
+      "entity": "ARTEX",
+      "owner": "ai-wiki",
+      "local_scope": "offensive agentic use, credential exposure, and response-control implications"
+    },
+    {
+      "entity": "OpenAI Codex and Haiou",
+      "owner": "ai-wiki",
+      "local_scope": "prompt-adware, configuration-integrity, and gateway-provenance implications"
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "IBM ContextForge MCP Gateway CVE-2026-18484",
+      "reason": "Already captured in the preceding collector artifact; no independently verified new primary advisory update was found in this run."
+    },
+    {
+      "candidate": "modelcontextprotocol/servers mcp-server-git public issue #5487",
+      "reason": "The reporter withdrew incorrect CVE identifiers and moved the claims to private reporting; maintainers state that review is pending. The public issue is insufficient as a verified disclosure."
+    },
+    {
+      "candidate": "Cloudflare MCP issue alleging combined Authorization bearers",
+      "reason": "The public issue title alone did not provide a reproducible, confirmed security disclosure, affected version, or remediation."
+    },
+    {
+      "candidate": "Google Cloud Agent Registry skill security scanning and CMEK release note",
+      "reason": "Visible release-note date was November 6, 2026, outside this run's two-day window."
+    },
+    {
+      "candidate": "OpenAI Hacktron partnership and security sprint posts",
+      "reason": "Visible publication dates of November 6 and November 2, 2026 are outside this run's two-day window."
+    },
+    {
+      "candidate": "Google Cloud CISO Perspectives security forecast",
+      "reason": "The page displayed November 10, 2026, which was future-dated relative to the local run time; it is excluded rather than normalized."
+    }
+  ],
+  "collection_limitations_and_blockers": [
+    "No collection blocker prevented creation of this raw-only artifact.",
+    "No qualifying primary regulatory or standards update was identified in the checked sources; this is an evidence limitation, not a no-change conclusion.",
+    "The Check Point report is a current publication but some underlying campaign/research activity may predate the window; its publication date is recorded separately from the claimed activity dates."
+  ],
+  "raw_only_boundary": {
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false,
+    "ingest_status": "unprocessed"
+  }
+}

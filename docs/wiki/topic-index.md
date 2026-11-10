@@ -30,6 +30,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [DeepSeek Harness Local Control-Plane Authentication](agent-and-tool-security/deepseek-harness-local-control-plane-authentication.md)
 - [RAGFlow Seafile Connector SSRF](agent-and-tool-security/ragflow-seafile-connector-ssrf.md)
 - [Haiou Codex Prompt-Adware Persistent Instruction Manipulation](model-and-prompt-security/haiou-codex-prompt-adware.md)
+- [Anthropic Fable 5.2 and Mythos 5.2 Cybersecurity Controls](testing-and-assurance/anthropic-fable-mythos-5-2-cybersecurity-controls.md)
+- [ARTEX Agentic Exploitation Campaigns](threats-and-attacks/artex-agentic-exploitation-campaigns.md)
 - [CrewAI ScrapeWebsiteTool URL-Parser SSRF](agent-and-tool-security/crewai-scrapewebsitetool-url-parser-ssrf.md)
 - [CrowdStrike Falcon Guardian Runtime Agent Controls](agent-and-tool-security/crowdstrike-falcon-guardian-runtime-agent-controls.md)
 - [astron-agent Knowledge-Space Authorization Bypass](identity-and-access/astron-agent-knowledge-space-authorization-bypass.md)

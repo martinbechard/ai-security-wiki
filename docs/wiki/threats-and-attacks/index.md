@@ -20,6 +20,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 - [AI-generated OT exploit scripts](ai-generated-ot-exploit-scripts.md)
 - [AI-themed installer malware lures](ai-themed-installer-malware-lures.md)
 - [Anthropic Claude misuse disruption report](anthropic-claude-misuse-disruption-report.md)
+- [ARTEX agentic exploitation campaigns](artex-agentic-exploitation-campaigns.md)
 - [PhantomRaven likely LLM-generated npm stealer](phantomraven-llm-generated-npm-stealer.md)
 
 ## Authoritative Sources
@@ -51,6 +52,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 ## Maintenance Notes
 
 - Updated on 2026-10-06 with the cross-agent MCP prompt-propagation leaf and Zammad primary-advisory enrichment.
+- Updated on 2026-11-09 with ARTEX reported agentic exploitation and public-exposure threat-intelligence evidence.
 - Updated on 2026-10-05 with the Zammad AI-driven zero-day breach leaf and Custom GPT ClickFix watcher evidence folded into AI-hosted artifact malware delivery.
 - Updated on 2026-10-03 with Transluce-reported agentic web-retrieval probing of U.S. and Canadian government sites.
 - Separate observed exploitation, demonstrated research, and plausible threat hypotheses.

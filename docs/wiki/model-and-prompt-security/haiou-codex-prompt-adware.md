@@ -13,6 +13,8 @@ The [November 4 collector](../../../raw/processed/2026-11-04/ai-security-wiki-to
 
 The report did not find the named gateway malicious and does not establish corporate-data exfiltration. It demonstrates durable steering of later agent behavior through trusted natural-language configuration rather than a single-turn prompt injection.
 
+The [November 9 collector source](../../../raw/processed/2026-11-09/ai-security-wiki-topic-news-collector-2026-11-09T192706-0500.json) adds [Check Point's November 9 threat-intelligence report](https://research.checkpoint.com/2026/9th-november-threat-intelligence-report/) and [detailed write-up](https://research.checkpoint.com/2026/free-the-model-sell-the-gateway-prompt-adware-hidden-in-jailbreak-bundles/). The report places Haiou on infrastructure associated with cybercrime tools while explicitly not establishing that its developers intended criminal use. It reinforces the persistent-instruction and gateway-provenance boundary; neither report establishes data exfiltration or that the named gateway is malicious.
+
 ## Security Impact
 
 - Threat: an unreviewed Skill, jailbreak bundle, or global configuration can persistently change trusted instructions and steer later actions or destinations.
@@ -24,7 +26,9 @@ The report did not find the named gateway malicious and does not establish corpo
 ## Authoritative Sources
 
 - [November 4 collector source](../../../raw/processed/2026-11-04/ai-security-wiki-topic-news-collector-2026-11-04T002949Z.json)
+- [November 9 collector source](../../../raw/processed/2026-11-09/ai-security-wiki-topic-news-collector-2026-11-09T192706-0500.json)
 - [Check Point Research report](https://blog.checkpoint.com/security/prompt-adware-how-hidden-ai-instructions-could-create-a-new-enterprise-security-risk/)
+- [Check Point Research November 9 threat-intelligence report](https://research.checkpoint.com/2026/9th-november-threat-intelligence-report/)
 
 ## Related Code
 
@@ -50,3 +54,4 @@ The report did not find the named gateway malicious and does not establish corpo
 ## Maintenance Notes
 
 - Created on 2026-11-04 from a dated research observation; gateway maliciousness and data-exfiltration claims are intentionally not inferred.
+- Updated on 2026-11-09 with Check Point's later campaign-context report; developer intent remains unestablished.

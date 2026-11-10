@@ -10,6 +10,7 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 
 - [ToFu MCP Server Security Findings](tofu-mcp-server-security-findings.md)
 - [OpenAI GPT-6 October deployment safety](openai-gpt-6-october-deployment-safety.md)
+- [Anthropic Fable 5.2 and Mythos 5.2 cybersecurity controls](anthropic-fable-mythos-5-2-cybersecurity-controls.md)
 - [agentverus-scanner security decision input trust](agentverus-scanner-security-decision-input-trust.md)
 - [Cyber-evaluation containment](cyber-evaluation-containment.md)
 - [Public cyber-capability assessments](public-cyber-capability-assessments.md)
@@ -63,6 +64,8 @@ This topic owns AI security threat modeling, red teaming, scanning, evaluation, 
 ## Maintenance Notes
 
 - Updated on 2026-10-13 with the October 12 ToFu MCP server security findings assurance leaf from secondary reporting.
+
+- Updated on 2026-11-09 with Anthropic Fable 5.2 and Mythos 5.2 vendor-stated cybersecurity-control and evaluation evidence.
 
 - Updated on 2026-10-08 with OpenAI GPT-6 October deployment safety as vendor-provided assurance evidence, not broad model coverage; after source processing, recheck source links point to `raw/processed`.
 - Updated on 2026-09-30 with AP-attributed OpenAI release-pacing and agent-monitoring evidence folded into frontier model critical cyber release gates.
