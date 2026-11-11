@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-11-10T19:32:50-05:00",
+  "run_timestamp_utc": "2026-11-11T00:32:50Z",
+  "collection_window": {
+    "duration": "last 2 days",
+    "cutoff_start": "2026-11-08T19:32:50-05:00",
+    "cutoff_start_utc": "2026-11-09T00:32:50Z",
+    "cutoff_end": "2026-11-10T19:32:50-05:00",
+    "date_rule": "Included sources must show a concrete publication or visible update timestamp strictly within this window. Sources with only ambiguous, future-dated, boundary-only, or conflicting dates are excluded."
+  },
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "source_policy": {
+    "public_sources_only": true,
+    "source_priority_used": [
+      "primary vendor incident report",
+      "public CVE record and publicly reproducible issue evidence"
+    ],
+    "local_or_private_content_sent_externally": false
+  },
+  "qualifying_findings": [
+    {
+      "id": "near-ai-sglang-inference-incident",
+      "title": "NEAR AI reports SGLang remote-code-execution incident affecting one inference server",
+      "topic_areas": [
+        "public AI security incidents, mitigations, patches, disclosures, and lessons learned",
+        "data security and privacy",
+        "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains"
+      ],
+      "source_urls": [
+        "https://near.ai/blog/security-incident-report-sglang-vulnerability"
+      ],
+      "visible_date": "2026-11-09",
+      "evidence_classification": "primary vendor security incident report",
+      "factual_summary": "NEAR AI says an unauthorized party exploited a remote-code-execution vulnerability in SGLang on one inference server, obtained access to internal infrastructure, and could have observed requests processed on that server on November 8, including confidential-mode requests. It reports access to account details for about 100 users, 18 legacy agents, and two API keys exposed in logs; it says stored Private Chat conversations and uploaded files showed no indication of access. NEAR AI revoked sessions and administrative credentials, replaced agent tokens, rotated remaining credentials, deployed the SGLang fix across inference servers, completed a forensic review, and notified confirmed affected users.",
+      "affected_boundary_or_version": "One NEAR AI inference server running SGLang; legacy NEAR AI Agents deployment; exact SGLang CVE and fixed release not supplied",
+      "why_it_matters_for_ai_security": "The report is a concrete incident and mitigation record showing that confidential-computing protections do not remove the risk from vulnerable inference software inside the protected environment. It also links inference-runtime compromise to in-flight prompt exposure, legacy-agent data, and credentials in logs.",
+      "named_entities": [
+        "NEAR AI",
+        "SGLang",
+        "NEAR AI Cloud",
+        "Private Chat",
+        "NEAR AI Agents"
+      ],
+      "upstream_routing": {
+        "classification": "upstream-owned entity with downstream-owned security incident lens",
+        "upstream_owner": "ai-wiki",
+        "routing_note": "Route broad NEAR AI and SGLang ecosystem coverage to ai-wiki. Retain the incident scope, confidential-inference boundary, credential/log exposure, patching, and response lessons in ai-security-wiki."
+      },
+      "confidence": "high for the vendor-stated incident scope and response; the root-cause details and absence-of-access statements remain vendor assertions pending an independent SGLang advisory or forensic report",
+      "follow_up_actions": [
+        "Locate the SGLang project advisory or fix and record its exact version boundary before synthesis.",
+        "Keep the distinction between potentially observed in-flight requests and stored Private Chat or uploaded files.",
+        "Do not generalize the incident to all confidential-inference deployments."
+      ]
+    },
+    {
+      "id": "omniagent-find-execdir-approval-bypass-cve-2026-125368",
+      "title": "CVE-2026-125368 records OmniAgent bash approval-gate bypass through find -execdir",
+      "topic_areas": [
+        "agent and tool security, including MCP, plugins, browsers, delegated authority, and autonomous action",
+        "model and prompt security",
+        "identity, authentication, authorization, credentials, and least privilege"
+      ],
+      "source_urls": [
+        "https://www.tenable.com/cve/CVE-2026-125368",
+        "https://www.vulncheck.com/advisories/omniagent-bash-approval-gate-bypass-via-find-execdir-in-safe-command-allowlist",
+        "https://github.com/YeQing17-2026/OmniAgent/issues/67",
+        "https://github.com/YeQing17-2026/OmniAgent/blob/12b98c520959eff88a6cfa3dd233497084360ab0/omniagent/agents/reflexion.py#L1379"
+      ],
+      "visible_date": "2026-11-10",
+      "evidence_classification": "public CVE record corroborated by public project issue and implicated source revision",
+      "factual_summary": "CVE-2026-125368, published and updated November 10, describes an OmniAgent approval bypass through commit 12b98c5. Its safe-bash classifier treats commands beginning with find as safe without separately interpreting find -execdir arguments. The public issue explains that a prompt-injected agent can cause execution of binaries through that primitive without the advertised human-approval step; it remained open at collection time and no fixed release was identified.",
+      "affected_boundary_or_version": "OmniAgent through commit 12b98c520959eff88a6cfa3dd233497084360ab0, especially ReflexionAgent bash execution with the approval gate enabled; no fixed release stated",
+      "why_it_matters_for_ai_security": "This is a concrete delegated-authority failure: a shallow safe-command allowlist can turn prompt-influenced tool input into unsupervised execution. The evidence supports parsing or disabling compound-command auto-approval, sandboxing the tool runtime, and independently validating any claimed approval boundary.",
+      "named_entities": [
+        "OmniAgent",
+        "ReflexionAgent",
+        "CVE-2026-125368",
+        "VulnCheck"
+      ],
+      "upstream_routing": {
+        "classification": "shared concept with downstream-owned security control",
+        "upstream_owner": "ai-dev-wiki",
+        "routing_note": "Route general OmniAgent and coding-agent workflow coverage to ai-dev-wiki. Retain the approval-gate bypass, prompt-injection precondition, execution-containment, and remediation evidence in ai-security-wiki."
+      },
+      "confidence": "medium-high: the public CVE record, public issue, and pinned source revision agree; the reporter issue is open and a maintainer fix or independently reproduced advisory was not located",
+      "follow_up_actions": [
+        "Check for a maintainer response, release, or advisory before durable synthesis.",
+        "Verify whether the current default branch still contains the unsafe classifier before advising a version-specific action.",
+        "Treat prompt injection as a stated exploitation precondition rather than a confirmed in-the-wild campaign."
+      ]
+    }
+  ],
+  "upstream_routing_notes": [
+    {
+      "entity": "NEAR AI and SGLang",
+      "owner": "ai-wiki",
+      "local_scope": "incident scope, confidential-inference boundary, credential/log exposure, and response controls"
+    },
+    {
+      "entity": "OmniAgent",
+      "owner": "ai-dev-wiki",
+      "local_scope": "approval-gate bypass, prompt-injection precondition, and execution-containment controls"
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Check Point ARTEX and Haiou reporting",
+      "reason": "Already captured in the immediately preceding collector artifact dated November 9; no distinct new security publication was identified in this run."
+    },
+    {
+      "candidate": "Claude Code Edit-tool TOCTOU advisory (CVE-2026-88968 / GHSA-5xjx-9qx6-jcrv)",
+      "reason": "The GitHub primary advisory visibly states publication on October 26, 2026, outside the collection window; a newer third-party listing does not replace the primary publication date."
+    },
+    {
+      "candidate": "Dynatrace MCP Server human-approval-gate advisory (GHSA-pc2w-4mq8-32qw / CVE-2026-123812)",
+      "reason": "The GitHub primary advisory was published June 8 and last updated July 29, 2026. A new database record date alone is insufficient to classify the underlying disclosure as a newly published or visibly updated security item."
+    },
+    {
+      "candidate": "@tsparticles/mcp-server CVE-2026-76892, CVE-2026-76893, and CVE-2026-63655",
+      "reason": "The primary CVE metadata visible through public records shows publication on November 4, 2026; later directory or package-database listing dates conflict with that primary date and were not used as a qualifying update."
+    },
+    {
+      "candidate": "NIST SP 2400-102e2026 initial public draft",
+      "reason": "The visible publication date was five days before this run, outside the two-day window."
+    },
+    {
+      "candidate": "AI security tracker and weekly-news aggregations",
+      "reason": "Used only for discovery; they were not accepted as primary evidence where a dated primary incident report, CVE record, vendor advisory, or reproducible project evidence was unavailable."
+    },
+    {
+      "candidate": "Ordinary AI product and model announcements returned by search",
+      "reason": "Excluded when they did not state a concrete security threat, vulnerability, mitigation, control change, assurance result, regulatory change, or public incident."
+    }
+  ],
+  "collection_limitations_and_blockers": [
+    "No collection blocker prevented creation of this raw-only artifact.",
+    "No qualifying primary standards or regulatory update was identified in the checked sources; this is an evidence limitation, not a no-change conclusion.",
+    "The NEAR AI report does not name the SGLang vulnerability identifier or fixed release, and the OmniAgent issue remains open without a confirmed maintainer fix; those gaps must be resolved or preserved during synthesis."
+  ],
+  "raw_only_boundary": {
+    "docs_wiki_edited": false,
+    "raw_processed_edited": false,
+    "ingest_status": "unprocessed"
+  }
+}

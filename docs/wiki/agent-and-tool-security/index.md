@@ -200,6 +200,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 - [MCP TypeScript SDK Validation Memory-Exhaustion DoS](mcp-typescript-sdk-validation-memory-exhaustion-dos.md)
 - [Cognition Unauthenticated Local-Shell Agent RCE](cognition-unauthenticated-local-shell-agent-rce.md)
 - [SGLang Prefill-Decode SSRF and Scheduler DoS](sglang-prefill-decode-ssrf-and-scheduler-dos.md)
+- [OmniAgent find -execdir approval bypass](omniagent-find-execdir-approval-bypass.md)
 - [crewai-tools Selenium Scraping Private-Address SSRF](crewai-tools-selenium-scraping-private-address-ssrf.md)
 
 - [Claude Agent SDK Resume Argument Injection](claude-agent-sdk-resume-argument-injection.md)
@@ -452,6 +453,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-11-10 with OmniAgent's find -execdir approval-gate bypass as a distinct prompt-influenced execution boundary.
 - Updated on 2026-11-08 with separate SiYuan MCP availability and Safe Outputs privilege-separation leaves; generic product and workflow coverage remains federated upstream.
 - Updated on 2026-11-06 with the AgentScope MCP workspace command-execution and Dagu MCP DAG-specification containment leaves.
 - Updated on 2026-11-04 with the CrewAI connected-peer SSRF and Falcon Guardian vendor-control leaves.

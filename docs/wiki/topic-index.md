@@ -151,6 +151,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 - [Speaches Pyannote Model-Loading Code Execution](infrastructure-and-supply-chain/speaches-pyannote-model-loading-code-execution.md)
 - [LangBot Lark Webhook Signature Bypass](identity-and-access/langbot-lark-webhook-signature-bypass.md)
 - [SGLang Prefill-Decode SSRF and Scheduler DoS](agent-and-tool-security/sglang-prefill-decode-ssrf-and-scheduler-dos.md)
+- [OmniAgent find -execdir Approval Bypass](agent-and-tool-security/omniagent-find-execdir-approval-bypass.md)
+- [NEAR AI SGLang Inference-Server Incident](incident-response/near-ai-sglang-inference-server-incident.md)
 - [crewai-tools Selenium Scraping Private-Address SSRF](agent-and-tool-security/crewai-tools-selenium-scraping-private-address-ssrf.md)
 
 - [agent-and-tool-security/archon-default-control-api-command-execution.md](agent-and-tool-security/archon-default-control-api-command-execution.md)

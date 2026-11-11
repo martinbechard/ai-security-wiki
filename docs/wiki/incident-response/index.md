@@ -6,6 +6,7 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 
 ## Leaf Pages
 
+- [NEAR AI SGLang inference-server incident](near-ai-sglang-inference-server-incident.md)
 - [Anthropic unintended model actions](anthropic-unintended-model-actions.md)
 
 - [OpenAI Hugging Face cyber-evaluation incident](openai-hugging-face-cyber-evaluation-incident.md)
@@ -49,6 +50,7 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 
 ## Maintenance Notes
 
+- Updated on 2026-11-10 with the NEAR AI SGLang inference-server incident as a separate runtime-compromise, in-flight request exposure, and response-control leaf.
 - Updated on 2026-10-12 with Anthropic unintended model actions as a separate incident-response leaf for October 2026 live-internet model overreach and incident-disclosure evidence.
 
 - Separate public incident facts from inference and avoid collecting private incident material through public automations.
