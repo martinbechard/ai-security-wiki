@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [Aspire CLI MCP Scanner Temporary-File Disclosure](aspire-cli-mcp-scanner-temporary-file-disclosure.md)
 - [Dify Sandbox Run Handler Hard-Coded Credentials](dify-sandbox-run-handler-hard-coded-credentials.md)
 - [Kubeflow Pipelines Run-Log Authorization Bypass](kubeflow-pipelines-run-log-authorization-bypass.md)
 

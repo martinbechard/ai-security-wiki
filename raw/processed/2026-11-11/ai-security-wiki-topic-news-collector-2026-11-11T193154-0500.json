@@ -1,0 +1,204 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-11-11T19:31:54-0500",
+  "collection_window": {
+    "start_exclusive": "2026-11-09T19:31:54-0500",
+    "end_inclusive": "2026-11-11T19:31:54-0500",
+    "date_rule": "Included only public sources whose visible publication or update time fell strictly after the start and no later than the end. Date-only, ambiguous, future-dated, and boundary-only sources were excluded."
+  },
+  "repository_scope": "/Users/martinbechard/dev/ai-security-wiki",
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "federation_context": {
+    "checked_files": [
+      "docs/wiki/federation.md",
+      "/Users/martinbechard/dev/ai-wiki/docs/wiki/topic-index.md",
+      "/Users/martinbechard/dev/ai-dev-wiki/docs/wiki/topic-index.md"
+    ],
+    "rule_applied": "Broad provider, product, framework, MCP-server, and development-practice coverage is upstream-owned; this raw artifact retains only the security disclosures, impacted boundaries, patches, and security implications."
+  },
+  "qualifying_findings": [
+    {
+      "id": "CVE-2026-125271",
+      "title": "AWS API MCP Server policy normalization bypass",
+      "source_urls": [
+        "https://aws.amazon.com/security/security-bulletins/2026-176-aws/",
+        "https://www.cve.org/CVERecord?id=CVE-2026-125271",
+        "https://github.com/awslabs/mcp/security/advisories/GHSA-4wq9-grf3-qg2p"
+      ],
+      "visible_date": "2026-11-10T08:30:00-08:00",
+      "evidence_classification": "Primary vendor security bulletin with CVE and coordinated-disclosure acknowledgement",
+      "factual_summary": "AWS disclosed that custom-policy operation-name normalization in AWS API MCP Server could let operations containing consecutive capital letters fail to match a configured denyList or elicitList, potentially bypassing a denial or elicitation requirement.",
+      "affected_boundary_or_version": ">= 0.2.13 and < 1.5.1; policy enforcement between an AI assistant's requested AWS API operation and the operator's configured guardrail.",
+      "mitigation_or_patch": "Upgrade awslabs.aws-api-mcp-server to 1.5.1 or later; AWS states there is no workaround other than upgrading and asks forks or derivatives to incorporate the fix.",
+      "why_it_matters_for_ai_security": "An MCP server that lets an assistant manage AWS accounts must enforce least-privilege and approval policy at the tool boundary; this defect could turn a nominally denied or approval-gated API operation into an executable action.",
+      "named_entities": ["AWS", "AWS API MCP Server", "Model Context Protocol", "CVE-2026-125271", "GHSA-4wq9-grf3-qg2p"],
+      "upstream_routing": "AWS and the AWS API MCP Server's general product coverage belong in ai-wiki. Retain the policy-bypass disclosure, affected authorization boundary, and upgrade requirement in ai-security-wiki."
+    },
+    {
+      "id": "CVE-2026-120792",
+      "title": "Microsoft Aspire CLI MCP configuration scanner leaks temporary diagnostics",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-q6jf-24jf-m3cg",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-120792",
+        "https://github.com/microsoft/aspire/releases/tag/v13.6.5"
+      ],
+      "visible_date": "2026-11-10",
+      "visible_update_date": "2026-11-11",
+      "evidence_classification": "Primary Microsoft security advisory published in the Microsoft Aspire repository and reviewed by GitHub Advisory Database",
+      "factual_summary": "Microsoft states that insecure temporary files used by the deprecated Aspire CLI MCP configuration scanner can expose sensitive configuration information to a local attacker on a shared non-Windows temporary directory.",
+      "affected_boundary_or_version": "Aspire CLI 13.2.0 through 13.6.4; npm packages >= 13.4.2 and < 13.6.5; Linux and macOS. The affected component is the deprecated MCP configuration scanner used by agent or MCP initialization commands.",
+      "mitigation_or_patch": "Upgrade Aspire CLI and its platform-specific package dependencies to 13.6.5 or later; a .NET SDK/runtime update alone does not establish that the CLI is patched.",
+      "why_it_matters_for_ai_security": "Local agent/MCP setup can expose configuration containing endpoints or credentials. Shared-temp handling is therefore a data-security and least-privilege boundary, even when the affected scanner is deprecated.",
+      "named_entities": ["Microsoft", "Aspire CLI", "MCP configuration scanner", "CVE-2026-120792", "GHSA-q6jf-24jf-m3cg"],
+      "upstream_routing": "Microsoft and Aspire product context belong in ai-wiki; development-tool workflow context belongs in ai-dev-wiki. Keep this local-platform information-disclosure boundary and patch evidence in ai-security-wiki."
+    },
+    {
+      "id": "GHSA-7m4x-rv66-mxhh",
+      "title": "MCP filesystem server same-device move race",
+      "source_urls": ["https://api.github.com/repos/modelcontextprotocol/servers/security-advisories", "https://github.com/modelcontextprotocol/servers/security/advisories/"],
+      "visible_date": "2026-11-11T07:24:37Z",
+      "evidence_classification": "Primary repository security-advisory API record",
+      "factual_summary": "A source-parent symlink swap after validation can make server-filesystem move an outside file into an allowed directory, where subsequent read tools can expose it.",
+      "affected_boundary_or_version": "@modelcontextprotocol/server-filesystem < 2.3.0; patched 2.3.0. The reported boundary is the allowed-directory confinement model during same-device move_file.",
+      "why_it_matters_for_ai_security": "Filesystem MCP tools are authority-bearing agents; a TOCTOU escape invalidates the directory boundary on which tool permissions depend.",
+      "named_entities": ["Model Context Protocol", "@modelcontextprotocol/server-filesystem", "GHSA-7m4x-rv66-mxhh", "CWE-367"],
+      "upstream_routing": "MCP server catalog context belongs in ai-wiki; retain this confinement disclosure and patch boundary locally."
+    },
+    {
+      "id": "GHSA-3rxj-6jhw-qfv7",
+      "title": "MCP fetch server IPv6 SSRF classifier gap",
+      "source_urls": ["https://api.github.com/repos/modelcontextprotocol/servers/security-advisories", "https://github.com/modelcontextprotocol/servers/security/advisories/"],
+      "visible_date": "2026-11-11T07:25:00Z",
+      "evidence_classification": "Primary repository security-advisory API record",
+      "factual_summary": "mcp-server-fetch classified IPv6 site-local fec0::/10 as public, allowing a request to pass its non-public-destination SSRF guard; the advisory notes limited default-host reachability and does not claim a demonstrated metadata-service read.",
+      "affected_boundary_or_version": "mcp-server-fetch >= 2026.10.10 and < 2026.11.11; patched 2026.11.11. Boundary: fetch-tool network destination validation.",
+      "why_it_matters_for_ai_security": "An agent's fetch tool must constrain network authority outside the model; classification gaps can route tool calls to non-public addresses.",
+      "named_entities": ["Model Context Protocol", "mcp-server-fetch", "GHSA-3rxj-6jhw-qfv7", "CWE-918"],
+      "upstream_routing": "MCP server catalog context belongs in ai-wiki; retain this SSRF guard and upgrade evidence locally."
+    },
+    {
+      "id": "GHSA-6hqx-gqrx-c5r2",
+      "title": "MCP Git server runs repository-controlled Git configuration",
+      "source_urls": ["https://api.github.com/repos/modelcontextprotocol/servers/security-advisories", "https://github.com/modelcontextprotocol/servers/security/advisories/"],
+      "visible_date": "2026-11-11T07:25:22Z",
+      "evidence_classification": "Primary repository security-advisory API record",
+      "factual_summary": "mcp-server-git could execute a program selected by an untrusted repository's Git configuration, including from a nominally read-only tool. The advisory says 2026.11.11 neutralizes command-bearing Git configuration and refuses Git older than 2.31.",
+      "affected_boundary_or_version": "mcp-server-git < 2026.11.11; patched 2026.11.11. Boundary: repository configuration accepted by a Git-backed MCP server.",
+      "why_it_matters_for_ai_security": "A tool marked read-only can still cross into code execution if repository metadata is treated as trusted, making this a delegated-authority and supply-chain risk.",
+      "named_entities": ["Model Context Protocol", "mcp-server-git", "GHSA-6hqx-gqrx-c5r2", "CWE-94", "CWE-829"],
+      "upstream_routing": "MCP server catalog and general coding workflow belong upstream; retain this untrusted-repository execution path and patch evidence locally."
+    },
+    {
+      "id": "GHSA-f9hh-cmx9-2f23",
+      "title": "MCP fetch server robots path-canonicalization bypass",
+      "source_urls": ["https://api.github.com/repos/modelcontextprotocol/servers/security-advisories", "https://github.com/modelcontextprotocol/servers/security/advisories/"],
+      "visible_date": "2026-11-11T07:27:04Z",
+      "evidence_classification": "Primary repository security-advisory API record",
+      "factual_summary": "mcp-server-fetch could bypass a robots.txt disallow rule through path canonicalization differences such as //private versus /private.",
+      "affected_boundary_or_version": "mcp-server-fetch >= 0.6.1 and < 2026.11.11; patched 2026.11.11. Boundary: content-access policy enforced by fetch path handling.",
+      "why_it_matters_for_ai_security": "Tool-level content restrictions are part of agent data-access governance; path normalization needs to align with the policy interpreter.",
+      "named_entities": ["Model Context Protocol", "mcp-server-fetch", "GHSA-f9hh-cmx9-2f23", "CWE-41", "CWE-706"],
+      "upstream_routing": "MCP server catalog context belongs in ai-wiki; retain this policy-enforcement bypass locally."
+    },
+    {
+      "id": "GHSA-q74p-4wrc-q7w6",
+      "title": "MCP Git server repository-confinement bypass after prior fix",
+      "source_urls": ["https://api.github.com/repos/modelcontextprotocol/servers/security-advisories", "https://github.com/modelcontextprotocol/servers/security/advisories/"],
+      "visible_date": "2026-11-11T07:27:42Z",
+      "evidence_classification": "Primary repository security-advisory API record",
+      "factual_summary": "The advisory reports that objects/info/alternates and linked-worktree common_dir handling could bypass the mcp-server-git --repository confinement after the earlier validation fix.",
+      "affected_boundary_or_version": "mcp-server-git >= 2026.10.28 and < 2026.11.11; patched 2026.11.11. Boundary: --repository filesystem confinement.",
+      "why_it_matters_for_ai_security": "Repository scoping is a least-privilege control for coding agents; incomplete fixes must be validated against Git's alternate object and worktree semantics.",
+      "named_entities": ["Model Context Protocol", "mcp-server-git", "GHSA-q74p-4wrc-q7w6", "CWE-22", "CWE-200"],
+      "upstream_routing": "MCP server catalog and general coding workflow belong upstream; retain the local security-control regression and patch evidence."
+    },
+    {
+      "id": "GHSA-p9cv-8g75-4xcg",
+      "title": "MCP filesystem server read race escapes allowed directories",
+      "source_urls": ["https://api.github.com/repos/modelcontextprotocol/servers/security-advisories", "https://github.com/modelcontextprotocol/servers/security/advisories/"],
+      "visible_date": "2026-11-11T07:28:07Z",
+      "evidence_classification": "Primary repository security-advisory API record",
+      "factual_summary": "A symlink swap after validation can cause read_text_file to return a file outside server-filesystem's allowedDirectories.",
+      "affected_boundary_or_version": "@modelcontextprotocol/server-filesystem < 2.3.0; patched 2.3.0. Boundary: allowedDirectories read confinement.",
+      "why_it_matters_for_ai_security": "Local files are often high-value agent context; a race that bypasses an allowed-directory control can disclose data beyond the delegated tool scope.",
+      "named_entities": ["Model Context Protocol", "@modelcontextprotocol/server-filesystem", "GHSA-p9cv-8g75-4xcg", "CWE-367"],
+      "upstream_routing": "MCP server catalog context belongs in ai-wiki; retain this file-access security boundary and patch evidence locally."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "NEAR AI SGLang inference incident",
+      "reason": "Already captured in the immediately preceding collector artifact raw/2026-11-10/ai-security-wiki-topic-news-collector-2026-11-10T193250-0500.json; no independently verified new primary update was identified."
+    },
+    {
+      "candidate": "OmniAgent find -execdir approval-gate bypass (CVE-2026-125368)",
+      "reason": "Already captured in the immediately preceding collector artifact; no distinct in-window patch or maintainer response was identified."
+    },
+    {
+      "candidate": "Microsoft report on agentic AI tooling used to find exposed secrets",
+      "source_url": "https://www.microsoft.com/en-us/security/blog/2026/11/05/threat-actors-use-agentic-ai-tooling-to-find-and-abuse-exposed-secrets/",
+      "reason": "Visible publication date is 2026-11-05, outside the strict two-day window."
+    },
+    {
+      "candidate": "CERT-EU Beyond the model: backdoors in AI agent harnesses",
+      "source_url": "https://cert.europa.eu/blog/beyond-the-model-backdoors-in-ai-agent-harnesses",
+      "reason": "Visible publication time is 2026-10-30T12:40:00+01:00, outside the strict two-day window."
+    },
+    {
+      "candidate": "NIST SP 2400-102e2026 initial public draft",
+      "source_url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.2400-102e2026.ipd.pdf",
+      "reason": "The document shows only November 2026 rather than a visible publication timestamp; date-only evidence cannot establish strict-window eligibility."
+    },
+    {
+      "candidate": "French Council on AI and Digital Technology report described by Le Monde",
+      "reason": "A reputable secondary report appears in-window, but no directly verified official report or primary regulatory change was collected in this run; do not treat secondary coverage as the regulatory authority."
+    },
+    {
+      "candidate": "Open MCP Registry pull requests labeled auth fixes",
+      "source_url": "https://github.com/modelcontextprotocol/registry/pulls",
+      "reason": "Open development pull requests are not a released security advisory, patch, or verified control change."
+    }
+  ],
+  "routing_notes": [
+    {
+      "entity_scope": "AWS API MCP Server",
+      "owner": "ai-wiki for broad product/entity context; ai-security-wiki for CVE-2026-125271's authorization-policy bypass"
+    },
+    {
+      "entity_scope": "Microsoft Aspire CLI and development setup practices",
+      "owner": "ai-wiki and ai-dev-wiki for broad product/practice context; ai-security-wiki for the MCP-scanner temporary-file disclosure and patch boundary"
+    },
+    {
+      "entity_scope": "modelcontextprotocol/servers package catalog",
+      "owner": "ai-wiki for ecosystem catalog; ai-security-wiki for the six concrete tool-confinement, SSRF, and repository-trust disclosures"
+    }
+  ],
+  "confidence_notes": [
+    "AWS and Microsoft findings are high confidence because they are first-party security advisories with affected and patched versions.",
+    "The six MCP server records are high confidence for their publication times, package/version fields, and reported behavior because they came from the repository's public security-advisory API. The advisories are reporter-authored and should be reconciled with maintainer release notes or fixes during ingestion.",
+    "No conclusion is made about active exploitation unless a primary source explicitly says so."
+  ],
+  "follow_up_actions": [
+    "During ingestion, verify AWS API MCP Server 1.5.1 release provenance and whether deployed forks inherit the fix.",
+    "Confirm whether Aspire CLI's deprecated MCP scanner is present in supported installation paths and inventory shared-temporary-directory deployments before relying on the upgrade guidance.",
+    "Reconcile the six modelcontextprotocol/servers advisories against the 2.3.0 and 2026.11.11 release artifacts, maintainer issue status, and any disputed affected-version ranges before durable synthesis.",
+    "Do not move this artifact to raw/processed or edit docs/wiki as part of collection."
+  ],
+  "collection_result": {
+    "qualifying_count": 8,
+    "exclusion_count": 7,
+    "routing_count": 3,
+    "blockers": "No collection blocker. Maintainer release-note reconciliation remains required for the repository-hosted MCP advisory group before synthesis."
+  }
+}

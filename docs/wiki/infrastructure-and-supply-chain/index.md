@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [MCP Git Server Repository-Confinement Regression](mcp-server-git-repository-confinement-regression.md)
 - [Crawl4AI Untrusted Model-Name Pickle Loading](crawl4ai-untrusted-model-name-pickle-loading.md)
 - [DeepInfer Unauthenticated Profile Path Traversal](deepinfer-unauthenticated-profile-path-traversal.md)
 - [Kubeflow Pipelines Volume Artifact Path Traversal](kubeflow-pipelines-volume-artifact-path-traversal.md)

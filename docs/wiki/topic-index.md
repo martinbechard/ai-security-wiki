@@ -8,6 +8,14 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [MCP Filesystem Server Read Race](agent-and-tool-security/mcp-server-filesystem-read-race.md)
+- [MCP Filesystem Server Same-Device Move Race](agent-and-tool-security/mcp-server-filesystem-move-race.md)
+- [MCP Fetch Server IPv6 Site-Local SSRF](agent-and-tool-security/mcp-server-fetch-ipv6-site-local-ssrf.md)
+- [MCP Fetch Server Robots Path Canonicalization Bypass](agent-and-tool-security/mcp-server-fetch-robots-path-canonicalization-bypass.md)
+- [MCP Git Server Repository-Configuration Execution](agent-and-tool-security/mcp-server-git-repository-configuration-execution.md)
+- [MCP Git Server Repository-Confinement Regression](infrastructure-and-supply-chain/mcp-server-git-repository-confinement-regression.md)
+- [AWS API MCP Server Policy Normalization Bypass](agent-and-tool-security/aws-api-mcp-policy-normalization-bypass.md)
+- [Aspire CLI MCP Scanner Temporary-File Disclosure](data-and-privacy/aspire-cli-mcp-scanner-temporary-file-disclosure.md)
 - [Vikunja Bot-Token Owner Revocation](identity-and-access/vikunja-bot-token-owner-revocation.md)
 - [Vikunja Remote Metadata Prompt Injection](model-and-prompt-security/vikunja-remote-metadata-prompt-injection.md)
 - [IBM ContextForge Tool-Name Collision Denial of Service](agent-and-tool-security/ibm-contextforge-tool-name-collision-dos.md)

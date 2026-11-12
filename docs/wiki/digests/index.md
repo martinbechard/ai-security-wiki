@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [November 2026](2026-11.md) records eight independently maintained November 10-11 items: AWS and Aspire patch boundaries plus six separately scoped MCP tool vulnerabilities; unverified MCP release claims remain leaf-level open questions.
 - [November 2026](2026-11.md) records two independently maintained November 9-10 items: NEAR AI's SGLang inference-runtime incident and OmniAgent's `find -execdir` approval-gate bypass.
 - [November 2026](2026-11.md) records six independently maintained November 7-8 boundaries: Vikunja bot-token revocation and metadata prompt trust, ContextForge tool-name availability, and separate Internet of Agents message access, enrollment authentication, and collaboration-loop controls.
 - [November 2026](2026-11.md) records four additional item-level updates: three CVE boundaries for SiYuan, fast-agent, and DeepSeek-Reasonix, plus the working-draft Safe Outputs MCP Gateway control design.

@@ -2,6 +2,12 @@
 
 ## Current Understanding
 
+- [MCP Filesystem Server Read Race](mcp-server-filesystem-read-race.md)
+- [MCP Filesystem Server Same-Device Move Race](mcp-server-filesystem-move-race.md)
+- [MCP Fetch Server IPv6 Site-Local SSRF](mcp-server-fetch-ipv6-site-local-ssrf.md)
+- [MCP Fetch Server Robots Path Canonicalization Bypass](mcp-server-fetch-robots-path-canonicalization-bypass.md)
+- [MCP Git Server Repository-Configuration Execution](mcp-server-git-repository-configuration-execution.md)
+- [AWS API MCP Server Policy Normalization Bypass](aws-api-mcp-policy-normalization-bypass.md)
 - [IBM ContextForge Tool-Name Collision Denial of Service](ibm-contextforge-tool-name-collision-dos.md)
 - [OpenBMB Internet of Agents Collaboration max_turns Denial of Service](openbmb-ioa-collaboration-max-turns-dos.md)
 - [SiYuan MCP Resource-Read Denial of Service](siyuan-mcp-resource-read-denial-of-service.md)
