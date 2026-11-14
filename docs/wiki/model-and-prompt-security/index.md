@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [Jet Admin Cloud Prompt-Injection Secret Exfiltration](jet-admin-cloud-prompt-injection-secret-exfiltration.md)
 - [Vikunja Remote Metadata Prompt Injection](vikunja-remote-metadata-prompt-injection.md)
 - [DeepSeek-Reasonix Repository Instruction Trust](deepseek-reasonix-repository-instruction-trust.md)
 - [Haiou Codex Prompt-Adware Persistent Instruction Manipulation](haiou-codex-prompt-adware.md)

@@ -1,0 +1,142 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-11-13T19:29:23-0500",
+  "cutoff_window": {
+    "start_inclusive": "2026-11-11T19:29:23-0500",
+    "end_exclusive": "2026-11-13T19:29:23-0500",
+    "date_rule": "Only a source with an unambiguous publication or update timestamp inside this window qualifies. Date-only and boundary-only claims are excluded."
+  },
+  "searched_topics": [
+    "threats and attacks", "model and prompt security", "agent and tool security including MCP and browser agents", "data security and privacy", "identity and authorization", "AI supply chains", "security evaluation and assurance", "AI governance and incidents"
+  ],
+  "source_method": "Public-web collection using official vendor security advisories, the NVD CVE API, a vendor incident report, and an official security-research post. No private, local, or sensitive repository content was sent to an external service.",
+  "qualifying_findings": [
+    {
+      "title": "Opera Neon MCP Hub browser-agent channel verification flaw",
+      "visible_date": "2026-11-12T13:17:11.573Z (NVD publication)",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-123139", "https://security.opera.com/en/improper-verification-of-source-of-a-communication-channel-opera-security-advisories/"],
+      "evidence_classification": "NVD record with vendor security-advisory reference",
+      "summary": "CVE-2026-123139 says Opera Neon MCP Hub extension 0.0.1 on macOS and Windows did not verify a communication-channel source, allowing a malicious installed extension to send commands through MCP Hub to the built-in Browser Operator.",
+      "affected_boundary_or_version": "Opera Neon MCP Hub extension 0.0.1; macOS and Windows.",
+      "why_it_matters_for_ai_security": "An extension crossing into the browser agent's action channel can inherit agentic browser authority; extension-to-agent origin binding is a distinct delegated-authority boundary.",
+      "named_entities": ["Opera Neon", "MCP Hub", "Browser Operator", "CVE-2026-123139"],
+      "upstream_routing": "ai-wiki owns broad Opera product coverage; retain this security-specific browser-agent trust-boundary finding locally.",
+      "confidence": "High for disclosure and affected component; consult the vendor advisory for remediation details before synthesis.",
+      "follow_up_actions": ["Verify the vendor remediation and fixed build", "Audit installed extensions and Browser Operator channel exposure"]
+    },
+    {
+      "title": "SakanaAI text-to-LoRA checkpoint-loader path traversal",
+      "visible_date": "2026-11-12T15:17:48.940Z (NVD publication)",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-126996", "https://github.com/SakanaAI/text-to-lora/issues/13"],
+      "evidence_classification": "NVD record, CNA-referenced project issue, and public proof-of-concept reference",
+      "summary": "CVE-2026-126996 reports that text-to-LoRA 0.0.1 passes an attacker-controlled base_model_name_or_path into get_tokenizer during checkpoint loading, permitting path traversal; NVD notes public exploit disclosure and no project response at publication.",
+      "affected_boundary_or_version": "SakanaAI text-to-LoRA 0.0.1 checkpoint loading; no fixed version stated.",
+      "why_it_matters_for_ai_security": "Model and checkpoint loading are supply-chain boundaries; untrusted path input can escape the intended model-artifact namespace.",
+      "named_entities": ["SakanaAI", "text-to-LoRA", "CVE-2026-126996"],
+      "upstream_routing": "ai-wiki owns the broad project/entity; retain the model-artifact loading security implication locally.",
+      "confidence": "Medium: NVD and the referenced public issue support the disclosure, while maintainer confirmation and a fix are absent.",
+      "follow_up_actions": ["Verify the reproducer against the referenced revision", "Check for a maintainer patch or security advisory before durable synthesis"]
+    },
+    {
+      "title": "MLflow FileStore model_id path traversal fixed in 3.18.0",
+      "visible_date": "2026-11-12T17:17:43.450Z (NVD publication)",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-127202", "https://github.com/mlflow/mlflow/commit/ab5fc795eedc22348253cf687818cf2a16c15282", "https://github.com/mlflow/mlflow/releases/tag/v3.18.0"],
+      "evidence_classification": "NVD record with upstream commit and release references",
+      "summary": "CVE-2026-127202 reports that MLflow before 3.18.0 with FileStore could accept ../ sequences in model_id on the log outputs API, enabling unauthenticated writes outside a run directory within the service account's permissions.",
+      "affected_boundary_or_version": "MLflow before 3.18.0 using FileStore; FileStore was default before 3.7.0 and later opt-in through MLFLOW_ALLOW_FILE_STORE.",
+      "why_it_matters_for_ai_security": "Model-tracking and artifact services are AI deployment supply-chain surfaces; traversal can alter host-side state beyond the intended experiment/run boundary.",
+      "named_entities": ["MLflow", "FileStore", "CVE-2026-127202"],
+      "upstream_routing": "ai-wiki owns broad MLflow coverage; retain this fixed tracking-service security delta locally.",
+      "confidence": "High: NVD cites upstream commit and 3.18.0 release.",
+      "follow_up_actions": ["Upgrade FileStore-backed MLflow deployments to 3.18.0 or later", "Review exposed log-outputs API and service-account write scope"]
+    },
+    {
+      "title": "pgEdge Postgres MCP Server v1.1.0 closes SQL and approval-boundary flaws",
+      "visible_date": "2026-11-12T18:17:24Z (NVD publications for CVE-2026-126196, CVE-2026-126197, and CVE-2026-126198)",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-126196", "https://nvd.nist.gov/vuln/detail/CVE-2026-126197", "https://nvd.nist.gov/vuln/detail/CVE-2026-126198", "https://github.com/pgEdge/pgedge-postgres-mcp/releases/tag/v1.1.0"],
+      "evidence_classification": "NVD records with GitHub Security Advisory, upstream commit, pull-request, and release references",
+      "summary": "Before 1.1.0, the server's read_only path could use PostgreSQL simple-query execution for unrecognized statements (CVE-2026-126196); custom pl-do tools could interpolate attacker input into DO blocks (CVE-2026-126197); and bundled clients based write confirmation on a tool name instead of write annotations (CVE-2026-126198).",
+      "affected_boundary_or_version": "pgEdge Postgres MCP Server before 1.1.0; CVE-2026-126198 is a bundled-client confirmation control, not a server authorization boundary.",
+      "why_it_matters_for_ai_security": "MCP-to-database integrations must enforce least privilege and server-side authorization independently of client confirmation or model behavior.",
+      "named_entities": ["pgEdge", "Postgres MCP Server", "CVE-2026-126196", "CVE-2026-126197", "CVE-2026-126198"],
+      "upstream_routing": "ai-wiki owns broad pgEdge/MCP product coverage; retain the database delegated-action security controls locally.",
+      "confidence": "High: NVD details and upstream v1.1.0 references agree; validate advisory remediation notes during synthesis.",
+      "follow_up_actions": ["Upgrade to 1.1.0 or later", "Treat database-role privileges and server authorization as primary controls", "Confirm custom tools carry accurate write annotations"]
+    },
+    {
+      "title": "Unit 42 reports autonomous Cairn intrusion operations",
+      "visible_date": "2026-11-12 (Unit 42 posted date)",
+      "source_urls": ["https://unit42.paloaltonetworks.com/attackers-use-autonomous-ai-to-target-semiconductor-defense-and-civil-society-sectors/"],
+      "evidence_classification": "Vendor threat-intelligence incident report",
+      "summary": "Unit 42 reports that Chinese-speaking attackers paired the open-source Cairn penetration-testing framework with Zhipu GLM and DeepSeek models for 25 autonomous operations against at least 19 organizations in August-September 2026, obtaining unauthorized access or data at 10; Unit 42 tracks the activity as CL-STA-1238 with moderate confidence.",
+      "affected_boundary_or_version": "Autonomous target-to-action workflow using a modified/open-source AI penetration-testing framework; no software version is a remediation target.",
+      "why_it_matters_for_ai_security": "The report is a public incident illustrating how model-enabled planning and tool execution can scale intrusion activity, reinforcing action logging, credential isolation, and approval/egress controls.",
+      "named_entities": ["Unit 42", "Cairn", "Zhipu GLM", "DeepSeek", "CL-STA-1238"],
+      "upstream_routing": "ai-wiki owns broad framework/model entities; retain the incident and its security controls locally.",
+      "confidence": "Medium-high: a primary vendor report, but attribution and operational totals are Unit 42 assessments.",
+      "follow_up_actions": ["Preserve attribution qualifiers", "Use the report's indicators and defensive guidance only after reviewing the original report"]
+    },
+    {
+      "title": "Jet Admin Cloud Platform prompt injection disclosure",
+      "visible_date": "2026-11-13T18:17:30.933Z (NVD publication)",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-123965", "https://www.cve.org/CVERecord?id=CVE-2026-123965"],
+      "evidence_classification": "NVD/CVE record with CISA CSAF reference",
+      "summary": "CVE-2026-123965 states that a free-account attacker could use prompt injection in Jet Admin Cloud Platform to expose .env configuration files and exfiltrate credentials; the record says the issue was mitigated via a sandbox component around October 29, 2026.",
+      "affected_boundary_or_version": "All versions are stated as affected; the record names a sandbox mitigation but does not give a release version.",
+      "why_it_matters_for_ai_security": "Prompt-injection resistance must include containment for secret-bearing execution environments, not only prompt-layer filtering.",
+      "named_entities": ["Jet Admin Cloud Platform", "CVE-2026-123965"],
+      "upstream_routing": "ai-wiki owns the broad product entity if needed; retain the prompt-injection and secret-exfiltration lesson locally.",
+      "confidence": "Medium: official vulnerability record supports the fact, but vendor remediation/version evidence should be checked before synthesis.",
+      "follow_up_actions": ["Verify the vendor changelog or advisory", "Confirm sandbox coverage and rotate potentially exposed credentials"]
+    },
+    {
+      "title": "ragent RAG traces authorization and knowledge-document XSS disclosures",
+      "visible_date": "2026-11-13T18:17:40Z (NVD publications for CVE-2026-129157 and CVE-2026-129158)",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-129157", "https://nvd.nist.gov/vuln/detail/CVE-2026-129158", "https://github.com/nageoffer/ragent/issues/186", "https://github.com/nageoffer/ragent/issues/187"],
+      "evidence_classification": "NVD records with public source-code and project-issue references",
+      "summary": "CVE-2026-129157 says ragent 1.0.0-1.1.0 let any logged-in user read other users' RAG traces, including identities, questions, and execution details. CVE-2026-129158 says ragent 1.1.0 served uploaded SVG knowledge-base documents inline, allowing authenticated stored XSS and potential account takeover.",
+      "affected_boundary_or_version": "ragent 1.0.0-1.1.0 for trace authorization; ragent 1.1.0 for SVG document upload/rendering.",
+      "why_it_matters_for_ai_security": "RAG observability data is sensitive cross-tenant content, and knowledge-base ingestion/rendering is both a document-trust and browser-session boundary.",
+      "named_entities": ["ragent", "RAG", "CVE-2026-129157", "CVE-2026-129158"],
+      "upstream_routing": "ai-wiki owns broad ragent/RAG entity coverage; retain the local data-isolation and content-rendering security implications.",
+      "confidence": "Medium-high: NVD includes code and issue references; no maintainer fix is established in the inspected evidence.",
+      "follow_up_actions": ["Verify fixed versions with the project", "Apply per-tenant authorization checks to trace APIs", "Treat uploaded SVG as active content or force safe download"]
+    },
+    {
+      "title": "IBM ContextForge MCP Gateway multi-boundary advisory set",
+      "visible_date": "2026-11-13T22:17:20Z (NVD publications; 17:17 local time, within the window)",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-110178", "https://nvd.nist.gov/vuln/detail/CVE-2026-110189", "https://nvd.nist.gov/vuln/detail/CVE-2026-110194", "https://nvd.nist.gov/vuln/detail/CVE-2026-110195", "https://nvd.nist.gov/vuln/detail/CVE-2026-110278", "https://nvd.nist.gov/vuln/detail/CVE-2026-110279", "https://nvd.nist.gov/vuln/detail/CVE-2026-94407"],
+      "evidence_classification": "NVD records referencing IBM PSIRT advisories",
+      "summary": "The in-window IBM advisory set covers cross-tenant bulk-import overwrite of tool/resource/prompt endpoints and credentials (CVE-2026-110178); filter-guard and schema-regex denial of service (CVE-2026-110189, CVE-2026-94407); SSRF (CVE-2026-110194); token-exchange cache and upstream-authorization credential isolation failures (CVE-2026-110195, CVE-2026-110279); and identity-claim replay/exposure to third-party MCP servers (CVE-2026-110278).",
+      "affected_boundary_or_version": "ContextForge MCP Gateway 1.0.0-1.0.11, with selected findings also affecting 1.1.0; consult each IBM PSIRT advisory for the exact fixed release.",
+      "why_it_matters_for_ai_security": "A gateway concentrates delegated tools, tenant data, upstream credentials, and identity claims; each requires independent tenant, origin, cache-key, and availability controls.",
+      "named_entities": ["IBM ContextForge MCP Gateway", "IBM PSIRT", "CVE-2026-110178", "CVE-2026-110189", "CVE-2026-110194", "CVE-2026-110195", "CVE-2026-110278", "CVE-2026-110279", "CVE-2026-94407"],
+      "upstream_routing": "ai-wiki owns broad ContextForge/MCP entity coverage; retain this security-specific multi-tenant and delegated-credential advisory set locally.",
+      "confidence": "High for the CVE facts and affected ranges; fixed-version information requires direct IBM PSIRT review.",
+      "follow_up_actions": ["Review all linked IBM PSIRT advisories", "Upgrade according to each advisory", "Audit imported public tool resources, cached token exchanges, upstream authorization headers, identity propagation, and gateway resource limits"]
+    }
+  ],
+  "upstream_routing": [
+    {"entity_or_practice": "Opera Neon and Browser Operator", "owner": "ai-wiki", "local_retained_lens": "browser-agent channel origin and delegated authority"},
+    {"entity_or_practice": "MLflow, pgEdge, ragent, SakanaAI text-to-LoRA, Jet Admin, and ContextForge", "owner": "ai-wiki", "local_retained_lens": "product-specific security disclosure, patch, isolation, and credential controls"},
+    {"entity_or_practice": "Cairn, Zhipu GLM, and DeepSeek", "owner": "ai-wiki", "local_retained_lens": "documented autonomous-intrusion incident and defenses"}
+  ],
+  "exclusions": [
+    {"candidate": "LLM 0.37.2 OpenAI-key forwarding fixes", "reason": "Project changelog shows only date 2026-11-11, which is before the local window date and has no visible time to establish it was after the 19:29 cutoff."},
+    {"candidate": "Microsoft MDASH Linux-kernel assurance report", "reason": "The official post visibly gives only the boundary date 2026-11-11, without a publication time that can establish it was after the 19:29 cutoff."},
+    {"candidate": "Dynatrace MCP Server unauthenticated HTTP-mode disclosure", "reason": "The GitHub-advisory publication predates this window; a later index/listing appearance is not a qualifying new source update."},
+    {"candidate": "AtlasMCP WordPress privilege escalation", "reason": "NVD/publication evidence is dated November 9, outside the strict window."},
+    {"candidate": "General AI product announcements and routine release notes", "reason": "No independently concrete security delta was established."},
+    {"candidate": "Date-only standards or regulatory materials found during searches", "reason": "No source with a visible in-window timestamp and a concrete AI-security rule or control change was established."},
+    {"candidate": "Secondary news summaries without a primary advisory or incident report", "reason": "Excluded where stronger primary, official, or vulnerability-database evidence was unavailable."}
+  ],
+  "confidence_notes": [
+    "NVD publication timestamps establish intake timing; source references must be rechecked during synthesis because some records cite reporter or CNA material and may lack maintainer remediation evidence.",
+    "Unit 42 attribution, operation counts, and impact are its stated assessment, not independently replicated facts.",
+    "No qualifying governance/regulatory finding was identified; this is an evidence limitation, not a claim that no change occurred."
+  ],
+  "collection_blockers": [
+    "No collection blocker.",
+    "Before synthesis, verify fixed versions and vendor advisories for SakanaAI, Jet Admin, ragent, and every ContextForge CVE; do not infer remediation from publication alone."
+  ]
+}

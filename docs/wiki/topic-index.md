@@ -8,6 +8,22 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [Opera Neon MCP Hub Channel-Origin Verification](agent-and-tool-security/opera-neon-mcp-hub-channel-origin-verification.md)
+- [SakanaAI text-to-LoRA Checkpoint-Loader Path Traversal](infrastructure-and-supply-chain/sakanai-text-to-lora-checkpoint-loader-path-traversal.md)
+- [MLflow FileStore Model-ID Path Traversal](infrastructure-and-supply-chain/mlflow-filestore-model-id-path-traversal.md)
+- [pgEdge Postgres MCP Read-Only SQL Bypass](agent-and-tool-security/pgedge-postgres-mcp-read-only-sql-bypass.md)
+- [pgEdge Postgres MCP PL/DO SQL Injection](agent-and-tool-security/pgedge-postgres-mcp-pl-do-sql-injection.md)
+- [pgEdge Postgres MCP Write-Confirmation Binding](agent-and-tool-security/pgedge-postgres-mcp-write-confirmation-binding.md)
+- [Cairn Autonomous Intrusion Operations](incident-response/cairn-autonomous-intrusion-operations.md)
+- [Jet Admin Cloud Prompt-Injection Secret Exfiltration](model-and-prompt-security/jet-admin-cloud-prompt-injection-secret-exfiltration.md)
+- [ragent RAG Trace Authorization](data-and-privacy/ragent-rag-trace-authorization.md)
+- [ragent Knowledge-SVG Stored XSS](agent-and-tool-security/ragent-knowledge-svg-stored-xss.md)
+- [IBM ContextForge Bulk-Import Tenant Overwrite](agent-and-tool-security/ibm-contextforge-bulk-import-tenant-overwrite.md)
+- [IBM ContextForge Filter-Validation Denial of Service](agent-and-tool-security/ibm-contextforge-filter-validation-denial-of-service.md)
+- [IBM ContextForge Server-Side Request Forgery](agent-and-tool-security/ibm-contextforge-server-side-request-forgery.md)
+- [IBM ContextForge Token-Exchange Cache Isolation](identity-and-access/ibm-contextforge-token-exchange-cache-isolation.md)
+- [IBM ContextForge Upstream-Authorization Credential Isolation](identity-and-access/ibm-contextforge-upstream-authorization-credential-isolation.md)
+- [IBM ContextForge Identity-Claim Replay](identity-and-access/ibm-contextforge-identity-claim-replay.md)
 - [MCP Filesystem Server Read Race](agent-and-tool-security/mcp-server-filesystem-read-race.md)
 - [MCP Filesystem Server Same-Device Move Race](agent-and-tool-security/mcp-server-filesystem-move-race.md)
 - [MCP Fetch Server IPv6 Site-Local SSRF](agent-and-tool-security/mcp-server-fetch-ipv6-site-local-ssrf.md)

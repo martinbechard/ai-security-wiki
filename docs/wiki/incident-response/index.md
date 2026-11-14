@@ -6,6 +6,7 @@ This topic owns detection, triage, containment, eradication, recovery, disclosur
 
 ## Leaf Pages
 
+- [Cairn autonomous intrusion operations](cairn-autonomous-intrusion-operations.md)
 - [NEAR AI SGLang inference-server incident](near-ai-sglang-inference-server-incident.md)
 - [Anthropic unintended model actions](anthropic-unintended-model-actions.md)
 

@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [SakanaAI text-to-LoRA Checkpoint-Loader Path Traversal](sakanai-text-to-lora-checkpoint-loader-path-traversal.md)
+- [MLflow FileStore Model-ID Path Traversal](mlflow-filestore-model-id-path-traversal.md)
 - [MCP Git Server Repository-Confinement Regression](mcp-server-git-repository-confinement-regression.md)
 - [Crawl4AI Untrusted Model-Name Pickle Loading](crawl4ai-untrusted-model-name-pickle-loading.md)
 - [DeepInfer Unauthenticated Profile Path Traversal](deepinfer-unauthenticated-profile-path-traversal.md)

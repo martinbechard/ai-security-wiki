@@ -2,6 +2,14 @@
 
 ## Current Understanding
 
+- [Opera Neon MCP Hub Channel-Origin Verification](opera-neon-mcp-hub-channel-origin-verification.md)
+- [pgEdge Postgres MCP Read-Only SQL Bypass](pgedge-postgres-mcp-read-only-sql-bypass.md)
+- [pgEdge Postgres MCP PL/DO SQL Injection](pgedge-postgres-mcp-pl-do-sql-injection.md)
+- [pgEdge Postgres MCP Write-Confirmation Binding](pgedge-postgres-mcp-write-confirmation-binding.md)
+- [ragent Knowledge-SVG Stored XSS](ragent-knowledge-svg-stored-xss.md)
+- [IBM ContextForge Bulk-Import Tenant Overwrite](ibm-contextforge-bulk-import-tenant-overwrite.md)
+- [IBM ContextForge Filter-Validation Denial of Service](ibm-contextforge-filter-validation-denial-of-service.md)
+- [IBM ContextForge Server-Side Request Forgery](ibm-contextforge-server-side-request-forgery.md)
 - [MCP Filesystem Server Read Race](mcp-server-filesystem-read-race.md)
 - [MCP Filesystem Server Same-Device Move Race](mcp-server-filesystem-move-race.md)
 - [MCP Fetch Server IPv6 Site-Local SSRF](mcp-server-fetch-ipv6-site-local-ssrf.md)

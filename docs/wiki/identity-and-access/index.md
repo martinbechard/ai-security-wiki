@@ -2,6 +2,9 @@
 
 ## Current Understanding
 
+- [IBM ContextForge Token-Exchange Cache Isolation](ibm-contextforge-token-exchange-cache-isolation.md)
+- [IBM ContextForge Upstream-Authorization Credential Isolation](ibm-contextforge-upstream-authorization-credential-isolation.md)
+- [IBM ContextForge Identity-Claim Replay](ibm-contextforge-identity-claim-replay.md)
 - [Vikunja Bot-Token Owner Revocation](vikunja-bot-token-owner-revocation.md)
 - [OpenBMB Internet of Agents Message-Handler Access Control](openbmb-ioa-message-handler-access-control.md)
 - [OpenBMB Internet of Agents Agent-Registration Authentication](openbmb-ioa-agent-registration-authentication.md)
