@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [n8n MCP OAuth Dynamic Client Registration Redirect](n8n-mcp-oauth-dynamic-client-registration-redirect.md)
 - [IBM ContextForge Token-Exchange Cache Isolation](ibm-contextforge-token-exchange-cache-isolation.md)
 - [IBM ContextForge Upstream-Authorization Credential Isolation](ibm-contextforge-upstream-authorization-credential-isolation.md)
 - [IBM ContextForge Identity-Claim Replay](ibm-contextforge-identity-claim-replay.md)

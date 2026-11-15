@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [November 2026](2026-11.md) records three independently maintained November 13-14 security items: n8n delegated-consent redirect validation, Flowise custom-function egress containment, and ContextForge dashboard-session rendering.
 - [November 2026](2026-11.md) records 16 independent November 12-13 security items: browser-agent channel verification, model and tracking paths, database MCP controls, an autonomous intrusion report, prompt-to-secret containment, RAG isolation, and six ContextForge gateway boundaries.
 - [November 2026](2026-11.md) records eight independently maintained November 10-11 items: AWS and Aspire patch boundaries plus six separately scoped MCP tool vulnerabilities; unverified MCP release claims remain leaf-level open questions.
 - [November 2026](2026-11.md) records two independently maintained November 9-10 items: NEAR AI's SGLang inference-runtime incident and OmniAgent's `find -execdir` approval-gate bypass.

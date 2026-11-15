@@ -8,6 +8,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [n8n MCP OAuth Dynamic Client Registration Redirect](identity-and-access/n8n-mcp-oauth-dynamic-client-registration-redirect.md)
+- [Flowise Custom Function SSRF Bypass](agent-and-tool-security/flowise-custom-function-ssrf-bypass.md)
+- [IBM ContextForge Dashboard DOM XSS](agent-and-tool-security/ibm-contextforge-dashboard-dom-xss.md)
 - [Opera Neon MCP Hub Channel-Origin Verification](agent-and-tool-security/opera-neon-mcp-hub-channel-origin-verification.md)
 - [SakanaAI text-to-LoRA Checkpoint-Loader Path Traversal](infrastructure-and-supply-chain/sakanai-text-to-lora-checkpoint-loader-path-traversal.md)
 - [MLflow FileStore Model-ID Path Traversal](infrastructure-and-supply-chain/mlflow-filestore-model-id-path-traversal.md)

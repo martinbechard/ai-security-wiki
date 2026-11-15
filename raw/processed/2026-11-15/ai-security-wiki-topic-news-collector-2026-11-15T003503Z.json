@@ -1,0 +1,128 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-11-15T00:35:03Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-11-13T00:35:03Z",
+    "end_inclusive": "2026-11-15T00:35:03Z",
+    "policy": "Only sources with a visible publication or material-update timestamp strictly after the start and no later than the run timestamp qualify. Date-only sources at a window boundary are excluded."
+  },
+  "source_method": "Public web and public GitHub Advisory Database API queries only; no local, private, proprietary, sensitive, or PII content was sent externally.",
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "qualifying_findings": [
+    {
+      "title": "n8n MCP OAuth dynamic-client registration open redirect",
+      "visible_date": "2026-11-13T12:31:20Z",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-pc28-gvgp-xg9x",
+        "https://github.com/n8n-io/n8n/security/advisories/GHSA-rc3w-8jc8-7x3w",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-126386"
+      ],
+      "evidence_classification": "Public GitHub Advisory Database record corroborated by an n8n repository advisory and NVD reference.",
+      "affected_boundary_or_version": "n8n before 1.123.89; 2.x before 2.45.5; 2.46.x before 2.46.1; and 3.x before 3.0.1. The exposed boundary is the unauthenticated /mcp-oauth/register dynamic-client-registration endpoint.",
+      "factual_summary": "CVE-2026-126386 states that arbitrary redirect_uri values were accepted during unauthenticated MCP OAuth client registration. Crafted authorization URLs could redirect a visitor to an attacker-controlled site before instance checks, enabling phishing.",
+      "why_it_matters_for_ai_security": "Remote MCP authorization is a delegated-authority boundary. An open redirect at registration/authorization can undermine user trust in agent-to-tool consent flows even when the underlying workflow platform is otherwise authenticated.",
+      "named_entities": ["n8n", "Model Context Protocol", "OAuth dynamic client registration", "CVE-2026-126386"],
+      "upstream_routing": "n8n as a general workflow/MCP product belongs to ai-wiki; the security-specific OAuth boundary and patch implication remain locally owned."
+    },
+    {
+      "title": "Flowise Custom Function sandbox SSRF bypass",
+      "visible_date": "2026-11-13T21:32:00Z",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-vqvj-w792-h4m6",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-127214",
+        "https://github.com/soovwv/cve/blob/main/research/flowise-ssrf-bypass-via-subpath-import.md"
+      ],
+      "evidence_classification": "Public GitHub Advisory Database record with reproducible public researcher technical evidence; no maintainer-authored remediation was identified in the advisory record.",
+      "affected_boundary_or_version": "Flowise through 3.1.4. An authenticated actor with chatflow or agentflow create/update permission can reach POST /api/v1/node-custom-function and import a subpath of an allowlisted HTTP package to bypass Custom Function SSRF checks.",
+      "factual_summary": "CVE-2026-127214 reports that package subpath imports such as axios/dist/node/axios.cjs evade the vm2 mock table and return an HTTP client that skips checkDenyList validation. The advisory describes arbitrary GET and POST requests to loopback, internal-network, or cloud-metadata addresses, enabling mapping, credential disclosure, and internal-service state changes.",
+      "why_it_matters_for_ai_security": "Agentflow editing permission becomes an internal-network and cloud-credential boundary when agent custom functions can bypass SSRF controls. This is relevant to least privilege, runtime isolation, and tool execution assurance.",
+      "named_entities": ["Flowise", "Custom Function", "vm2", "SSRF", "cloud metadata", "CVE-2026-127214"],
+      "upstream_routing": "Flowise product context belongs to ai-wiki; general agent-workflow development practice belongs to ai-dev-wiki. Retain only the local security finding, permission boundary, and remediation-verification note."
+    },
+    {
+      "title": "IBM ContextForge MCP Gateway Web UI DOM XSS fixed in v1.1.0",
+      "visible_date": "2026-11-14T00:31:43Z",
+      "source_urls": [
+        "https://www.ibm.com/support/pages/node/7296694",
+        "https://github.com/advisories/GHSA-5c6v-rx44-457j",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-110199"
+      ],
+      "evidence_classification": "Primary IBM security bulletin, corroborated by the public GitHub Advisory Database record.",
+      "affected_boundary_or_version": "IBM ContextForge MCP Gateway v1.0.0 through v1.0.11; IBM identifies v1.1.0 as the remediation release. The boundary is administrator-facing dashboard notification rendering from page-URL values.",
+      "factual_summary": "IBM says a mutation-XSS sanitizer bypass in dashboard status/error notifications can allow arbitrary JavaScript in an administrator's authenticated session when the administrator opens a crafted link. IBM rates CVE-2026-110199 CVSS 4.8 and recommends upgrading to v1.1.0; it states no workaround.",
+      "why_it_matters_for_ai_security": "An MCP gateway administration plane can hold routing and credential-control authority. Script execution in an authenticated administrator session can expose trusted-session credentials or alter gateway behavior.",
+      "named_entities": ["IBM", "ContextForge MCP Gateway", "DOM XSS", "CVE-2026-110199", "v1.1.0"],
+      "upstream_routing": "ContextForge is an upstream-owned MCP product entity in ai-wiki; preserve the security-specific administration-plane and fixed-version evidence in this security wiki."
+    }
+  ],
+  "upstream_routing": [
+    {
+      "entity": "n8n",
+      "owner": "ai-wiki",
+      "local_retention": "MCP OAuth delegated-authority flaw and affected/fixed versions."
+    },
+    {
+      "entity": "Flowise",
+      "owner": "ai-wiki; ai-dev-wiki for general development practice",
+      "local_retention": "Custom Function sandbox SSRF bypass and permission-to-network boundary."
+    },
+    {
+      "entity": "IBM ContextForge MCP Gateway",
+      "owner": "ai-wiki",
+      "local_retention": "Administrator-session XSS, MCP gateway control-plane impact, and IBM v1.1.0 remediation."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Opera Neon MCP Hub CVE-2026-123139",
+      "reason": "The in-window sources were a later secondary discussion of a November 12 vendor advisory; the same security finding was captured in the prior collector artifact."
+    },
+    {
+      "candidate": "AWS mcp-gateway-registry CVE-2026-125926",
+      "reason": "The primary AWS bulletin is visibly published November 11, outside this run's strict window."
+    },
+    {
+      "candidate": "IBM ContextForge advisory group other than CVE-2026-110199",
+      "reason": "The previously captured November 13 artifact already records the overlapping import, denial-of-service, SSRF, authorization, credential-isolation, and identity-replay findings; this run retains only the independently missing XSS disclosure."
+    },
+    {
+      "candidate": "MCP dependency-drift reporting",
+      "reason": "The November 13 secondary report has concrete observations but no linked primary public incident report or advisory sufficient to distinguish lab findings from a newly disclosed product vulnerability."
+    },
+    {
+      "candidate": "Ordinary AI product announcements and routine release notes",
+      "reason": "No concrete threat, vulnerability, mitigation, control result, standards/regulatory change, or public incident was established."
+    },
+    {
+      "candidate": "Date-only standards and regulatory materials",
+      "reason": "No source showed a timestamp strictly inside the window together with a concrete AI-security rule or control change."
+    },
+    {
+      "candidate": "Secondary-only security news summaries",
+      "reason": "Excluded where a primary advisory, official incident report, vulnerability record, or reproducible technical evidence was unavailable."
+    }
+  ],
+  "confidence_notes": [
+    "High confidence for the n8n affected and fixed version ranges because the public GHSA gives them directly; the underlying n8n repository advisory predates the public CVE/GHSA record and is corroborating, not the controlling in-window date.",
+    "Medium confidence for Flowise remediation status: the public advisory provides concrete technical evidence and affected version but no maintainer-authored fixed release in its references; confirm maintainer remediation before durable synthesis.",
+    "High confidence for ContextForge scope and v1.1.0 remediation because IBM's public security bulletin states both."
+  ],
+  "follow_up_actions": [
+    "Before synthesis, verify n8n release artifacts for every fixed branch and whether disabling the MCP OAuth endpoint is an officially supported interim control.",
+    "Before synthesis, obtain a Flowise maintainer advisory or patched release and preserve the reporter-evidence limitation if one is unavailable.",
+    "Before synthesis, verify the ContextForge v1.1.0 release artifact and assess all related November advisory findings as a coherent gateway upgrade set."
+  ],
+  "collection_blockers": [
+    "No collection blocker. The local worktree contained pre-existing untracked .Codex/agent-claim and .agent-ops paths; they were not modified."
+  ]
+}

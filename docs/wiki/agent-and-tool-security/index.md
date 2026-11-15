@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [Flowise Custom Function SSRF Bypass](flowise-custom-function-ssrf-bypass.md)
+- [IBM ContextForge Dashboard DOM XSS](ibm-contextforge-dashboard-dom-xss.md)
 - [Opera Neon MCP Hub Channel-Origin Verification](opera-neon-mcp-hub-channel-origin-verification.md)
 - [pgEdge Postgres MCP Read-Only SQL Bypass](pgedge-postgres-mcp-read-only-sql-bypass.md)
 - [pgEdge Postgres MCP PL/DO SQL Injection](pgedge-postgres-mcp-pl-do-sql-injection.md)
