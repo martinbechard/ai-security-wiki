@@ -8,6 +8,8 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [AtlasAiDev WordPress MCP Privilege Assignment](identity-and-access/atlasaidev-wordpress-mcp-privilege-assignment.md)
+- [vLLM Common-Prefix Cache Race](agent-and-tool-security/vllm-common-prefix-cache-race.md)
 - [n8n MCP OAuth Dynamic Client Registration Redirect](identity-and-access/n8n-mcp-oauth-dynamic-client-registration-redirect.md)
 - [Flowise Custom Function SSRF Bypass](agent-and-tool-security/flowise-custom-function-ssrf-bypass.md)
 - [IBM ContextForge Dashboard DOM XSS](agent-and-tool-security/ibm-contextforge-dashboard-dom-xss.md)

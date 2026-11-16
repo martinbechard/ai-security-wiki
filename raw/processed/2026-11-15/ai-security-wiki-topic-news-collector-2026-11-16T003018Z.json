@@ -1,0 +1,101 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-11-16T00:30:18Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-11-14T00:30:18Z",
+    "end_inclusive": "2026-11-16T00:30:18Z",
+    "policy": "Only sources with a visible publication or material-update timestamp strictly after the start and no later than the run timestamp qualify. Date-only sources at a window boundary are excluded."
+  },
+  "source_method": "Public NVD and GitHub Advisory Database API queries, public GitHub release/commit references, and public web search only; no local, private, proprietary, sensitive, or PII content was sent externally.",
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "qualifying_findings": [
+    {
+      "title": "AtlasAiDev MCP Server for WordPress incorrect privilege assignment",
+      "visible_date": "2026-11-15T15:30:41Z",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-w68m-3rvm-5xxq",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-125771",
+        "https://patchstack.com/database/wordpress/plugin/ai-workflow-automation-ai-agent-hub/vulnerability/wordpress-mcp-server-for-wordpress-plugin-2-0-3-privilege-escalation-vulnerability?_s_id=cve"
+      ],
+      "evidence_classification": "Public GitHub Advisory Database record, with the NVD record and Patchstack CNA advisory referenced by that record.",
+      "affected_boundary_or_version": "AtlasAiDev MCP Server for WordPress (ai-workflow-automation-ai-agent-hub) through version 2.0.3. GitHub's record does not list a fixed version; the referenced Patchstack advisory should control remediation verification.",
+      "factual_summary": "CVE-2026-125771 / GHSA-w68m-3rvm-5xxq reports CWE-266 incorrect privilege assignment allowing privilege escalation in the WordPress MCP plugin through 2.0.3. The public advisory is rated High (CVSS 3.1 7.2) and was published to GitHub's Advisory Database at 15:30:41Z on November 15.",
+      "why_it_matters_for_ai_security": "An MCP server acting on a WordPress installation bridges an AI client to administrative web actions. Incorrect privilege assignment can expand the authority available through that delegated tool boundary.",
+      "named_entities": ["AtlasAiDev", "MCP Server for WordPress", "Model Context Protocol", "CVE-2026-125771", "GHSA-w68m-3rvm-5xxq", "CWE-266"],
+      "upstream_routing": "The product's general catalog entry belongs in ai-wiki; this repository retains the MCP delegated-authority finding, affected range, and remediation-verification note."
+    },
+    {
+      "title": "vLLM common-prefix KV-cache race condition",
+      "visible_date": "2026-11-15T03:30:43Z",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-fj8v-85jv-jwpv",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-129356",
+        "https://github.com/vllm-project/vllm/commit/e687a251bb056fa527846633f7a1b0a6c0f42374",
+        "https://github.com/vllm-project/vllm/releases/tag/v0.32.0"
+      ],
+      "evidence_classification": "Public GitHub Advisory Database record with linked public vLLM fix commit and v0.32.0 release reference.",
+      "affected_boundary_or_version": "vllm-project/vllm 0.30.0 and 0.31.0; the advisory identifies single_type_kv_cache_manager.py's Common Prefix Handler. It names v0.32.0 and commit e687a251bb056fa527846633f7a1b0a6c0f42374 as remediation.",
+      "factual_summary": "CVE-2026-129356 / GHSA-fj8v-85jv-jwpv describes a remotely reachable, high-complexity race condition in vLLM's Common Prefix Handler. The advisory says public exploit material exists and recommends upgrading to 0.32.0; it is rated Low (CVSS 3.1 5.0).",
+      "why_it_matters_for_ai_security": "KV-cache and prefix sharing are inference-runtime isolation surfaces. A concurrency flaw in this component merits release-gate review where vLLM serves concurrent or mutually untrusted workloads, even though the public advisory assigns low severity and high attack complexity.",
+      "named_entities": ["vLLM", "Common Prefix Handler", "KV cache", "CVE-2026-129356", "GHSA-fj8v-85jv-jwpv", "v0.32.0", "CWE-362"],
+      "upstream_routing": "vLLM product and runtime background are upstream-owned in ai-wiki; retain the security-specific inference-runtime race, affected releases, patch reference, and tenancy-isolation implication locally."
+    }
+  ],
+  "upstream_routing": [
+    {
+      "entity": "AtlasAiDev MCP Server for WordPress",
+      "owner": "ai-wiki",
+      "local_retention": "MCP delegated-authority privilege-escalation finding and remediation verification."
+    },
+    {
+      "entity": "vLLM",
+      "owner": "ai-wiki",
+      "local_retention": "Inference-runtime cache race, affected versions, fix reference, and tenant-isolation relevance."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "IBM ContextForge MCP Gateway CVE-2026-110278",
+      "reason": "The GitHub Advisory Database record was updated November 14, but the same identity-propagation finding is already captured by the November 13 collector artifact and local security leaf; exclude as a duplicate."
+    },
+    {
+      "candidate": "GitHub Advisory Database records unrelated to AI systems",
+      "reason": "The in-window API page was reviewed for AI, model, agent, prompt, MCP, inference, and related terms; records for ordinary CMS, network, media, and general software components lacked an AI-security boundary."
+    },
+    {
+      "candidate": "Ordinary AI product announcements and routine release notes",
+      "reason": "Excluded because no concrete security threat, vulnerability, mitigation, assurance result, standards/regulatory change, or public incident was established."
+    },
+    {
+      "candidate": "Date-only standards and regulatory materials",
+      "reason": "No primary source with a timestamp strictly inside the window established a concrete AI-security rule, control, or regulatory change."
+    },
+    {
+      "candidate": "Secondary-only AI security news summaries",
+      "reason": "Excluded when a primary advisory, official incident report, vulnerability record, or reproducible technical evidence was unavailable."
+    }
+  ],
+  "confidence_notes": [
+    "High confidence that both findings were newly published in the window because the public GitHub Advisory Database API reports ISO-8601 timestamps inside it.",
+    "Medium confidence in the WordPress plugin's fixed version: the public GHSA identifies the affected range but leaves package/version data empty; verify the Patchstack CNA remediation before durable synthesis.",
+    "Medium confidence in exploitability characterization for CVE-2026-129356: the GHSA states that public exploit material exists and links the vLLM patch, but the reporter-authored advisory should be reconciled with vLLM maintainer release notes during synthesis."
+  ],
+  "follow_up_actions": [
+    "Before synthesis, verify the MCP Server for WordPress fixed version and vendor remediation in the Patchstack CNA source; preserve the advisory's high-privilege-required CVSS condition.",
+    "Before synthesis, verify that vLLM 0.32.0 includes commit e687a251bb056fa527846633f7a1b0a6c0f42374 and assess whether deployments share Common Prefix Handler state across security principals.",
+    "Do not duplicate the previously ingested ContextForge identity-propagation finding merely because its public advisory metadata was later updated."
+  ],
+  "collection_blockers": [
+    "No collection blocker. The local worktree contained pre-existing untracked .Codex/agent-claim and .agent-ops paths; they were not modified."
+  ]
+}

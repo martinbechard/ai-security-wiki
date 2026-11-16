@@ -26,6 +26,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [AtlasAiDev WordPress MCP Privilege Assignment](atlasaidev-wordpress-mcp-privilege-assignment.md)
 - [Vikunja Bot-Token Owner Revocation](vikunja-bot-token-owner-revocation.md)
 - [OpenBMB Internet of Agents Message-Handler Access Control](openbmb-ioa-message-handler-access-control.md)
 - [OpenBMB Internet of Agents Agent-Registration Authentication](openbmb-ioa-agent-registration-authentication.md)
