@@ -6,6 +6,7 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 
 ## Leaf Pages
 
+- [California OpenAI cybersecurity enforcement action](california-openai-cybersecurity-enforcement-action.md)
 - [OpenAI Frontier-AI Cyber-Defender Governance Blueprint](openai-frontier-ai-cyber-defender-governance-blueprint.md)
 - [AI compressed attack timelines controls](ai-compressed-attack-timelines-controls.md)
 - [Industrial AI distillation cloud security controls](industrial-ai-distillation-cloud-security-controls.md)
@@ -52,6 +53,7 @@ This topic owns AI security policy, standards, regulatory obligations, control o
 
 ## Maintenance Notes
 
+- Updated on 2026-11-16 with California's filed OpenAI cybersecurity enforcement action; allegations remain attributed pending an outcome.
 - Updated on 2026-10-22 with the OpenAI frontier-AI cyber-defender governance proposal, retained as a non-binding assurance signal.
 - Updated on 2026-10-14 with the industrial AI distillation cloud security controls leaf from the October 13 CSA analysis.
 - Updated on 2026-10-05 with the aiir Policy Gate signature-verification leaf and unsupported-product caveat.

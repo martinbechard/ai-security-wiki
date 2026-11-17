@@ -26,6 +26,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Leaf Pages
 
+- [RedAmon agent-session tenant authorization](redamon-agent-session-tenant-authorization.md)
 - [AtlasAiDev WordPress MCP Privilege Assignment](atlasaidev-wordpress-mcp-privilege-assignment.md)
 - [Vikunja Bot-Token Owner Revocation](vikunja-bot-token-owner-revocation.md)
 - [OpenBMB Internet of Agents Message-Handler Access Control](openbmb-ioa-message-handler-access-control.md)
@@ -231,6 +232,7 @@ This topic owns human and non-human identity, authentication, authorization, cre
 
 ## Maintenance Notes
 
+- Updated on 2026-11-16 with RedAmon live agent-session tenant authorization.
 - Updated on 2026-11-08 with the fast-agent listener-authentication and delegated-shell-authority leaf.
 - Updated on 2026-10-29 with split SuperAGI agent inventory, execution metadata, and execution configuration tenant-isolation leaves.
 - Updated on 2026-10-27 with AI Engine media or object authorization and Keepnet authentication-bypass evidence.

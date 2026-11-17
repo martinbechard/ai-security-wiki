@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "run_timestamp_utc": "2026-11-17T01:06:44Z",
+  "strict_window": {
+    "start_exclusive": "2026-11-10T01:06:44Z",
+    "end_inclusive": "2026-11-17T01:06:44Z",
+    "date_policy": "Visible publication or update timestamps must be strictly inside the rolling seven-day window; boundary-only, missing, ambiguous, and future dates are excluded."
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/vllm-common-prefix-cache-race.md",
+    "docs/wiki/identity-and-access/atlasaidev-wordpress-mcp-privilege-assignment.md",
+    "docs/wiki/identity-and-access/mcphub-oauth-code-redemption-bypass.md",
+    "docs/wiki/identity-and-access/n8n-instance-ai-credential-origin-confusion.md",
+    "docs/wiki/agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md",
+    "docs/wiki/agent-and-tool-security/ibm-langflow-flow-component-ssrf.md",
+    "docs/wiki/agent-and-tool-security/praisonai-imap-command-injection.md",
+    "docs/wiki/identity-and-access/ibm-langflow-mcp-tools-cache-isolation.md",
+    "docs/wiki/identity-and-access/praisonai-jobs-api-unauthenticated-execution.md",
+    "docs/wiki/identity-and-access/wpbot-ai-provider-api-key-spend.md",
+    "docs/wiki/incident-response/rubygems-spam-publishing-agent-attribution.md",
+    "docs/wiki/infrastructure-and-supply-chain/lightllm-config-server-pickle-rce.md",
+    "docs/wiki/infrastructure-and-supply-chain/praisonai-code-tools-workspace-fail-open.md",
+    "docs/wiki/infrastructure-and-supply-chain/praisonai-file-mention-path-traversal.md",
+    "docs/wiki/infrastructure-and-supply-chain/praisonai-multiedit-file-boundary-bypass.md"
+  ],
+  "selection_rationale": "Two durable pages absent from the prior ledger were selected first in stable path order; the remaining thirteen were the oldest checked entries, ordered by last_checked_at then stable path.",
+  "sources_checked": [
+    {"leaf_id": "docs/wiki/agent-and-tool-security/vllm-common-prefix-cache-race.md", "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-129356", "visible_update_at": "2026-11-16T15:37:21.853Z"},
+    {"leaf_id": "docs/wiki/identity-and-access/atlasaidev-wordpress-mcp-privilege-assignment.md", "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-125771", "visible_update_at": "2026-11-16T11:53:12.864Z"},
+    {"leaf_id": "docs/wiki/identity-and-access/mcphub-oauth-code-redemption-bypass.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-90474", "visible_update_at": "2026-09-24T14:21:45.208Z"},
+    {"leaf_id": "docs/wiki/identity-and-access/n8n-instance-ai-credential-origin-confusion.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-86074", "visible_update_at": "2026-09-09T16:04:32.580Z"},
+    {"leaf_id": "docs/wiki/agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-90898", "visible_update_at": "2026-09-14T11:19:46.276Z"},
+    {"leaf_id": "docs/wiki/agent-and-tool-security/ibm-langflow-flow-component-ssrf.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-12765", "visible_update_at": "2026-09-15T18:04:36.368Z"},
+    {"leaf_id": "docs/wiki/agent-and-tool-security/praisonai-imap-command-injection.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-57130", "visible_update_at": "2026-09-14T14:47:00.197Z"},
+    {"leaf_id": "docs/wiki/identity-and-access/ibm-langflow-mcp-tools-cache-isolation.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-12763", "visible_update_at": "2026-09-15T17:31:48.027Z"},
+    {"leaf_id": "docs/wiki/identity-and-access/praisonai-jobs-api-unauthenticated-execution.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-57131", "visible_update_at": "2026-09-14T16:28:08.459Z"},
+    {"leaf_id": "docs/wiki/identity-and-access/wpbot-ai-provider-api-key-spend.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-87918", "visible_update_at": "2026-09-12T15:28:19.145Z"},
+    {"leaf_id": "docs/wiki/incident-response/rubygems-spam-publishing-agent-attribution.md", "url": "https://blog.rubygems.org/2026/09/11/update-may-spam-publishing-campaign.html", "visible_update_at": "2026-09-11T00:00:00Z"},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/lightllm-config-server-pickle-rce.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-90919", "visible_update_at": "2026-09-14T14:24:32.920Z"},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/praisonai-code-tools-workspace-fail-open.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-56839", "visible_update_at": "2026-09-14T16:27:09.329Z"},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/praisonai-file-mention-path-traversal.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-57129", "visible_update_at": "2026-09-14T15:19:46.234Z"},
+    {"leaf_id": "docs/wiki/infrastructure-and-supply-chain/praisonai-multiedit-file-boundary-bypass.md", "url": "https://cveawg.mitre.org/api/cve/CVE-2026-57145", "visible_update_at": "2026-09-14T18:11:30.131Z"}
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/agent-and-tool-security/vllm-common-prefix-cache-race.md",
+      "title": "CVE-2026-129356 vLLM Common Prefix Handler race record updated",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-129356", "https://github.com/advisories/GHSA-fj8v-85jv-jwpv"],
+      "visible_update_at": "2026-11-16T15:37:21.853Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "confirmed_exploitation": false,
+      "affected_boundary_or_version": "vLLM Common Prefix Handler before 0.32.0; the cited advisory describes a remotely reachable high-complexity race condition involving the KV cache.",
+      "named_entities": ["vLLM", "Common Prefix Handler", "KV cache", "CVE-2026-129356", "GHSA-fj8v-85jv-jwpv"],
+      "upstream_routing": "Keep the vulnerability, remediation boundary, and evidence locally; broad vLLM product context belongs in ai-wiki.",
+      "follow_up_note": "The November 15 collector already captured the initial disclosure. Compare the November 16 CVE metadata delta against the cited advisory before synthesis; do not treat the advisory's public-exploit-material wording as confirmed exploitation."
+    },
+    {
+      "leaf_id": "docs/wiki/identity-and-access/atlasaidev-wordpress-mcp-privilege-assignment.md",
+      "title": "CVE-2026-125771 MCP Server for WordPress privilege-assignment record updated",
+      "source_urls": ["https://nvd.nist.gov/vuln/detail/CVE-2026-125771", "https://github.com/advisories/GHSA-w68m-3rvm-5xxq"],
+      "visible_update_at": "2026-11-16T11:53:12.864Z",
+      "evidence_classification": "disclosed_vulnerability",
+      "confirmed_exploitation": false,
+      "affected_boundary_or_version": "AtlasAiDev MCP Server for WordPress through 2.0.3; incorrect privilege assignment can permit privilege escalation.",
+      "named_entities": ["AtlasAiDev", "MCP Server for WordPress", "Model Context Protocol", "CVE-2026-125771", "GHSA-w68m-3rvm-5xxq", "CWE-266"],
+      "upstream_routing": "Keep the authorization vulnerability and mitigation locally; broad WordPress/MCP product context belongs in ai-wiki.",
+      "follow_up_note": "The November 15 collector already captured the initial disclosure. Reconcile the November 16 CVE metadata delta with the cited GitHub and Patchstack advisories before any wiki change."
+    }
+  ],
+  "exclusions": [
+    {
+      "leaf_ids": [
+        "docs/wiki/identity-and-access/mcphub-oauth-code-redemption-bypass.md",
+        "docs/wiki/identity-and-access/n8n-instance-ai-credential-origin-confusion.md",
+        "docs/wiki/agent-and-tool-security/bifrost-mcp-stdio-registration-rce.md",
+        "docs/wiki/agent-and-tool-security/ibm-langflow-flow-component-ssrf.md",
+        "docs/wiki/agent-and-tool-security/praisonai-imap-command-injection.md",
+        "docs/wiki/identity-and-access/ibm-langflow-mcp-tools-cache-isolation.md",
+        "docs/wiki/identity-and-access/praisonai-jobs-api-unauthenticated-execution.md",
+        "docs/wiki/identity-and-access/wpbot-ai-provider-api-key-spend.md",
+        "docs/wiki/incident-response/rubygems-spam-publishing-agent-attribution.md",
+        "docs/wiki/infrastructure-and-supply-chain/lightllm-config-server-pickle-rce.md",
+        "docs/wiki/infrastructure-and-supply-chain/praisonai-code-tools-workspace-fail-open.md",
+        "docs/wiki/infrastructure-and-supply-chain/praisonai-file-mention-path-traversal.md",
+        "docs/wiki/infrastructure-and-supply-chain/praisonai-multiedit-file-boundary-bypass.md"
+      ],
+      "reason": "The cited primary public records have visible latest updates from September 9 through September 24, outside the strict November 10 to November 17 window. They are disclosed vulnerabilities or incident evidence, not new in-window confirmed exploitation, demonstrated research, mitigation, or control changes."
+    }
+  ],
+  "artifact_scope": "Raw-only collection; docs/wiki and raw/processed were not edited."
+}

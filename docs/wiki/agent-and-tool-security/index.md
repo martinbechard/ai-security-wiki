@@ -183,6 +183,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Leaf Pages
 
+- [RedAmon sandbox terminal authentication](redamon-sandbox-terminal-authentication.md)
 - [vLLM Common-Prefix Cache Race](vllm-common-prefix-cache-race.md)
 - [IBM ContextForge Tool-Name Collision Denial of Service](ibm-contextforge-tool-name-collision-dos.md)
 - [OpenBMB Internet of Agents Collaboration max_turns Denial of Service](openbmb-ioa-collaboration-max-turns-dos.md)

@@ -11,6 +11,8 @@ tags: ["identity-and-access", "agent-and-tool-security"]
 
 The [November 15 collector source](../../../raw/processed/2026-11-15/ai-security-wiki-topic-news-collector-2026-11-16T003018Z.json) records [CVE-2026-125771](https://nvd.nist.gov/vuln/detail/CVE-2026-125771) / [GHSA-w68m-3rvm-5xxq](https://github.com/advisories/GHSA-w68m-3rvm-5xxq) for AtlasAiDev MCP Server for WordPress (`ai-workflow-automation-ai-agent-hub`) through 2.0.3. Broad product context belongs upstream; this page owns the delegated WordPress MCP privilege-assignment boundary.
 
+The [November 16 leaf-watch source](../../../raw/processed/2026-11-16/ai-security-wiki-leaf-update-watch-20261117T010644Z.json) records an in-window NVD metadata update. It does not resolve the missing vendor fixed-version evidence, which remains an open remediation question.
+
 ## Security Impact
 
 - Threat: a [high-privileged account prerequisite](https://github.com/advisories/GHSA-w68m-3rvm-5xxq) precedes incorrect privilege assignment that can permit privilege escalation through a WordPress MCP server bridging an AI client to administrative web actions.
@@ -23,6 +25,7 @@ The [November 15 collector source](../../../raw/processed/2026-11-15/ai-security
 ## Authoritative Sources
 
 - [November 15 collector source](../../../raw/processed/2026-11-15/ai-security-wiki-topic-news-collector-2026-11-16T003018Z.json)
+- [November 16 leaf-watch source](../../../raw/processed/2026-11-16/ai-security-wiki-leaf-update-watch-20261117T010644Z.json)
 - [CVE-2026-125771](https://nvd.nist.gov/vuln/detail/CVE-2026-125771)
 - [GHSA-w68m-3rvm-5xxq](https://github.com/advisories/GHSA-w68m-3rvm-5xxq)
 - [Patchstack advisory](https://patchstack.com/database/wordpress/plugin/ai-workflow-automation-ai-agent-hub/vulnerability/wordpress-mcp-server-for-wordpress-plugin-2-0-3-privilege-escalation-vulnerability?_s_id=cve)
@@ -53,3 +56,4 @@ The [November 15 collector source](../../../raw/processed/2026-11-15/ai-security
 ## Maintenance Notes
 
 - Created on 2026-11-15 from the November 15 collector source; the fixed-version uncertainty is intentionally retained.
+- Updated on 2026-11-16 with an NVD metadata watch that did not change the affected range or remediation uncertainty.

@@ -1,0 +1,117 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "run_timestamp": "2026-11-17T00:28:17Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-11-15T00:28:17Z",
+    "end_inclusive": "2026-11-17T00:28:17Z",
+    "policy": "Only public sources visibly published or materially updated strictly after the start and no later than the run timestamp qualify. Missing, ambiguous, future-dated, and boundary-only dates are excluded. A non-boundary date-only source is retained only when its calendar date is unambiguously inside the window."
+  },
+  "source_method": "Public California Department of Justice, California court complaint, NVD, GitHub Advisory Database, public RedAmon release, and public web-search evidence only. No private, proprietary, sensitive, PII, or local repository content was sent externally.",
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "qualifying_findings": [
+    {
+      "title": "California Attorney General files AI cybersecurity enforcement action against OpenAI",
+      "visible_date": "2026-11-16",
+      "source_urls": [
+        "https://oag.ca.gov/news/press-releases/it%E2%80%99s-golden-state-not-wild-west-attorney-general-bonta-sues-openai-over",
+        "https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf"
+      ],
+      "evidence_classification": "Primary California Department of Justice press release and filed civil complaint. The complaint's security assertions are allegations, not adjudicated findings.",
+      "affected_boundary_or_version": "Alleged controls for testing and monitoring OpenAI's advanced models and agents, including the testing environment implicated in the July 2026 Hugging Face incident; no product version is specified.",
+      "factual_summary": "On November 16, the California Attorney General announced a lawsuit alleging that OpenAI failed to adequately secure and monitor testing of highly capable AI models. The State alleges the Hugging Face attack was foreseeable and cites at least 80 cyber incidents; the relief sought includes security and monitoring controls. The press release has a date-only publication label, but that date is unambiguously within this run's non-boundary window.",
+      "why_it_matters_for_ai_security": "This is a concrete public governance and enforcement development focused on agent containment, testing-environment security, monitoring, incident evidence, and release-gate accountability.",
+      "named_entities": [
+        "California Department of Justice",
+        "Attorney General Rob Bonta",
+        "OpenAI",
+        "Hugging Face",
+        "California Unfair Competition Law",
+        "San Francisco Superior Court"
+      ],
+      "upstream_routing": "OpenAI and Hugging Face ecosystem background belongs in ai-wiki. Retain only the security-governance enforcement action, its alleged containment and monitoring failures, and the release-gate implications here."
+    },
+    {
+      "title": "RedAmon agent-session authorization and sandbox-terminal authentication CVEs published",
+      "visible_date": "2026-11-16T15:17:22Z",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-129854",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-129855",
+        "https://github.com/samugit83/redamon/security/advisories/GHSA-w454-6hwp-fm58",
+        "https://github.com/samugit83/redamon/security/advisories/GHSA-3cjg-8cp8-j269",
+        "https://github.com/samugit83/redamon/releases/tag/v7.8.0"
+      ],
+      "evidence_classification": "Public NVD/CVE records published in-window, corroborated by public maintainer advisories and the RedAmon v7.8.0 release. The maintainer release and advisories were published November 14; the qualifying material update is the November 16 public CVE publication.",
+      "affected_boundary_or_version": "RedAmon 4.0.0 before 7.8.0. CVE-2026-129854 concerns authenticated cross-tenant control of agent sessions through arbitrary session identifiers. CVE-2026-129855 concerns an unauthenticated WebSocket terminal on port 8016 that can expose a root shell within the Kali sandbox to a reachable client. Version 7.8.0 is the listed remediation release.",
+      "factual_summary": "NVD published CVE-2026-129854 and CVE-2026-129855 on November 16 for RedAmon. The first is missing object-level authorization that lets an authenticated user list, send commands to, or kill other users' agent sessions. The second is missing terminal authentication that can allow a client able to reach the service to obtain a root shell in the Kali sandbox. Public maintainer advisories and release notes identify v7.8.0 as the fix.",
+      "why_it_matters_for_ai_security": "An AI-driven penetration-testing framework combines delegated agent authority, multi-tenant session control, and privileged tool containers. These records directly concern least privilege, tenant isolation, and containment of autonomous actions and credentials.",
+      "named_entities": [
+        "RedAmon",
+        "CVE-2026-129854",
+        "CVE-2026-129855",
+        "GHSA-w454-6hwp-fm58",
+        "GHSA-3cjg-8cp8-j269",
+        "NVD",
+        "Kali sandbox",
+        "Model Context Protocol"
+      ],
+      "upstream_routing": "RedAmon product background belongs in ai-wiki. Retain the agent-session authorization boundary, sandbox-terminal authentication failure, affected range, patch version, and containment implications locally."
+    }
+  ],
+  "upstream_routing": [
+    {
+      "entity": "OpenAI and Hugging Face",
+      "owner": "ai-wiki",
+      "local_retention": "California AI-security enforcement action and its alleged testing, monitoring, incident-evidence, and release-gate implications."
+    },
+    {
+      "entity": "RedAmon",
+      "owner": "ai-wiki",
+      "local_retention": "Agent-session authorization, sandbox-terminal authentication, affected versions, remediation, and delegated-authority containment."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "AtlasAiDev MCP Server for WordPress and vLLM Common Prefix Handler advisories",
+      "reason": "Already captured by the previous collector artifact for this overlapping window; excluded as duplicates."
+    },
+    {
+      "candidate": "Other RedAmon v7.8.0 advisories",
+      "reason": "The public maintainer release and advisories are visibly dated November 14, before this run's strict window. Only the separately published November 16 CVE records are retained."
+    },
+    {
+      "candidate": "ComfyUI-Easy-Use CVE-2026-123790",
+      "reason": "Public primary and secondary evidence found during this run was visibly dated November 12 through November 14, outside the strict window."
+    },
+    {
+      "candidate": "Ordinary AI product, agent, plugin, and workflow announcements",
+      "reason": "Excluded when no concrete security threat, vulnerability, mitigation, assurance result, regulatory change, or public incident was established."
+    },
+    {
+      "candidate": "Secondary-only AI-security roundups and date-only boundary materials",
+      "reason": "Excluded when a primary advisory, official government or regulatory source, vulnerability record, reproducible technical evidence, or unambiguous in-window date was unavailable."
+    }
+  ],
+  "confidence_notes": [
+    "High confidence in the California action's date and status because the California Department of Justice publicly announced the filing and published the complaint on November 16; its allegations must remain attributed until adjudicated.",
+    "High confidence that CVE-2026-129854 and CVE-2026-129855 were publicly published in-window because NVD records report November 16 timestamps; high confidence in the affected range and v7.8.0 fix because public maintainer advisories and release notes corroborate them.",
+    "Medium confidence about external reachability for CVE-2026-129855: the advisory conditions impact on an attacker reaching the terminal service from the host or a co-resident container; it is not evidence that every deployment exposes that listener externally."
+  ],
+  "follow_up_actions": [
+    "Before synthesis, read the California complaint's requested relief and preserve allegation, jurisdiction, and procedural-status qualifiers rather than treating it as an established technical finding.",
+    "Before synthesis, verify installed RedAmon deployments are at least v7.8.0, review reachability to port 8016, rotate secrets readable by the agent or Kali containers if compromise is suspected, and test cross-tenant agent-session authorization.",
+    "Do not create upstream product-catalog duplicates; route broad OpenAI, Hugging Face, and RedAmon background to ai-wiki."
+  ],
+  "collection_blockers": [
+    "No collection blocker. The local worktree contained pre-existing untracked .Codex/agent-claim and .agent-ops paths; they were not modified."
+  ]
+}

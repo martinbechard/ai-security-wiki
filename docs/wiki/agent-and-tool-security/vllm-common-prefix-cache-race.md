@@ -11,6 +11,8 @@ tags: ["agent-and-tool-security", "infrastructure-and-supply-chain"]
 
 The [November 15 collector source](../../../raw/processed/2026-11-15/ai-security-wiki-topic-news-collector-2026-11-16T003018Z.json) records [CVE-2026-129356](https://nvd.nist.gov/vuln/detail/CVE-2026-129356) / [GHSA-fj8v-85jv-jwpv](https://github.com/advisories/GHSA-fj8v-85jv-jwpv) in vLLM 0.30.0 and 0.31.0. Broad vLLM background belongs upstream; this page owns the inference-runtime common-prefix cache concurrency and tenant-isolation boundary.
 
+The [November 16 leaf-watch source](../../../raw/processed/2026-11-16/ai-security-wiki-leaf-update-watch-20261117T010644Z.json) records an in-window NVD metadata update without changing the affected range or 0.32.0 remediation boundary. The GHSA's reference to public exploit material is not confirmation of exploitation in the wild.
+
 ## Security Impact
 
 - Threat: a remotely reachable, high-complexity race in the Common Prefix Handler can affect shared inference state.
@@ -23,6 +25,7 @@ The [November 15 collector source](../../../raw/processed/2026-11-15/ai-security
 ## Authoritative Sources
 
 - [November 15 collector source](../../../raw/processed/2026-11-15/ai-security-wiki-topic-news-collector-2026-11-16T003018Z.json)
+- [November 16 leaf-watch source](../../../raw/processed/2026-11-16/ai-security-wiki-leaf-update-watch-20261117T010644Z.json)
 - [CVE-2026-129356](https://nvd.nist.gov/vuln/detail/CVE-2026-129356)
 - [GHSA-fj8v-85jv-jwpv](https://github.com/advisories/GHSA-fj8v-85jv-jwpv)
 - [vLLM commit e687a25](https://github.com/vllm-project/vllm/commit/e687a251bb056fa527846633f7a1b0a6c0f42374)
@@ -54,3 +57,4 @@ The [November 15 collector source](../../../raw/processed/2026-11-15/ai-security
 ## Maintenance Notes
 
 - Created on 2026-11-15 from the November 15 collector source as a cache-concurrency boundary separate from vLLM worker egress and serialization findings.
+- Updated on 2026-11-16 with the NVD metadata watch; no confirmed-exploitation claim is added.

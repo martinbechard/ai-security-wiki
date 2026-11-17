@@ -8,6 +8,9 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [California OpenAI Cybersecurity Enforcement Action](governance-and-compliance/california-openai-cybersecurity-enforcement-action.md)
+- [RedAmon Agent-Session Tenant Authorization](identity-and-access/redamon-agent-session-tenant-authorization.md)
+- [RedAmon Sandbox Terminal Authentication](agent-and-tool-security/redamon-sandbox-terminal-authentication.md)
 - [AtlasAiDev WordPress MCP Privilege Assignment](identity-and-access/atlasaidev-wordpress-mcp-privilege-assignment.md)
 - [vLLM Common-Prefix Cache Race](agent-and-tool-security/vllm-common-prefix-cache-race.md)
 - [n8n MCP OAuth Dynamic Client Registration Redirect](identity-and-access/n8n-mcp-oauth-dynamic-client-registration-redirect.md)
@@ -918,6 +921,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-11-16 with a California enforcement-action leaf and separate RedAmon tenant-authorization and sandbox-terminal authentication leaves; watcher metadata updates remain in the existing vLLM and AtlasAiDev leaves.
 - Updated on 2026-11-06 with AgentScope MCP workspace command-execution and Dagu MCP DAG-specification containment leaves.
 - Updated on 2026-10-27 with AI Engine, CreditNirvana, Keepnet, ai-sdlc, and split MLflow security-boundary leaves.
 - Updated on 2026-10-20 with separate MCP TypeScript SDK tenant-isolation, structural-input availability, and bearer-token audience leaves; October 20 watcher confirmations remain leaf-level provenance.
