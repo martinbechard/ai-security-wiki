@@ -8,6 +8,11 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [Kubeshark MCP Pod-Regex Command Injection](agent-and-tool-security/kubeshark-mcp-pod-regex-command-injection.md)
+- [code-review-mcp-server Command Injection](agent-and-tool-security/code-review-mcp-server-command-injection.md)
+- [Google GTIG Autonomous Agentic Intrusion Activity](threats-and-attacks/google-gtig-autonomous-agentic-intrusion-activity.md)
+- [Microsoft Agent Framework PyPI Package Compromise](infrastructure-and-supply-chain/microsoft-agent-framework-pypi-package-compromise.md)
+- [NVIDIA Model Optimizer Untrusted Deserialization](infrastructure-and-supply-chain/nvidia-model-optimizer-untrusted-deserialization.md)
 - [California OpenAI Cybersecurity Enforcement Action](governance-and-compliance/california-openai-cybersecurity-enforcement-action.md)
 - [RedAmon Agent-Session Tenant Authorization](identity-and-access/redamon-agent-session-tenant-authorization.md)
 - [RedAmon Sandbox Terminal Authentication](agent-and-tool-security/redamon-sandbox-terminal-authentication.md)
@@ -921,6 +926,7 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Maintenance Notes
 
+- Updated on 2026-11-18 with five independently maintained security leaves from the November 18 collector.
 - Updated on 2026-11-16 with a California enforcement-action leaf and separate RedAmon tenant-authorization and sandbox-terminal authentication leaves; watcher metadata updates remain in the existing vLLM and AtlasAiDev leaves.
 - Updated on 2026-11-06 with AgentScope MCP workspace command-execution and Dagu MCP DAG-specification containment leaves.
 - Updated on 2026-10-27 with AI Engine, CreditNirvana, Keepnet, ai-sdlc, and split MLflow security-boundary leaves.

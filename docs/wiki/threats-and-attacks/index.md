@@ -6,6 +6,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 
 ## Leaf Pages
 
+- [Google GTIG autonomous agentic intrusion activity](google-gtig-autonomous-agentic-intrusion-activity.md)
 - [Cross-agent MCP prompt propagation](cross-agent-mcp-prompt-propagation.md)
 - [Agentic web retrieval government probing](agentic-web-retrieval-government-probing.md)
 - [Zammad AI-driven zero-day breach](zammad-ai-driven-zero-day-breach.md)
@@ -51,6 +52,7 @@ This topic owns AI-specific threat actors, attack paths, abuse cases, vulnerabil
 
 ## Maintenance Notes
 
+- Updated on 2026-11-18 with GTIG-attributed autonomous agentic intrusion observations from the November 18 collector.
 - Updated on 2026-10-06 with the cross-agent MCP prompt-propagation leaf and Zammad primary-advisory enrichment.
 - Updated on 2026-11-09 with ARTEX reported agentic exploitation and public-exposure threat-intelligence evidence.
 - Updated on 2026-10-05 with the Zammad AI-driven zero-day breach leaf and Custom GPT ClickFix watcher evidence folded into AI-hosted artifact malware delivery.

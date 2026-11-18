@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [November 2026 digest](2026-11.md) records item-level November 16-17 coverage for two MCP command-execution advisories, GTIG-reported autonomous intrusion activity, a removed Microsoft Agent Framework package release pair, and NVIDIA Model Optimizer deserialization; entries stay reverse chronological.
 - [November 2026](2026-11.md) records three independently maintained November 16 items: California's filed OpenAI cybersecurity enforcement action, RedAmon tenant-session authorization, and RedAmon sandbox-terminal authentication.
 - [November 2026](2026-11.md) records two independently maintained November 15 items: [AtlasAiDev WordPress MCP privilege assignment](../identity-and-access/atlasaidev-wordpress-mcp-privilege-assignment.md) and a [vLLM common-prefix cache race](../agent-and-tool-security/vllm-common-prefix-cache-race.md).
 - [November 2026](2026-11.md) records three independently maintained November 13-14 security items: n8n delegated-consent redirect validation, Flowise custom-function egress containment, and ContextForge dashboard-session rendering.
@@ -189,6 +190,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-11-18 to surface the November 16-17 item-level security digest coverage.
 - Updated on 2026-10-27 with seven item-level entries ordered before October 26 and scoped to durable security boundaries.
 - Updated on 2026-10-23 with item-level October entries for distinct repository trust, package malware, model-serving, evaluation egress, tenant isolation, capability authorization, OAuth issuer binding, and multimodal availability boundaries; ordering remains reverse chronological and is not grouped by source artifact or ingest batch.
 

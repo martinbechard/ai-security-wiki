@@ -1,0 +1,126 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-11-18T00:34:03Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-11-16T00:34:03Z",
+    "end_inclusive": "2026-11-18T00:34:03Z",
+    "rule": "Only sources with a visible publication or update timestamp strictly inside this UTC interval qualify. Date-only sources were used only when their calendar date was unambiguously inside the interval."
+  },
+  "source_method": "Public web search plus public GitHub Advisory Database, GitHub issue, PyPI, Google Cloud Blog, NVD, and CVE record evidence only. No private, proprietary, sensitive, PII, or local repository content was sent externally.",
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "qualifying_findings": [
+    {
+      "id": "kubeshark-mcp-pod-regex-command-injection",
+      "title": "Kubeshark MCP tool argument injection can redirect privileged Kubernetes images",
+      "visible_date": "2026-11-16",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-8vf2-hxg5-crqh",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-129236",
+        "https://github.com/kubeshark/kubeshark/releases/tag/v53.4.0"
+      ],
+      "evidence_classification": "Public GitHub Reviewed advisory published to the GitHub Advisory Database and NVD on November 16, with linked upstream patch and release references.",
+      "affected_boundary_or_version": "Kubeshark MCP command in v53.1.0 through v53.3.0; fixed in v53.4.0. Impact requires a local stdio MCP server started with --allow-destructive and a privileged kubeconfig capable of deploying the worker DaemonSet.",
+      "factual_summary": "CVE-2026-129236 / GHSA-8vf2-hxg5-crqh reports that the start_kubeshark MCP tool passed caller-controlled pod_regex before an end-of-options separator. A value beginning with --set could redirect Helm image values to an attacker-controlled registry; the published advisory states that the privileged worker can then lead to node and cluster-admin compromise. The fix places pod_regex after a literal -- separator.",
+      "why_it_matters_for_ai_security": "This is an indirect-prompt-injection-to-delegated-tool boundary: untrusted content can shape an agent's MCP call and borrow a deliberately enabled high-privilege Kubernetes context.",
+      "named_entities": ["Kubeshark", "Model Context Protocol", "CVE-2026-129236", "GHSA-8vf2-hxg5-crqh", "CWE-88", "Kubernetes"],
+      "upstream_routing": "Kubeshark product background belongs in ai-wiki. Retain the MCP tool-argument trust boundary, destructive-capability precondition, least-privilege implications, and v53.4.0 remediation locally."
+    },
+    {
+      "id": "code-review-mcp-server-command-injection",
+      "title": "code-review-mcp-server patches caller-controlled shell command injection",
+      "visible_date": "2026-11-16",
+      "source_urls": [
+        "https://github.com/advisories/GHSA-jq3q-62jc-fqq9",
+        "https://github.com/Orcus2021/code-review-mcp-server/releases/tag/v1.5.3"
+      ],
+      "evidence_classification": "Public GitHub Reviewed advisory published to the GitHub Advisory Database on November 16, with linked maintainer patch and release references.",
+      "affected_boundary_or_version": "code-review-mcp-server versions before 1.5.3; MCP tools accepting folderPath and baseBranch. Fixed in 1.5.3.",
+      "factual_summary": "CVE-2026-68934 / GHSA-jq3q-62jc-fqq9 says that MCP tools interpolated folderPath and baseBranch into child_process.execSync shell strings. Crafted parameter values could execute arbitrary host commands. Version 1.5.3 replaces execSync calls with execFileSync argument arrays.",
+      "why_it_matters_for_ai_security": "A coding-agent tool's path and branch inputs are delegated execution boundaries. The patch removes shell interpretation, limiting attacker-controlled repository content or prompts from becoming host commands.",
+      "named_entities": ["code-review-mcp-server", "Model Context Protocol", "CVE-2026-68934", "GHSA-jq3q-62jc-fqq9", "CWE-78"],
+      "upstream_routing": "General coding-agent workflow practice belongs in ai-dev-wiki; product catalog context belongs in ai-wiki. Keep the command-execution vulnerability and fixed-version security implication locally."
+    },
+    {
+      "id": "google-gtig-agentic-threat-activity-report",
+      "title": "Google GTIG documents autonomous agentic intrusion and exploitation activity",
+      "visible_date": "2026-11-16",
+      "source_urls": [
+        "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold"
+      ],
+      "evidence_classification": "Primary Google Threat Intelligence Group and Mandiant public threat-intelligence report, dated November 16.",
+      "affected_boundary_or_version": "Threat landscape evidence; no product version or vendor remediation applies.",
+      "factual_summary": "Google GTIG reported observing threat actors use LLM frameworks to fully automate vulnerability discovery and exploitation without a human in the loop, including an exposed multi-agent framework it calls exploit_agent. The report also describes use of open-source multi-agent penetration-testing frameworks in intrusions and LLM credential and cloud-resource theft for LLMJacking.",
+      "why_it_matters_for_ai_security": "The public report is concrete threat-model evidence for release gates around untrusted agent inputs, credential scope, cloud egress, autonomous tool execution, and monitoring of multi-stage attack behavior.",
+      "named_entities": ["Google Threat Intelligence Group", "Mandiant", "exploit_agent", "ARTEX", "CAIRN", "LLMJacking"],
+      "upstream_routing": "Broad model, framework, and company background belongs in ai-wiki. Retain the security-specific observed abuse patterns and control implications locally."
+    },
+    {
+      "id": "microsoft-agent-framework-pypi-compromise",
+      "title": "Microsoft Agent Framework PyPI releases 1.26.1 and 1.26.2 were removed after credential-stealer report",
+      "visible_date": "2026-11-17T20:35:20Z",
+      "source_urls": [
+        "https://github.com/microsoft/agent-framework/issues/10411",
+        "https://pypi.org/pypi/agent-framework/json"
+      ],
+      "evidence_classification": "Public reproducible third-party analysis in the upstream Microsoft repository, followed by an upstream project-member comment confirming both compromised releases were pulled from PyPI. The root cause remains under investigation.",
+      "affected_boundary_or_version": "PyPI agent-framework versions 1.26.1 and 1.26.2; the report identifies Python .pth startup hooks that execute for each Python process. The issue reports 1.26.0 as the known-good release at the time of the update.",
+      "factual_summary": "A public report to microsoft/agent-framework states that versions 1.26.1 and 1.26.2 contained startup-hook payloads that collected environment and credential material and sent it to a webhook endpoint. A project member replied that both versions had been pulled and that the project was investigating. The reporter's recommended response includes removing hooks before invoking pip, purging mirrors and caches, rebuilding affected images, and rotating potentially exposed credentials.",
+      "why_it_matters_for_ai_security": "Agent framework packages commonly run in CI and cloud-connected developer environments. A compromised dependency can cross agent, build, deployment, Azure identity, and GitHub Actions credential boundaries even if the framework is never directly imported.",
+      "named_entities": ["Microsoft Agent Framework", "agent-framework", "PyPI", "Azure DevOps", "GitHub Actions", "Python .pth"],
+      "upstream_routing": "Microsoft Agent Framework product context belongs in ai-wiki and general development dependency practice belongs in ai-dev-wiki. Retain the confirmed package-removal status, supply-chain evidence, incident-response steps, and credential-boundary implications locally."
+    },
+    {
+      "id": "nvidia-model-optimizer-untrusted-deserialization",
+      "title": "NVIDIA Model Optimizer untrusted-data deserialization CVE published",
+      "visible_date": "2026-11-17T17:18:09Z",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-67455",
+        "https://app.opencve.io/cve/CVE-2026-67455"
+      ],
+      "evidence_classification": "Public CVE/NVD record; an OpenCVE rendering reports the CVE record publication timestamp. No NVIDIA security bulletin or fixed-version reference was resolved during this collection run.",
+      "affected_boundary_or_version": "NVIDIA Model Optimizer for Linux and Windows; affected and fixed version ranges were not established by the public evidence reviewed in this run.",
+      "factual_summary": "CVE-2026-67455 describes a vulnerability in NVIDIA Model Optimizer in which an attacker could cause deserialization of untrusted data. The public record was reported as published on November 17. The available evidence did not establish exploit prerequisites, severity, or a vendor remediation version.",
+      "why_it_matters_for_ai_security": "Model-optimization pipelines consume AI artifacts and run in GPU-enabled environments. Untrusted-data deserialization is a model-artifact and runtime supply-chain boundary that warrants version and vendor-remediation verification before deployment decisions.",
+      "named_entities": ["NVIDIA", "NVIDIA Model Optimizer", "CVE-2026-67455", "deserialization", "model artifact supply chain"],
+      "upstream_routing": "NVIDIA and Model Optimizer background belong in ai-wiki. Retain only the security-specific artifact-deserialization boundary and remediation-verification requirement locally."
+    }
+  ],
+  "upstream_routing_notes": [
+    {"scope": "Kubeshark and code-review-mcp-server product catalog", "owner": "ai-wiki", "local_retention": "MCP command-execution and delegated-authority vulnerabilities, preconditions, patches, and operational control implications."},
+    {"scope": "Microsoft Agent Framework product catalog", "owner": "ai-wiki", "local_retention": "Supply-chain compromise evidence, confirmed package removal, and credential-exposure response."},
+    {"scope": "General coding-agent dependency and review workflow practice", "owner": "ai-dev-wiki", "local_retention": "Security-specific command-execution and dependency-compromise boundaries."},
+    {"scope": "Google, NVIDIA, models, and framework background", "owner": "ai-wiki", "local_retention": "Threat observations and model-artifact/runtime supply-chain controls."}
+  ],
+  "exclusions": [
+    {"candidate": "California Attorney General OpenAI enforcement action and RedAmon CVEs", "reason": "Already captured by the previous collector artifact in raw/processed/2026-11-16; retained as prior evidence rather than duplicated."},
+    {"candidate": "AtlasAiDev and vLLM advisory metadata changes", "reason": "The November 16 changes are already captured by the leaf-update-watch artifact; this collector does not duplicate existing raw evidence."},
+    {"candidate": "Ordinary AI product and model announcements", "reason": "Excluded because they lacked a concrete threat, vulnerability, mitigation, assurance result, regulatory change, or public incident."},
+    {"candidate": "Secondary-only claims of AI incidents or regulation changes", "reason": "Excluded when a primary advisory, official report, vulnerability record, or directly reproducible technical evidence was not identified."},
+    {"candidate": "Date-only or ambiguous-date materials at the cutoff boundary", "reason": "Excluded where the visible date could not establish a strict in-window publication or update time, except unambiguously in-window November 16 primary sources noted above."}
+  ],
+  "confidence_notes": [
+    "High confidence in the two MCP findings: GitHub Reviewed advisories supply the November 16 publication dates, affected ranges, fixed releases, technical mechanism, and linked patches.",
+    "High confidence that Google published the GTIG report on November 16 and that it reports observed agentic threat activity; attribution and operational details remain Google's threat-intelligence assessments.",
+    "Medium-high confidence in the agent-framework incident: a detailed public reproducible report is corroborated by an upstream member confirming removal of versions 1.26.1 and 1.26.2, but the cause and complete exposure scope remain under investigation.",
+    "Medium confidence in the NVIDIA finding: the public CVE supports the untrusted-deserialization fact and visible publication time, but a vendor bulletin, version range, severity, and remediation are unresolved."
+  ],
+  "follow_up_actions": [
+    "Verify Kubeshark deployments are at v53.4.0 or later; avoid --allow-destructive where possible, constrain kubeconfig privileges, and keep untrusted content from controlling MCP tool arguments.",
+    "Upgrade code-review-mcp-server to 1.5.3 or later and audit MCP tool implementations for shell-string execution of model- or repository-influenced parameters.",
+    "Use the GTIG report as threat-model input only; retain attribution qualifiers and evaluate autonomous-agent credential, egress, tool-execution, and telemetry controls against the stated patterns.",
+    "For installations or CI images that used agent-framework 1.26.1 or 1.26.2, follow the upstream incident response: remove startup hooks before running pip, purge caches and mirrors, rebuild images, investigate logs, and rotate potentially exposed credentials.",
+    "Before durable synthesis of CVE-2026-67455, obtain NVIDIA's vendor bulletin and exact affected and fixed Model Optimizer versions."
+  ],
+  "blockers": "No collection blocker. NVIDIA vendor remediation details were not resolved, and the Microsoft Agent Framework root cause and complete exposure scope remain under investigation. Pre-existing untracked .Codex/agent-claim/ and .agent-ops/ were not modified."
+}

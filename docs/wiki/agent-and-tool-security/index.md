@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [Kubeshark MCP Pod-Regex Command Injection](kubeshark-mcp-pod-regex-command-injection.md)
+- [code-review-mcp-server Command Injection](code-review-mcp-server-command-injection.md)
 - [Flowise Custom Function SSRF Bypass](flowise-custom-function-ssrf-bypass.md)
 - [IBM ContextForge Dashboard DOM XSS](ibm-contextforge-dashboard-dom-xss.md)
 - [Opera Neon MCP Hub Channel-Origin Verification](opera-neon-mcp-hub-channel-origin-verification.md)
@@ -471,6 +473,7 @@ This topic owns security boundaries for autonomous action, tool calls, MCP, dele
 
 ## Maintenance Notes
 
+- Updated on 2026-11-18 with Kubeshark and code-review-mcp-server command-injection leaves from the November 18 collector.
 - Updated on 2026-11-10 with OmniAgent's find -execdir approval-gate bypass as a distinct prompt-influenced execution boundary.
 - Updated on 2026-11-08 with separate SiYuan MCP availability and Safe Outputs privilege-separation leaves; generic product and workflow coverage remains federated upstream.
 - Updated on 2026-11-06 with the AgentScope MCP workspace command-execution and Dagu MCP DAG-specification containment leaves.

@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [Microsoft Agent Framework PyPI Package Compromise](microsoft-agent-framework-pypi-package-compromise.md)
+- [NVIDIA Model Optimizer Untrusted Deserialization](nvidia-model-optimizer-untrusted-deserialization.md)
 - [SakanaAI text-to-LoRA Checkpoint-Loader Path Traversal](sakanai-text-to-lora-checkpoint-loader-path-traversal.md)
 - [MLflow FileStore Model-ID Path Traversal](mlflow-filestore-model-id-path-traversal.md)
 - [MCP Git Server Repository-Confinement Regression](mcp-server-git-repository-confinement-regression.md)
@@ -251,6 +253,7 @@ This topic owns model, dataset, dependency, artifact, plugin, runtime, deploymen
 
 ## Maintenance Notes
 
+- Updated on 2026-11-18 with Microsoft Agent Framework package-compromise and NVIDIA Model Optimizer deserialization leaves from the November 18 collector.
 - Updated on 2026-10-27 with separate MLflow prompt-source local-file-read and GenAI scorer code-execution leaves.
 - Updated on 2026-10-31 with DeepInfer unauthenticated profiling path-traversal containment.
 - Updated on 2026-10-26 with Cloud Run MCP bucket provenance, ONNX shape-inference, vLLM shared-memory serialization, and image-decoder dependency boundaries.
