@@ -1,0 +1,155 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-11-19T00:35:03Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-11-17T00:35:03Z",
+    "end_inclusive": "2026-11-19T00:35:03Z",
+    "rule": "Only a source with a visible publication or update timestamp strictly inside this UTC interval qualifies. Date-only records were used only when their calendar date was unambiguously inside the interval; boundary-only, missing, ambiguous, and future dates were excluded."
+  },
+  "source_method": "Public-web collection using NVD's public CVE API as the primary vulnerability record, linked public researcher/vendor references, and federation-index checks. No private or local repository content was sent externally.",
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "qualifying_findings": [
+    {
+      "id": "flowise-public-chatflow-mcp-token-disclosure-cve-2026-130796",
+      "title": "Flowise public-chatflow endpoint exposes an MCP bearer token",
+      "visible_date": "2026-11-17T20:17:45.610Z",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-130796",
+        "https://www.vulncheck.com/advisories/flowise-3.1.3-through-3.1.4-mcp-server-token-disclosure-via-public-chatflow-endpoint",
+        "https://github.com/FlowiseAI/Flowise/blob/a65f81bb43ef66d3ce734bf0dff4223ae8041c95/packages/server/src/controllers/chatflows/index.ts#L229-L256",
+        "https://flowiseai.com/sunset"
+      ],
+      "evidence_classification": "NVD public CVE record with a VulnCheck CNA-source description and public Flowise source references; the product's public sunset page is linked as lifecycle context.",
+      "affected_boundary_or_version": "Flowise 3.1.3 through 3.1.4. An unauthenticated caller needs a public chatflow identifier; the affected chatflow uses its MCP-server configuration.",
+      "why_it_matters_for_ai_security": "A public agent entry point disclosed a delegated MCP authority token, allowing an unauthenticated actor to invoke tools and model-backed flow execution under the owner's quota and configured boundaries.",
+      "named_entities": [
+        "Flowise",
+        "Model Context Protocol",
+        "CVE-2026-130796",
+        "VulnCheck"
+      ],
+      "upstream_routing": "Flowise product background belongs in ai-wiki. Retain the MCP bearer-token disclosure, public-chatflow authorization boundary, lifecycle caveat, and credential-rotation implication in ai-security-wiki."
+    },
+    {
+      "id": "flowise-dns-rebinding-ssrf-cve-2026-130615",
+      "title": "Flowise browser loaders permit DNS-rebinding SSRF to internal services",
+      "visible_date": "2026-11-17T14:17:47.437Z",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-130615",
+        "https://www.vulncheck.com/advisories/flowise-through-3.1.4-ssrf-via-dns-rebinding-in-playwright-and-puppeteer-loaders",
+        "https://github.com/FlowiseAI/Flowise/blob/a65f81bb43ef66d3ce734bf0dff4223ae8041c95/packages/components/src/httpSecurity.ts#L121-L139",
+        "https://flowiseai.com/sunset"
+      ],
+      "evidence_classification": "NVD public CVE record with a VulnCheck CNA-source description and linked public Flowise implementation references.",
+      "affected_boundary_or_version": "Flowise through 3.1.4. A low-privilege authenticated user who can configure a chatflow needs a DNS-rebinding domain and a Playwright or Puppeteer loader.",
+      "why_it_matters_for_ai_security": "An agent-capable browser/document loader can turn user-controlled retrieval configuration into network authority over internal and cloud-metadata boundaries, with returned data entering the model context.",
+      "named_entities": [
+        "Flowise",
+        "Playwright",
+        "Puppeteer",
+        "CVE-2026-130615",
+        "VulnCheck"
+      ],
+      "upstream_routing": "Flowise and browser-loader product background belongs in ai-wiki; general agent-development use of browser loaders belongs in ai-dev-wiki. Keep the SSRF, DNS-rebinding, metadata-boundary, and model-context exposure analysis locally."
+    },
+    {
+      "id": "ai-puffer-ai-generated-comment-reply-xss-cve-2026-130121",
+      "title": "AI Puffer stores unsanitized AI-generated comment replies as XSS",
+      "visible_date": "2026-11-18T04:17:14.167Z",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-130121",
+        "https://www.wordfence.com/threat-intel/vulnerabilities/id/d164f090-83ee-499a-85e3-d642713467b9?source=cve",
+        "https://plugins.trac.wordpress.org/changeset/3807151/gpt3-ai-content-generator"
+      ],
+      "evidence_classification": "NVD public CVE record sourced from Wordfence, with linked WordPress plugin source and remediation changeset.",
+      "affected_boundary_or_version": "AI Puffer / GPT AI Power WordPress plugin versions through 2.5.28. Exploitation requires an administrator-configured Comment Auto-Reply task set to Approve and approval of the attacker's comment.",
+      "why_it_matters_for_ai_security": "This is a model-output-to-browser trust-boundary failure: an automated AI reply can transform adversarial input into stored active content under a site workflow that appears to be a routine moderation automation.",
+      "named_entities": [
+        "AI Puffer",
+        "GPT AI Power",
+        "WordPress",
+        "CVE-2026-130121",
+        "Wordfence"
+      ],
+      "upstream_routing": "AI Puffer and WordPress-plugin catalog information belongs in ai-wiki. Retain the AI-output sanitization failure, approval precondition, stored-XSS boundary, and remediation reference locally."
+    },
+    {
+      "id": "agentic-radar-untrusted-dotenv-api-key-exposure-cve-2026-132122",
+      "title": "agentic-radar loads an untrusted repository .env and can leak an OpenAI API key",
+      "visible_date": "2026-11-18T13:17:27.467Z",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-132122",
+        "https://www.vulncheck.com/advisories/agentic-radar-0.7.0-before-0.14.2-openai-api-key-leak-via-untrusted-env-loading",
+        "https://github.com/splx-ai/agentic-radar/commit/b99bb14fc1d9c4bab0bf2752d4547f79077960fe",
+        "https://github.com/splx-ai/agentic-radar/releases/tag/v0.14.2"
+      ],
+      "evidence_classification": "NVD public CVE record sourced from VulnCheck, with linked public upstream remediation commit and v0.14.2 release.",
+      "affected_boundary_or_version": "agentic-radar 0.7.0 before 0.14.2. Exposure requires scanning an attacker-controlled repository, an available OpenAI API key, and scan openai-agents or --harden-prompts calling OpenAI.",
+      "why_it_matters_for_ai_security": "A security scanner crossed the repository-trust boundary by accepting endpoint configuration from the artifact it analyzed, allowing prompt-hardening or agent scans to redirect credential-bearing model traffic.",
+      "named_entities": [
+        "agentic-radar",
+        "Splx AI",
+        "OpenAI API key",
+        "CVE-2026-132122",
+        "VulnCheck"
+      ],
+      "upstream_routing": "agentic-radar product background belongs in ai-wiki and general code-scanning workflow practice belongs in ai-dev-wiki. Keep the untrusted dotenv, endpoint redirection, credential-boundary, and v0.14.2 remediation implications locally."
+    }
+  ],
+  "upstream_routing_notes": [
+    "Flowise catalog and product updates route to ai-wiki; this artifact keeps only the two security-specific MCP-token and browser-loader SSRF boundaries.",
+    "Browser-loader workflow adoption routes to ai-dev-wiki; DNS-rebinding prevention and internal-network containment remain ai-security-wiki concerns.",
+    "AI Puffer product background routes to ai-wiki; model-output sanitization and approval-automation attack implications remain local.",
+    "agentic-radar catalog information routes to ai-wiki and general scanner practice to ai-dev-wiki; repository-controlled configuration and credential egress remain local."
+  ],
+  "exclusions": [
+    {
+      "candidate": "November 16 Kubeshark, code-review-mcp-server, Google GTIG, Microsoft Agent Framework, and NVIDIA Model Optimizer findings",
+      "reason": "Already captured in raw/processed/2026-11-18/ai-security-wiki-topic-news-collector-2026-11-18T003403Z.json; not duplicated."
+    },
+    {
+      "candidate": "GitHub Agentic Workflows Safe Outputs MCP Gateway specification version 1.30.0",
+      "reason": "The visible November 18 working-draft revision was found, but this pass did not establish a concrete new security requirement or control delta from the prior locally captured 1.29.20 draft; a version/date alone does not qualify."
+    },
+    {
+      "candidate": "General AI and developer product announcements surfaced during searches",
+      "reason": "Excluded because no concrete vulnerability, exploit, mitigation, control, assurance result, regulatory change, or public incident was established."
+    },
+    {
+      "candidate": "Sources with date-only, missing, ambiguous, future, or cutoff-boundary timestamps",
+      "reason": "Excluded under the strict-window rule when an unambiguous timestamp inside 2026-11-17T00:35:03Z through 2026-11-19T00:35:03Z could not be confirmed."
+    }
+  ],
+  "confidence_notes": [
+    "High confidence in the four CVE publication timestamps, affected descriptions, reference sets, and severity metadata because they were retrieved from NVD's public CVE API during this run.",
+    "The Flowise records are CNA-sourced through VulnCheck and identify no fixed version in NVD; the linked sunset page is lifecycle context, not proof that no downstream patch exists.",
+    "The AI Puffer record has a public WordPress remediation changeset, but the exact fixed plugin release should be confirmed before durable synthesis.",
+    "The agentic-radar remediation boundary is based on the linked upstream v0.14.2 release; verify installed distribution provenance and rotate keys if exposure is suspected."
+  ],
+  "follow_up_actions": [
+    "At ingest, verify whether Flowise deployments use public chatflows, rotate MCP bearer tokens, restrict public endpoints, and establish whether a supported patched distribution exists.",
+    "At ingest, test Flowise URL-loader egress protections against DNS rebinding and cloud-metadata addresses; restrict browser-loader network reachability.",
+    "Confirm the AI Puffer fixed release corresponding to the WordPress changeset and review Comment Auto-Reply approval settings plus stored-reply sanitization.",
+    "Upgrade agentic-radar to v0.14.2 or later, ensure scanners do not load repository-controlled environment files, and rotate potentially exposed OpenAI API keys.",
+    "Route product-only background changes upstream; retain this publication-safe artifact as the portable provenance record after security-specific leaf synthesis and validation."
+  ],
+  "blockers": [
+    "No collection blocker. Before durable synthesis, resolve Flowise supported-remediation status and exact fixed versions, verify the AI Puffer fixed release, and retain the CVE source-attribution qualifiers."
+  ],
+  "publication_safety": {
+    "status": "publication-safe derivative",
+    "reason": "The original collector artifact is retained locally outside version control because its credential-disclosure request sequence is not needed for the defensive wiki record.",
+    "preserved": "Advisory identifiers, source URLs, affected versions and boundaries, attribution, security impact, routing, confidence, and mitigation follow-up are retained."
+  }
+}

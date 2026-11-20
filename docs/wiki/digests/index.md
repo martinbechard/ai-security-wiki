@@ -2,16 +2,7 @@
 
 ## Current Understanding
 
-- [November 2026 digest](2026-11.md) records item-level November 16-17 coverage for two MCP command-execution advisories, GTIG-reported autonomous intrusion activity, a removed Microsoft Agent Framework package release pair, and NVIDIA Model Optimizer deserialization; entries stay reverse chronological.
-- [November 2026](2026-11.md) records three independently maintained November 16 items: California's filed OpenAI cybersecurity enforcement action, RedAmon tenant-session authorization, and RedAmon sandbox-terminal authentication.
-- [November 2026](2026-11.md) records two independently maintained November 15 items: [AtlasAiDev WordPress MCP privilege assignment](../identity-and-access/atlasaidev-wordpress-mcp-privilege-assignment.md) and a [vLLM common-prefix cache race](../agent-and-tool-security/vllm-common-prefix-cache-race.md).
-- [November 2026](2026-11.md) records three independently maintained November 13-14 security items: n8n delegated-consent redirect validation, Flowise custom-function egress containment, and ContextForge dashboard-session rendering.
-- [November 2026](2026-11.md) records 16 independent November 12-13 security items: browser-agent channel verification, model and tracking paths, database MCP controls, an autonomous intrusion report, prompt-to-secret containment, RAG isolation, and six ContextForge gateway boundaries.
-- [November 2026](2026-11.md) records eight independently maintained November 10-11 items: AWS and Aspire patch boundaries plus six separately scoped MCP tool vulnerabilities; unverified MCP release claims remain leaf-level open questions.
-- [November 2026](2026-11.md) records two independently maintained November 9-10 items: NEAR AI's SGLang inference-runtime incident and OmniAgent's `find -execdir` approval-gate bypass.
-- [November 2026](2026-11.md) records six independently maintained November 7-8 boundaries: Vikunja bot-token revocation and metadata prompt trust, ContextForge tool-name availability, and separate Internet of Agents message access, enrollment authentication, and collaboration-loop controls.
-- [November 2026](2026-11.md) records four additional item-level updates: three CVE boundaries for SiYuan, fast-agent, and DeepSeek-Reasonix, plus the working-draft Safe Outputs MCP Gateway control design.
-- [November 2026](2026-11.md) records 27 item-level November security boundaries, including ChatCLI and mcp-go OAuth resource-origin controls, Dify sandbox credential exposure, Jan workspace containment, and distinct Mistral Vibe pre-trust execution paths. The Azure AI Language watcher revision remains leaf provenance.
+- [November 2026 digest](2026-11.md) covers security updates through November 19.
 
 - [October 2026](2026-10.md) records the October 31 DeepInfer unauthenticated profiling filesystem-write boundary; repeat AI Engine and Kubeflow records enrich existing leaves without duplicate digest entries.
 
@@ -58,6 +49,8 @@ The active digest records each independently changing security item or closely c
 
 ## Authoritative Sources
 
+- [November 19 topic collector source](../../../raw/processed/2026-11-19/ai-security-wiki-topic-news-collector-2026-11-19T003503Z.json)
+- [November 19 leaf update watch source](../../../raw/processed/2026-11-19/ai-security-wiki-leaf-update-watch-20261119T010631Z.json)
 - [October 31 collector source](../../../raw/processed/2026-10-31/ai-security-wiki-topic-news-collector-2026-10-31T232757Z.json)
 - [October 30 collector source](../../../raw/processed/2026-10-30/ai-security-wiki-topic-news-collector-2026-10-30T232632Z.json)
 - [October 29 collector source](../../../raw/processed/2026-10-29/ai-security-wiki-topic-news-collector-2026-10-29T232841Z.json)
@@ -190,6 +183,7 @@ The active digest records each independently changing security item or closely c
 
 ## Maintenance Notes
 
+- Updated on 2026-11-19 after four new durable CVE leaves and an MLflow evidence-classification update; digest entries are item-level, not grouped by source artifact or collector run.
 - Updated on 2026-11-18 to surface the November 16-17 item-level security digest coverage.
 - Updated on 2026-10-27 with seven item-level entries ordered before October 26 and scoped to durable security boundaries.
 - Updated on 2026-10-23 with item-level October entries for distinct repository trust, package malware, model-serving, evaluation egress, tenant isolation, capability authorization, OAuth issuer binding, and multimodal availability boundaries; ordering remains reverse chronological and is not grouped by source artifact or ingest batch.

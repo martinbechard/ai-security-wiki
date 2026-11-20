@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [ServiceNow Now Assist email-response indirect prompt injection](servicenow-now-assist-email-response-indirect-prompt-injection.md)
+- [AI Puffer comment-reply stored XSS](ai-puffer-comment-reply-stored-xss.md)
 - [Jet Admin Cloud Prompt-Injection Secret Exfiltration](jet-admin-cloud-prompt-injection-secret-exfiltration.md)
 - [Vikunja Remote Metadata Prompt Injection](vikunja-remote-metadata-prompt-injection.md)
 - [DeepSeek-Reasonix Repository Instruction Trust](deepseek-reasonix-repository-instruction-trust.md)

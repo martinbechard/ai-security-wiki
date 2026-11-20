@@ -1,0 +1,154 @@
+{
+  "automation_name": "AI Security Wiki Topic News Collector",
+  "automation_id": "ai-security-wiki-topic-news-collector",
+  "run_timestamp": "2026-11-20T00:31:27Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-11-18T00:31:27Z",
+    "end_inclusive": "2026-11-20T00:31:27Z",
+    "rule": "Only a source with a visible publication or update timestamp strictly inside this UTC interval qualifies. Date-only records were used only when their calendar date was unambiguously inside the interval; boundary-only, missing, ambiguous, and future dates were excluded."
+  },
+  "source_method": "Public-web collection using NVD's public CVE API, linked vendor and maintainer advisories, public upstream commits/releases, and federation-index checks. No private or local repository content was sent externally.",
+  "searched_topics": [
+    "threats and attacks",
+    "model and prompt security",
+    "agent and tool security including MCP, plugins, browsers, delegated authority, and autonomous action",
+    "data security and privacy",
+    "identity, authentication, authorization, credentials, and least privilege",
+    "model, dataset, dependency, artifact, runtime, cloud, hardware, and deployment supply chains",
+    "threat modeling, red teaming, security evaluation, assurance, monitoring, and release gates",
+    "AI security standards, regulation, governance, audit evidence, and risk management",
+    "public AI security incidents, mitigations, patches, disclosures, and lessons learned"
+  ],
+  "qualifying_findings": [
+    {
+      "id": "pydantic-ai-harness-tool-output-ansi-dos-cve-2026-133161",
+      "title": "Pydantic AI Harness ANSI stripping can block agent runs",
+      "visible_date": "2026-11-19T15:17:35.953Z",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-133161",
+        "https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-m4cr-m4qc-9hh3"
+      ],
+      "evidence_classification": "NVD public CVE record with the linked upstream GitHub security advisory; NVD records CVSS 7.5 High.",
+      "affected_boundary_or_version": "Applications using pydantic-ai-harness ToolOutputLimits with strip_ansi=True and attacker-influenced tool output, including shell, file, fetched-page, or MCP-server output. Fixed in pydantic-ai-harness 0.70.0 or later; Pydantic AI v1 cannot use a harness newer than 0.4.0.",
+      "why_it_matters_for_ai_security": "An untrusted tool-output boundary can exhaust the event loop before configured output limits apply, delaying concurrent requests and agent runs. The mitigation choice also has a Pydantic AI v1 compatibility constraint.",
+      "named_entities": ["Pydantic AI Harness", "Pydantic AI", "Model Context Protocol", "CVE-2026-133161"],
+      "upstream_routing": "Pydantic AI product background belongs in ai-wiki; general agent-development adoption belongs in ai-dev-wiki. Retain tool-output trust, event-loop availability, version-compatibility, and upgrade-control implications in ai-security-wiki."
+    },
+    {
+      "id": "jetbrains-junie-cli-agent-file-tool-project-escape-cve-2026-133195",
+      "title": "Junie CLI agent file tools can modify paths outside the project",
+      "visible_date": "2026-11-19T15:17:40.590Z",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-133195",
+        "https://www.jetbrains.com/privacy-security/issues-fixed/"
+      ],
+      "evidence_classification": "NVD public CVE record with a JetBrains vendor security-issues reference; NVD records CVSS 7.5 High.",
+      "affected_boundary_or_version": "JetBrains Junie CLI before 26.6.29; agent file tools could modify files outside the project directory.",
+      "why_it_matters_for_ai_security": "The finding is a delegated-agent workspace-containment failure: project-scoped authority did not reliably constrain the file-system effects of an agent tool.",
+      "named_entities": ["JetBrains Junie CLI", "agent file tools", "CVE-2026-133195"],
+      "upstream_routing": "Junie product background and coding-agent workflow use belong upstream in ai-wiki and ai-dev-wiki respectively. Retain only the agent file-tool containment boundary, affected version, and patch implication locally."
+    },
+    {
+      "id": "splunk-ai-assistant-authorization-and-tenant-isolation-cve-2026-131302-131305",
+      "title": "Splunk AI Assistant has consent, retrieval, tenant-context, and feature-setting authorization flaws",
+      "visible_date": "2026-11-19T20:17:46.510Z",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-131302",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-131303",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-131304",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-131305",
+        "https://advisory.splunk.com/advisories/SVD-2026-1111"
+      ],
+      "evidence_classification": "NVD public CVE records with the linked Splunk advisory. The four records describe one product-version boundary and related REST/assistant authorization defects.",
+      "affected_boundary_or_version": "Splunk AI Assistant versions below 2.0.0. CVE-2026-131302 permits unauthorized training-data-consent setting changes; CVE-2026-131303 exposes limited index/data-source information outside scope; CVE-2026-131304 accepts a client-controlled tenant identifier, enabling cross-tenant data access and misattribution; CVE-2026-131305 accepts client-controlled feature settings.",
+      "why_it_matters_for_ai_security": "The group spans privacy-consent governance, retrieval authorization, tenant isolation, attribution integrity, and server-owned configuration boundaries in an AI assistant.",
+      "named_entities": ["Splunk AI Assistant", "Splunk", "CVE-2026-131302", "CVE-2026-131303", "CVE-2026-131304", "CVE-2026-131305", "SVD-2026-1111"],
+      "upstream_routing": "Splunk product background belongs in ai-wiki and general AI-assisted operational practice belongs in ai-dev-wiki. Retain the assistant-specific consent, retrieval authorization, tenant-context, and configuration-control failures in ai-security-wiki."
+    },
+    {
+      "id": "servicenow-now-assist-email-response-ai-agent-indirect-prompt-injection-cve-2026-18883",
+      "title": "ServiceNow centrally remediated indirect prompt injection in an email-response AI agent",
+      "visible_date": "2026-11-19T20:17:51.347Z",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-18883",
+        "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB3235180"
+      ],
+      "evidence_classification": "NVD public CVE record linked to a ServiceNow vendor security bulletin; NVD records CVSS 4.0 base score 7.1 High.",
+      "affected_boundary_or_version": "Email Response AI Agent in Now Assist for CSM. ServiceNow reports central remediation with no platform-version upgrade or hot fix and states it is not aware of malicious exploitation.",
+      "why_it_matters_for_ai_security": "Untrusted email content can become indirect instructions at an autonomous response boundary. The vendor's centralized remediation is a concrete mitigation change but requires deployment owners to verify their service posture rather than wait for a local patch.",
+      "named_entities": ["ServiceNow", "Now Assist for CSM", "Email Response AI Agent", "indirect prompt injection", "CVE-2026-18883"],
+      "upstream_routing": "ServiceNow product context belongs in ai-wiki; general customer-service automation practice belongs in ai-dev-wiki. Retain the indirect-prompt-injection boundary, centrally deployed remediation, and exploitation-status qualifier locally."
+    },
+    {
+      "id": "flyto2-core-agent-workflow-sandbox-ssrf-and-mcp-recipe-escape-cve-2026-77312-77316",
+      "title": "Flyto2 Core fixes agent-workflow sandbox escapes, DNS-rebinding SSRF, and MCP recipe traversal",
+      "visible_date": "2026-11-19T22:18:44.013Z",
+      "source_urls": [
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77312",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77313",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77314",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77315",
+        "https://nvd.nist.gov/vuln/detail/CVE-2026-77316",
+        "https://github.com/flytohub/flyto-core/security/advisories/GHSA-h9f9-h6gm-wc85",
+        "https://github.com/flytohub/flyto-core/security/advisories/GHSA-pfg2-w999-497v",
+        "https://github.com/flytohub/flyto-core/security/advisories/GHSA-mxcc-cr6x-2mvr",
+        "https://github.com/flytohub/flyto-core/security/advisories/GHSA-2mr3-rxrq-238c",
+        "https://github.com/flytohub/flyto-core/security/advisories/GHSA-6pm8-6f34-9v3g",
+        "https://github.com/flytohub/flyto-core/releases/tag/v2.26.8"
+      ],
+      "evidence_classification": "Five NVD public CVE records with linked upstream GitHub security advisories, commits, and the v2.26.8 release. CVE-2026-77312 is recorded as CVSS 10.0 Critical; the remaining records range from Medium to High.",
+      "affected_boundary_or_version": "Flyto2 Core before 2.26.8. CVE-2026-77312 covers incomplete FLYTO_SANDBOX_DIR file-write confinement; CVE-2026-77313 and CVE-2026-77316 cover DNS-rebinding bypasses of SSRF validation; CVE-2026-77314 covers MCP run_recipe path traversal beyond the bundled recipe directory; CVE-2026-77315 covers second-order SSRF through unvalidated pagination links.",
+      "why_it_matters_for_ai_security": "A single AI-agent workflow runtime had failures across filesystem containment, outbound-network authority, MCP recipe selection, and server-provided continuation URLs. Upgrade is a release-gate and supply-chain control, while deployments should also reassess sandbox mounts, metadata-service reachability, and recipe/module policy.",
+      "named_entities": ["Flyto2 Core", "Flyto", "Model Context Protocol", "CVE-2026-77312", "CVE-2026-77313", "CVE-2026-77314", "CVE-2026-77315", "CVE-2026-77316", "v2.26.8"],
+      "upstream_routing": "Flyto product background belongs in ai-wiki and generic workflow development practice belongs in ai-dev-wiki. Retain the five security boundaries, affected release range, and deployment-control implications in ai-security-wiki."
+    }
+  ],
+  "upstream_routing_notes": [
+    "Pydantic AI, Junie, Splunk, ServiceNow, and Flyto product/entity background routes to ai-wiki; this artifact retains only their security-specific implications.",
+    "General coding-agent, agent-runtime, and workflow adoption practices route to ai-dev-wiki; containment, authorization, privacy, prompt-injection, SSRF, and release-gate analysis stays in ai-security-wiki.",
+    "The Pydantic AI and Junie findings have existing local security lens coverage; new facts should be reconciled into their appropriate local leaves during normal ingest rather than duplicating broad product analysis."
+  ],
+  "exclusions": [
+    {
+      "candidate": "Flowise, AI Puffer, and agentic-radar disclosures published before 2026-11-19T00:35:04Z",
+      "reason": "Already captured by the immediately preceding collector artifact at raw/2026-11-19/ai-security-wiki-topic-news-collector-2026-11-19T003503Z.json; not duplicated."
+    },
+    {
+      "candidate": "NVD matches where the word agent referred to non-AI support, build, or co-browsing agents",
+      "reason": "Excluded after review because a keyword match alone does not make an item relevant to AI systems."
+    },
+    {
+      "candidate": "GitHub Agentic Workflows Unified Agent Session Specification 2.12.0",
+      "reason": "The November 19 draft has a visible date, but this pass did not establish a concrete security-control delta beyond previously collected Agentic Workflows material; a dated draft alone does not qualify."
+    },
+    {
+      "candidate": "Ordinary AI product, model, and integration announcements surfaced during the public search",
+      "reason": "Excluded because no concrete vulnerability, exploit, mitigation, assurance result, regulatory change, or public incident was established."
+    },
+    {
+      "candidate": "Sources with missing, ambiguous, future, date-only boundary, or cutoff-boundary timestamps",
+      "reason": "Excluded under the strict-window rule when a timestamp strictly inside 2026-11-18T00:31:27Z through 2026-11-20T00:31:27Z could not be confirmed."
+    }
+  ],
+  "confidence_notes": [
+    "High confidence in the visible publication timestamps, CVE identifiers, affected-version statements, and linked-reference sets because NVD's public CVE API was queried during this run.",
+    "The Splunk CVEs are grouped because they share the same product version boundary and primary vendor advisory; preserve their distinct consent, retrieval, tenant, and configuration effects during synthesis.",
+    "The ServiceNow record explicitly says the remediation was centrally deployed and that no malicious exploitation is currently known; do not infer absence of future exploitation or an on-premises patch requirement.",
+    "The Flyto2 group is based on linked upstream advisories and v2.26.8 release evidence; confirm deployed package provenance and whether any locally enabled modules or MCP exposure affect practical reachability."
+  ],
+  "follow_up_actions": [
+    "Upgrade pydantic-ai-harness to 0.70.0 or later where compatible; otherwise leave strip_ansi disabled and bound attacker-influenced tool output before event-loop processing.",
+    "Upgrade Junie CLI to 26.6.29 or later and independently verify tool operations cannot write beyond the approved project workspace.",
+    "Upgrade Splunk AI Assistant to 2.0.0 or later and test training-data consent, retrieval authorization, tenant-context binding, attribution, and feature-setting endpoints with low-privilege accounts.",
+    "Confirm the ServiceNow centrally deployed remediation status for Now Assist for CSM and keep untrusted email separated from executable agent instructions.",
+    "Upgrade Flyto2 Core to 2.26.8 or later; review sandbox mounts, file-write modules, DNS-rebinding-resistant outbound controls, metadata-service reachability, MCP recipe paths, and pagination follow behavior.",
+    "During normal raw-source ingest, retain only the security-specific local lens and route broad product/entity context upstream under federation rules."
+  ],
+  "blockers": [
+    "No collection blocker. Before durable synthesis, confirm vendor fixed-release applicability for deployed Pydantic AI, Junie, Splunk, ServiceNow, and Flyto2 environments and avoid inferring exploitation beyond the source statements."
+  ],
+  "publication_safety": {
+    "status": "publication-safe derivative",
+    "reason": "The artifact preserves public advisory identifiers, affected boundaries, remediation references, routing, and defensive follow-up without reproducing exploit payloads or operational attack instructions."
+  }
+}

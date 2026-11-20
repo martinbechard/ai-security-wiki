@@ -2,6 +2,12 @@
 
 ## Current Understanding
 
+- [Junie CLI agent file-tool project escape](junie-cli-agent-file-tool-project-escape.md)
+- [Flyto2 Core agent-workflow security family](flyto2-core-agent-workflow-security-family.md)
+- [Flyto2 Core filesystem sandbox write escape](flyto2-core-filesystem-sandbox-write-escape.md)
+- [Flyto2 Core DNS-rebinding SSRF](flyto2-core-dns-rebinding-ssrf.md)
+- [Flyto2 Core MCP recipe path traversal](flyto2-core-mcp-recipe-path-traversal.md)
+- [Flyto2 Core pagination continuation SSRF](flyto2-core-pagination-continuation-ssrf.md)
 - [Microsoft Agent Framework PyPI Package Compromise](microsoft-agent-framework-pypi-package-compromise.md)
 - [NVIDIA Model Optimizer Untrusted Deserialization](nvidia-model-optimizer-untrusted-deserialization.md)
 - [SakanaAI text-to-LoRA Checkpoint-Loader Path Traversal](sakanai-text-to-lora-checkpoint-loader-path-traversal.md)

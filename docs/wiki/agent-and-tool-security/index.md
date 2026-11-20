@@ -2,6 +2,8 @@
 
 ## Current Understanding
 
+- [Pydantic AI Harness ANSI tool-output denial of service](pydantic-ai-harness-ansi-tool-output-dos.md)
+- [Flowise browser-loader DNS-rebinding SSRF](flowise-browser-loader-dns-rebinding-ssrf.md)
 - [Kubeshark MCP Pod-Regex Command Injection](kubeshark-mcp-pod-regex-command-injection.md)
 - [code-review-mcp-server Command Injection](code-review-mcp-server-command-injection.md)
 - [Flowise Custom Function SSRF Bypass](flowise-custom-function-ssrf-bypass.md)

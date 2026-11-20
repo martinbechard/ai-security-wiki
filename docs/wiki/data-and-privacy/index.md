@@ -2,6 +2,7 @@
 
 ## Current Understanding
 
+- [agentic-radar untrusted dotenv API-key exposure](agentic-radar-untrusted-dotenv-api-key-exposure.md)
 - [ragent RAG Trace Authorization](ragent-rag-trace-authorization.md)
 - [Aspire CLI MCP Scanner Temporary-File Disclosure](aspire-cli-mcp-scanner-temporary-file-disclosure.md)
 - [Dify Sandbox Run Handler Hard-Coded Credentials](dify-sandbox-run-handler-hard-coded-credentials.md)

@@ -15,11 +15,13 @@ The advisory family page [MLflow 3.15.0 security advisory cluster](mlflow-3150-s
 
 The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) preserves this as the MLflow 3.15.0 network-boundary member. It reinforces that redirect revalidation and resolved-address pinning are the practical control points for webhook-test SSRF.
 
+The [November 19 leaf update watch source](../../../raw/processed/2026-11-19/ai-security-wiki-leaf-update-watch-20261119T010631Z.json) records [Previdian's public sensor-telemetry report](https://www.previdian.com/CVE-2026-64849) of attempts against this SSRF path. The report does not establish that a target was vulnerable or compromised, so the exploit status remains unconfirmed.
+
 ## Security Impact
 
 - Threat: attackers can use webhook testing to read internal network resources or metadata-service responses through the MLflow tracking server.
 - Affected boundary: MLflow before 3.15.0; model-registry webhook test flows and internal network reachability from the tracking server.
-- Exploit or incident status: public GitHub-reviewed advisory; no local incident evidence is recorded.
+- Exploit or incident status: public GitHub-reviewed advisory; public telemetry reports unverified attempts, with no confirmed exploitation or local incident evidence recorded.
 - Mitigation state: upgrade to MLflow 3.15.0, restrict webhook test access, revalidate redirect destinations, block internal address ranges, and review webhook test logs.
 - Confidence: high for affected version, severity, response-body exposure, and fixed release from GitHub advisory and release evidence.
 - Residual risk: deployments need retrospective review for internal response data returned through webhook tests before upgrade.
@@ -29,6 +31,7 @@ The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-se
 - [August 17 topic news collector source](../../../raw/processed/2026-08-17/ai-security-wiki-topic-news-collector-2026-08-17T233246Z.json)
 - [August 19 leaf update watch source](../../../raw/processed/2026-08-18/ai-security-wiki-leaf-update-watch-20260819T000420Z.json)
 - [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json)
+- [November 19 leaf update watch source](../../../raw/processed/2026-11-19/ai-security-wiki-leaf-update-watch-20261119T010631Z.json)
 - GitHub advisory GHSA-7gwp-5pfp-969j: https://github.com/advisories/GHSA-7gwp-5pfp-969j
 - MLflow 3.15.0 release: https://github.com/mlflow/mlflow/releases/tag/v3.15.0
 
@@ -59,3 +62,4 @@ The [August 21 leaf update watch source](../../../raw/processed/2026-08-21/ai-se
 
 - Created on 2026-08-19 after verifier correction split the MLflow advisory family into independently maintainable leaves.
 - Updated on 2026-08-21 from the [August 21 watcher](../../../raw/processed/2026-08-21/ai-security-wiki-leaf-update-watch-20260822T000454Z.json) with repeated CVE publication and redirect-bypass evidence.
+- Updated on 2026-11-19 with unverified public attempt telemetry; corroboration is required before changing the exploitation status.

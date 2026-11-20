@@ -1,0 +1,87 @@
+{
+  "automation_id": "ai-security-wiki-leaf-update-watch",
+  "run_timestamp": "2026-11-19T01:06:31Z",
+  "cutoff_window": {
+    "start_exclusive": "2026-11-12T01:06:31Z",
+    "end_inclusive": "2026-11-19T01:06:31Z",
+    "rule": "Only public sources with a visible publication or substantive update timestamp strictly inside this UTC interval qualify. Date-only, boundary-only, future, missing, and ambiguous timestamps are excluded."
+  },
+  "selected_leaf_ids": [
+    "docs/wiki/agent-and-tool-security/code-review-mcp-server-command-injection.md",
+    "docs/wiki/agent-and-tool-security/kubeshark-mcp-pod-regex-command-injection.md",
+    "docs/wiki/infrastructure-and-supply-chain/microsoft-agent-framework-pypi-package-compromise.md",
+    "docs/wiki/infrastructure-and-supply-chain/nvidia-model-optimizer-untrusted-deserialization.md",
+    "docs/wiki/threats-and-attacks/google-gtig-autonomous-agentic-intrusion-activity.md",
+    "docs/wiki/infrastructure-and-supply-chain/mlflow-webhook-test-ssrf.md",
+    "docs/wiki/model-and-prompt-security/context7-mcp-custom-instructions-prompt-injection.md",
+    "docs/wiki/model-and-prompt-security/vllm-derender-denial-of-service.md",
+    "docs/wiki/model-and-prompt-security/vllm-multimodal-input-boundary-vulnerabilities.md",
+    "docs/wiki/model-and-prompt-security/vllm-multimodal-media-ssrf-file-read.md",
+    "docs/wiki/testing-and-assurance/evaluation-platform-control-plane-rce.md",
+    "docs/wiki/threats-and-attacks/autonomous-ci-cd-exploit-adaptation.md",
+    "docs/wiki/agent-and-tool-security/agentic-browser-intent-collision.md",
+    "docs/wiki/agent-and-tool-security/approval-metadata-access-control.md",
+    "docs/wiki/agent-and-tool-security/claude-code-templates-studio-rce.md"
+  ],
+  "sources_checked": [
+    "https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold",
+    "https://github.com/microsoft/agent-framework/issues/10411",
+    "https://pypi.org/pypi/agent-framework/json",
+    "https://www.previdian.com/CVE-2026-64849",
+    "https://access.redhat.com/security/cve/cve-2026-64849",
+    "https://cveawg.mitre.org/api/cve/CVE-2026-64849",
+    "https://github.com/advisories/GHSA-7gwp-5pfp-969j",
+    "https://github.com/mlflow/mlflow/releases/tag/v3.15.0",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-67455",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-71486",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-73560",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-75130",
+    "https://nvd.nist.gov/vuln/detail/CVE-2026-73222",
+    "https://securitylab.github.com/advisories/GHSL-2024-198_GHSL-2024-199_Uptrain/",
+    "https://www.wiz.io/blog/red-agent-snowflake-copilot-cicd-bug",
+    "https://zenity.io/research/pleasefix-vulnerabilities",
+    "https://www.vulncheck.com/advisories/network-ai-before-cryptographic-signature-verification-bypass"
+  ],
+  "qualifying_updates": [
+    {
+      "leaf_id": "docs/wiki/infrastructure-and-supply-chain/mlflow-webhook-test-ssrf.md",
+      "title": "Public telemetry reports attempts against MLflow webhook-test SSRF",
+      "source_url": "https://www.previdian.com/CVE-2026-64849",
+      "visible_updated_at": "2026-11-18",
+      "evidence_classification": "unverified_claim",
+      "classification_detail": "The public telemetry page reports observed exploitation attempts and a last-observed date, but explicitly does not establish that a target was vulnerable or that an attempt succeeded. It is not confirmed exploitation or demonstrated research.",
+      "affected_boundary": "Internet-reachable MLflow Tracking Server webhook-test endpoint; the existing CVE covers redirect and DNS-rebinding SSRF to internal or cloud-metadata services before MLflow 3.15.0.",
+      "named_entities": ["MLflow", "CVE-2026-64849", "Previdian", "CISA KEV"],
+      "summary": "A November 18 page update adds public sensor-telemetry claims of attempts targeting the disclosed MLflow SSRF. The claim does not provide successful-compromise proof, so it must remain explicitly unverified during later synthesis.",
+      "upstream_routing": "MLflow product background belongs in ai-wiki. Retain the security-specific webhook SSRF, possible active targeting, network-egress, and cloud-metadata boundary locally.",
+      "follow_up_note": "During ingest, seek corroboration from CISA, the MLflow maintainer, or independently attributable incident reporting before changing any status to confirmed exploitation."
+    }
+  ],
+  "exclusions": [
+    {
+      "candidate": "Google GTIG November 16 agentic-threat report",
+      "reason": "Confirmed demonstrated threat intelligence within the window, but it is already captured by raw/processed/2026-11-18/ai-security-wiki-topic-news-collector-2026-11-18T003403Z.json; no duplicate leaf-watch record was made."
+    },
+    {
+      "candidate": "Microsoft Agent Framework PyPI compromise",
+      "reason": "Public November 17-18 incident coverage is already captured by raw/processed/2026-11-18/ai-security-wiki-topic-news-collector-2026-11-18T003403Z.json; no duplicate leaf-watch record was made."
+    },
+    {
+      "candidate": "Code-review MCP, Kubeshark MCP, NVIDIA Model Optimizer, Context7, vLLM, UpTrain, Snowflake CI/CD, Zenity, approval-metadata, and Claude Code Templates evidence",
+      "reason": "Cited primary or advisory records had visible publication or material-update dates before the strict window, or search results supplied only undated/derived summaries."
+    },
+    {
+      "candidate": "Red Hat MLflow record",
+      "reason": "Its visible November 6 update is outside the strict seven-day window."
+    }
+  ],
+  "upstream_routing": [
+    "Product catalogs and general framework information remain with ai-wiki; no broad product summaries are included here.",
+    "General development workflow practice remains with ai-dev-wiki; this artifact retains only security boundaries and evidence classifications."
+  ],
+  "follow_up_notes": [
+    "Do not infer confirmed exploitation from the Previdian attempt telemetry.",
+    "Do not edit docs/wiki or raw/processed during this collector run."
+  ],
+  "blockers": []
+}

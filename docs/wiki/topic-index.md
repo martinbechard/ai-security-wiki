@@ -8,6 +8,19 @@ description: "Navigation for locally owned AI security topics and source workflo
 
 ## Primary Topics
 
+- [Pydantic AI Harness ANSI tool-output denial of service](agent-and-tool-security/pydantic-ai-harness-ansi-tool-output-dos.md)
+- [Junie CLI agent file-tool project escape](infrastructure-and-supply-chain/junie-cli-agent-file-tool-project-escape.md)
+- [Splunk AI Assistant authorization family](identity-and-access/splunk-ai-assistant-authorization-family.md)
+- [ServiceNow Now Assist email-response indirect prompt injection](model-and-prompt-security/servicenow-now-assist-email-response-indirect-prompt-injection.md)
+- [Flyto2 Core agent-workflow security family](infrastructure-and-supply-chain/flyto2-core-agent-workflow-security-family.md)
+- [Flyto2 Core filesystem sandbox write escape](infrastructure-and-supply-chain/flyto2-core-filesystem-sandbox-write-escape.md)
+- [Flyto2 Core DNS-rebinding SSRF](infrastructure-and-supply-chain/flyto2-core-dns-rebinding-ssrf.md)
+- [Flyto2 Core MCP recipe path traversal](infrastructure-and-supply-chain/flyto2-core-mcp-recipe-path-traversal.md)
+- [Flyto2 Core pagination continuation SSRF](infrastructure-and-supply-chain/flyto2-core-pagination-continuation-ssrf.md)
+- [Flowise public-chatflow MCP token disclosure](identity-and-access/flowise-public-chatflow-mcp-token-disclosure.md)
+- [Flowise browser-loader DNS-rebinding SSRF](agent-and-tool-security/flowise-browser-loader-dns-rebinding-ssrf.md)
+- [AI Puffer comment-reply stored XSS](model-and-prompt-security/ai-puffer-comment-reply-stored-xss.md)
+- [agentic-radar untrusted dotenv API-key exposure](data-and-privacy/agentic-radar-untrusted-dotenv-api-key-exposure.md)
 - [Kubeshark MCP Pod-Regex Command Injection](agent-and-tool-security/kubeshark-mcp-pod-regex-command-injection.md)
 - [code-review-mcp-server Command Injection](agent-and-tool-security/code-review-mcp-server-command-injection.md)
 - [Google GTIG Autonomous Agentic Intrusion Activity](threats-and-attacks/google-gtig-autonomous-agentic-intrusion-activity.md)
